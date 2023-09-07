@@ -58,7 +58,7 @@ You can set the following parameters about STT:
 <a name="info_stt"></a>
 ## STT Information Retrieval
 
-You can get the following information about STT, follow these steps:
+You can get the following information about STT by following these steps:
 
 -   [Get the current STT state](#get). The state is also applied as a precondition for each method.
 -   Get the default language.

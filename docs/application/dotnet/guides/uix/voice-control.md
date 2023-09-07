@@ -121,7 +121,7 @@ To enable your application to use the voice control functionality, follow these 
 <a name="callback"></a>
 ## Manage callbacks
 
-To set and unset callbacks to get notifications about recognition results, state changes, and errors. Follow these steps:
+To set and unset callbacks to get notifications about recognition results, state changes, and errors, follow these steps:
 
 > [!NOTE]
 > Set and unset all callbacks when the voice control state is `Initialized` (the states are defined in the [Tizen.Uix.VoiceControl.State](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.State.html) enumeration).
@@ -278,7 +278,7 @@ To set and unset callbacks to get notifications about recognition results, state
 <a name="info"></a>
 ## Retrieve voice control information
 
-To get information about the current states, and current and supported languages. Follow these steps:
+To get information about the current states, and current and supported languages, follow these steps:
 
 -   Get the current voice control state using the `State` property of the [Tizen.Uix.VoiceControl.VoiceControlClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceControlClient.html) class.
 

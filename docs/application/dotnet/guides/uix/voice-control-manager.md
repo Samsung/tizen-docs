@@ -665,7 +665,7 @@ Follow these steps to send requests using the voice control manager:
 <a name="information"></a>
 ## Retrieve voice control manager information
 
-To get information about the current states, service states, current and supported languages. Follow these steps:
+To get information about the current states, service states, current and supported languages, follow these steps:
 
 -   Get the current voice control manager state using the `State` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
     The voice control manager state changes according to method calls:

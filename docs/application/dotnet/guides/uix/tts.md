@@ -575,7 +575,7 @@ To add text, follow these steps:
 <a name="control"></a>
 ## Control playback
 
-To start, pause, and stop the playback. Follow the steps below:
+To start, pause, and stop the playback, follow the steps below:
 
 -   To start synthesizing the text added in the queue and play the resulting sound data in sequence, use the `Play()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
 
