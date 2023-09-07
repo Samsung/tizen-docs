@@ -208,7 +208,7 @@ Other examples:
 Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, and each `repo` entry specifies a URL where RPM files used in the GBS build are located.
 
 > [!NOTE]
-> The `reference` directory in the remote repository URLs is a symbolic link in the remote server, which is always linked to the latest new directory and can be changed any time, so make sure to use the latest repo with a specific date to guarantee usability. An example is shown below:
+> The `reference` directory in the remote repository URLs is a symbolic link in the remote server, which is always linked to the latest directory and can be changed any time, so make sure to use the latest repo with a specific date to guarantee usability. An example is shown below:
 > ```
 > url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/reference/repos/standard/packages/
 > ```
