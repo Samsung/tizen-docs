@@ -212,7 +212,7 @@ Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, 
 > ```
 > url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/reference/repos/standard/packages/
 > ```
-> This URL is symbolically linked to the latest snapshot number in "[http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/](http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/)". To guarantee usability, use a specific date:
+> This URL is symbolically linked to the latest snapshot number in "[http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/](http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/){:target="_blank"}". To guarantee usability, use a specific date:
 > ```
 > url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/tizen-unified_20230905.212203/repos/standard/packages/
 > ```
