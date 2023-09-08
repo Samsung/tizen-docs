@@ -42,7 +42,7 @@ tensor_query_serversrc port=#reserved_appointed_port_number host=localhost conne
 other/tensors,num_tensors=1,types=uint8,format=static,dimensions=3:320:320:1,framerate=0/1 !
 tensor_transform mode=arithmetic option=typecast:float32,add:0.0,div:255.0 !
 queue ! tensor_filter framework=tensorflow2-lite model=/path/to/yolov5s/model/file.tflite !
-other/tensors,num_tensors=1,types=float32,format=static,dimensions=85:6300:1:1,framerate=0/1 !
+other/tensors,num_tensors=1,types=float32,format=static,dimensions=85:6300:1,framerate=0/1 !
 tensor_decoder mode=bounding_boxes option1=yolov5 option2=/path/to/coco/label.txt option4=320:320 option5=320:320 !
 video/x-raw,format=RGBA,width=320,height=320 ! tensor_converter !
 other/tensors,format=static,num_tensors=1,dimensions=4:320:320:1,types=uint8 !
@@ -67,7 +67,7 @@ AI developers can manage the pipeline description by doing the following:
     other/tensors,num_tensors=1,types=uint8,format=static,dimensions=3:320:320:1,framerate=0/1 ! \
     tensor_transform mode=arithmetic option=typecast:float32,add:0.0,div:255.0 ! \
     queue ! tensor_filter framework=tensorflow2-lite model=/path/to/yolov5s/model/file.tflite ! \
-    other/tensors,num_tensors=1,types=float32,format=static,dimensions=85:6300:1:1,framerate=0/1 ! \
+    other/tensors,num_tensors=1,types=float32,format=static,dimensions=85:6300:1,framerate=0/1 ! \
     tensor_decoder mode=bounding_boxes option1=yolov5 option2=/path/to/coco/label.txt option4=320:320 option5=320:320 ! \
     video/x-raw,format=RGBA,width=320,height=320 ! tensor_converter ! \
     other/tensors,format=static,num_tensors=1,dimensions=4:320:320:1,types=uint8 ! \
