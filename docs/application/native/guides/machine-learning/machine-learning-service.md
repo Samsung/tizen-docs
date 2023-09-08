@@ -237,30 +237,41 @@ ml_service_model_update_description (key, version, "Updated description for mobi
 ml_service_model_register (key, "/some/path/to/model.file", false, "not yet active", &version);
 
 // Get model info with its name and version
-ml_option_h model_info;
+ml_information_h model_info;
 ml_service_model_get (key, version, &model_info);
 
 // Check values of retrieved model info
 gchar *_path;
-ml_option_get (model_info, "path", (void **) &_path); // Value of _path: "/some/path/to/model.file"
+ml_information_get (model_info, "path", (void **) &_path); // Value of _path: "/some/path/to/model.file"
 gchar *_description;
-ml_option_get (model_info, "description", (void **) &_description); // Value of _description: "not yet active"
+ml_information_get (model_info, "description", (void **) &_description); // Value of _description: "not yet active"
 
 // Activate the not yet active model, setting all other models as NOT active
 ml_service_model_activate (key, version);
 
-// Get all model info with same name
-ml_option_h *all_info_list;
-guint info_num;
-ml_service_model_get_all (key, &all_info_list, &info_num);
+// Destroy the model info
+ml_information_destroy (model_info);
 
-for (int i = 0; i < info_num; i++) {
+// Get all model info with same name
+ml_information_list_h all_info_list;
+ml_service_model_get_all (key, &all_info_list);
+
+// Get the number of model info
+unsigned int info_length;
+ml_information_list_length (all_info_list, &info_length);
+
+for (int i = 0; i < info_length; i++) {
   // Do something for each model info
+  ml_information_h info;
+  ml_information_list_get_info (all_info_list, i, &info);
   ...
 }
 
 // Delete the model from the ml service
 ml_service_model_delete (key, version);
+
+// Delete the model info list
+ml_information_list_destroy (all_info_list);
 ```
 
 ### Application code using the registered model
@@ -272,7 +283,7 @@ Application developers can use the registered model:
 const gchar *key = "imgcls-mobilenet";
 gchar *model_path;
 
-ml_option_h activated_model_info;
+ml_information_h activated_model_info;
 
 // Get registered and activated model via ML Service API
 int status = ml_service_model_get_activated (key, &activated_model_info);
@@ -281,13 +292,16 @@ if (status == ML_ERROR_NONE) {
   gchar *activated_model_path;
 
   // Get path of the model
-  status = ml_option_get (activated_model_info, "path", (void **) &activated_model_path);
+  status = ml_information_get (activated_model_info, "path", (void **) &activated_model_path);
 
   model_path = g_strdup (activated_model_path);
 } else {
   // If there is no registered model, use the default model in the app
   model_path = g_strdup_printf ("%s/%s", app_get_resource_path (), "mobilenet_v1.tflite");
 }
+
+// Destroy the model info
+ml_information_destroy (activated_model_info);
 
 // Do inference with the variable `model_path`
 ...
