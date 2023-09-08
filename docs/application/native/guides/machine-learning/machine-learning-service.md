@@ -1,20 +1,22 @@
 # Machine Learning Service
 
-The Machine Learning Service API provides utility interfaces for both AI developers and application developers. AI developers can provide their pipelines and models as ML services, and application developers can use these services via this API.
+The Machine Learning Service API provides utility interfaces for both AI developers and application developers. AI developers can provide their pipelines, models, and resources as ML services, and application developers can use these services via this API.
 
 The main features of the Machine Learning Service API include the following:
 
-- Provide AI pipelines and models as ML services via machine-learning-agent (daemon).
+- Provide AI pipelines, models, and resources as ML services via machine-learning-agent (daemon).
 
-  AI developers can manage their AI pipeline description with a unique name. Then they can launch the pipeline as an ML service. They also provide their model files with a unique name. Application developers can access and use these model files.
+  AI developers can manage their AI pipeline description with a unique name. Then they can launch the pipeline as an ML service. They also provide their model files or resources (images, audio samples, etc.) with a unique name. Application developers can access and use these models or resources.
 
-- APIs for [pipeline](#machine-learning-service-api-for-pipeline) and [model](#machine-learning-service-api-for-model)
+- APIs for [pipeline](#machine-learning-service-api-for-pipeline), [model](#machine-learning-service-api-for-model), and [resource](#machine-learning-service-api-for-resource).
 
-  There are two types of Machine Learning Service API - for pipeline and for model.
+  There are three types of Machine Learning Service API - for pipeline, for model, and for resource.
 
   1. With Machine Learning Service API for pipeline, application developers can request their data to be processed by the launched ML service. The communication is powered by [NNStreamer's tensor_query](https://nnstreamer.github.io/gst/nnstreamer/tensor_query/README.html){:target="_blank"}, which implements [Edge-AI](https://nnstreamer.github.io/edge-ai.html){:target="_blank"} functionality.
 
   2. With Machine Learning Service API for model, application developers can get a registered model with a paired unique name. Then they may use it in their inference or train scenario. When AI developers upgrade the model, the application still behaves correctly in its scenario without any change to the application's code, unless the layout of the model is changed.
+
+  3. With Machine Learning Service API for resource, developers can share a set of resource files with a unique name. The resource files can be images, audio samples, binary, or any other data files. Developers can get the set of resources with the unique name and may use them in their AI inference or training scenario.
 
 ## Prerequisites
 
@@ -306,6 +308,71 @@ ml_information_destroy (activated_model_info);
 // Do inference with the variable `model_path`
 ...
 
+```
+
+## Machine Learning Service API for resource
+
+These APIs allow developers to manage and share any resource files such as images, audio samples, binary, or any other data files. Those resources can be added, retrieved, and deleted using the provided APIs.
+
+Let's say an application trains a model on-device. While training, the application may want to use some validation image files to validate its model. AI developers can add validation image files as ML resources, and application developers can use them to validate the on-device trained model:
+> [!NOTE]
+> Machine Learning Service API for resource is supported since Tizen 8.0.
+```c
+// AI developers provide the validation image files as resources
+
+// Unique name shared with developers
+const gchar *key_add = "mobilenet-validation-img";
+
+// Add 5 validation image files as resources
+for (int i = 0; i < 5; i++) {
+  // Provide the absolute file path and description
+  gchar *res_path = g_strdup_printf ("%s/%s", app_get_shared_resource_path (), "val_img%d.jpg", i);
+  gchar *res_description = g_strdup_printf ("This is description of the validation image %d...", i);
+
+  // Add the resource file path and description
+  ml_service_resource_add (key_add, res_path, res_description);
+
+  // Destroy the resource file path and description
+  g_free (res_path);
+  g_free (res_description);
+}
+
+...
+
+// Application developers use the validation image files as resources
+
+// Unique name shared with developers
+const gchar *key_get = "mobilenet-validation-img";
+
+// Get all resource info with same name
+ml_information_list_h res_info_list;
+ml_service_resource_get (key_get, &res_info_list);
+
+// Get the number of resource info
+unsigned int info_length;
+ml_information_list_length (res_info_list, &info_length);
+
+for (int i = 0; i < info_length; i++) {
+  ml_information_h info;
+  ml_information_list_get (res_info_list, i, &info);
+
+  gchar *path;
+  ml_information_get (info, "path", (void **) &path);
+
+  gchar *description;
+  ml_information_get (info, "description", (void **) &description);
+
+  // The validation image files may be used for validate on-device trained mobilenet model
+  ...
+}
+
+// Delete the resource info
+ml_information_list_destroy (res_info_list);
+
+...
+
+// Remove the resource from the ml service
+ml_service_resource_delete (key);
 ```
 
 ## Related information
