@@ -5,7 +5,7 @@ TTS (text-to-speech) features include synthesizing text into sound data as utter
 
 When your application creates a handle and prepares the TTS service, the TTS service is invoked and connected for background work. This service and your application communicate as the server and the client, respectively.
 
-The main features of the Tizen.Uix.Tts namespace include:
+The main features of the Tizen.Uix.Tts namespace includes the following:
 
 -   Preparing the TTS service for use
 
@@ -22,7 +22,7 @@ The main features of the Tizen.Uix.Tts namespace include:
 <a name="basic_tts"></a>
 ## Basic TTS processes
 
-Using TTS, you can:
+Using TTS, you can, you can accomplish the following tasks:
 
 -   Create a handle and register event handlers.
     -   Create a TTS handle which is used for distinguishing your application from other applications also using TTS.
@@ -60,7 +60,7 @@ You can set the following parameters about TTS:
 You can get the following information about TTS:
 
 -   [Get the current TTS state](#get). The state is also applied as a precondition for each method.
--   Get the current TTS service state. The service state is changed by internal behavior of the TTS service.
+-   Get the current TTS service state. The service state is changed by the internal behavior of the TTS service.
 -   Get the default voice.
     -   In TTS, the voice is defined as a combination of the language and the type, such as male or female.
     -   You can request the synthesis of the text with a specific voice, using the parameters of the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class. However, if you do not set a specific voice, TTS synthesizes the text with the default voice.
