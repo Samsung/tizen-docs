@@ -1,20 +1,22 @@
 # Machine Learning Service
 
-The Machine Learning Service API provides utility interfaces for both AI developers and application developers. AI developers can provide their pipelines and models as ML services, and application developers can use these services via this API.
+The Machine Learning Service API provides utility interfaces for both AI developers and application developers. AI developers can provide their pipelines, models, and resources as ML services, and application developers can use these services via this API.
 
 The main features of the Machine Learning Service API include the following:
 
-- Provide AI pipelines and models as ML services via machine-learning-agent (daemon).
+- Provide AI pipelines, models, and resources as ML services via machine-learning-agent (daemon).
 
-  AI developers can manage their AI pipeline description with a unique name. Then they can launch the pipeline as an ML service. They also provide their model files with a unique name. Application developers can access and use these model files.
+  AI developers can manage their AI pipeline description with a unique name. Then they can launch the pipeline as an ML service. They also provide their model files or resources (images, audio samples, etc.) with a unique name. Application developers can access and use these models or resources.
 
-- APIs for [pipeline](#machine-learning-service-api-for-pipeline) and [model](#machine-learning-service-api-for-model)
+- APIs for [pipeline](#machine-learning-service-api-for-pipeline), [model](#machine-learning-service-api-for-model), and [resource](#machine-learning-service-api-for-resource).
 
-  There are two types of Machine Learning Service API - for pipeline and for model.
+  There are three types of Machine Learning Service API - for pipeline, for model, and for resource.
 
   1. With Machine Learning Service API for pipeline, application developers can request their data to be processed by the launched ML service. The communication is powered by [NNStreamer's tensor_query](https://nnstreamer.github.io/gst/nnstreamer/tensor_query/README.html){:target="_blank"}, which implements [Edge-AI](https://nnstreamer.github.io/edge-ai.html){:target="_blank"} functionality.
 
   2. With Machine Learning Service API for model, application developers can get a registered model with a paired unique name. Then they may use it in their inference or train scenario. When AI developers upgrade the model, the application still behaves correctly in its scenario without any change to the application's code, unless the layout of the model is changed.
+
+  3. With Machine Learning Service API for resource, developers can share a set of resource files with a unique name. The resource files can be images, audio samples, binary, or any other data files. Developers can get the set of resources with the unique name and may use them in their AI inference or training scenario.
 
 ## Prerequisites
 
@@ -42,7 +44,7 @@ tensor_query_serversrc port=#reserved_appointed_port_number host=localhost conne
 other/tensors,num_tensors=1,types=uint8,format=static,dimensions=3:320:320:1,framerate=0/1 !
 tensor_transform mode=arithmetic option=typecast:float32,add:0.0,div:255.0 !
 queue ! tensor_filter framework=tensorflow2-lite model=/path/to/yolov5s/model/file.tflite !
-other/tensors,num_tensors=1,types=float32,format=static,dimensions=85:6300:1:1,framerate=0/1 !
+other/tensors,num_tensors=1,types=float32,format=static,dimensions=85:6300:1,framerate=0/1 !
 tensor_decoder mode=bounding_boxes option1=yolov5 option2=/path/to/coco/label.txt option4=320:320 option5=320:320 !
 video/x-raw,format=RGBA,width=320,height=320 ! tensor_converter !
 other/tensors,format=static,num_tensors=1,dimensions=4:320:320:1,types=uint8 !
@@ -67,7 +69,7 @@ AI developers can manage the pipeline description by doing the following:
     other/tensors,num_tensors=1,types=uint8,format=static,dimensions=3:320:320:1,framerate=0/1 ! \
     tensor_transform mode=arithmetic option=typecast:float32,add:0.0,div:255.0 ! \
     queue ! tensor_filter framework=tensorflow2-lite model=/path/to/yolov5s/model/file.tflite ! \
-    other/tensors,num_tensors=1,types=float32,format=static,dimensions=85:6300:1:1,framerate=0/1 ! \
+    other/tensors,num_tensors=1,types=float32,format=static,dimensions=85:6300:1,framerate=0/1 ! \
     tensor_decoder mode=bounding_boxes option1=yolov5 option2=/path/to/coco/label.txt option4=320:320 option5=320:320 ! \
     video/x-raw,format=RGBA,width=320,height=320 ! tensor_converter ! \
     other/tensors,format=static,num_tensors=1,dimensions=4:320:320:1,types=uint8 ! \
@@ -237,30 +239,41 @@ ml_service_model_update_description (key, version, "Updated description for mobi
 ml_service_model_register (key, "/some/path/to/model.file", false, "not yet active", &version);
 
 // Get model info with its name and version
-ml_option_h model_info;
+ml_information_h model_info;
 ml_service_model_get (key, version, &model_info);
 
 // Check values of retrieved model info
 gchar *_path;
-ml_option_get (model_info, "path", (void **) &_path); // Value of _path: "/some/path/to/model.file"
+ml_information_get (model_info, "path", (void **) &_path); // Value of _path: "/some/path/to/model.file"
 gchar *_description;
-ml_option_get (model_info, "description", (void **) &_description); // Value of _description: "not yet active"
+ml_information_get (model_info, "description", (void **) &_description); // Value of _description: "not yet active"
 
 // Activate the not yet active model, setting all other models as NOT active
 ml_service_model_activate (key, version);
 
-// Get all model info with same name
-ml_option_h *all_info_list;
-guint info_num;
-ml_service_model_get_all (key, &all_info_list, &info_num);
+// Destroy the model info
+ml_information_destroy (model_info);
 
-for (int i = 0; i < info_num; i++) {
+// Get all model info with same name
+ml_information_list_h all_info_list;
+ml_service_model_get_all (key, &all_info_list);
+
+// Get the number of model info
+unsigned int info_length;
+ml_information_list_length (all_info_list, &info_length);
+
+for (int i = 0; i < info_length; i++) {
   // Do something for each model info
+  ml_information_h info;
+  ml_information_list_get_info (all_info_list, i, &info);
   ...
 }
 
 // Delete the model from the ml service
 ml_service_model_delete (key, version);
+
+// Delete the model info list
+ml_information_list_destroy (all_info_list);
 ```
 
 ### Application code using the registered model
@@ -272,7 +285,7 @@ Application developers can use the registered model:
 const gchar *key = "imgcls-mobilenet";
 gchar *model_path;
 
-ml_option_h activated_model_info;
+ml_information_h activated_model_info;
 
 // Get registered and activated model via ML Service API
 int status = ml_service_model_get_activated (key, &activated_model_info);
@@ -281,7 +294,7 @@ if (status == ML_ERROR_NONE) {
   gchar *activated_model_path;
 
   // Get path of the model
-  status = ml_option_get (activated_model_info, "path", (void **) &activated_model_path);
+  status = ml_information_get (activated_model_info, "path", (void **) &activated_model_path);
 
   model_path = g_strdup (activated_model_path);
 } else {
@@ -289,9 +302,77 @@ if (status == ML_ERROR_NONE) {
   model_path = g_strdup_printf ("%s/%s", app_get_resource_path (), "mobilenet_v1.tflite");
 }
 
+// Destroy the model info
+ml_information_destroy (activated_model_info);
+
 // Do inference with the variable `model_path`
 ...
 
+```
+
+## Machine Learning Service API for resource
+
+These APIs allow developers to manage and share any resource files such as images, audio samples, binary, or any other data files. Those resources can be added, retrieved, and deleted using the provided APIs.
+
+Let's say an application trains a model on-device. While training, the application may want to use some validation image files to validate its model. AI developers can add validation image files as ML resources, and application developers can use them to validate the on-device trained model:
+> [!NOTE]
+> Machine Learning Service API for resource is supported since Tizen 8.0.
+```c
+// AI developers provide the validation image files as resources
+
+// Unique name shared with developers
+const gchar *key_add = "mobilenet-validation-img";
+
+// Add 5 validation image files as resources
+for (int i = 0; i < 5; i++) {
+  // Provide the absolute file path and description
+  gchar *res_path = g_strdup_printf ("%s/%s", app_get_shared_resource_path (), "val_img%d.jpg", i);
+  gchar *res_description = g_strdup_printf ("This is description of the validation image %d...", i);
+
+  // Add the resource file path and description
+  ml_service_resource_add (key_add, res_path, res_description);
+
+  // Destroy the resource file path and description
+  g_free (res_path);
+  g_free (res_description);
+}
+
+...
+
+// Application developers use the validation image files as resources
+
+// Unique name shared with developers
+const gchar *key_get = "mobilenet-validation-img";
+
+// Get all resource info with same name
+ml_information_list_h res_info_list;
+ml_service_resource_get (key_get, &res_info_list);
+
+// Get the number of resource info
+unsigned int info_length;
+ml_information_list_length (res_info_list, &info_length);
+
+for (int i = 0; i < info_length; i++) {
+  ml_information_h info;
+  ml_information_list_get (res_info_list, i, &info);
+
+  gchar *path;
+  ml_information_get (info, "path", (void **) &path);
+
+  gchar *description;
+  ml_information_get (info, "description", (void **) &description);
+
+  // The validation image files may be used for validate on-device trained mobilenet model
+  ...
+}
+
+// Delete the resource info
+ml_information_list_destroy (res_info_list);
+
+...
+
+// Remove the resource from the ml service
+ml_service_resource_delete (key);
 ```
 
 ## Related information
