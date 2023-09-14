@@ -293,10 +293,38 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
         try
         {
             /// Register the event handler for the ErrorOccurred event
-            tts_inst.EngineChanged += TtsErrorOccurred;
+            tts_inst.ErrorOccurred += TtsErrorOccurred;
 
             /// Deregister the event handler
-            tts_inst.EngineChanged -= TtsErrorOccurred;
+            tts_inst.ErrorOccurred -= TtsErrorOccurred;
+        }
+        catch (Exception e)
+        {
+            /// Error handling
+        }
+    }
+    ```
+
+-   Synthesized PCM
+
+    To get a notification when a synthesized PCM data is received from a TTS service, register an event handler for `SynthesizedPcm` event:
+
+    ```csharp
+    /// Event handler
+    void TtsSynthesizedPcm(object sender, SynthesizedPcmEventArgs e)
+    {
+        /// Your code
+    }
+
+    void SetUnsetSynthesizedPcmCb()
+    {
+        try
+        {
+            /// Register the event handler for the SynthesizedPcm event
+            tts_inst.SynthesizedPcm += TtsSynthesizedPcm;
+
+            /// Deregister the event handler
+            tts_inst.SynthesizedPcm -= TtsSynthesizedPcm;
         }
         catch (Exception e)
         {
@@ -661,6 +689,40 @@ To start, pause, and stop the playback, follow the steps below:
 
             tts_inst.Stop();
             RepeatedText text = tts_inst.Repeat();
+        }
+        catch (Exception e)
+        {
+            /// Error handling
+        }
+    }
+    ```
+
+<a name="playing_mode"></a>
+## Playing mode
+
+Playing mode determines which process, either TTS service or TTS client, plays the synthesized PCM data. Described below are the 2 different types of playing modes:
+
+> [!NOTE]
+> Playing mode is different from TTS mode. Playing mode only determines a subject to play PCM data.
+
+- `ByService`: TTS service plays the synthesized PCM data. If you do not set playing mode, it will be set as `ByService`.
+- `ByClient`: TTS client receives the synthesized PCM data from TTS service, and plays it directly.
+
+To decide between the client-side playback mode and the service-side playback mode, follow the steps below:
+
+-   Set the playing mode
+
+    If the application wants to play the PCM data directly instead of playing it that the application requested for synthesis in the TTS service, you can set the playback mode to `ByClient`. If the playback mode is not set by the user, the TTS service will synthesize the text and play it using the default value `ByService`.
+
+    > [!NOTE]
+    > If the playing mode is `ByService`, you don't need to set a event handler. It will be played automatically by the TTS service. If you set the mode to `ByClient`, you can receive the synthesized PCM data via `SynthesizedPcm` event and only change playing mode when TTS client state is `Created`. If you want to use both playing modes, it would be better to create 2 TTS handles:
+
+    ```csharp
+    void SetPlayingMode()
+    {
+        try
+        {
+            tts_inst.PlayingMode = PlayingMode.ByClient;
         }
         catch (Exception e)
         {
