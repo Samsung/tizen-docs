@@ -7,6 +7,7 @@
 - [How to add my applications to the Tizen binary?](#how-to-add-my-applications-to-the-tizen-binary)
 - [How to add my platform packages to the Tizen binary?](#how-to-add-my-platform-packages-to-the-tizen-binary)
 - [Can I find artifacts of TIC in my host PC?](#can-i-find-artifacts-of-tic-in-my-host-pc)
+- [What should I do if I get an error message saying that "Failed to setup loop device" while creating an image?](#what-should-i-do-if-i-get-an-error-message-saying-that-failed-to-setup-loop-device-while-creating-an-image)
 
 ## What is the building block?
 
@@ -38,3 +39,8 @@
 ## Can I find artifacts of TIC in my host PC?
 
 - You can find them in the `tic-artifacts` directory in your home directory if you use the [docker-compose](https://raw.githubusercontent.com/Samsung/tizen-docs/master/docs/platform/developing/media/docker-compose.yaml) file provided by us.
+
+## What should I do if I get an error message saying that "Failed to setup loop device" while creating an image?
+
+- You can meet this error if you use the Ubuntu. This is caused by kernel bug described [here](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/2015400) and the snap package system of the Ubuntu. To solve this problem,
+- You can solve this problem by releasing loop devices which is used by disabled the snap packages, please refer [here](https://askubuntu.com/questions/1036633/how-to-remove-disabled-unused-snap-packages-with-a-single-line-of-command)
