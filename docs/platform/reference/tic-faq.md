@@ -37,4 +37,4 @@
 
 ## Can I find artifacts of TIC in my host PC?
 
-- You can find them in the `tic-artifacts` directory in your home directory if you use the [docker-compose](https://s3-us-west-1.amazonaws.com/tizenschool/257/docker-compose.yaml) file provided by us.
+- You can find them in the `tic-artifacts` directory in your home directory if you use the [docker-compose](https://raw.githubusercontent.com/Samsung/tizen-docs/master/docs/platform/developing/media/docker-compose.yaml) file provided by us.
