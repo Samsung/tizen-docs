@@ -1321,7 +1321,6 @@ public class RemoteException : Exception
 namespace Proxy
 {
   // class for 'Message' interface.
- 
   public class Message : ProxyBase
   {
     public event EventHandler Connected;
