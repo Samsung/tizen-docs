@@ -706,16 +706,16 @@ Playing mode determines which process, either TTS service or TTS client, plays t
 > Playing mode is different from TTS mode. Playing mode only determines a subject to play PCM data.
 
 - `ByService`: TTS service plays the synthesized PCM data. If you do not set playing mode, it will be set as `ByService`.
-- `ByClient`: TTS client receives the synthesized PCM data from TTS service, and plays it directly.
+- `ByClient`: TTS client receives the synthesized PCM data from the TTS service and plays it directly.
 
-To decide between the client-side playback mode and the service-side playback mode, follow the steps below:
+To decide between the client-side playback mode and the service-side playback mode, follow the step below:
 
 -   Set the playing mode
 
-    If the application wants to play the PCM data directly instead of playing it that the application requested for synthesis in the TTS service, you can set the playback mode to `ByClient`. If the playback mode is not set by the user, the TTS service will synthesize the text and play it using the default value `ByService`.
+    If the application wants to play the PCM data directly instead of playing the one that the application requested for synthesis in the TTS service, you can set the playback mode to `ByClient`. If the playback mode is not set by the user, the TTS service will synthesize the text and play it using the default value `ByService`:
 
     > [!NOTE]
-    > If the playing mode is `ByService`, you don't need to set a event handler. It will be played automatically by the TTS service. If you set the mode to `ByClient`, you can receive the synthesized PCM data via `SynthesizedPcm` event and only change playing mode when TTS client state is `Created`. If you want to use both playing modes, it would be better to create 2 TTS handles:
+    > If the playing mode is `ByService`, you don't need to set an event handler. It will be played automatically by the TTS service. If you set the mode to `ByClient`, you can receive the synthesized PCM data via `SynthesizedPcm` event and only change playing mode when TTS client state is `Created`. If you want to use both playing modes, it would be better to create 2 TTS handles.
 
     ```csharp
     void SetPlayingMode()
