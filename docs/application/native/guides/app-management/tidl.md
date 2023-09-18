@@ -796,14 +796,16 @@ public class Runnable extends ServerBase {
 }
 ```
 
-## Protocol Version 2 (Since Tizen 8.0)
-**TIDLC** supports 'protocol version 2' since Tizen 8.0.
-To use 'protocol version 2', you must fill **'protocol 2'** in the .tidl file.
-The following features are supported in 'protocol version 2'.
+## Protocol version 2 (Since Tizen 8.0)
+To use protocol version 2, you must fill **'protocol 2'** in the .tidl file.
+The following features are supported in protocol version 2:
+  > **Note**
+  >
+  > **TIDLC** will support protocol version 2 since Tizen 8.0
 
-### Enum Type
+### Enum type
  - **'enum'** type is added.
- - You can declare an **enum** type inside a 'struct' or 'interface' and use it as a member variable or parameter.
+ - You can declare an **enum** type inside a 'struct' or 'interface' and use it as a member variable or parameter:
    ```tidl
     struct Message {
       enum Type {
@@ -826,10 +828,10 @@ The following features are supported in 'protocol version 2'.
 
       string SayHello(Version ver, string str, Message.Type msg);
     }
-  ```
+
 - When using a struct's enum type as a method parameter, it must be specified as **"<struct_name>.<enum_type>"**.
 
-### Import Another TIDL File
+### Import another TIDL file
 - **'import'** keyword is added.
 - You can add and use other TIDL files in the same directory as the current TIDL file using the **'import'** keyword.
 - During the compilation process, the contents of other TIDL files are integrated and generated as one code.
@@ -842,7 +844,7 @@ The following features are supported in 'protocol version 2'.
     }
   ```
 
-### Method Privilege
+### Method privilege
 - The protocol version 2 of TIDL supports the method privilege feature.
 - You can set privileges for each method of an interface by writing them as below:
   ```tidl
@@ -857,11 +859,11 @@ The following features are supported in 'protocol version 2'.
       int Uninstall(string package);
     }
   ```
-- To use the GetPackages method in the example, the client application needs to have the privilege that is "http://tizen.org/privilege/packagemanager.info".
+- To use the GetPackages method in the example, the client application needs to have the privilege that is "[http://tizen.org/privilege/packagemanager.info](http://tizen.org/privilege/packagemanager.info){:target="_blank"}".
 
-### Map and Set Container Type
+### Map and set container type
 - You can use map and set container types in TIDL.
-- The map type is **'map\<K, V\>'**. The set type is **'set\<K\>'**.
+- The map type is **'map\<K, V\>'**. The set type is **'set\<K\>'**:
   ```tidl
     struct Message {
       string name;
@@ -871,31 +873,31 @@ The following features are supported in 'protocol version 2'.
   ```
   > **Note**
   >
-  > The key type of map and set container must be TIDL's builtin types.
+  > The key type of map and set container must be TIDL's built-in types.
 
 ### Marshalling Type Info
-- From protocol version 2, the type information and variable names of method parameters are also transmitted.
+- From protocol version 2, the type of information and variable names of method parameters are also transmitted.
 - Even if variable names are changed, added, or deleted due to interface modifications, it does not affect communication.
 - If there are no variables to be passed, they are passed as initial values.
-  - Example 1. Original tidl code
+  - **Example 1** Original TIDL code:
 
     ```tidl
       interface Hello {
         int GetPackages(out list<string> packages);
       }
     ```
-  - Example 2. Revised tidl code
+  - **Example 2** Revised TIDL code:
     ```tidl
       interface Hello {
         int GetPackages(out list<string> packages, out int size);
       }
     ``````
-- In the example, the GetPackages() method has an added size parameter.
+- In the above example, the `GetPackages()` method has a size parameter added.
 - Even if the stub only returns the existing packages parameter, there is no problem with communication.
 
-### Struct Inheritance
+### Struct inheritance
 - **'struct'** inheritance is supported.
-- Here is an example that supports **'struct'** inheritance:
+- Here is an example that supports **'struct'** inheritance where **MessageDerived** inherits **MessageBase**:
   ```tidl
     struct MessageBase {
       int id;
@@ -906,12 +908,11 @@ The following features are supported in 'protocol version 2'.
       string msg;
     }
   ```
-- In this example, **MessageDerived** inherits **MessageBase**.
   > **Note**
   >
   > The inherited struct MUST not have elements of the base struct."
 
-- If the method of the interface is a base struct, communication can be performed using the derived struct that is inherited. (Polymophism)
+- If the method of the interface is a base struct, communication can be performed using the derived struct that is inherited: (Polymorphism)
   ```tidl
     struct MessageBase {
       int id;
@@ -931,22 +932,22 @@ The following features are supported in 'protocol version 2'.
       int SendMessage(MessageBase msg);
     }
   ```
-- When using the **Message** interface, you can use **Envelope** or **MessageDerived** to call the **SendMessage()** method.
+- When using the **Message** interface, you can use **Envelope** or **MessageDerived** to call the **`SendMessage()`** method.
 
-### Remote Exception
+### Remote exception
 - The stub can use **RemoteException** to throw an exception to the proxy.
 - This feature is available when the method operates synchronously.
-- When the proxy sends a request and waits for a result, if the stub throws an exception, it is passed to the proxy.
+- When the proxy sends a request and awaits a response, any exception thrown by the stub is forwarded to the proxy.
 
-### Local Execution Mode
+### Local execution mode
 - If the stub that the proxy sends a request to is in the same application, a function call occurs instead of RPC.
 
-### Private Sharing
-- Since protocol version 2, the file keyword can be used without the '-b' option.
+### Private sharing
+- Since protocol version 2, the **file** keyword can be used without the '-b' option.
 - The proxy or the stub can use this to share a specific file in the data directory with the intended recipient for communication.
 - The recipient who receives the shared file can access it with read-only permission.
 
-### TIDL Generated Code for Protocol Version 2
+### TIDL generated code for protocol version 2
 
 **TIDL**
 ```tidl
@@ -970,10 +971,10 @@ interface Message {
   int Send(MessageBase message);
 }
 ```
-- In the example, the MessageDerived structure inherits from MessageBase.
+- In the example above, the MessageDerived structure inherits from MessageBase.
 - When calling the Send method of the Message interface, you can use a MessageDerived instance.
 
-#### Proxy Interface
+#### Proxy interface
 
 **C**
 ```c
@@ -1381,7 +1382,7 @@ namespace Proxy
 
 
 <a name="stub-interface-1"></a>
-#### Stub Interface
+#### Stub interface
 
 **C**
 ```c
