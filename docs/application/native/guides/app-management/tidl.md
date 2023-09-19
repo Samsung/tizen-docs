@@ -799,8 +799,8 @@ public class Runnable extends ServerBase {
 ## Protocol version 2 (Since Tizen 8.0)
 To use protocol version 2, you must fill **'protocol 2'** in the .tidl file.
 The following features are supported in protocol version 2:
-  > [!Note]
-  > **TIDLC** will support protocol version 2 since Tizen 8.0
+  > [!NOTE]
+  > **TIDLC** will support protocol version 2 since Tizen 8.0.
 
 ### Enum type
  - **'enum'** type is added.
@@ -870,21 +870,21 @@ The following features are supported in protocol version 2:
       set<string> keys;
     }
   ```
-  > [!Note]
+  > [!NOTE]
   > The key type of map and set container must be TIDL's built-in types.
 
 ### Marshalling type info
 - From protocol version 2, the type of information and variable names of method parameters are also transmitted.
 - Even if variable names are changed, added, or deleted due to interface modifications, it does not affect communication.
 - If there are no variables to be passed, they are passed as initial values.
-  - **Example 1:** Original TIDL code:
+  - The following code is an example of an original TIDL code:
 
     ```tidl
       interface Hello {
         int GetPackages(out list<string> packages);
       }
     ```
-  - **Example 2:** Revised TIDL code:
+  - The following code is an example of a revised TIDL code:
     ```tidl
       interface Hello {
         int GetPackages(out list<string> packages, out int size);
@@ -906,7 +906,7 @@ The following features are supported in protocol version 2:
       string msg;
     }
   ```
-  > [!Note]
+  > [!NOTE]
   > The inherited struct must not have elements of the base struct.
 
 - If the method of the interface is a base struct, communication can be performed using the derived struct that is inherited: (Polymorphism)
