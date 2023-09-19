@@ -21,7 +21,7 @@
      $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
    ```
 
-2. Install the docker engine and tools. For information on docker engine installation, refer to [Install Docker Engine using the repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository):
+2. Install the docker engine and tools:
 
    ```shell
    sudo apt-get update
@@ -54,15 +54,16 @@ Before applying this configuration, ensure your host machine is behind the proxy
 
    ```conf
    [Service]
-   Environment="HTTP_PROXY=http://proxy_ip"
-   Environment="HTTPS_PROXY=https://proxy_ip"
-   Environment="NO_PROXY=localhost,127.0.0.1"
+   Environment="HTTP_PROXY=http://proxy_ip:port"
+   Environment="HTTPS_PROXY=https://proxy_ip:port"
+   Environment="NO_PROXY=localhost,127.0.0.1,tic"
    ```
 
 3. Restart the docker daemon:
 
    ```shell
-   sudo service docker restart
+   sudo systemctl daemon-reload
+   sudo systemctl restart docker
    ```
 
 4. Verify that the configuration has been loaded and matches the changes you made:
@@ -70,6 +71,21 @@ Before applying this configuration, ensure your host machine is behind the proxy
    ```shell
    sudo systemctl show --property=Environment docker
    ```
+
+5. Add proxy configurations to `~/.docker/config.json` file to configure the Docker client:
+
+   ```json
+   {
+      "proxies": {
+         "default": {
+            "httpProxy": "http://proxy_ip:port",
+            "httpsProxy": "http://proxy_ip:port",
+            "noProxy": "localhost,127.0.0.1,tic"
+         }
+      }
+   }
+   ```
+
 
 ### DNS
 
@@ -87,5 +103,11 @@ Before applying this configuration, ensure your host machine is behind the proxy
 2. Restart the docker daemon:
 
    ```shell
-   sudo service docker restart
+   sudo systemctl restart docker
    ```
+
+For more details, please refer the official docker document.
+  * [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+  * [Configure Docker to use a proxy server](https://docs.docker.com/network/proxy/)
+  * [Configure the daemon with systemd](https://docs.docker.com/config/daemon/systemd/)
+  * [Specify DNS servers for Docker](https://docs.docker.com/engine/install/troubleshoot/#specify-dns-servers-for-docker)

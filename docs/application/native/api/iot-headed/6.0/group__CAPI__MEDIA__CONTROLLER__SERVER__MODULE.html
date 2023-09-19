@@ -240,7 +240,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga7835218566c71fa2678ea11b218b796e">mc_server_search_cmd_received_cb</a> )(const char *client_name, const char *request_id, <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga5868e629d295ebf4c65ef3ebdf6f1a7c">mc_search_h</a> search, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the Server receives search command from the client.  <a href="#ga7835218566c71fa2678ea11b218b796e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga4b1f13222ef5342cb56f6d7285178072">mc_server_enable_cmd_received_cb</a> )(const char *client_name, const char *request_id, bool enabled, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the server receives the subtite and 360 mode command from the client.  <a href="#ga4b1f13222ef5342cb56f6d7285178072"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the server receives the subtitle and 360 mode command from the client.  <a href="#ga4b1f13222ef5342cb56f6d7285178072"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga776a41a7ffd8e4eb72bba0c4024cfeaf">mc_server_display_mode_cmd_received_cb</a> )(const char *client_name, const char *request_id, <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga4f361bbce4749d6336fc983b8689ab7d">mc_display_mode_e</a> mode, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the server receives the display mode command from the client.  <a href="#ga776a41a7ffd8e4eb72bba0c4024cfeaf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga21437df839948aebabf36f2dd830a03f">mc_server_display_rotation_cmd_received_cb</a> )(const char *client_name, const char *request_id, <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga6dab32f00043ec65490fb9fe92d92205">mc_display_rotation_e</a> rotation, void *user_data)</td></tr>
@@ -390,7 +390,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called when the server receives the subtite and 360 mode command from the client. </p>
+<p>Called when the server receives the subtitle and 360 mode command from the client. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the dbus event loop.<br/>
  If <em>request_id</em> is not null, the server should send the reply to the client with the <em>request_id</em>.<br/>

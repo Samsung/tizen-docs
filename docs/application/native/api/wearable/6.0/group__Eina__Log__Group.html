@@ -189,6 +189,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default logging method, this will output to standard error stream.  <a href="#ga38af538700301b2aa201e92837ca9c46"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga8bae9ff20acfb94f8dcb29b66440123d">eina_log_print_cb_file</a> (const <a class="el" href="group__Eina__Log__Group.html#ga3e8bc7f3b9aa9140d1e5b91baf08ebe8">Eina_Log_Domain</a> *d, <a class="el" href="group__Eina__Log__Group.html#ga5c0cd3a8463b76bb855805b70f58c7dd">Eina_Log_Level</a> level, const char *file, const char *fnc, int line, const char *fmt, void *data, va_list args)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternative logging method, this will output to given file stream.  <a href="#ga8bae9ff20acfb94f8dcb29b66440123d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga2174d66ed735f236582f5bb947c58ad9">eina_log_print_cb_syslog</a> (const <a class="el" href="group__Eina__Log__Group.html#ga3e8bc7f3b9aa9140d1e5b91baf08ebe8">Eina_Log_Domain</a> *d, <a class="el" href="group__Eina__Log__Group.html#ga5c0cd3a8463b76bb855805b70f58c7dd">Eina_Log_Level</a> level, const char *file, const char *fnc, int line, const char *fmt, void *data, va_list args)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternative logging function, this outputs to the system log.  <a href="#ga2174d66ed735f236582f5bb947c58ad9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga6b686425922b1117946cf869e18bc672">eina_log_print_cb_journald</a> (const <a class="el" href="group__Eina__Log__Group.html#ga3e8bc7f3b9aa9140d1e5b91baf08ebe8">Eina_Log_Domain</a> *d, <a class="el" href="group__Eina__Log__Group.html#ga5c0cd3a8463b76bb855805b70f58c7dd">Eina_Log_Level</a> level, const char *file, const char *fnc, int line, const char *fmt, void *data, va_list args)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternative logging method, this will output to systemd journal.  <a href="#ga6b686425922b1117946cf869e18bc672"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga8dcfef1baf5777089448b212b05899e2">eina_log_console_color_set</a> (FILE *fp, const char *color)</td></tr>
@@ -1814,6 +1816,85 @@ MT: Threads different from main thread will have thread id appended to domain na
 <dd>
 MT: Threads different from main thread will have thread id appended to domain name. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2174d66ed735f236582f5bb947c58ad9"></a><!-- doxytag: member="eina_log.h::eina_log_print_cb_syslog" ref="ga2174d66ed735f236582f5bb947c58ad9" args="(const Eina_Log_Domain *d, Eina_Log_Level level, const char *file, const char *fnc, int line, const char *fmt, void *data, va_list args)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__Log__Group.html#ga2174d66ed735f236582f5bb947c58ad9">eina_log_print_cb_syslog</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eina__Log__Group.html#ga3e8bc7f3b9aa9140d1e5b91baf08ebe8">Eina_Log_Domain</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Log__Group.html#ga5c0cd3a8463b76bb855805b70f58c7dd">Eina_Log_Level</a>&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fnc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Alternative logging function, this outputs to the system log. </p>
+<p>This function never gives color as the output.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">d</td><td>The domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Not used </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file that is logged </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fnc</td><td>The function that is logged </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>The line that is logged </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The output format to use </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Not Used </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>The arguments needed by the format </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

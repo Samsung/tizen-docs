@@ -2,7 +2,7 @@
 Voice control manager features allow you to record voice and give responses for the recognized voice commands. You can register general and system voice commands such as "power on", "power off", "music play", "music stop", and so on. In addition, you can start and stop voice recording. When the voice recording is finished, you can receive multiple recognition results such as Automatic Speech Recognition (ASR) and matched commands from the commands list, which is registered by the application using the voice control client.
 
 
-The main features of the [Tizen.Uix.VoiceControlManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html) namespace include:
+The main features of the [Tizen.Uix.VoiceControlManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html) namespace includes the following:
 
 -   Creating a handle and registering event handlers.
     -   You can create a voice control manager handle and only one voice control manager instance can work on the device.
@@ -11,7 +11,7 @@ The main features of the [Tizen.Uix.VoiceControlManager](/application/dotnet/api
     -    You can register commands as System, Widget, Foreground, SystemBackground, and Background type on the voice control service. When you speak a registered command, the callback returns the recognized result.
 -   Starting, stopping, and canceling recognition.
     -   You can [start and stop voice recording](#start_and_stop_recording) using a microphone.
-    -   You can set to stop recording manually or automatically. If automatic stop is set, voice control manager stops recording when end of speech is detected.
+    -   You can set it to stop recording manually or automatically. If the automatic stop is set, the voice control manager stops recording when the end of speech is detected.
     -   When the voice recording finishes, the voice control service recognizes the speech data and finds matching commands among the registered commands.
 -   Getting the recognition result.
     -   The recognition result is invoked by the registered event handler.
@@ -73,12 +73,12 @@ The following figure illustrates the voice control manager life-cycle:
 
 In general scenario, following are the voice control manager service state:
 1.  The user starts recording for recognition by using a voice control manager application, button, or voice trigger. If the start is successful, the voice control service state changes to `Recording`. For more information on service states, see [Tizen.Uix.VoiceControlManager.ServiceState](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.ServiceState.html) enumeration.
-2.  After recording is completed, the service state changes to `Processing` for recognition processing.
-3.  After recognition is completed, the service state changes to `Ready`.
+2.  After the recording is completed, the service state changes to `Processing` for recognition processing.
+3.  After the recognition is completed, the service state changes to `Ready`.
 
 ## Prerequisites
 
-To enable your application to use the voice control functionality:
+To enable your application to use the voice control functionality, follow these steps:
 
 1.  To use the [Tizen.Uix.VoiceControlManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html) class, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -143,7 +143,7 @@ To enable your application to use the voice control functionality:
     > Do not call the `Deinitialize()` method of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class in a callback. Within a callback, the `Deinitialize()` method fails and returns `ErrorCode.OperationFailed`.
 
 <a name="callback"></a>
-## Manage Callbacks
+## Manage callbacks
 
 You can set or unset callbacks such as notification of recognition results, state changes, errors, and so on:
 
@@ -382,9 +382,9 @@ You can set or unset callbacks such as notification of recognition results, stat
     ```
 
 
--   Set the all recognition result received callback invoked when voice control engine sends the all recognition result to voice control manager.
+-   Set the all recognition result received callback invoked when the voice control engine sends all recognition results to the voice control manager.
 
-    In the callback, the recognized result, recognized text, and engine message results are included. Recognized result can include more than two voice commands, if the two voice commands have the same command string and are registered by each voice control clients.
+    In the callback, the recognized result, recognized text, and engine message results are included. Recognized results can include more than two voice commands if the two voice commands have the same command string and are registered by each voice control client.
 
     If you want to select specific command in the recognized result, you can use `SetRecognizedCommandsSelectionDelegate()` method:
 
@@ -446,9 +446,9 @@ You can set or unset callbacks such as notification of recognition results, stat
 
 -   Set the recognized commands selection callback invoked when the voice control manager select specific voice commands in all recognized result.
 
-    When utterance is recognized, all the recognized result can include more than two voice commands if these commands have the same command string that is registered by each voice control clients.
+    When an utterance is recognized, all the recognized results can include more than two voice commands if these commands have the same command string that is registered by each voice control client.
 
-    In this case, voice control manager can select specific voice commands from all recognized result to send voice control client using `SetRecognizedCommandsSelectionDelegate()`.
+    In this case, the voice control manager can select specific voice commands from all recognized results to send the voice control client using `SetRecognizedCommandsSelectionDelegate()`.
 
     You can select a valid command result from the recognized command selection:
 
@@ -562,11 +562,11 @@ You can set or unset callbacks such as notification of recognition results, stat
 <a name="start_and_stop_recording"></a>
 ## Start and stop recording
 
-You can start, stop, or cancel recording using voice control manager:
+You can start, stop, or cancel recording using voice control manager by following these steps:
 
 -   To start recording, use the `Start()` method with `exclusiveCommandOption` as the parameter.
     The connected voice control service starts recording and the voice control manager state is changed to `Recording`.
-    If the parameter `exclusiveCommandOption` value is true, voice control service recognizes only the exclusive commands.
+    If the parameter `exclusiveCommandOption` value is true, the voice control service recognizes only the exclusive commands.
     This method must be called when the voice control manager is in the `Ready` state:
 
     ```csharp
@@ -585,7 +585,7 @@ You can start, stop, or cancel recording using voice control manager:
 
 -   To stop recording, use the `Stop()` method.
     The recording stops and the voice control manager state is changed to `Processing`.
-    When the recognition command result is processed, the `RecognitionResult` event triggers, and the state changes back to `Ready`.
+    When the recognition command result is processed, the `RecognitionResult` event triggers and the state changes back to `Ready`.
     This method must be called when the voice control manager is in the `Recording` state:
 
     ```csharp
@@ -624,9 +624,9 @@ You can start, stop, or cancel recording using voice control manager:
 <a name="send_requests"></a>
 ## Send requests
 
-You can send requests using the voice control manager:
+Follow these steps to send requests using the voice control manager:
 
--   To send the event information to the voice control engine in purpose of activating specific action, use the `DoAction()` method.
+-   To send the event information to the voice control engine for purpose of activating specific action, use the `DoAction()` method.
 
     This method must be called when the voice control manager is in the `Ready` state:
 
@@ -663,9 +663,9 @@ You can send requests using the voice control manager:
     ```
 
 <a name="information"></a>
-## Retrieve Voice Control Manager Information
+## Retrieve voice control manager information
 
-To get information about the current states, service states, current and supported languages:
+To get information about the current states, service states, current and supported languages, follow these steps:
 
 -   Get the current voice control manager state using the `State` property of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
     The voice control manager state changes according to method calls:
@@ -804,11 +804,11 @@ To get information about the current states, service states, current and support
     }
     ```
 
--   Get or set private data between voice control manager and voice control engine.
+-   Get or set private data between the voice control manager and the voice control engine.
 
     You can use the `GetPrivateData()` and `SetPrivateData()` methods of the [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html) class.
 
-    `GetPrivateData()` is used when the parameters move from voice control engine to voice control manager, while `SetPrivateData()` is used when the parameters move from voice control manager to voice control engine.
+    `GetPrivateData()` is used when the parameters move from the voice control engine to the voice control manager, while `SetPrivateData()` is used when the parameters move from the voice control manager to the voice control engine.
 
     This option must be set when the voice control manager is in the `Ready` state:
 
@@ -833,11 +833,11 @@ To get information about the current states, service states, current and support
 
 
 <a name="commands"></a>
-## Manage Commands
+## Manage commands
 
 You can use command group to manage the commands. You can add or remove the commands to the command group and retrieve the command information using the command group.
 
-To create a command group and commands:
+To create a command group and commands, follow these steps:
 
 1.  Create a command group with a command group handle.
 
@@ -1024,7 +1024,7 @@ To create a command group and commands:
 
 
 <a name="register_command"></a>
-## Register Command
+## Register command
 
 - You can register the commands for recognition by setting the command group to the voice control service from a file that includes the commands. The parameter `commandFilePath` is used to get the path of the file.
     If you want to update the registered commands, set the command group again with the updated commands:
@@ -1094,6 +1094,6 @@ To create a command group and commands:
     }
     ```
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 5.5 and Higher

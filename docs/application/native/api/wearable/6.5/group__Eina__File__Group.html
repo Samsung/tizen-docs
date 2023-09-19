@@ -112,6 +112,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator to list the content of a directory, with direct information.  <a href="#gaa4f06311bdc2285d2993deb4cdd0c8cc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gaac0b66eff443de69f913d99bb0454ee1">eina_file_statat</a> (void *container, <a class="el" href="group__Eina__File__Group.html#ga8e8779c9f28937a642dbe1be86760646">Eina_File_Direct_Info</a> *info, <a class="el" href="group__Eina__File__Group.html#gab15fe1278f044850fcb24417a47364a8">Eina_Stat</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses information provided by <a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> of <a class="el" href="group__Eina__File__Group.html#gaa4f06311bdc2285d2993deb4cdd0c8cc" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_stat_ls()</a> or <a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls()</a> to call stat in the most efficient way on your system.  <a href="#gaac0b66eff443de69f913d99bb0454ee1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga67b9fe0a4427b814e40ad22802a3514d">eina_file_close_from</a> (int fd, int *except_fd)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Close all file descriptors that are open at or above the given fd.  <a href="#ga67b9fe0a4427b814e40ad22802a3514d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gaaa203d417adcbd2389394c6514a5e8fc">eina_file_mkstemp</a> (const char *templatename, <a class="el" href="group__Eina__Stringshare__Group.html#gae8d53f367d5da5acfd19af6c235831d5">Eina_Tmpstr</a> **path)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and creates a uniquely named temporary file from a template name. The generated file is opened with the open(2) <code>O_EXCL</code> flag.  <a href="#gaaa203d417adcbd2389394c6514a5e8fc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga73f4be7e9b54f2c46fad7790f4c8d9e9">eina_file_mkdtemp</a> (const char *templatename, <a class="el" href="group__Eina__Stringshare__Group.html#gae8d53f367d5da5acfd19af6c235831d5">Eina_Tmpstr</a> **path)</td></tr>
@@ -160,6 +162,16 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins two paths of known length.  <a href="#gadf638f95abe9aa175b6aaa3762bc1b54"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gaafc34529ee88ef8b528f62dab8ffe469">eina_file_path_join</a> (char *dst, size_t size, const char *a, const char *b)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins two paths of known length.  <a href="#gaafc34529ee88ef8b528f62dab8ffe469"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gae0aa9f0ca7dd3b5b250f532197d1e518">eina_file_unlink</a> (const char *pathname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlinks file.  <a href="#gae0aa9f0ca7dd3b5b250f532197d1e518"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gad68c9d74aa32024109496f1354ea5123">eina_file_statgen_next</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the stat generation counter to tick over so any following i/o does real i/o and stat calls.  <a href="#gad68c9d74aa32024109496f1354ea5123"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__File__Group.html#ga14b7b651c6a2ea038f008e908995e9a5">Eina_Statgen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gae93a6be54e0120f907fd3f325223028b">eina_file_statgen_get</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current stat generation counter value.  <a href="#gae93a6be54e0120f907fd3f325223028b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gabc9a683b8de75db83d164deac01259a9">eina_file_statgen_enable</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable stat generation count optimiziing to only stat/do file i/o between generation counts changing.  <a href="#gabc9a683b8de75db83d164deac01259a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga43cc8981c8164ad73318fd6f6e160785">eina_file_statgen_disable</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable stat generation count optimiziing to only stat/do file i/o between generation counts changing.  <a href="#ga43cc8981c8164ad73318fd6f6e160785"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8e8779c9f28937a642dbe1be86760646"></a><!-- doxytag: member="Eina_File_Group::Eina_File_Direct_Info" ref="ga8e8779c9f28937a642dbe1be86760646" args="" -->
@@ -438,6 +450,44 @@ Defines</h2></td></tr>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga67b9fe0a4427b814e40ad22802a3514d"></a><!-- doxytag: member="eina_file.h::eina_file_close_from" ref="ga67b9fe0a4427b814e40ad22802a3514d" args="(int fd, int *except_fd)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__File__Group.html#ga67b9fe0a4427b814e40ad22802a3514d">eina_file_close_from</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>except_fd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Close all file descriptors that are open at or above the given fd. </p>
+<p>This closes all open file descriptors that are equal to or of higher value than the given inpit fd given. This is intended for niche use like closing all open files just before exec()ing a new process after calling fork(). The except_fd array can be NULL if no fd's are to be skipped, but if some fd's are to skip being closed then this will be an array of fd numbers being terminated by a fd value of -1.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>The fd value to begin closing at </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">except_fd</td><td>An array of fd's not to close terminated by -1 as the last invalid fd</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 
 </div>
 </div>
@@ -1431,6 +1481,115 @@ The difference between this function and <a class="el" href="group__Eina__File__
 <a class="el" href="group__Eina__File__Group.html#gaa4f06311bdc2285d2993deb4cdd0c8cc" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_stat_ls()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga43cc8981c8164ad73318fd6f6e160785"></a><!-- doxytag: member="eina_file.h::eina_file_statgen_disable" ref="ga43cc8981c8164ad73318fd6f6e160785" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__File__Group.html#ga43cc8981c8164ad73318fd6f6e160785">eina_file_statgen_disable</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Disable stat generation count optimiziing to only stat/do file i/o between generation counts changing. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabc9a683b8de75db83d164deac01259a9"></a><!-- doxytag: member="eina_file.h::eina_file_statgen_enable" ref="gabc9a683b8de75db83d164deac01259a9" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__File__Group.html#gabc9a683b8de75db83d164deac01259a9">eina_file_statgen_enable</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable stat generation count optimiziing to only stat/do file i/o between generation counts changing. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae93a6be54e0120f907fd3f325223028b"></a><!-- doxytag: member="eina_file.h::eina_file_statgen_get" ref="gae93a6be54e0120f907fd3f325223028b" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__File__Group.html#ga14b7b651c6a2ea038f008e908995e9a5">Eina_Statgen</a> <a class="el" href="group__Eina__File__Group.html#gae93a6be54e0120f907fd3f325223028b">eina_file_statgen_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the current stat generation counter value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 if you should always do stat calls and compare, or some other value that changes like a generation counter </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad68c9d74aa32024109496f1354ea5123"></a><!-- doxytag: member="eina_file.h::eina_file_statgen_next" ref="gad68c9d74aa32024109496f1354ea5123" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__File__Group.html#gad68c9d74aa32024109496f1354ea5123">eina_file_statgen_next</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Force the stat generation counter to tick over so any following i/o does real i/o and stat calls. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae0aa9f0ca7dd3b5b250f532197d1e518"></a><!-- doxytag: member="eina_file.h::eina_file_unlink" ref="gae0aa9f0ca7dd3b5b250f532197d1e518" args="(const char *pathname)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Eina__File__Group.html#gae0aa9f0ca7dd3b5b250f532197d1e518">eina_file_unlink</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unlinks file. </p>
+<p>This function is a wrapper around the unlink() system call. It removes a link to a file.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pathname</td><td>File name to unlink. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the unlink was successful, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise..</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
 
 </div>
 </div>

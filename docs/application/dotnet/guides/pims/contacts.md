@@ -20,14 +20,14 @@ In the figure, the Person1 is an aggregation of the Contact1, Contact2, and Cont
 
 ![Contact structure](./media/contacts_contact_structure.png)
 
-The main features of the Tizen.Pims.Contacts namespace include:
+The main features of the Tizen.Pims.Contacts namespace include the following:
 
 -   Contact management
     -   You can manage individual [contact record details](#record), such as name, phone number, email, address, job, instant messenger, and company, with the help of [contact data-views](#view).
 
         You can also create lists of similar contacts to [manage them in batches](#list).
 
-    - You can [insert contacts to](#create_contact), update them in, and remove them from the contacts database.
+    - You can [insert contacts](#create_contact), update them, and remove them from the contacts database.
     - You can monitor [changes in the contacts database](#db).
     - You can search for and organize contacts using [filters and queries](#filter).
     - You can store social activities.
@@ -38,7 +38,7 @@ The main features of the Tizen.Pims.Contacts namespace include:
     -   You can combine contacts in the same address book to create groups, allowing you to easily set the same properties (such as ringtones) for all contacts within the group.
     -   You can update and delete groups.
 - Address books
-    -   You can create address books using the local device (with no account), service providers (such as Samsung account), or applications (such as Joyn).
+    -   You can create address books using the local device (with no account), service providers (such as a Samsung account), or applications (such as Joyn).
     -   You can determine to which address book each contact and group belong.
     -   If the address book is related to an account, you can handle the account using an account ID created with the [Account Manager](../account/account.md). If the local device address book has no account, the related account ID is 0. You can create only one address book for each account.
 - Speed dials
@@ -57,7 +57,7 @@ The following figure illustrates the different entities and their relationships 
 ![Contact entities](./media/contacts_contact_entity.png)
 
 <a name="person"></a>
-## Contacts and Persons
+## Contacts and persons
 
 Each contact is linked to at least 1 person, which is a kind of virtual contact that can be used to combine the details when multiple contacts from different address books represent the same individual.
 
@@ -81,11 +81,11 @@ The linking between contacts and persons functions as follows:
 ## Records
 A record represents an actual record in the internal database, but you can also consider it a piece of information, such as an address, a phone number, or a group of contacts. A record can be a complex set of data, containing other data. For example, a contact record contains the `Address` property, which is a reference to an address record. An address record belongs to a contact record, and its `Id` property is set to the identifier of the corresponding contact. In this case, the address is the child record of the contact and the contact is the parent record.
 
-You can create records in the database, retrieve individual record details or lists of multiple records, and delete records:
+Follow the steps to create records in the database, retrieve individual record details or lists of multiple records, and delete records:
 
 -   Creating a record
 
-    When creating a record, you must specify what type of record you want to create by using its `Uri` property.
+    When creating a record, you must specify what type of record you want to create by using its `Uri` property:
 
     ```csharp
     /// Create a contact record
@@ -156,11 +156,11 @@ To manage the record, you can use the URI or views:
 
     For more information, see the view classes in the `Tizen.Pims.Contacts.ContactsViews` namespace.
 
-### Child Records
+### Child records
 
-Some record types can be a parent of other records. Effectively, a record can be a node in a tree or graph of relations between records.
+Some record types can be a parent of other records. Effectively, a record can be a node in a tree or a graph of relations between records.
 
-The following code example inserts an address record into a contact record. It is not necessary to insert or destroy all records. Only the parent record needs to be inserted into the database to store all the information, and when the parent record is destroyed, the child records are also destroyed automatically.
+The following code example inserts an address record into a contact record. It is not necessary to insert or destroy all records. Only the parent record needs to be inserted into the database to store all the information, and when the parent record is destroyed, the child records are also destroyed automatically:
 
 ```csharp
 ContactsRecord contact = new ContactsRecord(Contact.Uri);
@@ -182,7 +182,7 @@ contact.Dispose();
 manager.Dispose();
 ```
 
-Identifiers can be used to establish a relationship between 2 records. The following code example sets an address record's `ContactId` property to the ID of the contact. The `ContactId` property relates between the address record and the contact which is identified by the `ContactId` property. After the ID is set, the address becomes one of the addresses connected to the contact. The address is now the contact's child record, and the contact is the parent record.
+Identifiers can be used to establish a relationship between 2 records. The following code example sets an address record's `ContactId` property to the ID of the contact. The `ContactId` property relates between the address record and the contact which is identified by the `ContactId` property. After the ID is set, the address becomes one of the addresses connected to the contact. The address is now the contact's child record, and the contact is the parent record:
 
 ```csharp
 int contactId = ... /// Acquire the ID of the created contact
@@ -197,11 +197,11 @@ manager.Dispose();
 ```
 
 <a name="list"></a>
-## Contact Lists and Batch Operations
+## Contact lists and batch operations
 
 Use the [Tizen.Pims.Contacts.ContactsList](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsList.html) class to handle lists of records with the same type.
 
-To create a list:
+To create a list, follow these steps:
 
 -   Create a list:
 
@@ -224,7 +224,7 @@ To create a list:
     list.Dispose();
     ```
 
-To manage the list:
+To manage the list, follow these steps:
 
 -   Traversing
 
@@ -275,11 +275,11 @@ To manage the list:
     ```
 
     <a name="filter"></a>
-## Filters and Queries
+## Filters and queries
 
 Queries are used to retrieve [person](#get_contact) data which satisfies a given criteria, such as an integer property being greater than a given value, or a string property containing a given substring. A query needs a filter which can set the conditions for the search. The [Tizen.Pims.Contacts.ContactsQuery](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsQuery.html) class provides methods for sorting set projections and removing duplicated results.
 
-To filter, sort, and query contact data:
+To filter, sort, and query contact data, follow the steps below:
 
 -   Filtering
 
@@ -316,7 +316,7 @@ To filter, sort, and query contact data:
     | Condition C1<br>OR<br>Condition C2<br>AND<br>Condition C3 | (C1 OR C2) AND C3                        |
     | **Filter F1**:<br>Condition C1<br>OR<br>Condition C2<br><br>**Filter F2**:<br>Condition C3<br>OR<br>Condition C4<br><br>**Filter F3**:<br>Condition C5<br>AND<br>F1<br>AND<br>F2 | (C5 AND F1) AND F2, which is<br>(C5 AND (C1 OR C2)) AND (C3 OR C4) |
 
-    The following example creates a filter which accepts addresses with their contact's ID equal to a given ID (integer filter), or their country property equal to "Korea" (string filter). To get the filtered results, create a query and add the filter to it. The results are received in a list.
+    The following example creates a filter which accepts addresses with their contact's ID equal to a given ID (integer filter), or their country property equal to "Korea" (string filter). To get the filtered results, create a query and add the filter to it. The results are received in a list:
 
     ```csharp
     int contactId = ... /// Acquire the ID of the created contact
@@ -363,7 +363,7 @@ To filter, sort, and query contact data:
 
     Projection allows you to query the data for only the specific properties of a record that you need, at lower latency and cost than retrieving all properties. To use projection, use the `SetProjection()` method.
 
-    The following example creates a filter which gets only the person ID, display name, and image thumbnail path from the person records which have "test" (string filter) as the vibration path. Create a query and add the filter to it; the results are received in a list.
+    The following example creates a filter which gets only the person ID, display name, and image thumbnail path from the person records which have "test" (string filter) as the vibration path. Create a query and add the filter to it; the results are received in a list:
 
     ```csharp
     ContactsFilter filter = new ContactsFilter(Person.Uri, Person.Vibration, ContactsFilter.StringMatchType.Contains, "test");
@@ -413,7 +413,7 @@ To filter, sort, and query contact data:
 
 ## Prerequisites
 
-To enable your application to use the contacts functionality:
+To enable your application to use the contacts functionality, follow the steps below:
 
 1.  To use the [Tizen.Pims.Contacts](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -434,7 +434,7 @@ To enable your application to use the contacts functionality:
     ```
 
     <a name="create_contact"></a>
-## Creating a Contact
+## Create a contact
 
 Creating a new contact involves setting the contact properties and inserting the contact into the contact database.
 
@@ -442,7 +442,7 @@ Some contact properties are defined as child records that are associated with th
 
 When you create a new contact, the system automatically creates a new person associated with that contact. A person is an aggregation of 1 or more contacts associated with the same individual. A contact is always associated with a person.
 
-To create a new contact:
+To create a new contact, follow these steps:
 
 1.  Create a contact with the `Uri` property of the `Tizen.Pims.Contacts.ContactsViews.Contact` class:
 
@@ -510,7 +510,7 @@ To create a new contact:
             ContactsRecord birthday = new ContactsRecord(Event.Uri);
             ```
 
-        2. Set the event date with the `Date` property. The date is an integer.
+        2. Set the event date with the `Date` property. The date is an integer:
 
             ```csharp
             int year = 1990;
@@ -557,7 +557,7 @@ To create a new contact:
 
 3. Insert the contact into the contact database using the `Insert()` method of the [Tizen.Pims.Contacts.ContactsDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsDatabase.html) class. All child records added to the contact are inserted automatically along with the parent.
 
-    The system assigns a unique ID to the contact, and the method returns it.
+    The system assigns a unique ID to the contact, and the method returns it:
 
     ```csharp
     ContactsManager manager = new ContactsManager();
@@ -574,11 +574,11 @@ To create a new contact:
     All child records of the given record are also destroyed.
 
     <a name="get_contact"></a>
-## Retrieving Persons
+## Retrieve persons
 
 You can access contact details through persons.
 
-To retrieve a single person:
+To retrieve a single person, follow these steps:
 
 1.  Retrieve a person record using the person ID:
 
@@ -620,7 +620,7 @@ To retrieve multiple persons:
 
             The following example adds an AND operator and an additional condition which retrieves the persons who are set as favorites.
 
-            The combination of the AND operator and the 2 conditions means that the filter only retrieves the persons whose display name contains the string "John" and who are set as favorites.
+            The combination of the AND operator and the 2 conditions means that the filter only retrieves the persons whose display name contains the string "John" and who are set as favorites:
 
             ```csharp
             filter.AddCondition(ContactsFilter.LogicalOperator.And, Person.IsFavorite, true);
@@ -673,9 +673,9 @@ To retrieve multiple persons:
     ```
 
     <a name="db"></a>
-## Managing Database Change Notifications
+## Manage database change notifications
 
-To detect the person and group changes in the contacts database, add event handlers using the `AddDBChangedEventHandler()` method of the [Tizen.Pims.Contacts.ContactsDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsDatabase.html) class. To ignore database changes, remove the event handler using the `RemoveDBChangedEventHandler()` method.
+To detect the person and group changes in the contacts database, add event handlers using the `AddDBChangedEventHandler()` method of the [Tizen.Pims.Contacts.ContactsDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsDatabase.html) class. To ignore database changes, remove the event handler using the `RemoveDBChangedEventHandler()` method:
 
 ```csharp
 public static void DBChangedHandler(object sender, DBChangedEventArgs args)
@@ -690,9 +690,9 @@ manager.Database.AddDBChangedEventHandler(Contact.Uri, DBChangedHandler);
 ```
 
 <a name="vcard"></a>
-## Managing vCards
+## Manage vCards
 
-The [Tizen.Pims.Contacts.ContactsVcard](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsVcard.html) class provides methods for parsing and making vCards. The vCard functions are based on the [vCard v3.0 specification](http://www.ietf.org/rfc/rfc2426.txt).
+The [Tizen.Pims.Contacts.ContactsVcard](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsVcard.html) class provides methods for parsing and making vCards. The vCard functions are based on the [vCard v3.0 specification](http://www.ietf.org/rfc/rfc2426.txt){:target="_blank"}.
 
 -   You can import contact information by parsing vCards from stream or from a file:
 
@@ -743,6 +743,6 @@ The [Tizen.Pims.Contacts.ContactsVcard](/application/dotnet/api/TizenFX/latest/a
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

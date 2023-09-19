@@ -5,7 +5,7 @@ TTS (text-to-speech) features include synthesizing text into sound data as utter
 
 When your application creates a handle and prepares the TTS service, the TTS service is invoked and connected for background work. This service and your application communicate as the server and the client, respectively.
 
-The main features of the Tizen.Uix.Tts namespace include:
+The main features of the Tizen.Uix.Tts namespace includes the following:
 
 -   Preparing the TTS service for use
 
@@ -22,7 +22,7 @@ The main features of the Tizen.Uix.Tts namespace include:
 <a name="basic_tts"></a>
 ## Basic TTS processes
 
-Using TTS, you can:
+Using TTS, you can, you can accomplish the following tasks:
 
 -   Create a handle and register event handlers.
     -   Create a TTS handle which is used for distinguishing your application from other applications also using TTS.
@@ -60,7 +60,7 @@ You can set the following parameters about TTS:
 You can get the following information about TTS:
 
 -   [Get the current TTS state](#get). The state is also applied as a precondition for each method.
--   Get the current TTS service state. The service state is changed by internal behavior of the TTS service.
+-   Get the current TTS service state. The service state is changed by the internal behavior of the TTS service.
 -   Get the default voice.
     -   In TTS, the voice is defined as a combination of the language and the type, such as male or female.
     -   You can request the synthesis of the text with a specific voice, using the parameters of the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class. However, if you do not set a specific voice, TTS synthesizes the text with the default voice.
@@ -293,10 +293,38 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
         try
         {
             /// Register the event handler for the ErrorOccurred event
-            tts_inst.EngineChanged += TtsErrorOccurred;
+            tts_inst.ErrorOccurred += TtsErrorOccurred;
 
             /// Deregister the event handler
-            tts_inst.EngineChanged -= TtsErrorOccurred;
+            tts_inst.ErrorOccurred -= TtsErrorOccurred;
+        }
+        catch (Exception e)
+        {
+            /// Error handling
+        }
+    }
+    ```
+
+-   Synthesized PCM
+
+    To get a notification when a synthesized PCM data is received from a TTS service, register an event handler for `SynthesizedPcm` event:
+
+    ```csharp
+    /// Event handler
+    void TtsSynthesizedPcm(object sender, SynthesizedPcmEventArgs e)
+    {
+        /// Your code
+    }
+
+    void SetUnsetSynthesizedPcmCb()
+    {
+        try
+        {
+            /// Register the event handler for the SynthesizedPcm event
+            tts_inst.SynthesizedPcm += TtsSynthesizedPcm;
+
+            /// Deregister the event handler
+            tts_inst.SynthesizedPcm -= TtsSynthesizedPcm;
         }
         catch (Exception e)
         {
@@ -661,6 +689,40 @@ To start, pause, and stop the playback, follow the steps below:
 
             tts_inst.Stop();
             RepeatedText text = tts_inst.Repeat();
+        }
+        catch (Exception e)
+        {
+            /// Error handling
+        }
+    }
+    ```
+
+<a name="playing_mode"></a>
+## Playing mode
+
+Playing mode determines which process, either TTS service or TTS client, plays the synthesized PCM data. Described below are the 2 different types of playing modes:
+
+> [!NOTE]
+> Playing mode is different from TTS mode. Playing mode only determines a subject to play PCM data.
+
+- `ByService`: TTS service plays the synthesized PCM data. If you do not set playing mode, it will be set as `ByService`.
+- `ByClient`: TTS client receives the synthesized PCM data from the TTS service and plays it directly.
+
+To decide between the client-side playback mode and the service-side playback mode, follow the step below:
+
+-   Set the playing mode
+
+    If the application wants to play the PCM data directly instead of playing the one that the application requested for synthesis in the TTS service, you can set the playback mode to `ByClient`. If the playback mode is not set by the user, the TTS service will synthesize the text and play it using the default value `ByService`:
+
+    > [!NOTE]
+    > If the playing mode is `ByService`, you don't need to set an event handler. It will be played automatically by the TTS service. If you set the mode to `ByClient`, you can receive the synthesized PCM data via `SynthesizedPcm` event and only change playing mode when TTS client state is `Created`. If you want to use both playing modes, it would be better to create 2 TTS handles.
+
+    ```csharp
+    void SetPlayingMode()
+    {
+        try
+        {
+            tts_inst.PlayingMode = PlayingMode.ByClient;
         }
         catch (Exception e)
         {

@@ -1194,7 +1194,7 @@ Typedefs</h2></td></tr>
 <p>Sends the enable request to activate the watchdog timer. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>After this function is called, the system detects a timeout error. If, due to a program error as ANR (Application Not Responding), the system fails to reset the watchdog, the timer will elapse and generate a signal to terminate the running application. If the running application has to process a lot of operations, the application should disable or reset the watchdog timer. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherrwise a negative error value </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029abe8e501f5e8ee8b8e022b367555481fa">APP_ERROR_NONE</a></td><td>Successful </td></tr>

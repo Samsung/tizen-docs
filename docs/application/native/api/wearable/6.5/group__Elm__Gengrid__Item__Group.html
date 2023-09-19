@@ -113,6 +113,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the gengrid item's select mode.  <a href="#gaa958663d1a3eec01c0cc6a4bac354fec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga8e4aa5aa238e472f33813babfff0d56f">Elm_Object_Select_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Item__Group.html#gaa2ebf849d6b7a973d87595737c3c6072">elm_gengrid_item_select_mode_get</a> (const Elm_Gengrid_Item *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the gengrid item's select mode.  <a href="#gaa2ebf849d6b7a973d87595737c3c6072"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Item__Group.html#gac2edee718e8dd5f1e08903e449024855">elm_gengrid_item_custom_size_set</a> (Elm_Gengrid_Item *obj, int w, int h)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom size mode for non-homogeneous gengrid.  <a href="#gac2edee718e8dd5f1e08903e449024855"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Item__Group.html#gae5e9a7b71b61107109a695152aeae993">elm_gengrid_item_custom_size_get</a> (const Elm_Gengrid_Item *obj, int *w, int *h)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom size mode for non-homogeneous gengrid.  <a href="#gae5e9a7b71b61107109a695152aeae993"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Item__Group.html#ga60cf57e89b4f95230fe618168707bb28">elm_gengrid_item_show</a> (Elm_Gengrid_Item *obj, <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga40161f81baa7e0c89b14f84b80c71735">Elm_Gengrid_Item_Scrollto_Type</a> type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the portion of a gengrid's internal grid containing a given item, immediately.  <a href="#ga60cf57e89b4f95230fe618168707bb28"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Item__Group.html#ga0f40aecfe40cac4fc2e557006077f4f9">elm_gengrid_item_bring_in</a> (Elm_Gengrid_Item *obj, <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga40161f81baa7e0c89b14f84b80c71735">Elm_Gengrid_Item_Scrollto_Type</a> type)</td></tr>
@@ -267,6 +271,99 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a26">gengrid_example.c</a>, and <a class="el" href="index_example_02_8c-example.html#a2">index_example_02.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="gae5e9a7b71b61107109a695152aeae993"></a><!-- doxytag: member="elm_gengrid_item_eo.legacy.h::elm_gengrid_item_custom_size_get" ref="gae5e9a7b71b61107109a695152aeae993" args="(const Elm_Gengrid_Item *obj, int *w, int *h)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Item__Group.html#gae5e9a7b71b61107109a695152aeae993">elm_gengrid_item_custom_size_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Elm_Gengrid_Item *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Custom size mode for non-homogeneous gengrid. </p>
+<p>Get the dimensions of a gengrid item.</p>
+<p>Gives the dimensions set with <a class="el" href="group__Elm__Gengrid__Item__Group.html#gac2edee718e8dd5f1e08903e449024855" title="Custom size mode for non-homogeneous gengrid.">elm_gengrid_item_custom_size_set()</a>. If the item has not been modified values set with <a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set()</a> are obtained.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">w</td><td>The item's width. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>The item's height.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac2edee718e8dd5f1e08903e449024855"></a><!-- doxytag: member="elm_gengrid_item_eo.legacy.h::elm_gengrid_item_custom_size_set" ref="gac2edee718e8dd5f1e08903e449024855" args="(Elm_Gengrid_Item *obj, int w, int h)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Item__Group.html#gac2edee718e8dd5f1e08903e449024855">elm_gengrid_item_custom_size_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Elm_Gengrid_Item *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Custom size mode for non-homogeneous gengrid. </p>
+<p>Resize dimensions of a gengrid item.</p>
+<p>In case of a horizontal grid, only the widths only be resized and in case of vertical only the heights can be resized. Item size should be set by <a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set()</a> beforehand.</p>
+<p>The values set by <a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set()</a> will be used for the dimension that remains fixed.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The item's width. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The item's height.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="gae3f9bc8ab2cf46d1e134ec77e2ed6311"></a><!-- doxytag: member="elm_gengrid_item_eo.legacy.h::elm_gengrid_item_fields_update" ref="gae3f9bc8ab2cf46d1e134ec77e2ed6311" args="(Elm_Gengrid_Item *obj, const char *parts, Elm_Gengrid_Item_Field_Type itf)" -->

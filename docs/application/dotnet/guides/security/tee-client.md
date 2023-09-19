@@ -3,7 +3,7 @@
 > [!NOTE]
 > TEEC API is deprecated since Tizen 6.5 and will be removed after two releases without any alternatives.
 
-You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment. To implement TEE communication, you can use the libteec API, which is based on the GlobalPlatform® [TEE Client API](https://www.globalplatform.org/specs-library).
+You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment. To implement TEE communication, you can use the libteec API, which is based on the GlobalPlatform® [TEE Client API](https://www.globalplatform.org/specs-library){:target="_blank"}.
 
 You can run applications in 2 environments: a rich world (like Linux) with client applications (CA) and a secure world with trusted applications (TA).
 
@@ -11,7 +11,7 @@ You can run applications in 2 environments: a rich world (like Linux) with clien
 
 ![TEE communication architecture](./media/libteec_architecture.png)
 
-The main features of the Tizen.Security.TEEC namespace include:
+The main features of the Tizen.Security.TEEC namespace include the following:
 
 -   Connecting to a trusted application
 
@@ -24,7 +24,7 @@ The main features of the Tizen.Security.TEEC namespace include:
 ## Prerequisites
 
 
-To enable your application to use the TEE communication functionality:
+To enable your application to use the TEE communication functionality, follow the steps below:
 
 1.  To make your application visible in the official site for Tizen applications only for devices that support TEE communication, the application must specify the following feature in the `tizen-manifest.xml` file:
 
@@ -44,8 +44,8 @@ To enable your application to use the TEE communication functionality:
     }
     ```
 
-    > **Note**   
-	> In TV applications, you can test the TEE communication functionality on an emulator only. Most target devices do not currently support this feature.
+    > [!NOTE]  
+    > In TV applications, you can test the TEE communication functionality on an emulator only. Most target devices do not currently support this feature.
 
 
 2.  To use the methods and properties of the [Tizen.Security.TEEC](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.html) namespace, include it in your application:
@@ -67,11 +67,11 @@ To enable your application to use the TEE communication functionality:
     ```
 
 <a name="connecting_applications"></a>
-## Connecting Applications
+## Connect applications
 
-To communicate between applications, you must connect a client application to a trusted application by creating a session:
+To communicate between applications, you must connect a client application to a trusted application by creating a session, follow the steps below:
 
-1.  Open a session with the `OpenSession()` method of the [Tizen.Security.TEEC.Context](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Context.html) class, which returns the session as a new instance of the [Tizen.Security.TEEC.Session](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class.
+1.  Open a session with the `OpenSession()` method of the [Tizen.Security.TEEC.Context](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Context.html) class, which returns the session as a new instance of the [Tizen.Security.TEEC.Session](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class:
 
     ```csharp
     Guid ta_uuid = new Guid("  "); /// Trusted application GUID
@@ -92,11 +92,11 @@ To communicate between applications, you must connect a client application to a 
     ```
 
 <a name="sending_secure_commands"></a>
-## Sending Secure Commands
+## Send secure commands
 
 After opening a session with a trusted application, a client application can execute functions in the trusted application by sending secure commands to the trusted application.
 
-To send function call commands:
+To send function call commands, follow the steps below:
 
 -   To send a command for invoking a function without parameters, use the `InvokeCommand()` method of the [Tizen.Security.TEEC.Session](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class, with the first parameter identifying the function to be executed by the trusted application:
 
@@ -121,7 +121,7 @@ To send function call commands:
             Value p2 = new Value(10, 200, TEFValueType.InOut);
         ```
 
-    2.  Send the command to the trusted application with the `InvokeCommand()` method of the `Tizen.Security.TEEC.Session` class. The second parameter is a new instance of the [Tizen.Security.TEEC.Parameter](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Parameter.html) class containing the 2 integer parameter values.
+    2.  Send the command to the trusted application with the `InvokeCommand()` method of the `Tizen.Security.TEEC.Session` class. The second parameter is a new instance of the [Tizen.Security.TEEC.Parameter](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Parameter.html) class containing the 2 integer parameter values:
 
         ```csharp
             ses.InvokeCommand(1, new Parameter[] {p1, p2});
@@ -142,7 +142,7 @@ To send function call commands:
             TempMemoryReference p1 = new TempMemoryReference((IntPtr)(&val), 1024, TEFTempMemoryType.InOut);
         ```
 
-    2.  Send the command to the trusted application with the `InvokeCommand()` method of the `Tizen.Security.TEEC.Session` class. The second parameter is a new instance of the `Tizen.Security.TEEC.Parameter` class containing the memory reference.
+    2.  Send the command to the trusted application with the `InvokeCommand()` method of the `Tizen.Security.TEEC.Session` class. The second parameter is a new instance of the `Tizen.Security.TEEC.Parameter` class containing the memory reference:
 
         ```csharp
             ses.InvokeCommand(1, new Parameter[] {p1});
@@ -154,9 +154,9 @@ To send function call commands:
         ```
 
 <a name="using_shared_memory"></a>
-## Using Shared Memory
+## Use shared memory
 
-To share a memory block between a client application and a trusted application:
+To share a memory block between a client application and a trusted application, follow the steps below:
 
 -   To send a function call command to the trusted application, including an allocated shared memory reference:
     1.  Allocate a new memory block as shared memory with the `AllocateSharedMemory()` method of the [Tizen.Security.TEEC.Context](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Context.html) class, which returns the block as a new instance of the [Tizen.Security.TEEC.SharedMemory](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.SharedMemory.html) class:
@@ -167,7 +167,7 @@ To share a memory block between a client application and a trusted application:
             SharedMemory shm = ctx.AllocateSharedMemory(1024, SharedMemoryFlags.InOut);
         ```
 
-    2.  Register a memory reference based on the shared memory block by creating a new instance of the [Tizen.Security.TEEC.RegisteredMemoryReference](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.RegisteredMemoryReference.html) class, and send the function call command to the trusted application with the `InvokeCommand()` method of the [Tizen.Security.TEEC.Session](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class. The registered memory reference is passed in a new instance of the [Tizen.Security.TEEC.Parameter](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Parameter.html) class.
+    2.  Register a memory reference based on the shared memory block by creating a new instance of the [Tizen.Security.TEEC.RegisteredMemoryReference](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.RegisteredMemoryReference.html) class, and send the function call command to the trusted application with the `InvokeCommand()` method of the [Tizen.Security.TEEC.Session](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class. The registered memory reference is passed in a new instance of the [Tizen.Security.TEEC.Parameter](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.Parameter.html) class:
 
         ```csharp
             RegisteredMemoryReference p1 = new RegisteredMemoryReference(shm, 1024, 0, RegisteredMemoryReference.InOut);
@@ -195,7 +195,7 @@ To share a memory block between a client application and a trusted application:
             SharedMemory shm = ctx.RegisterSharedMemory(memaddr, 1024, SharedMemoryFlags.InOut);
         ```
 
-    2.  Register a memory reference based on the shared memory block by creating a new instance of the `Tizen.Security.TEEC.RegisteredMemoryReference` class, and send the function call command to the trusted application with the `InvokeCommand()` method of the `Tizen.Security.TEEC.Session` class. The registered memory reference is passed in a new instance of the `Tizen.Security.TEEC.Parameter` class.
+    2.  Register a memory reference based on the shared memory block by creating a new instance of the `Tizen.Security.TEEC.RegisteredMemoryReference` class, and send the function call command to the trusted application with the `InvokeCommand()` method of the `Tizen.Security.TEEC.Session` class. The registered memory reference is passed in a new instance of the `Tizen.Security.TEEC.Parameter` class:
 
         ```csharp
             RegisteredMemoryReference p1 = new RegisteredMemoryReference(shm, 1024, 0, RegisteredMemoryReference.InOut);
@@ -215,6 +215,6 @@ To share a memory block between a client application and a trusted application:
 
 
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 4.0 and Higher

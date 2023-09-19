@@ -122,7 +122,7 @@ State Transitions</h3>
 <tr>
 <td><a class="el" href="group__CAPI__MEDIA__WEBRTC__MODULE.html#ga753f76b2dd714f381769dbfd9fe5e63f" title="Starts the WebRTC.">webrtc_start()</a>  </td><td>IDLE  </td><td>NEGOTIATING  </td><td>ASYNC   </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__WEBRTC__MODULE.html#ga0046a7dc053d24eb3f7db03c0c7a3fe8" title="Stops the WebRTC.">webrtc_stop()</a>  </td><td>NEGOTIATING/PLAYING  </td><td>IDLE  </td><td>SYNC   </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__WEBRTC__MODULE.html#ga0046a7dc053d24eb3f7db03c0c7a3fe8" title="Stops the WebRTC.">webrtc_stop()</a>  </td><td>NEGOTIATING/PLAYING  </td><td>IDLE  </td><td>ASYNC   </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__MEDIA__WEBRTC__MODULE.html#ga4826f2210022537cbee810f243cee5c3" title="Sets the session description of the remote peer&#39;s current offer or answer.">webrtc_set_remote_description()</a>  </td><td>NEGOTIATING  </td><td>PLAYING*  </td><td>ASYNC   </td></tr>
 <tr>
@@ -354,7 +354,9 @@ Typedefs</h2></td></tr>
 <p>Called when the WebRTC needs to send the ICE candidate message to the remote peer through the signaling channel. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>webrtc</em> is the same object for which the callback was set.<br/>
- The <em>webrtc</em> should not be released. </dd></dl>
+ The <em>webrtc</em> should not be released.<br/>
+ The <em>candidate</em> can be used only in the callback. To use outside, make a copy.<br/>
+ It will be {"ice":{"candidate":"...", "sdpMLineIndex":0 or 1 or ...}}. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>
@@ -501,7 +503,8 @@ Typedefs</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>webrtc</em> is the same object for which the callback was set.<br/>
  The <em>webrtc</em> should not be released.<br/>
  <em>description</em> is a JSON string.<br/>
- It will be {"sdp":{"type":"offer or answer","sdp":"..."}}. </dd></dl>
+ It will be {"sdp":{"type":"offer or answer","sdp":"..."}}.<br/>
+ The <em>description</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>
@@ -623,6 +626,7 @@ Typedefs</h2></td></tr>
 
 <p>Called iteratively to inform all the TURN server URLs. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>turn_server</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">turn_server</td><td>The TURN server URL </td></tr>
@@ -948,7 +952,7 @@ Typedefs</h2></td></tr>
 <p>Adds a new ICE candidate from the remote peer over its signaling channel. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>candidate</em> is a JSON string.<br/>
- It will be {"ice":{"candidate":"..."}}. </dd></dl>
+ It should be {"ice":{"candidate":"...", "sdpMLineIndex":0 or 1 or ...}}. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>
@@ -1001,7 +1005,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">turn_server</td><td>The TURN server URL of the form turn(s)://username:password@host:port </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">turn_server</td><td>The TURN server URL of the form turn(s)://username:password:port </td></tr>
   </table>
   </dd>
 </dl>
@@ -2272,7 +2276,7 @@ The signaling state must be set to <a class="el" href="group__CAPI__MEDIA__WEBRT
 <p>Sets the session description of the remote peer's current offer or answer. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>description</em> is a JSON string.<br/>
- It will be {"sdp":{"type":"offer or answer","sdp":"..."}}. </dd></dl>
+ It should be {"sdp":{"type":"offer or answer","sdp":"..."}}. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>
@@ -2453,7 +2457,7 @@ The signaling state must be set to <a class="el" href="group__CAPI__MEDIA__WEBRT
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">stun_server</td><td>The STUN server URL </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stun_server</td><td>The STUN server URL of the form stun://host:port </td></tr>
   </table>
   </dd>
 </dl>

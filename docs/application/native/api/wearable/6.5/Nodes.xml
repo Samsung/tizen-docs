@@ -2370,18 +2370,6 @@
           <Path>group__CAPI__SYSTEM__FRAMEWORK.html</Path>
           <Subnodes>
            <Node>
-            <Name>Battery</Name>
-            <Path>group__CAPI__SYSTEM__BATTERY__MODULE.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>Battery Monitor</Name>
-              <Path>group__CAPI__SYSTEM__BATTERY__BATTERY__MONITOR__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
             <Name>Device</Name>
             <Path>group__CAPI__SYSTEM__DEVICE__MODULE.html</Path>
             <Subnodes>
@@ -2457,6 +2445,18 @@
             <Name>Media key</Name>
             <Path>group__CAPI__SYSTEM__MEDIA__KEY__MODULE.html</Path>
             <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>Resource</Name>
+            <Path>group__CAPI__SYSTEM__RESOURCE__MODULE.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>Battery Monitor</Name>
+              <Path>group__CAPI__SYSTEM__BATTERY__BATTERY__MONITOR__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
             </Subnodes>
            </Node>
            <Node>

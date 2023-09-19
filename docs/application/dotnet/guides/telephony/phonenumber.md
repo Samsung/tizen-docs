@@ -18,7 +18,7 @@ The main features of the Tizen.PhonenumberUtils namespace include:
 
 ## Prerequisites
 
-To enable your application to use the phone number management functionality:
+To enable your application to use the phone number management functionality, follow these steps:
 
 1.  To use the `GetNormalizedNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -35,9 +35,9 @@ To enable your application to use the phone number management functionality:
     ```
 
 <a name="getting"></a>
-## Retrieving Location Information
+## Retrieve location information
 
-To retrieve the location from a phone number, use the `GetLocationFromNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class. Provide the region of the phone number and the language of the returned location string as parameters, using the values defined in the [Tizen.PhonenumberUtils.Region](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.Region.html) and [Tizen.PhonenumberUtils.Language](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.Language.html) enumerations, respectively.
+To retrieve the location from a phone number, use the `GetLocationFromNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class. Provide the region of the phone number and the language of the returned location string as parameters, using the values defined in the [Tizen.PhonenumberUtils.Region](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.Region.html) and [Tizen.PhonenumberUtils.Language](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.Language.html) enumerations, respectively:
 
 ```csharp
 var utils = new PhonenumberUtils();
@@ -46,7 +46,7 @@ var location = utils.GetLocationFromNumber("0222550114", Region.Korea, Language.
 ```
 
 <a name="formatting"></a>
-## Formatting Phone Numbers
+## Format phone numbers
 
 To format a phone number to use region-specific separators, use the `GetFormattedNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class, which takes the region parameter as a value of the [Tizen.PhonenumberUtils.Region](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.Region.html) enumeration:
 
@@ -57,7 +57,7 @@ var formattedNumber = utils.GetFormattedNumber("0222550114", Region.Korea);
 ```
 
 <a name="normalizing"></a>
-## Normalizing Phone Numbers
+## Normal phone numbers
 
 To retrieve a phone number in a normalized format, use the `GetNormalizedNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](/application/dotnet/api/TizenFX/latest/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class:
 
@@ -67,8 +67,6 @@ var normalizedNumber = utils.GetNormalizedNumber("0222550114");
 /// Method returns the normalized number string "+821022550114"
 ```
 
-
-
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

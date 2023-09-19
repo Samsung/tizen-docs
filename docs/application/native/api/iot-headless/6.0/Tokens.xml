@@ -50620,6 +50620,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>package_manager_set_res_event_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>ga932ffa204211c7fa0b9eaa5aab7bbcc7</Anchor>
+    <Abstract>Registers a callback function to be invoked when the progress of the request to the package resource ...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>package_manager_unset_event_cb</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -50920,6 +50930,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>package_manager_res_event_info_h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>gaca3c7a9c4511b2a188c18d10ad728d7d</Anchor>
+    <Abstract>Resource share event handle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>package_manager_event_cb</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -50927,6 +50947,16 @@
     <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
     <Anchor>ga93b9fa80e3202eaef4ccf1770b05cfec</Anchor>
     <Abstract>Called when the package is installed, uninstalled, or updated, and the progress of the request to the...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_res_event_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>ga05ab85a274de2e6ed2a44f648c1728be</Anchor>
+    <Abstract>Called when the progress of the request to the package resource share changes.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -51209,6 +51239,42 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_EVENT_TYPE_RES_COPY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>gga6cebd879392068249bb8fd742f67a44ea353aa773816426ae26b96382ca4bd37d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_EVENT_TYPE_RES_CREATE_DIR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>gga6cebd879392068249bb8fd742f67a44ea82a41bca8aa4a4ba099ae1cd19968bdc</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_EVENT_TYPE_RES_REMOVE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>gga6cebd879392068249bb8fd742f67a44ea6599fa467ffbd1f786fb94f94c7dd834</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_EVENT_TYPE_RES_UNINSTALL</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>gga6cebd879392068249bb8fd742f67a44ea7bfac9fcbc516d519da666edfdb624be</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>PACKAGE_MANAGER_REQUEST_MOVE_TO_INTERNAL</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -51260,6 +51326,33 @@
     </TokenIdentifier>
     <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
     <Anchor>gga6f98fdc38ce50a3930edd14ec414b21aa67b1730f116d6226634703d18f340f8f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_RES_EVENT_PATH_STATE_NONE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>ggad189b4b6d797032ebdd29edce9efc671a6fbb58567668f2894c814800108824ad</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_RES_EVENT_PATH_STATE_OK</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>ggad189b4b6d797032ebdd29edce9efc671ae7be053500244025d87df35f62574928</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_RES_EVENT_PATH_STATE_FAILED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>ggad189b4b6d797032ebdd29edce9efc671a741020587e8cf6a6d6d0763937f7876f</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -51332,6 +51425,42 @@
     </TokenIdentifier>
     <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
     <Anchor>gga405444ebd6254b9cfbaedec829558882a4c4b22ec03f0d11827d8b82ed43ef7b5</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_STATUS_TYPE_RES_COPY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>gga405444ebd6254b9cfbaedec829558882aecc5e5753af3f5c0cc5dd67d7275ab46</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_STATUS_TYPE_RES_CREATE_DIR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>gga405444ebd6254b9cfbaedec829558882a8395c665b31661eb49ac2fb728de5ea5</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_STATUS_TYPE_RES_REMOVE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>gga405444ebd6254b9cfbaedec829558882ab52ec6881bd51d156e0ed76f89465eb5</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PACKAGE_MANAGER_STATUS_TYPE_RES_UNINSTALL</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__MANAGER__MODULE.html</Path>
+    <Anchor>gga405444ebd6254b9cfbaedec829558882a69c3636d8cdce70d1ea9d015970a0309</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -52175,6 +52304,96 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>package_manager_request_add_res_copy_path</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>ga99e23c4f6b5c2032b140e179782f5561</Anchor>
+    <Abstract>Adds resource source and destination path into handle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_request_res_copy_with_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>gae3a1b0a7b8a14b43bd579b00a5dd955b</Anchor>
+    <Abstract>Copies resources into target directory, asynchronously.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_request_add_res_create_dir_path</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>gaaf554641c8164efb8ba3f1816db2d9c3</Anchor>
+    <Abstract>Add directory path to be created at privileged shared directory into handle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_request_res_create_dir_with_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>ga88589d249e52c23b96bbc41d10a5d7ad</Anchor>
+    <Abstract>Create directories into directory for sharing resources via privileged application, asynchronously.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_request_add_res_remove_path</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>ga80f17d6d090d8ca38808109f767af708</Anchor>
+    <Abstract>Adds file or directory path to be removed located at privileged shared directory into handle...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_request_res_remove_with_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>ga03f2b40134cbc47635ddea802063055c</Anchor>
+    <Abstract>Removes resources from for sharing resources via privileged application, asynchronously.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_res_event_info_get_error_code</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>ga8f37d4e938b288f436ddfa0a4b35747e</Anchor>
+    <Abstract>Gets the error code from given resource event handle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_res_event_info_foreach_path</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>ga235237b7d5d7951af1a042a0ed663c1a</Anchor>
+    <Abstract>Retrieves all package information of installed packages.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_get_priv_shared_res_path</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>ga37753032c45a9e20ea635d9c44695d17</Anchor>
+    <Abstract>Gets the privileged shared resource path for the given package ID.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>package_manager_request_h</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -52192,6 +52411,26 @@
     <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
     <Anchor>ga037217462a5e6fd03efc53d6b714bb91</Anchor>
     <Abstract>Called when the progress of the request to the package manager changes.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_request_res_event_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>gabc390ae0715debdf7ef3833c22db40b4</Anchor>
+    <Abstract>Called when the progress of the request to the package resource share changes.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>package_manager_res_event_path_cb</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__PACKAGE__REQUEST__MODULE.html</Path>
+    <Anchor>ga6a7c2784aed163810d64a01cf0acd2ec</Anchor>
+    <Abstract>Called to retrieve all path state about resource event.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -62446,6 +62685,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>rpc_port_parcel_header_h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__RPC__PORT__PARCEL__MODULE.html</Path>
+    <Anchor>ga365c729a8be74ea96a0fcfe5a67be6d9</Anchor>
+    <Abstract>The header handle of the rpc port parcel.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>rpc_port_parcelable_t</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -63358,7 +63607,7 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
     <Anchor>ga1ce057915573b09f5c1cecdc9962239f</Anchor>
-    <Abstract>Perform OCSP that checks certificate is whether revoked or not.</Abstract>
+    <Abstract>Performs OCSP that checks certificate is whether revoked or not.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -63422,6 +63671,86 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ckmc_import_wrapped_key</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>ga7e884aaf3c9830c3337219e498e21758</Anchor>
+    <Abstract>Unwraps one key with another and stores it inside key manager.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_export_wrapped_key</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>ga803e9f1bede28488d1c656d5a2933e4a</Anchor>
+    <Abstract>Wraps one key with another and returns it to the client.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_key_derive</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>ga686d809ac058ac146866e861d32edd44</Anchor>
+    <Abstract>Derives a secret or key from another key/secret and stores it inside key manager.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_initialize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gaea56febe44a440589cb2ff9c4f825e34</Anchor>
+    <Abstract>Sets up a symmetric encryption or decryption context with given key and parameters.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_update</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gafda534126f8e6679cff70b602222972b</Anchor>
+    <Abstract>Performs symmetric encryption or decryption of the input and places the result in the output...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_finalize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gac45384074ac19149b9cb870d86742ea6</Anchor>
+    <Abstract>Finalizes symmetric encryption or decryption and returns remaining output if any.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_free</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>gafc3ef9fdb7c8d843be797ebf06403fcc</Anchor>
+    <Abstract>Destroys the encryption/decryption context and releases all its resources.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_get_backend_info</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__CLIENT__MODULE.html</Path>
+    <Anchor>ga15f9b2e1b19ae8f2b2a5c9aee2b2be79</Anchor>
+    <Abstract>Retrieves backend information.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CAPI_KEY_MANAGER_TYPES_MODULE</Name>
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
@@ -63447,6 +63776,16 @@
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>gaee0c7ca8092239410ca959427a74e850</Anchor>
     <Abstract>Gets the password protection status from ckmc_alias_info_s structure.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_alias_info_get_backend</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga60b7ed08a1eaec97edd3f25ee60ca7db</Anchor>
+    <Abstract>Gets the backend identifier from ckmc_alias_info_s structure.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -63730,6 +64069,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ckmc_backend_get_max_chunk_size</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gac3530710e577298a34be4f5996365662</Anchor>
+    <Abstract>Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_backend_info_free</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga45b8c12dc6e62677488eb966a66f033c</Anchor>
+    <Abstract>Destroys the backend information handle and releases all its resources.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ckmc_key_type_e</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -63910,6 +64269,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ckmc_kdf_prf_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga8439cb794c8fe891d9fded3009d8787f</Anchor>
+    <Abstract>Enumeration for key derivation function pseudo-random function parameter.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_kbkdf_mode_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gacccc7f3bcb1b469815fe4d9f2c28f945</Anchor>
+    <Abstract>Enumeration for key based key derivation function mode.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_kbkdf_counter_location_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gabec522a19d7d037226280c2561e24115</Anchor>
+    <Abstract>Enumeration for KBKDF counter location relative to fixed input.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ckmc_param_list_h</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -63927,6 +64316,36 @@
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>gaded2830b235ecead52b360c47c6167fc</Anchor>
     <Abstract>Enumeration for crypto algorithm types.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_backend_id_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga1c1173a2d3872d13da509d9407ae3880</Anchor>
+    <Abstract>Enumeration for backend identifiers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_backend_info_h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ga2b95bfe75e2b58cc2de37a813ebeb83d</Anchor>
+    <Abstract>Backend information handle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ckmc_cipher_ctx_h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gab73edcf9b9716bb4389aa3d8da2a286f</Anchor>
+    <Abstract>Encryption/decryption context handle.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -63990,6 +64409,42 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>ggac05f1d318100515b1c1e9d688bc6cce3ac829ee1164a3bcd5b2dc666aa091ebb6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_ALGO_KBKDF</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggac05f1d318100515b1c1e9d688bc6cce3aaad09ae35e8a2690c4992a08d6371516</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_ALGO_ECDH</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggac05f1d318100515b1c1e9d688bc6cce3a27a16081cddf2d7947683589642e2abe</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_BACKEND_SW</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga98fb677a435c980cf203029fd502dbb5a37c6f0751e99179e8adb3180c6b77b34</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_BACKEND_TZ</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga98fb677a435c980cf203029fd502dbb5a277bb6fcbeb520ecfff8469767a1ca95</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -64089,6 +64544,69 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>ggaecb8791432ee56ff94a6f6d7ea8dabd5a9b552944b13a6e4583067b661508e1ef</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KBKDF_COUNTER_BEFORE_FIXED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggaf608722cbaeb31a85c3cabce449d28bda9adf07d71b69cd59704fb2f629eb8471</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KBKDF_COUNTER_AFTER_FIXED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggaf608722cbaeb31a85c3cabce449d28bda52ca773f4d8008ee85f79c91ab681d94</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KBKDF_COUNTER_MIDDLE_FIXED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggaf608722cbaeb31a85c3cabce449d28bda907512b5112f614271628b03bb48881d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KBKDF_MODE_COUNTER</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>ggaa2aff148a834b5cc30162d84c05b0d7aacc9c77a56e9d8b04dd14309ead3953cd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KDF_PRF_HMAC_SHA256</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga2de8188acb5587e734099a5a2f69f665afe645248882726c453ab4eccc3aea617</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KDF_PRF_HMAC_SHA384</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga2de8188acb5587e734099a5a2f69f665afae6f8c3c93316a80df1509ed8a9e118</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_KDF_PRF_HMAC_SHA512</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga2de8188acb5587e734099a5a2f69f665a447ab830f9349f57d4c76bf59aff8c0c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -64245,6 +64763,15 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CKMC_PARAM_ALGO_TYPE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa61dd6794e1d00e6f93dfce37c863c8db</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CKMC_PARAM_ED_IV</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -64287,6 +64814,105 @@
     </TokenIdentifier>
     <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
     <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa0d2a2be92492ae4a4cf9bece0d49a50c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KDF_PRF</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa80256f9b5dd4b68dedde22093379421c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KDF_LEN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa954bc3e62428e68aa3854de6da3dca9f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_MODE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aaa56ba18180ec524e20560a667da7a14e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_LABEL</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa49779ffc4e842a4d4477bded25a7e85b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_CONTEXT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa202bd18050fd97b894b3ebba052c3677</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_FIXED_INPUT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aad7176d676ed00fa87299688d59a0bf75</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_COUNTER_LOCATION</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa21e1c21c8ecab9489bfed959b842da4e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_RLEN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa1e5477e1c3a43c31a58c08ec26fde1a6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_LLEN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa128c1c68bc3260b9c22c2e70e79a888a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_KBKDF_NO_SEPARATOR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aa4ded6d1bd21fc7d32787d71bf4d17344</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CKMC_PARAM_ECDH_PUBKEY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aaf1774b2dd96c6641ade02a0c515a725d</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -67479,6 +68105,26 @@
     <Path>struct____rpc__port__parcelable.html</Path>
     <Abstract>The interface for converting data to/from a parcel.</Abstract>
     <DeclaredIn>rpc-port-parcel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>to</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>__rpc_port_parcelable</Scope>
+    </TokenIdentifier>
+    <Path>struct____rpc__port__parcelable.html</Path>
+    <Anchor>aa372f58ee32131790d52a6f11316d217</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>from</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>__rpc_port_parcelable</Scope>
+    </TokenIdentifier>
+    <Path>struct____rpc__port__parcelable.html</Path>
+    <Anchor>a0d2496de3cf5c6f1e61dbc8415275690</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
