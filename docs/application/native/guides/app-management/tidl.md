@@ -870,8 +870,7 @@ The following features are supported in protocol version 2:
       set<string> keys;
     }
   ```
-  > **Note**
-  >
+  > [!Note]
   > The key type of map and set container must be TIDL's built-in types.
 
 ### Marshalling type info
@@ -970,7 +969,7 @@ interface Message {
 }
 ```
 - In the example above, the **MessageDerived** structure inherits from **MessageBase**.
-- When calling the Send method of the Message interface, you can use a MessageDerived instance.
+- When calling the Send method of the **Message** interface, you can use a **MessageDerived** instance.
 
 #### Proxy interface
 
