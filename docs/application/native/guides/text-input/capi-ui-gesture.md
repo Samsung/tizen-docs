@@ -1,5 +1,8 @@
 # Gesture
 
+[!NOTE]
+All Gesture APIs are deprecated since Tizen 8.0 and will be removed after two releases without any alternatives.
+
 `Gesture` is a movement or position of the hand, body, head, and face, and it expresses emotion, opinion, and so on.
 
 As there are many gesture types, various methods to recognize gestures on the device are existing.
