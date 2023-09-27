@@ -7,9 +7,9 @@
 
 ![IoTivity in Tizen](./media/iotivity.png)
 
-You can handle the resources between a server and client. The server is responsible for creating and providing resources, and the client can access and control those resources through requests.
+You can handle the resources between a server and a client. The server is responsible for creating and providing resources, and the client can access and control those resources through requests.
 
-The main features of the Tizen.Network.IoTConnectivity namespace include:
+The main features of the Tizen.Network.IoTConnectivity namespace includes the following:
 
 -   Resource management
 
@@ -21,9 +21,9 @@ The main features of the Tizen.Network.IoTConnectivity namespace include:
 
 - Requests and responses
 
-    The client can send various requests to the server resources:
+    The client can send various requests to the server resources through the following request types:
 
-    -   GET request: Read the resource information and [get a representation of the resource](#scenario_3) from the server
+    -   GET request: Read the resource information and [get a representation of the resource](#scenario_3) from the server.
     -   PUT request: Ask the server to [update the resource representation](#scenario_4).
 
     The server receives the request, processes it, and sends a response to the client. The client can check the result and the response.
@@ -33,7 +33,7 @@ The main features of the Tizen.Network.IoTConnectivity namespace include:
 ## Prerequisites
 
 
-To enable your application to use the IoT functionality:
+To enable your application to use the IoT functionality, follow these steps:
 
 1.  To use the [Tizen.Network.IoTConnectivity](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -66,9 +66,9 @@ To enable your application to use the IoT functionality:
     ```
 
 <a name="scenario_1"></a>
-## Registering Resources
+## Register resources
 
-To create and register resources:
+To create and register resources, follow the steps below:
 
 1.  Create the resource types by creating a new instance of the [Tizen.Network.IoTConnectivity.ResourceTypes](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.ResourceTypes.html) class.
 
@@ -107,9 +107,9 @@ To create and register resources:
     ```
 
 <a name="scenario_2"></a>
-## Finding Resources
+## Find resources
 
-To find resources:
+To find resources, follow the steps belows:
 
 1.  To find a resource, call the `StartFindingResource()` method of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class:
 
@@ -148,11 +148,12 @@ To find resources:
     ```
 
 <a name="scenario_3"></a>
-## Sending GET Requests
+## Send GET requests
 
-To send GET requests to a server:
+To send GET requests to a server, follow the steps below:
 
 1.  On the client side, [find resources](#scenario_2) and retrieve the remote resource handle using an event handler registered for the `ResourceFound` event of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class.
+
 2. Send the GET request to the server using the `GetAsync()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class:
 
     ```csharp
@@ -195,7 +196,7 @@ To send GET requests to a server:
 
 4. On the client side, handle the response returned by the `GetAsync()` method of the `Tizen.Network.IoTConnectivity.RemoteResource` class.
 
-    Handle the response appropriately. If the response is a success, the resource information can be included in it.
+    Handle the response appropriately. If the response is a success, the resource information can be included in it:
 
     ```csharp
     if (outArgs != null)
@@ -213,14 +214,15 @@ To send GET requests to a server:
     ```
 
 <a name="scenario_4"></a>
-## Sending PUT Requests
+## Send PUT requests
 
-To send PUT requests to a server:
+To send PUT requests to a server, follow the steps below:
 
 1.  On the client side, [find resources](#scenario_2) and retrieve the remote resource handle using an event handler registered for the `ResourceFound` event of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class.
+
 2. Send the PUT request to the server using the `PutAsync()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class.
 
-    First create the representation and attributes, and set the desired attribute values, and then send the representation using the `PutAsync()` method.
+    First, create the representation and attributes, set the desired attribute values, and then send the representation using the `PutAsync()` method.
 
     ```csharp
     if (outArgs != null)
@@ -274,7 +276,7 @@ To send PUT requests to a server:
 
 4. On the client side, handle the response returned by the `PutAsync()` method.
 
-    Handle the response appropriately. If the response is a success, the resource information can be included in it.
+    Handle the response appropriately. If the response is a success, the resource information can be included in it:
 
     ```csharp
     if (outArgs != null)
@@ -299,9 +301,9 @@ To send PUT requests to a server:
     ```
 
 <a name="scenario_5"></a>
-## Observing Resources
+## Observe resources
 
-To monitor the changes in a resource:
+To monitor the changes in a resource, follow the steps below:
 
 1.  On the server side, [register resources](#scenario_1) as observable and implement the `OnObserving()` method:
 
@@ -321,9 +323,10 @@ To monitor the changes in a resource:
     ```
 
 2. On the client side, [find resources](#scenario_2) and retrieve the remote resource handle using an event handler registered for the `ResourceFound` event of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class.
+
 3. On the client side, call the `StartObserving()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class. On the server side, your observing request is handled as adding a new observer.
 
-    Now whenever a resource changes on the server side, the client receives the information through an event handler registered for the `ObserverNotified` event of the `Tizen.Network.IoTConnectivity.RemoteResource` class.
+    Now, whenever a resource changes on the server side, the client receives the information through an event handler registered for the `ObserverNotified` event of the `Tizen.Network.IoTConnectivity.RemoteResource` class:
 
     ```csharp
     if (outArgs != null)
@@ -355,6 +358,6 @@ To monitor the changes in a resource:
 
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

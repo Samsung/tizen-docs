@@ -3,8 +3,7 @@
 
 
 The Tizen platform provides a wide range of features across a variety of
-hardware and software components. Among the features, there are some
-that can be selectively supported by the Tizen device manufacturer. For
+hardware and software components. Among the features, some can be selectively supported by the Tizen device manufacturer. For
 application stores to correctly select your application for installation
 on an appropriate device, the feature and profile information must be
 correctly declared in your application.
@@ -33,7 +32,7 @@ application is using, do one of the following:
     information instead of GPS.
 
 - Use feature-based filtering to prevent your application from being
-    shown in the application list on Tizen Store, if the user's
+    shown in the application list on the official site for Tizen applications, if the user's
     device does not support all the features of your application. This
     way you can prevent the application from being installed on an
     unsupported device in the first place.
@@ -44,7 +43,7 @@ application is using, do one of the following:
     number of devices which can support the application.
 
 If the `tizen-manifest.xml` file of the application package includes a
-feature list, Tizen Store compares the capabilities of the device
+feature list, the store compares the capabilities of the device
 with the required feature conditions of the application. The store only
 lists the applications whose conditions match the capabilities of the
 device and thus prevents incompatible applications from being
@@ -55,12 +54,12 @@ installed.
 ![Feature-based filtering](./media/app_filtering_basic_flow.png)
 
 When multiple features are defined in the feature list for feature-based
-filtering, Tizen Store creates the filtering condition for all using
+filtering, the store creates the filtering condition for all using
 the "AND" operation. For example, if there are
 `http://tizen.org/feature/network.nfc` and
 `http://tizen.org/feature/network.bluetooth` features in the feature
 list of the application package, only a device that has both those
-features can show the application on the Tizen Store application list
+features can show the application on the store application list
 for downloading.
 
 <a name="screen_size"></a>
@@ -68,16 +67,16 @@ for downloading.
 
 The screen size feature is the only exception to the normal feature
 handling process described above. When the screen size is defined in the
-feature list, Tizen Store creates the filtering condition with the
+feature list, the store creates the filtering condition with the
 "OR" operation. For example, if the
 `http://tizen.org/feature/screen.size.normal.480.800` and
 `http://tizen.org/feature/screen.size.normal.720.1280` features are
 defined in your application feature list, a device that supports one or
-the other of those features can show the application on the Tizen Store
+the other of those features can show the application on the store
 application list.
 
 If you do not specify a proper screen size in the `tizen-manifest.xml`
-file, your application can be rejected from the Tizen Store.
+file, your application can be rejected from the store.
 
 The following table lists the available screen size features:
 
@@ -104,20 +103,20 @@ The following table lists the available screen size features:
 The feature keys have a hierarchy. For example, consider the
 `http://tizen.org/feature/location`,
 `http://tizen.org/feature/location.gps`, and
-`http://tizen.org/feature/location.wps` features:
+`http://tizen.org/feature/location.wps` features. How the hierarchy for these features work is described below:
 
 -   If the feature list includes the
     `http://tizen.org/feature/location.gps` feature, only a device which
     has the `http://tizen.org/feature/location.gps` feature can show the
-    application on the Tizen Store application list.
+    application on the store application list.
 - If the feature list includes the `http://tizen.org/feature/location`
     feature, a device which has the
     `http://tizen.org/feature/location.gps`,
     `http://tizen.org/feature/location.wps`, or
     `http://tizen.org/feature/location` feature can show the application
-    on the Tizen Store application list.
+    on the store application list.
 
-    This means that Tizen Store considers the
+    This means that the store considers the
     `http://tizen.org/feature/location` feature as the
     `http://tizen.org/feature/location.gps OR http://tizen.org/feature/location.wps` feature.
     (If the feature list includes the
@@ -128,16 +127,16 @@ The feature keys have a hierarchy. For example, consider the
 <a name="adding"></a>
 ### Add the feature list
 
-To enable filtering for your native application, add the feature list
+To enable filtering for your native application, follow the steps below to add the feature list
 for the application `tizen-manifest.xml` file:
 
 1.  To open the manifest editor in Tizen Studio, double-click the
     `tizen-manifest.xml` file in the **Project Explorer** view.
 2. Select the features you need, one at a time:
 
-    1.  In the **Features** tab, click **+**.
-    2.  Select a feature.
-    3.  Click **OK**.
+    -   In the **Features** tab, click **+**.
+    -   Select a feature.
+    -   Click **OK**.
 
     The manifest file (`tizen-manifest.xml`) is updated automatically.
 
@@ -165,7 +164,7 @@ package:
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
-| `http://tizen.org/feature/diagnotics`       | Specify this key, if the application requires the diagnostics feature. | 6.0   |
+| `http://tizen.org/feature/diagnostics`       | Specify this key, if the application requires the diagnostics feature. | 6.0   |
 | `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
@@ -201,7 +200,7 @@ package:
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.call` | Specify this key, if the application requires the Bluetooth hands-free feature (HFP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.audio.controller` | Specify this key, if the application requires the Bluetooth Advanced Audio Distribution (A2DP) sink feature and the Bluetooth Audio Video Remote Control (AVRCP) controller feature. | 3.0   |
-| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP). | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio Distribution Profile feature (A2DP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.hid` | Specify this key, if the application requires the Bluetooth Human Input Device feature (HID). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth LE feature. | 2.3   |
@@ -212,15 +211,16 @@ package:
 | `http://tizen.org/feature/network.bluetooth.oob` | Specify this key, if the application requires Bluetooth Out Of Band (OOB). | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
-| `http://tizen.org/feature/network.mtp`   | Specify this key, if the application requires the Media Transfer Protocol (MTP) Host (Initiator) feature. | 3.0   |
-| `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
+| `http://tizen.org/feature/network.mtp`   | Specify this key, if the application requires the Media Transfer Protocol (MTP) host (Initiator) feature. | 3.0   |
+| `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
 | `http://tizen.org/feature/network.nfc`   | Specify this key, if the application requires the use of any API that, in turn, requires the Near Field Communication (NFC) feature. | 2.2.1 |
 | `http://tizen.org/feature/network.nfc.card_emulation` | Specify this key, if the application requires the NFC card emulation feature. | 2.3   |
 | `http://tizen.org/feature/network.nfc.card_emulation.hce` | Specify this key, if the application requires the NFC host-based card emulation feature. | 2.3.1 |
-| `http://tizen.org/feature/network.nfc.p2p` | Specify this key, if the application requires the NFC p2p feature. | 2.3.1 |
+| `http://tizen.org/feature/network.nfc.p2p` | Specify this key, if the application requires the NFC P2P feature. | 2.3.1 |
 | `http://tizen.org/feature/network.nfc.reserved_push` | Specify this key, if the application requires the NFC reserved push feature. | 2.2.1 |
 | `http://tizen.org/feature/network.nfc.tag` | Specify this key, if the application requires the NFC tag feature. | 2.3.1 |
 | `http://tizen.org/feature/network.push`  | Specify this key, if the application requires the network-based push service. | 2.2.1 |
+| `http://tizen.org/feature/network.route` | Specify this key, if the application requires modification of the routing table for network connections. | 7.0   |
 | `http://tizen.org/feature/network.secure_element` | Specify this key, if the application requires the secure element feature. | 2.2.1 |
 | `http://tizen.org/feature/network.secure_element.ese` | Specify this key, if the application requires the ESE secure element feature. | 2.3   |
 | `http://tizen.org/feature/network.secure_element.uicc` | Specify this key, if the application requires the UICC secure element feature. | 2.3   |
@@ -237,9 +237,10 @@ package:
 | `http://tizen.org/feature/network.tethering.wifi.direct` | Specify this key, if the application requires the tethering over Wi-Fi Direct feature. | 4.0   |
 | `http://tizen.org/feature/network.vpn`   | Specify this key, if the application requires the Virtual Private Network feature (VPN). | 3.0   |
 | `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature. | 2.2.1 |
-| `http://tizen.org/feature/network.wifi.direct` | Specify this key, if the application requires the Wi-Fi Direct&reg; feature. | 2.2.1 |
+| `http://tizen.org/feature/network.wifi.direct` | Specify this key, if the application requires the Wi-Fi Direct feature. | 2.2.1 |
 | `http://tizen.org/feature/network.wifi.direct.display` | Specify this key, if the application requires the Wi-Fi Direct display feature. | 2.3   |
 | `http://tizen.org/feature/network.wifi.direct.service_discovery` | Specify this key, if the application requires the Wi-Fi Direct service discovery feature. | 2.3   |
+| `http://tizen.org/feature/network.wifi.mac_randomization` | Specify this key, if the application requires the MAC randomization feature. | 6.5   |
 | `http://tizen.org/feature/network.wifi.tdls` | Specify this key, if the application requires the Wi-Fi Tunneled Direct Link Setup (TDLS). | 3.0   |
 | `http://tizen.org/feature/opengles.texture_format.3dc` | Specify this key, if the application requires the 3DC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.atc` | Specify this key, if the application requires the ATC texture format for OpenGL&reg; ES. | 2.2.1 |
@@ -318,7 +319,7 @@ package:
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
 | `http://tizen.org/feature/systemsetting.home_screen` | Specify this key, if the application requires a home screen. | 4.0   |
 | `http://tizen.org/feature/systemsetting.lock_screen` | Specify this key, if the application requires a lock screen. | 4.0   |
-| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incomming call and sound notification. | 4.0   |
+| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incoming call and sound notification. | 4.0   |
 | `http://tizen.org/feature/systemsetting.notification_email` | Specify this key, if the application requires an email notification. | 4.0   |
 | `http://tizen.org/feature/systemsetting.font` | Specify this key, if the application requires a font. | 5.0   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
@@ -327,7 +328,7 @@ package:
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
 | `http://tizen.org/feature/speech.control_manager` | Specify this key, if the application requires the voice control manager feature. | 5.5   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
-| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
+| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature. | 2.2.1 |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/usb.accessory` | Specify this key, if the application requires the USB client (or accessory) feature. | 2.2.1 |
 | `http://tizen.org/feature/usb.host`      | Specify this key, if the application requires the USB host feature. | 2.2.1 |
@@ -364,7 +365,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
-| `http://tizen.org/feature/diagnotics`       | Specify this key, if the application requires the diagnostics feature. | 6.0   |
+| `http://tizen.org/feature/diagnostics`       | Specify this key, if the application requires the diagnostics feature. | 6.0   |
 | `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
@@ -399,7 +400,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.call` | Specify this key, if the application requires the Bluetooth hands-free feature (HFP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.audio.controller` | Specify this key, if the application requires the Bluetooth Advanced Audio Distribution (A2DP) sink feature and the Bluetooth Audio Video Remote Control (AVRCP) controller feature. | 3.0   |
-| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP). | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio Distribution Profile feature (A2DP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.hid` | Specify this key, if the application requires the Bluetooth Human Input Device feature (HID). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.hid.device` | Specify this key, if the application requires the Bluetooth Human Interface Device (HID) device feature. | 3.0   |
@@ -413,15 +414,16 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.bluetooth.phonebook.client` | Specify this key, if the application requires the Bluetooth Phone Book Access (PBAP) client feature. | 3.0   |
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
 | `http://tizen.org/feature/network.inm` | Specify this key, if the application requires the Intelligent Network Monitoring (INM) feature. | 5.0   |
-| `http://tizen.org/feature/network.internet` | Specify this key, if the application requires Internet access. | 2.3.1 |
-| `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
+| `http://tizen.org/feature/network.internet` | Specify this key, if the application requires internet access. | 2.3.1 |
+| `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
 | `http://tizen.org/feature/network.nfc`   | Specify this key, if the application requires the use of any API that, in turn, requires the Near Field Communication (NFC) feature. | 2.2.1 |
 | `http://tizen.org/feature/network.nfc.card_emulation` | Specify this key, if the application requires the NFC card emulation feature. | 2.3   |
 | `http://tizen.org/feature/network.nfc.card_emulation.hce` | Specify this key, if the application requires the NFC host-based card emulation feature. | 2.3.1 |
-| `http://tizen.org/feature/network.nfc.p2p` | Specify this key, if the application requires the NFC p2p feature. | 2.3.1 |
+| `http://tizen.org/feature/network.nfc.p2p` | Specify this key, if the application requires the NFC P2P feature. | 2.3.1 |
 | `http://tizen.org/feature/network.nfc.reserved_push` | Specify this key, if the application requires the NFC reserved push feature. | 2.2.1 |
 | `http://tizen.org/feature/network.nfc.tag` | Specify this key, if the application requires the NFC tag feature. | 2.3.1 |
 | `http://tizen.org/feature/network.push`  | Specify this key, if the application requires the network-based push service. | 2.2.1 |
+| `http://tizen.org/feature/network.route` | Specify this key, if the application requires modification of the routing table for network connections. | 7.0   |
 | `http://tizen.org/feature/network.secure_element` | Specify this key, if the application requires the secure element feature. | 2.2.1 |
 | `http://tizen.org/feature/network.secure_element.ese` | Specify this key, if the application requires the ESE secure element feature. | 2.3   |
 | `http://tizen.org/feature/network.secure_element.uicc` | Specify this key, if the application requires the UICC secure element feature. | 2.3   |
@@ -435,6 +437,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.vpn`   | Specify this key, if the application requires the Virtual Private Network feature (VPN). | 3.0   |
 | `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature. | 2.2.1 |
 | `http://tizen.org/feature/network.wifi.tdls` | Specify this key, if the application requires the Wi-Fi Tunneled Direct Link Setup (TDLS). | 3.0   |
+| `http://tizen.org/feature/network.wifi.mac_randomization` | Specify this key, if the application requires the MAC randomization feature. | 6.5   |
 | `http://tizen.org/feature/opengles.texture_format.3dc` | Specify this key, if the application requires the 3DC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.atc` | Specify this key, if the application requires the ATC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.etc` | Specify this key, if the application requires the ETC texture format for OpenGL&reg; ES. | 2.2.1 |
@@ -509,7 +512,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
 | `http://tizen.org/feature/systemsetting.home_screen` | Specify this key, if the application requires a home screen. | 4.0   |
 | `http://tizen.org/feature/systemsetting.lock_screen` | Specify this key, if the application requires a lock screen. | 4.0   |
-| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incomming call and sound notification. | 4.0   |
+| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incoming call and sound notification. | 4.0   |
 | `http://tizen.org/feature/systemsetting.notification_email` | Specify this key, if the application requires an email notification. | 4.0   |
 | `http://tizen.org/feature/systemsetting.font` | Specify this key, if the application requires a font. | 5.0   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
@@ -517,7 +520,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
 | `http://tizen.org/feature/speech.control_manager` | Specify this key, if the application requires the voice control manager feature. | 5.5   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
-| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
+| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature. | 2.2.1 |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/usb.accessory` | Specify this key, if the application requires the USB client (or accessory) feature. | 2.2.1 |
 | `http://tizen.org/feature/usb.host`      | Specify this key, if the application requires the USB host feature. | 2.2.1 |
@@ -574,6 +577,6 @@ In a native application, the profile name element can be added to the
    <profile name="mobile"/>
 ```
 
-Tizen Store compares the device profile and the `profile name`
+The official site for Tizen applications compares the device profile and the `profile name`
 element in an application. The store only shows the applications with a profile name matching the device profile to prevent unsupported
 applications from being installed.

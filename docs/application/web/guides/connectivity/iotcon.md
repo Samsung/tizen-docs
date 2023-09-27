@@ -36,7 +36,7 @@ To enable your application to use the IoT functionality:
    <tizen:privilege name="http://tizen.org/privilege/internet"/>
    ```
 
-2. To make your application visible in Tizen Store only for devices that support Iotcon, the application must specify the following feature in the `config.xml` file:
+2. To make your application visible in the official site for Tizen applications only for devices that support Iotcon, the application must specify the following feature in the `config.xml` file:
 
    ```
    <widget>

@@ -107,10 +107,11 @@ To detect faces:
     ```
     /* For details, see the Image Util API Reference */
     unsigned char *dataBuffer = NULL;
-    unsigned long long bufferSize = 0;
-    unsigned long width = 0;
-    unsigned long height = 0;
+    size_t long bufferSize = 0;
+    unsigned int width = 0;
+    unsigned int height = 0;
     image_util_decode_h imageDecoder = NULL;
+    image_util_image_h decodedImage = NULL;
 
     error_code = image_util_decode_create(&imageDecoder);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
@@ -124,11 +125,11 @@ To detect faces:
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+    error_code = image_util_decode_run2(imageDecoder, &decodedImage);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+    error_code = image_util_get_image(decodedImage, &width, &height, NULL, &dataBuffer, &bufferSize);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -138,12 +139,14 @@ To detect faces:
 
     /* Fill the dataBuffer to g_source */
     error_code = mv_source_fill_by_buffer(facedata.g_source, dataBuffer, (unsigned int)bufferSize,
-                                          (unsigned int)width, (unsigned int)height, MEDIA_VISION_COLORSPACE_RGB888);
+                                          width, height, MEDIA_VISION_COLORSPACE_RGB888);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    free(dataBuffer);
-    dataBuffer = NULL;
+    error_code = image_util_destroy_image(decodedImage);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    decodedImage = NULL;
     ```
 
 3. Create the media vision engine using the `mv_create_engine_config()` function. The function creates the `g_engine_config` engine configuration handle and configures it with default attributes.
@@ -241,16 +244,13 @@ To recognize faces:
 
    char filePath[1024];
    unsigned char *dataBuffer = NULL;
-   unsigned long long bufferSize = 0;
-   unsigned long width = 0;
-   unsigned long height = 0;
+   size_t bufferSize = 0;
+   unsigned int width = 0;
+   unsigned int height = 0;
    image_util_decode_h imageDecoder = NULL;
+   image_util_image_h decodedImage = NULL;
 
     error_code = image_util_decode_create(&imageDecoder);
-    if (error_code != IMAGE_UTIL_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-
-    error_code = image_util_decode_set_colorspace(imageDecoder, IMAGE_UTIL_COLORSPACE_RGB888);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -261,11 +261,15 @@ To recognize faces:
        if (error_code != IMAGE_UTIL_ERROR_NONE)
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-       error_code = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+       error_code = image_util_decode_set_colorspace(imageDecoder, IMAGE_UTIL_COLORSPACE_RGB888);
        if (error_code != IMAGE_UTIL_ERROR_NONE)
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-       error_code = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+       error_code = image_util_decode_run2(imageDecoder, &decodedImage);
+       if (error_code != IMAGE_UTIL_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+       error_code = image_util_get_image(decodedImage, &width, &height, NULL, &dataBuffer, &bufferSize);
        if (error_code != IMAGE_UTIL_ERROR_NONE)
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -277,12 +281,14 @@ To recognize faces:
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
        error_code = mv_source_fill_by_buffer(facedata.g_source, dataBuffer, (unsigned int)bufferSize,
-                                             (unsigned int)width, (unsigned int)height, MEDIA_VISION_COLORSPACE_RGB888);
+                                             width, height, MEDIA_VISION_COLORSPACE_RGB888);
        if (error_code != MEDIA_VISION_ERROR_NONE)
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-       free(dataBuffer);
-       dataBuffer = NULL;
+       error_code = image_util_destroy_image(decodedImage);
+       if (error_code != IMAGE_UTIL_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+       decodedImage = NULL;
 
        error_code = mv_face_recognition_model_add(facedata.g_source,
                                                   facedata.g_face_recog_model, &roi, face_label);
@@ -312,6 +318,7 @@ To recognize faces:
     /* Decode the image and fill the image data to g_source handle */
     snprintf(filePath, 1024, "%s/whos_face.jpg", mydir);
     image_util_decode_h imageDecoder = NULL;
+    image_util_image_h decodedImage = NULL;
 
     error_code = image_util_decode_create(&imageDecoder);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
@@ -325,14 +332,14 @@ To recognize faces:
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+    error_code = image_util_decode_run2(imageDecoder, &decodedImage);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+    error_code = image_util_get_image(decodedImage, &width, &height, NULL, &dataBuffer, &bufferSize);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-
+    
     error_code = image_util_decode_destroy(imageDecoder);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
@@ -346,8 +353,10 @@ To recognize faces:
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
 
-    free(dataBuffer);
-    dataBuffer = NULL;
+    error_code = image_util_destroy_image(decodedImage);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    decodedImage = NULL;
 
     error_code = mv_face_recognize(facedata.g_source, facedata.g_face_recog_model, facedata.g_engine_config,
                                    NULL, _on_face_recognized_cb, NULL);
@@ -484,14 +493,14 @@ To track faces:
                  Track the face of index '0'.
                  Convert mv_rectangle_s to mv_quadrangle_s
               */
-              facedata.face_roi.points[0].x = face_location[0].x;
-              facedata.face_roi.points[0].y = face_location[0].y;
-              facedata.face_roi.points[1].x = face_location[0].x + face_location[0].width;
-              facedata.face_roi.points[1].y = face_location[0].y;
-              facedata.face_roi.points[2].x = face_location[0].x;
-              facedata.face_roi.points[2].y = face_location[0].y + face_location[0].height;
-              facedata.face_roi.points[3].x = face_location[0].x + face_location[0].width;
-              facedata.face_roi.points[3].y = face_location[0].y + face_location[0].height;
+              facedata.face_roi.points[0].x = face_locations[0].point.x;
+              facedata.face_roi.points[0].y = face_locations[0].point.y;
+              facedata.face_roi.points[1].x = face_locations[0].point.x + face_location[0].width;
+              facedata.face_roi.points[1].y = face_locations[0].point.y;
+              facedata.face_roi.points[2].x = face_locations[0].point.x;
+              facedata.face_roi.points[2].y = face_locations[0].point.y + face_location[0].height;
+              facedata.face_roi.points[3].x = face_locations[0].point.x + face_location[0].width;
+              facedata.face_roi.points[3].y = face_locations[0].point.y + face_location[0].height;
           }
       }
       ```
@@ -539,10 +548,10 @@ To track faces:
                           double confidence, void *user_data)
       {
           dlog_print(DLOG_INFO, LOG_TAG, "Location: (%d,%d) -> (%d,%d) -> (%d,%d) -> (%d,%d)\n",
-                     location->points[0].x, location->point[0].y,
-                     location->points[1].x, location->point[1].y,
-                     location->points[2].x, location->point[2].y,
-                     location->points[3].x, location->point[3].y)
+                     location->points[0].x, location->points[0].y,
+                     location->points[1].x, location->points[1].y,
+                     location->points[2].x, location->points[2].y,
+                     location->points[3].x, location->points[3].y)
       }
       ```
 

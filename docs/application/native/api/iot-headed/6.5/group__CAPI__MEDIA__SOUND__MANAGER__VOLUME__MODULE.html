@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Tizen Native API: Volume</title>
+<title>Tizen(Headed) Native API: Volume</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen_html_stylesheet.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
     if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
   });
 </script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Tizen Native API"/>
+<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Tizen(Headed) Native API"/>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Tizen Native API
+   <div id="projectname">Tizen(Headed) Native API
    &#160;<span id="projectnumber">6.5</span>
    </div>
    
@@ -319,6 +319,7 @@ sound_stream_ducking_s *&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The stream should be unducked before calling this function, otherwise, <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000eae1799fc87395cad8fb32348ed9fb3ee7">SOUND_MANAGER_ERROR_INVALID_STATE</a> is returned. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gae0bb1fc01f6eab1be4e06afa11c25e81" title="Called when the ducking activation or deactivation is finished.">sound_stream_ducking_state_changed_cb()</a> will be invoked. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gac49bf81a76d809232bcb5ee99ffba773" title="Creates a handle for stream ducking.">sound_manager_create_stream_ducking()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#ga74bc98b9c424846c049358ce3c9bce7b" title="Destroys the handle for stream ducking.">sound_manager_destroy_stream_ducking()</a> </dd>
@@ -491,6 +492,7 @@ sound_stream_ducking_s *&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The stream should be ducked before calling this function, otherwise, <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000eae1799fc87395cad8fb32348ed9fb3ee7">SOUND_MANAGER_ERROR_INVALID_STATE</a> is returned. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gae0bb1fc01f6eab1be4e06afa11c25e81" title="Called when the ducking activation or deactivation is finished.">sound_stream_ducking_state_changed_cb()</a> will be invoked. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gac49bf81a76d809232bcb5ee99ffba773" title="Creates a handle for stream ducking.">sound_manager_create_stream_ducking()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#ga74bc98b9c424846c049358ce3c9bce7b" title="Destroys the handle for stream ducking.">sound_manager_destroy_stream_ducking()</a> </dd>
@@ -530,9 +532,11 @@ sound_stream_ducking_s *&#160;</td><td class="memItemRight" valign="bottom"><a c
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000eaf001ca0b0c8316dded3f17792c894e32">SOUND_MANAGER_ERROR_NONE</a></td><td>Success </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000eac94b0cc6b0ca29cc295c0cc4edbbdc04">SOUND_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000ea7da462a754977b91f5dddc7a2c6cc909">SOUND_MANAGER_ERROR_INTERNAL</a></td><td>Internal error inside the sound system </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000eae1799fc87395cad8fb32348ed9fb3ee7">SOUND_MANAGER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The stream should be unducked before calling this function, otherwise, <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000eae1799fc87395cad8fb32348ed9fb3ee7">SOUND_MANAGER_ERROR_INVALID_STATE</a> is returned. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gac49bf81a76d809232bcb5ee99ffba773" title="Creates a handle for stream ducking.">sound_manager_create_stream_ducking()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#ga3f290837555bab364177f482fc1575b9" title="Checks if the stream is ducked.">sound_manager_is_ducked()</a> </dd>
@@ -716,6 +720,7 @@ sound_stream_ducking_s *&#160;</td><td class="memItemRight" valign="bottom"><a c
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000eaf001ca0b0c8316dded3f17792c894e32">SOUND_MANAGER_ERROR_NONE</a></td><td>Success </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000eac94b0cc6b0ca29cc295c0cc4edbbdc04">SOUND_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000ea7da462a754977b91f5dddc7a2c6cc909">SOUND_MANAGER_ERROR_INTERNAL</a></td><td>Internal error inside the sound system </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html#gga75b18da60a215ffc2484d9383e5d000eae1799fc87395cad8fb32348ed9fb3ee7">SOUND_MANAGER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
   </table>
   </dd>
 </dl>

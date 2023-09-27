@@ -55,7 +55,7 @@
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
-##### [Tizen .NET Application Lifecycle](/application/dotnet/guides/applications/uiapplication/application_lifecycle.md)
+##### [Tizen .NET Application Life Cycle](/application/dotnet/guides/applications/uiapplication/application_lifecycle.md)
 ##### [Watch Application](/application/dotnet/guides/applications/uiapplication/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
 
@@ -122,25 +122,31 @@
 
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
-#### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
-#### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
+#### Machine Learning Inference
+##### [Overview](/application/dotnet/guides/machine-learning/machine-learning-inference.md)
+##### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
+##### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
+#### [Machine Learning Train](/application/dotnet/guides/machine-learning/machine-learning-train.md)
 
 ### Maps
 #### [Overview](/application/dotnet/guides/maps/maps.md)
 #### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
 
-### Media and Camera
+### Multimedia
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
 #### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
+#### [Image Editing](/application/dotnet/guides/multimedia/image-edit.md)
 #### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
 
 #### Visual Detection and Recognition
 ##### [Overview](/application/dotnet/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/dotnet/guides/multimedia/image-barcode.md)
+##### [Deep Learning Based Face Recognition](/application/dotnet/guides/multimedia/face-recognition.md)
 ##### [Face Detection, Recognition, and Tracking](/application/dotnet/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/dotnet/guides/multimedia/image-recognition.md)
 ##### [Pose Detection](/application/dotnet/guides/multimedia/pose-detection.md)
+##### [ROI Tracker](/application/dotnet/guides/multimedia/roi-tracker.md)
 
 #### [Audio Management](/application/dotnet/guides/multimedia/audio.md)
 #### [Media Playback](/application/dotnet/guides/multimedia/media-playback.md)
@@ -149,9 +155,9 @@
 #### [Media Controller](/application/dotnet/guides/multimedia/media-controller.md)
 #### [Media Conversions](/application/dotnet/guides/multimedia/media-conversions.md)
 #### [Screen Mirroring](/application/dotnet/guides/multimedia/screen-mirroring.md)
-#### [Media Stream Recording](/application/dotnet/guides/multimedia/stream-recorder.md)
 #### [Radio](/application/dotnet/guides/multimedia/radio.md)
 #### [Camera](/application/dotnet/guides/multimedia/camera.md)
+#### [WebRTC](/application/dotnet/guides/multimedia/webrtc.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
@@ -202,6 +208,7 @@
 #### [Overview](/application/dotnet/guides/uix/overview.md)
 #### [Input Method](/application/dotnet/guides/uix/input-method.md)
 #### [Input Method Manager](/application/dotnet/guides/uix/input-method-manager.md)
+#### [Sticker](/application/dotnet/guides/uix/sticker.md)
 #### [Speech-to-text](/application/dotnet/guides/uix/stt.md)
 #### [Text-to-speech](/application/dotnet/guides/uix/tts.md)
 #### [Voice Control](/application/dotnet/guides/uix/voice-control.md)
@@ -220,6 +227,7 @@
 ###### [View](/application/dotnet/guides/user-interface/nui/view.md)
 ###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/CanvasView.md)
 ###### [CustomView](/application/dotnet/guides/user-interface/nui/customview.md)
+###### [GLView](/application/dotnet/guides/user-interface/nui/glview.md)
 ###### [ImageView](/application/dotnet/guides/user-interface/nui/imageview.md)
 ###### [TableView](/application/dotnet/guides/user-interface/nui/tableview.md)
 ###### [Text](/application/dotnet/guides/user-interface/nui/text.md)
@@ -227,10 +235,13 @@
 ###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
 ###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/AlertDialog.md)
 ###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
+###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/CameraView.md)
 ###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
+###### [CollectionView](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView.md)
 ###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
 ###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
+###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/Notification.md)
 ###### [Menu](/application/dotnet/guides/user-interface/nui/nui-components/Menu.md)
 ###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/Pagination.md)
 ###### [Picker](/application/dotnet/guides/user-interface/nui/nui-components/Picker.md)
@@ -243,7 +254,7 @@
 ###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
 ###### [TimePicker](/application/dotnet/guides/user-interface/nui/nui-components/TimePicker.md)
 
-##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)     
+##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
 
 ##### Layouts
 ###### [Overview](/application/dotnet/guides/user-interface/nui/layouts.md)
@@ -253,6 +264,11 @@
 ###### [Flex Layout](/application/dotnet/guides/user-interface/nui/flex-layout.md)
 ###### [Relative Layout](/application/dotnet/guides/user-interface/nui/relative-layout.md)
 ###### [Create Custom Layout](/application/dotnet/guides/user-interface/nui/custom-layout.md)
+
+##### Page Navigation
+###### [Overview](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/page-navigation.md)
+###### [ContentPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/ContentPage.md)
+###### [DialogPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/DialogPage.md)
 
 ##### Vector Graphics
 ###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
@@ -292,23 +308,43 @@
 ## [API Reference](/application/dotnet/api/overview.md)
 
 ## Samples
-### [Account](/application/dotnet/samples/account/overview.md)
-### [AppFW](/application/dotnet/samples/appfw/overview.md)
-### [Content](/application/dotnet/samples/content/overview.md)
-### [Context](/application/dotnet/samples/context/overview.md)
-### [General](/application/dotnet/samples/general/overview.md)
-### [Location](/application/dotnet/samples/location/overview.md)
-### [Machine Learning](/application/dotnet/samples/machinelearning/overview.md)
-### [Messaging](/application/dotnet/samples/messaging/overview.md)
-### [Multimedia](/application/dotnet/samples/multimedia/overview.md)
-### [Network](/application/dotnet/samples/network/overview.md)
-### [Security](/application/dotnet/samples/security/overview.md)
-### [Social](/application/dotnet/samples/social/overview.md)
-### [System](/application/dotnet/samples/system/overview.md)
-### [Telephony](/application/dotnet/samples/telephony/overview.md)
-### [UI](/application/dotnet/samples/ui/overview.md)
-### [UIX](/application/dotnet/samples/uix/overview.md)
-### [Watch](/application/dotnet/samples/watch/overview.md)
+### [Overview](/application/dotnet/samples/overview.md)
+### NUI
+#### [Account](/application/dotnet/samples/nui/account/overview.md)
+#### [AppFW](/application/dotnet/samples/nui/appfw/overview.md)
+#### [Content](/application/dotnet/samples/nui/content/overview.md)
+#### [Context](/application/dotnet/samples/nui/context/overview.md)
+#### [General](/application/dotnet/samples/nui/general/overview.md)
+#### [Location](/application/dotnet/samples/nui/location/overview.md)
+#### [Machine Learning](/application/dotnet/samples/nui/machinelearning/overview.md)
+#### [Messaging](/application/dotnet/samples/nui/messaging/overview.md)
+#### [Multimedia](/application/dotnet/samples/nui/multimedia/overview.md)
+#### [Network](/application/dotnet/samples/nui/network/overview.md)
+#### [Security](/application/dotnet/samples/nui/security/overview.md)
+#### [Social](/application/dotnet/samples/nui/social/overview.md)
+#### [System](/application/dotnet/samples/nui/system/overview.md)
+#### [Telephony](/application/dotnet/samples/nui/telephony/overview.md)
+#### [UI](/application/dotnet/samples/nui/ui/overview.md)
+#### [UIX](/application/dotnet/samples/nui/uix/overview.md)
+#### [Watch](/application/dotnet/samples/nui/watch/overview.md)
+### Xamarin.Forms (Deprecated)
+#### [Account](/application/dotnet/samples/account/overview.md)
+#### [AppFW](/application/dotnet/samples/appfw/overview.md)
+#### [Content](/application/dotnet/samples/content/overview.md)
+#### [Context](/application/dotnet/samples/context/overview.md)
+#### [General](/application/dotnet/samples/general/overview.md)
+#### [Location](/application/dotnet/samples/location/overview.md)
+#### [Machine Learning](/application/dotnet/samples/machinelearning/overview.md)
+#### [Messaging](/application/dotnet/samples/messaging/overview.md)
+#### [Multimedia](/application/dotnet/samples/multimedia/overview.md)
+#### [Network](/application/dotnet/samples/network/overview.md)
+#### [Security](/application/dotnet/samples/security/overview.md)
+#### [Social](/application/dotnet/samples/social/overview.md)
+#### [System](/application/dotnet/samples/system/overview.md)
+#### [Telephony](/application/dotnet/samples/telephony/overview.md)
+#### [UI](/application/dotnet/samples/ui/overview.md)
+#### [UIX](/application/dotnet/samples/uix/overview.md)
+#### [Watch](/application/dotnet/samples/watch/overview.md)
 
 
 # Web Application
@@ -426,6 +462,7 @@
 #### [Tensors Management](/application/web/guides/machine-learning/tensors.md)
 #### [Single](/application/web/guides/machine-learning/single.md)
 #### [Pipeline](/application/web/guides/machine-learning/pipeline.md)
+#### [Trainer](/application/web/guides/machine-learning/trainer.md)
 
 ### Media and Camera
 #### [Overview](/application/web/guides/multimedia/overview.md)
@@ -914,6 +951,7 @@
 #### [Overview](/application/native/guides/machine-learning/overview.md)
 #### [Machine Learning Inference](/application/native/guides/machine-learning/machine-learning-inference.md)
 #### [Machine Learning Training](/application/native/guides/machine-learning/machine-learning-training.md)
+#### [Machine Learning Service](/application/native/guides/machine-learning/machine-learning-service.md)
 
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
@@ -926,9 +964,11 @@
 ##### [Overview](/application/native/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
+##### [Deep Learning Based Face Recognition](/application/native/guides/multimedia/face-recognition.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
 ##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
+##### [ROI Tracker](/application/native/guides/multimedia/roi-tracker.md)
 
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/native/guides/multimedia/media-recording.md)
@@ -937,8 +977,6 @@
 #### [Media Handle Management](/application/native/guides/multimedia/media-handle.md)
 #### [Media Key Events](/application/native/guides/multimedia/media-key.md)
 #### [Media Muxing](/application/native/guides/multimedia/media-muxing.md)
-#### [Media Stream Playback](/application/native/guides/multimedia/media-streams.md)
-#### [Media Stream Recording](/application/native/guides/multimedia/stream-recorder.md)
 #### [Screen Mirroring](/application/native/guides/multimedia/screen-mirroring.md)
 #### [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)
 #### [Sound Manager](/application/native/guides/multimedia/sound-manager.md)
@@ -991,6 +1029,7 @@
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
 
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
+#### [User Awareness](/application/native/guides/location-sensors/user-awareness.md)
 
 ### Text Input, Gesture, and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
@@ -1001,6 +1040,7 @@
 #### [Gesture](/application/native/guides/text-input/capi-ui-gesture.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
+#### [Text-to-speech Engine](/application/native/guides/text-input/tts-engine.md)
 #### [Voice Control](/application/native/guides/text-input/voice-control.md)
 #### [Voice Control Manager](/application/native/guides/text-input/voice-control-manager.md)
 #### [Voice Control Engine](/application/native/guides/text-input/voice-control-engine.md)
@@ -1035,6 +1075,7 @@
 #### [System Settings](/application/native/guides/device/settings.md)
 #### [Sound and Vibration Feedback](/application/native/guides/device/feedback.md)
 #### [Battery Monitor](/application/native/guides/device/battery-monitor.md)
+#### [Resource Monitor](/application/native/guides/device/resource-monitor.md)
 
 ### Security
 #### [Overview](/application/native/guides/security/overview.md)
@@ -1067,6 +1108,7 @@
 ### [Overview](/application/native/api/overview.md)
 
 ### Wearable
+#### [7.0](/application/native/api/wearable/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/wearable/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/wearable/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/wearable/5.5/index.html){:target="_blank"}
@@ -1076,6 +1118,7 @@
 #### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
 
 ### Mobile
+#### [7.0](/application/native/api/mobile/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/mobile/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/mobile/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/mobile/5.5/index.html){:target="_blank"}
@@ -1085,6 +1128,7 @@
 #### [2.4](/application/native/api/mobile/2.4/index.html){:target="_blank"}
 
 ### Iot Headed
+#### [7.0](/application/native/api/iot-headed/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/iot-headed/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/iot-headed/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/iot-headed/5.5/index.html){:target="_blank"}
@@ -1092,6 +1136,7 @@
 #### [4.0](/application/native/api/iot-headed/4.0/index.html){:target="_blank"}
 
 ### Iot Headless
+#### [7.0](/application/native/api/iot-headless/7.0/index.html){:target="_blank"}
 #### [6.5](/application/native/api/iot-headless/6.5/index.html){:target="_blank"}
 #### [6.0](/application/native/api/iot-headless/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/iot-headless/5.5/index.html){:target="_blank"}
@@ -1101,7 +1146,7 @@
 ## [Samples](/development/sample/native)
 
 
-# Tizen Tools Family 
+# Tizen Tools Family
 
 ## Visual Studio Tools for Tizen
 ### [Overview](/application/vstools/index.md)
@@ -1109,6 +1154,7 @@
 
 ### Tools
 #### [Project Wizard](/application/vstools/tools/project-wizard.md)
+#### [Tizen .NET Hot Reload](/application/vstools/tools/dotnet-hotreload.md)
 
 #### Manifest Editor
 ##### [Overview](/application/vstools/tools/manifest-editor.md)
@@ -1126,12 +1172,14 @@
 ### Tizen
 #### [Hybrid application development](/application/vstools/Tizen/hybrid.md)
 #### [Importing Tizen Studio Projects](/application/vstools/Tizen/import.md)
+#### [TizenNUIGadget RPK development](/application/vstools/Tizen/nuigadget-rpk.md)
 
 ## Visual Studio Code Extension for Tizen
 ### [Prerequisites](/application/vscode-ext/index.md)
 ### [Installing Visual Studio Code Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
 ### Tizen
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
+#### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
 ### [Tizen Web](/application/vscode-ext/web.md)
 
 ## Tizen Studio
@@ -1270,6 +1318,8 @@
 #### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ### Release Notes
+#### [5.1 (Mar 31, 2023)](/application/tizen-studio/release-notes/5-1-release-notes.md)
+#### [5.0 (Oct 31, 2022)](/application/tizen-studio/release-notes/5-0-release-notes.md)
 #### [4.6 (Mar 30, 2022)](/application/tizen-studio/release-notes/4-6-release-notes.md)
 #### [4.5.1 (Dec 30, 2021)](/application/tizen-studio/release-notes/4-5-1-release-notes.md)
 #### [4.5 (Oct 29, 2021)](/application/tizen-studio/release-notes/4-5-release-notes.md)

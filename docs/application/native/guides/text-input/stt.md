@@ -55,6 +55,10 @@ You can set the following parameters about the STT:
 
   The private data is a setting parameter for applying keys provided by the STT engine. Using the `stt_set_private_data()` function, you can set the private data as the corresponding key of the STT engine.
 
+- Audio ID
+
+  The audio ID is a text for identifying the audio-in device that is used to record audio data. Using the `stt_set_audio_id()` function, you can set the audio ID.
+
 <a name="info_stt"></a>
 ## STT Information Retrieval
 
@@ -68,6 +72,7 @@ You can get the following information about the STT:
 - Get a list of the supported engines and the selection of current engines. Additional features, such as silence detection and partial result, are provided by specific engines.
 - Get the error message when the error callback is invoked.
 - Get private data from the STT engine.
+- Get the audio format information that STT engine can recognize.
 
 ## Prerequisites
 
@@ -473,6 +478,24 @@ You can get a notification about the default language changes by setting a defau
     }
     ```
 
+- Get the audio format information using the `stt_get_audio_format()` function.
+
+    The STT engine can accept and recognize the data which meets the audio formation information from the `stt_get_audio_format()` function. When you send the audio streaming data, you should check this information to get the result:
+
+    ```c
+    void
+    get_audio_format(stt_h stt)
+    {
+        stt_audio_type_e type;
+        int rate;
+        int num_of_channels;
+        int ret;
+        ret = stt_get_audio_format(stt, &type, &rate, &num_of_channels);
+        if (STT_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
+
 <a name="prepare"></a>
 ## Connecting and Disconnecting the STT
 
@@ -552,6 +575,33 @@ To set and get the options about the STT engine:
   {
       int ret;
       ret = stt_get_private_data(stt, key, data);
+      if (STT_ERROR_NONE != ret)
+          /* Error handling */
+  }
+  ```
+
+- Set and get the audio ID.
+
+  The audio ID is a text for identifying the audio-in device that is used to record audio data. Using the `stt_set_audio_id()` function, you can set the audio ID. To get the current audio ID, use the `stt_get_audio_id()` function:
+
+  > [!NOTE]
+  > The audio IDs other than STT_AUDIO_ID_NONE, STT_AUDIO_ID_WIFI, and STT_AUDIO_ID_BLUETOOTH are determined by the STT engine. To set the proper audio ID, see the engine instructions.
+
+  ```c
+  void
+  set_audio_id(stt_h stt, const char* audio_id)
+  {
+      int ret;
+      ret = stt_set_audio_id(stt, audio_id);
+      if (STT_ERROR_NONE != ret)
+          /* Error handling */
+  }
+
+  void
+  get_audio_id(stt_h stt, char** audio_id)
+  {
+      int ret;
+      ret = stt_get_audio_id(stt, audio_id);
       if (STT_ERROR_NONE != ret)
           /* Error handling */
   }
@@ -690,11 +740,59 @@ To set the STT options and control recording:
     }
     ```
 
-  - To cancel the recording without getting the result, use the `stt_cancel()` function.
+  - To start audio streaming, use the `stt_start_audio_streaming()` function.
 
-    The state changes to `STT_STATE_READY`.
+    The connected STT daemon is ready to accept audio streaming data from the client, and the state is changed to `STT_STATE_RECORDING`.
 
+    > [!NOTE]
+    > If the `stt_start_audio_streaming()` function fails, check the error code and take appropriate action.
+
+    The language and recognition type must be supported by the current STT engine. If you set `NULL` as the language parameter, the STT default language is used based on the `stt_get_default_language()` function:
+
+    ```c
+    void
+    start_audio_streaming(stt_h stt, const char* language, const char* type)
+    {
+        int ret;
+        ret = stt_start_audio_streaming(stt, language, type); /* Default language is NULL */
+        if (STT_ERROR_NONE != ret)
+            /* Error handling */
+    }
     ```
+
+  - While the STT audio streaming is in process, you can send the audio streaming data using the `stt_send_audio_streaming()` function:
+
+    ```c
+    void
+    send_audio_streaming(stt_h stt, char* data, size_t size)
+    {
+        int ret;
+        ret = stt_send_audio_streaming(stt, data, size);
+        if (STT_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
+
+  - To stop the audio streaming and get the recognition result, use the `stt_stop_audio_streaming()` function.
+
+    The audio streaming stops and the state is changed to `STT_STATE_PROCESSING`. When the recognition result has been processed, the result is sent in the recognition result callback, and the state is changed back to `STT_STATE_READY`:
+
+    ```c
+    void
+    stop_audio_streaming(stt_h stt)
+    {
+        int ret;
+        ret = stt_stop_audio_streaming(stt);
+        if (STT_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
+
+  - To cancel either the recording or the audio streaming without getting the result, use the `stt_cancel()` function.
+
+    The state changes to `STT_STATE_READY`:
+
+    ```c
     void
     cancel(stt_h stt)
     {

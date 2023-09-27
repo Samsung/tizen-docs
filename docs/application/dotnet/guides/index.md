@@ -1,7 +1,7 @@
 # Guides
 
-Tizen .NET provides a rich set of interfaces allowing you to build compelling TV, mobile, and wearable (preview) applications which achieve native performance.
-Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and TizenFX API support Tizen platform-specific functionalities.
+Tizen .NET provides a rich set of interfaces allowing you to build compelling TV, mobile, and wearable (preview) applications which achieves native performance.
+Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces, and TizenFX API supports Tizen platform-specific functionalities.
 
 ## Libraries
 
@@ -38,7 +38,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     </div>
 </div>
 
-## Tizen API Guides
+## Tizen API guides
 
 <div class="row cards-container-infra">
     <div class="col col-md-3">
@@ -257,7 +257,7 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces and T
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
-                <p class="h3 card-title">Media and Camera</p>
+                <p class="h3 card-title">Multimedia</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="multimedia/media-content.md">Media Content</a></li>

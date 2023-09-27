@@ -3,18 +3,18 @@
 
 You can push events from an application server to your application on a Tizen device. If the message sending fails for any reason, an error code identifying the failure reason is returned. You can use the [error code](#error_codes) to determine how to handle the failure.
 
-The main features of the Tizen.Messaging.Push namespace for server developers include:
+The main features of the `Tizen.Messaging.Push` namespace for server developers include the following:
 
 -   Sending push notifications
 
     You can [send push notifications](#send_server) from the application server to an application.
 
 <a name="send_server"></a>
-## Sending Push Notifications
+## Send push notifications
 
 You can send notifications to your applications installed on Tizen devices. The basics of sending push notifications are covered in the [Push](push.md#send) guide. This use case covers more advanced information, such as sending multiple notifications in one request and sending multicast notifications.
 
-To send push notifications:
+To send push notifications, follow the steps below:
 
 1.  Determine the RQM server.
 
@@ -57,7 +57,7 @@ To send push notifications:
         }
         ```
 
-    - If you have data to send to the application but no need to notify the user, use the action field on the same level as the message field, instead of within the message field, and do not include the message field itself. In this case, the notification is delivered with the best effort.
+    - If you have data to send to the application but no need to notify the user, use the action field on the same level as the message field, instead of within the message field, and do not include the message field itself. In this case, the notification is delivered with the best effort:
 
         ```JSON
         {
@@ -134,7 +134,7 @@ To send push notifications:
             | `reliableOption` | The push server guarantees reliable message delivery if the `reliableOption` is set. The possible options are:<br><br>`NoReliable`: Do not send any acknowledgment back to an application server and do not store the notification in the push server if the push service did not receive the notification.<br>`Transport`: Send an acknowledgment back to the application server when the push service receives the notification.<br><br>This is an optional field, and if it does not exist, the server applies its default value (`Transport`). An acknowledgment at this point does not mean a response to the notification request, but an acknowledgment that the push service has received the notification. When the push service receives the notification, the push server sends this acknowledgment to the application server in a JSON format through HTTP. | Optional<br>Type: string<br>Default: transport   |
             | `sessionInfo`    | Connection information for an application. Third-party applications can define this field by themselves. | Optional<br>Type: string<br>Default: `NULL`      |
             | `timeStamp`      | Server time in milliseconds when a notification request has been made. | OptionalType: longDefault: `NULL`        |
-            | `expiryDate`     | Time period, in minutes, for storing the request in the push server if the delivery fails:<br><br>- If the value set to 0, the push server stores the request for 1440 minutes (24 hours).<br>- If the value is 1 - 2800, the push server stores the request for that number of minutes.If the push server default setting is less than the defined value, the push server stores the request according to its own setting.<br>- If the value is greater than 2880, the push server stores the request for 2880 minutes (48 hours).<br><br>This is an optional field, and if it does not exist, the server applies its default value (0). If `reliableOption` is set at `NoReliable`, this field is meaningless. | Optional<br>Type: int<br>Default: 0              |
+            | `expiryDate`     | Time period, in minutes, for storing the request in the push server if the delivery fails:<br><br>- If the value is set to 0, the push server stores the request for 1440 minutes (24 hours).<br>- If the value is 1 - 2800, the push server stores the request for that number of minutes. If the push server default setting is less than the defined value, the push server stores the request according to its own setting.<br>- If the value is greater than 2880, the push server stores the request for 2880 minutes (48 hours).<br><br>This is an optional field, and if it does not exist, the server applies its default value (0). If `reliableOption` is set at `NoReliable`, this field is meaningless. | Optional<br>Type: int<br>Default: 0              |
 
         The following examples illustrate the notification:
 
@@ -209,7 +209,7 @@ To send push notifications:
                 }
                 ```
 
-                > **Note**   
+                > [!NOTE]  
 				> In the above example, the 3008 error code means that the `regID` does not exist in the push server. It happens when your application of that particular `regID` was uninstalled or disabled by the user, and consequently the `regID` must be removed from your application server. When the application is reinstalled or enabled, it must repeat the [registration process](push.md#registration) and send a new `regID` to your application server.
 
 	-  Multiple request
@@ -425,7 +425,7 @@ To send push notifications:
 
 
 <a name="error_codes"></a>				
-## Error Codes
+## Error codes
 
 If sending a push notification request fails for some reason, the response message contains an error code.
 
@@ -459,8 +459,8 @@ The following table lists all possible error codes for push notifications, helpi
 | 3019        | Error of containing abnormal data        |
 | 3020        | Error of not supported reliability option |
 | 3021        | Error of bad padding exception           |
-| 3022        | Error of json parse exception            |
-| 3023        | Error of json mapping                    |
+| 3022        | Error of JSON parse exception            |
+| 3023        | Error of JSON mapping                    |
 | 3024        | Error of illegal blocksize               |
 | 3025        | Error occurred while decoding regID      |
 | 3026        | Error of no secret key field             |
@@ -483,9 +483,9 @@ The following table lists all possible error codes for push notifications, helpi
 | 3043        | Error of invalid type                    |
 | 3044        | Error of not registered application      |
 | 3045        | Error of application authentication failed |
-| 3046        | Error of not allowed to use Push Server  |
+| 3046        | Error of not allowed to use push server  |
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

@@ -3,7 +3,7 @@
 
 Tizen offers various image processing features.
 
-The main features of the Image Util API include:
+The main features of the Image Util API include the following:
 
 - Conversion
 
@@ -26,8 +26,8 @@ The main features of the Image Util API include:
   You can [decode images](#decode), [encode them](#encode), and [encode animation](#animation) with the following formats:
 
   - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888
-  - Input image formats for decoding: JPEG, PNG, GIF, BMP, and WEBP
-  - Output image formats for encoding: JPEG, PNG, GIF, BMP, and WEBP
+  - Input image formats for decoding: JPEG, PNG, GIF, BMP, WEBP, HEIF, and JPEG XL
+  - Output image formats for encoding: JPEG, PNG, GIF, BMP, WEBP, and JPEG XL
   - Output image formats for encoding animation: [GIF and WEBP](#animation)
 
   > [!NOTE]
@@ -35,7 +35,7 @@ The main features of the Image Util API include:
 
 ## Prerequisites
 
-To enable your application to use the image util functionality:
+To enable your application to use the image util functionality, follow these steps:
 
 1. To use the functions and data types of the Image Util API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html) applications), include the `<image_util.h>` header file in your application:
 
@@ -66,8 +66,6 @@ To enable your application to use the image util functionality:
 
    The possible color spaces are defined in the `image_util_colorspace_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#gad3ea89a72a617912df9ddbd50be1b991) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#gad3ea89a72a617912df9ddbd50be1b991) applications).
 
-   For more information on the YUV color space, see [http://www.fourcc.org/yuv.php](http://www.fourcc.org/yuv.php).
-
 4. To support `image_util_transform_run()`, which is used for all image transformations, set the source image and create a handle for it (to be used as the second parameter):
 
    ```
@@ -80,9 +78,9 @@ To enable your application to use the image util functionality:
    ```
 
 <a name="image_colorspace"></a>
-## Converting Image Color Space
+## Convert image color space
 
-To convert one color space of an image to another:
+To convert one color space of an image to another, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -123,9 +121,9 @@ To convert one color space of an image to another:
    ```
 
 <a name="mediapacket_colorspace"></a>
-## Converting Media Packet Color Space
+## Convert media packet color space
 
-To convert one color space of a media packet to another:
+To convert one color space of a media packet to another, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -153,18 +151,18 @@ To convert one color space of a media packet to another:
    > Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
    > For more information on how to use the media packet handle of the Media Tool API, see [Media Handle Management](media-handle.md).
 
-5. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
+4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
 
-6. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
+5. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
    ```
    ret = image_util_transform_destroy(transform_h);
    ```
 
 <a name="resize_image"></a>
-## Resizing Image
+## Resize image
 
-To resize an image:
+To resize an image, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -197,9 +195,9 @@ To resize an image:
    ```
 
 <a name="resize_mediapacket"></a>
-## Resizing Media Packet
+## Resize media packet
 
-To resize a media packet:
+To resize a media packet, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -234,9 +232,9 @@ To resize a media packet:
    ```
 
 <a name="rotate_image"></a>
-## Rotating Image
+## Rotate image
 
-To rotate an image:
+To rotate an image, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -271,9 +269,9 @@ To rotate an image:
    ```
 
 <a name="rotate_mediapacket"></a>
-## Rotating Media Packet
+## Rotate media packet
 
-To rotate a media packet:
+To rotate a media packet, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -310,9 +308,9 @@ To rotate a media packet:
    ```
 
 <a name="crop_image"></a>
-## Cropping Image
+## Crop image
 
-To crop an image:
+To crop an image, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -347,9 +345,9 @@ To crop an image:
    ```
 
 <a name="crop_mediapacket"></a>
-## Cropping Media Packet
+## Crop media packet
 
-To crop a media packet:
+To crop a media packet, follow these steps:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -384,9 +382,9 @@ To crop a media packet:
    ```
 
 <a name="decode"></a>
-## Decoding from a File or Memory
+## Decode from a file or memory
 
-To decode a JPEG, PNG, GIF, or BMP image:
+To decode a JPEG, PNG, GIF, BMP, WEBP, HEIF, or JPEG XL image, follow these steps:
 
 1. Create a decoding handle using `image_util_decode_create()`:
 
@@ -410,7 +408,7 @@ To decode a JPEG, PNG, GIF, or BMP image:
    ```
 
    > [!NOTE]
-   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG and the WEBP images.
+   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG, the WEBP, the HEIF, and the JPEG XL images.
    > The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`.
    > PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
@@ -427,9 +425,9 @@ To decode a JPEG, PNG, GIF, or BMP image:
    ret = image_util_decode_destroy(decode_h);
    ```
 <a name="encode"></a>
-## Encoding to a File or Memory
+## Encode to a file or memory
 
-To encode a raw image:
+To encode a raw image, follow these steps:
 
 1. Create an encoding handle using `image_util_encode_create()`:
 
@@ -455,7 +453,7 @@ To encode a raw image:
    ```
 
    > [!NOTE]
-   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG and the WEBP images.
+   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG, the WEBP, and the JPEG XL images.
    > The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`.
    > PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
@@ -466,7 +464,7 @@ To encode a raw image:
    ```
 
 <a name="animation"></a>
-## Encoding an Animated GIF or WEBP
+## Encode an animated GIF or WEBP
 
 To encode an animated GIF or WEBP image, follow these steps:
 
@@ -506,9 +504,9 @@ To encode an animated GIF or WEBP image, follow these steps:
    ret = image_util_anim_encode_destroy(anim_encode_h);
    ```
 
-## Encoding an Animated GIF
+## Encode an animated GIF
 
-To encode an animated GIF image:
+To encode an animated GIF image, follow these steps:
 
 1. Create an encoding handle using `image_util_agif_encode_create()`:
 
@@ -536,7 +534,7 @@ To encode an animated GIF image:
    ```
 
 <a name="color_format"></a>
-## Supported Color Space Formats
+## Supported color space formats
 
 The following tables define the supported color space formats.
 
@@ -544,28 +542,28 @@ The following tables define the supported color space formats.
 
 | Label                                    | FOURCC in hex | Bits per pixel      | Description                              |
 |------------------------------------------|---------------|---------------------|------------------------------------------|
-| [RGB](http://www.fourcc.org/rgb.php#BI_RGB) | 0x32424752    | 1, 4, 8, 16, 24, 32 | Alias for BI_RGB                         |
-| [RGBA](http://www.fourcc.org/rgb.php#RGBA) | 0x41424752    | 16, 32              | Raw RGB with alpha. Sample precision and packing is arbitrary and determined using bit masks for each component, as for BI_BITFIELDS. |
+| RGB | 0x32424752    | 1, 4, 8, 16, 24, 32 | Alias for BI_RGB.                         |
+| RGBA | 0x41424752    | 16, 32              | Raw RGB with alpha. Sample precision and packing is arbitrary and determined using bit masks for each component, as for BI_BITFIELDS. |
 
 **Table: Packed YUV formats**
 
 | Label                                    | FOURCC in hex | Bits per pixel | Description                              |
 |------------------------------------------|---------------|----------------|------------------------------------------|
-| [UYVY](http://www.fourcc.org/yuv.php#UYVY) | 0x59565955    | 16             | YUV 4:2:2 (Y sample at every pixel, U and V sampled at every second pixel horizontally on each line). A macropixel contains 2 pixels in 1 u_int32. |
-| [YUYV](http://www.fourcc.org/yuv.php#YUYV) | 0x56595559    | 16             | Duplicate of YUY2.                       |
+| UYVY | 0x59565955    | 16             | YUV 4:2:2 (Y sample at every pixel, U and V sampled at every second pixel horizontally on each line). A macropixel contains 2 pixels in 1 u_int32. |
+| YUYV | 0x56595559    | 16             | Duplicate of YUY2.                       |
 
 **Table: Planar YUV formats**
 
 | Label                                    | FOURCC in hex | Bits per pixel | Description                              |
 |------------------------------------------|---------------|----------------|------------------------------------------|
-| [YV16](http://www.fourcc.org/rgb.php#BI_RGB) | 0x36315659    | 16             | 8-bit Y plane followed by 8-bit 2x1 subsampled V and U planes. |
-| [YV12](http://www.fourcc.org/rgb.php#RGBA) | 0x32315659    | 12             | 8-bit Y plane followed by 8-bit 2x2 subsampled V and U planes. |
-| [I420](http://www.fourcc.org/rgb.php#RGBA) | 0x30323449    | 12             | 8-bit Y plane followed by 8-bit 2x2 subsampled U and V planes. |
-| [NV12](http://www.fourcc.org/rgb.php#RGBA) | 0x3231564E    | 12             | 8-bit Y plane followed by an interleaved U/V plane with 2x2 subsampling. |
-| [NV21](http://www.fourcc.org/rgb.php#RGBA) | 0x3132564E    | 12             | As NV12 with U and V reversed in the interleaved plane. |
+| YV16 | 0x36315659    | 16             | 8-bit Y plane followed by 8-bit 2x1 subsampled V and U planes. |
+| YV12 | 0x32315659    | 12             | 8-bit Y plane followed by 8-bit 2x2 subsampled V and U planes. |
+| I420 | 0x30323449    | 12             | 8-bit Y plane followed by 8-bit 2x2 subsampled U and V planes. |
+| NV12 | 0x3231564E    | 12             | 8-bit Y plane followed by an interleaved U/V plane with 2x2 subsampling. |
+| NV21 | 0x3132564E    | 12             | As NV12 with U and V reversed in the interleaved plane. |
 
 <a name="quality"></a>
-## Quality and Size Comparison
+## Quality and size comparison
 
 The following table shows the effect on the image quality and file sizes when using different compression ratios.
 
@@ -579,7 +577,7 @@ The following table shows the effect on the image quality and file sizes when us
 | ![Low quality image](./media/quality_low.png) | Low quality (Q = 10)      | 4,787        | 46:1              | Severe high frequency loss; artifacts on subimage boundaries ("macroblocking") are obvious |
 | ![Lowest quality image](./media/quality_lowest.png) | Lowest quality            | -             | -                  |  -                                        |
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

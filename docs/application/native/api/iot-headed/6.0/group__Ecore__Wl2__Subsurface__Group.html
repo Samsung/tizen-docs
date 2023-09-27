@@ -87,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Functions to manipulate subsurfaces.</div>  </div>
 <div class="ingroups"><a class="el" href="group__Ecore__Wl2__Group.html">Ecore_Wl2 - Wayland integration</a></div></div><!--header-->
@@ -115,8 +116,125 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare video surface for a given subsurface.  <a href="#gaeb81430406bccb842bc49e7ca25b91e9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#ga31b727a85f95f8afa9c05aef50fe08ad">ecore_wl2_subsurface_video_surface_destination_set</a> (Ecore_Wl2_Subsurface *subsurface, int x, int y, int w, int h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set destination area of video surface for a given subsurface.  <a href="#ga31b727a85f95f8afa9c05aef50fe08ad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#ga813f6043c907fd87fd327e06bc0c878f">ecore_wl2_subsurface_video_surface_rotation_set</a> (Ecore_Wl2_Subsurface *subsurface, <a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#ga716e93d25930ccc0b2328739dd417589">Ecore_Wl2_Subsurface_Rotation</a> rotation)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set video surface rotation for a given subsurface.  <a href="#ga813f6043c907fd87fd327e06bc0c878f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#gafc1583e1393725305a868e39694b23da">ecore_wl2_subsurface_aux_hint_set</a> (Ecore_Wl2_Subsurface *subsurface, const char *hint, const char *val)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an auxiliary hint on a given subsurface.  <a href="#gafc1583e1393725305a868e39694b23da"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <br class="typebreak"/>
+<a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#gad791160224e9244815c5063a1b8dddfa">_Ecore_Wl2_Subsurface_Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#ga716e93d25930ccc0b2328739dd417589">Ecore_Wl2_Subsurface_Rotation</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the rotation types of video surface.  <a href="#ga716e93d25930ccc0b2328739dd417589"></a><br/></td></tr>
 </table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga716e93d25930ccc0b2328739dd417589"></a><!-- doxytag: member="Ecore_Wl2.h::Ecore_Wl2_Subsurface_Rotation" ref="ga716e93d25930ccc0b2328739dd417589" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#gad791160224e9244815c5063a1b8dddfa">_Ecore_Wl2_Subsurface_Rotation</a>  <a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#ga716e93d25930ccc0b2328739dd417589">Ecore_Wl2_Subsurface_Rotation</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Defines the rotation types of video surface. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#ga813f6043c907fd87fd327e06bc0c878f" title="Set video surface rotation for a given subsurface.">ecore_wl2_subsurface_video_surface_rotation_set</a></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="gad791160224e9244815c5063a1b8dddfa"></a><!-- doxytag: member="Ecore_Wl2.h::_Ecore_Wl2_Subsurface_Rotation" ref="gad791160224e9244815c5063a1b8dddfa" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#gad791160224e9244815c5063a1b8dddfa">_Ecore_Wl2_Subsurface_Rotation</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Defines the rotation types of video surface. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#ga813f6043c907fd87fd327e06bc0c878f" title="Set video surface rotation for a given subsurface.">ecore_wl2_subsurface_video_surface_rotation_set</a></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggad791160224e9244815c5063a1b8dddfaaf00752e0dce2d8df231b78766119cc1c"></a><!-- doxytag: member="ECORE_WL2_SUBSURFACE_ROTATION_NORMAL" ref="ggad791160224e9244815c5063a1b8dddfaaf00752e0dce2d8df231b78766119cc1c" args="" -->ECORE_WL2_SUBSURFACE_ROTATION_NORMAL</em>&nbsp;</td><td>
+<p>no rotation </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad791160224e9244815c5063a1b8dddfaa673fad3bf757ab0db42e5ab4d7834f2b"></a><!-- doxytag: member="ECORE_WL2_SUBSURFACE_ROTATION_90" ref="ggad791160224e9244815c5063a1b8dddfaa673fad3bf757ab0db42e5ab4d7834f2b" args="" -->ECORE_WL2_SUBSURFACE_ROTATION_90</em>&nbsp;</td><td>
+<p>90 degree counter-clockwise </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad791160224e9244815c5063a1b8dddfaae64e0af2c51b11cf970e211f2022d38a"></a><!-- doxytag: member="ECORE_WL2_SUBSURFACE_ROTATION_180" ref="ggad791160224e9244815c5063a1b8dddfaae64e0af2c51b11cf970e211f2022d38a" args="" -->ECORE_WL2_SUBSURFACE_ROTATION_180</em>&nbsp;</td><td>
+<p>180 degree counter-clockwise </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad791160224e9244815c5063a1b8dddfaa02dc0cdaccd14a5926bef4ae8015aa91"></a><!-- doxytag: member="ECORE_WL2_SUBSURFACE_ROTATION_270" ref="ggad791160224e9244815c5063a1b8dddfaa02dc0cdaccd14a5926bef4ae8015aa91" args="" -->ECORE_WL2_SUBSURFACE_ROTATION_270</em>&nbsp;</td><td>
+<p>270 degree counter-clockwise </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad791160224e9244815c5063a1b8dddfaacf5daf50d065c57e2a4dae11cb699776"></a><!-- doxytag: member="ECORE_WL2_SUBSURFACE_ROTATION_FLIPPED" ref="ggad791160224e9244815c5063a1b8dddfaacf5daf50d065c57e2a4dae11cb699776" args="" -->ECORE_WL2_SUBSURFACE_ROTATION_FLIPPED</em>&nbsp;</td><td>
+<p>180 degree flip around a vertical axis </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad791160224e9244815c5063a1b8dddfaae8fb618751255783d144a0ea97fe03d2"></a><!-- doxytag: member="ECORE_WL2_SUBSURFACE_ROTATION_FLIPPED_90" ref="ggad791160224e9244815c5063a1b8dddfaae8fb618751255783d144a0ea97fe03d2" args="" -->ECORE_WL2_SUBSURFACE_ROTATION_FLIPPED_90</em>&nbsp;</td><td>
+<p>flip and rotate 90 degree counter-clockwise </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad791160224e9244815c5063a1b8dddfaa28813902c6c9ccd37792e43e19389892"></a><!-- doxytag: member="ECORE_WL2_SUBSURFACE_ROTATION_FLIPPED_180" ref="ggad791160224e9244815c5063a1b8dddfaa28813902c6c9ccd37792e43e19389892" args="" -->ECORE_WL2_SUBSURFACE_ROTATION_FLIPPED_180</em>&nbsp;</td><td>
+<p>flip and rotate 180 degree counter-clockwise </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad791160224e9244815c5063a1b8dddfaac0e905e26d091e66d72bfa70f84e285b"></a><!-- doxytag: member="ECORE_WL2_SUBSURFACE_ROTATION_FLIPPED_270" ref="ggad791160224e9244815c5063a1b8dddfaac0e905e26d091e66d72bfa70f84e285b" args="" -->ECORE_WL2_SUBSURFACE_ROTATION_FLIPPED_270</em>&nbsp;</td><td>
+<p>flip and rotate 270 degree counter-clockwise </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gafc1583e1393725305a868e39694b23da"></a><!-- doxytag: member="Ecore_Wl2.h::ecore_wl2_subsurface_aux_hint_set" ref="gafc1583e1393725305a868e39694b23da" args="(Ecore_Wl2_Subsurface *subsurface, const char *hint, const char *val)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#gafc1583e1393725305a868e39694b23da">ecore_wl2_subsurface_aux_hint_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Ecore_Wl2_Subsurface *&#160;</td>
+          <td class="paramname"><em>subsurface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>hint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set an auxiliary hint on a given subsurface. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subsurface</td><td>The subsurface to set an auxiliary hint </td></tr>
+    <tr><td class="paramname">hint</td><td>The auxiliary hint string </td></tr>
+    <tr><td class="paramname">val</td><td>The value string</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga4d77c2f55683c6f3f1ce5e79cdbeeb55"></a><!-- doxytag: member="Ecore_Wl2.h::ecore_wl2_subsurface_del" ref="ga4d77c2f55683c6f3f1ce5e79cdbeeb55" args="(Ecore_Wl2_Subsurface *subsurface)" -->
 <div class="memitem">
 <div class="memproto">
@@ -396,6 +514,44 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">subsurface</td><td>The subsurface to prepare video surface</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga813f6043c907fd87fd327e06bc0c878f"></a><!-- doxytag: member="Ecore_Wl2.h::ecore_wl2_subsurface_video_surface_rotation_set" ref="ga813f6043c907fd87fd327e06bc0c878f" args="(Ecore_Wl2_Subsurface *subsurface, Ecore_Wl2_Subsurface_Rotation rotation)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#ga813f6043c907fd87fd327e06bc0c878f">ecore_wl2_subsurface_video_surface_rotation_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Ecore_Wl2_Subsurface *&#160;</td>
+          <td class="paramname"><em>subsurface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Wl2__Subsurface__Group.html#ga716e93d25930ccc0b2328739dd417589">Ecore_Wl2_Subsurface_Rotation</a>&#160;</td>
+          <td class="paramname"><em>rotation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set video surface rotation for a given subsurface. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subsurface</td><td>The subsurface to set video surface rotation </td></tr>
+    <tr><td class="paramname">rotation</td><td>The rotation type to set video surface rotation</td></tr>
   </table>
   </dd>
 </dl>

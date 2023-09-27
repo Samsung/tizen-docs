@@ -3,13 +3,11 @@
 
 You can show the application icon as a shortcut on the home screen to allow the user to easily launch the application. In the device application list, you can show a badge with the application icon to provide additional information about the application state or notifications to the user.
 
-The main application icon features include:
+The main application icon features include the following:
 
 -   Creating and removing a badge
 
-    You can use badges in your application to inform the user about notifications and events. A badge is an image displayed on the application icon.
-
-    You can [create a badge for an application](#create) and remove it.
+    You can use badges in your application to inform the user about notifications and events. A badge is an image displayed on the application icon. You can [create a badge for an application](#create) and remove it.
 
 - Managing the badge
 
@@ -31,9 +29,9 @@ The main application icon features include:
 ## Prerequisites
 
 
-To enable your application to use the application icon functionality:
+To enable your application to use the application icon functionality, follow these steps:
 
--   To handle badges:
+-   To handle badges, follow the steps below:
     1.  To use the [Tizen.Applications.Badge](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Badge.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
         ```XML
@@ -48,7 +46,7 @@ To enable your application to use the application icon functionality:
         using Tizen.Applications.Badge;
         ```
 
-- To handle shortcuts:
+- To handle shortcuts, follow the steps below:
     1.  To use the [Tizen.Applications.Shortcut](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Shortcut.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
         ```XML
@@ -64,11 +62,11 @@ To enable your application to use the application icon functionality:
         ```
 
 <a name="create"></a>
-## Creating and Removing a Badge
+## Create and remove a badge
 
-To create and remove badges:
+To create and remove badges, follow these steps:
 
--   To create a badge for an application, create an instance of the [Tizen.Applications.Badge](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Badge.html) class. The parameter defines the application for which the badge is added. If the application is adding a badge for itself, the parameter can be null.
+-   To create a badge for an application, create an instance of the [Tizen.Applications.Badge](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Badge.html) class. The parameter defines the application for which the badge is added. If the application is adding a badge for itself, the parameter can be null:
 
     ```csharp
     Badge badge = new Badge(appId);
@@ -79,20 +77,20 @@ To create and remove badges:
 
     If an application not signed with the same certificate must be allowed to [manage a badge](#manage), use the `Add()` method of the [Tizen.Applications.BadgeControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.BadgeControl.html) class with a writable application ID. The writable application ID enables another application to control your application to manage the badge. You can also configure your application to handle the badge itself.
 
-- To remove the badge from the application, call the `Remove()` method. The only parameter is the ID of the application whose badge is to be removed.
+- To remove the badge from the application, call the `Remove()` method. The only parameter is the ID of the application whose badge is to be removed:
 
     ```csharp
     BadgeControl.Remove(TEST_PKG);
     ```
 
 <a name="manage"></a>
-## Managing the Badge
+## Manage the badge
 
-To manage the badge:
+To manage the badge, follow these steps:
 
 -   Retrieve the badge count and visibility with the `Find()` method of the [Tizen.Applications.BadgeControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.BadgeControl.html) class. The values are stored in the `count` and `visible` properties of the [Tizen.Applications.Badge](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Badge.html) class.
 
-    The badge count is displayed in the upper-right corner of the badge and the `count` property value must be an integer. The `visible` property value is of the `Bool` type.
+    The badge count is displayed in the upper-right corner of the badge and the `count` property value must be an integer. The `visible` property value is of the `Bool` type:
 
     ```csharp
     uint count;
@@ -117,16 +115,16 @@ To manage the badge:
     ```
 
 <a name="add"></a>
-## Adding a Shortcut
+## Add a shortcut
 
-To add a shortcut to the home screen:
+To add a shortcut to the home screen, follow these steps:
 
 1.  Define the shortcut details (such as its name, icon path, and whether duplicates are allowed) with the properties of the [Tizen.Applications.Shortcut.HomeShortcutInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Shortcut.HomeShortcutInfo.html) class.
 
-    You can create 2 types of shortcuts:
+    You can create 2 types of shortcuts, they are:
 
     -   If you set the `Uri` property, clicking the shortcut opens the URI.
-    -   If the `Uri` property is not set, clicking the shortcut launches the application that set the shortcut.
+    -   If the `Uri` property is not set, clicking the shortcut launches the application that set the shortcut:
 
     ```csharp
     HomeShortcutInfo shortcut = new HomeShortcutInfo
@@ -145,9 +143,9 @@ To add a shortcut to the home screen:
     ```
 
 <a name="add_widget"></a>
-## Adding a Widget
+## Add a widget
 
-To add a widget to the home screen:
+To add a widget to the home screen, follow these steps:
 
 1.  Before adding a widget to the home screen, a widget application must be prepared.
 2. Define the widget details (such as its ID, size, and period) with the properties of the [Tizen.Applications.Shortcut.WidgetShortcutInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Shortcut.WidgetShortcutInfo.html) class:
@@ -172,6 +170,6 @@ To add a widget to the home screen:
     ShortcutManager.Add(shortcut);
     ```
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 4.0 and Higher

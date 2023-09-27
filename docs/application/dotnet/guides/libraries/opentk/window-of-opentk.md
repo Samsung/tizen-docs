@@ -4,9 +4,9 @@ This guide explains how to use `Window` property of `TizenGameApplication` class
 
 `Window` defines many events including [input event](#input-event), [window related event](#window-related-event), and [render related event](#render-related-event). You can add the event handlers of these events, if needed.
 
-## Input Event
+## Input event
 
-It supposed your application wants to execute some operations while a user is inputting text with a keyboard or selecting some menus with a mouse. You can implement such a use case by adding input event handlers for **key** or **mouse** event using `Window` of OpenTK. For example, if your device supports remote controller, you can use **key** event. If your device supports mouse, you can use **mouse** event.
+Suppose your application wants to execute some operations while a user is inputting text with a keyboard or selecting menu with a mouse. You can implement such a use case by adding input event handlers for **key** or **mouse** event using `Window` of OpenTK. For example, if your device supports remote controller, you can use **key** event. If your device supports mouse, you can use **mouse** event.
 
 The following code snippet shows how to add **mouse** and **key** event handlers:
 
@@ -64,7 +64,7 @@ private void KeyDownEventHandler(object sender, KeyboardKeyEventArgs e)
 
 ```
 
-## Window Related Event
+## Window related event
 
 `Window` supports some window state related events, such as **Closed**, **Closing**, **FocusedChanged**, **Resize**, **VisibleChanged**, **WindowStateChanged**, and so on.
 
@@ -88,9 +88,9 @@ private void ResizeEventHandler(object sender, EventArgs e)
 }
 ```
 
-## Render Related Event
+## Render related event
 
-`Window` also supports the render related events:
+`Window` also supports these render related events:
 
 - `RenderFrame`: Occurs when a frame is rendered.
 - `UpdateFrame`: Occurs when a frame is updated before `RenderFrame` event occurs.
@@ -129,6 +129,6 @@ private void OnRenderFrame(Object sender, FrameEventArgs e)
 }
 ```
 
-## Related Information
+## Related information
 - Dependencies
   -   Tizen 5.0 and Higher

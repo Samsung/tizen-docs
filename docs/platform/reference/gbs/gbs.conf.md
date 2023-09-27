@@ -123,7 +123,7 @@ url = https://api.tizen.org
 
 This section provides information about the configuration specification.
 
-### Configuring common properties
+### Configure common properties
 
 Typical common properties include `buildroot`, `user`, and `password`.
 
@@ -146,7 +146,7 @@ passwd=<New_Password>
 ```
 
 <a name="configuring-multiple-profiles"></a>
-### Configuring multiple profiles
+### Configure multiple profiles
 
 By adding configuration specifications of multiple profiles aimed at various devices in 1 configuration file, the GBS behavior oriented for a variety of devices can be manipulated by using a central configuration file.
 
@@ -169,7 +169,7 @@ $ gbs build --profile=profile.mobile -A i586
 $ gbs remotebuild --profile=mobile
 ```
 
-### Configuring a repository
+### Configure a repository
 
 You can configure a repository to adapt the GBS build. The repository configuration specification starts with the section declaration named "[repo.<customized_name>]", and is followed by various properties, including:
 

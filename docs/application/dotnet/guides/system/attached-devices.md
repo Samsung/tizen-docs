@@ -3,7 +3,7 @@
 
 You can control attached devices and monitor device changes in your application.
 
-The main features of the device control include:
+The main features of the device control include the following:
 
 -   Battery information
 
@@ -39,7 +39,7 @@ The main features of the device control include:
 
 ## Prerequisites
 
-To enable your application to use the attached device control functionality:
+To enable your application to use the attached device control functionality, follow the steps below:
 
 1.  To use the [Tizen.System.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Display.html), [Tizen.System.Led](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Led.html), and [Tizen.System.Vibrator](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Vibrator.html) classes, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -60,14 +60,14 @@ To enable your application to use the attached device control functionality:
     using Tizen.System;
     ```
 
-## Retrieving Battery Information
+## Retrieve battery information
 
 <a name="battery"></a>
-To retrieve battery information:
+To retrieve battery information, follow the steps below:
 
 -   Get the battery charge percentage with the `Percent` property of the [Tizen.System.Battery](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Battery.html) class.
 
-    The property contains the current battery charge percentage as an integer value from 0 to 100 that indicates the remaining battery charge as a percentage of the maximum level.
+    The property contains the current battery charge percentage as an integer value from 0 to 100 that indicates the remaining battery charge as a percentage of the maximum level:
 
     ```csharp
     int s_Percent;
@@ -76,7 +76,7 @@ To retrieve battery information:
 
 -   Get the current battery charging state with the `IsCharging` property.
 
-    The property contains the device battery charging state as `TRUE` or `FALSE`.
+    The property contains the device battery charging state as `TRUE` or `FALSE`:
 
     ```csharp
     bool charging;
@@ -85,7 +85,7 @@ To retrieve battery information:
 
 -   Get the current battery level with the `Level` property.
 
-    The property contains the device battery level as a value of the [Tizen.System.BatteryLevelStatus](/application/dotnet/api/TizenFX/latest/api/Tizen.System.BatteryLevelStatus.html) enumeration.
+    The property contains the device battery level as a value of the [Tizen.System.BatteryLevelStatus](/application/dotnet/api/TizenFX/latest/api/Tizen.System.BatteryLevelStatus.html) enumeration:
 
     ```csharp
     BatteryLevelStatus status;
@@ -93,9 +93,9 @@ To retrieve battery information:
     ```
 
 <a name="display"></a>
-## Controlling the Display
+## Control the display
 
-To retrieve and set display properties:
+To retrieve and set display properties, follow these steps:
 
 -   Get the number of display devices with the `NumberOfDisplays` property of the [Tizen.System.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Display.html) class:
 
@@ -124,7 +124,7 @@ To retrieve and set display properties:
 
 -   Get and set the display state with the `State` property.
 
-    The property contains the display state as a value of the [Tizen.System.DisplayState](/application/dotnet/api/TizenFX/latest/api/Tizen.System.DisplayState.html) enumeration.
+    The property contains the display state as a value of the [Tizen.System.DisplayState](/application/dotnet/api/TizenFX/latest/api/Tizen.System.DisplayState.html) enumeration:
 
     ```csharp
     DisplayState state;
@@ -133,9 +133,9 @@ To retrieve and set display properties:
     ```
 
 <a name="haptic"></a>
-## Controlling Haptic Devices
+## Control haptic devices
 
-To control haptic devices:
+To control haptic devices, follow these steps:
 
 -   Get the number of haptic devices with the `NumberOfVibrators` property of the [Tizen.System.Vibrator](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Vibrator.html) class:
 
@@ -146,7 +146,7 @@ To control haptic devices:
 
 -   Play and stop an effect on a given haptic device with the `Vibrate()` and `Stop()` methods.
 
-    The device vibrates for a specified time with a constant intensity. The effect handle can be 0.
+    The device vibrates for a specified time with a constant intensity. The effect handle can be 0:
 
     ```csharp
     Vibrator vib = Vibrator.Vibrators[0];
@@ -156,18 +156,18 @@ To control haptic devices:
     ```
 
 <a name="ir"></a>
-## Controlling IR Devices
+## Control IR devices
 
-To control an IR device:
+To control an IR device, follow these steps:
 
-1.  Determine whether IR is available on the device using the `IsAvailable` property of the [Tizen.System.IR](/application/dotnet/api/TizenFX/latest/api/Tizen.System.IR.html) class:
+-   Determine whether IR is available on the device using the `IsAvailable` property of the [Tizen.System.IR](/application/dotnet/api/TizenFX/latest/api/Tizen.System.IR.html) class:
 
     ```csharp
     bool test;
     test = IR.IsAvailable;
     ```
 
-2.  Transmit an IR pattern with a specific carrier frequency using the `Transmit()` method:
+-   Transmit an IR pattern with a specific carrier frequency using the `Transmit()` method:
 
     ```csharp
     List<int> pattern = new List<int>();
@@ -177,8 +177,8 @@ To control an IR device:
     ```
 
 <a name="led"></a>
-## Controlling LED Devices
-To control LEDs on the device:
+## Control LED devices
+To control LEDs on the device, follow the steps below:
 
 -   Get the maximum brightness value of a camera flash LED with the `MaxBrightness` property of the [Tizen.System.Led](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Led.html) class:
 
@@ -213,13 +213,13 @@ To control LEDs on the device:
     ```
 
 <a name="power"></a>
-## Controlling the Power State
+## Control the power state
 
-To lock and unlock the CPU state:
+To lock and unlock the CPU state, follow the steps below:
 
 -   Lock the power state with the `RequestLock()` method of the [Tizen.System.Power](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Power.html) class.
 
-    The method locks the given PowerLock of the [Tizen.System.PowerLock](/application/dotnet/api/TizenFX/latest/api/Tizen.System.PowerLock.html) enumeration for a specified time. After the given time (in milliseconds), the lock is unlocked. If the process is destroyed, every lock is removed.
+    The method locks the given PowerLock of the [Tizen.System.PowerLock](/application/dotnet/api/TizenFX/latest/api/Tizen.System.PowerLock.html) enumeration for a specified time. After the given time (in milliseconds), the lock is unlocked. If the process is destroyed, every lock is removed:
 
     ```csharp
     Power.RequestLock(PowerLock.Cpu, 2000);
@@ -232,7 +232,7 @@ To lock and unlock the CPU state:
     ```
 
 <a name="changes"></a>
-## Monitoring Device Changes
+## Monitor device changes
 
 To monitor device changes, use event handlers registered to the following events:
 
@@ -241,7 +241,7 @@ To monitor device changes, use event handlers registered to the following events
 -   `StateChanged` event in the [Tizen.System.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Display.html) class is called when the device display state changes.
 -   `BrightnessChanged` event in the [Tizen.System.Led](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Led.html) class is called when LED brightness changes.
 
-To manage device display status change events:
+To manage device display status change events, follow these steps:
 
 1.  Define an event handler:
 
@@ -267,6 +267,6 @@ To manage device display status change events:
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

@@ -18,7 +18,7 @@ TIC is an image creator tool used to create images for Tizen. The main features 
 
 ### Set up TIC on your PC
 
-1. Download the pre-configured docker-compose file, [TIC docker-compose](https://s3-us-west-1.amazonaws.com/tizenschool/257/docker-compose.yaml).
+1. Download the pre-configured docker-compose file, [TIC docker-compose](https://raw.githubusercontent.com/Samsung/tizen-docs/master/docs/platform/developing/media/docker-compose.yaml).
 
 2. Run the TIC docker container as a service:
 

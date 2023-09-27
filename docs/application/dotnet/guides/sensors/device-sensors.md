@@ -33,7 +33,7 @@ A device can have various physical and virtual sensors. The following table list
 | [Heart rate monitor sensor](#hrm) | [Pressure sensor](#pressure)  |  |
 ## Prerequisites
 
-To enable your application to use the device sensor functionalities:
+To enable your application to use the device sensor functionalities, follow the steps below:
 
 1.  To use any health-related sensors, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -52,7 +52,7 @@ To enable your application to use the device sensor functionalities:
 <a name="sensor"></a>
 ## Create a sensor instance
 
-If an application wants to observe data from a specific sensor, you must create a sensor instance:
+If an application wants to observe data from a specific sensor, you must create a sensor instance by following these steps:
 
 -   For a specific supported sensor type, a device can have multiple sensors.
 
@@ -212,7 +212,7 @@ The `AutoRotationState` property is one of the values of the [Tizen.Sensor.AutoR
 
 ## Geomagnetic orientation sensor
 
-The geomagnetic orientation sensor combines the 3-axis accelerometer and 3-axis magnetic sensor to determine the orientation (rotation angles) of the device. The geomagnetic orientation sensor is similar to the orientation sensor, but does not use a gyroscope. The geomagnetic orientation is the output of a software/hardware-based sensor fusion solution that uses the accelerometer and magnetic sensor. The geomagnetic orientation sensor output is an alternative representation to the geomagnetic rotation vector sensor output used to determine the rotation of the device, and it is calculated in terms of Euler angles:
+The geomagnetic orientation sensor combines the 3-axis accelerometer and 3-axis magnetic sensor to determine the orientation (rotation angles) of the device. The geomagnetic orientation sensor is similar to the orientation sensor but does not use a gyroscope. The geomagnetic orientation is the output of a software/hardware-based sensor fusion solution that uses the accelerometer and magnetic sensor. The geomagnetic orientation sensor output is an alternative representation to the geomagnetic rotation vector sensor output used to determine the rotation of the device, and it is calculated in terms of Euler angles:
 
 -   Azimuth
 -   Pitch

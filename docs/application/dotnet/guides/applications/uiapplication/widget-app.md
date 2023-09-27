@@ -1,6 +1,9 @@
-# Widget application
+# Widget Application
 
-The widget applications are commonly used in applications like home screen or lock screen. The .NET Tizen API provides two class that allows you to implement widget applications:
+> [!NOTE]
+> WidgetApplication class is deprecated since API Level 10 and will be removed in API Level 12. 
+
+The widget applications are commonly used in applications like home screen or lock screen. The .NET Tizen API provides the following two classes that allows you to implement widget applications:
 
 1. [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html)
 2. [WidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html)
@@ -13,23 +16,23 @@ An instance of the widget is managed by a [Widget Viewer](../../app-management/w
 
 ## Widget features
 
-The main features of widget application include:
+The main features of the widget application includes the following:
 
 - Creating widget applications
 
-You can [create a widget application](#create-widget) that usually has single process for maintaining the main loop. Within the process, the framework can [create multiple widget instances](#widget-instances) that can share the same resources. The widget application can also share data with other applications. The widget application can also [share data](#share) with other applications. Multiple instances of the same widget app could be used to create different UI for different size of the widget instance.
+  You can [create a widget application](#create-widget) that usually has a single process for maintaining the main loop. Within the process, the framework can [create multiple widget instances](#widget-instances) that can share the same resources. The widget application can also share data with other applications. The widget application can also [share data](#share) with other applications. Multiple instances of the same widget app could be used to create different UI for different size of the widget instance.
 
 - Managing multiple widget instances
 
   Whenever a widget instance is requested, the framework creates one. You can manage the widget instances by updating or destroying them, or by retrieving information about them.
 
-- Managing the life-cycle
+- Managing the life cycle
 
-  You can manage the [widget instance](#life-cycle) life-cycle through callback methods that are triggered as the instance state changes.
+  You can manage the [widget instance](#life-cycle) life cycle through callback methods that are triggered as the instance state changes.
 
 - Creating the widget UI
 
- The widget application can create a user interface that appears on the home screen or other widget viewer application. The UI of the widget application limits scroll actions to provide a better user experience. It is recommended that you design UI layout within the given screen size.
+  The widget application can create a user interface that appears on the home screen or other widget viewer applications. The UI of the widget application limits scroll actions to provide a better user experience. It is recommended that you design the UI layout within the given screen size.
 
 <div id="NoteSection">
     <div class="sampletab " id="note_tab">
@@ -75,7 +78,7 @@ You can [create a widget application](#create-widget) that usually has single pr
             <tbody>
                 <tr>
                     <p><a href="/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html"><code>NUIWidgetApplication</code></a> makes diverse class instances whenever <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetView.html"><code>WidgetView</code></a> requests for a widget instance.</p>
-                    <p>The widget instance has its own life-cycle similar to that of the widget application. However, the widget instance is an object created by the widget viewer application. Many widget instances can be running on a widget application process.</p>
+                    <p>The widget instance has its own life cycle similar to that of the widget application. However, the widget instance is an object created by the widget viewer application. Many widget instances can be running on a widget application process.</p>
                     <blockquote class="alert alert-note"><span class="alert-title"><span class="alert-title--icon"></span><span class="alert-title--text">Note</span></span>
                         <p> The case to use many widget instances in one widget application is known as multi-instance. In some devices, the multi-instance may not be supported. If a device does not support multi-instance, an error message is displayed.</p>
                     </blockquote>
@@ -90,7 +93,7 @@ You can [create a widget application](#create-widget) that usually has single pr
             <tbody>
                 <tr>
                     <p>The <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html">WidgetApplication</a> class provides the <code>WidgetApplication(IDictionary&lt; Type, string &gt; typeInfo)</code> constructor, that allows a widget application to have multiple widget classes. The widget applications with multiple classes can make diverse class instances whenever widget viewer applications, such as the home screen and the lock screen, request for a widget instance.</p>
-                    <p>The widget instance has its own life-cycle similar to the widget application. However, the widget instance is only an object shown by the widget viewer applications. Many widget instances can be running on the same widget application process.</p>
+                    <p>The widget instance has its own life cycle similar to the widget application. However, the widget instance is only an object shown by the widget viewer applications. Many widget instances can be running on the same widget application process.</p>
                 </tr>
             </tbody>
         </table>
@@ -104,7 +107,7 @@ You can [create a widget application](#create-widget) that usually has single pr
 <a name="life-cycle"></a>
 ## Widget instance states and events
 
-The following figure illustrates the widget instance states during the instance life-cycle:
+The following figure illustrates the widget instance states during the instance life cycle:
 
 - When the application is in the Ready state, the instance does not exist.
 - When the instance is created, it is in the Created state.
@@ -112,9 +115,9 @@ The following figure illustrates the widget instance states during the instance 
 - When the instance is invisible, it is in the Paused state.
 - When the instance is destroyed, it is in the Destroyed state.
 
-**Figure: Widget instance life-cycle**
+**Figure: Widget instance life cycle**
 
-![Widget instance life-cycle](./media/csharp_widgetapplication.png)
+![Widget instance life cycle](./media/csharp_widgetapplication.png)
 
 <div id="ClassSection">
     <div class="sampletab " id="note_tab">
@@ -233,7 +236,7 @@ To enable your application to use the widget functionality, you have to modify a
    class Program : NUIWidgetApplication
    ```
 
-3. The widget application starts with `Main()`, which creates and initializes the application. `Run()` method of [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class is used to start the application event-loop. `NUIWidgetApplication` class provides two kinds of constructors:
+3. The widget application starts with `Main()`, which creates and initializes the application. `Run()` method of [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class is used to start the application event loop. `NUIWidgetApplication` class provides the two following kinds of constructors:
 
    - For using the `NUIWidgetApplication(Type type)` constructor, in case the widget application's ID is the same as the application ID:
 
@@ -406,64 +409,64 @@ The widget application starts with the `Main()` function, which creates and init
 
 4.  The widget UI is drawn in the `OnCreate()` callback of your widget class:
 
-```csharp
-public override void OnCreate(Bundle content, int w, int h)
-{
-    try
+    ```csharp
+    public override void OnCreate(Bundle content, int w, int h)
     {
-        base.OnCreate(content, w, h);
-        Conformant conformant = new Conformant(Window);
-        conformant.Show();
-        Scroller scroller = new Scroller(Window)
+        try
         {
-            AlignmentX = -1,
-            AlignmentY = -1,
-            WeightX = 1,
-            WeightY = 1,
-            ScrollBlock = ScrollBlock.None,
-        };
-        scroller.Show();
+            base.OnCreate(content, w, h);
+            Conformant conformant = new Conformant(Window);
+            conformant.Show();
+            Scroller scroller = new Scroller(Window)
+            {
+                AlignmentX = -1,
+                AlignmentY = -1,
+                WeightX = 1,
+                WeightY = 1,
+                ScrollBlock = ScrollBlock.None,
+            };
+            scroller.Show();
 
-        Box box = new Box(Window)
-        {
-            AlignmentX = -1,
-            AlignmentY = -1,
-            WeightX = 1,
-            WeightY = 1,
-        };
-        box.Show();
-        scroller.SetContent(box);
-        conformant.SetContent(scroller);
+            Box box = new Box(Window)
+            {
+                AlignmentX = -1,
+                AlignmentY = -1,
+                WeightX = 1,
+                WeightY = 1,
+            };
+            box.Show();
+            scroller.SetContent(box);
+            conformant.SetContent(scroller);
 
-        Button exitButton = new Button(Window)
+            Button exitButton = new Button(Window)
+            {
+                Text = "Exit Test",
+                AlignmentX = -1,
+                AlignmentY = -1,
+                WeightX = 1,
+                WeightY = 1
+            };
+            box.PackEnd(exitButton);
+            exitButton.Show();
+        }
+        catch (Exception e)
         {
-            Text = "Exit Test",
-            AlignmentX = -1,
-            AlignmentY = -1,
-            WeightX = 1,
-            WeightY = 1
-        };
-        box.PackEnd(exitButton);
-        exitButton.Show();
+            Log.Warn(_logTag, "exception " + e);
+        }
     }
-    catch (Exception e)
-    {
-        Log.Warn(_logTag, "exception " + e);
-    }
-}
-```
+    ```
 
-</span>
-                </tr>
-            </tbody>
-        </table>
+    </span>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
 <a name="share"></a>
 ## Data sharing between the widget application and other applications
 
-You can share data between widget applications and UI (or service) applications. However, you must understand that this kind of data sharing is dependent on the file system. The reason is that the system (home screen) controls the widget application life-cycle, while the UI application life-cycle is mostly explicitly controlled by the user.
+You can share data between widget applications and UI (or service) applications. However, you must understand that this kind of data sharing is dependent on the file system. The reason is that the system (home screen) controls the widget application life cycle, while the UI application life cycle is mostly explicitly controlled by the user.
 
 For example, consider the differences between a Weather application and a Weather widget:
 
@@ -482,7 +485,7 @@ To manage data through the `data` directory, you can use the methods and propert
 
 If an application requires complex control over a widget, such as Music Player, it must implement a service application in the middle and use a data control with the classes and methods of the [Tizen.Applications.DataControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace.
 
-For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the data control to [provide data to the other applications](../../exchange-data-between-apps/data-control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
+For example, a music-player-service service application is needed to control the audio device, process audio files, handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the data control to [provide data to the other applications](../../exchange-data-between-apps/data-control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
 
 **Figure: Sharing through data control**
 

@@ -92,7 +92,7 @@ You can perform the following tasks using the **Overview** tab:
 
 ### Declaring Required Software or Hardware Features in the Features Tab
 
-You can declare any device software or hardware features that your application requires to run properly. The declaration can be used for application filtering in Tizen Store.
+You can declare any device software or hardware features that your application requires to run properly. The declaration can be used for application filtering in the official site for Tizen applications.
 
 To enable filtering for your native application:
 
@@ -104,7 +104,7 @@ To enable filtering for your native application:
 
 3. Click **OK**.
 
-4. Upload and publish the application package on Tizen Store.
+4. Upload and publish the application package on the store.
 
    If a Tizen-powered device requests applications, the store displays a list containing only applications compatible with the user's device.
 

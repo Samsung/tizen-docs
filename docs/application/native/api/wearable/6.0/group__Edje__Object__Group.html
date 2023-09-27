@@ -190,6 +190,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this object is animating or not.  <a href="#ga5e3d1908fd5b8a5a96d1b73bf123f789"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Group.html#ga728d0a0b58f9dc1001d121d4c04657b5">edje_object_animation_get</a> (const Efl_Canvas_Layout *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this object is animating or not.  <a href="#ga728d0a0b58f9dc1001d121d4c04657b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Efl_Input_Device *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Group.html#ga8768214253d31d9d3d8f63c3c4fcd4fc">edje_object_seat_get</a> (const Efl_Canvas_Layout *obj, <a class="el" href="group__Eina__Stringshare__Group.html#ga2b7dc19609a55e630a96cc1396e38a53">Eina_Stringshare</a> *name)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the seat device given its Edje's name.  <a href="#ga8768214253d31d9d3d8f63c3c4fcd4fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Stringshare__Group.html#ga2b7dc19609a55e630a96cc1396e38a53">Eina_Stringshare</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Group.html#ga657146e9c18686c81924b07c3f4df064">edje_object_seat_name_get</a> (const Efl_Canvas_Layout *obj, Efl_Input_Device *device)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name given to a set by Edje.  <a href="#ga657146e9c18686c81924b07c3f4df064"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Group.html#ga3056e02b3c85a7583c4ad1884b45ec7e">edje_object_layout_load_error_get</a> (const Efl_Canvas_Layout *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the (last) file loading error for a given object.  <a href="#ga3056e02b3c85a7583c4ad1884b45ec7e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Group.html#gac3c82a41baf8df93b4888268c11d040c">edje_object_content_remove</a> (Efl_Canvas_Layout *obj, Efl_Gfx_Entity *content)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unswallow an object from this Edje.  <a href="#gac3c82a41baf8df93b4888268c11d040c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum _Edje_Aspect_Control&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Group.html#gaa50f836ed4cce5dda7c2f3ba3bdd236a">Edje_Aspect_Control</a></td></tr>
@@ -529,6 +537,43 @@ Typedefs</h2></td></tr>
 </dl>
 </div>
 </div>
+<a class="anchor" id="gac3c82a41baf8df93b4888268c11d040c"></a><!-- doxytag: member="efl_canvas_layout_eo.legacy.h::edje_object_content_remove" ref="gac3c82a41baf8df93b4888268c11d040c" args="(Efl_Canvas_Layout *obj, Efl_Gfx_Entity *content)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Group.html#gac3c82a41baf8df93b4888268c11d040c">edje_object_content_remove</a> </td>
+          <td>(</td>
+          <td class="paramtype">Efl_Canvas_Layout *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Efl_Gfx_Entity *&#160;</td>
+          <td class="paramname"><em>content</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unswallow an object from this Edje. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">content</td><td>To be removed content.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>false</code> if <code>content</code> was not a child or can not be removed. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga991011136950e9be03821040d7bfa59c"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_file_get" ref="ga991011136950e9be03821040d7bfa59c" args="(const Evas_Object *obj, const char **file, const char **group)" -->
 <div class="memitem">
 <div class="memproto">
@@ -754,6 +799,32 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a3">edje-text.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ga3056e02b3c85a7583c4ad1884b45ec7e"></a><!-- doxytag: member="efl_canvas_layout_eo.legacy.h::edje_object_layout_load_error_get" ref="ga3056e02b3c85a7583c4ad1884b45ec7e" args="(const Efl_Canvas_Layout *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a> <a class="el" href="group__Edje__Object__Group.html#ga3056e02b3c85a7583c4ad1884b45ec7e">edje_object_layout_load_error_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Efl_Canvas_Layout *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the (last) file loading error for a given object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The load error code. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ga4d244ed455a48b9cbf286b6d8b802df3"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_load_error_get" ref="ga4d244ed455a48b9cbf286b6d8b802df3" args="(const Evas_Object *obj)" -->
@@ -1242,6 +1313,84 @@ On failure, this function will make all non-$null geometry pointers' pointed var
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>false</code> if obj was not a valid Edje object otherwise <code>true</code> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8768214253d31d9d3d8f63c3c4fcd4fc"></a><!-- doxytag: member="efl_canvas_layout_eo.legacy.h::edje_object_seat_get" ref="ga8768214253d31d9d3d8f63c3c4fcd4fc" args="(const Efl_Canvas_Layout *obj, Eina_Stringshare *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Efl_Input_Device* <a class="el" href="group__Edje__Object__Group.html#ga8768214253d31d9d3d8f63c3c4fcd4fc">edje_object_seat_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Efl_Canvas_Layout *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Stringshare__Group.html#ga2b7dc19609a55e630a96cc1396e38a53">Eina_Stringshare</a> *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the seat device given its Edje's name. </p>
+<p>Edje references seats by a name that differs from Evas. Edje naming follows a incrementional convention: first registered name is "seat1", second is "seat2", differently from Evas.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name's character string.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The seat device or <code>null</code> if not found.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga657146e9c18686c81924b07c3f4df064"></a><!-- doxytag: member="efl_canvas_layout_eo.legacy.h::edje_object_seat_name_get" ref="ga657146e9c18686c81924b07c3f4df064" args="(const Efl_Canvas_Layout *obj, Efl_Input_Device *device)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Stringshare__Group.html#ga2b7dc19609a55e630a96cc1396e38a53">Eina_Stringshare</a>* <a class="el" href="group__Edje__Object__Group.html#ga657146e9c18686c81924b07c3f4df064">edje_object_seat_name_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Efl_Canvas_Layout *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Efl_Input_Device *&#160;</td>
+          <td class="paramname"><em>device</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the name given to a set by Edje. </p>
+<p>Edje references seats by a name that differs from Evas. Edje naming follows a incrementional convention: first registered name is "seat1", second is "seat2", differently from Evas.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The seat device</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The name's character string or <code>null</code> if not found.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
 
 </div>
 </div>

@@ -1,9 +1,9 @@
-# Media and Camera
+# Multimedia
 
 
-The media and camera features introduce how you can use multimedia features in your application.
+Multimedia features introduce how you can use multimedia features in your application.
 
-You can use the following media and camera features in your .NET applications:
+You can use the following multimedia features in your .NET applications:
 
 -   [Media Content](media-content.md)
 
@@ -12,6 +12,10 @@ You can use the following media and camera features in your .NET applications:
 -   [Metadata](metadata.md)
 
     You can manage audio file attributes, extract metadata from media files, and retrieve various information related to the MIME type.
+
+-   [Image Editing](image-edit.md)
+
+    You can view and process bitmap images in JPEG format. The processing includes decoding, encoding, converting, and compressing images.
 
 -   [Thumbnail Images](thumbnail-images.md)
 
@@ -39,7 +43,7 @@ You can use the following media and camera features in your .NET applications:
 
 -   [Media Controller](media-controller.md)
 
-    You can communicate between the media controller server and client. The client can send requests to the server to modify the media, and the server can respond to the requests by modifying the media directly as requested. For the media controller feature to work, you must create both the client and server applications.
+    You can communicate between the media controller server and the client. The client can send requests to the server to modify the media, and the server can respond to the requests by modifying the media directly as requested. For the media controller feature to work, you must create both the client and server applications.
 
 -   [Media Conversions](media-conversions.md)
 
@@ -47,11 +51,7 @@ You can use the following media and camera features in your .NET applications:
 
 -   [Screen Mirroring](screen-mirroring.md)
 
-    You can mirror the device screen and sound to another device wirelessly. Tizen supports the screen mirroring feature as a sink which receives shared data from a source device that supports the Wi-Fi Display Technical Specification, and displays it.
-
--   [Media Stream Recording](stream-recorder.md)
-
-    You can record audio and video from a stream, and control the recording process through various settings. You can also access details, such as file names of the recordings.
+    You can mirror the device screen and sound to another device wirelessly. Tizen supports the screen mirroring feature as a sink that receives shared data from a source device that supports the Wi-Fi Display Technical Specification and displays it.
 
 -   [Radio](radio.md)
 
@@ -61,7 +61,11 @@ You can use the following media and camera features in your .NET applications:
 
     You can use the camera to preview and capture images. You can capture still images with the device's internal camera and keep images on your target device.
 
+-   [WebRTC](webrtc.md)
 
-## Related Information
+    You can have real-time audio/video communication with a remote peer. You can also send and receive generic data with a remote peer.
+
+
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

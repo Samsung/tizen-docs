@@ -1,12 +1,12 @@
 # Application Preferences
 
-Many applications require to save data in the persistent memory and read them in the next session in a safe way. Saved data can be sensitive, so in many cases access to the saved preference should be restricted. Preference API allows you to share stored preference data among applications in the same package.
+Many applications are required to save data in the persistent memory and read them in the next session in a safe way. Saved data can be sensitive, so in many cases access to the saved preference should be restricted. Preference API allows you to share stored preference data among applications in the same package.
 
 ## Store and retrieve records
 
 To store a variable, you must create a key-value pair. Use the following function to create a preference for a specific simple type: `Preference.Set(string key, value)`.
 
-Before storing or retrieving a variable, check whether it exists using the `Preference.Contains(string key)` function. Use the following function to retrieve a stored variable: `Preference.Get<T>()`.
+Before storing or retrieving a variable, check whether it exists using the `Preference.Contains(string key)` function. Use the following function to retrieve a stored variable: `Preference.Get<T>()`:
 
   ```csharp
   //set/get integer value
@@ -25,7 +25,7 @@ To store and retrieve string variables, use the following functions:
 
 ## List records 
 
-To list all records, use `Keys` collection: `Preference.Keys()`
+To list all records, use `Keys` collection `Preference.Keys()`:
 
   ```csharp
     Preference.Set("Option_enabled", true);
@@ -42,7 +42,7 @@ To list all records, use `Keys` collection: `Preference.Keys()`
 
 ## Remove records
 
-To safely remove records, use: `Preference.Remove(string key)`;
+To safely remove records, use `Preference.Remove(string key)`:
 
 ```csharp
     if (Preference.Contains("key"))
@@ -51,19 +51,19 @@ To safely remove records, use: `Preference.Remove(string key)`;
     }
 ```
 
-To remove all records, use:
+To remove all records, use the following function:
   - `Preference.RemoveAll()`
 
-## Managing application preferences
+## Manage application preferences
 
-Following code snippet shows how to store counter value, when application is closed using [Tizen.Applications.Preference](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Preference.html) module.
+The following code snippet shows how to store counter value when the application is closed using [Tizen.Applications.Preference](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Preference.html) module.
 
 **Figure: Preference Application Screenshot**
 
 ![Screenshot](./media/preferences.png)
 
-Clicked counter is stored as a pair of key - value data. When the application starts it tries to read this value and inserts it in the label component.
-To use NUI components and Preference module following namespaces are included:
+The clicked counter is stored as a pair of key-value data. When the application starts it tries to read this value and inserts it in the label component.
+To use NUI components and Preference module, the following namespaces are included:
 
 ```csharp
 using System;
@@ -75,7 +75,7 @@ using Tizen.NUI.Components;
 using Tizen.Applications;
 ```
 
-The `ClickedPreferenceKey` key is used to store counter value. Declared as a class member to use it in buttons callbacks. Also the `TextLabel` have to be a class member to show and update counter value:
+The `ClickedPreferenceKey` key is used to store counter value. It has to be declared as a class member for it to be used in button callbacks. Also, the `TextLabel` has to be a class member to show and update the counter value:
 
 ```csharp
 namespace NUIPreference
@@ -94,7 +94,7 @@ namespace NUIPreference
 }
 ```
 
-The `OnCreate()` handler tries to read value from the `Preference` module. Try / Catch block is useful when `ClickedPreferenceKey` is not set previously:
+The `OnCreate()` handler tries to read value from the `Preference` module. Try/Catch block is useful when `ClickedPreferenceKey` is not set previously:
 
 ```csharp
 protected override void OnCreate()
@@ -112,7 +112,7 @@ protected override void OnCreate()
 }
 ```
 
-In `OnTerminate()` method you can save key - value pairs:
+In `OnTerminate()` method you can save key-value pairs:
 
 ```csharp
 protected override void OnTerminate()
@@ -125,7 +125,7 @@ protected override void OnTerminate()
 The `CreateButtons()` method is a helper function. It is responsible for the following:
 - Creating buttons layout,
 - Creating buttons,
-- Setup callbacks.
+- Setup callbacks:
 
 ```csharp
 private View CreateButtons()

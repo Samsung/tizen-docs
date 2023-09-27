@@ -1,12 +1,12 @@
 # Bluetooth
 
-You can use Bluetooth functionalities in your application to, for example, manage the local Bluetooth adapter, and bond with and exchange data between Bluetooth-enabled devices. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over short distance between compliant devices.
+You can use Bluetooth functionalities in your application to, for example, manage the local Bluetooth adapter, and bond with and exchange data between Bluetooth-enabled devices. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over a short distance between compliant devices.
 
 **Figure: Bluetooth connections**
 
 ![Bluetooth connections](./media/bluetooth_device_discovering.png)
 
-The main features of the Tizen.Network.Bluetooth namespace include:
+The main features of the Tizen.Network.Bluetooth namespace includes the following:
 
 -   Managing the local Bluetooth adapter
 
@@ -24,7 +24,7 @@ The main features of the Tizen.Network.Bluetooth namespace include:
 
     You can create a bond with another device with the `Tizen.Network.Bluetooth.BluetoothDevice` class. Bonding allows the 2 devices to establish a connection.
 
-    Connected devices exchange keys needed for encrypted communication, but each connection has to be approved by the latest application user. You can also set authorization of other devices. Authorized devices are connected automatically without the latest user being asked for authorization.
+    Connected devices exchange keys needed for encrypted communication, but each connection has to be approved by the latest application user. You can also set the authorization of other devices. Authorized devices are connected automatically without the latest user being asked for authorization.
 
 -   Connecting to and exchanging data with a Bluetooth device using a Bluetooth socket
 
@@ -71,13 +71,13 @@ Remember to [release all resources](#release) when you are done.
 Bluetooth use is based on profiles. Tizen Bluetooth features support the Audio, GATT, and HID profiles.
 
 
-> **Note**   
+> [!NOTE]   
 > You can test the Bluetooth functionality on a target device only. The emulator does not support this feature.
 
 
 ## Prerequisites
 
-To enable your application to use the Bluetooth functionality:
+To enable your application to use the Bluetooth functionality, follow the steps below:
 
 1.  To use the [Tizen.Network.Bluetooth](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -93,7 +93,7 @@ To enable your application to use the Bluetooth functionality:
     using Tizen.Network.Bluetooth;
     ```
 <a name="enable"></a>
-## Enabling and Disabling Bluetooth
+## Enable and disable Bluetooth
 
 To allow the user to enable or disable Bluetooth, use the application control to display the Bluetooth activation settings.
 
@@ -115,11 +115,11 @@ public static bt_onoff_operation(void)
 }
 ```
 <a name="state"></a>
-## Checking the Bluetooth Adapter State
+## Check the Bluetooth adapter state
 
-To check the Bluetooth adapter state and monitor adapter state changes:
+To check the Bluetooth adapter state and monitor adapter state changes, follow the steps below:
 
-1.  Check whether the Bluetooth adapter is enabled on your device by using the `IsBluetoothEnabled` property of the [Tizen.Network.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class:
+1.  Check whether the Bluetooth adapter is enabled on your device by using the `IsBluetoothEnabled` property of the [Tizen.Network.Bluetooth.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class:
 
     ```csharp
     public class BluetoothAdapterTests
@@ -146,12 +146,12 @@ To check the Bluetooth adapter state and monitor adapter state changes:
     }
     ```
 <a name="find"></a>
-## Finding Other Devices
+## Find other devices
 
 To find remote Bluetooth devices, you can either discover them and bond with them, or you can query the list of previously bonded devices:
 
--   Discover and bond with new devices:
-    1.  Define a discovery state change event handler to manage the discovery process.
+1.  To discover and bond with new devices, follow the steps below:
+    -   Define a discovery state change event handler to manage the discovery process.
 
         The properties of the [Tizen.Network.Bluetooth.DiscoveryStateChangedEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.DiscoveryStateChangedEventArgs.html) class instance passed to the event handler contain information on the state of the discovery process and any devices discovered:
 
@@ -165,7 +165,7 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
                 In this state, you can get some information about the discovered device, such as the device MAC address, name, class, RSSI (received signal strength indicator), and bonding state. Using this information, you can bond with the discovered device.
 
-        -   The `DeviceFound` property contains the discovered Bluetooth device, as an instance of the [Tizen.Network.Bluetooth.BluetoothDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothDevice.html) class.
+        -   The `DeviceFound` property contains the discovered Bluetooth device, as an instance of the [Tizen.Network.Bluetooth.BluetoothDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothDevice.html) class:
 
         ```csharp
         public class DiscoveryCallbackTests
@@ -200,7 +200,7 @@ To find remote Bluetooth devices, you can either discover them and bond with the
         }
         ```
 
-    2.  Register the event handler with the `DiscoveryStateChanged` event of the [Tizen.Network.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class, and start the discovery process with the `StartDiscovery()` method:
+    -   Register the event handler with the `DiscoveryStateChanged` event of the [Tizen.Network.Bluetooth.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class, and start the discovery process with the `StartDiscovery()` method:
 
         ```csharp
         BluetoothAdapter.DiscoveryStateChanged += EventHandlerDiscoveryChanged;
@@ -211,9 +211,9 @@ To find remote Bluetooth devices, you can either discover them and bond with the
             await WaitDiscoveryFlag();
         ```
 
-        You can discover a nearby remote Bluetooth device, if the remote device Bluetooth is enabled and in a discovery mode.
+        You can discover a nearby remote Bluetooth device if the remote device's Bluetooth is enabled and in discovery mode.
 
-        To stop the device discovery, call the `BluetoothAdapter.StopDiscovery()` method.
+        To stop the device discovery, call the `BluetoothAdapter.StopDiscovery()` method:
 
         ```csharp
             BluetoothAdapter.StopDiscovery();
@@ -222,9 +222,9 @@ To find remote Bluetooth devices, you can either discover them and bond with the
         BluetoothAdapter.DiscoveryStateChanged -= EventHandlerDiscoveryChanged;
         ```
 
-    3.  To bond with a discovered remote device, use the `CreateBond()` method of the [Tizen.Network.Bluetooth.BluetoothDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothDevice.html) class. To cancel bonding, call the `CancelBonding()` method.
+    -   To bond with a discovered remote device, use the `CreateBond()` method of the [Tizen.Network.Bluetooth.BluetoothDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothDevice.html) class. To cancel bonding, call the `CancelBonding()` method.
 
-        To get notified when the bonding process has finished, define a bond created event handler and register it for the `BondCreated` event of the `Tizen.Network.Bluetooth.BluetoothDevice` class.
+        To get notified when the bonding process has finished, define a bond created event handler and register it for the `BondCreated` event of the `Tizen.Network.Bluetooth.BluetoothDevice` class:
 
         ```csharp
         if (device)
@@ -268,9 +268,9 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
         After you have successfully bonded with a remote device, it is included in the bonded device list. When you want to connect to that device again in the future, you do not need to discover it again. Instead, you can simply query the bonded device list to receive the information (such as address and name) you need to connect to the device. You can also query the bonded device list to verify that bonding was successful.
 
--   Query the bonded device list.
+2.  Query the bonded device list.
 
-    To query the list of previously bonded devices, use the `GetBondedDevices()` method of the `Tizen.Network.Bluetooth.BluetoothAdapter` class. The method lists all the bonded devices, and accessing the properties of each bonded device object gives more information (such as device name, MAC address, and service list) that you need to connect to the device.
+    To query the list of previously bonded devices, use the `GetBondedDevices()` method of the `Tizen.Network.Bluetooth.BluetoothAdapter` class. The method lists all the bonded devices, and accessing the properties of each bonded device object gives more information (such as device name, MAC address, and service list) that you need to connect to the device:
 
     ```csharp
     public static void BondedDeviceTest(BluetoothDevice item)
@@ -306,11 +306,11 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
     To remove a device from the bonded list, call the `DestroyBond()` method of the `Tizen.Network.Bluetooth.BluetoothDevice` class.
 
-> **Note**   
-> A Bluetooth device must be in a discovery mode (visible) for other devices to find it and connect to it. If you want other devices to find your device, you must set the device to be visible.
+> [!NOTE] 
+> A Bluetooth device must be in discovery mode (visible) for other devices to find it and connect to it. If you want other devices to find your device, you must set the device to be visible.
 
 <a name="visibility_control"></a>
-To manage the device visibility and enable discovery:
+To manage the device visibility and enable discovery, follow the steps below:
 
 1.  Check the current visibility of your device:
 
@@ -341,7 +341,7 @@ To manage the device visibility and enable discovery:
 
 2.  To allow the user to change the visibility mode of the device, use the application control to display the Bluetooth visibility setting application.
 
-    The [Tizen.Network.Bluetooth](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.html) namespace does not contain methods for changing the visibility. You must display the Bluetooth visibility setting application to allow the user to toggle the visibility state.
+    The [Tizen.Network.Bluetooth](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.html) namespace does not contain methods for changing the visibility. You must display the Bluetooth visibility setting application to allow the user to toggle the visibility state:
 
     ![Bluetooth visibility setting application](./media/bluetooth_visibility.png)
 
@@ -385,14 +385,14 @@ To manage the device visibility and enable discovery:
     BluetoothAdapter.VisibilityModeChanged += EventHandlerVisibilityModeChanged;
     ```
 <a name="connect"></a>
-## Connecting to Other Devices Using SPP
+## Connect to other devices using SPP
 
-To connect to other devices:
+To connect to other devices, follow the steps below:
 
--   Connect as a server:
-    1.  To establish a connection with your device acting as a server, create an RFCOMM Bluetooth socket using the `CreateServerSocket()` method of the [Tizen.Network.Bluetooth.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class, with the UUID of the service as a parameter. The UUID uniquely identifies which service to provide, and it must match with the UUID of the client's incoming connection in order to be accepted.
+1.  To connect as a server, follow these steps:
+    -   To establish a connection with your device acting as a server, create an RFCOMM Bluetooth socket using the `CreateServerSocket()` method of the [Tizen.Network.Bluetooth.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class, with the UUID of the service as a parameter. The UUID uniquely identifies which service to provide, and it must match with the UUID of the client's incoming connection in order to be accepted.
 
-        The socket is created as an instance of the [Tizen.Network.Bluetooth.BluetoothServerSocket](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothServerSocket.html) class.
+        The socket is created as an instance of the [Tizen.Network.Bluetooth.BluetoothServerSocket](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothServerSocket.html) class:
 
         ```csharp
         private static bool flagCreateSocketDone = false;
@@ -409,7 +409,7 @@ To connect to other devices:
         }
         ```
 
-    2.  To listen for an incoming connection from a client, call the `Listen()` method of the `Tizen.Network.Bluetooth.BluetoothServerSocket` class and define and register an event handler for the `AcceptStateChanged` event.
+    -   To listen for an incoming connection from a client, call the `Listen()` method of the `Tizen.Network.Bluetooth.BluetoothServerSocket` class and define and register an event handler for the `AcceptStateChanged` event:
 
         ```csharp
         public static IBluetoothServerSocket Socket = null;
@@ -438,12 +438,12 @@ To connect to other devices:
         }
         ```
 
-    3.  When you no longer want to accept any other connections or provide a service, destroy the server socket with the `DestroyServerSocket()` method of the `Tizen.Network.Bluetooth.BluetoothAdapter` class.
+    -   When you no longer want to accept any other connections or provide a service, destroy the server socket with the `DestroyServerSocket()` method of the `Tizen.Network.Bluetooth.BluetoothAdapter` class.
 
--   Connect as a client:
-    1.  Define a socket connection state change event handler and register it for the `ConnectionStateChanged` event of the [Tizen.Network.Bluetooth.IBluetoothClientSocket](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.IBluetoothClientSocket.html) interface. The event triggers whenever the connection state changes (for example, when a client connects to a service on the server).
+2.  To connect as a client, follow these steps:
+    -   Define a socket connection state change event handler and register it for the `ConnectionStateChanged` event of the [Tizen.Network.Bluetooth.IBluetoothClientSocket](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.IBluetoothClientSocket.html) interface. The event triggers whenever the connection state changes (for example, when a client connects to a service on the server).
 
-        The event handler receives the result of the connection state change as a value of the [Tizen.Network.Bluetooth.BluetoothError](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothError.html) enumeration, the new connection state as a value of the [Tizen.Network.Bluetooth.BluetoothSocketState](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothSocketState.html) enumeration, and an instance of the [Tizen.Network.Bluetooth.SocketConnection](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.SocketConnection.html) class that specifies connection details, including the client device MAC address.
+        The event handler receives the result of the connection state change as a value of the [Tizen.Network.Bluetooth.BluetoothError](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothError.html) enumeration, the new connection state as a value of the [Tizen.Network.Bluetooth.BluetoothSocketState](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothSocketState.html) enumeration, and an instance of the [Tizen.Network.Bluetooth.SocketConnection](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.SocketConnection.html) class that specifies connection details, including the client device MAC address:
 
         ```csharp
         public static void ConnectionStateChangedEventHandler(object sender, SocketConnectionStateChangedEventArgs args)
@@ -487,12 +487,12 @@ To connect to other devices:
 
 
 
-        > **Note**   
+        > [!NOTE]
 		> When you connect to a Bluetooth server device, retrieve the server socket file descriptor (the `SocketFd` property of the `Tizen.Network.Bluetooth.SocketConnection` class instance) in the callback and store it for later use. You need the file descriptor when sending data or disconnecting from the service.
 
 
 
-    2.  To request a connection to the Bluetooth server, first discover the server, and then create a socket using the `CreateSocket()` method of the [Tizen.Network.Bluetooth.BluetoothDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothDevice.html) class, using the UUID of the RFCOMM-based service as a parameter. This UUID must match the UUID used by the server when it created the server socket using the `CreateServerSocket()` method of the [Tizen.Network.Bluetooth.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class.
+    -   To request a connection to the Bluetooth server, first discover the server, and then create a socket using the `CreateSocket()` method of the [Tizen.Network.Bluetooth.BluetoothDevice](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothDevice.html) class, using the UUID of the RFCOMM-based service as a parameter. This UUID must match the UUID used by the server when it created the server socket using the `CreateServerSocket()` method of the [Tizen.Network.Bluetooth.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class:
 
         ```csharp
         const char *service_uuid="00001101-0000-1000-8000-00805F9B34FB";
@@ -547,9 +547,9 @@ To connect to other devices:
         Client.Connect();
         ```
 <a name="exchange"></a>
-## Exchanging Data Using SPP
+## Exchange data using SPP
 
-To share data between devices after establishing a connection:
+To share data between devices after establishing a connection, follow the steps below:
 
 1.  To write data, use the `SendData()` method of the [Tizen.Network.Bluetooth.IBluetoothClientSocket](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.IBluetoothClientSocket.html) interface, which accepts the data as a byte[] parameter:
 
@@ -563,7 +563,7 @@ To share data between devices after establishing a connection:
 
     Register the event handler for the `DataReceived` event of the [Tizen.Network.Bluetooth.IBluetoothServerSocket](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.IBluetoothServerSocket.html) interface.
 
-    The received data is passed to the event handler as an instance of the [Tizen.Network.Bluetooth.SocketData](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.SocketData.html) class, which contains the socket file descriptor, the size of the received data in bytes, and the data itself as a byte[].
+    The received data is passed to the event handler as an instance of the [Tizen.Network.Bluetooth.SocketData](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.SocketData.html) class, which contains the socket file descriptor, the size of the received data in bytes, and the data itself as a byte[]:
 
     ```csharp
     public static IBluetoothServerSocket Socket = null;
@@ -578,11 +578,11 @@ To share data between devices after establishing a connection:
     Socket.DataReceived += DataReceivedServerEventHandler;
     ```
 <a name="disconnect"></a>
-## Disconnecting from the Connected Device Using SPP
+## Disconnect from the connected device using SPP
 
-To disconnect from a device:
+To disconnect from a device, follow these steps:
 
--   If your device is a Bluetooth server, disconnect from the client with the `DestroyServerSocket()` method of the [Tizen.Network.Bluetooth.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class:
+1.  If your device is a Bluetooth server, disconnect from the client with the `DestroyServerSocket()` method of the [Tizen.Network.Bluetooth.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class:
 
     ```csharp
     if (Server != null)
@@ -591,7 +591,7 @@ To disconnect from a device:
     }
     ```
 
--   If your device is a Bluetooth client, disconnect from the server with the `Disconnect()` method of the [Tizen.Network.Bluetooth.IBluetoothClientSocket](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.IBluetoothClientSocket.html) interface:
+2.  If your device is a Bluetooth client, disconnect from the server with the `Disconnect()` method of the [Tizen.Network.Bluetooth.IBluetoothClientSocket](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.IBluetoothClientSocket.html) interface:
 
     ```csharp
     if (flagDisconnectSocketDone == false)
@@ -600,9 +600,9 @@ To disconnect from a device:
     }
     ```
 <a name="pre_gatt"></a>
-## Handling GATT Operation Preconditions
+## Handle GATT operation preconditions
 
-Before you can use the Bluetooth GATT functionalities, you must successfully connect to the BLE target.
+Before you can use the Bluetooth GATT functionalities, you must successfully connect to the BLE target by using the following procedure.
 
 Find the target device and connect to it with the `CreateClient()` and `ConnectAsync()` methods of the [Tizen.Network.Bluetooth.BluetoothGattClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattClient.html) class:
 
@@ -627,9 +627,9 @@ client.ConnectionStateChanged += GattClient_ConnectionStateChanged;
 await client.ConnectAsync(false);
 ```
 <a name="gatt"></a>
-## Managing GATT Client Operations
+## Manage GATT client operations
 
-To perform GATT client operations:
+To perform GATT client operations, follow these steps:
 
 1.  Define a connection state change event handler and register it for the `ConnectionStateChanged` event of the [Tizen.Network.Bluetooth.BluetoothGattClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattClient.html) class:
 
@@ -670,15 +670,15 @@ To perform GATT client operations:
     string address = leDevice.RemoteAddress;
     ```
 
-4.  Discover the service, characteristics, and descriptors of the remote service:
-    1.  To retrieve a list of the services belonging to the remote device, use the `GetServices()` method of the [Tizen.Network.Bluetooth.BluetoothGattClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattClient.html) class:
+4.  To discover the service, characteristics, and descriptors of the remote service, follow the steps below:
+    -   To retrieve a list of the services belonging to the remote device, use the `GetServices()` method of the [Tizen.Network.Bluetooth.BluetoothGattClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattClient.html) class:
 
         ```csharp
         IEnumerable<BluetoothGattService> srv_list;
         srv_list = client.GetServices();
         ```
 
-    2.  To retrieve a list of the characteristics of each service belonging to the remote device, use the `GetCharacteristics()` method of the [Tizen.Network.Bluetooth.BluetoothGattService](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattService.html) class:
+    -   To retrieve a list of the characteristics of each service belonging to the remote device, use the `GetCharacteristics()` method of the [Tizen.Network.Bluetooth.BluetoothGattService](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattService.html) class:
 
         ```csharp
         foreach (BluetoothGattService item in srv_list)
@@ -688,7 +688,7 @@ To perform GATT client operations:
         }
         ```
 
-    3.  To retrieve a list of the descriptors of each characteristic, use the `GetDescriptors()` method of the [Tizen.Network.Bluetooth.BluetoothGattCharacteristic](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattCharacteristic.html) class:
+    -   To retrieve a list of the descriptors of each characteristic, use the `GetDescriptors()` method of the [Tizen.Network.Bluetooth.BluetoothGattCharacteristic](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattCharacteristic.html) class:
 
         ```csharp
         foreach (BluetoothGattCharacteristic item in charc_list)
@@ -698,7 +698,7 @@ To perform GATT client operations:
         }
         ```
 
-    4.  To retrieve the descriptor data:
+    -   To retrieve the descriptor data:
 
         ```csharp
         BluetoothGattDescriptor desc = desc_list.First<BluetoothGattDescriptor>();
@@ -740,15 +740,15 @@ To perform GATT client operations:
     Assert.AreEqual(charc_value, value);
     ```
 
-7.  Manage characteristic data changes:
-    1.  Register an event handler for the `ValueChanged` event of the `Tizen.Network.Bluetooth.BluetoothGattCharacteristic` class, which triggers when the characteristic value changes on the remote device:
+7.  To manage characteristic data changes, follow the steps below:
+    -   Register an event handler for the `ValueChanged` event of the `Tizen.Network.Bluetooth.BluetoothGattCharacteristic` class, which triggers when the characteristic value changes on the remote device:
 
         ```csharp
         charc.ValueChanged += Charc_ValueChanged;
         /// Wait for a value change notification from remote device.
         ```
 
-    2.  Once the `ValueChanged` event triggers, use the event handler to display the changed value:
+    -   Once the `ValueChanged` event triggers, use the event handler to display the changed value:
 
         ```csharp
         private static void Charc_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -757,7 +757,7 @@ To perform GATT client operations:
         }
         ```
 
-    3.  When you no longer need the value change notifications, deregister the event handler:
+    -   When you no longer need the value change notifications, deregister the event handler:
 
         ```csharp
         Assert.IsNotNull(charc, "charc should not be null");
@@ -775,11 +775,11 @@ To perform GATT client operations:
     client.DisconnectAsync();
     ```
 <a name="gatt_getter"></a>
-## Managing Common GATT Getter Operations
+## Manage common GATT getter operations
 
-To perform getter operations for client-related information:
+To perform getter operations for client-related information, follow these steps:
 
--   Retrieve the UUID of a service, characteristic, or descriptor:
+1.  Retrieve the UUID of a service, characteristic, or descriptor:
 
     ```csharp
     /// Service UUID
@@ -806,7 +806,7 @@ To perform getter operations for client-related information:
     string DescriptorUuid = desc.Uuid;
     ```
 
--   Retrieve the value of a characteristic or descriptor:
+2.  Retrieve the value of a characteristic or descriptor:
 
     ```csharp
     int offset = 0;
@@ -836,7 +836,7 @@ To perform getter operations for client-related information:
     }
     ```
 
--   Retrieve a value of a characteristic or descriptor as an `integer` type:
+3.  Retrieve a value of a characteristic or descriptor as an `integer` type:
 
     ```csharp
     /// Assuming all the input parameters (type, and offset) are available
@@ -849,7 +849,7 @@ To perform getter operations for client-related information:
     }
     ```
 
--   Retrieve a value of a characteristic or descriptor as a `float` type:
+4.  Retrieve a value of a characteristic or descriptor as a `float` type:
 
     ```csharp
     /// Assuming all the input parameters (type, and offset) are available
@@ -862,7 +862,7 @@ To perform getter operations for client-related information:
     }
     ```
 
--   Retrieve a service, characteristic, or descriptor with a specific UUID:
+5.  Retrieve a service, characteristic, or descriptor with a specific UUID:
 
     ```csharp
     string svc_uuid = "0000180f-0000-1000-8000-00805f9b34fb"; /// Battery service
@@ -882,7 +882,7 @@ To perform getter operations for client-related information:
     Assert.IsNotNull(desc, "desc should not be null");
     ```
 
--   Retrieve the properties of a specified characteristic by using the `Properties` property of the `Tizen.Network.Bluetooth.BluetoothGattCharacteristic` class:
+6.  Retrieve the properties of a specified characteristic by using the `Properties` property of the `Tizen.Network.Bluetooth.BluetoothGattCharacteristic` class:
 
     ```csharp
     BluetoothGattProperty properties;
@@ -900,7 +900,7 @@ To perform getter operations for client-related information:
     properties = chr.Properties;
     ```
 
--   Retrieve the write type of a specified characteristic by using the `WriteType` property of the `Tizen.Network.Bluetooth.BluetoothGattCharacteristic` class:
+7.  Retrieve the write type of a specified characteristic by using the `WriteType` property of the `Tizen.Network.Bluetooth.BluetoothGattCharacteristic` class:
 
     ```csharp
     BluetoothGattWriteType WriteType;
@@ -919,7 +919,7 @@ To perform getter operations for client-related information:
     WriteType = chr.WriteType;
     ```
 
--   Retrieve an included service instance with a specific UUID by using the `GetIncludeService()` method of the [Tizen.Network.Bluetooth.BluetoothGattService](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattService.html) class:
+8.  Retrieve an included service instance with a specific UUID by using the `GetIncludeService()` method of the [Tizen.Network.Bluetooth.BluetoothGattService](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothGattService.html) class:
 
     ```csharp
     const string ServiceUuid = "180D";
@@ -942,11 +942,11 @@ To perform getter operations for client-related information:
     Assert.IsNotNull(result, "Expecting added service back, got null");
     ```
 <a name="gatt_setter"></a>
-## Managing Common GATT Setter Operations
+## Manage common GATT setter operations
 
-To set the client properties and attribute values:
+To set the client properties and attribute values, follow the steps below:
 
--   Set or update the characteristic value (`uint8` type value):
+1.  Set or update the characteristic value (`uint8` type value):
 
     ```csharp
     int unsignedInt8Value = byte.MaxValue;
@@ -959,7 +959,7 @@ To set the client properties and attribute values:
     }
     ```
 
--   Set or update the characteristic value (`integer` type value):
+2.  Set or update the characteristic value (`integer` type value):
 
     ```csharp
     int unsignedInt8Value = UInt16.MaxValue;
@@ -972,7 +972,7 @@ To set the client properties and attribute values:
     }
     ```
 
--   Set or update the characteristic value (`float` type value):
+3.  Set or update the characteristic value (`float` type value):
 
     ```csharp
     int mantissa = 123, exponent = 2;
@@ -985,7 +985,7 @@ To set the client properties and attribute values:
     }
     ```
 
--   Set the characteristic write type:
+4.  Set the characteristic write type:
 
     ```csharp
     const string CharacteristicUuid = "2A19";
@@ -997,9 +997,9 @@ To set the client properties and attribute values:
     characteristic.WriteType = BluetoothGattWriteType.NoResponse;
     ```
 <a name="le_scan"></a>
-## Managing Bluetooth LE Scans
+## Manage Bluetooth LE scans
 
-To discover nearby LE devices, perform an LE scan operation:
+To discover nearby LE devices, perform an LE scan operation by following these steps:
 
 1.  Register an event handler for the `ScanResultChanged` event of the [Tizen.Network.Bluetooth.BluetoothAdapter](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAdapter.html) class, and start the LE scan with the `StartLeScan()` method:
 
@@ -1088,11 +1088,11 @@ To discover nearby LE devices, perform an LE scan operation:
     }
     ```
 <a name="add_adv_data"></a>
-## Adding Advertising Data to the LE Advertisement
+## Add advertising data to the LE advertisement
 
 LE advertising data can be added to the LE advertisement or the scan response data. You can add various information, such as the device name, service UUID, service solicitation UUID, advertising appearance, advertising transmission power level, device name, and manufacturer data.
 
-To add advertising data:
+To add advertising data, follow the steps below:
 
 1.  Create a new instance of the [Tizen.Network.Bluetooth.BluetoothLeAdvertiseData](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothLeAdvertiseData.html) class and add advertising data to it:
 
@@ -1147,7 +1147,7 @@ To add advertising data:
     _advertiseData = null;
     ```
 <a name="set_adv_conn"></a>
-## Setting the LE Advertising Connectable Mode
+## Set the LE advertising connectable mode
 
 When advertising to a remote device, use the `AdvertisingConnectable()` property of the [Tizen.Network.Bluetooth.BluetoothLeAdvertiseData](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothLeAdvertiseData.html) class to define whether the advertising type is connectable or non-connectable:
 
@@ -1163,7 +1163,7 @@ Assert.IsFalse(_advertiseData.AdvertisingConnectable, "AdvertisingConnectable is
 ```
 
 <a name="set_adv_mode"></a>
-## Setting the LE Advertising Mode
+## Set the LE advertisement mode
 
 The advertising mode controls the advertising power and latency, and can be set to be balanced, low latency, or low energy.
 
@@ -1177,9 +1177,9 @@ _advertiseData.AdvertisingMode = BluetoothLeAdvertisingMode.BluetoothLeAdvertisi
 Assert.IsInstanceOf<BluetoothLeAdvertisingMode>(_advertiseData.AdvertisingMode, "AdvertisingMode value is not of type BluetoothLeAdvertisingMode");
 ```
 <a name="start_adv"></a>
-## Starting and Stopping LE Advertising
+## Start and stop LE advertisement
 
-To manage advertising:
+To manage advertising, follow the steps below:
 
 1.  To start advertising with the given advertiser and advertising parameter information, use the `StartAdvertising()` method of the [Tizen.Network.Bluetooth.BluetoothLeAdvertiser](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothLeAdvertiser.html) class:
 
@@ -1245,11 +1245,11 @@ To manage advertising:
     }
     ```
 <a name="avrcp"></a>
-## Handling Bluetooth AVRCP Events
+## Handle Bluetooth AVRCP events
 
-To receive notifications of Bluetooth AVRCP events:
+To receive notifications of Bluetooth AVRCP events, follow the steps below:
 
--   To receive notifications when the connection state is changed, register an event handler for the `TargetConnectionStateChanged` event of the [Tizen.Network.Bluetooth.BluetoothAvrcp](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAvrcp.html) class:
+1.  To receive notifications when the connection state is changed, register an event handler for the `TargetConnectionStateChanged` event of the [Tizen.Network.Bluetooth.BluetoothAvrcp](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.BluetoothAvrcp.html) class:
 
     ```csharp
     static BluetoothAvrcp avrcpProfile = null;
@@ -1262,7 +1262,7 @@ To receive notifications of Bluetooth AVRCP events:
     }
     ```
 
--   To receive notifications when the remote control device changes the repeat mode, register an event handler for the `RepeatModeChanged` event of the `Tizen.Network.Bluetooth.BluetoothAvrcp` class:
+2.  To receive notifications when the remote control device changes the repeat mode, register an event handler for the `RepeatModeChanged` event of the `Tizen.Network.Bluetooth.BluetoothAvrcp` class:
 
     ```csharp
     static BluetoothAvrcp avrcpProfile = null;
@@ -1283,7 +1283,7 @@ To receive notifications of Bluetooth AVRCP events:
     }
     ```
 <a name="release"></a>
-## Releasing All Resources
+## Release all resources
 
 To release all Bluetooth resources, deregister the event handlers:
 
@@ -1302,6 +1302,6 @@ avrcpProfile.RepeatModeChanged -= EventHandlerRepeatModeChanged;
 
 
 
-## Related Information
+## Related information
   * Dependencies
     -   Tizen 4.0 and Higher

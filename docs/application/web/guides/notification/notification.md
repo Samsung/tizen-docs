@@ -14,6 +14,10 @@ The main features of the Notification API include:
 
   You can [create a progress notification](#creating-progress-notifications) that informs the user about the progress of an activity.
 
+- Creating active notifications
+
+  You can [create an active notification](#creating-active-notifications) which contains buttons or a text field.
+
 - Managing notifications   
 
   You can [retrieve, update, and remove posted notifications](#managing-notifications).
@@ -137,6 +141,93 @@ Learning how to create progress notifications allows you to design interactive a
    tizen.notification.post(notification);
    updateProgressNotification(0);
    ```
+
+## Creating Active Notifications
+
+Active Notifications contain buttons or a text field which the user can use to reply to the notification directly.
+
+### Active Notification with buttons
+
+1. Use `NotificationButton` class to create buttons, as arguments provide text to show, an action and optionally a path to an image to display on a button:
+
+   ```
+   /* Create an action invoked when the button is clicked. */
+   var appControl = new tizen.ApplicationControl(
+       'http://tizen.org/appcontrol/operation/create_content', null, 'image/*');
+
+   var button1 = new tizen.NotificationButton('Button 1', appControl, null);
+   var button2 = new tizen.NotificationButton('Button 2', appControl, 'images/button.png');
+   ```
+
+2. Define the notification properties of the `UserNotificationInit` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotificationInit) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotificationInit) applications) where you can provide an array of created buttons:
+
+   ```
+   var info = {
+     content: 'This is an active notification with buttons.',
+     inputs: {
+       buttons: [button1, button2]
+     }
+   };
+   ```
+
+3. To be able to display the notification, create a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step:
+
+   ```
+   var notification = new tizen.UserNotification('SIMPLE', 'Progress notification', info);
+   ```
+
+4. To post the notification, use the `post()` method of the `NotificationManager` interface:
+
+   ```
+   tizen.notification.post(notification);
+   ```
+
+### Active Notification with a text field
+
+1. Define the notification properties of the `UserNotificationInit` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotificationInit) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotificationInit) applications) where you can define properties of text input:
+
+   ```
+   /* Create an action invoked when the button next to the text field is clicked. */
+   var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/create_content', null, 'image/*');
+
+   var info = {
+     content: 'This is an active notification with a text field.',
+     inputs: {
+       textInput: {
+         maxLength: 160,
+         appControl: appControl,
+         buttonText: 'Send',
+         imagePath: null,
+         placeholder: 'Placeholder text'
+       }
+     }
+   };
+   ```
+
+2. To be able to display the notification, create a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step:
+
+   ```
+   var notification = new tizen.UserNotification('SIMPLE', 'Progressnotification', info);
+   ```
+
+3. To post the notification, use the `post()` method of the `NotificationManager` interface:
+
+   ```
+   tizen.notification.post(notification);
+   ```
+
+4. To receive text entered to the text input use `getCurrentApplication()` method to obtain current application object and then `getRequestedAppControl()`:
+
+   ```
+   var app = tizen.application.getCurrentApplication();
+   var request = app.getRequestedAppControl();
+
+   if (request && request.callerAppId) {
+     /* ... */
+   }
+   ```
+
+   Learn more about app control from https://docs.tizen.org/application/web/guides/app-management/app-controls/
 
 ## Managing Notifications
 

@@ -3,7 +3,7 @@
 
 The OAuth 2.0 authorization framework enables a third-party application to obtain limited access to an HTTP service, either on behalf of a resource owner by orchestrating an approval interaction between the resource owner and the HTTP service, or by allowing the third-party application to obtain access on its own behalf.
 
-The main features of the Tizen.Account.OAuth2 namespace include:
+The main features of the Tizen.Account.OAuth2 namespace includes the following:
 
 -   Creating an OAuth 2.0 request
 
@@ -24,11 +24,11 @@ The main features of the Tizen.Account.OAuth2 namespace include:
 The OAuth 2.0 specification is defined in [\[RFC 6749\]](http://tools.ietf.org/html/rfc6749) and it builds on the OAuth 1.0 [\[RFC 5849\]](http://tools.ietf.org/html/rfc5849) deployment experience, as well as additional use cases and extensibility requirements gathered from the wider IETF community. The OAuth 2.0 protocol is not backward-compatible with OAuth 1.0.
 
 <a name="grant"></a>
-## Authorization Grant
+## Authorization grant
 
 An authorization grant is a credential representing the resource owner's authorization (to access its protected resources) used by the client to obtain an access token.
 
-The specification defines the following 4 grant types as well as an extensibility mechanism for defining additional types:
+The specification defines the following 4 grant types, as well as an extensibility mechanism for defining additional types:
 
 -   Authorization code
 
@@ -52,9 +52,9 @@ The specification defines the following 4 grant types as well as an extensibilit
 
 -   Resource owner password credentials
 
-    The resource owner password credentials (such as username and password) can be used directly as an authorization grant to obtain an access token.
+    The resource owner's password credentials (such as username and password) can be used directly as an authorization grant to obtain an access token.
 
-    Even though this grant type requires direct client access to the resource owner credentials, the resource owner credentials are used for a single request and are exchanged for an access token. This grant type can eliminate the need for the client to store the resource owner credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.
+    Even though this grant type requires direct client access to the resource owner credentials, the resource owner credentials are used for a single request, and are exchanged for an access token. This grant type can eliminate the need for the client to store the resource owner credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.
 
     **Figure: Resource owner password credentials flow**
 
@@ -72,7 +72,7 @@ To request an access token for the implicit, resource owner password credentials
 
 ## Prerequisites
 
-To enable your application to use the OAuth 2.0 functionality:
+To enable your application to use the OAuth 2.0 functionality, follow these steps:
 
 1.  To use the [Tizen.Account.OAuth2](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.OAuth2.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -88,13 +88,13 @@ To enable your application to use the OAuth 2.0 functionality:
     using Tizen.Account.OAuth2;
     ```
 
-> **Note**   
+> [!NOTE]   
 > The use cases in this guide refer to an `OAuth2Helper` class, which is a user-created class whose purpose is to handle various OAuth2 requests.
 
 <a name="request"></a>
-## Creating and Managing an OAuth 2.0 Request
+## Create and manage an OAuth 2.0 request
 
-To make a request with the OAuth 2.0 manager:
+To make a request with the OAuth 2.0 manager, follow these steps:
 
 1.  Create an OAuth2 request:
 
@@ -104,7 +104,7 @@ To make a request with the OAuth 2.0 manager:
 
 2.  Set the parameters needed for making the request.
 
-    You can set various request properties, such as end points for authentication and token, grant type, client credentials, scopes, authentication scheme, user name, and password.
+    You can set various request properties, such as end points for authentication and token, grant type, client credentials, scopes, authentication scheme, username, and password:
 
     ```csharp
     internal const string GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/auth";
@@ -161,9 +161,9 @@ To make a request with the OAuth 2.0 manager:
     ```
 
 <a name="token"></a>
-## Requesting the Server for a Grant or Token
+## Request the server for a grant or token
 
-To obtain the required authorization code or access token:
+To obtain the required authorization code or access token, follow these steps:
 
 -   <a name="req_code"></a>Request the authorization code.
 
@@ -203,7 +203,7 @@ To obtain the required authorization code or access token:
 
 -   Request the access token.
 
-    Access tokens are credentials used to access protected resources. An access token is a string representing an authorization issued to the client. Tokens represent specific access scopes and durations, granted by the resource owner, and enforced by the resource server and authorization server.
+    Access tokens are credentials used to access protected resources. An access token is a string representing an authorization issued to the client. Tokens represent specific access scopes and durations, granted by the resource owner, and enforced by the resource server and authorization server:
 
     -   Request the access token with the authorization code.
 
@@ -244,9 +244,9 @@ To obtain the required authorization code or access token:
 
     -   <a name="direct_token"></a>Request the access token directly.
 
-        You can request an access token in a single step without obtaining the authorization code explicitly. For the authorization code grant type, the code is obtained after the authentication and passed to the server to obtain the access token internally. For the implicit, resource owner password credentials, and client credentials grant types, you can obtain the access token directly.
+        You can request an access token in a single step without obtaining the authorization code explicitly. For the authorization code grant type, the code is obtained after the authentication, and passed to the server to obtain the access token internally. For the implicit, resource owner password credentials, and client credentials grant types, you can obtain the access token directly.
 
-        To obtain the access token directly, use the `GetAccessTokenAsync()` method. The response from the server is included in a callback.
+        To obtain the access token directly, use the `GetAccessTokenAsync()` method. The response from the server is included in a callback:
 
         ```csharp
         internal static ResourceOwnerPwdCredentialsTokenRequest CreateRoPwdTokenRequest()
@@ -393,15 +393,15 @@ To obtain the required authorization code or access token:
     ```
 
 <a name="response"></a>
-## Managing an OAuth 2.0 Response
+## Manage an OAuth 2.0 response
 
 The response from the server is returned as an instance of the [Tizen.Account.OAuth2.AuthorizationResponse](/application/dotnet/api/TizenFX/latest/api/Tizen.Account.OAuth2.AuthorizationResponse.html) class, from which various response parameters can be obtained.
 
-To manage the OAuth 2.0 response:
+To manage the OAuth 2.0 response, follow these steps:
 
 1.  Retrieve the response parameters from the response.
 
-    You can get various response information, such as the authorization code, state, and custom value.
+    You can get various response information, such as the authorization code, state, and custom value:
 
     ```csharp
     public static async Task RetrieveResponseInfo()
@@ -476,6 +476,6 @@ To manage the OAuth 2.0 response:
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

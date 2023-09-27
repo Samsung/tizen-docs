@@ -25,6 +25,6 @@ You can use the following security features in your .NET applications:
 
     You can create security-aware applications to manage device policies. In enterprise settings, you can provide rich control for IT administrators over employee devices.
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

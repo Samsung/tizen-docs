@@ -1,36 +1,39 @@
 # WebView
 
-You can access web pages and web content in your application using the WebView functionality. You can also use various other features for Web browsing, such as loading and displaying web pages, and navigating through the browsing history.
+> [!NOTE]
+> WebView class is deprecated since API Level 10 and will be removed in API Level 12. The WebView provided by .NET MAUI or Tizen.NUI can be used instead.
+
+You can access web pages and web content in your application using the WebView functionality. You can also use various other features for web browsing, such as loading and displaying web pages, and navigating through the browsing history.
 
 The main features of WebView are as follows:
 
-- Initializing and Creating WebView
+-   Initialize and create WebView
 
     You can [initialize a WebView](#initialize) and [create a WebView object](#initialize).
 
-- Managing Web Page Loading
+-   Manage web page loading
 
     You can [load a web page](#load) with requested URL and [register event handlers](#load) for loading events.
 
-- Managing Cookie
+-   Manage cookie
 
     You can [set the cookie policy and the storage](#cookie) for the cookie.
 
-- Executing JavaScript
+-   Execute JavaScript
 
     You can [execute the JavaScript code](#eval) in the context of the current WebView.
 
-- Finalizing WebView
+-   Finalize WebView
 
     You can [shut down the WebView](#finalize) and clean up the resources.
 
 ## Prerequisites
 
-To enable your application to use WebView functionality:
+To enable your application to use WebView functionality, follow the steps below:
 
-1. To use the [Tizen.WebView](/application/dotnet/api/TizenFX/latest/api/Tizen.WebView.html) namespace, create the `ElmSharp-Beta` project using the [Project Wizard](../../../vstools/tools/project-wizard.md) of Visual Studio.
+1.  To use the [Tizen.WebView](/application/dotnet/api/TizenFX/latest/api/Tizen.WebView.html) namespace, create the `ElmSharp-Beta` project using the [Project Wizard](../../../vstools/tools/project-wizard.md) of Visual Studio.
 
-2. To use the class of the `Tizen.WebView` namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+2.  To use the class of the `Tizen.WebView` namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```XML
    <privileges>
@@ -45,17 +48,17 @@ To enable your application to use WebView functionality:
    </privileges>
    ```
 
-3. To use the methods and properties of the `Tizen.WebView` namespace, include it in your application:
+3.  To use the methods and properties of the `Tizen.WebView` namespace, include it in your application:
     ```csharp
     using Tizen.WebView;
     ```
 
 <a name="initialize"></a>
-## Initializing and Creating WebView
+## Initialize and create WebView
 
 To Initialize WebView and create a WebView object, follow these steps:
 
-1. To use the `Tizen.WebView` namespace in your application, call the `Tizen.WebView.Chromium.Initialize` method before the start of the main loop:
+1.  To use the `Tizen.WebView` namespace in your application, call the `Tizen.WebView.Chromium.Initialize` method before the start of the main loop:
 
     ```csharp
     Elementary.Initialize();
@@ -65,7 +68,7 @@ To Initialize WebView and create a WebView object, follow these steps:
     app.Run(args);
     ```
 
-2. To create a WebView object, use the constructor of [Tizen.WebView.WebView](/application/dotnet/api/TizenFX/latest/api/Tizen.WebView.WebView.html) with `ElmSharp.Window`:
+2.  To create a WebView object, use the constructor of [Tizen.WebView.WebView](/application/dotnet/api/TizenFX/latest/api/Tizen.WebView.WebView.html) with `ElmSharp.Window`:
     ```csharp
     var webView = new WebView(window)
     {
@@ -78,17 +81,17 @@ To Initialize WebView and create a WebView object, follow these steps:
     ```
 
 <a name="load"></a>
-## Managing Web Page Loading
+## Manage web page loading
 
-To load a web page and add an event handler to loading events:
+To load a web page and add an event handler to loading events, follow these steps:
 
-- To load a web page, use the `Tizen.WebView.WebView.LoadUrl` method with an appropriate URL:
+1.  To load a web page, use the `Tizen.WebView.WebView.LoadUrl` method with an appropriate URL:
 
     ```csharp
     webView.LoadUrl("https://www.tizen.org/");
     ```
 
-- The following table lists the loading events provided by the `Tizen.WebView.WebView` class:
+2.  The following table lists the loading events provided by the `Tizen.WebView.WebView` class:
 
   **Table: Loading Events**
 
@@ -98,7 +101,7 @@ To load a web page and add an event handler to loading events:
   | `LoadFinished`   | This event occurs when the page loading has completed.            | -                                        |
   | `LoadError`      | This event occurs when the page loading has failed with an error. | Tizen.WebView.SmartCallbackLoadErrorArgs |
 
-- Add an event handler to handle each loading event:
+3.  Add an event handler to handle each loading event:
 
     ```csharp
     webView.LoadStarted += (s, e) =>
@@ -127,17 +130,17 @@ To load a web page and add an event handler to loading events:
     ```
 
 <a name='cookie'></a>
-## Managing Cookie
+## Manage cookie
 
-To manage and set the cookie options, use the [Tizen.WebView.CookieManager](/application/dotnet/api/TizenFX/latest/api/Tizen.WebView.CookieManager.html) class.
+To manage and set the cookie options, use the [Tizen.WebView.CookieManager](/application/dotnet/api/TizenFX/latest/api/Tizen.WebView.CookieManager.html) class in the following ways:
 
-- To get the `Tizen.WebView.CookieManager` object from WebView, use `Tizen.WebView.WebView.GetContext` and `Tizen.WebView.Context.GetCookieManager`:
+1.  To get the `Tizen.WebView.CookieManager` object from WebView, use `Tizen.WebView.WebView.GetContext` and `Tizen.WebView.Context.GetCookieManager`:
 
     ```csharp
     CookieManager cookieManager = webView.GetContext().GetCookieManager();
     ```
 
-- To set the cookie acceptance policy, use the `Tizen.WebView.CookieManager.SetCookieAcceptPolicy` method:
+2.  To set the cookie acceptance policy, use the `Tizen.WebView.CookieManager.SetCookieAcceptPolicy` method:
 
     ```csharp
     /* Accepts every cookie sent from any page */
@@ -150,14 +153,14 @@ To manage and set the cookie options, use the [Tizen.WebView.CookieManager](/app
     cookieManager.SetCookieAcceptPolicy(CookieAcceptPolicy.NoThirdParty);
     ```
 
-- To set the persistent storage for the cookie, use the `Tizen.WebView.CookieManager.SetPersistentStorage` method:
+3.  To set the persistent storage for the cookie, use the `Tizen.WebView.CookieManager.SetPersistentStorage` method:
 
     ```csharp
     cookieManager.SetPersistentStorage(DirectoryInfo.Data, CookiePersistentStorage.SqlLite);
     ```
 
 <a name="eval"></a>
-## Executing JavaScript
+## Execute JavaScript
 
 To execute the JavaScript code, use the `Tizen.WebView.Eval` and `Tizen.WebView.EvalAsync` methods.
 
@@ -188,7 +191,7 @@ The following example shows the HTML file used:
     ```
 
 <a name="finalize"></a>
-## Finalizing WebView
+## Finalize WebView
 To clean up the allocated resources, call the `Tizen.WebView.Chromium.Shutdown` method after the end of the main loop:
 
 ```csharp
@@ -199,6 +202,6 @@ Chromium.Shutdown();
 
 
 
-## Related Information
+## Related information
   - Dependencies
       - Tizen 4.0 and Higher

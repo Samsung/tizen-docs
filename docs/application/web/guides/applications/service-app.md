@@ -25,7 +25,7 @@ The device main menu does not contain any icons for Web services, because the ap
 
 To enable your application to use the Web service functionality:
 
-1. To make your application visible in Tizen Store only for devices that support the Web service, the application must specify the following feature in the `config.xml` file:
+1. To make your application visible in the official site for Tizen applications only for devices that support the Web service, the application must specify the following feature in the `config.xml` file:
 
    ```
    <widget>

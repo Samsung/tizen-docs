@@ -73,14 +73,6 @@ You can use the following multimedia features in your native applications:
 
   You can mux encoded media into a multiplexed stream and parse multiplexed media streams. You can use various types of media streams, such as audio, video, and text.
 
-- [Media Stream Playback](media-streams.md)
-
-  You can play and stream audio and video content. You can play audio and video content locally, or stream content from a server using IP protocol.
-
-- [Media Stream Recording](stream-recorder.md)
-
-  You can record audio and video from a stream, and control the recording process through various settings. You can also access details, such as file names of the recordings.
-
 - [Radio](radio.md)
 
   You can allow the user to listen to the FM radio on the device. You can control the radio playback, scan for available frequencies, and change between found frequencies.

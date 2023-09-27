@@ -1,6 +1,6 @@
 # Pose Detection
 
-Pose Detection is a new feature of Media Vision Inference API since Tizen 6.5(C#). This feature provides landmark detection; it defines landmarks and parts of a human body to help detect a human pose with a Motion Capture (MoCap) file, which you can create or edit using various tools.
+Pose detection is a new feature of Media Vision Inference API since Tizen 6.5 (C#). This feature provides landmark detection; it defines landmarks and parts of a human body to help detect a human pose with a Motion Capture (MoCap) file, which you can create or edit using various tools.
 
 ## Background
 
@@ -10,7 +10,7 @@ In Tizen, human body pose landmarks and body parts are defined as follows:
 
 ![Body pose](/application/native/guides/multimedia/media/mediavision_pose_tizen_def.png)
 
-The Pose landmark detection models are available in Open Model Zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models) or public GitHub site such as [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile). The public pose models provide landmark information, such as the number of landmarks and locations. To use them correctly, you must map the information to landmarks based on the definition. For example, you can use the [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile), which provides 14 landmarks as follows:
+The pose landmark detection models are available in Open Model Zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models){:target="_blank"} or public GitHub site such as [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile){:target="_blank"}. The public pose models provide landmark information, such as the number of landmarks and locations. To use them correctly, you must map the information to landmarks based on the definition. For example, you can use the [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile){:target="_blank"}, which provides 14 landmarks as follows:
 
 ![Body pose](/application/native/guides/multimedia/media/mediavision_pose_public_model_def.png),
 
@@ -37,7 +37,7 @@ In this model, `-1` denotes that there are no landmarks. Using this landmark inf
 
 `1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at the third position denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the fourth position denotes that the third landmark of the model corresponds to the fourth, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works:
 
-**Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) maps to the definitions**
+**Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile){:target="_blank"} maps to the definitions**
 
 | Value | Definition | pose_mapping.txt |
 | - | - | - |
@@ -59,7 +59,7 @@ In this model, `-1` denotes that there are no landmarks. Using this landmark inf
 | 16 | MV_INFERENCE_HUMAN_POSE_LEFT_ANKLE | 14 |
 
 
-The MoCap file includes the movements of objects or a person. There are various MoCap formats, but a well-known BioVision Hierarchy (BVH) file is supported in Media Vision. BVH file has a hierarchy structure to provide landmark information with landmarks' names, and the structure can be changed. It means that landmark information is different from the definition. To use the BVH file correctly, you have to map the information to the landmarks based on the definitions. For example, the [BVH file](/application/native/guides/multimedia/media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
+The MoCap file includes the movements of objects or a person. There are various MoCap formats, but a well known BioVision Hierarchy (BVH) file is supported in Media Vision. BVH file has a hierarchy structure to provide landmark information with landmarks' names, and the structure can be changed. It means that landmark information is different from the definition. To use the BVH file correctly, you have to map the information to the landmarks based on the definitions. For example, the [BVH file](/application/native/guides/multimedia/media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
 
 ![Body pose](/application/native/guides/multimedia/media/mediavision_pose_bvh_sample.png)
 
@@ -86,15 +86,15 @@ If there is no mapped landmark, you don't need to list it. For example, index th
 
 ## Prerequisites
 
-To enable your application to use the Media Vision Inference functionality:
+To enable your application to use the Media Vision Inference functionality, proceed as follows:
 
-1.  Install the NuGet packages for Media Vision.
+1.  Install the NuGet packages for media vision:
 
     ```csharp
     using Tizen.Multimedia;
     using Tizen.Multimedia.Vision;
     ```
-2. Create a structure to store pose data.
+2.  Create a structure to store pose data.
 
    For pose detection, use the following `BodyPart` structure:
 
@@ -120,7 +120,7 @@ To enable your application to use the Media Vision Inference functionality:
 
 ## Detect human pose
 
-To detect human pose from an image:
+To detect human pose from an image, proceed as follows:
 
 1. Create the source and engine configuration handles:
 
@@ -142,7 +142,7 @@ To detect human pose from an image:
    MediaVisionSource source = new MediaVisionSource(rgbframe, width, height, Tizen.Multimedia.ColorSpace.Rgb888);
    ```
 
-3. To detect landmarks of the pose from the `sample.jpg` image, run a `DetectAsync` from Detector.
+3. To detect landmarks of the pose from the `sample.jpg` image, run a `DetectAsync` from detector.
    This will return `Landmark`:
 
    ```csharp
@@ -150,7 +150,7 @@ To detect human pose from an image:
    ```
 
 4. Use `Landmark` to get landmarks information from the image:
-   Landmark is a two-dimension array that represents the number of sources for the first dimension and enum `BodyPart` for the second dimension.
+   Landmark is a two-dimension array that represents the number of sources for the first dimension and enum `BodyPart` for the second dimension:
 
     ```csharp
     public struct Landmark

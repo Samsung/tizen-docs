@@ -214,7 +214,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates a polymorphic clone of the given <em>measure_format</em> object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>clone</em> object should be released by the caller with the <a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga8c555a3f3cea08526a8564201b5d18f5" title="Destroys the measure format object.">i18n_measure_format_destroy()</a> function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -274,7 +274,7 @@ Typedefs</h2></td></tr>
 
 <p>Creates the measure format object using given locale. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#gaae2584251b189df229165cd4c5a2573b" title="Creates the measure format object using given locale.">i18n_measure_format_create_from_locale_id()</a> instead. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The created object should be released by the caller with the <a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga8c555a3f3cea08526a8564201b5d18f5" title="Destroys the measure format object.">i18n_measure_format_destroy()</a> function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -313,7 +313,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets a formatter for currency amount objects in the default locale. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The created object should be released by the caller with the <a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga8c555a3f3cea08526a8564201b5d18f5" title="Destroys the measure format object.">i18n_measure_format_destroy()</a> function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -366,7 +366,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets a formatter for currency amount objects in the given locale. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga9075632e8d013a8477e1092e3a0e2450" title="Gets a formatter for currency amount objects in the given locale.">i18n_measure_format_create_currency_format_from_locale_id()</a> instead. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The created object should be released by the caller with the <a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga8c555a3f3cea08526a8564201b5d18f5" title="Destroys the measure format object.">i18n_measure_format_destroy()</a> function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -505,7 +505,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Destroys the measure format object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">measure_format</td><td>The measure format object to destroy</td></tr>
@@ -561,7 +561,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Formats an object to produce a string. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The obtained <em>append_to</em> string is actually a concatenation of the given input string and the result of the function (appended to the string). Actually, the <em>append_to</em> buffer is being reallocated inside the function which means that the buffer is not at the same place in memory as it was on the input. Please note that the <em>append_to</em> buffer should be released by the caller with the free() function. <em>append_to</em> buffer should be allocated on the heap.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -929,7 +929,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Parses a string to produce an object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The obtained <em>result</em> object should be released by the caller with the <a class="el" href="group__CAPI__BASE__UTILS__I18N__FORMATTABLE__MODULE.html#gadc3c98bd60e7c4c2f0f7e8cd956dcae2" title="Releases the given i18n_formattable_h handle.">i18n_formattable_destroy()</a> function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

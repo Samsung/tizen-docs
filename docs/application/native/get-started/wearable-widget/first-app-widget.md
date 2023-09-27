@@ -40,9 +40,9 @@ When you are developing a more complex application, you can take advantage of th
 The following example shows you how to create and configure a basic wearable native widget application project in Tizen Studio. An application project contains all the files that make up an application.
 
 > [!NOTE]
-> Standalone widget application packages are not allowed in Tizen Store.
+> Standalone widget application packages are not allowed in the official site for Tizen applications.
 >
-> For user convenience, you can use a standalone widget application for testing purposes in Tizen Studio. If you want to publish the application in Tizen Store, combine it with at least 1 UI application in the same package.
+> For user convenience, you can use a standalone widget application for testing purposes in Tizen Studio. If you want to publish the application in the store, combine it with at least 1 UI application in the same package.
 > For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#develop).
 
 The following figure illustrates the application to be created. The application screen displays the **Hello widget** text and no user interaction is provided.
@@ -127,7 +127,7 @@ To view and modify the application configuration:
 
     -   **Overview**: Define general information, such as the package, label, and icon of the application.
 
-    -   **Features**: Define required software and hardware features. This information is used for application filtering in Tizen Store.
+    -   **Features**: Define required software and hardware features. This information is used for application filtering in the official site for Tizen applications.
 
     -   **Privileges**: Define the security-sensitive APIs or API groups accessed and used by the application.
 

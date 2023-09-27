@@ -5,7 +5,7 @@ For example, when an image consisting of a food item is provided as input to thi
 
 ## Prerequisites
 
-To enable your application to use the media vision inference functionality:
+To enable your application to use the media vision inference functionality, follow these steps:
 
 1. To use the functions and data types of the Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications), include the `<mv_inference.h>` header file in your application.
 
@@ -37,7 +37,7 @@ To enable your application to use the media vision inference functionality:
 <a name="classify"></a>
 ## Classify image
 
-To classify an image:
+To classify an image, follow these steps:
 
 1. Create the source and engine configuration handles:
 
@@ -61,10 +61,11 @@ To classify an image:
     ```c
     /* For details, see the Image Util API Reference */
     unsigned char *dataBuffer = NULL;
-    unsigned long long bufferSize = 0;
-    unsigned long width = 0;
-    unsigned long height = 0;
+    size_t bufferSize = 0;
+    unsigned int width = 0;
+    unsigned int height = 0;
     image_util_decode_h imageDecoder = NULL;
+    image_util_image_h decodedImage = NULL;
 
     error_code = image_util_decode_create(&imageDecoder);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
@@ -78,11 +79,11 @@ To classify an image:
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+    error_code = image_util_decode_run2(imageDecoder, &decodedImage);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+    error_code = image_util_get_image(decodedImage, &width, &height, NULL, &dataBuffer, &bufferSize);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -92,12 +93,14 @@ To classify an image:
 
     /* Fill the dataBuffer to g_source */
     error_code = mv_source_fill_by_buffer(imagedata.g_source, dataBuffer, (unsigned int)bufferSize,
-                                          (unsigned int)width, (unsigned int)height, MEDIA_VISION_COLORSPACE_RGB888);
+                                          width, height, MEDIA_VISION_COLORSPACE_RGB888);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    free(dataBuffer);
-    dataBuffer = NULL;
+    error_code = image_util_destroy_image(decodedImage);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    decodedImage = NULL;
     ```
 
 3. To classify the `sample.jpg` image, create a `g_inference` media vision inference handle:
@@ -111,12 +114,14 @@ To classify an image:
 4. Configure `g_engine_config` with classification model data to classify the image.
    The default engine is configured by the system. You can see the supported engines in Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f) applications).
 
-    In the following example, TensorFlow Lite model is used, and `data.tflite` and `label.txt` are in the `<OwnDataPath>`.
-	Model data is available in open model zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models):
+    In the following example, TensorFlow Lite model is used, and `data.tflite`, `meta.json`, and `label.txt` are in the `<OwnDataPath>`.
+	Model data is available in open model zoo, such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models).
+  Its corresponding model meta file is available in [meta file template](https://review.tizen.org/gerrit/gitweb?p=platform/core/api/mediavision.git;a=tree;f=meta-template;hb=refs/heads/tizen_6.5):
 
     ```c
     #define MODEL_DATA "OwnDataPath/data.tflite"
     #define MODEL_LABEL "OwnDataPath/label.txt"
+    #define MODEL_META "OwnDataPath/meta.json"
 
     error_code = mv_engine_config_set_string_attribute(handle,
                       MV_INFERENCE_MODEL_WEIGHT_FILE_PATH,
@@ -126,33 +131,13 @@ To classify an image:
                       MV_INFERENCE_MODEL_USER_FILE_PATH,
                       MODEL_LABEL);
 
-    error_code = mv_engine_config_set_double_attribute(handle,
-                      MV_INFERENCE_MODEL_MEAN_VALUE,
-                      127.5);
-
-    error_code = mv_engine_config_set_double_attribute(handle,
-                      MV_INFERENCE_MODEL_STD_VALUE,
-                      127.5);
-
-    error_code = mv_engine_config_set_double_attribute(handle,
-                      MV_INFERENCE_CONFIDENCE_THRESHOLD,
-                      0.0);
+    error_code = mv_engine_config_set_string_attribute(handle,
+                      MV_INFERENCE_MODEL_META_FILE_PATH,
+                      MODEL_META);
 
     error_code = mv_engine_config_set_int_attribute(handle,
                       MV_INFERENCE_BACKEND_TYPE,
                       MV_INFERENCE_BACKEND_TFLITE);
-
-    error_code = mv_engine_config_set_int_attribute(handle,
-                      MV_INFERENCE_INPUT_TENSOR_WIDTH,
-                      224);
-
-    error_code = mv_engine_config_set_int_attribute(handle,
-                      MV_INFERENCE_INPUT_TENSOR_HEIGHT,
-                      224);
-
-    error_code = mv_engine_config_set_int_attribute(handle,
-                      MV_INFERENCE_INPUT_TENSOR_CHANNELS,
-                      3);
     ```
     For more information on the configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications).
 

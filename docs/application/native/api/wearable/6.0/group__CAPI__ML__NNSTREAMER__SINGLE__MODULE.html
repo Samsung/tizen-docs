@@ -396,7 +396,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>If the data for the output buffer is allocated by the neural network framework (ML_NNFW_TYPE_CUSTOM_FILTER supports this), then this data will be freed when closing the <em>single</em> automatically by the neural network framework, and will not available for use later. It is recommended to copy the data from <em>output</em> if it is required to use it after the <em>single</em> handle is closed. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the data for the output buffer is allocated by the neural network framework (ML_NNFW_TYPE_CUSTOM_FILTER supports this), then this buffer will be freed when closing the <em>single</em> automatically by the neural network framework, and will not available for use later. It is recommended to copy the output buffer from <em>output</em> if it is required to use it after the <em>single</em> handle is closed. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>

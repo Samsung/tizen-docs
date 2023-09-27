@@ -1,19 +1,19 @@
 # Configuring Applications
 
-The Tizen Web application configuration file is composed of XML elements, including the `<widget>` element as its root and other elements. These elements represent application information, such as [configuration elements](#elements) and Tizen extending configuration elements for [mobile](#mw_extend) and [wearable](#ww_extend) applications.
+The Tizen web application configuration file is composed of XML elements, including the `<widget>` element as its root and other elements. These elements represent application information, such as [configuration elements](#elements) and Tizen extending configuration elements for [mobile](#mw_extend) and [wearable](#ww_extend) applications.
 
-This configuration information is used when you install or run the Tizen Web application on the Tizen platform. The Tizen Web application project must have the `config.xml` file in the project root directory.
+This configuration information is used when you install or run the Tizen web application on the Tizen platform. The Tizen web application project must have the `config.xml` file in the project root directory.
 
-The configuration file can be easily edited with the [Web application configuration editor](#edit) (form editor), or you can modify the XML structure directly using the configuration source editor. With the form editor, you can set the project configuration (manifest), even if you have no experience with developing a Tizen Web application project. If you are fluent with the configuration file XML structure, you can create the configuration file directly through the configuration source editor.
+The configuration file can be easily edited with the [Web application configuration editor](#edit) (form editor), or you can modify the XML structure directly using the configuration source editor. With the form editor, you can set the project configuration (manifest), even if you have no experience with developing a Tizen web application project. If you are fluent with the configuration file XML structure, you can create the configuration file directly through the configuration source editor.
 
-> **Note**  
+> [!NOTE]
 > The `config.xml` must conform to both the XML file format and the W3C specification requirements. Editing the file XML structure with the configuration source editor is intended for advanced users only.
 
 
 <a name="edit"></a>
-## Editing the config.xml File
+## Edit the config.xml file
 
-There are 2 different ways to edit the `config.xml` file:
+There are 2 different ways to edit the `config.xml` file, which are described below:
 
 - Use the **Source** tab:
 
@@ -37,9 +37,9 @@ There are 2 different ways to edit the `config.xml` file:
 
 
 <a name="hierarchy"></a>
-## Configuration Element Hierarchy
+## Configuration element hierarchy
 
-The Tizen Web application configuration file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `config.xml` file.
+The Tizen web application configuration file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `config.xml` file.
 
 <table>
 	<colgroup>
@@ -319,9 +319,9 @@ The Tizen Web application configuration file consists of XML elements organized 
 </table>
 
 <a name="elements"></a>
-## Configuration Elements
+## Configuration elements
 
-The following tables summarize the W3C configuration elements used in the `config.xml` file of a Web application. For more information on the W3C element details, see [Widget Packaging and XML Configuration](https://www.w3.org/TR/2011/REC-widgets-20110927/) (the details of the Tizen extending configuration elements are described in [Extending Configuration Elements in Mobile Applications](#mw_extend) and [Extending Configuration Elements in Wearable Applications](#ww_extend)). For a quick view of the element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
+The following tables summarize the W3C configuration elements used in the `config.xml` file of a web application. For more information on the W3C element details, see [Widget packaging and XML Configuration](https://www.w3.org/TR/2011/REC-widgets-20110927/){:target="_blank"} (the details of the Tizen extending configuration elements are described in [Extending Configuration Elements in Mobile Applications](#mw_extend) and [Extending Configuration Elements in Wearable Applications](#ww_extend)). For a quick view of the element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
 
 <table id="widget">
 	<thead>
@@ -360,7 +360,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 	</thead>
 	<tbody>
 		<tr>
-			<td>Used to control network access from within a Web application and to request access to certain network resources from the user agent.
+			<td>Used to control network access from within a web application and to request access to certain network resources from the user agent.
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>origin</code></li>
@@ -379,7 +379,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 	</thead>
 	<tbody>
 		<tr>
-			<td>Represents the person who created the Web application.
+			<td>Represents the person who created the web application.
 			<p><strong>Expected children:</strong></p>
 			<p>&lt;span&gt; and &lt;text node&gt;</p>
 			<p><strong>Attributes:</strong></p>
@@ -402,7 +402,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Represents the boot-strapping mechanism used to point to the main file of the Web application.
+			<td>Represents the boot-strapping mechanism used to point to the main file of the web application.
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>xml:lang</code></li>
@@ -424,7 +424,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Represents text describing the purpose of the Web application.
+			<td>Represents text describing the purpose of the web application.
 			<p><strong>Expected children:</strong></p>
 			<p>&lt;span&gt; and &lt;text node&gt;</p>
 			<p><strong>Attributes:</strong></p>
@@ -445,7 +445,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Represents the Web application icon.
+			<td>Represents the web application icon.
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>xml:lang</code></li>
@@ -467,7 +467,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Represents the license under which the Web application is distributed.
+			<td>Represents the license under which the web application is distributed.
 			<p><strong>Expected children:</strong></p>
 			<p>&lt;span&gt; and &lt;text node&gt;</p>
 			<p><strong>Attributes:</strong></p>
@@ -489,7 +489,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Represents the Web application name used, for example, in the application menu.
+			<td>Represents the web application name used, for example, in the application menu.
 			<p><strong>Expected children:</strong></p>
 			<p>&lt;span&gt; and &lt;text node&gt;</p>
 			<p><strong>Attributes:</strong></p>
@@ -532,7 +532,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to declare preferences as key-value pairs for the Web application for use at runtime.
+			<td>Used to declare preferences as key-value pairs for the web application for use at runtime.
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>name</code>
@@ -570,17 +570,17 @@ The following tables summarize the W3C configuration elements used in the `confi
 </table>
 
 <a name="mw_extend"></a>
-## Extending Configuration Elements in Mobile Applications
+## Extend configuration elements in mobile applications
 
-The following sections show additional configuration elements used in the `config.xml` file of a Web application, but not included in the [Widget Packaging and XML Configuration guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). For a quick view of the entire element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
+The following sections show additional configuration elements used in the `config.xml` file of a web application, but not included in the [Widget packaging and XML Configuration guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/){:target="_blank"}. For a quick view of the entire element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
 
-> **Note**  
+> [!NOTE]
 > The extension elements are denoted as though the `xmlns:tizen="http://tizen.org/ns/widgets"` namespace declaration is in effect.
 
 The maximum length of the attribute and the element (except `<tizen:metadata>`, W3C preference element) can be limited to 2048 bytes. In this case, leftover bytes are ignored.
 
 <a name="mw_account"></a>
-### Tizen Account
+### Tizen account
 
 <table>
 	<thead>
@@ -633,7 +633,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_navigation"></a>
-### Tizen Navigation Policy
+### Tizen navigation policy
 
 <table>
 	<thead>
@@ -643,7 +643,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define a list of URL domains that are allowed to be navigated in using the Web application.
+			<td>Used to define a list of URL domains that are allowed to be navigated in using the web application.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more
@@ -660,7 +660,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_appcontrol"></a>
-### Tizen Application Control
+### Tizen application control
 
 <table>
 	<thead>
@@ -670,7 +670,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to indicate that the Web application can handle a specific operation with the specified MIME type and URI. For more information, see <a href="../../web/guides/app-management/app-controls.md">Application Information and Controls</a>.
+			<td>Used to indicate that the web application can handle a specific operation with the specified MIME type and URI. For more information, see <a href="../../web/guides/app-management/app-controls.md">Application Information and Controls</a>.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -715,7 +715,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_appdefined_privilege"></a>
-### Tizen App-defined Privilege
+### Tizen app-defined privilege
 
 <table>
 	<thead>
@@ -748,7 +748,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_application"></a>
-### Tizen Application ID
+### Tizen application ID
 
 <table>
 	<thead>
@@ -770,10 +770,10 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				<p>The project name is a set of characters (0~9, a~z, A~Z) randomly generated by Tizen Studio. The minimum value is 1 byte and the maximum value is 52 bytes.</p>
 				</li>
 				<li><code>package</code>
-				<p>Mandatory; Tizen package ID generated by Tizen Studio, consisting of 10 characters (0~9, a~z, A~Z). The package ID is unique in Tizen Store.</p>
+				<p>Mandatory; Tizen package ID generated by Tizen Studio, consisting of 10 characters (0~9, a~z, A~Z). The package ID is unique in the store.</p>
 				</li>
 				<li><code>required_version</code>
-				<p>Mandatory; Tizen API version required for running the Web application</p>
+				<p>Mandatory; Tizen API version required for running the web application</p>
 				</li>
 				<li><code>launch_mode</code>
 				<p>Optional; sets which launch mode is supported (available values: <code>single</code> (default), <code>group</code>, <code>caller</code>)<p>
@@ -798,7 +798,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_bg_category"></a>
-### Tizen Background Category
+### Tizen background category
 
 <table>
 	<thead>
@@ -810,7 +810,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		<tr>
 			<td>Used to represent the category of an application that is allowed to run in the background.
 			<blockquote><p><strong>Note</strong><br>
-            In addition to declaring the <code>&lt;background-category&gt;</code> element, you must <a href="#mw_setting">set the <code>&lt;tizen:setting background-support&gt;</code> attribute to <code>enable</code></a> to run Web applications in the background.</p></blockquote>
+            In addition to declaring the <code>&lt;background-category&gt;</code> element, you must <a href="#mw_setting">set the <code>&lt;tizen:setting background-support&gt;</code> attribute to <code>enable</code></a> to run web applications in the background.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -829,7 +829,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_webapp"></a>
-### Tizen-hosted Web Application
+### Tizen-hosted web application
 
 <table>
 	<thead>
@@ -839,7 +839,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to point to a document which is hosted on an external server and acts as the Web application start page. The Tizen WRT allows the start page to be hosted on an external server.
+			<td>Used to point to a document which is hosted on an external server and acts as the web application start page. The Tizen WRT allows the start page to be hosted on an external server.
 			<p>If the start page is contained in the widget package, it is defined with the <a href="#content_element">&lt;content&gt; W3C element</a>. If both <code>&lt;content&gt;</code> and <code>&lt;tizen:content/&gt;</code> elements are defined, the <code>&lt;tizen:content/&gt;</code> element is used.</p>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
@@ -861,7 +861,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_sec"></a>
-### Tizen Content Security Policy
+### Tizen content security policy
 
 <table>
 	<thead>
@@ -886,7 +886,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_secreport"></a>
-### Tizen Content Security Policy Report Only
+### Tizen content security policy report only
 
 <table>
 	<thead>
@@ -913,7 +913,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_feature"></a>
-### Tizen Feature
+### Tizen feature
 
 <table>
 	<thead>
@@ -923,9 +923,9 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define hardware and software components for a Tizen application. This attribute is only used in Tizen Store for filtering purposes. It is ignored by the Web Runtime installation procedure.
+			<td>Used to define hardware and software components for a Tizen application. This attribute is only used in the store for filtering purposes. It is ignored by the Web Runtime installation procedure.
 			<blockquote><p><strong>Note</strong><br>
-            Even though the <code>&lt;feature/&gt;</code> element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen.</p></blockquote>
+            Even though the <code>&lt;feature/&gt;</code> element is defined in the Widget packaging and XML Configuration guidelines, an extended version is used in Tizen.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -944,7 +944,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_launch_screen"></a>
-### Tizen Launch Screen
+### Tizen launch screen
 
 <table>
 	<thead>
@@ -1027,7 +1027,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_metadata"></a>
-### Tizen Metadata
+### Tizen metadata
 
 <table>
 	<thead>
@@ -1037,7 +1037,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/mobile/tizen/application.html">Application</a> API.
+			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/mobile/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1062,7 +1062,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_privilege"></a>
-### Tizen Privilege
+### Tizen privilege
 
 <table>
 	<thead>
@@ -1072,7 +1072,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to get the required API access privileges for a Web application.
+			<td>Used to get the required API access privileges for a web application.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more (if duplicates, the first occurrence is considered and all others ignored)</li>
@@ -1091,7 +1091,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_provides_appdefined_privilege"></a>
-### Tizen Provided App-defined Privilege
+### Tizen provided app-defined privilege
 
 <table>
 	<thead>
@@ -1124,7 +1124,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_profile"></a>
-### Tizen Profile
+### Tizen profile
 
 <table>
 	<thead>
@@ -1153,7 +1153,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_setting"></a>
-### Tizen Settings
+### Tizen settings
 
 <table>
 	<thead>
@@ -1172,17 +1172,17 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 			<ul>
 				<li><code>screen-orientation</code>
 				<p>Optional; viewport orientation lock (available values: <code>portrait</code> (default), <code>landscape</code>), auto-rotation</p>
-				If the system auto rotation setting is on, the Web application viewport orientation is changed accordingly by default.</li>
+				If the system auto rotation setting is on, the web application viewport orientation is changed accordingly by default.</li>
 				<li><code>context-menu</code>
 				<p>Optional; context menu is displayed when the user clicks, for example, an image, text, or link (available values: <code>enable</code> (default), <code>disable</code>)</p>
 				</li>
 				<li><code>background-support</code>
 				<p>Optional; application execution continues when it is moved to the background (available values: <code>enable</code> (execution continues in the background), <code>disable</code> (default; application is suspended))</p>
 				<blockquote><p><strong>Note</strong><br>
-                Since Tizen 2.4, the system manages background processes more tightly. Even if the <code>background-support</code> attribute is set to <code>enable</code>, a Web application process can be suspended in the background. To guarantee that the application runs in the background, <a href="#mw_bg_category">add at least one background category</a> for the application with the <code>&lt;tizen:background-category&gt;</code> element. Only the background categories declared in the system can be used.</p></blockquote>
+                Since Tizen 2.4, the system manages background processes more tightly. Even if the <code>background-support</code> attribute is set to <code>enable</code>, a web application process can be suspended in the background. To guarantee that the application runs in the background, <a href="#mw_bg_category">add at least one background category</a> for the application with the <code>&lt;tizen:background-category&gt;</code> element. Only the background categories declared in the system can be used.</p></blockquote>
 				</li>
 				<li><code>encryption</code>
-				<p>Optional; Web application resources (HTML, JavaScript, and CSS files) are stored encrypted (available values: <code>enable</code>, <code>disable</code> (default))</p>
+				<p>Optional; web application resources (HTML, JavaScript, and CSS files) are stored encrypted (available values: <code>enable</code>, <code>disable</code> (default))</p>
 				</li>
 				<li><code>install-location</code>
 				<p>Optional; application installation location (available values: <code>auto</code> (default), <code>internal-only</code>, <code>prefer-external</code>)</p>
@@ -1193,8 +1193,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</ul>
 				</li>
 				<li><code>hwkey-event</code>
-				<p>Optional; a hardware key event is sent to the Web application when the user presses the hardware key (available values: <code>enable</code> (default), <code>disable</code>)<p>
-				<p>If this option is enabled, the <code>tizenhwkey</code> custom event is sent to the Web application. The <code>tizenhwkey</code> event object has a <code>keyName</code> attribute (available values: <code>menu</code> and <code>back</code>).</p>
+				<p>Optional; a hardware key event is sent to the web application when the user presses the hardware key (available values: <code>enable</code> (default), <code>disable</code>)<p>
+				<p>If this option is enabled, the <code>tizenhwkey</code> custom event is sent to the web application. The <code>tizenhwkey</code> event object has a <code>keyName</code> attribute (available values: <code>menu</code> and <code>back</code>).</p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
@@ -1202,14 +1202,14 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 &lt;tizen:setting screen-orientation="landscape"/&gt;
 &lt;!--Context menu is not displayed--&gt;
 &lt;tizen:setting context-menu="disable"/&gt;
-&lt;!--Web application execution is not suspended--&gt;
+&lt;!--web application execution is not suspended--&gt;
 &lt;!--when the application is sent to the background--&gt;
 &lt;tizen:setting background-support="enable"/&gt;
-&lt;!--Web applications resources are stored encrypted by the WRT--&gt;
+&lt;!--web applications resources are stored encrypted by the WRT--&gt;
 &lt;tizen:setting encryption="enable"/&gt;
 &lt;!--Installation location is set to "internal-only"--&gt;
 &lt;tizen:setting install-location="internal-only"/&gt;
-&lt;!--Hardware key event is sent to the Web application when the hardware key is pressed--&gt;
+&lt;!--Hardware key event is sent to the web application when the hardware key is pressed--&gt;
 &lt;tizen:setting hwkey-event="enable"/&gt;</code></pre>
 			</td>
 		</tr>
@@ -1217,7 +1217,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="mw_trust-anchor"></a>
-### Tizen Trust-anchor
+### Tizen trust-anchor
 
 <table>
 	<thead>
@@ -1246,18 +1246,17 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 </table>
 
 <a name="ww_extend"></a>
-## Extending Configuration Elements in Wearable Applications
+## Extend configuration elements in wearable applications
 
-The following sections show additional configuration elements used in the `config.xml` file of a Web application, but not included in the [Widget Packaging and XML Configuration guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). For a quick view of the entire element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
+The following sections show additional configuration elements used in the `config.xml` file of a web application, but not included in the [Widget packaging and XML Configuration guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/){:target="_blank"}. For a quick view of the entire element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
 
-> **Note**
->
+> [!NOTE]
 > The extension elements are denoted as though the `xmlns:tizen="http://tizen.org/ns/widgets"` namespace declaration is in effect.
 >
 > The maximum length of the attribute and the element (except `tizen:metadata`, W3C preference element) can be limited to 2048 bytes. In that case, leftover bytes are ignored.
 
 <a name="ww_account"></a>
-### Tizen Account
+### Tizen account
 
 <table>
 	<thead>
@@ -1298,7 +1297,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_allownavigation"></a>
-### Tizen Navigation Policy
+### Tizen navigation policy
 
 <table>
 	<thead>
@@ -1308,7 +1307,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define a list of URL domains that are allowed to be navigated in using the Web application.
+			<td>Used to define a list of URL domains that are allowed to be navigated in using the web application.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more
@@ -1323,7 +1322,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="appcontrol"></a>
-### Tizen Application Control
+### Tizen application control
 
 <table>
 	<thead>
@@ -1333,7 +1332,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to indicate that the Web application can handle a specific operation with the specified MIME type and URI. For more information, see <a href="../../web/guides/app-management/app-controls.md">Application Information and Controls</a>.
+			<td>Used to indicate that the web application can handle a specific operation with the specified MIME type and URI. For more information, see <a href="../../web/guides/app-management/app-controls.md">Application Information and Controls</a>.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1378,7 +1377,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_webwidget"></a>
-### Tizen Web Widget
+### Tizen web widget
 
 <table>
 	<thead>
@@ -1388,7 +1387,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define the basic information for a Web widget.
+			<td>Used to define the basic information for a web widget.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1402,18 +1401,18 @@ The following sections show additional configuration elements used in the `confi
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>id</code>
-				<p>Mandatory; unique ID of the Web widget in the &lt;TIZEN_APPLICATION_ID&gt;.&lt;STRING&gt; format, where &lt;STRING&gt; consists of 1 or more characters (0~9, a~z, A~Z)</p>
+				<p>Mandatory; unique ID of the web widget in the &lt;TIZEN_APPLICATION_ID&gt;.&lt;STRING&gt; format, where &lt;STRING&gt; consists of 1 or more characters (0~9, a~z, A~Z)</p>
 				</li>
 				<li><code>primary</code>
-				<p>Mandatory; defines a primary Web widget among the Web widgets in a Web application (available values: <code>true</code>, <code>false</code>)</p>
+				<p>Mandatory; defines a primary web widget among the web widgets in a web application (available values: <code>true</code>, <code>false</code>)</p>
 				</li>
 				<li><code>max-instance</code>
-				<p>Optional; limits the number of widget instances concurrently executable for a Web application. When omitted or its value is 0, unlimited number of widget instances are supported. The expected value is <code>integer</code>.</p>
+				<p>Optional; limits the number of widget instances concurrently executable for a web application. When omitted or its value is 0, unlimited number of widget instances are supported. The expected value is <code>integer</code>.</p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
 			<pre><code>&lt;tizen:app-widget id="EHtuCWfzcr.Widget.Widget" primary="true" max-instance="0"&gt;
-   &lt;tizen:widget-label&gt;Hello Web Widget!&lt;/tizen:widget-label&gt;
+   &lt;tizen:widget-label&gt;Hello web Widget!&lt;/tizen:widget-label&gt;
    &lt;tizen:widget-content src="index.html"&gt;
       &lt;tizen:widget-size preview="preview.png"&gt;2x2&lt;/tizen:widget-size&gt;
    &lt;/tizen:widget-content&gt;
@@ -1432,7 +1431,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define the name of the Web widget.
+			<td>Used to define the name of the web widget.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>1 or more</li>
@@ -1456,7 +1455,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define the starting page of the Web widget.
+			<td>Used to define the starting page of the web widget.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>1</li>
@@ -1468,7 +1467,7 @@ The following sections show additional configuration elements used in the `confi
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>src</code>
-				<p>Mandatory; local file path, relative to the source Web application directory of the widget starting page</p>
+				<p>Mandatory; local file path, relative to the source web application directory of the widget starting page</p>
 				</li>
 			</ul>
 			</td>
@@ -1484,7 +1483,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define the size of the Web widget.
+			<td>Used to define the size of the web widget.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>1</li>
@@ -1492,7 +1491,7 @@ The following sections show additional configuration elements used in the `confi
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>preview</code>
-				<p>Mandatory; image file path, relative to the source Web application directory of the box content displayed in the widget viewer</p>
+				<p>Mandatory; image file path, relative to the source web application directory of the box content displayed in the widget viewer</p>
 				</li>
 			</ul>
 			</td>
@@ -1508,7 +1507,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define a (key, value) pair that can be read by a Web widget through the WidgetService API. Its main use is to allow you to define a constant to be read by a Web widget.
+			<td>Used to define a (key, value) pair that can be read by a web widget through the WidgetService API. Its main use is to allow you to define a constant to be read by a web widget.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>1 or more</li>
@@ -1528,7 +1527,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_appdefined_privilege"></a>
-### Tizen App-defined Privilege
+### Tizen app-defined privilege
 
 <table>
 	<thead>
@@ -1561,7 +1560,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_application"></a>
-### Tizen Application ID
+### Tizen application ID
 
 <table>
 	<thead>
@@ -1586,10 +1585,10 @@ The following sections show additional configuration elements used in the `confi
 				<p>Mandatory; Tizen wearable package ID generated by Tizen Studio, consisting of 10 characters (0~9, a~z, A~Z). The package ID is unique in the Samsung Apps.</p>
 				</li>
 				<li><code>required_version</code>
-				<p>Mandatory; Tizen API version required for running the Web application</p>
+				<p>Mandatory; Tizen API version required for running the web application</p>
 				</li>
 				<li><code>ambient_support</code>
-				<p>Optional; sets whether the Web application supports the ambient mode (available values: <code>enable</code>, <code>disable</code> (default))</p>
+				<p>Optional; sets whether the web application supports the ambient mode (available values: <code>enable</code>, <code>disable</code> (default))</p>
 				<p>If this option is enabled, the application can be shown in the ambient mode.</p>
 				<strong>Since: 2.3.1</strong>
 				<blockquote><p><strong>Note</strong><br>
@@ -1620,7 +1619,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_bg_category"></a>
-### Tizen Background Category
+### Tizen background category
 
 <table>
 	<thead>
@@ -1632,7 +1631,7 @@ The following sections show additional configuration elements used in the `confi
 		<tr>
 			<td>Used to represent the category of an application that is allowed to run in the background.
 			<blockquote><p><strong>Note</strong><br>
-            In addition to declaring the <code>&lt;background-category&gt;</code> element, you must <a href="#ww_setting">set the <code>&lt;tizen:setting background-support&gt;</code> attribute to <code>enable</code></a> to run Web applications in the background.</p></blockquote>
+            In addition to declaring the <code>&lt;background-category&gt;</code> element, you must <a href="#ww_setting">set the <code>&lt;tizen:setting background-support&gt;</code> attribute to <code>enable</code></a> to run web applications in the background.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1651,7 +1650,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_category"></a>
-### Tizen Category
+### Tizen category
 
 <table>
 	<thead>
@@ -1680,7 +1679,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_tizencontent"></a>
-### Tizen Content
+### Tizen content
 
 <table>
 	<thead>
@@ -1711,7 +1710,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_contentsecpolicy"></a>
-### Tizen Content Security Policy
+### Tizen content security policy
 
 <table>
 	<thead>
@@ -1736,7 +1735,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_contentsecpolicyreport"></a>
-### Tizen Content Security Policy Report Only
+### Tizen content security policy report only
 
 <table>
 	<thead>
@@ -1763,7 +1762,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_feature"></a>
-### Tizen Feature
+### Tizen feature
 
 <table>
 	<thead>
@@ -1773,9 +1772,9 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define the hardware and software components for a Tizen wearable Web application. This attribute is only used in the Samsung Apps for filtering purposes. It is ignored by the Web Runtime installation procedure.
+			<td>Used to define the hardware and software components for a Tizen wearable web application. This attribute is only used in the Samsung Apps for filtering purposes. It is ignored by the Web Runtime installation procedure.
 			<blockquote><p><strong>Note</strong><br>
-            Even though the <code>&lt;feature/&gt;</code> element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen.</p></blockquote>
+            Even though the <code>&lt;feature/&gt;</code> element is defined in the Widget packaging and XML Configuration guidelines, an extended version is used in Tizen.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1860,7 +1859,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_launch_screen"></a>
-### Tizen Launch Screen
+### Tizen launch screen
 
 <table>
 	<thead>
@@ -1943,7 +1942,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_metadata"></a>
-### Tizen Metadata
+### Tizen metadata
 
 <table>
 	<thead>
@@ -1953,7 +1952,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
+			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1978,7 +1977,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_privilege"></a>
-### Tizen Privilege
+### Tizen privilege
 
 <table>
 	<thead>
@@ -1988,7 +1987,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to get the required API access privileges for the Web application.
+			<td>Used to get the required API access privileges for the web application.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -2007,7 +2006,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_provides_appdefined_privilege"></a>
-### Tizen Provided App-defined Privilege
+### Tizen provided app-defined privilege
 
 <table>
 	<thead>
@@ -2040,7 +2039,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_profile"></a>
-### Tizen Profile
+### Tizen profile
 
 <table>
 	<thead>
@@ -2069,7 +2068,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_service"></a>
-### Tizen Service
+### Tizen service
 
 <table>
 	<thead>
@@ -2079,7 +2078,7 @@ The following sections show additional configuration elements used in the `confi
 	</thead>
 	<tbody>
 		<tr>
-			<td>Used to define a Web service application.
+			<td>Used to define a web service application.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -2099,23 +2098,13 @@ The following sections show additional configuration elements used in the `confi
 				<p>Mandatory; Tizen service ID, which is a combination of the Tizen wearable package ID and service name.</p>
 				<p>The service ID is a set of characters (0~9, a~z, A~Z) and unique among service applications on the device. The minimum value is 1 byte and the maximum value is 52 bytes.</p>
 				</li>
-				<li><code>on-boot</code>
-				<p>Optional; sets whether the service application is launched automatically on device boot (available values: <code>true</code>, <code>false</code> (default))</p>
-				<blockquote><p><strong>Note</strong><br>
-                This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.</p></blockquote>
-				</li>
-				<li><code>auto-restart</code>
-				<p>Optional; sets whether the service application is relaunched automatically when it is terminated (available values: <code>true</code>, <code>false</code> (default))</p>
-				<blockquote><p><strong>Note</strong><br>
-                This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.</p></blockquote>
-				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>&lt;tizen:service id="webService.application" auto-restart="true" on-boot="false"&gt;
+			<pre><code>&lt;tizen:service id="webService.application"&gt;
    &lt;tizen:content src="service/service.js"/&gt;
    &lt;tizen:name&gt;WebService&lt;/tizen:name&gt;
    &lt;tizen:icon src="service-icon.png"/&gt;
-   &lt;tizen:description&gt;Web Service Application&lt;/tizen:description&gt;
+   &lt;tizen:description&gt;web Service Application&lt;/tizen:description&gt;
    &lt;tizen:metadata key="key1" value="value1"/&gt;
    &lt;tizen:category name="http://tizen.org/category/service"/&gt;
 &lt;tizen:service&gt;</code></pre>
@@ -2132,7 +2121,7 @@ The following sections show additional configuration elements used in the `confi
 	</thead>
 	<tbody>
 		<tr>
-			<td>Used to define the start page of the Web service application.
+			<td>Used to define the start page of the web service application.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>1</li>
@@ -2140,7 +2129,7 @@ The following sections show additional configuration elements used in the `confi
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>src</code>
-				<p>Mandatory; start JavaScript file path of the Web service application. The path is relative to the source Web application directory.</p>
+				<p>Mandatory; start JavaScript file path of the web service application. The path is relative to the source web application directory.</p>
 				</li>
 			</ul>
 			</td>
@@ -2156,7 +2145,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define the name of the Web service application.
+			<td>Used to define the name of the web service application.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>1 or more</li>
@@ -2180,7 +2169,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define the icon for the Web service application.
+			<td>Used to define the icon for the web service application.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or 1</li>
@@ -2188,7 +2177,7 @@ The following sections show additional configuration elements used in the `confi
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>src</code>
-				<p>Mandatory; file path of the Web service application icon. The path is relative to the source Web application directory.</p>
+				<p>Mandatory; file path of the web service application icon. The path is relative to the source web application directory.</p>
 				</li>
 			</ul>
 			</td>
@@ -2204,7 +2193,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define the description for the Web service application.
+			<td>Used to define the description for the web service application.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or 1</li>
@@ -2222,7 +2211,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
+			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -2266,7 +2255,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_setting"></a>
-### Tizen Settings
+### Tizen settings
 
 <table>
 	<thead>
@@ -2286,18 +2275,18 @@ The following sections show additional configuration elements used in the `confi
 				<li><code>background-support</code>
 				<p>Optional; application execution continues when it is moved to the background (available values: <code>enable</code> (execution continues in the background), <code>disable</code> (default; application is suspended))</p>
 				<blockquote><p><strong>Note</strong><br>
-                Since Tizen 2.4, the system manages background processes more tightly. Even if the <code>background-support</code> attribute is set to <code>enable</code>, a Web application process can be suspended in the background. To guarantee that the application runs in the background, <a href="#ww_bg_category">add at least one background category</a> for the application with the &lt;tizen:background-category&gt; element. Only the background categories declared in the system can be used.</p></blockquote>
+                Since Tizen 2.4, the system manages background processes more tightly. Even if the <code>background-support</code> attribute is set to <code>enable</code>, a web application process can be suspended in the background. To guarantee that the application runs in the background, <a href="#ww_bg_category">add at least one background category</a> for the application with the &lt;tizen:background-category&gt; element. Only the background categories declared in the system can be used.</p></blockquote>
 				</li>
 				<li><code>context-menu</code>
 				<p>Optional; sets whether the context menu is shown (available values: <code>enable</code> (default), <code>disable</code>)</p>
 				<p>If this option is enabled, the context menu is visible to the user.</p>
 				</li>
 				<li><code>encryption</code>
-				<p>Optional; sets whether Web application resources are encrypted (available values: <code>enable</code>, <code>disable</code> (default))</p>
+				<p>Optional; sets whether web application resources are encrypted (available values: <code>enable</code>, <code>disable</code> (default))</p>
 				<p>If this option is enabled, the application resources (HTML, JS and CSS files) are encrypted.</p>
 				</li>
 				<li><code>screen-orientation</code>
-				<p>Optional; sets whether it locks the orientation of the Web application (available values: <code>portrait</code> (default), <code>landscape</code>, <code>auto-rotation</code>)</p>
+				<p>Optional; sets whether it locks the orientation of the web application (available values: <code>portrait</code> (default), <code>landscape</code>, <code>auto-rotation</code>)</p>
 				<ul>
 					<li><code>portrait</code> or <code>landscape</code>: orientation is locked to portrait or landscape respectively</li>
 					<li><code>auto-rotation</code>: follows the device orientation setting</li>
@@ -2312,8 +2301,8 @@ The following sections show additional configuration elements used in the `confi
 				</ul>
 				</li>
 				<li><code>hwkey-event</code>
-				<p>Optional; a hardware key event is sent to the Web application when the user presses the hardware key (available values: <code>enable</code> (default), <code>disable</code>)</p>
-				<p>If this option is enabled, the <code>tizenhwkey</code> custom event is sent to the Web application. The <code>tizenhwkey</code> event object has a <code>keyName</code> attribute (available value: <code>back</code>).</p>
+				<p>Optional; a hardware key event is sent to the web application when the user presses the hardware key (available values: <code>enable</code> (default), <code>disable</code>)</p>
+				<p>If this option is enabled, the <code>tizenhwkey</code> custom event is sent to the web application. The <code>tizenhwkey</code> event object has a <code>keyName</code> attribute (available value: <code>back</code>).</p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
@@ -2329,7 +2318,7 @@ The following sections show additional configuration elements used in the `confi
 </table>
 
 <a name="ww_trust-anchor"></a>
-### Tizen Trust-anchor
+### Tizen trust-anchor
 
 <table>
 	<thead>

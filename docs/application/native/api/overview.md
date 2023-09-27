@@ -15,7 +15,7 @@ To be able to use an API, you need to include a header in which API is defined. 
 
 ## Related Feature
 
-Some of the Tizen Native APIs require features to prevent your application from being shown in the application list on Tizen Store. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
+Some of the Tizen Native APIs require features to prevent your application from being shown in the application list on the official site for Tizen applications. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
 
 **Figure: Related Feature**
 
@@ -47,6 +47,7 @@ For example, see the "Privilege:" section in the following picture:
 <ul>
 <li>Wearable
   <ul>
+    <li><a href="wearable/7.0/index.html" target="_blank">7.0</a></li>
     <li><a href="wearable/6.5/index.html" target="_blank">6.5</a></li>
     <li><a href="wearable/6.0/index.html" target="_blank">6.0</a></li>
     <li><a href="wearable/5.5/index.html" target="_blank">5.5</a></li>
@@ -59,6 +60,7 @@ For example, see the "Privilege:" section in the following picture:
 </li>
 <li>Mobile
   <ul>
+    <li><a href="mobile/7.0/index.html" target="_blank">7.0</a></li>
     <li><a href="mobile/6.5/index.html" target="_blank">6.5</a></li>
     <li><a href="mobile/6.0/index.html" target="_blank">6.0</a></li>
     <li><a href="mobile/5.5/index.html" target="_blank">5.5</a></li>
@@ -72,6 +74,7 @@ For example, see the "Privilege:" section in the following picture:
 </li>
 <li>Iot-Headed
   <ul>
+    <li><a href="iot-headed/7.0/index.html" target="_blank">7.0</a></li>
     <li><a href="iot-headed/6.5/index.html" target="_blank">6.5</a></li>
     <li><a href="iot-headed/6.0/index.html" target="_blank">6.0</a></li>
     <li><a href="iot-headed/5.5/index.html" target="_blank">5.5</a></li>
@@ -81,6 +84,7 @@ For example, see the "Privilege:" section in the following picture:
 </li>
 <li>Iot-Headless
   <ul>
+    <li><a href="iot-headless/7.0/index.html" target="_blank">7.0</a></li>
     <li><a href="iot-headless/6.5/index.html" target="_blank">6.5</a></li>
     <li><a href="iot-headless/6.0/index.html" target="_blank">6.0</a></li>
     <li><a href="iot-headless/5.5/index.html" target="_blank">5.5</a></li>

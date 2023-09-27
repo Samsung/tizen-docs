@@ -8,7 +8,7 @@ The Get Started Tutorial teaches you how to create basic Tizen applications for 
 
 ## Hardware setup for IoT development
 
-To start developing Tizen IoT applications, follow the [Get Started guide](http://tizenschool.org/tutorial/191/) that demonstrates how to set up the Raspberry Pi 3 or 4 board.
+To start developing Tizen IoT applications, follow the [Get Started guide](https://samsung.github.io/TizenSchool/tutorials/191) that demonstrates how to set up the Raspberry Pi 3 or 4 board.
 
 ## .NET application
 

@@ -32,7 +32,7 @@ application is using, do one of the following:
     information instead of GPS.
 
 - Use feature-based filtering to prevent your application from being
-    shown in the application list on Tizen Store, if the user's
+    shown in the application list on the official site for Tizen applications, if the user's
     device does not support all the features of your application. This
     way you can prevent the application from being installed on an
     unsupported device in the first place.
@@ -43,7 +43,7 @@ application is using, do one of the following:
     number of devices which can support the application.
 
 If the `config.xml` file of the application package includes a feature
-list, Tizen Store compares the capabilities of the device with the
+list, the store compares the capabilities of the device with the
 required feature conditions of the application. The store only lists the
 applications whose conditions match the capabilities of the device, and
 thus prevents incompatible applications from being installed.
@@ -53,12 +53,12 @@ thus prevents incompatible applications from being installed.
 ![Feature-based filtering](./media/app_filtering_basic_flow.png)
 
 When multiple features are defined in the feature list for feature-based
-filtering, Tizen Store creates the filtering condition for all using
+filtering, the store creates the filtering condition for all using
 the "AND" operation. For example, if there are
 `http://tizen.org/feature/network.nfc` and
 `http://tizen.org/feature/network.bluetooth` features in the feature
 list of the application package, only a device that has both those
-features can show the application on the Tizen Store application list
+features can show the application on the store application list
 for downloading.
 
 <a name="screen_size"></a>
@@ -66,16 +66,16 @@ for downloading.
 
 The screen size feature is the only exception to the normal feature
 handling process described above. When the screen size is defined in the
-feature list, Tizen Store creates the filtering condition with the
+feature list, the store creates the filtering condition with the
 "OR" operation. For example, if the
 `http://tizen.org/feature/screen.size.normal.480.800` and
 `http://tizen.org/feature/screen.size.normal.720.1280` features are
 defined in your application feature list, a device that supports one or
-the other of those features can show the application on the Tizen Store
+the other of those features can show the application on the store
 application list.
 
 If you do not specify a proper screen size in the `config.xml` file,
-your application can be rejected from Tizen Store.
+your application can be rejected from the store.
 
 The following tables list the available screen size features.
 
@@ -117,15 +117,15 @@ The feature keys have a hierarchy. For example, consider the
 -   If the feature list includes the
     `http://tizen.org/feature/location.gps` feature, only a device which
     has the `http://tizen.org/feature/location.gps` feature can show the
-    application on the Tizen Store application list.
+    application on the store application list.
 - If the feature list includes the `http://tizen.org/feature/location`
     feature, a device which has the
     `http://tizen.org/feature/location.gps`,
     `http://tizen.org/feature/location.wps`, or
     `http://tizen.org/feature/location` feature can show the application
-    on the Tizen Store application list.
+    on the store application list.
 
-    This means that Tizen Store considers the
+    This means that the store considers the
     `http://tizen.org/feature/location` feature as the
     `http://tizen.org/feature/location.gps OR http://tizen.org/feature/location.wps` feature.
     (If the feature list includes the
@@ -387,7 +387,7 @@ In a Web application, the profile name element can be added to the
    <tizen:profile name="mobile"/>
 ```
 
-Tizen Store compares the device profile and the `profile name`
+The official site for Tizen applications compares the device profile and the `profile name`
 element in an application. The store only shows the applications with a
 profile name matching the device profile to prevent unsupported
 applications from being installed.

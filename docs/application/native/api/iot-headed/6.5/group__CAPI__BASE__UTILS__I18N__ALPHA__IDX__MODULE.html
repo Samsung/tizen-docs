@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Tizen Native API: Alphabetic Index</title>
+<title>Tizen(Headed) Native API: Alphabetic Index</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen_html_stylesheet.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
     if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
   });
 </script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Tizen Native API"/>
+<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Tizen(Headed) Native API"/>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Tizen Native API
+   <div id="projectname">Tizen(Headed) Native API
    &#160;<span id="projectnumber">6.5</span>
    </div>
    
@@ -254,7 +254,7 @@ Typedefs</h2></td></tr>
 <p>Adds the index characters from a specified locale to the index. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga424e58a6840444f137ec099c456e0a0b" title="Adds the index characters from a specified locale to the index.">i18n_alpha_idx_add_labels_with_locale_id()</a> instead. </dd></dl>
 <p>The labels are added to those that are already in the index; they do not replace the existing index characters. The collation order for this index is not changed; it remains that of the locale that was originally specified when creating this Index. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Label will be added to this alphabetic index </td></tr>
@@ -353,7 +353,7 @@ Typedefs</h2></td></tr>
 
 <p>Adds the record to the alphabetic index. </p>
 <p>Each record will be associated with an index Bucket based on the record's name. The list of records for each bucket will be sorted based on the collation ordering of the names in the index's locale. Records with duplicate names are permitted; they will be kept in the order that they were added. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Record will be added to this alphabetic index </td></tr>
@@ -390,7 +390,7 @@ Typedefs</h2></td></tr>
 
 <p>Remove all records from the index. </p>
 <p>The set of Buckets, which define the headings under which records are classified, is not altered. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records</td></tr>
@@ -442,7 +442,7 @@ Typedefs</h2></td></tr>
 <p>Creates an alphabetic index object for the specified locale. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga9f379164db57e4aa3589e76decaa6589" title="Creates an alphabetic index object for the specified locale.">i18n_alpha_idx_create_from_locale_id()</a> instead. </dd></dl>
 <p>If the locale's data does not include index characters, a set of them will be synthesized based on the locale's exemplar characters. The locale determines the sorting order for both the index characters and the user item names appearing under each Index character. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The created object should be released by the caller with the <a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#gaaa9fbf8834d581e6a35809666799855d" title="Destroys the alphabetic index object.">i18n_alpha_idx_destroy()</a> function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -528,7 +528,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Destroys the alphabetic index object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index to be destroyed</td></tr>
@@ -572,7 +572,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the number of labels in this index. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Note: may trigger lazy index construction.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -625,7 +625,7 @@ Typedefs</h2></td></tr>
 
 <p>Given the name of a record, returns the zero-based index of the bucket in which the item should appear. </p>
 <p>The name need not be in the index. A Record will not be added to the index by this function. Bucket numbers are zero-based, in Bucket iteration order. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -672,7 +672,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the name of the label of the current bucket in alphabetic index. </p>
 <p>If the iteration is before the first Bucket (<a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga34facc6299dd08a6ef271d6486ca959f" title="Sets the next bucket as current bucket in the index.">i18n_alpha_idx_get_next_bucket()</a> has not been called), or after the last, return an empty string. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The obtained <em>label</em> should be released by the caller with the free() function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -719,7 +719,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the type of the label for the current Bucket (selected by the iteration over Buckets). </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -765,7 +765,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the number of &lt;name, data&gt; records in the current bucket. </p>
 <p>If the current bucket iteration position is before the first label or after the last, return 0. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -811,7 +811,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the zero based index of the current bucket of this index. </p>
 <p>Sets the variable pointed by the <em>bucket_index</em> to -1 if no iteration is in process. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -857,7 +857,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the default label used for abbreviated buckets between other index characters. </p>
 <p>For example, consider the labels when Latin and Greek are used: X Y Z ... &amp;#x0391; &amp;#x0392; &amp;#x0393; </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The obtained <em>label</em> should be released by the caller with the free() function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -905,7 +905,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the limit on the number of labels permitted in the index. </p>
 <p>The number does not include over, under and inflow labels. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -950,7 +950,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the next bucket as current bucket in the index. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets </td></tr>
@@ -997,7 +997,7 @@ Typedefs</h2></td></tr>
 
 <p>Sets the next record as current record in current bucket of the index. </p>
 <p>When <a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga34facc6299dd08a6ef271d6486ca959f" title="Sets the next bucket as current bucket in the index.">i18n_alpha_idx_get_next_bucket()</a> is called, record iteration is reset to just before the first record in the new bucket. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -1043,7 +1043,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the special label used for items that sort after the last normal label, and that would not otherwise have an appropriate label. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The obtained <em>label</em> should be released by the caller with the free() function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1090,7 +1090,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the total number of records in this index, that is, the number of &lt;name, data&gt; pairs added. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -1128,7 +1128,7 @@ Typedefs</h2></td></tr>
 <p>Returns NULL if:</p>
 <ul>
 <li>the current iteration position is before the first item in this Bucket, or after the last,</li>
-<li>the given <em>index</em> parameter is invalid. <dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<li>the given <em>index</em> parameter is invalid. <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exceptions section.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1176,7 +1176,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the name of the current record. </p>
 <p>If the Record iteration position is before the first or after the last record, sets the string pointed by the <em>record_name</em> parameter to NULL and returns the <a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeac99116c34321718d04ae4ce34afa4077">I18N_ERROR_INDEX_OUTOFBOUNDS</a> error code. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The obtained <em>record_name</em> should be released by the caller with the free() function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1224,7 +1224,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the special label used for items that sort before the first normal label, and that would not otherwise have an appropriate label. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The obtained <em>label</em> should be released by the caller with the free() function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1262,7 +1262,7 @@ Typedefs</h2></td></tr>
 
 <p>Resets the bucket iteration for this index. </p>
 <p>The next call to <a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga34facc6299dd08a6ef271d6486ca959f" title="Sets the next bucket as current bucket in the index.">i18n_alpha_idx_get_next_bucket()</a> will restart the iteration at the first label. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records</td></tr>
@@ -1297,7 +1297,7 @@ Typedefs</h2></td></tr>
 
 <p>Resets the record iteration for this index to before the first Record in the current Bucket. </p>
 <p>The next call to <a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga8c0a14e377e5049162f8a69294369d7c" title="Sets the next record as current record in current bucket of the index.">i18n_alpha_idx_get_next_record()</a> will restart the iteration at the first label. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records</td></tr>
@@ -1342,7 +1342,7 @@ Typedefs</h2></td></tr>
 
 <p>Sets the default label used for abbreviated buckets between other index characters. </p>
 <p>An inflow label will be automatically inserted if two otherwise-adjacent label characters are from different scripts, e.g. Latin and Cyrillic, and a third script, e.g. Greek, sorts between the two. The default inflow character is an ellipsis (...) </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -1388,7 +1388,7 @@ Typedefs</h2></td></tr>
 
 <p>Sets a limit on the number of labels permitted in the index. </p>
 <p>The number does not include over, under and inflow labels. Currently, if the number is exceeded, then every nth item is removed to bring the count down. A more sophisticated mechanism may be available in the future. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -1433,7 +1433,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the special label used for items that sort after the last normal label, and that would not otherwise have an appropriate label. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>
@@ -1478,7 +1478,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the special label used for items that sort before the first normal label, and that would not otherwise have an appropriate label. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.2 and 3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The alphabetic index, which contains buckets with records </td></tr>

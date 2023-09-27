@@ -2,7 +2,7 @@
 
 You can perform various media conversions through codecs. You can encode and decode video and audio data.
 
-The main features of the Tizen.Multimedia.MediaCodec namespace include:
+The main features of the Tizen.Multimedia.MediaCodec namespace include the following:
 
 -   Preparing media codecs
 
@@ -17,9 +17,9 @@ The main features of the Tizen.Multimedia.MediaCodec namespace include:
     [Run the media codec loop](#RunCodec) and retrieve the output packet.
 
 <a name="PrepareCodec"></a>
-## Preparing Media Codecs
+## Prepare media codecs
 
-To prepare the media codecs:
+To prepare the media codecs, proceed as follows:
 
 1.  Create an instance of the [Tizen.Multimedia.MediaCodec.MediaCodec](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
 
@@ -47,7 +47,7 @@ To prepare the media codecs:
 
 3.  To receive notifications whenever the input or output buffers are changed:
 
-    1.  To receive notifications when the input buffer is processed, register an event handler for the `InputProcessed` event of the `Tizen.Multimedia.MediaCodec.MediaCodec` class.
+    -   To receive notifications when the input buffer is processed, register an event handler for the `InputProcessed` event of the `Tizen.Multimedia.MediaCodec.MediaCodec` class.
 
         The event handler receives the currently-processing input packet:
 
@@ -60,7 +60,7 @@ To prepare the media codecs:
         }
         ```
 
-    2.  To receive notifications when the output buffers are dequeued, register an event handler for the `OutputAvailable` event of the `Tizen.Multimedia.MediaCodec.MediaCodec` class.
+    -   To receive notifications when the output buffers are dequeued, register an event handler for the `OutputAvailable` event of the `Tizen.Multimedia.MediaCodec.MediaCodec` class.
 
         The event handler receives the result packet:
 
@@ -76,9 +76,9 @@ To prepare the media codecs:
         ```
 
 <a name="FillPacket"></a>
-## Filling Media Packets
+## Fill media packets
 
-To create a media packet and fill it with data:
+To create a media packet and fill it with data, proceed as follows:
 
 1.  Create an instance of the [Tizen.Multimedia.MediaPacket](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaPacket.html) class:
 
@@ -102,14 +102,14 @@ To create a media packet and fill it with data:
     ```
 
 <a name="RunCodec"></a>
-## Running Media Codecs
+## Run media codecs
 
 After [preparing the media codec](#PrepareCodec) and [filling the media packet with data](#FillPacket), run the media codec in the following loop:
 
 1.  When an input buffer is ready, read a chunk of input and copy it into the buffer to be encoded or decoded.
 2.  When an output buffer is ready, copy the encoded or decoded output from the buffer.
 
-To run the media codec loop:
+To run the media codec loop, proceed as follows:
 
 1.  Prepare the media codec using the `Prepare()` method of the [Tizen.Multimedia.MediaCodec.MediaCodec](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
 
@@ -164,6 +164,6 @@ To run the media codec loop:
     mediaCodec.Unprepare();
     ```
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

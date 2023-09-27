@@ -14,16 +14,16 @@ Since Tizen 3.0, some privileges are categorized as privacy-related. The user ca
 ## Prerequisites
 
 
-To use the methods and properties of the [Tizen.Security.Privilege](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.Privilege.html) class, include the [Tizen.Security](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.html) namespace in your application. If you want to designate a privilege's type, include the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace too.
+To use the methods and properties of the [Tizen.Security.Privilege](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.Privilege.html) class, include the [Tizen.Security](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.html) namespace in your application. If you want to designate a privilege's type, include the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace too. This is shown in the following code block:
 
 ```csharp
 using Tizen.Security;
 using Tizen.Applications;
 ```
 <a name="get"></a>
-## Getting Privilege Information
+## Get privilege information
 
-To get various privilege information:
+To get various privilege information, follow these steps:
 
 -   Get the privilege display name using the `GetDisplayName()` method of the `Tizen.Security.Privilege` class:
 
@@ -67,6 +67,6 @@ To get various privilege information:
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

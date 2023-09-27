@@ -30,7 +30,7 @@ The samples library contains sample applications that can help you understand va
     </div>
 </div>
 
-## Popular Guides
+## Popular guides
 
 The guides library introduce various features of .NET applications. The features are supported in the TizenFX API, and you can use them in creating Tizen applications.
 
@@ -68,7 +68,7 @@ The guides library introduce various features of .NET applications. The features
     </div>
 </div>
 
-## API Reference
+## API reference
 
 Discover a rich set of interfaces allowing you to build compelling TV, mobile, and wearable applications which achieve native performance.
 
@@ -111,24 +111,24 @@ Discover a rich set of interfaces allowing you to build compelling TV, mobile, a
 
 <div class="row cards-container-infra">
     <div class="col col-12 col-md-6 col-xl-4">
-        <a href="https://tizenschool.org/tutorial/143/contents/1" target="_blank" class="card card-infra card-img-external h-100">
-            <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/tizenschool/143/Getting_Started_Creating_NET.jpg">
+        <a href="https://samsung.github.io/TizenSchool/tutorials/143" target="_blank" class="card card-infra card-img-external h-100">
+            <img class="card-img-top" src="https://samsung.github.io/TizenSchool/assets/images/tutorials/143/Getting_Started_Creating_NET.jpg">
             <div class="card-body">
                 <p class="h5 card-title">Getting Started with Creating a .NET App</p>
             </div>
         </a>
     </div>
     <div class="col col-12 col-md-6 col-xl-4">
-        <a href="https://tizenschool.org/tutorial/199/contents/1" target="_blank" class="card card-infra card-img-external h-100">
-            <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/tizenschool/199/Workout_thumbnail.png">
+        <a href="https://samsung.github.io/TizenSchool/tutorials/199" target="_blank" class="card card-infra card-img-external h-100">
+            <img class="card-img-top" src="https://samsung.github.io/TizenSchool/assets/images/tutorials/199/Workout_thumbnail.png">
             <div class="card-body">
                 <p class="h5 card-title">Workout application guide</p>
             </div>
         </a>
     </div>
     <div class="col col-12 col-md-6 col-xl-4">
-        <a href="https://tizenschool.org/tutorial/147/contents/1" target="_blank" class="card card-infra card-img-external h-100">
-            <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/tizenschool/147/tn-watchface.png">
+        <a href="https://samsung.github.io/TizenSchool/tutorials/147" target="_blank" class="card card-infra card-img-external h-100">
+            <img class="card-img-top" src="https://samsung.github.io/TizenSchool/assets/images/tutorials/147/tn-watchface.png">
             <div class="card-body">
                 <p class="h5 card-title">How to create Digital WatchFace</p>
             </div>

@@ -2,9 +2,9 @@
 # Input Method Manager
 
 
-You can manage the input method editors (IMEs) installed on the device. After your IME application is installed, you can use the input method manager to open a list of installed IMEs, allow the user to enable an installed IME, and show an IME selector, in which the user can see the enabled IMEs and select one as a default keyboard.
+You can manage the IMEs (Input Method Editors) installed on the device. After your IME application is installed, you can use the input method manager to open a list of installed IMEs, allow the user to enable an installed IME, and show an IME selector, in which the user can see the enabled IMEs and select one as a default keyboard.
 
-The main features of the Tizen.Uix.InputMethodManager namespace include:
+The main features of the Tizen.Uix.InputMethodManager namespace include the following:
 
 -   Showing the IME list
 
@@ -28,7 +28,7 @@ The main features of the Tizen.Uix.InputMethodManager namespace include:
 
 ## Prerequisites
 
-To enable your application to use the input method management functionality:
+To enable your application to use the input method management functionality, follow these steps:
 
 1.  To use the [Tizen.Uix.InputMethodManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -45,7 +45,7 @@ To enable your application to use the input method management functionality:
     ```
 
 <a name="list"></a>
-## Showing the IME List
+## Show the IME list
 
 To launch the IME list menu to show the installed IMEs, use the `ShowIMEList()` method of the [Tizen.Uix.InputMethodManager.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class:
 
@@ -64,7 +64,7 @@ void ShowImeList()
 ```
 
 <a name="selector"></a>
-## Showing the IME Selector
+## Show the IME selector
 
 To launch the IME selector menu to allow the user to select the default keyboard, use the `ShowIMESelector()` method of the [Tizen.Uix.InputMethodManager.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class:
 
@@ -83,11 +83,11 @@ void ShowImeSelector()
 ```
 
 <a name="enable"></a>
-## Checking the IME State
+## Check the IME state
 
 To check whether a specific IME is enabled, to check the current default keyboard, or to get the number of enabled (usable) IMEs:
 
--   To check whether a specific IME is enabled, use the `IsIMEEnabled()` method of the [Tizen.Uix.InputMethodManager.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class. As a parameter, use the application ID of the IME whose status you want to check.
+-   To check whether a specific IME is enabled, use the `IsIMEEnabled()` method of the [Tizen.Uix.InputMethodManager.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class. As a parameter, use the application ID of the IME whose status you want to check:
 
     ```csharp
     bool IsImeEnabled(string appId)
@@ -138,6 +138,6 @@ To check whether a specific IME is enabled, to check the current default keyboar
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

@@ -2,7 +2,7 @@
 
 You can access the system configuration related to user preferences, such as ringtone, wallpaper, and font using system settings.
 
-The main features of the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class include:
+The main features of the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class include the following:
 
 -   Managing system settings
 
@@ -14,7 +14,7 @@ The main features of the [Tizen.System.SystemSettings](/application/dotnet/api/T
 
 ## Prerequisites
 
-To enable your application to use the system setting functionality:
+To enable your application to use the system setting functionality, follow these steps:
 
 1.  To use the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -24,7 +24,7 @@ To enable your application to use the system setting functionality:
     </privileges>
     ```
 
-2. To make your application visible in Tizen Store only for devices that support the system setting features, add the following feature key to the `tizen-manifest.xml` file:
+2. To make your application visible on the official site for Tizen applications only for devices that support the system setting features, add the following feature key to the `tizen-manifest.xml` file:
 
     ```XML
     <!--To use the WallpaperHomeScreen property and WallpaperHomeScreenChanged event-->
@@ -65,7 +65,7 @@ To enable your application to use the system setting functionality:
     ```
 
 
-    > **Note**   
+    > [!NOTE]
 	> In TV applications, you can test the system settings functionality on an emulator only. Most target devices do not currently support this feature.
 
 
@@ -76,7 +76,7 @@ To enable your application to use the system setting functionality:
     ```
 
 <a name="settings"></a>
-## Retrieving System Settings
+## Retrieve system settings
 
 You can retrieve system settings with the properties of the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class.
 
@@ -87,7 +87,7 @@ var getValue = Tizen.System.SystemSettings.IncomingCallRingtone;
 ```
 
 <a name="events"></a>
-## Monitoring System Setting Changes
+## Monitor system setting changes
 
 You can set up notifications about system setting changes by defining event handlers and registering them for the [Tizen.System.SystemSettings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html) class events.
 
@@ -111,6 +111,6 @@ To monitor, for example, when the ringtone for incoming calls changes:
     ```
 
 
-## Related Information
+## Related information
 * Dependencies
   -   Tizen 4.0 and Higher

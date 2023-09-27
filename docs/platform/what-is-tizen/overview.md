@@ -140,6 +140,7 @@ To facilitate developing Tizen applications, [Tizen Studio](../../application/ti
 
 The latest versions of the Tizen platform include the following:
 
+- [Tizen 7.0](versions/tizen-7-0-m2.md)
 - [Tizen 6.5](versions/tizen-6-5-m2.md)
 - [Tizen 6.0](versions/tizen-6-0-m2.md)
 - [Tizen 5.5](versions/tizen-5-5-m2.md)
