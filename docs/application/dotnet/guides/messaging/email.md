@@ -1,5 +1,7 @@
 # Email
 
+> [!NOTE]
+> All email APIs have been deprecated since Tizen 8.0 and will be removed after two releases without any alternatives.
 
 You can access the email infrastructure to allow the user to exchange digital messages. Email systems are based on a store-and-forward model, in which email server computer systems accept, forward, deliver, and store messages on behalf of users, who only need to connect to the email infrastructure, typically an email server, with a network-enabled device for the duration of message submission or retrieval.
 
