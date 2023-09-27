@@ -1123,20 +1123,19 @@ tz uninstall [options]
 ## Import project to Tizen-Core format
 
 The projects created in Tizen-Studio, Visual Studio, and other IDEs need to be converted to Tizen-Core format, before building and running the projects in Tizen-Core. 
-Import command in Tizen-Core is used to convert and create the required files to build the project in Tizen-Core.
-Initialize the workspace with the required type as mentioned in the section [Initialize the Workspace](#initialize-the-workspace). After the workspace is initialized, use the following command to import the project.
+Init command in Tizen-Core is used to convert and create the required files to build the project in Tizen-Core as Import functionality is accomplished internally through the
+Init command.
 
 **Syntax:**
 
 ```
-tz import [options]
+tz init [options]
 ```
 
 **Options:**
 
 | Option                           | Description                              |
 |----------------------------------|------------------------------------------|
-| `-P`, `--project=PROJECT,...`     | Import the list of projects, format: project1, project2. |
 | `-p`, `--profile=STRING`     | Build profile of the project. |
 | `-u`, `--update-sln`   | Add imported project entries in sln present in workspace. |
 | `-f`, `--force` | Ignore existing project YAML files. |
@@ -1149,24 +1148,24 @@ tz import [options]
 
   Windows&reg;:
   ```
-  > tz import -w C:\Users\workspace
+  > tz init -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz import -w ~/workspace
+  $ tz init -w ~/workspace
   ```
 
 - Import web wgt project to Tizen-Core format.
   
   Windows&reg;:
   ```
-  > tz import -W C:\Users\basicweb.wgt -w C:\Users\workspace
+  > tz init -W C:\Users\basicweb.wgt -w C:\Users\workspace
   ```
 
   Ubuntu and macOS:
   ```
-  $ tz import -W ~/basicweb.wgt -w ~/workspace
+  $ tz init -W ~/basicweb.wgt -w ~/workspace
   ```
 
 ## Display the command help
