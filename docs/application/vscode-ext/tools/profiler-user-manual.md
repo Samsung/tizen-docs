@@ -11,15 +11,15 @@
      ![Run Memory Profiler](media/run_profiler.png)
 
 
-   - If everything is OK then the application starts as if you run it normally.
+   - If everything is ok then the application starts as if you are running it normally.
 
      ![Tizen application running](media/profiling_app_started.png)
 
 
-   - Profiling progress window will be displayed with stop button in a new tab which shows live performance profiling of the application.
+   - Profiling progress window will be displayed with a "Stop" button in a new tab showing the application's live performance profiling.
 
      ![Close Application](media/profiling_progress.png)
 
-   - Profiling can be stopped by clicking stop button.
+   - Profiling can be stopped by clicking the "Stop" button.
 
      ![Close Application](media/profiling_stop.png)
