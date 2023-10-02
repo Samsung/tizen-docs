@@ -13,6 +13,9 @@
 <div class="brief">
  The Messaging API provides interfaces and methods for managing SMS, MMS, and email messages.
         </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+        </p>
 <div class="description">
         <p>
 The Messaging API provides access to these capabilities:
@@ -54,63 +57,63 @@ For more information on the Messaging features, see <a href="/application/web/gu
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>
+<li class="deprecated">
                     1.1. <a href="#MessageServiceTag">MessageServiceTag</a>
 </li>
-<li>
+<li class="deprecated">
                     1.2. <a href="#MessageId">MessageId</a>
 </li>
-<li>
+<li class="deprecated">
                     1.3. <a href="#MessageAttachmentId">MessageAttachmentId</a>
 </li>
-<li>
+<li class="deprecated">
                     1.4. <a href="#MessageConvId">MessageConvId</a>
 </li>
-<li>
+<li class="deprecated">
                     1.5. <a href="#MessageFolderId">MessageFolderId</a>
 </li>
 </ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
-<li>2.1. <a href="#MessageManagerObject">MessageManagerObject</a>
+<li class="deprecated">2.1. <a href="#MessageManagerObject">MessageManagerObject</a>
 </li>
-<li>2.2. <a href="#Message">Message</a>
+<li class="deprecated">2.2. <a href="#Message">Message</a>
 </li>
-<li>2.3. <a href="#MessageInit">MessageInit</a>
+<li class="deprecated">2.3. <a href="#MessageInit">MessageInit</a>
 </li>
-<li>2.4. <a href="#MessageBody">MessageBody</a>
+<li class="deprecated">2.4. <a href="#MessageBody">MessageBody</a>
 </li>
-<li>2.5. <a href="#MessageAttachment">MessageAttachment</a>
+<li class="deprecated">2.5. <a href="#MessageAttachment">MessageAttachment</a>
 </li>
-<li>2.6. <a href="#Messaging">Messaging</a>
+<li class="deprecated">2.6. <a href="#Messaging">Messaging</a>
 </li>
-<li>2.7. <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a>
+<li class="deprecated">2.7. <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a>
 </li>
-<li>2.8. <a href="#MessageService">MessageService</a>
+<li class="deprecated">2.8. <a href="#MessageService">MessageService</a>
 </li>
-<li>2.9. <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>
+<li class="deprecated">2.9. <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>
 </li>
-<li>2.10. <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a>
+<li class="deprecated">2.10. <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a>
 </li>
-<li>2.11. <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a>
+<li class="deprecated">2.11. <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a>
 </li>
-<li>2.12. <a href="#MessageStorage">MessageStorage</a>
+<li class="deprecated">2.12. <a href="#MessageStorage">MessageStorage</a>
 </li>
-<li>2.13. <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a>
+<li class="deprecated">2.13. <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a>
 </li>
-<li>2.14. <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a>
+<li class="deprecated">2.14. <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a>
 </li>
-<li>2.15. <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a>
+<li class="deprecated">2.15. <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a>
 </li>
-<li>2.16. <a href="#MessagesChangeCallback">MessagesChangeCallback</a>
+<li class="deprecated">2.16. <a href="#MessagesChangeCallback">MessagesChangeCallback</a>
 </li>
-<li>2.17. <a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a>
+<li class="deprecated">2.17. <a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a>
 </li>
-<li>2.18. <a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a>
+<li class="deprecated">2.18. <a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a>
 </li>
-<li>2.19. <a href="#MessageConversation">MessageConversation</a>
+<li class="deprecated">2.19. <a href="#MessageConversation">MessageConversation</a>
 </li>
-<li>2.20. <a href="#MessageFolder">MessageFolder</a>
+<li class="deprecated">2.20. <a href="#MessageFolder">MessageFolder</a>
 </li>
 </ul>
 </li>
@@ -126,129 +129,20 @@ For more information on the Messaging features, see <a href="/application/web/gu
 <th>Interface</th>
 <th>Method</th>
 </tr></thead>
-<tbody>
-<tr>
-<td><a href="#MessageManagerObject">MessageManagerObject</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#Message">Message</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#MessageInit">MessageInit</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#MessageBody">MessageBody</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#MessageAttachment">MessageAttachment</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#Messaging">Messaging</a></td>
-<td><div>void <a href="#Messaging::getMessageServices">getMessageServices</a> (<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
-</tr>
-<tr>
-<td><a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a></td>
-<td><div>void <a href="#MessageServiceArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageService">MessageService</a>[] services)</div></td>
-</tr>
-<tr>
-<td><a href="#MessageService">MessageService</a></td>
-<td>
-<div>void <a href="#MessageService::sendMessage">sendMessage</a> (<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? simIndex)</div>
-<div>void <a href="#MessageService::loadMessageBody">loadMessageBody</a> (<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#MessageService::loadMessageAttachment">loadMessageAttachment</a> (<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>long <a href="#MessageService::sync">sync</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)</div>
-<div>long <a href="#MessageService::syncFolder">syncFolder</a> (<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)</div>
-<div>void <a href="#MessageService::stopSync">stopSync</a> (long opId)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#MessageRecipientsCallback">MessageRecipientsCallback</a></td>
-<td><div>void <a href="#MessageRecipientsCallback::onsuccess">onsuccess</a> (DOMString[] recipients)</div></td>
-</tr>
-<tr>
-<td><a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a></td>
-<td><div>void <a href="#MessageBodySuccessCallback::onsuccess">onsuccess</a> (<a href="#Message">Message</a> message)</div></td>
-</tr>
-<tr>
-<td><a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a></td>
-<td><div>void <a href="#MessageAttachmentSuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageAttachment">MessageAttachment</a> attachment)</div></td>
-</tr>
-<tr>
-<td><a href="#MessageStorage">MessageStorage</a></td>
-<td>
-<div>void <a href="#MessageStorage::addDraftMessage">addDraftMessage</a> (<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#MessageStorage::findMessages">findMessages</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset)</div>
-<div>void <a href="#MessageStorage::removeMessages">removeMessages</a> (<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#MessageStorage::updateMessages">updateMessages</a> (<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#MessageStorage::findConversations">findConversations</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset)</div>
-<div>void <a href="#MessageStorage::removeConversations">removeConversations</a> (<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#MessageStorage::findFolders">findFolders</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>long <a href="#MessageStorage::addMessagesChangeListener">addMessagesChangeListener</a> (<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)</div>
-<div>long <a href="#MessageStorage::addConversationsChangeListener">addConversationsChangeListener</a> (<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)</div>
-<div>long <a href="#MessageStorage::addFoldersChangeListener">addFoldersChangeListener</a> (<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)</div>
-<div>void <a href="#MessageStorage::removeChangeListener">removeChangeListener</a> (long watchId)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a></td>
-<td><div>void <a href="#MessageArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#Message">Message</a>[] messages)</div></td>
-</tr>
-<tr>
-<td><a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a></td>
-<td><div>void <a href="#MessageConversationArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageConversation">MessageConversation</a>[] conversations)</div></td>
-</tr>
-<tr>
-<td><a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a></td>
-<td><div>void <a href="#MessageFolderArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageFolder">MessageFolder</a>[] folders)</div></td>
-</tr>
-<tr>
-<td><a href="#MessagesChangeCallback">MessagesChangeCallback</a></td>
-<td>
-<div>void <a href="#MessagesChangeCallback::messagesadded">messagesadded</a> (<a href="#Message">Message</a>[] addedMessages)</div>
-<div>void <a href="#MessagesChangeCallback::messagesupdated">messagesupdated</a> (<a href="#Message">Message</a>[] updatedMessages)</div>
-<div>void <a href="#MessagesChangeCallback::messagesremoved">messagesremoved</a> (<a href="#Message">Message</a>[] removedMessages)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a></td>
-<td>
-<div>void <a href="#MessageConversationsChangeCallback::conversationsadded">conversationsadded</a> (<a href="#MessageConversation">MessageConversation</a>[] addedConversations)</div>
-<div>void <a href="#MessageConversationsChangeCallback::conversationsupdated">conversationsupdated</a> (<a href="#MessageConversation">MessageConversation</a>[] updatedConversations)</div>
-<div>void <a href="#MessageConversationsChangeCallback::conversationsremoved">conversationsremoved</a> (<a href="#MessageConversation">MessageConversation</a>[] removedConversations)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a></td>
-<td>
-<div>void <a href="#MessageFoldersChangeCallback::foldersadded">foldersadded</a> (<a href="#MessageFolder">MessageFolder</a>[] addedFolders)</div>
-<div>void <a href="#MessageFoldersChangeCallback::foldersupdated">foldersupdated</a> (<a href="#MessageFolder">MessageFolder</a>[] updatedFolders)</div>
-<div>void <a href="#MessageFoldersChangeCallback::foldersremoved">foldersremoved</a> (<a href="#MessageFolder">MessageFolder</a>[] removedFolders)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#MessageConversation">MessageConversation</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#MessageFolder">MessageFolder</a></td>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
 <div class="typedefs" id="typedefs-section">
 <h2>1. Type Definitions</h2>
-<div class="enum" id="MessageServiceTag">
+<div class="enum deprecated" id="MessageServiceTag">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageServiceTag"></a><h3>1.1. MessageServiceTag</h3>
 <div class="brief">
  Specifies the Messaging service tags.
 The following values are supported in this release:
           </div>
-<pre class="webidl prettyprint">  enum MessageServiceTag { "messaging.sms", "messaging.mms", "messaging.email" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum MessageServiceTag { "messaging.sms", "messaging.mms", "messaging.email" };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -263,42 +157,54 @@ messaging.email, for email services            </li>
           </ul>
          </div>
 </div>
-<div class="typedef" id="MessageId">
+<div class="typedef deprecated" id="MessageId">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageId"></a><h3>1.2. MessageId</h3>
 <div class="brief">
  The Message identifier.
           </div>
-<pre class="webidl prettyprint">  typedef DOMString MessageId;</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  typedef DOMString MessageId;</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
 </div>
-<div class="typedef" id="MessageAttachmentId">
+<div class="typedef deprecated" id="MessageAttachmentId">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageAttachmentId"></a><h3>1.3. MessageAttachmentId</h3>
 <div class="brief">
  The MessageAttachment identifier within a message.
           </div>
-<pre class="webidl prettyprint">  typedef DOMString MessageAttachmentId;</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  typedef DOMString MessageAttachmentId;</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
 </div>
-<div class="typedef" id="MessageConvId">
+<div class="typedef deprecated" id="MessageConvId">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageConvId"></a><h3>1.4. MessageConvId</h3>
 <div class="brief">
  The MessageConversation identifier.
           </div>
-<pre class="webidl prettyprint">  typedef DOMString MessageConvId;</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  typedef DOMString MessageConvId;</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
 </div>
-<div class="typedef" id="MessageFolderId">
+<div class="typedef deprecated" id="MessageFolderId">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageFolderId"></a><h3>1.5. MessageFolderId</h3>
 <div class="brief">
  The identifier of an email folder.
           </div>
-<pre class="webidl prettyprint">  typedef DOMString MessageFolderId;</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  typedef DOMString MessageFolderId;</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -306,14 +212,17 @@ messaging.email, for email services            </li>
 </div>
 <div class="interfaces" id="interfaces-section">
 <h2>2. Interfaces</h2>
-<div class="interface" id="MessageManagerObject">
+<div class="interface deprecated" id="MessageManagerObject">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageManagerObject"></a><h3>2.1. MessageManagerObject</h3>
 <div class="brief">
  The MessageManagerObject interface defines what is instantiated by the Tizen object.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageManagerObject {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface MessageManagerObject {
     readonly attribute <a href="#Messaging">Messaging</a> messaging;
-  };</pre>
+  };</span></pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;</pre>
 <p><span class="version">Since: </span>
  1.0
@@ -336,12 +245,15 @@ There is a <em>tizen.messaging</em> object that allows access to the Messaging A
 </li></ul>
 </div>
 </div>
-<div class="interface" id="Message">
+<div class="interface deprecated" id="Message">
 <a class="backward-compatibility-anchor" name="::Messaging::Message"></a><h3>2.2. Message</h3>
 <div class="brief">
  The Message interface defines the content and attributes of a message.
           </div>
-<pre class="webidl prettyprint">  [Constructor(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict)]
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Constructor(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict)]
   interface Message {
     readonly attribute <a href="#MessageId">MessageId</a>? id;
     readonly attribute <a href="#MessageConvId">MessageConvId</a>? conversationId;
@@ -360,7 +272,7 @@ There is a <em>tizen.messaging</em> object that allows access to the Messaging A
     readonly attribute <a href="#MessageId">MessageId</a>? inResponseTo;
     readonly attribute DOMString messageStatus;
     attribute <a href="#MessageAttachment">MessageAttachment</a>[] attachments;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -408,7 +320,7 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, errorCallback
 <dt class="method" id="">
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#MessageServiceTag">MessageServiceTag</a>, <a href="#MessageInit">MessageInit</a>?)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">Message(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict);</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">Message(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict);</span></pre>
 </dl>
 </div>
 <div class="attributes">
@@ -694,12 +606,15 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB);
 </ul>
 </div>
 </div>
-<div class="dictionary" id="MessageInit">
+<div class="dictionary deprecated" id="MessageInit">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageInit"></a><h3>2.3. MessageInit</h3>
 <div class="brief">
  The dictionary providing specific message attributes for message creation.
           </div>
-<pre class="webidl prettyprint">  dictionary MessageInit {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  dictionary MessageInit {
     DOMString subject;
     DOMString[] to;
     DOMString[] cc;
@@ -707,7 +622,7 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB);
     DOMString plainBody;
     DOMString htmlBody;
     boolean isHighPriority;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -817,18 +732,21 @@ This property is used only with email messages.
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageBody">
+<div class="interface deprecated" id="MessageBody">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageBody"></a><h3>2.4. MessageBody</h3>
 <div class="brief">
  The MessageBody interface describes a message body.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageBody {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface MessageBody {
     readonly attribute <a href="#MessageId">MessageId</a> messageId;
     readonly attribute boolean loaded;
     attribute DOMString plainBody;
     attribute DOMString htmlBody;
     attribute <a href="#MessageAttachment">MessageAttachment</a>[] inlineAttachments;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -928,18 +846,21 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB);
 </ul>
 </div>
 </div>
-<div class="interface" id="MessageAttachment">
+<div class="interface deprecated" id="MessageAttachment">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageAttachment"></a><h3>2.5. MessageAttachment</h3>
 <div class="brief">
  The MessageAttachment interface defines the content and attributes of a message attachment.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString filePath, optional DOMString? mimeType)]
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Constructor(DOMString filePath, optional DOMString? mimeType)]
   interface MessageAttachment {
     readonly attribute <a href="#MessageAttachmentId">MessageAttachmentId</a>? id;
     readonly attribute <a href="#MessageId">MessageId</a>? messageId;
     readonly attribute DOMString? mimeType;
     readonly attribute DOMString? filePath;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -949,7 +870,7 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB);
 <dt class="method" id="">
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString?)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">MessageAttachment(DOMString filePath, optional DOMString? mimeType);</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">MessageAttachment(DOMString filePath, optional DOMString? mimeType);</span></pre>
 </dl>
 </div>
 <div class="attributes">
@@ -1020,15 +941,18 @@ It holds the location path to a loaded attachment file, appropriate for the File
 </ul>
 </div>
 </div>
-<div class="interface" id="Messaging">
+<div class="interface deprecated" id="Messaging">
 <a class="backward-compatibility-anchor" name="::Messaging::Messaging"></a><h3>2.6. Messaging</h3>
 <div class="brief">
  The Messaging interface retrieves messaging services.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface Messaging {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface Messaging {
     void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -1134,14 +1058,17 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB, errorCallba
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageServiceArraySuccessCallback">
+<div class="interface deprecated" id="MessageServiceArraySuccessCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageServiceArraySuccessCallback"></a><h3>2.7. MessageServiceArraySuccessCallback</h3>
 <div class="brief">
  The MessageServiceArraySuccessCallback interface defines callback(s) for retrieving message services.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageServiceArraySuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageServiceArraySuccessCallback {
     void onsuccess(<a href="#MessageService">MessageService</a>[] services);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -1172,16 +1099,19 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB, errorCallba
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageService">
+<div class="interface deprecated" id="MessageService">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageService"></a><h3>2.8. MessageService</h3>
 <div class="brief">
  The MessageService interface allows a web application to manipulate and send messages and supports the message creating, sending, and fetching capabilities.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageService {
-    readonly attribute DOMString id;
-    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-    readonly attribute DOMString name;
-    readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface MessageService {
+<span class="nocode deprecated">    readonly attribute DOMString id;
+</span>    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
+<span class="nocode deprecated">    readonly attribute DOMString name;
+</span>    readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                      optional long? simIndex) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void loadMessageBody(<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
@@ -1193,7 +1123,7 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB, errorCallba
     long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopSync(long opId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -1247,11 +1177,14 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, serviceErrorC
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="MessageService::id">
+<li class="attribute deprecated" id="MessageService::id">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">id</span></span><div class="brief">
  The unique identifier of this Messaging service.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+            </p>
 <p><span class="version">Since: </span>
  1.0.
             </p>
@@ -1265,11 +1198,14 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, serviceErrorC
  1.0
             </p>
 </li>
-<li class="attribute" id="MessageService::name">
+<li class="attribute deprecated" id="MessageService::name">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  The messaging service name taken from the messaging service.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+            </p>
 <p><span class="version">Since: </span>
  1.0.
             </p>
@@ -1886,14 +1822,17 @@ If the <em>operationId</em> argument is not valid or does not correspond to a va
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageRecipientsCallback">
+<div class="interface deprecated" id="MessageRecipientsCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageRecipientsCallback"></a><h3>2.9. MessageRecipientsCallback</h3>
 <div class="brief">
  The MessageRecipientsCallback interface specifies the methods to be called for the sendMessage() operation.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageRecipientsCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageRecipientsCallback {
     void onsuccess(DOMString[] recipients);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -1924,15 +1863,18 @@ If the <em>operationId</em> argument is not valid or does not correspond to a va
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageBodySuccessCallback">
+<div class="interface deprecated" id="MessageBodySuccessCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageBodySuccessCallback"></a><h3>2.10. MessageBodySuccessCallback</h3>
 <div class="brief">
  The MessageBodySuccessCallback interface specifies a success callback function that takes a message as the input argument.
 It is used in the loadMessageBody() asynchronous operation.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageBodySuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageBodySuccessCallback {
     void onsuccess(<a href="#Message">Message</a> message);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -1963,15 +1905,18 @@ It is used in the loadMessageBody() asynchronous operation.
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageAttachmentSuccessCallback">
+<div class="interface deprecated" id="MessageAttachmentSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageAttachmentSuccessCallback"></a><h3>2.11. MessageAttachmentSuccessCallback</h3>
 <div class="brief">
  The MessageAttachmentSuccessCallback callback interface specifies a success callback function that takes the loaded attachment as the input argument.
 It is used in the loadMessageAttachment() asynchronous operation.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageAttachmentSuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageAttachmentSuccessCallback {
     void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -2002,12 +1947,15 @@ It is used in the loadMessageAttachment() asynchronous operation.
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageStorage">
+<div class="interface deprecated" id="MessageStorage">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageStorage"></a><h3>2.12. MessageStorage</h3>
 <div class="brief">
  The MessageStorage interface allows management capabilities using a web application to query, update, and delete messages, and subscribe to <em>MessageStorage</em> changes.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageStorage {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface MessageStorage {
     void addDraftMessage(<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
@@ -2030,7 +1978,7 @@ It is used in the loadMessageAttachment() asynchronous operation.
     long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)
                                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -3011,14 +2959,17 @@ watchId = messageStorage.addFoldersChangeListener(folderChangeCB);
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageArraySuccessCallback">
+<div class="interface deprecated" id="MessageArraySuccessCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageArraySuccessCallback"></a><h3>2.13. MessageArraySuccessCallback</h3>
 <div class="brief">
  The MessageArraySuccessCallback defines findMessages specific success callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageArraySuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageArraySuccessCallback {
     void onsuccess(<a href="#Message">Message</a>[] messages);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -3056,14 +3007,17 @@ It is used in the findMessages asynchronous operation.
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageConversationArraySuccessCallback">
+<div class="interface deprecated" id="MessageConversationArraySuccessCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageConversationArraySuccessCallback"></a><h3>2.14. MessageConversationArraySuccessCallback</h3>
 <div class="brief">
  The MessageConversationArraySuccessCallback interface defines findConversations specific success callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageConversationArraySuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageConversationArraySuccessCallback {
     void onsuccess(<a href="#MessageConversation">MessageConversation</a>[] conversations);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -3101,14 +3055,17 @@ It is used in the findConversations asynchronous operation.
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageFolderArraySuccessCallback">
+<div class="interface deprecated" id="MessageFolderArraySuccessCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageFolderArraySuccessCallback"></a><h3>2.15. MessageFolderArraySuccessCallback</h3>
 <div class="brief">
  The MessageFolderArraySuccessCallback interface defines findFolders specific success callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageFolderArraySuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageFolderArraySuccessCallback {
     void onsuccess(<a href="#MessageFolder">MessageFolder</a>[] folders);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -3146,16 +3103,19 @@ It is used in the findFolders asynchronous operation.
 </dl>
 </div>
 </div>
-<div class="interface" id="MessagesChangeCallback">
+<div class="interface deprecated" id="MessagesChangeCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessagesChangeCallback"></a><h3>2.16. MessagesChangeCallback</h3>
 <div class="brief">
  The MessagesChangeCallback defines addMessagesChangeListener callback.
           </div>
-<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessagesChangeCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback, NoInterfaceObject] interface MessagesChangeCallback {
     void messagesadded(<a href="#Message">Message</a>[] addedMessages);
     void messagesupdated(<a href="#Message">Message</a>[] updatedMessages);
     void messagesremoved(<a href="#Message">Message</a>[] removedMessages);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -3235,16 +3195,19 @@ It contains only MessageId attribute.
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageConversationsChangeCallback">
+<div class="interface deprecated" id="MessageConversationsChangeCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageConversationsChangeCallback"></a><h3>2.17. MessageConversationsChangeCallback</h3>
 <div class="brief">
  The MessageConversationsChangeCallback interface defines addConversationsChangeListener callback.
           </div>
-<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessageConversationsChangeCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback, NoInterfaceObject] interface MessageConversationsChangeCallback {
     void conversationsadded(<a href="#MessageConversation">MessageConversation</a>[] addedConversations);
     void conversationsupdated(<a href="#MessageConversation">MessageConversation</a>[] updatedConversations);
     void conversationsremoved(<a href="#MessageConversation">MessageConversation</a>[] removedConversations);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -3324,17 +3287,20 @@ Every element contains only MessageConvId attribute.
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageFoldersChangeCallback">
+<div class="interface deprecated" id="MessageFoldersChangeCallback">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageFoldersChangeCallback"></a><h3>2.18. MessageFoldersChangeCallback</h3>
 <div class="brief">
  The MessageFoldersChangeCallback callback interface specifies a callback as a set of functions that are invoked when message folders from <em>MessageStorage</em> change.
 Each function takes a list of folders as the input argument.
           </div>
-<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessageFoldersChangeCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback, NoInterfaceObject] interface MessageFoldersChangeCallback {
     void foldersadded(<a href="#MessageFolder">MessageFolder</a>[] addedFolders);
     void foldersupdated(<a href="#MessageFolder">MessageFolder</a>[] updatedFolders);
     void foldersremoved(<a href="#MessageFolder">MessageFolder</a>[] removedFolders);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -3408,12 +3374,15 @@ Each element contains only MessageFolderId attribute.
 </dl>
 </div>
 </div>
-<div class="interface" id="MessageConversation">
+<div class="interface deprecated" id="MessageConversation">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageConversation"></a><h3>2.19. MessageConversation</h3>
 <div class="brief">
  The MessageConversation interface defines the message conversation (also known as the thread of messages).
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageConversation {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface MessageConversation {
     readonly attribute <a href="#MessageConvId">MessageConvId</a> id;
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
     readonly attribute Date timestamp;
@@ -3427,7 +3396,7 @@ Each element contains only MessageFolderId attribute.
     readonly attribute DOMString[] cc;
     readonly attribute DOMString[] bcc;
     readonly attribute <a href="#MessageId">MessageId</a> lastMessageId;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -3601,21 +3570,24 @@ This property is set up by the device or the Web runtime environment.
 </ul>
 </div>
 </div>
-<div class="interface" id="MessageFolder">
+<div class="interface deprecated" id="MessageFolder">
 <a class="backward-compatibility-anchor" name="::Messaging::MessageFolder"></a><h3>2.20. MessageFolder</h3>
 <div class="brief">
  The MessageFolder interface defines the email folder.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageFolder {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface MessageFolder {
     readonly attribute <a href="#MessageFolderId">MessageFolderId</a> id;
     readonly attribute <a href="#MessageFolderId">MessageFolderId</a> parentId;
-    readonly attribute DOMString serviceId;
-    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> contentType;
+<span class="nocode deprecated">    readonly attribute DOMString serviceId;
+</span>    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> contentType;
     attribute DOMString name;
     readonly attribute DOMString path;
     readonly attribute DOMString type;
     attribute boolean synchronizable;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -3657,11 +3629,14 @@ If this folder is a root folder, the parent folder ID is <var>null</var>.
  1.0
             </p>
 </li>
-<li class="attribute" id="MessageFolder::serviceId">
+<li class="attribute deprecated" id="MessageFolder::serviceId">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">serviceId</span></span><div class="brief">
  The identifier of the service to which a specified folder belongs.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+            </p>
 <p><span class="version">Since: </span>
  1.0.
             </p>
@@ -3779,164 +3754,7 @@ To guarantee that the mms application runs on a device with MMS feature, define 
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Messaging {
-  typedef DOMString MessageId;
-  typedef DOMString MessageAttachmentId;
-  typedef DOMString MessageConvId;
-  typedef DOMString MessageFolderId;
-  enum MessageServiceTag { "messaging.sms", "messaging.mms", "messaging.email" };
-  dictionary MessageInit {
-    DOMString subject;
-    DOMString[] to;
-    DOMString[] cc;
-    DOMString[] bcc;
-    DOMString plainBody;
-    DOMString htmlBody;
-    boolean isHighPriority;
-  };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;
-  [NoInterfaceObject] interface MessageManagerObject {
-    readonly attribute <a href="#Messaging">Messaging</a> messaging;
-  };
-  [Constructor(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict)]
-  interface Message {
-    readonly attribute <a href="#MessageId">MessageId</a>? id;
-    readonly attribute <a href="#MessageConvId">MessageConvId</a>? conversationId;
-    readonly attribute <a href="#MessageFolderId">MessageFolderId</a>? folderId;
-    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-    readonly attribute Date? timestamp;
-    readonly attribute DOMString? from;
-    attribute DOMString[] to;
-    attribute DOMString[] cc;
-    attribute DOMString[] bcc;
-    attribute <a href="#MessageBody">MessageBody</a> body;
-    attribute boolean isRead;
-    readonly attribute boolean hasAttachment;
-    attribute boolean isHighPriority;
-    attribute DOMString subject;
-    readonly attribute <a href="#MessageId">MessageId</a>? inResponseTo;
-    readonly attribute DOMString messageStatus;
-    attribute <a href="#MessageAttachment">MessageAttachment</a>[] attachments;
-  };
-  [NoInterfaceObject] interface MessageBody {
-    readonly attribute <a href="#MessageId">MessageId</a> messageId;
-    readonly attribute boolean loaded;
-    attribute DOMString plainBody;
-    attribute DOMString htmlBody;
-    attribute <a href="#MessageAttachment">MessageAttachment</a>[] inlineAttachments;
-  };
-  [Constructor(DOMString filePath, optional DOMString? mimeType)]
-  interface MessageAttachment {
-    readonly attribute <a href="#MessageAttachmentId">MessageAttachmentId</a>? id;
-    readonly attribute <a href="#MessageId">MessageId</a>? messageId;
-    readonly attribute DOMString? mimeType;
-    readonly attribute DOMString? filePath;
-  };
-  [NoInterfaceObject] interface Messaging {
-    void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface MessageServiceArraySuccessCallback {
-    void onsuccess(<a href="#MessageService">MessageService</a>[] services);
-  };
-  [NoInterfaceObject] interface MessageService {
-    readonly attribute DOMString id;
-    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-    readonly attribute DOMString name;
-    readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                     optional long? simIndex) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void loadMessageBody(<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback,
-                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)
-              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                    optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void stopSync(long opId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface MessageRecipientsCallback {
-    void onsuccess(DOMString[] recipients);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface MessageBodySuccessCallback {
-    void onsuccess(<a href="#Message">Message</a> message);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface MessageAttachmentSuccessCallback {
-    void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
-  };
-  [NoInterfaceObject] interface MessageStorage {
-    void addDraftMessage(<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                      optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void updateMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback,
-                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit,
-                           optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)
-                                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback,
-                                        optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)
-                                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface MessageArraySuccessCallback {
-    void onsuccess(<a href="#Message">Message</a>[] messages);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface MessageConversationArraySuccessCallback {
-    void onsuccess(<a href="#MessageConversation">MessageConversation</a>[] conversations);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface MessageFolderArraySuccessCallback {
-    void onsuccess(<a href="#MessageFolder">MessageFolder</a>[] folders);
-  };
-  [Callback, NoInterfaceObject] interface MessagesChangeCallback {
-    void messagesadded(<a href="#Message">Message</a>[] addedMessages);
-    void messagesupdated(<a href="#Message">Message</a>[] updatedMessages);
-    void messagesremoved(<a href="#Message">Message</a>[] removedMessages);
-  };
-  [Callback, NoInterfaceObject] interface MessageConversationsChangeCallback {
-    void conversationsadded(<a href="#MessageConversation">MessageConversation</a>[] addedConversations);
-    void conversationsupdated(<a href="#MessageConversation">MessageConversation</a>[] updatedConversations);
-    void conversationsremoved(<a href="#MessageConversation">MessageConversation</a>[] removedConversations);
-  };
-  [Callback, NoInterfaceObject] interface MessageFoldersChangeCallback {
-    void foldersadded(<a href="#MessageFolder">MessageFolder</a>[] addedFolders);
-    void foldersupdated(<a href="#MessageFolder">MessageFolder</a>[] updatedFolders);
-    void foldersremoved(<a href="#MessageFolder">MessageFolder</a>[] removedFolders);
-  };
-  [NoInterfaceObject] interface MessageConversation {
-    readonly attribute <a href="#MessageConvId">MessageConvId</a> id;
-    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-    readonly attribute Date timestamp;
-    readonly attribute unsigned long messageCount;
-    readonly attribute unsigned long unreadMessages;
-    readonly attribute DOMString preview;
-    readonly attribute DOMString subject;
-    readonly attribute boolean isRead;
-    readonly attribute DOMString from;
-    readonly attribute DOMString[] to;
-    readonly attribute DOMString[] cc;
-    readonly attribute DOMString[] bcc;
-    readonly attribute <a href="#MessageId">MessageId</a> lastMessageId;
-  };
-  [NoInterfaceObject] interface MessageFolder {
-    readonly attribute <a href="#MessageFolderId">MessageFolderId</a> id;
-    readonly attribute <a href="#MessageFolderId">MessageFolderId</a> parentId;
-    readonly attribute DOMString serviceId;
-    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> contentType;
-    attribute DOMString name;
-    readonly attribute DOMString path;
-    readonly attribute DOMString type;
-    attribute boolean synchronizable;
-  };
 };</pre>
 </div>
 <div id="page-footer">
