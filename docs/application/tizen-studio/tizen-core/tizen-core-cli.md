@@ -1188,9 +1188,8 @@ To package and install rpk on the target, use the following commands:
 
 ## Import project to Tizen-Core format
 
-The projects created in Tizen-Studio, Visual Studio, and other IDEs need to be converted to Tizen-Core format, before building and running the projects in Tizen-Core. 
-Init command in Tizen-Core is used to convert and create the required files to build the project in Tizen-Core as Import functionality is accomplished internally through the
-Init command.
+The projects created in Tizen Studio, Visual Studio, and other IDEs need to be converted to Tizen-Core format, before building and running the projects in Tizen-Core. 
+init command in Tizen-Core is used to convert and create the required files to build the project in Tizen-Core as import functionality is accomplished internally through the init command.
 
 **Syntax:**
 
