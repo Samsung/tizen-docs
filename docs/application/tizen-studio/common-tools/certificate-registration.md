@@ -42,7 +42,7 @@ You can create a new certificate profile with the Certificate Manager:
 
       ![Author information](./media/cert_reg_author_info.png)
 
-   2. You can use the default Tizen distributor certificate or another distributor certificate if you have one. In general, the default Tizen Distributor Certificate is used and you do not need to modify the distributor certificates. You can also select the privilege level and version of the Distributor Certificate (in [native](../../native/tutorials/details/sec-privileges.md) and [Web](../../web/tutorials/sec-privileges.md) applications).
+   2. You can use the default Tizen Distributor Certificate or another distributor certificate if you have one. In general, the default Tizen Distributor Certificate is used and you do not need to modify the distributor certificates. You can also select the privilege level and version of the Distributor Certificate (in [native](../../native/tutorials/details/sec-privileges.md) and [Web](../../web/tutorials/sec-privileges.md) applications).
 
       * For Tizen 8.0 devices or higher versions you can select version as new (default).
       * For Tizen 7.0 devices or lower versions you can select version as old. 
