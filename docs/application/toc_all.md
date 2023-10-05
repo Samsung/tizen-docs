@@ -1177,6 +1177,9 @@
 ## Visual Studio Code Extension for Tizen
 ### [Prerequisites](/application/vscode-ext/index.md)
 ### [Installing Visual Studio Code Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
+### Tools
+#### [Profiler](/application/vscode-ext/tools/profiler-user-manual.md)
+#### [Memory Profiler](/application/vscode-ext/tools/memory-profiler-user-manual.md)
 ### Tizen
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
 #### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)

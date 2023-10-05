@@ -22,6 +22,10 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tiz
 
     Download from <https://nodejs.org>.
 
+  - Python 2.7 (only for macOS)
+
+    Download from <https://www.python.org/ftp/python/2.7.18/python-2.7.18-macosx10.9.pkg>.
+
   - Tizen Baseline SDK or Tizen Studio
 
     If neither of these is found, VS Code Extension for Tizen installs the Baseline SDK.
