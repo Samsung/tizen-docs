@@ -73,6 +73,9 @@ The main features of the Bluetooth API include:
 
   You can use LE operations to [manage scans](#le_scan), [set scanning filters](#le_scan_filter), [add advertising data](#add_adv_data), [set the advertising connectable mode](#set_adv_conn), [set the advertising mode](#set_adv_mode), and [start and stop advertising](#start_adv).
 
+  > [!NOTE]
+  > You can use extended advertising functionalities such as setting the primary phy, secondary phy, and related scan functionalities since Tizen 8.0.
+
 - Controlling remote audio and video devices with Bluetooth AVRCP
 
   The Bluetooth AVRCP feature (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__AVRCP__MODULE.html) applications) provides functions for remotely controlling audio and video devices.
@@ -1727,6 +1730,149 @@ To discover nearby LE devices, perform an LE scan operation:
            if (bt_adapter_le_get_scan_result_appearance(info, pkt_type, &appearance) == BT_ERROR_NONE)
                dlog_print(DLOG_INFO, LOG_TAG, "Appearance = %d", appearance);
            if (bt_adapter_le_get_scan_result_manufacturer_data(info, pkt_type, &manufacturer_id,
+                                                               &manufacturer_data, &manufacturer_data_len) == BT_ERROR_NONE) {
+               dlog_print(DLOG_INFO, LOG_TAG, "Manufacturer data[ID:%.4X, 0x%.2X%.2X...(len:%d)]",
+                          manufacturer_id, manufacturer_data[0], manufacturer_data[1], manufacturer_data_len);
+               g_free(manufacturer_data);
+           }
+       }
+   }
+   ```
+
+## Manage Bluetooth LE extended scans
+
+To discover nearby extended advertising packets, perform an LE extended scan operation:
+
+1. To start the LE extended scan:
+
+   ```
+   int
+   main()
+   {
+       int ret = BT_ERROR_NONE;
+       ret = bt_adapter_le_start_scan_new(__bt_adapter_le_new_scan_result_cb, NULL);
+
+       if (ret != BT_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "[bt_adapter_le_start_scan_new] failed.");
+
+       /*
+          Wait while the system searches for the LE target you want to connect to
+          When you find the LE target you want, stop the LE scan
+
+          bt_adapter_le_start_scan_new() operates continually
+          until you call bt_adapter_le_stop_scan()
+          If you do not call bt_adapter_le_stop_scan() after calling
+          bt_adapter_le_start_scan_new(), calling bt_adapter_le_start_scan_new() again
+          can cause an in-progress error
+       */
+
+       ret = bt_adapter_le_stop_scan();
+       if (ret != BT_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "[bt_adapter_le_stop_scan] failed.");
+
+       return;
+   }
+   ```
+
+2. Use the callback defined in the `bt_adapter_le_start_scan_new()` function to retrieve the handle of scan results. The callback contains the handle on the scanned devices. You can retrieve the primary phy, secondary phy, advertising sid, periodic advertising interval, and the legacy information such as the device names, scanned devices' transmission level, service data list, appearance of the devices, and manufacturer data of the devices.
+
+   To handle the scan result:
+
+   ```
+   int ret;
+   int i;
+
+   void
+   __bt_adapter_le_new_scan_result_cb(int result,
+                                  bt_new_scan_result_h handle,
+                                  void *user_data)
+   {
+       bt_adapter_le_packet_type_e pkt_type = BT_ADAPTER_LE_PACKET_ADVERTISING;
+       bt_adapter_le_device_scan_result_info_s *legacy_info;
+       bool is_extended;
+       int primary_phy;
+       int secondary_phy;
+       int advertising_sid;
+       int periodic_adv_int;
+
+       if (info == NULL) {
+           dlog_print(DLOG_INFO, LOG_TAG, "No discovery_info!");
+
+           return;
+       }
+
+       if (bt_adapter_le_get_new_scan_result_is_extended(handle, &is_extended) == BT_ERROR_NONE) {
+           dlog_print(DLOG_INFO, LOG_TAG, "Extended advertising packet");
+
+           if (bt_adapter_le_get_new_scan_result_primary_phy(handle, &primary_phy) == BT_ERROR_NONE) {
+               dlog_print(DLOG_INFO, LOG_TAG, "Primary PHY = %d", primary_phy);
+           }
+           if (bt_adapter_le_get_new_scan_result_secondary_phy(handle, &secondary_phy) == BT_ERROR_NONE) {
+               dlog_print(DLOG_INFO, LOG_TAG, "Secondary PHY = %d", secondary_phy);
+           }
+           if (bt_adapter_le_get_new_scan_result_advertising_sid(handle, &advertising_sid) == BT_ERROR_NONE) {
+               dlog_print(DLOG_INFO, LOG_TAG, "Advertising Sid = %d", advertising_sid);
+           }
+           if (bt_adapter_le_get_new_scan_result_periodic_adv_int(handle, &periodic_adv_int) == BT_ERROR_NONE) {
+               dlog_print(DLOG_INFO, LOG_TAG, "Periodic Advertising Interval = %d", periodic_adv_int);
+           }
+       }
+
+       if (bt_adapter_le_get_new_scan_result_legacy_info(handle, &legacy_info) != BT_ERROR_NONE) {
+           dlog_print(DLOG_ERROR, LOG_TAG, "[bt_adapter_le_get_new_scan_result_legacy_info] failed.");
+           return;
+       }
+
+       for (i = 0; i < 2; i++) {
+           char **uuids;
+           char *device_name;
+           int tx_power_level;
+           bt_adapter_le_service_data_s *data_list;
+           int appearance;
+           int manufacturer_id;
+           char *manufacturer_data;
+           int manufacturer_data_len;
+           int count;
+
+           pkt_type += i;
+           if (pkt_type == BT_ADAPTER_LE_PACKET_ADVERTISING && legacy_info->adv_data == NULL)
+               continue;
+           if (pkt_type == BT_ADAPTER_LE_PACKET_SCAN_RESPONSE && legacy_info->scan_data == NULL)
+               break;
+
+           if (bt_adapter_le_get_scan_result_service_uuids(legacy_info, pkt_type, &uuids, &count) == BT_ERROR_NONE) {
+               int i;
+               for (i = 0; i < count; i++) {
+                   dlog_print(DLOG_INFO, LOG_TAG, "UUID[%d] = %s", i + 1, uuids[i]);
+                   g_free(uuids[i]);
+               }
+               g_free(uuids);
+           }
+           if (bt_adapter_le_get_scan_result_device_name(legacy_info, pkt_type, &device_name) == BT_ERROR_NONE) {
+               dlog_print(DLOG_INFO, LOG_TAG, "Device name = %s", device_name);
+               g_free(device_name);
+           }
+           if (bt_adapter_le_get_scan_result_tx_power_level(legacy_info, pkt_type, &tx_power_level) == BT_ERROR_NONE)
+               dlog_print(DLOG_INFO, LOG_TAG, "TX Power level = %d", tx_power_level);
+           if (bt_adapter_le_get_scan_result_service_solicitation_uuids(legacy_info, pkt_type, &uuids, &count) == BT_ERROR_NONE) {
+               int i;
+               for (i = 0; i < count; i++) {
+                   dlog_print(DLOG_INFO, LOG_TAG, "Solicitation UUID[%d] = %s", i + 1, uuids[i]);
+                   g_free(uuids[i]);
+               }
+               g_free(uuids);
+           }
+           if (bt_adapter_le_get_scan_result_service_data_list(legacy_info, pkt_type, &data_list, &count) == BT_ERROR_NONE) {
+               int i;
+               for (i = 0; i < count; i++) {
+                   dlog_print(DLOG_INFO, LOG_TAG, "Service Data[%d] = [0x%2.2X%2.2X:0x%.2X...]", i + 1,
+                              data_list[i].service_uuid[0], data_list[i].service_uuid[1], data_list[i].service_data[0]);
+               }
+               bt_adapter_le_free_service_data_list(data_list, count);
+           }
+           if (bt_adapter_le_get_scan_result_appearance(legacy_info, pkt_type, &appearance) == BT_ERROR_NONE)
+               dlog_print(DLOG_INFO, LOG_TAG, "Appearance = %d", appearance);
+           if (bt_adapter_le_get_scan_result_manufacturer_data(legacy_info, pkt_type, &manufacturer_id,
                                                                &manufacturer_data, &manufacturer_data_len) == BT_ERROR_NONE) {
                dlog_print(DLOG_INFO, LOG_TAG, "Manufacturer data[ID:%.4X, 0x%.2X%.2X...(len:%d)]",
                           manufacturer_id, manufacturer_data[0], manufacturer_data[1], manufacturer_data_len);
