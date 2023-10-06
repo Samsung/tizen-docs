@@ -72,9 +72,17 @@ It is used to create an author signature, which ensures the integrity of the app
 
 3. Sign in to Samsung account
 
+    A pop-up notification appear, indicating a 5-minute timeout for accessing Samsung account sign-in page.
+    
+    ![samsung account sign-in timeout](media/certification_guide11-3.png)
+
     Samsung account sign-in window appears. Click **Sign in** or **Create new account**. (To get a certificate, you must have a Samsung account. If you do not have an account, it is recommended to create a new account.)
 
     ![samsung account](media/certification_guide11.png)
+
+    Following a successful login, a "Login Successful" window appears in the browser.
+    
+    ![samsung login message](media/certification_guide11-2.png)
 
 4. Backup created author certificate
 
