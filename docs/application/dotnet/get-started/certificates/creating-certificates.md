@@ -72,7 +72,7 @@ It is used to create an author signature, which ensures the integrity of the app
 
 3. Sign in to Samsung account
 
-    A pop-up notification appear, indicating a 5-minute timeout for accessing Samsung account sign-in page.
+    A pop-up notification appears, indicating a 5-minute timeout for accessing Samsung account sign-in page.
     
     ![samsung account sign-in timeout](media/certification_guide11-3.png)
 
