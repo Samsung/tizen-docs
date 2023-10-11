@@ -1,10 +1,10 @@
-# Tizen 8.0 Public M1
+# Tizen 8.0 M2 Release
 
-Release date: May 31, 2023
+Release date: Oct 31, 2023
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 8.0 M1 source codes are under **tizen** branch.)
+- [Getting source code](http://review.tizen.org/git/) (Tizen 8.0 M2 source codes are under **tizen** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20230515.082838/](http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20230515.082838/)
