@@ -1219,7 +1219,9 @@ You must destroy <em>ppencrypted</em> with <a class="el" href="group__CAPI__KEY_
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The wrapping key must be either symmetric (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>) or public RSA (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a00a9e5221f318f05cde7cd08fbf73ad9">CKMC_KEY_RSA_PUBLIC</a>). </dd>
 <dd>
-The <em>ppwrapped_key</em> should be released using <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gada5f41101ddf3d4394a62007c9a588cf" title="Destroys the ckmc_key_s handle and releases all its resources.">ckmc_key_free()</a>.</dd></dl>
+The <em>ppwrapped_key</em> should be released using <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gada5f41101ddf3d4394a62007c9a588cf" title="Destroys the ckmc_key_s handle and releases all its resources.">ckmc_key_free()</a>. </dd>
+<dd>
+The key denoted by <em>alias</em> can only be <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">params</td><td>Algorithm parameter list handle. See <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga3d01ef6c7561b1aaeab217875ad9dc04" title="Algorithm parameter list handle.">ckmc_param_list_h</a> and <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaded2830b235ecead52b360c47c6167fc" title="Enumeration for crypto algorithm types.">ckmc_algo_type_e</a> for details. Supported algorithms:<ul>
@@ -2152,7 +2154,7 @@ You must destroy the newly created <em>pkcs12</em> by calling <a class="el" href
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The wrapping key must be either symmetric (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>) or private RSA (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a17473f4e40f75e21ef69a969de7cafa6">CKMC_KEY_RSA_PRIVATE</a>). </dd>
 <dd>
-key_type in <em>wrapped_key</em> must not be set to <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a4662cab83ced68d25078849b1fa958d4">CKMC_KEY_NONE</a>. </dd>
+key_type in <em>wrapped_key</em> can only be <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>. </dd>
 <dd>
 password in <em>wrapped_key</em> must be set to NULL. There's no need to additionally encrypt a wrapped key. </dd>
 <dd>
