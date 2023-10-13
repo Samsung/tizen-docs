@@ -42,6 +42,9 @@ do not want to interact with the TV image.
 <li>
                     1.4. <a href="#ZPosition">ZPosition</a>
 </li>
+<li>
+                    1.5. <a href="#SourceRotationRatio">SourceRotationRatio</a>
+</li>
 </ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -86,6 +89,7 @@ do not want to interact with the TV image.
 <div>
 <a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> <a href="#TVWindowManager::getSource">getSource</a> (optional <a href="#WindowType">WindowType</a>? type)</div>
 <div>void <a href="#TVWindowManager::show">show</a> (<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString[]? rectangle, optional <a href="#WindowType">WindowType</a>? type, optional <a href="#ZPosition">ZPosition</a>? zPosition)</div>
+<div>void <a href="#TVWindowManager::rotateSource">rotateSource</a> (<a href="#SourceRotationRatio">SourceRotationRatio</a> rotation, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#TVWindowManager::hide">hide</a> (<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type)</div>
 <div>void <a href="#TVWindowManager::getRect">getRect</a> (<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit, optional <a href="#WindowType">WindowType</a>? type)</div>
 <div>
@@ -236,6 +240,28 @@ BEHIND - Displays the TV window behind the Web Application            </li>
           </ul>
          </div>
 </div>
+<div class="enum" id="SourceRotationRatio">
+<a class="backward-compatibility-anchor" name="::TVWindow::SourceRotationRatio"></a><h3>1.5. SourceRotationRatio</h3>
+<div class="brief">
+ An enumerator to indicate the rotation of the video source.
+          </div>
+<pre class="webidl prettyprint">  enum SourceRotationRatio { "ROTATION_0", "ROTATION_90", "ROTATION_180", "ROTATION_270" };</pre>
+<p><span class="version">Since: </span>
+ 8.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ROTATION_0 - rotation 0 degrees            </li>
+            <li>
+ROTATION_90 - rotation 90 degrees            </li>
+            <li>
+ROTATION_180 - rotation 180 degrees            </li>
+            <li>
+ROTATION_270 - rotation 270 degrees            </li>
+          </ul>
+         </div>
+</div>
 </div>
 <div class="interfaces" id="interfaces-section">
 <h2>2. Interfaces</h2>
@@ -271,6 +297,7 @@ functionality of the TV Window API.
     <a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> getSource(optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void show(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString[]? rectangle,
               optional <a href="#WindowType">WindowType</a>? type, optional <a href="#ZPosition">ZPosition</a>? zPosition) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void rotateSource(<a href="#SourceRotationRatio">SourceRotationRatio</a> rotation, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void hide(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type)
               raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getRect(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit,
@@ -669,6 +696,86 @@ catch (error)
 try
 {
   tizen.tvwindow.show(successCB, null, ["10.5%", "10%", "900", "500px"]);
+}
+catch (error)
+{
+  console.log("Error name: " + error.name + ", error message: " + error.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVWindowManager::rotateSource">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::rotateSource"></a><code><b><span class="methodName">rotateSource</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Rotates soruce of the tvwindow object shown on the screen.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void rotateSource(<a href="#SourceRotationRatio">SourceRotationRatio</a> rotation, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 8.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+AbortError - if any unexpected error occurred.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">rotation</span>:
+ The desired rotation of the source.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to invoke when the operation is finished successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError if this functionality is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function rotationCB()
+{
+  console.log("Rotation finished successfully");
+}
+
+function successCB(windowRect, type)
+{
+  tizen.tvwindow.rotateSource("ROTATION_180", rotationCB);
+}
+
+try
+{
+  tizen.tvwindow.show(successCB, null, ["0", "0", "50%", "50%"]);
 }
 catch (error)
 {
@@ -1263,6 +1370,7 @@ To guarantee the running of this application on a device with a TV picture-in-pi
     "PICTURE_SIZE_TYPE_WSS_4x3", "PICTURE_SIZE_TYPE_WSS_16x9", "PICTURE_SIZE_TYPE_WSS_ZOOM1", "PICTURE_SIZE_TYPE_WSS_ZOOM1_DN",
     "PICTURE_SIZE_TYPE_WSS_ZOOM2", "PICTURE_SIZE_TYPE_WSS_WIDEZOOM", "PICTURE_SIZE_TYPE_WSS_14x9", "PICTURE_SIZE_TYPE_UNKNOWN" };
   enum ZPosition { "FRONT", "BEHIND" };
+  enum SourceRotationRatio { "ROTATION_0", "ROTATION_90", "ROTATION_180", "ROTATION_270" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVWindowManagerObject">TVWindowManagerObject</a>;
   [NoInterfaceObject] interface TVWindowManagerObject {
     readonly attribute <a href="#TVWindowManager">TVWindowManager</a> tvwindow;
@@ -1275,6 +1383,7 @@ To guarantee the running of this application on a device with a TV picture-in-pi
     <a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> getSource(optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void show(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString[]? rectangle,
               optional <a href="#WindowType">WindowType</a>? type, optional <a href="#ZPosition">ZPosition</a>? zPosition) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void rotateSource(<a href="#SourceRotationRatio">SourceRotationRatio</a> rotation, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void hide(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type)
               raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getRect(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit,
