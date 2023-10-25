@@ -1155,6 +1155,7 @@
 ### Tools
 #### [Project Wizard](/application/vstools/tools/project-wizard.md)
 #### [Tizen .NET Hot Reload](/application/vstools/tools/dotnet-hotreload.md)
+#### [.NET Core Diagnostics](/application/vstools/tools/dotnet-diagnostics.md)
 
 #### Manifest Editor
 ##### [Overview](/application/vstools/tools/manifest-editor.md)
