@@ -768,10 +768,11 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </ul>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac05f1d318100515b1c1e9d688bc6cce3ac829ee1164a3bcd5b2dc666aa091ebb6"></a><!-- doxytag: member="CKMC_ALGO_RSA_OAEP" ref="ggac05f1d318100515b1c1e9d688bc6cce3ac829ee1164a3bcd5b2dc666aa091ebb6" args="" -->CKMC_ALGO_RSA_OAEP</em>&nbsp;</td><td>
-<p>RSA-OAEP algorithm Supported parameters:</p>
+<p>RSA-OAEP algorithm (EME-OAEP as defined in PKCS #1 with MGF1) Supported parameters:</p>
 <ul>
 <li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa61dd6794e1d00e6f93dfce37c863c8db">CKMC_PARAM_ALGO_TYPE</a> = <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3ac829ee1164a3bcd5b2dc666aa091ebb6">CKMC_ALGO_RSA_OAEP</a> (mandatory),</li>
-<li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa0d2a2be92492ae4a4cf9bece0d49a50c">CKMC_PARAM_ED_LABEL</a> = label to be associated with the message (optional, not supported at the moment) </li>
+<li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa0d2a2be92492ae4a4cf9bece0d49a50c">CKMC_PARAM_ED_LABEL</a> = label (encoding parameter) to be associated with the message (optional, not supported at the moment)</li>
+<li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aaae491732be15c5057755eea1fbb1eabe">CKMC_PARAM_ED_OAEP_HASH</a> = hash algorithm to be used in OAEP padding (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaecb8791432ee56ff94a6f6d7ea8dabd5" title="Enumeration for hash algorithm.">__ckmc_hash_algo</a>). (optional) </li>
 </ul>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac05f1d318100515b1c1e9d688bc6cce3aaad09ae35e8a2690c4992a08d6371516"></a><!-- doxytag: member="CKMC_ALGO_KBKDF" ref="ggac05f1d318100515b1c1e9d688bc6cce3aaad09ae35e8a2690c4992a08d6371516" args="" -->CKMC_ALGO_KBKDF</em>&nbsp;</td><td>
@@ -1138,6 +1139,9 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa0d2a2be92492ae4a4cf9bece0d49a50c"></a><!-- doxytag: member="CKMC_PARAM_ED_LABEL" ref="gga8b4a2846798d61983a4b8b186dfed97aa0d2a2be92492ae4a4cf9bece0d49a50c" args="" -->CKMC_PARAM_ED_LABEL</em>&nbsp;</td><td>
 <p>buffer - RSA OAEP label (not supported at the moment) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aaae491732be15c5057755eea1fbb1eabe"></a><!-- doxytag: member="CKMC_PARAM_ED_OAEP_HASH" ref="gga8b4a2846798d61983a4b8b186dfed97aaae491732be15c5057755eea1fbb1eabe" args="" -->CKMC_PARAM_ED_OAEP_HASH</em>&nbsp;</td><td>
+<p>integer - function to be used both as Label and MGF hash function in OAEP padding (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaecb8791432ee56ff94a6f6d7ea8dabd5" title="Enumeration for hash algorithm.">__ckmc_hash_algo</a>). Currently only <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaecb8791432ee56ff94a6f6d7ea8dabd5a7878c642193cd45410561ad1fc91136e">CKMC_HASH_SHA1</a> and <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaecb8791432ee56ff94a6f6d7ea8dabd5a0aa1879aea52958da0f9701e793100d8">CKMC_HASH_SHA256</a> are supported. If not given, the default <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaecb8791432ee56ff94a6f6d7ea8dabd5a7878c642193cd45410561ad1fc91136e">CKMC_HASH_SHA1</a> is used. (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa80256f9b5dd4b68dedde22093379421c"></a><!-- doxytag: member="CKMC_PARAM_KDF_PRF" ref="gga8b4a2846798d61983a4b8b186dfed97aa80256f9b5dd4b68dedde22093379421c" args="" -->CKMC_PARAM_KDF_PRF</em>&nbsp;</td><td>
 <p>integer - pseudo-random function number (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga8439cb794c8fe891d9fded3009d8787f" title="Enumeration for key derivation function pseudo-random function parameter.">ckmc_kdf_prf_e</a>) (Since 6.0) </p>
