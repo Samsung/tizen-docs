@@ -31,7 +31,7 @@ Tizen provides a building block pool of components mainly based on the Tizen API
 
 Tizen custom device can be created by combining API building blocks in various ways as per the requirements. Required packages are installed based on the dependencies related to the specified building blocks.
 
-For more information, please reference [Tizen custom device](profiles/iot.md).
+For more information, please reference [Tizen custom device](profiles/tizen_custom.md).
 
 Devices and features under new categories or devices can be easily added for emerging technologies. Therefore, Tizen is adaptable and customizable for new products. In the foreseeable future, for example, IoT devices and services are expected to be prevalent and Tizen is taking proactive steps toward the opportunities in these new markets.
 
