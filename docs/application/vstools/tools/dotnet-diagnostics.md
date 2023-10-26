@@ -1,7 +1,7 @@
 # Get Started with .NET Core Diagnostics
 
 .NET Core Diagnostics supports a number of tools that can be used to diagnose the Tizen .NET applications.
-It includes dotnet-gcdump, dotnet-dump and dotnet-trace tools to aid .NET developers in diagnosing their applications.
+It includes dotnet-gcdump, dotnet-dump, and dotnet-trace tools to aid .NET developers in diagnosing their applications.
 
 ## Prerequisites
 
@@ -10,11 +10,11 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
 - Make sure that Tizen Studio Version 5.5 or above is installed.
 - Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with the installed 5.5 or above Tizen Studio path.
 
-## Tizen .NET Core Diagnostics Tools
+## Tizen .NET Core Diagnostics tools
 
 ## dotnet-gcdump
 
-### Step 1. Running dotnet-gcdump tool
+### Step 1. Run dotnet-gcdump tool
    - If no Tizen device is connected and no Tizen emulators are running then launch the type of emulator you want to use for diagnosing your application.
 
      ![Launch Emulator](media/start_emulator.png)
@@ -25,19 +25,19 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
      ![Run dotnet-gcdump](media/dotnet-gcdump.png)
 
 
-   - If everything is OK then the application starts and it starts collecting the **gcdump**.
+   - If everything is ok then the application starts and it starts collecting the gcdump file.
 
      ![Tizen application running](media/dotnet-gcdump-collect.png)
 
 
-   - Once the **gcdump** is collected, a Message popup is shown to inform user and file is added to the gcdump file list in **GCDump Explorer window**.
+   - Once the gcdump file is collected, a message popup is shown to inform the user, and the file is added to the gcdump file list in **GCDump Explorer window**.
 
 
-   - User can collect the **gcdump** multiple times by clicking the **Collect** button, until the application is closed by pressing "Home" or "Back" buttons, or by clicking **Stop** button given in **GCDump Explorer window**.
+   - User can collect the gcdump file multiple times by clicking the **Collect** button, until the application is closed by pressing "Home" or "Back" buttons, or by clicking the **Stop** button given in **GCDump Explorer window**.
 
 
 
-### Step 2. Analyzing the gcdump file
+### Step 2. Analyze the gcdump file
    - The GUI application provides two tools to view the gcdump diagnostics data. The views include:
 
        - Double click the gcdump file in **GCDump Explorer window**. It will open the file in **PerfView** tool.
@@ -47,7 +47,7 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
 
 ## dotnet-trace
 
-### Step 1. Running dotnet-trace tool
+### Step 1. Run dotnet-trace tool
    - If no Tizen device is connected and no Tizen emulators are running then launch the type of emulator you want to use for diagnosing your application.
 
      ![Launch Emulator](media/start_emulator.png)
@@ -58,19 +58,19 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
      ![Run dotnet-dump](media/dotnet-trace.png)
 
 
-   - If everything is OK then the application starts and it starts collecting the **trace**.  
-       - If Application is not running already in the device/emulator then **trace** will be collected from Application startup.
-       - If Application is already running in the device/emulator then **trace** will be collected from there on.
+   - If everything is ok then the application starts and it starts collecting the trace.  
+       - If application is not running already in the device/emulator then **trace** will be collected from application startup.
+       - If application is already running in the device/emulator then **trace** will be collected from there on.
 
      ![Tizen application running](media/dotnet-trace-collect.png)
 
-   - Press **Stop Trace** button above to stop and generate the **trace** file.
+   - Press **Stop Trace** button above to stop and generate the trace file.
 
-   - Once the **trace** file is generated, a Message popup is shown to inform user and file is added to the gcdump file list in **Dump Explorer window**.
+   - Once the trace file is generated, a message popup is shown to inform the user, and the file is added to the gcdump file list in **Dump Explorer window**.
 
 
 
-### Step 2. Analyzing the trace file
+### Step 2. Analyze the trace file
    - The GUI application provides different tools for different **Format** to view the trace diagnostics data.
    - **nettrace**
        - Double click the trace (.nettrace) file in **Trace Explorer window**. It will open the file in **PerfView** tool.
@@ -88,7 +88,7 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
 
 ## dotnet-dump
 
-### Step 1. Running dotnet-dump tool
+### Step 1. Run dotnet-dump tool
    - If no Tizen device is connected and no Tizen emulators are running then launch the type of emulator you want to use for diagnosing your application.
 
      ![Launch Emulator](media/start_emulator.png)
@@ -99,19 +99,19 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
      ![Run dotnet-dump](media/dotnet-dump.png)
 
 
-   - If everything is OK then the application starts and it starts collecting the **dump**.
+   - If everything is ok then the application starts and it starts collecting the dump file.
 
      ![Tizen application running](media/dotnet-dump-collect.png)
 
 
-   - Once the **dump** is collected, a Message popup is shown to inform user and file is added to the gcdump file list in **Dump Explorer window**.
+   - Once the dump file is collected, a message popup is shown to inform the user, and the file is added to the gcdump file list in **Dump Explorer window**.
 
 
-   - User can collect the **dump** multiple times by clicking the **Collect** button, until the application is closed by pressing "Home" or "Back" buttons, or by clicking **Stop** button given in **Dump Explorer window**.
+   - User can collect the dump file multiple times by clicking the **Collect** button, until the application is closed by pressing "Home" or "Back" buttons, or by clicking **Stop** button given in **Dump Explorer window**.
 
 
-### Step 2. Analyzing the dump file
+### Step 2. Analyze the dump file
    - Open the **sdb shell**
-   - Go to the folder containing **dump** file 
+   - Go to the folder containing the dump file
    - Run the command **dotnet dump analyze {file_name}**
 
