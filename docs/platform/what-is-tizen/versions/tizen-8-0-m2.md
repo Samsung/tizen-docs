@@ -22,9 +22,9 @@ The main progress of Tizen 8.0 includes the work that has been done to expand th
 
 - **Creating and Rendering 3D Scenes Using NUI**
 
-  Tizen includes simple features that allow to create and render 3D scenes using NUI. Tizen 8.0 adds more powerful 3D features and useful APIs for creating 3D content.
+  Tizen includes simple features that allow developers to create and render 3D scenes using NUI. Tizen 8.0 adds more powerful 3D features and useful APIs for creating 3D content.
 	
-	- Model files can be loaded asynchronously and are cached to reduce redundant memory. Materials for Physically Based Rendering(PBR) now can be modified at runtime. Newly added 3D-friendly classes make the things easier. And compressed texture formats are now supported.   
+	- Model files can be loaded asynchronously and are cached to reduce redundant memory. Materials for Physically Based Rendering(PBR) can now be modified at runtime. Newly added 3D-friendly classes make things easier. And compressed texture formats are now supported.   
 	
 	- In addition to Image Based Lighting (IBL), a new type of light source has become available. Directional lighting can be easily installed in a scene. NUI supports up to 5 directional light sources. And one of the lights installed in the scene can make shadows. Shadows are drawn using Shadow Mapping. Hard shadows by default, but optional filtering to soften edges is also provided.   
 	
@@ -42,7 +42,7 @@ The main progress of Tizen 8.0 includes the work that has been done to expand th
 
 - **3D AI Avatars**
 
-  One of the useful new 3D features in Tizen 8.0 is AI avatars. Controlling avatar's body/face motion has become easier. Tizen avatars support AI LipSync, which is inferred from the device.
+  One of the useful new 3D features in Tizen 8.0 is AI avatars. Controlling an avatar's body/face motion has become easier. Tizen avatars support AI LipSync, which is inferred from the device.
   
   **Figure: AI LipSync Results With Motion**
 
@@ -65,7 +65,7 @@ The main progress of Tizen 8.0 includes the work that has been done to expand th
 
   - Model/Data Repository
   
-    - New feature to provide methods to share and control AI models or data files between different applications. With this feature, developers can separate the model file from the application package, and deploy newly updated AI model independently.
+    - New feature to provide methods to share and control AI models or data files between different applications. With this feature, developers can separate the model file from the application package, and deploy the newly updated AI model independently.
 	- AI applications can fetch and control the version of an AI model without code-level modification, and access ML resources, which contain images, audio, video, and binary files for model retraining.
 	
 	**Figure: Sharing ML Model and Resource Data**
