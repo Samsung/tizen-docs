@@ -1,16 +1,16 @@
 # Tizen 8.0
 
-The second milestone (M2) release of Tizen 8.0 was announced in October 2023. Tizen is an open-source operating system (OS) maintained by Samsung, and it is being developed and optimized for smart devices since 2012.
+The second milestone (M2) release of Tizen 8.0 was announced in October 2023. Tizen is an open-source operating system (OS) maintained by Samsung, and it has been developed and optimized for smart devices since 2012.
 
-The main progress of Tizen 8.0 includes the works that have been done to expand the ecosystem of home appliances. Tizen 8.0 is also updated and optimized to unlock even more experiences for our developers. These new enhancements include multi-modal interaction framework, 3D UI, machine learning, build infra, and more.
+The main progress of Tizen 8.0 includes the work that has been done to expand the ecosystem of home appliances. Tizen 8.0 is also updated and optimized to unlock even more experiences for our developers. These new enhancements include a multi-modal interaction framework, 3D UI, machine learning, build infra, and more.
 
 ## Multi-modal Interaction Framework
 
 - **Multi-modal Interaction Framework**
 
-  Multi-modal Interaction involves using various communication channels or modes, such as voice, gestures, and more, to interact with digital devices. It offers natural, intuitive, and flexible interactions, catering to user preferences.
+  Multi-modal interaction involves using various communication channels or modes, such as voice, gestures, and more, to interact with digital devices. It offers natural, intuitive, and flexible interactions, catering to user preferences.
 
-  The Multi-modal Interaction Framework simplifies the implementation of multi-modal interactions. It achieves this by providing a structured way to create workflows, representing multi-modal scenarios. These workflows are composed of nodes that encapsulate core functionalities.
+  The Multi-modal Interaction Framework simplifies the implementation of multi-modal interactions. It achieves this by providing a structured way to create workflows that represent multi-modal scenarios. These workflows are composed of nodes that encapsulate core functionalities.
 
    Application developers can leverage the provided prebuilt workflows, which reduces the complexities of implementing multi-modal interactions in their applications. This simplifies the development process, allowing them to incorporate multi-modal capabilities without difficulties.    
 
@@ -54,7 +54,7 @@ The main progress of Tizen 8.0 includes the works that have been done to expand 
 
   - ML Service
   
-    To support AI inference offloading between the leaf device such as TizenRT and Tizen, NNStreamer and NNStreamer-Edge are updated as below.
+    To support AI inference offloading between the leaf device such as TizenRT and Tizen, NNStreamer and NNStreamer-Edge are updated as below:
   
     - Optimize the size of NNStreamer-Edge library (<25KiB).
     - Support various communication protocols such as MQTT, MQTT-Hybrid, AITT, and TCP.
@@ -66,7 +66,7 @@ The main progress of Tizen 8.0 includes the works that have been done to expand 
   - Model/Data Repository
   
     - New feature to provide methods to share and control AI models or data files between different applications. With this feature, developers can separate the model file from the application package, and deploy newly updated AI model independently.
-	- AI application also can fetch and control the version of AI model without code-level modification, and access ML resources, which contains images, audio, video, and binary files for model retraining.
+	- AI applications can fetch and control the version of an AI model without code-level modification, and access ML resources, which contain images, audio, video, and binary files for model retraining.
 	
 	**Figure: Sharing ML Model and Resource Data**
 
@@ -90,11 +90,11 @@ The main progress of Tizen 8.0 includes the works that have been done to expand 
   
   - Increased Rank Limit & Number of Tensors
   
-     - To infer the large model such as LLM, the size of the rank limit is increased from 4 to 16 and the number of tensors is increased from 16 to 256 in NNStreamer.
+     - To infer large models such as LLM, the size of the rank limit is increased from 4 to 16, and the number of tensors is increased from 16 to 256 in NNStreamer.
 	 
 - **Light-weight On-device Training Framework: NNTrainer**
 
-  There have been increased requests to provide personalized intelligence services by updating neural networks with user data without exposing the data out of the devices. However, the limited resources of devices incur significant difficulties. NNTrainer enables "On-Device Training" features in Tizen efficiently  by providing the followings
+  There have been increased requests to provide personalized intelligence services by updating neural networks with user data without exposing the data in the devices. However, the limited resources of devices incur significant difficulties. NNTrainer enables "On-Device Training" features in Tizen efficiently by providing the following:
 
   - Highly memory-efficient on-device training technique without sacrificing accuracy and latency.
   - Rich training features.
@@ -118,7 +118,7 @@ The main progress of Tizen 8.0 includes the works that have been done to expand 
 
 - **From OBS to GBS-based Quick Build**
 
-  In the Tizen development process, we switched the build Infra which is used for the build and snapshot creation from the OBS to the GBS-based Quick Build. This change has the following merits.   
+  In the Tizen development process, we switched the build infra which is used for the build and snapshot creation from the OBS to the GBS-based Quick Build. This change has the following merits:   
   
   First, it is possible to increase the efficiency of project management and operation through parallel build, text-based project list, and package list management, etc.
 It is more efficient for more people to collaborate and work on more projects together than before.   
