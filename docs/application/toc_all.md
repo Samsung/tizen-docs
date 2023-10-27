@@ -6,7 +6,7 @@
 ### [Overview](/application/profiles/index.md)
 ### [Wearable](/application/profiles/wearable.md)
 ### [Mobile](/application/profiles/mobile.md)
-### [IoT](/application/profiles/iot.md)
+### [IoT](/application/profiles/tizen_custom.md)
 ### [TV](/application/profiles/tv.md)
 
 

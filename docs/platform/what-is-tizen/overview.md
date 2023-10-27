@@ -7,7 +7,7 @@ Tizen is an open source operating system based on Linux, hosted by the Linux Fou
 
 As diverse devices are getting smarter and more connected, there is a strong need for a software platform for integrated services with connected products. Tizen is designed for this and has been evolving to connect everything.
 
-To support different types of devices with a seamless user experience, Tizen provides the features and functions for various kind of devices. Tizen supports both headed and headless products. In the near future, lots of internet connected devices are anticipated to be on the market and IoT services are expected to pervade everyone's daily life. Tizen is moving forward to the future of everything connected.
+To support different types of devices with a seamless user experience, Tizen provides the features and functions for various kinds of devices. Tizen supports both headed and headless products. In the near future, lots of internet-connected devices are anticipated to be on the market and IoT services are expected to pervade everyone's daily life. Tizen is moving forward to the future of everything connected.
 
 **Figure: Connecting different devices**
 
@@ -15,9 +15,9 @@ To support different types of devices with a seamless user experience, Tizen pro
 
 ## Openness, optimization, and opportunities
 
-Tizen is a Linux-based, open source software platform. Anyone can contribute and freely develop the system software and applications, which is beneficial for both device manufacturers and application developers. Furthermore, by supporting web applications with open web technologies and C# applications with .Net technologies, Tizen provides developers flexibility and extensibility. Based on the open ecosystem, the user can expect various experiences from Tizen devices and services. With its openness, Tizen can pursue continuing progress and expand the ecosystem.
+Tizen is a Linux-based, open source software platform. Anyone can contribute and freely develop the system software and applications, which is beneficial for both device manufacturers and application developers. Furthermore, by supporting web applications with open web technologies and C# applications with .NET technologies, Tizen provides developers flexibility and extensibility. Based on the open ecosystem, the user can expect various experiences from Tizen devices and services. With its openness, Tizen can pursue continuing progress and expand the ecosystem.
 
-Tizen is built to work on diverse devices.
+Tizen is built to work on the following diverse devices:
 
 - [TV device](profiles/tv.md)
 - [Tizen custom device](profiles/tizen_custom.md)
@@ -29,7 +29,7 @@ Tizen devices provide product-optimized functionality and performance.
 Tizen allows developers to make various kinds of devices and develop applications for the devices.
 Tizen provides a building block pool of components mainly based on the Tizen API sets.
 
-Tizen custom device can be created by combining API building blocks in various ways as per the requirements. Required packages are installed based on the dependencies related to the specified building blocks.
+Tizen custom devices can be created by combining API building blocks in various ways as per the requirements. Required packages are installed based on the dependencies related to the specified building blocks.
 
 For more information, please reference [Tizen custom device](profiles/tizen_custom.md).
 
@@ -44,17 +44,17 @@ Devices and features under new categories or devices can be easily added for eme
 
 Since 2012, Tizen has been expanding as smart gadgets have become generalized and connected. By accommodating various device types, Tizen is gearing up for the new era of convergence. As of now, there is a wide variety of Tizen devices on the market:
 
-- TV & Audio : Samsung Smart TVs, Samsung Lyfestyle TV, Samsung Smart Monitor, Samsung Sound Bar
-- Display : Samsung Smart Signage, Samsung Flip, Samsung Kiosk
-- Smart appliances: Samsung Family Hub Fridge, Samsung air conditioner, Samsung washing machine
+- TV & Audio: Samsung Smart TVs, Samsung Lifestyle TV, Samsung Smart monitor, Samsung sound Bar
+- Display: Samsung Smart Signage, Samsung Flip, Samsung Kiosk
+- Smart appliances: Samsung family hub fridge, Samsung air conditioner, Samsung washing machine
 - Wearables: Samsung Galaxy Watch series (Galaxy Watch, Galaxy Watch Active, Galaxy Watch Active2, Galaxy Watch3), Gear series (Gear 2, Gear 2 Neo, Gear S, Gear S2, Gear S3)
 - Mobile phones: Samsung Z series (Z1(3G), Z3(3G/LTE), Z2(LTE), Z4)
-- Tablets: DIGMA Plane 8501 3G
-- Cameras: Samsung NX-series(NX300, NX30, NX2000, NX1, NX500), Gear 360
-- OBD : Samsung Connect Auto
+- Tablets: Digma Plane 8501 3G
+- Cameras: Samsung NX series (NX300, NX30, NX2000, NX1, NX500), Gear 360
+- OBD: Samsung Connect Auto
 
 
-Samsung is holding the highest market share in the global TV market and its recent models are all based on the Tizen platform. It is expected for the Tizen platform to broaden its ecosystem with increasing market requirements and user demands.
+Samsung holds the highest market share in the global TV market and its recent models are all based on the Tizen platform. It is expected that the Tizen platform to broaden its ecosystem with increasing market requirements and user demands.
 
 
 ## Productivity
