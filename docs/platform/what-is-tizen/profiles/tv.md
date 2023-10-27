@@ -42,4 +42,4 @@ For more information on developing a Samsung Smart TV application, go to [SAMSUN
 
 **Figure: Samsung Smart TVs**
 
-![Samsung Smart TVs](media/profile_tv_devices1.jpg){:target="_blank"}
+![Samsung Smart TVs](media/profile_tv_devices1.jpg)
