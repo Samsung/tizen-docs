@@ -112,6 +112,8 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
 
 ### Step 2. Analyze the dump file
    - Open the **sdb shell**
-   - Go to the folder containing the dump file
+   - Go to the folder (**/home/owner/share/tmp/sdk_tools**) containing the dump file
    - Run the command **dotnet dump analyze {file_name}**
+
+**Note:** Please delete the dump file after analyze as it takes lot of memory space.
 
