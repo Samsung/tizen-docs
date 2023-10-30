@@ -25,12 +25,12 @@ Release date: Oct 31, 2023
 - System and resource management
   - Provide the resource-manager/system-plugin-API interface to separate deviced-plugin from device management service.
     - The system-plugin-backend-deviced-headed/headless git/package have been added to support the vendor specific code without any changes of device management core.
-  - Separate resourced-plugin including LMK(Low Memory Killer) & CPU boosting stall governors from resource management service.
+  - Separate resourced-plugin including LMK (Low Memory Killer) & CPU boosting stall governors from resource management service.
     - The system-plugin-backend-resourced-generic git/package has been added to include the vendor specific policy according to hardware specification.
   - The light-weighted multi-user csharp-API has been supported.
 
 - Device and sensor management
-  - Multi-theme function of sound feedback has been supported to change the feedkback theme on runtime in order to provide the advanced user-experience.
+  - Multi-theme function of sound feedback has been supported to change the feedback theme on runtime in order to provide an advanced user experience.
   - Pre suspend-wakeup notifier has been added to reduce the turn on latency of display.
 
 - OS upgrade
@@ -45,7 +45,7 @@ Release date: Oct 31, 2023
   - CVE-2023-34969 patch has been applied.
 - btrfs
   - CVE-2023-1611 patch has been applied.
-- systemd / cryptsetup / crash-worker / initrd / libdbuspolicy / upgrade
+- systemd/cryptsetup/crash-worker/initrd/libdbuspolicy/upgrade
   - Change dependency from openssl1.1 to openssl3.
 
 
@@ -57,7 +57,7 @@ Release date: Oct 31, 2023
   - python3-protobuf
     - Version 3.9.2 has been upgraded to version 4.24.1.
   - ncruses
-    - Version 6.2 has been upgraded to version 6.4
+    - Version 6.2 has been upgraded to version 6.4.
 
 #### Fixes
 
@@ -98,8 +98,8 @@ Release date: Oct 31, 2023
 
 - Tizen Database Access Object (TDAO)
   - New feature has been ready to access a database.
-    - Provide classes for DAO and Entity
-    - Provides Compile-time Verification of SQL queries
+    - Provide classes for DAO and Entity.
+    - Provides Compile-time Verification of SQL queries.
 - TIDL
   - Support for import keyword has been added.
   - Support for method privilege has been added.
@@ -152,8 +152,8 @@ Release date: Oct 31, 2023
   - The input thread for processing key event has been separated for removing key event delivery delay element (Input Device check, Compositing, Capture, and so on).
 - Tizen WS Shell
   - The KVM service has been added.
-    - KVM service provides Copy&Paste and Drag&Drop among multi-devices
-    - The tws_service_kvm interface has beed added to tzsh protocol.
+    - KVM service provides Copy & Paste and Drag & Drop among multi-devices
+    - The tws_service_kvm interface has been added to tzsh protocol.
 - TBM
   - Parallelization function to improve the authentication speed from TBM has been added.
 - TPL-EGL
@@ -173,7 +173,7 @@ Release date: Oct 31, 2023
   - The version of Libxkbcommon has been upgraded to 1.5.1.
 - TTS Framework
   - Supports root daemon as TTS client.
-  - Supports on-demand reconnection of clients when TTS service abnormally terminated. This is useful for low-end devices when its cpu consumption is very high.
+  - Supports on-demand reconnection of clients when TTS service is abnormally terminated. This is useful for low-end devices when their CPU consumption is very high.
   - Supports a client-side callback function to receive synthesized pcm data.
   - Supports a new C API to set playing mode.
 - STT Framework
@@ -189,7 +189,7 @@ Release date: Oct 31, 2023
   - Gesture framework has been deprecated.
 - Text Input
   - The performance to get surrounding text has been improved.
-  - Autofill and Inputmethod setting application has been reimplemented based on NUI gadget.
+  - Autofill and Input method setting application has been reimplemented based on NUI gadget.
 - NLP
   - NLP APIs have been deprecated.
 
@@ -243,7 +243,7 @@ Release date: Oct 31, 2023
   - Support for cache of font list
 - Drag and Drop
   - Support for multiple windows on a single process has been added.
-- Performance / Memory Improvement
+- Performance/Memory Improvement
   - The object sizes of some internal classes have been reduced.
   - Message processing logic has been optimized.
   - Some matrix operations have been optimized.
@@ -253,19 +253,19 @@ Release date: Oct 31, 2023
 - Aurum
   - Support for UI context changed event has been added.
   - Support for UI scrolling finished event has been added.
-  - Supports for enabling xPath command
-  - Supports for getting the window rotation angle
-  - Supports for getting information whether application idle or not
+  - Support for enabling xPath command
+  - Support for getting the window rotation angle
+  - Support for getting information whether the application is idle or not
   - Improves the performance of finding element
-  - Supports for window rotation function
+  - Support for window rotation function
   - Improves the performance of creating xPath
-- UI Analyzer(internal Tool)
-  - Supports for the information of rotated window
-  - Supports for enhanced test recording
-  - Supports for testing validataions
-  - Supports for playing the recorded tests and showing the result
-  - Supports for saving the recorded tests and loading the saved file
-  - Supports for playing the smoke tests automatically
+- UI Analyzer (internal Tool)
+  - Support for the information of rotated window
+  - Support for enhanced test recording
+  - Support for testing validation
+  - Support for playing the recorded tests and showing the result
+  - Support for saving the recorded tests and loading the saved file
+  - Support for playing the smoke tests automatically
 - Vector Animation
   - Tizenvg has been updated to the latest thorvg.
 
@@ -278,9 +278,9 @@ Release date: Oct 31, 2023
 - Various text defects have been fixed.
 - Various Aurum defects have been fixed.
 - Various touch and gesture defects have been fixed.
-- Fixs the crash issue for web application
-- Fix the crash issue when click function works
-- Fix the memory leak
+- Fixes the crash issue for web application.
+- Fix the crash issue when the click function works.
+- Fix the memory leak.
 
 
 ### Multimedia framework
@@ -308,10 +308,10 @@ Release date: Oct 31, 2023
   - Deprecated thumbnail util APIs have been removed.
 - Audio Framework
   - New APIs for sound effects have been added.
-    - Support Acoustic Echo Cancellation functionality.
-    - Support Noise Suppression based on neural network.
-    - Support Automatic Gain Control.
-    - Support to be able to get a reference playback stream when recording sound.
+    - Supports Acoustic Echo Cancellation functionality.
+    - Supports Noise Suppression based on neural network.
+    - Supports Automatic Gain Control.
+    - Supports to be able to get a reference playback stream when recording sound.
 - Media Player
   - New APIs for video codec type settings have been added.
 - MediaController
@@ -385,7 +385,7 @@ Release date: Oct 31, 2023
   - SoundFocusManager for web media has been supported.
   - Accessibility has been supported.
   - H.264 codec for public profile has been supported.
-  - ewk_view_ime_window_set to support IME for NUIhas been added.
+  - ewk_view_ime_window_set to support IME for NUI has been added.
 - Web Runtime
   - Views-based splash screen has been applied.
 
@@ -414,7 +414,7 @@ Release date: Oct 31, 2023
 - Lightweight Web Engine
 - Network loader defects have been fixed.
 - Memory leak defects have been fixed.
-- Url parsing defects have been fixed.
+- URL parsing defects have been fixed.
 - History management defects have been fixed.
 
 
@@ -469,12 +469,12 @@ Release date: Oct 31, 2023
     - Add new APIs to separately manage ML model files. These APIs allow ML applications to exploit the latest ML model deployed without code-level modifications that require re-packaging and re-distribution of the whole application.
     - AI Inference offloading between Tizen and TizenRT has been improved. The binary size of `NNStreamer-Edge` is optimized.
     - Add new APIs for machine learning resource which contains images, audio, video and binary files. These APIs provides a method to share the data files those can be used for training or inferencing the AI models.
-    - Add new utility functions to handle the key-value style information. This informantion object can be used to update the configuration and check the internal status.
+    - Add new utility functions to handle the key-value style information. This information object can be used to update the configuration and check the internal status.
   - ML.Inference API Updates
     - Add new API to use extended rank limit. To maintain the backward compatibility, the default rank limit is 4. The extended rank is only used when new API is called.
     - Support TensorFlow Lite v2.11.0 by default.
   - ML.Training API Updates
-    - Add Identify Layer as a utility layer which flows everthing as it is.
+    - Add Identify Layer as a utility layer which flows everything as it is.
     - Add learning rate scheduling features.
     - Step learning rate scheduling.
     - Exponent learning rate scheduling.
@@ -493,7 +493,7 @@ Release date: Oct 31, 2023
   - Support proactive swap which utilizes secondary storage for less memory consumption.
     - Add Cache Pool/Cache Loader/Cache Element classes.
     - Update Memory pool and planner for better utilization.
-  - Added Execution order and memory usage tarcing for debugging.
+  - Added Execution order and memory usage tracing for debugging.
   - Added TFLite exporter which generates inference model for tflite (unstable).
 - Open source updates
   - TensorFlow-Lite2 has been upgraded to version 2.11.0.
