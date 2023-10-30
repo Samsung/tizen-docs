@@ -68175,6 +68175,15 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CKMC_PARAM_ED_OAEP_HASH</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__CAPI__KEY__MANAGER__TYPES__MODULE.html</Path>
+    <Anchor>gga8b4a2846798d61983a4b8b186dfed97aaae491732be15c5057755eea1fbb1eabe</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CKMC_PARAM_KDF_PRF</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>

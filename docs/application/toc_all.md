@@ -1155,6 +1155,7 @@
 ### Tools
 #### [Project Wizard](/application/vstools/tools/project-wizard.md)
 #### [Tizen .NET Hot Reload](/application/vstools/tools/dotnet-hotreload.md)
+#### [.NET Core Diagnostics](/application/vstools/tools/dotnet-diagnostics.md)
 
 #### Manifest Editor
 ##### [Overview](/application/vstools/tools/manifest-editor.md)
@@ -1177,6 +1178,9 @@
 ## Visual Studio Code Extension for Tizen
 ### [Prerequisites](/application/vscode-ext/index.md)
 ### [Installing Visual Studio Code Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
+### Tools
+#### [Profiler](/application/vscode-ext/tools/profiler-user-manual.md)
+#### [Memory Profiler](/application/vscode-ext/tools/memory-profiler-user-manual.md)
 ### Tizen
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
 #### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
@@ -1318,6 +1322,7 @@
 #### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ### Release Notes
+#### [5.5 (Oct 30, 2023)](/application/tizen-studio/release-notes/5-5-release-notes.md)
 #### [5.1 (Mar 31, 2023)](/application/tizen-studio/release-notes/5-1-release-notes.md)
 #### [5.0 (Oct 31, 2022)](/application/tizen-studio/release-notes/5-0-release-notes.md)
 #### [4.6 (Mar 30, 2022)](/application/tizen-studio/release-notes/4-6-release-notes.md)

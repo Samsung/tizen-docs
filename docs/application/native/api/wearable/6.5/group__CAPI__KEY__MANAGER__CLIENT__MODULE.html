@@ -474,8 +474,7 @@ To pass <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4
 <dd>
 The newly created <em>ppout</em> must be destroyed using <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2a26c45625b706951dc37b6a5aa1900c" title="Destroys the ckmc_raw_buffer_s handle and releases all its resources.">ckmc_buffer_free()</a> when it's no longer needed. </dd>
 <dd>
-Note that the backend may impose limit on the maximum size of processed data (</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>).</dd></dl>
+Note that the backend may impose limit on the maximum size of processed data (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>).</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>Encryption/decryption context created with <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaea56febe44a440589cb2ff9c4f825e34" title="Sets up a symmetric encryption or decryption context with given key and parameters.">ckmc_cipher_initialize()</a> </td></tr>
@@ -968,13 +967,7 @@ You must destroy <em>ppdecrypted</em> with <a class="el" href="group__CAPI__KEY_
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">key_alias</td><td>Alias of the key to be used for encryption </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">password</td><td>The password used in decrypting a key value. If password of the policy is provided in <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga31d2793501c5ab52b46256550bba836f" title="Stores a key inside key manager based on the provided policy.">ckmc_save_key()</a>, the same password should be provided </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">encrypted</td><td>Data to be decrypted. <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3a9b45091c35e55914ade49da3b9438008">CKMC_ALGO_AES_GCM</a> mode requires GCM tag to be appended at the end. In case of AES algorithm the backend may impose limit on the maximum size of processed data (</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>). For RSA the size must be smaller or equal to key size in bytes - 42. </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encrypted</td><td>Data to be decrypted. <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3a9b45091c35e55914ade49da3b9438008">CKMC_ALGO_AES_GCM</a> mode requires GCM tag to be appended at the end. In case of AES algorithm the backend may impose limit on the maximum size of processed data (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>). For RSA the size must be smaller or equal to key size in bytes - 42. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ppdecrypted</td><td>Decrypted data</td></tr>
   </table>
   </dd>
@@ -1133,13 +1126,7 @@ You must destroy <em>ppencrypted</em> with <a class="el" href="group__CAPI__KEY_
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">key_alias</td><td>Alias of the key to be used for encryption </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">password</td><td>The password used in decrypting a key value. If password of the policy is provided in <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga31d2793501c5ab52b46256550bba836f" title="Stores a key inside key manager based on the provided policy.">ckmc_save_key()</a>, the same password should be provided </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">decrypted</td><td>Data to be encrypted. In case of AES algorithm the backend may impose limit on the maximum size of processed data (</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>). For RSA the size must be smaller or equal to key size in bytes - 42. Example: for 1024 RSA key the maximum data size is 1024/8 - 42 = 86. </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">decrypted</td><td>Data to be encrypted. In case of AES algorithm the backend may impose limit on the maximum size of processed data (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>). For RSA the size must be smaller or equal to key size in bytes - 42. Example: for 1024 RSA key the maximum data size is 1024/8 - 42 = 86. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ppencrypted</td><td>Encrypted data. In <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3a9b45091c35e55914ade49da3b9438008">CKMC_ALGO_AES_GCM</a> mode it includes the GCM tag appended at the end.</td></tr>
   </table>
   </dd>
@@ -1232,7 +1219,9 @@ You must destroy <em>ppencrypted</em> with <a class="el" href="group__CAPI__KEY_
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The wrapping key must be either symmetric (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>) or public RSA (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a00a9e5221f318f05cde7cd08fbf73ad9">CKMC_KEY_RSA_PUBLIC</a>). </dd>
 <dd>
-The <em>ppwrapped_key</em> should be released using <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gada5f41101ddf3d4394a62007c9a588cf" title="Destroys the ckmc_key_s handle and releases all its resources.">ckmc_key_free()</a>.</dd></dl>
+The <em>ppwrapped_key</em> should be released using <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gada5f41101ddf3d4394a62007c9a588cf" title="Destroys the ckmc_key_s handle and releases all its resources.">ckmc_key_free()</a>. </dd>
+<dd>
+The key denoted by <em>alias</em> can only be <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">params</td><td>Algorithm parameter list handle. See <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga3d01ef6c7561b1aaeab217875ad9dc04" title="Algorithm parameter list handle.">ckmc_param_list_h</a> and <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaded2830b235ecead52b360c47c6167fc" title="Enumeration for crypto algorithm types.">ckmc_algo_type_e</a> for details. Supported algorithms:<ul>
@@ -2165,7 +2154,7 @@ You must destroy the newly created <em>pkcs12</em> by calling <a class="el" href
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The wrapping key must be either symmetric (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>) or private RSA (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a17473f4e40f75e21ef69a969de7cafa6">CKMC_KEY_RSA_PRIVATE</a>). </dd>
 <dd>
-key_type in <em>wrapped_key</em> must not be set to <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a4662cab83ced68d25078849b1fa958d4">CKMC_KEY_NONE</a>. </dd>
+key_type in <em>wrapped_key</em> can only be <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>. </dd>
 <dd>
 password in <em>wrapped_key</em> must be set to NULL. There's no need to additionally encrypt a wrapped key. </dd>
 <dd>
@@ -2173,8 +2162,7 @@ If password in <em>policy</em> is provided, the stored key is additionally encry
 <dd>
 If extractable in <em>policy</em> is set to false, the stored key may still be exported in a wrapped form. </dd>
 <dd>
-Note that the backend may impose limit on the maximum size of <em>wrapped_key</em> (</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>).</dd></dl>
+Note that the backend may impose limit on the maximum size of <em>wrapped_key</em> (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>).</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">params</td><td>Algorithm parameter list handle. See <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga3d01ef6c7561b1aaeab217875ad9dc04" title="Algorithm parameter list handle.">ckmc_param_list_h</a> and <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaded2830b235ecead52b360c47c6167fc" title="Enumeration for crypto algorithm types.">ckmc_algo_type_e</a> for details. Supported algorithms:<ul>
