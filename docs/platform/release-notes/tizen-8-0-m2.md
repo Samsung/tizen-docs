@@ -216,7 +216,7 @@ Release date: Oct 31, 2023
   - Support for glb format has been added.
   - Support for equirectangular projection has been added.
   - Support for NavigationMesh and PathFinding has been added.
-  - Support to modify Physically Based Rendering(PBR) material in runtime.
+  - Support to modify Physically Based Rendering (PBR) material in runtime.
   - Support for compressed texture formats.
   - Support for directional light and shadow.
   - Support for particle system.
@@ -323,8 +323,8 @@ Release date: Oct 31, 2023
 #### New and changed features
 
 - Network
-  - Support 6GHz band for Wi-Fi 6E has been added.
-  - New API for getting 6Ghz band support has been added.
+  - 6GHz band for Wi-Fi 6E has been added.
+  - New API for getting 6GHz band support has been added.
   - New APIs to provide DHCP state and its event have been added.
   - New enumeration for no carrier error has been added.
 - Bluetooth
@@ -353,9 +353,9 @@ Release date: Oct 31, 2023
 - Privacy privilege manager
   - Privacy privilege manager (PPM) feature has been deprecated.
 - Key manager
-  - supports multi-staged encryption.
-  - supports importing and exporting wrapped key.
-  - supports key derivation with ECDH and KBKDF.
+  - Supports multi-staged encryption.
+  - Supports importing and exporting wrapped key.
+  - Supports key derivation with ECDH and KBKDF.
 
 
 ### Service framework
