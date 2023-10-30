@@ -30,17 +30,17 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
      ![Tizen application running](media/dotnet-gcdump-collect.png)
 
 
-   - Once the gcdump file is collected, a message popup is shown to inform the user, and the file is added to the gcdump file list in **GCDump Explorer window**.
+   - Once the gcdump file is collected, a message popup is shown to inform the user, and the file is added to the gcdump file list in **GCDump Explorer** window.
 
 
-   - User can collect the gcdump file multiple times by clicking the **Collect** button, until the application is closed by pressing "Home" or "Back" buttons, or by clicking the **Stop** button given in **GCDump Explorer window**.
+   - User can collect the gcdump file multiple times by clicking the **Collect** button, until the application is closed by pressing "Home" or "Back" buttons, or by clicking the **Stop** button given in **GCDump Explorer** window.
 
 
 
 ### Step 2. Analyze the gcdump file
    - The GUI application provides two tools to view the gcdump diagnostics data. The views include:
 
-       - Double click the gcdump file in **GCDump Explorer window**. It will open the file in **PerfView** tool.
+       - Double click the gcdump file in **GCDump Explorer** window. It will open the file in **PerfView** tool.
        ![gcdump PerfView analysis view](media/dotnet-gcdump-perfview.png)
        - Right click the gcdump file in **GCDump Explorer window** and select **Open With Editor**. It will open the file in **Visual Studio**.
 
@@ -59,26 +59,26 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
 
 
    - If everything is ok then the application starts and it starts collecting the trace.  
-       - If application is not running already in the device/emulator then **trace** will be collected from application startup.
-       - If application is already running in the device/emulator then **trace** will be collected from there on.
+       - If application is not already running in the device/emulator then trace will be collected from application startup.
+       - If application is already running in the device/emulator then trace will be collected from there on.
 
      ![Tizen application running](media/dotnet-trace-collect.png)
 
    - Press **Stop Trace** button above to stop and generate the trace file.
 
-   - Once the trace file is generated, a message popup is shown to inform the user, and the file is added to the gcdump file list in **Dump Explorer window**.
+   - Once the trace file is generated, a message popup is shown to inform the user, and the file is added to the gcdump file list in **Dump Explorer** window.
 
 
 
 ### Step 2. Analyze the trace file
    - The GUI application provides different tools for different **Format** to view the trace diagnostics data.
    - **nettrace**
-       - Double click the trace (.nettrace) file in **Trace Explorer window**. It will open the file in **PerfView** tool.
+       - Double click the trace (.nettrace) file in **Trace Explorer** window. It will open the file in **PerfView** tool.
        ![trace PerfView analysis view](media/dotnet-trace-perfview.png)
-       - Right click the trace file in **Trace Explorer window** and select **Open With Editor**. It will open the file in **Visual Studio**.
+       - Right click the trace file in **Trace Explorer** window and select **Open With Editor**. It will open the file in **Visual Studio**.
        ![trace VS analysis view](media/dotnet-trace-vs.png)
    - **speedscope**
-       - Double click the trace (.speedscope.json) file in **Trace Explorer window**. It will open the file in **speedscope web** tool.
+       - Double click the trace (.speedscope.json) file in **Trace Explorer** window. It will open the file in **speedscope web** tool.
        ![trace SpeedScope analysis view](media/dotnet-trace-speedscope.png)  
    - **chromium**  
    Open Google Chrome and type **chrome://tracing** or Microsoft Edge browser and type **edge://tracing**.  
@@ -104,10 +104,10 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
      ![Tizen application running](media/dotnet-dump-collect.png)
 
 
-   - Once the dump file is collected, a message popup is shown to inform the user, and the file is added to the gcdump file list in **Dump Explorer window**.
+   - Once the dump file is collected, a message popup is shown to inform the user, and the file is added to the gcdump file list in **Dump Explorer** window.
 
 
-   - User can collect the dump file multiple times by clicking the **Collect** button, until the application is closed by pressing "Home" or "Back" buttons, or by clicking **Stop** button given in **Dump Explorer window**.
+   - User can collect the dump file multiple times by clicking the **Collect** button, until the application is closed by pressing "Home" or "Back" buttons, or by clicking **Stop** button given in **Dump Explorer** window.
 
 
 ### Step 2. Analyze the dump file
