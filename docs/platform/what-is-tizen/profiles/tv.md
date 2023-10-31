@@ -1,6 +1,6 @@
 # Tizen TV
 
-Tizen TV profile allows you to develop applications for Samsung Smart TVs.
+Tizen TV allows you to develop applications for Samsung Smart TVs.
 
 Tizen Open Source Project introduced an expanded Tizen platform for Smart TVs at the fifth annual [Tizen Developer Conference](https://www.tizen.org/events/2017/tizen-developer-conference-2017) (TDC)  in San Francisco at the Hilton Union Square.
 
@@ -8,7 +8,7 @@ Tizen Open Source Project introduced an expanded Tizen platform for Smart TVs at
 
 ![Samsung Smart TV applications](media/Smart-TVs-at-TDC2017_main_1.jpg)
 
-The TV profile provides various exciting features as follows:
+The TV provides various exciting features as follows:
 
 - **Ready to connect! Get involved!**  
 Samsung encourages you to participate in the development of the Tizen platform. Various policies have already been made in collaboration with partners and developers, especially for Voice Touch, Samsung Checkout, Sports/Music services, and the security solutions for the 2017 Smart TV models.  
@@ -27,17 +27,12 @@ Samsung has completely redesigned its Smart TV experience. With a new intuitive 
 
 The Samsung Smart TV SDK combines TV features with web-based technologies. The SDK provides tools for developing Samsung TV applications for the Tizen platform.
 
-To develop applications for the TV profile, refer to the following:
+To develop applications for Tizen TV, refer to the following:
 
 - [Smart TV Quick-start Guide](http://developer.samsung.com/tv/develop/getting-started/quick-start-guide){:target="_blank"}
-- [**Create Samsung Smart TV Web applications**](../../../application/web/get-started/tv/first-samsung-tv-app.md)
-- [Create TV .NET Applications](../../../application/dotnet/get-started/first-app.md)
-- [Create TV Web applications](../../../application/web/get-started/tv/first-app.md)
+- [Create Tizen TV .NET Applications](https://developer.samsung.com/smarttv/develop/getting-started/creating-tv-applications.html){:target="_blank"}
+- [Create Tizen TV TV Web applications](https://developer.samsung.com/smarttv/develop/tizen-net-tv/getting-started/creating-net-tv-applications.html){:target="_blank"}
 
-## Design guidelines for Tizen TV
-
-Tizen design principles suggest some clear guidelines that help you to design simple and easy-to-use applications for everyone:
-- [Design Principles](https://developer.tizen.org/design/tv/design-principles){:target="_blank"}
 
 ## Tizen TV devices
 
@@ -47,4 +42,4 @@ For more information on developing a Samsung Smart TV application, go to [SAMSUN
 
 **Figure: Samsung Smart TVs**
 
-![Samsung Smart TVs](media/profile_tv_devices.jpg)
+![Samsung Smart TVs](media/profile_tv_devices1.jpg)

@@ -1,5 +1,7 @@
 # Messages
 
+> [!NOTE]
+> All messages APIs have been deprecated since Tizen 8.0 and will be removed after two releases without any alternatives.
 
 You can access the device messaging capabilities, including sending SMS and MMS messages.
 

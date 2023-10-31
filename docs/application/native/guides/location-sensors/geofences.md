@@ -1,5 +1,8 @@
 # Geofences
 
+> [!NOTE]
+> All geofence APIs have been deprecated since Tizen 8.0 and will be removed after two releases without any alternatives.
+
 A geofence is a virtual perimeter for a real-world geographic area. A geofence is defined by either a geopoint and radius for geopoint geofences, or by a MAC address for Wi-Fi and Bluetooth geofences. The geofence feature alerts the user when the geofence state changes (the user crosses the perimeter).
 
 This feature is supported in mobile applications only.

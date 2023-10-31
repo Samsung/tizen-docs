@@ -3,6 +3,9 @@
 
 The Content Screening and Reputation (CSR) framework allows you to screen the content of malicious Web sites and block access to those sites. The CSR framework protects the device and the user by passing the security API calls to an anti-malware engine, which is provided by a security vendor. The framework is also responsible for error handling when there is no anti-malware engine installed.
 
+> [!NOTE]
+> Since Tizen 8.0, all CSR APIs are deprecated and will be removed without any alternative.
+
 The main features of the CSR API include:
 
 - Content Screening Service
