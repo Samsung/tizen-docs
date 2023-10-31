@@ -25,6 +25,10 @@ The main features of the Sound Manager API include:
 
   You can manually [route your stream](#stream_routing) to a specific device.
 
+- Adding sound effect methods to a stream information
+
+  You can [add sound effects](#stream_effect_method) to a stream information.
+
 ## Prerequisites
 
 To use the functions and data types of the Sound Manager API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications), include the `<sound_manager.h>` header file in your application:
@@ -462,6 +466,74 @@ To add an external USB device for stream routing:
    ```
    /* Free the device list */
    sound_manager_free_device_list(device_list);
+   ```
+
+<a name="stream_effect_method"></a>
+## Add sound effect methods to a stream information
+
+There are couple of effect methods for preprocessing. When you start to capture audio streams, you can enable several methods simultaneously.
+If these methods are set, the capture stream will be preprocessed by the audio framework before receiving it.
+The two types of APIs that you can use are described below:
+
+- In case of exclusive methods like `sound_effect_method_with_reference_e`, it includes Acoustic Echo Cancellation (AEC) functionality and it cannot be set with other methods because it uses a playback reference which is an exclusive system resource.
+- In case of `sound_effect_method_e`, there are functionalities like Noise Suppression (NS) and Automatic Gain Control (AGC) that don't need a reference playback. Therefore, you can use these methods simultaneously using the 'or' keyword.
+
+1. Add effect method Acoustic Echo Cancellation (AEC) with a reference device to a stream information:
+
+   ```
+   /* Add the AEC method based on WEBRTC */
+   int ret, size;
+   char buffer[MAX_SIZE];
+   sound_stream_info_h stream_info;
+   sound_device_list_h device_list = NULL;
+   sound_device_h device;
+   audio_in_h input = NULL;
+
+   ret = sound_manager_create_stream_information(SOUND_STREAM_TYPE_MEDIA, NULL, NULL, &stream_info);
+   ret = sound_manager_get_device_list(SOUND_DEVICE_ALL_MASK, &device_list);
+
+   ret = sound_manager_get_next_device(device_list, &device)
+   ret = sound_manager_set_effect_method_with_reference(stream_info, SOUND_EFFECT_ACOUSTIC_ECHO_CANCEL_WEBRTC, device);
+
+   ret = audio_in_create(48000, AUDIO_CHANNEL_MONO, AUDIO_SAMPLE_TYPE_S16_LE, &input);
+   ret = audio_in_set_sound_stream_info(input, stream_info);
+   ret = audio_in_get_buffer_size(input, &size);
+   ret = audio_in_prepare(handle);
+
+   while (1)
+       ret = audio_in_read(input, (void *)buffer, size);
+
+   audio_in_unprepare(input);
+   audio_in_destroy(input);
+   sound_manager_destroy_stream_information(stream_info);
+   sound_manager_free_device_list(device_list);
+   ```
+
+2. Add effect methods Noise Suppression (NS) and Automatic Gain Control (AGC) simultaneously to a stream information:
+
+   ```
+   /* Add NS and AGC effect methods simultaneously */
+   int ret, size;
+   char buffer[MAX_SIZE];
+   sound_stream_info_h stream_info;
+   sound_device_list_h device_list = NULL;
+   sound_device_h device;
+   audio_in_h input = NULL;
+
+   ret = sound_manager_create_stream_information(SOUND_STREAM_TYPE_MEDIA, NULL, NULL, &stream_info);
+   ret = sound_manager_set_effect_method(stream_info, SOUND_EFFECT_NOISE_SUPPRESSION_VOIP | SOUND_EFFECT_AUTOMATIC_GAIN_CONTROL_CAPTURE);
+
+   ret = audio_in_create(48000, AUDIO_CHANNEL_MONO, AUDIO_SAMPLE_TYPE_S16_LE, &input);
+   ret = audio_in_set_sound_stream_info(input, stream_info);
+   ret = audio_in_get_buffer_size(input, &size);
+   ret = audio_in_prepare(handle);
+
+   while (1)
+       ret = audio_in_read(input, (void *)buffer, size);
+
+   audio_in_unprepare(input);
+   audio_in_destroy(input);
+   sound_manager_destroy_stream_information(stream_info);
    ```
 
 ## Related Information

@@ -6,6 +6,9 @@ This feature is supported in mobile and wearable applications only.
 
 Before Tizen 4.0, the pop-up requesting the user's consent to use privacy-related privileges was triggered by first access to protected resources or functionality. Since Tizen 4.0, you can decide the moment in the application life-cycle when permissions are granted. It can be at the application startup, or at the moment when some additional functionality is to be used. For example, a notepad application where the user can enter both text notes and photographs does not automatically require camera access in order to be used (maybe the user only wants to add text notes). Optimally, the application requests the user to grant camera access permission only when the user needs the camera.
 
+> [!NOTE]
+> Since Tizen 8.0, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternative.
+
 The main features of the Privacy Privilege API include:
 
 -   Checking privilege status

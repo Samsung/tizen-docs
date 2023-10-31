@@ -482,6 +482,11 @@ For more information about the pipeline states, see [GStreamer guide](https://gs
     ml_tensors_info_destroy (info);
     ```
 
+    If you want to use tensors whose dimension is higher than 4, use the following function:
+    ```c
+    ml_tensors_info_create_extended (&info);
+    ```
+
 - **Set functions**
 
     ```c

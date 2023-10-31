@@ -32,14 +32,19 @@ The main features of the Camera API include:
   You can [control the camera settings](#attributes):
 
   - Contrast
+  - Saturation
+  - Sharpness
+  - Gain
   - Exposure
   - Brightness
   - Effects
   - ISO
   - White balance
+  - White balance temperature
   - Zoom
   - Flash
   - Focus
+  - Focus level
   - Metering
   - EXIF tag (geo, orientation, software info and description)
   - Scene mode, HDR, theater
