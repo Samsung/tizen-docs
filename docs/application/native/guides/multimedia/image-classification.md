@@ -194,6 +194,27 @@ To classify an image, follow these steps:
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
+## Timestamp
+
+Time is important for camera data, and you may want to bring time information from the camera system to mediavision.  
+In such a case, if you want to include time information in the mv_source data, there is a method.
+Use `mv_source_{get,set}_timestamp()` to handle timedata:
+
+```c
+mv_source_h mv_source;
+uint64_t timestamp;
+error_code = mv_create_source(&mv_source);
+if (error_code != MEDIA_VISION_ERROR_NONE)
+dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+error_code = mv_source_set_timestamp(mv_source, 2);
+if (error_code != MEDIA_VISION_ERROR_NONE)
+dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+error_code = mv_source_get_timestamp(mv_source, &timestamp);
+if (error_code != MEDIA_VISION_ERROR_NONE)
+dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+```
 
 ## Related information
 - Dependencies

@@ -53,19 +53,6 @@ To get various privilege information, follow these steps:
     }
     ```
 
--   Get the privacy display name using the `GetPrivacyDisplayName()` method of the `Tizen.Security.Privilege` class:
-
-    ```csharp
-    try
-    {
-        var privacyDisplayName = Privilege.GetPrivacyDisplayName("http://tizen.org/privilege/account.read");
-    }
-    catch (Exception e)
-    {
-        /// Error handling
-    }
-    ```
-
 
 ## Related information
 * Dependencies
