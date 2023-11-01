@@ -1,10 +1,10 @@
 # What is Tizen?
 ## [Overview](/platform/what-is-tizen/overview.md)
-## Profiles
-### [Wearable](/platform/what-is-tizen/profiles/wearable.md)
+## Devices
 ### [TV](/platform/what-is-tizen/profiles/tv.md)
+### [Custum](/platform/what-is-tizen/profiles/tizen_custom.md)
 ### [Mobile](/platform/what-is-tizen/profiles/mobile.md)
-### [IoT](/platform/what-is-tizen/profiles/iot.md)
+### [Wearable](/platform/what-is-tizen/profiles/wearable.md)
 ## Versions
 ### [Tizen 8.0](/platform/what-is-tizen/versions/tizen-8-0-m2.md)
 ### [Tizen 7.0](/platform/what-is-tizen/versions/tizen-7-0-m2.md)
