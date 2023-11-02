@@ -2,7 +2,7 @@
 ## [Overview](/platform/what-is-tizen/overview.md)
 ## Devices
 ### [TV](/platform/what-is-tizen/profiles/tv.md)
-### [Custum](/platform/what-is-tizen/profiles/tizen_custom.md)
+### [Custom](/platform/what-is-tizen/profiles/tizen_custom.md)
 ### [Mobile](/platform/what-is-tizen/profiles/mobile.md)
 ### [Wearable](/platform/what-is-tizen/profiles/wearable.md)
 ## Versions
