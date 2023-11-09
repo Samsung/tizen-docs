@@ -288,6 +288,66 @@ To search for available services on a network, use a service type or target info
    dnssd_stop_browsing_service(browser_handle);
    ```
 
+Another way to search for services is by first finding the service name and then using the service name to resolve its address.
+
+1. To start searching, use the `dnssd_browse_service()` function.
+
+    The DNS-SD browser handle is stored in a `dnssd_browser_h` variable. For more information on the service types, see [http://www.dns-sd.org/ServiceTypes.html](http://www.dns-sd.org/ServiceTypes.html).
+
+    ```
+    dnssd_browser_h browser_handle;
+    char *service_type = "_ftp._tcp";
+    char *interface = "wlan0";
+    int error_code;
+
+    error_code = dnssd_browse_service(service_type, interface, &browser_handle, __found_cb, NULL);
+    if (error_code == DNSSD_ERROR_NONE)
+        dlog_print(DLOG_DEBUG, LOG_TAG, "Start browsing");
+    ```
+
+2. The callback defined in the `dnssd_browse_service()` function is called when the remote service becomes available or unavailable.
+   But at this time, IP address of the found service is not known. To get the IP address, `dnssd_resolve_service()` function is used.
+
+    ```
+    void
+    __found_cb(dnssd_service_h dnssd_remote_service, dnssd_service_state_e state, void *user_data)
+    {
+        dlog_print(DLOG_DEBUG, LOG_TAG, "Browse Service Callback\n");
+        dlog_print(DLOG_DEBUG, LOG_TAG, "Handler: %u\n", dnssd_remote_service);
+        dlog_print(DLOG_DEBUG, LOG_TAG, "State: ");
+        switch (browse_state) {
+        case DNSSD_SERVICE_STATE_AVAILABLE:
+            /* DNS-SD service found */
+            dlog_print(DLOG_DEBUG, LOG_TAG, "Available\n");
+            dnssd_resolve_service(dnssd_remote_service, __resolved_cb, NULL);
+            break;
+        case DNSSD_SERVICE_STATE_UNAVAILABLE:
+            /* DNS-SD service becomes unavailable */
+            dlog_print(DLOG_DEBUG, LOG_TAG, "Un-Available\n");
+            break;
+        }
+    }
+    ```
+
+3. The callback defined in the `dnssd_resolve_service()` function is called when the IP address of the service is succesfully resolved.
+
+   ```
+   void
+    __resolved_cb(dnssd_error_e result, dnssd_service_h dnssd_remote_service, void *user_data)
+   {
+       if (result == DNSSD_ERROR_NONE) {
+           __dnssd_print_found(dnssd_remote_service);
+       }
+   }
+   ```
+
+4. When the services no longer interest you, stop resolving and browsing using the browser handle:
+
+   ```
+   dnssd_cancel_resolve_service(browser_handle);
+   dnssd_cancel_browse_service(browser_handle);
+   ```
+
 <a name="ssdp_service"></a>
 ## Managing a Local Service with SSDP
 
