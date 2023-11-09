@@ -437,6 +437,21 @@ To set some attributes, follow the below steps:
     camera.Settings.Brightness = brightnessRange.Min;
     ```
 
+-   Camera manual focus attribute
+
+    Retrieve the range of available manual focus level values using the `FocusLevelRange` property, and the current manual focus level using the `FocusLevel` property. The following example retrieves the available manual focus level range and sets the manual focus level to minimum:
+
+    ```csharp
+    if (camera.Settings.IsFocusLevelSupported)
+    {
+        Range focusLevelRange = camera.Settings.FocusLevelRange;
+        int focusLevel = camera.Settings.FocusLevel;
+
+        /// Set a new manual focus level
+        camera.Settings.FocusLevel = focusLevelRange.Min;
+    }
+    ```
+
 ## Release resources
 
 After you have finished working with the camera, follow the steps below to stop the camera and clean up the application environment:
