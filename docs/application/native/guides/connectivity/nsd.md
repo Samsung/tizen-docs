@@ -320,7 +320,7 @@ Another way to search for services is by first finding the service name and then
     }
     ```
     
-5. The callback defined in the `dnssd_resolve_service()` function is called when the IP address of the service is succesfully resolved.
+3. The callback defined in the `dnssd_resolve_service()` function is called when the IP address of the service is successfully resolved:
    
    ```
    void
