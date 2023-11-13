@@ -284,7 +284,7 @@ To search for available services on a network, use a service type or target info
 Another way to search for services is by first finding the service name and then using the service name to resolve its address.
 
 1. To start searching, use the `dnssd_browse_service()` function.
-    The DNS-SD browser handle is stored in a `dnssd_browser_h` variable. For more information on the service types, see [http://www.dns-sd.org/ServiceTypes.html](http://www.dns-sd.org/ServiceTypes.html).
+    The DNS-SD browser handle is stored in a `dnssd_browser_h` variable. For more information on the service types, see [http://www.dns-sd.org/ServiceTypes.html](http://www.dns-sd.org/ServiceTypes.html){:target="_blank"}:
    
     ```
     dnssd_browser_h browser_handle;
