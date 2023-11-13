@@ -297,7 +297,7 @@ Another way to search for services is by first finding the service name and then
     ```
     
 3. The callback defined in the `dnssd_browse_service()` function is called when the remote service becomes available or unavailable.
-   But at this time, IP address of the found service is not known. To get the IP address, `dnssd_resolve_service()` function is used.
+   But at this time, IP address of the found service is not known. To get the IP address, `dnssd_resolve_service()` function is used:
    
     ```
     void
