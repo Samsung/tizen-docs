@@ -332,7 +332,7 @@ Another way to search for services is by first finding the service name and then
    }
    ```
    
-7. When the services no longer interest you, stop resolving and browsing using the browser handle:
+4. When the services no longer interest you, stop resolving and browsing using the browser handle:
    
    ```
    dnssd_cancel_resolve_service(browser_handle);
