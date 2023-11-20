@@ -43,7 +43,7 @@ Tizen Emulator for VS Code Extension for Tizen has the same requirements as the 
 - Intel&reg; Hardware Acceleration Execution Manager (Intel&reg; HAXM) speeds up the Tizen emulation on Intel-VT-enabled systems. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md).
 
 > [!NOTE]
-> This option will not applicable and work on AMD processors.
+> This option will not be applicable to and will not work on AMD processors.
 
 - Make sure **Hyper-V** is disabled (in Windows 10 or higher):
   1. Input **Control Panel** on the **Search** box in Windows 10.
