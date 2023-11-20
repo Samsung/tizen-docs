@@ -69,12 +69,12 @@ Tizen Emulator for Visual Studio has the same requirements as the emulator in Ti
 
      > Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V-All -Online
 
-    > FeatureName      : Microsoft-Hyper-V-All
-    > DisplayName      : Hyper-V
-    > Description      : Provides services and management tools for creating and running virtual machines and their resources.
-     >                  RestartRequired    : Possible
-     >                  State                     : Disabled
-     >                  CustomProperties :
+     FeatureName      : Microsoft-Hyper-V-All\
+     DisplayName      : Hyper-V\
+     Description      : Provides services and management tools for creating and running virtual machines and their resources.\
+                      RestartRequired  : Possible\
+                      State            : Disabled\
+                      CustomProperties :
 
   2. Enable Hyper-V & HypervisorPlatform
 
