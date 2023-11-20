@@ -57,7 +57,7 @@ Tizen Emulator for Visual Studio has the same requirements as the emulator in Ti
 
   4. Reboot the computer.
 
-Option 2)
+### Option 2
 
 - Microsoft's Hyper-V and the Windows Hypervisor Platform (WHPX). Hyper-V is a virtualization feature of Windows that makes it possible to run virtualized computer systems on a physical host computer.
 
