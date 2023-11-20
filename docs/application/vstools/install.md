@@ -54,7 +54,7 @@ Tizen Emulator for Visual Studio has the same requirements as the emulator in Ti
 
   3. Disable **Hyper-V** and click **OK**.
 
-     Additional note: make sure **Virtual Machine Platform** should be disabled as well to use HAXM
+     Additional note: make sure **Virtual Machine Platform** should be disabled as well to use HAXM.
 
      ![Disable Hyper-V](media/cs_prerequisite-disable-hyperv.png)
 
