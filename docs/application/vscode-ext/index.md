@@ -67,13 +67,12 @@ Tizen Emulator for VS Code Extension for Tizen has the same requirements as the 
 
      > Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V-All -Online
 
-     FeatureName      : Microsoft-Hyper-V-All
-     DisplayName      : Hyper-V
-     Description      : Provides services and management tools for creating and running virtual machines and their
-                        resources.
-                        RestartRequired  : Possible
-                        State            : Disabled
-                        CustomProperties :
+    > FeatureName      : Microsoft-Hyper-V-All
+    > DisplayName      : Hyper-V
+    > Description      : Provides services and management tools for creating and running virtual machines and their resources.
+     >                  RestartRequired    : Possible
+     >                  State                     : Disabled
+     >                  CustomProperties :
 
   2. Enable Hyper-V & HypervisorPlatform
 
