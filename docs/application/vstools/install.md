@@ -78,7 +78,7 @@ Tizen Emulator for Visual Studio has the same requirements as the emulator in Ti
 
   2. Enable Hyper-V & HypervisorPlatform
 
-     > Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+     > Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All\
      > Enable-WindowsOptionalFeature -Online -FeatureName HypervisorPlatform -All
 
      ![Enable Hyper-V](media/cs_prerequisite-enable-hyperv.png)
