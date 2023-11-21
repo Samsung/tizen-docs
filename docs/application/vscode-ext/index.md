@@ -76,7 +76,7 @@ Tizen Emulator for VS Code Extension for Tizen has the same requirements as the 
 
   2. Enable Hyper-V & HypervisorPlatform
 
-     > Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+     > Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All\
      > Enable-WindowsOptionalFeature -Online -FeatureName HypervisorPlatform -All
 
      ![Enable Hyper-V](media/cs_prerequisite-enable-hyperv.png)
