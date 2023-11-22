@@ -1031,13 +1031,12 @@
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
 #### [User Awareness](/application/native/guides/location-sensors/user-awareness.md)
 
-### Text Input, Gesture, and Voice
+### Text Input and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
 #### [Input Method](/application/native/guides/text-input/input-method.md)
 #### [Autofill](/application/native/guides/text-input/autofill.md)
 #### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
 #### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
-#### [Gesture](/application/native/guides/text-input/capi-ui-gesture.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Text-to-speech Engine](/application/native/guides/text-input/tts-engine.md)
