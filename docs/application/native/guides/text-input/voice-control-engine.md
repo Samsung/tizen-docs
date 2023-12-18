@@ -33,11 +33,13 @@ The main features of the VCE API include:
 
 To enable your application to use the VCE functionality:
 
-1. To use the VCE API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the VCE API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
       <privilege>http://tizen.org/privilege/recorder</privilege>
+      <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+      <privilege>http://tizen.org/privilege/datasharing</privilege>
    </privileges>
    ```
 

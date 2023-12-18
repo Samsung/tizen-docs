@@ -2,7 +2,12 @@
 
 Tizen Native API is carefully selected and tightly managed APIs from the Tizen Native subsystems. The Native API is divided into dozens of API modules; each module represents a logically similar set of submodule APIs, which can be grouped into the same category.
 
-Tizen Native APIs supports mobile and wearable devices. They contain somewhat different modules. For more information, see API Reference for <a href="mobile/latest/index.html" target="_blank">mobile</a> or <a href="wearable/latest/index.html" target="_blank">wearable</a>.
+The previous versions of Tizen Native APIs supports mobile, wearable, and IoT devices seperatly. They contain somewhat different modules.
+
+For more information, see API Reference for <a href="mobile/latest/index.html" target="_blank">Mobile</a>, <a href="wearable/latest/index.html" target="_blank">Wearable</a>, <a href="iot-headed/latest/index.html" target="_blank">Iot-Headed</a>, or <a href="iot-headless/latest/index.html" target="_blank">Iot-Headless</a>.
+
+Since 8.0, Tizen supports a single set of Native APIs. For more information, see API Reference for <a href="common/latest/index.html" target="_blank">8.0</a>.
+
 
 ## Required Header
 
@@ -45,6 +50,8 @@ For example, see the "Privilege:" section in the following picture:
 
 ## Versions
 <ul>
+<li><a href="common/8.0/index.html" target="_blank">8.0</a></li>
+</li>
 <li>Wearable
   <ul>
     <li><a href="wearable/7.0/index.html" target="_blank">7.0</a></li>
