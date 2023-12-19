@@ -137,7 +137,7 @@ To flash the SD card for Raspberry Pi 3 or 4, follow the steps below:
         For example:
 
         ```
-        $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb
+        $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb --format
         $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb -b tizen-unified_20221017.061100_tizen-boot-armv7l-rpi3.tar.gz tizen-unified_20221017.061100_tizen-headed-armv7l.tar.gz
         ```
 
