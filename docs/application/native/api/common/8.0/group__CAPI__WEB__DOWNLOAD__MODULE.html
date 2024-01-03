@@ -375,7 +375,7 @@ Typedefs</h2></td></tr>
 <p>Download ID does not exist in download service module </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga2d9ccc088c02cf1ab70879f1beda1cd1aada43a48bd61cf6c7245eb8594cbfd37"></a><!-- doxytag: member="DOWNLOAD_ERROR_INVALID_NETWORK_TYPE" ref="gga2d9ccc088c02cf1ab70879f1beda1cd1aada43a48bd61cf6c7245eb8594cbfd37" args="" -->DOWNLOAD_ERROR_INVALID_NETWORK_TYPE</em>&nbsp;</td><td>
-<p>Network bonding is set but network type is not set as DOWNLOAD_NETWORK_ALL </p>
+<p>Network bonding is set but network type is not set as <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODULE.html#ggadf73239ac2efa6d4214a03751c76c9b8aad694f0daf57a6ec05da7be4ca048903">DOWNLOAD_NETWORK_ALL</a> </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga2d9ccc088c02cf1ab70879f1beda1cd1a6ea33edbe0b6258755acb254f84ebd6b"></a><!-- doxytag: member="DOWNLOAD_ERROR_NO_DATA" ref="gga2d9ccc088c02cf1ab70879f1beda1cd1a6ea33edbe0b6258755acb254f84ebd6b" args="" -->DOWNLOAD_ERROR_NO_DATA</em>&nbsp;</td><td>
 <p>No data because the set API is not called </p>
@@ -862,6 +862,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/download</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>content_name</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">download_id</td><td>The download ID </td></tr>
@@ -1145,7 +1146,9 @@ The download state must be <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODUL
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/download</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The etag value is available or not depending on the web server. <br/>
- After download is started, it can get the etag value.</dd></dl>
+ After download is started, it can get the etag value. </dd>
+<dd>
+The <em>etag</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">download_id</td><td>The download ID </td></tr>
@@ -1321,7 +1324,7 @@ The download state must be <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODUL
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/download</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <em>value</em> using free().</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <em>fields</em> using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">download_id</td><td>The download ID </td></tr>
@@ -1603,6 +1606,7 @@ The download state must be <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODUL
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/download</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>description</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">download_id</td><td>The download ID </td></tr>
@@ -1657,6 +1661,7 @@ The download state must be <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODUL
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/download</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>title</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">download_id</td><td>The download ID </td></tr>
@@ -1815,6 +1820,7 @@ The download state must be <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODUL
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/download</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>temp_path</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">download_id</td><td>The download ID </td></tr>
@@ -2236,7 +2242,7 @@ The download state must be <a class="el" href="group__CAPI__WEB__DOWNLOAD__MODUL
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">download_id</td><td>The download ID </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">file_name</td><td>The file name for the downloaded file <br/>
- If <em>name</em> is <code>NULL</code> it clears the previous value.</td></tr>
+ If <em>file_name</em> is <code>NULL</code> it clears the previous value.</td></tr>
   </table>
   </dd>
 </dl>
