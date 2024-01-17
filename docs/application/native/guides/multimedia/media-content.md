@@ -1073,7 +1073,7 @@ To access media item information:
                    audio_meta_get_album(audio_handle, &album);
                    audio_meta_get_album_artist(audio_handle, &album_artist);
 
-                   dlog_print(DLOG_DEBUG, LOG_TAG, "This is a music");
+                   dlog_print(DLOG_DEBUG, LOG_TAG, "This is an audio file");
                    dlog_print(DLOG_DEBUG, LOG_TAG,
                               "Title: %s, Album: %s, Artist: %s, Album_artist: %s,
                                title, album, artist, album_artist);
