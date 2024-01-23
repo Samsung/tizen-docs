@@ -95,10 +95,6 @@
 #### [Overview](/application/dotnet/guides/data/overview.md)
 #### [Data Storages](/application/dotnet/guides/data/data-storages.md)
 
-### Display Web Content
-#### [Overview](/application/dotnet/guides/webview/overview.md)
-#### [WebView](/application/dotnet/guides/webview/webview.md)
-
 ### Hot Reloading
 #### [Overview](/application/dotnet/guides/hot-reloading/overview.md)
 
