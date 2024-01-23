@@ -46,5 +46,5 @@ To see the trademark notice list, see [Trademarks](../trademarks.md).
 **See the following links for more information:**
 - Source code (GIT/Gerrit): https://review.tizen.org/gerrit
 - Tizen Build setup (OBS): https://build.tizen.org/
-- Tizen Bug Tracking system (Jira): https://bugs.tizen.org/
+- Tizen Bug Tracker: https://www.tizen.org/community/bug-tracker 
 - Download URL: http://download.tizen.org/
