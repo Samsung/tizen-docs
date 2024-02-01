@@ -138,6 +138,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a handle to image util.  <a href="#gaf1e254fd77c01e19bcca596378edb582"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gab89fcf51363d10b273b230357a8e1b3f">image_util_create_image</a> (unsigned int width, unsigned int height, <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#gad3ea89a72a617912df9ddbd50be1b991">image_util_colorspace_e</a> colorspace, const unsigned char *data, size_t data_size, <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ga1f44f8617307518186b8778b02b2d51a">image_util_image_h</a> *image)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an image handle.  <a href="#gab89fcf51363d10b273b230357a8e1b3f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gafb9765dea32d526af3209cc58fac3844">image_util_create_image_from_media_packet</a> (<a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga37d30125c3b624d8272611ec6c6f0f90">media_packet_h</a> media_packet, <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ga1f44f8617307518186b8778b02b2d51a">image_util_image_h</a> *image)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an image handle from media packet.  <a href="#gafb9765dea32d526af3209cc58fac3844"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gabef11eada003fc32f262043c4537c9c2">image_util_clone_image</a> (<a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ga1f44f8617307518186b8778b02b2d51a">image_util_image_h</a> src, <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ga1f44f8617307518186b8778b02b2d51a">image_util_image_h</a> *dst)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clones an image handle.  <a href="#gabef11eada003fc32f262043c4537c9c2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#ga661da0990bd1d0683e243df48f5167a2">image_util_get_image</a> (<a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ga1f44f8617307518186b8778b02b2d51a">image_util_image_h</a> image, unsigned int *width, unsigned int *height, <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#gad3ea89a72a617912df9ddbd50be1b991">image_util_colorspace_e</a> *colorspace, unsigned char **data, size_t *data_size)</td></tr>
@@ -376,6 +378,58 @@ Typedefs</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">colorspace</td><td>The colorspace of image </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data of image </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>The size of data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">image</td><td>A handle of image</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value</dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggac64a780350051897761937fabe5650d1a9f0569ebe8ad637688ff7147c64a0276">IMAGE_UTIL_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggac64a780350051897761937fabe5650d1a4e970bffd53d378904951b8284bd3dbb">IMAGE_UTIL_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ggac64a780350051897761937fabe5650d1a786cd54557647a7060e872ac078058cf">IMAGE_UTIL_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gaa14647b8554bcc82d945d63407979ea0" title="Destroys an image handle.">image_util_destroy_image()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#ga661da0990bd1d0683e243df48f5167a2" title="Gets the information from the image.">image_util_get_image()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gabef11eada003fc32f262043c4537c9c2" title="Clones an image handle.">image_util_clone_image()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gafb9765dea32d526af3209cc58fac3844"></a><!-- doxytag: member="image_util.h::image_util_create_image_from_media_packet" ref="gafb9765dea32d526af3209cc58fac3844" args="(media_packet_h media_packet, image_util_image_h *image)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gafb9765dea32d526af3209cc58fac3844">image_util_create_image_from_media_packet</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga37d30125c3b624d8272611ec6c6f0f90">media_packet_h</a>&#160;</td>
+          <td class="paramname"><em>media_packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#ga1f44f8617307518186b8778b02b2d51a">image_util_image_h</a> *&#160;</td>
+          <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates an image handle from media packet. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>image</em> should be released using <a class="el" href="group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gaa14647b8554bcc82d945d63407979ea0" title="Destroys an image handle.">image_util_destroy_image()</a>.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">media_packet</td><td>The media_packet </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">image</td><td>A handle of image</td></tr>
   </table>
   </dd>
