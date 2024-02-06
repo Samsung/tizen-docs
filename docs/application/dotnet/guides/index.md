@@ -148,21 +148,6 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces, and 
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
-                <p class="h3 card-title">Display Web Content</p>
-                <div class="card-text">
-                    <ul class="list-infra list-infra-arrow">
-                        <li><a href="webview/webview.md">WebView</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-footer">
-                <a class="link-standalone" href="webview/overview.md">Learn more</a>
-            </div>
-        </div>
-    </div>
-    <div class="col col-md-3">
-        <div class="card card-infra card-list h-100">
-            <div class="card-body">
                 <p class="h3 card-title">Hot-Reloading</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
