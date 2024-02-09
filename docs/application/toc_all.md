@@ -1303,8 +1303,6 @@
 #### [Platform Development Tools](/application/tizen-studio/platform-tools/platform-tools.md)
 
 ### [Configurable SDK](/application/tizen-studio/configurable-sdk/configurable-sdk.md)
-### Extension SDK
-#### [Overview](/application/tizen-studio/extension-sdk/overview.md)
 
 ### Tizen RT
 #### [Overview](/application/tizen-studio/rt-ide/overview.md)
