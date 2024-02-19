@@ -346,6 +346,31 @@ The following table provides detailed information regarding removed functions an
 | Multimedia - Thumbnail Util | thumbnail_util_destroy() | Mobile, Wearable | Since 5.0 | 8.0 | No longer available | - |
 | Multimedia - Media Vision | mv_inference_target_type_e | Mobile, Wearable | Since 5.5 | 8.0 | No longer available | - |
 | Multimedia - Media Vision | MV_INFERENCE_TARGET_TYPE | Mobile, Wearable | Since 5.5 | 8.0 | No longer available | - |
+| UI - Clipboard History Manager | All functions of this module | Mobile | - | 8.0 | No longer available | - |
+| UI - Gesture | All functions of this module | Wearable | - | 9.0 | No longer available | - |
+| Content - Media Content - Media Filter | MEDIA_FILE_NAME_PINYIN | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Content - Media Content - Media Filter | MEDIA_TITLE_PINYIN | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Content - Media Content - Media Filter | MEDIA_ALBUM_PINYIN | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Content - Media Content - Media Filter | MEDIA_ARTIST_PINYIN | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Content - Media Content - Media Filter | MEDIA_ALBUM_ARTIST_PINYIN | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Content - Media Content - Media Filter | MEDIA_GENRE_PINYIN | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Content - Media Content - Media Filter | MEDIA_COMPOSER_PINYIN | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Content - Media Content - Media Filter | FOLDER_NAME_PINYIN | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Multimedia - Stream Recorder | All functions of this module | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Multimedia - Image Util | image_util_calculate_buffer_size() | Mobile, Wearable | Since 5.5 | 9.0 | No longer available | - |
+| Multimedia - Image Util | image_util_transform_set_hardware_acceleration() | Mobile, Wearable | Since 5.0 | 9.0 | No longer available | - |
+| Multimedia - Image Util | image_util_encode_set_resolution() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_create_image() |
+| Multimedia - Image Util | image_util_encode_set_colorspace() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_create_image() |
+| Multimedia - Image Util | image_util_encode_set_webp_lossless() | Mobile, Wearable | Since 7.0 | 9.0 | Better alternative | image_util_encode_set_lossless() |
+| Multimedia - Image Util | image_util_encode_set_gif_frame_delay_time() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_agif_encode_add_frame() |
+| Multimedia - Image Util | image_util_encode_set_input_buffer() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_create_image() |
+| Multimedia - Image Util | image_util_encode_set_output_path() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_encode_run_to_file() or image_util_encode_run_async_to_file() |
+| Multimedia - Image Util | image_util_encode_set_output_buffer() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_encode_run_to_buffer() or image_util_encode_run_async_to_buffer() |
+| Multimedia - Image Util | image_util_encode_run() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_encode_run_to_file() or image_util_encode_run_to_buffer() |
+| Multimedia - Image Util | image_util_encode_run_async() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_encode_run_async_to_file() or image_util_encode_run_async_to_buffer() |
+| Multimedia - Image Util | image_util_decode_set_output_buffer() | Mobile, Wearable | Since 5.5 | 9.0 | No longer available | - |
+| Multimedia - Image Util | image_util_decode_run() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_decode_run2() |
+| Multimedia - Image Util | image_util_decode_run_async() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_decode_run_async2() |
 
 ## Related information
 
