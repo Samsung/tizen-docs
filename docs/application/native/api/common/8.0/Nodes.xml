@@ -4883,48 +4883,6 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>UI View Manager (Deprecated)</Name>
-            <Path>group__CAPI__UI__VIEWMGR__MODULE.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>UI Application</Name>
-              <Path>group__CAPI__UI__APPLICATION.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>UI Menu</Name>
-              <Path>group__CAPI__UI__MENU.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>UI Popup</Name>
-              <Path>group__CAPI__UI__POPUP.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>UI Standard View</Name>
-              <Path>group__CAPI__UI__STANDARD__VIEW.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>UI View</Name>
-              <Path>group__CAPI__UI__VIEW.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>UI Viewmgr</Name>
-              <Path>group__CAPI__UI__VIEWMGR.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
             <Name>Vulkan</Name>
             <Path>group__OPENSRC__VULKAN__FRAMEWORK.html</Path>
             <Subnodes>

@@ -13,6 +13,5 @@ var group__CAPI__UI__FRAMEWORK =
     [ "SDL", "group__OPENSRC__SDL__FRAMEWORK.html", "group__OPENSRC__SDL__FRAMEWORK" ],
     [ "TBM Surface", "group__CAPI__UI__TBM__SURFACE__MODULE.html", null ],
     [ "Tizen WS Shell", "group__TIZEN__WS__SHELL__MODULE.html", "group__TIZEN__WS__SHELL__MODULE" ],
-    [ "UI View Manager (Deprecated)", "group__CAPI__UI__VIEWMGR__MODULE.html", "group__CAPI__UI__VIEWMGR__MODULE" ],
     [ "Vulkan", "group__OPENSRC__VULKAN__FRAMEWORK.html", null ]
 ];
