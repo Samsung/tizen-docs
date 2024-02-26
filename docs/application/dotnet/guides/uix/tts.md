@@ -243,7 +243,24 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
 -   Utterance started or completed
 
-    If you add text in TTS, that text is handled as an utterance and it obtains its own ID. After you request the TTS process to start, the text is synthesized by an engine and played. To get a notification when an utterance is started or completed, register event handlers for the `UtteranceStarted` and `UtteranceCompleted` events, respectively:
+    If you add text in TTS, that text is handled as an utterance and it obtains its own ID. After you request the TTS process to start, the text is synthesized by an engine and played. Each event handler is invoked in the following cases:
+    
+     |     Event handler    |               Invoked when                | TTS state |
+     | :------------------: | :---------------------------------------: | :-------: |
+     |  `UtteranceStarted`  | playing the synthesized audio is started  | `Ready` > `Playing` |
+     | `UtteranceCompleted` | playing the synthesized audio is finished | `Playing` (The state is NOT changed until `Stop()` is called.) |
+
+    > [!NOTE]
+    > `UtteranceCompleted` is NOT invoked when
+    >
+    > (1) your application calls `Stop()`.
+    >
+    > (2) playing the synthesized audio is stopped by other application.
+    >
+    > Although the `UtteranceCompleted` event handler is not invoked, a `StateChanged` event handler will be invoked. (The state will be changed from `Playing` to `Ready`.)
+    
+    
+    To get a notification when an utterance is started or completed, register event handlers for the `UtteranceStarted` and `UtteranceCompleted` events, respectively:
 
     ```csharp
     /// Utterance started event handler
