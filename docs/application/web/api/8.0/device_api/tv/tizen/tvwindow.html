@@ -709,7 +709,7 @@ catch (error)
 </dt>
 <dd>
 <div class="brief">
- Rotates soruce of the tvwindow object shown on the screen.
+ Rotates source of the tvwindow object shown on the screen.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void rotateSource(<a href="#SourceRotationRatio">SourceRotationRatio</a> rotation, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
@@ -721,7 +721,7 @@ The errorCallback is launched with these error types:
             </p>
             <ul>
               <li>
-AbortError - if any unexpected error occurred.              </li>
+UnknownError - if any unexpected error occurred.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -770,7 +770,11 @@ AbortError - if any unexpected error occurred.              </li>
 
 function successCB(windowRect, type)
 {
-  tizen.tvwindow.rotateSource("ROTATION_180", rotationCB);
+  try {
+    tizen.tvwindow.rotateSource("ROTATION_180", rotationCB);
+  } catch (error) {
+    console.log("Error name: " + error.name + ", error message: " + error.message);
+  }
 }
 
 try
