@@ -12,22 +12,6 @@ Tizen .NET provides a rich set of interfaces allowing you to build compelling TV
         </a>
     </div>
     <div class="col col-6 col-xl-3">
-        <a href="https://developer.xamarin.com/guides/xamarin-forms/getting-started/" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">Xamarin.Forms</p>
-                <p class="card-text">Provides APIs for creating user interfaces that can be shared across platforms.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-6 col-xl-3">
-        <a href="https://samsung.github.io/Tizen.CircularUI/index.html" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">Tizen.Wearable.CircularUI</p>
-                <p class="card-text">Set of extension APIs of Xamarin Forms.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-6 col-xl-3">
         <a href="/application/dotnet/api/TizenFX/index.html" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">TizenFX API</p>
@@ -42,25 +26,6 @@ Tizen .NET provides a rich set of interfaces allowing you to build compelling TV
 One of the major components of .NET Core is the .NET Standard. The .NET APIs provided by Tizen .NET follow the .NET Standard 2.0. The column titled as 2.0 in the [official list](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) of the supported CoreFX APIs lists all the available .NET APIs.
 
 There are limitations of .NET Standard API on Tizen. For more information, see [Limitations of .NET Standard API on Tizen](dotnet-standard-limitations.md).
-
-## Xamarin.Forms
-
-[Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/getting-started/) provides cross-platform APIs, which allow you to create user interfaces that can be shared across platforms. The Visual Studio Tools for Tizen enables Tizen support for Xamarin.Forms.
-
-You can efficiently build your Tizen .NET application UI and its supporting logic using the Xamarin.Forms APIs. Extended details for these APIs are available on the [Xamarin Web site](https://developer.xamarin.com/api/namespace/Xamarin.Forms/).
-
-Tizen .NET contains a few limitations on the Xamarin.Forms APIs; these limitations are to be eliminated in future releases. The following classes are not supported:
-
-- `AppLinkEntry`
-- `OpenGLView`
-
-A list of limitations is available at [Xamarin.Forms limitations](xamarin-forms-limitations.md).
-
-## Tizen.Wearable.CircularUI
-
-[Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html) provides Tizen wearable-specific user interfaces. It is a set of extension APIs of Xamarin.Forms. Tizen.Wearable.CircularUI APIs are supported only on Tizen wearable devices with Tizen .NET support, unlike the Xamarin.Forms which support cross platforms.
-
-Using these APIs, you can easily and efficiently add Tizen wearable-specific user interfaces to your Tizen wearable application. For more information about these APIs, see [Tizen.Wearable.CircularUI GitHub](https://github.com/Samsung/Tizen.CircularUI).
 
 ## TizenFX API
 
