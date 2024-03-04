@@ -1796,8 +1796,8 @@ For metadata of a book file, call the `media_info_get_book()` function with the 
 | `Media ID`      | Media ID of the book<br> This value is the same as the media ID in the general information. |
 | `Subject`       | Subject(or genre) of the book            |
 | `Author`        | Author of the book                       |
-| `Date`          | Release date of the book                 |
-| `Publisher`     | Publisher of the book                    |
+| `Date`          | Release date of the book (Deprecated since 9.0) |
+| `Publisher`     | Publisher of the book (Deprecated since 9.0) |
 
 For metadata of an image file, call the `media_info_get_image()` function with the media handle.
 
@@ -1815,7 +1815,7 @@ For metadata of an image file, call the `media_info_get_image()` function with t
 | `Orientation`   | Orientation of the image                 |
 | `Date taken`    | Time the image was created<br> You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
 
-For metadata of a video file, call `withmedia_info_get_video()` function with the media handle.
+For metadata of a video file, call the `media_info_get_video()` function with the media handle.(Deprecated since 9.0)
 
 **Table: Video metadata (only for video files)**
 
@@ -1833,8 +1833,8 @@ For metadata of a video file, call `withmedia_info_get_video()` function with th
 | `Track number`  | Track number of the video content (Deprecated since 9.0) |
 | `Bit rate`      | Bit rate of the video content (Deprecated since 9.0) |
 | `Duration`      | Duration of the video content (Deprecated since 9.0) |
-| `Width`         | Width of the video content               |
-| `Height`        | Height of the video content              |
+| `Width`         | Width of the video content (Deprecated since 9.0) |
+| `Height`        | Height of the video content (Deprecated since 9.0) |
 | `rotation`      | The clockwise rotation angle of the video content in degrees (Deprecated since 9.0) |
 
 ## Related Information
