@@ -1815,7 +1815,7 @@ For metadata of an image file, call the `media_info_get_image()` function with t
 | `Orientation`   | Orientation of the image                 |
 | `Date taken`    | Time the image was created<br> You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
 
-For metadata of a video file, call the `media_info_get_video()` function with the media handle.(Deprecated since 9.0)
+For metadata of a video file, call the `media_info_get_video()` function with the media handle. (Deprecated since 9.0)
 
 **Table: Video metadata (only for video files)**
 
