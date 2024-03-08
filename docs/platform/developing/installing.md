@@ -19,7 +19,7 @@ You can install a variety of development tools, including:
 > [!NOTE]
 > GBS and MIC are used as examples because they are mandatory development tools for Tizen developers.
 
-## Install development tools in Ubuntu or Debian
+## Install development tools in Ubuntu
 
 To install a development tool in Ubuntu, follow the steps below:
 
