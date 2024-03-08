@@ -2,8 +2,8 @@
 
 Tizen SCM tools support the following Linux distribution versions:
 
-- Ubuntu 20.04/18.04/16.04/14.04
-- openSUSE 13.2/Leap 42.1/42.3
+- Ubuntu 22.04/20.04/18.04
+- openSUSE 15.2/42.3/42.1
 
 > [!NOTE]
 > Tizen SCM tools are maintained in http://download.tizen.org/tools/latest-release/ .
@@ -21,7 +21,7 @@ You can install a variety of development tools, including:
 
 ## Install development tools in Ubuntu or Debian
 
-To install a development tool in Ubuntu or Debian, follow the steps below:
+To install a development tool in Ubuntu, follow the steps below:
 
 > [!NOTE]
 > The `apt-get install <Package_Name>` command is recommended because it upgrades 1 or more already installed packages without upgrading every package installed, whereas the `apt-get upgrade` command installs the newest version of all currently installed packages. In addition, `apt-get update` must always be executed before `apt-get install <Package_Name>` or `apt-get upgrade`, to resynchronize the package index files.
@@ -52,10 +52,10 @@ To install a development tool in Ubuntu or Debian, follow the steps below:
    >    deb [trusted=yes] http://download.tizen.org/tools/latest-release/Ubuntu_<version>/ /
    >    ```
    >
-   >    For example, in Ubuntu 20.04, append the following line to the source list:
+   >    For example, in Ubuntu 22.04, append the following line to the source list:
    >
    >      ```
-   >      deb [trusted=yes] http://download.tizen.org/tools/latest-release/Ubuntu_20.04/ /
+   >      deb [trusted=yes] http://download.tizen.org/tools/latest-release/Ubuntu_22.04/ /
    >      ```
    >
    > Pay special attention to the space between the URL and "/".
@@ -72,10 +72,10 @@ To install a development tool in openSUSE, follow the steps below:
 
 1. Add the Tizen tools repository to the package manager source list.
 
-   In openSUSE 13.2, for example:
+   In openSUSE 15.2, for example:
 
    ```
-   $ sudo zypper addrepo http://download.tizen.org/tools/latest-release/openSUSE_13.2/ tools
+   $ sudo zypper addrepo http://download.tizen.org/tools/latest-release/openSUSE_15.2/ tools
    ```
 
    > [!NOTE]
