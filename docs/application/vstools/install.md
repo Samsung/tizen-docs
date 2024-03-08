@@ -107,6 +107,11 @@ Visual Studio Tools for Tizen extension is registered in the Visual Studio Marke
 
    The installation starts.
 
+The video below shows how Visual Studio Tools for Tizen is installed in windows:
+
+<video controls height="400">
+  <source src="../media/vstools-installation.mp4" type=video/mp4>
+</video>
 
 ### Install Tizen Baseline SDK
 
@@ -163,6 +168,12 @@ You can use Tizen Package Manager to set up Tizen Baseline SDK path or each tool
      ![Check the SDK tool path](media/howtoinstall-checktoolpath.png)
 
      The other tools paths are automatically set up.
+
+The video below shows how to set the Baseline SDK path from Local PC on Visual Studio in windows:
+
+<video controls height="400">
+  <source src="../media/vs-baselineskdpath.mp4" type=video/mp4>
+</video>
 
 ### Install Emulator images
 
