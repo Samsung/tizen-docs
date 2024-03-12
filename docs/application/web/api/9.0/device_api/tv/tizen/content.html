@@ -119,8 +119,6 @@ Playlist functionality has been added in Tizen 2.3.
 <tr>
 <td><a href="#ContentManager">ContentManager</a></td>
 <td>
-<div>void <a href="#ContentManager::update">update</a> (<a href="#Content">Content</a> content)</div>
-<div>void <a href="#ContentManager::updateBatch">updateBatch</a> (<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#ContentManager::getDirectories">getDirectories</a> (<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#ContentManager::find">find</a> (<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, optional unsigned long? count, optional unsigned long? offset)</div>
 <div>void <a href="#ContentManager::scanFile">scanFile</a> (DOMString contentURI, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
@@ -361,10 +359,10 @@ The <em>tizen.content</em> object allows accessing the functionality of the Cont
  The ContentManager interface provides operations to retrieve and manipulate content.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ContentManager {
-    void update(<a href="#Content">Content</a> content) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+<span class="nocode deprecated">    void update(<a href="#Content">Content</a> content) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void getDirectories(<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+</span>    void getDirectories(<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
               optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode,
@@ -390,13 +388,16 @@ The <em>tizen.content</em> object allows accessing the functionality of the Cont
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="ContentManager::update">
+<dt class="deprecated method" id="ContentManager::update">
 <a class="backward-compatibility-anchor" name="::Content::ContentManager::update"></a><code><b><span class="methodName">update</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Updates attributes of content in the content database synchronously.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void update(<a href="#Content">Content</a> content);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -458,13 +459,16 @@ tizen.content.update(content);
 </pre>
 </div>
 </dd>
-<dt class="method" id="ContentManager::updateBatch">
+<dt class="deprecated method" id="ContentManager::updateBatch">
 <a class="backward-compatibility-anchor" name="::Content::ContentManager::updateBatch"></a><code><b><span class="methodName">updateBatch</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Updates a batch of content attributes in the content database asynchronously.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -1814,33 +1818,36 @@ tizen.content.find(findCB);
  The Content interface provides access to the properties of a content item.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Content {
-    readonly attribute DOMString[] editableAttributes;
-    readonly attribute <a href="#ContentId">ContentId</a> id;
+<span class="nocode deprecated">    readonly attribute DOMString[] editableAttributes;
+</span>    readonly attribute <a href="#ContentId">ContentId</a> id;
     readonly attribute DOMString name;
     readonly attribute <a href="#ContentType">ContentType</a> type;
     readonly attribute DOMString mimeType;
     readonly attribute DOMString title;
     readonly attribute DOMString contentURI;
     readonly attribute DOMString[]? thumbnailURIs;
-    readonly attribute Date? releaseDate;
-    readonly attribute Date? modifiedDate;
+<span class="nocode deprecated">    readonly attribute Date? releaseDate;
+</span>    readonly attribute Date? modifiedDate;
     readonly attribute unsigned long size;
-    readonly attribute DOMString? description;
-    readonly attribute unsigned long rating;
-    attribute boolean isFavorite;
-  };</pre>
+<span class="nocode deprecated">    readonly attribute DOMString? description;
+</span><span class="nocode deprecated">    readonly attribute unsigned long rating;
+</span><span class="nocode deprecated">    attribute boolean isFavorite;
+</span>  };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="Content::editableAttributes">
+<li class="attribute deprecated" id="Content::editableAttributes">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString[]
                       </span><span class="name">editableAttributes</span></span><div class="brief">
  The list of attributes that are editable to the local backend using the update() or updateBatch() method.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -1914,11 +1921,14 @@ The attribute is marked as read-only since Tizen 5.5.
  2.0
             </p>
 </li>
-<li class="attribute" id="Content::releaseDate">
+<li class="attribute deprecated" id="Content::releaseDate">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">Date </span><span class="name">releaseDate</span><span class="optional"> [nullable]</span></span><div class="brief">
  The date when content has been released publicly. If only the release year is known, then the month and date are set to January and 1st respectively.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -1941,11 +1951,14 @@ The attribute is marked as read-only since Tizen 5.5.
  2.0
             </p>
 </li>
-<li class="attribute" id="Content::description">
+<li class="attribute deprecated" id="Content::description">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">description</span><span class="optional"> [nullable]</span></span><div class="brief">
  The content description.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="description">
             <p>
 The attribute is marked as read-only since Tizen 5.5.
@@ -1955,11 +1968,14 @@ The attribute is marked as read-only since Tizen 5.5.
  2.0
             </p>
 </li>
-<li class="attribute" id="Content::rating">
+<li class="attribute deprecated" id="Content::rating">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">unsigned long </span><span class="name">rating</span></span><div class="brief">
  The content rating. This value can range from <var>0</var> to <var>10</var>.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="description">
             <p>
 The attribute is marked as read-only since Tizen 5.5.
@@ -1969,10 +1985,13 @@ The attribute is marked as read-only since Tizen 5.5.
  2.0
             </p>
 </li>
-<li class="attribute" id="Content::isFavorite">
+<li class="attribute deprecated" id="Content::isFavorite">
 <span class="attrName"><span class="type">boolean </span><span class="name">isFavorite</span></span><div class="brief">
  Boolean value that indicates whether a content item is marked as a favorite.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.3
             </p>
@@ -1986,13 +2005,13 @@ The attribute is marked as read-only since Tizen 5.5.
  The VideoContent interface extends a basic <em>Content</em> object with video-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface VideoContent : <a href="#Content">Content</a> {
-    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
-    readonly attribute DOMString? album;
-    readonly attribute DOMString[]? artists;
-    readonly attribute unsigned long duration;
-    readonly attribute unsigned long width;
-    readonly attribute unsigned long height;
-  };</pre>
+<span class="nocode deprecated">    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
+</span><span class="nocode deprecated">    readonly attribute DOMString? album;
+</span><span class="nocode deprecated">    readonly attribute DOMString[]? artists;
+</span><span class="nocode deprecated">    readonly attribute unsigned long duration;
+</span><span class="nocode deprecated">    readonly attribute unsigned long width;
+</span><span class="nocode deprecated">    readonly attribute unsigned long height;
+</span>  };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -2000,11 +2019,14 @@ The attribute is marked as read-only since Tizen 5.5.
       <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="VideoContent::geolocation">
+<li class="attribute deprecated" id="VideoContent::geolocation">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">SimpleCoordinates </span><span class="name">geolocation</span><span class="optional"> [nullable]</span></span><div class="brief">
  The geographical location where the video has been made.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="description">
             <p>
 The attribute is marked as read-only since Tizen 5.5. Modifying it or its attributes has no effect.
@@ -2014,48 +2036,63 @@ The attribute is marked as read-only since Tizen 5.5. Modifying it or its attrib
  2.0
             </p>
 </li>
-<li class="attribute" id="VideoContent::album">
+<li class="attribute deprecated" id="VideoContent::album">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">album</span><span class="optional"> [nullable]</span></span><div class="brief">
  The album name to which the video belongs.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
 </li>
-<li class="attribute" id="VideoContent::artists">
+<li class="attribute deprecated" id="VideoContent::artists">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString[]
                       </span><span class="name">artists</span><span class="optional"> [nullable]</span></span><div class="brief">
  The list of artists who created the video.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
 </li>
-<li class="attribute" id="VideoContent::duration">
+<li class="attribute deprecated" id="VideoContent::duration">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">unsigned long </span><span class="name">duration</span></span><div class="brief">
  The video duration in milliseconds.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
 </li>
-<li class="attribute" id="VideoContent::width">
+<li class="attribute deprecated" id="VideoContent::width">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">unsigned long </span><span class="name">width</span></span><div class="brief">
  The width of a video in pixels.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
 </li>
-<li class="attribute" id="VideoContent::height">
+<li class="attribute deprecated" id="VideoContent::height">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">unsigned long </span><span class="name">height</span></span><div class="brief">
  The height of the video in pixels.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -2130,13 +2167,13 @@ If the lyrics are not synchronized, the array has only one member with full lyri
     readonly attribute DOMString? album;
     readonly attribute DOMString[]? genres;
     readonly attribute DOMString[]? artists;
-    readonly attribute DOMString[]? composers;
-    readonly attribute <a href="#AudioContentLyrics">AudioContentLyrics</a>? lyrics raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    readonly attribute DOMString? copyright;
-    readonly attribute unsigned long bitrate;
-    readonly attribute unsigned short? trackNumber;
-    readonly attribute unsigned long duration;
-  };</pre>
+<span class="nocode deprecated">    readonly attribute DOMString[]? composers;
+</span>    readonly attribute <a href="#AudioContentLyrics">AudioContentLyrics</a>? lyrics raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+<span class="nocode deprecated">    readonly attribute DOMString? copyright;
+</span><span class="nocode deprecated">    readonly attribute unsigned long bitrate;
+</span>    readonly attribute unsigned short? trackNumber;
+<span class="nocode deprecated">    readonly attribute unsigned long duration;
+</span>  };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -2173,12 +2210,15 @@ If the lyrics are not synchronized, the array has only one member with full lyri
  2.0
             </p>
 </li>
-<li class="attribute" id="AudioContent::composers">
+<li class="attribute deprecated" id="AudioContent::composers">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString[]
                       </span><span class="name">composers</span><span class="optional"> [nullable]</span></span><div class="brief">
  The list of composers for the music.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -2199,20 +2239,26 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </li></ul>
         </div>
 </li>
-<li class="attribute" id="AudioContent::copyright">
+<li class="attribute deprecated" id="AudioContent::copyright">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">copyright</span><span class="optional"> [nullable]</span></span><div class="brief">
  The copyright information.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
 </li>
-<li class="attribute" id="AudioContent::bitrate">
+<li class="attribute deprecated" id="AudioContent::bitrate">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">unsigned long </span><span class="name">bitrate</span></span><div class="brief">
  The audio bitrate in bits per second. By default, this value is <var>0</var>.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -2226,11 +2272,14 @@ If the lyrics are not synchronized, the array has only one member with full lyri
  2.0
             </p>
 </li>
-<li class="attribute" id="AudioContent::duration">
+<li class="attribute deprecated" id="AudioContent::duration">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">unsigned long </span><span class="name">duration</span></span><div class="brief">
  The audio duration in milliseconds.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -2244,8 +2293,8 @@ If the lyrics are not synchronized, the array has only one member with full lyri
  The ImageContent interface extends a basic <em>Content</em> object with image-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ImageContent : <a href="#Content">Content</a> {
-    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
-    readonly attribute unsigned long width;
+<span class="nocode deprecated">    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
+</span>    readonly attribute unsigned long width;
     readonly attribute unsigned long height;
     readonly attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
   };</pre>
@@ -2256,11 +2305,14 @@ If the lyrics are not synchronized, the array has only one member with full lyri
       <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="ImageContent::geolocation">
+<li class="attribute deprecated" id="ImageContent::geolocation">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">SimpleCoordinates </span><span class="name">geolocation</span><span class="optional"> [nullable]</span></span><div class="brief">
  The geographical location where the image has been made.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="description">
             <p>
 The attribute is marked as read-only since Tizen 5.5. Modifying it or its attributes has no effect.
@@ -3354,9 +3406,6 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     readonly attribute <a href="#ContentManager">ContentManager</a> content;
   };
   [NoInterfaceObject] interface ContentManager {
-    void update(<a href="#Content">Content</a> content) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getDirectories(<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
@@ -3401,7 +3450,6 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     readonly attribute Date? modifiedDate;
   };
   [NoInterfaceObject] interface Content {
-    readonly attribute DOMString[] editableAttributes;
     readonly attribute <a href="#ContentId">ContentId</a> id;
     readonly attribute DOMString name;
     readonly attribute <a href="#ContentType">ContentType</a> type;
@@ -3409,20 +3457,10 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     readonly attribute DOMString title;
     readonly attribute DOMString contentURI;
     readonly attribute DOMString[]? thumbnailURIs;
-    readonly attribute Date? releaseDate;
     readonly attribute Date? modifiedDate;
     readonly attribute unsigned long size;
-    readonly attribute DOMString? description;
-    readonly attribute unsigned long rating;
-    attribute boolean isFavorite;
   };
   [NoInterfaceObject] interface VideoContent : <a href="#Content">Content</a> {
-    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
-    readonly attribute DOMString? album;
-    readonly attribute DOMString[]? artists;
-    readonly attribute unsigned long duration;
-    readonly attribute unsigned long width;
-    readonly attribute unsigned long height;
   };
   [NoInterfaceObject] interface AudioContentLyrics {
     readonly attribute <a href="#AudioContentLyricsType">AudioContentLyricsType</a> type;
@@ -3433,15 +3471,10 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     readonly attribute DOMString? album;
     readonly attribute DOMString[]? genres;
     readonly attribute DOMString[]? artists;
-    readonly attribute DOMString[]? composers;
     readonly attribute <a href="#AudioContentLyrics">AudioContentLyrics</a>? lyrics raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    readonly attribute DOMString? copyright;
-    readonly attribute unsigned long bitrate;
     readonly attribute unsigned short? trackNumber;
-    readonly attribute unsigned long duration;
   };
   [NoInterfaceObject] interface ImageContent : <a href="#Content">Content</a> {
-    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
     readonly attribute unsigned long width;
     readonly attribute unsigned long height;
     readonly attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
