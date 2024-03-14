@@ -1808,10 +1808,10 @@ For metadata of an image file, call the `media_info_get_image()` function with t
 | `Media ID`      | Media ID of the image<br> This value is the same as the media ID in the general information. |
 | `Width`         | Width of the image                       |
 | `Height`        | Height of the image                      |
-| `Exposure time` | Exposure time of the image (Deprecated since 9.0) |
-| `F-number`      | F-number of the image (Deprecated since 9.0) |
-| `ISO`           | ISO of the image (Deprecated since 9.0) |
-| `Model`         | Model name of the camera that created the image (Deprecated since 9.0) |
+| `Exposure time` | Exposure time of the image (Deprecated since 8.0) |
+| `F-number`      | F-number of the image (Deprecated since 8.0) |
+| `ISO`           | ISO of the image (Deprecated since 8.0) |
+| `Model`         | Model name of the camera that created the image (Deprecated since 8.0) |
 | `Orientation`   | Orientation of the image                 |
 | `Date taken`    | Time the image was created<br> You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
 
