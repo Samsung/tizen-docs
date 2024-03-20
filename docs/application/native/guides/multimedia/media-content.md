@@ -32,7 +32,7 @@ The main media content features include:
 
   You can also retrieve [general information about the media and more specific information about the media type](#media_info).
 
-- Media bookmarks
+- Media bookmarks (Deprecated since 9.0)
 
   You can [insert](#inserting), [search for](#finding), [read](#reading), and [remove](#removing) bookmarks for video and audio files.
 
@@ -40,7 +40,7 @@ The main media content features include:
 
   You can [create a filter](#filter) to find specific media items.
 
-- Media playlists
+- Media playlists (Deprecated since 9.0)
 
   You can [add](#create_playlist) or [delete](#delete_playlist) a playlist of video and audio files, and add media files to a created playlist. In addition, you can also [search for playlists](#find_playlist) and [read playlist information](#read_playlist).
 
@@ -535,6 +535,9 @@ To access information about the media items in a given album:
 
 <a name="media_bookmark"></a>
 ## Bookmark
+
+> [!NOTE]
+> All media bookmark APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
 
 <a name="inserting"></a>
 ### Inserting Bookmarks
@@ -1208,6 +1211,9 @@ To insert a media folder, and optionally any subfolders, in the database:
 
 <a name="media_playlist"></a>
 ## Playlist
+
+> [!NOTE]
+> All media playlist APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
 
 <a name="create_playlist"></a>
 ### Creating Playlists
