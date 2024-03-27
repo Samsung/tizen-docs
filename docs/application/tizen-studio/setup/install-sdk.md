@@ -38,6 +38,18 @@ To install Tizen Studio:
    >
    > If you install Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, administrator privileges are required to run the Tizen SDK tools.
 
+The video below shows how Tizen Studio is installed in Windows using the IDE installer:
+
+<video controls height="400">
+  <source src="../media/tizenstudio-ideinstaller.mp4" type=video/mp4>
+</video>
+
+The video below shows how Tizen Studio is installed in Linux using the IDE installer:
+
+<video controls height="400">
+  <source src="../media/tizenstudio-ideinstaller-linux.mp4" type=video/mp4>
+</video>
+
 
 ## Using the CLI Installer
 
@@ -79,6 +91,18 @@ To install Tizen Studio using the CLI installer:
 > **Note**
 >
 > If you want to develop a native application on the CLI, you must install the Native App Development platform and tools using the CLI Package Manager.
+
+The video below shows how Tizen Studio is installed in Windows using the CLI installer:
+
+<video controls height="400">
+  <source src="../media/tizenstudio-cliinstaller.mp4" type=video/mp4>
+</video>
+
+The video below shows how Tizen Studio is installed in Linux using the CLI installer:
+
+<video controls height="400">
+  <source src="../media/tizenstudio-cliinstaller-linux.mp4" type=video/mp4>
+</video>
 
 ## Display packages with CLI
 
