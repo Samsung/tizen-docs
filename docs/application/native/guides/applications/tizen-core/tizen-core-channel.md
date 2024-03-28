@@ -8,7 +8,8 @@ To use the tizen core channel API, you must include the `tizen_core.h` header.
 #include <tizen_core.h>
 ```
 
-## Creating channel sender and receiver pairs
+## Managing channel sender and receiver pairs
+1. Creating channel sender and receiver pairs
 Use `tizen_core_channel_make_pair()` to create a channel sender and receiver pair.
 ```c
 {

@@ -5,7 +5,7 @@ Tizen Core provides an API that supports secure communication between threads.
 
 The following are functions provided by Tizen Core for inter-thread communication and event delivery.
  - **[Tizen Core Channel](./tizen-core-channel.md)**: Provides a thread-safe communication method between threads.
- - **[Tizen Core Event](./tizen-core-event.md)**: Tizen Core Event: Provides the ability to deliver events to specific tasks.
+ - **[Tizen Core Event](./tizen-core-event.md)**: Provides the ability to deliver events to specific tasks.
 
 ## Preparation
 To use the Tizen core API, you must include the `tizen_core.h` header.
@@ -160,7 +160,7 @@ You can obtain the tizen core information of the current thread through the API 
 ```
 If there is no `tizen_core_h` running in the current thread, the function returns the `tizen_core_h` running in the main thread.
 
-## Adding an Idle Job to Tizen Core
+## Adding an idle job to tizen core
 Let's write an example that adds an idle job to `tizen_core_h` and removes the job again when the callback is called.
 ```c
 static bool idle_job_cb(void *user_data)

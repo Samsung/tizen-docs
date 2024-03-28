@@ -8,7 +8,7 @@ To use the tizen core event API, you must include the `tizen_core.h` header.
 #include <tizen_core.h>
 ```
 
-## Managing Tizen Core Events
+## Managing tizen core events
 1. Creating an event handle and registering an event handler
 Here's an example of creating an event and registering an event handler.
 ```c
