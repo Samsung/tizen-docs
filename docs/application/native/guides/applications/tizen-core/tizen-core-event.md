@@ -2,6 +2,12 @@
 
 A feature to deliver events to specific tasks, which can be used to wait for completion of tasks or send notifications to other threads. This page covers creating events, registering event handlers with them, attaching them to the main loop, and receiving events.
 
+## Preparation
+To use the tizen core event API, you must include the `tizen_core.h` header.
+```c
+#include <tizen_core.h>
+```
+
 ## Managing Tizen Core Events
 1. Creating an event handle and registering an event handler
 Here's an example of creating an event and registering an event handler.
