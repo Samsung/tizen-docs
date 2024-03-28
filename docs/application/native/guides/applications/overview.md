@@ -67,16 +67,6 @@ Because a service application has no UI, neither does it have a pause state. Sin
 
 Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](efl-ui-app.md#state_trans).
 
-## Tizen Core
-
-Tizen core is a Main Loop Model provided since Tizen 9.0. It allows for the creation of multiple loops in different threads, enabling safe communication between them.
-
-- **[Tizen Core](./tizen-core/tizen-core.md)**: Supports creating and running the main loop in multiple threads.
-
-- **[Tizen Core Channel](.tizen-core/tizen-core-channel.md)**: Provides a communication channel that allows safe sending and receiving of data between threads. This channel can be used to exchange information in a synchronized state without data conflict.
-
-- **[Tizen Core Event](.tizen-core/tizen-core-event.md)**: A feature to deliver events to specific tasks, which can be used to wait for completion of tasks or send notifications to other threads.
-
 
 ## Related Information
 - Dependencies
