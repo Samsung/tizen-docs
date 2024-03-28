@@ -371,6 +371,19 @@ The following table provides detailed information regarding removed functions an
 | Multimedia - Image Util | image_util_decode_set_output_buffer() | Mobile, Wearable | Since 5.5 | 9.0 | No longer available | - |
 | Multimedia - Image Util | image_util_decode_run() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_decode_run2() |
 | Multimedia - Image Util | image_util_decode_run_async() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | image_util_decode_run_async2() |
+| Multimedia - Media Controller Client | mc_client_set_shuffle_ability_updated_cb() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_client_set_ability_support_updated_cb() |
+| Multimedia - Media Controller Client | mc_client_unset_shuffle_ability_updated_cb() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_client_unset_ability_support_updated_cb() |
+| Multimedia - Media Controller Client | mc_client_set_repeat_ability_updated_cb() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_client_set_ability_support_updated_cb() |
+| Multimedia - Media Controller Client | mc_client_unset_repeat_ability_updated_cb() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_client_unset_ability_support_updated_cb() |
+| Multimedia - Media Controller Client | mc_client_get_playlist_item_index() | Mobile, Wearable | Since 5.0 | 9.0 | Better alternative | mc_client_get_playlist_item_info() |
+| Multimedia - Media Controller Client | mc_client_get_server_shuffle_ability_support() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_client_get_server_ability_support() |
+| Multimedia - Media Controller Client | mc_client_get_server_repeat_ability_support() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_client_get_server_ability_support() |
+| Multimedia - Media Controller Client | mc_client_foreach_server_playlist() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_playlist_foreach_playlist() |
+| Multimedia - Media Controller Server | mc_server_set_playlist_item_index() | Mobile, Wearable | Since 5.0 | 9.0 | Better alternative | mc_server_set_playlist_item_info() |
+| Multimedia - Media Controller Server | mc_server_foreach_playlist() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_playlist_foreach_playlist() |
+| Multimedia - Media Controller Server | mc_server_set_shuffle_ability() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_server_set_ability_support() |
+| Multimedia - Media Controller Server | mc_server_set_repeat_ability() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_server_set_ability_support() |
+| Multimedia - Media Streamer | All functions of this module | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
 
 ## Related information
 
