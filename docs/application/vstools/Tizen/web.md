@@ -1,4 +1,4 @@
-# Web application development
+# Web Application Development
 
 
 ## Develop application
@@ -8,11 +8,11 @@ The following sections explain how to use Visual Studio for Tizen to develop you
 
 ### Create Tizen Web project
 
-To create a Tizen web project:
+To create a Tizen web project, follow the steps below:
 
 1. In the Visual Studio menu, select **File &gt; New &gt; Project**.
 
-2. For creating web application, select **JavaScript** and **Tizen** options in the dropdown list. Then, select **Tizen Web project** and click **Next**.
+2. For creating Web application, select **JavaScript** and **Tizen** options in the dropdown list. Then, select **Tizen Web project** and click **Next**.
 
    ![Create Tizen project](media/web_create_project.PNG)
 

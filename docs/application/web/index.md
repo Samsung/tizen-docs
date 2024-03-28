@@ -1,7 +1,7 @@
 
 # Tizen Web Application
 
-The [Tizen Studio](../tizen-studio/index.md) enables you to create Web applications for mobile, wearable, and TV devices. A Web application consists of HTML, JavaScript, and CSS combined in a package, which can be installed on the Tizen device.  
+[Tizen Studio](../tizen-studio/index.md) enables you to create Web applications for mobile, wearable, and TV devices. A Web application consists of HTML, JavaScript, and CSS combined in a package, which can be installed on the Tizen device.  
 
 A [Web application package](./tutorials/process/app-dev-process.md#package) includes all the support files that are needed by the Web application.
 Therefore, a Web application can run without any additional external resources or network connectivity after installation.
@@ -16,7 +16,7 @@ more native service applications.
 Applications in the same package follow the same installation life-cycle, handled by the [application package manager](#package).
 
 <a name="package"></a>
-## Application Package Manager
+## Application package manager
 
 The application package manager is one of the core modules of the Tizen application framework, and is responsible for installing, uninstalling, and updating packages, and storing their information. Using the package manager, you can also retrieve information related to the packages that are installed on the device.
 
@@ -28,11 +28,11 @@ The application package manager module is expandable to support various types of
 manager](./media/application_package_manager.png)
 
 <a name="config"></a>
-### Web Package Configuration
+### Web package configuration
 
 Each Web application package has a configuration file, `config.xml`, which indicates a packaging format and metadata for the application.
 
-The Tizen Web application must follow the guidelines of [W3C Widget Packaging and XML Configuration](https://www.w3.org/TR/2011/REC-widgets-20110927/) and
+The Tizen Web application must follow the guidelines of [W3C Widget Packaging and XML Configuration](https://www.w3.org/TR/widgets/){:target="_blank"} and
 Tizen extended configuration (in [mobile](../tizen-studio/web-tools/config-editor.md#mw_extend)
 and
 [wearable](../tizen-studio/web-tools/config-editor.md#ww_extend) applications).
@@ -40,7 +40,7 @@ and
 For more information on the configuration elements, see [Configuration Element Hierarchy](../tizen-studio/web-tools/config-editor.md#hierarchy).
 
 <a name="wap"></a>
-### Web Application Package
+### Web application package
 
 The Tizen platform supports Web applications based on HTML, JavaScript, and CSS, and packaged according to the W3C specification. The platform also provides device APIs to access the platform capabilities, enabling a rich Web application development environment.
 
@@ -87,7 +87,7 @@ A Web application package must conform to the following conventions:
   | `App` | `home/owner/apps_rw/<Package ID>` <br> (For example:<br> `home/owner/apps_rw/qik37po9ck`) | `<Package ID>.<Name>`<br> (For example:<br>   `qik37po9ck.Sample`) | `opt/share/packages/<Package ID>.xml` <br> (For example: <br>    `opt/share/packages/qik37po9ck.xml`) |
 
 <a name="hap"></a>
-### Hybrid Application Package
+### Hybrid application package
 
 A hybrid application package must conform to the following conventions:
 
