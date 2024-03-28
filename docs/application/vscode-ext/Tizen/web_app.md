@@ -1,4 +1,4 @@
-# Web application development
+# Web Application Development
 
 The VS code extension installation can be done in two different ways. Refer to [VS code extension installation](dotnet.md) section for details. 
 
@@ -8,7 +8,7 @@ The following sections explain how to use Visual Studio Code Extension for Tizen
 
 ### Create Tizen Web project
 
-To create a Tizen Web project:
+To create a Tizen Web project, follow the steps below:
 
 1. Create a new directory as the root directory for your project.
 
