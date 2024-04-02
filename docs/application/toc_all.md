@@ -1303,13 +1303,12 @@
 #### [Platform Development Tools](/application/tizen-studio/platform-tools/platform-tools.md)
 
 ### [Configurable SDK](/application/tizen-studio/configurable-sdk/configurable-sdk.md)
-### Extension SDK
-#### [Overview](/application/tizen-studio/extension-sdk/overview.md)
 
 ### Tizen RT
 #### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ### Release Notes
+#### [5.6 (Mar 29, 2024)](/application/tizen-studio/release-notes/5-6-release-notes.md)
 #### [5.5 (Oct 30, 2023)](/application/tizen-studio/release-notes/5-5-release-notes.md)
 #### [5.1 (Mar 31, 2023)](/application/tizen-studio/release-notes/5-1-release-notes.md)
 #### [5.0 (Oct 31, 2022)](/application/tizen-studio/release-notes/5-0-release-notes.md)

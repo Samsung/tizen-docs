@@ -2,8 +2,6 @@
 
 An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use.
 
-The Application API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
-
 > **Note**  
 > It is possible that no application suitable to receive the application control exists. In that case, before you send the launch request, verify that a suitable application exists.
 
@@ -11,7 +9,7 @@ The Application API is mandatory for Tizen Mobile, Wearable, and TV profiles, wh
 
 ### Performing a Web Search
 
-The search operation is supported in mobile and TV applications only.
+The search operation is available depending on whether the installed application supports it or not.
 
 To find what you are looking for on the Web, use the `http://tizen.org/appcontrol/operation/search` operation.
 
@@ -46,7 +44,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ### Loading a Web Page
 
-The view operation is supported in mobile applications only.
+The view operation is available depending on whether the installed application supports it or not.
 
 To open a Web page, use the `http://tizen.org/appcontrol/operation/view` operation and specify the Web URL in the URI.
 
@@ -87,7 +85,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## Calendar
-The calendar application control is supported in mobile applications only.
+The calendar application control is available depending on whether the installed application supports it or not.
 
 ### Adding a Calendar Event
 
@@ -295,7 +293,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## Call
-The call application control is supported in mobile and wearable applications only.
+The call application control is available depending on whether the installed application supports it or not.
 
 ### Making a Phone Call
 
@@ -364,7 +362,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## Camera
-The camera application control is supported in mobile applications only.
+The camera application control is available depending on whether the installed application supports it or not.
 
 ### Capturing a Picture or Video
 
@@ -485,7 +483,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ## Contact
 
 ### Adding a Contact
-The contact adding operation is supported in mobile and wearable applications only. Wearable applications support the `http://tizen.org/appcontrol/data/phone` and `http://tizen.org/appcontrol/data/name` keys only as extra input.
+The contact adding operation is available depending on whether the installed application supports it or not.
 
 To add a new contact, use the `http://tizen.org/appcontrol/operation/add` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -535,7 +533,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Editing a Contact
-The contact editing operation is supported in mobile applications only.
+The contact editing operation is available depending on whether the installed application supports it or not.
 
 To edit a known contact, use the `http://tizen.org/appcontrol/operation/edit` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -585,7 +583,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Viewing a Contact
-The contact viewing operation is supported in mobile and wearable applications only. Wearable applications support the `application/vnd.tizen.contact` MIME type only.
+The contact viewing operation is available depending on whether the installed application supports it or not.
 
 To display a specified contact in the contact database, use the `http://tizen.org/appcontrol/operation/view` operation. To specify various contact details, refer to the extras defined below.
 
@@ -647,7 +645,7 @@ function launchViewVcard(uri) {
 
 ### Selecting a Contact
 
-The contact selection operation is supported in mobile and wearable applications only. Wearable applications support only the `single` value in the `http://tizen.org/appcontrol/data/selection_mode` key and the `id` and `phone` values in the `http://tizen.org/appcontrol/data/type` key.
+The contact selection operation is available depending on whether the installed application supports it or not.
 
 To select a specified contact in the user's contacts, use the `http://tizen.org/appcontrol/operation/pick` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -713,7 +711,7 @@ function launchContactPick(selectionMode, dataType) {
 ```
 
 ### Sharing a Contact
-The contact sharing operation is supported in mobile applications only.
+The contact sharing operation is available depending on whether the installed application supports it or not.
 
 To share a single contact, use the `http://tizen.org/appcontrol/operation/share` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -750,7 +748,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Sharing Multiple Contacts
-The multiple contact sharing operation is supported in mobile applications only.
+The multiple contact sharing operation is available depending on whether the installed application supports it or not.
 
 To share a set of contacts, use the `http://tizen.org/appcontrol/operation/multi_share` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -786,7 +784,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## Email
-The email application control is supported in mobile applications only.
+The email application control is available depending on whether the installed application supports it or not.
 
 ### Composing an Email
 
@@ -974,7 +972,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## File Storage
-The file storage application control is supported in mobile applications only.
+The file storage application control is available depending on whether the installed application supports it or not.
 
 ### Retrieving a Specific Type of File
 
@@ -1047,7 +1045,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Input Delegator
 
-The input delegator application control is supported in wearable applications since Tizen 2.3.2, and in mobile and TV applications since Tizen 4.0. Some of the input types are not supported in mobile and TV applications.
+The input delegator application control is available depending on whether the installed application supports it or not.
 
 ### Receiving User Input
 
@@ -1072,22 +1070,22 @@ To receive a specific type of input from the user, use the `http://tizen.org/app
 
 | Key                                      | Description                              | Note                                     |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `http://tizen.org/appcontrol/data/input_type` | The input method type. This key must be passed as a string. The available values are:<br> - `input_voice`: Ask for voice input<br> - `input_emoticon`: Ask for emoticon input<br> - `input_keyboard`: Ask for keyboard input<br> - `input_reply`: Ask for reply input<br> - `input_drawing`: Ask for drawing input<br> - `input_recording`: Ask for recording input | This key is optional.<br>**The input_reply, input_drawing and input_recording values are supported since Tizen 4.0, in wearable applications only.** |
-| `http://tizen.org/appcontrol/data/input_default_text` | The preformatted text to be used as default input, such as "http://" for Web addresses. This key must be passed as a string. | This key is optional.                    |
+| `http://tizen.org/appcontrol/data/input_type` | The input method type. This key must be passed as a string. The available values are:<br> - `input_voice`: Ask for voice input<br> - `input_emoticon`: Ask for emoticon input<br> - `input_keyboard`: Ask for keyboard input<br> - `input_reply`: Ask for reply input<br> - `input_drawing`: Ask for drawing input<br> - `input_recording`: Ask for recording input | This key is optional. |
+| `http://tizen.org/appcontrol/data/input_default_text` | The preformatted text to be used as default input, such as "http://" for Web addresses. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/input_default_text` | The guide text, such as "Input user name". This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/input_guide_text` | The text to receive an answer result from a smart reply. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/input_returnkey_type` | The return key used in the keyboard input type. This key must be passed as a string. The available values are:<Br> - `Done`: Set key label to **Done**<br> - `Send`: Set key label to **Send**<br> - `Join`: Set key label to **Join** <br> - `Login`: Set key label to **Login**<br> - `Next`: Set key label to **Next**<br> - `Sign-in`: Set key label to **Sign-in**<br> - `Search`: Set key label to **Search**<br> - `Go`: Set key label to **Go** | This key is optional, and **it is supported since Tizen 4.0.** |
 | `http://tizen.org/appcontrol/data/input_max_text_length` | The maximum text length allowed in the keyboard input type. This key must be passed as a string. | This key is optional, and **it is supported since Tizen 4.0.** |
 | `http://tizen.org/appcontrol/data/input_cursor_position_set` | The position where the cursor is to be set in the keyboard input type. This key must be passed as a string. | This key is optional, and **it is supported since Tizen 4.0.** |
 | `http://tizen.org/appcontrol/data/input_cursor_position_get` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional, and **it is supported since Tizen 4.0.** |
-| `http://tizen.org/appcontrol/data/input_reply_type` | The reply type. This key must be passed as a string. The available values are:<br> - `input_voice`: Receive the result as voice<br> - `input_emoticon`: Receive the result as an emoticon<Br> - `input_keyboard`: Receive the result as keyboard input<br> - `input_reply`: Receive the result as reply input<br> - `input_image`: Receive the result as an image<br> - `input_audio`: Receive the result as audio | This key is optional, and **it is supported since Tizen 4.0, in wearable applications only.** |
+| `http://tizen.org/appcontrol/data/input_reply_type` | The reply type. This key must be passed as a string. The available values are:<br> - `input_voice`: Receive the result as voice<br> - `input_emoticon`: Receive the result as an emoticon<Br> - `input_keyboard`: Receive the result as keyboard input<br> - `input_reply`: Receive the result as reply input<br> - `input_image`: Receive the result as an image<br> - `input_audio`: Receive the result as audio | This key is optional |
 
 #### Extra Output
 
 | Key                                     | Value description                        | Note                                     |
 | --------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/text` | The result string from the input delegator. This key must be passed as a string. | -                                        |
-| `http://tizen.org/appcontrol/data/path` | The list of multiple file paths from the input delegator. This key must be passed as an array. | **This key is supported since Tizen 4.0, in wearable applications only.** |
+| `http://tizen.org/appcontrol/data/path` | The list of multiple file paths from the input delegator. This key must be passed as an array. | This key is optional |
 
 #### Example Code
 
@@ -1106,7 +1104,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Map
 
-The map application control is supported in mobile and wearable applications only. In wearable applications, this application control is available since Tizen 2.3.2.
+The map application control is available depending on whether the installed application supports it or not.
 
 
 ### Showing a Location on a Map
@@ -1202,7 +1200,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ## Message
 
 ### Composing a Message
-The message composition operation is supported in mobile applications only.
+The message composition operation is available depending on whether the installed application supports it or not.
 
 To compose a new message, use the `http://tizen.org/appcontrol/operation/compose` operation. To specify various message details, refer to the extras defined below.
 
@@ -1247,7 +1245,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Sharing a Single Item Using a Message
-The single item sharing operation is supported in mobile applications only.
+The single item sharing operation is available depending on whether the installed application supports it or not.
 
 To share a single item using an MMS message, use the `http://tizen.org/appcontrol/operation/share` operation.
 
@@ -1294,7 +1292,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Sharing Multiple Items Using a Message
-The multiple item sharing operation is supported in mobile applications only.
+The multiple item sharing operation is available depending on whether the installed application supports it or not.
 
 To share multiple items using an MMS message, use the `http://tizen.org/appcontrol/operation/multi_share` operation.
 
@@ -1342,7 +1340,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Sharing Text in a Message
-The text sharing operation is supported in mobile and wearable applications only.
+The text sharing operation is available depending on whether the installed application supports it or not.
 
 To share any text with an SMS or MMS message, use the `http://tizen.org/appcontrol/operation/share_text` operation.
 
@@ -1389,7 +1387,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ## Multimedia
 
 ### Playing an Audio or Video File
-The audio or video file playback operation is supported in mobile and wearable applications only.
+The audio or video file playback operation is available depending on whether the installed application supports it or not.
 
 To play an audio or video file, use the `http://tizen.org/appcontrol/operation/view` operation with a URI. To specify various details, refer to the extras defined below.
 
@@ -1431,7 +1429,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Viewing an Image File
-The image file viewing operation is supported in mobile and wearable applications only.
+The image file viewing operation is available depending on whether the installed application supports it or not.
 
 To display an image file, use the `http://tizen.org/appcontrol/operation/view` operation with a URI. To specify various details, refer to the extras defined below.
 
@@ -1463,7 +1461,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Retrieving a Media File
-The media file retrieval operation is supported in mobile and wearable applications only. Wearable applications support the `image/*` MIME type only.
+The media file retrieval operation is available depending on whether the installed application supports it or not.
 
 To retrieve a specific type of media file, use the `http://tizen.org/appcontrol/operation/pick` operation. To specify various details, refer to the extras defined below.
 
@@ -1505,7 +1503,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## System Settings
-The system settings application control is supported in mobile applications only.
+The system settings application control is available depending on whether the installed application supports it or not.
 
 
 ### Showing System Settings
@@ -1534,7 +1532,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## Settings for Bluetooth
-The Bluetooth settings application control is supported in mobile and wearable applications only.
+The Bluetooth settings application control is available depending on whether the installed application supports it or not.
 
 
 ### Showing Bluetooth Settings to Activate Bluetooth
@@ -1588,7 +1586,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## Settings for Location
-The location settings application control is supported in mobile applications only.
+The location settings application control is available depending on whether the installed application supports it or not.
 
 ### Showing Location Settings
 
@@ -1618,7 +1616,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## Settings for NFC
-The NFC settings application control is supported in mobile applications only.
+The NFC settings application control is available depending on whether the installed application supports it or not.
 
 ### Showing NFC Settings
 
@@ -1652,7 +1650,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## Settings for Wi-Fi
-The Wi-Fi settings application control is supported in mobile applications only.
+The Wi-Fi settings application control is available depending on whether the installed application supports it or not.
 
 ### Showing Wi-Fi Settings
 
@@ -1680,7 +1678,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ## Voice Recorder
-The voice recorder application control is supported in wearable applications only.
+The voice recorder application control is available depending on whether the installed application supports it or not.
 
 ### Recording Audio
 
@@ -1721,6 +1719,4 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.2 and Higher for Wearable
-  - Tizen 3.0 and Higher for TV
+  - Each application control is available depending on whether the installed application supports it or not.

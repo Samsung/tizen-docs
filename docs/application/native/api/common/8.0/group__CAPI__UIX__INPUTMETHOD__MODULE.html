@@ -748,7 +748,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>The handle to retrieve unconventional input device specific event data. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga57b5967e7ea6017b35ad2b6bd22e3d42" title="Sets process_input_device_event event callback function.">ime_event_set_process_input_device_event_cb()</a> </dd></dl>
 
 </div>
@@ -1022,7 +1022,7 @@ Defines</h2></td></tr>
 
 <p>Called when the input event is received from an unconventional input device that does not generate key events. </p>
 <p>This function processes the input event before an associated text input UI control does.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>device_type</em> contains the information what kind of unconventional input device generated the given event, and the handle <em>device_event</em> is used for obtaining device-specific input device event data. <em>device_event</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1445,7 +1445,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration of directions for rotary input device's rotation event. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaa3f30ae4cc8720fd32de758c3a231d2b" title="Gets the direction of the rotary input device event.">ime_input_device_rotary_get_direction()</a> </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga7a06812d731609dd209e291188b3ca1fa207159d02d94663f61f5bf9c21abe517"></a><!-- doxytag: member="IME_INPUT_DEVICE_ROTARY_DIRECTION_CLOCKWISE" ref="gga7a06812d731609dd209e291188b3ca1fa207159d02d94663f61f5bf9c21abe517" args="" -->IME_INPUT_DEVICE_ROTARY_DIRECTION_CLOCKWISE</em>&nbsp;</td><td>
@@ -1472,7 +1472,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration of unconventional input devices. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga57b5967e7ea6017b35ad2b6bd22e3d42" title="Sets process_input_device_event event callback function.">ime_event_set_process_input_device_event_cb()</a> </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga968d7b792bbfc1c040f2e08e44440679ab780f98ee0c9aad6992d7fd4442e89fc"></a><!-- doxytag: member="IME_INPUT_DEVICE_TYPE_UNKNOWN" ref="gga968d7b792bbfc1c040f2e08e44440679ab780f98ee0c9aad6992d7fd4442e89fc" args="" -->IME_INPUT_DEVICE_TYPE_UNKNOWN</em>&nbsp;</td><td>
@@ -4268,7 +4268,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets <code>process_input_device_event</code> event callback function. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public</dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/ime</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaeac9cf3e991ed49d2211b8b3551ac898" title="Called when the input event is received from an unconventional input device that does not generate ke...">ime_process_input_device_event_cb()</a> callback function is called when the event is received from unconventional input devices that needs to be handled by IMEs.</dd></dl>
@@ -4738,7 +4738,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Unsets <code>process_input_device_event</code> event callback function. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public</dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/ime</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaeac9cf3e991ed49d2211b8b3551ac898" title="Called when the input event is received from an unconventional input device that does not generate ke...">ime_process_input_device_event_cb()</a> callback function is called when the event is received from unconventional input devices that needs to be handled by IMEs.</dd></dl>
@@ -4971,7 +4971,7 @@ The returned value should not be released. The returned value is managed by the 
 
 <p>Gets the direction of the rotary input device event. </p>
 <p>If the device_type parameter of the <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gaeac9cf3e991ed49d2211b8b3551ac898" title="Called when the input event is received from an unconventional input device that does not generate ke...">ime_process_input_device_event_cb()</a> function indicates the current input device type is <a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#gga968d7b792bbfc1c040f2e08e44440679a67d9105ab6c2bc1122e772d36e3ca8da">IME_INPUT_DEVICE_TYPE_ROTARY</a>, then the device_event parameter can be used to retrieve rotary device specific parameters, such as direction, as shown in the sample code.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public</dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/ime</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

@@ -8,7 +8,7 @@ An application control provides functions for launching other applications with 
 
 ## Browser
 
-The browser application control is supported only in mobile applications.
+The browser application control is available depending on whether the installed application supports it or not.
 
 ### Performing a Web Search
 
@@ -85,7 +85,7 @@ app_control_destroy(app_control);
 
 ## Calendar
 
-The calendar application control is supported only in mobile applications.
+The calendar application control is available depending on whether the installed application supports it or not.
 
 ### Adding a Calendar Event
 
@@ -303,7 +303,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ## Call
 
-The call application control is supported in mobile and wearable applications.
+The call application control is available depending on whether the installed application supports it or not.
 
 ### Making a Phone Call
 
@@ -383,7 +383,7 @@ launchCall()
 
 ## Camera
 
-The camera application control is supported only in mobile applications.
+The camera application control is available depending on whether the installed application supports it or not.
 
 ### Capturing a Picture or Video
 
@@ -512,7 +512,7 @@ app_control_destroy(service);
 
 ### Adding a Contact
 
-The contact adding operation is supported in mobile and wearable applications. Wearable applications support the `APP_CONTROL_DATA_PHONE` and `APP_CONTROL_DATA_NAME` keys only as extra input.
+The contact adding operation is available depending on whether the installed application supports it or not.
 
 To add a new contact, use the `APP_CONTROL_OPERATION_ADD` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -565,7 +565,7 @@ app_control_destroy(request);
 
 ### Editing a Contact
 
-The contact editing operation is supported only in mobile applications.
+The contact editing operation is available depending on whether the installed application supports it or not.
 
 To edit a known contact, use the `APP_CONTROL_OPERATION_EDIT` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -620,7 +620,7 @@ app_control_destroy(request);
 
 ### Viewing a Contact
 
-The contact viewing operation is supported in mobile and wearable applications. Wearable applications support only the `application/vnd.tizen.contact` MIME type.
+The contact viewing operation is available depending on whether the installed application supports it or not.
 
 To display a specified contact in the contact database, use the `APP_CONTROL_OPERATION_VIEW` operation. To specify various contact details, refer to the extras defined below.
 
@@ -696,7 +696,7 @@ launchViewVcard(const char *uri)
 
 ### Selecting a Contact
 
-The contact selection operation is supported in mobile and wearable applications. Wearable applications support only the `single` value in the `APP_CONTROL_DATA_SELECTION_MODE` key and the `id` and `phone` values in the `APP_CONTROL_DATA_TYPE` key.
+The contact selection operation is available depending on whether the installed application supports it or not.
 
 To select a specified contact in the user's contacts, use the `APP_CONTROL_OPERATION_PICK` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -754,7 +754,7 @@ launchContactPick(const char *selectionMode, const char *resultType,
 
 ### Sharing a Contact
 
-The contact sharing operation is supported only in mobile applications.
+The contact sharing operation is available depending on whether the installed application supports it or not.
 
 To share a single contact, use the `APP_CONTROL_OPERATION_SHARE` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -794,7 +794,7 @@ app_control_destroy(service);
 
 ### Sharing Multiple Contacts
 
-The multiple contact sharing operation is supported only in mobile applications.
+The multiple contact sharing operation is available depending on whether the installed application supports it or not.
 
 To share a set of contacts, use the `APP_CONTROL_OPERATION_MULTI_SHARE` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -834,7 +834,7 @@ app_control_destroy(service);
 
 ## Email
 
-The email application control is supported only in mobile applications.
+The email application control is available depending on whether the installed application supports it or not.
 
 ### Composing an Email
 
@@ -1055,7 +1055,7 @@ app_control_destroy(service);
 
 ## File Storage
 
-The file storage application control is supported only in mobile applications.
+The file storage application control is available depending on whether the installed application supports it or not.
 
 ### Retrieving a Specific Type of File
 
@@ -1130,7 +1130,7 @@ app_control_destroy(app_control);
 
 ## Input Delegator
 
-The input delegator application control is supported in wearable applications since Tizen 2.3.2, and in mobile applications since Tizen 4.0. Some of the input types are not supported in mobile applications. And also, some input types may not be supported depending on the device.
+The input delegator application control is available depending on whether the installed application supports it or not.
 
 ### Receiving User Input
 
@@ -1166,7 +1166,7 @@ The input types are grouped into the following MIME types. Therefore, if you spe
 
 | Key                                      | Description                              | Note                  |
 |------------------------------------------|------------------------------------------|-----------------------|
-| `APP_CONTROL_DATA_INPUT_TYPE`            | The input method type. This key must be passed as a string. The available values are:<br>- `input_voice`: Ask for voice input<br>- `input_emoticon`: Ask for emoticon input<br>- `input_keyboard`: Ask for keyboard input<br>- `input_reply`: Ask for reply input<br>- `input_drawing`: Ask for drawing input<br>- `input_recording`: Ask for recording input | This key is optional.<br>The `input_reply`, `input_drawing` and `input_recording` values are supported only in wearable applications since Tizen 4.0. Also, some input types may not be supported depending on the device.<br><br>The `input_reply` supports the following languages: English, Spanish, French, Italian, Russian, German. |
+| `APP_CONTROL_DATA_INPUT_TYPE`            | The input method type. This key must be passed as a string. The available values are:<br>- `input_voice`: Ask for voice input<br>- `input_emoticon`: Ask for emoticon input<br>- `input_keyboard`: Ask for keyboard input<br>- `input_reply`: Ask for reply input<br>- `input_drawing`: Ask for drawing input<br>- `input_recording`: Ask for recording input | This key is optional. Also, some input types may not be supported depending on the device.<br><br>The `input_reply` supports the following languages: English, Spanish, French, Italian, Russian, German. |
 | `APP_CONTROL_DATA_INPUT_DEFAULT_TEXT`    | The preformatted text to be used as default input, such as "http://" for Web addresses. This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_keyboard` type.      |
 | `APP_CONTROL_DATA_INPUT_GUIDE_TEXT`      | The guide text, such as "Input user name". This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_keyboard` type.               |
 | `APP_CONTROL_DATA_INPUT_PREDICTION_HINT` | The text to receive an answer result from a smart reply. This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_reply` type.    |
@@ -1174,14 +1174,14 @@ The input types are grouped into the following MIME types. Therefore, if you spe
 | `APP_CONTROL_DATA_INPUT_MAX_TEXT_LENGTH` | The maximum text length allowed in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_SET` | The position where the cursor is to be set in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_GET` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
-| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output according to the result of this key. If the result is `input_audio` or `input_image`, you  must get the path of the result value through `APP_CONTROL_DATA_PATH`.<br><br>The available values are:<br> - `input_voice`: Receive the result as voice<br> - `input_emoticon`: Receive the result as an emoticon<br>- `input_keyboard`: Receive the result as keyboard input<br> - `input_reply`: Receive the result as reply input<br> - `input_image`: Receive the result as an image<br> - `input_audio`: Receive the result as audio  | This key is optional and supported only in wearable applications since Tizen 4.0. |
+| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output according to the result of this key. If the result is `input_audio` or `input_image`, you  must get the path of the result value through `APP_CONTROL_DATA_PATH`.<br><br>The available values are:<br> - `input_voice`: Receive the result as voice<br> - `input_emoticon`: Receive the result as an emoticon<br>- `input_keyboard`: Receive the result as keyboard input<br> - `input_reply`: Receive the result as reply input<br> - `input_image`: Receive the result as an image<br> - `input_audio`: Receive the result as audio  | This key is optional. |
 
 #### Extra Output
 
 | Key                     | Value Description                        | Note |
 |-------------------------|------------------------------------------|-----|
 | `APP_CONTROL_DATA_TEXT` | The result string from the input delegator. This key must be passed as a string. | - |
-| `APP_CONTROL_DATA_PATH` | The list of multiple file paths from the input delegator.<br>If user selects `input_recording` type or `input_drawing` type to input in Input Delegator, you must check this key to find the file path of result.<br><br>This key must be passed as an array. | This key is supported only in wearable applications since Tizen 4.0. |
+| `APP_CONTROL_DATA_PATH` | The list of multiple file paths from the input delegator.<br>If user selects `input_recording` type or `input_drawing` type to input in Input Delegator, you must check this key to find the file path of result.<br><br>This key must be passed as an array. | This key is optional. |
 
 #### Example Code
 
@@ -1243,7 +1243,7 @@ input_selector_result(app_control_h request, app_control_h reply, app_control_re
 
 ## Map
 
-The map application control is supported in mobile and wearable applications. In wearable applications, this application control is available since Tizen 2.3.2.
+The map application control is available depending on whether the installed application supports it or not.
 
 ### Showing a Location on a Map
 
@@ -1408,7 +1408,7 @@ pick_reply_cb(app_control_h request, app_control_h reply, app_control_result_e r
 
 ### Composing a Message
 
-The message composition operation is supported only in mobile applications.
+The message composition operation is available depending on whether the installed application supports it or not.
 
 To compose a new message, use the `APP_CONTROL_OPERATION_COMPOSE` operation. To specify various message details, refer to the extras defined below.
 
@@ -1459,7 +1459,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ### Sharing a Single Item Using a Message
 
-The single item sharing operation is supported only in mobile applications.
+The single item sharing operation is available depending on whether the installed application supports it or not.
 
 To share a single item using an MMS message, use the `APP_CONTROL_OPERATION_SHARE` operation.
 
@@ -1511,7 +1511,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ### Sharing Multiple Items Using a Message
 
-The multiple item sharing operation is supported only in mobile applications.
+The multiple item sharing operation is available depending on whether the installed application supports it or not.
 
 To share multiple items using an MMS message, use the `APP_CONTROL_OPERATION_MULTI_SHARE` operation.
 
@@ -1562,7 +1562,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ### Sharing Text in a Message
 
-The text sharing operation is supported in mobile and wearable applications.
+The text sharing operation is available depending on whether the installed application supports it or not.
 
 To share any text with an SMS or MMS message, use the `APP_CONTROL_OPERATION_SHARE_TEXT` operation.
 
@@ -1611,7 +1611,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ### Playing an Audio or Video File
 
-The audio or video file playback operation is supported in mobile and wearable applications.
+The audio or video file playback operation is available depending on whether the installed application supports it or not.
 
 To play an audio or video file, use the `APP_CONTROL_OPERATION_VIEW` operation with a URI. To specify various details, refer to the extras defined below.
 
@@ -1682,7 +1682,7 @@ play_audio_operation(const char* audio_uri)
 
 ### Viewing an Image File
 
-The image file viewing operation is supported in mobile and wearable applications.
+The image file viewing operation is available depending on whether the installed application supports it or not.
 
 To display an image file, use the `APP_CONTROL_OPERATION_VIEW` operation with a URI. To specify various details, refer to the extras defined below.
 
@@ -1743,7 +1743,7 @@ view_image_operation(const char* image_uri)
 
 ### Retrieving a Media File
 
-The media file retrieval operation is supported in mobile and wearable applications. Wearable applications support only the `image/*` MIME type.
+The media file retrieval operation is available depending on whether the installed application supports it or not.
 
 To retrieve a specific type of media file, use the `APP_CONTROL_OPERATION_PICK` operation. To specify various details, refer to the extras defined below.
 
@@ -1815,7 +1815,7 @@ retrieve_media_operation(const char* mime_type)
 
 ### Creates media controller to communicate with application
 
-The media controller operation is supported in mobile and wearable applications.
+The media controller operation is available depending on whether the installed application supports it or not.
 To control media application, use the `APP_CONTROL_OPERATION_MEDIA_CONTROLLER` operation with the `server` and `client` launch type.
 To specify various event details, refer to the extras defined below.
 
@@ -1879,7 +1879,7 @@ media_controller_operation(const char* music_uri)
 
 ## System Settings
 
-The system settings application control is supported only in mobile applications.
+The system settings application control is available depending on whether the installed application supports it or not.
 
 ### Showing System Settings
 
@@ -1931,7 +1931,7 @@ launch_setting(void)
 
 ## Settings for Bluetooth
 
-The Bluetooth settings application control is supported in mobile and wearable applications.
+The Bluetooth settings application control is available depending on whether the installed application supports it or not.
 
 ### Showing Bluetooth Settings to Activate Bluetooth
 
@@ -2035,13 +2035,13 @@ bt_visibility_operation(void)
 
 ## Settings for Location
 
-The location settings application control is supported only in mobile applications.
+The location settings application control is available depending on whether the installed application supports it or not.
 
 ### Showing Location Settings
 
 To launch the location setting application to allow the user to configure the source of the location information, use the `APP_CONTROL_OPERATION_SETTING_LOCATION` operation.
 
-If the location service is not active when an application tries to use the [Location Manager](../../api/mobile/latest/group__CAPI__LOCATION__MANAGER__MODULE.html) or Geolocation APIs, an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
+If the location service is not active when an application tries to use the [Location Manager](../../api/common/latest/group__CAPI__LOCATION__MANAGER__MODULE.html) or Geolocation APIs, an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
 
 **Figure: Showing location settings**
 
@@ -2089,7 +2089,7 @@ location_setting(void)
 
 ## Settings for NFC <a name="settings_nfc"></a>
 
-The NFC settings application control is supported only in mobile applications.
+The NFC settings application control is available depending on whether the installed application supports it or not.
 
 ### Showing NFC Settings
 
@@ -2151,7 +2151,7 @@ nfc_setting(void)
 
 ## Settings for Wi-Fi
 
-The Wi-Fi settings application control is supported only in mobile applications.
+The Wi-Fi settings application control is available depending on whether the installed application supports it or not.
 
 ### Showing Wi-Fi Settings
 
@@ -2200,7 +2200,7 @@ wifi_launch_operation(void)
 
 ## Voice Recorder
 
-The voice recorder application control is supported only in mobile applications.
+The voice recorder application control is available depending on whether the installed application supports it or not.
 
 ### Recording Audio
 
@@ -2244,7 +2244,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ## VPN Service
 
-The VPN service application control is supported only in mobile applications since Tizen 3.0.
+The VPN service application control is available depending on whether the installed application supports it or not.
 
 ### Connecting and Disconnecting VPN
 
@@ -2318,5 +2318,4 @@ vpn_appcontrol_result_cb(app_control_h request, app_control_h reply, app_control
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.2 and Higher for Wearable
+  - Each application control is available depending on whether the installed application supports it or not.
