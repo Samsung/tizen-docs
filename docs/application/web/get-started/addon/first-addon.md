@@ -37,7 +37,7 @@ The following example shows you how to create and configure a basic addon projec
 
 ![Basic UI Web Application](media/basic_app_running_1_mw.png)
 
-To create the addon project:
+To create the addon project, follow these steps:
 
 1.  Launch Tizen Studio.
 
@@ -95,7 +95,7 @@ Your addon project is now ready for further actions. Next, build the addon.
 <a name="configuration"></a>
 ### Manage addon configuration
 
-To view and modify the addon configuration:
+To view and modify the addon configuration, follow these steps:
 
 1.  In the **Project Explorer** view, double-click the **config.xml** file of the addon. Tizen Studio opens the file in the addon configuration editor.
 
@@ -149,7 +149,7 @@ You can run the addon on the [emulator](../../tutorials/process/run-debug-app.md
 <a name="emulator"></a>
 ### Run on emulator
 
-To run the addon on the emulator:
+To run the addon on the emulator, follow these steps:
 
 1.  Launch an emulator instance in [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
     1. In the Tizen Studio menu, select **Tools \> Emulator Manager**.
@@ -244,7 +244,7 @@ To show a pop-up with a message, use `lcResume`. Remove all the lines related to
 
 ![JavaScript file for resume](media/js_for_resume.png)
 
-`addonapi` includes APIs for addons. To show the pop-up, you can use `addonapi.window.showMessageBox()`.
+`addonapi` includes APIs for addons. To show the pop-up, you can use `addonapi.window.showMessageBox()`:
 
 ```
 const addonAPI = require('addonapi');

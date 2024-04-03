@@ -29,7 +29,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 When you are developing a more complex application, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
-## Creating a Project
+## Create a project
 
 The following example shows you how to create and configure a basic TV Web application project in Tizen Studio. An application project contains all the files that make up an application.
 
@@ -43,7 +43,7 @@ The following figure illustrates the application to be created:
 
 ![TV Web Basic application](media/emulator_running_2_tv.png)
 
-To create the application project:
+To create the application project, follow the steps below:
 
 1.  Launch Tizen Studio.
 
@@ -105,9 +105,9 @@ You can see the created project in the **Project Explorer** view. The most impor
 Your application project is now ready for further actions. Next, build the application.
 
 <a name="configuration"></a>
-### Managing the Application Configuration
+### Manage the application configuration
 
-To view and modify the application configuration:
+To view and modify the application configuration, follow these steps:
 
 1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. Tizen Studio opens the file in the Web application configuration editor.
 
@@ -139,7 +139,7 @@ To view and modify the application configuration:
 For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
 
 <a name="build"></a>
-## Building Your Application
+## Build your application
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
@@ -180,14 +180,14 @@ You can build the application in the following ways:
 After you have built the application, run it.
 
 <a name="run"></a>
-## Running Your Application
+## Run your application
 
-You can run the Web application on the [emulator](../../tutorials/process/run-debug-app.md#emulator), [Samsung TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator), or a [real target device](../../tutorials/process/run-debug-app.md#target).
+You can run the Web application on the [emulator](../../tutorials/process/run-debug-app.md#emulator), [Samsung TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator){:target="_blank"}, or a [real target device](../../tutorials/process/run-debug-app.md#target).
 
 <a name="emulator"></a>
-### Running on the Emulator
+### Run on emulator
 
-To run the application on the emulator:
+To run the application on the emulator, follow these steps:
 
 1.  Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
 
@@ -232,9 +232,9 @@ To run the application on the emulator:
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 <a name="simulator"></a>
-### Running on the Samsung TV Simulator
+### Run on the Samsung TV Simulator
 
-To run the application on the simulator:
+To run the application on the simulator, follow these steps:
 
 1.  In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Web Simulator Application (Samsung TV)**.
 
@@ -247,9 +247,9 @@ To run the application on the simulator:
 For more information on using the simulator features, see [TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator).
 
 <a name="target"></a>
-### Running on a Target Device
+### Run on a target device
 
-To run the application on a target device:
+To run the application on a target device, follow these steps:
 
 1. Connect the TV target device to your computer:
 
@@ -312,17 +312,17 @@ To run the application on a target device:
    >    ![Run Configurations window](media/run_configurations_w.png)
 
 <a name="ui"></a>
-## Designing a Simple UI
+## Design a simple UI
 
 The TV application created with the **Basic UI** template has a simple user interface with a text component showing the **Basic** text in the middle of the screen.
 
-The UI is created using [W3C/HTML](https://www.w3schools.com). The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
+The UI is created using [W3C/HTML](https://www.w3schools.com){:target="_blank"}. The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
 
 **Figure: User interface in the Basic UI template**
 
 ![User interface in the Basic template](media/emulator_running_1_tv.png)
 
-### Creating the Basic UI
+### Create the Basic UI
 
 The UI in the **Basic UI** template uses the HTML DOM, which is a structured model to control Web elements. It is an official W3C standard to express the document regardless of platforms or languages, and the foundation of the HTML5 APIs. The template contains the following components:
 
@@ -372,7 +372,7 @@ The UI in the **Basic UI** template uses the HTML DOM, which is a structured mod
     </body>
     ```
 
-### Modifying Existing Components with CSS
+### Modify existing components with CSS
 
 CSS (Cascading Style Sheets) specifies the layout and styling of the Web application.
 

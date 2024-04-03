@@ -29,7 +29,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 When you are developing a more complex application, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
-## Creating a Project
+## Create a project
 
 The following example shows you how to create and configure a basic mobile Web application project in Tizen Studio. An application project contains all the files that make up an application.
 
@@ -43,7 +43,7 @@ The following figure illustrates the application to be created:
 
 ![Mobile Web Basic application](media/basic_app_running_1_mw.png) ![Mobile Web Basic application](media/basic_app_running_2_mw.png)
 
-To create the application project:
+To create the application project, follow these steps:
 
 1.  Launch Tizen Studio.
 
@@ -105,9 +105,9 @@ You can see the created project in the **Project Explorer** view. The most impor
 Your application project is now ready for further actions. Next, build the application.
 
 <a name="configuration"></a>
-### Managing the Application Configuration
+### Manage the application configuration
 
-To view and modify the application configuration:
+To view and modify the application configuration, follow these steps:
 
 1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. Tizen Studio opens the file in the Web application configuration editor.
 
@@ -139,7 +139,7 @@ To view and modify the application configuration:
 For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
 
 <a name="build"></a>
-## Building Your Application
+## Build your application
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
@@ -180,14 +180,14 @@ You can build the application in the following ways:
 After you have built the application, run it.
 
 <a name="run"></a>
-## Running Your Application
+## Run your application
 
 You can run the Web application on the [emulator](../../tutorials/process/run-debug-app.md#emulator), [Web Simulator](../../tutorials/process/run-debug-app.md#simulator), or a [real target device](../../tutorials/process/run-debug-app.md#target).
 
 <a name="emulator"></a>
-### Running on the Emulator
+### Run on emulator
 
-To run the application on the emulator:
+To run the application on the emulator, follow these steps:
 
 1.  Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
     1. In the Tizen Studio menu, select **Tools \> Emulator Manager**.
@@ -236,9 +236,9 @@ To run the application on the emulator:
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 <a name="simulator"></a>
-### Running on the Web Simulator
+### Run on the Web Simulator
 
-To run the application on the Web Simulator:
+To run the application on the Web Simulator, follow these steps:
 
 1.  In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Web Simulator Application**.
 
@@ -253,7 +253,7 @@ To run the application on the Web Simulator:
 For more information on using the Web Simulator features, see [Taking Advantage of Web Simulator Features](../../../tizen-studio/web-tools/web-simulator-features.md).
 
 <a name="target"></a>
-### Running on a Target Device
+### Run on a target device
 
 To run the application on a target device:
 
@@ -286,17 +286,17 @@ To run the application on a target device:
     > ![Run Configurations window](media/run_configurations_w.png)
 
 <a name="ui"></a>
-## Designing a Simple UI
+## Design a simple UI
 
 The mobile application created with the **Basic UI** template has a simple user interface with a text component showing the **Basic** text in the middle of the screen.
 
-The UI is created using [W3C/HTML](https://www.w3schools.com). The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
+The UI is created using [W3C/HTML](https://www.w3schools.com)){:target="_blank"}. The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
 
 **Figure: User interface in the Basic UI template**
 
 ![User interface in the Basic template](media/basic_app_running_1_mw.png)
 
-### Creating the Basic UI
+### Create the Basic UI
 
 The UI in the **Basic UI** template uses the HTML DOM, which is a structured model to control Web elements. It is an official W3C standard to express the document regardless of platforms or languages, and the foundation of the HTML5 APIs. The template contains the following components:
 
@@ -346,7 +346,7 @@ The UI in the **Basic UI** template uses the HTML DOM, which is a structured mod
     </body>
     ```
 
-### Modifying Existing Components with CSS
+### Modify existing components with CSS
 
 CSS (Cascading Style Sheets) specifies the layout and styling of the Web application.
 
@@ -411,7 +411,7 @@ By default, the text uses the `#ffffff` color (white), defined for the `<body>` 
 
 ![Screen with a new text color](media/build_ui_basic_textbox_mw.png)
 
-### Adding More Components and Functionality with TAU
+### Add more components and functionality with TAU
 
 TAU (Tizen Advanced UI) is a Web UI library that enables you to create and manage various kinds of UI components. The components represent a visual UI element, such as a button, checkbox, or list view. You can manipulate and interact with the application screens through the UI components. For more information, see [Tizen Advanced UI](../../guides/tau/tau.md) and [Tizen Advanced UI framework Reference](../../api/latest/ui_fw_api/ui_fw_api_cover.htm).
 
@@ -423,7 +423,7 @@ TAU helps you to create Tizen Web applications easily. The following figure show
 
 The UI in the **Basic UI** template only contains one visible text component. To create a more elaborate UI with more components, screens, and functionality, use the TAU library in your application. The following example shows how to create a list and a footer button on a page (screen), create a second page, and move between the pages.
 
-To create a Web application and design its UI with TAU:
+To create a Web application and design its UI with TAU, follow these steps:
 
 1.  Install TAU templates.
 
@@ -486,7 +486,7 @@ To create a Web application and design its UI with TAU:
     You can add additional `<script src="<CUSTOM_LIBRARY_OR_JS_FILE>">` or `<link rel="stylesheet" src="<CUSTOM_CSS>">` elements to include your own scripts and style sheets. However, place them after the default `<script>` elements, so that you can use any TAU APIs provided by the default libraries.
 
 3.  Create the first page.
-    1. Open the `index.html` file. By default, the `<body>` element of the HTML file contains 1 page (`<div>` element with the `ui-page` class) which contains a header (`<div>` element with the `ui-header` class) and a content section (`<div>` element with the `ui-content` class).
+    1. Open the `index.html` file. By default, the `<body>` element of the HTML file contains 1 page (`<div>` element with the `ui-page` class) which contains a header (`<div>` element with the `ui-header` class) and a content section (`<div>` element with the `ui-content` class):
 
         ```
         <body>
@@ -613,7 +613,7 @@ To create a Web application and design its UI with TAU:
 
     -   Add a button in the footer.
 
-        When implementing Tizen mobile Web applications, you can use the `ui-footer` class as a footer area. You can add 1 or 2 buttons to the footer area, by using the `<button>` elements.
+        When implementing Tizen mobile Web applications, you can use the `ui-footer` class as a footer area. You can add 1 or 2 buttons to the footer area, by using the `<button>` elements:
 
         ```
         <div class="ui-page" id="main">
@@ -738,7 +738,7 @@ To create a Web application and design its UI with TAU:
 
         You have to consider the fact that when the user clicks the **Back** key, the application can only exit if it is showing the first page. If the second page is showing, the application must return to the first page.
 
-        The following example shows how to handle the **Back** key input with page navigation and application exit. Similar code is included in the **TAU SinglePage** project template `main.js` file by default.
+        The following example shows how to handle the **Back** key input with page navigation and application exit. Similar code is included in the **TAU SinglePage** project template `main.js` file by default:
 
         ```
         (function() {

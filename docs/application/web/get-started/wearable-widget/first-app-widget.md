@@ -38,7 +38,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 When you are developing a more complex application, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
-## Creating a Project
+## Create a project
 
 The following example shows you how to create and configure a basic wearable Web widget application project in Tizen Studio. An application project contains all the files that make up an application.
 
@@ -53,7 +53,7 @@ The following figure illustrates the application to be created. The application 
 
 ![Wearable Web Widget application](media/basic_app_running_ww_widget.png)
 
-To create the application project:
+To create the application project, follow the steps below:
 
 1.  Launch Tizen Studio.
 
@@ -117,7 +117,7 @@ You can see the created project in the **Project Explorer** view. The most impor
 Your application project is now ready for further actions. Next, build the application.
 
 <a name="validate"></a>
-### Checking the Application with the API Validator
+### Check the application with the API Validator
 
 You can validate a Tizen wearable widget application using one of 3 validators:
 
@@ -140,9 +140,9 @@ When the validation is complete, its results are shown in the **Problems** view.
 ![Validation results](media/widget_validate_result_w.png)
 
 <a name="configuration"></a>
-### Managing the Application Configuration
+### Manage the application configuration
 
-To view and modify the application configuration:
+To view and modify the application configuration, follow the steps below:
 
 1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. Tizen Studio opens the file in the Web application configuration editor.
 
@@ -173,9 +173,9 @@ To view and modify the application configuration:
 
 For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
 
-### Understanding the Source Code
+### Understand the source code
 
-Pay attention to the following main issues in the application source code, to understand how the application is designed and how it works. For source code details related to the UI, see [Designing a Simple UI](#ui).
+Pay attention to the following main issues in the application source code, to understand how the application is designed and how it works. For source code details related to the UI, see [Designing a simple UI](#ui).
 
 -   The widget application settings are defined in the `config.xml` file.
 
@@ -237,7 +237,7 @@ Pay attention to the following main issues in the application source code, to un
     ![Widget application reference](media/widget_app_reference_w.png)
 
 <a name="build"></a>
-## Building Your Application
+## Build your application
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
@@ -249,7 +249,7 @@ You can build the application in the following ways:
 
     The automatic build means that Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
 
-    To use the automatic build:
+    To use the automatic build, follow these steps:
 
     1.  Select the project in the **Project Explorer** view.
     2.  In the Tizen Studio menu, select **Project \> Build Automatically**.
@@ -278,7 +278,7 @@ You can build the application in the following ways:
 After you have built the application, run it.
 
 <a name="run"></a>
-## Running Your Application
+## Run your application
 
 You can run the Web widget application on the [emulator](../../tutorials/process/run-debug-app.md#emulator) or a [real target device](../../tutorials/process/run-debug-app.md#target).
 
@@ -286,9 +286,9 @@ You can run the Web widget application on the [emulator](../../tutorials/process
 > Since the Web Simulator does not support a circular UI, this topic does not cover the instructions for running the application on the Web Simulator.
 
 <a name="emulator"></a>
-### Running on the Emulator
+### Run on emulator
 
-To run the application on the emulator:
+To run the application on the emulator, follow the steps below:
 
 1.  Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
     1.  In the Tizen Studio menu, select **Tools \> Emulator Manager**.
@@ -350,7 +350,7 @@ To run the application on the emulator:
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 <a name="target"></a>
-### Running on a Target Device
+### Run on a target device
 
 First of all, a target device and your computer must be connected to the same Wi-Fi network.
 
@@ -421,17 +421,17 @@ To run the application on the target device:
     >  ![Run Configurations window](media/run_configurations_w_widget.png)
 
 <a name="ui"></a>
-## Designing a Simple UI
+## Design a simple UI
 
 The widget application created with the **Widget** template has a simple user interface with a text component showing the **Hello Widget** text on the screen.
 
-The UI is created using [W3C/HTML](https://www.w3schools.com) in the `index.html` file. The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
+The UI is created using [W3C/HTML](https://www.w3schools.com){:target="_blank"} in the `index.html` file. The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
 
 **Figure: User interface in the Widget template**
 
 ![Wearable Web Widget application](media/basic_app_running_ww_widget.png)
 
-### Creating the Basic UI
+### Create the Basic UI
 
 The UI in the **Widget** template uses the HTML DOM, which is a structured model to control Web elements. It is an official W3C standard to express the document regardless of platforms or languages, and the foundation of the HTML5 APIs. The template contains the following components:
 
@@ -476,7 +476,7 @@ The UI in the **Widget** template uses the HTML DOM, which is a structured model
     </body>
     ```
 
-### Modifying Existing Components with CSS
+### Modify existing components with CSS
 
 CSS (Cascading Style Sheets) specifies the layout and styling of the Web application.
 

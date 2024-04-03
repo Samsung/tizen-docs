@@ -20,7 +20,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
        ![install TV Extension](./media/install_tv_extension.png)
 
-       For more information on updating packages, see [Updating Tizen Studio](../../../tizen-studio/setup/update-sdk.md).
+       For more information on updating packages, see [updating Tizen Studio](../../../tizen-studio/setup/update-sdk.md).
 
 **Build your first application**
 
@@ -43,11 +43,11 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 When you are developing a more complex application, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
-## Create a Project
+## Create a project
 
 The following example shows you how to create and configure a basic Samsung TV Web application project in Tizen Studio. An application project contains all the files that make up an application.
 
-To create the application project:
+To create the application project, follow these steps:
 
 1.  Launch Tizen Studio.
 
@@ -107,9 +107,9 @@ You can see the created project in the **Project Explorer** view. The most impor
 Your application project is now ready for further actions. Next, build the application.
 
 <a name="configuration"></a>
-### Manage the Application Configuration
+### Manage the application configuration
 
-To view and modify the application configuration:
+To view and modify the application configuration, follow these steps:
 
 1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. Tizen Studio opens the file in the Web application configuration editor.
 
@@ -141,7 +141,7 @@ To view and modify the application configuration:
 For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
 
 <a name="build"></a>
-## Build Your Application
+## Build your application
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
@@ -153,7 +153,7 @@ You can build the application in the following ways:
 
     The automatic build means that Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
 
-    To use the automatic build:
+    To use the automatic build, follow these steps:
 
     1.  Select the project in the **Project Explorer** view.
     2. In the Tizen Studio menu, select **Project \> Build Automatically**.
@@ -180,12 +180,12 @@ You can build the application in the following ways:
 After you have built the application, run it.
 
 <a name="run"></a>
-## Run Your Application
+## Run your application
 
-You can run the Web application on the [emulator](../../tutorials/process/run-debug-app.md#emulator), [Samsung TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator), or a [real target device](../../tutorials/process/run-debug-app.md#target).
+You can run the Web application on the [emulator](../../tutorials/process/run-debug-app.md#emulator), [Samsung TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator){:target="_blank"}, or a [real target device](../../tutorials/process/run-debug-app.md#target).
 
 <a name="emulator"></a>
-### Run on the Emulator
+### Run on emulator
 
 To run the application on the emulator:
 
@@ -230,7 +230,7 @@ For more information on using the emulator features, see [Using Emulator Control
 <a name="simulator"></a>
 ### Run on the Samsung TV Simulator
 
-To run the application on the simulator:
+To run the application on the simulator, follow these steps:
 
 1.  In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Web Simulator Application (Samsung TV)**.
 
@@ -240,12 +240,12 @@ To run the application on the simulator:
 
     ![Application running in the simulator](media/simulator_basic_app_samsung_tv.png)
 
-For more information on using the simulator features, see [TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator).
+For more information on using the simulator features, see [TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator){:target="_blank"}.
 
 <a name="target"></a>
-### Run on a Target Device
+### Run on a target device
 
-To run the application on a target device:
+To run the application on a target device, follow these steps:
 
 1. Connect the TV target device to your computer:
 
@@ -308,11 +308,11 @@ To run the application on a target device:
     >    ![Run Configurations window](media/run_configurations_samsung_tv.png)
 
 <a name="ui"></a>
-## Design Your UI
+## Design your UI
 
 The Samsung TV application created with the **Basic Project** template has a simple user interface with basic HTML and JavaScript.
 
-The UI is created using [W3C/HTML](https://www.w3schools.com). The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
+The UI is created using [W3C/HTML](https://www.w3schools.com){:target="_blank"}. The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
 
 ### Edit HTML
 
