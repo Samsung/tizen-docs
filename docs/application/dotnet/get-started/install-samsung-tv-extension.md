@@ -1,7 +1,7 @@
 # Install Samsung Smart TV Extension
 
 The Samsung Smart TV Extension allows developers to create applications for Samsung Smart TVs and emulate them for testing purposes.  
-It is an add-on SDK, which is installed using the Tizen Studio Package Manager.
+It is an add-on SDK, which is installed using the Tizen Package Manager.
 
 To install the Samsung Smart TV Extension, follow these steps:
   
