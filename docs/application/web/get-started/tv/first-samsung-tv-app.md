@@ -20,12 +20,6 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
        ![install TV Extension](./media/install_tv_extension.png)
 
-The video below shows how to set up Tizen Studio and TV Extension:
-
-<video controls height="400">
-  <source src="../media/samsung-certificate-tv-extension.mp4" type=video/mp4>
-</video>
-
 For more information on updating packages, see [Updating Tizen Studio](../../../tizen-studio/setup/update-sdk.md).
 
 **Build your first application**
