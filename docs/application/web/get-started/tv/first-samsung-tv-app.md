@@ -6,7 +6,7 @@ A Samsung TV Web application is basically a Web site stored on a Samsung Smart T
 
 Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic TV Web application, which displays some text on the screen and changes the text when the user clicks it:
 
-**Set up Tizen Studio and TV Extention**
+**Set up Tizen Studio and TV Extension**
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
@@ -20,7 +20,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
        ![install TV Extension](./media/install_tv_extension.png)
 
-       For more information on updating packages, see [Updating Tizen Studio](../../../tizen-studio/setup/update-sdk.md).
+For more information on updating packages, see [Updating Tizen Studio](../../../tizen-studio/setup/update-sdk.md).
 
 **Build your first application**
 

@@ -21,6 +21,7 @@
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
 ### [API Privileges](/application/dotnet/get-started/api-privileges.md)
 ### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
+### [Install Samsung Smart TV Extension](/application/dotnet/get-started/install-samsung-tv-extension.md)
 ### Certificates
 #### [Overview](/application/dotnet/get-started/certificates/index.md)
 #### [Installing the Extension](/application/dotnet/get-started/certificates/installing-the-extension.md)
