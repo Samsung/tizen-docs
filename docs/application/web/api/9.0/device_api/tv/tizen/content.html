@@ -32,9 +32,6 @@ for accessing internal and external storage using this API, privileges (<a href=
         <p>
 For more information on the Content features, see <a href="/application/web/guides/data/stored-content">Stored Content Management</a>.
         </p>
-        <p>
-Playlist functionality has been added in Tizen 2.3.
-        </p>
        </div>
 <p><span class="version">Since: </span>
  2.0
@@ -57,7 +54,7 @@ Playlist functionality has been added in Tizen 2.3.
 <li>
                     1.5. <a href="#ContentDirectoryId">ContentDirectoryId</a>
 </li>
-<li>
+<li class="deprecated">
                     1.6. <a href="#PlaylistId">PlaylistId</a>
 </li>
 </ul>
@@ -87,15 +84,15 @@ Playlist functionality has been added in Tizen 2.3.
 </li>
 <li>2.12. <a href="#ImageContent">ImageContent</a>
 </li>
-<li>2.13. <a href="#PlaylistItem">PlaylistItem</a>
+<li class="deprecated">2.13. <a href="#PlaylistItem">PlaylistItem</a>
 </li>
-<li>2.14. <a href="#Playlist">Playlist</a>
+<li class="deprecated">2.14. <a href="#Playlist">Playlist</a>
 </li>
-<li>2.15. <a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a>
+<li class="deprecated">2.15. <a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a>
 </li>
-<li>2.16. <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a>
+<li class="deprecated">2.16. <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a>
 </li>
-<li>2.17. <a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a>
+<li class="deprecated">2.17. <a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a>
 </li>
 <li>2.18. <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a>
 </li>
@@ -126,9 +123,6 @@ Playlist functionality has been added in Tizen 2.3.
 <div>void <a href="#ContentManager::cancelScanDirectory">cancelScanDirectory</a> (DOMString contentDirURI)</div>
 <div>long <a href="#ContentManager::addChangeListener">addChangeListener</a> (<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback)</div>
 <div>void <a href="#ContentManager::removeChangeListener">removeChangeListener</a> (long listenerId)</div>
-<div>void <a href="#ContentManager::getPlaylists">getPlaylists</a> (<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#ContentManager::createPlaylist">createPlaylist</a> (DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#Playlist">Playlist</a>? sourcePlaylist)</div>
-<div>void <a href="#ContentManager::removePlaylist">removePlaylist</a> (<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#ContentManager::createThumbnail">createThumbnail</a> (<a href="#Content">Content</a> content, <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 </td>
 </tr>
@@ -178,34 +172,6 @@ Playlist functionality has been added in Tizen 2.3.
 <tr>
 <td><a href="#ImageContent">ImageContent</a></td>
 <td></td>
-</tr>
-<tr>
-<td><a href="#PlaylistItem">PlaylistItem</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#Playlist">Playlist</a></td>
-<td>
-<div>void <a href="#Playlist::add">add</a> (<a href="#Content">Content</a> item)</div>
-<div>void <a href="#Playlist::addBatch">addBatch</a> (<a href="#Content">Content</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#Playlist::remove">remove</a> (<a href="#PlaylistItem">PlaylistItem</a> item)</div>
-<div>void <a href="#Playlist::removeBatch">removeBatch</a> (<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#Playlist::get">get</a> (<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count, optional long? offset)</div>
-<div>void <a href="#Playlist::setOrder">setOrder</a> (<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#Playlist::move">move</a> (<a href="#PlaylistItem">PlaylistItem</a> item, long delta, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a></td>
-<td><div>void <a href="#PlaylistArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#Playlist">Playlist</a>[] playlists)</div></td>
-</tr>
-<tr>
-<td><a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a></td>
-<td><div>void <a href="#PlaylistSuccessCallback::onsuccess">onsuccess</a> (<a href="#Playlist">Playlist</a> playlist)</div></td>
-</tr>
-<tr>
-<td><a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a></td>
-<td><div>void <a href="#PlaylistItemArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#PlaylistItem">PlaylistItem</a>[] items)</div></td>
 </tr>
 <tr>
 <td><a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a></td>
@@ -310,12 +276,15 @@ ROTATE_270 - corresponds to rotate 270 degrees image content orientation.       
  2.0
           </p>
 </div>
-<div class="typedef" id="PlaylistId">
+<div class="typedef deprecated" id="PlaylistId">
 <a class="backward-compatibility-anchor" name="::Content::PlaylistId"></a><h3>1.6. PlaylistId</h3>
 <div class="brief">
  Playlist identifier.
           </div>
-<pre class="webidl prettyprint">  typedef DOMString PlaylistId;</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  typedef DOMString PlaylistId;</span></pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -374,12 +343,12 @@ The <em>tizen.content</em> object allows accessing the functionality of the Cont
     void cancelScanDirectory(DOMString contentDirURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeListener(long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+<span class="nocode deprecated">    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                         optional <a href="#Playlist">Playlist</a>? sourcePlaylist) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+</span><span class="nocode deprecated">    void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void createThumbnail(<a href="#Content">Content</a> content, <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+</span>    void createThumbnail(<a href="#Content">Content</a> content, <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1122,13 +1091,16 @@ tizen.content.removeChangeListener(listenerId);
 </pre>
 </div>
 </dd>
-<dt class="method" id="ContentManager::getPlaylists">
+<dt class="deprecated method" id="ContentManager::getPlaylists">
 <a class="backward-compatibility-anchor" name="::Content::ContentManager::getPlaylists"></a><code><b><span class="methodName">getPlaylists</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Gets all playlists.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -1196,13 +1168,16 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 </pre>
 </div>
 </dd>
-<dt class="method" id="ContentManager::createPlaylist">
+<dt class="deprecated method" id="ContentManager::createPlaylist">
 <a class="backward-compatibility-anchor" name="::Content::ContentManager::createPlaylist"></a><code><b><span class="methodName">createPlaylist</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Creates a new playlist.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional <a href="#Playlist">Playlist</a>? sourcePlaylist);</pre></div>
 <p><span class="version">Since: </span>
@@ -1311,13 +1286,16 @@ tizen.content.createPlaylist("My new playlist", createSuccess, createFail);
 </pre>
 </div>
 </dd>
-<dt class="method" id="ContentManager::removePlaylist">
+<dt class="deprecated method" id="ContentManager::removePlaylist">
 <a class="backward-compatibility-anchor" name="::Content::ContentManager::removePlaylist"></a><code><b><span class="methodName">removePlaylist</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Removes a playlist.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -2357,72 +2335,87 @@ The attribute is marked as read-only since Tizen 5.5.
 </ul>
 </div>
 </div>
-<div class="interface" id="PlaylistItem">
+<div class="interface deprecated" id="PlaylistItem">
 <a class="backward-compatibility-anchor" name="::Content::PlaylistItem"></a><h3>2.13. PlaylistItem</h3>
 <div class="brief">
  The PlaylistItem interface represents a playlist item.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface PlaylistItem {
-    readonly attribute <a href="#Content">Content</a> content;
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface PlaylistItem {
+<span class="nocode deprecated">    readonly attribute <a href="#Content">Content</a> content;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
 <h4>Attributes</h4>
-<ul><li class="attribute" id="PlaylistItem::content">
+<ul><li class="attribute deprecated" id="PlaylistItem::content">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">Content </span><span class="name">content</span></span><div class="brief">
  Content contained in this playlist item.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.3
             </p>
 </li></ul>
 </div>
 </div>
-<div class="interface" id="Playlist">
+<div class="interface deprecated" id="Playlist">
 <a class="backward-compatibility-anchor" name="::Content::Playlist"></a><h3>2.14. Playlist</h3>
 <div class="brief">
  The Playlist interface represents a playlist.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface Playlist {
-    readonly attribute <a href="#PlaylistId">PlaylistId</a> id;
-    attribute DOMString name raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    readonly attribute long numberOfTracks;
-    attribute DOMString? thumbnailURI raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void add(<a href="#Content">Content</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void addBatch(<a href="#Content">Content</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface Playlist {
+<span class="nocode deprecated">    readonly attribute <a href="#PlaylistId">PlaylistId</a> id;
+</span><span class="nocode deprecated">    attribute DOMString name raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    readonly attribute long numberOfTracks;
+</span><span class="nocode deprecated">    attribute DOMString? thumbnailURI raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void add(<a href="#Content">Content</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void addBatch(<a href="#Content">Content</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void remove(<a href="#PlaylistItem">PlaylistItem</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+</span><span class="nocode deprecated">    void remove(<a href="#PlaylistItem">PlaylistItem</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count,
+</span><span class="nocode deprecated">    void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count,
              optional long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+</span><span class="nocode deprecated">    void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void move(<a href="#PlaylistItem">PlaylistItem</a> item, long delta, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+</span><span class="nocode deprecated">    void move(<a href="#PlaylistItem">PlaylistItem</a> item, long delta, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
               raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="Playlist::id">
+<li class="attribute deprecated" id="Playlist::id">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">PlaylistId </span><span class="name">id</span></span><div class="brief">
  Identifier of a playlist.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.3
             </p>
 </li>
-<li class="attribute" id="Playlist::name">
+<li class="attribute deprecated" id="Playlist::name">
 <span class="attrName"><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  Name of a playlist (case sensitive and unique).
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="description">
             <p>
 When <var>name</var> is set, the change is recorded in the database.
@@ -2450,19 +2443,25 @@ When <var>name</var> is set, the change is recorded in the database.
 </li></ul>
         </div>
 </li>
-<li class="attribute" id="Playlist::numberOfTracks">
+<li class="attribute deprecated" id="Playlist::numberOfTracks">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">long </span><span class="name">numberOfTracks</span></span><div class="brief">
  Number of playlist items in the playlist.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <p><span class="version">Since: </span>
  2.3
             </p>
 </li>
-<li class="attribute" id="Playlist::thumbnailURI">
+<li class="attribute deprecated" id="Playlist::thumbnailURI">
 <span class="attrName"><span class="type">DOMString </span><span class="name">thumbnailURI</span><span class="optional"> [nullable]</span></span><div class="brief">
  Thumbnail URI of a playlist.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="description">
             <p>
 By default, this attribute is set to <var>null</var>. <br>When <var>thumbnailURI</var> is set, the change is recorded in the database.
@@ -2495,13 +2494,16 @@ By default, this attribute is set to <var>null</var>. <br>When <var>thumbnailURI
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="Playlist::add">
+<dt class="deprecated method" id="Playlist::add">
 <a class="backward-compatibility-anchor" name="::Content::Playlist::add"></a><code><b><span class="methodName">add</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Adds a content item to a playlist.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void add(<a href="#Content">Content</a> item);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -2542,13 +2544,16 @@ See code example for the <em>createPlaylist()</em> method.
 </li></ul>
         </div>
 </dd>
-<dt class="method" id="Playlist::addBatch">
+<dt class="deprecated method" id="Playlist::addBatch">
 <a class="backward-compatibility-anchor" name="::Content::Playlist::addBatch"></a><code><b><span class="methodName">addBatch</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Adds tracks to a playlist as a batch, asynchronously.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void addBatch(<a href="#Content">Content</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -2598,13 +2603,16 @@ UnknownError: In case of any error              </li>
 </li></ul>
         </div>
 </dd>
-<dt class="method" id="Playlist::remove">
+<dt class="deprecated method" id="Playlist::remove">
 <a class="backward-compatibility-anchor" name="::Content::Playlist::remove"></a><code><b><span class="methodName">remove</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Removes a track from a playlist.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#PlaylistItem">PlaylistItem</a> item);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -2704,13 +2712,16 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 </pre>
 </div>
 </dd>
-<dt class="method" id="Playlist::removeBatch">
+<dt class="deprecated method" id="Playlist::removeBatch">
 <a class="backward-compatibility-anchor" name="::Content::Playlist::removeBatch"></a><code><b><span class="methodName">removeBatch</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Removes tracks from a playlist as a batch, asynchronously.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -2835,13 +2846,16 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 </pre>
 </div>
 </dd>
-<dt class="method" id="Playlist::get">
+<dt class="deprecated method" id="Playlist::get">
 <a class="backward-compatibility-anchor" name="::Content::Playlist::get"></a><code><b><span class="methodName">get</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Gets playlist items from a playlist.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count,
          optional long? offset);</pre></div>
 <p><span class="version">Since: </span>
@@ -2938,13 +2952,16 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 </pre>
 </div>
 </dd>
-<dt class="method" id="Playlist::setOrder">
+<dt class="deprecated method" id="Playlist::setOrder">
 <a class="backward-compatibility-anchor" name="::Content::Playlist::setOrder"></a><code><b><span class="methodName">setOrder</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Changes the play order of all playlist items in the playlist.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -3078,13 +3095,16 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 </pre>
 </div>
 </dd>
-<dt class="method" id="Playlist::move">
+<dt class="deprecated method" id="Playlist::move">
 <a class="backward-compatibility-anchor" name="::Content::Playlist::move"></a><code><b><span class="methodName">move</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Moves the specified item up or down a specified amount in the play order.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void move(<a href="#PlaylistItem">PlaylistItem</a> item, long delta, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -3229,14 +3249,17 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 </dl>
 </div>
 </div>
-<div class="interface" id="PlaylistArraySuccessCallback">
+<div class="interface deprecated" id="PlaylistArraySuccessCallback">
 <a class="backward-compatibility-anchor" name="::Content::PlaylistArraySuccessCallback"></a><h3>2.15. PlaylistArraySuccessCallback</h3>
 <div class="brief">
  The PlaylistArraySuccessCallback interface specifies a success callback that is invoked when all existing playlists are retrieved successfully.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistArraySuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistArraySuccessCallback {
     void onsuccess(<a href="#Playlist">Playlist</a>[] playlists);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -3272,14 +3295,17 @@ It is used in <em>tizen.content.getPlaylists()</em>.
 </dl>
 </div>
 </div>
-<div class="interface" id="PlaylistSuccessCallback">
+<div class="interface deprecated" id="PlaylistSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Content::PlaylistSuccessCallback"></a><h3>2.16. PlaylistSuccessCallback</h3>
 <div class="brief">
  The PlaylistSuccessCallback interface specifies a success callback that is invoked when a new playlist is successfully created.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistSuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistSuccessCallback {
     void onsuccess(<a href="#Playlist">Playlist</a> playlist);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -3315,14 +3341,17 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 </dl>
 </div>
 </div>
-<div class="interface" id="PlaylistItemArraySuccessCallback">
+<div class="interface deprecated" id="PlaylistItemArraySuccessCallback">
 <a class="backward-compatibility-anchor" name="::Content::PlaylistItemArraySuccessCallback"></a><h3>2.17. PlaylistItemArraySuccessCallback</h3>
 <div class="brief">
  The PlaylistItemArraySuccessCallback interface specifies a success callback that is invoked when a list of playlist items are successfully retrieved.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistItemArraySuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 9.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistItemArraySuccessCallback {
     void onsuccess(<a href="#PlaylistItem">PlaylistItem</a>[] items);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -3396,7 +3425,6 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 <pre class="webidl prettyprint">module Content {
   typedef DOMString ContentId;
   typedef DOMString ContentDirectoryId;
-  typedef DOMString PlaylistId;
   enum ContentType { "IMAGE", "VIDEO", "AUDIO", "OTHER" };
   enum AudioContentLyricsType { "SYNCHRONIZED", "UNSYNCHRONIZED" };
   enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90", "TRANSVERSE",
@@ -3418,11 +3446,6 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     void cancelScanDirectory(DOMString contentDirURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeListener(long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                        optional <a href="#Playlist">Playlist</a>? sourcePlaylist) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void createThumbnail(<a href="#Content">Content</a> content, <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
@@ -3478,36 +3501,6 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     readonly attribute unsigned long width;
     readonly attribute unsigned long height;
     readonly attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
-  };
-  [NoInterfaceObject] interface PlaylistItem {
-    readonly attribute <a href="#Content">Content</a> content;
-  };
-  [NoInterfaceObject] interface Playlist {
-    readonly attribute <a href="#PlaylistId">PlaylistId</a> id;
-    attribute DOMString name raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    readonly attribute long numberOfTracks;
-    attribute DOMString? thumbnailURI raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void add(<a href="#Content">Content</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void addBatch(<a href="#Content">Content</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void remove(<a href="#PlaylistItem">PlaylistItem</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count,
-             optional long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void move(<a href="#PlaylistItem">PlaylistItem</a> item, long delta, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistArraySuccessCallback {
-    void onsuccess(<a href="#Playlist">Playlist</a>[] playlists);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistSuccessCallback {
-    void onsuccess(<a href="#Playlist">Playlist</a> playlist);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistItemArraySuccessCallback {
-    void onsuccess(<a href="#PlaylistItem">PlaylistItem</a>[] items);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface ThumbnailSuccessCallback {
     void onsuccess(DOMString path);
