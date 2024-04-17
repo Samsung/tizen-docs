@@ -1,11 +1,11 @@
 
-# Creating the Application Project
+# Create the Application Project
 
 You can create a Web application project by selecting from a variety of
 templates and samples. The following instructions are specific for
 creating the project with a template.
 
-To create a Web application project:
+To create a Web application project, follow the steps below:
 
 1.  In Tizen Studio, select **File &gt; New &gt; Tizen Project**.
 
@@ -26,7 +26,7 @@ To create a Web application project:
 
     2.  Select the profile (**Mobile**, **Wearable**, or **TV**) and
       version from a drop-down list and click **Next**.  
-        >  **Note**  
+        > [!NOTE]
         > If you cannot see the TV profile option, open the Package Manager and make sure that you have installed the TV extension packages in the **Extension SDK** tab.
 
         ![Selecting the profile and version](./media/create_project_wizard_version_wearable.png)
@@ -41,7 +41,7 @@ To create a Web application project:
 
     5. Define the project properties and click **Finish**.  
        You can fill the project name. You can also select the location and working sets by clicking **More properties**.  
-       >  **Note**  
+       > [!NOTE]
        > The Tizen API names cannot be used as project names. The project name must be more than 2 characters and is restricted to the following regular expression: \[a-zA-Z\]\[a-zA-Z0-9-\]{2,49}.
 
        ![Defining properties](./media/create_project_wizard_properties_ww.png)
@@ -51,9 +51,9 @@ To create a Web application project:
 The new application project is shown in the **Project Explorer** view of Tizen Studio, with default content in the `config.xml` file as well as in several project folders.
 
 <a name="import"></a>
-## Importing a Project
+## Import a project
 
-If you have an existing Tizen application project, you can import it into Tizen Studio:  
+If you have an existing Tizen application project, you can import it into Tizen Studio by following these steps:  
 1.  In the Tizen Studio menu, go to **File &gt; Import &gt; Tizen &gt; Tizen Project**, and click **Next**.
 2.  Select the location of the root directory or archive file of the Tizen project and click **Next**.
 3.  If you want to convert the project profile and version, use the
