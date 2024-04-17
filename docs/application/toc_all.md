@@ -52,6 +52,8 @@
 #### [Overview](/application/dotnet/guides/applications/overview.md)
 #### [Service Application](/application/dotnet/guides/applications/service_application.md)
 #### [Tizen Core](/application/dotnet/guides/applications/tizen-core.md)
+##### [Tizen Core Channel](/application/dotnet/guides/applications/tizen-core/tizen-core-channel.md)
+##### [Tizen Core Event](/application/dotnet/guides/applications/tizen-core/tizen-core-event.md)
 #### UI Application
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
