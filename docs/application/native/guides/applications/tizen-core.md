@@ -8,13 +8,13 @@ The following are functions provided by Tizen Core for inter-thread communicatio
  - **[Tizen Core Event](./tizen-core-event.md)**: Provides the ability to deliver events to specific tasks.
 
 ## Preparation
-To use the Tizen core API, you must include the `tizen_core.h` header.
+To use the Tizen Core API, you must include the `tizen_core.h` header, as shown below:
 ```c
 #include <tizen_core.h>
 ```
 
-## Initializing tizen core
-Before using tizen core, call `tizen_core_init()` as shown below.
+## Initializing Tizen Core
+Before using Tizen core, Call `tizen_core_init()` as shown below:
 ```c
 #include <tizen_core.h>
 
@@ -26,8 +26,8 @@ int main(int argc, char **argv)
 }
 ```
 
-## Shutting down tizen core
-When tizen core is no longer needed, shut down tizen core with the code below.
+## Shutting down Tizen Core
+When Tizen Core is no longer needed, shut down Tizen Core with the code below:
 ```c
 #include <tizen_core.h>
 
@@ -40,10 +40,10 @@ int main(int argc, char **argv)
 }
 ```
 
-## Managing tizen core tasks
+## Managing Tizen Core tasks
 This section will cover creating, executing, and terminating tizen_core_task_h objects. It will also cover obtaining `tizen_core_h` from `tizen_core_task_h` and adding idle jobs, timers, and sources to the main loop.
 
-1. Creating a Task
+### Creating a Task
 Here's an example on how to create a `tizen_core_task_h` object.
 ```c
 {
@@ -61,7 +61,7 @@ Here's an example on how to create a `tizen_core_task_h` object.
 The created `task` handle should be removed using `tizen_core_task_destroy()` when it is no longer needed.
 
 
-2. Running a task
+### Running a task
 In this example, we'll cover the code to execute a previously created task using `tizen_core_task_run()`.
 ```c
 {
@@ -76,7 +76,7 @@ In this example, we'll cover the code to execute a previously created task using
 ```
 `task` creates and runs a thread named "task1". After calling `tizen_core_task_run()`, the thread is created and the loop starts running.
 
-3. Checking if a task is running
+### Checking if a task is running
 An example of checking if a task is running using `tizen_core_task_is_running()`.
 ```c
 static void check_task_running_state(tizen_core_task_h task)
@@ -95,7 +95,7 @@ static void check_task_running_state(tizen_core_task_h task)
 ```
 If the task is running, the log message "Task is running" is printed using dlog.
 
-4. Exiting a task
+### Exiting a task
 An example of exiting a running task.
 ```c
 {
@@ -116,7 +116,7 @@ An example of exiting a running task.
 ```
 In this example, the `task` checks if it is running before exiting. When `tizen_core_task_quit()` is called, the loop ends and the created thread is cleaned up.
 
-5. Getting the core handle
+### Getting the core handle
 An example of getting a `tizen_core_h` handle from a `tizen_core_task_h` handle.
 ```c
 {
@@ -160,7 +160,7 @@ You can obtain the tizen core information of the current thread through the API 
 ```
 If there is no `tizen_core_h` running in the current thread, the function returns the `tizen_core_h` running in the main thread.
 
-## Adding an idle job to tizen core
+## Adding an idle job to Tizen Core
 Let's write an example that adds an idle job to `tizen_core_h` and removes the job again when the callback is called.
 ```c
 static bool idle_job_cb(void *user_data)
@@ -187,7 +187,7 @@ In this example, the `idle_job_cb()` returns 'false'. If 'true' is returned, the
 Since the `idle_job_cb()` returns 'false', the returned source handle does not need to be explicitly freed.
 However, if the `idle_job_cb()` returns 'true', you have to call `tizen_core_remove_source()` to free the source.
 
-## Adding a timer to tizen core
+## Adding a timer to Tizen Core
 Here's an example of registering a timer that calls the callback every 100 ms.
 ```c
 static bool timer_cb(void *user_data)
@@ -212,7 +212,7 @@ static tizen_core_source_h add_timer(tizen_core_h core)
 ```
 If the registered timer source is no longer needed, you should remove it by calling `tizen_core_remove_source()`.
 
-## Removing a source from tizen core
+## Removing a source from Tizen Core
 To remove a source registered with `tizen_core_add_idle_job()` or `tizen_core_add_timer()`, use `tizen_core_remove_source()` as follows:
 ```c
 {
@@ -226,8 +226,8 @@ To remove a source registered with `tizen_core_add_idle_job()` or `tizen_core_ad
 }
 ```
 
-## Managing tizen core sources
-1. Creating a poll file descriptor
+## Managing Tizen Core sources
+### Creating a poll file descriptor
 This example covers creating a `tizen_core_poll_fd_h`.
 ```c
 static tizen_core_poll_fd_h create_poll_fd(int fd, uint16_t events)
@@ -261,7 +261,7 @@ static tizen_core_poll_fd_h create_poll_fd(int fd, uint16_t events)
 The created `poll_fd` handle can be registered to a source using `tizen_core_source_add_poll()`.
 When the `poll_fd` is no longer needed, you must call `tizen_core_poll_fd_destroy()`.
 
-2. Creating a source and registering a poll file descriptor
+### Creating a source and registering a poll file descriptor
 This example registers the poll fd created in the previous example to a source.
 ```c
 static tizen_core_source_h create_fd_source(tizen_core_poll_fd_h poll_fd)
@@ -303,7 +303,7 @@ static tizen_core_source_h create_fd_source(tizen_core_poll_fd_h poll_fd)
 This example registers the poll fd to a source and adds the source to the "task1" core.
 The source begins polling the fd. You should call `tizen_core_remove_source()` to remove the source added with `tizen_core_add_source()` when it is no longer needed.
 
-3. Registering callbacks and controlling events
+### Registering callbacks and controlling events
 In case of file descriptor sources, the `tizen_core_source_prepare_cb()` function usually returns 'false' because we have to wait until poll() gets called before knowing whether or not we should process any events. We set the returned timeout value to -1 indicating we don't care how long the poll() call block lasts. The `tizen_core_source_check_cb()` function tests the result of the poll() call to verify if the required condition is met and returns 'true' if it does.
 This example demonstrates registering `tizen_core_source_prepare_cb()`, `tizen_core_source_check_cb()`, `tizen_core_source_dispatch_cb()`, `tizen_core_source_finalize_cb()` functions and reading data from the fd.
 ```c

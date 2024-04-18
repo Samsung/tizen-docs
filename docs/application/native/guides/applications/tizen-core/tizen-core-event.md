@@ -3,14 +3,14 @@
 A feature to deliver events to specific tasks, which can be used to wait for completion of tasks or send notifications to other threads. This page covers creating events, registering event handlers with them, attaching them to the main loop, and receiving events.
 
 ## Preparation
-To use the tizen core event API, you must include the `tizen_core.h` header.
+To use the Tizen Core event API, you must include the `tizen_core.h` header.
 ```c
 #include <tizen_core.h>
 ```
 
-## Managing tizen core events
-1. Creating an event handle and registering an event handler
-Here's an example of creating an event and registering an event handler.
+## Managing Tizen Core events
+### Creating an event handle and registering an event handler
+Here's an example of creating an event and registering an event handler:
 ```c
 static bool event_handler_cb(tizen_core_event_object_h object, void *user_data)
 {
@@ -42,8 +42,8 @@ static tizen_core_source_h add_event(void)
 An event handler has been added to the created event. To remove the event handler from the event, use `tizen_core_event_remove_handler()`.
 When you no longer need `tizen_core_event_h`, call `tizen_core_event_destroy()` to destroy it.
 
-2. Registering the event with the tizen core
-This example uses `tizen_core_add_event()` to register an event with the tizen core.
+### Registering the event with Tizen Core
+This example uses `tizen_core_add_event()` to register an event with Tizen Core:
 ```c
 {
   tizen_core_source_h source = NULL;
@@ -70,8 +70,8 @@ This example uses `tizen_core_add_event()` to register an event with the tizen c
 When you pass `tizen_core_event_h` to `tizen_core_h` via `tizen_core_add_event()`, `tizen_core_source_h` is returned. Use `tizen_core_remove_source()` to remove `tizen_core_source_h`, which will also remove `tizen_core_event_h`.
 Once you call `tizen_core_add_event()`, the ownership of `tizen_core_event_h` transfers to `tizen_core_h`.
 
-3. Creating an event object and delivering it to tizen core
-This example demonstrates creating an event object and delivering it to tizen core.
+### Creating an event object and delivering it to Tizen Core
+This example demonstrates creating an event object and delivering it to Tizen Core:
 ```c
 static void event_object_destroy_cb(void *event_data, void *user_data)
 {
@@ -128,7 +128,7 @@ static int emit_event(int id, void *data)
   return 0;
 }
 ```
-After calling `tizen_core_emit_event()`, the ownership of the created event object moves to tizen core. It is delivered to all registered event handlers and automatically released by the tizen core.
+After calling `tizen_core_emit_event()`, the ownership of the created event object moves to Tizen Core. It is delivered to all registered event handlers and automatically released by the Tizen Core.
 If you want to deliver `tizen_core_event_object_h` only to a specific `tizen_core_event_h`, use `tizen_core_event_emit()` instead.
 
 ## Related Information
