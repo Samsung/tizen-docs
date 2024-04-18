@@ -21,6 +21,7 @@
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
 ### [API Privileges](/application/dotnet/get-started/api-privileges.md)
 ### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
+### [Install Samsung Smart TV Extension](/application/dotnet/get-started/install-samsung-tv-extension.md)
 ### Certificates
 #### [Overview](/application/dotnet/get-started/certificates/index.md)
 #### [Installing the Extension](/application/dotnet/get-started/certificates/installing-the-extension.md)
@@ -1308,6 +1309,7 @@
 #### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ### Release Notes
+#### [5.6 (Mar 29, 2024)](/application/tizen-studio/release-notes/5-6-release-notes.md)
 #### [5.5 (Oct 30, 2023)](/application/tizen-studio/release-notes/5-5-release-notes.md)
 #### [5.1 (Mar 31, 2023)](/application/tizen-studio/release-notes/5-1-release-notes.md)
 #### [5.0 (Oct 31, 2022)](/application/tizen-studio/release-notes/5-0-release-notes.md)
