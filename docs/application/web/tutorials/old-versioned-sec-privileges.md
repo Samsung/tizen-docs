@@ -4,7 +4,7 @@ The API version restriction of privileges are deprecated since 5.0. This page pr
 
 
 <a name="mobile"></a>
-## Mobile Web API Privileges
+## Mobile Web API privileges
 
 The following tables list the API privileges, which you must declare when using security-sensitive API modules in mobile Web applications:
 
@@ -92,7 +92,7 @@ The following tables list the API privileges, which you must declare when using 
 
 
 <a name="wearable"></a>
-## Wearable Web API Privileges
+## Wearable Web API privileges
 
 The following tables list the API privileges, which you must declare when using security-sensitive API modules in wearable Web applications:
 
@@ -171,7 +171,7 @@ The following tables list the API privileges, which you must declare when using 
 
 
 <a name="tv"></a>
-## TV Web API Privileges
+## TV Web API privileges
 
 The following tables list the API privileges, which you must declare when using security-sensitive API modules in TV Web applications.
 
@@ -225,7 +225,7 @@ The following tables list the API privileges, which you must declare when using 
 
 
 <a name="nonAPI"></a>
-## Non-API Bound Privileges
+## Non-API bound privileges
 
 Tizen application privileges are loosely bound to APIs, so most of the privileges can be identified by the APIs that the application calls. However, there are some privileges that are not coupled with the Tizen APIs. To allow easy identification, those privileges are mapped to corresponding system resources that are similar to other privileges.
 
