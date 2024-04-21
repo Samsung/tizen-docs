@@ -3,7 +3,7 @@
 A feature to deliver events to specific tasks, which can be used to wait for completion of tasks or send notifications to other threads. This page covers creating events, registering event handlers with them, attaching them to the main loop, and receiving events.
 
 ## Preparation
-To use the Tizen Core event API, you must include the `tizen_core.h` header.
+To use the Tizen Core event API, you must include the `tizen_core.h` header:
 ```c
 #include <tizen_core.h>
 ```

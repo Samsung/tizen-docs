@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 This section will cover creating, executing, and terminating tizen_core_task_h objects. It will also cover obtaining `tizen_core_h` from `tizen_core_task_h` and adding idle jobs, timers, and sources to the main loop.
 
 ### Creating a Task
-Here's an example on how to create a `tizen_core_task_h` object.
+Here's an example on how to create a `tizen_core_task_h` object:
 ```c
 {
   tizen_core_task_h task = NULL;
@@ -62,7 +62,7 @@ The created `task` handle should be removed using `tizen_core_task_destroy()` wh
 
 
 ### Running a task
-In this example, we'll cover the code to execute a previously created task using `tizen_core_task_run()`.
+In this example, we'll cover the code to execute a previously created task using `tizen_core_task_run()`:
 ```c
 {
   int ret;
@@ -77,7 +77,7 @@ In this example, we'll cover the code to execute a previously created task using
 `task` creates and runs a thread named "task1". After calling `tizen_core_task_run()`, the thread is created and the loop starts running.
 
 ### Checking if a task is running
-An example of checking if a task is running using `tizen_core_task_is_running()`.
+An example of checking if a task is running using `tizen_core_task_is_running()`:
 ```c
 static void check_task_running_state(tizen_core_task_h task)
 {
@@ -96,7 +96,7 @@ static void check_task_running_state(tizen_core_task_h task)
 If the task is running, the log message "Task is running" is printed using dlog.
 
 ### Exiting a task
-An example of exiting a running task.
+An example of exiting a running task:
 ```c
 {
   bool running = false;
@@ -117,7 +117,7 @@ An example of exiting a running task.
 In this example, the `task` checks if it is running before exiting. When `tizen_core_task_quit()` is called, the loop ends and the created thread is cleaned up.
 
 ### Getting the core handle
-An example of getting a `tizen_core_h` handle from a `tizen_core_task_h` handle.
+An example of getting a `tizen_core_h` handle from a `tizen_core_task_h` handle:
 ```c
 {
   tizen_core_h core = NULL;
@@ -131,7 +131,7 @@ An example of getting a `tizen_core_h` handle from a `tizen_core_task_h` handle.
 }
 ```
 
-A `tizen_core_h` can also be found by name. The next example shows how to find the `tizen_core_h` of a `tizen_core_task_h` created earlier with the name "task1".
+A `tizen_core_h` can also be found by name. The next example shows how to find the `tizen_core_h` of a `tizen_core_task_h` created earlier with the name "task1":
 ```c
 {
   tizen_core_h core = NULL;
@@ -145,7 +145,7 @@ A `tizen_core_h` can also be found by name. The next example shows how to find t
 }
 ```
 
-You can obtain the tizen core information of the current thread through the API like so.
+You can obtain the Tizen Core information of the current thread through the API by using the following code:
 ```c
 {
   tizen_core_h core = NULL;
@@ -228,7 +228,7 @@ To remove a source registered with `tizen_core_add_idle_job()` or `tizen_core_ad
 
 ## Managing Tizen Core sources
 ### Creating a poll file descriptor
-This example covers creating a `tizen_core_poll_fd_h`.
+This example covers creating a `tizen_core_poll_fd_h`:
 ```c
 static tizen_core_poll_fd_h create_poll_fd(int fd, uint16_t events)
 {
@@ -262,7 +262,7 @@ The created `poll_fd` handle can be registered to a source using `tizen_core_sou
 When the `poll_fd` is no longer needed, you must call `tizen_core_poll_fd_destroy()`.
 
 ### Creating a source and registering a poll file descriptor
-This example registers the poll fd created in the previous example to a source.
+This example registers the poll fd created in the previous example to a source:
 ```c
 static tizen_core_source_h create_fd_source(tizen_core_poll_fd_h poll_fd)
 {
@@ -305,7 +305,7 @@ The source begins polling the fd. You should call `tizen_core_remove_source()` t
 
 ### Registering callbacks and controlling events
 In case of file descriptor sources, the `tizen_core_source_prepare_cb()` function usually returns 'false' because we have to wait until poll() gets called before knowing whether or not we should process any events. We set the returned timeout value to -1 indicating we don't care how long the poll() call block lasts. The `tizen_core_source_check_cb()` function tests the result of the poll() call to verify if the required condition is met and returns 'true' if it does.
-This example demonstrates registering `tizen_core_source_prepare_cb()`, `tizen_core_source_check_cb()`, `tizen_core_source_dispatch_cb()`, `tizen_core_source_finalize_cb()` functions and reading data from the fd.
+This example demonstrates registering `tizen_core_source_prepare_cb()`, `tizen_core_source_check_cb()`, `tizen_core_source_dispatch_cb()`, `tizen_core_source_finalize_cb()` functions and reading data from the fd:
 ```c
 static bool source_prepare_cb(tizen_core_source_h source, int *timeout, void *user_data)
 {

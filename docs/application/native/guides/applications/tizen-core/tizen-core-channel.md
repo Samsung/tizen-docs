@@ -1,6 +1,6 @@
 # Tizen Core Channel
 
-Tizen core channel Provides a communication channel that allows safe sending and receiving of data between threads. This channel can be used to exchange information in a synchronized state without data conflict. This page describes how to create a channel sender and receiver pair, send and receive data, and destroy the channel sender and receiver pair.
+Tizen Core channel Provides a communication channel that allows safe sending and receiving of data between threads. This channel can be used to exchange information in a synchronized state without data conflict. This page describes how to create a channel sender and receiver pair, send and receive data, and destroy the channel sender and receiver pair.
 
 ## Preparation
 To use the Tizen Core channel API, you must include the `tizen_core.h` header.
@@ -27,7 +27,7 @@ Use `tizen_core_channel_make_pair()` to create a channel sender and receiver pai
 You must destroy the `sender` and `receiver` handles by calling `tizen_core_channel_sender_destroy()` and `tizen_core_channel_receiver_destroy()` respectively when they are no longer needed.
 
 ### Creating and transmitting a channel object
-This example shows how to create and transmit a channel object.
+This example shows how to create and transmit a channel object:
 ```c
 {
   tizen_core_channel_object_h object = NULL;
@@ -68,7 +68,7 @@ This example shows how to create and transmit a channel object.
 The `receiver` receives the `object` and destroys it after use by calling `tizen_core_channel_object_destroy()`. If the object's data was allocated memory, you need to release it appropriately. In this example, we allocate a string using `strdup()` and release it using `free()` when an error occurs.
 
 ### Creating a task for receiving objects
-This example creates a task that registers `tizen_core_channel_receive_cb()` to receive channel objects.
+This example creates a task that registers `tizen_core_channel_receive_cb()` to receive channel objects:
 ```c
 static void channel_receive_cb(tizen_core_channel_object_cb object, void *user_data)
 {
