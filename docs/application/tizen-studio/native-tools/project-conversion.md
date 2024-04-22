@@ -22,7 +22,7 @@ Tizen Studio and CLI differ in how they describe the project properties and buil
 
 The CLI project structure is similar to the Tizen Studio project structure. The CLI project has the following properties and make files for supporting custom build and packaging.
 
-**Table: Project properties**
+**Table: CLI Project files**
 | File               | Location            | Description                |
 |--------------------|---------------------|----------------------------|
 | project_def.prop | ./ | Describes the user-defined properties of the project.|
