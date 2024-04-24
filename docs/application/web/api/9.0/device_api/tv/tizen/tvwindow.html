@@ -297,7 +297,8 @@ functionality of the TV Window API.
     <a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> getSource(optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void show(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString[]? rectangle,
               optional <a href="#WindowType">WindowType</a>? type, optional <a href="#ZPosition">ZPosition</a>? zPosition) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void rotateSource(<a href="#SourceRotationRatio">SourceRotationRatio</a> rotation, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void rotateSource(<a href="#SourceRotationRatio">SourceRotationRatio</a> rotation, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void hide(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type)
               raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getRect(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit,
@@ -770,9 +771,12 @@ UnknownError - if any unexpected error occurred.              </li>
 
 function successCB(windowRect, type)
 {
-  try {
+  try
+  {
     tizen.tvwindow.rotateSource("ROTATION_180", rotationCB);
-  } catch (error) {
+  }
+  catch (error)
+  {
     console.log("Error name: " + error.name + ", error message: " + error.message);
   }
 }
@@ -1387,7 +1391,8 @@ To guarantee the running of this application on a device with a TV picture-in-pi
     <a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> getSource(optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void show(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString[]? rectangle,
               optional <a href="#WindowType">WindowType</a>? type, optional <a href="#ZPosition">ZPosition</a>? zPosition) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void rotateSource(<a href="#SourceRotationRatio">SourceRotationRatio</a> rotation, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void rotateSource(<a href="#SourceRotationRatio">SourceRotationRatio</a> rotation, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void hide(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type)
               raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getRect(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit,
