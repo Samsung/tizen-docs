@@ -1,5 +1,5 @@
 
-# Coding Applications
+# Code Applications
 
 When coding your application, you must consider the following issues:
 
@@ -14,7 +14,7 @@ When coding your application, you must consider the following issues:
 3.  Destroy allocated resources and save the current application state.
 
 <a name="hover"></a>
-## Using Hover Help
+## Hover Help
 
 Tizen Studio supports hover help for Web API and W3C Widget APIs.
 
@@ -25,7 +25,7 @@ The hover help provides input from the [API Reference](../../api/latest/device_a
 ![Hover help](./media/hover_help.png)
 
 <a name="add"></a>
-## Adding External Source Code or Library
+## Add external source code or library
 
 External source files are located in the project directory, and its `/js` and `/css` sub-directories. You can add a new folder or source file (such as CSS, HTML, JSON, XML, and JavaScript) to your existing project.
 
@@ -46,5 +46,5 @@ You can add files in the following ways (as an example, the instructions illustr
 
 
 
-> **Note**  
+> [!NOTE]
 > You can also drag and drop external source files or libraries.  If you drop a file to the **Project Explorer** view, the **File Operation** dialog appears, and allows you to either copy the file or create a link to it.
