@@ -4,7 +4,7 @@ Your Web applications can communicate with other Web or native applications. The
 
 The Message Port API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Message Port API include:
+The main features of the Message Port API include the following:
 
 - Sending messages
 
@@ -28,7 +28,7 @@ The main features of the Message Port API include:
 
   ![Trusted message ports](./media/message_port_trusted.png)
 
-## Managing Message Ports
+## Manage message ports
 
 You can send and receive messages through 2 types of message ports:
 
@@ -50,7 +50,7 @@ Learning how to send messages to and receive responses from other Tizen applicat
    var localPort = tizen.messageport.requestLocalMessagePort('SAMPLE_PORT');
    ```
 
-2. To retrieve an instance of the `RemoteMessagePort` interface, use the `requestRemoteMessagePort()` method of the `tizen.messageport` object. The `RemoteMessagePort` interface sends messages to the port identified by an `ApplicationId` and a port name.
+2. To retrieve an instance of the `RemoteMessagePort` interface, use the `requestRemoteMessagePort()` method of the `tizen.messageport` object. The `RemoteMessagePort` interface sends messages to the port identified by an `ApplicationId` and a port name:
 
    ```
    var targetApplicationId = tizen.application.getCurrentApplication().appInfo.id;
