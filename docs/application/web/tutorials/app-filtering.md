@@ -9,7 +9,7 @@ on an appropriate device, the feature and profile information must be
 correctly declared in your application.
 
 <a name="filter_w"></a>
-## Feature-based Filtering
+## Feature-based filter
 
 Some features can be selectively supported by the Tizen device
 manufacturer. To prevent problems when the user is trying to run your
@@ -62,7 +62,7 @@ features can show the application on the store application list
 for downloading.
 
 <a name="screen_size"></a>
-### Screen Size Feature
+### Screen size feature
 
 The screen size feature is the only exception to the normal feature
 handling process described above. When the screen size is defined in the
@@ -107,7 +107,7 @@ The following tables list the available screen size features.
 | `http://tizen.org/feature/screen.size.all` | Specify this key, if the application supports all possible current and future screen sizes and all possible current and future resolutions per screen size.<br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.all` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 
 <a name="hierarchy"></a>
-### Feature Hierarchy
+### Feature hierarchy
 
 The feature keys have a hierarchy. For example, consider the
 `http://tizen.org/feature/location`,
@@ -134,10 +134,10 @@ The feature keys have a hierarchy. For example, consider the
     device which supports both those features can show the application.)
 
 <a name="adding"></a>
-### Adding the Feature List
+### Add the feature list
 
 To enable filtering for your Web application, add the feature list for
-the application `config.xml` file:
+the application `config.xml` file, follow these steps:
 1.  To open the Web application configuration editor in Tizen
     Studio, double-click the `config.xml` file in the **Project
     Explorer** view.
@@ -175,9 +175,9 @@ application package.
 | `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires any of the Human Activity Monitor features. | 2.3   |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
 | `http://tizen.org/feature/led`           | Specify this key, if the application requires the LED feature. | 2.4   |
-| `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature for using the [Human Activity Monitor](../api/latest/device_api/mobile/tizen/humanactivitymonitor.html) (GPS Type) API. | 2.3   |
+| `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature for using the [HumanActivityMonitor](../api/latest/device_api/mobile/tizen/humanactivitymonitor.html) (GPS Type) API. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
-| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [Media Key](../api/latest/device_api/mobile/tizen/mediakey.html) API. | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [MediaKey](../api/latest/device_api/mobile/tizen/mediakey.html) API. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth Low Energy feature (BLE). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Low Energy GATT Client feature. | 4.0   |
@@ -252,12 +252,12 @@ Tizen 4.0.
 | `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 2.3   |
-| `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires the [Human Activity Monitor](../api/latest/device_api/wearable/tizen/humanactivitymonitor.html) API.<br>If the key is declared in the `config.xml` file, the application can be installed on the device with any of the Human Activity Monitor features:<br><br> - HRM: `http://tizen.org/feature/sensor.heart_rate_monitor`<br> - PEDOMETER: `http://tizen.org/feature/sensor.pedometer`<br> - GPS: `http://tizen.org/feature/location.batch` | 2.3   |
+| `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires the [HumanActivityMonitor](../api/latest/device_api/wearable/tizen/humanactivitymonitor.html) API.<br>If the key is declared in the `config.xml` file, the application can be installed on the device with any of the Human Activity Monitor features:<br><br> - HRM: `http://tizen.org/feature/sensor.heart_rate_monitor`<br> - PEDOMETER: `http://tizen.org/feature/sensor.pedometer`<br> - GPS: `http://tizen.org/feature/location.batch` | 2.3   |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
 | `http://tizen.org/feature/led`           | Specify this key, if the application requires the LED feature. | 2.4   |
 | `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
-| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [Media Key](../api/latest/device_api/wearable/tizen/mediakey.html) API. | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [MediaKey](../api/latest/device_api/wearable/tizen/mediakey.html) API. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth Low Energy feature (BLE). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Low Energy GATT Client feature. | 4.0   |
@@ -355,7 +355,7 @@ Tizen 4.0.
 
 <a name="profile_w"></a>
 
-## Profile-based Filtering
+## Profile-based filter
 
 A Tizen profile describes the requirements for a category of Tizen
 devices that have a common application execution environment.
@@ -393,7 +393,7 @@ profile name matching the device profile to prevent unsupported
 applications from being installed.
 
 <a name="multi_profile"></a>
-## Single Web Application for Multiple Profiles
+## Single Web application for multiple profiles
 
 Applications are created for a single specific target profile and can
 only run on devices compliant to that profile. However, it is easily
