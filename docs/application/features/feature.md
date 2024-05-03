@@ -1875,8 +1875,6 @@ The version of Tizen Core API in the \[Major\].\[Minor\] format. For example, "1
 **System information:**\
 The platform returns the ABI information (e.g. "arm_32", "arm_64", "riscv_32", "riscv_64", "x86", "x86_64) of a device.\
 
-[Edit Key]( "edit"){.edit}
-
 </div>
 
 <div class="views-row views-row-120 views-row-odd">
@@ -1947,8 +1945,6 @@ Specify this key, if the application requires the RISC-V 32-bit  CPU architectur
 **System information:**\
 The platform returns true for this key, if the device runs on the RISC-V 32-bit CPU architecture.
 
-[Edit Key]( "edit"){.edit}
-
 </div>
 
 <div class="views-row views-row-125 views-row-even">
@@ -1961,8 +1957,6 @@ Specify this key, if the application requires the RISC-V 64-bit  CPU architectur
 
 **System information:**\
 The platform returns true for this key, if the device runs on the RISC-V 64-bit CPU architecture.
-
-[Edit Key]( "edit"){.edit}
 
 </div>
 
