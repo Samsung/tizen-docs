@@ -255,6 +255,8 @@ package:
 | `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv8` | Specify this key, if the application requires the ARMv8 CPU architecture. | 4.0 |
+| `http://tizen.org/feature/platform.core.cpu.arch.riscv32` | Specify this key, if the application requires the RISC-V 32-bit CPU architecture. | 9.0 |
+| `http://tizen.org/feature/platform.core.cpu.arch.riscv64` | Specify this key, if the application requires the RISC-V 64-bit CPU architecture. | 9.0 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse3` | Specify this key, if the application requires the SSE3 FPU architecture. | 2.2.1 |
@@ -452,6 +454,8 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv8` | Specify this key, if the application requires the ARMv8 CPU architecture. | 4.0 |
+| `http://tizen.org/feature/platform.core.cpu.arch.riscv32` | Specify this key, if the application requires the RISC-V 32-bit CPU architecture. | 9.0 |
+| `http://tizen.org/feature/platform.core.cpu.arch.riscv64` | Specify this key, if the application requires the RISC-V 64-bit CPU architecture. | 9.0 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse3` | Specify this key, if the application requires the SSE3 FPU architecture. | 2.2.1 |
