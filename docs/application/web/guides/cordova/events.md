@@ -38,7 +38,7 @@ window.onload = function() {
 };
 ```
 
-## Adding Event Listeners
+## Add event listeners
 
 The applications typically use the `document.addEventListener()` method to attach an event listener once the `deviceready` event fires. This means that event listeners for other events (such as `pause`, `resume`, and `backbutton`) are added during or after the `deviceready` event handler:
 
@@ -59,13 +59,13 @@ function onVolumeUp() {
 }
 ```
 
-## Handling Pause and Resume Events
+## Handle pause and resume events
 
 The pause event signals that the application is put into the background. This happens typically when the screen is being locked or when the user switches to a different application. The resume event signals that the application returns from the background to the foreground.
 
 To handle the `pause` and `resume` events:
 
-1. Define the event handlers for the `pause` and `resume` events:
+1. Define the event handlers for the `pause` and `resume` events, follow these steps:
 
    ```
    function onPause() {
@@ -84,7 +84,7 @@ To handle the `pause` and `resume` events:
    document.addEventListener('resume', onResume);
    ```
 
-## Handling Button Press Events
+## Handle button press events
 
 You can add event listeners for specific button press events, as defined in the following table.
 
@@ -102,7 +102,7 @@ You can add event listeners for specific button press events, as defined in the 
 
 Events are triggered when the corresponding button is pressed.
 
-To add event listeners for the menu, volume up, and volume down buttons:
+To add event listeners for the menu, volume up, and volume down buttons, follow these steps:
 
 1. Define the event handlers for the `menubutton`, `volumeupbutton`, and `volumeupbutton` events:
 
@@ -118,7 +118,7 @@ To add event listeners for the menu, volume up, and volume down buttons:
 
 2. In the `deviceready` event handler, [add the listeners](#adding-event-listeners).
 
-   In this example, the same listener is used for both the volume up and down buttons.
+   In this example, the same listener is used for both the volume up and down buttons:
 
    ```
    document.addEventListener('menubutton', onMenuButton);
@@ -128,7 +128,7 @@ To add event listeners for the menu, volume up, and volume down buttons:
 
 When you press the buttons, the result is shown in the system console.
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
