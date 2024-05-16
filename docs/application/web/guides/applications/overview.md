@@ -4,7 +4,7 @@ The [Tizen Studio](../../../tizen-studio/index.md) enables you to create Web app
 
 The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-## Web Application Models
+## Web application models
 
 The application models support a rich set of standard W3C/HTML5 features, which include various JavaScript APIs as well as additional HTML markups and CSS features. These features along with the Tizen Device APIs and UI framework support can be used to create rich Web applications in a variety of categories, such as contact, messaging, device information access, multimedia, graphics, and games.
 
@@ -32,7 +32,7 @@ Tizen provides various application models to allow you to create applications ta
 
   Addon is a type of extension for Web applications. Addon works while the Web applications run. They work commonly on all the Web applications installed and provide some common functionalities, which are not included in Web applications. For example, an addon can show an advertisement before a Web application runs. Addons can be installed and removed separately. However, you cannot run them solely without running the Web applications.
 
-## Application Package Manager
+## Application package manager
 
 The application package manager is one of the core modules of the Tizen application framework, and responsible for installing, uninstalling, and updating packages, and storing their information. Using the package manager, you can also retrieve information related to the packages that are installed on the device.
 
@@ -45,7 +45,7 @@ The application package manager module is expandable to support various types of
 Tizen supports both Web application packages and hybrid application packages, which combine a Web application and one or more native service applications. Applications in the same package follow the same installation life-cycle, handled by the application package manager.
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

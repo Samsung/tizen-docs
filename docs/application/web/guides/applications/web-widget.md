@@ -23,7 +23,7 @@ Since widgets are loaded on the widget board in the home screen layer, the only 
 ![User actions on a widget](./media/webwidget_tap_tasks.png)
 
 <a name="app_model"></a>
-## Application Model
+## Application model
 
 Web widgets use only a subset of HTML, CSS, and DOM APIs available for Web applications. Since a design goal of widgets is to provide a quick view of the widget content to the user, there are some restrictions in the Web widget implementation to prevent unnecessary performance degradation:
 
@@ -86,7 +86,7 @@ The Web widget life-cycle proceeds as follows:
 
 6. To uninstall the parent Web application and all its widgets, the user long-presses the Web application and selects its **-** button. In this case, the Web application package (including all its widgets and their resources) is deleted from the wearable device. The Tizen framework removes the Web application from the application tray and deletes all its widgets from the widget board.
 
-### Packaging and Configuration
+### Package and configuration
 
 The Web widget application must be included in the same package with its parent Web application. The Web widgets are placed in the `widget` subdirectory, which is generated automatically by Tizen Studio. The following example shows a typical structure of a Web application package with 2 Web widgets:
 
@@ -180,7 +180,7 @@ The following examples show the `config.xml` files in a Web application package:
   ```
 
 <a name="ui_design"></a>
-## UI Design
+## UI design
 
 Although only limited subsets of Tizen Web APIs are supported for Web widgets, they provide a wide range of UI designs sufficient for wearable devices. The following sections show various design examples using the HTML elements and CSS properties supported in Web widgets.
 
@@ -331,8 +331,8 @@ The following UI layouts with code examples are common use cases in widgets on w
 
   ![Vertical split layout](./media/webwidget_vertical_split_layout.png)
 
-> **Note**  
-> The widget engine only supports the `block`, `inline`, `inline-block`, and `none` values for the `display` property.
+> [!NOTE]
+> The widget engine only supports the `block`, `inline`, `inline-block`, and `none` values for the `display` property:
 > ```
 > #more {
 >    .display: inline-block;
@@ -657,7 +657,7 @@ function goAni() {
 ```
 
 <a name="event"></a>
-## Event Handling
+## Event handling
 
 The Web widget applications support the following events: `onload`, `onclick`, and `visibilityChange`:
 
@@ -762,7 +762,7 @@ The Web widget applications support the following events: `onload`, `onclick`, a
   ```
 
 <a name="communication"></a>
-## Communication Between Web Widgets and Other Applications
+## Communication between web widgets and other applications
 
 Web widgets can communicate with other applications in various ways. As shown in the following table, the available methods depend on the type of the application the Web widget interacts with.
 
@@ -775,7 +775,7 @@ Web widgets can communicate with other applications in various ways. As shown in
   [Web widget &lt;--&gt; Web server](#comm_server)                                | XMLHttpRequest |
 
 <a name="comm_parent"></a>
-### Communicating with a Web Application on a Wearable Device
+### Communicate with a web application on a wearable device
 
 For data sharing between a Web widget and its parent application on the same device, use the Tizen [Preference API](../../api/latest/device_api/wearable/tizen/preference.html). The Preference API allows a Web widget to communicate with its parent Web app (and vice versa) by storing key-value pairs in a hashtable-like data structure. The data stored by the Preference API has a "package" scope, which means that any widgets (or a Web app) in a package can access the data stored by the other widgets (or a Web app) in the same package. In addition, the Preference API does not need additional permissions, so no modifications in the `config.xml` file are required.
 
@@ -852,13 +852,13 @@ In addition, to launch an application, its application ID must be used to identi
 tizen.application.launch('ApplicationIDToLaunch', onGetAppsContextSuccess);
 ```
 
-> **Note**  
+> [!NOTE]
 > It is not recommended for a Web widget to launch other Web widgets. This feature is deprecated in Tizen 3.0.
 
 <a name="comm_host"></a>
-### Communicating with a Host Application on a Host Device
+### Communicate with a host application on a host device
 
-The widget and its parent application can reside on separate devices, as when a Web widget is on a wearable device while the host (parent) application is on a mobile device. In this case, the widget and parent applications can communicate through [SAP (Samsung Accessory Protocol)](https://developer.samsung.com/galaxy-watch/develop/sdk#samsung-accessory-sdk) to share data between the widget (the consumer in SAP) and the parent application (the provider in SAP).
+The widget and its parent application can reside on separate devices, as when a Web widget is on a wearable device while the host (parent) application is on a mobile device. In this case, the widget and parent applications can communicate through [SAP (Samsung Accessory Protocol)](https://developer.samsung.com/galaxy-watch/develop/sdk#samsung-accessory-sdk){:target="_blank"} to share data between the widget (the consumer in SAP) and the parent application (the provider in SAP).
 
 The following example shows SAP communication implementation between a Web widget on a Tizen wearable device and its parent application on an Android&trade; mobile device:
 
@@ -1071,7 +1071,7 @@ The following example shows SAP communication implementation between a Web widge
   ```
 
 <a name="comm_server"></a>
-### Communicating with a Web Server
+### Communicate with a web server
 
 To get data from a Web server through the Internet, use the XMLHttpRequest API. The Web widget engine, however, does not support the full XMLHttpRequest specification. It only supports the `GET` and `POST` methods, and the `TEXT` and `JSON` data types. This design decision emphasizes the read-only behavior of the Web widgets and meets the runtime memory requirements. Use Web widgets to display information in a compact manner, and do not create new resources using the `PUT` method: as user interaction is not intended and can exceed the widget's maximum allowed memory, it can lead to security risks.
 
@@ -1137,7 +1137,7 @@ function handleResponseJSON(e) {
 ```
 
 <a name="cookbook"></a>
-## Locale Information Formatting
+## Locale information formatting
 
 You can use a `Date` object to format locale information in a widget.
 
@@ -1151,7 +1151,7 @@ d.toLocaleTimeString(); /* '7:38:05 AM' */
 ```
 
 <a name="debug"></a>
-## Debugging
+## Debug
 
 You can debug and validate your Web widget. Currently, there are 2 approaches to debugging a Web widget:
 
@@ -1161,7 +1161,7 @@ You can debug and validate your Web widget. Currently, there are 2 approaches to
 The validation process checks whether a Web widget is compliant with the specifications and whether it contains unsupported HTML elements and CSS properties.
 
 <a name="consolelog"></a>
-### Debugging with the Console Log
+### Debug with the console log
 
 Using the `console.log()` method is a simple and convenient way of debugging a Web widget. The following figure shows how to debug a Web widget using Tizen Studio.
 
@@ -1182,7 +1182,7 @@ The following figure shows the `sbd dlog` command in action.
 ![Debugging messages in the terminal](./media/webwidget_debug_terminal.png)
 
 <a name="web_debug"></a>
-### Debugging with the Web Debugger
+### Debug with the web debugger
 
 To make Web widgets lighter, debugging features may not be supported by default. In this case, take the following steps to use a built-in Web application debugger:
 
@@ -1202,7 +1202,7 @@ In addition, you can still use the `console.log()` method as shown in the follow
 
 ![Web debugger](./media/webwidget_debug_web_consolelog.png)
 
-Similarly, you can also use the following command to print the `console.log()` messages in a terminal.
+Similarly, you can also use the following command to print the `console.log()` messages in a terminal:
 
 ```
 sdb dlog | grep ConsoleMessage
@@ -1215,7 +1215,7 @@ The following figure shows the `sdb dlog` command in action.
 ![Debugging messages in the terminal](./media/webwidget_debug_web_terminal.png)
 
 <a name="validate"></a>
-### Validating a Web Widget
+### Validate a web widget
 
 You can validate a Web widget using the following validators:
 
@@ -1238,7 +1238,7 @@ When the validation is complete, its results are shown in the **Problems** view.
 ![Web widget validation result](./media/webwidget_validate_result.png)
 
 <a name="performance"></a>
-## Performance Considerations
+## Performance considerations
 
 It is important to prevent unnecessary performance degradation in widgets. As a result, some restrictions must be followed when implementing Web widgets:
 
@@ -1592,6 +1592,6 @@ After removal, no corresponding event is fired because no event is considered ne
 
 For the Web widget file and image size limits, see [Performance Considerations](#performance).
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.3.2 for Wearable
