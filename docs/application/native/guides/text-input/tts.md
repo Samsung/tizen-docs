@@ -266,15 +266,15 @@ To set and unset callbacks, follow these steps:
 
      |           Callback           |               Invoked when                | TTS state |
      | :--------------------------: | :---------------------------------------: | :-------: |
-     |  Utterance started callback  | playing the synthesized audio is started  | `TTS_STATE_READY` > `TTS_STATE_PLAYING` |
-     | Utterance completed callback | playing the synthesized audio is finished | `TTS_STATE_PLAYING` (The state is NOT changed until `tts_stop()` is called.) |
+     |  Utterance started callback  | Playing the synthesized audio is started  | `TTS_STATE_READY` > `TTS_STATE_PLAYING` |
+     | Utterance completed callback | Playing the synthesized audio is finished | `TTS_STATE_PLAYING` (The state is NOT changed until `tts_stop()` is called.) |
 
         > [!NOTE]
-        > Utterance completed callback is NOT invoked when
+        > Utterance completed callback is NOT invoked when the following occurs:
         >
-        > (1) your application calls `tts_stop()`.
+        > (1) Your application calls `tts_stop()`.
         >
-        > (2) playing the synthesized audio is stopped by other application.
+        > (2) Playing the synthesized audio is stopped by another application.
         >
         > Although the utterance completed callback is not invoked, a state changed callback will be invoked. (The state will be changed from `TTS_STATE_PLAYING` to `TTS_STATE_READY`.)
 

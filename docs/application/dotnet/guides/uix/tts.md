@@ -247,15 +247,15 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
     
      |     Event handler    |               Invoked when                | TTS state |
      | :------------------: | :---------------------------------------: | :-------: |
-     |  `UtteranceStarted`  | playing the synthesized audio is started  | `Ready` > `Playing` |
-     | `UtteranceCompleted` | playing the synthesized audio is finished | `Playing` (The state is NOT changed until `Stop()` is called.) |
+     |  `UtteranceStarted`  | Playing the synthesized audio is started  | `Ready` > `Playing` |
+     | `UtteranceCompleted` | Playing the synthesized audio is finished | `Playing` (The state is NOT changed until `Stop()` is called.) |
 
     > [!NOTE]
-    > `UtteranceCompleted` is NOT invoked when
+    > `UtteranceCompleted` is NOT invoked when the following occurs:
     >
-    > (1) your application calls `Stop()`.
+    > (1) Your application calls `Stop()`.
     >
-    > (2) playing the synthesized audio is stopped by other application.
+    > (2) Playing the synthesized audio is stopped by another application.
     >
     > Although the `UtteranceCompleted` event handler is not invoked, a `StateChanged` event handler will be invoked. (The state will be changed from `Playing` to `Ready`.)
     
