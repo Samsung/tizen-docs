@@ -4,7 +4,7 @@ The notepad application shows all the notes in the main page, and allows the use
 
 This feature is supported in mobile and wearable applications only.
 
-To create a simple notepad application using the TAU library:
+To create a simple notepad application using the TAU library, follow the steps below:
 
 1. Generate an application from Tizen Studio.
 
@@ -68,7 +68,7 @@ To create a simple notepad application using the TAU library:
 
       - Add content for the main page by adding a `div` element with the `_ui-content` class. Add to this a `ul` element, which creates the list of notes.  
         Set the `data-scroll="y"` and `data-handler="true"` attributes.  
-        The item in the list is represented as a `li` element. When a note on the main page is clicked, the application triggers the `changepage` event to the `editor` page and shows the item.
+        The item in the list is represented as a `li` element. When a note on the main page is clicked, the application triggers the `changepage` event to the `editor` page and shows the item:
 
         ```
         <div class="ui-content" data-scroll="y" data-handler="true">
@@ -76,7 +76,7 @@ To create a simple notepad application using the TAU library:
         </div>
         ```
 
-      - Add a navigation button to the application to change to the editor page. The button is placed in the footer, and it is created from an `a` element,			which has the `id="newBtn"` attribute.
+      - Add a navigation button to the application to change to the editor page. The button is placed in the footer, and it is created from an `a` element,			which has the `id="newBtn"` attribute:
 
         ```
         <div class="ui-footer">
@@ -100,14 +100,14 @@ To create a simple notepad application using the TAU library:
       </div>
       ```
 
-		> **Note**  
+		> [!NOTE]
 		> In mobile applications, pages are constructed using the `data-role` attribute, while the wearable applications use the `class` attribute. In addition, the value of the `data-role` attribute in mobile applications differs from the `class` attribute value in the wearable applications.
 
    2. On the editing page, the header and footer are similar to the main page.
 
        The only difference is that the action triggered after pressing the button adds an item to the items array and adds the item to the top of the visible list. The editing page is defined with a `div` block with the `id="editor"` and `class="ui-page"` attributes.
 
-      The editing page is needed for adding or editing a selected note. It has a `textarea` element to allow the user to edit the selected note.
+      The editing page is needed for adding or editing a selected note. It has a `textarea` element to allow the user to edit the selected note:
 
       ```
       <!--This code applies to wearable applications-->
@@ -172,7 +172,7 @@ To create a simple notepad application using the TAU library:
    ```
 
 6. Create the `main.js` file and create a function to close the application.  
-   The application is started when the HTML content is ready.
+   The application is started when the HTML content is ready:
 
    ```
    document.addEventListener('DOMContentLoaded', function() {
@@ -373,7 +373,7 @@ To create a simple notepad application using the TAU library:
 
    Now the application is ready and you can deploy it to a device or emulator.
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable

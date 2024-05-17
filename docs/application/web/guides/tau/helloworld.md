@@ -23,13 +23,13 @@ The following example shows a basic TAU template:
 </html>
 ```
 
-## Scaling the UI
+## Scale the UI
 
 The Tizen Advanced UI (TAU)-based template provides 2 scaling methods: device-width and fixed-width.
 
 - Device-width scaling
 
-  This scaling mode is suited for most mobile devices, such as Tizen, iPhone, and Android&trade;. In this mode, the viewport width is set to `device-width`, enabling rem scaling using the Rem and Em units. These units calculate the size of a source element automatically based on the container font size (Em) or the base font size (Rem). In Tizen Web applications, a 320 px screen width is assumed.
+  This scaling mode is suited for most mobile devices, such as Tizen, iPhone, and Android&trade;. In this mode, the viewport width is set to `device-width`, enabling rem scaling using the Rem and Em units. These units calculate the size of a source element automatically based on the container font size (Em) or the base font size (Rem). In Tizen Web applications, a 320 px screen width is assumed:
 
   ```
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -51,7 +51,7 @@ The Tizen Advanced UI (TAU)-based template provides 2 scaling methods: device-wi
   <meta name="viewport" content="width=360, initial-scale=1, user-scalable=no">
   ```
 
-## Importing TAU
+## Import TAU
 
 You can import TAU with HTML. For better performance, all CSS files must be included in the header and all script elements must be put before the body element's close tag:
 
@@ -68,24 +68,24 @@ You can import TAU with HTML. For better performance, all CSS files must be incl
 </html>
 ```
 
-In HTML, use the `<script>` and `<link>` elements. These default elements are used to load the basic Tizen Advanced UI (TAU) libraries that must be included in Tizen Web applications. The loaded libraries are:
+In HTML, use the `<script>` and `<link>` elements. These default elements are used to load the basic Tizen Advanced UI (TAU) libraries that must be included in Tizen Web applications. The loaded libraries are described below:
 
 - TAU library: `tau(.min).js`  
    This element is mandatory, as it imports the TAU library, which you need to use the TAU JavaScript Interface.
 - TAU theme: `tau(.min).css`  
    This element is also mandatory, as it imports the TAU theme.
 
-## Running Custom JavaScript and CSS
+## Run custom JavaScript and CSS
 
 You can add an additional `<script src="<CUSTOM_LIBRARY>">` or `<link rel="stylesheet" src="<CUSTOM_CSS>">` element to include your own scripts and style sheets. However, place them **after** the default `<script>` elements, as you can use any TAU APIs provided by the default libraries.
 
-To load your JavaScript file, include the file in the `<script>` element in the HTML header. Since the TAU files are already loaded, you can use any APIs from these libraries as well.
+To load your JavaScript file, include the file in the `<script>` element in the HTML header. Since the TAU files are already loaded, you can use any APIs from these libraries as well:
 
 ```
 <script src="{YOUR_SCRIPT_PATH}"></script>
 ```
 
-## Creating a Page in the Body
+## Create a page in the body
 
 The body section of the HTML file contains 1 or more pages.
 
@@ -145,7 +145,7 @@ The following example shows a basic sample code for Hello World:
 </html>
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

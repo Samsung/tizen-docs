@@ -4,9 +4,9 @@ Each UI component in TAU has its own selector for autodetecting in an HTML file.
 
 This feature is supported in mobile and wearable applications only.
 
-## Defining UI Components
+## Define UI components
 
-You can define UI components in 2 different ways using selectors:
+You can define UI components in 2 different ways using selectors, below is the description of the 2 possible ways:
 
 - With a `class` selector
 
@@ -46,11 +46,11 @@ You can define UI components in 2 different ways using selectors:
   </div>
   ```
 
-## Setting UI Component Options
+## Set UI component options
 
 TAU supports several ways of setting options for a UI component. For more information, see [Mobile UI Components](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm) and [Wearable UI Components](../../api/latest/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm).
 
-To set the options:
+To set the options, follow the steps below:
 
 - Initializing options with the `data-` attribute
 
@@ -81,7 +81,7 @@ To set the options:
 
 - Setting options with a manual constructor
 
-  Options can be set as arguments to the component constructor. When using options as arguments, you must use the camelCase name.
+  Options can be set as arguments to the component constructor. When using options as arguments, you must use the CamelCase name.
 
   The following example shows the use of a manual constructor:
 
@@ -114,7 +114,7 @@ To set the options:
 
 - Setting options with a method call
 
-  To set options dynamically, use the `option`() method.
+  To set options dynamically, use the `option`() method:
 
   ```
   <div id="hasSectionchangerPage" class="ui-page">
@@ -142,11 +142,11 @@ To set the options:
   </script>
   ```
 
-## Managing UI Components with jQuery
+## Manage UI components with jQuery
 
 You can use jQuery with TAU for convenience. Also for backward compatibility, TAU supports the jQuery interface for UI components. However, it is strongly recommended to use the new TAU style.
 
-To manage the UI components if the jQuery library is loaded:
+To manage the UI components if the jQuery library is loaded, follow the steps below:
 
 1. Create the UI component:
 
@@ -171,7 +171,7 @@ To manage the UI components if the jQuery library is loaded:
    </script>
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable

@@ -6,7 +6,7 @@ This feature is supported in mobile and wearable applications only.
 
 To download and build TAU from Git:
 
-> **Note**  
+> [!NOTE]
 > To build a TAU library, ensure that you have both Git and `Node.js` installed.
 
 1. Download the Git repository:
@@ -57,7 +57,7 @@ To download and build TAU from Git:
       grunt build
       ```
 
-## Related Information
+## Related information
 * Dependencies      
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
