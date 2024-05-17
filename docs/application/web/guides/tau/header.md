@@ -35,7 +35,7 @@ The header component supports the following events.
 
 You can use the `headerexpand` and `headercollapse` events if you need to do something when the header expands and collapses.
 
-The following examples show header events with Marquee.
+The following examples show header events with Marquee:
 
 ```
 var page = document.querySelector('#myPage');
@@ -58,6 +58,6 @@ page.addEventListener('headerexpandcomplete', function() {
 }, false);
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.3.1 and Higher for Wearable

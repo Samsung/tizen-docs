@@ -10,7 +10,7 @@ The following figure shows the layout of the processing component in a rectangul
 
 ![Processing component on a rectangular device](./media/rectangular_processing.png) ![Processing component on a circular device](./media/round_processing.png)
 
-To implement the processing component:
+To implement the processing component, follow the steps below:
 
 1. Edit the HTML code to add the processing component to your application screen:
 
@@ -46,6 +46,6 @@ To implement the processing component:
    }
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.3.1 and Higher for Wearable

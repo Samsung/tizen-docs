@@ -18,7 +18,7 @@ Rotary events are used to deliver the rotary device or sensor data to the applic
 
 Some UI components provide interactive features with this event. For example, you can implement some rotary-dependent behaviors and control the application page, circle-shaped progress bar, and section changer with a rotary event.
 
-## Scrolling a Page or Popup
+## Scroll a page or popup
 
 You can scroll the content area in a page or popup with the rotary event.
 
@@ -106,7 +106,7 @@ To attach a rotary event, query a scrollable DOM:
 </script>
 ```
 
-## Controlling a Snap List
+## Control a snap list
 
 You can scroll to a position in a snap list with the rotary event:
 
@@ -163,7 +163,7 @@ You can scroll to a position in a snap list with the rotary event:
 </script>
 ```
 
-## Changing the Section Changer Index
+## Change the section changer index
 
 You can between the section changer component sections with the rotary event:
 
@@ -245,7 +245,7 @@ You can between the section changer component sections with the rotary event:
 </script>
 ```
 
-## Changing the Circle-shaped Progress Bar Value
+## Change the circle-shaped progress bar value
 
 You can change the value of the circle-shaped progress bar component with the rotary event:
 
@@ -311,6 +311,6 @@ You can change the value of the circle-shaped progress bar component with the ro
 </script>
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.3.1 and Higher for Wearable
