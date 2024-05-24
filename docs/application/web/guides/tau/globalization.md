@@ -1,12 +1,12 @@
 # Globalization
 
-The TAU Globalize utility supports internationalization and localization. It wraps the [Globalize](https://github.com/jquery/globalize) functionality for easy access from Tizen Web applications, and it is extended to support right-to-left (RTL) languages.
+The TAU Globalize utility supports internationalization and localization. It wraps the [Globalize](https://github.com/jquery/globalize){:target="_blank"} functionality for easy access from Tizen Web applications, and it is extended to support right-to-left (RTL) languages.
 
 This feature is supported in mobile and wearable applications only.
 
 ## jQuery and Globalize
 
-Globalize is a jQuery JavaScript library for internationalization and localization that leverages the official Unicode CLDR JSON data. The library works both for the browser and as a Node.js module. jQuery and Globalize have dependencies with [cldr.js](https://github.com/rxaviers/cldrjs), which is a CLDR low-level manipulation tool.
+Globalize is a jQuery JavaScript library for internationalization and localization that leverages the official Unicode CLDR JSON data. The library works both for the browser and as a Node.js module. jQuery and Globalize have dependencies with [cldr.js](https://github.com/rxaviers/cldrjs){:target="_blank"}, which is a CLDR low-level manipulation tool.
 
 Globalize:
 
@@ -27,18 +27,18 @@ The Unicode CLDR provides the key building blocks for software to support the wo
 - Country information: language usage, currency information, calendar preference and week conventions, and postal and telephone codes
 - ISO and BCP 47 code support (such as cross-mappings) and keyboard layouts
 
-CLDR uses the XML format provided by UTS #35: Unicode Locale Data Markup Language (LDML). LDML is a format used not only for CLDR, but also for the general interchange of locale data. For more information on CLDR, see [CLDR release notes](http://cldr.unicode.org/index/downloads/cldr-27), and to download the JSON format file, see [JSON Data from the Unicode CLDR Project](https://github.com/unicode-cldr/cldr-json).
+CLDR uses the XML format provided by UTS #35: Unicode Locale Data Markup Language (LDML). LDML is a format used not only for CLDR, but also for the general interchange of locale data. For more information on CLDR, see [CLDR release notes](http://cldr.unicode.org/index/downloads/cldr-27){:target="_blank"}, and to download the JSON format file, see [JSON Data from the Unicode CLDR Project](https://github.com/unicode-cldr/cldr-json){:target="_blank"}.
 
 The TAU Globalize utility uses the CLDR 26 release, and when you create a Tizen Web application project, you find CLDR in the `<project>/lib/tau/<profile>js/cldr-data` folder.
 
-## Using the Globalize Utility
+## Use the Globalize utility
 
-To use the TAU Globalize utility in your application:
+To use the TAU Globalize utility in your application, follow these steps:
 
 1. Download the following dependency files for your application:
 
-   - [Cldr](https://github.com/rxaviers/cldrjs)  (v0.4.0)
-   - [Globalize](https://github.com/jquery/globalize) (v1.0.0-alpha.17)
+   - [CLDR](https://github.com/rxaviers/cldrjs){:target="_blank"}  (v0.4.0)
+   - [Globalize](https://github.com/jquery/globalize){:target="_blank"} (v1.0.0-alpha.17)
    - [Cldr-date](http://unicode.org/Public/cldr/26/json-full.zip) (26 version) main and supplemental
 
 2. Create a folder structure, as shown in the following table.
@@ -120,7 +120,7 @@ To use the TAU Globalize utility in your application:
    | Number module | `cldr/main/locale/numbers.json`<br>`cldr/supplemental/numberingSystems.json` |
    | Plural module | `cldr/supplemental/plurals.json` (for cardinals)<br>`cldr/supplemental/ordinals.json` (for ordinals) |
 
-## Using the Globalize Utility Methods
+## Use the Globalize utility methods
 
 The following code snippets show how to use the TAU Globalize utility methods:
 
@@ -138,7 +138,7 @@ The following code snippets show how to use the TAU Globalize utility methods:
   });
   ```
 
-   For more information, see the [currency unit standard in ISO 4217](http://en.wikipedia.org/wiki/ISO_4217).
+   For more information, see the [currency unit standard in ISO 4217](http://en.wikipedia.org/wiki/ISO_4217){:target="_blank"}.
 
 - `formatDate()`:
 
@@ -154,7 +154,7 @@ The following code snippets show how to use the TAU Globalize utility methods:
   });
   ```
 
-  For more information, see [date-formatter](https://github.com/jquery/globalize/blob/master/doc/api/date/date-formatter.md).
+  For more information, see [date-formatter](https://github.com/jquery/globalize/blob/master/doc/api/date/date-formatter.md){:target="_blank"}.
 
 - `getCalendar()`:
 
@@ -175,7 +175,7 @@ The following code snippets show how to use the TAU Globalize utility methods:
 
   This method supports custom locale data.
 
-  1. Create a directory for each locale that has localized content under the locales directory in the project root. The locale names are defined in the [W3C IANA Language Subtag Registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry).
+  1. Create a directory for each locale that has localized content under the locales directory in the project root. The locale names are defined in the [W3C IANA Language Subtag Registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry){:target="_blank"}.
 
      ```
      index.html
@@ -227,7 +227,7 @@ The following code snippets show how to use the TAU Globalize utility methods:
      ```
 
 - `messageFormatter()`:  
-   This method returns a function that formats a message using the ICU message format pattern. For more information, see [message-formatter](https://github.com/jquery/globalize/blob/master/doc/api/message/message-formatter.md).
+   This method returns a function that formats a message using the ICU message format pattern. For more information, see [message-formatter](https://github.com/jquery/globalize/blob/master/doc/api/message/message-formatter.md){:target="_blank"}.
 
   1. Create a locale resource in the locales path:
 
@@ -261,7 +261,7 @@ The following code snippets show how to use the TAU Globalize utility methods:
      });
      ```
 
-## Right-to-left (RTL) Language Support
+## Right-to-left (RTL) language support
 
 TAU offers 2 ways to handle right-to-left (RTL) languages:
 
@@ -302,7 +302,7 @@ The following examples show how to use the locale-specific CSS:
   }
   ```
 
-The following example shows how to use the RTL property in a locale object (the `rtl` variable). If a given locale has an RTL direction, the variable is `true`.
+The following example shows how to use the RTL property in a locale object (the `rtl` variable). If a given locale has an RTL direction, the variable is `true`:
 
 ```
 var globalize = tau.util.globalize,
@@ -315,7 +315,7 @@ document.addEventListener('pageshow', function() {
 });
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

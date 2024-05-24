@@ -4,7 +4,7 @@ You can create a simple application using TAU Animation. With the following exam
 
 This feature is supported in mobile and wearable applications only.
 
-## Loading a TAU Animation
+## Load a TAU Animation
 
 You can import the TAU Animation module with HTML:
 
@@ -17,10 +17,10 @@ You can import the TAU Animation module with HTML:
 
 `tau.animation` is the namespace of the TAU Animation module. You can call TAU Animation methods through this namespace.
 
-> **Note**  
+> [!NOTE]
 > To get the `tau.animation.min.js` library, create a new project from the [UIComponent](/development/sample/web/UI/TAU_UI_Components) sample. The library is included in the sample's `lib/tau/animation` directory.
 
-## Creating TAU Animations
+## Create TAU Animations
 
 The following code snippet shows how to create a TAU Animation:
 
@@ -77,7 +77,7 @@ Available animation methods:
 
 - Option
 
-  An `option` consists of a duration, ease, delay, callback, and stagger. In order to provide better usage, if you want to use only duration, you can set the duration as a number value like in the previous examples. If any other options are needed, you must make an `{option}` object and insert the `duration: value` into the object.
+  An `option` consists of a duration, ease, delay, callback, and stagger. In order to provide better usage, if you want to use only duration, you can set the duration as a number value like in the previous examples. If any other options are needed, you must make an `{option}` object and insert the `duration: value` into the object:
 
   ```xml
   <div id="redBox" style="background-color: 'red'; position:absolute; width:100px; height:100px;"></div>
@@ -113,7 +113,7 @@ Available animation methods:
   t('.box').tween({rotateZ: 120}, {duration: 1000, stagger: 200});
   ```
 
-The following example shows the full code for the first animation described above.
+The following example shows the full code for the first animation described above:
 
 ```xml
 <!DOCTYPE html>
@@ -156,7 +156,7 @@ The following example shows the full code for the first animation described abov
 </html>
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

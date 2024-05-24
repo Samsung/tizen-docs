@@ -10,7 +10,7 @@ As the Tizen version number changes, TAU has been updated with new features. Whe
 - New and deprecated components in 2.4
 - Gesture event handling
 
-## Backward Compatibility in TAU
+## Backward compatibility in TAU
 
 To support backward compatibility, TAU provides the `tau.support-2.3.js` and `tau.support-2.3.css` files.
 
@@ -28,11 +28,10 @@ If you want to use deprecated components, you can import those files. See the fo
 </html>
 ```
 
-> **Note**
->
+> [!NOTE]
 > The `tau.support-2.3` file is only for backward compatibility. The above components are **DEPRECATED since Tizen 2.4** and are deleted in Tizen 3.0.
 
-## Component Definitions
+## Component definitions
 
 Since Tizen 2.4, it is strongly recommended to use the `class` selector to define the components in HTML files. The `"data-role"` selector has been deprecated and is no longer supported.
 
@@ -65,8 +64,8 @@ The following example shows how to define the UI components before and after:
   </div>
   ```
 
-  > **Note**  
-  > The old selector with `data-role` can still be used in 2.4, but it is **DEPRECATED** and no longer supported in the next version.
+  > [!NOTE]
+  > The old selector with `data-role` can still be used in Tizen 2.4, but it is **DEPRECATED** and no longer supported in the next version.
 
 - After:
 
@@ -105,7 +104,7 @@ For more information, see the [Mobile UI Component API Reference](../../api/late
 | ---------------------------------------- | ---------------------------------------- |
 | [Checkbox](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm) | The checkbox component changes the default browser checkboxes to a form more adapted to the mobile environment. |
 | [Colored List View](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm) | The colored list view component shows each list item with a gradient background color. |
-| [Dropdown Menu](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm) | The dropdown menu component is used to select one option. It is created as a drop-down list form. |
+| [Dropdown Menu](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm) | The dropdown menu component is used to select one option. It is created as a dropdown list form. |
 | [Expandable](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm) | The expandable component allows you to expand or collapse content when tapped. |
 | [Floating Actions](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm) | The floating actions component shows a floating action button that can be moved left and right. |
 | [Grid View](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm) | The grid view component provides a grid-type list and presents content that are easily identified as images. |
@@ -118,9 +117,9 @@ For more information, see the [Mobile UI Component API Reference](../../api/late
 | [Tabs](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm) | The tabs component shows an unordered list of buttons on the screen wrapped together in a single group. |
 | [Text Enveloper](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm) | The text enveloper component changes a text item to a button. |
 
-## Deprecated Components
+## Deprecated components
 
-Some mobile components are deprecated and no longer supported since 2.4. Instead of using deprecated components, see the following table and replace the components by new components or an HTML element.
+Some mobile components are deprecated and no longer supported since Tizen 2.4. Instead of using deprecated components, see the following table and replace the components by new components or an HTML element.
 
 For more information on deprecated components, see the [Mobile Component API Reference](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm).
 
@@ -557,7 +556,7 @@ If your application used the above deprecated components, see the following exam
   </script>
   ```
 
-## Event Handling
+## Handle events
 
 Some events have changed. The following examples illustrate how to handle events:
 
@@ -631,6 +630,6 @@ Some events have changed. The following examples illustrate how to handle events
   button.addEventListener('click', eventHandler);
   ```
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
