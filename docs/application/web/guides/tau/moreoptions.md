@@ -10,7 +10,7 @@ The following figure shows the more options component in a rectangular and circu
 
 ![More options component on a rectangular device](./media/rectangular_moreoption.png) ![More options component on a circular device](./media/round_moreoption.png)
 
-To implement the more options component:
+To implement the more options component, follow these steps:
 
 1. Edit the HTML code to add the more options component to your application screen:
 
@@ -114,6 +114,6 @@ To implement the more options component:
    })();
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.3.1 and Higher for Wearable

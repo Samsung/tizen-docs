@@ -10,7 +10,7 @@ The following figure shows the layout of the thumbnail component in a rectangula
 
 ![Thumbnail component on a rectangular device](./media/rectangular_thumbnail.png) ![Thumbnail component on a circular device](./media/round_thumbnail.png)
 
-To implement the thumbnail component:
+To implement the thumbnail component, follow these steps:
 
 1. Edit the HTML code to add the thumbnail component to your application screen:
 
@@ -92,6 +92,6 @@ To implement the thumbnail component:
    })();
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.3.1 and Higher for Wearable
