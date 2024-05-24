@@ -4,7 +4,7 @@ You can perform operations on files and directories stored in the device filesys
 
 The File API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the File API include:
+The main features of the File API include the following:
 
 - Resolving the filesystem
 
@@ -28,7 +28,7 @@ The main features of the File API include:
 
 ## Prerequisites
 
-To enable your application to use the file functionality:
+To enable your application to use the file functionality, follow these steps:
 
 1. To perform any Cordova-related operations, you must wait until Cordova is fully set up (the `deviceready` event occurs):
 
@@ -49,9 +49,9 @@ To enable your application to use the file functionality:
    <tizen:privilege name="http://tizen.org/privilege/filesystem.write"/>
    ```
 
-## Resolving Filesystem Entries
+## Resolve filesystem entries
 
-To resolve the initial root for other filesystem operations:
+To resolve the initial root for other filesystem operations, follow these steps:
 
 - Use the `requestFileSystem()` global async method:
 
@@ -67,7 +67,7 @@ To resolve the initial root for other filesystem operations:
       };
       ```
 
-    - Call the method with the created callbacks. The filesystem request can use a temporary or persistent filesystem with a defined size.
+    - Call the method with the created callbacks. The filesystem request can use a temporary or persistent filesystem with a defined size:
 
       ```
       requestFileSystem(TEMPORARY, 1024*1024, successCallback, errorCallback);
@@ -106,9 +106,9 @@ To resolve the initial root for other filesystem operations:
     Entry name example.txt
     ```
 
-## Operating on Directories
+## Operate on directories
 
-To create directories and files, delete directories, and read entries within directories:
+To create directories and files, delete directories, and read entries within directories, follow these steps:
 
 - To create a directory, you can use the `getDirectory()` method:
 
@@ -189,9 +189,9 @@ To create directories and files, delete directories, and read entries within dir
   success
   ```
 
-## Operating on Entries
+## Operate on entries
 
-To move, copy, and delete entries, or access entry metadata, parent information, and URL:
+To move, copy, and delete entries, or access entry metadata, parent information, and URL, follow these steps:
 
 - To look up metadata about an entry, you can use the `getMetadata()` method:
 
@@ -283,7 +283,7 @@ To move, copy, and delete entries, or access entry metadata, parent information,
   });
   ```
 
-  > **Note**  
+  > [!NOTE]
   > You cannot delete a non-empty directory or the filesystem root directory.
 
   The following output is shown in the system log:
@@ -309,9 +309,9 @@ To move, copy, and delete entries, or access entry metadata, parent information,
   URL: file:///home/owner/apps_rw/WfigBlWDyf/tmp/testDirectory/
   ```
 
-## Operating on Files
+## Operate on files
 
-To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entries). To create a writer for a file and access file details:
+To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entries). To create a writer for a file and access file details, follow these steps:
 
 - To create a `FileWriter` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileWriter), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileWriter), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileWriter) applications), use the `createWriter()` method:
 
@@ -328,7 +328,7 @@ To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entrie
   created fileWriter object for testFile.txt
   ```
 
-- To access a `File` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#File), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#File), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#File) applications), use the `file()` method. The object represents the current state of the file.
+- To access a `File` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#File), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#File), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#File) applications), use the `file()` method. The object represents the current state of the file:
 
   ```
   var f; /* Must be a FileEntry object resolved using methods presented before */
@@ -343,9 +343,9 @@ To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entrie
   created file object for example.txt
   ```
 
-## Reading and Writing File Content
+## Read and write file content
 
-To read and write file content:
+To read and write file content, follow these steps:
 
 - To read a file and return the data as a base64-encoded data URL, you can use the `readAsDataURL()` method:
 
@@ -528,7 +528,7 @@ To read and write file content:
   abort
   ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

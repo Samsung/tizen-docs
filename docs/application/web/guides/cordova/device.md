@@ -29,9 +29,9 @@ function onDeviceReady() {
 ```
 
 <a name="loginfo"></a>
-## Accessing Device Properties
+## Access device properties
 
-To retrieve information on the device, Cordova, and operating system, and output it in the system log:
+To retrieve information on the device, Cordova, and operating system, and output it in the system log, follow these steps:
 
 1. Prepare a handler for the `deviceready` event:
 
@@ -56,7 +56,7 @@ To retrieve information on the device, Cordova, and operating system, and output
    ```
 
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 3.0 and Higher for Mobile
    - Tizen 3.0 and Higher for Wearable
