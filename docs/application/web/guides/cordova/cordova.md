@@ -37,7 +37,7 @@ You can use the following Cordova features in your Web applications:
 - [Notification Dialogs](./dialogs.md)  
 	You can make different types of input dialog boxes and notifications to the user.
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
