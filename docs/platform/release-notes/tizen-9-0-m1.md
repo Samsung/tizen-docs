@@ -392,9 +392,7 @@ Release date: May 31, 2024
   - New error type to handle no carrier exception has been added.
   - Supports automatic connection when AP changes from WPA2 to WPA3.
 - Bluetooth
-  - New API for setting advertising flags has been added.
-  - New APIs for extended advertising have been added.
-  - New APIs for scanning extended advertisement have been added.
+  - The API to get the maximum buffer size of L2CAP socket has been added.
 - Open source
   - Curl has been upgraded to version 8.5.0.
 
@@ -407,10 +405,17 @@ Release date: May 31, 2024
   - The issue where not being able to support SSID other than utf-8 format in netlink scan has been fixed.
   - The issue where unnecessary background scan attempts has been fixed.
 - Bluetooth
-  - Failed issue when you fill advertising data with maximum bytes has been fixed.
-  - Invalid handle issue when gatt connected with the bonded device has been fixed.
-  - Registering gatt client failed issue has been fixed.
-  - EIR manufacturer data parsing issue has been fixed.
+  - The crash issue in LE scanning has been fixed.
+  - The LE scan duty value for low energy has been modified.
+    New interval value for low energy is 1400 ms.
+    New window value for low energy is 140 ms.
+  - Some GATT operation fail issues have been fixed.
+  - The PBAP operation fail issue has been fixed.
+  - The issue where the previous trigger_bond_info was deleted when requesting bond has been fixed.
+  - The issue where event did not occur when CoC connection failed has been fixed.
+  - The issue where CoC pending info was not cleared forever has been fixed.
+  - The issue where more than 255 GATT attributes could not be supported has been fixed.
+  - The issue where server MTU changed callback was not called has been fixed.
 
 
 ### Security
