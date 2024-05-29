@@ -29,7 +29,7 @@ Release date: May 31, 2024
 
 - Device and sensor management
   - The priority-based sound feedback playback has been added and the getter of supported theme ID list.
-  - The key mapping between linux kernel input key code and button has been supported when adding new hardware button.
+  - The key mapping between Linux kernel input key code and button has been supported when adding new hardware button.
   - The getter of power lock count and callback for change of power lock count have been added.
 
 - OS upgrade
@@ -37,11 +37,11 @@ Release date: May 31, 2024
   - The update-control plugin has been supported in order to separate the vendor/product dependent code.
 
 - kmod
-  - Version 30 has been upgaded to version 31.
+  - Version 30 has been upgraded to version 31.
 - f2fs-tools
-  - Version 1.14.0 has been upgaded to version 1.16.0.
+  - Version 1.14.0 has been upgraded to version 1.16.0.
 - libdrm
-  - Version 2.4.114 has been upgaded to version 2.4.118.
+  - Version 2.4.114 has been upgraded to version 2.4.118.
 - device-mapper
   - Version 2.02.98 has been upgraded to version 2.03.22.
 - KDBus
@@ -54,7 +54,7 @@ Release date: May 31, 2024
 - storaged
  - Tizen.System.Feedback issue that does not detect 'unmountable event' has been fixed.
 - sensord
- - The exception handling code when listener connection is failed has beed added.
+ - The exception handling code when listener connection is failed has been added.
 
 
 ### System (base)
@@ -401,7 +401,7 @@ Release date: May 31, 2024
 - Network
   - The logic to parse device information in multiple device environments has been fixed.
   - D-Bus signal handling code for Wi-Fi has been fixed.
-  - The issues in the code for storing and loading wifi configuration have been fixed.
+  - The issues in the code for storing and loading Wi-Fi configuration have been fixed.
   - The issue where not being able to support SSID other than utf-8 format in netlink scan has been fixed.
   - The issue where unnecessary background scan attempts has been fixed.
 - Bluetooth
@@ -439,7 +439,7 @@ Release date: May 31, 2024
 
 - WebGPU has been supported.
 - Sharescreen API has been supported.
-- Picture in Picture(Document, Media Session API) has been supported.
+- Picture in Picture (Document, Media Session API) has been supported.
 - Third party cookies are not allowed in a page for Security.
 - clang has been upgraded to version 18
 
