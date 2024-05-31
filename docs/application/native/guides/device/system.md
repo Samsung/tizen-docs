@@ -536,10 +536,13 @@ The following table lists the platform feature keys:
 | Key                                      | Type     | Description                              |
 |------------------------------------------|----------|------------------------------------------|
 | `http://tizen.org/feature/platform.core.api.version` | `String` | The platform returns the version of Tizen Core API in the "[Major].[Minor]" format.<br>If a device does not provide Tizen Core API, it returns an empty string for this key. |
+| `http://tizen.org/feature/platform.core.abi` | `String` | The platform returns the ABI information. |
 | `http://tizen.org/feature/platform.core.cpu.arch` | `String` | The platform returns the CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv6` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv6 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv7 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv8` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv8 CPU architecture. |
+| `http://tizen.org/feature/platform.core.cpu.arch.riscv32` | `bool`   | The platform returns `true` for this key, if the device runs on the RISC-V 32-bit CPU architecture. |
+| `http://tizen.org/feature/platform.core.cpu.arch.riscv64` | `bool`   | The platform returns `true` for this key, if the device runs on the RISC-V 64-bit CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | `bool`   | The platform returns `true` for this key, if the device runs on the x86 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.frequency` | `int`    | The platform returns the frequency at which a core CPU is running. |
 | `http://tizen.org/feature/platform.core.fpu.arch` | `String` | The platform returns the FPU architecture. |

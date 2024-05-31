@@ -262,7 +262,24 @@ To set and unset callbacks, follow these steps:
 
    - Utterance started or completed
 
-     If you add text in TTS, that text is handled as an utterance and it obtains its own ID. After you request the TTS process to start, the text is synthesized by an engine and played out. To get a notification when an utterance is started or completed, set the respective callbacks:
+     If you add text in TTS, that text is handled as an utterance and it obtains its own ID. After you request the TTS process to start, the text is synthesized by an engine and played out. Each callback is invoked in the following cases:
+
+     |           Callback           |               Invoked when                | TTS state |
+     | :--------------------------: | :---------------------------------------: | :-------: |
+     |  Utterance started callback  | Playing the synthesized audio is started  | `TTS_STATE_READY` > `TTS_STATE_PLAYING` |
+     | Utterance completed callback | Playing the synthesized audio is finished | `TTS_STATE_PLAYING` (The state is NOT changed until `tts_stop()` is called.) |
+
+        > [!NOTE]
+        > Utterance completed callback is NOT invoked when the following occurs:
+        >
+        > (1) Your application calls `tts_stop()`.
+        >
+        > (2) Playing the synthesized audio is stopped by another application.
+        >
+        > Although the utterance completed callback is not invoked, a state changed callback will be invoked. (The state will be changed from `TTS_STATE_PLAYING` to `TTS_STATE_READY`.)
+
+     
+     To get a notification when an utterance is started or completed, set the respective callbacks:
 
      ```cpp
      /* Started callback */

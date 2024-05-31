@@ -76,7 +76,7 @@ AI developers can manage the pipeline description by doing the following:
     tensor_query_serversink async=false sync=false";
 
     // Set the pipeline with service name.
-    ml_service_set_pipeline ("object_detection_service", object_detection_pipeline);
+    ml_service_pipeline_set ("object_detection_service", object_detection_pipeline);
     ```
 
 2. Get or delete the pipeline description of the service name:
@@ -84,10 +84,10 @@ AI developers can manage the pipeline description by doing the following:
     ```c
     // Get the pipeline description of given service name.
     gchar *pipeline;
-    ml_service_get_pipeline ("object_detection_service", &pipeline);
+    ml_service_pipeline_get ("object_detection_service", &pipeline);
 
     // Delete the pipeline description of given service.
-    ml_service_delete_pipeline ("object_detection_service");
+    ml_service_pipeline_delete ("object_detection_service");
     ```
 
 AI developers can manage the ML service doing the following:.
@@ -97,10 +97,10 @@ AI developers can manage the ML service doing the following:.
     ```c
     // Launch the given service. Proper pipeline description is should be set beforehand.
     ml_service_h object_detection_service_h;
-    ml_service_launch_pipeline ("object_detection_service", object_detection_service_h);
+    ml_service_pipeline_launch ("object_detection_service", object_detection_service_h);
 
     // Start the given service. Clients can use this service when the pipeline is in playing state.
-    ml_service_start_pipeline (object_detection_service_h);
+    ml_service_start (object_detection_service_h);
     ```
 
 2. Stop, destroy or get the pipeline state:
@@ -108,10 +108,10 @@ AI developers can manage the ML service doing the following:.
     ```c
     // Get the state of given service.
     ml_pipeline_state_e state;
-    ml_service_get_pipeline_state (object_detection_service_h, &state);
+    ml_service_pipeline_get_state (object_detection_service_h, &state);
 
     // Stop the given service.
-    ml_service_stop_pipeline (object_detection_service_h);
+    ml_service_stop (object_detection_service_h);
 
     // Destroy the given service.
     ml_service_destroy (object_detection_service_h);

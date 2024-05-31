@@ -1869,6 +1869,16 @@ The version of Tizen Core API in the \[Major\].\[Minor\] format. For example, "1
 
 <div class="views-row views-row-119 views-row-odd">
 
+[http://tizen.org/feature/platform.core.abi](){#feature/platform.core.abi}
+------------------------------------------------------------------------------------
+
+**System information:**\
+The platform returns the ABI information (e.g. "arm_32", "arm_64", "riscv_32", "riscv_64", "x86", "x86_64) of a device.\
+
+</div>
+
+<div class="views-row views-row-120 views-row-odd">
+
 [http://tizen.org/feature/platform.core.cpu.arch](){#feature/platform.core.cpu.arch}
 ------------------------------------------------------------------------------------
 
@@ -1879,7 +1889,7 @@ The platform returns the CPU architecture (e.g. "armv7", "x86") of a device.\
 
 </div>
 
-<div class="views-row views-row-120 views-row-even">
+<div class="views-row views-row-121 views-row-even">
 
 [http://tizen.org/feature/platform.core.cpu.arch.armv6](){#feature/platform.core.cpu.arch.armv6}
 ------------------------------------------------------------------------------------------------
@@ -1891,7 +1901,7 @@ The platform returns true for this key, if the device runs on the ARMv6 CPU arch
 
 </div>
 
-<div class="views-row views-row-121 views-row-odd">
+<div class="views-row views-row-122 views-row-odd">
 
 [http://tizen.org/feature/platform.core.cpu.arch.armv7](){#feature/platform.core.cpu.arch.armv7}
 ------------------------------------------------------------------------------------------------
@@ -1908,7 +1918,7 @@ The platform returns true for this key, if the device runs on the ARMv7 CPU arch
 
 </div>
 
-<div class="views-row views-row-122 views-row-even">
+<div class="views-row views-row-123 views-row-even">
 
 [http://tizen.org/feature/platform.core.cpu.arch.armv8](){#feature/platform.core.cpu.arch.armv8}
 ------------------------------------------------------------------------------------------------
@@ -1924,7 +1934,33 @@ The platform returns true for this key, if the device runs on the ARMv8 CPU arch
 
 </div>
 
-<div class="views-row views-row-123 views-row-odd">
+<div class="views-row views-row-124 views-row-even">
+
+[http://tizen.org/feature/platform.core.cpu.arch.riscv32](){#feature/platform.core.cpu.arch.riscv32}
+------------------------------------------------------------------------------------------------
+
+**Application filtering:**\
+Specify this key, if the application requires the RISC-V 32-bit  CPU architecture.
+
+**System information:**\
+The platform returns true for this key, if the device runs on the RISC-V 32-bit CPU architecture.
+
+</div>
+
+<div class="views-row views-row-125 views-row-even">
+
+[http://tizen.org/feature/platform.core.cpu.arch.riscv64](){#feature/platform.core.cpu.arch.riscv64}
+------------------------------------------------------------------------------------------------
+
+**Application filtering:**\
+Specify this key, if the application requires the RISC-V 64-bit  CPU architecture.
+
+**System information:**\
+The platform returns true for this key, if the device runs on the RISC-V 64-bit CPU architecture.
+
+</div>
+
+<div class="views-row views-row-126 views-row-odd">
 
 [http://tizen.org/feature/platform.core.cpu.arch.x86](){#feature/platform.core.cpu.arch.x86}
 --------------------------------------------------------------------------------------------
@@ -1941,7 +1977,7 @@ The platform returns true for this key, if the device runs on the x86 CPU archit
 
 </div>
 
-<div class="views-row views-row-124 views-row-even">
+<div class="views-row views-row-127 views-row-even">
 
 [http://tizen.org/feature/platform.core.cpu.frequency](){#feature/platform.core.cpu.frequency}
 ----------------------------------------------------------------------------------------------
@@ -1953,7 +1989,7 @@ The platform returns the frequency at which a core CPU is running. (unit: MHz).
 
 </div>
 
-<div class="views-row views-row-125 views-row-odd">
+<div class="views-row views-row-128 views-row-odd">
 
 [http://tizen.org/feature/platform.core.fpu.arch](){#feature/platform.core.fpu.arch}
 ------------------------------------------------------------------------------------
@@ -1965,7 +2001,7 @@ The platform returns the FPU architecture (e.g. "vfpv3", "ssse3" of a device). I
 
 </div>
 
-<div class="views-row views-row-126 views-row-even">
+<div class="views-row views-row-129 views-row-even">
 
 [http://tizen.org/feature/platform.core.fpu.arch.sse2](){#feature/platform.core.fpu.arch.sse2}
 ----------------------------------------------------------------------------------------------
@@ -1982,7 +2018,7 @@ The platform returns true for this key, if the device supports the SSE2 FPU arch
 
 </div>
 
-<div class="views-row views-row-127 views-row-odd">
+<div class="views-row views-row-130 views-row-odd">
 
 [http://tizen.org/feature/platform.core.fpu.arch.sse3](){#feature/platform.core.fpu.arch.sse3}
 ----------------------------------------------------------------------------------------------
@@ -1999,7 +2035,7 @@ The platform returns true for this key, if the device supports the SSE3 FPU arch
 
 </div>
 
-<div class="views-row views-row-128 views-row-even">
+<div class="views-row views-row-131 views-row-even">
 
 [http://tizen.org/feature/platform.core.fpu.arch.ssse3](){#feature/platform.core.fpu.arch.ssse3}
 ------------------------------------------------------------------------------------------------
@@ -2016,7 +2052,7 @@ The platform returns true for this key, if the device supports the SSSE3 FPU arc
 
 </div>
 
-<div class="views-row views-row-129 views-row-odd">
+<div class="views-row views-row-132 views-row-odd">
 
 [http://tizen.org/feature/platform.core.fpu.arch.vfpv2](){#feature/platform.core.fpu.arch.vfpv2}
 ------------------------------------------------------------------------------------------------
@@ -2028,7 +2064,7 @@ The platform returns true for this key, if the device supports the VFPV2 FPU arc
 
 </div>
 
-<div class="views-row views-row-130 views-row-even">
+<div class="views-row views-row-133 views-row-even">
 
 [http://tizen.org/feature/platform.core.fpu.arch.vfpv3](){#feature/platform.core.fpu.arch.vfpv3}
 ------------------------------------------------------------------------------------------------
@@ -2045,7 +2081,7 @@ The platform returns true for this key, if the device supports the VFPV3 FPU arc
 
 </div>
 
-<div class="views-row views-row-131 views-row-odd">
+<div class="views-row views-row-134 views-row-odd">
 
 [http://tizen.org/feature/platform.core.fpu.arch.vfpv4](){#feature/platform.core.fpu.arch.vfpv4}
 ------------------------------------------------------------------------------------------------
@@ -2061,7 +2097,7 @@ The platform returns true for this key, if the device supports the VFPV4 FPU arc
 
 </div>
 
-<div class="views-row views-row-132 views-row-even">
+<div class="views-row views-row-135 views-row-even">
 
 [http://tizen.org/feature/platform.native.api.version](){#feature/platform.native.api.version}
 ----------------------------------------------------------------------------------------------
@@ -2073,7 +2109,7 @@ The platform returns the version of native API in the "\[Major\].\[Minor\]" form
 
 </div>
 
-<div class="views-row views-row-133 views-row-odd">
+<div class="views-row views-row-136 views-row-odd">
 
 [http://tizen.org/feature/platform.native.osp\_compatible](){#feature/platform.native.osp_compatible}
 -----------------------------------------------------------------------------------------------------
@@ -2091,7 +2127,7 @@ This feature is deprecated since Tizen 2.3.
 
 </div>
 
-<div class="views-row views-row-134 views-row-even">
+<div class="views-row views-row-137 views-row-even">
 
 [http://tizen.org/feature/platform.version](){#feature/platform.version}
 ------------------------------------------------------------------------
@@ -2103,7 +2139,7 @@ The platform returns the version of platform in the "\[Major\].\[Minor\].\[Patch
 
 </div>
 
-<div class="views-row views-row-135 views-row-odd">
+<div class="views-row views-row-138 views-row-odd">
 
 [http://tizen.org/feature/platform.version.name](){#feature/platform.version.name}
 ----------------------------------------------------------------------------------
@@ -2115,7 +2151,7 @@ The platform return the platform version name. (e.g. Tizen 2.0: magnolia, Tizen 
 
 </div>
 
-<div class="views-row views-row-136 views-row-even">
+<div class="views-row views-row-139 views-row-even">
 
 [http://tizen.org/feature/platform.web.api.version](){#feature/platform.web.api.version}
 ----------------------------------------------------------------------------------------
@@ -2127,7 +2163,7 @@ The platform returns the version of Web API in the "\[Major\].\[Minor\]" format.
 
 </div>
 
-<div class="views-row views-row-137 views-row-odd">
+<div class="views-row views-row-140 views-row-odd">
 
 [http://tizen.org/feature/profile](){#feature/profile}
 ------------------------------------------------------
@@ -2139,7 +2175,7 @@ The platform returns a compliant device profile for this key.
 
 </div>
 
-<div class="views-row views-row-138 views-row-even">
+<div class="views-row views-row-141 views-row-even">
 
 [http://tizen.org/feature/screen](){#feature/screen}
 ----------------------------------------------------
@@ -2151,7 +2187,7 @@ The platform returns true for this key, if the device has a display screen.
 
 </div>
 
-<div class="views-row views-row-139 views-row-odd">
+<div class="views-row views-row-142 views-row-odd">
 
 [http://tizen.org/feature/screen.always\_on.high\_color](){#feature/screen.always_on.high_color}
 ------------------------------------------------------------------------------------------------
@@ -2163,7 +2199,7 @@ The platform returns true for this key, if the device supports a high color mode
 
 </div>
 
-<div class="views-row views-row-140 views-row-even">
+<div class="views-row views-row-143 views-row-even">
 
 [http://tizen.org/feature/screen.always\_on.low\_bit\_color](){#feature/screen.always_on.low_bit_color}
 -------------------------------------------------------------------------------------------------------
@@ -2175,7 +2211,7 @@ The platform returns true for this key, if the device supports a low bit color m
 
 </div>
 
-<div class="views-row views-row-141 views-row-odd">
+<div class="views-row views-row-144 views-row-odd">
 
 [http://tizen.org/feature/screen.auto\_rotation](){#feature/screen.auto_rotation}
 ---------------------------------------------------------------------------------
@@ -2191,7 +2227,7 @@ The platform returns true for this key, if the device supports screen auto-rotat
 
 </div>
 
-<div class="views-row views-row-142 views-row-even">
+<div class="views-row views-row-145 views-row-even">
 
 [http://tizen.org/feature/screen.bpp](){#feature/screen.bpp}
 ------------------------------------------------------------
@@ -2204,7 +2240,7 @@ The value depends on the screen, and is typically 8, 16, 24, or 32.
 
 </div>
 
-<div class="views-row views-row-143 views-row-odd">
+<div class="views-row views-row-146 views-row-odd">
 
 [http://tizen.org/feature/screen.coordinate\_system.size.large](){#feature/screen.coordinate_system.size.large}
 ---------------------------------------------------------------------------------------------------------------
@@ -2216,7 +2252,7 @@ The platform returns true for this key, if the device supports large screen size
 
 </div>
 
-<div class="views-row views-row-144 views-row-even">
+<div class="views-row views-row-147 views-row-even">
 
 [http://tizen.org/feature/screen.coordinate\_system.size.normal](){#feature/screen.coordinate_system.size.normal}
 -----------------------------------------------------------------------------------------------------------------
@@ -2228,7 +2264,7 @@ The platform returns true for this key, if the device supports normal screen siz
 
 </div>
 
-<div class="views-row views-row-145 views-row-odd">
+<div class="views-row views-row-148 views-row-odd">
 
 [http://tizen.org/feature/screen.dpi](){#feature/screen.dpi}
 ------------------------------------------------------------
@@ -2240,7 +2276,7 @@ The platform returns the number of dots per inch supported by the device.
 
 </div>
 
-<div class="views-row views-row-146 views-row-even">
+<div class="views-row views-row-149 views-row-even">
 
 [http://tizen.org/feature/screen.height](){#feature/screen.height}
 ------------------------------------------------------------------
@@ -2252,7 +2288,7 @@ The platform returns the height of the screen in pixels supported by the device.
 
 </div>
 
-<div class="views-row views-row-147 views-row-odd">
+<div class="views-row views-row-150 views-row-odd">
 
 [http://tizen.org/feature/screen.output.hdmi](){#feature/screen.output.hdmi}
 ----------------------------------------------------------------------------
@@ -2264,7 +2300,7 @@ The platform returns true for this key, if the device supports HDMI output.
 
 </div>
 
-<div class="views-row views-row-148 views-row-even">
+<div class="views-row views-row-151 views-row-even">
 
 [http://tizen.org/feature/screen.output.rca](){#feature/screen.output.rca}
 --------------------------------------------------------------------------
@@ -2276,7 +2312,7 @@ The platform returns true for this key, if the device supports RCA output.
 
 </div>
 
-<div class="views-row views-row-149 views-row-odd">
+<div class="views-row views-row-152 views-row-odd">
 
 [http://tizen.org/feature/screen.shape.circle](){#feature/screen.shape.circle}
 ------------------------------------------------------------------------------
@@ -2292,7 +2328,7 @@ The platform returns true for this key, if the device supports circle-shaped scr
 
 </div>
 
-<div class="views-row views-row-150 views-row-even">
+<div class="views-row views-row-153 views-row-even">
 
 [http://tizen.org/feature/screen.shape.rectangle](){#feature/screen.shape.rectangle}
 ------------------------------------------------------------------------------------
@@ -2308,7 +2344,7 @@ The platform returns true for this key, if the device supports rectangle shape s
 
 </div>
 
-<div class="views-row views-row-151 views-row-odd">
+<div class="views-row views-row-154 views-row-odd">
 
 [http://tizen.org/feature/screen.size.all](){#feature/screen.size.all}
 ----------------------------------------------------------------------
@@ -2329,7 +2365,7 @@ The platform always returns true, if the device supports any screen sizes and re
 
 </div>
 
-<div class="views-row views-row-152 views-row-even">
+<div class="views-row views-row-155 views-row-even">
 
 [http://tizen.org/feature/screen.size.large](){#feature/screen.size.large}
 --------------------------------------------------------------------------
@@ -2341,7 +2377,7 @@ The platform returns true for this key, if the device supports large screen size
 
 </div>
 
-<div class="views-row views-row-153 views-row-odd">
+<div class="views-row views-row-156 views-row-odd">
 
 [http://tizen.org/feature/screen.size.normal](){#feature/screen.size.normal}
 ----------------------------------------------------------------------------
@@ -2362,7 +2398,7 @@ The platform always returns false for this key.
 
 </div>
 
-<div class="views-row views-row-154 views-row-even">
+<div class="views-row views-row-157 views-row-even">
 
 [http://tizen.org/feature/screen.size.normal.1080.1920](){#feature/screen.size.normal.1080.1920}
 ------------------------------------------------------------------------------------------------
@@ -2384,7 +2420,7 @@ The platform can return true for multiple resolution keys.
 
 </div>
 
-<div class="views-row views-row-155 views-row-odd">
+<div class="views-row views-row-158 views-row-odd">
 
 [http://tizen.org/feature/screen.size.normal.240.400](){#feature/screen.size.normal.240.400}
 --------------------------------------------------------------------------------------------
@@ -2405,7 +2441,7 @@ The platform can return true for multiple resolution keys.
 
 </div>
 
-<div class="views-row views-row-156 views-row-even">
+<div class="views-row views-row-159 views-row-even">
 
 [http://tizen.org/feature/screen.size.normal.320.320](){#feature/screen.size.normal.320.320}
 --------------------------------------------------------------------------------------------
@@ -2427,7 +2463,7 @@ The platform can return true for multiple resolution keys.
 
 </div>
 
-<div class="views-row views-row-157 views-row-odd">
+<div class="views-row views-row-160 views-row-odd">
 
 [http://tizen.org/feature/screen.size.normal.320.480](){#feature/screen.size.normal.320.480}
 --------------------------------------------------------------------------------------------
@@ -2449,7 +2485,7 @@ The platform can return true for multiple resolution keys.
 
 </div>
 
-<div class="views-row views-row-158 views-row-even">
+<div class="views-row views-row-161 views-row-even">
 
 [http://tizen.org/feature/screen.size.normal.360.360](){#feature/screen.size.normal.360.360}
 --------------------------------------------------------------------------------------------
@@ -2465,7 +2501,7 @@ The platform returns true for this key, if the device supports the 360x360 resol
 
 </div>
 
-<div class="views-row views-row-159 views-row-odd">
+<div class="views-row views-row-162 views-row-odd">
 
 [http://tizen.org/feature/screen.size.normal.360.480](){#feature/screen.size.normal.360.480}
 --------------------------------------------------------------------------------------------
@@ -2487,7 +2523,7 @@ The platform can return true for multiple resolution keys.
 
 </div>
 
-<div class="views-row views-row-160 views-row-even">
+<div class="views-row views-row-163 views-row-even">
 
 [http://tizen.org/feature/screen.size.normal.480.800](){#feature/screen.size.normal.480.800}
 --------------------------------------------------------------------------------------------
@@ -2509,7 +2545,7 @@ The platform can return true for multiple resolution keys.
 
 </div>
 
-<div class="views-row views-row-161 views-row-odd">
+<div class="views-row views-row-164 views-row-odd">
 
 [http://tizen.org/feature/screen.size.normal.540.960](){#feature/screen.size.normal.540.960}
 --------------------------------------------------------------------------------------------
@@ -2531,7 +2567,7 @@ The platform can return true for multiple resolution keys.
 
 </div>
 
-<div class="views-row views-row-162 views-row-even">
+<div class="views-row views-row-165 views-row-even">
 
 [http://tizen.org/feature/screen.size.normal.600.1024](){#feature/screen.size.normal.600.1024}
 ----------------------------------------------------------------------------------------------
@@ -2553,7 +2589,7 @@ The platform can return true for multiple resolution keys.
 
 </div>
 
-<div class="views-row views-row-163 views-row-odd">
+<div class="views-row views-row-166 views-row-odd">
 
 [http://tizen.org/feature/screen.size.normal.720.1280](){#feature/screen.size.normal.720.1280}
 ----------------------------------------------------------------------------------------------
@@ -2575,7 +2611,7 @@ The platform can return true for multiple resolution keys.
 
 </div>
 
-<div class="views-row views-row-164 views-row-even">
+<div class="views-row views-row-167 views-row-even">
 
 [http://tizen.org/feature/screen.width](){#feature/screen.width}
 ----------------------------------------------------------------
@@ -2587,7 +2623,7 @@ The platform returns the width of the screen in pixels supported by the device.
 
 </div>
 
-<div class="views-row views-row-165 views-row-odd">
+<div class="views-row views-row-168 views-row-odd">
 
 [http://tizen.org/feature/security.tee](){#feature/security.tee}
 ----------------------------------------------------------------
@@ -2603,7 +2639,7 @@ The platform returns true for this key, if the device supports a Trusted Executi
 
 </div>
 
-<div class="views-row views-row-166 views-row-even">
+<div class="views-row views-row-169 views-row-even">
 
 [http://tizen.org/feature/sensor.accelerometer](){#feature/sensor.accelerometer}
 --------------------------------------------------------------------------------
@@ -2619,7 +2655,7 @@ The platform returns true for this key, if the device supports the acceleration 
 
 </div>
 
-<div class="views-row views-row-167 views-row-odd">
+<div class="views-row views-row-170 views-row-odd">
 
 [http://tizen.org/feature/sensor.accelerometer.wakeup](){#feature/sensor.accelerometer.wakeup}
 ----------------------------------------------------------------------------------------------
@@ -2635,7 +2671,7 @@ The platform returns true for this key and the <http://tizen.org/feature/sensor.
 
 </div>
 
-<div class="views-row views-row-168 views-row-even">
+<div class="views-row views-row-171 views-row-even">
 
 [http://tizen.org/feature/sensor.activity\_recognition](){#feature/sensor.activity_recognition}
 -----------------------------------------------------------------------------------------------
@@ -2651,7 +2687,7 @@ The platform returns true for this key, if the device supports the activity reco
 
 </div>
 
-<div class="views-row views-row-169 views-row-odd">
+<div class="views-row views-row-172 views-row-odd">
 
 [http://tizen.org/feature/sensor.barometer](){#feature/sensor.barometer}
 ------------------------------------------------------------------------
@@ -2667,7 +2703,7 @@ The platform returns true for this key, if the device supports the barometer sen
 
 </div>
 
-<div class="views-row views-row-170 views-row-even">
+<div class="views-row views-row-173 views-row-even">
 
 [http://tizen.org/feature/sensor.barometer.wakeup](){#feature/sensor.barometer.wakeup}
 --------------------------------------------------------------------------------------
@@ -2683,7 +2719,7 @@ The platform returns true for this key and the <http://tizen.org/feature/sensor.
 
 </div>
 
-<div class="views-row views-row-171 views-row-odd">
+<div class="views-row views-row-174 views-row-odd">
 
 [http://tizen.org/feature/sensor.geomagnetic\_rotation\_vector](){#feature/sensor.geomagnetic_rotation_vector}
 --------------------------------------------------------------------------------------------------------------
@@ -2699,7 +2735,7 @@ The platform returns true for this key, if the device supports Geomagnetic-based
 
 </div>
 
-<div class="views-row views-row-172 views-row-even">
+<div class="views-row views-row-175 views-row-even">
 
 [http://tizen.org/feature/sensor.gesture\_recognition](){#feature/sensor.gesture_recognition}
 ---------------------------------------------------------------------------------------------
@@ -2715,7 +2751,7 @@ The platform returns true for this key, if the device supports the gesture recog
 
 </div>
 
-<div class="views-row views-row-173 views-row-odd">
+<div class="views-row views-row-176 views-row-odd">
 
 [http://tizen.org/feature/sensor.gravity](){#feature/sensor.gravity}
 --------------------------------------------------------------------
@@ -2731,7 +2767,7 @@ The platform returns true for this key, if the device supports the gravity senso
 
 </div>
 
-<div class="views-row views-row-174 views-row-even">
+<div class="views-row views-row-177 views-row-even">
 
 [http://tizen.org/feature/sensor.gyroscope](){#feature/sensor.gyroscope}
 ------------------------------------------------------------------------
@@ -2747,7 +2783,7 @@ The platform returns true for this key, if the device supports the gyro sensor.
 
 </div>
 
-<div class="views-row views-row-175 views-row-odd">
+<div class="views-row views-row-178 views-row-odd">
 
 [http://tizen.org/feature/sensor.gyroscope.uncalibrated](){#feature/sensor.gyroscope.uncalibrated}
 --------------------------------------------------------------------------------------------------
@@ -2763,7 +2799,7 @@ The platform returns true for this key, if the device supports Uncalibrated Gyro
 
 </div>
 
-<div class="views-row views-row-176 views-row-even">
+<div class="views-row views-row-179 views-row-even">
 
 [http://tizen.org/feature/sensor.gyroscope.wakeup](){#feature/sensor.gyroscope.wakeup}
 --------------------------------------------------------------------------------------
@@ -2779,7 +2815,7 @@ The platform returns true for this key and the <http://tizen.org/feature/sensor.
 
 </div>
 
-<div class="views-row views-row-177 views-row-odd">
+<div class="views-row views-row-180 views-row-odd">
 
 [http://tizen.org/feature/sensor.gyroscope\_rotation\_vector](){#feature/sensor.gyroscope_rotation_vector}
 ----------------------------------------------------------------------------------------------------------
@@ -2795,7 +2831,7 @@ The platform returns true for this key, if the device supports Gyroscope-based r
 
 </div>
 
-<div class="views-row views-row-178 views-row-even">
+<div class="views-row views-row-181 views-row-even">
 
 [http://tizen.org/feature/sensor.heart\_rate\_monitor](){#feature/sensor.heart_rate_monitor}
 --------------------------------------------------------------------------------------------
@@ -2811,7 +2847,7 @@ The platform returns true for this key, if the device supports the heart rate mo
 
 </div>
 
-<div class="views-row views-row-179 views-row-odd">
+<div class="views-row views-row-182 views-row-odd">
 
 [http://tizen.org/feature/sensor.heart\_rate\_monitor.led\_green](){#feature/sensor.heart_rate_monitor.led_green}
 -----------------------------------------------------------------------------------------------------------------
@@ -2827,7 +2863,7 @@ The platform returns true for this key, if the device supports the green LED hea
 
 </div>
 
-<div class="views-row views-row-180 views-row-even">
+<div class="views-row views-row-183 views-row-even">
 
 [http://tizen.org/feature/sensor.heart\_rate\_monitor.led\_ir](){#feature/sensor.heart_rate_monitor.led_ir}
 -----------------------------------------------------------------------------------------------------------
@@ -2843,7 +2879,7 @@ The platform returns true for this key, if the device supports the infrared LED 
 
 </div>
 
-<div class="views-row views-row-181 views-row-odd">
+<div class="views-row views-row-184 views-row-odd">
 
 [http://tizen.org/feature/sensor.heart\_rate\_monitor.led\_red](){#feature/sensor.heart_rate_monitor.led_red}
 -------------------------------------------------------------------------------------------------------------
@@ -2859,7 +2895,7 @@ The platform returns true for this key, if the device supports the red LED heart
 
 </div>
 
-<div class="views-row views-row-182 views-row-even">
+<div class="views-row views-row-185 views-row-even">
 
 [http://tizen.org/feature/sensor.humidity](){#feature/sensor.humidity}
 ----------------------------------------------------------------------
@@ -2875,7 +2911,7 @@ The platform returns true for this key, if the device supports the humidity sens
 
 </div>
 
-<div class="views-row views-row-183 views-row-odd">
+<div class="views-row views-row-186 views-row-odd">
 
 [http://tizen.org/feature/sensor.linear\_acceleration](){#feature/sensor.linear_acceleration}
 ---------------------------------------------------------------------------------------------
@@ -2891,7 +2927,7 @@ The platform returns true for this key, if the device supports the linear accele
 
 </div>
 
-<div class="views-row views-row-184 views-row-even">
+<div class="views-row views-row-187 views-row-even">
 
 [http://tizen.org/feature/sensor.magnetometer](){#feature/sensor.magnetometer}
 ------------------------------------------------------------------------------
@@ -2907,7 +2943,7 @@ The platform returns true for this key, if the device supports the magnetic sens
 
 </div>
 
-<div class="views-row views-row-185 views-row-odd">
+<div class="views-row views-row-188 views-row-odd">
 
 [http://tizen.org/feature/sensor.magnetometer.uncalibrated](){#feature/sensor.magnetometer.uncalibrated}
 --------------------------------------------------------------------------------------------------------
@@ -2923,7 +2959,7 @@ The platform returns true for this key, if the device supports Uncalibrated Geom
 
 </div>
 
-<div class="views-row views-row-186 views-row-even">
+<div class="views-row views-row-189 views-row-even">
 
 [http://tizen.org/feature/sensor.magnetometer.wakeup](){#feature/sensor.magnetometer.wakeup}
 --------------------------------------------------------------------------------------------
@@ -2939,7 +2975,7 @@ The platform returns true for this key and the <http://tizen.org/feature/sensor.
 
 </div>
 
-<div class="views-row views-row-187 views-row-odd">
+<div class="views-row views-row-190 views-row-odd">
 
 [http://tizen.org/feature/sensor.pedometer](){#feature/sensor.pedometer}
 ------------------------------------------------------------------------
@@ -2955,7 +2991,7 @@ The platform returns true for this key, if the device supports the pedometer.
 
 </div>
 
-<div class="views-row views-row-188 views-row-even">
+<div class="views-row views-row-191 views-row-even">
 
 [http://tizen.org/feature/sensor.photometer](){#feature/sensor.photometer}
 --------------------------------------------------------------------------
@@ -2971,7 +3007,7 @@ The platform returns true for this key, if the device supports the photo (light)
 
 </div>
 
-<div class="views-row views-row-189 views-row-odd">
+<div class="views-row views-row-192 views-row-odd">
 
 [http://tizen.org/feature/sensor.photometer.wakeup](){#feature/sensor.photometer.wakeup}
 ----------------------------------------------------------------------------------------
@@ -2987,7 +3023,7 @@ The platform returns true for this key and the <http://tizen.org/feature/sensor.
 
 </div>
 
-<div class="views-row views-row-190 views-row-even">
+<div class="views-row views-row-193 views-row-even">
 
 [http://tizen.org/feature/sensor.proximity](){#feature/sensor.proximity}
 ------------------------------------------------------------------------
@@ -3003,7 +3039,7 @@ The platform returns true for this key, if the device supports the proximity sen
 
 </div>
 
-<div class="views-row views-row-191 views-row-odd">
+<div class="views-row views-row-194 views-row-odd">
 
 [http://tizen.org/feature/sensor.proximity.wakeup](){#feature/sensor.proximity.wakeup}
 --------------------------------------------------------------------------------------
@@ -3019,7 +3055,7 @@ The platform returns true for this key and the <http://tizen.org/feature/sensor.
 
 </div>
 
-<div class="views-row views-row-192 views-row-even">
+<div class="views-row views-row-195 views-row-even">
 
 [http://tizen.org/feature/sensor.rotation\_vector](){#feature/sensor.rotation_vector}
 -------------------------------------------------------------------------------------
@@ -3035,7 +3071,7 @@ The platform returns true for this key, if the device supports the rotation vect
 
 </div>
 
-<div class="views-row views-row-193 views-row-odd">
+<div class="views-row views-row-196 views-row-odd">
 
 [http://tizen.org/feature/sensor.significant\_motion](){#feature/sensor.significant_motion}
 -------------------------------------------------------------------------------------------
@@ -3051,7 +3087,7 @@ The platform returns true for this key, if the device supports Significant Motio
 
 </div>
 
-<div class="views-row views-row-194 views-row-even">
+<div class="views-row views-row-197 views-row-even">
 
 [http://tizen.org/feature/sensor.sleep\_monitor](){#feature/sensor.sleep_monitor}
 ---------------------------------------------------------------------------------
@@ -3067,7 +3103,7 @@ The platform returns true for this key, if the device supports the sleep monitor
 
 </div>
 
-<div class="views-row views-row-195 views-row-odd">
+<div class="views-row views-row-198 views-row-odd">
 
 [http://tizen.org/feature/sensor.stress\_monitor](){#feature/sensor.stress_monitor}
 -----------------------------------------------------------------------------------
@@ -3083,7 +3119,7 @@ The platform returns true for this key, if the device supports the stress monito
 
 </div>
 
-<div class="views-row views-row-196 views-row-even">
+<div class="views-row views-row-199 views-row-even">
 
 [http://tizen.org/feature/sensor.temperature](){#feature/sensor.temperature}
 ----------------------------------------------------------------------------
@@ -3099,7 +3135,7 @@ The platform returns true for this key, if the device supports the temperature s
 
 </div>
 
-<div class="views-row views-row-197 views-row-odd">
+<div class="views-row views-row-200 views-row-odd">
 
 [http://tizen.org/feature/sensor.tiltmeter](){#feature/sensor.tiltmeter}
 ------------------------------------------------------------------------
@@ -3115,7 +3151,7 @@ The platform returns true for this key, if the device supports the tilt sensor.
 
 </div>
 
-<div class="views-row views-row-198 views-row-even">
+<div class="views-row views-row-201 views-row-even">
 
 [http://tizen.org/feature/sensor.tiltmeter.wakeup](){#feature/sensor.tiltmeter.wakeup}
 --------------------------------------------------------------------------------------
@@ -3131,7 +3167,7 @@ The platform returns true for this key and the <http://tizen.org/feature/sensor.
 
 </div>
 
-<div class="views-row views-row-199 views-row-odd">
+<div class="views-row views-row-202 views-row-odd">
 
 [http://tizen.org/feature/sensor.ultraviolet](){#feature/sensor.ultraviolet}
 ----------------------------------------------------------------------------
@@ -3147,7 +3183,7 @@ The platform returns true for this key, if the device supports the ultraviolet s
 
 </div>
 
-<div class="views-row views-row-200 views-row-even">
+<div class="views-row views-row-203 views-row-even">
 
 [http://tizen.org/feature/sensor.wrist\_up](){#feature/sensor.wrist_up}
 -----------------------------------------------------------------------
@@ -3163,7 +3199,7 @@ The platform returns true for this key, if the device supports the wrist up acti
 
 </div>
 
-<div class="views-row views-row-201 views-row-odd">
+<div class="views-row views-row-204 views-row-odd">
 
 [http://tizen.org/feature/shell.appwidget](){#feature/shell.appwidget}
 ----------------------------------------------------------------------
@@ -3179,7 +3215,7 @@ The platform returns true for this key, if the device supports the AppWidget (Dy
 
 </div>
 
-<div class="views-row views-row-202 views-row-even">
+<div class="views-row views-row-205 views-row-even">
 
 [http://tizen.org/feature/shortcut](){#feature/shortcut}
 --------------------------------------------------------
@@ -3195,7 +3231,7 @@ The platform returns true for this key, if the device supports Shortcut API.
 
 </div>
 
-<div class="views-row views-row-203 views-row-odd">
+<div class="views-row views-row-206 views-row-odd">
 
 [http://tizen.org/feature/sip.voip](){#feature/sip.voip}
 --------------------------------------------------------
@@ -3211,7 +3247,7 @@ The platform returns true for this key, if the device supports the Voice over In
 
 </div>
 
-<div class="views-row views-row-204 views-row-even">
+<div class="views-row views-row-207 views-row-even">
 
 [http://tizen.org/feature/speech.control](){#feature/speech.control}
 --------------------------------------------------------------------
@@ -3227,7 +3263,7 @@ The platform returns true for this key, if the device supports voice control.
 
 </div>
 
-<div class="views-row views-row-205 views-row-odd">
+<div class="views-row views-row-208 views-row-odd">
 
 [http://tizen.org/feature/speech.recognition](){#feature/speech.recognition}
 ----------------------------------------------------------------------------
@@ -3243,7 +3279,7 @@ The platform returns true for this key, if the device supports speech recognitio
 
 </div>
 
-<div class="views-row views-row-206 views-row-even">
+<div class="views-row views-row-209 views-row-even">
 
 [http://tizen.org/feature/speech.synthesis](){#feature/speech.synthesis}
 ------------------------------------------------------------------------
@@ -3259,7 +3295,7 @@ The platform returns true for this key, if the device supports speech synthesis 
 
 </div>
 
-<div class="views-row views-row-207 views-row-odd">
+<div class="views-row views-row-210 views-row-odd">
 
 [http://tizen.org/feature/systemsetting](){#feature/systemsetting}
 ------------------------------------------------------------------
@@ -3275,7 +3311,7 @@ The platform returns true for this key, if the device supports SystemSetting API
 
 </div>
 
-<div class="views-row views-row-208 views-row-even">
+<div class="views-row views-row-211 views-row-even">
 
 [http://tizen.org/feature/systemsetting.home\_screen](){#feature/systemsetting.home_screen}
 -------------------------------------------------------------------------------------------
@@ -3291,7 +3327,7 @@ The platform returns true for this key and <http://tizen.org/feature/systemsetti
 
 </div>
 
-<div class="views-row views-row-209 views-row-odd">
+<div class="views-row views-row-212 views-row-odd">
 
 [http://tizen.org/feature/systemsetting.incoming\_call](){#feature/systemsetting.incoming_call}
 -----------------------------------------------------------------------------------------------
@@ -3307,7 +3343,7 @@ The platform returns true for this key and <http://tizen.org/feature/systemsetti
 
 </div>
 
-<div class="views-row views-row-210 views-row-even">
+<div class="views-row views-row-213 views-row-even">
 
 [http://tizen.org/feature/systemsetting.lock\_screen](){#feature/systemsetting.lock_screen}
 -------------------------------------------------------------------------------------------
@@ -3323,7 +3359,7 @@ The platform returns true for this key and <http://tizen.org/feature/systemsetti
 
 </div>
 
-<div class="views-row views-row-211 views-row-odd">
+<div class="views-row views-row-214 views-row-odd">
 
 [http://tizen.org/feature/systemsetting.notification\_email](){#feature/systemsetting.notification_email}
 ---------------------------------------------------------------------------------------------------------
@@ -3339,7 +3375,7 @@ The platform returns true for this key and <http://tizen.org/feature/systemsetti
 
 </div>
 
-<div class="views-row views-row-212 views-row-even">
+<div class="views-row views-row-215 views-row-even">
 
 [http://tizen.org/feature/tv.audio](){#feature/tv.audio}
 --------------------------------------------------------
@@ -3354,7 +3390,7 @@ The platform returns true for this key, if the device supports TV Audio Control 
 
 </div>
 
-<div class="views-row views-row-213 views-row-odd">
+<div class="views-row views-row-216 views-row-odd">
 
 [http://tizen.org/feature/tv.display](){#feature/tv.display}
 ------------------------------------------------------------
@@ -3369,7 +3405,7 @@ The platform returns true for this key, if the device supports TV Display Contro
 
 </div>
 
-<div class="views-row views-row-214 views-row-even">
+<div class="views-row views-row-217 views-row-even">
 
 [http://tizen.org/feature/tv.information](){#feature/tv.information}
 --------------------------------------------------------------------
@@ -3384,7 +3420,7 @@ The platform returns true for this key, if the device supports TV information AP
 
 </div>
 
-<div class="views-row views-row-215 views-row-odd">
+<div class="views-row views-row-218 views-row-odd">
 
 [http://tizen.org/feature/tv.inputdevice](){#feature/tv.inputdevice}
 --------------------------------------------------------------------
@@ -3399,7 +3435,7 @@ The platform returns true for this key, if the device supports TV Input Device A
 
 </div>
 
-<div class="views-row views-row-216 views-row-even">
+<div class="views-row views-row-219 views-row-even">
 
 [http://tizen.org/feature/tv.pip](){#feature/tv.pip}
 ----------------------------------------------------
@@ -3414,7 +3450,7 @@ The platform returns true for this key, if the device supports TV Window API.
 
 </div>
 
-<div class="views-row views-row-217 views-row-even">
+<div class="views-row views-row-220 views-row-even">
 
 [http://tizen.org/feature/ui_service.sticker](){#feature/ui_service.sticker}
 ----------------------------------------------------
@@ -3430,7 +3466,7 @@ The platform returns true for this key, if the device supports Sticker API.
 
 </div>
 
-<div class="views-row views-row-218 views-row-even">
+<div class="views-row views-row-221 views-row-even">
 
 [http://tizen.org/feature/usb.accessory](){#feature/usb.accessory}
 ------------------------------------------------------------------
@@ -3446,7 +3482,7 @@ The platform returns true for this key, if the device supports the USB client or
 
 </div>
 
-<div class="views-row views-row-219 views-row-odd">
+<div class="views-row views-row-222 views-row-odd">
 
 [http://tizen.org/feature/usb.host](){#feature/usb.host}
 --------------------------------------------------------
@@ -3478,7 +3514,7 @@ The platform returns true for this key, if the device supports the barcode recog
 
 </div>
 
-<div class="views-row views-row-221 views-row-odd">
+<div class="views-row views-row-223 views-row-odd">
 
 [http://tizen.org/feature/vision.barcode\_generation](){#feature/vision.barcode_generation}
 -------------------------------------------------------------------------------------------

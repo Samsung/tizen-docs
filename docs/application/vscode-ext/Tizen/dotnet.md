@@ -28,6 +28,11 @@ To install VS Code Extension for Tizen from the Visual Studio Code Marketplace:
 
    - To use a previously-installed instance of the Tizen Baseline SDK or Tizen Studio with the VS Code Extension for Tizen, click **YES** and see [Setting Tizen Baseline SDK Configuration](#setting-baseline-config).
 
+The video below shows how to install Visual Studio Code Extension for Tizen from the marketplace:
+
+<video controls height="400">
+  <source src="../media/vscode-installation.mp4" type=video/mp4>
+</video>
 
 ## Install using VSIX file
 

@@ -2,12 +2,12 @@
 
 An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use.
 
-> **Note**  
+> [!NOTE]
 > It is possible that no application suitable to receive the application control exists. In that case, before you send the launch request, verify that a suitable application exists.
 
 ## Browser
 
-### Performing a Web Search
+### Perform a Web search
 
 The search operation is available depending on whether the installed application supports it or not.
 
@@ -42,7 +42,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Loading a Web Page
+### Load a Web page
 
 The view operation is available depending on whether the installed application supports it or not.
 
@@ -63,7 +63,7 @@ To open a Web page, use the `http://tizen.org/appcontrol/operation/view` operati
 - `file:<path>`
 - `javascript:<path>`
 
-#### MIME Type (Optional)
+#### MIME type (Optional)
 
 - `image/svg+xml`
 - `text/html`
@@ -87,7 +87,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ## Calendar
 The calendar application control is available depending on whether the installed application supports it or not.
 
-### Adding a Calendar Event
+### Add a calendar event
 
 To add a new event to the user's calendar, use the `http://tizen.org/appcontrol/operation/add` operation with the `application/vnd.tizen.calendar` MIME type. To specify various event details, refer to the extras defined below.
 
@@ -103,7 +103,7 @@ To add a new event to the user's calendar, use the `http://tizen.org/appcontrol/
 
 `application/vnd.tizen.calendar`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
@@ -113,13 +113,13 @@ To add a new event to the user's calendar, use the `http://tizen.org/appcontrol/
 | `http://tizen.org/appcontrol/data/title` | The title of the event. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/text`  | The description of the event. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                   | Description                              |
 | ------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/id` | The database record ID of the event (ID in the `_calendar_event` view). This key must be passed as a string. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/title', ['My event']),
@@ -135,7 +135,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Editing a Calendar Event
+### Edit a calendar event
 
 To edit an existing event in the user's calendar, use the `http://tizen.org/appcontrol/operation/edit` operation with the `application/vnd.tizen.calendar` MIME type. To specify various event details, refer to the extras defined below.
 
@@ -151,7 +151,7 @@ To edit an existing event in the user's calendar, use the `http://tizen.org/appc
 
 `application/vnd.tizen.calendar`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                   |
 | ---------------------------------------- | ---------------------------------------- | ---------------------- |
@@ -162,13 +162,13 @@ To edit an existing event in the user's calendar, use the `http://tizen.org/appc
 | `http://tizen.org/appcontrol/data/title` | The title of event. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/text`  | The description of event. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                   | Description                              |
 | ------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/id` | The database record ID of the event (ID in the `_calendar_event` view). This key must be passed as a string. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/id', ['1']),
@@ -185,7 +185,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Viewing a Calendar Event
+### View a calendar event
 
 To display a specified event in the user's calendar, use the `http://tizen.org/appcontrol/operation/view` operation. To specify various event details, refer to the extras defined below.
 
@@ -212,13 +212,13 @@ For example: `file://<media storage path>/file.vcs`
 - `text/x-vcalendar` (for vcalendar file)
 - `text/vcalendar` (for vcalendar file)
 
-#### Extra Input
+#### Extra input
 
 | Key                                   | Description                              | Note                                     |
 | ------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/id` | The database record ID of the event (ID in the `_calendar_event` view). This key must be passed as a string. | This key is mandatory when the MIME type is set to `application/vnd.tizen.calendar`. |
 
-#### Example Code
+#### Example code
 
 ```
 /* To view a calendar event from a vcs file */
@@ -245,7 +245,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Selecting a Calendar Event
+### Select a calendar event
 
 To select a specified event in the user's calendar, use the `http://tizen.org/appcontrol/operation/pick` operation with the `application/vnd.tizen.calendar` MIME type. To specify various event details, refer to the extras defined below.
 
@@ -261,22 +261,22 @@ To select a specified event in the user's calendar, use the `http://tizen.org/ap
 
 `application/vnd.tizen.calendar`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/type`  | The type of items to be delivered. The available values are `id` (default) and `vcs`. This key must be passed as a string. | This key is optional. |
-| `http://tizen.org/appcontrol/data/selection_mode` | The selection mode of the PICK operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/selection_mode` | The selection mode of the pick operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/total_count` | The total number of events to be returned. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                      | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/type`  | The type of items to be delivered. The available values are `id` and `vcs`. This key must be passed as a string. |
 | `http://tizen.org/appcontrol/data/selected` | The database record ID of the event (ID in the `_calendar_event` view) or the paths of the vcs files. This key must be passed as an array. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/type', ['id']),
@@ -295,7 +295,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ## Call
 The call application control is available depending on whether the installed application supports it or not.
 
-### Making a Phone Call
+### Make a phone call
 
 To directly initiate a phone call, use the `http://tizen.org/appcontrol/operation/call` operation with a phone number URI scheme.
 
@@ -328,7 +328,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Launching a Call Application with a Phone Number
+### Launch a call application with a phone number
 
 To open a call application and display a predefined a phone number, use the `http://tizen.org/appcontrol/operation/dial` action with a phone number URI scheme. When the call application opens, it displays the phone number, but the user must press the **Call** button to initiate the phone call.
 
@@ -348,7 +348,7 @@ If empty, a dialer UI without a number is presented.
 
 For example: `tel:+821234567890`
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/dial',
@@ -364,7 +364,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ## Camera
 The camera application control is available depending on whether the installed application supports it or not.
 
-### Capturing a Picture or Video
+### Capture a picture or video
 
 To take a picture or record video, use the `http://tizen.org/appcontrol/operation/create_content` operation with the MIME type. To specify an option, refer to the extras defined below.
 
@@ -381,19 +381,19 @@ To take a picture or record video, use the `http://tizen.org/appcontrol/operatio
 - `image/*`
 - `video/*`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                      | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/selected` | The path of the created image or video file. This key must be passed as a string. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/create_content',
@@ -406,7 +406,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Capturing a Picture
+### Capture a picture
 
 To capture a still image, use the `http://tizen.org/appcontrol/operation/image_capture` operation. To specify an option, refer to the extras defined below.
 
@@ -418,19 +418,19 @@ To capture a still image, use the `http://tizen.org/appcontrol/operation/image_c
 
 `http://tizen.org/appcontrol/operation/image_capture`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                      | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/selected` | The path of the created file. This key must be passed as a string. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/image_capture',
@@ -443,7 +443,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Capturing a Video
+### Capture a video
 
 To record a video, use the `http://tizen.org/appcontrol/operation/video_capture` operation. To specify an option, refer to the extras defined below.
 
@@ -455,19 +455,19 @@ To record a video, use the `http://tizen.org/appcontrol/operation/video_capture`
 
 `http://tizen.org/appcontrol/operation/video_capture`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                      | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/selected` | The path of the created file. This key must be passed as a string. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/video_capture',
@@ -482,7 +482,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Contact
 
-### Adding a Contact
+### Add a contact
 The contact adding operation is available depending on whether the installed application supports it or not.
 
 To add a new contact, use the `http://tizen.org/appcontrol/operation/add` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
@@ -499,7 +499,7 @@ To add a new contact, use the `http://tizen.org/appcontrol/operation/add` operat
 
 `application/vnd.tizen.contact`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
@@ -508,13 +508,13 @@ To add a new contact, use the `http://tizen.org/appcontrol/operation/add` operat
 | `http://tizen.org/appcontrol/data/url`   | The homepage URL. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/name`  | The contact's name. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                   | Description                              |
 | ------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/id` | The database record ID of the added person (ID in the `_contacts_person` view). This key must be passed as a string. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/phone', ['0123456789']),
@@ -532,7 +532,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Editing a Contact
+### Edit a contact
 The contact editing operation is available depending on whether the installed application supports it or not.
 
 To edit a known contact, use the `http://tizen.org/appcontrol/operation/edit` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
@@ -549,7 +549,7 @@ To edit a known contact, use the `http://tizen.org/appcontrol/operation/edit` op
 
 `application/vnd.tizen.contact`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                   |
 | ---------------------------------------- | ---------------------------------------- | ---------------------- |
@@ -558,13 +558,13 @@ To edit a known contact, use the `http://tizen.org/appcontrol/operation/edit` op
 | `http://tizen.org/appcontrol/data/email` | The email address that is added to the contact. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/url`   | The homepage URL that is added to the contact. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                   | Description                              |
 | ------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/id` | The database record ID of the person to be edited (ID in the `_contacts_person` view). This key must be passed as a string. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/id', ['personId']),
@@ -582,7 +582,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Viewing a Contact
+### View a contact
 The contact viewing operation is available depending on whether the installed application supports it or not.
 
 To display a specified contact in the contact database, use the `http://tizen.org/appcontrol/operation/view` operation. To specify various contact details, refer to the extras defined below.
@@ -608,13 +608,13 @@ To display a specified contact from a vcard file, use the `file:` URI. To displa
 - `text/vcard`
 - `text/x-vcard`
 
-#### Extra Input
+#### Extra input
 
 | Key                                   | Description                              | Note                                     |
 | ------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/id` | The database record ID of the edited person (ID in the `_contacts_person` view). This key must be passed as a string. | This key is mandatory when the MIME type is set to `application/vnd.tizen.contact`. |
 
-#### Example Code
+#### Example code
 
 ```
 function launchContactDetails(personId) {
@@ -643,7 +643,7 @@ function launchViewVcard(uri) {
 }
 ```
 
-### Selecting a Contact
+### Select a contact
 
 The contact selection operation is available depending on whether the installed application supports it or not.
 
@@ -661,22 +661,22 @@ To select a specified contact in the user's contacts, use the `http://tizen.org/
 
 `application/vnd.tizen.contact`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
-| `http://tizen.org/appcontrol/data/selection_mode` | The selection mode of the PICK operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/selection_mode` | The selection mode of the pick operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/type`  | The type of items to be delivered. The available values are `id` (default), `phone`, `email`, and `vcf`. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/total_count` | The total number of events to be returned. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                      | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/type`  | The type of items to be delivered. The available values are `id`, `phone`, `email`, and `vcf`. This key must be passed as a string. |
 | `http://tizen.org/appcontrol/data/selected` | The extra field to get the return information. The content of this key depends on its type:<br> - `id`: The database record ID of the selected person (ID in the `_contacts_person` view).<Br> - `phone`: The database record ID of the number of the selected person (ID in the `_contacts_number` view).<br> - `email`: The database record ID of the email of the selected person (ID in the `_contacts_email` view).<br> - `vcf`: The path to the vCard file.<Br>This key must be passed as an array. |
 
-#### Example Code
+#### Example code
 
 ```
 function launchContactPick(selectionMode, dataType) {
@@ -710,7 +710,7 @@ function launchContactPick(selectionMode, dataType) {
 }
 ```
 
-### Sharing a Contact
+### Share a contact
 The contact sharing operation is available depending on whether the installed application supports it or not.
 
 To share a single contact, use the `http://tizen.org/appcontrol/operation/share` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
@@ -723,14 +723,14 @@ To share a single contact, use the `http://tizen.org/appcontrol/operation/share`
 
 `application/vnd.tizen.contact`
 
-#### Extra Input
+#### Extra input
 
 | Key                                     | Description                              | Note                   |
 | --------------------------------------- | ---------------------------------------- | ---------------------- |
 | `http://tizen.org/appcontrol/data/id`   | The database record ID of the person (ID in the `_contacts_person` view) when `http://tizen.org/appcontrol/data/type` is set to `person`.<br>The database record ID of my profile (ID in the `_contacts_my_profile` view) when `http://tizen.org/appcontrol/data/type` is set to `my_profile`. This key must be passed as a string. | This key is mandatory. |
 | `http://tizen.org/appcontrol/data/type` | The type of contact. The available values are `my_profile` and `person`. This key must be passed as a string. | This key is mandatory. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/type', ['person']),
@@ -747,7 +747,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Sharing Multiple Contacts
+### Share multiple contacts
 The multiple contact sharing operation is available depending on whether the installed application supports it or not.
 
 To share a set of contacts, use the `http://tizen.org/appcontrol/operation/multi_share` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
@@ -760,13 +760,13 @@ To share a set of contacts, use the `http://tizen.org/appcontrol/operation/multi
 
 `application/vnd.tizen.contact`
 
-#### Extra Input
+#### Extra input
 
 | Key                                   | Description                              | Note                   |
 | ------------------------------------- | ---------------------------------------- | ---------------------- |
 | `http://tizen.org/appcontrol/data/id` | The database record IDs of the person (ID in the `_contacts_person` view). This key must be passed as an array. | This key is mandatory. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/id',
@@ -786,7 +786,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ## Email
 The email application control is available depending on whether the installed application supports it or not.
 
-### Composing an Email
+### Compose an email
 
 To compose an email with optional recipients, subject, and body text, use the `http://tizen.org/appcontrol/operation/compose` operation.
 
@@ -804,7 +804,7 @@ To compose an email with optional recipients, subject, and body text, use the `h
 
 If the `mailto:` field is empty, it filters out all but email applications in the system, and you can use the extra data only to pass optional parameters.
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
@@ -815,7 +815,7 @@ If the `mailto:` field is empty, it filters out all but email applications in th
 | `http://tizen.org/appcontrol/data/text`  | The body of the email to be sent. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared in an email message. This key must be passed as an array. | This key is optional. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/cc', ['cc@tizen.org', 'cc2@tizen.org']),
@@ -834,7 +834,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Sharing a Single File Using an Email Message
+### Share a single file using an email message
 
 To share a single file of any MIME type in an email message, use the `http://tizen.org/appcontrol/operation/share` operation.
 
@@ -858,7 +858,7 @@ Any MIME type that your application needs, such as `image/jpg`, `video/*`, or `*
 
 If sharing a single item through `http://tizen.org/appcontrol/data/path` and the URI is specified with `mailto:`, the MIME type must be explicitly set.
 
-#### Extra Input
+#### Extra input
 
 | Key                                     | Description                              | Note                                     |
 | --------------------------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -880,7 +880,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Sharing Multiple Items Using an Email Message
+### Sharing multiple items using an email message
 
 To share multiple files of any MIME type using an email message, use the `http://tizen.org/appcontrol/operation/multi_share` operation.
 
@@ -904,13 +904,13 @@ Any MIME type that your application needs, such as `image/jpg`, `video/*`, or `*
 
 If you try to share a set of files with different MIME types, use `<type>/*` or `*/*`. For example, if you send `video/mp4` and `audio/ogg`, the MIME type must be `*/*`.
 
-#### Extra Input
+#### Extra input
 
 | Key                                     | Description                              | Note                   |
 | --------------------------------------- | ---------------------------------------- | ---------------------- |
 | `http://tizen.org/appcontrol/data/path` | The list of multiple file paths to be shared in an email message. This key must be passed as an array. | This key is mandatory. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/path', ['img_path']),
@@ -927,7 +927,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Sharing Text in an Email
+### Share text in an email
 
 To share any text with an email message, use the `http://tizen.org/appcontrol/operation/share_text` operation. You can also define the message subject and a list of file attachments.
 
@@ -945,7 +945,7 @@ To share any text with an email message, use the `http://tizen.org/appcontrol/op
 
 Only an empty `mailto:` field is allowed. It filters out all but email applications in the system.
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                   |
 | ---------------------------------------- | ---------------------------------------- | ---------------------- |
@@ -953,7 +953,7 @@ Only an empty `mailto:` field is allowed. It filters out all but email applicati
 | `http://tizen.org/appcontrol/data/subject` | The subject of an email message. This key must be passed as a string. | This key is optional.  |
 | `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared using an email message. This key must be passed as an array. | This key is optional. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/path', ['img_path']),
@@ -971,10 +971,10 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## File Storage
+## File storage
 The file storage application control is available depending on whether the installed application supports it or not.
 
-### Retrieving a Specific Type of File
+### Retrieve a specific type of file
 
 To select any kind of file from the storage, use the `http://tizen.org/appcontrol/operation/pick` operation with the corresponding MIME type. To give options for the pick operation, refer to the extras defined below.
 
@@ -986,7 +986,7 @@ To select any kind of file from the storage, use the `http://tizen.org/appcontro
 
 \*/\*
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
@@ -994,13 +994,13 @@ To select any kind of file from the storage, use the `http://tizen.org/appcontro
 | `http://tizen.org/appcontrol/data/total_count` | The total number of items to be returned. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                      | Value Description                        |
 | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/selected` | The list of selected file paths. This key must be passed as an array. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/selection_mode', ['single'])];
@@ -1015,7 +1015,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Downloading a File
+### Download a file
 
 To download a file, use the `http://tizen.org/appcontrol/operation/download` operation and specify the URL in the URI.
 
@@ -1030,7 +1030,7 @@ To request this operation, the `http://tizen.org/privilege/download` privilege i
 - `http:<path>`
 - `https:<path>`
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/download',
@@ -1043,11 +1043,11 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Input Delegator
+## Input delegator
 
 The input delegator application control is available depending on whether the installed application supports it or not.
 
-### Receiving User Input
+### Receive user input
 
 To receive a specific type of input from the user, use the `http://tizen.org/appcontrol/operation/get_input` operation. To give an option for the input delegator, refer to the extras defined below.
 
@@ -1066,7 +1066,7 @@ To receive a specific type of input from the user, use the `http://tizen.org/app
 - `audio/*`
 - `*/*`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                                     |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -1080,14 +1080,14 @@ To receive a specific type of input from the user, use the `http://tizen.org/app
 | `http://tizen.org/appcontrol/data/input_cursor_position_get` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional, and **it is supported since Tizen 4.0.** |
 | `http://tizen.org/appcontrol/data/input_reply_type` | The reply type. This key must be passed as a string. The available values are:<br> - `input_voice`: Receive the result as voice<br> - `input_emoticon`: Receive the result as an emoticon<Br> - `input_keyboard`: Receive the result as keyboard input<br> - `input_reply`: Receive the result as reply input<br> - `input_image`: Receive the result as an image<br> - `input_audio`: Receive the result as audio | This key is optional |
 
-#### Extra Output
+#### Extra output
 
 | Key                                     | Value description                        | Note                                     |
 | --------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/text` | The result string from the input delegator. This key must be passed as a string. | -                                        |
 | `http://tizen.org/appcontrol/data/path` | The list of multiple file paths from the input delegator. This key must be passed as an array. | This key is optional |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/input_type', ['input_voice']);
@@ -1107,7 +1107,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 The map application control is available depending on whether the installed application supports it or not.
 
 
-### Showing a Location on a Map
+### Show a location on a map
 
 To open a map to show a location, use the `http://tizen.org/appcontrol/operation/view` operation with an URI. To specify various map details, refer to the extras defined below.
 
@@ -1123,7 +1123,7 @@ To open a map to show a location, use the `http://tizen.org/appcontrol/operation
    Show the map at the location of a given keyword (address or POI). For example: `geo:0,0?q=Eiffel%20Tower`  
    All strings passed in the `geo:` URI must be encoded. If only `geo:` is used, it filters out all but map applications in the system, and the location to be shown depends on the application scenario and configuration.
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/view',
@@ -1136,7 +1136,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Picking a Location from the Map
+### Pick a location from the map
 
 To pick a location from the map, use the `http://tizen.org/appcontrol/operation/pick` operation. To specify various map details, refer to the extras defined below.
 
@@ -1154,13 +1154,13 @@ All strings passed in the `geo:` URI must be encoded.
 
 If only `geo:` is used, it filters out all but map applications in the system, and the location to be shown depends on the application scenario and configuration.
 
-#### Extra Input
+#### Extra input
 
 | Key                                     | Description                              | Note                                     |
 | --------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `http://tizen.org/appcontrol/data/type` | The type of items to be delivered. The available values are `address` (default), `image`, `poi`, `geocode`, `uri`, or `all`. This key must be passed as a string. | This key is optional. **The poi value is not supported in Tizen 2.4.** **The geocode and uri values are supported since Tizen 3.0.** |
+| `http://tizen.org/appcontrol/data/type` | The type of items to be delivered. The available values are `address` (default), `image`, `poi`, `geocode`, `uri`, or `all`. This key must be passed as a string. | This key is optional. **The POI value is not supported in Tizen 2.4.** **The geocode and uri values are supported since Tizen 3.0.** |
 
-#### Extra Output
+#### Extra output
 
 | Key                                      | Description                              | Note                                     |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -1170,7 +1170,7 @@ If only `geo:` is used, it filters out all but map applications in the system, a
 | `http://tizen.org/appcontrol/data/url`   | The URI of a place that shows the selected location. This key must be passed as a string. | **This key is supported since Tizen 3.0.** |
 | `http://tizen.org/appcontrol/data/path`  | The file path of the image showing the selected location. This key must be passed as a string. | -                                        |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/type', ['poi'])];
@@ -1199,7 +1199,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Message
 
-### Composing a Message
+### Compose a message
 The message composition operation is available depending on whether the installed application supports it or not.
 
 To compose a new message, use the `http://tizen.org/appcontrol/operation/compose` operation. To specify various message details, refer to the extras defined below.
@@ -1219,7 +1219,7 @@ To compose a new message, use the `http://tizen.org/appcontrol/operation/compose
 - `mmsto:<phone-number>`  
    For example: `mmsto:+17913331234`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
@@ -1228,7 +1228,7 @@ To compose a new message, use the `http://tizen.org/appcontrol/operation/compose
 | `http://tizen.org/appcontrol/data/subject` | The subject of an MMS message. If this value is set for an SMS message, the message is automatically converted to MMS. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared in a multimedia message. This key must be passed as an array. | This key is optional. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/text', ['My text']),
@@ -1244,7 +1244,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Sharing a Single Item Using a Message
+### Share a single item using a message
 The single item sharing operation is available depending on whether the installed application supports it or not.
 
 To share a single item using an MMS message, use the `http://tizen.org/appcontrol/operation/share` operation.
@@ -1270,13 +1270,13 @@ Any MIME type that your application needs, such as `image/jpg`, `video/*`, or `*
 
 If sharing a single item through `http://tizen.org/appcontrol/data/path` and the URI is specified with `mmsto:`, the MIME type must be explicitly set.
 
-#### Extra Input
+#### Extra input
 
 | Key                                     | Description                              | Note                                     |
 | --------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/path` | When the URI is set to `mmsto`, a path to a single file to be shared must be provided using this key. Otherwise, the key is ignored. This key must be passed as a string. | This key is mandatory when the URI is set to `mmsto`. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/path', ['img_path'])];
@@ -1291,7 +1291,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Sharing Multiple Items Using a Message
+### Share multiple items using a message
 The multiple item sharing operation is available depending on whether the installed application supports it or not.
 
 To share multiple items using an MMS message, use the `http://tizen.org/appcontrol/operation/multi_share` operation.
@@ -1310,19 +1310,19 @@ To share multiple items using an MMS message, use the `http://tizen.org/appcontr
 
 Only an empty `mmsto:` field is allowed. This can be used to filter out all but message applications available in the system.
 
-#### MIME Type (Mandatory)
+#### MIME type (Mandatory)
 
 Any MIME type that your application needs, such as `image/jpg`, `video/*`, or `*/*`
 
 If you try to share a set of files with different MIME types, use `<type>/*` or `*/*`. For example, if you send `video/mp4` and `audio/ogg`, the MIME type must be `*/*`.
 
-#### Extra Input
+#### Extra input
 
 | Key                                     | Description                              | Note                   |
 | --------------------------------------- | ---------------------------------------- | ---------------------- |
 | `http://tizen.org/appcontrol/data/path` | The list of multiple file paths to be shared in a multimedia message. This key must be passed as an array. | This key is mandatory. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/path', ['img_path']),
@@ -1339,7 +1339,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Sharing Text in a Message
+### Share text in a message
 The text sharing operation is available depending on whether the installed application supports it or not.
 
 To share any text with an SMS or MMS message, use the `http://tizen.org/appcontrol/operation/share_text` operation.
@@ -1359,7 +1359,7 @@ To share any text with an SMS or MMS message, use the `http://tizen.org/appcontr
 
 Only an empty `sms:` or `mmsto:` field is allowed. This can be used to filter out all but message applications available in the system.
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                   |
 | ---------------------------------------- | ---------------------------------------- | ---------------------- |
@@ -1367,7 +1367,7 @@ Only an empty `sms:` or `mmsto:` field is allowed. This can be used to filter ou
 | `http://tizen.org/appcontrol/data/subject` | The subject of an MMS message. If it is set for an SMS message, the message is automatically converted to MMS. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared in a multimedia message. This key must be passed as an array. | This key is optional. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControlData = [new tizen.ApplicationControlData('http://tizen.org/appcontrol/data/text', ['Hello, My name is Tizy.']),
@@ -1386,7 +1386,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Multimedia
 
-### Playing an Audio or Video File
+### Play an audio or video file
 The audio or video file playback operation is available depending on whether the installed application supports it or not.
 
 To play an audio or video file, use the `http://tizen.org/appcontrol/operation/view` operation with a URI. To specify various details, refer to the extras defined below.
@@ -1403,7 +1403,7 @@ To play an audio or video file, use the `http://tizen.org/appcontrol/operation/v
 - `rtsp:<path>`
 - `rtp:<path>`
 
-#### MIME Type (Optional)
+#### MIME type (Optional)
 
 - `audio/*`
 - `video/*`
@@ -1415,7 +1415,7 @@ To play an audio or video file, use the `http://tizen.org/appcontrol/operation/v
 - `application/x-smaf`
 - `application/vnd.smaf`
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/view',
@@ -1428,7 +1428,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Viewing an Image File
+### View an image file
 The image file viewing operation is available depending on whether the installed application supports it or not.
 
 To display an image file, use the `http://tizen.org/appcontrol/operation/view` operation with a URI. To specify various details, refer to the extras defined below.
@@ -1443,11 +1443,11 @@ To display an image file, use the `http://tizen.org/appcontrol/operation/view` o
 - `https:<path>`
 - `file:<path>`
 
-#### MIME Type (Optional)
+#### MIME type (Optional)
 
 - `image/*`
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/view',
@@ -1460,7 +1460,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Retrieving a Media File
+### Retrieve a media file
 The media file retrieval operation is available depending on whether the installed application supports it or not.
 
 To retrieve a specific type of media file, use the `http://tizen.org/appcontrol/operation/pick` operation. To specify various details, refer to the extras defined below.
@@ -1469,13 +1469,13 @@ To retrieve a specific type of media file, use the `http://tizen.org/appcontrol/
 
 `http://tizen.org/appcontrol/operation/pick`
 
-#### MIME Type (Optional)
+#### MIME type (Optional)
 
 - `audio/*`
 - `image/*`
 - `video/*`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
@@ -1483,13 +1483,13 @@ To retrieve a specific type of media file, use the `http://tizen.org/appcontrol/
 | `http://tizen.org/appcontrol/data/total_count` | The total number of items to be returned. This key must be passed as a string. | This key is optional. |
 | `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                      | Value Description                        |
 | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/selected` | The paths of the selected files. This key must be passed as an array. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/pick',
@@ -1502,11 +1502,11 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## System Settings
+## System settings
 The system settings application control is available depending on whether the installed application supports it or not.
 
 
-### Showing System Settings
+### Show system settings
 
 To display various setting menus for, for example, Connections, Devices, and System Information, use the `http://tizen.org/appcontrol/operation/setting` operation.
 
@@ -1518,7 +1518,7 @@ To display various setting menus for, for example, Connections, Devices, and Sys
 
 `http://tizen.org/appcontrol/operation/setting`
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting',
@@ -1535,7 +1535,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 The Bluetooth settings application control is available depending on whether the installed application supports it or not.
 
 
-### Showing Bluetooth Settings to Activate Bluetooth
+### Show Bluetooth settings to activate Bluetooth
 
 To launch the Bluetooth setting application to allow the user to activate or deactivate Bluetooth, use the `http://tizen.org/appcontrol/operation/setting/bt_enable` operation.
 
@@ -1547,7 +1547,7 @@ To launch the Bluetooth setting application to allow the user to activate or dea
 
 `http://tizen.org/appcontrol/operation/setting/bt_enable`
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/bt_enable',
@@ -1560,7 +1560,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-### Showing Bluetooth Settings to Configure Visibility
+### Showing Bluetooth settings to configure visibility
 
 To launch the Bluetooth setting application to allow the user to configure the visibility of the device, use the `http://tizen.org/appcontrol/operation/setting/bt_visibility` operation.
 
@@ -1572,7 +1572,7 @@ To launch the Bluetooth setting application to allow the user to configure the v
 
 `http://tizen.org/appcontrol/operation/setting/bt_visibility`
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/bt_visibility',
@@ -1585,10 +1585,10 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Settings for Location
+## Settings for location
 The location settings application control is available depending on whether the installed application supports it or not.
 
-### Showing Location Settings
+### Show location settings
 
 To launch the location setting application to allow the user to configure the source of the location information, use the `http://tizen.org/appcontrol/operation/setting/location` operation.
 
@@ -1602,7 +1602,7 @@ If the location service is not active when an application tries to use the `Huma
 
 `http://tizen.org/appcontrol/operation/setting/location`
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/location',
@@ -1618,7 +1618,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ## Settings for NFC
 The NFC settings application control is available depending on whether the installed application supports it or not.
 
-### Showing NFC Settings
+### Showing NFC settings
 
 To launch the NFC setting application to allow the user to activate or deactivate NFC, use the `http://tizen.org/appcontrol/operation/setting/nfc` operation.
 
@@ -1630,13 +1630,13 @@ To launch the NFC setting application to allow the user to activate or deactivat
 
 `http://tizen.org/appcontrol/operation/setting/nfc`
 
-#### Extra Input
+#### Extra input
 
 | Key                     | Description                              | Note                                     |
 | ----------------------- | ---------------------------------------- | ---------------------------------------- |
 | `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:<br>  - `nfc` (default): Default setting menu is launched<br>  - `tap_n_pay`: Tap & pay setting menu is launched. The support for this value depends on the device NFC settings. | This key is optional, and **it is supported since Tizen 3.0**. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/nfc',
@@ -1664,7 +1664,7 @@ To launch the Wi-Fi setting application to allow the user to activate and config
 
 `http://tizen.org/appcontrol/operation/setting/wifi`
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/wifi',
@@ -1677,10 +1677,10 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Voice Recorder
+## Voice recorder
 The voice recorder application control is available depending on whether the installed application supports it or not.
 
-### Recording Audio
+### Record audio
 
 To record audio, use the `http://tizen.org/appcontrol/operation/create_content` operation with the audio MIME type. To give an option for recording audio, refer to the extras defined below.
 
@@ -1688,23 +1688,23 @@ To record audio, use the `http://tizen.org/appcontrol/operation/create_content` 
 
 `http://tizen.org/appcontrol/operation/create_content`
 
-#### MIME Type (Mandatory)
+#### MIME type (Mandatory)
 
 Audio MIME type, such as `audio/m4a`, `audio/ogg`, and `audio/*`
 
-#### Extra Input
+#### Extra input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
-#### Extra Output
+#### Extra output
 
 | Key                                      | Value Description                        |
 | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/selected` | The path of the created audio file. This key must be passed as a string. |
 
-#### Example Code
+#### Example code
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/create_content',
@@ -1717,6 +1717,6 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Each application control is available depending on whether the installed application supports it or not.

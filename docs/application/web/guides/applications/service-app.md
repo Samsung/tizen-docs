@@ -1,6 +1,6 @@
 # Web Service
 
-A Web service is a type of Tizen Web application that provides an environment for running JavaScript in the background without a graphical user interface (the Web service follows the [ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm)). Web services are useful in performing periodical or continuous activities that doesn't need user intervention, such as crawling data in the background. For example, a Web service can be used for getting data or listening for platform events in the background. As Web services do not have UI components, they run on top of a more light-weight runtime than Web applications. Therefore, you can expect them to perform better and consume less memory.
+A Web service is a type of Tizen Web application that provides an environment for running JavaScript in the background without a graphical user interface (the Web service follows the [ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm){:target="_blank"}). Web services are useful in performing periodical or continuous activities that doesn't need user intervention, such as crawling data in the background. For example, a Web service can be used for getting data or listening for platform events in the background. As Web services do not have UI components, they run on top of a more light-weight runtime than Web applications. Therefore, you can expect them to perform better and consume less memory.
 
 The main features of the Web service include:
 
@@ -53,9 +53,9 @@ To enable your application to use the Web service functionality:
 > No privileges need to be separately defined for Web services, since the Web service is always packaged with a Web application, and a privilege defined for the Web application covers the entire application package.
 
 <a name="create"></a>
-## Manage Web Service Life-cycle
+## Manage Web service life-cycle
 
-To run a Web service, you must export a number of callbacks using the [CommonJS Modules](http://wiki.commonjs.org/wiki/Modules/1.1) API. The callbacks need to be added to the `module.exports` object, which is provided by the environment. The following callbacks are called when there are life-cycle changes or application control events which are triggered by the application management framework:
+To run a Web service, you must export a number of callbacks using the [CommonJS Modules](http://wiki.commonjs.org/wiki/Modules/1.1){:target="_blank"} API. The callbacks need to be added to the `module.exports` object, which is provided by the environment. The following callbacks are called when there are life-cycle changes or application control events which are triggered by the application management framework:
 
 - `onStart()`: The entry point of the service. It is called after the service runtime finishes the set-up.
 - `onStop()`: The exit point of the service. It is called to end a service. You can release resources or save the context by using this callback.
@@ -68,7 +68,7 @@ The Web service is running in browser thread of the Web application process.
 
 To manage Web service callbacks, follow these steps:
 
-1. Create the service entry point with the `onStart()` callback. The callback is invoked when the service is launched. Within the callback, you can prepare resources and initialize whatever the Web service needs during the execution.
+1. Create the service entry point with the `onStart()` callback. The callback is invoked when the service is launched. Within the callback, you can prepare resources and initialize whatever the Web service needs during the execution:
 
    ```
    module.exports.onStart = function() {
@@ -76,7 +76,7 @@ To manage Web service callbacks, follow these steps:
    };
    ```
 
-2. Create the service exit point with the `onStop()` callback. The callback is invoked when the service is about to be stopped. All resources can be cleared and backed up within the callback.
+2. Create the service exit point with the `onStop()` callback. The callback is invoked when the service is about to be stopped. All resources can be cleared and backed up within the callback:
 
    ```
    module.exports.onStop = function() {
@@ -85,13 +85,13 @@ To manage Web service callbacks, follow these steps:
    ```
 
 <a name="package"></a>
-## Package Web Service
+## Package Web service
 
 A Web application package can contain one Web application and several Web services. Each application in the Web application package shares the same package ID and has a unique application ID. In the following example, you can use the `<tizen:application>` element to define information for the Web application. The `<tizen:service>` element is used to define information about the Web service. The Web application and the Web service have the same package ID and different application IDs.
 
 The Web application package file is installed, updated, and uninstalled as a single [package](../../index.md#package).
 
-To package the Web service with a Web application, define the service in the `config.xml` file. The `<tizen:service>` element allows you to define the characteristics of the Web service. For example, you can specify the name, type and starting JavaScipt file of the Web service.
+To package the Web service with a Web application, define the service in the `config.xml` file. The `<tizen:service>` element allows you to define the characteristics of the Web service. For example, you can specify the name, type and starting JavaScipt file of the Web service:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -111,7 +111,7 @@ To package the Web service with a Web application, define the service in the `co
 ```
 
 <a name="launch"></a>
-## Launch Web Service by Web Application
+## Launch Web service by Web application
 
 The following code explains you how to launch a Web service by Web application.
 
@@ -133,7 +133,7 @@ The Web application launches a Web service by calling the `startService()` metho
  ```
 
 <a name="terminate"></a>
-## Terminate Web Service by Web Application
+## Terminate Web service by Web application
 
 The following code explains you how to terminate a Web service by Web application.
 

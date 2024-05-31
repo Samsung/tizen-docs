@@ -42,10 +42,10 @@ You can use the following application data exchange features in your Web applica
 
 - [Data Control](data-control.md)
 
-  You can exchanging SQL- or key-value-type data between applications. All applications (consumers) can request data shared by other applications (providers), and 1 provider can serve multiple consumers.
+  You can exchange SQL- or key-value-type data between applications. All applications (consumers) can request data shared by other applications (providers), and 1 provider can serve multiple consumers.
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

@@ -16,7 +16,7 @@ the packaging information for Web, native, and hybrid application
 packages.
 
 <a name="versioning"></a>
-## API Versioning
+## API version
 
 The version format used to identify the APIs of the Tizen platform is
 **X.Y.Z** (Major.Minor.Micro). All changes, including any kind of
@@ -24,7 +24,7 @@ version update, maintain the application binary interface (ABI)
 compatibility excepting only critical security reasons.
 
 <a name="policy"></a>
-## Deprecation Policy and Schedule
+## Deprecation policy and schedule
 
 API deprecation is used to inform you that some APIs are no longer
 recommended for use in your applications. The Tizen team is trying to
@@ -60,7 +60,7 @@ adopted in Tizen:
 -   All version changes are considered 1 release for purposes of the    deprecation policy.
 
 <a name="identify"></a>
-## Identifying a Deprecated API
+## Identify a deprecated API
 
 Tizen Studio continues to provide deprecation warnings. From the API
 reference, you can find a highlighted tag starting with **Deprecated**.
@@ -131,7 +131,7 @@ You can also see the API deprecation warning in log messages:
     ```
 
 <a name="compatibility"></a>
-## API Backward Compatibility
+## API backward compatibility
 
 With the best efforts, the Tizen platform tries to provide a backward
 compatibility of public APIs documented in the API reference. Therefore,

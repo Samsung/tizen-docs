@@ -4,10 +4,10 @@ You can manage installed widgets and widget instances in various ways, such as r
 
 This feature is supported in mobile and wearable applications only.
 
-> **Note**  
+> [!NOTE]
 > Do not use "widget" as a name for any of your global variables, as it is the name of a global W3C object.
 
-The main features of the Widget Service API include:
+The main features of the Widget Service API include are as follows:
 
 - Widget retrieval   
 
@@ -22,7 +22,7 @@ The main features of the Widget Service API include:
   You can [manage widget instances](#instance) by changing the instance data update interval and managing the instance content.
 
 <a name="widget"></a>
-## Widget Retrieval
+## Widget retrieval
 
 Using the `WidgetServiceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetServiceManager) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetServiceManager) applications), you can:
 
@@ -30,11 +30,11 @@ Using the `WidgetServiceManager` interface (in [mobile](../../api/latest/device_
 - Receive information about the primary widget ID or size related to the specific size type.
 
 <a name="get_widget"></a>
-### Retrieving a Widget
+### Retrieve a widget
 
 Learning how to retrieve the installed widget list is a basic widget management skill:
 
-1. Define a success handler implementing the `WidgetArraySuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetArraySuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetArraySuccessCallback) applications). Optionally, you can specify an error handler too.
+1. Define a success handler implementing the `WidgetArraySuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetArraySuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetArraySuccessCallback) applications). Optionally, you can specify an error handler too:
 
    ```
    var successCallback = function(widgets) {
@@ -46,7 +46,7 @@ Learning how to retrieve the installed widget list is a basic widget management 
    };
    ```
 
-2. To get a list of all installed widgets, use the `getWidgets()` method of the `WidgetServiceManager` interface. If the optional `packageId` parameter is given, only the widgets belonging to the given package are returned.
+2. To get a list of all installed widgets, use the `getWidgets()` method of the `WidgetServiceManager` interface. If the optional `packageId` parameter is given, only the widgets belonging to the given package are returned:
 
    ```
    var packageId = 'org.tizen.contacts';
@@ -60,7 +60,7 @@ Learning how to retrieve the installed widget list is a basic widget management 
    ```
 
 <a name="info"></a>
-### Retrieving ID and Size Information
+### Retrieve ID and size information
 
 Learning how to retrieve the primary widget ID or size makes using the Widget Service API easy and convenient:
 
@@ -77,7 +77,7 @@ Learning how to retrieve the primary widget ID or size makes using the Widget Se
   ```
 
 <a name="management"></a>
-## Widget Management
+## Widget management
 
 Using the `Widget` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#Widget) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#Widget) applications), you can:
 
@@ -89,7 +89,7 @@ Using the `Widget` interface (in [mobile](../../api/latest/device_api/mobile/tiz
 <a name="name"></a>
 ### Retrieving the Widget Name
 
-To retrieve the widget name:
+To retrieve the widget name, follow these steps:
 
 1. Retrieve the widget whose name you need:
 
@@ -97,21 +97,21 @@ To retrieve the widget name:
    var myWidget = tizen.widgetservice.getWidget('org.tizen.gallery.widget');
    ```
 
-2. To get the widget name, use the `getName()` method of the `Widget` interface. If the locale parameter is omitted, the system locale is used.
+2. To get the widget name, use the `getName()` method of the `Widget` interface. If the locale parameter is omitted, the system locale is used:
 
    ```
    var name = myWidget.getName('en-us');
    ```
 
 <a name="instances"></a>
-### Retrieving Widget Instances
+### Retrieve widget instances
 
 Learning how to retrieve information about installed widget instances makes the Widget Service API more useful:
 
-> **Note**  
+> [!NOTE]
 > The `WidgetInstance.id` value (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetInstance::id) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetInstance::id) applications) is volatile and can change after device reboot.
 
-1. Define a success handler implementing the `WidgetInstancesCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetInstancesCallback) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetInstancesCallback) applications). Optionally, you can specify an error handler too.
+1. Define a success handler implementing the `WidgetInstancesCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetInstancesCallback) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetInstancesCallback) applications). Optionally, you can specify an error handler too:
 
    ```
    var successCallback = function(instances) {
@@ -130,7 +130,7 @@ Learning how to retrieve information about installed widget instances makes the 
    ```
 
 <a name="variants"></a>
-### Retrieving Widget Variants
+### Retrieve widget variants
 
 To retrieve variants representing all the supported widget size types:
 
@@ -165,7 +165,7 @@ To retrieve variants representing all the supported widget size types:
    ```
 
 <a name="receive"></a>
-### Monitoring Widget Changes
+### Monitor widget changes
 
 Learning to receive notifications when the state of the widget has been changed is a useful widget management skill. There are 4 states that can be noticed: `CREATE`, `DESTROY`, `PAUSE`, and `RESUME`.
 
@@ -196,20 +196,20 @@ Learning to receive notifications when the state of the widget has been changed 
    ```
 
 <a name="instance"></a>
-## Widget Instance Management
+## Widget instance management
 
 Using the `WidgetInstance` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetInstance) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetInstance) applications), you can:
 
 - Change the update period of the instance using the `changeUpdatePeriod()` method.
 - Send or get content to and from the widget instance.
 
-> **Note**  
+> [!NOTE]
 > These features are not supported by Web widgets. You can only use them in Web applications to manage installed widgets. For more information, see [Web Device API supported by Widget Engine](../../api/latest/wearable_widget/web_widget.html#user-content-web-device-api).
 
 <a name="period"></a>
-### Changing the Update Period
+### Change the update period
 
-To change the update interval for the widget instance:
+To change the update interval for the widget instance, follow these steps:
 
 1. Retrieve the widget instance with the `getInstances()` method:
 
@@ -230,7 +230,7 @@ To change the update interval for the widget instance:
    ```
 
 <a name="content"></a>
-### Sending and Getting Content
+### Send and get content
 
 Learning how to send and get the widget content is a useful widget management skill:
 
@@ -246,13 +246,13 @@ Learning how to send and get the widget content is a useful widget management sk
    myWidget.getInstances(successCallback);
    ```
 
-2. To send data to the widget, use the `sendContent()` method of the `WidgetInstance` interface. The second parameter defines whether the instance is updated even if the provider is paused.
+2. To send data to the widget, use the `sendContent()` method of the `WidgetInstance` interface. The second parameter defines whether the instance is updated even if the provider is paused:
 
    ```
    instance.sendContent(data, true);
    ```
 
-3. To retrieve widget instance content, define a success handler implementing the `WidgetContentCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetContentCallback) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetContentCallback) applications). Optionally, you can specify an error handler too.
+3. To retrieve widget instance content, define a success handler implementing the `WidgetContentCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetContentCallback) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetContentCallback) applications). Optionally, you can specify an error handler too:
 
    ```
    var successCallback = function(object) {
@@ -271,7 +271,7 @@ Learning how to send and get the widget content is a useful widget management sk
    ```
 
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 3.0 and Higher for Mobile
    - Tizen 2.3.2 and Higher for Wearable
