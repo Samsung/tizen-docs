@@ -4,7 +4,7 @@ The Tizen platform supports some device events for user interaction. To provide 
 
 This feature is supported in mobile and wearable applications only.
 
-## Hardware Key Events
+## Hardware key events
 
 The Tizen platform supports hardware key events for user interaction on devices.
 
@@ -32,13 +32,13 @@ window.addEventListener('tizenhwkey', function(ev) {
 });
 ```
 
-### Exiting the Application with the Back Key
+### Exit the application with the back key
 
 When the application binds a `tizenhwkey` event, it checks the page ID and decides to go back or exit with several lines of app-side script.
 
 The Tizen Device APIs provide an application exit method. Even if the application has many pages, it can handle the back/exit process.
 
-With a TAU page, simply remember the ID of the main page. In the following example, the ID of the main page is `main`.
+With a TAU page, simply remember the ID of the main page. In the following example, the ID of the main page is `main`:
 
 ```javascript
 (function() {
@@ -58,7 +58,7 @@ With a TAU page, simply remember the ID of the main page. In the following examp
 }());
 ```
 
-## Rotary Events in Wearable Applications
+## Rotary events in wearable applications
 
 The Tizen platform supports rotary events for user interaction on a wearable rotary device or sensor. The rotary device can rotate clockwise or counter-clockwise, and dispatch an event for each movement. The rotary device has points called detents. If the rotary device detects the detent point while rotating, it dispatches a separate new event about the point. The number of the available detent points depends on the device hardware.
 
@@ -83,7 +83,7 @@ document.addEventListener('rotarydetent', function(ev) {
 });
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
