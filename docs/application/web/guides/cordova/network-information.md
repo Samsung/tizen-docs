@@ -4,7 +4,7 @@ You can access information about the connection (such as cellular, Wi-Fi, or Eth
 
 The Network Information API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Network Information API include:
+The main features of the Network Information API include the following:
 
 - Getting the connection status        
 
@@ -34,7 +34,7 @@ To enable your application to use the network information functionality:
    <tizen:privilege name="http://tizen.org/privilege/telephony"/>
    ```
 
-## Checking the Connection Status
+## Check the connection status
 
 The following table lists the available connection types in the `Connection` global dictionary, which you can use to determine the current connection status.
 
@@ -60,7 +60,7 @@ To determine whether the device is connected to a Wi-Fi network:
    </div>
    ```
 
-2. Get the connection type.
+2. Get the connection type:
 
    It is a case-sensitive string in the `navigator.connection` object.
 
@@ -80,11 +80,11 @@ To determine whether the device is connected to a Wi-Fi network:
 
 The above code fills the `div` element with text, based on whether the device is connected to a Wi-Fi network.
 
-## Handling Network-related Events
+## Handle network-related events
 
 Manage the situations where the device connects to and disconnects from a network:
 
-1. Register event handlers after Cordova is set up. The most convenient way is to use the `deviceready` event callback.
+1. Register event handlers after Cordova is set up. The most convenient way is to use the `deviceready` event callback:
 
    ```
    document.addEventListener('deviceready', register);
@@ -110,7 +110,7 @@ Manage the situations where the device connects to and disconnects from a networ
    The `online` event fires when `connection.type` changes from `Connection.NONE` to any other value. Similarly, the `offline` event fires when `connection.type` becomes `Connection.NONE`.
 
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 3.0 and Higher for Mobile
    - Tizen 3.0 and Higher for Wearable

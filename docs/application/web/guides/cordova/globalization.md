@@ -4,7 +4,7 @@ You can get information about the user's locale, language, and time zone. You ca
 
 The Globalization API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Globalization API include:
+The main features of the Globalization API include the following:
 
 - Obtaining locale information
 
@@ -17,7 +17,7 @@ The main features of the Globalization API include:
   - [Get the pattern string to format and parse dates](#retrieving-the-date-format-details).
   - [Get the first day of the week](#retrieving-the-first-day-of-the-week).
   - [Get the pattern string to format and parse numbers](#retrieving-the-number-format-details).
-  - [Determine whether the Daylight Saving Time is in effect](#retrieving-the-daylight-saving-time-status) for a given date.
+  - [Determine whether the daylight saving time is in effect](#retrieving-the-daylight-saving-time-status) for a given date.
 
 - Converting data
 
@@ -37,7 +37,7 @@ function onDeviceReady() {
 }
 ```
 
-## Retrieving the Current Language
+## Retrieve the current language
 
 To get the current BCP 47 language identifier:
 
@@ -60,7 +60,7 @@ The following output is shown in the system log:
 Language: en-US
 ```
 
-## Retrieving the Current Locale
+## Retrieve the current locale
 
 To get the current BCP 47 locale identifier:
 
@@ -83,7 +83,7 @@ The following output is shown in the system log:
 Locale: en-US
 ```
 
-## Retrieving the Currency Details
+## Retrieve the currency details
 
 To obtain the following information about the currency:
 
@@ -131,7 +131,7 @@ decimal: .
 grouping: ,
 ```
 
-## Retrieving the Names of the Months and Days of the Week
+## Retrieve the names of the months and days of the week
 
 To obtain the names of months:
 
@@ -169,14 +169,14 @@ month: November
 month: December
 ```
 
-## Retrieving the Date Format Details
+## Retrieve the date format details
 
 To get the following information about the date format:
 
 - Date and time pattern that follows Unicode Technical Standard #35
 - Abbreviated name of the time zone
 - Current difference in seconds between the user's time zone and coordinated universal time
-- Current daylight saving time offset in seconds between the user's non-daylight saving time zone and the user's daylight saving time zone.
+- Current daylight saving time offset in seconds between the user's non-daylight saving time zone and the user's daylight saving time zone
 
 ```
 function checkDatePattern() {
@@ -202,7 +202,7 @@ The following output is shown in the system log:
 Date pattern: M/d/yyyy h:mm a
 ```
 
-## Retrieving the First Day of the Week
+## Retrieve the first day of the week
 
 To obtain information on which day is the first day of the week (1 means Sunday):
 
@@ -226,7 +226,7 @@ The following output is shown in the system log:
 day: 1
 ```
 
-## Retrieving the Number Format Details
+## Retrieve the number format details
 
 To obtain the following information about the number format:
 
@@ -234,7 +234,7 @@ To obtain the following information about the number format:
 
 - Symbol to use when formatting and parsing, such as percent or currency symbol  
 
-  It depends on the third parameter of the `getNumberPattern()` method, which can be `'decimal'`, `'percent'`, or `'currency'`.
+  It depends on the third parameter of the `getNumberPattern()` method, which can be `'decimal'`, `'percent'`, or `'currency'`
 
 - Number of fractional digits
 
@@ -282,7 +282,7 @@ decimal: .
 grouping: ,
 ```
 
-## Retrieving the Daylight Saving Time Status
+## Retrieve the daylight saving time status
 
 To obtain information on whether the daylight saving time is in effect for a given date using the current time zone:
 
@@ -306,9 +306,9 @@ The following output is shown in the system log:
 dst: true
 ```
 
-## Performing Conversions
+## Perform conversions
 
-To make conversions between strings, numbers, and dates according to the current locale:
+To make conversions between strings, numbers, and dates according to the current locale, follow these steps:
 
 - Date to string  
 
@@ -432,7 +432,7 @@ To make conversions between strings, numbers, and dates according to the current
   number: 1234.56
   ```
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
