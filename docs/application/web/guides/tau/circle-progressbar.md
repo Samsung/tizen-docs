@@ -10,7 +10,7 @@ The following figure shows the layout of the progress bar component in a rectang
 
 ![Circle-shaped progress bar component on a rectangular device](./media/rectangular_progress.png)  ![Circle-shaped progress bar component on a circular device](./media/round_progress.png)
 
-To implement the progress bar component:
+To implement the progress bar component, follow the steps below:
 
 1. Edit the HTML code to add the component to your application screen:
 
@@ -167,6 +167,6 @@ To implement the progress bar component:
    }());
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.3.1 and Higher for Wearable
