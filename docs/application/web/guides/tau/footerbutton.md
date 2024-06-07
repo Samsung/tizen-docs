@@ -18,9 +18,9 @@ The footer button on the circular UI has the `ui-bottom-button` class. When ther
 
 To implement footer buttons:
 
-- To implement a single footer button:
+- To implement a single footer button, follow this step:
 
-  Edit the HTML code to add the footer button component to your application screen.
+  Edit the HTML code to add the footer button component to your application screen:
 
   ```xml
   <div class="ui-page ui-page-active" id="bottomButtonPage">
@@ -36,11 +36,11 @@ To implement footer buttons:
   </div>
   ```
 
-- To implement multiple footer buttons:
+- To implement multiple footer buttons, follow these steps:
 
   1. Edit the HTML code to add the footer button components to your application screen.
 
-     When there are multiple buttons, the buttons (except for the first button) use the drawer in the circular UI.
+     When there are multiple buttons, the buttons (except for the first button) use the drawer in the circular UI:
 
      ```xml
      <div class="ui-page ui-page-active" id="bottomButtonWithMorePage">
@@ -114,6 +114,6 @@ To implement footer buttons:
      })();
      ```
 
-## Related Information
+## Related information
 * Dependencies     
   - Tizen 2.3.1 and Higher for Wearable
