@@ -4,7 +4,7 @@ You can enable the user to control the device through their voice. You can regis
 
 The Voice Control API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Voice Control API include:
+The main features of the Voice Control API include the following:
 
 - Managing commands
 
@@ -17,7 +17,7 @@ The main features of the Voice Control API include:
   You can get a notification of the language change in a listener. If the display language is changed to a non-supported one, the voice control language changes to English.
 
 
-To use the voice control:
+To use the voice control, follow these steps:
 
 
 1. Set up the voice control and [register listeners](#callback).
@@ -40,7 +40,7 @@ To use the voice control:
 
 ## Prerequisites
 
-   To enable your application to use the voice control functionality:
+   To enable your application to use the voice control functionality, follow these steps:
 
    1. Initialize a voice control client instance using the `getVoiceControlClient()` function:
 
@@ -62,12 +62,12 @@ To use the voice control:
       }
       ```
 
-      > **Note**  
+      > [!NOTE]
       > Do not call the `release()` function in a listener.
 
 <a name="callback"></a>
-## Managing Listeners
-To set and unset listeners to get notifications about recognition results and language changes:
+## Manage listeners
+To set and unset listeners to get notifications about recognition results and language changes, follow these steps:
 
 
 * Add the current language change listener to be invoked when the system or application language changes:
@@ -96,12 +96,12 @@ To set and unset listeners to get notifications about recognition results and la
    }
    ```
 
-* Add the recognition result listener to be invoked when a voice command is recognized.
+* Add the recognition result listener to be invoked when a voice command is recognized
 
-   > **Note**  
+   > [!NOTE]
    >   If the recognition result produces a reject event, the voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.
 
-   To get the command, check the `list` parameter in the recognition result listener. The parameter is an array of recognized `VoiceControlCommand` instances. The `result` parameter contains the recognized text.
+   To get the command, check the `list` parameter in the recognition result listener. The parameter is an array of recognized `VoiceControlCommand` instances. The `result` parameter contains the recognized text:
 
    ```csharp
    /* Listener */
@@ -128,9 +128,9 @@ To set and unset listeners to get notifications about recognition results and la
    ```
 
 <a name="info"></a>
-## Retrieving the Current Language
+## Retrieve the current language
 
-To get the current language, use the `getCurrentLanguage()` function. The voice control recognition works for the current (default) language. To be notified of language changes, use the language change listener.
+To get the current language, use the `getCurrentLanguage()` function. The voice control recognition works for the current (default) language. To be notified of language changes, use the language change listener:
 
 ```csharp
 var getCurrentLang()
@@ -147,13 +147,13 @@ var getCurrentLang()
 ```
 
 <a name="commands"></a>
-## Managing Commands
+## Manage commands
 
-To create a command list and commands:
+To create a command list and commands, follow these steps:
 
 1. Create a command.  
 
-   Create a command with a command text and a command type. The command type is optional and the default command type is <code>FOREGROUND</code>.
+   Create a command with a command text and a command type. The command type is optional and the default command type is <code>FOREGROUND</code>:
    ```csharp
    var createCommandList()
    {
@@ -166,7 +166,7 @@ To create a command list and commands:
 
    The command list can include many commands, each with their own command text and type. The list can have <code>FOREGROUND</code> type commands, which are valid when the application is in a visible state.
 
-   You can access the command list after you set it to the voice control and when you get the recognition result.
+   You can access the command list after you set it to the voice control and when you get the recognition result:
    ```csharp
        var commands = [command1, command2, command3];
    ```
@@ -175,7 +175,7 @@ To create a command list and commands:
 
    You can set the command list with commands using the `setCommandList()` function.
 
-   If you want to update the registered commands, set the command list again with the updated commands using the `setCommandList()` function.
+   If you want to update the registered commands, set the command list again with the updated commands using the `setCommandList()` function:
 
    ```csharp
        client.setCommandList(commands, "FOREGROUND");
@@ -188,7 +188,7 @@ To create a command list and commands:
    }
    ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 4.0 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
