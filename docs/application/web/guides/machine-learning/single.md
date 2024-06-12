@@ -2,7 +2,7 @@
 
 You can use the Single API to load the existing neural network model from the storage. After loading the model, you can invoke it with a single instance of input data. Then, you can get the inference output result.
 
-The main features of the Single API include:
+The main features of the Single API include the following:
 
 - Loading a neural network model
 
@@ -36,7 +36,7 @@ Additionally, to access files using the Single API (in [mobile](../../api/latest
     var model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite");
     ```
 
-2. If the model supports dynamic tensors, you can:
+2. If the model supports dynamic tensors, you can do the following:
 
     - provide custom input and output tensors:
         ```javascript
