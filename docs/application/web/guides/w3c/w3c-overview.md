@@ -43,7 +43,7 @@ You can use the following W3C, HTML5, and supplementary features in your Web app
 
   You can create a visual outlook for the UI application to ensure the best possible user experience. The Tizen platform provides the W3C/HTML5 UI toolkit framework for developing a Web application.
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
