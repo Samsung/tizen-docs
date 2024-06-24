@@ -4,7 +4,7 @@ You can access secure elements in a device. You can access various secure elemen
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Secure Element API include:
+The main features of the Secure Element API include the following:
 
 - Managing secure elements   
 
@@ -30,11 +30,11 @@ To use the Secure Element API (in [mobile](../../api/latest/device_api/mobile/ti
 <tizen:privilege name="http://tizen.org/privilege/secureelement"/>
 ```
 
-## Managing Secure Elements
+## Manage secure elements
 
 To use secure elements in your application, you must learn to retrieve them and track changes in them:
 
-1. To retrieve all the available secure element readers, use the `getReaders()` method of the `SEService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#SEService) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#SEService) applications). The method registers the `ReaderArraySuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#ReaderArraySuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#ReaderArraySuccessCallback) applications), which is invoked when the list of available secure element readers has been successfully retrieved.
+1. To retrieve all the available secure element readers, use the `getReaders()` method of the `SEService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#SEService) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#SEService) applications). The method registers the `ReaderArraySuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#ReaderArraySuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#ReaderArraySuccessCallback) applications), which is invoked when the list of available secure element readers has been successfully retrieved:
 
    ```
    function success(readers) {
@@ -79,7 +79,7 @@ To use secure elements in your application, you must learn to retrieve them and 
 
 To use secure elements in your application, you must learn to open sessions and channels:
 
-1. To open a session, use the `openSession()` method of the `Reader` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Reader) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Reader) applications). The method registers the `SessionSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#SessionSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#SessionSuccessCallback) applications), which is invoked when a session on a specific reader is opened.
+1. To open a session, use the `openSession()` method of the `Reader` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Reader) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Reader) applications). The method registers the `SessionSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#SessionSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#SessionSuccessCallback) applications), which is invoked when a session on a specific reader is opened:
 
    ```
    function successCB(session) {
@@ -94,7 +94,7 @@ To use secure elements in your application, you must learn to open sessions and 
 
 2. To open a channel within a session:
 
-   1. Open a basic channel with the `openBasicChannel()` method of the `Session` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Session) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Session) applications). The method registers the `ChannelSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#ChannelSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#ChannelSuccessCallback) applications), which is invoked when a channel is opened to communicate with a specific applet.
+   1. Open a basic channel with the `openBasicChannel()` method of the `Session` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Session) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Session) applications). The method registers the `ChannelSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#ChannelSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#ChannelSuccessCallback) applications), which is invoked when a channel is opened to communicate with a specific applet:
 
       ```
       function successCB(channel) {
@@ -112,17 +112,17 @@ To use secure elements in your application, you must learn to open sessions and 
       session.openBasicChannel([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe], successCB, errorCB);
       ```
 
-   2. Open a logical channel with the `openLogicalChannel()` method of the `Session` interface. As with a basic channel, the method registers the `ChannelSuccessCallback` interface.
+   2. Open a logical channel with the `openLogicalChannel()` method of the `Session` interface. As with a basic channel, the method registers the `ChannelSuccessCallback` interface:
 
       ```
       session.openLogicalChannel([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe], successCB, errorCB);
       ```
 
-## Transmitting APDUs to Secure Elements
+## Transmit APDUs to secure elements
 
 To use secure elements in your application, you must learn to transmit application protocol data units (APDU) to secure elements:
 
-1. To transmit an APDU command to a secure element, use the `transmit()` method of the `Channel` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Channel) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Channel) applications).
+1. To transmit an APDU command to a secure element, use the `transmit()` method of the `Channel` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Channel) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Channel) applications):
 
    ```
    /* APDU command is defined in ISO7816-4 */
@@ -140,7 +140,7 @@ To use secure elements in your application, you must learn to transmit applicati
    }
    ```
 
-## Closing Sessions and Channels
+## Closing sessions and channels
 
 To use secure elements in your application, you must learn to close sessions and channels:
 
@@ -169,7 +169,7 @@ To use secure elements in your application, you must learn to close sessions and
    ```
 
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
