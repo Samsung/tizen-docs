@@ -8,7 +8,7 @@ Push notification helps your application server send data to your application on
 
 If a push message arrives when the application is running, the message is automatically delivered to the application. If the application is not running, the push service makes a sound or vibrates and adds a ticker or a badge notification to notify the user. By touching this notification, the user can check the message. If the application server sends a message with a `LAUNCH` option, the push service forcibly launches the application and hands over the message to the application.
 
-The main features of the Push API include:
+The main features of the Push API include the following:
 
 - Registering to the push service   
 
@@ -30,7 +30,7 @@ The main features of the Push API include:
 
   The push service implements the RESTful open API for sending a push message. For more information on sending push notifications, see [Push Server](../../../native/guides/messaging/push-server.md).
 
-> **Note**  
+> [!NOTE]
 > Remember about security issues when sending notifications with sensitive information. For a list of strongly recommended rules, see [Managing Security](../../../native/guides/messaging/push.md#managing-security).
 
 ## Architecture
@@ -41,7 +41,7 @@ The architecture of the Tizen Push service is described in detail in the [mobile
 
 ![Service architecture](./media/push-overview.png)
 
-To receive push notifications for your application:
+To receive push notifications for your application, follow these steps:
 
 1. Request permission to access the Tizen push servers for using the push service API.
 2. Wait for a confirmation email for the request.
@@ -51,7 +51,7 @@ To receive push notifications for your application:
 
 ## Prerequisites
 
-To enable your application to use the push functionality:
+To enable your application to use the push functionality, follow these steps:
 
 1. To use the Push API (in [mobile](../../api/latest/device_api/mobile/tizen/push.html), [wearable](../../api/latest/device_api/wearable/tizen/push.html), and [TV](../../api/latest/device_api/tv/tizen/push.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
@@ -73,12 +73,12 @@ To enable your application to use the push functionality:
 
       To use the push messaging service, the application needs permission to access the Tizen push server. Request permission from the Tizen push service team using one of the following online request forms:
 
-      - [Request permission for a new application](https://developer.tizen.org/webform/request-permission-tizen-push-service)
-      - [Extend the expiration date or change the quota](https://developer.tizen.org/webform/request-extend-expiration-date-or-change-quota) for an application that already has permission to use the push messaging service
+      - [Request permission for a new application](https://developer.tizen.org/webform/request-permission-tizen-push-service){:target="_blank"}.
+      - [Extend the expiration date or change the quota](https://developer.tizen.org/webform/request-extend-expiration-date-or-change-quota){:target="_blank"} for an application that already has permission to use the push messaging service
 
       When the team approves the request, you receive a push app ID corresponding to your package ID.
 
-## Registering to the Push Service
+## Register to the push service
 
 To receive push notifications, you must learn how to register your application to the push service:
 
@@ -104,7 +104,7 @@ To receive push notifications, you must learn how to register your application t
      }
      ```
 
-  2. Register the application for the service with the `register()` method. This operation has to be done only once.
+  2. Register the application for the service with the `register()` method. This operation has to be done only once:
 
      ```
      /* Request application registration */
@@ -113,7 +113,7 @@ To receive push notifications, you must learn how to register your application t
 
 - Since Tizen 3.0:
 
-  Before registering, you must connect to the push service:
+  Before registering, you must connect to the push service, follow these steps to connect to the push service:
 
   1. Define event handlers:
 
@@ -144,7 +144,7 @@ To receive push notifications, you must learn how to register your application t
      }
      ```
 
-  2. Connect to the push service with the `connect()` method. The `register()` method is called in the `stateChangeCallback()` callback. This operation has to be done only once.
+  2. Connect to the push service with the `connect()` method. The `register()` method is called in the `stateChangeCallback()` callback. This operation has to be done only once:
 
      ```
      /* Connect to push service */
@@ -162,7 +162,7 @@ if (registrationId != null) {
 
 Since Tizen 3.0, you must connect to the push service before getting the registration ID.
 
-## Receiving Push Notifications
+## Receive push notifications
 
 You can connect to the push service and start receiving push notifications with the `connectService()` method up to Tizen 2.4, or with the `connect()` method since Tizen 3.0. Up to Tizen 2.4, you must pass the `PushNotificationCallback` listener (in [mobile](../../api/latest/device_api/mobile/tizen/push.html#PushNotificationCallback) and  [wearable](../../api/latest/device_api/wearable/tizen/push.html#PushNotificationCallback) applications) as a parameter in the method to receive push notifications. Since Tizen 3.0, you must pass the `PushRegistrationStateChangeCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/push.html#PushRegistrationStateChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/push.html#PushRegistrationStateChangeCallback), and [TV](../../api/latest/device_api/tv/tizen/push.html#PushRegistrationStateChangeCallback) applications) and `PushNotificationCallback` callbacks (in [mobile](../../api/latest/device_api/mobile/tizen/push.html#PushNotificationCallback), [wearable](../../api/latest/device_api/wearable/tizen/push.html#PushNotificationCallback), and [TV](../../api/latest/device_api/tv/tizen/push.html#PushNotificationCallback) applications) as parameters in the method. The first callback is called when the registration change state changes. This callback is called at least once, just after the connection is established. The second callback is called when notification messages arrive. You can also pass the `ErrorCallback` as a parameter to be called if the connection request fails.
 
@@ -174,7 +174,7 @@ When a notification arrives at the device, its delivery mechanism depends on whe
 
 - When the application is not running    
 
-  If the notification arrives when the application is not running, there are 3 ways to handle the notification:
+  If the notification arrives when the application is not running, these are the 3 ways to handle the notification:
 
   - Forcibly launch the application and deliver the notification to it.        
 
@@ -196,7 +196,7 @@ When a notification arrives at the device, its delivery mechanism depends on whe
 
 To take advantage of the push technology, you must learn how to connect to the push service and receive push notifications:
 
-1. Define the event handlers for the push connection. The push notifications are delivered in the success event handler.
+1. Define the event handlers for the push connection. The push notifications are delivered in the success event handler:
 
    ```
    function errorCallback(response) {
@@ -258,9 +258,9 @@ tizen.push.disconnect();
 
 To learn how send a simple push notification to the device, see [Sending Push Notifications](../../../native/guides/messaging/push.md#sending-push-notifications). For advanced features in sending notifications, see the [Push Server](../../../native/guides/messaging/push-server.md) guide for server developers.
 
-## Retrieving Missed Push Messages
+## Retrieve missed push messages
 
-While the application is not running, messages cannot be delivered. To retrieve such missed push messages:
+While the application is not running, messages cannot be delivered. Follow these steps to retrieve such missed push messages:
 
 - Up to Tizen 2.4:
 
@@ -319,9 +319,9 @@ While the application is not running, messages cannot be delivered. To retrieve 
 
 The notification callback passed to the `connectService()` (up to Tizen 2.4) or `connect()` (since Tizen 3.0) method is called for every unread message.
 
-## Handling a Launch by the Push Service
+## Handle a launch by the push service
 
-If the application is launched by the push service, determine the reason for the application launch and react to it appropriately:
+If the application is launched by the push service, follow these steps to determine the reason for the application launch and react to it appropriately:
 
 1. Get the requested application control with the `getRequestedAppControl()` method:
 
@@ -329,7 +329,7 @@ If the application is launched by the push service, determine the reason for the
    var requestedAppControl = tizen.application.getCurrentApplication().getRequestedAppControl().appControl;
    ```
 
-2. Determine the reason for the application launch. If the reason for the launch is a notification, retrieve the latest push message.
+2. Determine the reason for the application launch. If the reason for the launch is a notification, retrieve the latest push message:
 
    ```
    for (var i = 0; i < requestedAppControl.data.length; ++i) {
@@ -353,11 +353,11 @@ If the application is launched by the push service, determine the reason for the
    }
    ```
 
-## Retrieving Messages When Launched by the Push Service
+## Retrieve messages when launched by the push service
 
 If the application is launched by the push service due to a notification, use the `getPushMessage()` method to return the last undelivered push message. If none exists, the method returns `NULL`.
 
-To retrieve and read the last message:
+To retrieve and read the last message, follow these steps:
 
 1. Retrieve the message:
 
@@ -380,7 +380,7 @@ To retrieve and read the last message:
    }
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
