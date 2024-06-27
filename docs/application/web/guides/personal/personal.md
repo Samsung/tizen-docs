@@ -24,7 +24,7 @@ You can use the following personal data features in your Web application:
 
   You can synchronize device data, such as contacts and calendar events, using the OMA DS server.
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
