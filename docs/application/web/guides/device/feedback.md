@@ -4,7 +4,7 @@ You can handle feedback patterns (media or vibration) that can be played as a re
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Feedback API include:
+The main features of the Feedback API include the following:
 
 - Checking for pattern support
 
@@ -18,7 +18,7 @@ Each feedback pattern can have separate media files of sound and vibration type.
 
 ## Prerequisites
 
-1. From Tizen 5.0 onwards, it is possible to make your application visible in the official site for Tizen applications only for devices that support the feedback vibration feature. To do so, you must specify the following feature in the `config.xml` file of the application:
+1. Since Tizen 5.0 onwards, it is possible to make your application visible in the official site for Tizen applications only for devices that support the feedback vibration feature. To do so, you must specify the following feature in the `config.xml` file of the application:
 
    ```
     <widget>
@@ -38,7 +38,7 @@ Each feedback pattern can have separate media files of sound and vibration type.
     }
     ```
 
-## Checking the Pattern
+## Check the pattern
 
 You can check whether a feedback type (sound or vibration) is supported for a specified pattern. To get information about the supported specified system predefined pattern type pairs, use the `isPatternSupported()` method of the `FeedbackManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/feedback.html#FeedbackManager) and [wearable](../../api/latest/device_api/wearable/tizen/feedback.html#FeedbackManager) applications):
 
@@ -52,11 +52,11 @@ if (!isSupported) {
 console.log('pattern ' + pattern + ' is' + isSupportedStr + ' supported');
 ```
 
-## Setting the Media Pattern
+## Set the media pattern
 
 The available predefined system patterns are defined in the `FeedbackPattern` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/feedback.html#FeedbackPattern) and [wearable](../../api/latest/device_api/wearable/tizen/feedback.html#FeedbackPattern) applications).
 
-To start and stop playing various types of predefined reactions:
+To start and stop playing various types of predefined reactions, follow these steps:
 
 1. To set a specified type of reaction for an event, use the `play()` method of the `FeedbackManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/feedback.html#FeedbackManager) and [wearable](../../api/latest/device_api/wearable/tizen/feedback.html#FeedbackManager) applications):
 
@@ -74,7 +74,7 @@ To start and stop playing various types of predefined reactions:
    tizen.feedback.stop();
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 3.0 and Higher for Mobile
    - Tizen 3.0 and Higher for Wearable
