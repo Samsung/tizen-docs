@@ -4,7 +4,7 @@ You can [manage the screen orientation state](#managing-the-screen-orientation) 
 
 This feature is supported in mobile and TV applications only.
 
-The main features of the Screen Orientation API include:
+The main features of the Screen Orientation API include the following:
 
 - Accessing the current screen orientation
 
@@ -28,7 +28,7 @@ The main features of the Screen Orientation API include:
 
   Locking means that the rendering of the current browsing context is forced to be shown in the specified orientation. The screen remains in the selected orientation state until the lock is removed.
 
-## Managing the Screen Orientation
+## Manage the screen orientation
 
 The application implemented below consists of buttons used to either lock the screen orientation to a specific state or release the lock. The current orientation state is also displayed on the screen.
 
@@ -55,7 +55,7 @@ To enhance the user interaction with the device, learn to manage the screen orie
    </body>
    ```
 
-2. When the screen is loaded, the `onload()` method is called. Within the method, add an event listener to the `screen` object, and define the `updateCurrOrrTxt()` event handler to be called whenever the screen orientation changes. The event handler updates the text element containing the current screen orientation information on the screen, by retrieving the current state with the `screen.orientation` attribute.
+2. When the screen is loaded, the `onload()` method is called. Within the method, add an event listener to the `screen` object, and define the `updateCurrOrrTxt()` event handler to be called whenever the screen orientation changes. The event handler updates the text element containing the current screen orientation information on the screen, by retrieving the current state with the `screen.orientation` attribute:
 
    ```
    <script>
@@ -70,7 +70,7 @@ To enhance the user interaction with the device, learn to manage the screen orie
 
 3. Use the `onclick` event handlers to react to the button clicks. For the first 4 buttons, use the `lockOrientation()` method to lock the screen orientation in place, and for the final button, use the `unlockOrientation()` method to release the orientation lock.
 
-   The `lockOrientation()` method accepts the following parameter values: `portrait-primary`, `portrait-secondary`, `landscape-primary`, `landscape-secondary`, `portrait`, and `landscape`.
+   The `lockOrientation()` method accepts the following parameter values: `portrait-primary`, `portrait-secondary`, `landscape-primary`, `landscape-secondary`, `portrait`, and `landscape`:
 
    ```
            document.getElementById('portrait-primary').onclick = function() {
@@ -86,12 +86,12 @@ To enhance the user interaction with the device, learn to manage the screen orie
    </script>
    ```
 
-   > **Note**  
+   > [!NOTE]
    > When using the screen orientation lock:  
    > - When the `portrait` value is used to lock the orientation, the orientation can change between `portrait-primary` and `portrait-secondary`. The `landscape` value behaves similarly.  
    > - Depending on the browser, unlocking the screen orientation may have no visual effect.
 
-4. Define CSS styles in the &lt;head&gt; section of the document to make the application more eye-catching.
+4. Define CSS styles in the &lt;head&gt; section of the document to make the application more eye-catching:
 
    ```
    <style type="text/css">
@@ -122,13 +122,13 @@ To enhance the user interaction with the device, learn to manage the screen orie
    </style>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [screen_orientation.html](http://download.tizen.org/misc/examples/w3c_html5/device/the_screen_orientation_api)
+- [screen_orientation.html](http://download.tizen.org/misc/examples/w3c_html5/device/the_screen_orientation_api){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for TV

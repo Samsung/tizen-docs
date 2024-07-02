@@ -1,7 +1,7 @@
 # SVG
 The HTML5 SVG supports 2D graphics through SVG (Scalable Vector Graphics). Prior to HTML5, SVG functioned based on XML, so it was only used in XHTML or with a separate SVG plug-in. Since HTML5, however, an `svg` tag is used in XML, and can be added as an inline element in HTML.
 
-The main SVG API features include:
+The main SVG API features include the following:
 
 - Creating text and images
 
@@ -23,9 +23,9 @@ The main SVG API features include:
 
   You can [control events related to SVG elements using scripts](#controlling-svg-elements-through-scripting).
 
-For more information on using SVG, see [Scalable Vector Graphics (SVG) Tiny 1.2 Specification](http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/).
+For more information on using SVG, see [Scalable Vector Graphics (SVG) Tiny 1.2 Specification](http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/){:target="_blank"}.
 
-## Creating Text and Images
+## Create text and images
 
 To create text and images, use the `svg` tag in HTML `<body>` element:
 
@@ -50,9 +50,9 @@ To create text and images, use the `svg` tag in HTML `<body>` element:
   </svg>
   ```
 
-## Making Shapes
+## Make shapes
 
-To create shapes as inline SVG elements:
+To create shapes as inline SVG elements, follow these steps:
 
 1. Create the SVG element with the `svg` tag.
 
@@ -100,19 +100,19 @@ To create shapes as inline SVG elements:
      </svg>
      ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [svg_shape.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_svg)
+- [svg_shape.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_svg){:target="_blank"}
 
-## Grouping SVG Elements
+## Group SVG elements
 
-To group inline SVG elements:
+To group inline SVG elements, follow these steps:
 
 1. Combine various SVG elements in a group using the `<g>` container element, whose `id` attribute must be defined.
 
-   If you assign a presentation attribute to the group, all the child elements inherit it. For example, in the following example, the stroke color black is defined for the group, which means that both the rectangle and circle elements within the group use the black stroke color.
+   If you assign a presentation attribute to the group, all the child elements inherit it. For example, in the following example, the stroke color black is defined for the group, which means that both the rectangle and circle elements within the group use the black stroke color:
 
    ```
    <svg xmlns="http://www.w3.org/2000/svg" width="600px" height="600px">
@@ -158,15 +158,15 @@ To group inline SVG elements:
    </svg>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [svg_group.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_svg)
+- [svg_group.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_svg){:target="_blank"}
 
 ## Animating SVG Elements
 
-To animate inline SVG elements:
+To animate inline SVG elements, follow these steps:
 
 1. To animate a specific element attribute based on time, use the `<animate>` element:
 
@@ -191,7 +191,7 @@ To animate inline SVG elements:
    </svg>
    ```
 
-3. To create a motion animation, use the `<animateMotion>` element. The element assigns the parent element to the `<mpath>` as reference element, and animates according to the shape of the `<mpath>` element.
+3. To create a motion animation, use the `<animateMotion>` element. The element assigns the parent element to the `<mpath>` as reference element, and animates according to the shape of the `<mpath>` element:
 
    ```
    <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="200px">
@@ -206,15 +206,15 @@ To animate inline SVG elements:
    </svg>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [svg_animation.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_svg)
+- [svg_animation.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_svg){:target="_blank"}
 
-## Controlling SVG Elements through Scripting
+## Control SVG elements through scripts
 
-To use scripts to manage events related to SVG elements:
+To use scripts to manage events related to SVG elements, follow these steps:
 
 1. Define an SVG element:
 
@@ -227,7 +227,7 @@ To use scripts to manage events related to SVG elements:
 
 2. Use the `<script>` element to handle events related to the SVG elements.
 
-   The script usage is similar to handling DOM as a script. The following example controls the SVG element's `width` attribute through the click event.
+   The script usage is similar to handling DOM as a script. The following example controls the SVG element's `width` attribute through the click event:
 
    ```
    <script>
@@ -246,13 +246,13 @@ To use scripts to manage events related to SVG elements:
    </script>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [svg_script.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_svg)
+- [svg_script.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_svg){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
