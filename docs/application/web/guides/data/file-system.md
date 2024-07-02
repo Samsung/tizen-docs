@@ -10,7 +10,7 @@ The Filesystem API is mandatory for Tizen Mobile, Wearable, and TV profiles, whi
 
 The Filesystem API provides access to accessible parts of the file system, which are represented as [virtual root locations](#supported-virtual-roots).
 
-The main features of the Filesystem API include:
+The main features of the Filesystem API include the following:
 
 - File storage management
 
@@ -50,7 +50,7 @@ You can manage different storages on the device with the `FileSystemManager` int
 
 You can retrieve additional information about the storages, including listing available storages and receiving storage change notifications with the `listStorages()` and `addStorageStateChangeListener()` methods provided by the `FileSystemManager` interface.
 
-To manage file storages:
+To manage file storages, follow these steps:
 
 - To list available storages, use the `listStorages()` method of the `FileSystemManager` interface to search for the storages available on the device.
 
