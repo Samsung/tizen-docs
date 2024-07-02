@@ -2,7 +2,7 @@
 
 The media features include playing various media, and accessing media streams and capture capabilities.
 
-The main media features are:
+The main media features are the following:
 
 - [getUserMedia](./getusermedia.md)
 
@@ -24,7 +24,7 @@ The main media features are:
 
   Allows you to play sounds to provide responsiveness on user interaction.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
