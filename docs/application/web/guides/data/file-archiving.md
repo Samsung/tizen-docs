@@ -4,7 +4,7 @@ You can manage ZIP archives and operate on the archived files.
 
 The Archive API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Archive API include:
+The main features of the Archive API include the following:
 
 - Accessing archive content   
 
@@ -42,11 +42,11 @@ To use the Archive API (in [mobile](../../api/latest/device_api/mobile/tizen/arc
 <tizen:privilege name="http://tizen.org/privilege/filesystem.write"/>
 ```
 
-## Reading the Content of an Archive
+## Read the content of an archive
 
 Opening an archive and accessing a list of its members is a basic archive management skill:
 
-1. To access the archive file, use the `open()` method of the `ArchiveManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/archive.html#ArchiveManager), [wearable](../../api/latest/device_api/wearable/tizen/archive.html#ArchiveManager), and [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveManager) applications). The provided callback receives an `ArchiveFile` object (in [mobile](../../api/latest/device_api/mobile/tizen/archive.html#ArchiveFile), [wearable](../../api/latest/device_api/wearable/tizen/archive.html#ArchiveFile), and [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveFile) applications).
+1. To access the archive file, use the `open()` method of the `ArchiveManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/archive.html#ArchiveManager), [wearable](../../api/latest/device_api/wearable/tizen/archive.html#ArchiveManager), and [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveManager) applications). The provided callback receives an `ArchiveFile` object (in [mobile](../../api/latest/device_api/mobile/tizen/archive.html#ArchiveFile), [wearable](../../api/latest/device_api/wearable/tizen/archive.html#ArchiveFile), and [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveFile) applications):
 
    ```
    var myArchive = null;
@@ -57,7 +57,7 @@ Opening an archive and accessing a list of its members is a basic archive manage
    tizen.archive.open('downloads/archive.zip', 'r', openSuccess);
    ```
 
-2. Get the list of all files contained inside the archive using the `getEntries()` method of the `ArchiveFile` interface.
+2. Get the list of all files contained inside the archive using the `getEntries()` method of the `ArchiveFile` interface:
 
    ```
    function listSuccess(members) {
@@ -74,13 +74,13 @@ Opening an archive and accessing a list of its members is a basic archive manage
    myArchive.getEntries(listSuccess);
    ```
 
-3. After the work with the archive is finished, close the archive  using the `close()` method of the `ArchiveFile` interface.
+3. After the work with the archive is finished, close the archive  using the `close()` method of the `ArchiveFile` interface:
 
    ```
    archive.close();
    ```
 
-## Creating an Archive
+## Create an archive
 
 Creating an archive and adding files to it is a basic archive management skill:
 
@@ -104,11 +104,11 @@ Creating an archive and adding files to it is a basic archive management skill:
    }
    ```
 
-## Extracting Files from an Archive
+## Extract files from an archive
 
 Extracting a file from an archive is a basic archive management skill:
 
-1. To access an archive file, use the `open()` method of the `ArchiveManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/archive.html#ArchiveManager), [wearable](../../api/latest/device_api/wearable/tizen/archive.html#ArchiveManager), and [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveManager) applications). The "r" mode is suitable for extracting from the archive.
+1. To access an archive file, use the `open()` method of the `ArchiveManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/archive.html#ArchiveManager), [wearable](../../api/latest/device_api/wearable/tizen/archive.html#ArchiveManager), and [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveManager) applications). The "r" mode is suitable for extracting from the archive:
 
    ```
    tizen.archive.open('downloads/some_archive.zip', 'r', openSuccess, openError);
@@ -116,7 +116,7 @@ Extracting a file from an archive is a basic archive management skill:
 
 2. To extract files:
 
-   - To extract all files from the archive, use the `extractAll()` method of the `ArchiveFile` interface (in [mobile](../../api/latest/device_api/mobile/tizen/archive.html#ArchiveFile), [wearable](../../api/latest/device_api/wearable/tizen/archive.html#ArchiveFile), and [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveFile) applications).
+   - To extract all files from the archive, use the `extractAll()` method of the `ArchiveFile` interface (in [mobile](../../api/latest/device_api/mobile/tizen/archive.html#ArchiveFile), [wearable](../../api/latest/device_api/wearable/tizen/archive.html#ArchiveFile), and [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveFile) applications):
 
      ```
      function progressCallback(opId, val, name) {
@@ -130,7 +130,7 @@ Extracting a file from an archive is a basic archive management skill:
 
    - To extract only a selected file from the archive, use the `extract()` method of the `ArchiveFileEntry` interface (in [mobile](../../api/latest/device_api/mobile/tizen/archive.html#ArchiveFileEntry), [wearable](../../api/latest/device_api/wearable/tizen/archive.html#ArchiveFileEntry), and [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveFileEntry) applications).
 
-     First, get the `archiveFileEntry` object using the `getEntryByName()` or `getEntries()` method of the `ArchiveFile` interface.
+     First, get the `archiveFileEntry` object using the `getEntryByName()` or `getEntries()` method of the `ArchiveFile` interface:
 
      ```
      function extractSuccessCallback() {
@@ -145,7 +145,7 @@ Extracting a file from an archive is a basic archive management skill:
      }
      ```
 
-## Aborting File Operations
+## Abort file operations
 
 You can abort an on-going file archive operation for the `open()`, `add()`, `extractAll()`, `getEntries()`, `getEntryByName()`, and `extract()` methods.
 
@@ -160,7 +160,7 @@ function openSuccess(archive) {
 tizen.archive.open('downloads/some_archive.zip', 'r', openSuccess);
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

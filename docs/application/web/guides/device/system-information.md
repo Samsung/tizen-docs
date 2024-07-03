@@ -4,7 +4,7 @@ You can access and monitor the [device and system properties](#system-informatio
 
 The System Information API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the System Information API include:
+The main features of the System Information API include the following:
 
 - Checking the amount of total and available memory
 
@@ -33,7 +33,7 @@ To use the System Information API (in [mobile](../../api/latest/device_api/mobil
 <tizen:privilege name="http://tizen.org/privilege/telephony"/>
 ```
 
-## Retrieving a Device Capability
+## Retrieve a device capability
 
 Retrieve a device capability using the `getCapability()` method of the `SystemInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfo), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfo) applications):
 
@@ -46,7 +46,7 @@ Retrieve a device capability using the `getCapability()` method of the `SystemIn
 
 For a list of available keys and their meaning, see the device capability keys (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo_capability_keys.html) and [wearable](../../api/latest/device_api/wearable/tizen/systeminfo_capability_keys.html) applications).
 
-## Retrieving the Current State of a Property
+## Retrieve the current state of a property
 
 The property state can determine whether your application has enough resources to complete a particular task or service successfully. For example, if you are creating a file, you need to check the storage property to know whether a writable storage is available on the device.
 
@@ -54,7 +54,7 @@ Retrieve information about the property states using the applicable methods of t
 
 1. To check the current state of the property, use the `getPropertyValue()` method.
 
-   The first method parameter must be of the `SystemInfoPropertyId` type (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfoPropertyId), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfoPropertyId), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoPropertyId) applications). For the available values, see the [Available properties](#property) table.
+   The first method parameter must be of the `SystemInfoPropertyId` type (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfoPropertyId), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfoPropertyId), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoPropertyId) applications). For the available values, see the [Available properties](#property) table:
 
    ```
    /* Retrieve the battery property */
@@ -68,7 +68,7 @@ Retrieve information about the property states using the applicable methods of t
 
 2. Use the power property values.
 
-   In the following example, the battery level and charging status of the power property are printed to a console log.
+   In the following example, the battery level and charging status of the power property are printed to a console log:
 
    ```
    function onPowerSuccessCallback(battery) {
@@ -80,7 +80,7 @@ Retrieve information about the property states using the applicable methods of t
    }
    ```
 
-3. Retrieve the current states of a specific device property using the `getPropertyValueArray()` method. For example, you can check the state of SIM cards mounted in the Tizen device.
+3. Retrieve the current states of a specific device property using the `getPropertyValueArray()` method. For example, you can check the state of SIM cards mounted in the Tizen device:
 
    ```
    function successCallback(properties) {
@@ -93,13 +93,13 @@ Retrieve information about the property states using the applicable methods of t
    tizen.systeminfo.getPropertyValueArray('SIM', successCallback);
    ```
 
-4. Retrieve the number of system property information using the `getCount()` method. For example, you can check the number of SIM cards installed in the Tizen device.
+4. Retrieve the number of system property information using the `getCount()` method. For example, you can check the number of SIM cards installed in the Tizen device:
 
    ```
    console.log('The number of SIM cards in the device is ' + tizen.systeminfo.getCount('SIM'));
    ```
 
-## Retrieving the Memory State
+## Retrieve the memory state
 
 Check the total or available amount of system memory using the applicable method of the `SystemInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfo), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfo) applications):
 
@@ -115,7 +115,7 @@ Check the total or available amount of system memory using the applicable method
   console.log('The available memory size is ' + tizen.systeminfo.getAvailableMemory() + ' bytes.');
   ```
 
-## Retrieving and Monitoring the Device Orientation
+## Retrieve and monitor the device orientation
 
 The device orientation defines the angle between the direction of what is considered to be the "top" side of the device and the physical upward direction. The device orientation is not directly related to the screen orientation. For example, when the **Auto rotate screen** option is disabled or the Web application has the `screen-orientation` option (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_setting) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_setting) applications) set to "landscape" or "portrait", the screen is not rotated and the `window.screen.orientation` property does not change; however, the `SystemInfo` device orientation changes.
 
@@ -162,7 +162,7 @@ When a device is in its natural position, it is considered to be in the `PORTRAI
 </tbody>
 </table>
 
-To retrieve information about the device orientation:
+To retrieve information about the device orientation, follow these steps:
 
 1. To retrieve the current orientation of the device, use the `getPropertyValue()` method of the `SystemInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfo), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfo) applications) and query the `DEVICE_ORIENTATION` property:
 
@@ -186,15 +186,15 @@ To retrieve information about the device orientation:
    tizen.systeminfo.removePropertyValueChangeListener(orientationListenerId);
    ```
 
-## Receiving Notifications on Property Value Changes
+## Receive notifications on property value changes
 
 You can receive state updates when a change occurs in a specific property. The `addPropertyValueChangeListener()` method registers an event listener for a specific property, and returns the subscription identifier for the listener. You can use the `SystemInfoPropertySuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfoPropertySuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfoPropertySuccessCallback), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoPropertySuccessCallback) applications) to define the event handler for receiving the change notification.
 
-To receive notifications on property value changes:
+To receive notifications on property value changes, follow these steps:
 
 1. Register a `SystemInfoPropertySuccessCallback` event handler for the property value changes using the `addPropertyValueChangeListener()` method of the `SystemInfo` interface.
 
-   The first parameter defines the property whose value changes you want to track, and the optional last parameter defines any thresholds when you want the notifications to be triggered. In the following example, an event handler is registered for the memory property value changes.
+   The first parameter defines the property whose value changes you want to track, and the optional last parameter defines any thresholds when you want the notifications to be triggered. In the following example, an event handler is registered for the memory property value changes:
 
    ```
    function successCallback(memory) {
@@ -208,7 +208,7 @@ To receive notifications on property value changes:
 
 2. In the success event handler of the `addPropertyValueChangeListener()` method, define the notification event actions.
 
-   In the following example, a warning about the low battery is logged to the console.
+   In the following example, a warning about the low battery is logged to the console:
 
    ```
    /* Trigger a notification */
@@ -221,7 +221,7 @@ To receive notifications on property value changes:
 
 3. To deregister the event handler, use `removePropertyValueChangeListener()` method with the watch identifier returned from the `addPropertyValueChangeListener()` method.
 
-   In the following example, the event handler is deregistered when the first change of the SIM card state is detected.
+   In the following example, the event handler is deregistered when the first change of the SIM card state is detected:
 
    ```
    function successCallback(properties) {
@@ -235,7 +235,7 @@ To receive notifications on property value changes:
    ```
 
 
-> **Note**  
+> [!NOTE]
 > In case of `WIFI_NETWORK` property, value change listener is triggered on `ipAddress` and `ip6Address` properties change in the network layer. These changes are not consistent with the `status` or `signalStrength` properties of a physical adapter in physical layer.  
 According to the previous constraints, in a specific situation, the listener could be triggered just before network adapter shutdown. In this case, the value of `status` returned by the listener will be outdated.
 
@@ -258,7 +258,7 @@ tizen.systeminfo.addPropertyValueChangeListener('WIFI_NETWORK', successCallback,
 ```
 
 <a name="property"></a>
-## System Information Properties
+## System information properties
 
 The system properties are defined as subtypes of the `SystemInfoProperty` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfoProperty), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfoProperty), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoProperty) applications). The following table lists the available subtypes, and the related `SystemInfoPropertyId` type values.
 
@@ -287,7 +287,7 @@ The system properties are defined as subtypes of the `SystemInfoProperty` interf
 | [`SystemInfoServiceCountry`](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoServiceCountry) | `SERVICE_COUNTRY`                | Represents a country for which the basic policy of terms and conditions is set. |
 | [`SystemInfoSourceInfo`](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoVideoSourceInfo) | `SOURCE_INFO`                | Provides information about the current video source of device, for example TV, HDMI1, HDMI2, and so on. |
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
