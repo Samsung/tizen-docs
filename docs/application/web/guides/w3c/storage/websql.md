@@ -32,12 +32,12 @@ The main Web SQL database features include:
 
   You can handle errors [asynchronously](#handling-a-syntax-error-asynchronously) or [synchronously](#handling-a-syntax-error-synchronously).
 
-  For the properties that can be delivered with the `sqlError` object, see [Errors and exceptions](http://www.w3.org/TR/2010/NOTE-webdatabase-20101118/?cp=3_0_6_0_5_6#errors-and-exceptions).
+  For the properties that can be delivered with the `sqlError` object, see [Errors and exceptions](http://www.w3.org/TR/2010/NOTE-webdatabase-20101118/?cp=3_0_6_0_5_6#errors-and-exceptions){:target="_blank"}.
 
-> **Note**  
+> [!NOTE]
 > The Web SQL Database API is still in group note state, but Tizen supports it as it is already widely used in the industry.
 
-## Opening a Database Asynchronously
+## Open a database asynchronously
 
 To open a database asynchronously, use the `openDatabase()` method. If the database does not exist, the method first creates it and then opens it:
 
@@ -56,18 +56,18 @@ try {
 
 The method takes the following arguments: unique name of the database, expected version of the database to be opened (if an empty string is given any version can be loaded), display name, the estimated size of database (number of bytes), and, optionally, the database creation event handler.
 
-> **Note**  
+> [!NOTE]
 > The creation event handler is invoked only once if the database does not exist. There is no event handler for the database `opened` event.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [websqldatabase_example.html](http://download.tizen.org/misc/examples/w3c_html5/storage/web_sql_database)
+- [websqldatabase_example.html](http://download.tizen.org/misc/examples/w3c_html5/storage/web_sql_database){:target="_blank"}
 
-## Executing SQL Statements Asynchronously
+## Execute SQL statements asynchronously
 
-To execute SQL statements asynchronously:
+To execute SQL statements asynchronously, follow these steps:
 
 1. In the Web SQL Database API, each SQL statement must be executed under a transaction. To create a transaction, use either `transaction()` or  `readTransaction()` method returned by the `openDatabase()` method:
 
@@ -81,7 +81,7 @@ To execute SQL statements asynchronously:
 
    The difference between the `transaction()` and `readTransaction()` methods is that the latter cannot be used with SQL statements that change the database (such as `INSERT`, `UPDATE`, `DELETE`, or `CREATE`).
 
-   > **Note**  
+   > [!NOTE]
    > When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
 
 2. To execute a SQL statement, use the `executeSql()` method. The SQL statement is the first parameter of the method and cannot contain SQL transaction statements (such as `BEGIN`, `END`, or `ROLLBACK`):
@@ -101,20 +101,20 @@ To execute SQL statements asynchronously:
    sqlTransaction.executeSql('SELECT * FROM tizenTable WHERE id=?', [value]);
    ```
 
-   > **Note**  
+   > [!NOTE]
    > Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [websqldatabase_example.html](http://download.tizen.org/misc/examples/w3c_html5/storage/web_sql_database)
+- [websqldatabase_example.html](http://download.tizen.org/misc/examples/w3c_html5/storage/web_sql_database){:target="_blank"}
 
-## Accessing SQL Results Asynchronously
+## Access SQL results asynchronously
 
 When a SQL statement is executed, its event handler is invoked and returns the result as a `sqlResultSet` object.
 
-To access the result:
+To access the result, follow these steps:
 
 - The result object of the INSERT statement contains the insert ID, which stores the identifier of the added record. If multiple records were inserted, the insert ID contains the ID of the last inserted record:
 
@@ -138,13 +138,13 @@ To access the result:
   });
   ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [websqldatabase_example.html](http://download.tizen.org/misc/examples/w3c_html5/storage/web_sql_database)
+- [websqldatabase_example.html](http://download.tizen.org/misc/examples/w3c_html5/storage/web_sql_database){:target="_blank"}
 
-## Handling a Syntax Error Asynchronously
+## Handle a syntax error asynchronously
 
 To handle a syntax error asynchronously, use a `sqlError` object:
 
@@ -163,7 +163,7 @@ sqlTransaction.executeSql('SELECT * FROM notExistingTable', [], function(sqlTran
 
 Other types of errors that can occur are exceptions. The `sqlException` object has the same fields as the `sqlError` object but it must be handled in the `try - catch` block.
 
-## Opening a Database Synchronously
+## Open a database synchronously
 
 To open a SQL database synchronously, use the `openDatabaseSync()` method. The method can only be used in the [Web Worker](../perf-opt/web-workers.md#js_performance) context. If the database does not exist, the method first creates it and then opens it:
 
@@ -178,12 +178,12 @@ try {
 
 The method takes the following arguments: unique name of the database, expected version of the database to be opened (if an empty string is given any version can be loaded), display name, the estimated size of database (number of bytes), and, optionally, the database creation event handler.
 
-> **Note**  
+> [!NOTE]
 > The creation event handler is invoked only once if the database does not exist. There is no event handle for the database opened event but, in the synchronous database API, no other code is run until the database creation operation is completed.
 
-## Executing SQL Statements Synchronously
+## Execute SQL statements synchronously
 
-To execute SQL statements synchronously:
+To execute SQL statements synchronously, follow these steps:
 
 1. In the Web SQL Database API, each SQL statement must be executed under a transaction. To create a transaction, use either `transaction()` or  `readTransaction()` method returned by the `openDatabaseSync()` method:
 
@@ -197,7 +197,7 @@ To execute SQL statements synchronously:
 
    The difference between the `transaction()` and `readTransaction()` methods is that the latter cannot be used with SQL statements that change the database (such as `INSERT`, `UPDATE`, `DELETE`, or `CREATE`).
 
-   > **Note**  
+   > [!NOTE]
    > When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
 
 2. To execute a SQL statement, use the `executeSql()` method. The SQL statement is the first parameter of the method and cannot contain SQL transaction statements (such as `BEGIN`, `END`, or `ROLLBACK`):
@@ -214,10 +214,10 @@ To execute SQL statements synchronously:
                                                     ['Ulysses', 'James Joyce']);
    ```
 
-   > **Note**  
+   > [!NOTE]
    > Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
 
-## Accessing SQL Results Synchronously
+## Access SQL results synchronously
 
 When a SQL statement is executed, its event handler is invoked and returns the result as a `sqlResultSet` object.
 
@@ -242,7 +242,7 @@ To access the result:
   }
   ```
 
-## Handling a Syntax Error Synchronously
+## Handle a syntax error synchronously
 
 To handle a syntax error synchronously, use a `sqlException` object:
 
@@ -258,9 +258,9 @@ try {
 }
 ```
 
-> **Note**  
+> [!NOTE]
 > In the synchronous database API, the script execution is stopped until the transaction is completed.
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
