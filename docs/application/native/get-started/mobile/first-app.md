@@ -1,12 +1,12 @@
-# Create Your First Tizen Mobile Native Application
+# 
 
-**Welcome to Tizen Mobile Native application development!**
+**Bem vindo ao app inovador**
 
 A mobile native application is created using the C language, and can be run on Tizen mobile devices. The application uses the native API, which provides various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
 Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic mobile native application, which displays some text on the screen with no user interaction:
 
-1.  Before you get started with developing Tizen applications, download and install [Tizen Studio](../../../tizen-studio/index.md).
+pp1.  Before you get started with developing Tizen applications, download and install [Tizen Studio](../../../tizen-studio/index.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
