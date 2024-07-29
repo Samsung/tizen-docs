@@ -1875,6 +1875,8 @@ The version of Tizen Core API in the \[Major\].\[Minor\] format. For example, "1
 **System information:**\
 The platform returns the ABI information (e.g. "arm_32", "arm_64", "riscv_32", "riscv_64", "x86", "x86_64) of a device.\
 
+Thus, "arm_32" will be returned for "arm 32-bit" devices. Likewise, each of the values "arm_64", "riscv_32", "riscv_64", "x86", and "x86_64" is used for "arm 64-bit", "risc-v 32-bit", "risc-v 64-bit", "x86 32-bit", and "x86 64-bit" devices, respectively.
+
 </div>
 
 <div class="views-row views-row-120 views-row-odd">
