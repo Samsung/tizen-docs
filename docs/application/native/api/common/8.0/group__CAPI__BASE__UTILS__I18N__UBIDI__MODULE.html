@@ -985,7 +985,8 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the current callback function used for ubidi class determination. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>fn</em> and <em>context</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ubidi</td><td>The paragraph <a class="el" href="group__CAPI__BASE__UTILS__I18N__UBIDI__MODULE.html#ga2dba5d75b6a0564491e69ea881aaa058" title="An i18n_ubidi_h handle.">i18n_ubidi_h</a> object </td></tr>
@@ -2425,7 +2426,8 @@ Defines</h2></td></tr>
 
 <p>Sets the callback function and callback data used by the UBA implementation for ubidi class determination. </p>
 <p>This may be useful for assigning ubidi classes to PUA characters, or for special application needs. For instance, an application may want to handle all spaces like L or R characters (according to the base direction) when creating the visual ordering of logical lines which are part of a report organized in columns: there should not be interaction between adjacent cells. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>old_fn</em> and <em>old_context</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ubidi</td><td>The paragraph <a class="el" href="group__CAPI__BASE__UTILS__I18N__UBIDI__MODULE.html#ga2dba5d75b6a0564491e69ea881aaa058" title="An i18n_ubidi_h handle.">i18n_ubidi_h</a> object </td></tr>
