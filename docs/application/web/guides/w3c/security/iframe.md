@@ -367,7 +367,7 @@ For the complete source code related to this use case, see the following files:
 - [iframe_popup.html](http://download.tizen.org/misc/examples/w3c_html5/security/html5_the_iframe_element)
 - [popup.html](http://download.tizen.org/misc/examples/w3c_html5/security/html5_the_iframe_element)
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
