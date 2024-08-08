@@ -2,7 +2,7 @@
 
 Page visibility can detect whether the Web document is being shown on the screen. With it, you can design your application to only operate when its page is visible, both enhancing the user experience and reducing the resource usage on the device.
 
-The main features of the Page Visibility API include:
+The main features of the Page Visibility API include  the following:
 
 - Retrieving the page visibility status   
 
@@ -17,10 +17,10 @@ The main features of the Page Visibility API include:
 
   For example, in a video player application, you can change the play status of the application based on the event: pause the playback when the page becomes hidden, and continue playing when the page becomes visible again.
 
-> **Note**  
+> [!NOTE]
 > Tizen supports the WebKit-based Page Visibility API. When using the Page Visibility API, you must include the webkit prefix.
 
-## Retrieving the Page Visibility Status
+## Retrieve the page visibility status
 
 To optimize the performance of your application, you must learn to retrieve the page visibility status:
 
@@ -55,20 +55,20 @@ To optimize the performance of your application, you must learn to retrieve the 
 
    Tizen does not currently support the `prerender` and `unloaded` types.
 
-> **Note**  
+> [!NOTE]
 > Since Tizen supports the WebKit-based page visibility, you must include the webkit prefix in the attributes.
 
 **Figure: Page visibility (in mobile applications only)**
 
 ![Page visibility (in mobile applications only)](./media/page_visibility_get.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
 - [page_1.html](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/page_visibility)
 
-## Receiving Notifications on Visibility Status Changes
+## Receive notifications on visibility status changes
 
 To optimize the performance of your application, you must learn to track changes in the page visibility status, and respond to them appropriately:
 
@@ -115,7 +115,7 @@ To optimize the performance of your application, you must learn to track changes
    </script>
    ```
 
-3. Add an event listener to track the page visibility status changes. When the status changes and the `visibilityChange` event is triggered, use the `hidden` property to check whether the page is hidden or visible, and to play or pause the video accordingly.
+3. Add an event listener to track the page visibility status changes. When the status changes and the `visibilityChange` event is triggered, use the `hidden` property to check whether the page is hidden or visible, and to play or pause the video accordingly:
 
    ```
    <script>
@@ -140,14 +140,14 @@ If the video page becomes hidden with a tab screen transition, the playback is p
 
 ![Video player (in mobile applications only)](./media/page_visibility_change.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
 - [visibility_sample.html](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/page_visibility)
 - [video_sample.mp4](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/page_visibility)
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
