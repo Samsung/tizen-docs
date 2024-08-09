@@ -641,7 +641,8 @@ Defines</h2></td></tr>
 
 <p>Creates a copy of an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#ga9d2cd9341ffdcba900337503248037bc" title="A number formatter.">i18n_unumber_format_h</a>. </p>
 <p>This function performs a deep copy. </p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Error codes are described in <a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> description. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Error codes are described in <a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> description.<br/>
+ The <em>fmt_clone</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#ga7980d5247a80dcdd0e846da0e5c0d9a2" title="Destroys an i18n_unumber_format_h.">i18n_unumber_destroy()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -654,7 +655,30 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#ga9d2cd9341ffdcba900337503248037bc" title="A number formatter.">i18n_unumber_format_h</a> fmt = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#ga9d2cd9341ffdcba900337503248037bc" title="A number formatter.">i18n_unumber_format_h</a> fmt_clone = NULL;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#gafff467d64dabe45a9efdaa28e66d6a8e" title="Creates and returns a new unumber_format_h for formatting and parsing numbers.">i18n_unumber_create</a>(<a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#gga4edc8cb72e7f46e05d8cdfe24cf386f1ae3016fd2d30e25dc5ffdcb4ef16c950a">I18N_UNUMBER_DECIMAL</a>, NULL, -1, <a class="code" href="group__CAPI__BASE__UTILS__I18N__ULOCALE__MODULE.html#gaa1fb30d8c9c658ca5de76985324a8b30">I18N_ULOCALE_US</a>, NULL, &amp;fmt);
+    <span class="keywordflow">if</span>(error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_unumber_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#ga38bb998fab42140cfd1921fcafeafe12" title="Creates a copy of an i18n_unumber_format_h.">i18n_unumber_clone</a>(fmt, &amp;fmt_clone);
+    <span class="keywordflow">if</span>(error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_unumber_clone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#ga7980d5247a80dcdd0e846da0e5c0d9a2" title="Destroys an i18n_unumber_format_h.">i18n_unumber_destroy</a>(fmt_clone);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#ga7980d5247a80dcdd0e846da0e5c0d9a2" title="Destroys an i18n_unumber_format_h.">i18n_unumber_destroy</a>(fmt);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>

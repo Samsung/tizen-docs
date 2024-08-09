@@ -209,9 +209,9 @@ Sample Code 1</h2>
 
     <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a894401249607d292bbb666133d861499">DLOG_INFO</a>, LOG_TAG, <span class="stringliteral">&quot;i18n_udate_destroy\n&quot;</span>);
     <span class="comment">// destroy an i18n_udate_format_h</span>
-    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga98426d4b7abc03d70107f947abe34f50" title="Destroys an i18n_udate_format_h.">i18n_udate_destroy</a>(formatter_KR);
-    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga98426d4b7abc03d70107f947abe34f50" title="Destroys an i18n_udate_format_h.">i18n_udate_destroy</a>(formatter_LA);
     <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga98426d4b7abc03d70107f947abe34f50" title="Destroys an i18n_udate_format_h.">i18n_udate_destroy</a>(formatter_SaoPaulo);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga98426d4b7abc03d70107f947abe34f50" title="Destroys an i18n_udate_format_h.">i18n_udate_destroy</a>(formatter_LA);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga98426d4b7abc03d70107f947abe34f50" title="Destroys an i18n_udate_format_h.">i18n_udate_destroy</a>(formatter_KR);
 </pre></div> <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -1438,11 +1438,12 @@ Defines</h2></td></tr>
 
 <p>Creates a copy of an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a>. </p>
 <p>This function performs a deep copy. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>format_clone</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga98426d4b7abc03d70107f947abe34f50" title="Destroys an i18n_udate_format_h.">i18n_udate_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>The format to copy. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">format_clone</td><td>A pointer to clone of <code>format</code>.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">format_clone</td><td>A pointer to clone of <em>format</em>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1450,7 +1451,37 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a> format = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#gaee2461e926bc151486d380c43bc4f2a3" title="Enumeration for the possible date/time format styles.">i18n_udate_format_style_e</a> time_style = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ggaee2461e926bc151486d380c43bc4f2a3a01ca7417255b43eb2ae9e45bd75da2e7">I18N_UDATE_DEFAULT</a>, date_style = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ggaee2461e926bc151486d380c43bc4f2a3a01ca7417255b43eb2ae9e45bd75da2e7">I18N_UDATE_DEFAULT</a>;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *locale = <a class="code" href="group__CAPI__BASE__UTILS__I18N__ULOCALE__MODULE.html#gaa1fb30d8c9c658ca5de76985324a8b30">I18N_ULOCALE_US</a>;
+    <span class="keyword">const</span> <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> *tz_id = 0; <span class="comment">// use the default timezone</span>
+    int32_t tz_id_length = -1;
+    <span class="keyword">const</span> <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> *pattern = NULL;
+    int32_t pattern_length = 0;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a> format_clone = NULL;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2c157a326eb219ffd9f8bcc2cb5fb4ca" title="Creates a new i18n_udate_format_h for formatting and parsing dates and times.">i18n_udate_create</a>(time_style, date_style, locale, tz_id, tz_id_length, pattern, pattern_length, &amp;format);
+    <span class="keywordflow">if</span>(error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_udate_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#gaa68bd5dde9068f22e1322b5f62dfbcb7" title="Creates a copy of an i18n_udate_format_h.">i18n_udate_clone</a>(format, &amp;format_clone);
+    <span class="keywordflow">if</span>(error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_udate_clone : %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga98426d4b7abc03d70107f947abe34f50" title="Destroys an i18n_udate_format_h.">i18n_udate_destroy</a>(format);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga98426d4b7abc03d70107f947abe34f50" title="Destroys an i18n_udate_format_h.">i18n_udate_destroy</a>(format_clone);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga98426d4b7abc03d70107f947abe34f50" title="Destroys an i18n_udate_format_h.">i18n_udate_destroy</a>(format);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1856,7 +1887,8 @@ Defines</h2></td></tr>
 
 <p>Gets the <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCALENDAR__MODULE.html#ga7432adbd8d47daa469fc2512af579168" title="i18n_ucalendar_h.">i18n_ucalendar_h</a> associated with an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a>. </p>
 <p>An <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a> uses an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCALENDAR__MODULE.html#ga7432adbd8d47daa469fc2512af579168" title="i18n_ucalendar_h.">i18n_ucalendar_h</a> to convert a raw value to, for example, the day of the week. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>calendar</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>The <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a> to query. </td></tr>
@@ -1950,7 +1982,8 @@ Defines</h2></td></tr>
 
 <p>Gets the <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#ga9d2cd9341ffdcba900337503248037bc" title="A number formatter.">i18n_unumber_format_h</a> associated with an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a>. </p>
 <p>An <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a> uses an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMBER__MODULE.html#ga9d2cd9341ffdcba900337503248037bc" title="A number formatter.">i18n_unumber_format_h</a> to format numbers within a date, for example the day number. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>number_format</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>The formatter to query. </td></tr>
