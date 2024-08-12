@@ -12,13 +12,13 @@ This feature is supported in wearable applications only.
 
 For more detailed and comprehensive information, study the following documentation:
 
-- [Make the Web Faster by Google Developers](https://developers.google.com/speed/)
-- [Speed Up Your JavaScript by Nicholas C. Zakas](https://www.slideshare.net/nzakas/speed-up-your-javascript)
-- [High-Performance Kick-Ass Web Apps by Stoyan Stefanov](https://www.slideshare.net/stoyan/high-performance-kick-ass-web-apps-javascript-edition)
-- [Best Practices for Speeding Up Your Web Site, by Yahoo Developer Network](http://developer.yahoo.com/performance/rules.html)  
-- [Rendering: repaint, reflow/relayout, restyle by Stoyan Stefanov](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
+- [Make the Web Faster by Google Developers](https://developers.google.com/speed/){:target="_blank"}
+- [Speed Up Your JavaScript by Nicholas C. Zakas](https://www.slideshare.net/nzakas/speed-up-your-javascript){:target="_blank"}
+- [High-Performance Kick-Ass Web Apps by Stoyan Stefanov](https://www.slideshare.net/stoyan/high-performance-kick-ass-web-apps-javascript-edition){:target="_blank"}
+- [Best Practices for Speeding Up Your Web Site, by Yahoo Developer Network](http://developer.yahoo.com/performance/rules.html){:target="_blank"}  
+- [Rendering: repaint, reflow/relayout, restyle by Stoyan Stefanov](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/){:target="_blank"}
 
-## Reducing the Access Time for Variables
+## Reduce the access time for variables
 
 Out-of-scope variables, properties, and arrays, which are accessed more than twice, can be inefficient. It takes time to search whenever you reference an out-of-scope variable.
 
@@ -61,12 +61,12 @@ test: function() {
 	</tbody>
 </table>
 
-> **Tip**  
+> [!NOTE]
 > To minimize the property access time:  
 > - Property depth: the deeper the property hierarchy is, the more search time is required (`object.name` < `object.name.name`).
 > - Property notation: dot notation is faster than associate notation in Webkit (`object.name` < `object ["name"]`).
 
-## Improving the Event Handler Response Time
+## Improve the event handler response time
 
 As the number of event handlers grows in the DOM tree, Webkit consumes more memory to trace the events and the response time for each event increases. To prevent response time slow-down, you can use a technique called event delegation.
 
@@ -110,7 +110,7 @@ document.getElementById('ul').onclick = function() {
 </tbody>
 </table>
 
-## Cleaning up Unused Properties and DOM Elements
+## Clean up unused properties and DOM elements
 
 When DOM elements or object properties are accessed, JavaScript searches the variables with its variable resolution mechanism. Try to reduce the number of potential targets, since the average variable search slows when the target coverage grows. To minimize this problem, good coding practice demands that you explicitly remove unused DOM elements and properties when you know they are no longer needed.
 
@@ -141,7 +141,7 @@ el.parentNode.removeChild(el);
 </tbody>
 </table>
 
-## Minimizing the Document Flow
+## Minimize the document flow
 
 The layout of the Web application is maintained in Webkit as a DOM tree. The CSS style is applied to the DOM tree and produces the render tree that contains the rendering information for the real screen. The user sees the result of painting the render tree. The following figure shows the overall rendering flow that happens in the Webkit layout engine.
 
@@ -235,9 +235,9 @@ To reduce document reflow, apply the following tips:
   		</tbody>
   </table>
 
-## Improving the Application Launch Time
+## Improve the application launch time
 
-The basic principle of improving the launch time of a Web application is simply to "show first page as quickly as possible and do nothing but UI rendering". To apply this principle:
+The basic principle of improving the launch time of a Web application is simply to "show first page as quickly as possible and do nothing but UI rendering". To apply this principle, follow these steps:
 
 - Reduce the number of files.
 
@@ -297,6 +297,6 @@ The basic principle of improving the launch time of a Web application is simply 
 
   Alternatively, avoid loading web frameworks until the web application displays the first page. You can create a simple first page that does not use web frameworks and load web frameworks asynchronously while the first page is displayed. Additionally, most frameworks have specific features to improve their loading performance, for example, lazy-loading. To improve the performance of your application, you can use one of the specific features in your web applications that are based on web frameworks.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.3.1 and Higher for Wearable
