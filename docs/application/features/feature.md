@@ -1885,7 +1885,7 @@ Thus, "arm_32" will be returned for "arm 32-bit" devices. Likewise, each of the 
 ------------------------------------------------------------------------------------
 
 **System information:**\
-The platform returns the CPU architecture (e.g. "armv7", "x86") of a device.\
+The platform returns the CPU architecture (e.g. "armv6", "armv7", "armv8", "riscv32", "riscv64", "x86") of a device.\
 
 [Edit Key](https://www.tizen.org/node/8666/edit?destination=feature "edit"){.edit}
 
