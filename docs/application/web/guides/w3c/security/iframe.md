@@ -32,11 +32,11 @@ The main feature of the `iframe` element is the `sandbox` attribute (in [mobile]
   - `allow-popups`  
     Enables [ opening a pop-up window from the sandboxed element](#sandboxed_popups).
 
-> **Note**  
+> [!NOTE]
 > The `scrolling`, `align`, `frameborder`, `marginheight`, `marginwidth`, `longdesc`, and `seamless` HTML5 attributes are no longer supported in the latest HTML5 version.
 
 <a name="sandboxed_cookies"></a>
-## Accessing Sandboxed Cookies
+## Access sandboxed cookies
 
 Learning how to control `iframe` element content when accessing the cookies of the parent document enhances the security features of your application:
 
@@ -140,7 +140,7 @@ Learning how to control `iframe` element content when accessing the cookies of t
 
 ![Sandbox cookie access (in mobile applications only)](./media/sandbox_cookie_access.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
@@ -148,7 +148,7 @@ For the complete source code related to this use case, see the following files:
 - [iframe_cookie_stolen.html](http://download.tizen.org/misc/examples/w3c_html5/security/html5_the_iframe_element)
 
 <a name="sandboxed_page"></a>
-## Redirecting a Sandboxed Page
+## Redirect a sandboxed page
 
 Learning how to control `iframe` element content when redirecting a page enhances the security features of your application:
 
@@ -213,7 +213,7 @@ Learning how to control `iframe` element content when redirecting a page enhance
 
 ![Sandbox page redirection (in mobile applications only)](./media/sandbox_page_redirection.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
@@ -222,7 +222,7 @@ For the complete source code related to this use case, see the following files:
 - [warning.html](http://download.tizen.org/misc/examples/w3c_html5/security/html5_the_iframe_element)
 
 <a name="sandboxed_form"></a>
-## Submitting a Sandboxed Form
+## Submit a sandboxed form
 
 Learning how to control `iframe` element content when submitting a form enhances the security features of your application:
 
@@ -300,7 +300,7 @@ Learning how to control `iframe` element content when submitting a form enhances
 
 ![Sandbox form submission (in mobile applications only)](./media/sandbox_form_submission.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
@@ -309,22 +309,22 @@ For the complete source code related to this use case, see the following files:
 
 
 <a name="sandboxed_popups"></a>
-## Managing Sandboxed Pop-ups
+## Manage sandboxed pop-ups
 
 Learning how to control the opening of the `iframe` element content enhances the security features of your application:
 
 1.  Create an `<input>` element of the `checkbox` type that enables the sandbox activation. In addition, create an `iframe` element with the `sandbox` property (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) applications). To allow pop-ups, set the `sandbox` attribute value as `allow-popups`:
 
-   ```
-   <input type="checkbox" id="chkSandbox" name="chkSandbox"
-          onclick="setSandbox()"/> Enable Sandbox
-   <div id="description" style="padding:10 px; margin:10 px;"></div>
+     ```
+    <input type="checkbox" id="chkSandbox" name="chkSandbox"
+              onclick="setSandbox()"/> Enable Sandbox
+    <div id="description" style="padding:10 px; margin:10 px;"></div>
 
-   <iframe src="iframe_popup.html"
-           sandbox="allow-scripts allow-same-origin allow-popups"
-           id="iframe"
-           style="border: 1px solid #DCDCDC;"></iframe>
-   ```
+    <iframe src="iframe_popup.html"
+            sandbox="allow-scripts allow-same-origin allow-popups"
+            id="iframe"
+            style="border: 1px solid #DCDCDC;"></iframe>
+    ```
 
 2. If the `sandbox` attribute is activated, remove the `allow-popups` flag from the `sandbox` attribute value:
 
@@ -360,14 +360,14 @@ Learning how to control the opening of the `iframe` element content enhances the
 
 ![Sandbox pop-up (in mobile applications only)](./media/sandbox_popup.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
 - [iframe_popup.html](http://download.tizen.org/misc/examples/w3c_html5/security/html5_the_iframe_element)
 - [popup.html](http://download.tizen.org/misc/examples/w3c_html5/security/html5_the_iframe_element)
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

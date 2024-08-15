@@ -16,9 +16,9 @@ The main performance and optimization features are:
 
   Allows you to improve the performance of Tizen Web applications.
 
-- [Web Workers](./web-workers.md)
+- [Web workers](./web-workers.md)
 
-  Enables you to create and manage HTML5 Web Workers to run an independent JavaScript thread in the background without affecting the device performance.
+  Enables you to create and manage HTML5 Web workers to run an independent JavaScript thread in the background without affecting the device performance.
 
 - [JavaScript performance improvement](./js-performance-improvement.md)
 
@@ -33,7 +33,7 @@ The main performance and optimization features are:
   Enables you to improve application performance when using jQuery with JavaScript writing techniques.
 
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
