@@ -4,7 +4,7 @@ Timing control is used mainly in animations for cyclic script execution synchron
 
 Making script-based animations requires updating the properties of the animated objects in each frame. In computerized animations, the frame rate is normally 30 or 60 fps (frames per second), because the human eye perceives a sequence of images as an animation when they change at least 12-15 times per second. The `requestAnimationFrame()` (or `webkitRequestAnimationFrame()`) method enables [scheduling the animation frame update requests](#creating-an-application-with-a-controllable-animation). The frame update rate depends on implementation. In Tizen 2.2, it is about 60 fps.
 
-> **Note**  
+> [!NOTE]
 > In mobile applications, when using the emulator, you must include the  `webkit` prefix in method names, such as `window.performance.webkitNow()`. However, when using a device, the prefix must not be used. In addition, when using the emulator, methods assigned to variables must be formatted as follows:
 
 ```
@@ -19,7 +19,7 @@ window.performance.windowNow = window.performance.now || window.performance.webk
 window.performance.windowNow();
 ```
 
-## Creating an Application with a Controllable Animation
+## Create an application with a controllable animation
 
 To optimize the performance of your application, you must learn to create a simple controllable DOM animation.
 
@@ -135,7 +135,7 @@ This example creates a screen with a Tizen pinwheel rotating on it, and buttons 
 
    The callback method is automatically called before the screen is updated. To keep the animation going, the `requestAnimationFrame()` method is called at the end of the callback method. Because the callback is synchronized with screen updates, when application is in the background and not visible on the screen, the updates are not called and the animation stops.
 
-6. Set events for the **Left** and **Right** buttons. Tapping the buttons increases or decreases the animation speed.
+6. Set events for the **Left** and **Right** buttons. Tapping the buttons increases or decreases the animation speed:
 
    ```
    leftDiv = document.getElementById('leftBtn');
@@ -149,13 +149,13 @@ This example creates a screen with a Tizen pinwheel rotating on it, and buttons 
    handlerRequest = window.webkitRequestAnimationFrame(nextFrame);
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [renamed_index.html](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/timing_control_for_script_based_animations/animation_timing_warm_up)
+- [renamed_index.html](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/timing_control_for_script_based_animations/animation_timing_warm_up){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
