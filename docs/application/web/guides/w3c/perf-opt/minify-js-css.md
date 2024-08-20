@@ -2,7 +2,7 @@
 
 File minification improves application performance as unnecessary data is being removed. For example, page loading time can be decreased by reducing the number of JavaScript and CSS files.
 
-Minifying tools, such as [Closure Compiler](https://developers.google.com/closure/compiler/) and [Grunt](http://gruntjs.com/), include features that can combine and reduce JavaScript file. The following table shows Closure Compiler and Grunt features in comparison.
+Minifying tools, such as [Closure Compiler](https://developers.google.com/closure/compiler/){:target="_blank"} and [Grunt](http://gruntjs.com/){:target="_blank"}, include features that can combine and reduce JavaScript file. The following table shows Closure Compiler and Grunt features in comparison.
 
 **Table: Comparison of minifying tools**
 
@@ -53,7 +53,7 @@ Grunt has advantages in terms of expandability by providing various plug-ins. Fo
 - [Installing and using Grunt](#installing-and-using-grunt)
 - [Improvement through Grunt](#improvement-through-grunt)
 
-## Installing and Using Grunt
+## Install and use Grunt
 
 The Grunt tool provides application performance improvement based on the decrease of request count, transferred data, and transfer time.
 
@@ -61,9 +61,9 @@ The Grunt tool provides application performance improvement based on the decreas
 
 The commands used for installing and using Grunt work in the same manner, without any changes, across most of the major operating systems. To run the commands, you may need to use sudo (for Linux and BSD), or run your command shell as Administrator (for Windows&reg;).
 
-### Installing Grunt
+### How to install Grunt
 
-1. Install the [Node.js](http://www.nodejs.org/) platform. The platform includes the Node.js package manager, npm, which is used to install Grunt CLI (command line interface).
+1. Install the [Node.js](http://www.nodejs.org/){:target="_blank"} platform. The platform includes the Node.js package manager, npm, which is used to install Grunt CLI (command line interface).
 
 2. Install Grunt CLI:
 
@@ -71,7 +71,7 @@ The commands used for installing and using Grunt work in the same manner, withou
    npm install -g grunt-cli /* -g: global type */
    ```
 
-### Using Grunt
+### How to use Grunt
 
 1. Change to the root directory of the project:
 
@@ -87,7 +87,7 @@ The commands used for installing and using Grunt work in the same manner, withou
 
 3. Create the `package.json` file: 
 
-   When executing the following command, interactive prompt that receives information on the project is executed. Through the information entered, the `package.json` file is created.
+   When executing the following command, interactive prompt that receives information on the project is executed. Through the information entered, the `package.json` file is created:
    
    ```
    npm init
@@ -118,7 +118,7 @@ The commands used for installing and using Grunt work in the same manner, withou
 
 After running the Grunt plug-in, the following comparison result is shown through the inspector in the Google Chrome&trade; browser. The expected results vary depending on the application, but since the improvement effects are certain, it is recommended to use Grunt.
 
-> **Note**  
+> [!NOTE]
 > For the sake of comparing improvement, in the following examples, 2 Web applications have been arbitrarily chosen and named App#1 and App#2.
 
 **Table: Result for App #01**
@@ -254,7 +254,7 @@ After running the Grunt plug-in, the following comparison result is shown throug
 </table>
 
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
