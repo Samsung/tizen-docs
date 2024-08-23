@@ -8,9 +8,9 @@ The following techniques of writing JavaScript code can be used to improve appli
 - [Using literal expressions](#using-literal-expressions)
 - [Managing DOM control](#managing-dom-control)
 
-## Removing the Debugging Statement
+## Remove the debugging statement
 
- The `console.log` statement, which is frequently used in JavaScript debugging, can cause poor performance. The following example shows how deleting the statement improves performance.
+ The `console.log` statement, which is frequently used in JavaScript debugging, can cause poor performance. The following example shows how deleting the statement improves performance:
 
 ```
 /* Code#1 */
@@ -43,9 +43,9 @@ for (var i = 0, len = array_list.length; i < len; i++) {
 |---------|---------------------------|---------------------------|
 | Tizen   | 0.823                     | 0.100                     |
 
-## Removing Slow Loop Statements
+## Remove slow loop statements
 
- The `for - in` loop is relatively slower than the other loops, such as `for`, `while`, and `do - while`, as it assigns object properties to the variable (`idx` in the following example), navigating the object every time the loop is iterated. The following example shows how modifying the loop improves performance.
+ The `for - in` loop is relatively slower than the other loops, such as `for`, `while`, and `do - while`, as it assigns object properties to the variable (`idx` in the following example), navigating the object every time the loop is iterated. The following example shows how modifying the loop improves performance:
 
 ```
 /* Code#1 */
@@ -69,7 +69,7 @@ for (var i = 0, len = array_list.length; i < len; i++) {
 
 ![JavaScript performance improvement result (in mobile applications only)](./media/js_perform_result_loop.png)
 
-> **Note**  
+> [!NOTE]
 > By caching the `array_list.length` before using it, as shown in the second example above, better performance is achieved. For more information, see [Using cached array length](#arraylength).
 
 **Table: JavaScript performance improvement result**
@@ -79,9 +79,9 @@ for (var i = 0, len = array_list.length; i < len; i++) {
 | Tizen   | 0.150                     | 0.100                     |
 
 <a name="arraylength"></a>
-## Using Cached Array Length
+## Use cached array length
 
-In a loop statement, you can cache the length of an array before using it instead of using it directly in the loop. Minimizing the steps taken to search for the scope chain activation object speeds up the response performance. The following example shows how caching the array list improves performance.
+In a loop statement, you can cache the length of an array before using it instead of using it directly in the loop. Minimizing the steps taken to search for the scope chain activation object speeds up the response performance. The following example shows how caching the array list improves performance:
 
 ```
 /* Code#1 */
@@ -120,9 +120,9 @@ for (i = 0, arrayLen = array_list.length; i < arrayLen; i++) {
 |---------|---------------------------|---------------------------|
 | Tizen   | 0.104                     | 0.100                     |
 
-## Using Literal Expressions
+## Use literal expressions
 
- Using literal expressions instead of newly created ones improves the JavaScript performance. Literal expressions are optimized for modern browser engines. They reduce the amount of interpretation time of the JavaScript interpreter. The following example shows how using literal expressions improves performance.
+ Using literal expressions instead of newly created ones improves the JavaScript performance. Literal expressions are optimized for modern browser engines. They reduce the amount of interpretation time of the JavaScript interpreter. The following example shows how using literal expressions improves performance:
 
 ```
 /* Code#1 */
@@ -150,13 +150,13 @@ for (var i = 0; i < 100; i++) {
 |---------|---------------------------|---------------------------|
 | Tizen   | 0.197                     | 0.100                     |
 
-## Managing DOM Control
+## Manage DOM control
 
  Rendering performance can be improved by minimizing direct DOM manipulation and creating a new instance of a cached DOM object.
 
 When referring to variables, JavaScript revolves around a scope chain (variable object set that can be accessed in the current scope). The deeper the scope chain, the more execution time is needed.
 
-The following example shows how applying DOM control improves performance.
+The following example shows how applying DOM control improves performance:
 
 ```
 /* Code#1 */
@@ -193,7 +193,7 @@ for (var i = 0; i < 100; i++) {
 |---------|---------------------------|---------------------------|
 | Tizen   | 0.119                     | 0.100                     |
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
