@@ -36,7 +36,7 @@ The guides library introduce various features of .NET applications. The features
 
 <div class="row cards-container-infra">
     <div class="col col-6 col-xl-3">
-        <a href="guides/libraries/wcircularui/index.md" class="card card-infra h-100">
+        <a href="guides/user-interface/wcircularui/index.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Tizen Wearable CircularUI</p>
                 <p class="card-text">Learn how to create Tizen Wearable Xamarin Forms application more easily and efficiently.</p>
