@@ -2,7 +2,7 @@
 
 Typed Array - Khronos is an HTML5 feature that allows you to access binary data in JavaScript. It is designed to effectively handle the complex binary data of WebGL&trade;. It provides better performance than the WebGL - Khronos API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#webgl), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#webgl), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#webgl) applications) when manipulating binary data and handling the data of other HTML APIs.
 
-The main features of the Typed Array - Khronos API include:
+The main features of the Typed Array - Khronos API include the following:
 
 - Creating an array buffer
 
@@ -28,11 +28,11 @@ A typed array is capable of handling binary data in different sources:
 
 Additionally, a typed array can be used to manage in-memory binary data of byte layouts, and assist in efficiently manipulating raw data for complex and powerful Web applications, such as audio and video operation, Web sockets, and the [File API operations](../../data/file-system.md).
 
-## Creating an Array Buffer
+## Create an array Buffer
 
 To handle binary data in your application with JavaScript, you must learn to create array buffers:
 
-1. Create a new [ArrayBuffer](http://www.ecma-international.org/ecma-262/6.0/#sec-arraybuffer-constructor) with a specific length:
+1. Create a new [ArrayBuffer](http://www.ecma-international.org/ecma-262/6.0/#sec-arraybuffer-constructor){:target="_blank"} with a specific length.
 
    ```
    <script>
@@ -48,7 +48,7 @@ To handle binary data in your application with JavaScript, you must learn to cre
 
    The content of the array buffer is initialized to 0. If the requested number of bytes are not allocated, an exception is raised.
 
-2. Slice the array buffer to copy the buffer bytes and return a new array buffer:
+3. Slice the array buffer to copy the buffer bytes and return a new array buffer:
 
    ```
        /* Get slice: '1234' */
@@ -69,11 +69,11 @@ To handle binary data in your application with JavaScript, you must learn to cre
 
    ![Creating and slicing array buffers (in mobile applications only)](./media/arraybuffer.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [sample_1.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_typed_array)
+- [sample_1.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_typed_array){:target="_blank"}
 
 ## Creating Typed Array Views
 
@@ -112,7 +112,7 @@ The array buffer view shares information between views of all types, and has the
 
 To handle binary data in your application with JavaScript, you must learn to access the binary data for reading and writing:
 
-1. Create new instances of the typed array view types with a general fixed-length binary buffer:
+1. Create new instances of the typed array view types with a General fixed-length binary buffer:
 
    ```
    <script>
@@ -137,10 +137,10 @@ To handle binary data in your application with JavaScript, you must learn to acc
    </script>
    ```
 
-	> **Note**  
+	> [!NOTE]
 	> In the above code, to access a buffer with an array of 16-bit signed integers, use the `Int16Array` instance that references an array buffer.
 
-2. Create a typed array view:
+2. Create a typed array view.
 
    ```
    <script>
@@ -218,7 +218,7 @@ To handle binary data in your application with JavaScript, you must learn to acc
    The `DataView` stores the values of the given type at the specified byte offset from the start of the view. Moreover, alignment is not a constraint, and it can store the multi-byte values at any offset. For multi-byte values, the optional `littleEndian` argument indicates that the value can be stored in a big-endian or little-endian byte order. If the argument is set to `false` or is undefined, the value gets stored in the big-endian byte order.  
    ![DataView](./media/data_view.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
@@ -226,7 +226,7 @@ For the complete source code related to this use case, see the following files:
 - [sample_3.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_typed_array)
 - [sample_4.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_typed_array)
 
-## Using Typed Arrays
+## Use typed arrays
 
 To handle binary data in your application with JavaScript, you must learn to deliver binary data effectively in other HTML5 APIs that employ a typed array:
 
@@ -283,7 +283,7 @@ To handle binary data in your application with JavaScript, you must learn to del
    };
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
