@@ -97,7 +97,7 @@ The following figure illustrates the GPS application.
 
 ![GPS application (in mobile applications only)](./media/geolocation.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
