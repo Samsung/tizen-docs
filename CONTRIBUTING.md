@@ -21,7 +21,7 @@ You need a basic understanding of [Git and GitHub.com](https://guides.github.com
 **Step 1:** Skip this step for small changes. Open an [issue](https://github.com/Samsung/tizen-docs/issues) describing what you want to do, such as change an existing article or create a new one.
 The content inside the **docs** folder is organized into sections that are reflected in the Table of Contents (toc_all.md). Define where the topic will be located in the toc_all.md. Get feedback on your proposal.
 
-You must use heading tags(#, ##, ###, ####...) for items of TOC. There are four categoris: Open Source Project, Application, IoT and Blog. They are items of GNB(Global Navigation Bar) and they have own TOC files(toc_all.md) in their own directories.
+You must use heading tags(#, ##, ###, ####...) for items of TOC. There are four categories: Open Source Project, Application, IoT and Blog. They are items of GNB(Global Navigation Bar) and they have own TOC files(toc_all.md) in their own directories.
 
 > **Note**
 >
