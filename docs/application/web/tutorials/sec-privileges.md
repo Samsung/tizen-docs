@@ -22,7 +22,7 @@ Since Tizen platform 3.0, some privileges are categorized as privacy-related and
 
 Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
 
-The API version restriction of privileges are deprecated since platform version 5.0. So, if you are develeoping an app with an earlier API version and need information about supported version, see [this page](./old-versioned-sec-privileges.md). The page does not include privileges issued after 4.0.
+The API version restriction of privileges are deprecated since platform version 5.0. So, if you are developing an app with an earlier API version and need information about supported version, see [this page](./old-versioned-sec-privileges.md). The page does not include privileges issued after 4.0.
 
 <a name="API"></a>
 ## Web API privileges
