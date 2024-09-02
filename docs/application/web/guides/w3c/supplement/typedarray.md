@@ -28,11 +28,11 @@ A typed array is capable of handling binary data in different sources:
 
 Additionally, a typed array can be used to manage in-memory binary data of byte layouts, and assist in efficiently manipulating raw data for complex and powerful Web applications, such as audio and video operation, Web sockets, and the [File API operations](../../data/file-system.md).
 
-## Create an array Buffer
+## Create an array buffer
 
 To handle binary data in your application with JavaScript, you must learn to create array buffers:
 
-1. Create a new [ArrayBuffer](http://www.ecma-international.org/ecma-262/6.0/#sec-arraybuffer-constructor){:target="_blank"} with a specific length.
+1. Create a new [ArrayBuffer](http://www.ecma-international.org/ecma-262/6.0/#sec-arraybuffer-constructor){:target="_blank"} with a specific length:
 
    ```
    <script>
@@ -48,7 +48,7 @@ To handle binary data in your application with JavaScript, you must learn to cre
 
    The content of the array buffer is initialized to 0. If the requested number of bytes are not allocated, an exception is raised.
 
-3. Slice the array buffer to copy the buffer bytes and return a new array buffer:
+2. Slice the array buffer to copy the buffer bytes and return a new array buffer:
 
    ```
        /* Get slice: '1234' */
@@ -112,7 +112,7 @@ The array buffer view shares information between views of all types, and has the
 
 To handle binary data in your application with JavaScript, you must learn to access the binary data for reading and writing:
 
-1. Create new instances of the typed array view types with a General fixed-length binary buffer:
+1. Create new instances of the typed array view types with a general fixed-length binary buffer:
 
    ```
    <script>
@@ -140,7 +140,7 @@ To handle binary data in your application with JavaScript, you must learn to acc
 	> [!NOTE]
 	> In the above code, to access a buffer with an array of 16-bit signed integers, use the `Int16Array` instance that references an array buffer.
 
-2. Create a typed array view.
+2. Create a typed array view:
 
    ```
    <script>
