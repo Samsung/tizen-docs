@@ -2,9 +2,9 @@
 
 WebGL - Khronos is a graphics library for creating 3D visual elements in Web applications without separate plug-ins.
 
-WebGL&trade; is designed as a rendering context of the [HTML5 &lt;canvas&gt; element](../graphics/canvas.md). The WebGL&trade; context is still being developed and has not been standardized. WebGL&trade; uses 3D rendering APIs derived from [OpenGL&reg; ES 2.0](http://www.opengl.org/documentation/specs/version2.0/glspec20.pdf), and is realized by binding shaders and [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.00.pdf) (GLSL ES) as JavaScript.
+WebGL&trade; is designed as a rendering context of the [HTML5 &lt;canvas&gt; element](../graphics/canvas.md). The WebGL&trade; context is still being developed and has not been standardized. WebGL&trade; uses 3D rendering APIs derived from [OpenGL&reg; ES 2.0](https://registry.khronos.org/OpenGL/specs/gl/glspec20.pdf){:target="_blank"}, and is realized by binding shaders and [OpenGL&reg; ES Shading Language](https://www.khronos.org/files/opengles_shading_language.pdf){:target="_blank"} (GLSL ES) as JavaScript.
 
-The main features of WebGL&trade; include:
+The main features of WebGL&trade; include the following:
 
 - Importing the WebGL&trade; context
 
@@ -18,7 +18,7 @@ The main features of WebGL&trade; include:
 
   A buffer is a memory block for storing temporary data. In WebGL&trade;, you must [create a vertex buffer object (VBO) to store vertex attributes](#initializing-buffers), such as location, color, and texture coordinates.
 
-  > **Note**  
+  > [!NOTE]
   > The `deleteBuffer()` method can be used to delete the buffer.
 
 - Drawing on the screen
@@ -47,16 +47,16 @@ The main features of WebGL&trade; include:
 
 - WebGL&trade; frameworks
 
-  Numerous [frameworks](http://www.khronos.org/webgl/wiki/User_Contributions#Frameworks) exist to easily import low-level methods to WebGL&trade; and to develop WebGL&trade; more productively.
+  Numerous [frameworks](http://www.khronos.org/webgl/wiki/User_Contributions#Frameworks){:target="_blank"} exist to easily import low-level methods to WebGL&trade; and to develop WebGL&trade; more productively.
 
-  The [three.js](https://github.com/mrdoob/three.js/) is one of the most widely used WebGL&trade; frameworks. It is a lightweight JavaScript library, in which many settings that need to be performed when developing WebGL&trade; are already set as basis. Consequently, three.js reduces the amount of overlapping code due to repetitive setting works.
+  The [three.js](https://github.com/mrdoob/three.js/){:target="_blank"} is one of the most widely used WebGL&trade; frameworks. It is a lightweight JavaScript library, in which many settings that need to be performed when developing WebGL&trade; are already set as basis. Consequently, three.js reduces the amount of overlapping code due to repetitive setting works.
 
   You can use the three.js framework to, for example, [apply light and camera effects](#framework).
 
 <a name="import"></a>
-## Importing the WebGL&trade; Context
+## Import the WebGL&trade; context
 
-To import the WebGL&trade; context from the HTML5 `<canvas>` element:
+To import the WebGL&trade; context from the HTML5 `<canvas>` element, follow these steps:
 
 1. Define the `<canvas>` element ID and set its width and height:
 
@@ -66,7 +66,7 @@ To import the WebGL&trade; context from the HTML5 `<canvas>` element:
    </body>
    ```
 
-   > **Note**  
+   > [!NOTE]
    > If the width and height are not set, the default size, 300 x 150 px, is used.
 
 2. Use the `getContext()` method of the `Canvas` object to import the WebGL&trade; context:
@@ -96,17 +96,17 @@ To import the WebGL&trade; context from the HTML5 `<canvas>` element:
    </script>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [webgl_camera_effect.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
+- [webgl_camera_effect.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
 
-## Initializing Programs and Shaders
+## Initialize programs and shaders
 
-To bind the shaders and GLSL ES in WebGL&trade; by using shaders and programs:
+To bind the shaders and GLSL ES in WebGL&trade; by using shaders and programs, follow these steps:
 
-1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
+1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](https://www.khronos.org/files/opengles_shading_language.pdf){:target="_blank"} (GLSL ES):
 
    ```
    <script id="vshader" type="x-shader/x-vertex">
@@ -150,10 +150,10 @@ To bind the shaders and GLSL ES in WebGL&trade; by using shaders and programs:
        gl.compileShader(fshader);
    ```
 
-   > **Note**  
+   > [!NOTE]
    > After a shader has been used, you can use the `deleteShader()` method to delete it.
 
-5. Import the `createProgram()` method to create a new instance of the [WebGLProgram](https://www.khronos.org/registry/webgl/specs/1.0/#5.6) object, in which the shaders are then attached:
+5. Import the `createProgram()` method to create a new instance of the [WebGLProgram](https://www.khronos.org/registry/webgl/specs/1.0/#5.6){:target="_blank"} object, in which the shaders are then attached:
 
    ```
        var program = null;
@@ -181,18 +181,18 @@ To bind the shaders and GLSL ES in WebGL&trade; by using shaders and programs:
    </script>
    ```
 
-   > **Note**  
+   > [!NOTE]
    > After a  WebGL&trade; program has been used, you can use the `deleteProgram()` method to delete it.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [webgl_circle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
+- [webgl_circle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
 
-## Initializing Buffers
+## Initialize buffers
 
-To create buffers, bind them, and store data in them:
+To create buffers, bind them, and store data in them, follow these steps:
 
 1. To create a triangle (shown on the left in the figure), define the coordinates of a triangle according to the WebGL&trade; coordinate system (shown on the right):
 
@@ -233,15 +233,15 @@ The following figure shows the final triangle as it is displayed on the screen.
 
 ![Triangle on the screen](media/initializing_buffers.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [webgl_triangle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
+- [webgl_triangle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
 
-## Drawing Shapes on the Screen
+## Draw shapes on the screen
 
-To display shapes on the screen using attribute array data and a drawing buffer:
+To display shapes on the screen using attribute array data and a drawing buffer, follow these steps:
 
 1. Import the `getAttribLocation()` method to bring the attribute location from the WebGL&trade; program:
 
@@ -260,7 +260,7 @@ To display shapes on the screen using attribute array data and a drawing buffer:
 
 3. Import the `vertexAttribPointer()` method that indicates the data format to the shader.
 
-   The second argument value is the number of components per vertex. It can be 2, 3, or, for RGBA, 4.
+   The second argument value is the number of components per vertex. It can be 2, 3, or, for RGBA, 4:
 
    ```
        gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
@@ -384,19 +384,19 @@ To display shapes on the screen using attribute array data and a drawing buffer:
      gl.drawArrays(gl. TRIANGLE_FAN, 0, 6);
       ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [webgl_circle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
-- [webgl_rectangle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
-- [webgl_triangle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
+- [webgl_circle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
+- [webgl_rectangle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
+- [webgl_triangle.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
 
-## Setting Colors
+## Set colors
 
-To set colors using attributes and a buffer:
+To set colors using attributes and a buffer, follow these steps:
 
-1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
+1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](https://www.khronos.org/files/opengles_shading_language.pdf){:target="_blank"} (GLSL ES):
 
    ```
    <script id="vshader" type="x-shader/x-vertex">
@@ -466,21 +466,21 @@ The following figure shows the result as it is displayed on the screen.
 
 ![Color on the screen](media/color_final.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [webgl_color.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
+- [webgl_color.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
 
-## Setting Textures
+## Set textures
 
-To apply an image from a file to a surface as a texture:
+To apply an image from a file to a surface as a texture, follow these steps:
 
-1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES). In this example, the texture coordinate attribute is used instead of the vertex coordinate attribute.
+1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](https://www.khronos.org/files/opengles_shading_language.pdf){:target="_blank"} (GLSL ES). In this example, the texture coordinate attribute is used instead of the vertex coordinate attribute.
 
-   Set the variable to pass the texture coordinate over to the fragment shader. Define the formula for calculating the texture coordinates.
+   Set the variable to pass the texture coordinate over to the fragment shader. Define the formula for calculating the texture coordinates:
 
-   > **Note**  
+   > [!NOTE]
    > The coordinate range of a vertex is -1 ~ 1, and the coordinate range of a texture is 0 ~ 1.
 
    ```
@@ -505,7 +505,7 @@ To apply an image from a file to a surface as a texture:
    </script>
    ```
 
-   > **Note**  
+   > [!NOTE]
    > The texture coordinates use the `s, t` pair.
 
 2. Create a new `texture` instance using the `createTexture()` method:
@@ -515,7 +515,7 @@ To apply an image from a file to a surface as a texture:
        var texture = gl.createTexture();
    ```
 
-   > **Note**  
+   > [!NOTE]
    > After a texture has been used, you can use the `deleteTexture()` method to delete it.
 
 3. Load the image file to be used as texture data, and bind the texture using the `bindTexture()` method:
@@ -535,7 +535,7 @@ To apply an image from a file to a surface as a texture:
 
    The image data loaded in HTML has the opposite Y axis as the WebGL&trade; direction. Use the `gl.UNPACK_FLIP_Y_WEBGL` attribute to reverse the data and store it.
 
-4. Use the loaded image file to fill the texture data. The `texImage2D()` method assigns the image to be used as a texture, and the `textParameteri()` method assigns a filter.
+4. Use the loaded image file to fill the texture data. The `texImage2D()` method assigns the image to be used as a texture, and the `textParameteri()` method assigns a filter:
 
    ```
            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, textureImage);
@@ -573,16 +573,16 @@ The following figure shows the result as it is displayed on the screen.
 
 ![Texture on the screen](media/texture.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [webgl_texture.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
-- [carp.jpg](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl/images)
+- [webgl_texture.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
+- [carp.jpg](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl/images){:target="_blank"}
 
-## Creating an Animation
+## Create an animation
 
-To create an animation by adjusting and moving object coordinates:
+To create an animation by adjusting and moving object coordinates, follow these steps:
 
 1. Calculate the central point:
 
@@ -611,7 +611,7 @@ To create an animation by adjusting and moving object coordinates:
            vertices = [];
    ```
 
-2. Use a trigonometric function to calculate the vertex location of a regular N polygon with the central point as the center. Store the n(50) vertex coordinates using the changed central point as the center of the array.
+2. Use a trigonometric function to calculate the vertex location of a regular N polygon with the central point as the center. Store the n(50) vertex coordinates using the changed central point as the center of the array:
 
    ```
            for (var i = 0; i < n; i++) {
@@ -625,7 +625,7 @@ To create an animation by adjusting and moving object coordinates:
            vertices = vertices.concat(circumVertices);
    ```
 
-3. Change the value of the variable in order to calculate the central point. Render the circle with the central point and vertex location, using the `TRIANGLE_FAN` argument that allows all triangles to share a central point to make a circle.
+3. Change the value of the variable in order to calculate the central point. Render the circle with the central point and vertex location, using the `TRIANGLE_FAN` argument that allows all triangles to share a central point to make a circle:
    ```
            /* Change the angle value to change the central point coordinates */
            angle += 0.01;
@@ -646,7 +646,7 @@ To create an animation by adjusting and moving object coordinates:
        window.setInterval(function() {draw();}, 10);
    </script>
    ```
-   > **Note**  
+   > [!NOTE]
    > Instead of the `setInterval()` method, you can also use the script-based W3C `requestAnimationFrame()` method.
 
 The following figure shows the animation as it is displayed on the screen.
@@ -655,15 +655,15 @@ The following figure shows the animation as it is displayed on the screen.
 
 ![Animation on the screen](media/animation_up_down.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [webgl_animation.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
+- [webgl_animation.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
 
-## Creating a 3D Perspective
+## Create a 3D perspective
 
-To create a 3D perspective, you can use the [glMatrix library](https://github.com/toji/gl-matrix):
+To create a 3D perspective, you can use the [glMatrix library](https://github.com/toji/gl-matrix){:target="_blank"}:
 
 1. Set the vertex coordinate and color buffer values to draw 2 triangles:
 
@@ -716,7 +716,7 @@ To create a 3D perspective, you can use the [glMatrix library](https://github.co
 
    ![2 triangles](media/3d.png)
 
-2. Define the vertex shader and fragment shader with using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES), and modify the GLSL ES variables:
+2. Define the vertex shader and fragment shader with using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](https://www.khronos.org/files/opengles_shading_language.pdf){:target="_blank"} (GLSL ES), and modify the GLSL ES variables:
 
    ```
    <script id="vshader" type="x-shader/x-vertex">
@@ -798,18 +798,18 @@ The following figure shows the 3D perspective as it is displayed on the screen.
 
 ![3D perspective on the screen](media/3d_final.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [webgl_camera_effect.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
-- [gl-matrix-min.js](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl/js/lib)
+- [webgl_camera_effect.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
+- [gl-matrix-min.js](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl/js/lib){:target="_blank"}
 
-## Using Touch Events
+## Use touch events
 
-You can apply a texture and 3D perspective with touch events by using the [glMatrix library](https://github.com/toji/gl-matrix). The following example demonstrates how to display and turn a dice on the screen based on touch events:
+You can apply a texture and 3D perspective with touch events by using the [glMatrix library](https://github.com/toji/gl-matrix){:target="_blank"}. The following example demonstrates how to display and turn a dice on the screen based on touch events:
 
-1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
+1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](https://www.khronos.org/files/opengles_shading_language.pdf){:target="_blank"} (GLSL ES):
 
    ```
    <script id="vshader" type="x-shader/x-vertex">
@@ -1016,7 +1016,7 @@ You can apply a texture and 3D perspective with touch events by using the [glMat
 
 9. Import the `mat4()` method module and define it using the utility methods:
 
-   > **Note**  
+   > [!NOTE]
    > The `perspective()` method is not WebGL&trade;-embedded, so it must be used directly, or a third-party matrix library must be used.
 
    ```
@@ -1092,19 +1092,19 @@ The following figure shows the dice as it is displayed on the screen.
 
 ![Dice on the screen](media/dice_3d.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [webgl_dice.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
-- [dice.gif](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl/images)
+- [webgl_dice.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
+- [dice.gif](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl/images){:target="_blank"}
 
 <a name="framework"></a>
-## Using WebGL&trade; Frameworks
+## Use WebGL&trade; frameworks
 
-To use the three.js framework for your WebGL&trade; application:
+To use the three.js framework for your WebGL&trade; application, follow these steps:
 
-1. Download the [three.js library](http://threejs.org/) and include it in the HTML file:
+1. Download the [three.js library](http://threejs.org/){:target="_blank"} and include it in the HTML file:
 
    ```
    <head>
@@ -1156,7 +1156,7 @@ To use the three.js framework for your WebGL&trade; application:
    </body>
    ```
 
-3. Define the variables to be used and the methods to be executed when the window is loaded. Once the window load is complete, import the `startWebGl()` method.
+3. Define the variables to be used and the methods to be executed when the window is loaded. Once the window load is complete, import the `startWebGl()` method:
 
    ```
    <script>
@@ -1206,7 +1206,7 @@ To use the three.js framework for your WebGL&trade; application:
        }
    ```
 
-   > **Note**  
+   > [!NOTE]
    > In WebGL&trade;, there is no `Camera` object.
 
 6. Create a new `Scene` instance and create the mesh and light elements using the `createMeshs()` and `setupLight()` methods:
@@ -1366,14 +1366,14 @@ The following figure shows the final result as it is displayed on the screen.
 
 ![Final result](media/threejs.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [webgl_using_three_js.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
-- [three.js](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl/js/lib)
+- [webgl_using_three_js.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl){:target="_blank"}
+- [three.js](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl/js/lib){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
