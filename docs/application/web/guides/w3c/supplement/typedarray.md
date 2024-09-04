@@ -103,7 +103,7 @@ The array buffer view shares information between views of all types, and has the
 
   <sup>2</sup> The `Uint8ClampedArray` is a special view, and it replaces the `CanvasPixelArray`.
 
-  > **Note**  
+  > [!NOTE]
   > There are no restrictions related to sorting the typed array view types.
 
 - DataView view types
@@ -265,7 +265,7 @@ To handle binary data in your application with JavaScript, you must learn to del
      </script>
      ```
 
-	> **Note**  
+	> [!NOTE]
 	> The pixel array of a canvas can be created and edited without direct manipulation of the canvas element.  
 
 3. For the XMLHttpRequest API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#httpreq), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#httpreq), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#httpreq) applications), set the response type of the `XMLHttpRequest` object as `arraybuffer` to receive a typed array response. This allows you to parse the binary file through the network.
