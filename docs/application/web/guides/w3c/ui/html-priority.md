@@ -9,11 +9,11 @@ The structure of the HTML document can be classified into DOCTYPE and HTML DOM (
 3. DOM elements, including [references to JavaScript](#javascript-behavior), are arranged based on the information defined in the head element. This is called rendering.
 4. The elements are painted on the screen based on [CSS rules](#css-rule-priorities).
 
-## <!DOCTYPE> Element
+## <!DOCTYPE> element
 
 The `<!DOCTYPE>` element informs the browser of the HTML version and which rules it must follow. It is not a composition element of the HTML.
 
-The browser, based on the version defined in the `<!DOCTYPE>` element and DTD (Document Type Definition), decides how to handle the HTML before interpreting it. Therefore, the `<!DOCTYPE>` element must be declared at the beginning of an HTML document.
+The browser, based on the version defined in the `<!DOCTYPE>` element and DTD (Document Type Definition), decides how to handle the HTML before interpreting it. Therefore, the `<!DOCTYPE>` element must be declared at the beginning of an HTML document:
 
 ```
 <!--HTML5-->
@@ -64,8 +64,8 @@ The `<head>` contains the following subelements:
 
 - `<title>`: Defines the title of the document.
 - `<meta>`: Defines information, such as encoding, creator, and keywords of the document.
-  > **Note**  
-  > The [viewport element](https://www.w3.org/TR/css-device-adapt/#atviewport-rule), which sets the screen area, is included in the meta information.
+  > [!NOTE]
+  > The [viewport element](https://www.w3.org/TR/css-device-adapt/#atviewport-rule){:target="_blank"}, which sets the screen area, is included in the meta information.
 
 - `<style>`, `<link>`: Sets the styles of the document.
 - `<script>`, `<noscript>`: Adds functions to the document.
@@ -96,7 +96,7 @@ The `<body>` element defines the area displaying content on the browser screen:
 </html>
 ```
 
-## CSS Rule Priorities
+## CSS rule priorities
 
 The basic rule of HTML, CSS, and JavaScript is that the code is applied from the top to the bottom of the document. Sometimes the lack of understanding of the CSS rule priorities can cause a result you do not expect.
 
@@ -106,7 +106,7 @@ The following figure illustrates this problem in mobile applications by applying
 
 ![Expected and actual result of applying a font color (in mobile applications only)](./media/css_result.png)
 
-### Basic CSS Rules
+### Basic CSS rules
 
 When creating a CSS document, the following rules apply:
 
@@ -118,7 +118,7 @@ When creating a CSS document, the following rules apply:
   <!--Blue color is applied-->
   ```
 
-- The style applied in the parent node at the DOM tree is inherited. For more information, see [W3C inheritance documentation](http://www.w3.org/TR/CSS21/cascade.html#inheritance).
+- The style applied in the parent node at the DOM tree is inherited. For more information, see [W3C inheritance documentation](http://www.w3.org/TR/CSS21/cascade.html#inheritance){:target="_blank"}.
 
 - The style that has the highest CSS specificity is applied. The specificity of different elements is defined as follows:
 
@@ -168,7 +168,7 @@ body .contents {color: #999;}
 #container > .contents {color: #999;}
 ```
 
-### Using CSS with HTML
+### Use CSS with HTML
 
 There are various ways to connect CSS with HTML. Creating a separate CSS file and managing it separately is convenient when it comes to applying changes in the future. The file is connected to the HTML file using a `<link>` tag in the `<head>` element.
 
@@ -217,7 +217,7 @@ Using the order above, if all other color styles are applied to `<p>` elements, 
 
 Generally, when the `@import` attribute is used, connect to the top of CSS file that has been linked externally, as illustrated in the following figure. If the attribute is applied in the middle of the CSS file, it is difficult to know the point where CSS has been applied, and to find the file connected to the source in the future. Therefore, group the CSS file at the top.
 
-> **Note**  
+> [!NOTE]
 > Using the `@import` attribute gives the same result as connecting an external file, but it does not function correctly in older browsers (IE 5.5 and below).
 
 **Figure: Using the @import attribute**
@@ -254,13 +254,13 @@ The markup in the corresponding files is as follows:
   **Figure: Result of using the @import attribute in the CSS area**  
   ![Result of using the @import attribute in the CSS area](./media/import_css_area.png)
 
-## JavaScript Behavior
+## JavaScript behavior
 
 With the advent of HTML5, numerous powerful HTML5 APIs have been introduced. Since the usage of JavaScript has increased, it has become important to use it correctly and [optimize JavaScript performance](../perf-opt/js-performance-improvement.md).
 
-[JavaScript used in Web applications](#using-javascript-code-within-html) can be divided into the core, [ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm), and [DOM](http://www.w3.org/DOM), which all manipulate HTML. ECMAScript is executed when a method is called, or it can be executed when an event is fired within a HTML document through a linkage with DOM.
+[JavaScript used in Web applications](#using-javascript-code-within-html) can be divided into the core, [ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm){:target="_blank"}, and [DOM](http://www.w3.org/DOM){:target="_blank"}, which all manipulate HTML. ECMAScript is executed when a method is called, or it can be executed when an event is fired within a HTML document through a linkage with DOM.
 
-### Using JavaScript with HTML
+### Use JavaScript with HTML
 
 Used with HTML, JavaScript works as follows:
 
@@ -290,12 +290,12 @@ The following example shows how you can use JavaScript with HTML either by linki
 
 Both ways described above give the same result in behavior. However, the position of the JavaScript code affects the order in which the methods are called.
 
-> **Note**  
+> [!NOTE]
 > Previously, adding JavaScript code within head tag was recommended because it is easy to maintain. Currently, adding it to the end of the body and executing it after parsing the HTML document is common.
 
-### JavaScript Events
+### JavaScript events
 
-JavaScript generally calls a method when a specific [event](http://www.w3schools.com/jsref/dom_obj_event.asp) is fired. More than 70 types of events, such as onload and onclick are available.
+JavaScript generally calls a method when a specific [event](http://www.w3schools.com/jsref/dom_obj_event.asp){:target="_blank"} is fired. More than 70 types of events, such as onload and onclick are available.
 
 The following example shows the use of a simple event:
 
@@ -315,7 +315,7 @@ The following example shows the use of a simple event:
 
 Prefer using W3C standard event listener methods. The inline JavaScript code applied directly to an HTML tag is difficult to maintain. Assigning a method directly to an event is also difficult when passing parameters, as the method needs to be assigned for every event.
 
-### JavaScript Priorities
+### JavaScript priorities
 
 The rendering order of JavaScript code is based on the following rules:
 
@@ -323,7 +323,7 @@ The rendering order of JavaScript code is based on the following rules:
 - JavaScript within the `<body>` element is immediately handled when it is parsed.  
 - When the temporarily saved JavaScript content is executed, the `<head>` element content is rendered first, and the `<body>` element content after it.
 
-## Using JavaScript Code within HTML
+## Use JavaScript code within HTML
 
 To provide users with JavaScript-based features, you must learn to use JavaScript code within an HTML document:
 
@@ -376,10 +376,10 @@ To provide users with JavaScript-based features, you must learn to use JavaScrip
 
   The JavaScript code within the `<body>` element is sent to Interpreter. The anonymous method is immediately executed, and the HTML DOM structure is set up. The methods in the `$(document).ready()` method and in the `onload` event are executed in the stored order.
 
-> **Note**  
+> [!NOTE]
 > jQuery has to be called from both the `<head>` and `<body>` elements. The `logText` variable has to be called from the `<body>` element. The method connected to the `onload` event in the `<head>` element is not executed.
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

@@ -2,7 +2,7 @@
 
 The W3C specifications provide HTML and CSS, which are the core technologies for building Web pages and Web applications. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
 
-The main HTML and CSS features are:
+The main HTML and CSS features are as follows:
 
 - **HTML features**
 
@@ -114,7 +114,7 @@ The main HTML and CSS features are:
 
     Allows you to design your application layout so that your application can run on multiple Tizen devices.
 
-## Related Information
+## Related information
 * Dependencies    
     - Tizen 2.4 and Higher for Mobile
     - Tizen 2.3.1 and Higher for Wearable

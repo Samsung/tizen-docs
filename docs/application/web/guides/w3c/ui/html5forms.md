@@ -6,9 +6,9 @@ In the past, the Web form allowed you to accept user input before transmitting i
 
 With HTML5 forms, you can use new [elements](#new-html5-elements), [input element types](#new-input-element-types), and [input element attributes](#new-input-element-attributes).
 
-## Creating a Basic Login Form
+## Create a basic login form
 
-To create simple user input forms, you must learn to use the HTML5 features in Web forms:
+To create simple user input forms, follow these steps to use the HTML5 features in Web forms:
 
 1. Create a simple form where the user can enter their login details (email address and password):
 
@@ -54,15 +54,15 @@ The final form that checks the email validity and requires the mandatory passwor
 </form>
 ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [basicLogin.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/html5_forms)
+- [basicLogin.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/html5_forms){:target="_blank"}
 
-## Creating an Advanced Login Form
+## Create an advanced login form
 
-To create advanced user input forms, you must learn to use the HTML5 features in Web forms:
+To create advanced user input forms, follow these steps to use the HTML5 features in Web forms:
 
 1. [Create a login form](#creating-a-basic-login-form) that checks the email validity and requires the mandatory password input:
 
@@ -86,7 +86,7 @@ To create advanced user input forms, you must learn to use the HTML5 features in
 
 3. To spare the user from filling in information that they have given previously, use the `autocomplete` attribute, which shows the previously successfully inserted entries in a `datalist`, from which the user can select and use them.
 
-   You can apply the `autocomplete` attribute to  a specific field by adding it to the appropriate `input` element. If you add it to the `form` element, it applies to all child elements within the form.
+   You can apply the `autocomplete` attribute to  a specific field by adding it to the appropriate `input` element. If you add it to the `form` element, it applies to all child elements within the form:
 
    ```
    <form action="" method="" autocomplete="on">
@@ -94,7 +94,7 @@ To create advanced user input forms, you must learn to use the HTML5 features in
 
 4. In general, apply the `autocomplete` attribute to the `form` element, and then separately set it to `off` for those fields that must not use it.
 
-   In the following example, the password field must not use autocomplete, to prevent unauthorized access by any user.
+   In the following example, the password field must not use autocomplete, to prevent unauthorized access by any user:
 
    ```
    <input type="password" placeholder="password" required autocomplete="off"/>
@@ -102,7 +102,7 @@ To create advanced user input forms, you must learn to use the HTML5 features in
 
 5. Protect the password with private and public key pair using the `keygen` element.
 
-   The element is used to transform the data sent from the connected form to a pair of encrypted keys using the RSA (Rivest Shamir Adleman) method. When the input data is sent from the form, the private key is saved in the local computer, and the public key is delivered to the server. Only if the keys match, the login process proceeds forwards.
+   The element is used to transform the data sent from the connected form to a pair of encrypted keys using the RSA (Rivest Shamir Adleman) method. When the input data is sent from the form, the private key is saved in the local computer, and the public key is delivered to the server. Only if the keys match, the login process proceeds forwards:
 
    ```
    <keygen name="keyvalue">
@@ -110,7 +110,7 @@ To create advanced user input forms, you must learn to use the HTML5 features in
 
 6. Use the `pattern` attribute to perform a validity check that ensures that the password field value matches the given regular expression. The `required` attribute is used to ensure that the field value must be entered and then the validity check can be performed.
 
-   In the following example, the password only accepts numbers and letters of the alphabet. If an invalid value is entered, the login cannot proceed.
+   In the following example, the password only accepts numbers and letters of the alphabet. If an invalid value is entered, the login cannot proceed:
 
    ```
    <input type="password" placeholder="password" required
@@ -120,7 +120,7 @@ To create advanced user input forms, you must learn to use the HTML5 features in
 
 7. Define the required length of the password within the `pattern` attribute.
 
-   In the following example, the password must be 6 to 12 characters long.
+   In the following example, the password must be 6 to 12 characters long:
 
    ```
    <input type="password" placeholder="password" required
@@ -146,9 +146,9 @@ The final form with autofocus and autocomplete features, strengthened security, 
 </form>
 ```
 
-## New HTML5 Elements
+## New HTML5 elements
 
-The following table lists the new elements available for your forms in HTML5. For a complete source code, see [elements.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/html5_forms).
+The following table lists the new elements available for your forms in HTML5. For a complete source code, see [elements.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/html5_forms){:target="_blank"}.
 
 **Table: New HTML5 elements**
 
@@ -225,9 +225,9 @@ The following table lists the new elements available for your forms in HTML5. Fo
 </table>
 
 
-## New Input Element Types
+## New input element types
 
-The following table lists the new input element types available for your forms in HTML5. Many of the new elements activate a specific keyboard suitable for the type of value the user is expected to enter (for example, an email or URL). For a complete source code, see [types.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/html5_forms).
+The following table lists the new input element types available for your forms in HTML5. Many of the new elements activate a specific keyboard suitable for the type of value the user is expected to enter (for example, an email or URL). For a complete source code, see [types.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/html5_forms){:target="_blank"}.
 
 **Table: New input element types**
 
@@ -236,7 +236,7 @@ The following table lists the new input element types available for your forms i
 		<th>Type</th><th>Description</th><th>Example</th>
 	</tr>
 	<tr>
-		<td><code>color</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#color-state-(type=color)">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#color-state-(type=color)">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#color-state-(type=color)">TV</a> applications)</td>
+		<td><code>color</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#color-state-(type=color)" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#color-state-(type=color)" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#color-state-(type=color)" target="_blank">TV</a> applications)</td>
 		<td> Select an HSL color from the color picker. The value format is HEX (#0099ff).</td>
 		<td rowspan="13">
 <pre class="prettyprint">
@@ -256,7 +256,7 @@ The following table lists the new input element types available for your forms i
 		</td>
 	</tr>
 	<tr>
-		<td><code>date</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#date-state-(type=date)">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#date-state-(type=date)">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#date-state-(type=date)">TV</a> applications)</td>
+		<td><code>date</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#date-state-(type=date)" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#date-state-(type=date)" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#date-state-(type=date)" target="_blank">TV</a> applications)</td>
 		<td>Enter a date with no time zone (yyyy-mm-dd).</td>
 	</tr>
 	<tr>
@@ -268,29 +268,29 @@ The following table lists the new input element types available for your forms i
 		<td>Enter a date and time with no time zone (yyyy-mm-ddTtt:mm).</td>
 	</tr>
 	<tr>
-		<td><code>email</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#e-mail-state-(type=email)">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#e-mail-state-(type=email)">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#e-mail-state-(type=email)">TV</a> applications) </td><td>Enter an email address with the email keyboard.<br> If the <code>required</code> attribute is used, the system checks whether the input format is in line with the ABNF regular expression (<code>1*(atext / ".") "@" ldh-str 1*("." ldh-str)</code>).</td>
+		<td><code>email</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#e-mail-state-(type=email)" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#e-mail-state-(type=email)" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#e-mail-state-(type=email)" target="_blank">TV</a> applications) </td><td>Enter an email address with the email keyboard.<br> If the <code>required</code> attribute is used, the system checks whether the input format is in line with the ABNF regular expression (<code>1*(atext / ".") "@" ldh-str 1*("." ldh-str)</code>).</td>
 	</tr>
 	<tr>
 		<td><code>month</code></td>
 		<td> Enter a year and month with no time zone (yyyy-mm).</td>
 	</tr>
 	<tr>
-		<td><code>number</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#number-state-(type=number)">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#number-state-(type=number)">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#number-state-(type=number)">TV</a> applications)</td><td>Enter numbers with the number keyboard. </td>
+		<td><code>number</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#number-state-(type=number)" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#number-state-(type=number)" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#number-state-(type=number)" target="_blank">TV</a> applications)</td><td>Enter numbers with the number keyboard. </td>
 	</tr>
 	<tr>
-		<td><code>range</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#range-state-(type=range)">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#range-state-(type=range)">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#range-state-(type=range)">TV</a> applications)</td><td> Select a value from the slider.</td>
+		<td><code>range</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#range-state-(type=range)" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#range-state-(type=range)" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#range-state-(type=range)" target="_blank">TV</a> applications)</td><td> Select a value from the slider.</td>
 	</tr>
 	<tr>
-		<td><code>search</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#text-(type=text)-state-and-search-state-(type=search)">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#text-(type=text)-state-and-search-state-(type=search)">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#text-(type=text)-state-and-search-state-(type=search)">TV</a> applications) </td><td>No specific functionality is defined for this element in the HTML5 specifications.</td>
+		<td><code>search</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#text-(type=text)-state-and-search-state-(type=search)" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#text-(type=text)-state-and-search-state-(type=search)" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#text-(type=text)-state-and-search-state-(type=search)" target="_blank">TV</a> applications) </td><td>No specific functionality is defined for this element in the HTML5 specifications.</td>
 	</tr>
 	<tr>
-		<td><code>tel</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#telephone-state-(type=tel)">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#telephone-state-(type=tel)">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#telephone-state-(type=tel)">TV</a> applications)</td><td> Enter a phone number with the number keyboard.</td>
+		<td><code>tel</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#telephone-state-(type=tel)" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#telephone-state-(type=tel)" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#telephone-state-(type=tel)" target="_blank">TV</a> applications)</td><td> Enter a phone number with the number keyboard.</td>
 	</tr>
 	<tr>
-		<td><code>time</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#time-state-(type=time)">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#time-state-(type=time)">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#time-state-(type=time)">TV</a> applications) </td><td>Enter a time with no time zone (tt:mm:ss).</td>
+		<td><code>time</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#time-state-(type=time)" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#time-state-(type=time)" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#time-state-(type=time)" target="_blank">TV</a> applications) </td><td>Enter a time with no time zone (tt:mm:ss).</td>
 	</tr>
 	<tr>
-		<td><code>url</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#url-state-(type=url)">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#url-state-(type=url)">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#url-state-(type=url)">TV</a> applications)</td><td>Enter a URL with the URL keyboard.</td>
+		<td><code>url</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#url-state-(type=url)" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#url-state-(type=url)" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#url-state-(type=url)" target="_blank">TV</a> applications)</td><td>Enter a URL with the URL keyboard.</td>
 	</tr>
 	<tr>
 		<td><code>week</code></td>
@@ -298,9 +298,9 @@ The following table lists the new input element types available for your forms i
 	</tr>
 </table>
 
-## New Input Element Attributes
+## New input element attributes
 
-The following table lists the new input element attributes available for your forms in HTML5. For a complete source code, see [attributes.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/html5_forms).
+The following table lists the new input element attributes available for your forms in HTML5. For a complete source code, see [attributes.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/html5_forms){:target="_blank"}.
 
 **Table: New input element attributes**
 
@@ -311,7 +311,7 @@ The following table lists the new input element attributes available for your fo
 		<th>Example</th>
 	</tr>
 	<tr>
-		<td><code>autocomplete</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#autofilling-form-controls:-the-autocomplete-attribute">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#autofilling-form-controls:-the-autocomplete-attribute">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#autofilling-form-controls:-the-autocomplete-attribute">TV</a> applications)</td>
+		<td><code>autocomplete</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#autofilling-form-controls:-the-autocomplete-attribute" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#autofilling-form-controls:-the-autocomplete-attribute" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#autofilling-form-controls:-the-autocomplete-attribute" target="_blank">TV</a> applications)</td>
 		<td>Prefilling feature, which helps the users by, for example, prefilling the user's address based on earlier user input.<p>The text used by the user before (such as an <code>input</code> element) is listed in a <code>datalist</code> form. The attribute can be used in all form elements, and is activated if the value is "on" and deactivated if the value is "off".</p></td>
 		<td rowspan="6">
 <pre class="prettyprint">
@@ -323,28 +323,28 @@ The following table lists the new input element attributes available for your fo
 		</td>
 	</tr>
 	<tr>
-		<td><code>min</code> and <code>max</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-min-and-max-attributes">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-min-and-max-attributes">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-min-and-max-attributes">TV</a> applications)</td><td>Allowed range of values for the element.</td>
+		<td><code>min</code> and <code>max</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-min-and-max-attributes" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-min-and-max-attributes" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-min-and-max-attributes" target="_blank">TV</a> applications)</td><td>Allowed range of values for the element.</td>
 	</tr>
 	<tr>
-		<td><code>pattern</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-pattern-attribute">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-pattern-attribute">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-pattern-attribute">TV</a> applications)</td>
+		<td><code>pattern</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-pattern-attribute" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-pattern-attribute" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-pattern-attribute" target="_blank">TV</a> applications)</td>
 		<td>Regular expression against which the control's value is checked.<p>The attribute can be used to check the validity of the form data. During service, a guide requiring the input format from the user is necessary.</p></td>
 	</tr>
 	<tr>
-		<td><code>placeholder</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-placeholder-attribute">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-placeholder-attribute">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-placeholder-attribute">TV</a> applications)</td>
+		<td><code>placeholder</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-placeholder-attribute" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-placeholder-attribute" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-placeholder-attribute" target="_blank">TV</a> applications)</td>
 		<td>Short hint intended to aid the user with the data entry.<p>The attribute can be used in the majority of form elements for various purposes, such as hint text or advertisement.</p></td>
 	</tr>
 	<tr>
-		<td><code>required</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-required-attribute">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-required-attribute">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-required-attribute">TV</a> applications)</td>
+		<td><code>required</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-required-attribute" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-required-attribute" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-required-attribute" target="_blank">TV</a> applications)</td>
 		<td>Boolean attribute which, when specified, defines that the element is mandatory.</td>
 	</tr>
 	<tr>
-		<td><code>step</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-step-attribute">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-step-attribute">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-step-attribute">TV</a> applications)</td>
+		<td><code>step</code> (in <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-step-attribute" target="_blank">mobile</a>, <a href="https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#the-step-attribute" target="_blank">wearable</a>, and <a href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#the-step-attribute" target="_blank">TV</a> applications)</td>
 		<td>Granularity expected of the value, limiting the allowed values.</td>
 	</tr>
 </table>
 
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
