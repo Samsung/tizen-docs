@@ -2,7 +2,7 @@
 
 Media queries allow you to [apply the CSS differently according to conditions](#media-query-conditions) based on the media type (type of device) and media features (viewport status). Previously, you were able to use the media type only and create Web services with fixed layouts. However, smart phones, tablets, and other devices with various resolutions require a liquid layout. HTML5 now makes various characteristics and conditional defining possible, and can be used to implement responsive Web design (RWD), which is a [liquid layout](#creating-a-liquid-layout) that mainly reacts according to the device resolution.
 
-You can use media queries in 3 ways:
+You can use media queries in the following 3 ways:
 
 - In CSS
 
@@ -12,7 +12,7 @@ You can use media queries in 3 ways:
   @media only screen and (max-width: 480px) {styles}
   ```
 
-   > **Note**  
+   > [!NOTE]
    > This approach is popular since it can reduce style overlapping; however, if all the styles are applied to 1 CSS, the maintenance work efficiency decreases.
 
 - In an `@import` rule in CSS
@@ -31,18 +31,18 @@ You can use media queries in 3 ways:
   <link rel="stylesheet" media="all and (max-width: 480px)" href="example.css">
   ```
 
-   > **Note**  
+   > [!NOTE]
    > The disadvantage of this approach is that every time the condition is expanded, the HTML file must be edited. However, since this approach only imports the CSS files that match the condition, the file transmission amount can be reduced.
 
 For more information on the CSS priorities when different media queries are used, see [Media Query Priorities](#media-query-priorities).
 
-## Media Query Conditions
+## Media query conditions
 
 You can define the following conditions for the media queries:
 
 - Combination and relevancy
 
-  You can combine multiple conditions into 1 Boolean query with the `and` operator. To define a negative condition (something not being relevant), use the `not` operator.
+  You can combine multiple conditions into 1 Boolean query with the `and` operator. To define a negative condition (something not being relevant), use the `not` operator:
 
   ```
   @media not screen and (min-width: 320px), screen and (max-width: 480px) {
@@ -52,7 +52,7 @@ You can define the following conditions for the media queries:
 
 - Viewport width
 
-  You can define the query to match to a specific viewport width range using the `min-width` and `max-width` attributes.
+  You can define the query to match to a specific viewport width range using the `min-width` and `max-width` attributes:
 
   ```
   @media all and (min-width: 320px) and (max-width: 480px) {
@@ -64,7 +64,7 @@ You can define the following conditions for the media queries:
 
   The `height` attribute refers to restoring the viewport's height, and the `device-height` attribute refers to restoring the resolution set on the device.
 
-  The same difference applies to the `width` and `aspect-ratio` attributes, which can assign 'device-'.
+  The same difference applies to the `width` and `aspect-ratio` attributes, which can assign 'device-':
 
   ```
   @media screen and (min-device-height: 700px) {
@@ -79,7 +79,7 @@ You can define the following conditions for the media queries:
 
 - Device aspect ratio
 
-  You can use the `device-aspect-ratio` attribute to check the width-length ratio (aspect ratio) of the printing device.
+  You can use the `device-aspect-ratio` attribute to check the width-length ratio (aspect ratio) of the printing device:
 
   ```
   @media all and (device-aspect-ratio: 9/16) and (orientation: portrait),
@@ -88,10 +88,10 @@ You can define the following conditions for the media queries:
   }
   ```
 
-  > **Note**  
+  > [!NOTE]
   > The device aspect ratio is a reliable way to distinguish the portrait and landscape modes of a smart phone. However, because the aspect ratio of all the devices has to be specified, a precise rule is hard to define. (Currently wildly used screen ratios are 15:9, 16:10, 16:9, 3:2, and 4:3, but devices with other screen ratios may be added in the future.)
 
-## Media Query Priorities
+## Media query priorities
 
 When multiple media queries and conditions are defined, CSS is applied with the following priorities:
 
@@ -171,7 +171,7 @@ The CSS is applied based on the viewport:
   - The `a.css` file is not imported.
   - The `b.css` file is applied (based on `content: "b.css : width: 768px ~ 1024px"`).
 
-## Creating a Liquid Layout
+## Create a liquid layout
 
 You can use media queries to determine the styles to be used in a Web document. The following example creates a simple Web document with a liquid layout that organically changes according to the device resolution to show an optimized layout on both portrait and landscape modes:
 
@@ -195,7 +195,7 @@ You can use media queries to determine the styles to be used in a Web document. 
    </div>
    ```
 
-2. Define basic styles for the page, using a flexible box (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#flexi), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#flexi), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#flexi) applications) and multi-column (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#multicolumn) and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#multicolumn) applications only) layout with 2 columns. (The following figure applies to mobile applications only.)
+2. Define basic styles for the page, using a flexible box (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#flexi), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#flexi), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#flexi) applications) and multi-column (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#multicolumn) and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#multicolumn) applications only) layout with 2 columns: (The following figure applies to mobile applications only.)
 
    ```
    .container {
@@ -254,14 +254,14 @@ You can use media queries to determine the styles to be used in a Web document. 
    @media print {<!--Specific layout-->}
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [liquid_layout_2.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/media_queries)
-- [logo.png](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/media_queries)
+- [liquid_layout_2.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/media_queries){:target="_blank"}
+- [logo.png](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/media_queries){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
