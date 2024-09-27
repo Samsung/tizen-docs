@@ -681,6 +681,67 @@ To add text, follow the steps below:
   }
   ```
 
+<a name="synthesis text"></a>
+## Add text with systhesis parameter
+
+The function tts_add_text_with_synthesis_parameter() is an extended version of the tts_add_text() function that allows you to request the TTS library to read a text with various options. For example, it can be used to customize speech by specifying parameters such as pitch, speed, volume, and background volume for the desired text. The TTS library manages added texts using queues, allowing multiple texts to be added simultaneously. Each acquired text receives a speech ID which is used to synthesize and play sound data.
+
+  > [!NOTE]
+  > If the added text is too long, some engines need a long time for synthesis. It is recommended to only use proper length text clips.
+
+  When you do not set the language and use `NULL` for it, the default language is used for synthesizing text.
+
+  You can add text at any point after the `tts_prepare()` function changes the state to `TTS_STATE_READY`:
+
+  ```cpp
+  void
+  add_text_with_synthesis_parameter(tts_h tts)
+  {
+      const char* text = "tutorial"; /* Text for read */
+      const char* language = "en_US"; /* Language */
+      int speed = 10;
+      int pitch = 10;
+      int voice_type = TTS_VOICE_TYPE_FEMALE; /* Voice type */
+      int speed = TTS_SPEED_AUTO; /* Read speed */
+      int utt_id; /* Utterance ID for the requested text */
+
+      static tts_synthesis_parameter_h g_tts_synth_h = NULL;
+      int ret = tts_synthesis_parameter_create(&g_tts_synth_h);
+      ret = tts_synthesis_parameter_set_language(g_tts_synth_h, language);
+      ret = tts_synthesis_parameter_set_speed(g_tts_synth_h, speed);
+      ret = tts_synthesis_parameter_set_pitch(g_tts_synth_h, pitch);
+      ret = tts_synthesis_parameter_set_voice_type(g_tts_synth_h, voice_type);
+      ret = tts_synthesis_parameter_set_volume(g_tts_synth_h, volume);
+      ret = tts_synthesis_parameter_set_background_volume_ratio(g_tts_synth_h, backgroundVolume);
+
+      ret = tts_add_text_with_synthesis_parameter(tts, text, g_tts_synth_h, &utt_id);
+      if (TTS_ERROR_NONE != ret)
+          /* Error handling */
+  }
+  ```
+
+<a name="silent utterance"></a>
+## Add silent utterance
+
+The tts_add_silent_utterance function provides speech with silence for a specific duration. The maximum silent time is 5000 milliseconds (msec). If you need a silent period longer than 5000 msec, call this function multiple times.
+
+  > [!NOTE]
+  > You can add text at any point after the `tts_prepare()` function changes the state to `TTS_STATE_READY`:
+
+  ```cpp
+  void
+  add_silent_utterance(tts_h tts)
+  {
+	  int utt_id = 0;
+	  int ret = 0;
+      int durationInMsec = 3000;
+
+	  ret = tts_add_silent_utterance(tts, durationInMsec, &utt_id);
+        if (TTS_ERROR_NONE != ret)
+            /* Error handling */
+  }
+  ```
+
 <a name="control"></a>
 ## Control playback
 
