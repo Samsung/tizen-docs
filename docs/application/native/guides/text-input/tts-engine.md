@@ -214,12 +214,13 @@ To register and define event callbacks for the TTSE service application, follow 
 
 3. Implement the optional callbacks, as needed:
 
-    - You can register optional callbacks with the `ttse_set_private_data_set_cb()`, `ttse_set_private_data_requested_cb()`, `ttse_set_activated_mode_changed_cb()` functions:
+    - You can register optional callbacks with the `ttse_set_private_data_set_cb()`, `ttse_set_private_data_requested_cb()`, `ttse_set_activated_mode_changed_cb()`, `ttse_set_personal_tts_id_set_cb` functions:
 
         ```
         static int private_data_set_cb(const char* key, const char* data);
         static int private_data_requested_cb(const char* key, char** data);
         static void activated_mode_changed_cb(int activated_mode);
+        static int personal_tts_id_set_cb(const char* ptts_id, void* user_data);
 
         void
         int main(int argc, char* argv[])
@@ -233,6 +234,7 @@ To register and define event callbacks for the TTSE service application, follow 
             ttse_set_private_data_set_cb(private_data_set_cb);
             ttse_set_private_data_requested_cb(private_data_requested_cb);
             ttse_set_activated_mode_changed_cb(activated_mode_changed_cb);
+            ttse_set_personal_tts_id_set_cb(personal_tts_id_set_cb, NULL);
 
             ...
         }
@@ -258,6 +260,12 @@ To register and define event callbacks for the TTSE service application, follow 
     activated_mode_changed_cb(int activated_mode)
     {
         return ;	/* get activated modes changed succeed */
+    }
+
+    static int
+    personal_tts_id_set_cb(const char* ptts_id, void* user_data)
+    {
+
     }
     ```
 
@@ -362,6 +370,31 @@ You can send the following result information about the TTSE:
     }
     ```
 
+<a name="send_personal_voice"></a>
+## Send personal voice
+
+You can send the following personal voice information about the TTSE:
+
+- Send the personal voice's information (ex, language, unique id, display name, device name) to the engine service user using the `ttse_send_result()` function:
+
+    ```
+    void
+    send_personal_voice(void)
+    {
+        int ret = TTSE_ERROR_NONE;
+        char* language = "en_US";
+        char* unique_id = "12345678"
+        char* display_name = "my_voice";
+        char* device_name = "my_mobile";
+
+		...
+
+        ret = ttse_send_personal_voice(language, unique_id, display_name, device_name);
+
+        if(TTSE_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
 
 ## Related information
 - Dependencies
