@@ -1,7 +1,7 @@
 # Media Content
 
 
-You can get information about media content from the metadata in the content, such as an ID3 or MP4 tag. You can obtain or update data from the media database, which stores metadata for the media files (such as images, videos, books, and audio) on the device.
+You can get information about media content from the metadata in the content, such as an ID3 tag. You can obtain or update data from the media database, which stores metadata for the media files (such as images, videos, books, and audio) on the device.
 
 **Figure: Media content of the device**
 
@@ -9,8 +9,8 @@ You can get information about media content from the metadata in the content, su
 
 The media files are updated using an application (by calling the Content API) or a media scanner. When updating the files in the media scanner, the following limitations apply:
 
-- SD card insertion and removal: Media files are updated only in the SD card.
-- Rebooting the device: Media files are updated in the internal memory and SD card on the device.
+- The external storage device insertion and removal (e.g. SD card, USB drive): Media files are updated only in the external storage device.
+- Rebooting the device: Media files are updated in the internal and external storages on the device.
 
 You can only use the Media Content API to manage files located in specific paths. You can get the paths by using the `storage_get_directory()` function. For more information, see the Storage API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications).
 
