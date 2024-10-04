@@ -4,7 +4,7 @@ You can make different types of notifications to the user, so that each time a n
 
 The Dialogs API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Dialogs API include:
+The main features of the Dialogs API include the following:
 
 - Alerts        
 
@@ -34,13 +34,13 @@ function onDeviceReady() {
 }
 ```
 
-## Creating Alerts
+## Create alerts
 
-To show a custom alert with 1 button:
+To show a custom alert with 1 button, follow these steps:
 
 1. Define a callback method to be invoked when the user closes the alert.
 
-   The callback has no parameters.
+   The callback has no parameters:
 
    ```
    var alertDismissed = function() {
@@ -63,13 +63,13 @@ To show a custom alert with 1 button:
 
 When the user dismisses the dialog box, the log appears in the console.
 
-## Creating Confirmations
+## Create confirmations
 
-To show a confirmation dialog box with a set of buttons:
+To show a confirmation dialog box with a set of buttons, follow these steps:
 
 1. Define a callback method to be invoked when the user clicks a button.
 
-   The callback has 1 parameter: the index of the pressed button, or 0, if the dialog is dismissed without a button press.
+   The callback has 1 parameter: the index of the pressed button, or 0, if the dialog is dismissed without a button press:
 
    ```
    var confirmCallback = function(buttonIndex) {
@@ -77,7 +77,7 @@ To show a confirmation dialog box with a set of buttons:
    };
    ```
 
-2. Open the confirmation dialog box with a set of buttons as the last parameter. The default value is `['OK', 'Cancel']`.
+2. Open the confirmation dialog box with a set of buttons as the last parameter. The default value is `['OK', 'Cancel']`:
 
    ```
    navigator.notification.confirm('Choose one option:', confirmCallback,
@@ -86,13 +86,13 @@ To show a confirmation dialog box with a set of buttons:
 
 The callback is invoked when the user performs an action.
 
-## Creating Prompts
+## Create prompts
 
-To show a prompt dialog box where the user can put some text, with a set of buttons:
+To show a prompt dialog box where the user can put some text, with a set of buttons, follow these steps:
 
 1. Define a callback method to be invoked when the user clicks a button.
 
-   The callback has 1 parameter: the `PromptData` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/dialogs.html#PromptData), [wearable](../../api/latest/device_api/wearable/tizen/cordova/dialogs.html#PromptData), and [TV](../../api/latest/device_api/tv/tizen/cordova/dialogs.html#PromptData) applications) containing the user input and pressed button index.
+   The callback has 1 parameter: the `PromptData` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/dialogs.html#PromptData), [wearable](../../api/latest/device_api/wearable/tizen/cordova/dialogs.html#PromptData), and [TV](../../api/latest/device_api/tv/tizen/cordova/dialogs.html#PromptData) applications) containing the user input and pressed button index:
 
    ```
    var promptCallback = function(results) {
@@ -100,7 +100,7 @@ To show a prompt dialog box where the user can put some text, with a set of butt
    };
    ```
 
-2. Open a prompt dialog box with a set of buttons and default text to be shown in the text input field. The default values are `['OK', 'Cancel']` and an empty string.
+2. Open a prompt dialog box with a set of buttons and default text to be shown in the text input field. The default values are `['OK', 'Cancel']` and an empty string:
 
    ```
    navigator.notification.prompt('Please enter text:', promptCallback, 'Prompt dialog box',
@@ -116,9 +116,9 @@ The callback provides the `PromptData` object, holding all the data provided by 
 | buttonIndex | Index of a button pressed by the user. The index uses one-based indexing, so the values can be 1, 2, 3, and so on. |
 | input1      | Text entered by the user.                |
 
-## Making Beep Sounds
+## Make beep sounds
 
-To make a beep sound once or more:
+To make a beep sound once or more, follow these steps:
 
 - Make a beep only once:
 
@@ -132,7 +132,7 @@ To make a beep sound once or more:
   navigator.notification.beep(3);
   ```
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

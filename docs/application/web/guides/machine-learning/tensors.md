@@ -2,7 +2,7 @@
 
 Machine Learning Web API in Tizen requires `TensorsInfo` and `TensorsData` objects. These objects are used to perform calculation with neural network models.
 
-The main features of the Machine Learning API include:
+The main features of the Machine Learning API include the following:
 
 - Checking support of a specific neural network framework
 

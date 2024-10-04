@@ -1,10 +1,10 @@
 # Alarms
 
-You can schedule an application to be run at a specific time. When an alarm is triggered, the application is launched (unless it is already running).
+You can schedule an application to run at a specific time. When an alarm is triggered, the application is launched (unless it is already running).
 
-The Alarm API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Alarm API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on Tizen emulators.
 
-The main features of the Alarm API include:
+The main features of the Alarm API include the following:
 
 - Alarm management   
 
@@ -30,11 +30,11 @@ To use the Alarm API (in [mobile](../../api/latest/device_api/mobile/tizen/alarm
 <tizen:privilege name="http://tizen.org/privilege/alarm"/>
 ```
 
-## Managing Alarms
+## Manage alarms
 
 Both relative and absolute alarms are available: a relative alarm is triggered after a specified delay from the moment it is created, while an absolute alarm is triggered at a specified time and date. You can also create a recurring alarm that is repeated after a specified period of time, or on the given days of the week at a defined time.
 
-To obtain a list of alarms, and create and delete alarms:
+To obtain a list of alarms, create and delete them, follow these steps:
 
 1. To obtain a list of all the alarms that have been set on a device but not yet triggered, use the `getAll()` method:
 
@@ -47,7 +47,7 @@ To obtain a list of alarms, and create and delete alarms:
 
    - To create an absolute alarm, create an instance of the `AlarmAbsolute` interface (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmAbsolute), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmAbsolute), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmAbsolute) applications).
 
-     You must define the time and date when the alarm is triggered as a `Date` object.
+     You must define the time and date when the alarm is triggered as a `Date` object:
 
      ```
      /* Alarm is triggered at 8:00 on April 4, 2012 */
@@ -57,7 +57,7 @@ To obtain a list of alarms, and create and delete alarms:
 
    - To create a relative alarm, create an instance of the `AlarmRelative` interface (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmRelative), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmRelative), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmRelative) applications).
 
-     You must define the delay after which the alarm is triggered. Use the predefined constants from the `AlarmManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmManager), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmManager), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmManager) applications).
+     You must define the delay after which the alarm is triggered. Use the predefined constants from the `AlarmManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmManager), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmManager), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmManager) applications):
 
      ```
      /* Alarm is triggered in 3 hours */
@@ -66,7 +66,7 @@ To obtain a list of alarms, and create and delete alarms:
 
    - To create a recurring absolute alarm, create an instance of the `AlarmAbsolute` interface.
 
-     You must define the time and date when the alarm is triggered as a `Date` object. In addition, you can define the weekdays or a time period when the alarm is repeated. Define the time period using the predefined constants from the `AlarmManager` interface.
+     You must define the time and date when the alarm is triggered as a `Date` object. In addition, you can define the weekdays or a time period when the alarm is repeated. Define the time period using the predefined constants from the `AlarmManager` interface:
 
      ```
      /* Alarm is triggered for the first time at 8:00 on April 4, 2012 */
@@ -82,12 +82,12 @@ To obtain a list of alarms, and create and delete alarms:
      var alarm4 = new tizen.AlarmAbsolute(date, ['SA', 'SU']);
      ```
 
-        > **Note**  
+        > [!NOTE]
         > You cannot define both a time period and a weekday recurrence for the same alarm.
 
    - To create a recurring relative alarm, create an instance of the `AlarmRelative` interface.
 
-     You must define the delay after which the alarm is triggered, and the period after which it is repeated.
+     You must define the delay after which the alarm is triggered, and the period after which it is repeated:
 
      ```
      /*
@@ -110,9 +110,9 @@ To obtain a list of alarms, and create and delete alarms:
 
    To delete all alarms at once, use the `removeAll()` method.
 
-## Launching Applications with Alarms
+## Launch applications with alarms
 
-Learning how to launch applications with alarms is a basic alarm management skill:
+Learning how to launch applications with alarms is a basic alarm management skill, follow these steps to launch application with alarms:
 
 1. To launch an application when an alarm is triggered, you must define the application as a parameter in the `add()` method used to add the created alarm to the system:
 
@@ -138,7 +138,7 @@ Learning how to launch applications with alarms is a basic alarm management skil
    tizen.alarm.add(alarm, 'org.tizen.browser', appControl);
    ```
 
-## Checking for Alarm Events
+## Check for alarm events
 
 You can retrieve information about the next alarm event using the `AlarmAbsolute` (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmAbsolute), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmAbsolute), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmAbsolute) applications) and `AlarmRelative` (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmRelative), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmRelative), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmRelative) applications) interfaces. They provide the time and date of the next scheduled absolute alarm, or the time remaining before the next relative alarm.
 
@@ -170,7 +170,7 @@ You can retrieve information about the next alarm event using the `AlarmAbsolute
    console.log('The alarm triggers ' + alarm.getRemainingSeconds() + ' seconds later');
    ```
 
-## Managing Alarm Notifications in Mobile and Wearable Applications
+## Manage alarm notifications in mobile and wearable applications
 
 Alarm notification is an alarm which, when triggered, automatically posts a [notification](../../api/latest/device_api/mobile/tizen/notification.html#Notification). You can create alarm notifications with both `AlarmAbsolute` (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmAbsolute) and [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmAbsolute) applications) and `AlarmRelative` (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmRelative) and [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmRelative) applications) alarm types. The notification is shown in the status bar on the device.
 
@@ -221,7 +221,7 @@ To create an alarm notification with the `AlarmRelative` alarm type and `UserNot
    You can [remove the alarm notification](#removeAlarm) with the `tizen.alarm.remove()` method.
 
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable

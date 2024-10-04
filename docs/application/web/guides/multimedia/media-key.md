@@ -4,7 +4,7 @@ You can manage media key events in your application. The media keys are used to 
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Media Key API include:
+The main features of the Media Key API include the following:
 
 - Registering a listener
 
@@ -17,11 +17,11 @@ The main features of the Media Key API include:
 
   With the registered listener, you can monitor the media keys and react to their state changes when the user presses or releases a key.
 
-## Managing Media Key State Changes
+## Manage media key state changes
 
 Learning how to register key event listener is a basic media key management skill:
 
-1. Implement the listener to handle media key state changes. The listener can contain event listeners for key press (`onpressed`) and release (`onreleased`) notifications.
+1. Implement the listener to handle media key state changes. The listener can contain event listeners for key press (`onpressed`) and release (`onreleased`) notifications:
 
    ```
    var myMediaKeyChangeListener = {

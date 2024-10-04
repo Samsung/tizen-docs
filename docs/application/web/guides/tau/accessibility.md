@@ -1,6 +1,6 @@
 # Accessibility
 
-The [WAI-ARIA](http://www.w3.org/TR/wai-aria/) (Web Accessibility Initiative - Accessible Rich Internet Applications) is a standard to support easy access to Web content in Web applications. The WAI-ARIA is composed of a role, states, and property, and its current version is 1.0. The Tizen screen reader sends the screen information to the user with the text-to-speech technology from WAI-ARIA data.
+The [WAI-ARIA](http://www.w3.org/TR/wai-aria/){:target="_blank"} (Web Accessibility Initiative - Accessible Rich Internet Applications) is a standard to support easy access to Web content in Web applications. The WAI-ARIA is composed of a role, states, and property, and its current version is 1.0. The Tizen screen reader sends the screen information to the user with the text-to-speech technology from WAI-ARIA data.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -35,7 +35,7 @@ The following examples show how WAI-ARIA code is read using the text-to-speech f
 When creating applications that use the Tizen screen reader, keep in mind the following exceptions:
 
 - If the `aria-hidden` attribute of an element is set to `true`, the screen reader does not read the content of the element or its child elements.  
-  In the following snippet, the screen reader reads "on", but not "off" or "child".
+  In the following snippet, the screen reader reads "on", but not "off" or "child":
 
   ```
   <div tabindex="0">
@@ -48,7 +48,7 @@ When creating applications that use the Tizen screen reader, keep in mind the fo
   ```
 
 - If the `role` attribute is not defined, it is not read.  
-  In the following snippet, the screen reader reads "test", but not "link".
+  In the following snippet, the screen reader reads "test", but not "link":
 
   ```
   <a role="" href="test.html">test</a>
@@ -62,7 +62,7 @@ The `<img>` element supports the image alt text through the `alt` attribute:
 <img src="icon.jpg" alt="icon">
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

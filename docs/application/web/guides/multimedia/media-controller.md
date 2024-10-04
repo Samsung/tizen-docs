@@ -2,12 +2,12 @@
 
 You can have your client application communicate with a media server.
 
-To manage the media using the Media Controller API, you have to develop two applications:
+To manage the media using the Media Controller API, you have to develop the following applications:
 
 - Client that sends requests to the server in order to change, for example, the playback state and position modes.
 - Server that directly manages the media on the device.
 
-The main features of the Media Controller API include:
+The main features of the Media Controller API include the following:
 
 - Setting up the client and server pair
 
@@ -78,9 +78,9 @@ To use the Media Controller API (in [mobile](../../api/latest/device_api/mobile/
 <tizen:privilege name="http://tizen.org/privilege/mediacontroller.server"/>
 ```
 
-## Getting Client and Server
+## Get client and server
 
-To manage the media controller features in your application, you must learn to set up the client and server pair:
+To manage the media controller features in your application, you must learn to set up the client and server pair, follow these steps to set up the client and server pair:
 
 1. Create a media controller server using the `createServer()` method:
 
@@ -117,7 +117,7 @@ To manage the media controller features in your application, you must learn to s
    mcClient.findServers(findSuccessCallback, findErrorCallback);
    ```
 
-## Managing Requests
+## Manage requests
 
 To manage the media controller features in your application, you must learn to handle requests from the client to the server:
 
@@ -179,7 +179,7 @@ To manage the media controller features in your application, you must learn to h
    mcServerInfo.playback.sendShuffleMode(true, replyCallback);
    ```
 
-## Setting and Getting Server Icon URI
+## Set and get server icon URI
 
 You can update the icon URI address of a media controller server, which can then be accessed
 from the client application. The default value of the server icon URI attribute is null.
@@ -200,7 +200,7 @@ To use the icon URI attribute in your media controller application, follow these
     console.log(mcServerInfo.iconURI);
     ```
 
-## Receiving Notifications from Server
+## Receive notifications from server
 
 To manage the media controller features in your application, you must learn to receive notifications from the server:
 
@@ -236,9 +236,9 @@ To manage the media controller features in your application, you must learn to r
    mcServerInfo.playback.removePlaybackInfoChangeListener(watcherId);
    ```
 
-## Sending and Receiving Custom Commands
+## Send and receive custom commands
 
-To manage the media controller features in your application, you must learn to send custom commands:
+To manage the media controller features in your application, you must learn to send custom commands, follow these steps to send and receive custom commands:
 
 <a name="send_custom_commands"></a>
 
@@ -294,7 +294,7 @@ To manage the media controller features in your application, you must learn to s
 
       The `watcherId` variable stores the value, which can be used in the future to remove the listener from the server using the `removeCommandListener()` method.
 
-## Sending and Receiving Custom Events
+## Send and receive custom events
 
 Custom command enables the client application to talk to the server application.
 The communication in the opposite direction is done with the help of custom events.
@@ -366,13 +366,13 @@ The communication in the opposite direction is done with the help of custom even
       recipient.sendEvent(eventName, eventData, eventReplyReceived);
       ```
 
-## Sending and Receiving Search Requests from Client to Server
+## Send and receive search requests from client to server
 
 Client application can send search requests, which consist of a collection of search conditions.
 Server listens for the incoming search requests and handles them accordingly.
 After handling a request, server sends a response to the client that sent the request.
 
-### Receiving Search Request
+### Receive search request
 
 To receive and handle search request on the server, follow these steps:
 
@@ -401,7 +401,7 @@ To receive and handle search request on the server, follow these steps:
     mcServer.setSearchRequestListener(searchRequestCallback);
     ```
 
-### Sending Search Request
+### Send search request
 
 To send the search request from the client application, follow these steps:
 
@@ -441,7 +441,7 @@ To send the search request from the client application, follow these steps:
     mcServerInfo.sendSearchRequest(request, searchReplyCallback);
     ```
 
-## Setting Content Type for Currently Playing Media
+## Set content type for currently playing media
 
 Server can set content type for current playback. Client can access this type (read-only)
 and perform some actions that depend on the content-type, such as displaying different icons for
@@ -469,7 +469,7 @@ different types of media items.
     ```
 
 
-## Setting Content Age Rating for Currently Playing Media
+## setting content age rating for currently playing media
 
 Server can set age rating for current playback. Client can access this rating (read-only) and perform some actions such as displaying a warning for underage users.
 
@@ -492,7 +492,7 @@ Server can set age rating for current playback. Client can access this rating (r
     }
     ```
 
-## Managing Playlists on Server Side
+## Manage playlists on server side
 
 To manage the media controller playlists in your server application, you must learn to create, save, and delete playlists.
 
@@ -594,7 +594,7 @@ To manage the media controller playlists in your server application, you must le
    mcServer.playlists.deletePlaylist(playlist.name, deleteSuccess, deleteFailure);
    ```
 
-## Managing Playlists on Client Side
+## Manage playlists on client side
 
 To manage the media controller playlist in your application, you must handle requests from the client to the server:
 
@@ -656,7 +656,7 @@ To manage the media controller playlist in your application, you must handle req
 
         ```
 
-## Media Controller Server Abilities
+## Media controller server abilities
 
 Various abilities can be set to give the information to the clients about the supported features. These abilities can be divided into two groups:
 
@@ -681,7 +681,7 @@ Various abilities can be set to give the information to the clients about the su
     - displayRotation: Setting display orientations.
     - displayMode: Setting display modes.
 
-### Setting Media Controller Server Abilities
+### Set media controller server abilities
 
 You can set the media server abilities as follows:
 
@@ -697,7 +697,7 @@ mcServer.abilities.displayMode.fullScreen = "YES";
 mcServer.abilities.displayRotation.rotation180 = "YES";
 ```
 
-### Checking Media Controller Server Abilities
+### Check media controller server abilities
 
 Using `saveAbilities()` is required to save changes of playback abilities into database, otherwise changes will have no effect on the device and clients will not be notified about an update. Other abilities are updated instantly and there is no need to manually save these abilities.
 
@@ -713,7 +713,7 @@ console.log("ability REWIND: " + mcServerInfo.abilities.playback.rewind);
 console.log("ability FORWARD: " + mcServerInfo.abilities.playback.forward);
 ```
 
-### Monitoring Media Controller Server Abilities
+### Monitor media controller server abilities
 
 You can monitor changes of server abilities using the `addAbilityChangeListener` method on client side. You will also receive the notifications about every ability change on the server side:
 
@@ -767,7 +767,7 @@ After the first use of `subscribe()`, you will stop receiving changes from not s
 You can stop monitoring the specific server, using the analogical `unsubscribe()` method. In case, if no server is subscribed, notifications from all active servers will be sent.
 
 
-## Media Controller Server Features
+## Media controller server features
 
 Media controller API provides the following methods to change and monitor server features:
 - Subtitles
@@ -831,7 +831,7 @@ watcherId = mcServer.displayRotation.addChangeRequestListener(changeListener);
 
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

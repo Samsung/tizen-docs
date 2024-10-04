@@ -828,10 +828,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for the 'out_result' parameter return value. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>i18n_ulocale_accept_language_from_http() </dd>
-<dd>
-i18n_ulocale_accept_language() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga9cd2d295de071ee9c92d7d650778fb4eaa18cb90f4369fe6f5e6b8151f01bf9d6"></a><!-- doxytag: member="I18N_ULOCALE_ACCEPT_FAILED" ref="gga9cd2d295de071ee9c92d7d650778fb4eaa18cb90f4369fe6f5e6b8151f01bf9d6" args="" -->I18N_ULOCALE_ACCEPT_FAILED</em>&nbsp;</td><td>
 <p>No exact match was found </p>
@@ -1326,6 +1323,7 @@ i18n_ulocale_accept_language() </dd></dl>
 <p>Gets I18N's default locale. </p>
 <p>The returned string is a snapshot in time, and will remain valid and unchanged even when <a class="el" href="group__CAPI__BASE__UTILS__I18N__ULOCALE__MODULE.html#ga53b3b3e61a6a6f4a22d68e756509fd6e" title="Sets I18N&#39;s default locale.">i18n_ulocale_set_default()</a> is called. The returned storage is owned by I18N, and must not be altered or deleted by the caller. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>locale</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">locale</td><td>The I18N default locale</td></tr>
@@ -2670,11 +2668,11 @@ i18n_ulocale_accept_language() </dd></dl>
       <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54afe587b82bef57a833efb01cb01ab331d">DLOG_DEBUG</a>, <span class="stringliteral">&quot;test&quot;</span>, <span class="stringliteral">&quot;Locale: %s&quot;</span>, only_locale);
       <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54afe587b82bef57a833efb01cb01ab331d">DLOG_DEBUG</a>, <span class="stringliteral">&quot;test&quot;</span>, <span class="stringliteral">&quot;Keyword1 value: %s&quot;</span>, buff_out);
 
-      <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy</a>(keyword_enum)
-      free(buff);
-      free(sub_buff);
-      free(only_locale);
       free(buff_out);
+      free(only_locale);
+      <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy</a>(keyword_enum)
+      free(sub_buff);
+      free(buff);
 </pre></div> <dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exceptions section and <a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> description. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

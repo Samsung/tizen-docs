@@ -3806,7 +3806,9 @@ Defines</h2></td></tr>
 
 <p>The string tokenizer API allows an application to break a string into tokens. </p>
 <p>Works just like C's strspn but with Unicode. </p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exceptions section. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exceptions section. </dd>
+<dd>
+The <em>save_state</em> should not be released. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

@@ -14,16 +14,16 @@ You can use the helper script as follows:
 
 The SnapListMarqueeStyle helper provides a helper script to support creating some usable components for the list style. It supports making the list view more effective using the [SnapListview](../../api/latest/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm) and [Marquee](../../api/latest/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm) components.
 
-> **Note**  
+> [!NOTE]
 > This helper script is supported since Tizen 2.3.
 
 The following example shows how to create your own listview style with SnapListMarqueeStyle. In the example, the list item text scrolls horizontally and the sub text appears if the list item is placed in the middle of the screen.
 
-To create a SnapListMarqueeStyle:
+To create a SnapListMarqueeStyle, follow these steps:
 
 1. Edit the HTML code to add the SnapListMarqueeStyle component to your application screen.
 
-   You can add a multiline style listview as follows.
+   You can add a multiline style listview as follows:
 
    ```
    <div class="ui-page ui-page-active" id="snaplistTest">
@@ -152,6 +152,6 @@ You can use the following methods with the SnapListMarqueeStyle:
   </script>
   ```
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.3.1 and Higher for Wearable

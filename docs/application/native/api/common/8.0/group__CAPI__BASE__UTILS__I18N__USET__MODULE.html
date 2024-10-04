@@ -891,6 +891,7 @@ Defines</h2></td></tr>
 <p>Returns a copy of this object. </p>
 <p>If this set is frozen, then the clone will be frozen as well. Uses <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga2845900411b516d3be79c21886d68716" title="Clones the set and make the clone mutable.">i18n_uset_clone_as_thawed()</a> for a mutable clone of a frozen set.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>set_clone</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">set</td><td>The original set. Must not be <code>NULL</code>. </td></tr>
@@ -906,7 +907,32 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga2845900411b516d3be79c21886d68716" title="Clones the set and make the clone mutable.">i18n_uset_clone_as_thawed()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga2845900411b516d3be79c21886d68716" title="Clones the set and make the clone mutable.">i18n_uset_clone_as_thawed()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> <span class="keyword">set</span> = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> set_clone = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae0e3fb89ba8a47fd1a8f7aaf7715e762" title="i18n_uchar32.">i18n_uchar32</a> start = 0x41;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae0e3fb89ba8a47fd1a8f7aaf7715e762" title="i18n_uchar32.">i18n_uchar32</a> end = 0x50;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga49c49318a61d12e13c62d6b1492f2900" title="Creates an i18n_uset_h object that contains the range of characters start..end, inclusive.">i18n_uset_create</a>(start, end, &amp;<span class="keyword">set</span>);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga801314f7dc84c80dabfde41a2550fd17" title="Returns a copy of this object.">i18n_uset_clone</a>(<span class="keyword">set</span>, &amp;set_clone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_clone: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(<span class="keyword">set</span>);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(set_clone);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(<span class="keyword">set</span>);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -937,7 +963,8 @@ Defines</h2></td></tr>
 
 <p>Clones the set and make the clone mutable. </p>
 <p>See the ICU4J Freezable interface for details. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>set_copy</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">set</td><td>The set. Must not be <code>NULL</code>. </td></tr>
@@ -957,7 +984,32 @@ Defines</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#gab98a6c6e1f645115e1d7eb22197037d6" title="Determines whether the set has been frozen (made immutable) or not.">i18n_uset_is_frozen()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga801314f7dc84c80dabfde41a2550fd17" title="Returns a copy of this object.">i18n_uset_clone()</a> </dd></dl>
+<a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga801314f7dc84c80dabfde41a2550fd17" title="Returns a copy of this object.">i18n_uset_clone()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> <span class="keyword">set</span> = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> set_copy = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae0e3fb89ba8a47fd1a8f7aaf7715e762" title="i18n_uchar32.">i18n_uchar32</a> start = 0x41;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae0e3fb89ba8a47fd1a8f7aaf7715e762" title="i18n_uchar32.">i18n_uchar32</a> end = 0x50;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga49c49318a61d12e13c62d6b1492f2900" title="Creates an i18n_uset_h object that contains the range of characters start..end, inclusive.">i18n_uset_create</a>(start, end, &amp;<span class="keyword">set</span>);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga2845900411b516d3be79c21886d68716" title="Clones the set and make the clone mutable.">i18n_uset_clone_as_thawed</a>(<span class="keyword">set</span>, &amp;set_copy);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_clone_as_thawed: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(<span class="keyword">set</span>);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(set_copy);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(<span class="keyword">set</span>);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -1458,6 +1510,7 @@ Defines</h2></td></tr>
 <p>Creates an <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> object that contains the range of characters start..end, inclusive. </p>
 <p>If <code>start &gt; end</code> then an empty set is created (same as using i18n_uset_empty_create()).</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>set</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>First character of the range, inclusive </td></tr>
@@ -1474,7 +1527,24 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> <span class="keyword">set</span> = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae0e3fb89ba8a47fd1a8f7aaf7715e762" title="i18n_uchar32.">i18n_uchar32</a> start = 0x41;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae0e3fb89ba8a47fd1a8f7aaf7715e762" title="i18n_uchar32.">i18n_uchar32</a> end = 0x50;
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga49c49318a61d12e13c62d6b1492f2900" title="Creates an i18n_uset_h object that contains the range of characters start..end, inclusive.">i18n_uset_create</a>(start, end, &amp;<span class="keyword">set</span>);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(<span class="keyword">set</span>);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -1496,6 +1566,7 @@ Defines</h2></td></tr>
 <p>Creates an empty <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> object. </p>
 <p>Equivalent to i18n_uset_create(1, 0).</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>set</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">set</td><td>A pointer to the newly created <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a>. The caller must call <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a> on it when done.</td></tr>
@@ -1506,7 +1577,21 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> uset = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#gae018afb9cfe2fb629a56c424a07b836d" title="Creates an empty i18n_uset_h object.">i18n_uset_create_empty</a>(&amp;uset);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_create_empty: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(uset);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1548,6 +1633,7 @@ Defines</h2></td></tr>
 <p>Creates a set based on a given pattern. </p>
 <p>See the UnicodeSet class description for the syntax of the pattern language.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>set</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>A string specifying what characters are in the set </td></tr>
@@ -1564,7 +1650,28 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *pattern_ascii = <span class="stringliteral">&quot;[:Hyphen:]&quot;</span>;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> *pattern = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> <span class="keyword">set</span> = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+
+    pattern = (<a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> *)calloc(strlen(pattern_ascii), <span class="keyword">sizeof</span>(<a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a>));
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USTRING__MODULE.html#ga8e886fa1c415282fd37e4d0168b80b4f" title="Copies a byte string encoded in the default codepage to a ustring.">i18n_ustring_copy_ua</a>(pattern, pattern_ascii);
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga9db178e22a1701698343f2e9d5192f4f" title="Creates a set based on a given pattern.">i18n_uset_create_pattern</a>(pattern, 10, &amp;<span class="keyword">set</span>);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_create_pattern: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    free(pattern);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(<span class="keyword">set</span>);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -1608,6 +1715,7 @@ Defines</h2></td></tr>
 <p>Creates a set based on a given pattern. </p>
 <p>See the UnicodeSet class description for the syntax of the pattern language.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>set</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>A string specifying what characters are in the set </td></tr>
@@ -1625,7 +1733,29 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;string.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *pattern_ascii = <span class="stringliteral">&quot;[:Hyphen:]&quot;</span>;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> *pattern = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> <span class="keyword">set</span> = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+
+    pattern = (<a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> *)calloc(strlen(pattern_ascii) + 1, <span class="keyword">sizeof</span>(<a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a>));
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USTRING__MODULE.html#ga8e886fa1c415282fd37e4d0168b80b4f" title="Copies a byte string encoded in the default codepage to a ustring.">i18n_ustring_copy_ua</a>(pattern, pattern_ascii);
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga78ae620f31ab76c56cdabde0c41284ce" title="Creates a set based on a given pattern.">i18n_uset_create_pattern_options</a>(pattern, strlen(pattern_ascii), <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#gga06fc87d81c62e9abb8790b6e5713c55bad922af9bc9bbd507ec42004f0a839938">I18N_USET_IGNORE_SPACE</a>, &amp;<span class="keyword">set</span>);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_create_pattern: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    free(pattern);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(<span class="keyword">set</span>);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -2923,7 +3053,7 @@ Error code. Error codes not listed below are described in <a class="el" href="gr
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">set</td><td>the set. Must not be <code>NULL</code>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>start of the input string </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>length of the @ string; &gt;= 0, can be <code>-1</code> for NULL-terminated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>length of the <em>str</em>; &gt;= 0, can be <code>-1</code> for NULL-terminated </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">span_condition</td><td>specifies the containment condition</td></tr>
   </table>
   </dd>

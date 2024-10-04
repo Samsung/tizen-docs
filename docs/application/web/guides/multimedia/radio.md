@@ -4,7 +4,7 @@ You can access and control the FM radio on the device.
 
 This feature is supported in mobile applications only.
 
-The main features of the FM Radio API include:
+The main features of the FM Radio API include the following:
 
 - Managing the radio
 
@@ -24,13 +24,13 @@ The available operations depend on the current radio state. To get information a
 
 ![FM radio states and transitions](./media/fmradio-state.png)
 
-## Managing the FM Radio
+## Manage the FM radio
 
 Starting and stopping an FM radio and changing the frequency is a basic FM radio management skill:
 
 1. To start the FM radio, use the `start()` method of the [FMRadioManager](../../api/latest/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface:
 
-   > **Note**  
+   > [!NOTE]
    > Always check the current state before using any state-dependent functions.
 
    ```
@@ -64,11 +64,11 @@ Starting and stopping an FM radio and changing the frequency is a basic FM radio
    }
    ```
 
-## Scanning the FM Radio Frequency
+## Scan the FM radio frequency
 
-To create an application with FM radio features, you must provide a scanning capability:
+To create an application with FM radio features, you must provide a scanning capability by following these steps:
 
-1. To find a radio channel at a higher frequency than the current one, use the `seekUp()`method of the [FMRadioManager](../../api/latest/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface. This method is available only in `PLAYING` radio state.
+1. To find a radio channel at a higher frequency than the current one, use the `seekUp()`method of the [FMRadioManager](../../api/latest/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface. This method is available only in `PLAYING` radio state:
 
    ```
    if (tizen.fmradio.state === 'PLAYING') {
@@ -76,7 +76,7 @@ To create an application with FM radio features, you must provide a scanning cap
    }
    ```
 
-2. To find a radio channel at a lower frequency than the current one, use the `seekDown()`method of the `FMRadioManager` interface. This method is available only in `PLAYING` radio state.
+2. To find a radio channel at a lower frequency than the current one, use the `seekDown()`method of the `FMRadioManager` interface. This method is available only in `PLAYING` radio state:
 
    ```
    if (tizen.fmradio.state === 'PLAYING') {
@@ -84,7 +84,7 @@ To create an application with FM radio features, you must provide a scanning cap
    }
    ```
 
-3. To scan all available radio channels, use the `scanStart()` method of the `FMRadioManager` interface. This method is available only in the `READY` state. During scanning, the state is changed to `SCANNING`.
+3. To scan all available radio channels, use the `scanStart()` method of the `FMRadioManager` interface. This method is available only in the `READY` state. During scanning, the state is changed to `SCANNING`:
 
    ```
    var radioScanCallback = {
@@ -118,11 +118,11 @@ To create an application with FM radio features, you must provide a scanning cap
    }
    ```
 
-## Getting Information about Interruptions
+## Get information about interruptions
 
 Retrieving information about FM radio interruptions is a useful FM radio management skill:
 
-1. Set the `oninterrupted` listener to receive notifications when the radio is interrupted. The event handler receives the reason of the interruption (such as an incoming call or notification tone). You can also use the event handler to restart the playback.
+1. Set the `oninterrupted` listener to receive notifications when the radio is interrupted. The event handler receives the reason of the interruption (such as an incoming call or notification tone). You can also use the event handler to restart the playback:
 
    ```
    var interruptCallback = {
@@ -143,6 +143,6 @@ Retrieving information about FM radio interruptions is a useful FM radio managem
 2. To stop receiving information about interruptions, use the `unsetFMRadioInterruptedListener()` method of the [FMRadioManager](../../api/latest/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface.
 
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile

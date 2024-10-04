@@ -6,9 +6,9 @@ This feature is supported in mobile and wearable applications only.
 
 To localize a Tizen Web application:
 
-1. Create a directory for each locale.
+1. Create a directory for each locale, follow these steps.
 
-   Create a directory for each locale that has localized content under the `locales` directory in package root. The locale names are defined in the [W3C IANA Language Subtag Registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry).
+   Create a directory for each locale that has localized content under the `locales` directory in package root. The locale names are defined in the [W3C IANA Language Subtag Registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry{:target="_blank"}).
 
    The Web Runtime loads the proper resource for the current locale according to the W3C widget using the following mark-up:
 
@@ -54,8 +54,8 @@ To localize a Tizen Web application:
    log('hello=' + LANG_JSON_DATA['hello']);
    ```
 
-   > **Note**  
-   > When the Web Runtime fails to find a file in a local folder, it searches for the file according to the procedure in the [W3C specification](https://www.w3.org/TR/widgets/#folder-based-localization-0).  
+   > [!NOTE]
+   > When the Web Runtime fails to find a file in a local folder, it searches for the file according to the procedure in the [W3C specification](https://www.w3.org/TR/widgets/#folder-based-localization-0){:target="_blank"}.
    > If the Web Runtime still fails to find a file in a local folder, it retrieves the folders that match the parent subtag, and prioritizes the files in the subfolders over the files in the local folders closer to the root of the widget package. If after all this, the Web Runtime still cannot find the file, an unexpected problem can occur.  
    > To avoid problems, leave a default file in the root folder.
 
@@ -150,7 +150,7 @@ To localize a Tizen Web application:
    | Uzbekistan                      | `uz-uz`     |
    | Vietnamese                      | `vi-vn`     |
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable

@@ -29,7 +29,7 @@ You can use the following connectivity and wireless features in your Web applica
   You can request a preferred connection network type for a domain.
 
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

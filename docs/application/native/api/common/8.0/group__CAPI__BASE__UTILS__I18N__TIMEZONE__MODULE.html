@@ -293,6 +293,7 @@ Typedefs</h2></td></tr>
 <p>Clones i18n_timezone_h polymorphically. </p>
 <p>Clients are responsible for deleting the i18n_timezone_h cloned. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>clone</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timezone</td><td>The i18n_timezone_h to clone. </td></tr>
@@ -302,7 +303,38 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone, clone;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> *timezone_id = NULL;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga39acc1f73336fd9f901106f3eaf077f5" title="Creates a new copy of the default i18n_timezone_h for this host.">i18n_timezone_create_default</a>(&amp;timezone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error creating default timezone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga22eeb99166bf4f5b30d55066b96afdb4" title="Clones i18n_timezone_h polymorphically.">i18n_timezone_clone</a>(timezone, &amp;clone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_timezone_get_display_name_with_type_locale: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaa57cf5f432b7e64d8e2f63258909ecba" title="Fills in &quot;timezone_id&quot; with the i18n_timezone_h&#39;s ID.">i18n_timezone_get_id</a>(clone, &amp;timezone_id);
+    printf(<span class="stringliteral">&quot;Created clone timezone: %s\n&quot;</span>, timezone_id);
+
+    free(timezone_id);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(clone);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -382,6 +414,7 @@ Typedefs</h2></td></tr>
 
 <p>Creates an i18n_timezone_h for the given timezone_id. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>timezone</em> should be released using i18n_timezone_destory().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">timezone</td><td>the GMT/UTC time zone. </td></tr>
@@ -391,7 +424,30 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> *timezone_id = NULL;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga7fc016a31415e4bad4534249f2f2a164" title="Creates an i18n_timezone_h for the given timezone_id.">i18n_timezone_create</a>(&amp;timezone, <span class="stringliteral">&quot;Asia/Seoul&quot;</span>);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error creating timezone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaa57cf5f432b7e64d8e2f63258909ecba" title="Fills in &quot;timezone_id&quot; with the i18n_timezone_h&#39;s ID.">i18n_timezone_get_id</a>(timezone, &amp;timezone_id);
+    printf(<span class="stringliteral">&quot;Created timezone: %s\n&quot;</span>, timezone_id);
+
+    free(timezone_id);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -418,6 +474,7 @@ Typedefs</h2></td></tr>
 <p>This function determines the default timezone by querying the system once and storing the obtained timezone as default until the application terminates.</p>
 <p>To query the system for the current timezone, use <a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gac2c045c8ac715ef81abfb6dd7189d24e" title="Creates an i18n_timezone_h detected from the current host system configuration.">i18n_timezone_detect_host_timezone()</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>timezone</em> should be released using i18n_timezone_destory().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">timezone</td><td>A default i18n_timezone_h. Clients are responsible for deleting the time zone object returned.</td></tr>
@@ -426,7 +483,29 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> *timezone_id = NULL;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga39acc1f73336fd9f901106f3eaf077f5" title="Creates a new copy of the default i18n_timezone_h for this host.">i18n_timezone_create_default</a>(&amp;timezone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error creating default timezone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaa57cf5f432b7e64d8e2f63258909ecba" title="Fills in &quot;timezone_id&quot; with the i18n_timezone_h&#39;s ID.">i18n_timezone_get_id</a>(timezone, &amp;timezone_id);
+    printf(<span class="stringliteral">&quot;Created default timezone: %s\n&quot;</span>, timezone_id);
+
+    free(timezone_id);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -452,6 +531,7 @@ Typedefs</h2></td></tr>
 <p>This is a commonly used time zone.<br/>
  Note: For backward compatibility reason, the ID used by the time zone returned by this method is "GMT", although the I18N's canonical ID for the GMT time zone is "Etc/GMT". </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>timezone</em> should be released using i18n_timezone_destory().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">timezone</td><td>the GMT/UTC time zone.</td></tr>
@@ -464,7 +544,30 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gab1b5f6a51c5d841d7a73bb5dc671f236" title="Returns the &quot;unknown&quot; time zone.">i18n_timezone_create_unknown()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gab1b5f6a51c5d841d7a73bb5dc671f236" title="Returns the &quot;unknown&quot; time zone.">i18n_timezone_create_unknown()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> *timezone_id = NULL;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaf7155f4cf9a1a30fb4bb903d23413ea8" title="The GMT (=UTC) time zone has a raw offset of zero and does not use daylight savings time...">i18n_timezone_create_gmt</a>(&amp;timezone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error creating GMT timezone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaa57cf5f432b7e64d8e2f63258909ecba" title="Fills in &quot;timezone_id&quot; with the i18n_timezone_h&#39;s ID.">i18n_timezone_get_id</a>(timezone, &amp;timezone_id);
+    printf(<span class="stringliteral">&quot;Created gmt timezone: %s\n&quot;</span>, timezone_id);
+
+    free(timezone_id);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -486,6 +589,7 @@ Typedefs</h2></td></tr>
 <p>Returns the "unknown" time zone. </p>
 <p><a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga7fc016a31415e4bad4534249f2f2a164" title="Creates an i18n_timezone_h for the given timezone_id.">i18n_timezone_create()</a> returns a mutable clone of this time zone if the input ID is not recognized. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>timezone</em> should be released using i18n_timezone_destory().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">timezone</td><td>the "unknown" time zone.</td></tr>
@@ -500,7 +604,29 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga7fc016a31415e4bad4534249f2f2a164" title="Creates an i18n_timezone_h for the given timezone_id.">i18n_timezone_create()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaf7155f4cf9a1a30fb4bb903d23413ea8" title="The GMT (=UTC) time zone has a raw offset of zero and does not use daylight savings time...">i18n_timezone_create_gmt()</a> </dd></dl>
+<a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaf7155f4cf9a1a30fb4bb903d23413ea8" title="The GMT (=UTC) time zone has a raw offset of zero and does not use daylight savings time...">i18n_timezone_create_gmt()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> *timezone_id = NULL;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gab1b5f6a51c5d841d7a73bb5dc671f236" title="Returns the &quot;unknown&quot; time zone.">i18n_timezone_create_unknown</a>(&amp;timezone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error creating unknown timezone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaa57cf5f432b7e64d8e2f63258909ecba" title="Fills in &quot;timezone_id&quot; with the i18n_timezone_h&#39;s ID.">i18n_timezone_get_id</a>(timezone, &amp;timezone_id);
+    printf(<span class="stringliteral">&quot;Created unknown timezone: %s\n&quot;</span>, timezone_id);
+
+    free(timezone_id);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -554,7 +680,8 @@ Typedefs</h2></td></tr>
 
 <p>Creates an <a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> detected from the current host system configuration. </p>
 <p>This function does not change the default time zone and does not update the current ICU's default. It may return a different <a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> from the one returned by <a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga39acc1f73336fd9f901106f3eaf077f5" title="Creates a new copy of the default i18n_timezone_h for this host.">i18n_timezone_create_default()</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>timezone</em> should be released using i18n_timezone_destory().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">timezone</td><td>A new instance of <a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> detected from the current host system configuration. Users are responsible for deleting the returned time zone object with <a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy()</a>.</td></tr>
@@ -564,7 +691,30 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> *timezone_id = NULL;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gac2c045c8ac715ef81abfb6dd7189d24e" title="Creates an i18n_timezone_h detected from the current host system configuration.">i18n_timezone_detect_host_timezone</a>(&amp;timezone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error creating timezone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaa57cf5f432b7e64d8e2f63258909ecba" title="Fills in &quot;timezone_id&quot; with the i18n_timezone_h&#39;s ID.">i18n_timezone_get_id</a>(timezone, &amp;timezone_id);
+    printf(<span class="stringliteral">&quot;Created timezone: %s\n&quot;</span>, timezone_id);
+
+    free(timezone_id);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -808,6 +958,7 @@ Typedefs</h2></td></tr>
 <p>Returns a name of this time zone suitable for presentation to the user in the default locale. </p>
 <p>This method returns the long name, not including daylight savings. If the display name is not available for the locale, then this method returns a string in the localized GMT offset format such as GMT[+-]HH:mm. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>display_name</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timezone</td><td>The i18n_timezone_h to get a display name. </td></tr>
@@ -817,7 +968,39 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main()
+ {
+    <span class="keywordtype">char</span> *display_name;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> timezone_id[10];
+    <span class="keywordtype">int</span> gmt = -12;
+    <span class="keywordflow">for</span>(; gmt &lt; 15; gmt++) {
+        snprintf(timezone_id, 10, (gmt&lt;0)? <span class="stringliteral">&quot;GMT%d:00&quot;</span> : <span class="stringliteral">&quot;GMT+%d:00&quot;</span>, gmt);
+        error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga7fc016a31415e4bad4534249f2f2a164" title="Creates an i18n_timezone_h for the given timezone_id.">i18n_timezone_create</a>(&amp;timezone, timezone_id);
+        <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+            printf(<span class="stringliteral">&quot;Error i18n_timezone_create: %d\n&quot;</span>, error_code);
+            <span class="keywordflow">return</span> EXIT_FAILURE;
+        }
+
+        error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga561dfa156943ceca59405caad7ee77eb" title="Returns a name of this time zone suitable for presentation to the user in the default locale...">i18n_timezone_get_display_name</a>(timezone, &amp;display_name);
+        <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+            printf(<span class="stringliteral">&quot;Error i18n_timezone_get_display_name: %d\n&quot;</span>, error_code);
+            <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+            <span class="keywordflow">return</span> EXIT_FAILURE;
+        }
+        printf(<span class="stringliteral">&quot;Created %s timezone display_name: %s\n&quot;</span>, timezone_id, display_name);
+        free(display_name);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+    }
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -865,6 +1048,7 @@ Typedefs</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga3f8757d71e1767c9ccc356660888cfea" title="Returns a name of this time zone suitable for presentation to the user in the default locale...">i18n_timezone_get_display_name_with_locale_id()</a> instead. </dd></dl>
 <p>This method returns the long name, not including daylight savings. If the display name is not available for the locale, then this method returns a string in the localized GMT offset format such as GMT[+-]HH:mm. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>display_name</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timezone</td><td>The i18n_timezone_h to get a display name. </td></tr>
@@ -876,7 +1060,42 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main()
+ {
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *language = <a class="code" href="group__CAPI__BASE__UTILS__I18N__ULOCALE__MODULE.html#ga5cec6b738ff799df1279fea216a8e17c">I18N_ULOCALE_ENGLISH</a>;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *country = <span class="stringliteral">&quot;US&quot;</span>;
+    <span class="keywordtype">char</span> *display_name;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> timezone_id[10];
+    <span class="keywordtype">int</span> gmt = -12;
+    <span class="keywordflow">for</span>(; gmt &lt; 15; gmt++) {
+        snprintf(timezone_id, 10, (gmt&lt;0)? <span class="stringliteral">&quot;GMT%d:00&quot;</span> : <span class="stringliteral">&quot;GMT+%d:00&quot;</span>, gmt);
+        error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga7fc016a31415e4bad4534249f2f2a164" title="Creates an i18n_timezone_h for the given timezone_id.">i18n_timezone_create</a>(&amp;timezone, timezone_id);
+        <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+            printf(<span class="stringliteral">&quot;Error i18n_timezone_create: %d\n&quot;</span>, error_code);
+            <span class="keywordflow">return</span> EXIT_FAILURE;
+        }
+
+        error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gada96f44fd0583c9cef2b22e8da062252" title="Returns a name of this time zone suitable for presentation to the user in the default locale...">i18n_timezone_get_display_name_with_locale</a>(timezone, language, country, &amp;display_name);
+        <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+            printf(<span class="stringliteral">&quot;Error i18n_timezone_get_display_name_with_locale: %d\n&quot;</span>, error_code);
+            <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+            <span class="keywordflow">return</span> EXIT_FAILURE;
+        }
+        printf(<span class="stringliteral">&quot;Created %s timezone display_name: %s\n&quot;</span>, timezone_id, display_name);
+        free(display_name);
+
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+    }
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -977,6 +1196,7 @@ Typedefs</h2></td></tr>
 <p>Returns a name of this time zone suitable for presentation to the user in the default locale. </p>
 <p>If the display name is not available for the locale, then this method returns a string in the localized GMT offset format such as GMT[+-]HH:mm. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>display_name</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timezone</td><td>The i18n_timezone_h to get a display name. </td></tr>
@@ -988,7 +1208,45 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main()
+ {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga088a8341c9427e569d58229b19dc16be" title="i18n_ubool.">i18n_ubool</a> daylight = <span class="keyword">true</span>;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gab6978e5916ff9d22ff5694e1982aefa5" title="Enumeration for use with i18n_timezone_get_display_name(), i18n_timezone_get_display_name_with_locale...">i18n_timezone_display_type_e</a> type = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ggab6978e5916ff9d22ff5694e1982aefa5ae2771847f45cc2388c4db2ed95a10dd7">I18N_TIMEZONE_DISPLAY_TYPE_SHORT</a>;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> *display_name;
+    <span class="keywordtype">char</span> timezone_id[10];
+    <span class="keywordtype">int</span> gmt = -12;
+    <span class="keywordflow">for</span>(; gmt &lt; 15; gmt++) {
+        type = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ggab6978e5916ff9d22ff5694e1982aefa5ae2771847f45cc2388c4db2ed95a10dd7">I18N_TIMEZONE_DISPLAY_TYPE_SHORT</a>;
+        snprintf(timezone_id, 10, (gmt&lt;0)? <span class="stringliteral">&quot;GMT%d:00&quot;</span> : <span class="stringliteral">&quot;GMT+%d:00&quot;</span>, gmt);
+        error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga7fc016a31415e4bad4534249f2f2a164" title="Creates an i18n_timezone_h for the given timezone_id.">i18n_timezone_create</a>(&amp;timezone, timezone_id);
+        <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+            printf(<span class="stringliteral">&quot;Error i18n_timezone_create: %d\n&quot;</span>, error_code);
+            <span class="keywordflow">return</span> EXIT_FAILURE;
+        }
+
+        <span class="keywordflow">for</span>(; type &lt;= <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ggab6978e5916ff9d22ff5694e1982aefa5a817b1ecb5b0287ee827bdde20862f8e5">I18N_TIMEZONE_DISPLAY_TYPE_GENERIC_LOCATION</a>; type++) {
+            error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga12f35ad0249a6f9ff6ceae44b8be4aa5" title="Returns a name of this time zone suitable for presentation to the user in the default locale...">i18n_timezone_get_display_name_with_type</a>(timezone, daylight, type, &amp;display_name);
+            <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+                printf(<span class="stringliteral">&quot;Error i18n_timezone_get_display_name_with_type: %d\n&quot;</span>, error_code);
+                <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+                <span class="keywordflow">return</span> EXIT_FAILURE;
+            }
+            printf(<span class="stringliteral">&quot;Created %s timezone display_name: %s\n&quot;</span>, timezone_id, display_name);
+            free(display_name);
+        }
+
+        error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+    }
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1048,6 +1306,7 @@ Typedefs</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaee942f092fd2e4ee0cf83e9e728841a4" title="Returns a name of this time zone suitable for presentation to the user in the default locale...">i18n_timezone_get_display_name_with_type_locale_id()</a> instead. </dd></dl>
 <p>If the display name is not available for the locale, then this method returns a string in the localized GMT offset format such as GMT[+-]HH:mm. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>display_name</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timezone</td><td>The i18n_timezone_h to get a display name. </td></tr>
@@ -1061,7 +1320,43 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#ga088a8341c9427e569d58229b19dc16be" title="i18n_ubool.">i18n_ubool</a> daylight = <span class="keyword">true</span>;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gab6978e5916ff9d22ff5694e1982aefa5" title="Enumeration for use with i18n_timezone_get_display_name(), i18n_timezone_get_display_name_with_locale...">i18n_timezone_display_type_e</a> style = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ggab6978e5916ff9d22ff5694e1982aefa5a6e6ad5f4ea3bf0a654bd521f8f6ed166">I18N_TIMEZONE_DISPLAY_TYPE_LONG</a>;
+    <span class="keywordtype">char</span> *timezone_id = NULL;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *language = <a class="code" href="group__CAPI__BASE__UTILS__I18N__ULOCALE__MODULE.html#ga5cec6b738ff799df1279fea216a8e17c">I18N_ULOCALE_ENGLISH</a>;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *country = <span class="stringliteral">&quot;US&quot;</span>;
+    <span class="keywordtype">char</span> *display_name;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga39acc1f73336fd9f901106f3eaf077f5" title="Creates a new copy of the default i18n_timezone_h for this host.">i18n_timezone_create_default</a>(&amp;timezone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error creating default timezone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga86ed201cbf50dbe6eedfb71d0a4ebc5b" title="Returns a name of this time zone suitable for presentation to the user in the default locale...">i18n_timezone_get_display_name_with_type_locale</a>(timezone, daylight, style, language, country, &amp;display_name);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_timezone_get_display_name_with_type_locale: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaa57cf5f432b7e64d8e2f63258909ecba" title="Fills in &quot;timezone_id&quot; with the i18n_timezone_h&#39;s ID.">i18n_timezone_get_id</a>(timezone, &amp;timezone_id);
+    printf(<span class="stringliteral">&quot;Created %s timezone display_name: %s\n&quot;</span>, timezone_id, display_name);
+
+    free(timezone_id);
+    free(display_name);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1216,6 +1511,7 @@ Typedefs</h2></td></tr>
 <p>An equivalency group contains zones that have the same GMT offset and rules.<br/>
  The given index must be in the range 0..n-1, where n is the out parameter value from i18n_timezone_count_equivalent_ids(timezone_id, &amp;n). For some value of 'index', the returned value will be equal to the given id. If the given id is not a valid system time zone, or if 'index' is out of range, then returns an empty string. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>equivalent_timezone_id</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timezone_id</td><td>a system time zone ID </td></tr>
@@ -1230,7 +1526,24 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gac41387ce9d6254a22708407a3e5685f4" title="Returns the number of IDs in the equivalency group that includes the given ID.">i18n_timezone_count_equivalent_ids()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gac41387ce9d6254a22708407a3e5685f4" title="Returns the number of IDs in the equivalency group that includes the given ID.">i18n_timezone_count_equivalent_ids()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main() {
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *timezone_id = <span class="stringliteral">&quot;PST&quot;</span>;
+    int32_t index = 0;
+    <span class="keywordtype">char</span> *equivalent_timezone_id;
+    ret = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabca7fead687eac8e7a4d88c60155fc51" title="Returns an ID in the equivalency group that includes the given ID.">i18n_timezone_get_equivalent_id</a>(timezone_id, index, &amp;equivalent_timezone_id);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error creating timezone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    printf(<span class="stringliteral">&quot;equivalent timezone id: %s\n&quot;</span>, equivalent_timezone_id);
+    free(equivalent_timezone_id);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -1261,6 +1574,7 @@ Typedefs</h2></td></tr>
 
 <p>Fills in "timezone_id" with the i18n_timezone_h's ID. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>timezone_id</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timezone</td><td>The i18n_timezone_h to get a timezone ID. </td></tr>
@@ -1270,7 +1584,30 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gabd486481b1eb10fcd5a6e8241bc6c347" title="handle for object that represents a time zone offset, and also figures out daylight savings...">i18n_timezone_h</a> timezone;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keywordtype">char</span> *timezone_id = NULL;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga7fc016a31415e4bad4534249f2f2a164" title="Creates an i18n_timezone_h for the given timezone_id.">i18n_timezone_create</a>(&amp;timezone, <span class="stringliteral">&quot;Asia/Seoul&quot;</span>);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error creating timezone: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#gaa57cf5f432b7e64d8e2f63258909ecba" title="Fills in &quot;timezone_id&quot; with the i18n_timezone_h&#39;s ID.">i18n_timezone_get_id</a>(timezone, &amp;timezone_id);
+    printf(<span class="stringliteral">&quot;Created timezone: %s\n&quot;</span>, timezone_id);
+
+    free(timezone_id);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html#ga64e5dd26e0fb7c8f18f04793213a38d2" title="Destroys an i18n_timezone_h.">i18n_timezone_destroy</a>(timezone);
+
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1628,7 +1965,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the i18n_timezone_h's raw GMT offset (i.e., the number of milliseconds to add to GMT to get local time, before taking daylight savings time into account). </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timezone</td><td>The i18n_timezone_h to set a raw offset. </td></tr>

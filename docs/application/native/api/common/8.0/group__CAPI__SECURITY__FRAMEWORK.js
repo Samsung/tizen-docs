@@ -8,5 +8,6 @@ var group__CAPI__SECURITY__FRAMEWORK =
     [ "Privacy Privilege Manager (Deprecated)", "group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html", null ],
     [ "Privilege Info", "group__CAPI__SECURITY__FRAMEWORK__PRIVILEGE__INFO__MODULE.html", null ],
     [ "Trusted Execution Framework", "group__CAPI__TEF__MODULE.html", null ],
+    [ "Web Authentication", "group__CAPI__WEBAUTHN__MODULE.html", null ],
     [ "YACA", "group__CAPI__YACA__MODULE.html", "group__CAPI__YACA__MODULE" ]
 ];

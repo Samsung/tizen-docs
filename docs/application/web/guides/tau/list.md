@@ -10,7 +10,7 @@ The following figure shows the layout of the list component in a rectangular and
 
 ![List component on a rectangular device](./media/rectangular_list.png) ![List component on a circular device](./media/round_list.png)
 
-To implement the list component:
+To implement the list component, follow these steps:
 
 1. Edit the HTML code to add the list component to your application screen:
 
@@ -123,6 +123,6 @@ To implement the list component:
    });
    ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.3.1 and Higher for Wearable

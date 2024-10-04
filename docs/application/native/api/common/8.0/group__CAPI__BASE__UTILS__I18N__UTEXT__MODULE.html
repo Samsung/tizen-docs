@@ -443,7 +443,22 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea23808ecfb28f4f5e8eaf1247cb553fbe">I18N_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea23808ecfb28f4f5e8eaf1247cb553fbe">I18N_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UTEXT__MODULE.html#gad425881c807b1e54b771d35800a7d97a" title="An i18n_utext_h handle.">i18n_utext_h</a> utb;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> uString[] = {0x41, 0x42, 0x43, 0};
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UTEXT__MODULE.html#gac66e75a07ee2feadafa8510fe28bfa7c" title="Creates a read-only i18n_utext_h for i18n_uchar * string.">i18n_utext_create_for_uchars</a>(NULL, uString, -1, &amp;utb);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UTEXT__MODULE.html#ga3f70098669c0ee9e12c59efeecf1aa5f" title="Destroys the i18n_utext_h handle and release its resources.">i18n_utext_destroy</a>(utb);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>

@@ -894,7 +894,21 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga64585cc19278ece0d76506d65a0f22c2" title="Deletes the unicode converter and releases resources associated with just this instance.">i18n_ucnv_destroy()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga344290bbf34f0d68fbaaf27a27c1fe9b" title="Does a fuzzy compare of two converter/alias names.">i18n_ucnv_compare_names()</a> </dd></dl>
+<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga344290bbf34f0d68fbaaf27a27c1fe9b" title="Does a fuzzy compare of two converter/alias names.">i18n_ucnv_compare_names()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gae401bcdb90b04060bb27d8285fb4a397" title="An i18n_ucnv_h handle.">i18n_ucnv_h</a> converter;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga09e0059470446d2dce3991ea04ab8515" title="Creates an i18n_ucnv_h with the name of a coded character set specified as a C string.">i18n_ucnv_create</a>(<span class="stringliteral">&quot;ibm-949&quot;</span>, &amp;converter);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucnv_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga64585cc19278ece0d76506d65a0f22c2" title="Deletes the unicode converter and releases resources associated with just this instance.">i18n_ucnv_destroy</a>(converter);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -1001,8 +1015,27 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gafd9e9f503d690e275c208824cc365906" title="Gets a codepage number associated with the converter.">i18n_ucnv_get_ccsid()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga5a005d020b7fd8533c4c0553fc702868" title="Gets a codepage platform associated with the converter.">i18n_ucnv_get_platform()</a> </dd></dl>
+<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga5a005d020b7fd8533c4c0553fc702868" title="Gets a codepage platform associated with the converter.">i18n_ucnv_get_platform()</a></dd></dl>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gae401bcdb90b04060bb27d8285fb4a397" title="An i18n_ucnv_h handle.">i18n_ucnv_h</a> converter;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    int32_t ccsids[] = {37, 850, 943, 949, 950, 1047, 1252, 1392, 33722};
 
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 9; ++i)
+    {
+        error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga659809582140f42acf15403bc10f8b40" title="Creates an i18n_ucnv_h from a CCSID number and platform pair.">i18n_ucnv_create_ccsid</a>(ccsids[i], <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gga8f55663b37d05c0f8ab7b940cfc393eaabcbe0c7d75d22262bf92fceb13b954df">I18N_UCNV_IBM</a>, &amp;converter);
+        <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+            printf(<span class="stringliteral">&quot;Error i18n_ucnv_create_ccsid: %d\n&quot;</span>, error_code);
+            <span class="keywordflow">return</span> EXIT_FAILURE;
+        }
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga64585cc19278ece0d76506d65a0f22c2" title="Deletes the unicode converter and releases resources associated with just this instance.">i18n_ucnv_destroy</a>(converter);
+    }
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="gac2b4016c0ee40a8582c97327d0982bb2"></a><!-- doxytag: member="utils_i18n_ucnv.h::i18n_ucnv_create_package" ref="gac2b4016c0ee40a8582c97327d0982bb2" args="(const char *package_name, const char *converter_name, i18n_ucnv_h *converter)" -->
@@ -1062,8 +1095,22 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga09e0059470446d2dce3991ea04ab8515" title="Creates an i18n_ucnv_h with the name of a coded character set specified as a C string.">i18n_ucnv_create()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga8aff15494ae491a62a61b73f346b5ec4" title="Clones converter thread safely.">i18n_ucnv_safe_clone()</a> </dd></dl>
-
+<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga8aff15494ae491a62a61b73f346b5ec4" title="Clones converter thread safely.">i18n_ucnv_safe_clone()</a></dd></dl>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gae401bcdb90b04060bb27d8285fb4a397" title="An i18n_ucnv_h handle.">i18n_ucnv_h</a> converter;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gac2b4016c0ee40a8582c97327d0982bb2" title="Creates an i18n_ucnv_h specified from a package_name and a converter_name.">i18n_ucnv_create_package</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, &amp;converter);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucnv_create_package: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga64585cc19278ece0d76506d65a0f22c2" title="Deletes the unicode converter and releases resources associated with just this instance.">i18n_ucnv_destroy</a>(converter);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="ga85cdde79cfc2f6c9d47e4a3a76027ad9"></a><!-- doxytag: member="utils_i18n_ucnv.h::i18n_ucnv_create_standard_names" ref="ga85cdde79cfc2f6c9d47e4a3a76027ad9" args="(const char *conv_name, const char *standard, i18n_uenumeration_h *enumeration)" -->
@@ -1179,8 +1226,23 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga64585cc19278ece0d76506d65a0f22c2" title="Deletes the unicode converter and releases resources associated with just this instance.">i18n_ucnv_destroy()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga344290bbf34f0d68fbaaf27a27c1fe9b" title="Does a fuzzy compare of two converter/alias names.">i18n_ucnv_compare_names()</a> </dd></dl>
-
+<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga344290bbf34f0d68fbaaf27a27c1fe9b" title="Does a fuzzy compare of two converter/alias names.">i18n_ucnv_compare_names()</a></dd></dl>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gae401bcdb90b04060bb27d8285fb4a397" title="An i18n_ucnv_h handle.">i18n_ucnv_h</a> converter;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> name[] = {0x0069, 0x0062, 0x006d, 0x002d, 0x0039, 0x0034, 0x0033, 0x0000};
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga0b38ffefbe72997cc9bc920247abef85" title="Creates a Unicode converter with the names specified as unicode string.">i18n_ucnv_create_unicode</a>(name, &amp;converter);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucnv_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga64585cc19278ece0d76506d65a0f22c2" title="Deletes the unicode converter and releases resources associated with just this instance.">i18n_ucnv_destroy</a>(converter);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="ga64585cc19278ece0d76506d65a0f22c2"></a><!-- doxytag: member="utils_i18n_ucnv.h::i18n_ucnv_destroy" ref="ga64585cc19278ece0d76506d65a0f22c2" args="(i18n_ucnv_h converter)" -->
@@ -3024,11 +3086,33 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter</td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gae401bcdb90b04060bb27d8285fb4a397" title="An i18n_ucnv_h handle.">i18n_ucnv_h</a> converter;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gae401bcdb90b04060bb27d8285fb4a397" title="An i18n_ucnv_h handle.">i18n_ucnv_h</a> cloned_converter;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga09e0059470446d2dce3991ea04ab8515" title="Creates an i18n_ucnv_h with the name of a coded character set specified as a C string.">i18n_ucnv_create</a>(<span class="stringliteral">&quot;iso-8859-3&quot;</span>, &amp;converter);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucnv_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga8aff15494ae491a62a61b73f346b5ec4" title="Clones converter thread safely.">i18n_ucnv_safe_clone</a>(converter, &amp;cloned_converter);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucnv_safe_clone: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga64585cc19278ece0d76506d65a0f22c2" title="Deletes the unicode converter and releases resources associated with just this instance.">i18n_ucnv_destroy</a>(converter);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga64585cc19278ece0d76506d65a0f22c2" title="Deletes the unicode converter and releases resources associated with just this instance.">i18n_ucnv_destroy</a>(cloned_converter);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#ga64585cc19278ece0d76506d65a0f22c2" title="Deletes the unicode converter and releases resources associated with just this instance.">i18n_ucnv_destroy</a>(converter);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="ga6dd0b837cff9acd94acff5ec50851ec1"></a><!-- doxytag: member="utils_i18n_ucnv.h::i18n_ucnv_set_default_name" ref="ga6dd0b837cff9acd94acff5ec50851ec1" args="(const char *name)" -->

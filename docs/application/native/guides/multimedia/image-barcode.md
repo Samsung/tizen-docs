@@ -334,7 +334,7 @@ To generate a barcode:
       ```
       mv_colorspace_e image_colorspace = MEDIA_VISION_COLORSPACE_INVALID;
       unsigned int image_width = 0;
-      unsigned int height_height = 0;
+      unsigned int image_height = 0;
       unsigned char *image_buffer_ptr = NULL;
       unsigned int image_buffer_size = 0;
 

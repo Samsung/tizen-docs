@@ -16,7 +16,7 @@ You can use the following text input and voice features in your Web applications
 
   You can register general voice commands and enable the user to control the Web application with their voice.
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

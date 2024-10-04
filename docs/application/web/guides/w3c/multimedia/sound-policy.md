@@ -39,6 +39,6 @@ Sound is played on a tap event for:
 - HTML elements on which the mouseover event listener is registered
 - MediaController objects of the HTML media elements
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile

@@ -14,11 +14,11 @@ The following figures show the layout of the popup component in a rectangular an
 
 ![Side popup component on a rectangular device](./media/rectangular_popup_side.png) ![Side popup component on a circular device](./media/round_popup_side.png)
 
-To implement the popup button component:
+To implement the popup button component, follow these steps:
 
 - To implement a bottom popup button component:
 
-  Edit the HTML code to add the bottom popup button component to your application screen. To add the bottom button to the circular UI, you must add the `ui-bottom-button` class to the popup footer. The popup can have only 1 bottom button.
+  Edit the HTML code to add the bottom popup button component to your application screen. To add the bottom button to the circular UI, you must add the `ui-bottom-button` class to the popup footer. The popup can have only 1 bottom button:
 
   ```
   <div id="bottomBtnPopup" class="ui-popup">
@@ -36,7 +36,7 @@ To implement the popup button component:
 
 - To implement a side popup button component:
 
-  Edit the HTML code to add the side popup button component to your application screen. To add side buttons for the circular UI, you must add the `ui-side-button` class to the popup footer. The popup can have only 2 side buttons.
+  Edit the HTML code to add the side popup button component to your application screen. To add side buttons for the circular UI, you must add the `ui-side-button` class to the popup footer. The popup can have only 2 side buttons:
 
   ```
   <style>
@@ -57,6 +57,6 @@ To implement the popup button component:
   </div>
   ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.3.1 and Higher for Wearable

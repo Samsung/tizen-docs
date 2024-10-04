@@ -12,7 +12,7 @@ You can use the following messaging features in your Web applications:
 
   The application can receive push notifications from a push server. You can register your application and connect to the push service, to be ready to receive push notifications when they arrive.
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

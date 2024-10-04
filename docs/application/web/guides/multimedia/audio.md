@@ -4,7 +4,7 @@ You can control the volume level of several sound types and get information abou
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Sound API include:
+The main features of the Sound API include the following:
 
 - Managing the volume level and sound mode
 
@@ -30,9 +30,9 @@ To use the Sound API (in [mobile](../../api/latest/device_api/mobile/tizen/sound
 <tizen:privilege name="http://tizen.org/privilege/volume.set"/>
 ```
 
-## Managing Volume and Sound Mode
+## Manage volume and sound mode
 
-Managing volume levels and sound modes is a basic multimedia management skill:
+Managing volume levels and sound modes is a basic multimedia management skill, follow these steps to manage volume and sound mode:
 
 1. Get the current volume level using the `getVolume()` method:
 
@@ -55,9 +55,9 @@ Managing volume levels and sound modes is a basic multimedia management skill:
    console.log('Sound Mode is ' + mode);
    ```
 
-## Monitoring Volume and Sound Mode Changes
+## Monitor volume and sound mode changes
 
-Managing volume and sound mode changes is a basic multimedia management skill:
+Managing volume and sound mode changes is a basic multimedia management skill, follow these steps to monitor volume and sound mode:
 
 1. Register the volume change listener to track changes in the volume level:
 
@@ -82,9 +82,9 @@ Managing volume and sound mode changes is a basic multimedia management skill:
    tizen.sound.setSoundModeChangeListener(onsuccessCB);
    ```
 
-## Managing Sound Devices
+## Manage sound devices
 
-Learning how to list connected and activated sound devices allows you to manage sound devices more effectively:
+Learning how to list connected and activated sound devices allows you to manage sound devices more effectively, follow these steps to manage sound devices:
 
 1. Get a list of the current sound devices in a connected state using the `getConnectedDeviceList()` method:
 
@@ -108,7 +108,7 @@ Learning how to list connected and activated sound devices allows you to manage 
    }
    ```
 
-## Monitoring the Sound Device State
+## Monitor the sound device state
 
 Learning how to monitor changes in the sound device state makes it easier for you to manage the sound devices:
 
@@ -138,7 +138,7 @@ Learning how to monitor changes in the sound device state makes it easier for yo
    tizen.sound.removeDeviceStateChangeListener(listenerId);
    ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

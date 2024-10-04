@@ -1,6 +1,6 @@
 # Machine Learning
 
-Machine learning features help you to handle Neural Network Frameworks (NNFWs), like [TensorFlow and TensorFlow Lite](https://tensorflow.org).
+Machine learning features help you to handle Neural Network Frameworks (NNFWs), like [TensorFlow and TensorFlow Lite](https://tensorflow.org){:target="_blank"}.
 
 You can use the following machine learning features in your web applications:
 

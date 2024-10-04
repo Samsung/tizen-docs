@@ -22,7 +22,7 @@ To use the Download API (in [mobile](../../api/latest/device_api/mobile/tizen/do
 <tizen:privilege name="http://tizen.org/privilege/download"/>
 ```
 
-## Managing downloads
+## Manage downloads
 
 To provide the user access to Internet resources, you must learn how to manage download operations through the following steps:
 
@@ -124,7 +124,7 @@ To provide the user access to Internet resources, you must learn how to manage d
       ```
         For any abandoned download operation, the resources are already released. Thus, the download operation cannot be resumed.
 
-## Checking the download state and information
+## Check the download state and information
 
 To provide the user access to Internet resources, you must learn how to check the state of a download operation and retrieve relevant information by following these steps:
 

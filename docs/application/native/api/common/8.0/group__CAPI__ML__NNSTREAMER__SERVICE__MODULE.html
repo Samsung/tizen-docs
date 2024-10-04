@@ -121,22 +121,36 @@ Related Features</h2>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3814e0ff191431754c005bf86e1fde0f">ml_service_set_pipeline</a> (const char *name, const char *pipeline_desc)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pipeline description with a given name.  <a href="#ga3814e0ff191431754c005bf86e1fde0f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaeb6364723b3a92ef7c549ed3ec803014">ml_service_get_pipeline</a> (const char *name, char **pipeline_desc)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pipeline description with a given name.  <a href="#gaeb6364723b3a92ef7c549ed3ec803014"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf437df2e28228cc737928ffd0d11e15b">ml_service_delete_pipeline</a> (const char *name)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the pipeline description with a given name.  <a href="#gaf437df2e28228cc737928ffd0d11e15b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacf4506b41f600929600230feb8d6f306">ml_service_launch_pipeline</a> (const char *name, <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> *handle)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Launches the pipeline of given service and gets the service handle.  <a href="#gacf4506b41f600929600230feb8d6f306"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga06cdbbc396373516c060e5089587d6e6">ml_service_start_pipeline</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the pipeline of given service handle.  <a href="#ga06cdbbc396373516c060e5089587d6e6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaa6bf57454bcfb3f476bfdafb36592a16">ml_service_stop_pipeline</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the pipeline of given service handle.  <a href="#gaa6bf57454bcfb3f476bfdafb36592a16"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga4f14d89d6bfcea80d3bcd12f19feb890">ml_service_new</a> (const char *config, <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> *handle)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a handle for machine learning service using a configuration file.  <a href="#ga4f14d89d6bfcea80d3bcd12f19feb890"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3f58a8bc0ccbc9599b2d1de27f7fed08">ml_service_set_event_cb</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga857275bb953b668734ed9d82cb2a1419">ml_service_event_cb</a> cb, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the callback which will be invoked when a new event occurs from machine learning service.  <a href="#ga3f58a8bc0ccbc9599b2d1de27f7fed08"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga04d5bc7fb70cef668ceaf526d159d960">ml_service_start</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the process of machine learning service.  <a href="#ga04d5bc7fb70cef668ceaf526d159d960"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gad19922c5cb45a41aca02a1d99341b0d0">ml_service_stop</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the process of machine learning service.  <a href="#gad19922c5cb45a41aca02a1d99341b0d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga468a85069db4f8d0445f24a91ff7c922">ml_service_get_input_information</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, const char *name, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> *info)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information of required input data.  <a href="#ga468a85069db4f8d0445f24a91ff7c922"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaecf990ed26d6e2bdf6e6c2631e07c68e">ml_service_get_output_information</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, const char *name, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> *info)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information of output data.  <a href="#gaecf990ed26d6e2bdf6e6c2631e07c68e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga87a25d4d1056d648e78ad1af5d0d0bfb">ml_service_set_information</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, const char *name, const char *value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the information for machine learning service.  <a href="#ga87a25d4d1056d648e78ad1af5d0d0bfb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga6765d97db8fffe9754e53f46b3b002d5">ml_service_get_information</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, const char *name, char **value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information from machine learning service.  <a href="#ga6765d97db8fffe9754e53f46b3b002d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gae4f1ffbf18e9bfc519384876e90d5aef">ml_service_request</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, const char *name, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an input data to process the model in machine learning service.  <a href="#gae4f1ffbf18e9bfc519384876e90d5aef"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaddfc8aee5ca9f5368e9d142d92ff971b">ml_service_destroy</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the given service handle.  <a href="#gaddfc8aee5ca9f5368e9d142d92ff971b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf7f714f568baa14726ac4f2ca5be4547">ml_service_get_pipeline_state</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga351d9e9377c180582b3af2f20448ef74">ml_pipeline_state_e</a> *state)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the state of given handle's pipeline.  <a href="#gaf7f714f568baa14726ac4f2ca5be4547"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the handle for machine learning service.  <a href="#gaddfc8aee5ca9f5368e9d142d92ff971b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gab97ae4f2c67836aade5e31fafa4dfff2">ml_service_pipeline_set</a> (const char *name, const char *pipeline_desc)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pipeline description with a given name.  <a href="#gab97ae4f2c67836aade5e31fafa4dfff2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga6ad85b349f5ea1e0bc872338f4a26a19">ml_service_pipeline_get</a> (const char *name, char **pipeline_desc)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pipeline description with a given name.  <a href="#ga6ad85b349f5ea1e0bc872338f4a26a19"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga4eb5879f44898acaa2633e4bfc228391">ml_service_pipeline_delete</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the pipeline description with a given name.  <a href="#ga4eb5879f44898acaa2633e4bfc228391"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga5870805e3522804c45a0cdd323993290">ml_service_pipeline_launch</a> (const char *name, <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> *handle)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Launches the pipeline of given service and gets the service handle.  <a href="#ga5870805e3522804c45a0cdd323993290"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga11547fad9c25134f6e5b8d5d103c695f">ml_service_pipeline_get_state</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga351d9e9377c180582b3af2f20448ef74">ml_pipeline_state_e</a> *state)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the state of given handle's pipeline.  <a href="#ga11547fad9c25134f6e5b8d5d103c695f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga48793427794c606553270b2530b5bc9b">ml_service_query_create</a> (<a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaf642a820810934d697a0b217d4dbc38b">ml_option_h</a> option, <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> *handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates query service handle with given ml-option handle.  <a href="#ga48793427794c606553270b2530b5bc9b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga20e2fb3f51d8c370da02f3505016b4ce">ml_service_query_request</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> handle, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> input, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> *output)</td></tr>
@@ -165,8 +179,36 @@ Functions</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A handle for ml-service instance.  <a href="#gacc06cc55eff6b9094c7c680e7cf2dba8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga857275bb953b668734ed9d82cb2a1419">ml_service_event_cb</a> )(<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf43debaed329c13f7b85cf56979236b0">ml_service_event_e</a> event, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga215d754a53da3652131ba391be326432">ml_information_h</a> event_data, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for the event from machine learning service.  <a href="#ga857275bb953b668734ed9d82cb2a1419"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga857275bb953b668734ed9d82cb2a1419"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_event_cb" ref="ga857275bb953b668734ed9d82cb2a1419" args=")(ml_service_event_e event, ml_information_h event_data, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga857275bb953b668734ed9d82cb2a1419">ml_service_event_cb</a>)(<a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf43debaed329c13f7b85cf56979236b0">ml_service_event_e</a> event, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga215d754a53da3652131ba391be326432">ml_information_h</a> event_data, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback for the event from machine learning service. </p>
+<p>Note that the handle of event data may be deallocated after the return and this is synchronously called. Thus, if you need the event data, copy the data and return fast. Do not spend too much time in the callback. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>event_data</em> should not be released. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The event from machine learning service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_data</td><td>The handle of event data. If it is null, the event does not include data field. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Private data for the callback. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gacc06cc55eff6b9094c7c680e7cf2dba8"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_h" ref="gacc06cc55eff6b9094c7c680e7cf2dba8" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -183,44 +225,34 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<hr/><h2>Function Documentation</h2>
-<a class="anchor" id="gaf437df2e28228cc737928ffd0d11e15b"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_delete_pipeline" ref="gaf437df2e28228cc737928ffd0d11e15b" args="(const char *name)" -->
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="gaf43debaed329c13f7b85cf56979236b0"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_event_e" ref="gaf43debaed329c13f7b85cf56979236b0" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf437df2e28228cc737928ffd0d11e15b">ml_service_delete_pipeline</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td class="memname">enum <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf43debaed329c13f7b85cf56979236b0">ml_service_event_e</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Deletes the pipeline description with a given name. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to delete. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>If the name does not exist in the database, this function returns ML_ERROR_NONE without any errors. </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
-  </table>
-  </dd>
+<p>Enumeration for the event types of machine learning service. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggaf43debaed329c13f7b85cf56979236b0ad0343e1d5f7e08ca992f67f7c52feebe"></a><!-- doxytag: member="ML_SERVICE_EVENT_UNKNOWN" ref="ggaf43debaed329c13f7b85cf56979236b0ad0343e1d5f7e08ca992f67f7c52feebe" args="" -->ML_SERVICE_EVENT_UNKNOWN</em>&nbsp;</td><td>
+<p>Unknown or invalid event type. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaf43debaed329c13f7b85cf56979236b0a6ac4859b8cb50319ca2f131b836bb06c"></a><!-- doxytag: member="ML_SERVICE_EVENT_NEW_DATA" ref="ggaf43debaed329c13f7b85cf56979236b0a6ac4859b8cb50319ca2f131b836bb06c" args="" -->ML_SERVICE_EVENT_NEW_DATA</em>&nbsp;</td><td>
+<p>New data is processed from machine learning service. </p>
+</td></tr>
+</table>
+</dd>
 </dl>
 
 </div>
 </div>
+<hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gaddfc8aee5ca9f5368e9d142d92ff971b"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_destroy" ref="gaddfc8aee5ca9f5368e9d142d92ff971b" args="(ml_service_h handle)" -->
 <div class="memitem">
 <div class="memproto">
@@ -236,60 +268,12 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Destroys the given service handle. </p>
-<p>If given service handle is created by <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacf4506b41f600929600230feb8d6f306" title="Launches the pipeline of given service and gets the service handle.">ml_service_launch_pipeline()</a>, this requests machine learning agent daemon to destroy the pipeline. </p>
+<p>Destroys the handle for machine learning service. </p>
+<p>If given service handle is created by <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga5870805e3522804c45a0cdd323993290" title="Launches the pipeline of given service and gets the service handle.">ml_service_pipeline_launch()</a>, this requests machine learning agent to destroy the pipeline. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The service handle. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on Success. Otherwise a negative error value. </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to access the pipeline state. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gaeb6364723b3a92ef7c549ed3ec803014"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_get_pipeline" ref="gaeb6364723b3a92ef7c549ed3ec803014" args="(const char *name, char **pipeline_desc)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaeb6364723b3a92ef7c549ed3ec803014">ml_service_get_pipeline</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>pipeline_desc</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets the pipeline description with a given name. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, <em>pipeline_desc</em> must be released using g_free(). </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to retrieve. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">pipeline_desc</td><td>The pipeline corresponding with the given name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
   </table>
   </dd>
 </dl>
@@ -298,20 +282,20 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>The parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to stop the process. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="gaf7f714f568baa14726ac4f2ca5be4547"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_get_pipeline_state" ref="gaf7f714f568baa14726ac4f2ca5be4547" args="(ml_service_h handle, ml_pipeline_state_e *state)" -->
+<a class="anchor" id="ga6765d97db8fffe9754e53f46b3b002d5"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_get_information" ref="ga6765d97db8fffe9754e53f46b3b002d5" args="(ml_service_h handle, const char *name, char **value)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf7f714f568baa14726ac4f2ca5be4547">ml_service_get_pipeline_state</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga6765d97db8fffe9754e53f46b3b002d5">ml_service_get_information</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a>&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -319,55 +303,14 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga351d9e9377c180582b3af2f20448ef74">ml_pipeline_state_e</a> *&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets the state of given handle's pipeline. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The service handle. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">state</td><td>The pipeline state. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on Success. Otherwise a negative error value. </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to access the pipeline state. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gacf4506b41f600929600230feb8d6f306"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_launch_pipeline" ref="gacf4506b41f600929600230feb8d6f306" args="(const char *name, ml_service_h *handle)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacf4506b41f600929600230feb8d6f306">ml_service_launch_pipeline</a> </td>
-          <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>&#160;</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -378,26 +321,134 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Launches the pipeline of given service and gets the service handle. </p>
-<p>This requests machine learning agent daemon to launch a new pipeline of given service. The pipeline of service <em>name</em> should be set. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>handle</em> should be destroyed using <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaddfc8aee5ca9f5368e9d142d92ff971b" title="Destroys the given service handle.">ml_service_destroy()</a>. </dd></dl>
+<p>Gets the information from machine learning service. </p>
+<p>Note that a configuration file may not have such information field. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>value</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The service name. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">handle</td><td>Newly created service handle is returned. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name to get the corresponding value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>The value of the name. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on Success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a55c58e89564526c50f44d1bf46cb2c54">ML_ERROR_OUT_OF_MEMORY</a></td><td>Failed to allocate required memory. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to launch the pipeline. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>The parameter is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga468a85069db4f8d0445f24a91ff7c922"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_get_input_information" ref="ga468a85069db4f8d0445f24a91ff7c922" args="(ml_service_h handle, const char *name, ml_tensors_info_h *info)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga468a85069db4f8d0445f24a91ff7c922">ml_service_get_input_information</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the information of required input data. </p>
+<p>Note that a model may not have such information if its input type is not determined statically. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>info</em> should be released using <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaec4bae5d600139d335826612109c2b9e" title="Frees the given handle of a tensors information.">ml_tensors_info_destroy()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of input node in the pipeline. You can set NULL if ml-service is constructed from model configuration. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">info</td><td>The handle of input tensors information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>The parameter is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaecf990ed26d6e2bdf6e6c2631e07c68e"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_get_output_information" ref="gaecf990ed26d6e2bdf6e6c2631e07c68e" args="(ml_service_h handle, const char *name, ml_tensors_info_h *info)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaecf990ed26d6e2bdf6e6c2631e07c68e">ml_service_get_output_information</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the information of output data. </p>
+<p>Note that a model may not have such information if its output is not determined statically. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>info</em> should be released using <a class="el" href="group__CAPI__ML__FRAMEWORK.html#gaec4bae5d600139d335826612109c2b9e" title="Frees the given handle of a tensors information.">ml_tensors_info_destroy()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of output node in the pipeline. You can set NULL if ml-service is constructed from model configuration. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">info</td><td>The handle of output tensors information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>The parameter is invalid. </td></tr>
   </table>
   </dd>
 </dl>
@@ -438,7 +489,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -486,7 +537,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -541,7 +592,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -590,7 +641,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -639,7 +690,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -713,7 +764,7 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -803,7 +854,7 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -814,6 +865,380 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
   </dd>
 </dl>
 
+</div>
+</div>
+<a class="anchor" id="ga4f14d89d6bfcea80d3bcd12f19feb890"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_new" ref="ga4f14d89d6bfcea80d3bcd12f19feb890" args="(const char *config, ml_service_h *handle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga4f14d89d6bfcea80d3bcd12f19feb890">ml_service_new</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> *&#160;</td>
+          <td class="paramname"><em>handle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates a handle for machine learning service using a configuration file. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/mediastorage is needed if the configuration is relevant to media storage. </dd>
+<dd>
+http://tizen.org/privilege/externalstorage is needed if the configuration is relevant to external storage. </dd>
+<dd>
+The <em>handle</em> should be released using <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaddfc8aee5ca9f5368e9d142d92ff971b" title="Destroys the handle for machine learning service.">ml_service_destroy()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>The absolute path to configuration file. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a39df68b9a816c7c276768edacf3a9b8e">ML_ERROR_PERMISSION_DENIED</a></td><td>The application does not have the privilege to access to the media storage or external storage. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>The parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>Failed to parse the configuration file. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to open the model. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a55c58e89564526c50f44d1bf46cb2c54">ML_ERROR_OUT_OF_MEMORY</a></td><td>Failed to allocate required memory.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Here is an example of the usage: </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Callback function for the event from machine learning service.</span>
+ <span class="comment">// Note that the handle of event data will be deallocated after the return and this is synchronously called.</span>
+ <span class="comment">// Thus, if you need the event data, copy the data and return fast.</span>
+ <span class="comment">// Do not spend too much time in the callback.</span>
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ _ml_service_event_cb (<a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaf43debaed329c13f7b85cf56979236b0" title="Enumeration for the event types of machine learning service.">ml_service_event_e</a> event, <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ga215d754a53da3652131ba391be326432" title="A handle of a ml-information instance.">ml_information_h</a> event_data, <span class="keywordtype">void</span> *user_data)
+ {
+   <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2" title="A handle of input or output frames. ml_tensors_info_h is the handle for tensors metadata.">ml_tensors_data_h</a> data;
+   <span class="keywordtype">void</span> *_data;
+   <span class="keywordtype">size_t</span> _size;
+
+   <span class="keywordflow">switch</span> (event) {
+     <span class="keywordflow">case</span> <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ggaf43debaed329c13f7b85cf56979236b0a6ac4859b8cb50319ca2f131b836bb06c">ML_SERVICE_EVENT_NEW_DATA</a>:
+       <span class="comment">// For the case of new data event, handle output data.</span>
+       <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ga5636d7ae543c198eb3215f2cc24763a1" title="Gets a value of key in ml-information instance.">ml_information_get</a> (event_data, <span class="stringliteral">&quot;data&quot;</span>, &amp;data);
+       <a class="code" href="group__CAPI__ML__FRAMEWORK.html#gaad9f022ec40b619818c99ca382c711a0" title="Gets a tensor data of given handle.">ml_tensors_data_get_tensor_data</a> (data, 0, &amp;_data, &amp;_size);
+       <span class="keywordflow">break</span>;
+     <span class="keywordflow">default</span>:
+       <span class="keywordflow">break</span>;
+   }
+ }
+
+ <span class="comment">// The path to the configuration file.</span>
+ <span class="keyword">const</span> <span class="keywordtype">char</span> config_path[] = <span class="stringliteral">&quot;/path/to/application/configuration/my_application_config.conf&quot;</span>;
+
+ <span class="comment">// Create ml-service for model inference from configuration.</span>
+ <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8" title="A handle for ml-service instance.">ml_service_h</a> handle;
+
+ <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga4f14d89d6bfcea80d3bcd12f19feb890" title="Creates a handle for machine learning service using a configuration file.">ml_service_new</a> (config_path, &amp;handle);
+ <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3f58a8bc0ccbc9599b2d1de27f7fed08" title="Sets the callback which will be invoked when a new event occurs from machine learning service...">ml_service_set_event_cb</a> (handle, _ml_service_event_cb, NULL);
+
+ <span class="comment">// Get input information and allocate input buffer.</span>
+ <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659" title="A handle of a tensors metadata instance.">ml_tensors_info_h</a> input_info;
+ <span class="keywordtype">void</span> *input_buffer;
+ <span class="keywordtype">size_t</span> input_size;
+
+ <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga468a85069db4f8d0445f24a91ff7c922" title="Gets the information of required input data.">ml_service_get_input_information</a> (handle, NULL, &amp;input_info);
+
+ <a class="code" href="group__CAPI__ML__FRAMEWORK.html#gab065e3d2e2bd8515b5d308ecb4851456" title="Gets the size of tensors data in the given tensors information handle in bytes.">ml_tensors_info_get_tensor_size</a> (input_info, 0, &amp;input_size);
+ input_buffer = malloc (input_size);
+
+ <span class="comment">// Create input data handle.</span>
+ <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2" title="A handle of input or output frames. ml_tensors_info_h is the handle for tensors metadata.">ml_tensors_data_h</a> input;
+
+ <a class="code" href="group__CAPI__ML__FRAMEWORK.html#gab4a8d2377a2baf5b7d5dc3030274bfc7" title="Creates a tensor data frame with the given tensors information.">ml_tensors_data_create</a> (input_info, &amp;input);
+ <a class="code" href="group__CAPI__ML__FRAMEWORK.html#gaa262922e9a993e425758adfd940b536f" title="Copies a tensor data to given handle.">ml_tensors_data_set_tensor_data</a> (input, 0, input_buffer, input_size);
+
+ <span class="comment">// Push input data into ml-service and process the output in the callback.</span>
+ <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gae4f1ffbf18e9bfc519384876e90d5aef" title="Adds an input data to process the model in machine learning service.">ml_service_request</a> (handle, NULL, input);
+
+ <span class="comment">// Finally, release all handles and allocated memories.</span>
+ <a class="code" href="group__CAPI__ML__FRAMEWORK.html#gaec4bae5d600139d335826612109c2b9e" title="Frees the given handle of a tensors information.">ml_tensors_info_destroy</a> (input_info);
+ <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ga46ea2e374a99dda84abdedcd2274491f" title="Frees the given tensors&#39; data handle.">ml_tensors_data_destroy</a> (input);
+ <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaddfc8aee5ca9f5368e9d142d92ff971b" title="Destroys the handle for machine learning service.">ml_service_destroy</a> (handle);
+ free (input_buffer);
+</pre></div> 
+</div>
+</div>
+<a class="anchor" id="ga4eb5879f44898acaa2633e4bfc228391"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_pipeline_delete" ref="ga4eb5879f44898acaa2633e4bfc228391" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga4eb5879f44898acaa2633e4bfc228391">ml_service_pipeline_delete</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Deletes the pipeline description with a given name. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to delete. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the name does not exist in the database, this function returns ML_ERROR_NONE without any errors. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6ad85b349f5ea1e0bc872338f4a26a19"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_pipeline_get" ref="ga6ad85b349f5ea1e0bc872338f4a26a19" args="(const char *name, char **pipeline_desc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga6ad85b349f5ea1e0bc872338f4a26a19">ml_service_pipeline_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>pipeline_desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the pipeline description with a given name. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, <em>pipeline_desc</em> must be released using free(). </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The unique name to retrieve. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pipeline_desc</td><td>The pipeline corresponding with the given name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga11547fad9c25134f6e5b8d5d103c695f"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_pipeline_get_state" ref="ga11547fad9c25134f6e5b8d5d103c695f" args="(ml_service_h handle, ml_pipeline_state_e *state)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga11547fad9c25134f6e5b8d5d103c695f">ml_service_pipeline_get_state</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga351d9e9377c180582b3af2f20448ef74">ml_pipeline_state_e</a> *&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the state of given handle's pipeline. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The service handle. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">state</td><td>The pipeline state. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on Success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to access the pipeline state. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5870805e3522804c45a0cdd323993290"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_pipeline_launch" ref="ga5870805e3522804c45a0cdd323993290" args="(const char *name, ml_service_h *handle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga5870805e3522804c45a0cdd323993290">ml_service_pipeline_launch</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a> *&#160;</td>
+          <td class="paramname"><em>handle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Launches the pipeline of given service and gets the service handle. </p>
+<p>This requests machine learning agent daemon to launch a new pipeline of given service. The pipeline of service <em>name</em> should be set. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>handle</em> should be destroyed using <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaddfc8aee5ca9f5368e9d142d92ff971b" title="Destroys the handle for machine learning service.">ml_service_destroy()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The service name. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">handle</td><td>Newly created service handle is returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on Success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a55c58e89564526c50f44d1bf46cb2c54">ML_ERROR_OUT_OF_MEMORY</a></td><td>Failed to allocate required memory. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to launch the pipeline. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gab97ae4f2c67836aade5e31fafa4dfff2"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_pipeline_set" ref="gab97ae4f2c67836aade5e31fafa4dfff2" args="(const char *name, const char *pipeline_desc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gab97ae4f2c67836aade5e31fafa4dfff2">ml_service_pipeline_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pipeline_desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the pipeline description with a given name. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the name already exists, the pipeline description is overwritten. Overwriting an existing description is restricted to APP/service that set it. However, users should keep their <em>name</em> unexposed to prevent unexpected overwriting. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Unique name to retrieve the associated pipeline description. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipeline_desc</td><td>The pipeline description to be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Here is an example of the usage: </p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">const</span> gchar my_pipeline[] = <span class="stringliteral">&quot;videotestsrc is-live=true ! videoconvert ! tensor_converter ! tensor_sink async=false&quot;</span>;
+ gchar *pipeline;
+ <span class="keywordtype">int</span> status;
+ <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga8cd0e98aebf57a86242812b5b02cfd9b" title="A handle of an NNStreamer pipeline.">ml_pipeline_h</a> handle;
+
+ <span class="comment">// Set pipeline description.</span>
+ status = <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gab97ae4f2c67836aade5e31fafa4dfff2" title="Sets the pipeline description with a given name.">ml_service_pipeline_set</a> (<span class="stringliteral">&quot;my_pipeline&quot;</span>, my_pipeline);
+ <span class="keywordflow">if</span> (status != <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a>) {
+   <span class="comment">// handle error case</span>
+   <span class="keywordflow">goto</span> error;
+ }
+
+ <span class="comment">// Example to construct a pipeline with stored pipeline description.</span>
+ <span class="comment">// Users may register intelligence pipelines for other processes and fetch such registered pipelines.</span>
+ <span class="comment">// For example, a developer adds a pipeline which includes preprocessing and invoking a neural network model,</span>
+ <span class="comment">// then an application can fetch and construct this for intelligence service.</span>
+ status = <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga6ad85b349f5ea1e0bc872338f4a26a19" title="Gets the pipeline description with a given name.">ml_service_pipeline_get</a> (<span class="stringliteral">&quot;my_pipeline&quot;</span>, &amp;pipeline);
+ <span class="keywordflow">if</span> (status != <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a>) {
+   <span class="comment">// handle error case</span>
+   <span class="keywordflow">goto</span> error;
+ }
+
+ status = <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga16d808d0e331219e430388aa5d53b82c" title="Constructs the pipeline (GStreamer + NNStreamer).">ml_pipeline_construct</a> (pipeline, NULL, NULL, &amp;handle);
+ <span class="keywordflow">if</span> (status != <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a>) {
+   <span class="comment">// handle error case</span>
+   <span class="keywordflow">goto</span> error;
+ }
+
+ error:
+ <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga4132cb693a519bd49384f72f75b4d614" title="Destroys the pipeline.">ml_pipeline_destroy</a> (handle);
+ g_free (pipeline);
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="ga48793427794c606553270b2530b5bc9b"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_query_create" ref="ga48793427794c606553270b2530b5bc9b" args="(ml_option_h option, ml_service_h *handle)" -->
@@ -843,7 +1268,7 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
 
 <p>Creates query service handle with given ml-option handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>handle</em> should be destroyed using <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaddfc8aee5ca9f5368e9d142d92ff971b" title="Destroys the given service handle.">ml_service_destroy()</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>handle</em> should be destroyed using <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaddfc8aee5ca9f5368e9d142d92ff971b" title="Destroys the handle for machine learning service.">ml_service_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">option</td><td>The option used for creating query service. </td></tr>
@@ -908,7 +1333,7 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -918,6 +1343,61 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>The input is incompatible with the pipeline. </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a2adea125666ad878589a5a962184e674">ML_ERROR_TRY_AGAIN</a></td><td>The pipeline is not ready yet. </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aaf6fc53860088c1be29d98cf24240015">ML_ERROR_TIMED_OUT</a></td><td>Failed to get output from the query service. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gae4f1ffbf18e9bfc519384876e90d5aef"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_request" ref="gae4f1ffbf18e9bfc519384876e90d5aef" args="(ml_service_h handle, const char *name, const ml_tensors_data_h data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gae4f1ffbf18e9bfc519384876e90d5aef">ml_service_request</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a>&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adds an input data to process the model in machine learning service. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of input node in the pipeline. You can set NULL if ml-service is constructed from model configuration. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The handle of tensors data to be processed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>The parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to process the input data. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a55c58e89564526c50f44d1bf46cb2c54">ML_ERROR_OUT_OF_MEMORY</a></td><td>Failed to allocate required memory. </td></tr>
   </table>
   </dd>
 </dl>
@@ -970,7 +1450,7 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -1048,7 +1528,7 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -1096,7 +1576,7 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -1110,21 +1590,27 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
 
 </div>
 </div>
-<a class="anchor" id="ga3814e0ff191431754c005bf86e1fde0f"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_set_pipeline" ref="ga3814e0ff191431754c005bf86e1fde0f" args="(const char *name, const char *pipeline_desc)" -->
+<a class="anchor" id="ga3f58a8bc0ccbc9599b2d1de27f7fed08"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_set_event_cb" ref="ga3f58a8bc0ccbc9599b2d1de27f7fed08" args="(ml_service_h handle, ml_service_event_cb cb, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3814e0ff191431754c005bf86e1fde0f">ml_service_set_pipeline</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3f58a8bc0ccbc9599b2d1de27f7fed08">ml_service_set_event_cb</a> </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>pipeline_desc</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga857275bb953b668734ed9d82cb2a1419">ml_service_event_cb</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1135,13 +1621,13 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
 </div>
 <div class="memdoc">
 
-<p>Sets the pipeline description with a given name. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the name already exists, the pipeline description is overwritten. Overwriting an existing description is restricted to APP/service that set it. However, users should keep their <em>name</em> unexposed to prevent unexpected overwriting. </dd></dl>
+<p>Sets the callback which will be invoked when a new event occurs from machine learning service. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Unique name to retrieve the associated pipeline description. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">pipeline_desc</td><td>The pipeline description to be stored. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>The callback to handle the event from ml-service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Private data for the callback. This value is passed to the callback when it's invoked. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1150,52 +1636,72 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a0c2a8a6bf95d38b886dc401179a7ad36">ML_ERROR_IO_ERROR</a></td><td>The operation of DB or filesystem has failed.</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Here is an example of the usage: </p>
-<div class="fragment"><pre class="fragment"> <span class="keyword">const</span> gchar my_pipeline[] = <span class="stringliteral">&quot;videotestsrc is-live=true ! videoconvert ! tensor_converter ! tensor_sink async=false&quot;</span>;
- gchar *pipeline;
- <span class="keywordtype">int</span> status;
- <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga8cd0e98aebf57a86242812b5b02cfd9b" title="A handle of an NNStreamer pipeline.">ml_pipeline_h</a> handle;
 
- <span class="comment">// Set pipeline description.</span>
- status = <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga3814e0ff191431754c005bf86e1fde0f" title="Sets the pipeline description with a given name.">ml_service_set_pipeline</a> (<span class="stringliteral">&quot;my_pipeline&quot;</span>, my_pipeline);
- <span class="keywordflow">if</span> (status != <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a>) {
-   <span class="comment">// handle error case</span>
-   <span class="keywordflow">goto</span> error;
- }
-
- <span class="comment">// Example to construct a pipeline with stored pipeline description.</span>
- <span class="comment">// Users may register intelligence pipelines for other processes and fetch such registered pipelines.</span>
- <span class="comment">// For example, a developer adds a pipeline which includes preprocessing and invoking a neural network model,</span>
- <span class="comment">// then an application can fetch and construct this for intelligence service.</span>
- status = <a class="code" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaeb6364723b3a92ef7c549ed3ec803014" title="Gets the pipeline description with a given name.">ml_service_get_pipeline</a> (<span class="stringliteral">&quot;my_pipeline&quot;</span>, &amp;pipeline);
- <span class="keywordflow">if</span> (status != <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a>) {
-   <span class="comment">// handle error case</span>
-   <span class="keywordflow">goto</span> error;
- }
-
- status = <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga16d808d0e331219e430388aa5d53b82c" title="Constructs the pipeline (GStreamer + NNStreamer).">ml_pipeline_construct</a> (pipeline, NULL, NULL, &amp;handle);
- <span class="keywordflow">if</span> (status != <a class="code" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a>) {
-   <span class="comment">// handle error case</span>
-   <span class="keywordflow">goto</span> error;
- }
-
- error:
- <a class="code" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga4132cb693a519bd49384f72f75b4d614" title="Destroys the pipeline.">ml_pipeline_destroy</a> (handle);
- g_free (pipeline);
-</pre></div> 
 </div>
 </div>
-<a class="anchor" id="ga06cdbbc396373516c060e5089587d6e6"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_start_pipeline" ref="ga06cdbbc396373516c060e5089587d6e6" args="(ml_service_h handle)" -->
+<a class="anchor" id="ga87a25d4d1056d648e78ad1af5d0d0bfb"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_set_information" ref="ga87a25d4d1056d648e78ad1af5d0d0bfb" args="(ml_service_h handle, const char *name, const char *value)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga06cdbbc396373516c060e5089587d6e6">ml_service_start_pipeline</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga87a25d4d1056d648e78ad1af5d0d0bfb">ml_service_set_information</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the information for machine learning service. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name to set the corresponding value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value of the name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>The parameter is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga04d5bc7fb70cef668ceaf526d159d960"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_start" ref="ga04d5bc7fb70cef668ceaf526d159d960" args="(ml_service_h handle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#ga04d5bc7fb70cef668ceaf526d159d960">ml_service_start</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a>&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -1205,34 +1711,33 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
 </div>
 <div class="memdoc">
 
-<p>Starts the pipeline of given service handle. </p>
-<p>This requests machine learning agent daemon to start the pipeline. </p>
+<p>Starts the process of machine learning service. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The service handle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on Success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to start the pipeline. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to start the process. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="gaa6bf57454bcfb3f476bfdafb36592a16"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_stop_pipeline" ref="gaa6bf57454bcfb3f476bfdafb36592a16" args="(ml_service_h handle)" -->
+<a class="anchor" id="gad19922c5cb45a41aca02a1d99341b0d0"></a><!-- doxytag: member="ml&#45;api&#45;service.h::ml_service_stop" ref="gad19922c5cb45a41aca02a1d99341b0d0" args="(ml_service_h handle)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gaa6bf57454bcfb3f476bfdafb36592a16">ml_service_stop_pipeline</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gad19922c5cb45a41aca02a1d99341b0d0">ml_service_stop</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html#gacc06cc55eff6b9094c7c680e7cf2dba8">ml_service_h</a>&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -1242,22 +1747,21 @@ http://tizen.org/privilege/externalstorage is needed if model file is relevant t
 </div>
 <div class="memdoc">
 
-<p>Stops the pipeline of given service handle. </p>
-<p>This requests machine learning agent daemon to stop the pipeline. </p>
+<p>Stops the process of machine learning service. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The service handle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle of ml-service. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on Success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93aabfd19c4f0472a012e00204cf076ed66">ML_ERROR_NOT_SUPPORTED</a></td><td>Not supported. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Fail. The parameter is invalid. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to stop the pipeline. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a></td><td>Given parameter is invalid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a17a8d71c54b9508ca0167419985e65d4">ML_ERROR_STREAMS_PIPE</a></td><td>Failed to stop the process. </td></tr>
   </table>
   </dd>
 </dl>

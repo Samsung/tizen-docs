@@ -4,7 +4,7 @@ You can manage input device keys and monitor key events.
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Input Device API include:
+The main features of the Input Device API include the following:
 
 - Gathering a list of supported keys   
 
@@ -18,11 +18,11 @@ The main features of the Input Device API include:
 
   You can [register keys](#registering-and-deregistering-keys) to handle DOM events for them.
 
-The key names are listed in the [DOM Level 3 KeyboardEvent key Values](http://www.w3.org/TR/2014/WD-DOM-Level-3-Events-key-20140612) specification. The `name` attribute in the Input Device API is equal to the key value specified in the specification (the [Media Controller Keys](http://www.w3.org/TR/2014/WD-DOM-Level-3-Events-key-20140612/#keys-media-controller) section is the most relevant to the Input Device API). If the specification does not contain an appropriate entry for the key, the Input Device API provides a device-specific `name`.
+The key names are listed in the [DOM Level 3 KeyboardEvent key Values](https://www.w3.org/TR/uievents-key/){:target="_blank"} specification. The `name` attribute in the Input Device API is equal to the key value specified in the specification (the [Media Controller Keys](https://www.w3.org/TR/uievents-key/#keys-media-controller){:target="_blank"} section is the most relevant to the Input Device API). If the specification does not contain an appropriate entry for the key, the Input Device API provides a device-specific `name`.
 
-## Getting a List of All Supported Keys
+## Get a list of all supported keys
 
-To get a list of all supported keys:
+To get a list of all supported keys, follow this step:
 
 1. To get a supported key list, use the `getSupportedKeys()` method of the `InputDeviceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications):
 
@@ -39,13 +39,13 @@ To get a list of all supported keys:
 
 2. Use the gathered list to handle `keydown` and `keyup` events.
 
-## Gathering Key Information
+## Gather key information
 
-To gather information about the key by its name:
+To gather information about the key by its name, follow these steps:
 
 1. Create a list of keys for which you want the information by using the `InputDeviceKey` object (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceKey) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceKey) applications).
 
-   If you do not want to gather information about all supported keys, create a separate list of keys for information gathering. If you want information about all supported keys, use the list retrieved in the previous use case.
+   If you do not want to gather information about all supported keys, create a separate list of keys for information gathering. If you want information about all supported keys, use the list retrieved in the previous use case:
 
    ```
    var keys = ['VolumeUp', 'VolumeDown'];
@@ -54,7 +54,7 @@ To gather information about the key by its name:
 
 2. Check each key separately using the `getKey()` method of the `InputDeviceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications).
 
-   If the result of the `getKey()` method is not `null`, you can access the key information. If the result is `null`, the key is not supported.
+   If the result of the `getKey()` method is not `null`, you can access the key information. If the result is `null`, the key is not supported:
 
    ```
    for (var i = 0; i < keys.length; i++) {
@@ -72,14 +72,14 @@ To gather information about the key by its name:
    }
    ```
 
-## Registering and Deregistering Keys
+## Register and deregister keys
 
 When you want to react to input device key presses, register the applicable key using the `InputDeviceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications). After registering the input device key, the application receives a DOM keyboard event when the key is pressed or released. When the events are no longer needed, deregister the key.
 
-> **Note**  
+> [!NOTE]
 > The application cannot register the mandatory keys (**ArrowLeft**, **ArrowRight**, **ArrowUp**, **ArrowDown**, **Enter**, and **Back**).
 
-To manage input device keys, you must learn to change the action of a supported key:
+To manage input device keys, you must learn to change the action of a supported key, follow these steps to manage input device keys:
 
 1. To gather the keys, [get a list of all supported keys](#getting-a-list-of-all-supported-keys).
 
@@ -165,7 +165,7 @@ To manage input device keys, you must learn to change the action of a supported 
 
    After deregistration, the `keydown` and `keyup` events are no longer triggered for the keys.
 
-## Related Information
+## Related information
 * Dependencies   
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

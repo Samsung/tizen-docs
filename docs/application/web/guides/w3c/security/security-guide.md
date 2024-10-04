@@ -2,7 +2,7 @@
 
 The security features include HTML element and client-side cross-origin request control.
 
-The main security features are:
+The main security include the following:
 
 - [Cross-Origin Resource Sharing](./cors.md)  
 
@@ -12,7 +12,7 @@ The main security features are:
 
   Enables you to allow or block specific HTML elements on a Web page.
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

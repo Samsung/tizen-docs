@@ -132,7 +132,8 @@ Tizen Web APIs to Web applications:
 
 It also supports multiple browsing context creation within a single Web
 application using, for example, the `window.open()` method, or hyperlink
-navigation.
+navigation. (The WRT ignores parameters related to the position or size
+of the window of browsing context.)
 
 Tizen Web APIs can be accessed in the top-level browsing context, such
 as main document window, and nested browsing contexts, such as iframes.

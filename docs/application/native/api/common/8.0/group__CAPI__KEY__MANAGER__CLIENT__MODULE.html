@@ -219,7 +219,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Allows another application to access client's application data. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000029">Deprecated:</a></b></dt><dd>Deprecated since 2.4. [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga39fc4bc68ec8845a5262c346d69329c9" title="Allows another application to access client&#39;s application data.">ckmc_set_permission()</a> instead] </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000029">Deprecated:</a></b></dt><dd>Deprecated since 2.4 [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga39fc4bc68ec8845a5262c346d69329c9" title="Allows another application to access client&#39;s application data.">ckmc_set_permission()</a> instead] </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/keymanager (public level privilege) is no longer required to use this function since 3.0. </dd>
 <dd>
@@ -617,7 +617,7 @@ Note that the backend may impose limit on the maximum size of processed data (<a
 If password in the policy is provided, the key is additionally encrypted with the password in the policy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size of key strength to be created. <code>1024</code>, <code>2048</code>, <code>3072</code> and <code>4096</code> are supported </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size of key strength to be created. <code>1024</code>, <code>2048</code>, <code>3072</code> (Since 7.0) and <code>4096</code> are supported </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">private_key_alias</td><td>The name of private key to be stored </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">public_key_alias</td><td>The name of public key to be stored </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">policy_private_key</td><td>The policy about how to store a private key securely </td></tr>
@@ -781,7 +781,7 @@ If password in the policy is provided, the key is additionally encrypted with th
 If password in the policy is provided, the key is additionally encrypted with the password in the policy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size of key strength to be created. <code>1024</code>, <code>2048</code>, and <code>4096</code> are supported </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size of key strength to be created. <code>1024</code>, <code>2048</code>, <code>3072</code> and <code>4096</code> are supported </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">private_key_alias</td><td>The name of private key to be stored </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">public_key_alias</td><td>The name of public key to be stored </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">policy_private_key</td><td>The policy about how to store a private key securely </td></tr>
@@ -967,7 +967,7 @@ You must destroy <em>ppdecrypted</em> with <a class="el" href="group__CAPI__KEY_
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">key_alias</td><td>Alias of the key to be used for encryption </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">password</td><td>The password used in decrypting a key value. If password of the policy is provided in <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga31d2793501c5ab52b46256550bba836f" title="Stores a key inside key manager based on the provided policy.">ckmc_save_key()</a>, the same password should be provided </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">encrypted</td><td>Data to be decrypted. <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3a9b45091c35e55914ade49da3b9438008">CKMC_ALGO_AES_GCM</a> mode requires GCM tag to be appended at the end. In case of AES algorithm the backend may impose limit on the maximum size of processed data (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>). For RSA the size must be smaller or equal to key size in bytes - 42. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">encrypted</td><td>Data to be decrypted. <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3a9b45091c35e55914ade49da3b9438008">CKMC_ALGO_AES_GCM</a> mode requires GCM tag to be appended at the end. In case of AES algorithm the backend may impose limit on the maximum size of processed data (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>). </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ppdecrypted</td><td>Decrypted data</td></tr>
   </table>
   </dd>
@@ -1033,7 +1033,7 @@ You must destroy <em>ppdecrypted</em> with <a class="el" href="group__CAPI__KEY_
 <div class="memdoc">
 
 <p>Revokes another application's access to client's application data. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000030">Deprecated:</a></b></dt><dd>Deprecated since 2.4. [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga39fc4bc68ec8845a5262c346d69329c9" title="Allows another application to access client&#39;s application data.">ckmc_set_permission()</a> instead] </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000030">Deprecated:</a></b></dt><dd>Deprecated since 2.4 [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga39fc4bc68ec8845a5262c346d69329c9" title="Allows another application to access client&#39;s application data.">ckmc_set_permission()</a> instead] </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/keymanager (public level privilege) is no longer required to use this function since 3.0. </dd>
 <dd>
@@ -1126,7 +1126,7 @@ You must destroy <em>ppencrypted</em> with <a class="el" href="group__CAPI__KEY_
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">key_alias</td><td>Alias of the key to be used for encryption </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">password</td><td>The password used in decrypting a key value. If password of the policy is provided in <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga31d2793501c5ab52b46256550bba836f" title="Stores a key inside key manager based on the provided policy.">ckmc_save_key()</a>, the same password should be provided </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">decrypted</td><td>Data to be encrypted. In case of AES algorithm the backend may impose limit on the maximum size of processed data (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>). For RSA the size must be smaller or equal to key size in bytes - 42. Example: for 1024 RSA key the maximum data size is 1024/8 - 42 = 86. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">decrypted</td><td>Data to be encrypted. In case of AES algorithm the backend may impose limit on the maximum size of processed data (<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac3530710e577298a34be4f5996365662" title="Retrieves maximum data chunk size in bytes that can be passed to given backend. This is the maximum s...">ckmc_backend_get_max_chunk_size()</a>). For RSA the size must be smaller or equal to key size in bytes - 2* hash function output size in bytes - 2. Example: for 1024 RSA key and hash SHA1 the maximum data size is 1024/8 - 2*160/8 = 86. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ppencrypted</td><td>Encrypted data. In <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3a9b45091c35e55914ade49da3b9438008">CKMC_ALGO_AES_GCM</a> mode it includes the GCM tag appended at the end.</td></tr>
   </table>
   </dd>
@@ -1221,7 +1221,11 @@ You must destroy <em>ppencrypted</em> with <a class="el" href="group__CAPI__KEY_
 <dd>
 The <em>ppwrapped_key</em> should be released using <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gada5f41101ddf3d4394a62007c9a588cf" title="Destroys the ckmc_key_s handle and releases all its resources.">ckmc_key_free()</a>. </dd>
 <dd>
-The key denoted by <em>alias</em> can only be <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>.</dd></dl>
+The key denoted by <em>alias</em> can only be <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a">CKMC_KEY_AES</a>. </dd>
+<dd>
+If the wrapping key is public RSA, the key size denoted by <em>alias</em> must be smaller than: wrapping key size in bits - 2* hash function output size in bits - 16. Example: for 1024 RSA wrapping key and hash SHA384 the key size must be smaller than: 1024 - 2*384 - 16 = 240 bits. </dd>
+<dd>
+Considering the key size limit it's recommended to use RSA key longer than <code>1024</code> bits.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">params</td><td>Algorithm parameter list handle. See <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga3d01ef6c7561b1aaeab217875ad9dc04" title="Algorithm parameter list handle.">ckmc_param_list_h</a> and <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaded2830b235ecead52b360c47c6167fc" title="Enumeration for crypto algorithm types.">ckmc_algo_type_e</a> for details. Supported algorithms:<ul>
@@ -1583,7 +1587,7 @@ You must destroy the newly created <em>ppcert_chain_list</em> by calling <a clas
 <div class="memdoc">
 
 <p>Verifies a certificate chain using an alias list of untrusted certificates and return that chain. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated:</a></b></dt><dd>Deprecated since 2.4. [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga761097dcbbe6b44d562131da2a1e17bc" title="Verifies a certificate chain and returns that chain.">ckmc_get_cert_chain()</a> instead] </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated:</a></b></dt><dd>Deprecated since 2.4 [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga761097dcbbe6b44d562131da2a1e17bc" title="Verifies a certificate chain and returns that chain.">ckmc_get_cert_chain()</a> instead] </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/keymanager (public level privilege) is no longer required to use this function since 3.0. </dd>
 <dd>
@@ -2526,7 +2530,7 @@ The item owner can remove by default. </dd></dl>
 <div class="memdoc">
 
 <p>Removes a certificate from key manager. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated:</a></b></dt><dd>Deprecated since 2.4. [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> instead] </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated:</a></b></dt><dd>Deprecated since 2.4 [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> instead] </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/keymanager (public level privilege) is no longer required to use this function since 3.0. </dd>
 <dd>
@@ -2576,7 +2580,7 @@ The key owner can remove by default. </dd></dl>
 <div class="memdoc">
 
 <p>Removes a data from key manager. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated:</a></b></dt><dd>Deprecated since 2.4. [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> instead] </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated:</a></b></dt><dd>Deprecated since 2.4 [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> instead] </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/keymanager (public level privilege) is no longer required to use this function since 3.0. </dd>
 <dd>
@@ -2626,7 +2630,7 @@ The data owner can remove by default. </dd></dl>
 <div class="memdoc">
 
 <p>Removes a key from key manager. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated:</a></b></dt><dd>Deprecated since 2.4. [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> instead] </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated:</a></b></dt><dd>Deprecated since 2.4 [Use <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> instead] </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/keymanager (public level privilege) is no longer required to use this function since 3.0. </dd>
 <dd>

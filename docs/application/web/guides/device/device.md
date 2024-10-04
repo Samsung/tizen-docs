@@ -29,7 +29,7 @@ You can use the following device settings and systems features in your Web appli
   You can play a feedback pattern using sound or vibration. You can set specific patterns, and check whether a specific pattern is supported.
 
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

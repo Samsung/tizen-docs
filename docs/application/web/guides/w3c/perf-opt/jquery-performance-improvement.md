@@ -67,9 +67,9 @@ The following example HTML code has been used as a basis when describing the tec
 </div>
 ```
 
-## Using Selectors
+## Use selectors
 
- When navigating a specific element, use an ID selector prior to other selectors, such as tags and classes. The following example shows how using an ID selector improves performance.
+ When navigating a specific element, use an ID selector prior to other selectors, such as tags and classes. The following example shows how using an ID selector improves performance:
 
 ```
 /* Code#1 */
@@ -91,7 +91,7 @@ var search_button = $('#contents button');
 | ------- | ------------------------- | ------------------------- |
 | Tizen   | 0.118                     | 0.100                     |
 
- When using a class selector, apply a tag preceded by the class name. The following example shows how using a tag improves performance.
+ When using a class selector, apply a tag preceded by the class name. The following example shows how using a tag improves performance:
 
 ```
 /* Code#1 */
@@ -118,13 +118,13 @@ var search_button = $('#contents button.blue');
 | ------- | ------------------------- | ------------------------- | ------------------------- |
 | Tizen   | 0.105                     | 0.100                     | 0.100                     |
 
-## Using Caches
+## Use caches
 
  When referring to a DOM object, you can first create a cache for it.
 
 Without doing this, every time a DOM object is called, DOM is searched to return a new jQuery object, which degrades performance.
 
-The following example shows how using a cache improves performance.
+The following example shows how using a cache improves performance:
 
 ```
 /* Code#1 */
@@ -151,11 +151,11 @@ $search_button.addClass('red');
 | ------- | ------------------------- | ------------------------- |
 | Tizen   | 0.104                     | 0.100                     |
 
-## Using Chaining
+## Use chaining
 
  Chaining makes the code lighter and reduces repeated operations, such as reflow and repaint.
 
-When a DOM element is changed, chaining ties similar object references into groups for execution. jQuery objects need not be repeatedly created as existing ones can be reused. The following example shows how chaining improves performance.
+When a DOM element is changed, chaining ties similar object references into groups for execution. jQuery objects need not be repeatedly created as existing ones can be reused. The following example shows how chaining improves performance:
 
 ```
 /* Code#1 */
@@ -179,11 +179,11 @@ $('#contents').addClass('active').css('border', '1px solid').('background-color'
 | ------- | ------------------------- | ------------------------- |
 | Tizen   | 0.108                     | 0.101                     |
 
-## Managing DOM Control
+## Manage DOM control
 
 Minimizing direct DOM manipulation improves jQuery performance. Every time an element is created and inserted, time and capacity is needed. Using a cached selector with the `append()` method reduces the need for capacity.
 
-The following example shows how applying DOM control improves performance.
+The following example shows how applying DOM control improves performance:
 
 ```
 /* Code#1 */
@@ -217,7 +217,7 @@ $contents_list.append(list);
 | ------- | ------------------------- | ------------------------- |
 | Tizen   | 0.120                     | 0.101                     |
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

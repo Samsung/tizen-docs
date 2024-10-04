@@ -459,7 +459,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets a binary data from a binary resource. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>binary_result</em> is available until <em>ures</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>binary_result</em> is available until <em>ures</em> is released. The <em>binary_result</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>Resource bundle. </td></tr>
@@ -695,7 +695,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets a 32 bit integer array from a resource. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>int_vector_result</em> is available until <em>ures</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>int_vector_result</em> is available until <em>ures</em> is released. The <em>int_vector_result</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>Resource bundle. </td></tr>
@@ -750,7 +750,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the key associated with a given resource. Not all the resources have a key - only those that are members of a table. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>key_result</em> is available until <em>ures</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>key_result</em> is available until <em>ures</em> is released. The <em>key_result</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>Resource bundle. </td></tr>
@@ -802,7 +802,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the name of the locale associated with <em>ures</em>. You can choose between requested, valid and real locale. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>locale</em> is available until <em>ures</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>locale</em> is available until <em>ures</em> is released. The <em>locale</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>An <a class="el" href="group__CAPI__BASE__UTILS__I18N__URES__MODULE.html#gaa393c895154ee212761e85aa7bdcc25c" title="An i18n_ures_h handle.">i18n_ures_h</a>. </td></tr>
@@ -917,9 +917,9 @@ Typedefs</h2></td></tr>
 
 <p>Gets the next string in a given resource or NULL if there are no more resources to iterate over. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>key</em> is available until <em>ures</em> is released. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>key</em> is available until <em>ures</em> is released. The <em>key</em> should not be released. </dd>
 <dd>
-The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
+The <em>str_result</em> is available until <em>ures</em> is released. The <em>str_result</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>Resource bundle. </td></tr>
@@ -1020,7 +1020,7 @@ The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
 
 <p>Gets a string from an <a class="el" href="group__CAPI__BASE__UTILS__I18N__URES__MODULE.html#gaa393c895154ee212761e85aa7bdcc25c" title="An i18n_ures_h handle.">i18n_ures_h</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. The <em>str_result</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>An <a class="el" href="group__CAPI__BASE__UTILS__I18N__URES__MODULE.html#gaa393c895154ee212761e85aa7bdcc25c" title="An i18n_ures_h handle.">i18n_ures_h</a>. </td></tr>
@@ -1087,7 +1087,7 @@ The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
 
 <p>Gets the string in a given resource at the specified index. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. The <em>str_result</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>Resource bundle. </td></tr>
@@ -1148,7 +1148,7 @@ The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
 
 <p>Gets a string in a given resource that has a given key. This procedure works only with table resources. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. The <em>str_result</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>Resource bundle. </td></tr>
@@ -1314,7 +1314,7 @@ The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
 <p>Gets a UTF-8 string from a string resource. </p>
 <p>The UTF-8 string may be returnable directly as a pointer, or it may need to be copied, or transformed from UTF-16 using <a class="el" href="group__CAPI__BASE__UTILS__I18N__USTRING__MODULE.html#gae03b7340fe77dfaceae417aa8ace35d5" title="Converts a UTF-16 string to UTF-8.">i18n_ustring_to_UTF8()</a> or equivalent. If <em>force_copy==TRUE</em>, then the string is always written to the dest buffer and dest is returned. If <em>force_copy==FALSE</em>, then the string is returned as a pointer if possible, without needing a dest buffer (it can be NULL). If the string needs to be copied or transformed, then it may be placed into dest at an arbitrary offset. If the string is to be written to dest, then <a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea761512268f9c36dab9313de5f2a46173">I18N_ERROR_BUFFER_OVERFLOW</a> is set if appropriate, as usual. If the string is transformed from UTF-16, then a conversion error may occur if an unpaired surrogate is encountered. If the function is successful, then the output UTF-8 string is always well-formed. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. The <em>str_result</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>Resource bundle. </td></tr>
@@ -1393,7 +1393,7 @@ The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
 <p>Gets a UTF-8 string from a resource at the specified index. </p>
 <p>The UTF-8 string may be returnable directly as a pointer, or it may need to be copied, or transformed from UTF-16 using <a class="el" href="group__CAPI__BASE__UTILS__I18N__USTRING__MODULE.html#gae03b7340fe77dfaceae417aa8ace35d5" title="Converts a UTF-16 string to UTF-8.">i18n_ustring_to_UTF8()</a> or equivalent. If force_copy==TRUE, then the string is always written to the dest buffer and dest is returned. If force_copy==FALSE, then the string is returned as a pointer if possible, without needing a dest buffer (it can be NULL). If the string needs to be copied or transformed, then it may be placed into dest at an arbitrary offset. If the string is to be written to dest, then <a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea761512268f9c36dab9313de5f2a46173">I18N_ERROR_BUFFER_OVERFLOW</a> is set if appropriate, as usual. If the string is transformed from UTF-16, then a conversion error may occur if an unpaired surrogate is encountered. If the function is successful, then the output UTF-8 string is always well-formed. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str_result</em> is available until <em>ures</em> is released. The <em>str_result</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ures</td><td>Resource bundle. </td></tr>
