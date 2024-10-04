@@ -433,6 +433,29 @@ To obtain the current state, the supported voice list, and the current voice, fo
     }
     ```
 
+- Obtain a list of personal voices supported by the TTS engine using the `tts_foreach_supported_personal_voices()` function
+
+    The foreach function triggers a separate callback for each supported personal voice. As long as the callback returns `true`, the foreach function continues to loop over the supported personal voices:
+
+    ```cpp
+    bool
+    supported_personal_voice_cb(tts_h tts, const char* language, const char* unique_id, const char* display_name, const char* device_name, void* user_data)
+    {
+        return true; /* To continue to get the next supported personal voice */
+
+        return false; /* To stop the loop */
+    }
+
+    void
+    get_supported_voice(tts_h tts)
+    {
+        int ret;
+        ret = tts_foreach_supported_personal_voices(tts, supported_personal_voice_cb, NULL);
+        if (TTS_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
+
 - Get the default voice using the `tts_get_default_voice()` function
 
     TTS synthesizes the text using the default voice if you do not set the language and the voice type as parameters of the `tts_add_text()` function:
