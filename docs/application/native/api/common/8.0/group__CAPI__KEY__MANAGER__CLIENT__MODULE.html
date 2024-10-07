@@ -2510,7 +2510,9 @@ The item owner can remove by default. </dd></dl>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga7fa7e228123390169a5f665e7449abd3" title="Creates DSA private/public key pair and stores them inside key manager based on each policy...">ckmc_create_key_pair_dsa()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga7467573db7e30882b29260561687c21a" title="Creates ECDSA private/public key pair and stores them inside key manager based on each policy...">ckmc_create_key_pair_ecdsa()</a> </dd></dl>
+<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga7467573db7e30882b29260561687c21a" title="Creates ECDSA private/public key pair and stores them inside key manager based on each policy...">ckmc_create_key_pair_ecdsa()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__EXTENDED__MODULE.html#gaf56215d2e47987a6b01fa5dca1d4724d" title="Creates private/public key pair based on Key-Encapsulation Mechanism (KEM) type and stores them insid...">ckmc_create_key_pair_kem()</a> </dd></dl>
 
 </div>
 </div>
@@ -2836,7 +2838,7 @@ The certificate's binary value will be converted and saved as binary DER encoded
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/keymanager (public level privilege) is no longer required to use this function since 3.0. </dd>
 <dd>
-Currently API supports seven types of keys. These are RSA public/private key, DSA public/private key, ECDSA public/private key, and AES symmetric key. </dd>
+Currently API supports nine types of keys. These are RSA public/private key, DSA public/private key, ECDSA public/private key, KEM public/private key and AES symmetric key. </dd>
 <dd>
 key_type in key may be set to <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a4662cab83ced68d25078849b1fa958d4">CKMC_KEY_NONE</a> as an input. key_type is determined inside key manager during storing keys. </dd>
 <dd>

@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('group__SHORTCUT__MODULE.html','');
+  initNavTree('group__CAPI__SHORTCUT__MODULE.html','');
 </script>
 <div id="doc-content">
 <div class="header">
@@ -98,15 +98,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>The other for the application developers who should implement the Add to home feature. </li>
 </ul>
-<h2><a class="anchor" id="SHORTCUT_MODULE_HEADER"></a>
+<h2><a class="anchor" id="CAPI_SHORTCUT_MODULE_HEADER"></a>
 Required Header</h2>
 <p>#include &lt;shortcut_manager.h&gt;</p>
-<h2><a class="anchor" id="SHORTCUT_MODULE_OVERVIEW"></a>
+<h2><a class="anchor" id="CAPI_SHORTCUT_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>It provides function of creating shortcut. Developers can use the "shortcut_add_to_home" API to create their shortcut to a home screen.</p>
+<p>It provides function of creating shortcut. Developers can use the <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6" title="Adds a shortcut to home, asynchronously.">shortcut_add_to_home()</a> API to create their shortcut to a home screen.</p>
 <h2><a class="anchor" id="CAPI_SHORTCUT_MODULE_FEATURE"></a>
 Related Features</h2>
-<p>This API is related with the following features:<br/>
+<p>This function is related with the following features:<br/>
 </p>
 <ul>
 <li>http://tizen.org/feature/shortcut<br/>
@@ -119,36 +119,36 @@ Related Features</h2>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6">shortcut_add_to_home</a> (const char *name, <a class="el" href="group__SHORTCUT__MODULE.html#gaa8a6626e60eb109877b7dfda9094f323">shortcut_type</a> type, const char *uri, const char *icon, int allow_duplicate, <a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a> cb, void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6">shortcut_add_to_home</a> (const char *name, <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaa8a6626e60eb109877b7dfda9094f323">shortcut_type</a> type, const char *uri, const char *icon, int allow_duplicate, <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a> cb, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a shortcut to home, asynchronously.  <a href="#ga011861a63275ff9a43b4c3793e5bdcc6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#gaf0c548cbac567fc420f82ced192fa279">shortcut_add_to_home_widget</a> (const char *name, <a class="el" href="group__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26">shortcut_widget_size_e</a> size, const char *widget_id, const char *icon, double period, int allow_duplicate, <a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a> cb, void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf0c548cbac567fc420f82ced192fa279">shortcut_add_to_home_widget</a> (const char *name, <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26">shortcut_widget_size_e</a> size, const char *widget_id, const char *icon, double period, int allow_duplicate, <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a> cb, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a widget to home, asynchronously.  <a href="#gaf0c548cbac567fc420f82ced192fa279"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482">shortcut_remove_from_home</a> (const char *name, <a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a> cb, void *user_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482">shortcut_remove_from_home</a> (const char *name, <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a> cb, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a shortcut from home, asynchronously.  <a href="#ga5d343f4929ea001d3ce85da25ccaa482"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48">shortcut_get_list</a> (const char *package_name, <a class="el" href="group__SHORTCUT__MODULE.html#gaaf28261df1f1ff29b944dcd1c469069f">shortcut_list_cb</a> list_cb, void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48">shortcut_get_list</a> (const char *package_name, <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaaf28261df1f1ff29b944dcd1c469069f">shortcut_list_cb</a> list_cb, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the preset list of shortcut template from the installed package, synchronously.  <a href="#gaf203b07515a180f99edd1ad778de0b48"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#gabfafa189950beba0df3185804f6f147a">shortcut_set_request_cb</a> (<a class="el" href="group__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1">shortcut_request_cb</a> request_cb, void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gabfafa189950beba0df3185804f6f147a">shortcut_set_request_cb</a> (<a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1">shortcut_request_cb</a> request_cb, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to listen requests from applications.  <a href="#gabfafa189950beba0df3185804f6f147a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#gaf7d858ea528ba9b1791fb37136472d4d">shortcut_unset_request_cb</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf7d858ea528ba9b1791fb37136472d4d">shortcut_unset_request_cb</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets a callback for the shortcut request.  <a href="#gaf7d858ea528ba9b1791fb37136472d4d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#ga50c8b2104ec5cbe8fe2bbf4f7badc4b4">shortcut_set_remove_cb</a> (<a class="el" href="group__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20">shortcut_remove_cb</a> remove_cb, void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga50c8b2104ec5cbe8fe2bbf4f7badc4b4">shortcut_set_remove_cb</a> (<a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20">shortcut_remove_cb</a> remove_cb, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the callback function to listen the remove requests from applications.  <a href="#ga50c8b2104ec5cbe8fe2bbf4f7badc4b4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#ga26561cbc2c7cf8fb8ae94c2ca5e273ba">shortcut_unset_remove_cb</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga26561cbc2c7cf8fb8ae94c2ca5e273ba">shortcut_unset_remove_cb</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets a callback for the shortcut remove.  <a href="#ga26561cbc2c7cf8fb8ae94c2ca5e273ba"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__SHORTCUT__MODULE.html#ga5673d7f72724570266d49331be1aef84">_shortcut_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#gaa8a6626e60eb109877b7dfda9094f323">shortcut_type</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga5673d7f72724570266d49331be1aef84">_shortcut_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaa8a6626e60eb109877b7dfda9094f323">shortcut_type</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for shortcut types.  <a href="#gaa8a6626e60eb109877b7dfda9094f323"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__SHORTCUT__MODULE.html#ga51c08f91ded9ab3c202b846ba9cc2a7b">shortcut_widget_size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26">shortcut_widget_size_e</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga51c08f91ded9ab3c202b846ba9cc2a7b">shortcut_widget_size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26">shortcut_widget_size_e</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for sizes of shortcut widget.  <a href="#ga0619a5151b930e52cc88dd5f5613dc26"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a> )(int ret, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to receive the result of <a class="el" href="group__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6" title="Adds a shortcut to home, asynchronously.">shortcut_add_to_home()</a>.  <a href="#gafc52352da8c35140d5fd82b7f64c7a82"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#gaaf28261df1f1ff29b944dcd1c469069f">shortcut_list_cb</a> )(const char *package_name, const char *icon, const char *name, const char *extra_key, const char *extra_data, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to receive the result of <a class="el" href="group__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48" title="Gets the preset list of shortcut template from the installed package, synchronously.">shortcut_get_list()</a>.  <a href="#gaaf28261df1f1ff29b944dcd1c469069f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1">shortcut_request_cb</a> )(const char *package_name, const char *name, int type, const char *content_info, const char *icon, int pid, double period, int allow_duplicate, void *user_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a> )(int ret, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to receive the result of <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6" title="Adds a shortcut to home, asynchronously.">shortcut_add_to_home()</a>.  <a href="#gafc52352da8c35140d5fd82b7f64c7a82"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaaf28261df1f1ff29b944dcd1c469069f">shortcut_list_cb</a> )(const char *package_name, const char *icon, const char *name, const char *extra_key, const char *extra_data, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to receive the result of <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48" title="Gets the preset list of shortcut template from the installed package, synchronously.">shortcut_get_list()</a>.  <a href="#gaaf28261df1f1ff29b944dcd1c469069f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1">shortcut_request_cb</a> )(const char *package_name, const char *name, int type, const char *content_info, const char *icon, int pid, double period, int allow_duplicate, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to the add_to_home request.  <a href="#ga47843749bacea9bb908b8be2b5ac32a1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20">shortcut_remove_cb</a> )(const char *package_name, const char *name, int sender_pid, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to the <a class="el" href="group__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482" title="Removes a shortcut from home, asynchronously.">shortcut_remove_from_home()</a> request.  <a href="#gaf96371e4dbc7aa1fc8eb59c4f1b2da20"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20">shortcut_remove_cb</a> )(const char *package_name, const char *name, int sender_pid, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to the <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482" title="Removes a shortcut from home, asynchronously.">shortcut_remove_from_home()</a> request.  <a href="#gaf96371e4dbc7aa1fc8eb59c4f1b2da20"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="gafc52352da8c35140d5fd82b7f64c7a82"></a><!-- doxytag: member="shortcut_manager.h::result_cb" ref="gafc52352da8c35140d5fd82b7f64c7a82" args=")(int ret, void *user_data)" -->
@@ -156,13 +156,13 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* <a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a>)(int ret, void *user_data)</td>
+          <td class="memname">typedef int(* <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a>)(int ret, void *user_data)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Called to receive the result of <a class="el" href="group__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6" title="Adds a shortcut to home, asynchronously.">shortcut_add_to_home()</a>. </p>
+<p>Called to receive the result of <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6" title="Adds a shortcut to home, asynchronously.">shortcut_add_to_home()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -172,7 +172,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int <code>0</code> if there is no error, otherwise errno </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6" title="Adds a shortcut to home, asynchronously.">shortcut_add_to_home()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6" title="Adds a shortcut to home, asynchronously.">shortcut_add_to_home()</a> </dd></dl>
 
 </div>
 </div>
@@ -181,13 +181,13 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* <a class="el" href="group__SHORTCUT__MODULE.html#gaaf28261df1f1ff29b944dcd1c469069f">shortcut_list_cb</a>)(const char *package_name, const char *icon, const char *name, const char *extra_key, const char *extra_data, void *user_data)</td>
+          <td class="memname">typedef int(* <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaaf28261df1f1ff29b944dcd1c469069f">shortcut_list_cb</a>)(const char *package_name, const char *icon, const char *name, const char *extra_key, const char *extra_data, void *user_data)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Called to receive the result of <a class="el" href="group__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48" title="Gets the preset list of shortcut template from the installed package, synchronously.">shortcut_get_list()</a>. </p>
+<p>Called to receive the result of <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48" title="Gets the preset list of shortcut template from the installed package, synchronously.">shortcut_get_list()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -201,7 +201,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>SHORTCUT_ERROR_NONE to continue with the next iteration of the loop, other error values to break out of the loop </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48" title="Gets the preset list of shortcut template from the installed package, synchronously.">shortcut_get_list()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48" title="Gets the preset list of shortcut template from the installed package, synchronously.">shortcut_get_list()</a> </dd></dl>
 
 </div>
 </div>
@@ -210,26 +210,26 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* <a class="el" href="group__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20">shortcut_remove_cb</a>)(const char *package_name, const char *name, int sender_pid, void *user_data)</td>
+          <td class="memname">typedef int(* <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20">shortcut_remove_cb</a>)(const char *package_name, const char *name, int sender_pid, void *user_data)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Called to the <a class="el" href="group__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482" title="Removes a shortcut from home, asynchronously.">shortcut_remove_from_home()</a> request. </p>
+<p>Called to the <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482" title="Removes a shortcut from home, asynchronously.">shortcut_remove_from_home()</a> request. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">package_name</td><td>The name of package </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the created shortcut icon </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sender_pid</td><td>The process ID of who request <a class="el" href="group__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482" title="Removes a shortcut from home, asynchronously.">shortcut_remove_from_home()</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sender_pid</td><td>The process ID of who request <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482" title="Removes a shortcut from home, asynchronously.">shortcut_remove_from_home()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback register function </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The result of handling a shortcut remove request<br/>
  This returns <code>0</code> if the remove_from_home request is handled successfully, otherwise it returns a proper errno. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#ga50c8b2104ec5cbe8fe2bbf4f7badc4b4" title="Sets the callback function to listen the remove requests from applications.">shortcut_set_remove_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga50c8b2104ec5cbe8fe2bbf4f7badc4b4" title="Sets the callback function to listen the remove requests from applications.">shortcut_set_remove_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -238,7 +238,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* <a class="el" href="group__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1">shortcut_request_cb</a>)(const char *package_name, const char *name, int type, const char *content_info, const char *icon, int pid, double period, int allow_duplicate, void *user_data)</td>
+          <td class="memname">typedef int(* <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1">shortcut_request_cb</a>)(const char *package_name, const char *name, int type, const char *content_info, const char *icon, int pid, double period, int allow_duplicate, void *user_data)</td>
         </tr>
       </table>
 </div>
@@ -263,7 +263,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The result of handling a shortcut creation request<br/>
  This returns <code>0</code> if the add_to_home request is handled successfully, otherwise it returns a proper errno </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#gabfafa189950beba0df3185804f6f147a" title="Sets a callback function to listen requests from applications.">shortcut_set_request_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gabfafa189950beba0df3185804f6f147a" title="Sets a callback function to listen requests from applications.">shortcut_set_request_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -272,14 +272,14 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef enum <a class="el" href="group__SHORTCUT__MODULE.html#ga5673d7f72724570266d49331be1aef84">_shortcut_type</a>  <a class="el" href="group__SHORTCUT__MODULE.html#gaa8a6626e60eb109877b7dfda9094f323">shortcut_type</a></td>
+          <td class="memname">typedef enum <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga5673d7f72724570266d49331be1aef84">_shortcut_type</a>  <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaa8a6626e60eb109877b7dfda9094f323">shortcut_type</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Enumeration for shortcut types. </p>
-<p>Basically, two types of shortcuts are defined. Every homescreen developer should support these types of shortcuts. Or return, a proper errno to figure out why the application failed to add a shortcut. <a class="el" href="group__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84ac2d8924e0dc626a18e3f3e38e059b5dd">LAUNCH_BY_APP</a> is used for adding a package itself as a shortcut. <a class="el" href="group__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84aa2b3ac9c89168b0f26dd2a5ac189b8c1">LAUNCH_BY_URI</a> is used for adding a shortcut for "uri" data. </p>
+<p>Basically, two types of shortcuts are defined. Every homescreen developer should support these types of shortcuts. Or return, a proper errno to figure out why the application failed to add a shortcut. <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84ac2d8924e0dc626a18e3f3e38e059b5dd">LAUNCH_BY_APP</a> is used for adding a package itself as a shortcut. <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84aa2b3ac9c89168b0f26dd2a5ac189b8c1">LAUNCH_BY_URI</a> is used for adding a shortcut for "uri" data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -289,7 +289,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef enum <a class="el" href="group__SHORTCUT__MODULE.html#ga51c08f91ded9ab3c202b846ba9cc2a7b">shortcut_widget_size</a>  <a class="el" href="group__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26">shortcut_widget_size_e</a></td>
+          <td class="memname">typedef enum <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga51c08f91ded9ab3c202b846ba9cc2a7b">shortcut_widget_size</a>  <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26">shortcut_widget_size_e</a></td>
         </tr>
       </table>
 </div>
@@ -306,14 +306,14 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__SHORTCUT__MODULE.html#ga5673d7f72724570266d49331be1aef84">_shortcut_type</a></td>
+          <td class="memname">enum <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga5673d7f72724570266d49331be1aef84">_shortcut_type</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Enumeration for shortcut types. </p>
-<p>Basically, two types of shortcuts are defined. Every homescreen developer should support these types of shortcuts. Or return, a proper errno to figure out why the application failed to add a shortcut. <a class="el" href="group__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84ac2d8924e0dc626a18e3f3e38e059b5dd">LAUNCH_BY_APP</a> is used for adding a package itself as a shortcut. <a class="el" href="group__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84aa2b3ac9c89168b0f26dd2a5ac189b8c1">LAUNCH_BY_URI</a> is used for adding a shortcut for "uri" data. </p>
+<p>Basically, two types of shortcuts are defined. Every homescreen developer should support these types of shortcuts. Or return, a proper errno to figure out why the application failed to add a shortcut. <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84ac2d8924e0dc626a18e3f3e38e059b5dd">LAUNCH_BY_APP</a> is used for adding a package itself as a shortcut. <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84aa2b3ac9c89168b0f26dd2a5ac189b8c1">LAUNCH_BY_URI</a> is used for adding a shortcut for "uri" data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga5673d7f72724570266d49331be1aef84ac2d8924e0dc626a18e3f3e38e059b5dd"></a><!-- doxytag: member="LAUNCH_BY_APP" ref="gga5673d7f72724570266d49331be1aef84ac2d8924e0dc626a18e3f3e38e059b5dd" args="" -->LAUNCH_BY_APP</em>&nbsp;</td><td>
@@ -333,7 +333,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__SHORTCUT__MODULE.html#ga2fa1e3c2ae44272bd3cad3d8e0102289">shortcut_error_e</a></td>
+          <td class="memname">enum <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga2fa1e3c2ae44272bd3cad3d8e0102289">shortcut_error_e</a></td>
         </tr>
       </table>
 </div>
@@ -389,7 +389,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__SHORTCUT__MODULE.html#ga51c08f91ded9ab3c202b846ba9cc2a7b">shortcut_widget_size</a></td>
+          <td class="memname">enum <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga51c08f91ded9ab3c202b846ba9cc2a7b">shortcut_widget_size</a></td>
         </tr>
       </table>
 </div>
@@ -452,7 +452,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6">shortcut_add_to_home</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6">shortcut_add_to_home</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -460,7 +460,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__SHORTCUT__MODULE.html#gaa8a6626e60eb109877b7dfda9094f323">shortcut_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaa8a6626e60eb109877b7dfda9094f323">shortcut_type</a>&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -484,7 +484,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a>&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
@@ -525,23 +525,23 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a42ed65cbadbd830e18e9a86ba5468c21">SHORTCUT_ERROR_RESOURCE_BUSY</a></td><td>Device or resource busy </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289aaf94684dd8aa6a5c71f06f7c67699fef">SHORTCUT_ERROR_NO_SPACE</a></td><td>There is no space to add a new shortcut </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a64207dd205fc0b5848352dd9e55fad39">SHORTCUT_ERROR_EXIST</a></td><td>Shortcut is already exist </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a034e5d16c3d345ae6fb905577dc1ad48">SHORTCUT_ERROR_FAULT</a></td><td>Unrecoverable error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a42ed65cbadbd830e18e9a86ba5468c21">SHORTCUT_ERROR_RESOURCE_BUSY</a></td><td>Device or resource busy </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289aaf94684dd8aa6a5c71f06f7c67699fef">SHORTCUT_ERROR_NO_SPACE</a></td><td>There is no space to add a new shortcut </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a64207dd205fc0b5848352dd9e55fad39">SHORTCUT_ERROR_EXIST</a></td><td>Shortcut is already exist </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a034e5d16c3d345ae6fb905577dc1ad48">SHORTCUT_ERROR_FAULT</a></td><td>Unrecoverable error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to prepare the callback function. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>You have to check the return status from the callback function which is passed by the argument. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82" title="Called to receive the result of shortcut_add_to_home().">result_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82" title="Called to receive the result of shortcut_add_to_home().">result_cb()</a> </dd></dl>
 <dl class="user"><dt><b>Example</b></dt><dd><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <span class="preprocessor">#include &lt;shortcut_manager.h&gt;</span>
 <span class="keyword">static</span> <span class="keywordtype">int</span> _result_cb(<span class="keywordtype">int</span> ret, <span class="keywordtype">int</span> pid, <span class="keywordtype">void</span> *data)
@@ -562,7 +562,7 @@ Typedefs</h2></td></tr>
     strncat(path, data_path, path_len);
     strncat(path, <span class="stringliteral">&quot;Friend.jpg&quot;</span>, path_len);
 
-    <a class="code" href="group__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6" title="Adds a shortcut to home, asynchronously.">shortcut_add_to_home</a>(<span class="stringliteral">&quot;With friends&quot;</span>, <a class="code" href="group__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84aa2b3ac9c89168b0f26dd2a5ac189b8c1">LAUNCH_BY_URI</a>, <span class="stringliteral">&quot;gallery:0000-0000&quot;</span>, path, 0, _result_cb, NULL);
+    <a class="code" href="group__CAPI__SHORTCUT__MODULE.html#ga011861a63275ff9a43b4c3793e5bdcc6" title="Adds a shortcut to home, asynchronously.">shortcut_add_to_home</a>(<span class="stringliteral">&quot;With friends&quot;</span>, <a class="code" href="group__CAPI__SHORTCUT__MODULE.html#gga5673d7f72724570266d49331be1aef84aa2b3ac9c89168b0f26dd2a5ac189b8c1">LAUNCH_BY_URI</a>, <span class="stringliteral">&quot;gallery:0000-0000&quot;</span>, path, 0, _result_cb, NULL);
     free(path);
 
     <span class="keywordflow">return</span> 0;
@@ -576,7 +576,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__SHORTCUT__MODULE.html#gaf0c548cbac567fc420f82ced192fa279">shortcut_add_to_home_widget</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf0c548cbac567fc420f82ced192fa279">shortcut_add_to_home_widget</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -584,7 +584,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26">shortcut_widget_size_e</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26">shortcut_widget_size_e</a>&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
@@ -614,7 +614,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a>&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
@@ -656,22 +656,22 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a034e5d16c3d345ae6fb905577dc1ad48">SHORTCUT_ERROR_FAULT</a></td><td>Unrecoverable error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a034e5d16c3d345ae6fb905577dc1ad48">SHORTCUT_ERROR_FAULT</a></td><td>Unrecoverable error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to prepare the callback function. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>You have to check the return status from the callback function which is passed by the argument. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82" title="Called to receive the result of shortcut_add_to_home().">result_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82" title="Called to receive the result of shortcut_add_to_home().">result_cb()</a> </dd>
 <dd>
-<a class="el" href="group__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26" title="Enumeration for sizes of shortcut widget.">shortcut_widget_size_e</a> </dd></dl>
+<a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga0619a5151b930e52cc88dd5f5613dc26" title="Enumeration for sizes of shortcut widget.">shortcut_widget_size_e</a> </dd></dl>
 <dl class="user"><dt><b>Example</b></dt><dd><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <span class="preprocessor">#include &lt;shortcut.h&gt;</span>
 <span class="preprocessor">#include &lt;storage.h&gt;</span>
@@ -695,7 +695,7 @@ Typedefs</h2></td></tr>
     <a class="code" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga3fa5d91f560ca1adffbb8c2717c0eed8" title="Gets the absolute path to the each directory of the given storage.">storage_get_directory</a>(<a class="code" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ggabdf32571260b6c253da5bfcdecaa2f1faff4f5a663ef90263d543b7b16fbe2ae1">STORAGE_TYPE_INTERNAL</a>, <a class="code" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ggaacf2209a06b947c1cee4ba223679383aaf1b1c3965870eb7275c4625a758e1596">STORAGE_DIRECTORY_IMAGES</a>, &amp;image_root);
     snprintf(image_path, TIZEN_PATH_MAX, <span class="stringliteral">&quot;%s/alter_icon.png&quot;</span>, image_root);
 
-    <a class="code" href="group__SHORTCUT__MODULE.html#gaf0c548cbac567fc420f82ced192fa279" title="Adds a widget to home, asynchronously.">shortcut_add_to_home_widget</a>(<span class="stringliteral">&quot;alter_name&quot;</span>, <a class="code" href="group__SHORTCUT__MODULE.html#gga51c08f91ded9ab3c202b846ba9cc2a7ba66b1b8df69d5b40cf316f2560dac5e62">WIDGET_SIZE_1x1</a>, <span class="stringliteral">&quot;org.tizen.testwidget&quot;</span>,
+    <a class="code" href="group__CAPI__SHORTCUT__MODULE.html#gaf0c548cbac567fc420f82ced192fa279" title="Adds a widget to home, asynchronously.">shortcut_add_to_home_widget</a>(<span class="stringliteral">&quot;alter_name&quot;</span>, <a class="code" href="group__CAPI__SHORTCUT__MODULE.html#gga51c08f91ded9ab3c202b846ba9cc2a7ba66b1b8df69d5b40cf316f2560dac5e62">WIDGET_SIZE_1x1</a>, <span class="stringliteral">&quot;org.tizen.testwidget&quot;</span>,
                     image_path, -1.0f, 0, _result_cb, NULL);
 
     <span class="keywordflow">return</span> 0;
@@ -709,7 +709,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48">shortcut_get_list</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf203b07515a180f99edd1ad778de0b48">shortcut_get_list</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>package_name</em>, </td>
@@ -717,7 +717,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__SHORTCUT__MODULE.html#gaaf28261df1f1ff29b944dcd1c469069f">shortcut_list_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaaf28261df1f1ff29b944dcd1c469069f">shortcut_list_cb</a>&#160;</td>
           <td class="paramname"><em>list_cb</em>, </td>
         </tr>
         <tr>
@@ -754,13 +754,13 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>N</code> Number of items (call count of the callback function), otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a034e5d16c3d345ae6fb905577dc1ad48">SHORTCUT_ERROR_FAULT</a></td><td>Unrecoverable error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a034e5d16c3d345ae6fb905577dc1ad48">SHORTCUT_ERROR_FAULT</a></td><td>Unrecoverable error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
   </table>
   </dd>
 </dl>
@@ -774,7 +774,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482">shortcut_remove_from_home</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482">shortcut_remove_from_home</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -782,7 +782,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82">result_cb</a>&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
@@ -816,19 +816,19 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to prepare the callback function. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>You have to check the return status from the callback function which is passed by the argument. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82" title="Called to receive the result of shortcut_add_to_home().">result_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gafc52352da8c35140d5fd82b7f64c7a82" title="Called to receive the result of shortcut_add_to_home().">result_cb()</a> </dd></dl>
 <dl class="user"><dt><b>Example</b></dt><dd><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;shortcut_manager.h&gt;</span>
 
 <span class="keywordtype">int</span> _result_cb(<span class="keywordtype">int</span> ret, <span class="keywordtype">void</span> *data)
@@ -842,8 +842,8 @@ Typedefs</h2></td></tr>
 {
     <span class="keywordtype">int</span> result;
 
-    result = <a class="code" href="group__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482" title="Removes a shortcut from home, asynchronously.">shortcut_remove_from_home</a>(<span class="stringliteral">&quot;shortcut_name&quot;</span>, _result_cb, NULL);
-    <span class="keywordflow">if</span> (result != <a class="code" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a>) {
+    result = <a class="code" href="group__CAPI__SHORTCUT__MODULE.html#ga5d343f4929ea001d3ce85da25ccaa482" title="Removes a shortcut from home, asynchronously.">shortcut_remove_from_home</a>(<span class="stringliteral">&quot;shortcut_name&quot;</span>, _result_cb, NULL);
+    <span class="keywordflow">if</span> (result != <a class="code" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a>) {
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<span class="stringliteral">&quot;Failed to remove a shortcut: %d\n&quot;</span>, result);
         <span class="keywordflow">return</span> result;
     }
@@ -857,9 +857,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__SHORTCUT__MODULE.html#ga50c8b2104ec5cbe8fe2bbf4f7badc4b4">shortcut_set_remove_cb</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga50c8b2104ec5cbe8fe2bbf4f7badc4b4">shortcut_set_remove_cb</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20">shortcut_remove_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20">shortcut_remove_cb</a>&#160;</td>
           <td class="paramname"><em>remove_cb</em>, </td>
         </tr>
         <tr>
@@ -893,21 +893,21 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to prepare a callback function. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>If a request is sent from the application, the registered callback will be invoked. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20" title="Called to the shortcut_remove_from_home() request.">shortcut_remove_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20" title="Called to the shortcut_remove_from_home() request.">shortcut_remove_cb()</a> </dd>
 <dd>
-<a class="el" href="group__SHORTCUT__MODULE.html#ga2fa1e3c2ae44272bd3cad3d8e0102289" title="Enumeration for values of shortcut response types.">shortcut_error_e</a> </dd></dl>
+<a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga2fa1e3c2ae44272bd3cad3d8e0102289" title="Enumeration for values of shortcut response types.">shortcut_error_e</a> </dd></dl>
 
 </div>
 </div>
@@ -916,9 +916,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__SHORTCUT__MODULE.html#gabfafa189950beba0df3185804f6f147a">shortcut_set_request_cb</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gabfafa189950beba0df3185804f6f147a">shortcut_set_request_cb</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1">shortcut_request_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1">shortcut_request_cb</a>&#160;</td>
           <td class="paramname"><em>request_cb</em>, </td>
         </tr>
         <tr>
@@ -952,21 +952,21 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a2ab38a4eac249a96282458b20377b6fc">SHORTCUT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a16040a48d070eae50339cd80967854a0">SHORTCUT_ERROR_IO_ERROR</a></td><td>I/O Error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ab8aea9e9dbe3c569f853252449bfa029">SHORTCUT_ERROR_COMM</a></td><td>Connection not established or communication problem </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to prepare a callback function. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>If a request is sent from the application, the registered callback will be invoked. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1" title="Called to the add_to_home request.">shortcut_request_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga47843749bacea9bb908b8be2b5ac32a1" title="Called to the add_to_home request.">shortcut_request_cb()</a> </dd>
 <dd>
-<a class="el" href="group__SHORTCUT__MODULE.html#ga2fa1e3c2ae44272bd3cad3d8e0102289" title="Enumeration for values of shortcut response types.">shortcut_error_e</a> </dd></dl>
+<a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga2fa1e3c2ae44272bd3cad3d8e0102289" title="Enumeration for values of shortcut response types.">shortcut_error_e</a> </dd></dl>
 
 </div>
 </div>
@@ -975,7 +975,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__SHORTCUT__MODULE.html#ga26561cbc2c7cf8fb8ae94c2ca5e273ba">shortcut_unset_remove_cb</a> </td>
+          <td class="memname">void <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga26561cbc2c7cf8fb8ae94c2ca5e273ba">shortcut_unset_remove_cb</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -993,13 +993,13 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>None </dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#ga50c8b2104ec5cbe8fe2bbf4f7badc4b4" title="Sets the callback function to listen the remove requests from applications.">shortcut_set_remove_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#ga50c8b2104ec5cbe8fe2bbf4f7badc4b4" title="Sets the callback function to listen the remove requests from applications.">shortcut_set_remove_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> </dd></dl>
 
@@ -1010,7 +1010,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__SHORTCUT__MODULE.html#gaf7d858ea528ba9b1791fb37136472d4d">shortcut_unset_request_cb</a> </td>
+          <td class="memname">void <a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gaf7d858ea528ba9b1791fb37136472d4d">shortcut_unset_request_cb</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -1028,13 +1028,13 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>None </dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a734095a1f1a7429251bd251b2b459c68">SHORTCUT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#gabfafa189950beba0df3185804f6f147a" title="Sets a callback function to listen requests from applications.">shortcut_set_request_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SHORTCUT__MODULE.html#gabfafa189950beba0df3185804f6f147a" title="Sets a callback function to listen requests from applications.">shortcut_set_request_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> </dd></dl>
 

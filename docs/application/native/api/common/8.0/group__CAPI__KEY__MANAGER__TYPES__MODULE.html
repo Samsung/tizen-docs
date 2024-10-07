@@ -174,6 +174,8 @@ Functions</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gabb915d623f9d58ad52499fca077f7092">__ckmc_key_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga13325a6f898aa5aa6cd75c19fc8bbe72">ckmc_key_type_e</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for key types of key manager.  <a href="#ga13325a6f898aa5aa6cd75c19fc8bbe72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga51db58445b6d5e593b5f7ebedaf359d5">__ckmc_kem_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga68188db2dbaa7f1d6a6b38f60a140acb">ckmc_kem_type_e</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for KEM types.  <a href="#ga68188db2dbaa7f1d6a6b38f60a140acb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga57219912936b58bd045696ca41eba678">__ckmc_data_format</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga8c4c7666eda4d7a71bf527fc6cc01b6e">ckmc_data_format_e</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for data format.  <a href="#ga8c4c7666eda4d7a71bf527fc6cc01b6e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga77c093d4b9b5032ad93e0d3bf6a24fc7">__ckmc_ec_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga987e97b0a77d5fc526d0bb1126be609f">ckmc_ec_type_e</a></td></tr>
@@ -514,6 +516,22 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 
 </div>
 </div>
+<a class="anchor" id="ga68188db2dbaa7f1d6a6b38f60a140acb"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_kem_type_e" ref="ga68188db2dbaa7f1d6a6b38f60a140acb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga51db58445b6d5e593b5f7ebedaf359d5">__ckmc_kem_type</a>  <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga68188db2dbaa7f1d6a6b38f60a140acb">ckmc_kem_type_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for KEM types. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga0b412af80e83c316b1cba0e6e0bd8196"></a><!-- doxytag: member="ckmc&#45;type.h::ckmc_key_s" ref="ga0b412af80e83c316b1cba0e6e0bd8196" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -798,6 +816,13 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aaf1774b2dd96c6641ade02a0c515a725d">CKMC_PARAM_ECDH_PUBKEY</a> = peer's public key (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196" title="The structure for key used in key manager CAPI.">ckmc_key_s</a>) </li>
 </ul>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggac05f1d318100515b1c1e9d688bc6cce3ae8809cd05f5ded5c31ea6b8fe806aa30"></a><!-- doxytag: member="CKMC_ALGO_KEM" ref="ggac05f1d318100515b1c1e9d688bc6cce3ae8809cd05f5ded5c31ea6b8fe806aa30" args="" -->CKMC_ALGO_KEM</em>&nbsp;</td><td>
+<p>KEM algorithm Supported parameters:</p>
+<ul>
+<li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa61dd6794e1d00e6f93dfce37c863c8db">CKMC_PARAM_ALGO_TYPE</a> = <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggac05f1d318100515b1c1e9d688bc6cce3ae8809cd05f5ded5c31ea6b8fe806aa30">CKMC_ALGO_KEM</a> (mandatory),</li>
+<li><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aa46da219373b8763cefe2f606c6d48666">CKMC_PARAM_KEM_TYPE</a> = the type of KEM (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga68188db2dbaa7f1d6a6b38f60a140acb" title="Enumeration for KEM types.">ckmc_kem_type_e</a>) (mandatory) (Since 7.0) </li>
+</ul>
+</td></tr>
 </table>
 </dd>
 </dl>
@@ -1016,6 +1041,32 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 
 </div>
 </div>
+<a class="anchor" id="ga51db58445b6d5e593b5f7ebedaf359d5"></a><!-- doxytag: member="ckmc&#45;type.h::__ckmc_kem_type" ref="ga51db58445b6d5e593b5f7ebedaf359d5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga51db58445b6d5e593b5f7ebedaf359d5">__ckmc_kem_type</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for KEM types. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga51db58445b6d5e593b5f7ebedaf359d5a7ec6924e2f65d856abdacf8d0c5d82f7"></a><!-- doxytag: member="CKMC_ML_KEM_768" ref="gga51db58445b6d5e593b5f7ebedaf359d5a7ec6924e2f65d856abdacf8d0c5d82f7" args="" -->CKMC_ML_KEM_768</em>&nbsp;</td><td>
+<p>ML-KEM-768 algorithm type </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga51db58445b6d5e593b5f7ebedaf359d5a315f43932147f2e2e4a4c8f17ca09a20"></a><!-- doxytag: member="CKMC_ML_KEM_1024" ref="gga51db58445b6d5e593b5f7ebedaf359d5a315f43932147f2e2e4a4c8f17ca09a20" args="" -->CKMC_ML_KEM_1024</em>&nbsp;</td><td>
+<p>ML-KEM-1024 algorithm type </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gabb915d623f9d58ad52499fca077f7092"></a><!-- doxytag: member="ckmc&#45;type.h::__ckmc_key_type" ref="gabb915d623f9d58ad52499fca077f7092" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1053,6 +1104,12 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a"></a><!-- doxytag: member="CKMC_KEY_AES" ref="ggabb915d623f9d58ad52499fca077f7092a6b79828e42346a5ab8741832866eda2a" args="" -->CKMC_KEY_AES</em>&nbsp;</td><td>
 <p>AES key </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggabb915d623f9d58ad52499fca077f7092ab3fd38b04506d750e6e89dc6d3930540"></a><!-- doxytag: member="CKMC_KEY_KEM_PUBLIC" ref="ggabb915d623f9d58ad52499fca077f7092ab3fd38b04506d750e6e89dc6d3930540" args="" -->CKMC_KEY_KEM_PUBLIC</em>&nbsp;</td><td>
+<p>KEM public key (Since 7.0) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggabb915d623f9d58ad52499fca077f7092abf244e087dea3da2d534dcdaa6027806"></a><!-- doxytag: member="CKMC_KEY_KEM_PRIVATE" ref="ggabb915d623f9d58ad52499fca077f7092abf244e087dea3da2d534dcdaa6027806" args="" -->CKMC_KEY_KEM_PRIVATE</em>&nbsp;</td><td>
+<p>KEM private key (Since 7.0) </p>
 </td></tr>
 </table>
 </dd>
@@ -1181,6 +1238,9 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aaf1774b2dd96c6641ade02a0c515a725d"></a><!-- doxytag: member="CKMC_PARAM_ECDH_PUBKEY" ref="gga8b4a2846798d61983a4b8b186dfed97aaf1774b2dd96c6641ade02a0c515a725d" args="" -->CKMC_PARAM_ECDH_PUBKEY</em>&nbsp;</td><td>
 <p>buffer - EC public key in DER form (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196" title="The structure for key used in key manager CAPI.">ckmc_key_s</a>) (Since 6.0) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa46da219373b8763cefe2f606c6d48666"></a><!-- doxytag: member="CKMC_PARAM_KEM_TYPE" ref="gga8b4a2846798d61983a4b8b186dfed97aa46da219373b8763cefe2f606c6d48666" args="" -->CKMC_PARAM_KEM_TYPE</em>&nbsp;</td><td>
+<p>integer - specifies the KEM type (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga68188db2dbaa7f1d6a6b38f60a140acb" title="Enumeration for KEM types.">ckmc_kem_type_e</a>) (Since 7.0) </p>
 </td></tr>
 </table>
 </dd>
