@@ -319,7 +319,7 @@
            </Node>
            <Node>
             <Name>Shortcut</Name>
-            <Path>group__SHORTCUT__MODULE.html</Path>
+            <Path>group__CAPI__SHORTCUT__MODULE.html</Path>
             <Subnodes>
             </Subnodes>
            </Node>
@@ -4840,13 +4840,13 @@
             <Subnodes>
              <Node>
               <Name>Provider</Name>
-              <Path>group__MINICONTROL__PROVIDER__MODULE.html</Path>
+              <Path>group__CAPI__MINICONTROL__PROVIDER__MODULE.html</Path>
               <Subnodes>
               </Subnodes>
              </Node>
              <Node>
               <Name>Viewer</Name>
-              <Path>group__MINICONTROL__VIEWER__MODULE.html</Path>
+              <Path>group__CAPI__MINICONTROL__VIEWER__MODULE.html</Path>
               <Subnodes>
               </Subnodes>
              </Node>

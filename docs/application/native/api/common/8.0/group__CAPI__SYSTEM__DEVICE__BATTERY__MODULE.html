@@ -102,8 +102,8 @@ Required Header</h2>
 <h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_BATTERY_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p>The Battery API provides the way to get the current battery capacity value, battery state and charging state. It also supports the API for an application to receive the battery events from the system. To receive the battery event it should be described by the callback function.</p>
-<h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_BATTERY_MODULE_OVERVIEW"></a>
-Overview</h2>
+<h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_BATTERY_MODULE_FEATURE"></a>
+Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
@@ -407,7 +407,6 @@ Functions</h2></td></tr>
 <p>Gets the battery charge percentage. </p>
 <p>It returns an integer value from <code>0</code> to <code>100</code> that indicates remaining battery charge as a percentage of the maximum level. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>In order to be notified when the battery state changes, use system_info_set_changed_cb(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">percent</td><td>The remaining battery charge percentage (<code>0</code> ~ <code>100</code>) </td></tr>

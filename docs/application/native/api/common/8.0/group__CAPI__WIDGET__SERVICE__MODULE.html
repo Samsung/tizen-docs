@@ -97,13 +97,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>To get the information of installed widgets. </p>
 <h2><a class="anchor" id="CAPI_WIDGET_SERVICE_MODULE_HEADER"></a>
 Required Header</h2>
-<p>#include &lt;widget_service.h&gt; #include &lt;widget_errno.h&gt;</p>
-<h2><a class="anchor" id="CAPI_WIDGET_SERVICE_MODULE_FEATURE"></a>
-Related Features</h2>
-<p>This API is related with the following feature:</p>
-<ul>
-<li>http://tizen.org/feature/shell.appwidget</li>
-</ul>
+<p>#include &lt;widget_service.h&gt;<br/>
+ #include &lt;widget_errno.h&gt;<br/>
+</p>
 <h2><a class="anchor" id="CAPI_WIDGET_SERVICE_MODULE_OVERVIEW"></a>
 Overview</h2>
 <h1>1. widget service API</h1>
@@ -143,7 +139,18 @@ Overview</h2>
 <tr>
 <td><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#ggaded8b006a69721d8e273302f88870000a7c5acd3ef625184d38e5294251ef32d8">WIDGET_SIZE_TYPE_EASY_3x3</a></td><td>- (SQUARE - depends on screen resolution) </td><td>Mobile  </td></tr>
 </table>
-<p>However the Easy Mode is not a mandatory requirements for viewer application development. So you will not be able to create your widgets using Easy Mode size types. But if you are developing the homescreen(or application which is related with widgets displaying), You should care these types too. </p>
+<p>However the Easy Mode is not a mandatory requirements for viewer application development. So you will not be able to create your widgets using Easy Mode size types. But if you are developing the homescreen(or application which is related with widgets displaying), You should care these types too.</p>
+<h2><a class="anchor" id="CAPI_WIDGET_SERVICE_MODULE_FEATURE"></a>
+Related Features</h2>
+<p>This function is related with the following feature:</p>
+<ul>
+<li>http://tizen.org/feature/shell.appwidget<br/>
+</li>
+</ul>
+<p>It is recommended to design feature related codes in your application for reliability.<br/>
+ You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
+ To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
