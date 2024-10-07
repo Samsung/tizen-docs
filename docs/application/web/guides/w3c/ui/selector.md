@@ -4,7 +4,7 @@ The selectors allow you to select element nodes in the DOM tree by matching them
 
 You can use the `querySelector()` and `querySelectorAll()` methods to retrieve the element nodes. Both methods accept a single parameter, a string selector. The string selector is a selector or a group of selectors that can be surrounded by whitespace. If you use a selector group as the string selector with the `querySelector()` method, the method returns the first element (if any) that matches any of the selectors in the group.
 
-The main features of the Selectors API Level 1 and Level 2 include:
+The main features of the Selectors API Level 1 and Level 2 include the following:
 
 - Selecting a single element
 
@@ -16,11 +16,11 @@ The main features of the Selectors API Level 1 and Level 2 include:
 
 You can also [create an accordion menu](#creating-an-accordion-menu).
 
-## Selecting a Single Node
+## Select a single node
 
-To use selectors for handling page elements and selecting a single node:
+To use selectors for handling page elements and selecting a single node, follow these steps:
 
-1. To select the first matching element found in the child nodes, use the `querySelector()` method with CSS selectors. You get the same result as when using the `getElementById()`, `getElementsByTagName()`, and `getElementsByClassName()` methods.
+1. To select the first matching element found in the child nodes, use the `querySelector()` method with CSS selectors. You get the same result as when using the `getElementById()`, `getElementsByTagName()`, and `getElementsByClassName()` methods:
 
    ```
    /* First <td> element in the document */
@@ -39,7 +39,7 @@ To use selectors for handling page elements and selecting a single node:
 
 2. You can use the CSS selectors to ensure that elements with complex structures can be easily selected.  
 
-   For example, the following example selects the last element among the child nodes of the second `<tr>` element, which is a child of the `<tbody>` element in the second `<table>` element of the document.
+   For example, the following example selects the last element among the child nodes of the second `<tr>` element, which is a child of the `<tbody>` element in the second `<table>` element of the document:
 
    ```
    var obj = document.querySelector('table:nth-child(2) tbody > tr:nth-child(2) :last-child');
@@ -56,15 +56,15 @@ To use selectors for handling page elements and selecting a single node:
 
    ![Single node selection (in mobile applications only)](./media/single_node_selection.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [accordion.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/selectors_api)
+- [accordion.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/selectors_api){:target="_blank"}
 
-## Selecting Multiple Nodes
+## Select multiple nodes
 
-To use selectors for handling page elements and selecting multiple nodes in a node list:
+To use selectors for handling page elements and selecting multiple nodes in a node list, follow these steps:
 
 1. Select an element in the node list using the `querySelector()` method:
 
@@ -97,13 +97,13 @@ To use selectors for handling page elements and selecting multiple nodes in a no
 
    ![Multiple node selection (in mobile applications only)](./media/multi_node_selection.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [accordion.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/selectors_api)
+- [accordion.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/selectors_api){:target="_blank"}
 
-## Creating an Accordion Menu
+## Create an accordion menu
 
 You can retrieve element nodes from the DOM tree and create a simple accordion menu.
 
@@ -190,13 +190,13 @@ The accordion menu is created using the CSS3 Basic User Interface Module Level 3
 
    ![Accordion menu (in mobile applications only)](./media/accordion_menu.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [selector_sample.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/selectors_api)
+- [selector_sample.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/selectors_api){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

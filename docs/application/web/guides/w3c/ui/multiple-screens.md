@@ -10,49 +10,49 @@ Tizen provides the [UI scalability](#ui-scalability) resolution feature, which a
 
 To optimize images used in Web applications, images based on a single resource can be used in [various resolutions](#image-resolution-optimization).
 
-## Key Concepts
+## Key concepts
 
-Before building a Web application for multiple resolutions, make sure you are familiar with the following [W3C](http://www.w3.org/) Web content scaling standards, which must be taken into account when developing Web applications:
+Before building a Web application for multiple resolutions, make sure you are familiar with the following [W3C](http://www.w3.org/){:target="_blank"} Web content scaling standards, which must be taken into account when developing Web applications:
 
 - Viewport meta tag
 - CSS media query
 
-### Viewport Meta Tag
+### Viewport meta tag
 
 A viewport defines the application area that displays the Web page content.
 
 In a Web browser, the viewport size depends on the browser window size. If the viewport is smaller than the Web content size, horizontal and vertical scrollbars are displayed for page navigation. The Web browser viewport does not support the zoom feature. However, in a mobile Web browser, there are no window scrollbars and the viewport supports the zoom feature.
 
-The [viewport meta tag](http://www.w3.org/TR/mwabp/#bp-viewport) enables you to customize the viewport size and zoom levels in a majority of mobile Web browsers. Using this tag, you can set the width, height, initial scale, and scale range for Web pages.
+The [viewport meta tag](http://www.w3.org/TR/mwabp/#bp-viewport){:target="_blank"} enables you to customize the viewport size and zoom levels in a majority of mobile Web browsers. Using this tag, you can set the width, height, initial scale, and scale range for Web pages.
 
 To use the viewport meta tag while developing Web applications, you must note the following:
 
 - The `device-height` and `device-width` attributes defined in the viewport meta tag are not the same as the real device width and height in pixels.
 - Using the viewport meta tag, the Web browsers of different devices display the same content with different layout size and scale factor. The scale factor is calculated using the device pixel ratio (DPR).
 
-### CSS Media Query
+### CSS media query
 
-The [CSS media query](http://www.w3.org/TR/css3-mediaqueries/) enables you to set conditions for particular media features and types to apply different CSS files for the application content. For Web content scaling, you can use the CSS media query to, for example:
+The [CSS media query](http://www.w3.org/TR/css3-mediaqueries/){:target="_blank"} enables you to set conditions for particular media features and types to apply different CSS files for the application content. For Web content scaling, you can use the CSS media query to, for example:
 
 - Define the image resource to be used based on the screen dots per inch (DPI) ratio.
 - Determine the CSS layout to be used based on the screen width.
 
-## UI Scalability
+## UI scalability
 
 With UI scalability, you can support multiple screen resolutions in a single Tizen Web application. Tizen automatically converts and translates the size and position values that are defined in the application's logical resolution to the physical resolution at runtime. The Tizen Advanced UI (TAU) uses the [viewport meta tag](#viewport-meta-tag) to fit the Web page into the device screen, and the `rem` unit to determine the size of the Tizen Web UI components.
 
-### Setting the Viewport
+### Set the viewport
 
 Tizen devices support a variety of screen resolutions and dots per inch (DPI) values. If the viewport meta tag is not defined, TAU uses the default viewport width and scale factor. This ensures that Web content layout varies between different screen resolutions.
 
-In the following example, the viewport width is set to `device-width`, which is determined by the width of the Tizen device. The `device-width` value is retrieved to set similar virtual DPI values and to display UI components with similar physical sizes across all devices. (TAU uses the example value by default, if no other viewport value is defined.)
+In the following example, the viewport width is set to `device-width`, which is determined by the width of the Tizen device. The `device-width` value is retrieved to set similar virtual DPI values and to display UI components with similar physical sizes across all devices: (TAU uses the example value by default, if no other viewport value is defined.)
 
 ```
 <meta name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 ```
 
-If the viewport width is set to `device-width`, the width and scale factor values are calculated by the Web browser. The following table shows different layout sizes and scale factors of the Tizen Web site (`http://tizen.org`) on different devices with the viewport width set to `device-width`.
+If the viewport width is set to `device-width`, the width and scale factor values are calculated by the Web browser. The following table shows different layout sizes and scale factors of the Tizen Web site (`http://tizen.org`) on different devices with the viewport width set to `device-width`:
 
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -65,13 +65,13 @@ If the viewport width is set to `device-width`, the width and scale factor value
 | 720 x 1280               | 306             | 320        | ![captured screen1](./media/captured_screen1.png) | 360 px         | 2.0          |
 | 480 x 800                | 218             | 240        | ![captured screen2](./media/captured_screen2.png) | 320 px         | 1.5          |
 
-### Working with Tizen Web Winsets
+### Work with Tizen Web winsets
 
 The default sizes of Tizen Web winsets (such as Popup, Button, and Checkbox) are designed based on the reference viewport DPI of 160. Therefore, these winsets are of similar sizes on any Tizen device if the viewport width is set to `device-width`.
 
 If you manually set the viewport width of your application to a fixed value, the Tizen Web winsets may not fit appropriately in the application. To avoid the problem, Tizen Web winsets use the `rem` unit for the winset length, which depends on the base font size of the winset. Each Tizen Web winset theme has its own base font size, and the `<html>` element font size is also set to the base font size. If the viewport width is set to a fixed value, this base font size is recalculated and set to the `<html>` element to adjust the Tizen Web winset sizes accurately.
 
-## Creating Applications Supporting Multiple Screens
+## Create applications supporting multiple screens
 
 To create an application that supports multiple screen sizes, you must consider the following while coding your application:
 
@@ -79,7 +79,7 @@ To create an application that supports multiple screen sizes, you must consider 
 - Optimizing resources
 - Creating screen resolution-independent UI
 
-### Configuring the Viewport
+### Configure the viewport
 
 To use UI scalability in your application, set the `viewport` meta tag while [creating a Web application project](../../../tutorials/process/app-dev-process.md) in Tizen Studio. To configure the viewport in the Tizen Web applications, add the `viewport` meta tag in the `<head>` section of the `index.html` file:
 
@@ -89,7 +89,7 @@ To use UI scalability in your application, set the `viewport` meta tag while [cr
                minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 ```
 
-### Optimizing Resources
+### Optimize resources
 
 By default, the Tizen Advanced UI (TAU) consists of the HD Web winsets. The winset scale is lowered for lower screen resolution devices. To optimize resources for different screen resolutions and devices, use the [CSS media query](#css-media-query) for different resolutions available in Tizen. You can use CSS media queries in the HTML or CSS files.
 
@@ -132,11 +132,11 @@ You can also set different layout and resources for the portrait and landscape v
 }
 ```
 
-### Creating Screen Resolution-independent UI
+### Create screen resolution-independent UI
 
 The Tizen base font size is 22 px. This base font size value varies based on the device screen resolution. However, to create a screen resolution-independent UI, the Web browser engine renders the base font size as a logical pixel size instead of a physical pixel size.
 
-## Image Resolution Optimization
+## Image resolution optimization
 
 In Web applications, optimization of applications for various platforms (regarding devices, OS, and resolution) is efficient.
 
@@ -146,7 +146,7 @@ Images can be used in Web applications in the following ways:
 
 - `IMG` element linking images directly to HTML
 - CSS `background` property expressing images as a background in HTML
-- [SVG (Scalable Vector Graphics)](../graphics/svg.md), [Canvas](../graphics/canvas.md), and [WebGL&trade;](http://www.khronos.org/registry/webgl/specs/latest/) APIs implementing graphics in HTML
+- [SVG (Scalable Vector Graphics)](../graphics/svg.md), [Canvas](../graphics/canvas.md), and [WebGL&trade;](http://www.khronos.org/registry/webgl/specs/latest/){:target="_blank"} APIs implementing graphics in HTML
 
 When selecting an option from the list above, consider the type of the image resource you are going to use.
 
@@ -181,7 +181,7 @@ The image color is expressed based on pixels. Therefore, the higher resolution a
 - 300 x 200 px: 39 KB
 - 300 x 200 px: 15 KB
 
-Current full HD displays have a resolution that is 1.5 to 2 times bigger than the actual screen size. The image quality is guaranteed if you size images as 2 times bigger than their original size.
+Current full HD displays have a resolution that is 1.5 to 2 times bigger than the actual screen size. The image quality is guaranteed if you size images as 2 times bigger than their original size:
 
 ```
 img {
@@ -195,7 +195,7 @@ img {
 
 ### Icons
 
-Icons generally have a fixed size. Size icon images as 2 times bigger than their original size. Using the CSS3 `background-size` property, you can add an image with the size of, for example, 40 x 40 px, compressed as 20 x 20 px.
+Icons generally have a fixed size. Size icon images as 2 times bigger than their original size. Using the CSS3 `background-size` property, you can add an image with the size of, for example, 40 x 40 px, compressed as 20 x 20 px:
 
 ```
 .prev_icon, .next_icon {
@@ -219,7 +219,7 @@ When multiple icons are used on a page, all the image files are called separatel
 
 ![Calling each of image separately](./media/calling_img_sep.png)
 
-You can use the sprite image technique (grouping multiple images as one and showing the only desired images defined with the `background-position` property) to noticeably reduce the page loading speed without any loss in quality of the image, as the following example shows.
+You can use the sprite image technique (grouping multiple images as one and showing the only desired images defined with the `background-position` property) to noticeably reduce the page loading speed without any loss in quality of the image, as the following example shows:
 
 ```
 .prev_icon, .next_icon {
@@ -240,13 +240,13 @@ You can use the sprite image technique (grouping multiple images as one and show
 
 ![Network speed when using sprite image](./media/network_speed_sprite.png)
 
-### Animated Images
+### Animated images
 
 Animated images can be created in various formats and with many tools, such as GIF, JavaScript, Canvas, and SVG.
 
 To create a simple and repetitive animation effect (such as the following JAVA mascot) as effectively as possible, use GIF images, JavaScript, or the CSS3 `animation` attribute.
 
-**Figure: JAVA mascot character in GIF (source: http://lea.verou.me)**
+**Figure: JAVA mascot character in GIF (source: http://lea.verou.me){:target="_blank"}**
 
 ![JAVA mascot character  in GIF](./media/mascot.gif)
 
@@ -257,7 +257,7 @@ The following sections compare the network capacity usage and timeline of the fo
 - [CSS3 animation](#css3)
 
 <a name="gif"></a>
-#### GIF Animation
+#### GIF animation
 
 Using GIF animation, the resource usage is as follows:
 
@@ -280,7 +280,7 @@ Using GIF animation, the resource usage is as follows:
 GIF animation can be created in various resolutions without quality loss when you use the option introduced in [Photos](#photos). This, however, increases memory occupancy.
 
 <a name="js"></a>
-#### JavaScript Animation
+#### JavaScript animation
 
 JavaScript animation is less affected by enlarging or reducing its screen size. However, it uses a lot of device resources compared to using CSS3 animations:
 
@@ -327,7 +327,7 @@ You can use the `requestAnimationFrame()` method of the [Timing control for scri
 ```
 
 <a name="css3"></a>
-#### CSS3 Animation
+#### CSS3 animation
 
 CSS3 animation has a low usage of events, memory, and network capacity. It is efficient for animations that have a fixed size. However, since CSS3 animation is pixel-based, it is difficult to use for animations that need to be enlarged or reduced, in which case JavaScript is a better option:
 
@@ -365,6 +365,6 @@ The following example shows how CSS3 animation can be implemented:
 </style>
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
