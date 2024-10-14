@@ -126,9 +126,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#ga61e6b38d77c14a58b0ebdedc1246e1dd">i18n_ubrk_last</a> (<a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gac70e4a75c9b537220e26a11cb90c608c">i18n_ubreak_iterator_h</a> break_iter)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the iterator position to the index immediately <em>beyond</em> the last character in the text being scanned.  <a href="#ga61e6b38d77c14a58b0ebdedc1246e1dd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gad3fd59e1be08c59ca5b4e34c81bc3603">i18n_ubrk_preceding</a> (<a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gac70e4a75c9b537220e26a11cb90c608c">i18n_ubreak_iterator_h</a> break_iter, int32_t offset)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the iterator position to the first boundary preceding the specified <code>offset</code>.  <a href="#gad3fd59e1be08c59ca5b4e34c81bc3603"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the iterator position to the first boundary preceding the specified <em>offset</em>.  <a href="#gad3fd59e1be08c59ca5b4e34c81bc3603"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#ga8b50563e3cc16469f5f20ab6ae99dbab">i18n_ubrk_following</a> (<a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gac70e4a75c9b537220e26a11cb90c608c">i18n_ubreak_iterator_h</a> break_iter, int32_t offset)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the iterator to the first boundary following the specified <code>offset</code>.  <a href="#ga8b50563e3cc16469f5f20ab6ae99dbab"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the iterator to the first boundary following the specified <em>offset</em>.  <a href="#ga8b50563e3cc16469f5f20ab6ae99dbab"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gacf5afd1ec69d6500997a1d46025f33a1">i18n_ubrk_get_available</a> (int32_t index)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a locale for which text breaking information is available.  <a href="#gacf5afd1ec69d6500997a1d46025f33a1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gab4d53bc04d5399e22ceb7e0c25411e26">i18n_ubrk_count_available</a> (void)</td></tr>
@@ -406,6 +406,7 @@ Defines</h2></td></tr>
 <p>Opens a new <a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#gac70e4a75c9b537220e26a11cb90c608c" title="i18n_ubreak_iterator_h.">i18n_ubreak_iterator_h</a> for locating text boundaries using specified breaking rules. </p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Error codes are described in <a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> description. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>break_iter</em> and <em>parse_err</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">rules</td><td>A set of rules specifying the text breaking conventions. </td></tr>
@@ -561,8 +562,8 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Advances the iterator to the first boundary following the specified <code>offset</code>. </p>
-<p>The value returned is always greater than <code>offset</code>, or <a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#ga1584f185a878f882f5639188f17dbfae" title="Value indicating all text boundaries have been returned.">I18N_UBRK_DONE</a>. </p>
+<p>Advances the iterator to the first boundary following the specified <em>offset</em>. </p>
+<p>The value returned is always greater than <em>offset</em>, or <a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#ga1584f185a878f882f5639188f17dbfae" title="Value indicating all text boundaries have been returned.">I18N_UBRK_DONE</a>. </p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exceptions section. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -904,8 +905,8 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the iterator position to the first boundary preceding the specified <code>offset</code>. </p>
-<p>The new position is always smaller than <code>offset</code>, or <a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#ga1584f185a878f882f5639188f17dbfae" title="Value indicating all text boundaries have been returned.">I18N_UBRK_DONE</a>. </p>
+<p>Sets the iterator position to the first boundary preceding the specified <em>offset</em>. </p>
+<p>The new position is always smaller than <em>offset</em>, or <a class="el" href="group__CAPI__BASE__UTILS__I18N__UBRK__MODULE.html#ga1584f185a878f882f5639188f17dbfae" title="Value indicating all text boundaries have been returned.">I18N_UBRK_DONE</a>. </p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exceptions section. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1003,6 +1004,7 @@ Defines</h2></td></tr>
 <p>Thread safe cloning operation. </p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Error codes are described in <a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> description. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>break_iter_clone</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">break_iter</td><td>iterator to be cloned. Must not be <code>NULL</code>. </td></tr>

@@ -214,7 +214,7 @@ To register and define a callback for the `clicked,double` signal:
 void
 double_clicked_cb(void *data, Evas_Object *obj, void *event_info)
 {
-    elm_Object_Item *it = event_info;
+    Elm_Object_Item *it = event_info;
     elm_list_selected_item_set(it, EINA_FALSE);
 }
 ```

@@ -6,7 +6,7 @@ The Time API is mandatory for Tizen Mobile, Wearable, and TV profiles, which mea
 
 Locale refers to the set of information that is specific to a language and a country. It affects the numeric formats (decimal and list separators), date formats, and the character sorting order. It determines how a locale-specific functionality behaves; for example, how numbers are displayed or strings converted to dates.
 
-The main features of the Time API include:
+The main features of the Time API include the following:
 
 - Managing the current date, time, and time zone   
 
@@ -24,18 +24,18 @@ The main features of the Time API include:
 
   You can [retrieve notifications on time changes](#retrieving-time-change-notifications) performed by the user.
 
-## Retrieving Date and Time
+## Retrieve date and time
 
 With the `TimeUtil` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeUtil) applications), you can retrieve the current date, time, and time zone, and the number of available time zones, and determine whether a year is a leap year.
 
 You can also perform other date-and time-related tasks, such as getting the date of the next and previous daylight saving time transition, converting current time to UTC standard time, and getting the time zone abbreviation.
 
-> **Note**  
+> [!NOTE]
 > UTC is the primary time standard used by the world to track time. Time zones are created for the world as a positive or negative offset of UTC. For example, the time zone for Iceland is UTC+00:00, and the time zone for India is UTC+05:30.
 >
 > DST (or summer time) is the practice of clocks being advanced temporarily by a fixed time during the summer to take advantage of more daylight. Typically, this temporary adjustment is one hour. For example, one hour shift ahead in time will cause the last moment of 20:59 to jump to 22:00 instead of 21:00. In this case, the day will have 23 hours. In another scenario, one hour shift back in time will cause the day to have 25 hours.
 
-To handle date and time in your application:
+To handle date and time in your application, follow these steps:
 
 1. To get the current date and time, use the `getCurrentDateTime()` method, which returns a `TZDate` object:
 
@@ -74,11 +74,11 @@ To handle date and time in your application:
 
     The `getFullYear()` method returns the year (4 digits) of the `TZDate` object.
 
-## Retrieving the Local Date and Time Format
+## Retrieve the local date and time format
 
 The date and time can be expressed, for example, in a numerical format YYYY-MM-DD hh:mm:ss (for example, "1996-10-23 16:08:27") or in hybrid format (for example, "Wednesday, October 23, 1996, 04:08:27 PM").
 
-To handle date and time formats in your application:
+To handle date and time formats in your application, follow these steps:
 
 1. To check the date format, use the `getDateFormat()` method:
 
@@ -94,7 +94,7 @@ To handle date and time formats in your application:
    console.log('Time format is ' + timeFormat);
    ```
 
-## Calculating Date and Time Information
+## Calculate date and time information
 
 Calculate and compare time and date information using the applicable methods of the `TimeDuration` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeDuration), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeDuration), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeDuration) applications):
 
@@ -112,7 +112,7 @@ Calculate and compare time and date information using the applicable methods of 
        console.log('Event1 is shorter than Event2.');
    ```
 
-   > **Note**  
+   > [!NOTE]
    > The unit of the returned `TimeDuration` object is equivalent to the largest possible unit amongst the source parameter units while making sure that precision is not lost in the result. This implies that if, for example, a comparison is done between "1 hour" and "20 minutes", the result is displayed as 40 minutes, not 0.67 hour. Although the hour is a bigger unit than the minute, the result is more precise if presented in minutes.
 
 2.  To compare 2 `TimeDuration` objects for equality, use the `equalsTo()` method:
@@ -151,11 +151,11 @@ Calculate and compare time and date information using the applicable methods of 
 
     If the number of added time is negative, date or time is set to an earlier moment of time.
 
-## Retrieving Time Change Notifications
+## Retrieve time change notifications
 
 Getting notifications when the user changes the time or time zone allows you to react to those changes in your application.
 
-1. To monitor time or time zone changes, define the event handlers:
+1. To monitor time or time zone changes, define the following event handlers:
 
    - The time change event handler is called when the user adjusts the clock:
 
@@ -211,7 +211,7 @@ Getting notifications when the user changes the time or time zone allows you to 
      tizen.time.unsetTimezoneChangeListener();
      ```
 
-## Related Information
+## Related information
 * Dependencies     
      - Tizen 2.4 and Higher for Mobile
      - Tizen 2.3.1 and Higher for Wearable

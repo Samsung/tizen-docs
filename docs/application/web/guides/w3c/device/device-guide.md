@@ -28,7 +28,7 @@ The main device features are:
 
   Enables you to retrieve the current screen orientation state, monitor state changes, and lock the screen to a specific orientation.
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

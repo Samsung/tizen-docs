@@ -21,7 +21,7 @@ The main supplementary features are:
   Enables you to control the camera options, capture images, and record video.
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

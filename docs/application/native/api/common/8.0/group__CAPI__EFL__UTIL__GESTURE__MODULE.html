@@ -140,6 +140,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates or deactivates a global gesture.  <a href="#gae0a4ba52326148f5351955ff8c323b0e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga2ceec0cc65301165f02226658b7f43d3">efl_util_gesture_activate_set_on_window</a> (<a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54">efl_util_gesture_h</a> gesture_h, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *window, unsigned int type, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> active)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates or deactivates a global gesture on given window.  <a href="#ga2ceec0cc65301165f02226658b7f43d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga59960c367d2e43a3aa27a8429596abd2">efl_util_gesture_edge_swipe_cb_set</a> (<a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54">efl_util_gesture_h</a> gesture_h, efl_util_gesture_edge_swipe_cb cb_func, void *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set edge swipe gesture callback function of given efl util gesture handle.  <a href="#ga59960c367d2e43a3aa27a8429596abd2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#gafe3f9c722bbb313869f2830a3faf64d5">efl_util_gesture_edge_drag_cb_set</a> (<a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54">efl_util_gesture_h</a> gesture_h, efl_util_gesture_edge_drag_cb cb_func, void *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set edge drag gesture callback function of given efl util gesture handle.  <a href="#gafe3f9c722bbb313869f2830a3faf64d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga6227fa106579f99c4b3adda4f3f830a6">efl_util_gesture_tap_cb_set</a> (<a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54">efl_util_gesture_h</a> gesture_h, efl_util_gesture_tap_cb cb_func, void *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set tap gesture callback function of given efl util gesture handle.  <a href="#ga6227fa106579f99c4b3adda4f3f830a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#gace9837de781578d366e91cfa1245d2c6">efl_util_gesture_palm_cover_cb_set</a> (<a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54">efl_util_gesture_h</a> gesture_h, efl_util_gesture_palm_cover_cb cb_func, void *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set palm cover gesture callback function of given efl util gesture handle.  <a href="#gace9837de781578d366e91cfa1245d2c6"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
@@ -686,6 +694,58 @@ _efl_util_gesture_h *&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 </div>
 </div>
+<a class="anchor" id="gafe3f9c722bbb313869f2830a3faf64d5"></a><!-- doxytag: member="efl_util.h::efl_util_gesture_edge_drag_cb_set" ref="gafe3f9c722bbb313869f2830a3faf64d5" args="(efl_util_gesture_h gesture_h, efl_util_gesture_edge_drag_cb cb_func, void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#gafe3f9c722bbb313869f2830a3faf64d5">efl_util_gesture_edge_drag_cb_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54">efl_util_gesture_h</a>&#160;</td>
+          <td class="paramname"><em>gesture_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">efl_util_gesture_edge_drag_cb&#160;</td>
+          <td class="paramname"><em>cb_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set edge drag gesture callback function of given efl util gesture handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">gesture_h</td><td>The <a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54" title="Definition for the gesture handle.">efl_util_gesture_h</a> handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb_func</td><td>The callback function pointer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa5ae851bfc15767bd9bea1e78dbdea10d">EFL_UTIL_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aac6d5067a1273ee691d405cf9212a495a">EFL_UTIL_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ga3ec5e547c410e30773c03d50b4657345"></a><!-- doxytag: member="efl_util.h::efl_util_gesture_edge_drag_free" ref="ga3ec5e547c410e30773c03d50b4657345" args="(efl_util_gesture_h gesture_h, efl_util_gesture_data data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -846,6 +906,58 @@ _efl_util_gesture_h *&#160;</td><td class="memItemRight" valign="bottom"><a clas
     <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa5ae851bfc15767bd9bea1e78dbdea10d">EFL_UTIL_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aac6d5067a1273ee691d405cf9212a495a">EFL_UTIL_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa4981cced5dd0a152a7ac430ceca43cae">EFL_UTIL_ERROR_NO_RESOURCE_AVAILABLE</a></td><td>Resource is not available </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga59960c367d2e43a3aa27a8429596abd2"></a><!-- doxytag: member="efl_util.h::efl_util_gesture_edge_swipe_cb_set" ref="ga59960c367d2e43a3aa27a8429596abd2" args="(efl_util_gesture_h gesture_h, efl_util_gesture_edge_swipe_cb cb_func, void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga59960c367d2e43a3aa27a8429596abd2">efl_util_gesture_edge_swipe_cb_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54">efl_util_gesture_h</a>&#160;</td>
+          <td class="paramname"><em>gesture_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">efl_util_gesture_edge_swipe_cb&#160;</td>
+          <td class="paramname"><em>cb_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set edge swipe gesture callback function of given efl util gesture handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">gesture_h</td><td>The <a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54" title="Definition for the gesture handle.">efl_util_gesture_h</a> handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb_func</td><td>The callback function pointer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa5ae851bfc15767bd9bea1e78dbdea10d">EFL_UTIL_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aac6d5067a1273ee691d405cf9212a495a">EFL_UTIL_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -1108,6 +1220,58 @@ _efl_util_gesture_h *&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 </div>
 </div>
+<a class="anchor" id="gace9837de781578d366e91cfa1245d2c6"></a><!-- doxytag: member="efl_util.h::efl_util_gesture_palm_cover_cb_set" ref="gace9837de781578d366e91cfa1245d2c6" args="(efl_util_gesture_h gesture_h, efl_util_gesture_palm_cover_cb cb_func, void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#gace9837de781578d366e91cfa1245d2c6">efl_util_gesture_palm_cover_cb_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54">efl_util_gesture_h</a>&#160;</td>
+          <td class="paramname"><em>gesture_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">efl_util_gesture_palm_cover_cb&#160;</td>
+          <td class="paramname"><em>cb_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set palm cover gesture callback function of given efl util gesture handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">gesture_h</td><td>The <a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54" title="Definition for the gesture handle.">efl_util_gesture_h</a> handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb_func</td><td>The callback function pointer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa5ae851bfc15767bd9bea1e78dbdea10d">EFL_UTIL_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aac6d5067a1273ee691d405cf9212a495a">EFL_UTIL_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ga252292052acd38a2cae5e2ad3c6099aa"></a><!-- doxytag: member="efl_util.h::efl_util_gesture_palm_cover_free" ref="ga252292052acd38a2cae5e2ad3c6099aa" args="(efl_util_gesture_h gesture_h, efl_util_gesture_data data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1244,6 +1408,58 @@ _efl_util_gesture_h *&#160;</td><td class="memItemRight" valign="bottom"><a clas
     <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aac6d5067a1273ee691d405cf9212a495a">EFL_UTIL_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aaef7c8567712fc22a334f4fae987856d8">EFL_UTIL_ERROR_OUT_OF_MEMORY</a></td><td>Memory allocation failure </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa4981cced5dd0a152a7ac430ceca43cae">EFL_UTIL_ERROR_NO_RESOURCE_AVAILABLE</a></td><td>Resource is not available </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6227fa106579f99c4b3adda4f3f830a6"></a><!-- doxytag: member="efl_util.h::efl_util_gesture_tap_cb_set" ref="ga6227fa106579f99c4b3adda4f3f830a6" args="(efl_util_gesture_h gesture_h, efl_util_gesture_tap_cb cb_func, void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga6227fa106579f99c4b3adda4f3f830a6">efl_util_gesture_tap_cb_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54">efl_util_gesture_h</a>&#160;</td>
+          <td class="paramname"><em>gesture_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">efl_util_gesture_tap_cb&#160;</td>
+          <td class="paramname"><em>cb_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set tap gesture callback function of given efl util gesture handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">gesture_h</td><td>The <a class="el" href="group__CAPI__EFL__UTIL__GESTURE__MODULE.html#ga8d24cfe2e67c970f52cd0ac919161c54" title="Definition for the gesture handle.">efl_util_gesture_h</a> handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb_func</td><td>The callback function pointer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa5ae851bfc15767bd9bea1e78dbdea10d">EFL_UTIL_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aac6d5067a1273ee691d405cf9212a495a">EFL_UTIL_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>

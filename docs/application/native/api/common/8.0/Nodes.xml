@@ -2229,6 +2229,12 @@
               <Subnodes>
               </Subnodes>
              </Node>
+             <Node>
+              <Name>Key Manager Extended</Name>
+              <Path>group__CAPI__KEY__MANAGER__CLIENT__EXTENDED__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
             </Subnodes>
            </Node>
            <Node>
@@ -2252,6 +2258,12 @@
            <Node>
             <Name>Trusted Execution Framework</Name>
             <Path>group__CAPI__TEF__MODULE.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>Web Authentication</Name>
+            <Path>group__CAPI__WEBAUTHN__MODULE.html</Path>
             <Subnodes>
             </Subnodes>
            </Node>

@@ -54,9 +54,10 @@ To enable your application to use the Wi-Fi functionality:
 3. To be able to use all Wi-Fi functions, initialize Wi-Fi using the `wifi_manager_initialize()` function:
 
    ```
+   wifi_manager_h wifi;
    int error_code;
 
-   error_code = wifi_manager_initialize(wifi);
+   error_code = wifi_manager_initialize(&wifi);
    if (error_code != WIFI_ERROR_NONE)
        return;
    ```

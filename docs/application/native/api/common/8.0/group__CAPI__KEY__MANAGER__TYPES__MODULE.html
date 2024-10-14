@@ -242,7 +242,7 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div class="memdoc">
 
 <p>Enumeration for database access rights. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated:</a></b></dt><dd>Deprecated since 2.4. [Use <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga3f560f40f34366d77f89d4dcb3aa8637" title="Enumeration for permissions to access/modify alias.">ckmc_permission_e</a> instead] </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated:</a></b></dt><dd>Deprecated since 2.4 [Use <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga3f560f40f34366d77f89d4dcb3aa8637" title="Enumeration for permissions to access/modify alias.">ckmc_permission_e</a> instead] </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -706,7 +706,7 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div class="memdoc">
 
 <p>Enumeration for database access rights. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated:</a></b></dt><dd>Deprecated since 2.4. [Use <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga3f560f40f34366d77f89d4dcb3aa8637" title="Enumeration for permissions to access/modify alias.">ckmc_permission_e</a> instead] </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated:</a></b></dt><dd>Deprecated since 2.4 [Use <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga3f560f40f34366d77f89d4dcb3aa8637" title="Enumeration for permissions to access/modify alias.">ckmc_permission_e</a> instead] </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga6619d20ad4892cc5ea61a4a1386787fca85d97d3322567212c598406a9b680eb7"></a><!-- doxytag: member="CKMC_AR_READ" ref="gga6619d20ad4892cc5ea61a4a1386787fca85d97d3322567212c598406a9b680eb7" args="" -->CKMC_AR_READ</em>&nbsp;</td><td>
@@ -1141,7 +1141,7 @@ __ckmc_backend_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <p>buffer - RSA OAEP label (not supported at the moment) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aaae491732be15c5057755eea1fbb1eabe"></a><!-- doxytag: member="CKMC_PARAM_ED_OAEP_HASH" ref="gga8b4a2846798d61983a4b8b186dfed97aaae491732be15c5057755eea1fbb1eabe" args="" -->CKMC_PARAM_ED_OAEP_HASH</em>&nbsp;</td><td>
-<p>integer - function to be used both as Label and MGF hash function in OAEP padding (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaecb8791432ee56ff94a6f6d7ea8dabd5" title="Enumeration for hash algorithm.">__ckmc_hash_algo</a>). Currently only <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaecb8791432ee56ff94a6f6d7ea8dabd5a7878c642193cd45410561ad1fc91136e">CKMC_HASH_SHA1</a> and <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaecb8791432ee56ff94a6f6d7ea8dabd5a0aa1879aea52958da0f9701e793100d8">CKMC_HASH_SHA256</a> are supported. If not given, the default <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaecb8791432ee56ff94a6f6d7ea8dabd5a7878c642193cd45410561ad1fc91136e">CKMC_HASH_SHA1</a> is used. (Since 6.0) </p>
+<p>integer - function to be used both as Label and MGF hash function in OAEP padding (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaecb8791432ee56ff94a6f6d7ea8dabd5" title="Enumeration for hash algorithm.">__ckmc_hash_algo</a>). If not given, the default <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaecb8791432ee56ff94a6f6d7ea8dabd5a7878c642193cd45410561ad1fc91136e">CKMC_HASH_SHA1</a> is used. (Since 6.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga8b4a2846798d61983a4b8b186dfed97aa80256f9b5dd4b68dedde22093379421c"></a><!-- doxytag: member="CKMC_PARAM_KDF_PRF" ref="gga8b4a2846798d61983a4b8b186dfed97aa80256f9b5dd4b68dedde22093379421c" args="" -->CKMC_PARAM_KDF_PRF</em>&nbsp;</td><td>
 <p>integer - pseudo-random function number (see <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga8439cb794c8fe891d9fded3009d8787f" title="Enumeration for key derivation function pseudo-random function parameter.">ckmc_kdf_prf_e</a>) (Since 6.0) </p>
@@ -2415,7 +2415,7 @@ If the function returns error, provided param list may contain some of default p
 <div class="memdoc">
 
 <p>Creates a new <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196" title="The structure for key used in key manager CAPI.">ckmc_key_s</a> (<em>private_key</em>), <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga9ead6ec9000737ad0b017ca8fe77159b" title="The structure for certificate used in key manager CAPI.">ckmc_cert_s</a> (<em>cert</em>), and <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gae5f26d34aeedda390da59887fc65ffa7" title="The structure for linked list of ckmc_cert_s.">ckmc_cert_list_s</a> (<em>ca_cert_list</em>) handle from a given PKCS#12 file and returns them. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated:</a></b></dt><dd>Deprecated since 2.4. [Use <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaf18d9f6f50ed320155411eb04cee7d08" title="Creates a new ckmc_pkcs12_s handle from a given PKCS#12 file and returns it.">ckmc_pkcs12_load()</a> instead] </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated:</a></b></dt><dd>Deprecated since 2.4 [Use <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaf18d9f6f50ed320155411eb04cee7d08" title="Creates a new ckmc_pkcs12_s handle from a given PKCS#12 file and returns it.">ckmc_pkcs12_load()</a> instead] </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must destroy the newly created <em>private_key</em>, <em>cert</em> and <em>ca_cert_list</em> by calling <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gada5f41101ddf3d4394a62007c9a588cf" title="Destroys the ckmc_key_s handle and releases all its resources.">ckmc_key_free()</a>, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga8a57aeb32d78cd20c62589b7d518ca00" title="Destroys the ckmc_cert_s handle and releases all its resources.">ckmc_cert_free()</a>, and <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gab634614fa1c68de96e8a2c65d4321e96" title="Destroys the ckmc_cert_list_s handle and releases all its resources from the provided first handle ca...">ckmc_cert_list_all_free()</a> if they are no longer needed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

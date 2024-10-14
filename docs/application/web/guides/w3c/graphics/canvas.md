@@ -2,7 +2,7 @@
 
 The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#canvas2d), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#canvas2d), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
 
-The main features of the Canvas Element API include:
+The main features of the Canvas Element API include the following:
 
 - Creating a canvas
 
@@ -26,16 +26,16 @@ For all canvas objects (images, shapes, text, and lines), you can define colors 
 
 In mobile applications only, in HTML5, the [Scalable Vector Graphics (SVG) 2](../../../api/latest/w3c_api/w3c_api_m.html#svg) API provides similar features as the canvas. Their difference is that SVG expresses graphics using vectors, while the canvas is based on pixels. To express complex graphics, use the canvas, and to express graphics with a liberal expansion or reduction, use [SVG](./svg.md).
 
-> **Note**  
-> The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL&trade;](https://www.khronos.org/registry/webgl/specs/1.0/) API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL&trade; in mobile applications, see [Performance Comparison of Canvas 2D and WebGL&trade;](#comparison).
+> [!NOTE]
+> The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL&trade;](https://www.khronos.org/registry/webgl/specs/1.0/){:target="_blank"} API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL&trade; in mobile applications, see [Performance Comparison of Canvas 2D and WebGL&trade;](#comparison).
 
-## Using a Canvas
+## Use a canvas
 
-To create a canvas in your application:
+To create a canvas in your application, follow these steps:
 
 1. Create a `<canvas>` element with the HTML5 Canvas Element API.
 
-   The canvas assigns the region (canvas context) where images are drawn with JavaScript.
+   The canvas assigns the region (canvas context) where images are drawn with JavaScript:
 
    ```
    <canvas width="300" height="300" id="canvas">
@@ -47,7 +47,7 @@ To create a canvas in your application:
 
 2. To check the information on the image connected to the canvas, use the `toDataURL([Optional], [Variadic])` method to restore the URL of the image used on the canvas. To create a blob object of the image file, use the `getContext(contextId)` method.
 
-3. Use the `CanvasRenderingContext2D` interface (in [mobile](http://www.w3.org/TR/2015/REC-2dcontext-20151119/#canvasrenderingcontext2d), [wearable](http://www.w3.org/TR/2012/CR-2dcontext-20121217/#canvasrenderingcontext2d), and [TV](https://www.w3.org/TR/2015/REC-2dcontext-20151119/#canvasrenderingcontext2d) applications) to connect to the canvas and get the canvas context:
+3. Use the `CanvasRenderingContext2D` interface (in [mobile](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext){:target="_blank"} applications) to connect to the canvas and get the canvas context:
 
    ```
    var canvas = document.querySelector('canvas'),
@@ -69,25 +69,25 @@ if (!(canvas.getContext)) {
 }
 ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [canvas_tutorial1.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
-- [canvas_tutorial2.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
+- [canvas_tutorial1.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context){:target="_blank"}
+- [canvas_tutorial2.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context){:target="_blank"}
 
-## Using Images on the Canvas
+## Use images on the canvas
 
 To use images on the canvas, use the `drawImage()` method of the HTML Canvas 2D Context API. The method receives information, such as the image URL and position, and where it is indicated, and then creates the image on the canvas. The created image is pixel-based.
 
-> **Note**  
+> [!NOTE]
 > To edit the created image, you must comply with the same-origin policy.
 
-To use images on a canvas:
+To use images on a canvas, follow these steps:
 
 1. Use the `drawImage()` method to express an image on the canvas.
 
-   When you define the URL of the image to be imported and its coordinates, the original image is imported as it is. You can hide certain parts of the image by assigning its size accordingly.
+   When you define the URL of the image to be imported and its coordinates, the original image is imported as it is. You can hide certain parts of the image by assigning its size accordingly:
 
    ```
    /* Draw the image by setting its size */
@@ -99,7 +99,7 @@ To use images on a canvas:
    context.drawImage(image, 0, 10, 40, 60, 190, 205, 40, 60);
    ```
 
-2. When the image is connected to the canvas, extract the color value through the `getImageData()` method. Re-input the transformed values with the `putImageData()` method.
+2. When the image is connected to the canvas, extract the color value through the `getImageData()` method. Re-input the transformed values with the `putImageData()` method:
 
    ```
    /* Import the image with the required coordinates */
@@ -116,7 +116,7 @@ To use images on a canvas:
    context.putImageData(transImage, 30, 20);
    ```
 
-3. Use the `CanvasTransformation` interface to transform the selected object, for example, its size, angle, or position. By connecting to the image used on the canvas, you can also rotate it. (The following figure applies to mobile applications only.)
+3. Use the `CanvasTransformation` interface to transform the selected object, for example, its size, angle, or position. By connecting to the image used on the canvas, you can also rotate it:
 
    ```
    context.beginPath();
@@ -137,24 +137,26 @@ To use images on a canvas:
    context.restore();
    ```
 
+   The following figure applies to mobile applications only.
+   
    ![Using images on the canvas (in mobile applications only)](./media/canvas_using_images.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [canvas_tutorial1.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
-- [canvas_tutorial2.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
+- [canvas_tutorial1.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context){:target="_blank"}
+- [canvas_tutorial2.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context){:target="_blank"}
 
-## Drawing Shapes to the Canvas
+## Draw shapes to the canvas
 
 With the HTML Canvas 2D Context API, you can draw various shapes, such as rectangles (`rect()`), circles (`arc()` and `arcTo()`), and lines (`lineTo()` and `bezierCurveTo()`), to a canvas. You can define the position and size of the shapes, and also merge shapes with other shape objects.
 
-To create and draw shapes on a canvas:
+To create and draw shapes on a canvas, follow these steps:
 
 1. Use the `rect()` method to create a rectangle.
 
-   Use the canvas context to assign the rectangle attributes, such as position and size. (The following figure applies to mobile applications only.)
+   Use the canvas context to assign the rectangle attributes, such as position and size:
 
    ```
    /* Rectangle fill style */
@@ -169,6 +171,8 @@ To create and draw shapes on a canvas:
    context.clearRect(50, 50, 100, 100);
    ```
 
+   The following figure applies to mobile applications only.
+   
    ![Assign rectangle attributes (in mobile applications only)](./media/canvas_drawing_shapes1.png)
 
 2. Use the `arc()` method to create a circle.
@@ -199,7 +203,7 @@ To create and draw shapes on a canvas:
 
    ![Assign circle attributes (in mobile applications only)](./media/canvas_drawing_shapes2.png)
 
-3. Use the `CanvasTransformation` interface to transform the created shapes. With compositing, a certain part of the shape can be made transparent. (The following figure applies to mobile applications only.)
+3. Use the `CanvasTransformation` interface to transform the created shapes. With compositing, a certain part of the shape can be made transparent.
 
    ```
    /* Display the relevant area */
@@ -214,20 +218,22 @@ To create and draw shapes on a canvas:
    context.fillStyle = 'tomato';
    ```
 
+   The following figure applies to mobile applications only.
+   
    ![Transform shapes (in mobile applications only)](./media/canvas_drawing_shapes3.png)
 
-> **Note**  
+> [!NOTE]
 > For a canvas, the rendering occurs in the order from the back of the input source.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
 - [canvas_tutorial3.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
 
-## Drawing Masks to the Canvas
+## Draw masks to the canvas
 
-To draw masks on a canvas:
+To draw masks on a canvas, follow these steps:
 
 1. Create the HTML layout with a canvas and 2 button input elements for brush selection:
 
@@ -248,7 +254,7 @@ To draw masks on a canvas:
    </style>
    ```
 
-3. Declare the JavaScript variables needed in the application. The `lastX` and `lastY` variables indicate the last position of a user event. The `mouseBtn` variable indicates whether a button or touch event has occurred, and the `brushSize` variable indicates the current brush size.
+3. Declare the JavaScript variables needed in the application. The `lastX` and `lastY` variables indicate the last position of a user event. The `mouseBtn` variable indicates whether a button or touch event has occurred, and the `brushSize` variable indicates the current brush size:
 
    ```
    var lastX = 0,
@@ -272,7 +278,7 @@ To draw masks on a canvas:
 
 5. Draw an image on the canvas using the `drawImage()` method. The user is able to replace the image with another using a brush.
 
-   Create a new `Image` object, including the path of the image file. Define the line width to be based on the brush size selected by the user.
+   Create a new `Image` object, including the path of the image file. Define the line width to be based on the brush size selected by the user:
 
    ```
    var img = new Image();
@@ -314,7 +320,7 @@ To draw masks on a canvas:
 
    ![Drawing events](./media/drawing_line_sequence.png)
 
-8. Use the `updateLastPos()` method to update the `lastX` and `lastY` variable values. The real coordinates can be calculated by reducing the offset position of the canvas element from the touch position coordinates. The `'touch'` string indicates that the event is a touch event.
+8. Use the `updateLastPos()` method to update the `lastX` and `lastY` variable values. The real coordinates can be calculated by reducing the offset position of the canvas element from the touch position coordinates. The `'touch'` string indicates that the event is a touch event:
 
    ```
    function updateLastPos(e) {
@@ -329,7 +335,7 @@ To draw masks on a canvas:
    }
    ```
 
-9. When the user starts drawing, the `touchstart` or `mousedown` event calls the `startDraw()` method, which updates the event position, sets the composite operations property to make the drawing a mask, begins to draw a new path, moves the drawing point to the selected coordinates, and sets the button or touch event state to `true`.
+9. When the user starts drawing, the `touchstart` or `mousedown` event calls the `startDraw()` method, which updates the event position, sets the composite operations property to make the drawing a mask, begins to draw a new path, moves the drawing point to the selected coordinates, and sets the button or touch event state to `true`:
 
    ```
    function startDraw(e) {
@@ -341,7 +347,7 @@ To draw masks on a canvas:
    }
    ```
 
-10. While the user is drawing, the `touchmove` and `mousemove` events are handled with the `drawStep()` method based on the button state retrieved from the `mouseBtn` variable. The `drawStep()` method calls the `updateLastPos()` method only when the mouse or finger is being moved. Use the `stroke()` method to make the drawn line visible.
+10. While the user is drawing, the `touchmove` and `mousemove` events are handled with the `drawStep()` method based on the button state retrieved from the `mouseBtn` variable. The `drawStep()` method calls the `updateLastPos()` method only when the mouse or finger is being moved. Use the `stroke()` method to make the drawn line visible:
 
     ```
     function drawStep(e) {
@@ -364,17 +370,17 @@ To draw masks on a canvas:
 
     ![Drawing masks](./media/canvas_drawing_masks.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [renamed_index.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context/scratchcard)
+- [renamed_index.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context/scratchcard){:target="_blank"}
 
-## Creating Text and Lines on the Canvas
+## Creat text and lines on the canvas
 
-To create text and lines on a canvas:
+To create text and lines on a canvas, follow these steps:
 
-1. To draw a line, use the `moveTo()` method to assign the beginning point of the line, and the `lineTo()` method to assign the end point of the line. The `stroke()` method draws the full line.
+1. To draw a line, use the `moveTo()` method to assign the beginning point of the line, and the `lineTo()` method to assign the end point of the line. The `stroke()` method draws the full line:
 
    ```
    context.lineJoin = 'bevel';
@@ -389,7 +395,7 @@ To create text and lines on a canvas:
 
 2. When adding text on the canvas, use various attributes and methods to define how the text looks and where it is located.
 
-   The `font` attribute defines the font style, and the `textBaseline` attribute the vertical alignment of the text.
+   The `font` attribute defines the font style, and the `textBaseline` attribute the vertical alignment of the text:
 
    ```
    context.font = 'italic 400 22px/2 sans-serif';
@@ -409,19 +415,19 @@ To create text and lines on a canvas:
    context.measureText('textAlign=end', 150, 100);
    ```
 
-> **Note**  
+> [!NOTE]
 > When drawing multiple images on a canvas, indicate the starting point with the `beginPath()` method to prevent unforeseen errors.
 
 ### Source Code
 
 For the complete source code related to this use case, see the following files:
 
-- [Line_Styles_3.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
-- [Text_Styles_2.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
-- [Text_Styles_4.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
+- [Line_Styles_3.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context){:target="_blank"}
+- [Text_Styles_2.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context){:target="_blank"}
+- [Text_Styles_4.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context){:target="_blank"}
 
 <a name="comparison"></a>
-## Performance Comparison of Canvas 2D and WebGL&trade; in Mobile Applications
+## Performance comparison of Canvas 2D and WebGL&trade; in mobile applications
 
 In Web documents prior to HTML5, only simple image loading was supported. To create graphic animations, you had to use a separate plug-in. However, as the graphic-related APIs have become more standardized, you can now express graphics by using only JavaScript, without a separate plug-in.
 
@@ -452,7 +458,7 @@ There is one problem with using WebGL&trade;; the ratio of mobile browsers suppo
 
 Many mobile browsers do not support WebGL&trade; or only partially support WebGL&trade;. Even though Tizen supports WebGL&trade;, it is recommended to use the Canvas 2D Context API for small numbers of 2D drawings, since the API is supported in most mobile browsers. However, for performance critical applications, use WebGL&trade; for faster 2D performance.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

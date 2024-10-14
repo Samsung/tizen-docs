@@ -40,7 +40,7 @@ TAU Animation provides the following features:
 
 To use TAU Animation, you must load the `tau.animation.min.js` file, which can work with any other library or Web framework. There are no other prerequisites.
 
-## Animation Fundamentals
+## Animation fundamentals
 
 The `tau.animation.js` file has its own modules for animating target objects when animation methods are invoked.
 
@@ -51,14 +51,14 @@ The general idea of animating target objects is for several parts to interact wi
 ![Animation parts](./media/tau_animation_1.png)
 
 - Ticker: Switches the `requestAnimationFrame()` method on and off. The ticker operates based on events.
-- TweenAnimator: Runs the whole time logic. The TweenAnimator invokes the animation to play or stop, and it also updates the tween value per frame.
-- SimpleAnimation: Consists of the animation play logic. The animation makes the tween object and target object, and it also interacts with the TweenAnimator.
-- SimpleAnimationGroup: Group of `simpleAnimation` objects. It can include several objects for animation.
-- SimpleAnimation Extension: Provides the mixin functionality. Pure DOM can be a target object with the `simpleAnimation` extension.
-- DomObject: Target object that also has a render logic. If the tick is switched on, the TweenAnimator invokes the update method. And then, the render logic of DomObject is invoked, and the target objects are moved based on the animation option.
+- Tween(Animator): Runs the whole time logic. The Tween(Animator) invokes the animation to play or stop, and it also updates the tween value per frame.
+- Simple Animation: Consists of the animation play logic. The animation makes the tween object and target object, and it also interacts with the Tween(Animator).
+- Simple Animation Group: Group of `simpleAnimation` objects. It can include several objects for animation.
+- Simple Animation Extension: Provides the mixin functionality. Pure DOM can be a target object with the `simpleAnimation` extension.
+- DomObject: Target object that also has a render logic. If the tick is switched on, the Tween(Animator) invokes the update method. And then, the render logic of DomObject is invoked, and the target objects are moved based on the animation option.
 - AnimationObject: Interface for various target objects. In this example, the `DomObject` is used as a reference.
 
-To make and call several animations:
+To make and call several animations, follow these steps:
 
 1. Make a target object for the animation.
 
@@ -83,7 +83,7 @@ To make and call several animations:
 
 2. Create an animation with transform, CSS properties, effects, and ease.
 
-   Once the target object is made, you can create an animation. The animation consists of an animation value including transform, CSS properties, and effect. Basically, an animation option is inserted with the duration of 1 s (1000 ms) only as a default. If you want to add an ease function, delay, loop, or callback, create an object for an animation option.
+   Once the target object is made, you can create an animation. The animation consists of an animation value including transform, CSS properties, and effect. Basically, an animation option is inserted with the duration of 1 s (1000 ms) only as a default. If you want to add an ease function, delay, loop, or callback, create an object for an animation option:
 
    ```
    <div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px;">
@@ -108,19 +108,19 @@ To make and call several animations:
 
 4. After inserting the animation, send an event to the Ticker.
 
-   In the above queue, there are 4 animations in queue. When all animations are inserted, the animations are popped and animated sequentially by the TweenAnimator.
+   In the above queue, there are 4 animations in queue. When all animations are inserted, the animations are popped and animated sequentially by the Tween(Animator).
 
 5. The Ticker calls the `requestAnimationFrame()` method.  
-  The TweenAnimator invokes the play and tick methods in the Ticker. The Ticker calls the `on()` method, and the `on()` method includes the `requestAnimationFrame()` method. The `RAF()` method is invoked until the TweenAnimator's tick time reaches the end of the duration.
+  The Tween(Animator) invokes the play and tick methods in the Ticker. The Ticker calls the `on()` method, and the `on()` method includes the `requestAnimationFrame()` method. The `RAF()` method is invoked until the TweenAnimator's tick time reaches the end of the duration.
 
 6. During the `requestAnimationFrame()` method call, the `AnimationObject` renders the target object and the TweenAnimator's time logic is operating.  
-   The `AnimationObject` can get the time value using the calculating animation. The `AnimationObject` renders the target object based on the time value. If the duration is 1000 (ms), the TweenAnimator gives time 0 through 1000.
+   The `AnimationObject` can get the time value using the calculating animation. The `AnimationObject` renders the target object based on the time value. If the duration is 1000 (ms), the Tween(Animator) gives time 0 through 1000.
 
    **Figure: TweenAnimator**
 
    ![TweenAnimator](./media/tau_animation_4.png)
 
-## Animation Functions
+## Animation functions
 
 To provide better functionality, various animation features have been implemented. You can easily increase and improve an animation effect. If you want to connect several animations, use chaining animations. Predefined effects and animations with CSS properties and stagger are also provided.
 
@@ -132,7 +132,7 @@ You can make an animation using the `tween()` method. If a tween animation is ma
 tween({animation}, {option});
 ```
 
-`{animation}` can be various animations, such as transform, CSS property, or predefined effect. Basically, `{animation}` indicates the destination of the animation. For example, `{rotateZ: 90}` indicates a rotation from the current value to 90 degrees. To do this, you must set the starting point of the animation, and for this, an additional animation form is provided. `{rotateZ: [30, 90]}` indicates the changing rotation value of the transform from 30 to 90.
+`{animation}` can be various animations, such as transform, CSS property, or predefined effect. Basically, `{animation}` indicates the destination of the animation. For example, `{rotateZ: 90}` indicates a rotation from the current value to 90 degrees. To do this, you must set the starting point of the animation, and for this, an additional animation form is provided. `{rotateZ: [30, 90]}` indicates the changing rotation value of the transform from 30 to 90:
 
 ```
 <div id="redBox" style="background-color: 'red'; position:absolute; width:100px; height:100px;"></div>
@@ -146,7 +146,7 @@ t('#redBox').tween({translateX: 1000}, 1000); /* Translate from current position
 t('#blueBox').tween({left: 200, top: [100, 300]}, 1000);
 ```
 
-### Chaining
+### Chain
 
 The animation is inserted to the animation queue automatically before playing. At first, this feature does not seem important for making an animation, but if the animation is implemented in this way, the LOC (lines of code) can be decreased significantly.
 
@@ -167,7 +167,7 @@ t('#blueBox').tween({translateX: [500, 1000]}, 1000).tween({translateY: 500}, 10
 
 The chaining feature makes an intuitive sequence group animation.
 
-### Predefined Effects
+### Predefined effects
 
 To make an effect, you can combine many single animations, or use a predefined effect.
 
@@ -210,7 +210,7 @@ The following example shows how you can make a shake effect:
 
 ### Group
 
-Sometimes, you need to animate all objects with the same animation. To make an animation group for this purpose, the `target()` method is provided. If all classes of DOM are `box`, you can create a box group. Like in CSS selectors, '.' is a class selector and '\#' is an ID selector. Also, a pure HTML element can be a parameter of the `target()` method.
+Sometimes, you need to animate all objects with the same animation. To make an animation group for this purpose, the `target()` method is provided. If all classes of DOM are `box`, you can create a box group. Like in CSS selectors, '.' is a class selector and '\#' is an ID selector. Also, a pure HTML element can be a parameter of the `target()` method:
 
 ```
 <div class="box"></div>
@@ -245,7 +245,7 @@ t('.box').tween('zoomIn', {duration: 1000, stagger: 200});
 
 ### Callback
 
-You can add some actions before and after an animation. If you add the `onStart` callback, it is invoked before the animation. The `onComplete` callback is invoked after the animation.
+You can add some actions before and after an animation. If you add the `onStart` callback, it is invoked before the animation. The `onComplete` callback is invoked after the animation:
 
 ```
 <div id='blueBox'></div>
@@ -263,7 +263,7 @@ t('#blueBox').tween({translateY: [0, 150], rotateZ: [0, 180]}, {
 
 In the above animation, the box is translated along the Y axis from 0 to 150 and rotated from 0 to 180. Before translating and rotating, the `start` text is inserted into the box. After translating and rotating, the box's background color is changed to navy.
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

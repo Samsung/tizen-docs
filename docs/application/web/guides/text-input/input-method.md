@@ -1,6 +1,6 @@
 # IME Application
 
-Tizen Web IME (Input Method Editor) applications are written in HTML5 for Tizen, combining HTML, JavaScript, and CSS into a package that can be installed on a Tizen device, such as Samsung Gear, or the Tizen Emulator. Both the Tizen device and the emulator must run Tizen version 2.3 or higher to run Web IME applications.
+Tizen Web IME (Input Method Editor) applications are written in HTML5 for Tizen, combining HTML, JavaScript, and CSS into a package that can be installed on a Tizen device, such as Samsung Gear, or Tizen Emulator. Both the Tizen device and the emulator must run Tizen version 2.3 or higher to run Web IME applications.
 
 This feature is supported in wearable applications only.
 
@@ -22,9 +22,9 @@ The communication between the Web IME and the `ise-web-helper-agent` module is a
 
 Since the Web IME runs within a Web container and communicates with it, as a Web IME application developer you do not need knowledge of the platform architecture or details of the native API. You can develop Web IME applications as if they were normal Web applications, as long as the `web-helper-client.js` file is included and properly used.
 
-## Supported Application Types
+## Supported application types
 
-Tizen Web IME can interact with 2 types of Tizen applications:
+Tizen Web IME can interact with the following 2 types of Tizen applications:
 
 - In-house (native) application
 - Downloaded (Web) application
@@ -94,28 +94,28 @@ The following table lists the events that you can implement in your handler obje
 | `onUpdateSurroundingText(cursor, text)`  | Handler for the surrounding text signal update.<br><br>`cursor` parameter: Cursor position.<Br>`text` parameter: Surrounding text near the cursor. |
 | `onUpdateSelection(text)`                | Handler for the selection signal update.<br><br>`text` parameter: Currently selected text. |
 
-> **Note**  
+> [!NOTE]
 > The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
 
-## Web IME Configuration
+## Web IME configuration
 
-The Web IME configuration follows the Tizen packaging policy with certain extensions. Tizen applications are packaged according to the [Widget packaging guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). For more information on Tizen extensions to configuration elements, see [Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#elements) and [Extending Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#ww_extend).
+The Web IME configuration follows the Tizen packaging policy with certain extensions. Tizen applications are packaged according to the [Widget packaging guidelines](https://www.w3.org/TR/widgets/){:target="_blank"}. For more information on Tizen extensions to configuration elements, see [Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#elements) and [Extending Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#ww_extend).
 
 Internally, the application package manager is responsible for installing, uninstalling, and updating packages and storing their information.
 
 Tizen has the following additional configuration elements:
 
 - `tizen:category`  
-   To identify with other IMEs, the Web IME application must contain the UUID information.
+   To identify with other IMEs, the Web IME application must contain the UUID information:
 
   ```
   <tizen:category name="http://tizen.org/category/ime"/>
   ```
 
 - `tizen:uuid`  
-   Added to identify the Web IME application type. If this element is defined, the application type is IME.
+   Added to identify the Web IME application type. If this element is defined, the application type is IME:
 
-  > **Note**  
+  > [!NOTE]
   > The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
 
   ```
@@ -123,7 +123,7 @@ Tizen has the following additional configuration elements:
   ```
 
 - `tizen:languages`  
-    The locale string in the `<tizen:language>` element can be used to display the input language the specific Input Method Editor supports. The `<tizen:languages>` parent element can have more than 1 `<tizen:language>` child element.
+    The locale string in the `<tizen:language>` element can be used to display the input language the specific Input Method Editor supports. The `<tizen:languages>` parent element can have more than 1 `<tizen:language>` child element:
 
   ```
   <tizen:languages>
@@ -132,12 +132,12 @@ Tizen has the following additional configuration elements:
   </tizen:languages>
   ```
 
-> **Note**  
+> [!NOTE]
 > 2-letter primary codes are reserved for [ISO639] language abbreviations. 2-letter codes include `fr` (French), `de` (German), `it` (Italian), `nl` (Dutch), `el` (Greek), `es` (Spanish), `pt` (Portuguese), `ar` (Arabic), `he` (Hebrew), `ru` (Russian), `zh` (Chinese), `ja` (Japanese), `hi` (Hindi), `ur` (Urdu), and `sa` (Sanskrit).  
 > 
-> Any 2-letter subcode is understood to be a [ISO3166] country code. For more information, see [http://www.w3.org/TR/html401/struct/dirlang.html](http://www.w3.org/TR/html401/struct/dirlang.html).
+> Any 2-letter subcode is understood to be a [ISO3166] country code. For more information, see [Language information and text direction](http://www.w3.org/TR/html401/struct/dirlang.html){:target="_blank"}.
 
-## Hardware Key Events
+## Hardware key events
 
 The Web IME is capable of not only showing a soft keyboard and emitting key events to the client application, but also handling hardware key events and translating them to a specific language. This is very common when entering texts in CJK (Chinese, Japanese, and Korean) languages, where each key event must be composed to produce a final result string.
 
@@ -145,9 +145,9 @@ When a hardware key is pressed, the client application receives the key event an
 
 When creating the handler object for `WebHelperClient`, implement the `onProcessKeyEvent()` method if you want to translate each hardware key event.
 
-The following example translates the key event to a string "ㅁ", which is a Korean character mapped to the `a` key event.
+The following example translates the key event to a string "ㅁ", which is a Korean character mapped to the `a` key event:
 
-> **Note**  
+> [!NOTE]
 > To provide full support for Korean character composition, a more complex process is needed. This example is only a demonstration.
 
 ```
@@ -167,13 +167,13 @@ WebHelperClient.initialize(WebHelperClientHandler);
 
 When the processing of a hardware key event is completed, the `onProcessKeyEvent` event handler must return `true`. Otherwise, the client application considers the Web IME as not reacting to the key event, and tries to invoke its fallback handler, which appends an additional `a` to the committed "ㅁ" string.
 
-## Key Events, Commit Strings, and Pre-edit Strings
+## Key events, commit strings, and pre-edit strings
 
 Key events, commit strings and pre-edit strings are needed to send appropriate messages to the client application.
 
 Key events, when sent to the client application, use the same process as when a hardware key is pressed. Therefore, sending a key event to the client application using the `sendKeyEvent()` method calls the Web IME `onProcessKeyEvent()` event handler.
 
-To prevent the key event from being sent back to the Web IME (as there is no need to translate that key event again), use the `forwardKeyEvent()` method that invokes the client application's fallback key event handler.
+To prevent the key event from being sent back to the Web IME (as there is no need to translate that key event again), use the `forwardKeyEvent()` method that invokes the client application's fallback key event handler:
 
 ```
 <script type="text/javascript">
@@ -212,7 +212,7 @@ WebHelperClient.updatePreeditString('abc');
 WebHelperClient.updatePreeditString('def');
 ```
 
-## Web IME Life-cycle
+## Web IME life-cycle
 
 The Web IME applications have exactly the same life-cycle as the native IME applications. They have 4 states: unloaded, invisible, visible, and terminated.
 
@@ -228,9 +228,9 @@ A Web IME in the visible or invisible state can move on to the terminated state 
 - The system is shut down.
 - A different Web IME is selected in setting the application keyboard selection menu.
 
-## Sample IME Application
+## Sample IME application
 
-To create an IME application:
+To create an IME application, follow these steps:
 
 1. To create the Web IME project, launch Tizen Studio and go to **File > New > Tizen Project**.
 2. In the Project Wizard, select **Template** as the project type, **WEARABLE** profile and applicable version, **Web Application** type, and **Web Input Method Editor** template.
@@ -241,6 +241,6 @@ To create an IME application:
 6. In the emulator, change the default keyboard with the Web IME you developed in **Setting > Text input**.   
 ![Setting main](./media/web_ime_setting_main.png)![Setting text input](./media/web_ime_setting_text_input.png)
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.3.1 and Higher for Wearable

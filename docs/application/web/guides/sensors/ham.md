@@ -4,7 +4,7 @@ You can access and record human activity data from various [sensors](#supported-
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Human Activity Monitor API include:
+The main features of the Human Activity Monitor API include the following:
 
 - Retrieving data
 
@@ -35,7 +35,7 @@ To use the Human Activity Monitor API (in [mobile](../../api/latest/device_api/m
 <tizen:privilege name="http://tizen.org/privilege/location"/>
 ```
 
-## Retrieving Data
+## Retrieve data
 
 Enabling the monitor and retrieving data is a basic Human Activity Monitor (HAM) management skill:
 
@@ -96,9 +96,9 @@ Enabling the monitor and retrieving data is a basic Human Activity Monitor (HAM)
    tizen.humanactivitymonitor.stop('HRM');
    ```
 
-## Managing Data Recording
+## Manage data record
 
-The Human Activity Monitor API allows you to record and retrieve saved sensor data:
+The Human Activity Monitor API allows you to record and retrieve saved sensor data, , follow these steps to record and retrieve saved sensor data:
 
 1. To check whether a sensor is supported, use the `getCapability()` method of the `SystemInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo) and [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfo) applications):
 
@@ -110,7 +110,7 @@ The Human Activity Monitor API allows you to record and retrieve saved sensor da
    }
    ```
 
-2. To enable data recording, use the `startRecorder()` method of the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications). Optionally, you can also define an interval and period for the data recording.
+2. To enable data recording, use the `startRecorder()` method of the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications). Optionally, you can also define an interval and period for the data recording:
 
    ```
    var type = 'PRESSURE';
@@ -147,7 +147,7 @@ The Human Activity Monitor API allows you to record and retrieve saved sensor da
 
 4. To get the data sliced by an interval, you can use a combination of the `anchorTime` and `interval` options in the `HumanActivityRecorderQuery` interface.
 
-   Some human activity recorder types do not allow slicing the data by an interval.
+   Some human activity recorder types do not allow slicing the data by an interval:
 
    ```
    /* To retrieve data everyday at midnight */
@@ -158,7 +158,7 @@ The Human Activity Monitor API allows you to record and retrieve saved sensor da
 
 5. To read the human activity recorder data from the database, use the `readRecorderData()` method of the `HumanActivityMonitorManager` interface with the query.
 
-   Even if your application never recorded any data, you can access any data that has been recorded in the database by other applications.
+   Even if your application never recorded any data, you can access any data that has been recorded in the database by other applications:
 
    ```
    function onerror(error) {
@@ -180,7 +180,7 @@ The Human Activity Monitor API allows you to record and retrieve saved sensor da
    }
    ```
 
-## Using User-defined Intervals
+## Use user-defined intervals
 
 The Human Activity Monitor API allows the user to select their own intervals for collecting samples in a specified range using the `HumanActivityMonitorOption` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorOption) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorOption) applications). Such functionality can be used to build more power-efficient data collection applications (the less often the device gathers data, the less energy is used). You can change the interval according to the device state, for example, when the display is switched off, the sampling interval can be decreased.
 
@@ -226,7 +226,7 @@ The Human Activity Monitor API allows the user to select their own intervals for
    tizen.humanactivitymonitor.stop('HRM');
    ```
 
-## Receiving Notifications on Pedometer Data Changes
+## Receive notifications on pedometer data changes
 
 Learning how to register a listener for accumulative allows you to monitor the step count maintained by the system without enabling the Pedometer sensor and the `PEDOMETER` monitor is a basic Human Activity Monitor (HAM) management skill:
 
@@ -250,7 +250,7 @@ Learning how to register a listener for accumulative allows you to monitor the s
    tizen.humanactivitymonitor.unsetAccumulativePedometerListener();
    ```
 
-## Monitoring Sleep
+## Monitor sleep
 
 Learning how to monitor user's sleep is a basic Human Activity Monitor (HAM) management skill:
 
@@ -271,7 +271,7 @@ Learning how to monitor user's sleep is a basic Human Activity Monitor (HAM) man
    tizen.humanactivitymonitor.stop('SLEEP_MONITOR');
    ```
 
-## Detecting Sleep
+## Detect sleep
 
 Learning how to detect whether the user is asleep is a basic Human Activity Monitor (HAM) management skill:
 
@@ -292,7 +292,7 @@ Learning how to detect whether the user is asleep is a basic Human Activity Moni
    tizen.humanactivitymonitor.stop('SLEEP_DETECTOR');
    ```
 
-## Supported Monitors
+## Supported monitors
 
 The following table introduces the available monitor types and lists the monitor capabilities you can use to [determine whether a specific monitor is supported](#support) on a device.
 
@@ -307,7 +307,7 @@ The following table introduces the available monitor types and lists the monitor
 | Sleep monitor                        | `http://tizen.org/feature/sensor.sleep_monitor` | When the sleep sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
 | Sleep detector                        | `http://tizen.org/feature/sensor.sleep_monitor` | When the sleep sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
 
-## Supported Recorders in Wearable Applications
+## Supported recorders in wearable applications
 
 The following table introduces the available recorder types and lists the capabilities you can use to [determine whether a specific recorder is supported](#support) on a device.
 
@@ -317,7 +317,7 @@ The following table introduces the available recorder types and lists the capabi
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | Pressure | `http://tizen.org/feature/sensor.barometer` | Use the `startRecorder()` and `stopRecorder()` methods to record the pressure sensor data for the specific period of time. Use the `readRecorderData()` method to read the recorded pressure sensor data. |
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

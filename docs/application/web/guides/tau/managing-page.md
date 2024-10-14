@@ -4,7 +4,7 @@ The basic building block of an application UI in the TAU library is the `Page` e
 
 This feature is supported in mobile and wearable applications only.
 
-## Page Structure
+## Page structure
 
 A page consists of:
 
@@ -38,9 +38,9 @@ TAU creates a page:
 <div class="ui-page"><span>I have no page</span></div>
 ```
 
-## Creating a Single Page
+## Create a single page
 
-To create a page:
+To create a page, follow the steps below:
 
 1. Create a single page with the following code:
 
@@ -100,11 +100,11 @@ To create a page:
 
    The popup works because TAU opens (makes visible) the page whose `id` attribute corresponds to the `#hashtag` page. This is basic page routing; for more information, see [Page Routing](#page-routing).
 
-## Creating Multiple Pages in One HTML File
+## Create multiple pages in one HTML file
 
 You can implement a template containing multiple `page` containers in the application's `index.html` file.
 
-In a multi-page layout, the main page is defined with the `ui-page-active` class. If no page has the `ui-page-active` class, the framework automatically sets up the first page in the source order as the main page. You can improve the launch performance by explicitly defining the main page to be displayed first. If the application has to wait for the framework to set up the main page, the page is displayed with some delay only after the framework is fully loaded.
+In a multi-page layout, the main page is defined with the `ui-page-active` class. If no page has the `ui-page-active` class, the framework automatically sets up the first page in the source order as the main page. You can improve the launch performance by explicitly defining the main page to be displayed first. If the application has to wait for the framework to set up the main page, the page is displayed with some delay only after the framework is fully loaded:
 
 ```
 <body>
@@ -122,17 +122,17 @@ In a multi-page layout, the main page is defined with the `ui-page-active` class
 </body>
 ```
 
-## Page Routing
+## Page routing
 
 TAU is basically a UI framework, but since its purpose is to ease application building, it also provides basic functionality for changing pages in multi-page applications. The mechanics behind page routing are simple, and work without any additional JavaScript code. You can use the JavaScript API to get more powerful page routing functionalities.
 
-To manage page routing:
+To manage page routing, follow these steps:
 
 - To route without JavaScript:
 
   TAU routing is based on URL hash changes, and it has a built-in mechanism for history tracking. The framework responds to `#hashtag` changes and tries to display the page that has the `id` attribute equal to the hashtag value. This approach works for pages defined inside the same HTML document.
 
-  TAU uses every `<a>` element in the page and binds routing methods for them. In addition, all button instances that are based on that tag and have a proper `href` attribute work with the framework router. The active page has a `ui-page-active` class assigned. Set that class yourself to be sure the correct page is displayed.
+  TAU uses every `<a>` element in the page and binds routing methods for them. In addition, all button instances that are based on that tag and have a proper `href` attribute work with the framework router. The active page has a `ui-page-active` class assigned. Set that class yourself to be sure the correct page is displayed:
 
   ```
   <!--pageOne.html-->
@@ -224,7 +224,7 @@ To manage page routing:
   </div>
   ```
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

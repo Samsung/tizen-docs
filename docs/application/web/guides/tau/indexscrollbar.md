@@ -10,7 +10,7 @@ The following figure shows the layout of the index scroll bar component in a rec
 
 ![Index scroll bar component on a rectangular device](./media/rectangular_index.png)  ![Index scroll bar component on a circular device](./media/round_index.png)
 
-To implement the index scroll bar component:
+To implement the index scroll bar component, follow these steps:
 
 1. Edit the HTML code to add the component to your application screen:
 
@@ -70,7 +70,8 @@ To implement the index scroll bar component:
 
    In the following example, the list scrolls to the position of the list item defined using the `ui-listview-divider` class, selected by the index scroll bar.
 
-   Note that in a rectangular UI, touching the index generates the selection, but in a round UI, the selection occurs when using the rotary.
+    > [!NOTE]
+    > In a rectangular UI, touching the index generates the selection, but in a round UI, the selection occurs when using the rotary.
 
    ```
    (function() {
@@ -134,6 +135,6 @@ To implement the index scroll bar component:
    }());
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.3.1 and Higher for Wearable

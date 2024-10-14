@@ -217,6 +217,7 @@ Typedefs</h2></td></tr>
 
 <p>Creates an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#ga542b02807c8bcd7cc10e13fccc3740e3" title="An i18n_unumsys_h handle.">i18n_unumsys_h</a> using the name of one of the predefined numbering systems specified by CLDR and known to ICU, such as "latn", "arabext", or "hanidec"; the full list is returned by <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#ga6469b7215240f1869989530e60790332" title="Returns an enumeration over the names of all of the predefined numbering systems known to ICU...">i18n_unumsys_get_available_names</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>unumsys</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#gaf261163149ed2e3bd9c06c83fb89c973" title="Destroys an i18n_unumsys_h.">i18n_unumsys_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the numbering system for which an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#ga542b02807c8bcd7cc10e13fccc3740e3" title="An i18n_unumsys_h handle.">i18n_unumsys_h</a> should be created. </td></tr>
@@ -229,7 +230,21 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea5c244ec84689713de573d397f50c6573">I18N_ERROR_NOT_SUPPORTED</a></td><td>A numbering system unknown to ICU. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#ga542b02807c8bcd7cc10e13fccc3740e3" title="An i18n_unumsys_h handle.">i18n_unumsys_h</a> unumsys;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#ga949c5dc22fa087393955fdb41e6d82ea" title="Creates an i18n_unumsys_h using the numbering system for the specified locale.">i18n_unumsys_create</a>(<span class="stringliteral">&quot;latn&quot;</span>, &amp;unumsys);
+    <span class="keywordflow">if</span>(error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_unumsys_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#gaf261163149ed2e3bd9c06c83fb89c973" title="Destroys an i18n_unumsys_h.">i18n_unumsys_destroy</a>(unumsys);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -281,6 +296,7 @@ Typedefs</h2></td></tr>
 <p>Returns an enumeration over the names of all of the predefined numbering systems known to ICU. </p>
 <p>The numbering system names will be in alphabetical (invariant) order. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>uenum</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">uenum</td><td>A pointer to a <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> that must be closed with <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy()</a>, or NULL if an error occurred. </td></tr>
@@ -292,7 +308,21 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea23808ecfb28f4f5e8eaf1247cb553fbe">I18N_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea23808ecfb28f4f5e8eaf1247cb553fbe">I18N_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+  <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> uenum;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#ga6469b7215240f1869989530e60790332" title="Returns an enumeration over the names of all of the predefined numbering systems known to ICU...">i18n_unumsys_get_available_names</a>(&amp;uenum);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_unumsys_get_available_names: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy</a>(uenum);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+  }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -388,6 +418,7 @@ Typedefs</h2></td></tr>
 
 <p>Returns the name of the specified <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#ga542b02807c8bcd7cc10e13fccc3740e3" title="An i18n_unumsys_h handle.">i18n_unumsys_h</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>name</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">unumsys</td><td>The <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNUMSYS__MODULE.html#ga542b02807c8bcd7cc10e13fccc3740e3" title="An i18n_unumsys_h handle.">i18n_unumsys_h</a> whose name is desired. </td></tr>

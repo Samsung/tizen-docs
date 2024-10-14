@@ -223,7 +223,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the availability of the given execution environments with custom option.  <a href="#ga3f5c31ab891658b59ce7a7f7165e66be"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga6002afac36849310f20b8fd5c4b13993">ml_check_element_availability</a> (const char *element_name, bool *available)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the element is registered and available on the pipeline.  <a href="#ga6002afac36849310f20b8fd5c4b13993"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#gaf8232f5dd4c834c7687b6658773a81c8">ml_pipeline_custom_easy_filter_register</a> (const char *name, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> in, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> out, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga791d6acae17e8cd7a1a16ae561720aef">ml_custom_easy_invoke_cb</a> cb, void *user_data, <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#gafbb44f116ad65b6ad26f86810c2e98db">ml_custom_easy_filter_h</a> *custom)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#gaf8232f5dd4c834c7687b6658773a81c8">ml_pipeline_custom_easy_filter_register</a> (const char *name, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> in, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> out, <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga791d6acae17e8cd7a1a16ae561720aef">ml_custom_easy_invoke_cb</a> cb, void *user_data, <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#gafbb44f116ad65b6ad26f86810c2e98db">ml_custom_easy_filter_h</a> *custom)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a custom filter.  <a href="#gaf8232f5dd4c834c7687b6658773a81c8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga71189ab25bdbcc993c78fcf470b2f828">ml_pipeline_custom_easy_filter_unregister</a> (<a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#gafbb44f116ad65b6ad26f86810c2e98db">ml_custom_easy_filter_h</a> custom)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the custom filter.  <a href="#ga71189ab25bdbcc993c78fcf470b2f828"></a><br/></td></tr>
@@ -249,6 +249,8 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for sink element of NNStreamer pipelines (pipeline's output).  <a href="#ga4ce88d4415f529a804b4f9474c37ea8a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga3d5215e036ec52703b7d9e7c9a0e551e">ml_pipeline_state_cb</a> )(<a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga351d9e9377c180582b3af2f20448ef74">ml_pipeline_state_e</a> state, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for the change of pipeline state.  <a href="#ga3d5215e036ec52703b7d9e7c9a0e551e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga791d6acae17e8cd7a1a16ae561720aef">ml_custom_easy_invoke_cb</a> )(const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> in, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> out, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to execute the custom-easy filter in NNStreamer pipelines.  <a href="#ga791d6acae17e8cd7a1a16ae561720aef"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga6cd9352fd42e7e0e5e7fcd84dab18c9a">ml_pipeline_if_custom_cb</a> )(const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> data, const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga5f8d0255cd0b1aff41245b699ea65659">ml_tensors_info_h</a> info, int *result, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for custom condition of tensor_if.  <a href="#ga6cd9352fd42e7e0e5e7fcd84dab18c9a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
@@ -307,6 +309,35 @@ Defines</h2></td></tr>
 
 <p>A handle of a "custom-easy filter" of an NNStreamer pipeline. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga791d6acae17e8cd7a1a16ae561720aef"></a><!-- doxytag: member="nnstreamer.h::ml_custom_easy_invoke_cb" ref="ga791d6acae17e8cd7a1a16ae561720aef" args=")(const ml_tensors_data_h in, ml_tensors_data_h out, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int(* <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga791d6acae17e8cd7a1a16ae561720aef">ml_custom_easy_invoke_cb</a>)(const <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> in, <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga67049dd89c4287044ee93839fa195fa2">ml_tensors_data_h</a> out, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback to execute the custom-easy filter in NNStreamer pipelines. </p>
+<p>Note that if <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga791d6acae17e8cd7a1a16ae561720aef" title="Callback to execute the custom-easy filter in NNStreamer pipelines.">ml_custom_easy_invoke_cb()</a> returns negative error values, the constructed pipeline does not work properly anymore. So developers should release the pipeline handle and recreate it again. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>in</em> can be used only in the callback. To use outside, make a copy. </dd>
+<dd>
+The <em>out</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>The handle of the tensor input (a single frame. tensor/tensors). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The handle of the tensor output to be filled (a single frame. tensor/tensors). </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">user_data</td><td>User application's private data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. <code>1</code> to ignore the input data. Otherwise a negative error value. </dd></dl>
 
 </div>
 </div>
@@ -864,7 +895,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga791d6acae17e8cd7a1a16ae561720aef">ml_custom_easy_invoke_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga791d6acae17e8cd7a1a16ae561720aef">ml_custom_easy_invoke_cb</a>&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
@@ -889,7 +920,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
 <div class="memdoc">
 
 <p>Registers a custom filter. </p>
-<p>NNStreamer provides an interface for processing the tensors with 'custom-easy' framework which can execute without independent shared object. Using this function, the application can easily register and execute the processing code. If a custom filter with same name exists, this will be failed and return the error code <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a>. Note that if <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ga791d6acae17e8cd7a1a16ae561720aef" title="Callback to execute the custom-easy filter in NNStreamer pipelines.">ml_custom_easy_invoke_cb()</a> returns negative error values, the constructed pipeline does not work properly anymore. So developers should release the pipeline handle and recreate it again. </p>
+<p>NNStreamer provides an interface for processing the tensors with 'custom-easy' framework which can execute without independent shared object. Using this function, the application can easily register and execute the processing code. If a custom filter with same name exists, this will be failed and return the error code <a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a8081833f5d75604414cd5cb831c538ab">ML_ERROR_INVALID_PARAMETER</a>. Note that if <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga791d6acae17e8cd7a1a16ae561720aef" title="Callback to execute the custom-easy filter in NNStreamer pipelines.">ml_custom_easy_invoke_cb()</a> returns negative error values, the constructed pipeline does not work properly anymore. So developers should release the pipeline handle and recreate it again. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, <em>custom</em> handle must be released using <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#ga71189ab25bdbcc993c78fcf470b2f828" title="Unregisters the custom filter.">ml_pipeline_custom_easy_filter_unregister()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -2273,7 +2304,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -2324,7 +2355,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -2379,7 +2410,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -2416,7 +2447,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -2470,7 +2501,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>
@@ -2611,7 +2642,7 @@ http://tizen.org/privilege/recorder is needed if <em>pipeline_description</em> a
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success. Otherwise a negative error value. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. Otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__ML__FRAMEWORK.html#ggafa8aa7b8ee0794aff8dcd3029525fc93a1d5fc7f826e7a67851245a3f27b7d0a7">ML_ERROR_NONE</a></td><td>Successful. </td></tr>

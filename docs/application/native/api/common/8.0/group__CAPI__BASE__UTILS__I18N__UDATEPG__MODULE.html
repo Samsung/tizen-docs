@@ -527,7 +527,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> for list of all the base skeletons in canonical form. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>enumeration</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dtpg</td><td>An <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a> handle. Must not be <code>NULL</code>. </td></tr>
@@ -539,7 +540,29 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> enumeration = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gafee7fa5459a16b046f7005b76a3d180f" title="Handle for a date/time pattern generator object.">i18n_udatepg_h</a> dtpg = NULL;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga3734e23dbd4e28cccd4fd44d91c219ee" title="Creates an empty generator, to be constructed with i18n_udatepg_add_pattern() etc.">i18n_udatepg_create_empty</a>(&amp;dtpg);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_udatepg_create_empty: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga63a46d8730cc9fdf9506e8338bf320ba" title="Creates an i18n_uenumeration_h for list of all the base skeletons in canonical form.">i18n_udatepg_base_skeletons_create</a>(dtpg, &amp;enumeration);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_udatepg_base_skeletons_create: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy</a>(dtpg);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy</a>(enumeration);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy</a>(dtpg);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -572,11 +595,12 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates a copy of a generator. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dtpg</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dtpg</td><td>An <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gafee7fa5459a16b046f7005b76a3d180f" title="Handle for a date/time pattern generator object.">i18n_udatepg_h</a> handle to be copied. Must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">dtpg_clone</td><td>A pointer to clone of <code>dtpg</code> handle.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dtpg_clone</td><td>A pointer to clone of <em>dtpg</em> handle.</td></tr>
   </table>
   </dd>
 </dl>
@@ -584,7 +608,29 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+  <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gafee7fa5459a16b046f7005b76a3d180f" title="Handle for a date/time pattern generator object.">i18n_udatepg_h</a> dtpg = NULL;
+  <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gafee7fa5459a16b046f7005b76a3d180f" title="Handle for a date/time pattern generator object.">i18n_udatepg_h</a> dtpg_clone = NULL;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga3734e23dbd4e28cccd4fd44d91c219ee" title="Creates an empty generator, to be constructed with i18n_udatepg_add_pattern() etc.">i18n_udatepg_create_empty</a>(&amp;dtpg);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_udatepg_create_empty: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga73c179914f5493f6ebcaa9e8dcc72e3a" title="Creates a copy of a generator.">i18n_udatepg_clone</a>(dtpg, &amp;dtpg_clone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_udatepg_clone: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy</a>(dtpg);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy</a>(dtpg_clone);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy</a>(dtpg);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -652,7 +698,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates an empty generator, to be constructed with <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga7844b851375810719ae7a8c76f3fd56a" title="Adds a pattern to the generator.">i18n_udatepg_add_pattern()</a> etc. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dtpg</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">dtpg</td><td>A pointer to the <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gafee7fa5459a16b046f7005b76a3d180f" title="Handle for a date/time pattern generator object.">i18n_udatepg_h</a> handle.</td></tr>
@@ -663,7 +710,21 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gafee7fa5459a16b046f7005b76a3d180f" title="Handle for a date/time pattern generator object.">i18n_udatepg_h</a> dtpg = NULL;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga3734e23dbd4e28cccd4fd44d91c219ee" title="Creates an empty generator, to be constructed with i18n_udatepg_add_pattern() etc.">i18n_udatepg_create_empty</a>(&amp;dtpg);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_udatepg_create_empty: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy</a>(dtpg);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -867,7 +928,7 @@ Typedefs</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>Input pattern, such as "dd/MMM". Must not be <code>NULL</code>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of <code>pattern</code>, &gt;= 0. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">base_skeleton</td><td>Such as "Md". </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">capacity</td><td>The capacity of base <code>skeleton</code>, &gt;= 0.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">capacity</td><td>The capacity of <em>base_skeleton</em>, &gt;= 0.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1015,15 +1076,15 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dtpg</td><td>An <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gafee7fa5459a16b046f7005b76a3d180f" title="Handle for a date/time pattern generator object.">i18n_udatepg_h</a> handle. Must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">skeleton</td><td>The <code>skeleton</code> is a pattern containing only the variable fields; for example, "MMMdd" and "mmhh" are skeletons. Must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of <code>skeleton</code>, &gt;= 0. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">options</td><td>Options for forcing the length of specified fields in the returned pattern to match those in the <code>skeleton</code> (when this would not happen otherwise). For default behavior, use <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gga731047fe7f112d42ccd8f017b08ac2baae2831edcabe3370793700cbefd1f4a4b">I18N_UDATEPG_MATCH_NO_OPTIONS</a>. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">best_pattern</td><td>The best pattern found from the given <code>skeleton</code>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">capacity</td><td>The capacity of <code>best_pattern</code>, &gt;= 0.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">skeleton</td><td>The <em>skeleton</em> is a pattern containing only the variable fields; for example, "MMMdd" and "mmhh" are skeletons. Must not be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of <em>skeleton</em>, &gt;= 0. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">options</td><td>Options for forcing the length of specified fields in the returned pattern to match those in the <em>skeleton</em> (when this would not happen otherwise). For default behavior, use <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gga731047fe7f112d42ccd8f017b08ac2baae2831edcabe3370793700cbefd1f4a4b">I18N_UDATEPG_MATCH_NO_OPTIONS</a>. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">best_pattern</td><td>The best pattern found from the given <em>skeleton</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">capacity</td><td>The capacity of <em>best_pattern</em>, &gt;= 0.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The length of <code>best_pattern</code>.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The length of <em>best_pattern</em>.</dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
@@ -1241,11 +1302,11 @@ Typedefs</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>Input pattern, such as "dd/MMM". Must not be <code>NULL</code>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of <code>pattern</code>, &gt;= 0. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">skeleton</td><td>Such as "MMMdd". </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">capacity</td><td>The capacity of <code>skeleton</code>, &gt;= 0.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">capacity</td><td>The capacity of <em>skeleton</em>, &gt;= 0.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The length of <code>skeleton</code>.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The length of <em>skeleton</em>.</dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
@@ -1688,7 +1749,8 @@ Typedefs</h2></td></tr>
 
 <p>Creates an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> for list of all the skeletons in canonical form. </p>
 <p>Call <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga3be63a8c492a4da00108303c5e6bea26" title="Gets the pattern corresponding to a given skeleton.">i18n_udatepg_get_pattern_for_skeleton()</a> to get the corresponding pattern. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>enumeration</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dtpg</td><td>An <a class="el" href="group__CAPI__BASE__UTILS__I18N__UDATE__MODULE.html#ga2164fdba19d218cd60513fe4feabb400" title="A date formatter.">i18n_udate_format_h</a> handle. Must not be <code>NULL</code>. </td></tr>
@@ -1700,7 +1762,29 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> enumeration = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gafee7fa5459a16b046f7005b76a3d180f" title="Handle for a date/time pattern generator object.">i18n_udatepg_h</a> dtpg = NULL;
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga3734e23dbd4e28cccd4fd44d91c219ee" title="Creates an empty generator, to be constructed with i18n_udatepg_add_pattern() etc.">i18n_udatepg_create_empty</a>(&amp;dtpg);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_udatepg_create_empty: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#gaaae71346f951ed780d401bfe7731bf1c" title="Creates an i18n_uenumeration_h for list of all the skeletons in canonical form.">i18n_udatepg_skeletons_create</a>(dtpg, &amp;enumeration);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_udatepg_skeletons_create: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy</a>(dtpg);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy</a>(enumeration);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UDATEPG__MODULE.html#ga5ffcf3354d0bbced852046c33f1bc4f2" title="Destroys a generator.">i18n_udatepg_destroy</a>(dtpg);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
