@@ -1170,6 +1170,9 @@
 ### Tools
 #### [Profiler](/application/vscode-ext/tools/profiler-user-manual.md)
 #### [Memory Profiler](/application/vscode-ext/tools/memory-profiler-user-manual.md)
+#### [Address Sanitizer](/application/vscode-ext/tools/address-sanitizer-user-manual.md)
+#### [Leak Sanitizer](/application/vscode-ext/tools/leak-sanitizer-user-manual.md)
+#### [UTC and Code Coverage](/application/vscode-ext/tools/unit-test-code-coverage-user-manual.md)
 ### Tizen
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
 #### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
