@@ -1175,6 +1175,8 @@
 #### [Address Sanitizer](/application/vscode-ext/tools/address-sanitizer-user-manual.md)
 #### [Leak Sanitizer](/application/vscode-ext/tools/leak-sanitizer-user-manual.md)
 #### [UTC and Code Coverage](/application/vscode-ext/tools/unit-test-code-coverage-user-manual.md)
+#### [Dotnet Diagnostics](/application/vscode-ext/tools/diagnostics.md)
+#### [Web Assembly](/application/vscode-ext/tools/wasm.md)
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
 #### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
 ### [Tizen Web](/application/vscode-ext/web.md)
