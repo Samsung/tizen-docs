@@ -217,7 +217,6 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | Cairo                     | Provides a library for 2D vector graphics drawing. Vector graphics are advantageous because they have small file sizes and can be scaled to any size without any loss of image quality. Cairo EvasGL APIs have been newly added since 2.3.1. | [mobile](../api/mobile/latest/group__OPENSRC__CAIRO__FRAMEWORK.html), [wearable](../api/wearable/latest/group__OPENSRC__CAIRO__FRAMEWORK.html) | [Cairo](graphics/cairo.md)       |
   | Clipboard History Manager | Provides copy and paste functionalities for applications. | [mobile](../api/mobile/latest/group__CAPI__CBHM__MODULE.html) (since 3.0) |  |
   | EFL                       | Provides a collection of libraries that are independent and can be built on top of each other to provide useful features that   complement the existing environment. | [mobile](../api/mobile/latest/group__EFL.html) [wearable](../api/wearable/latest/group__EFL.html) | [EFL](ui/efl/index.md)   |
   | EFL UTIL                  | Gets and sets the priority order of notification windows.  | [mobile](../api/mobile/latest/group__CAPI__EFL__UTIL__MODULE.html), [wearable](../api/wearable/latest/group__CAPI__EFL__UTIL__MODULE.html) | [EFL Utilities](ui/efl/efl-util.md)    |

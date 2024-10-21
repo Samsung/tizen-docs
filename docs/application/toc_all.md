@@ -914,7 +914,6 @@
 
 ### Graphics
 #### [Overview](/application/native/guides/graphics/overview.md)
-#### [Cairo Vector Graphics](/application/native/guides/graphics/cairo.md)
 #### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
 #### [Hardware Acceleration](/application/native/guides/graphics/hw-acceleration.md)
 #### OpenGL&reg; ES
