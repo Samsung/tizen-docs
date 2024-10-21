@@ -9,7 +9,7 @@ export PATH=$PATH:$<TIZEN_STUDIO>/tools/tizen-core/
 ```
 ## List profile templates
 
-The command displays the list of project templates for all the versions of the given workspace type. By default, it displays all the available templates:
+The following command displays the list of project templates for all the versions of the given workspace type. By default, it displays all the available templates:
 
 **Syntax:**
 
@@ -54,7 +54,7 @@ tz list templates [options]
 
 ## List installed rootstraps
 
-The command displays a list of all the installed rootstraps in Tizen Studio:
+The following command displays a list of all the installed rootstraps in Tizen Studio:
 
 Windows&reg;, Ubuntu, and macOS:
 ```
@@ -68,7 +68,7 @@ tizen-9.0-emulator64.core                Tizen 9.0, x86_64
 
 ## List Emulators
 
-The command displays the list of emulators available for all the installed profiles:
+The following command displays the list of Emulators available for all the installed profiles:
 
 **Syntax:**
 
@@ -85,7 +85,7 @@ tz emul list-vm [options]
 
 **Examples:**
 
-- List of all the installed emulators:
+- List of all the installed Emulators:
 
   Windows&reg;, Ubuntu, and macOS:
 
@@ -98,7 +98,7 @@ tz emul list-vm [options]
 
 ## Launch Emulator
 
-The command is used to launch the installed Emulators.
+The following command is used to launch the installed Emulators:
 
 **Syntax:**
 
@@ -114,7 +114,7 @@ tz emul launch [options]
 
 **Examples:**
 
-- Launch emulator:
+- Launch Emulator:
 
   Windows&reg;, Ubuntu, and macOS:
 
@@ -124,7 +124,7 @@ tz emul launch [options]
 
 ## Create a Tizen project
 
-The command creates a Tizen native or web or dotnet or resource project from a template in the given directory:
+The following command creates a Tizen native/web/dotnet/resource project from a template in the given directory:
 
 **Syntax:**
 
@@ -168,7 +168,7 @@ tz new [options]
   $ tz new -t Basic -n basicweb -T web -p tizen-9.0 -w  ~/workspace
   ```
 
-- Create a dotnet project based on the NUIAPP template in the workspace.
+- Create a dotnet project based on the NUIAPP template in the workspace:
 
   Windows&reg;:
   ```
@@ -180,9 +180,9 @@ tz new [options]
   $ tz new -t TizenNUIApp -n nuiapp -T dotnet -p tizen-9.0 -w ~/workspace
   ```
 
-## Set Global and Project configuration options
+## Set global and project configuration options
 
-The command displays and sets the global and project configuration options. For setting or getting project configurations, Project path is mandatory.
+The following command displays and sets the global and project configuration options. For setting or getting project configurations, project path is mandatory:
 
 **Syntax:**
 
@@ -229,7 +229,7 @@ tz set [options]
   ```
   $ tz set -A arm -c llvm -b release -w ~/workspace/basicnative
   ```
-- Global - set Dotnet build tool:
+- Global - set dotnet build tool:
   
   ```
   > tz set -D msbuild
@@ -270,7 +270,7 @@ tz set [options]
 
 **Examples:**
 
-- The command displays the compiler, architecture, and the build type set:
+- The following command displays the compiler, architecture, and the build type set:
 
   Windows&reg;:
   ```
@@ -290,7 +290,7 @@ tz set [options]
 
 ## Build the project
 
-The command builds the Tizen native, web, and dotnet projects. The same command can be used to build all the 3 type of projects.
+The following command builds Tizen native, web, and dotnet projects. The same command can be used to build all the 3 type of projects:
 
 **Syntax:**
 
@@ -334,7 +334,7 @@ tz build [options]
   ```
 ## Package a Tizen application with sign
 
-The command builds and packages the Tizen application with signing. If there is a package file in the option (-b), the package is re-signed. The Tizen application is signed with a certified profile in the `tizen-studio-data/profile/profiles.xml` file. Certificate security-profiles can be created as mentioned in the section [manage a security profile](#manage-a-security-profile). 
+The following command builds and packages Tizen application with signing. If there is a package file in the option (-b), the package is re-signed. Tizen application is signed with a certified profile in the `tizen-studio-data/profile/profiles.xml` file. Certificate security-profiles can be created as mentioned in the section [manage a security profile](#manage-a-security-profile).
 
 **Syntax:**
 
@@ -356,7 +356,7 @@ tz pack [options]
 
 **Examples:**
 
-- Package the project.
+- Package the project:
 
   Windows&reg;:
   ```
@@ -388,7 +388,7 @@ tz pack [options]
   [2/2] STAMP obj/Build/pack.stamp
   ```
 
-- Repackage existing pkg file.
+- Repackage the existing pkg file:
 
   Windows&reg;:
   ```
@@ -413,7 +413,7 @@ tz pack [options]
   Package File Location: /home/user/basicnative/Debug/org.example.basicnative-1.0.0-x86.tpk
   ```
 
-- Merge and repackage the existing pkg files.
+- Merge and repackage the existing pkg files:
 
   Windows&reg;:
   ```
@@ -438,7 +438,7 @@ tz pack [options]
   ```  
 ## Install the application on a target
 
-The command installs a Tizen application on a specified target or serial device:
+The following command installs a Tizen application on a specified target or serial device:
 
 **Syntax:**
 
@@ -457,7 +457,7 @@ tz install [options]
 
 **Examples:**
 
-- Install the application.
+- Install the application:
 
   Windows&reg;:
   ```
@@ -477,7 +477,7 @@ tz install [options]
 
 ## Run the application on a target
 
-The command runs the Tizen application on a specified target or serial device:
+The following command runs the Tizen application on a specified target or serial device:
 
 **Syntax:**
 
@@ -493,13 +493,13 @@ tz run [options]
 | `-t`, `--target=STRING`          | Specifies the target name to run the package. |
 | `-e`, `--serial=STRING`          | Specifies the serial to run the package. |
 | `-d`, `--debug-mode`             | Run web app in debug mode in web inspector. |
-| `-r`, `--simulator`              | Run web app in web simulator(only TV simulator supported). |
+| `-r`, `--simulator`              | Run the web app in web simulator (only TV simulator supported). |
 | `-p`, `--package-id=STRING`      | Specifies the package id to execute. |
 | `-c`, `--coverage`               | Generate coverage report for native test app run. |
 
 **Examples:**
 
-- Run the specified application on the emulator-26101.
+- Run the specified application on the Emulator-26101:
 
   Windows&reg;:
   ```
@@ -511,7 +511,7 @@ tz run [options]
   $ tz run -e emulator-26101 -w ~/workspace/basicnative
   ```
 
-## Run the web application in web simulator(only TV simulator supported).
+## Run the web application in web simulator (only TV simulator supported)
 
   Windows&reg;:
   ```
@@ -523,7 +523,7 @@ tz run [options]
   $ tz run -r -w ~/workspace/basicweb
   ```
 
-## Run the web application in debug mode using web inspector.
+## Run the web application in debug mode using web inspector
 
   Windows&reg;:
   ```
@@ -537,7 +537,7 @@ tz run [options]
 
 ## Uninstall the application on a target
 
-The command uninstalls the Tizen application on a specified target or serial device:
+The following command uninstalls Tizen application on a specified target or serial device:
 
 **Syntax:**
 
@@ -555,7 +555,7 @@ tz uninstall [options]
 
 **Examples:**
 
-- Uninstall the application based on the specified working directory.
+- Uninstall the application based on the specified working directory:
 
   Windows&reg;:
   ```
@@ -568,8 +568,7 @@ tz uninstall [options]
   ```
 ## Clean the project
 
-The command cleans the Tizen project. If you clean the project, all the output files generated during  
-build are removed.
+The following command is used to clean Tizen project. If you clean the project, all output files generated during the build are removed.
 
 **Syntax:**
 
@@ -585,7 +584,7 @@ tz clean [options]
 
 **Examples:**
 
-- Clean the project.
+- Clean the project:
 
   Windows&reg;:
   ```
@@ -599,7 +598,7 @@ tz clean [options]
 
 ## Add dependency between the projects
 
-The command adds dependency between the projects in the given directory.
+The following command adds dependency between the projects in the given directory:
 
 **Syntax:**
 
@@ -618,7 +617,7 @@ tz add-deps [options]
 
 **Examples:**
 
-- Following command creates native BasicUI and ServiceApp in the workspace and ServiceApp is added as dependent project of BasicUI:
+- The following command creates native BasicUI and ServiceApp in the workspace and ServiceApp is added as dependent project of BasicUI:
 
 
   Windows&reg;:
@@ -635,9 +634,9 @@ tz add-deps [options]
   $ tz add-deps /home/test/workspace/basic -d ../service
   ```
 
-## Details on creating hybrid projects
+## Details to create hybrid projects
 
-A hybrid project is a project which combines different type of projects like Native and Dotnet or Web and Native apps.
+A hybrid project is a project which combines different type of projects like native and dotnet, or web and native apps.
 
 **Example:**
 
@@ -661,9 +660,9 @@ Once the different types of projects are created in the workspace, dependencies 
 
 The rest of the functionalities: [build](#build-the-project), [pack](#package-a-tizen-application-with-signing), [install](#install-the-application-on-a-target), [run](#run-the-application-on-a-target), [setting working_folder](#set-the-working-folder), [adding dependency](#add-dependency-between-the-projects) have the same behaviour in the hybrid workspace.
 
-## Details on creating, packaging and installing resource project
+## Details to create, package, and install resource project
 
-A resource project can contain resource files that can be used by a native application in a workspace.
+A resource project can contain resource files that can be used by a native application in a workspace:
 
 **Example:**
 
@@ -685,7 +684,7 @@ To package and install rpk on the target, use the following commands:
 
 **Examples:**
 
-- Package the project into rpk
+- Package the project into rpk:
 
   Windows&reg;:
   ```
@@ -697,7 +696,7 @@ To package and install rpk on the target, use the following commands:
   $ tz pack -w ~/workspace/basicrpk
   ```
 
-- Install the rpk on the target
+- Install the rpk on the target:
 
   Windows&reg;:
   ```
@@ -712,7 +711,7 @@ To package and install rpk on the target, use the following commands:
 
 ## Issue a Tizen certificate
 
-The command generates a Tizen certificate for your application. If you want to upload your application to the the official site for Tizen applications or install the application on a Tizen device, you must generate a Tizen certificate.
+The following command generates a Tizen certificate for your application. If you want to upload your application to the the official site for Tizen applications or install the application on a Tizen device, you must generate a Tizen certificate using the following command:
 
 **Syntax:**
 ```
@@ -984,7 +983,7 @@ Examples:
 
 ## Display the command help
 
-The command displays the CLI command help:
+The following command displays the CLI command help:
 
 **Syntax:**
 
@@ -1008,9 +1007,9 @@ templates, new, add-deps, rem-deps, clean, build, pack, install, run, uninstall,
   > tz new --help
   Usage: tz new --project-name=STRING --template=STRING --type=STRING --profile=STRING
 
-Create new project
+  Create new project
 
-Flags:
+  Flags:
       --help                   Show context-sensitive help.
       --version                Print version information and quit
 
@@ -1022,5 +1021,5 @@ Flags:
   ```
 
 ## Related information
-* Dependencies  
+- Dependencies  
   - Tizen Studio 6.0 and Higher
