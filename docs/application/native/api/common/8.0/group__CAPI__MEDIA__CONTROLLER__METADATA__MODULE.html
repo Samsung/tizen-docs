@@ -152,7 +152,7 @@ Functions</h2></td></tr>
 <p>Clones the metadata handle of media. </p>
 <p>This function copies the metadata handle from one to another. The <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gae9101e67ce04bc94bdecfe3dafd199e1" title="The structure type for the media controller metadata handle.">mc_metadata_h</a> is created internally and therefore available through the functions of media controller metadata.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dst</em> should be released using <code><a class="el" href="group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html#gac8fb1f3b20b2da96862dddac9028f1e4" title="Destroys a media controller metadata handle.">mc_metadata_destroy()</a></code>.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dst</em> should be released using <a class="el" href="group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html#gac8fb1f3b20b2da96862dddac9028f1e4" title="Destroys a media controller metadata handle.">mc_metadata_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The source handle of the media controller metadata </td></tr>
@@ -643,7 +643,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Sets <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga662816917c82d04f301443ebb63b508c" title="Sets the callback for monitoring metadata status of the media controller server.">mc_client_set_metadata_updated_cb()</a> function to get the metadata if you are media controller client. <br/>
- and also you can use this function when get the metadata when callback function invoked in <code><a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#ga86dfe223bc98b67d170a9a4507363033" title="Iterates through media items in a playlist.">mc_playlist_foreach_item()</a></code>.</dd></dl>
+ and also you can use this function when get the metadata when callback function invoked in <a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#ga86dfe223bc98b67d170a9a4507363033" title="Iterates through media items in a playlist.">mc_playlist_foreach_item()</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga662816917c82d04f301443ebb63b508c" title="Sets the callback for monitoring metadata status of the media controller server.">mc_client_set_metadata_updated_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#ga86dfe223bc98b67d170a9a4507363033" title="Iterates through media items in a playlist.">mc_playlist_foreach_item()</a> </dd></dl>

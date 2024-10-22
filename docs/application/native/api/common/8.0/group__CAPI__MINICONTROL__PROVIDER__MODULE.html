@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('group__MINICONTROL__PROVIDER__MODULE.html','');
+  initNavTree('group__CAPI__MINICONTROL__PROVIDER__MODULE.html','');
 </script>
 <div id="doc-content">
 <div class="header">
@@ -95,22 +95,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Minicontrol Provider APIs. </p>
-<h2><a class="anchor" id="MINICONTROL_PROVIDER_MODULE_HEADER"></a>
+<h2><a class="anchor" id="CAPI_MINICONTROL_PROVIDER_MODULE_HEADER"></a>
 Required Header</h2>
 <p>#include &lt;minicontrol-provider.h&gt;</p>
-<h2><a class="anchor" id="MINICONTROL_PROVIDER_MODULE_OVERVIEW"></a>
+<h2><a class="anchor" id="CAPI_MINICONTROL_PROVIDER_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>It provides functions for creating EFL socket window. </p>
+<p>It provides functions for creating EFL socket window.</p>
+<h2><a class="anchor" id="CAPI_MINICONTROL_PROVIDER_MODULE_FEATURE"></a>
+Related Features</h2>
+<p>This API is related with the following features:<br/>
+</p>
+<ul>
+<li>http://tizen.org/feature/minicontrol<br/>
+</li>
+</ul>
+<p>It is recommended to design feature related codes in your application for reliability.<br/>
+ You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
+ To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gaa1603db937bc1960c7302d9655db8f64">minicontrol_create_window</a> (const char *name, <a class="el" href="group__MINICONTROL__LIBRARY.html#gac2f26f99096396572042dca507a8d5dc">minicontrol_target_viewer_e</a> target_viewer, <a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84">minicontrol_event_cb</a> callback)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gaa1603db937bc1960c7302d9655db8f64">minicontrol_create_window</a> (const char *name, <a class="el" href="group__MINICONTROL__LIBRARY.html#gac2f26f99096396572042dca507a8d5dc">minicontrol_target_viewer_e</a> target_viewer, <a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84">minicontrol_event_cb</a> callback)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a window for minicontrol.  <a href="#gaa1603db937bc1960c7302d9655db8f64"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gaeab559856568e2a6ec39ba20f47ea4e4">minicontrol_send_event</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *minicontrol, <a class="el" href="group__MINICONTROL__LIBRARY.html#gaf822189275d3945bdfa9a0b151fbad05">minicontrol_provider_event_e</a> event, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *event_arg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gaeab559856568e2a6ec39ba20f47ea4e4">minicontrol_send_event</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *minicontrol, <a class="el" href="group__MINICONTROL__LIBRARY.html#gaf822189275d3945bdfa9a0b151fbad05">minicontrol_provider_event_e</a> event, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *event_arg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a event to the viewer.  <a href="#gaeab559856568e2a6ec39ba20f47ea4e4"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84">minicontrol_event_cb</a> )(<a class="el" href="group__MINICONTROL__LIBRARY.html#gac9d0a2a03d14590c4c78f36827c0f88b">minicontrol_viewer_event_e</a> event_type, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *event_arg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84">minicontrol_event_cb</a> )(<a class="el" href="group__MINICONTROL__LIBRARY.html#gac9d0a2a03d14590c4c78f36827c0f88b">minicontrol_viewer_event_e</a> event_type, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *event_arg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a event comes from viewer.  <a href="#gac45c851ca58b9d3e60e1abaf613d7f84"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
@@ -119,7 +131,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84">minicontrol_event_cb</a>)(<a class="el" href="group__MINICONTROL__LIBRARY.html#gac9d0a2a03d14590c4c78f36827c0f88b">minicontrol_viewer_event_e</a> event_type, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *event_arg)</td>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84">minicontrol_event_cb</a>)(<a class="el" href="group__MINICONTROL__LIBRARY.html#gac9d0a2a03d14590c4c78f36827c0f88b">minicontrol_viewer_event_e</a> event_type, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *event_arg)</td>
         </tr>
       </table>
 </div>
@@ -136,7 +148,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>minicontrol_viewer_register_event_callback() used to register this callback. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gaa1603db937bc1960c7302d9655db8f64" title="Creates a window for minicontrol.">minicontrol_create_window</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gaa1603db937bc1960c7302d9655db8f64" title="Creates a window for minicontrol.">minicontrol_create_window</a> </dd>
 <dd>
 <a class="el" href="group__MINICONTROL__LIBRARY.html#gac9d0a2a03d14590c4c78f36827c0f88b" title="Enumeration for types of events which will be sent by minicontrol_viewer_send_event().">minicontrol_viewer_event_e</a> </dd></dl>
 
@@ -148,7 +160,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gaa1603db937bc1960c7302d9655db8f64">minicontrol_create_window</a> </td>
+          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gaa1603db937bc1960c7302d9655db8f64">minicontrol_create_window</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -162,7 +174,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84">minicontrol_event_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84">minicontrol_event_cb</a>&#160;</td>
           <td class="paramname"><em>callback</em>&#160;</td>
         </tr>
         <tr>
@@ -176,7 +188,7 @@ Typedefs</h2></td></tr>
 
 <p>Creates a window for minicontrol. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the gat_last_result() method. Error codes are described in Exception section. The returned value should be released using <a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exception section. The returned value should be released using <a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of minicontrol socket window </td></tr>
@@ -198,7 +210,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__MINICONTROL__LIBRARY.html#gac2f26f99096396572042dca507a8d5dc" title="Enumeration for selecting target viewers.">minicontrol_target_viewer_e</a> </dd>
 <dd>
-<a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84" title="Called when a event comes from viewer.">minicontrol_event_cb</a> </dd>
+<a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gac45c851ca58b9d3e60e1abaf613d7f84" title="Called when a event comes from viewer.">minicontrol_event_cb</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> </dd></dl>
 
@@ -209,7 +221,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gaeab559856568e2a6ec39ba20f47ea4e4">minicontrol_send_event</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gaeab559856568e2a6ec39ba20f47ea4e4">minicontrol_send_event</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>minicontrol</em>, </td>
@@ -257,7 +269,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__MINICONTROL__LIBRARY.html#gaf822189275d3945bdfa9a0b151fbad05" title="Enumeration for types of events which will be sent by minicontrol_send_event().">minicontrol_provider_event_e</a> </dd>
 <dd>
-<a class="el" href="group__MINICONTROL__PROVIDER__MODULE.html#gaa1603db937bc1960c7302d9655db8f64" title="Creates a window for minicontrol.">minicontrol_create_window</a> </dd></dl>
+<a class="el" href="group__CAPI__MINICONTROL__PROVIDER__MODULE.html#gaa1603db937bc1960c7302d9655db8f64" title="Creates a window for minicontrol.">minicontrol_create_window</a> </dd></dl>
 
 </div>
 </div>

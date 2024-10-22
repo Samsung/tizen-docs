@@ -15,6 +15,6 @@ var group__CAPI__APPLICATION__FRAMEWORK =
     [ "Package Manager", "group__CAPI__PACKAGE__MANAGER__MODULE.html", "group__CAPI__PACKAGE__MANAGER__MODULE" ],
     [ "RPC Port", "group__CAPI__RPC__PORT__MODULE.html", "group__CAPI__RPC__PORT__MODULE" ],
     [ "Service Application", "group__CAPI__SERVICE__APP__MODULE.html", null ],
-    [ "Shortcut", "group__SHORTCUT__MODULE.html", null ],
+    [ "Shortcut", "group__CAPI__SHORTCUT__MODULE.html", null ],
     [ "Widget", "group__CAPI__WIDGET__FRAMEWORK.html", "group__CAPI__WIDGET__FRAMEWORK" ]
 ];
