@@ -951,11 +951,13 @@
 #### Visual Detection and Recognition
 ##### [Overview](/application/native/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
-##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
+##### [Deep Learning Based Face Detection](/application/native/guides/multimedia/face-detection.md)
+##### [Deep Learning Based Object Detection](/application/native/guides/multimedia/object-detection.md)
 ##### [Deep Learning Based Face Recognition](/application/native/guides/multimedia/face-recognition.md)
+##### [Deep Learning Based Image Classification](/application/native/guides/multimedia/image-classification.md)
+##### [Deep Learning Based Facial Landmark](/application/native/guides/multimedia/facial-landmark.md)
+##### [Deep Learning Based Pose Landmark](/application/native/guides/multimedia/pose-landmark.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
-##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
-##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
 ##### [ROI Tracker](/application/native/guides/multimedia/roi-tracker.md)
 
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
