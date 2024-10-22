@@ -147,7 +147,7 @@
 ##### [Deep Learning Based Face Detection](/application/dotnet/guides/multimedia/face-detection.md)
 ##### [Deep Learning Based Object Detection](/application/dotnet/guides/multimedia/object-detection.md)
 ##### [Deep Learning Based Image Classification](/application/dotnet/guides/multimedia/image-classification.md)
-##### [Deep Learning Based Facial Landmark](/application/dotnet/guides/multimedia/facial-landmark.md)
+##### [Deep Learning Based Ficial Landmark](/application/dotnet/guides/multimedia/facial-landmark.md)
 ##### [Deep Learning Based Pose Landmark](/application/dotnet/guides/multimedia/pose-landmark.md)
 ##### [ROI Tracker](/application/dotnet/guides/multimedia/roi-tracker.md)
 
