@@ -1,7 +1,7 @@
-# Welcome Page: Tizen Extension for VS Code 
+# Welcome Page: Tizen Extension for Visual Studio Code   
 
 ## Open Welcome Page
-   - Click on the **Tizen Extension icon** present in **Activity Bar**:
+   - Click on the **Tizen Extension** icon present in **Activity Bar**:
 
      ![Click Tizen Extension](media/activity-bar.png)
 
@@ -27,7 +27,7 @@
 
      ![Select I Agree](media/i-agree.png)
 
-     - Choose an **empty folder** to install the Tizen SDK:
+     - Choose an **empty folder** to install Tizen SDK:
 
      ![Select Folder](media/select-folder.png)
 
@@ -45,7 +45,7 @@
 
      ![Select Tizen SDK Path](media/select-sdk-path.png)
 
-     - A **pop-up** will confirm if the Tizen SDK is **set** correctly:
+     - A **pop-up** will confirm if Tizen SDK is **set** correctly:
 
      ![SDK Set Properly](media/sdk-set-properly.png)
 
@@ -61,6 +61,6 @@
 
      ![Click more about Tizen SDK](media/more-about-sdk.png)
 
-     The Tizen documentation page will be opened in the default browser:
+     Tizen documentation page will be opened in the default browser:
 
      ![Documentation page](media/documentation-page.png)

@@ -8,7 +8,7 @@ It includes dotnet-gcdump, dotnet-dump, and dotnet-trace tools to aid .NET devel
 Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Studio Code:
 
 - Make sure that Tizen Studio Version 6.0 or above is installed.
-- Make sure to set Tizen Studio Path with the installed 6.0 or above Tizen Studio path by using the VS code command: **Tizen: Wizard to set Tizen Baseline SDK path or install a new.**.
+- Make sure to set Tizen Studio Path with the installed 6.0 or above, by using the VS Code command: **Tizen: Wizard to set Tizen Baseline SDK path or install a new.**.
 
 ## Tizen .NET Core Diagnostics tools
 
@@ -19,7 +19,7 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
 
      ![Launch Emulator](media/start_emulator.png)
 
-   - Open the **command palette** and select **Tizen.NET: Run dotnet diagnostics tools**:
+   - Open the **Command Palette** and select **Tizen.NET: Run dotnet diagnostics tools**:
 
      ![Run dotnet-gcdump](media/dotnet-diagnostics.png)
   
@@ -43,7 +43,7 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
    - Once the gcdump file is collected, a message popup is shown with the option to open the generated gcdump file. Once we click the **YES** option, it will open the file in **PerfView** tool as seen below:
      ![gcdump PerfView analysis view](media/dotnet-gcdump-perfview.png)
 
-  - Another way to open the **gcdump** file is to right click the gcdump file in **File Explorer Panel** of VS code and select **Tizen: Open in Diagnostics File Viewer**. It will open the file in **PerfView** tool as seen below:
+  - Another way to open the **gcdump** file is to right click the gcdump file in **File Explorer Panel** of VS Code and select **Tizen: Open in Diagnostics File Viewer**. It will open the file in **PerfView** tool as seen below:
      ![gcdump PerfView analysis view](media/dotnet-gcdump-open.png)
 
     > [!NOTE]
@@ -57,7 +57,7 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
 
      ![Launch Emulator](media/start_emulator.png)
 
-   - Open the **command palette** and select **Tizen.NET: Run dotnet diagnostics tools**:
+   - Open the **Command Palette** and select **Tizen.NET: Run dotnet diagnostics tools**:
 
      ![Run dotnet-trace](media/dotnet-diagnostics.png)
 
@@ -90,7 +90,7 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
    - **nettrace**
        - Once the trace file is collected, a message popup is shown with the option to open the generated trace file. Once we click the **YES** option. It will open the file in **PerfView** tool as seen below:
        ![trace PerfView analysis view](media/dotnet-trace-perfview.png)
-       - Right click the trace (.nettrace) file in **File Explorer Panel** of VS code and select **Tizen: Open in Diagnostics File Viewer**. It will open the file in **PerfView** tool as seen below:
+       - Right click the trace (.nettrace) file in **File Explorer Panel** of VS Code, and then select **Tizen: Open in Diagnostics File Viewer**. It will open the file in **PerfView** tool as seen below:
        ![trace PerfView analysis view](media/dotnet-trace-open.png)
        - > [!NOTE]
          > The above two options to open/view nettrace file is supported only in Windows OS.
@@ -110,7 +110,7 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
 
      ![Launch Emulator](media/start_emulator.png)
 
-   - Open the **command palette** and select **Tizen.NET: Run dotnet diagnostics tools**:
+   - Open the **Command Palette** and select **Tizen.NET: Run dotnet diagnostics tools**:
 
      ![Run dotnet-dump](media/dotnet-diagnostics.png)
 
@@ -127,7 +127,7 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
      ![Tizen application running](media/dotnet-dump-running.png)
 
    - Once the dump file is generated, a message popup is shown to inform the user, and the file is added to the **dump** folder inside the **TizenDiagnostics** folder of the project.
-   - Dump file analysis is also printed in output panel of VS code as seen below:
+   - Dump file analysis is also printed in output panel of VS Code, as shown below:
 
      ![Completed dotnet-dump](media/dotnet-dump-completed.png)
 

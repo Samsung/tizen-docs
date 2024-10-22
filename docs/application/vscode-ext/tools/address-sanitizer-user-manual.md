@@ -1,5 +1,5 @@
 # To Detect Runtime Memory Error with Address Sanitizer
-- The Address Sanitizer is a tool that helps find memory errors in Tizen native apps. It checks if certain parts of the code might cause memory problems while running. This tool can prevent crashes or bugs during app use. It works by adding extra code during app compilation. If the app doesn't crash with the Address Sanitizer, it means the code is safe from memory issues. The tool can find different types of bugs. The Address Sanitizer tool can detect the following types of bugs:
+- The Address Sanitizer is a tool that helps find memory errors in Tizen Native apps. It checks if certain parts of the code might cause memory problems while running. This tool can prevent crashes or bugs during app use. It works by adding extra code during app compilation. If the app doesn't crash with the Address Sanitizer, it means the code is safe from memory issues. The tool can find different types of bugs. The Address Sanitizer tool can detect the following types of bugs:
 
 - Out-of-bounds accesses to heap and stack
 - Use-after-free
@@ -15,7 +15,7 @@
     <br>
 
 - After the application is launched, run the application scenario you want to test.
-- Visual Studio code shows the profiling result after clicking on **Stop Profiling** button:
+- Visual Studio Code shows the profiling result after clicking on the **Stop Profiling** button:
 
     ![Stop Profile Button](media/stop_profiling_button.png)
     <br>

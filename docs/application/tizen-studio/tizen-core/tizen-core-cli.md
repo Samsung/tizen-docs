@@ -25,7 +25,7 @@ tz list templates [options]
 
 **Examples:**
 
-- List of all the native application templates:
+- List of all the Native application templates:
 
   Windows&reg;, Ubuntu, and macOS:
 
@@ -319,7 +319,7 @@ tz build [options]
   $ tz build -w ~/workspace/basicnative
   ```
 
-- Build the native project with the  `arm`, `llvm`, and `release` options:
+- Build the Native project with `arm`, `llvm`, and `release` options:
 
   Windows&reg;:
   ```
@@ -477,7 +477,7 @@ tz install [options]
 
 ## Run the application on a target
 
-The following command runs the Tizen application on a specified target or serial device:
+TThe following command runs Tizen application on a specified target or serial device:
 
 **Syntax:**
 
@@ -568,7 +568,7 @@ tz uninstall [options]
   ```
 ## Clean the project
 
-The following command is used to clean Tizen project. If you clean the project, all output files generated during the build are removed.
+The following command is used to clean Tizen project. If you clean the project, all output files generated during the build are removed:
 
 **Syntax:**
 
@@ -617,7 +617,7 @@ tz add-deps [options]
 
 **Examples:**
 
-- The following command creates native BasicUI and ServiceApp in the workspace and ServiceApp is added as dependent project of BasicUI:
+- The following command creates Native BasicUI and ServiceApp in the workspace and ServiceApp is added as dependent project of BasicUI:
 
 
   Windows&reg;:
