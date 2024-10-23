@@ -20,16 +20,16 @@ Below are the prerequisites for using **Tizen WebAssembly (WASM)** in Visual Stu
 1. Download and extract the [Tizen Emscripten SDK](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/download.html) suitable for your OS. 
 2. Setup Tizen Emscripten and use it with Visual Studio Code.
    > [!NOTE]
-   > These steps guide to use *emsdk* without changing development host environment variables permanently.
+   > These steps guide to use **emsdk** without changing development host environment variables permanently.
 
    - Open the **Command Palette** and select **Tizen Web: Wizard to set Tizen WASM emsdk path**.
      - It launches a wizard to browse the folder and set it.
-     - Browse the *emsdk* directory and set it.
+     - Browse the **emsdk** directory and set it.
 
     ![Select dotnet-gcdump](media/wasm-emsdk-path-set.png)
 
    - Open the **Command Palette** and select **Tizen Web: Activate Tizen WASM emsdk path**.
-     - It activates the *emsdk* tool to be used by Tizen VS Code extension.
+     - It activates the **emsdk** tool to be used by Tizen VS Code extension.
 
     ![Select dotnet-gcdump](media/wasm-emsdk-activate.png)
 
@@ -88,10 +88,10 @@ The following section demonstrates the steps essential for developing a Tizen WA
 
     - If everything is okay, then the WASM module build starts and build messages are shown in the output console of VS Code.
     - Once build is completed, it shows the build success message.
-> [!NOTE]
-> First WASM module build after *emsdk* activation may take take upto 15-20 minutes (to create emscripten cache files), depending on the type of the OS (Windows/Linux/MAC).
+      > [!NOTE]
+      > First WASM module build after *emsdk* activation may take take upto 15-20 minutes (to create emscripten cache files), depending on the type of the OS (Windows/Linux/MAC).
 
-     ![Select wasm module template](media/wasm-build-success.png)
+     ![wasm build module](media/wasm-build-success.png)
 
 
 4. Running the Web WASM Application:

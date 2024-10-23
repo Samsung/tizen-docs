@@ -30,4 +30,4 @@
 - This action will open the corresponding source file in your editor and **navigate to the exact location where the failure has occurred**, as illustrated in the following figure:
 
 
-![Failure occured](media/failure_line.png)                                                         
+    ![Failure occured](media/failure_line.png)                                                         
