@@ -92,10 +92,10 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
        ![trace PerfView analysis view](media/dotnet-trace-perfview.png)
        - Right click the trace (.nettrace) file in **File Explorer Panel** of VS Code, and then select **Tizen: Open in Diagnostics File Viewer**. It will open the file in **PerfView** tool as seen below:
        ![trace PerfView analysis view](media/dotnet-trace-open.png)
-       - > [!NOTE]
-         > The above two options to open/view nettrace file is supported only in Windows OS.
+      > [!NOTE]
+      > The above two options to open/view nettrace file is supported only in Windows OS.
    - **speedscope**
-       - Right click the trace (.nettrace) file in **File Explorer Panel** of VS code and select **Tizen: Open in Diagnostics File Viewer**. It will open the file in **SpeedScope** web tool as seen below:
+       - Right click the trace (.nettrace) file in **File Explorer Panel** of VS Code, and then select **Tizen: Open in Diagnostics File Viewer**. It will open the file in **SpeedScope** web tool as seen below:
        ![trace SpeedScope analysis view](media/dotnet-trace-speedscope.png)  
    - **chromium**  
     Open Google Chrome browser and type: **chrome://tracing**, or the Microsoft Edge browser and type: **edge://tracing**.  
