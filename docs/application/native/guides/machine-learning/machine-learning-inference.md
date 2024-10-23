@@ -111,14 +111,23 @@ This section shows how to create a pipeline.
     ml_pipeline_get_state (handle, &state);
     ```
 
-3. Stop the pipeline and get state:
+3. (Optional) Clears all data and resets the pipeline.
+
+    Stops the pipeline and clear all data. If you set the start to be true, start the pipeline after the flush operation is done.
+    ```c
+    bool start;
+    ml_pipeline_flush (handle, start);
+    ```
+    
+
+4. Stop the pipeline and get state:
 
     ```c
     ml_pipeline_stop (handle);
     ml_pipeline_get_state (handle, &state);
     ```
 
-4. Destroy the pipeline.
+5. Destroy the pipeline.
 
     When no longer needed, destroy the pipeline:
 
