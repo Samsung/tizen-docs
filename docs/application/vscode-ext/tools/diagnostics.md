@@ -7,7 +7,7 @@ It includes dotnet-gcdump, dotnet-dump, and dotnet-trace tools to aid .NET devel
 
 Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Studio Code:
 
-- Make sure that Tizen Studio Version 6.0 or above is installed.
+- Make sure that Tizen Studio version 6.0 or above is installed.
 - Make sure to set Tizen Studio Path with the installed 6.0 or above, by using the VS Code command: **Tizen: Wizard to set Tizen Baseline SDK path or install a new.**.
 
 ## Tizen .NET Core Diagnostics tools
@@ -87,17 +87,17 @@ Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Stud
 
 #### Step 2. Analyze the trace file
    - There are different tools for different **Format** to view the trace diagnostics data:
-   - **nettrace**
+   - **nettrace**:
        - Once the trace file is collected, a message popup is shown with the option to open the generated trace file. Once we click the **YES** option. It will open the file in **PerfView** tool as seen below:
        ![trace PerfView analysis view](media/dotnet-trace-perfview.png)
        - Right click the trace (.nettrace) file in **File Explorer Panel** of VS Code, and then select **Tizen: Open in Diagnostics File Viewer**. It will open the file in **PerfView** tool as seen below:
        ![trace PerfView analysis view](media/dotnet-trace-open.png)
-      > [!NOTE]
-      > The above two options to open/view nettrace file is supported only in Windows OS.
-   - **speedscope**
+        > [!NOTE]
+        > The above two options to open/view nettrace file is supported only in Windows OS.
+   - **speedscope**:
        - Right click the trace (.nettrace) file in **File Explorer Panel** of VS Code, and then select **Tizen: Open in Diagnostics File Viewer**. It will open the file in **SpeedScope** web tool as seen below:
        ![trace SpeedScope analysis view](media/dotnet-trace-speedscope.png)  
-   - **chromium**  
+   - **chromium**:
     Open Google Chrome browser and type: **chrome://tracing**, or the Microsoft Edge browser and type: **edge://tracing**.  
    Now click on **Load** button which fill open file explorer and select the **.chromium** file and click **Open**:
        ![trace VS analysis view](media/dotnet-trace-chromium.png)

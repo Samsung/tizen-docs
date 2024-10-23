@@ -136,8 +136,8 @@ tz new [options]
 
 | Option                 | Description                              |
 |------------------------|------------------------------------------|
-| `-t`, `--template=STRING`     | Specifies the template name (Required). |
-| `-n`, `--project=STRING`      | Specifies the project name (Required). |
+| `-t`, `--template=STRING`     | Specifies the template name (Required) |
+| `-n`, `--project=STRING`      | Specifies the project name (Required) |
 | `-w`, `--ws-dir=STRING`       | Specifies the directory where project has to be created. By default it will be current directory |
 | `-T`, `--type=STRING`         | Specifies the profile type (Required) [native/web/dotnet/rpk] |
 | `-p`, `--profile=STRING`      | Specify the profile name (Required) |

@@ -25,9 +25,9 @@
     ![Asan UI Report](media/failure_report.png)
     <br>
   
-  ## Source file navigation on failure
-  - When a failure occurs, you can click on the **line number associated with the failure which is generated in UI Report**.
-  - This action will open the corresponding source file in your editor and **navigate to the exact location where the failure has occurred**, as illustrated in the following figure:
+## Source file navigation on failure
+- When a failure occurs, you can click on the **line number associated with the failure which is generated in UI Report**.
+- This action will open the corresponding source file in your editor and **navigate to the exact location where the failure has occurred**, as illustrated in the following figure:
 
 
-    ![Failure occured](media/failure_line.png)                                                         
+![Failure occured](media/failure_line.png)                                                         

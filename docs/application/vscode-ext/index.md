@@ -9,9 +9,9 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET, Tizen 
 
     - Windows 10 and above (64 bit)
     - Ubuntu 18.04 and above (64 bit)
-    - macOS 11.4(Big Sur)/12.3(Monterey)
+    - macOS 11.4 (Big Sur) / 12.3 (Monterey)
 
-- Required tools
+- Required tools:
 
     To use VS Code Extension for Tizen, you must install the following tools:
 
@@ -27,7 +27,7 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET, Tizen 
 
       If neither of these is found, VS Code Extension for Tizen installs the Baseline SDK.
 
-## Emulator requirements
+## Emulator Requirements
 
 Tizen Emulator for VS Code Extension for Tizen has the same requirements as the Emulator in Tizen Studio. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator):
 
