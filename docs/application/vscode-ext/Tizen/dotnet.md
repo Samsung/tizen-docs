@@ -15,7 +15,7 @@ To install VS Code Extension for Tizen from the Visual Studio Code Marketplace:
 2. In the **Extensions** view's **Search Extensions in Marketplace** field, enter **Tizen**.
 3. Locate **Visual Studio Code Extension for Tizen** in the search results and click **Install**.
 4. After the installation is complete, activate the extension by clicking **Reload**.
-5. Once the extension has been activated, it asks whether you want to use an existing Tizen Baseline SDK installation or install a new one:
+5. Once the extension has been activated, it asks whether you want to use an existing Tizen Baseline SDK installation or install a new one. Alternatively, you can use the GUI to perform the same task. Click [here](../tools/welcome-page.md#install-tizen-sdk) to access the GUI.
 
    ![Visual Studio Code Marketplace](media/vscode_baselinesdk_exists.png)
 
