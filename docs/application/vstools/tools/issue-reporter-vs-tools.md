@@ -3,7 +3,7 @@ Reporting an issue is a key feature that enables you to directly report any issu
 1. Launch Visual Studio and locate **Tools** on the top menu:
 
     ![Top Menu of Visual Studio](./media/top_menu.PNG)
-    ![Top Menu of Visual Studio](./media/top_menu.PNG)
+
     
 
 2. Select **Tools -> Tizen -> Report an Issue**:
