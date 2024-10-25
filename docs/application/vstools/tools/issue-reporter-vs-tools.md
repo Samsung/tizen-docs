@@ -3,6 +3,8 @@ Reporting an issue is a key feature that enables you to directly report any issu
 1. Launch Visual Studio and locate **Tools** on the top menu:
 
     ![Top Menu of Visual Studio](./media/top_menu.PNG)
+    ![Top Menu of Visual Studio](./media/top_menu.PNG)
+    
 
 2. Select **Tools -> Tizen -> Report an Issue**:
 
@@ -15,7 +17,6 @@ Reporting an issue is a key feature that enables you to directly report any issu
 
     a. **Documentation bug report** - Click on the **“Get started”** button (red rectangle), to report any issue associated with the documentation of VS Tools for Tizen.
 
-    b.	**Platform bug report** - Click on the **“Get started”** button (blue rectangle) below, to report any issue that arises while using VS Tools for Tizen.
+    b.	**Platform bug report** - Click on the **“Get started”** button (blue rectangle), to report any issue that arises while using VS Tools for Tizen.
 
-    ![GitHub Page](./media/git_page.png)
-
+    ![GitHub Page](./media/git_page.PNG)

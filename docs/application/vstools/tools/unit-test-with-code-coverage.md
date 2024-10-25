@@ -6,9 +6,10 @@ The Code Coverage tool is based on the `llvm-cov` tool. Using the Code Coverage 
 
 
 > [!NOTE]:  
+> 
 > Before you run the Unit Test and Code Coverage, follow the steps below:
-> * Make sure that you have an Emulator or a connected target device running.
-> * If you want to try out the tool and do not have an applicable project to test, create a project with the **Project Wizard** using a template or a sample. For more information on creating a project, check [Native Application Development](../Tizen/native).
+  > * Make sure that you have an Emulator or a connected target device running.
+  > * If you want to try out the tool and do not have an applicable project to test, create a project with the **Project Wizard** using a template or a sample. For more information on creating a project, check [Native Application Development](../Tizen/native).
 
 
 ## To build a Unit Test project

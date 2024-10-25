@@ -63,18 +63,18 @@ Connecting a device to a computer depends on the device type:
     To connect a remote device, follow these steps:
 
     1. In the Tizen Studio menu, select **Tools > Device Manager**.
-	2. In the **Device Manager** window that appears,  click **Remote Device Manager** ![Remote Device Manager](./media/device_manager_remote_device_manager_icon.png).        
-	3. In the **Remote Device Manager** window that appears, you can scan, add, edit, and delete a device. You can click **Scan Devices** ![Scan Device](./media/dm_scan_devices_icon.png) to see the list of available devices. 
-	
-	    ![Remote Device Manager](./media/remote_device_manager.png)
-	4. To add a remote device, click **Add +**. 
-	5. In the **Add Device** dialog that appears, enter the device name, the IP address of the device to which the connection needs to be made, and the port number. The default port number is **26101**.
+    2. In the **Device Manager** window that appears,  click **Remote Device Manager** ![Remote Device Manager](./media/device_manager_remote_device_manager_icon.png).        
+    3. In the **Remote Device Manager** window that appears, you can scan, add, edit, and delete a device. You can click **Scan Devices** ![Scan Device](./media/dm_scan_devices_icon.png) to see the list of available devices. 
+    
+        ![Remote Device Manager](./media/remote_device_manager.png)
+    4. To add a remote device, click **Add +**. 
+    5. In the **Add Device** dialog that appears, enter the device name, the IP address of the device to which the connection needs to be made, and the port number. The default port number is **26101**.
         
-		![Add Device](./media/add_device.png)
-	   
-	   > [!NOTE]
-	   > If you are using an emulator, then you need to enter the IP address of the system on which the emulator is launched.
-	6. Confirm the IP address and port number of the remote device, and toggle the **Connection** switch to **ON**.
+        ![Add Device](./media/add_device.png)
+       
+       > [!NOTE]
+       > If you are using an emulator, then you need to enter the IP address of the system on which the emulator is launched.
+    6. Confirm the IP address and port number of the remote device, and toggle the **Connection** switch to **ON**.
 
         When the connection is established, the remote device appears in **Device Manager**.
 
@@ -162,7 +162,7 @@ You can perform a variety of actions in the **Log** view:
     -   To delete all tabs for a device, right-click it in Device Manager and select **Delete log tabs**. Confirm the deletion by clicking **OK**.
 
     > [!NOTE]  
-	> Any filters created for a log tab are deleted when the tab is removed.
+    > Any filters created for a log tab are deleted when the tab is removed.
 
 - Filtering log messages
 
@@ -212,19 +212,28 @@ You can set the following settings for Device Manager:
     > Only values between 5,000 and 100,000 (lines) are allowed.
 
 ## Report an issue in Device Manager
-The **Issue Reporter** button can be used to report any issue that may arise while using the **Device Manager**. This button is placed inside the main window of Device Manager, and makes the process of reporting an issue straightforward. To report an issue, follow these steps:
-1. Launch **Device Manager** and view the top right region where three buttons appear: **Issue Reporter** (red rectangle), **Configuration**, and **About** buttons are found, as illustrated in the following figure:
-![Device Manager Window](./media/device_manager.png)
+The **Issue Reporter** button can be used to report any issue that may arise while using **Device Manager**. This button is placed inside the main window of Device Manager, and makes the process of reporting an issue straightforward. To report an issue, follow these steps:
+1. Launch **Device Manager** and view the top right region where three buttons appear: **Issue Reporter** (red rectangle), **Configuration**, and **About**, as illustrated in the following figure:
+
+    **Figure: Device Manager**
+
+    ![Device Manager Window](./media/device_manager.PNG)
+
 2. Click on the **Issue Reporter** button to be redirected to a **GitHub** page, that will open in your default browser. Then use your GitHub username or email address, and password to Sign in:
 
-    ![Sign In Page](./media/sign_in.png)
+    **Figure: Sign in page**
+
+    ![Sign in Page](./media/sign_in.png)
+
 3. After signing in, a new page will open. It can be used to report two types of bugs/issues:
 
     a. **Documentation bug report** - Click on the **“Get started”** button (red rectangle), to report any issue associated with the documentation of Device Manager.
 
-    b. **Platform bug report** - Click on the **“Get started”** button (blue rectangle) below, to report any issue that arises while using the Device Manager.
+    b. **Platform bug report** - Click on the **“Get started”** button (blue rectangle), to report any issue that arises while using Device Manager.
 
-    ![GitHub Page](./media/git_page.png)
+    **Figure: GitHub page to report issue**
+
+    ![GitHub page to report issue](./media/git_page.PNG)
 
 
 ## Related Information
