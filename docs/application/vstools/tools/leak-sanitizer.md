@@ -6,7 +6,7 @@ The Leak Sanitizer is a profiling tool used to detect runtime memory leaks in Ti
 > [!NOTE] 
 > Before you run the Leak Sanitizer, follow the steps below:
 > - Make sure that you have an Emulator or a connected target device running
-> -	If you want to try out the tool and do not have an applicable project to test, create a test project with the **Project Wizard** using a template or a sample. For more information on creating a project, see [Create Tizen Mobile Native Application](https://docs.tizen.org/application/vstools/Tizen/native)
+> -	If you want to try out the tool and do not have an applicable project to test, create a test project with the **Project Wizard** using a template or a sample. For more information on creating a project, see [Create Tizen Native Application](../Tizen/native)
 
 To use the Leak Sanitizer, follow the steps below:
 1. In the Project Explorer view, select **Tools >  Tizen > Profiler > Profile With Leak Sanitizer**. 

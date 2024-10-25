@@ -13,7 +13,7 @@ The Address Sanitizer tool can detect the following types of bugs:
 > [!NOTE]  
 > Before you run the Address Sanitizer, follow the steps below:
 > - Make sure that you have an Emulator or a connected target device running
-> - If you want to try out the tool but do not have an applicable project to test, create a test project with the **Project Wizard** using a template or a sample. For more information on creating a project, see [Create Tizen Native Application](https://docs.tizen.org/application/vstools/Tizen/native)
+> - If you want to try out the tool but do not have an applicable project to test, create a test project with the **Project Wizard** using a template or a sample. For more information on creating a project, see [Create Tizen Native Application](../Tizen/native)
 
 
 To use the Address Sanitizer, follow the steps below:

@@ -4,11 +4,12 @@ The Code Coverage is a profiling tool used to determine the coverage details of 
 
 The Code Coverage tool is based on the `llvm-cov` tool. Using the Code Coverage tool, you can detect parts of code that are not covered by a unit test, and ensure that the uncovered code does not cause errors at runtime. The Code Coverage tool supports functional, statement, and branch coverage.
 
-<!-- ## Use Unit Test and Code Coverage -->
-> [!NOTE]  
+
+> [!NOTE]:  
 > Before you run the Unit Test and Code Coverage, follow the steps below:
-> - Make sure that you have an Emulator or a connected target device running.
-> - If you want to try out the tool and do not have an applicable project to test, create a project with the **Project Wizard** using a template or a sample. For more information on creating a project, check [Native Application Development](../Tizen/native).
+> * Make sure that you have an Emulator or a connected target device running.
+> * If you want to try out the tool and do not have an applicable project to test, create a project with the **Project Wizard** using a template or a sample. For more information on creating a project, check [Native Application Development](../Tizen/native).
+
 
 ## To build a Unit Test project
 With a Unit Test, you can verify that your code works well, and increases its reliability. Tizen Studio Extension for VS Code provides the creating, building, and editing tools for unit tests, and a view for checking and analyzing the test results.
@@ -21,17 +22,17 @@ It uses the **gtest** framework to make and launch the test cases. To manage you
   To create a test project, follow these steps:
   1. In the Visual Studio Solution Explorer, right-click on the solution name, select **Add > New Project > Tizen Native Project**, and click on **Next** button. As illustrated in the following figure:
       
-      <img src="./media/utc_1.png" alt="Creating gtest project 1" width="980"/>
+      <img src="./media/utc_1.png" alt="Creating gtest project part: 1" width="980"/>
       
       <!-- ![Test results](./media/utc_1.png) -->
 
-      <img src="./media/utc_2.png" alt="Creating gtest project 2" width="980"/>
+      <img src="./media/utc_2.png" alt="Creating gtest project part: 2" width="980"/>
     
       <!-- ![Test results](./media/utc_2.png) -->
     
   2. In the **Configure your new project** window, select a name for the **Unit Test** project > click on **create** button > select **gtest** template > press **OK** as illustrated in the following figure:
       
-      <img src="./media/utc_3.png" alt="Creating gtest project 3" width="980"/>
+      <img src="./media/utc_3.png" alt="Creating gtest project part: 3" width="980"/>
       
       <!-- ![Test results](./media/utc_3.png) -->
 
@@ -76,7 +77,7 @@ It uses the **gtest** framework to make and launch the test cases. To manage you
 
       The method declaration should be mentioned in the header file.
 
-        <img src="./media/utc_8.png" alt="method mention in headre file" width="480"/>
+        <img src="./media/utc_8.png" alt="method mention in header file" width="480"/>
 
         <!-- ![Test results](./media/utc_8.png) -->
 
@@ -87,7 +88,7 @@ It uses the **gtest** framework to make and launch the test cases. To manage you
       #endif
       ```
         
-        <img src="./media/utc_11.png" alt="HTML Code Coverage Report 1" width="980"/>
+        <img src="./media/utc_11.png" alt="enclosing main method with macros" width="980"/>
 
         <!-- ![Test results](./media/utc_12.png) -->
 
@@ -100,19 +101,19 @@ After the test cases are executed, the results are displayed on the **Native Uni
  * ### Explorer view
     * Upon double click on the failed test case, the cursor will navigate to the line the test case failed. As illustrated in the following figure:
       
-      <img src="./media/utc_12.png" alt="HTML Code Coverage Report 1" width="980"/>
+      <img src="./media/utc_12.png" alt="Unit test result report" width="980"/>
 
       <!-- ![Test results](./media/utc_12.png) -->
 
  * ### HTML Code Coverage report
     * The **index.html** page is opened in the browser to view the Code Coverage Report, as illustrated in the following figure:
       
-      ![HTML Code Coverage Report](./media/coverage_report_1.PNG)
+      <img src="./media/coverage_report_1.PNG" alt="HTML Code Coverage Report" width="880"/>
 
       <!-- ![Test results](./media/coverage_report_1.png) -->
 
     * Click on any of the projects to get the coverage at the file level, as illustrated in the following figure:
 
-      ![HTML Code Coverage Report](./media/coverage_report_2.PNG)
+      <img src="./media/coverage_report_2.PNG" alt="HTML Code Coverage Report navigation" width="880"/>
 
       <!-- ![Test results](./media/coverage_report_2.png) -->
