@@ -183,6 +183,21 @@ The following figure shows an example of how to create and launch an emulator us
 
 In the `create` command, the `–p` option is the platform name. You can see the available platforms using the `list -vm` command.
 
+## Report an issue in Emulator Manager
+The **Issue Reporter** button can be used to report any issue that can arise while using **Emulator Manager**. This button is placed inside the main window of **Emulator Manager** and makes the process of reporting an issue straightforward. To report an issue, follow these steps:
+1. Launch **Emulator Manager** and view the top right region where two buttons appear: **Issue Reporter** (red rectangle), and **About** buttons are found, as illustrated in the following figure:
+![Emulator Manager Window](./media/em_manager.png)
+2. Click on the **Issue Reporter** button to be redirected to a **GitHub** page that will open in your default browser. Then use your GitHub username or email address, and password to Sign in:
+
+    ![Sign In Page](./media/sign_in.png)
+3. After signing in, a new page will open. It can be used to report two types of bugs/issues:
+
+    a. **Documentation bug report** - Click on the **“Get started”** button (red rectangle), to report any issue associated with the documentation of Emulator Manager.
+
+    b. **Platform bug report** - Click on the **“Get started”** button (blue rectangle) below, to report any issue that arises while using Emulator Manager.
+
+    ![GitHub Page](./media/git_page.png)
+
 ## Related information
 * Dependencies
   - Tizen Studio 1.0 and Higher

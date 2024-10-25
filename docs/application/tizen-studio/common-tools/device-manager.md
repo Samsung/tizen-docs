@@ -211,6 +211,22 @@ You can set the following settings for Device Manager:
     > [!NOTE]   
     > Only values between 5,000 and 100,000 (lines) are allowed.
 
+## Report an issue in Device Manager
+The **Issue Reporter** button can be used to report any issue that may arise while using the **Device Manager**. This button is placed inside the main window of Device Manager, and makes the process of reporting an issue straightforward. To report an issue, follow these steps:
+1. Launch **Device Manager** and view the top right region where three buttons appear: **Issue Reporter** (red rectangle), **Configuration**, and **About** buttons are found, as illustrated in the following figure:
+![Device Manager Window](./media/device_manager.png)
+2. Click on the **Issue Reporter** button to be redirected to a **GitHub** page, that will open in your default browser. Then use your GitHub username or email address, and password to Sign in:
+
+    ![Sign In Page](./media/sign_in.png)
+3. After signing in, a new page will open. It can be used to report two types of bugs/issues:
+
+    a. **Documentation bug report** - Click on the **“Get started”** button (red rectangle), to report any issue associated with the documentation of Device Manager.
+
+    b. **Platform bug report** - Click on the **“Get started”** button (blue rectangle) below, to report any issue that arises while using the Device Manager.
+
+    ![GitHub Page](./media/git_page.png)
+
+
 ## Related Information
 * Dependencies    
     - Tizen Studio 2.0 and Higher
