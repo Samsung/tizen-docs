@@ -109,6 +109,6 @@ var timerId = task.AddTimer(100, () => {
 ```
 If the registered timer source is no longer needed, you should remove it by calling `Tizen.Core.Task.RemoveTimer()` with the `timerId`.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 9.0

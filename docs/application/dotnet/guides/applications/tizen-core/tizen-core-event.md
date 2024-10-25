@@ -55,6 +55,6 @@ using (var eventObject = new EventObject(id++, message))
 ```
 If you want to deliver `Tizen.Core.EventObject` only to a specific `Tizen.Core.Event`, use `Tizen.Core.Event.Emit()` method instead.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 9.0
