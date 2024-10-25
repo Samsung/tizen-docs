@@ -8,7 +8,7 @@ The Code Coverage tool is based on the `llvm-cov` tool. Using the Code Coverage 
 > [!NOTE]  
 > Before you run the Unit Test and Code Coverage, follow the steps below:
 > - Make sure that you have an Emulator or a connected target device running.
-> - If you want to try out the tool and do not have an applicable project to test, create a project with the **Project Wizard** using a template or a sample. For more information on creating a project, check [Native Application Development](https://docs.tizen.org/application/vstools/Tizen/native).
+> - If you want to try out the tool and do not have an applicable project to test, create a project with the **Project Wizard** using a template or a sample. For more information on creating a project, check [Native Application Development](../Tizen/native).
 
 ## To build a Unit Test project
 With a Unit Test, you can verify that your code works well, and increases its reliability. Tizen Studio Extension for VS Code provides the creating, building, and editing tools for unit tests, and a view for checking and analyzing the test results.
@@ -107,12 +107,12 @@ After the test cases are executed, the results are displayed on the **Native Uni
  * ### HTML Code Coverage report
     * The **index.html** page is opened in the browser to view the Code Coverage Report, as illustrated in the following figure:
       
-      <img src="./media/coverage_report_1.png" alt="HTML Code Coverage Report 1" width="880"/>
+      ![HTML Code Coverage Report](./media/coverage_report_1.PNG)
 
       <!-- ![Test results](./media/coverage_report_1.png) -->
 
     * Click on any of the projects to get the coverage at the file level, as illustrated in the following figure:
 
-      <img src="./media/coverage_report_2.png" alt="HTML Code Coverage Report 1" width="880"/>
+      ![HTML Code Coverage Report](./media/coverage_report_2.PNG)
 
       <!-- ![Test results](./media/coverage_report_2.png) -->

@@ -11,14 +11,14 @@ The Leak Sanitizer is a profiling tool used to detect runtime memory leaks in Ti
 To use the Leak Sanitizer, follow the steps below:
 1. In the Project Explorer view, select **Tools >  Tizen > Profiler > Profile With Leak Sanitizer**. 
   
-    The profiler links your program to a runtime library containing the bare necessities required for Leak Sanitizer to work, this is done by setting the option `-fsanitize` to `leak`, and no compile-time instrumentation is applied here. Whilst the option is set, the application launches on the connected target device or the Emulator to detect any runtime memory leaks. As illustrated in the following figure:
+   The profiler links your program to a runtime library containing the bare necessities required for Leak Sanitizer to work, this is done by setting the option `-fsanitize` to `leak`, and no compile-time instrumentation is applied here. Whilst the option is set, the application launches on the connected target device or the Emulator to detect any runtime memory leaks. As illustrated in the following figure:
     
-      <img src="./media/LSan Menu.png" alt="LSAN Menu" width="980"/>
+   ![Leak Sanitizer Menu](./media/LSan Menu.png)
 
 2. After the application launches, run the application scenario that you want to test. Unlike the Address Sanitizer, Visual Studio Code checks and shows the profiling result when you exit the application. As illustrated in the following figure:
   
-      <img src="./media/Lsan Stop profiling.PNG" alt="LSAN stop" width="980"/>
+   ![Leak Sanitizer Stop](./media/Lsan Stop profiling.PNG)
 
-    After clicking the **Stop Profiling** button, VS Code will collect and show the profiling report. As illustrated in the following figure:
+   After clicking the **Stop Profiling** button, VS Code will collect and show the profiling report. As illustrated in the following figure:
   
-      <img src="./media/LSan report.PNG" alt="LSAN Report" width="980"/>
+   ![Leak Sanitizer Report](./media/LSan report.PNG)
