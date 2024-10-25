@@ -59,6 +59,11 @@
 ##### [Watch Application](/application/dotnet/guides/applications/uiapplication/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
 
+#### Tizen Core
+##### [Tizen Core](/application/dotnet/guides/applications/tizen-core/tizen-core.md)
+##### [Tizen Core Channel](/application/dotnet/guides/applications/tizen-core/tizen-core-channel.md)
+##### [Tizen Core Event](/application/dotnet/guides/applications/tizen-core/tizen-core-event.md)
+
 ### Exchange Data Between Applications
 #### [Overview](/application/dotnet/guides/exchange-data-between-apps/overview.md)
 #### [Application Control](/application/dotnet/guides/exchange-data-between-apps/app-controls.md)
