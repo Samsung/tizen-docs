@@ -76,7 +76,7 @@ task.Send(async () => {
     Log.Debug(LogTag, "Received Message = " + (string)channelObject.Data);
     channelObject.Dispose();
 });
-
+```
 The `await channel.Receiver.Receive()` blocks indefinitely if there is no data being transmitted. It is recommended to use it in situations where the sender sends data reliably.
 After receiving the object, its ownership is transferred to the receiving party, so you must release it by calling the `Tizen.Core.ChannelObject.Dispose()`.
 
