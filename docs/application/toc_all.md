@@ -1155,7 +1155,7 @@
 
 #### [Address Sanitizer](/application/vstools/tools/address-sanitizer.md)
 #### [Install Tizen App](/application/vstools/tools/install-tizen-app.md)
-#### [Issue Reporter VS Tools](/application/vstools/tools/issue-reporter-vs-tools.md)
+#### [Issue Reporter](/application/vstools/tools/issue-reporter-vs-tools.md)
 #### [Leak Sanitizer](/application/vstools/tools/leak-sanitizer.md)
 #### [Unit Test with Code Coverage](/application/vstools/tools/unit-test-with-code-coverage.md)
 

@@ -51,7 +51,7 @@ The emulator instance appears in the Emulator Manager.
 
 To view the emulator instance details, right-click the instance and select **Detail**.
 
-> **Note**  
+> [!NOTE]  
 > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, see [Increasing the Application Execution Speed](../../tizen-studio/common-tools/emulator.md#speed) for more information. If GPU is disabled, install the latest vendor-provided graphic driver.
 >
 > The mobile emulator supports HD (720x1280) and WVGA (480x800) resolutions.

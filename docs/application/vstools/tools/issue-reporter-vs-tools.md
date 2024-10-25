@@ -2,11 +2,11 @@
 Reporting an issue is a key feature that enables you to directly report any issue that can occur while using Visual Studio Tools for Tizen platforms. To report an issue, follow these steps:
 1. Launch Visual Studio and locate **Tools** on the top menu:
 
-    ![Top Menu of Visual Studio](./media/top_menu.png)
+    ![Top Menu of Visual Studio](./media/top_menu.PNG)
 
 2. Select **Tools -> Tizen -> Report an Issue**:
 
-    ![Report an Issue](./media/report_issue.png)
+    ![Report an Issue](./media/report_issue.PNG)
 
 3. Then a GitHub page will open in your default browser, where you need to enter your GitHub username or email address and password to Sign in:
 
