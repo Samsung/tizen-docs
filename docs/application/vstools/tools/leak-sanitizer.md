@@ -4,7 +4,7 @@ The Leak Sanitizer is a profiling tool used to detect runtime memory leaks in Ti
 
 ## To use the Leak Sanitizer
 
-> [!NOTE]: 
+> [!NOTE]
 >
 > Before you run the Leak Sanitizer, follow the steps below:
 	> - Make sure that you have an Emulator or a connected target device running
