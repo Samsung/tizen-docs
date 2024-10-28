@@ -83,7 +83,7 @@ It uses the **gtest** framework to make and launch the test cases. To manage you
         <!-- ![Test results](./media/utc_8.png) -->
 
     * Enclose the main() function of the Native project with `TEST_BUILD`:
-      ```cpp
+      ```csharp
       #ifndef TEST_BUILD
       //main method
       #endif

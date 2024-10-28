@@ -35,7 +35,7 @@ To create a Tizen Native project:
 
 2. To deploy and run your application, select **Debug &gt; Start without Debugging**.
 
-   > [!NOTE]
+   > [!NOTE]   
    > Ensure the emulator is running in your system.
 
    ![Run application](media/native_run_application1.PNG)
@@ -51,14 +51,11 @@ To create a Tizen Native project:
 
    ![Add break point](media/native_debug_application.PNG)
 
-3. Start the debugging session by selecting **Debug &gt; Start Debugging** in the menu bar, or pressing **F5**, or by clicking the **Debug** button in the menu bar.
+3. Start the debugging session by selecting **Debug &gt; Start Debugging** in the menu bar, or pressing **F5**, or by clicking the **Debug** button in the menu bar.    
 
-
-> [!NOTE]   
-> If you are facing errors when trying to clean the solution:   
-> - Locate the Tizen Native project on the Solution Explorer of Visual Studio and right click on it. Then, find **Properties** at the end of the menu and click on it. As illustrated in the following figure:    
-![right click on tizen native project](./media/properties.png)
-
-> - A new window will open where you need to go to **Configuration Properties -> Advanced -> Build Log File**.
-> - Next, clear the text on the box for **Build Log File**. Now, the **clean solution** function should work properly. As illustrated in the following figure:
-![clear build log file](./media/properties_window.png)
+   > [!NOTE]    
+   > If you are facing errors when trying to clean the solution, then follow the steps below:
+   > - Locate the Tizen Native project on the Solution Explorer of Visual Studio and right click on it. Then go to **Properties -> Configuration Properties -> Advanced -> Build Log File**.
+   > - Next, clear the text on the box for **Build Log File**. Now, the **clean solution** function should work properly.
+   
+   ![clear build log file](./media/properties_window.png)
