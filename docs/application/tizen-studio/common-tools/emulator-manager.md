@@ -11,6 +11,7 @@ The main features of the Emulator Manager are:
 - Starting and stopping the emulator instance
 
 <a name="access"></a>
+
 ## Accessing the Emulator Manager
 
 If you do not have the Emulator Manager installed, you can install it using the Tizen Studio Package Manager.
@@ -54,9 +55,8 @@ To create a new emulator instance:
 
    To view the emulator instance details, right-click the instance and select **Detail**.
 
-   > **Note**
-   >
-   > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator).
+  > [!NOTE]
+  > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator).
 
 ### Creating Platforms
 
@@ -182,6 +182,30 @@ The following figure shows an example of how to create and launch an emulator us
 ![Launching the emulator using the command line](./media/emulator_manager_cli_create.png)
 
 In the `create` command, the `–p` option is the platform name. You can see the available platforms using the `list -vm` command.
+
+## Report an issue in Emulator Manager
+The **Issue Reporter** button can be used to report any issue that may arise while using **Emulator Manager**. This button is placed inside the main window of **Emulator Manager** and makes the process of reporting an issue straightforward. To report an issue, follow these steps:
+1. Launch **Emulator Manager** and view the top right region where two buttons appear: **Issue Reporter** (red rectangle), and **About**, as illustrated in the following figure:
+
+    **Figure: Emulator Manager**
+    
+    ![Emulator Manager Window](./media/em_manager.PNG)
+
+2. Click on the **Issue Reporter** button to be redirected to a **GitHub** page, that will open in your default browser. Then use your GitHub username or email address, and password to Sign in:
+
+    **Figure: Sign in page**
+
+    ![Sign In Page](./media/sign_in.png)
+
+3. After signing in, a new page will open. It can be used to report two types of bugs/issues:
+
+    a. **Documentation bug report** - Click on the **“Get started”** button (red rectangle), to report any issue associated with the documentation of Emulator Manager.
+
+    b. **Platform bug report** - Click on the **“Get started”** button (blue rectangle), to report any issue that arises while using Emulator Manager.
+
+    **Figure: GitHub page to report issue**
+
+    ![GitHub page to report issue](./media/git_page.PNG)
 
 ## Related information
 * Dependencies

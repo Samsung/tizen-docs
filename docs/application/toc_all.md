@@ -1153,6 +1153,12 @@
 ##### [Metadata Element](/application/vstools/tools/metadata-element.md)
 ##### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
 
+#### [Address Sanitizer](/application/vstools/tools/address-sanitizer.md)
+#### [Install Tizen App](/application/vstools/tools/install-tizen-app.md)
+#### [Issue Reporter](/application/vstools/tools/issue-reporter-vs-tools.md)
+#### [Leak Sanitizer](/application/vstools/tools/leak-sanitizer.md)
+#### [Unit Test with Code Coverage](/application/vstools/tools/unit-test-with-code-coverage.md)
+
 #### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
 #### [Emulator Control Panel](/application/vstools/tools/emulator-control-panel.md)
 #### [API and Privilege Checker](/application/vstools/tools/api-privilege-checker.md)
