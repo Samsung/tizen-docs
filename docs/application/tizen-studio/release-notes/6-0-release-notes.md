@@ -30,7 +30,7 @@
   - Fixed the issue of .NET workload getting installed on every launch in VS Code plugin.
   - Fixed the build issue of Tizen Native Shared Library projects in VS Code plugin.
   - Fixed the issue of newly added source and resource files not getting updated in Native project configuration in VS Code plugin.
-  - Fixed the issue of ``tizen-manifest.xml`` not opening for native and ``TizenNUIGadget_inhouse`` project in VS plugin.
+  - Fixed the issue of ``tizen-manifest.xml`` not opening for Native, and ``TizenNUIGadget_inhouse`` project in VS plugin.
   - Fixed the issue of all files getting deleted whenever creating a project inside an existing solution in VS plugin.
   - Fixed the issue of .NET trace getting stuck in VS plugin.
   - Fixed the issue of Certificate change not getting impacted by prompting the user to restart VS.
