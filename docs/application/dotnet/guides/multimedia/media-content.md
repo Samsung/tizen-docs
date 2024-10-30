@@ -45,7 +45,7 @@ The main features of the `Tizen.Content.MediaContent` namespace include the foll
 
     You can [add](#create-playlists) or [delete](#delete-playlists) a playlist of video and audio files, and add media files to a created playlist. In addition, you can also [search for playlists](#find-playlists).
 
--   Media tags
+-   Media tags (Deprecated since API Level 12)
 
     You can access the tag information for the media files in the database. You can, for example, [add media tags](#add-tags), [retrieve tag information](#retrieve-tag-information), and [delete tags](#delete-tags).
 
@@ -378,7 +378,7 @@ To access media item information, follow the steps below:
                     VideoInfo videoInfo = mediaInfo as VideoInfo;
 
                     Tizen.Log.Info(LogTag, "This is a video");
-                    Tizen.Log.Info(LogTag, $"Title: {videoInfo.Title}, Album: {videoInfo.Album}, Artist: {videoInfo.Artist}, Album artist: {videoInfo.AlbumArtist}, Duration: {videoInfo.Duration}");
+                    Tizen.Log.Info(LogTag, $"Title: {videoInfo.Title}");
 
                 case MediaType.Sound:
                 case MediaType.Music:
@@ -649,16 +649,16 @@ The following tables list the available media file information.
 | `FileSize`       | File size of the media content           |
 | `DateAdded`      | Time the media content was added to the database |
 | `DateModified`   | Last modification time of the media content |
-| `Timeline`       | Time the media content was created       |
-| `ThumbnailPath`  | Path of the stored thumbnail image of the media content |
-| `Description`    | Description of the media content         |
-| `Longitude`      | Longitude of the media content           |
-| `Latitude`       | Latitude of the media content            |
-| `Altitude`       | Altitude of the media content            |
-| `Rating`         | Rating of the media content              |
-| `IsFavorite`     | Favorite status of the media content     |
+| `Timeline`       | Time the media content was created (Deprecated since API Level 12) |
+| `ThumbnailPath`  | Path of the stored thumbnail image of the media content (Deprecated since API Level 12) |
+| `Description`    | Description of the media content (Deprecated since API Level 12)        |
+| `Longitude`      | Longitude of the media content (Deprecated since API Level 12)          |
+| `Latitude`       | Latitude of the media content (Deprecated since API Level 12)           |
+| `Altitude`       | Altitude of the media content (Deprecated since API Level 12)           |
+| `Rating`         | Rating of the media content (Deprecated since API Level 12)             |
+| `IsFavorite`     | Favorite status of the media content (Deprecated since API Level 12)    |
 | `Title`          | Title of the media content               |
-| `IsDrm`          | The media is DRM-protected or not        |
+| `IsDrm`          | The media is DRM-protected or not (Deprecated since API Level 12)       |
 
 **Table: Audio metadata (only for audio files)**
 
@@ -668,16 +668,16 @@ The following tables list the available media file information.
 | `Artist`         | Artist of the audio content              |
 | `AlbumArtist`    | Album artist of the audio content<br>The artist and album artist can be the same |
 | `Genre`          | Genre of the audio content               |
-| `Composer`       | Composer of the audio content            |
+| `Composer`       | Composer of the audio content (Deprecated since API Level 12)           |
 | `Year`           | Year the audio content was recorded      |
-| `DateRecorded`   | Date the audio content was recorded      |
-| `Copyright`      | Copyright information for the audio content |
+| `DateRecorded`   | Date the audio content was recorded (Deprecated since API Level 12)     |
+| `Copyright`      | Copyright information for the audio content (Deprecated since API Level 12) |
 | `TrackNumber`    | Track number of the audio content        |
-| `BitRate`        | Bit rate of the audio content            |
-| `BitPerSample`   | Bit per sample of the audio content<br>The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample |
-| `SampleRate`     | Sample rate of the audio content          |
-| `Channels`       | Channel information for the audio content |
-| `Duration`       | Duration of the audio content             |
+| `BitRate`        | Bit rate of the audio content (Deprecated since API Level 12)           |
+| `BitPerSample`   | Bit per sample of the audio content<br>The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample (Deprecated since API Level 12) |
+| `SampleRate`     | Sample rate of the audio content (Deprecated since API Level 12) |
+| `Channels`       | Channel information for the audio content (Deprecated since API Level 12) |
+| `Duration`       | Duration of the audio content (Deprecated since API Level 12) |
 
 **Table: Image metadata (only for image files)**
 
@@ -685,10 +685,10 @@ The following tables list the available media file information.
 |-----------------|------------------------------------------|
 | `Width`         | Width of the image                       |
 | `Height`        | Height of the image                      |
-| `ExposureTime`  | Exposure time of the image               |
-| `FNumber`       | FNumber of the image                     |
-| `Iso`           | ISO of the image                         |
-| `Model`         | Model name of the camera that created the image |
+| `ExposureTime`  | Exposure time of the image (Deprecated since API Level 12) |
+| `FNumber`       | FNumber of the image (Deprecated since API Level 12) |
+| `Iso`           | ISO of the image (Deprecated since API Level 12) |
+| `Model`         | Model name of the camera that created the image (Deprecated since API Level 12) |
 | `Orientation`   | Orientation of the image                 |
 | `DateTaken`     | Time the image was created<br>You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system |
 
@@ -696,19 +696,19 @@ The following tables list the available media file information.
 
 | Metadata name   | Description                             |
 |-----------------|-----------------------------------------|
-| `Album`         | Album information for the video content |
-| `Artist`        | Artist of the video content             |
-| `AlbumArtist`   | Album artist of the video content       |
-| `Genre`         | Genre of the video content              |
-| `Composer`      | Media composer of the video content     |
-| `Year`          | Year the video content was recorded     |
-| `DateRecorded`  | Date the video content was recorded     |
-| `Copyright`     | Copyright of the video content          |
-| `TrackNumber`   | Track number of the video content       |
-| `BitRate`       | Bit rate of the video content           |
-| `Duration`      | Duration of the video content           |
-| `Width`         | Width of the video content              |
-| `Height`        | Height of the video content             |
+| `Album`         | Album information for the video content (Deprecated since API Level 12) |
+| `Artist`        | Artist of the video content (Deprecated since API Level 12) |
+| `AlbumArtist`   | Album artist of the video content (Deprecated since API Level 12) |
+| `Genre`         | Genre of the video content (Deprecated since API Level 12) |
+| `Composer`      | Media composer of the video content (Deprecated since API Level 12) |
+| `Year`          | Year the video content was recorded (Deprecated since API Level 12) |
+| `DateRecorded`  | Date the video content was recorded (Deprecated since API Level 12) |
+| `Copyright`     | Copyright of the video content (Deprecated since API Level 12) |
+| `TrackNumber`   | Track number of the video content (Deprecated since API Level 12) |
+| `BitRate`       | Bit rate of the video content (Deprecated since API Level 12) |
+| `Duration`      | Duration of the video content (Deprecated since API Level 12) |
+| `Width`         | Width of the video content (Deprecated since API Level 12) |
+| `Height`        | Height of the video content (Deprecated since API Level 12) |
 
 **Table: Book metadata (only for book files)**
 
@@ -716,8 +716,8 @@ The following tables list the available media file information.
 |-----------------|-----------------------------------------|
 | `Subject`       | Subject for the book content            |
 | `Author`        | Author of the book content              |
-| `DatePublished` | Published date of the book content      |
-| `Publisher`     | Publisher of the book content           |
+| `DatePublished` | Published date of the book content (Deprecated since API Level 12) |
+| `Publisher`     | Publisher of the book content (Deprecated since API Level 12) |
 
 ## Related information
 * Dependencies

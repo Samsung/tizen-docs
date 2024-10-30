@@ -450,6 +450,29 @@ To obtain the current state, the supported voice list, and the current voice, fo
     }
     ```
 
+- Obtain a list of personal voices supported by the TTS engine using the `tts_foreach_supported_personal_voices()` function
+
+    The foreach function triggers a separate callback for each supported personal voice. As long as the callback returns `true`, the foreach function continues to loop over the supported personal voices:
+
+    ```cpp
+    bool
+    supported_personal_voice_cb(tts_h tts, const char* language, const char* unique_id, const char* display_name, const char* device_name, void* user_data)
+    {
+        return true; /* To continue to get the next supported personal voice */
+
+        return false; /* To stop the loop */
+    }
+
+    void
+    get_supported_voice(tts_h tts)
+    {
+        int ret;
+        ret = tts_foreach_supported_personal_voices(tts, supported_personal_voice_cb, NULL);
+        if (TTS_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
+
 - Get the default voice using the `tts_get_default_voice()` function
 
     TTS synthesizes the text using the default voice if you do not set the language and the voice type as parameters of the `tts_add_text()` function:
@@ -678,6 +701,67 @@ To add text, follow the steps below:
       ret = tts_get_max_text_size(tts, &size);
       if (TTS_ERROR_NONE != ret)
           /* Error handling */
+  }
+  ```
+
+<a name="synthesis text"></a>
+## Add text with systhesis parameter
+
+The function tts_add_text_with_synthesis_parameter() is an extended version of the tts_add_text() function that allows you to request the TTS library to read a text with various options. For example, it can be used to customize speech by specifying parameters such as pitch, speed, volume, and background volume for the desired text. The TTS library manages added texts using queues, allowing multiple texts to be added simultaneously. Each acquired text receives a speech ID which is used to synthesize and play sound data.
+
+  > [!NOTE]
+  > If the added text is too long, some engines need a long time for synthesis. It is recommended to only use proper length text clips.
+
+  When you do not set the language and use `NULL` for it, the default language is used for synthesizing text.
+
+  You can add text at any point after the `tts_prepare()` function changes the state to `TTS_STATE_READY`:
+
+  ```cpp
+  void
+  add_text_with_synthesis_parameter(tts_h tts)
+  {
+      const char* text = "tutorial"; /* Text for read */
+      const char* language = "en_US"; /* Language */
+      int speed = 10;
+      int pitch = 10;
+      int voice_type = TTS_VOICE_TYPE_FEMALE; /* Voice type */
+      int speed = TTS_SPEED_AUTO; /* Read speed */
+      int utt_id; /* Utterance ID for the requested text */
+
+      static tts_synthesis_parameter_h g_tts_synth_h = NULL;
+      int ret = tts_synthesis_parameter_create(&g_tts_synth_h);
+      ret = tts_synthesis_parameter_set_language(g_tts_synth_h, language);
+      ret = tts_synthesis_parameter_set_speed(g_tts_synth_h, speed);
+      ret = tts_synthesis_parameter_set_pitch(g_tts_synth_h, pitch);
+      ret = tts_synthesis_parameter_set_voice_type(g_tts_synth_h, voice_type);
+      ret = tts_synthesis_parameter_set_volume(g_tts_synth_h, volume);
+      ret = tts_synthesis_parameter_set_background_volume_ratio(g_tts_synth_h, backgroundVolume);
+
+      ret = tts_add_text_with_synthesis_parameter(tts, text, g_tts_synth_h, &utt_id);
+      if (TTS_ERROR_NONE != ret)
+          /* Error handling */
+  }
+  ```
+
+<a name="silent utterance"></a>
+## Add silent utterance
+
+The tts_add_silent_utterance function provides speech with silence for a specific duration. The maximum silent time is 5000 milliseconds (msec). If you need a silent period longer than 5000 msec, call this function multiple times.
+
+  > [!NOTE]
+  > You can add text at any point after the `tts_prepare()` function changes the state to `TTS_STATE_READY`:
+
+  ```cpp
+  void
+  add_silent_utterance(tts_h tts)
+  {
+	  int utt_id = 0;
+	  int ret = 0;
+      int durationInMsec = 3000;
+
+	  ret = tts_add_silent_utterance(tts, durationInMsec, &utt_id);
+        if (TTS_ERROR_NONE != ret)
+            /* Error handling */
   }
   ```
 

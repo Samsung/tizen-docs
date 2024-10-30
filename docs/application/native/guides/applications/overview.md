@@ -67,6 +67,7 @@ Because a service application has no UI, neither does it have a pause state. Sin
 
 Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](efl-ui-app.md#state_trans).
 
+
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
