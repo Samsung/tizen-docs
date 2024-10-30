@@ -6,16 +6,16 @@ Release date: Oct 31, 2024
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 9.0 M2 source codes are under **tizen** branch.)
 
-- Getting binaries and images
+- Getting binaries and images:
   - Base: https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20240929.112120/
   - Profile(Unified): https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20241025.103727/
 
-- [How to flash to a device](../developing/flashing.md)
+- [How to flash an image to device](../developing/flashing.md)
 
 
 ## Release notes
 
-### System (kernel and system framework)
+### System kernel and system framework
 
 #### New and changed features
 
@@ -77,7 +77,7 @@ Release date: Oct 31, 2024
   - libgc version 8.0.4 has been upgraded to version 8.2.6.
 
 
-### System (base)
+### System (Base)
 
 #### New and changed features
 
@@ -485,7 +485,7 @@ Release date: Oct 31, 2024
   - Includes features for enabling and disabling Wi-Fi Aware, handling session termination, and discovering nearby services.
   - Enhanced capabilities for establishing secure data paths and managing peer connections.
 - Bluetooth
-  - New disconnection error type to handle MIC failure bas been added.
+  - New disconnection error type to handle MIC failure has been added.
 
 #### Fixes
 
@@ -526,7 +526,7 @@ Release date: Oct 31, 2024
 
 - WebAuthn has been supported based on Tizen Native WebAuthn.
 - CSS nesting has been supported.
-- LLVM toolchain has been upgraded to version 18.
+- LLVM Toolchain has been upgraded to version 18.
 
 #### Fixes
 
@@ -538,7 +538,7 @@ Release date: Oct 31, 2024
 - Fix to support WebM container
 
 
-### Lightweight web solution
+### Lightweight Web Solution
 
 #### New and changed features
 
@@ -660,4 +660,4 @@ Release date: Oct 31, 2024
   - Reported bugs in NNStreamer and ML API have been fixed.
 
 ## Known issues
-  - XNNPACK delegate of TensorFlow-Lite2 is temporarily disabled due to the toolchain version issue.
+  - XNNPACK delegate of TensorFlow-Lite2 is temporarily disabled due to the Toolchain version issue.
