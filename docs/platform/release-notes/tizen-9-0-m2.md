@@ -365,7 +365,7 @@ Release date: Oct 31, 2024
   - Support for creating xpath when processes name are same.
   - Support for updating function of application information.
   - Support for updating function of XPath information.
-  - Support for changing the port number (50051-50060)
+  - Support for changing the port number (50051-50060).
   - Support for separating event registration.
   - Improve the performance by refactoring processing event.
   - Support for navigation functions.
@@ -388,8 +388,8 @@ Release date: Oct 31, 2024
 - HandDrawingEngine
   - Support for drawing engine based on vector graphics has been added.
 - Vector Graphics
-  - Improve the offscreen rendering performance of multiple shapes in lottie-player.
-  - A trim path dynamic property in lottie-player has been added.
+  - Improve the offscreen rendering performance of multiple shapes in Lottie-player.
+  - A trim path dynamic property in Lottie-player has been added.
 - Clipboard
   - Support for multi-type copy and paste.
   - A HasType in Clipboard has been added.
