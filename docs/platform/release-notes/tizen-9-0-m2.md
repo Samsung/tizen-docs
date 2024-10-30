@@ -8,7 +8,7 @@ Release date: Oct 31, 2024
 
 - Getting binaries and images:
   - Base: https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20240929.112120/
-  - Profile(Unified): https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20241025.103727/
+  - Profile (Unified): https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20241025.103727/
 
 - [How to flash an image to device](../developing/flashing.md)
 
@@ -30,19 +30,19 @@ Release date: Oct 31, 2024
 
 - Device and sensor management
   - The display dimming brightness adjustment has been supported.
-  - The user configuration of display module has been supported (example. /etc/deviced/conf.d/display.conf).
+  - The user configuration of display module has been supported (Example: ``/etc/deviced/conf.d/display.conf``).
   - API document have been updated for Device/Sensor/Resource management.
 
 - Resource management
   - The robot and component-based app type has been supported.
-  - The user configuration of limiter module has been supported (example. /etc/resourced/limiter.conf.d/limiter.conf).
+  - The user configuration of limiter module has been supported (Example: ``/etc/resourced/limiter.conf.d/limiter.conf``).
 
 - OS Upgrade
   - HAL ABI Compatibility
     - The ABI compatibility between Platform and HAL has been guaranteed. It supports the Platform-Only OS Upgrade and HAL-Reuse.
-    - HAL-rootstrap has been added to support ABI compatibility between platform and HAL. It contains the ABI-guaranteed packages used by HAL-backend.
+    - HAL-rootstrap has been added to support ABI compatibility between the Platform and HAL. It contains the ABI-guaranteed packages used by HAL-backend.
     - HAL-rootstrap-checker has been added to check whether HAL-backenend has been built using only HAL-rootstrap. It prevents the ABI break of HAL-backend as system-side.
-    - Multi-HAL interface architecture of HAL module has been added to support the various hardware by single platform.
+    - Multi-HAL interface architecture of HAL module has been added to support the various hardware by a single Platform.
     - HAL Compatibility Checker has been added to check whether HAL backend version between the supported HAL interface version. If there are mismatch, fail to load HAL backend.
     - HAL ACR (API Change Request) procedure has been added.
 
@@ -51,7 +51,7 @@ Release date: Oct 31, 2024
     - The automated test of OS Upgrade and delta image automation generator have been added to verify OS Upgrade between different Tizen version.
 
 - ISU (Individual Service Upgrade)
-  - The ISU has supported '/etc/isu/[package name]/isu.cfg.d/' to create ISU package which contains the multiple package files.
+  - The ISU has supported ``/etc/isu/[package name]/isu.cfg.d/`` to create ISU package which contains the multiple package files.
   - The ISU version getter has been added.
   - The ISU data migration script has been added.
 
@@ -212,7 +212,7 @@ Release date: Oct 31, 2024
 - App-event
   - The app-event has been changed to use TIDL instead of DBUS.
 - Launchpad
-  - The launchpad has been refactored. A sub module (lux) written in rust language has been added.
+  - The launchpad has been refactored. A sub module (lux) written in Rust language has been added.
 - TIDL
   - The TIDL compiler has been updated to generate code that uses the Rust programming language.
 - Tizen Core
@@ -222,7 +222,7 @@ Release date: Oct 31, 2024
 
 - RPC-Port
   - The receiving timeout has been changed. (10 seconds -> 25 seconds)
-  - It has been changed to a structure that can receive events through the event loop of the connected(or listened) thread.
+  - It has been changed to a structure that can receive events through the event loop of the connected (or listened) thread.
 
 
 ### Window and interaction
@@ -335,7 +335,7 @@ Release date: Oct 31, 2024
   - A Window constructor using WindowData and FrontBufferRendering have been added.
   - A SetSecondarySelection in NUI.WindowSystem has been added.
   - A RelativeMotionGrab and RelativeMotionUnGrab in Window have been added.
-  - Support for window background/behind blur.
+  - Support for Window background/behind blur.
 - NUI Gadget
   - Support Unload API to release assembly has been added.
   - Support NUI Gadget Resource Manager to get Culture Information.
@@ -353,25 +353,25 @@ Release date: Oct 31, 2024
   - Support Capture for SceneView.
 - Drag and Drop
   - Support for multiple windows on a single process has been added.
-- Performance/Memory Improvement
+- Performance/memory improvement
   - Optimize render thread bottleneck.
   - Optimize Property update logic in render thread.
   - Optimize to control Vector capacity release for memory usage.
   - Support custom shader pre-compile option.
-  - Support to synchronize rendering fps with lottie's fps.
+  - Support to synchronize rendering FPS with Lottie's FPS.
 - Aurum
   - Improve the performance of finding element and dump objects by adding new methods.
   - Support for sorting child objects by coordinates.
   - Support for creating xpath when processes name are same.
   - Support for updating function of application information.
   - Support for updating function of XPath information.
-  - Support for changing the port number(50051-50060)
+  - Support for changing the port number (50051-50060)
   - Support for separating event registration.
   - Improve the performance by refactoring processing event.
   - Support for navigation functions.
   - Support for getting the parent.
   - Support for aurum-python to improve user convienent.
-- UI Analyzer (internal Tool)
+- UI Analyzer (Internal Tool)
   - Support new workspace for saving screenshot
   - Support for changing slider feature
   - Support for description information
@@ -383,8 +383,8 @@ Release date: Oct 31, 2024
   - Support for player cancel function.
   - Support for upgrade the vulnerable.
   - Support for waiting the grpc server ready.
-  - Support for role, highlightable attributes.
-  - Support for change the sdb port.
+  - Support for role and highlightable attributes.
+  - Support for change the SDB port.
 - HandDrawingEngine
   - Support for drawing engine based on vector graphics has been added.
 - Vector Graphics
@@ -397,7 +397,7 @@ Release date: Oct 31, 2024
 #### Fixes
 
   - Fix bug when find element with showing condition.
-  - Fix Memory leaks
+  - Fix memory leaks
   - Fix memory corruption
   - Fix strict weak ordering.
   - Fix the bug of reloading setting
@@ -412,7 +412,7 @@ Release date: Oct 31, 2024
   - Fix Various LottieAnimation defects.
   - Fix Various WidgetView defects.
   - Fix the bug during touch event hittest.
-  - Fix svg image loading defects.
+  - Fix SVG image loading defects.
   - Fix Various Text defects.
   - Fix Aurum crash issue.
   - Fix the text space issue for UI-Analyzer
@@ -455,12 +455,12 @@ Release date: Oct 31, 2024
     - Support MediaVision framework as a machine learning based vision backend
     - Support Camera API, OpenCV and vision source as Camera input backends
 - Media Streamer
-  - Media Streamer APIs has been removed.
+  - Media Streamer APIs have been removed.
 - Native WebRTC
   - Renegotiation has been supported.
   - Domain name as connection address of ICE candidate has been supported.
   - Consent-freshness of RFC7675 has been supported.
-  - New enum for 'max-compat' bundle policy has been added.
+  - New enum for ``max-compat`` bundle policy has been added.
   - New API for specifying payload type has been added.
   - New APIs for getting local/remote description have been added.
 - Audio Frameworks
@@ -478,7 +478,7 @@ Release date: Oct 31, 2024
   - New APIs for monitoring and retrieving the state of default gateway and DNS have been added.
   - New API for initiating a one-time online HTTP check has been added.
 - Wi-Fi Aware
-  - New set of APIs to manage Wi-Fi Aware functionalities has been added.
+  - New set of APIs to manage Wi-Fi Aware functionalities have been added.
     - Allows applications to create, configure, and manage Wi-Fi Aware sessions.
     - Supports various session types such as Publish and Subscribe.
     - Provides mechanisms for sending and receiving messages between peers.
@@ -507,7 +507,7 @@ Release date: Oct 31, 2024
   - The ligoqs has been added for PQC algorithms.
   - The key manager supports ML-KEM.
 - Passkey Support
-  - New native and C# WebAuthn APIs are provided.
+  - New Native and C# WebAuthn APIs are provided.
   - Hybrid transport is supported.
 
 
@@ -608,7 +608,7 @@ Release date: Oct 31, 2024
   - Tizen.Multimedia.Vision
     - InferenceTargetType and InferenceBackendType have been removed.
   - Tizen.Multimedia.Util
-    - Deprecated APIs has been removed.
+    - Deprecated APIs have been removed.
   - Tizen.Multimedia.StreamRecorder has been removed.
   - Tizen.Uix.Tts
     - New TTS synthesized PCM APIs have been added.
@@ -631,14 +631,14 @@ Release date: Oct 31, 2024
 
 ### Machine learning
 
-## New and changed features
+#### New and changed features
 
-### Machine Learning (ML) API updates
+#### Machine Learning (ML) API updates
   -  ML.Service API Updates
     - ML Service API supports application developers to use AI offloading service using various protocols such as TCP, MQTT, and other custom connection via NNStreamer-Edge.
   - Add NNFW enum type to support TensorRT and QNN.
 
-### NNStreamer and Related modules update
+#### NNStreamer and Related modules update
   - NNStreamer has been upgraded to version 2.4.2.
     - Add new inference filter to support the ONNX Runtime.
     - Add new inference filter to support the SNPE version 2 (Qualcomm Neural Processing SDK).
@@ -649,15 +649,15 @@ Release date: Oct 31, 2024
 
   - NNStreamer-Edge has been upgraded to version 0.2.6.
     - Support custom connection (user defined protocol).
-    - Support Multi-Connectivity Framework (MCF) using custom connection.
+    - Support Multi Connectivity Framework (MCF) using custom connection.
 
   - MLOps-Agent has been upgraded to version 1.8.6.
     - Parse the path for AI model or recource files from installed RPK.
 
   - Support ML computation offloading to an Android device (Experimental).
 
-## Fixes
+#### Fixes
   - Reported bugs in NNStreamer and ML API have been fixed.
 
-## Known issues
+#### Known issues
   - XNNPACK delegate of TensorFlow-Lite2 is temporarily disabled due to the Toolchain version issue.
