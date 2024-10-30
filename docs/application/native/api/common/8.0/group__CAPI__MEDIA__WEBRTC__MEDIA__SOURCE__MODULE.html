@@ -2189,6 +2189,8 @@ Typedefs</h2></td></tr>
 <p>Sets the crop coordinates of a screen source. </p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/internal/default/platform </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The coordinates are in UI (screen) units, and the start coordinate refers to the upper left corner of the video display area on the screen.<br/>
  If we give a rectangle within that area (described by x, y, width, height) then this sub-area will be sent to peer and it changes the video resolution. The changed resolution can be checked through <a class="el" href="group__CAPI__MEDIA__WEBRTC__MEDIA__SOURCE__MODULE.html#gac10c09b994e05b698b369d9c07251f85" title="Gets the video resolution of the media source.">webrtc_media_source_get_video_resolution()</a>.<br/>
  Even when the crop area is changed again, the rectangle coordinates are still based on the original UI (screen) as in the first setting.<br/>
@@ -2253,6 +2255,8 @@ Typedefs</h2></td></tr>
 <p>Unsets the crop coordinates of a screen source. </p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/internal/default/platform </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">webrtc</td><td>WebRTC handle </td></tr>
