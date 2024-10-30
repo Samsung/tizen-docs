@@ -60,6 +60,11 @@
 ##### [Watch Application](/application/dotnet/guides/applications/uiapplication/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
 
+#### Tizen Core
+##### [Tizen Core](/application/dotnet/guides/applications/tizen-core/tizen-core.md)
+##### [Tizen Core Channel](/application/dotnet/guides/applications/tizen-core/tizen-core-channel.md)
+##### [Tizen Core Event](/application/dotnet/guides/applications/tizen-core/tizen-core-event.md)
+
 ### Exchange Data Between Applications
 #### [Overview](/application/dotnet/guides/exchange-data-between-apps/overview.md)
 #### [Application Control](/application/dotnet/guides/exchange-data-between-apps/app-controls.md)
@@ -95,10 +100,6 @@
 ### Data
 #### [Overview](/application/dotnet/guides/data/overview.md)
 #### [Data Storages](/application/dotnet/guides/data/data-storages.md)
-
-### Display Web Content
-#### [Overview](/application/dotnet/guides/webview/overview.md)
-#### [WebView](/application/dotnet/guides/webview/webview.md)
 
 ### Hot Reloading
 #### [Overview](/application/dotnet/guides/hot-reloading/overview.md)
@@ -696,6 +697,10 @@
 ### [Overview](/application/native/guides/index.md)
 ### Applications
 #### [Overview](/application/native/guides/applications/overview.md)
+#### Tizen Core
+##### [Overview](/application/native/guides/applications/tizen-core/tizen-core.md)
+##### [Tizen Core Channel](/application/native/guides/applications/tizen-core/tizen-core-channel.md)
+##### [Tizen Core Event](/application/native/guides/applications/tizen-core/tizen-core-event.md)
 #### UI Applications
 ##### [Overview](/application/native/guides/applications/ui-app.md)
 ##### EFL Applications
@@ -900,7 +905,6 @@
 
 ### Graphics
 #### [Overview](/application/native/guides/graphics/overview.md)
-#### [Cairo Vector Graphics](/application/native/guides/graphics/cairo.md)
 #### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
 #### [Hardware Acceleration](/application/native/guides/graphics/hw-acceleration.md)
 #### OpenGL&reg; ES

@@ -4,7 +4,7 @@ The Machine Learning Service API provides utility interfaces for both AI develop
 
 The main features of the Machine Learning Service API include the following:
 
-- Provide AI pipelines, models, and resources as ML services via machine-learning-agent (daemon).
+- Provide AI pipelines, models, and resources as ML services via machine learning agent.
 
   AI developers can manage their AI pipeline description with a unique name. Then they can launch the pipeline as an ML service. They also provide their model files or resources (images, audio samples, etc.) with a unique name. Application developers can access and use these models or resources.
 
@@ -374,6 +374,190 @@ ml_information_list_destroy (res_info_list);
 // Remove the resource from the ml service
 ml_service_resource_delete (key);
 ```
+
+## Machine learning service with configuration file
+It provides an API that manages machine learning services based on the configuration file. Application users can easily use the machine learning service by writing necessary options in the configuration file. The API is designed to be simple and flexible, allowing developers to create, manage, and use machine learning models in their applications. A key feature of this API is that it allows users to manage these capabilities using a configuration file, simplifying the process of setting up and managing machine learning models without updating the application.
+
+### Configuration file template
+The configuration file is used to set up the machine learning model and to provide information about the model/pipeline. The configuration file is a JSON file that contains a list of key-value pairs.
+- Single-based v.s. Pipeline-based
+1. **Single-based** : a simple approach that uses a single model. The single-based approach is suitable for simple tasks.
+    ```
+    "single" :
+    {
+      "model" : [mandatory, string] the file path of the model file.
+      "framework" : [optional, string] the neural network framework.
+      "custom" : [optional, string] the custom options for the neural network framework.
+      "input_info" : [optional, array] the array of tensor information of input data.
+      "output_info" : [optional, array] the array of tensor information of output data.
+    },
+    "information" :
+    {
+      "key" : "value" // Any key-value pair can be added.
+    }
+    ```
+
+2. **Pipeline-based** : a more complex approach that utilizes GStreamer/NNStreamer pipeline with neural network model(s). The pipeline-based approach is suitable for complex tasks such as requiring many models or GStreamer's performant data processing functionalities. You may check [NNStreamer](https://github.com/nnstreamer/nnstreamer) or [NNStreamer's example](https://github.com/nnstreamer/nnstreamer-example) for more details about pipeline usage.
+    ```
+    "pipeline" :
+    {
+      "description" : [mandatory, string] the pipeline description. It should be valid GStreamer pipeline.
+      "input_node" : [mandatory, array] the array of input node (appsrc) and tensor information of input data.
+      "output_node" : [mandatory, array] the array of output node (appsink or tensor_sink) and tensor information of output data.
+    },
+    "information" :
+    {
+      "key" : "value" // Any key-value pair can be added.
+    }
+    ```
+
+### Configuration file example (image classification)
+These are two configuration files of image classification task using mobilenet tflite model.
+
+1. Single-based configuration file
+
+    ```json
+    {
+      "single" :
+      {
+        "model" : "/path/to/model/mobilenet_v2_1.0_224_quant.tflite",
+        "framework" : "tensorflow-lite",
+        "input_info" : [
+          {
+            "type" : "uint8",
+            "dimension" : "3:224:224:1"
+          }
+        ],
+        "output_info" : [
+          {
+            "type" : "uint8",
+            "dimension" : "1001:1"
+          }
+        ]
+      },
+      "information" :
+      {
+        "threshold" : "0.65",
+        "label_path" : "/path/to/label/label.txt"
+      }
+    }
+    ```
+
+  This is a simple configuration for a model that takes a single input tensor and produces a single output tensor.
+
+  - Input tensor is of type `uint8` and has dimension `3:224:224:1`. The model would take an image of 224x224 with 3 color channels (RGB) and a batch size of 1.
+  - Output tensor is of type `uint8` and has dimension `1001:1`. It would represent a vector of 1001 class probabilities for some classification task.
+  - Application can get `threshold` and `label_path` values with `ml_service_get_information` API.
+
+  Note that **`"input_info"` and `"output_info"` can be omitted for tflite model**, because NNStreamer can infer the input and output tensor information when open the tflite model file. However, a few frameworks require explicit input/output information. So you should check your model and its framework.
+
+2. Pipeline-based configuration file
+
+    ```json
+    {
+      "pipeline" :
+      {
+        "description" : "appsrc name=input_img caps=other/tensors,num_tensors=1,format=static,types=uint8,dimensions=3:224:224:1,framerate=0/1 ! tensor_filter framework=tensorflow-lite model=/path/to/model/mobilenet_v2_1.0_224_quant.tflite ! tensor_sink name=result_clf",
+        "input_node" : [
+          {
+            "name" : "input_img",
+            "info" : [
+              {
+                "type" : "uint8",
+                "dimension" : "3:224:224:1"
+              }
+            ]
+          }
+        ],
+        "output_node" : [
+          {
+            "name" : "result_clf",
+            "info" : [
+              {
+                "type" : "uint8",
+                "dimension" : "1001:1"
+              }
+            ]
+          }
+        ]
+      },
+      "information" :
+      {
+        "threshold" : "0.65",
+        "label_path" : "/path/to/label/label.txt"
+      }
+    }
+    ```
+
+  This is a pipeline-based configuration for an image classification task. The description should be valid GStreamer pipeline.
+
+  - `appsrc` element named `input_img` is the source of the input data, which is a tensor of type `uint8` and dimension `3:224:224:1`. `caps` is required here, and it is equivalent to corresponding `input_node`.
+  - `tensor_filter` element uses the TensorFlow-Lite framework and the `mobilenet_v2_1.0_224_quant.tflite` model to process the input data.
+  - `tensor_sink` element named `result_clf` is the sink for the output data, which produces a single tensor of type `uint8` and dimension of `1001:1` as written in `output_node`.
+  - Application can get `threshold` and `label_path` values with `ml_service_get_information` API.
+
+### Example of use
+This section shows how to use the ml-service.
+```c
+  // Callback function for the event from machine learning service.
+  // Note that the handle of event data will be deallocated after the return and this is synchronously called.
+  // Thus, if you need the event data, copy the data and return fast.
+  // Do not spend too much time in the callback.
+  static void
+  _ml_service_event_cb (ml_service_event_e event, ml_information_h event_data, void *user_data)
+  {
+    ml_tensors_data_h data;
+    void *_data;
+    size_t _size;
+ 
+    switch (event) {
+      case ML_SERVICE_EVENT_NEW_DATA:
+        // For the case of new data event, handle output data.
+        ml_information_get (event_data, "data", &data);
+        ml_tensors_data_get_tensor_data (data, 0, &_data, &_size);
+        break;
+      default:
+        break;
+    }
+  }
+ 
+  // The path to the configuration file.
+  const char config_path[] = "/path/to/application/configuration/my_application_config.conf";
+ 
+  // Create ml-service for model inference from configuration.
+  ml_service_h handle;
+ 
+  ml_service_new (config_path, &handle);
+  ml_service_set_event_cb (handle, _ml_service_event_cb, NULL);
+ 
+  // Get input information and allocate input buffer.
+  ml_tensors_info_h input_info;
+  void *input_buffer;
+  size_t input_size;
+ 
+  ml_service_get_input_information (handle, NULL, &input_info);
+ 
+  ml_tensors_info_get_tensor_size (input_info, 0, &input_size);
+  input_buffer = malloc (input_size);
+ 
+  // Create input data handle.
+  ml_tensors_data_h input;
+ 
+  ml_tensors_data_create (input_info, &input);
+  ml_tensors_data_set_tensor_data (input, 0, input_buffer, input_size);
+ 
+  // Push input data into ml-service and process the output in the callback.
+  ml_service_request (handle, NULL, input);
+ 
+  // Finally, release all handles and allocated memories.
+  ml_tensors_info_destroy (input_info);
+  ml_tensors_data_destroy (input);
+  ml_service_destroy (handle);
+  free (input_buffer);
+```
+
+### Extended usage case for AI service
+By modifying the configuration file, you can construct various AI service, such as 1) model registration to the remote (edge) device. 2) AI pipeline registration to the remote device. 3) Requesting AI model training on the remote device.
 
 ## Related information
 

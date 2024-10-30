@@ -5,7 +5,7 @@ You can access, add, and edit metadata in media files.
 
 The main metadata features include the following:
 
--   Metadata editing
+-   Metadata editing (Deprecated since API Level 12)
 
     You can [edit the metadata](#editing) of several popular audio formats using the metadata editor. You can add and remove album art, or update the information for the audio file.
 
@@ -43,7 +43,7 @@ To enable your application to use the metadata functionality, proceed as follows
     ```
 
 <a name="editing"></a>
-## Edit metadata and artwork
+## Edit metadata and artwork (Deprecated since API Level 12)
 To add and edit metadata in an audio file, proceed as follows:
 
 1.  Create an instance of the [Tizen.Multimedia.MetadataEditor](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MetadataEditor.html) class with the path of the file to be edited. Make sure you have access to the file whose metadata and artwork you want to edit:
@@ -196,19 +196,19 @@ The following table lists the metadata you can edit.
 
 | Attribute     | Description                        | Property or method of the Tizen.Multimedia.MetadataEditor class |
 |-------------|----------------------------------|----------------------------------------|
-| Artist        | Artist of the audio content        | `Artist`                                 |
-| Title         | Title of the audio content         | `Title`                                  |
-| Album         | Album of the audio content         | `Album`                                  |
-| Genre         | Genre of the audio content         | `Genre`                                  |
-| Composer        | Composer of the audio content        | `Composer`                                 |
-| Copyright     | Copyright of the audio content     | `Copyright`                              |
-| Date          | Date of the audio content          | `Date`                                   |
-| Description   | Description of the audio content   | `Description`                            |
-| Comment       | Comment of the audio content       | `Comment`                                |
-| TrackNumber   | Track number of the audio content  | `TrackNumber`                            |
-| Picture       | Picture of the audio content       | `PictureCount`<br>`GetPicture()`<br>`AddPicture()`<br>`RemovePicture()` |
-| Conductor     | Conductor of the audio content     | `Conductor`                              |
-| Unsync lyrics | Unsync lyrics of the audio content | `UnsyncLyrics`                           |
+| Artist        | Artist of the audio content        | `Artist` (Deprecated since API Level 12) |
+| Title         | Title of the audio content         | `Title` (Deprecated since API Level 12) |
+| Album         | Album of the audio content         | `Album` (Deprecated since API Level 12)  |
+| Genre         | Genre of the audio content         | `Genre` (Deprecated since API Level 12) |
+| Composer        | Composer of the audio content        | `Composer` (Deprecated since API Level 12) |
+| Copyright     | Copyright of the audio content     | `Copyright` (Deprecated since API Level 12) |
+| Date          | Date of the audio content          | `Date` (Deprecated since API Level 12) |
+| Description   | Description of the audio content   | `Description` (Deprecated since API Level 12) |
+| Comment       | Comment of the audio content       | `Comment` (Deprecated since API Level 12) |
+| TrackNumber   | Track number of the audio content  | `TrackNumber` (Deprecated since API Level 12) |
+| Picture       | Picture of the audio content       | `PictureCount` (Deprecated since API Level 12)<br>`GetPicture() (Deprecated since API Level 12)`<br>`AddPicture() (Deprecated since API Level 12)`<br>`RemovePicture()` (Deprecated since API Level 12) |
+| Conductor     | Conductor of the audio content     | `Conductor` (Deprecated since API Level 12) |
+| Unsync lyrics | Unsync lyrics of the audio content | `UnsyncLyrics` (Deprecated since API Level 12) |
 
 <a name="attribute2"></a>
 ## Extractable metadata attributes
