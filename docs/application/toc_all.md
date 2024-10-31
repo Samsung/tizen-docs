@@ -60,6 +60,11 @@
 ##### [Watch Application](/application/dotnet/guides/applications/uiapplication/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
 
+#### Tizen Core
+##### [Tizen Core](/application/dotnet/guides/applications/tizen-core/tizen-core.md)
+##### [Tizen Core Channel](/application/dotnet/guides/applications/tizen-core/tizen-core-channel.md)
+##### [Tizen Core Event](/application/dotnet/guides/applications/tizen-core/tizen-core-event.md)
+
 ### Exchange Data Between Applications
 #### [Overview](/application/dotnet/guides/exchange-data-between-apps/overview.md)
 #### [Application Control](/application/dotnet/guides/exchange-data-between-apps/app-controls.md)
@@ -95,10 +100,6 @@
 ### Data
 #### [Overview](/application/dotnet/guides/data/overview.md)
 #### [Data Storages](/application/dotnet/guides/data/data-storages.md)
-
-### Display Web Content
-#### [Overview](/application/dotnet/guides/webview/overview.md)
-#### [WebView](/application/dotnet/guides/webview/webview.md)
 
 ### Hot Reloading
 #### [Overview](/application/dotnet/guides/hot-reloading/overview.md)
@@ -696,6 +697,10 @@
 ### [Overview](/application/native/guides/index.md)
 ### Applications
 #### [Overview](/application/native/guides/applications/overview.md)
+#### Tizen Core
+##### [Overview](/application/native/guides/applications/tizen-core/tizen-core.md)
+##### [Tizen Core Channel](/application/native/guides/applications/tizen-core/tizen-core-channel.md)
+##### [Tizen Core Event](/application/native/guides/applications/tizen-core/tizen-core-event.md)
 #### UI Applications
 ##### [Overview](/application/native/guides/applications/ui-app.md)
 ##### EFL Applications
@@ -900,7 +905,6 @@
 
 ### Graphics
 #### [Overview](/application/native/guides/graphics/overview.md)
-#### [Cairo Vector Graphics](/application/native/guides/graphics/cairo.md)
 #### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
 #### [Hardware Acceleration](/application/native/guides/graphics/hw-acceleration.md)
 #### OpenGL&reg; ES
@@ -949,11 +953,13 @@
 #### Visual Detection and Recognition
 ##### [Overview](/application/native/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
-##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
+##### [Deep Learning Based Face Detection](/application/native/guides/multimedia/face-detection.md)
+##### [Deep Learning Based Object Detection](/application/native/guides/multimedia/object-detection.md)
 ##### [Deep Learning Based Face Recognition](/application/native/guides/multimedia/face-recognition.md)
+##### [Deep Learning Based Image Classification](/application/native/guides/multimedia/image-classification.md)
+##### [Deep Learning Based Facial Landmark](/application/native/guides/multimedia/facial-landmark.md)
+##### [Deep Learning Based Pose Landmark](/application/native/guides/multimedia/pose-landmark.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
-##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
-##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
 ##### [ROI Tracker](/application/native/guides/multimedia/roi-tracker.md)
 
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
@@ -1151,6 +1157,12 @@
 ##### [Metadata Element](/application/vstools/tools/metadata-element.md)
 ##### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
 
+#### [Address Sanitizer](/application/vstools/tools/address-sanitizer.md)
+#### [Install Tizen App](/application/vstools/tools/install-tizen-app.md)
+#### [Issue Reporter](/application/vstools/tools/issue-reporter-vs-tools.md)
+#### [Leak Sanitizer](/application/vstools/tools/leak-sanitizer.md)
+#### [Unit Test with Code Coverage](/application/vstools/tools/unit-test-with-code-coverage.md)
+
 #### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
 #### [Emulator Control Panel](/application/vstools/tools/emulator-control-panel.md)
 #### [API and Privilege Checker](/application/vstools/tools/api-privilege-checker.md)
@@ -1167,10 +1179,16 @@
 ## Visual Studio Code Extension for Tizen
 ### [Prerequisites](/application/vscode-ext/index.md)
 ### [Installing Visual Studio Code Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
+### [Tizen Welcome Page](/application/vscode-ext/tools/welcome-page.md)
+### [Tizen Activity Bar](/application/vscode-ext/tools/activity-bar.md)
 ### Tools
 #### [Profiler](/application/vscode-ext/tools/profiler-user-manual.md)
 #### [Memory Profiler](/application/vscode-ext/tools/memory-profiler-user-manual.md)
-### Tizen
+#### [Address Sanitizer](/application/vscode-ext/tools/address-sanitizer-user-manual.md)
+#### [Leak Sanitizer](/application/vscode-ext/tools/leak-sanitizer-user-manual.md)
+#### [UTC and Code Coverage](/application/vscode-ext/tools/unit-test-code-coverage-user-manual.md)
+#### [Dotnet Diagnostics](/application/vscode-ext/tools/diagnostics.md)
+#### [Web Assembly](/application/vscode-ext/tools/wasm.md)
 #### [Hybrid application development](/application/vscode-ext/Tizen/hybrid.md)
 #### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
 ### [Tizen Web](/application/vscode-ext/web.md)

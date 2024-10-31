@@ -231,10 +231,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the system command list.  <a href="#ga7fd1ea4811f6942b368036d58a91947b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga9e99075429ff9d67a28a169858f0c120">vc_set_invocation_name</a> (const char *name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the invocation name.  <a href="#ga9e99075429ff9d67a28a169858f0c120"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gab49df6a8c9c1a30effd332fdbd19ea45">vc_set_server_dialog</a> (const char *app_id, const char *credential)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests to set app id which is to want to ask the server dialogue.  <a href="#gab49df6a8c9c1a30effd332fdbd19ea45"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gaffbfb9d2027200a38f2975a7ebcf8865">vc_unset_server_dialog</a> (const char *app_id)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests to unset app id which is to not want to ask the server dialogue.  <a href="#gaffbfb9d2027200a38f2975a7ebcf8865"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga7d1a6845946d3d565ae2d7003989808c">vc_request_dialog</a> (const char *disp_text, const char *utt_text, bool auto_start)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests to start the dialogue.  <a href="#ga7d1a6845946d3d565ae2d7003989808c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gaeab142d51a45aa8a3e1f172f2a8e146e">vc_set_command_list</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html#ga89b3da11ab1c2a636d7e723c54ebe1a4">vc_cmd_list_h</a> vc_cmd_list, int type)</td></tr>
@@ -1604,60 +1600,6 @@ Defines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gab49df6a8c9c1a30effd332fdbd19ea45"></a><!-- doxytag: member="voice_control.h::vc_set_server_dialog" ref="gab49df6a8c9c1a30effd332fdbd19ea45" args="(const char *app_id, const char *credential)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gab49df6a8c9c1a30effd332fdbd19ea45">vc_set_server_dialog</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>app_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>credential</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Requests to set app id which is to want to ask the server dialogue. </p>
-<p>Using this function, the developer can request registering the application on vc framework. If developer requests to register <em>app_id</em> with <em>credential</em> which is valid, the application will be set on vc framework. and then, when the developer requests the dialogue using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga7d1a6845946d3d565ae2d7003989808c" title="Requests to start the dialogue.">vc_request_dialog()</a>, dialog from specific engine server will be played by vc framework. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If <em>app_id</em> is <code>NULL</code>, the API tries to get app ID using app manager framework. However, getting app ID may be failed. </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">app_id</td><td>App id which is to want to ask server dialog. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">credential</td><td>Credential key. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The service state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggab56fbe5d3ece7c0931b582f66e44c5c4a9abc01b4975411caf563dc72ac2886da">VC_SERVICE_STATE_READY</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gaffbfb9d2027200a38f2975a7ebcf8865" title="Requests to unset app id which is to not want to ask the server dialogue.">vc_unset_server_dialog()</a> </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ga590b65dcec1cd859c501f33b991d3f66"></a><!-- doxytag: member="voice_control.h::vc_set_service_state_changed_cb" ref="ga590b65dcec1cd859c501f33b991d3f66" args="(vc_service_state_changed_cb callback, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2287,49 +2229,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gacabcc45fd3a636bc04cb1b1a745a269a" title="Sets a callback function for getting recognition result.">vc_set_result_cb()</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaffbfb9d2027200a38f2975a7ebcf8865"></a><!-- doxytag: member="voice_control.h::vc_unset_server_dialog" ref="gaffbfb9d2027200a38f2975a7ebcf8865" args="(const char *app_id)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gaffbfb9d2027200a38f2975a7ebcf8865">vc_unset_server_dialog</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>app_id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Requests to unset app id which is to not want to ask the server dialogue. </p>
-<p>Using this function, the developer can disable function to ask dialog based on server. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If <em>app_id</em> is <code>NULL</code>, the API tries to get app ID using app manager framework. However, getting app ID may be failed. </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">app_id</td><td>App id which is to not want to ask server dialog. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The service state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggab56fbe5d3ece7c0931b582f66e44c5c4a9abc01b4975411caf563dc72ac2886da">VC_SERVICE_STATE_READY</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gab49df6a8c9c1a30effd332fdbd19ea45" title="Requests to set app id which is to want to ask the server dialogue.">vc_set_server_dialog()</a> </dd></dl>
 
 </div>
 </div>

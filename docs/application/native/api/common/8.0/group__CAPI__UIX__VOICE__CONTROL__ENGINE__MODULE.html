@@ -1083,7 +1083,7 @@ Defines</h2></td></tr>
 
 <p>Called when the engine service user sets command list before recognition. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should set commands via vcd_foreach_command(). The <em>vc_command</em> should not be released. The <em>vc_command</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should set commands via <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga1fe395c7c9af1980aacf7f5a8e624481" title="Retrieves all commands using callback function.">vce_get_foreach_command()</a>. The <em>vc_command</em> should not be released. The <em>vc_command</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vc_command</td><td>command handle. The <em>vc_command</em> can be used only in the callback. To use outside, make a copy. </td></tr>
@@ -1104,9 +1104,9 @@ Defines</h2></td></tr>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga2a96ca8271dcd2fc867dc2705ce2c903" title="Called when the engine service user starts recognition.">vce_start_cb()</a> is called after this function is successful. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga2a96ca8271dcd2fc867dc2705ce2c903" title="Called when the engine service user starts recognition.">vce_start_cb()</a> </dd>
 <dd>
-vcd_foreach_command() </dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga1fe395c7c9af1980aacf7f5a8e624481" title="Retrieves all commands using callback function.">vce_get_foreach_command()</a> </dd>
 <dd>
-vce_unset_commands() </dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gaad9394402faf3bc043861921c2fada81" title="Called when the engine service user unsets command list for reset.">vce_unset_commands_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gac0496feeb89b67baf84076993700c67f" title="Gets command length.">vce_get_command_count()</a> </dd></dl>
 
@@ -1320,7 +1320,7 @@ vce_unset_commands() </dd>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>vcd_foreach_command() is successful. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5adc3963c2ad757fb4cd8a19ab590c93" title="Called when the engine service user sets command list before recognition.">vce_set_commands_cb()</a> is successful. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga82929b9bfc9abbcd2904fdbbe763d839" title="Called when the engine service user sets recording data for speech recognition from recorder...">vce_set_recording_data_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gab0d2005b1418d370636c410c805ab220" title="Called when the engine service user stops to get the result of recognition.">vce_stop_cb()</a> </dd>

@@ -3,7 +3,7 @@
 
 To handle content metadata, you can use the following features:
 
-- Metadata editing
+- Metadata editing (Deprecated since 9.0)
 
   You can [edit the metadata](#edit_metadata) of several popular audio formats using the metadata editor. You can add and remove album art, or update the information for the audio file.
 

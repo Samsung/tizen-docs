@@ -1,7 +1,7 @@
 # Media Content
 
 
-You can get information about media content from the metadata in the content, such as an ID3 or MP4 tag. You can obtain or update data from the media database, which stores metadata for the media files (such as images, videos, books, and audio) on the device.
+You can get information about media content from the metadata in the content, such as an ID3 tag. You can obtain or update data from the media database, which stores metadata for the media files (such as images, videos, books, and audio) on the device.
 
 **Figure: Media content of the device**
 
@@ -9,8 +9,8 @@ You can get information about media content from the metadata in the content, su
 
 The media files are updated using an application (by calling the Content API) or a media scanner. When updating the files in the media scanner, the following limitations apply:
 
-- SD card insertion and removal: Media files are updated only in the SD card.
-- Rebooting the device: Media files are updated in the internal memory and SD card on the device.
+- The external storage device insertion and removal (e.g. SD card, USB drive): Media files are updated only in the external storage device.
+- Rebooting the device: Media files are updated in the internal and external storages on the device.
 
 You can only use the Media Content API to manage files located in specific paths. You can get the paths by using the `storage_get_directory()` function. For more information, see the Storage API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications).
 
@@ -32,7 +32,7 @@ The main media content features include:
 
   You can also retrieve [general information about the media and more specific information about the media type](#media_info).
 
-- Media bookmarks
+- Media bookmarks (Deprecated since 9.0)
 
   You can [insert](#inserting), [search for](#finding), [read](#reading), and [remove](#removing) bookmarks for video and audio files.
 
@@ -40,11 +40,11 @@ The main media content features include:
 
   You can [create a filter](#filter) to find specific media items.
 
-- Media playlists
+- Media playlists (Deprecated since 9.0)
 
   You can [add](#create_playlist) or [delete](#delete_playlist) a playlist of video and audio files, and add media files to a created playlist. In addition, you can also [search for playlists](#find_playlist) and [read playlist information](#read_playlist).
 
-- Media tags
+- Media tags (Deprecated since 9.0)
 
   You can access the tag information for the media files in the database. You can, for example, [add media tags](#tag_add), [retrieve tag information](#tag_list), and [delete tags](#tag_delete).
 
@@ -536,6 +536,9 @@ To access information about the media items in a given album:
 <a name="media_bookmark"></a>
 ## Bookmark
 
+> [!NOTE]
+> All media bookmark APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
+
 <a name="inserting"></a>
 ### Inserting Bookmarks
 
@@ -664,7 +667,7 @@ To remove a bookmark:
    ```
    media_bookmark_delete_from_db(bookmark_id);
    ```
-   
+
 <a name="media_filter"></a>
 ## Filter
 
@@ -1058,35 +1061,32 @@ To access media item information:
                    free(datetaken);
 
                image_meta_destroy(image_handle);
-           } else if (media_type == MEDIA_CONTENT_TYPE_VIDEO) {
-               video_meta_h video_handle;
+           } else if (media_type == MEDIA_CONTENT_TYPE_MUSIC) {
+               audio_meta_h audio_handle;
                char *title = NULL;
                char *artist = NULL;
                char *album = NULL;
                char *album_artist = NULL;
-               int duration = 0;
 
-               ret = media_info_get_video(media_handle, &video_handle);
+               ret = media_info_get_audio(media_handle, &audio_handle);
                if (ret != MEDIA_CONTENT_ERROR_NONE) {
                    /* Error handling */
                } else {
-                   video_meta_get_artist(video_handle, &artist);
-                   video_meta_get_album(video_handle, &album);
-                   video_meta_get_album_artist(video_handle, &album_artist);
-                   video_meta_get_duration(video_handle, &duration);
+                   audio_meta_get_artist(audio_handle, &artist);
+                   audio_meta_get_album(audio_handle, &album);
+                   audio_meta_get_album_artist(audio_handle, &album_artist);
 
-                   dlog_print(DLOG_DEBUG, LOG_TAG, "This is a video");
+                   dlog_print(DLOG_DEBUG, LOG_TAG, "This is an audio file");
                    dlog_print(DLOG_DEBUG, LOG_TAG,
-                              "Title: %s, Album: %s, Artist: %s, Album_artist: %s \n
-                               Duration: %d",
-                               title, album, artist, album_artist, duration);
+                              "Title: %s, Album: %s, Artist: %s, Album_artist: %s,
+                               title, album, artist, album_artist);
                }
 
                free(artist);
                free(album);
                free(album_artist);
 
-               video_meta_destroy(video_handle);
+               audio_meta_destroy(video_handle);
            }
            dlog_print(DLOG_DEBUG, LOG_TAG, "media_id [%d]: %s", i, media_id);
            dlog_print(DLOG_DEBUG, LOG_TAG, "media_name [%d]: %s", i, media_name);
@@ -1211,6 +1211,9 @@ To insert a media folder, and optionally any subfolders, in the database:
 
 <a name="media_playlist"></a>
 ## Playlist
+
+> [!NOTE]
+> All media playlist APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
 
 <a name="create_playlist"></a>
 ### Creating Playlists
@@ -1411,6 +1414,9 @@ media_playlist_delete_from_db(id);
 
 <a name="media_tag"></a>
 ## Tag
+
+> [!NOTE]
+> All media tag APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
 
 <a name="tag_add"></a>
 ### Adding Tags
@@ -1754,16 +1760,16 @@ The following tables list the information available about the media files.
 | `Size`            | File size of the media content           |
 | `Added time`      | Time the media content was added to the database |
 | `Modified time`   | Last modification time of the media content |
-| `Timeline`        | Time the media content was created<br> You can use this value to sort the content. |
+| `Timeline`        | Time the media content was created<br> You can use this value to sort the content. (Deprecated since 9.0) |
 | `Thumbnail path`  | Path of the stored thumbnail image of the media content |
-| `Description`     | Description of the media content         |
-| `Longitude`       | Longitude of the media content           |
-| `Latitude`        | Latitude of the media content            |
-| `Altitude`        | Altitude of the media content            |
-| `Rating`          | Rating of the media content              |
-| `Favorite`        | Favorite status of the media content     |
+| `Description`     | Description of the media content (Deprecated since 9.0) |
+| `Longitude`       | Longitude of the media content (Deprecated since 9.0) |
+| `Latitude`        | Latitude of the media content (Deprecated since 9.0) |
+| `Altitude`        | Altitude of the media content (Deprecated since 9.0) |
+| `Rating`          | Rating of the media content (Deprecated since 9.0) |
+| `Favorite`        | Favorite status of the media content (Deprecated since 9.0) |
 | `Title`           | Title of the media content               |
-| `Is DRM`          | Check flag for DRM content               |
+| `Is DRM`          | Check flag for DRM content (Deprecated since 9.0) |
 
 For metadata of an audio file, call the `media_info_get_audio()` function with the media handle.
 
@@ -1776,16 +1782,16 @@ For metadata of an audio file, call the `media_info_get_audio()` function with t
 | `Artist`         | Artist of the audio content              |
 | `Album Artist`   | Album artist of the audio content<br> The artist and album artist can be the same. |
 | `Genre`          | Genre of the audio content               |
-| `Composer`       | Composer of the audio content            |
+| `Composer`       | Composer of the audio content (Deprecated since 9.0) |
 | `Year`           | Year the audio content was created       |
-| `Recorded date`  | Date the audio content was recorded      |
-| `Copyright`      | Copyright information for the audio content |
+| `Recorded date`  | Date the audio content was recorded (Deprecated since 9.0) |
+| `Copyright`      | Copyright information for the audio content (Deprecated since 9.0) |
 | `Track number`   | Track number of the audio content        |
-| `Bit rate`       | Bit rate of the audio content            |
-| `Bit per sample` | Bit per sample of the audio content<br> The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. |
-| `Sample rate`    | Sample rate of the audio content         |
-| `Channel`        | Channel information for the audio content |
-| `Duration`       | Duration of the audio content            |
+| `Bit rate`       | Bit rate of the audio content (Deprecated since 9.0) |
+| `Bit per sample` | Bit per sample of the audio content<br> The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. (Deprecated since 9.0) |
+| `Sample rate`    | Sample rate of the audio content (Deprecated since 9.0) |
+| `Channel`        | Channel information for the audio content (Deprecated since 9.0) |
+| `Duration`       | Duration of the audio content (Deprecated since 9.0) |
 
 For metadata of a book file, call the `media_info_get_book()` function with the media handle.
 
@@ -1796,8 +1802,8 @@ For metadata of a book file, call the `media_info_get_book()` function with the 
 | `Media ID`      | Media ID of the book<br> This value is the same as the media ID in the general information. |
 | `Subject`       | Subject(or genre) of the book            |
 | `Author`        | Author of the book                       |
-| `Date`          | Release date of the book                 |
-| `Publisher`     | Publisher of the book                    |
+| `Date`          | Release date of the book (Deprecated since 9.0) |
+| `Publisher`     | Publisher of the book (Deprecated since 9.0) |
 
 For metadata of an image file, call the `media_info_get_image()` function with the media handle.
 
@@ -1808,34 +1814,34 @@ For metadata of an image file, call the `media_info_get_image()` function with t
 | `Media ID`      | Media ID of the image<br> This value is the same as the media ID in the general information. |
 | `Width`         | Width of the image                       |
 | `Height`        | Height of the image                      |
-| `Exposure time` | Exposure time of the image               |
-| `F-number`      | F-number of the image                    |
-| `ISO`           | ISO of the image                         |
-| `Model`         | Model name of the camera that created the image |
+| `Exposure time` | Exposure time of the image (Deprecated since 8.0) |
+| `F-number`      | F-number of the image (Deprecated since 8.0) |
+| `ISO`           | ISO of the image (Deprecated since 8.0) |
+| `Model`         | Model name of the camera that created the image (Deprecated since 8.0) |
 | `Orientation`   | Orientation of the image                 |
 | `Date taken`    | Time the image was created<br> You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
 
-For metadata of a video file, call `withmedia_info_get_video()` function with the media handle.
+For metadata of a video file, call the `media_info_get_video()` function with the media handle. (Deprecated since 9.0)
 
 **Table: Video metadata (only for video files)**
 
 | Metadata name   | Description                              |
 |-----------------|------------------------------------------|
 | `Media ID`      | Media ID of the video content<br> This value is same as the media ID in the general information. |
-| `Album`         | Album information for the video content  |
-| `Artist`        | Artist of the video content              |
-| `Album artist`  | Album artist of the video content        |
-| `Genre`         | Genre of the video content               |
-| `Composer`      | Media composer of the video content      |
-| `Year`          | Year the video content was created       |
-| `Recorded date` | Date the video content was recorded      |
-| `Copyright`     | Copyright of the video content           |
-| `Track number`  | Track number of the video content        |
-| `Bit rate`      | Bit rate of the video content            |
-| `Duration`      | Duration of the video content            |
-| `Width`         | Width of the video content               |
-| `Height`        | Height of the video content              |
-| `rotation`      | The clockwise rotation angle of the video content in degrees |
+| `Album`         | Album information for the video content (Deprecated since 9.0) |
+| `Artist`        | Artist of the video content (Deprecated since 9.0) |
+| `Album artist`  | Album artist of the video content (Deprecated since 9.0) |
+| `Genre`         | Genre of the video content (Deprecated since 9.0) |
+| `Composer`      | Media composer of the video content (Deprecated since 9.0) |
+| `Year`          | Year the video content was created (Deprecated since 9.0) |
+| `Recorded date` | Date the video content was recorded (Deprecated since 9.0) |
+| `Copyright`     | Copyright of the video content (Deprecated since 9.0) |
+| `Track number`  | Track number of the video content (Deprecated since 9.0) |
+| `Bit rate`      | Bit rate of the video content (Deprecated since 9.0) |
+| `Duration`      | Duration of the video content (Deprecated since 9.0) |
+| `Width`         | Width of the video content (Deprecated since 9.0) |
+| `Height`        | Height of the video content (Deprecated since 9.0) |
+| `rotation`      | The clockwise rotation angle of the video content in degrees (Deprecated since 9.0) |
 
 ## Related Information
 - Dependencies

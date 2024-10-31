@@ -580,7 +580,7 @@ media_packet_pool_s *&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001046">Deprecated:</a></b></dt><dd>Deprecated since 6.5. </dd></dl>
 <p>It re-creates only media packet handle with exist media packet handle.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>new_packet</code> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a>. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>new_packet</em> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a>. </dd>
 <dd>
 It will return <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ggadb2be9c99897069853224fc84751b2aaaf44b7232542c1645c2216a498ab7a9aa">MEDIA_PACKET_ERROR_INVALID_OPERATION</a> <br/>
  if the media packet handle is from <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga015afae6df85b1706a1c7d5babe0068f" title="Creates a media packet handle.">media_packet_new()</a>, <br/>
@@ -652,7 +652,7 @@ It will return <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ggadb2b
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001045">Deprecated:</a></b></dt><dd>Deprecated since 6.5. Use <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga015afae6df85b1706a1c7d5babe0068f" title="Creates a media packet handle.">media_packet_new()</a> instead. </dd></dl>
 <p>It creates only media packet handle without allocated buffer.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>packet</code> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>packet</em> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The allocated <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gaec4260fc372b22d1d8592197856c0600" title="Media Format handle type.">media_format_h</a> by caller </td></tr>
@@ -858,7 +858,7 @@ It will return <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ggadb2b
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001048">Deprecated:</a></b></dt><dd>Deprecated since 6.5. Use <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga75f4f22fe2cdba2dc91d042fa3886ec7" title="Creates media packet handle with already allocated buffer.">media_packet_new_from_external_memory()</a> instead. </dd></dl>
 <p>It does not support video's <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gga00bd0b1a46b4c8be7688c8ed8d7ec3f1a5ec5502eafe8d852e21735ff179d20bb">MEDIA_FORMAT_RAW</a> type.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>packet</code> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>packet</em> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The allocated <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gaec4260fc372b22d1d8592197856c0600" title="Media Format handle type.">media_format_h</a> by caller </td></tr>
@@ -962,7 +962,7 @@ It will return <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ggadb2b
 <p>Creates media packet handle and allocates buffer with <a class="el" href="group__CAPI__UI__TBM__SURFACE__MODULE.html#gab5051788c7893158992b308111688eaf" title="Definition for the Tizen buffer surface.">tbm_surface_h</a>. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001047">Deprecated:</a></b></dt><dd>Deprecated since 6.5. Use <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga60d294b76675c089e5d32677c32d5607" title="Creates media packet handle and allocates buffer with tbm_surface_h.">media_packet_new_from_tbm_surface()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>packet</code> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>packet</em> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The allocated <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gaec4260fc372b22d1d8592197856c0600" title="Media Format handle type.">media_format_h</a> by caller </td></tr>
@@ -1676,7 +1676,7 @@ It will return <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ggadb2b
 <p>Gets plane data pointer from tbm surface in the given media packet. </p>
 <p>Use only if the media_format_h is <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gga00bd0b1a46b4c8be7688c8ed8d7ec3f1a5ec5502eafe8d852e21735ff179d20bb">MEDIA_FORMAT_RAW</a> and <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gga4755342004669e4f844e19290ff883aaafbd4cebd879cc2c329294993c0b8aa6b">MEDIA_FORMAT_VIDEO</a>. It means that media_packet_h's buffer is allocated on tbm_surface. If not sure of that, use <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga8dd57c6d2056acf91a9820f526dd54b1" title="Checks whether the given media packet is for video.">media_packet_is_video()</a> and <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#gaeb9491b2d3af578e2d5e879875c9b4d3" title="Checks whether the given media packet is raw type.">media_packet_is_raw()</a> or <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga62ec523cce6403de04457687f3f57b80" title="Checks whether the allocated buffer is tbm surface or not.">media_packet_has_tbm_surface_buffer()</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>plane_data_ptr</code> must not be released by using free(). Note that It is released by <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a> or <a class="el" href="group__CAPI__UI__TBM__SURFACE__MODULE.html#gadfaa0df8052c79adfcbcb98c26b6cf04" title="Destroys the tbm_surface.">tbm_surface_destroy()</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>plane_data_ptr</em> must not be released by using free(). Note that It is released by <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga30bd897babaa3d05af3f5a9aacbe50db" title="Destroys the media packet handle.">media_packet_destroy()</a> or <a class="el" href="group__CAPI__UI__TBM__SURFACE__MODULE.html#gadfaa0df8052c79adfcbcb98c26b6cf04" title="Destroys the tbm_surface.">tbm_surface_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">packet</td><td>The media packet handle </td></tr>
@@ -2283,7 +2283,7 @@ It will return <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ggadb2b
 <p>Creates a media packet handle. </p>
 <p>It creates only media packet handle without allocated buffer. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>packet</code> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga240381877444662b04e55579bbe5ed55" title="Decreases reference count of a media packet handle.">media_packet_unref()</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>packet</em> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga240381877444662b04e55579bbe5ed55" title="Decreases reference count of a media packet handle.">media_packet_unref()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gaec4260fc372b22d1d8592197856c0600" title="Media Format handle type.">media_format_h</a> allocated by the caller </td></tr>
@@ -2435,7 +2435,7 @@ It will return <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ggadb2b
 <p>Creates media packet handle with already allocated buffer. </p>
 <p>It does not support video's <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gga00bd0b1a46b4c8be7688c8ed8d7ec3f1a5ec5502eafe8d852e21735ff179d20bb">MEDIA_FORMAT_RAW</a> type. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>packet</code> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga240381877444662b04e55579bbe5ed55" title="Decreases reference count of a media packet handle.">media_packet_unref()</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>packet</em> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga240381877444662b04e55579bbe5ed55" title="Decreases reference count of a media packet handle.">media_packet_unref()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The allocated <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gaec4260fc372b22d1d8592197856c0600" title="Media Format handle type.">media_format_h</a> by caller </td></tr>
@@ -2514,7 +2514,7 @@ It will return <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ggadb2b
 
 <p>Creates media packet handle and allocates buffer with <a class="el" href="group__CAPI__UI__TBM__SURFACE__MODULE.html#gab5051788c7893158992b308111688eaf" title="Definition for the Tizen buffer surface.">tbm_surface_h</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <code>packet</code> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga240381877444662b04e55579bbe5ed55" title="Decreases reference count of a media packet handle.">media_packet_unref()</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>packet</em> must be released by using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga240381877444662b04e55579bbe5ed55" title="Decreases reference count of a media packet handle.">media_packet_unref()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The <a class="el" href="group__CAPI__MEDIA__TOOL__MEDIA__FORMAT__MODULE.html#gaec4260fc372b22d1d8592197856c0600" title="Media Format handle type.">media_format_h</a> allocated by caller </td></tr>
