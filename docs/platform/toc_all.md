@@ -6,6 +6,7 @@
 ### [Mobile](/platform/what-is-tizen/profiles/mobile.md)
 ### [Wearable](/platform/what-is-tizen/profiles/wearable.md)
 ## Versions
+### [Tizen 9.0](/platform/what-is-tizen/versions/tizen-9-0-m2.md)
 ### [Tizen 8.0](/platform/what-is-tizen/versions/tizen-8-0-m2.md)
 ### [Tizen 7.0](/platform/what-is-tizen/versions/tizen-7-0-m2.md)
 ### [Tizen 6.5](/platform/what-is-tizen/versions/tizen-6-5-m2.md)
