@@ -2,6 +2,8 @@
 
 The instructions for flashing depend on the type of device you are using. Instructions are available for the following devices:
 - TM1 reference device
+> [!NOTE]
+> TM1 was deprecated since Tizen 8.0
 
 To flash the Tizen image to the TM1 reference device:
 
