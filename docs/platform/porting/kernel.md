@@ -1,50 +1,93 @@
-# Kernel
+﻿# Kernel
 
 For information on how to set up the Tizen OS development environment, see [Setting up the Development Environment](../developing/setting-up.md).
 
 
+## U-Boot build
+
+To build the Tizen U-boot for The Raspberry Pi 4 board, follow below steps:
+
+1. Install and setup cross-compile tools on your system if the host has a different architecture than the target (such as x86 or x86_64).
+2. Prepare the U-boot source code for Tizen from `platform/kernel/u-boot`:
+   ```
+	git: https://review.tizen.org/git/?p=platform/kernel/u-boot.git
+	or
+	cgit: https://git.tizen.org/cgit/platform/kernel/u-boot
+	branch: tizen
+	```
+3. If your u-boot source has been used to create binaries for another architecture, start by cleaning them up.
+4. Set up the .config file for RPi4:
+   ```
+   make ARCH=arm tizen_rpi_4_32b_defconfig
+   or
+   make ARCH=arm64 tizen_rpi_4_defconfig
+   ```
+5. After re-configuring your needs (sush as `make ARCH=arm menuconfig`), build it:
+   ```
+   /* To build u-boot */
+   $ make CROSS_COMPILE=/usr/bin/arm-linux-gnu- all
+
+   /* To create boot.scr.uimg */
+   $ ./tools/mkimage -A arm -T script -C none -n "Tizen RPI4 U-boot helper" -d ./tizen/bootscript/tizen-boot-rpi4.scr ./boot.scr.uimg
+
+   /* To create uboot.env */
+   $ CROSS_COMPILE=arm-linux-gnu- ./scripts/get_default_env.sh > default_env.txt
+   $ ./tools/mkenvimage -s 16487 -o uboot.env default_envs.txt
+   ```
+6. Copy the created images (`u-boot.bin uboot.env boot.scr.uimg`) into BOOT partition of  SD-card
+   ```
+   /* For example, SD-card block device assumes /dev/sdb, boot partition is a first partition */
+	 $ udisksctl mount -b /dev/sdb1
+	 $ cp u-boot.bin /media/<your ID>/boot/
+	 $ cp uboot.env /media/<your ID>/boot/
+	 $ cp boot.src.uimg /media/<your ID>/boot/
+   ```
+
 ## Kernel build
 
-To build the Tizen kernel for the TM1 board, follow these steps:
+To build the Tizen kernel for the Raspberry Pi 4 board, follow these steps:
 
 1. Install and set up cross-compile tools on your system if the host has a different architecture than the target (such as x86).
-1. Prepare the kernel source code for TM1 from `profile/mobile/platform/kernel/linux-3.10-sc7730`:
+2. Prepare the kernel source code for Raspberry Pi 4 from `platform/kernel/linux-rpi`:
    ```
-   git: https://review.tizen.org/git/?p=profile/mobile/platform/kernel/linux-3.10-sc7730.git
-   branch: accepted/tizen_mobile
+   git: https://review.tizen.org/git/?p=platform/kernel/linux-rpi.git
+   or
+   cgit: https://git.tizen.org/cgit/platform/kernel/linux-rpi
+   branch: tizen
    ```
-1. If your kernel source has been used to create binaries for another architecture, start by cleaning them up.
-1. Set up the `.config` file for TM1:
+3. If your kernel source has been used to create binaries for another architecture, start by cleaning them up.
+4. Use the build-rpi4.sh script to build Tizen Rasbperry Pi 4 kernel.
    ```
-   $ make ARCH=arm tizen_tm1_defconfig
+   /* 32-bit kernel build */
+   $ ./build-rpi4.sh arm
+   or
+   /* 64-bit kernel build */
+   $ ./bulid-rpi4.sh arm64
    ```
-1. After reconfiguring your needs (such as `make ARCH=arm menuconfig`) or using the stock configuration (no modifications), build it:
+5. Created kernel, module and dtb files under output directory.
    ```
-   $ make ARCH=arm zImage
-   $ make ARCH=arm dtbs
+   $ ls output/
+   bcm2711-rpi-4-b.dtb  modules.img  tizen-local-202411271526-boot-armv7l-rpi4.tar  zImage
    ```
-1. Create a `devicetree` and `zImage` merged image with the image tools:
+6. Update modules.img into module partition of SD-card with sd_fusing.py script.
    ```
-   $ scripts/sprd_dtbtool.sh -o arch/arm/boot/merged-dtb -p scripts/dtc/ -v arch/arm/boot/dts/
-   $ scripts/sprd_mkdzimage.sh -o arch/arm/boot/dzImage -k arch/arm/boot/zImage -d arch/arm/boot/merged-dtb
+   $ ./sd_fusing.py -d /dev/sdb -b tizen-local-202411271525-boot-armv7l-rpi4.tar -t rpi4
    ```
-1. Build and make the kernel module image as well. Note that you may need to do sudo first to let `sudo -n` work in the script:
+ 7.  Copy dtb / kernel files (`dtb, zImage or Image`) into BOOT partition of SD-card.
+     ```
+	 $ udisksctl mount -b /dev/sdb1
+	 $ cp zImage /media/<your ID>/boot/
+	 $ cp *.dtb /media/<your ID>/boot/
+     ```
+8. Copy dtb* files under overlays directory into BOOT partition of SD-card.
    ```
-   $ sudo ls
-   $ scripts/mkmodimg.sh
-   ```
-1. Make a `.tar` archive from `dzImage` and `modules.img`. You can make your own `.tar` file from the 2 files:
-   ```
-   $ tar cf FILENAME_YOU_WANT.tar -C arch/arm/boot dzImage -C ../../../usr/tmp-mod modules.img
-   ```
-1. Send the `.tar` image to the target using `lthor`:
-   ```
-   $ lthor FILENAME_YOU_WANT.tar
-   ```
+   $ cp arch/arm/boot/dts/overlays/*.dtb* /media/<your ID>/boot/overlays/
+	```
+
 
 For information on how to create an image using MIC, see [MIC Image Creator](../reference/mic/mic-overview.md).
 
-
+> [!TIP] If use USB-PWR  Splitter, you can utilize the USB OTG function as well as the USB SDB and lthor on linux environment.
 
 ## Tizen bootup overview
 
@@ -54,7 +97,7 @@ This section provides a brief overview of the typical booting sequence, starting
 
 ![Tizen bootup sequence](media/800px-boot-1.png)
 
-The Tizen bootup process is the same as any other [Linux](https://wiki.tizen.org/Linux) kernel. Make sure that the correct machine ID and the boot arguments are passed from the boot loader.
+The Tizen bootup process is same as any other Linux kernel. Make sure that the correct machine ID and the boot arguments are passed from the boot loader.
 
 After mounting the initial RAM disk image, `initramfs` hands over control to `systemd` as the Tizen platform system manager daemon. From this point, `systemd` is responsible for probing all remaining hardware, mounting all necessary file systems, and spawning all configured services. The system bootup process is split up into discrete steps. To synchronize points during start-up, target units (files whose names end in `.target`) are used for grouping units. The bootup process is highly parallelized in each target so that the order in which specific target units are reached is not determined. The `system-plugin-slp` is an OAL plugin for configuration settings, such as the mount point (`/etc/fstab`).
 
@@ -92,7 +135,7 @@ The following figure shows the overview of normal booting sequence in Tizen plat
 
 ## BSP customization
 
-This section covers the basic configuration, setup, and build procedure required for building the boot loader and the kernel image for [ARM](https://wiki.tizen.org/ARM).
+This section covers the basic configuration, setup, and build procedure required for building the boot loader and the kernel image for ARM.
 
 ### Boot loader
 
@@ -102,50 +145,30 @@ If your platform is already loaded with the compatible boot loader software, you
 
 #### Boot loader setup and build
 
-To build the Tizen TM1 boot loader, follow these steps:
+To build the Tizen Raspberry Pi 4 boot loader, refer to [U-Boot Build](#u-boot-build)
 
-1. Install and set up cross-compile tools on your system if the host has a different architecture than the target (such as x86).
-2. Start with cleaning up the `u-boot-tm1` source. Download the source from the [u-boot-tm1](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/u-boot-tm1.git;a=summary) repository:
-   ```
-   $ make distclean
-   ```
-3. Set up the configuration for TM1.
-4. Build `u-boot`:
-   ```
-   $ make ARCH=arm
-   ```
-5. Once the build is successful, the `u-boot.bin` file is created. (This step is for preventing from flashing the other `u-boot.bin` file.):
-   ```
-   $ tools/mkimage_signed.sh u-boot.bin "tizen_tm1"
-   ```
-
-   After the script is run, the `u-boot-mmc.bin` file is created.
-6. Create a boot loader tarball to download the `u-boot` binary onto the target:
-   ```
-   $ tar cvf bootloader.tar u-boot-mmc.bin
-   ```
-> [!NOTE]
-> Be careful when modifying the boot loader, incorrect configuration can damage the device permanently.
 
 #### Boot loader kernel parameters
 
-Command line parameters, such as the following example, can be passed from the boot loader to the [Linux](https://wiki.tizen.org/Linux) kernel:
+Command line parameters, such as the following example, can be passed from the boot loader to the Linux kernel:
 
 ```
-console=ttyS1,115200n8
-mem=1024M
-loglevel=1
+U-Boot> edit opts
+edit: loglevel=4
+U-Boot> saveenv
+Saving Environment to FAT... OK
+U-Boot>
 ```
 
 ### Kernel
 
-The kernel is the operating system that drives the platform. In this case, the kernel refers to the open-source [Linux](https://wiki.tizen.org/Linux) kernel that is customized for the Tizen platform. The following section gives a brief overview of the Tizen kernel setup, configuration, and the build procedure for building a Linux kernel for your Tizen platform. The output of the kernel binary is a uImage that is suitable only for a `u-boot` boot loader. If you have chosen a secure booting configuration in your boot loader, this uImage must be compatible with your boot loader.
+The kernel is the operating system that drives the platform. In this case, the kernel refers to the open-source Linux kernel that is customized for the Tizen platform. The following section gives a brief overview of the Tizen kernel setup, configuration, and the build procedure for building a Linux kernel for your Tizen platform. The output of the kernel binary is a kernel image (`zImage or Image`) that is suitable only for a `u-boot` boot loader. If you have chosen a secure booting configuration in your boot loader, this kernel image (`zImage  or Image`) must be compatible with your boot loader.
 
 #### Kernel configurations
 
-To download the Tizen kernel source package, see [Getting Source Code and Build](https://wiki.tizen.org/Porting_Guide#Getting_Source_Code.26Build). To set up or modify your kernel configuration, use the appropriate `defconfig` file from `arch/arm/configs/` ([ARM](https://wiki.tizen.org/ARM) CPU).
+To download the Tizen kernel source package, see [Kernel Build](#kernel-build). To set up or modify your kernel configuration, use the appropriate `defconfig` file from `arch/arm/configs/` (ARM CPU).
 
-For more information on the Tizen kernel configuration and kernel building, see [Kernel Build](https://wiki.tizen.org/Porting_Guide#Kernel_Build).
+For more information on the Tizen kernel configuration and kernel building, see [Kernel Build](#kernel-build).
 
 > [!NOTE]
 > Tizen uses `INOTIFY` instead of `DNOTIFY`. You must disable `DNOTIFY` from your kernel configuration.
