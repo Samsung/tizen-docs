@@ -1,5 +1,6 @@
 ﻿# Kernel
 
+
 For information on how to set up the Tizen OS development environment, see [Setting up the Development Environment](../developing/setting-up.md).
 
 

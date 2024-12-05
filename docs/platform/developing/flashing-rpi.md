@@ -1,5 +1,6 @@
 ﻿# Flash an Image to RPI
 
+
 This topic describes how to flash Tizen on an SD card and setting up Raspberry Pi 4.
 > [!NOTE]
 > Raspberry Pi 3 was not supported since Tizen 8.0. Raspberry Pi 5 (64bit-only) can be using for experimental.
