@@ -1,4 +1,4 @@
-﻿# Flash an Image to RPI
+# Flash an Image to RPI
 
 This topic describes how to flash Tizen on an SD card and setting up Raspberry Pi 4.
 > [!NOTE]
