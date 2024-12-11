@@ -1185,6 +1185,12 @@
 ### Tools
 #### [Profiler](/application/vscode-ext/tools/profiler-user-manual.md)
 #### [Memory Profiler](/application/vscode-ext/tools/memory-profiler-user-manual.md)
+
+#### Memory Profiler (9.0)
+#### [Overview](/application/vscode-ext/tools/memory-profiler-9.0/index.md)
+#### [Getting Started](/application/vscode-ext/tools/memory-profiler-9.0/getting-started.md)
+#### [Key Features](/application/vscode-ext/tools/memory-profiler-9.0/key-features.md)
+
 #### [Address Sanitizer](/application/vscode-ext/tools/address-sanitizer-user-manual.md)
 #### [Leak Sanitizer](/application/vscode-ext/tools/leak-sanitizer-user-manual.md)
 #### [UTC and Code Coverage](/application/vscode-ext/tools/unit-test-code-coverage-user-manual.md)
