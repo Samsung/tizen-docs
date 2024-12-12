@@ -99,36 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2><a class="anchor" id="CAPI_UIX_INPUTMETHOD_MODULE_HEADER"></a>
 Required Header</h2>
 <p>#include &lt;inputmethod.h&gt;</p>
-<h2><a class="anchor" id="CAPI_UIX_INPUTMETHOD_MODULE_PRIVILEGE"></a>
-Required Privileges</h2>
-<p>1. To use the Input Method API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:</p>
-<div class="fragment"><pre class="fragment">    &lt;privileges&gt;
-        &lt;privilege&gt;http:<span class="comment">//tizen.org/privilege/ime&lt;/privilege&gt;</span>
-    &lt;/privileges&gt;
-</pre></div><h2><a class="anchor" id="CAPI_UIX_INPUTMETHOD_MODULE_OVERVIEW"></a>
+<h2><a class="anchor" id="CAPI_UIX_INPUTMETHOD_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>Input method editor (IME) is an input panel that lets users provide input and the platform receive the text data entered.<br/>
- Custom keyboards can be built according to the application's necessity by these API sets.<br/>
- Tizen provides a framework to create such input method editors. Such extra input methods can be selected from Settings.</p>
-<h2><a class="anchor" id="CAPI_UIX_INPUTMETHOD_MODULE_LIFECYCLE"></a>
-IME Application Life cycle</h2>
-<p>The IME application runs as follows:</p>
-<p>1. Once the IME application is started, the <b>create()</b> callback function is called. 2. When a text input UI control gets the focus, the <b>show()</b> callback function is called.<br/>
- The IME application can call Input Method APIs to interact with the UI control.<br/>
- The event callback functions are called when the UI control state changes.<br/>
- When the text input UI control loses the focus, the <b>hide()</b> callback function is called. 3. When the IME application is finished, the <b>terminate()</b> callback function is called.</p>
-<h2><a class="anchor" id="CAPI_UIX_INPUTMETHOD_MODULE_EVENT_CALLBACK"></a>
-Managing the main loop and event callback functions</h2>
-<p>The IME application must implement the <b>ime_app_main()</b> function. It is the main entry point, in which you can and call the <b><a class="el" href="group__CAPI__UIX__INPUTMETHOD__MODULE.html#ga034cfc4e8f171c9f7f75d33b0bd0d17b" title="Runs the main loop of IME application.">ime_run()</a></b> function to start the main loop.</p>
-<p>During its life-cycle, the IME application can receive a number of events from the Tizen Input Service framework through the callback functions.<br/>
- You must register the mandatory <b>create()</b>, <b>terminate()</b>, <b>show()</b>, and <b>hide()</b> callbacks.<br/>
- Other callbacks can be registered as required by the specific IME application.</p>
-<h2><a class="anchor" id="CAPI_UIX_INPUTMETHOD_MODULE_SHOW_AND_HIDE"></a>
-Showing and hiding the keyboard</h2>
-<p>When an associated text input UI control has the focus, the active keyboard is requested to be shown. When the text input UI control loses the focus, the keyboard is requested to be hidden.</p>
-<p>The <b>show()</b> and <b>hide()</b> callback functions are used to manage the keyboard visibility, and the IME application must register both of them when starting the IME main loop.</p>
-<p>The client application can set various configurations for each text input UI control, such as the cursor position, key layout type, return key type, and flags of predictive text.<br/>
- The configurations are delivered to the IME application though the <b>show()</b> callback function, to allow the keyboard to show the correct look to the user. </p>
+<p>Input method editor (IME) is an input panel that lets users provide input and the platform receive the text data entered. Custom keyboards can be built according to the application's necessity by these API sets. Tizen provides a framework to create such input method editors. Such extra input methods can be selected from Settings. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>

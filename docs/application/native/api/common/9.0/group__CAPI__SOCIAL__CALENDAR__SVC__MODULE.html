@@ -215,10 +215,10 @@ Version</h3>
 <table class="doxtable">
 <caption align="bottom">Table: Version related APIs </caption>
 <tr>
-<td><a class="el" href="group__CAPI__SOCIAL__CALENDAR__SVC__DATABASE__MODULE.html#ga579850165253736055158750bae8bbba" title="Gets the current calendar database version.">calendar_db_get_current_version()</a> <br/>
- <a class="el" href="group__CAPI__SOCIAL__CALENDAR__SVC__DATABASE__MODULE.html#gac60510d7c18f3a6e241f0189ceea4ff7" title="Retrieves records with the given calendar database version.">calendar_db_get_changes_by_version()</a> <br/>
- <a class="el" href="group__CAPI__SOCIAL__CALENDAR__SVC__DATABASE__MODULE.html#ga9afa5689dca0107f1d1ccbbeffbfd4f4" title="Gets the last successful change version of the database on the current connection.">calendar_db_get_last_change_version()</a> <br/>
- <a class="el" href="group__CAPI__SOCIAL__CALENDAR__SVC__DATABASE__MODULE.html#ga4383557750918c177bfed6bd8c3cbb6f" title="Retrieves changed exception records since the given calendar database version. Exceptions are the mod...">calendar_db_get_changes_exception_by_version()</a>   </td></tr>
+<td><a class="el" href="group__CAPI__SOCIAL__CALENDAR__SVC__DATABASE__MODULE.html#ga579850165253736055158750bae8bbba" title="Gets the current calendar database version.">calendar_db_get_current_version(int* calendar_db_version)</a> <br/>
+ <a class="el" href="group__CAPI__SOCIAL__CALENDAR__SVC__DATABASE__MODULE.html#gac60510d7c18f3a6e241f0189ceea4ff7" title="Retrieves records with the given calendar database version.">calendar_db_get_changes_by_version(const char *view_uri, int calendar_book_id, int calendar_db_version, calendar_list_h *record_list, int *current_calendar_db_version)</a> <br/>
+ <a class="el" href="group__CAPI__SOCIAL__CALENDAR__SVC__DATABASE__MODULE.html#ga9afa5689dca0107f1d1ccbbeffbfd4f4" title="Gets the last successful change version of the database on the current connection.">calendar_db_get_last_change_version(int* last_change_version)</a> <br/>
+ <a class="el" href="group__CAPI__SOCIAL__CALENDAR__SVC__DATABASE__MODULE.html#ga4383557750918c177bfed6bd8c3cbb6f" title="Retrieves changed exception records since the given calendar database version. Exceptions are the mod...">calendar_db_get_changes_exception_by_version(const char *view_uri, int original_event_id, int calendar_db_version, calendar_list_h *list)</a>   </td></tr>
 </table>
 <p>Whenever modifications are in DB, version number is increased every time. <br/>
  If sync applications like Google, Facebook sync at version 13 and they try to sync again every 1 minute, they want to get changes from version 14 to current version. <br/>
