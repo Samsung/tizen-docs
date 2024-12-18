@@ -97,9 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Widget application API. </p>
 <h2><a class="anchor" id="CAPI_WIDGET_APP_MODULE_HEADER"></a>
 Required Header</h2>
-<p>#include &lt;widget_app.h&gt;<br/>
- #include &lt;widget_app_efl.h&gt;<br/>
-</p>
+<p>#include &lt;widget_app.h&gt; #include &lt;widget_app_efl.h&gt;</p>
 <h2><a class="anchor" id="CAPI_WIDGET_APP_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p>The <a class="el" href="group__CAPI__WIDGET__APP__MODULE.html">Widget Application</a> API provides functions for handling Tizen widget application state changes or system events. Tizen widget application can be shown in the home screen. This API supports making multiple widget instances per an application. This API provides interfaces for the following categories:</p>
@@ -154,15 +152,10 @@ Registering callbacks for instance state change events</h3>
 Widget Instance States</div></div>
  <h2><a class="anchor" id="CAPI_WIDGET_APP_MODULE_RELATED_FEATURES"></a>
 Related Features</h2>
-<p>This function is related with the following feature:</p>
+<p>This API is related with the following feature:</p>
 <ul>
-<li>http://tizen.org/feature/shell.appwidget<br/>
-</li>
+<li><a href="http://tizen.org/feature/shell.appwidget">http://tizen.org/feature/shell.appwidget</a> </li>
 </ul>
-<p>It is recommended to design feature related codes in your application for reliability.<br/>
- You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
- To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
