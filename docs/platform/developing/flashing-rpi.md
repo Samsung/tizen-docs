@@ -70,7 +70,7 @@ To flash the SD card for Raspberry Pi 4 or 5, follow the steps below:
     4.  Fusing-script for Raspberry Pi 4 (fusing script is same for RPI5):
 
         ```
-        $ wget https://git.tizen.org/cgit/platform/kernel/u-boot/plain/scripts/tizen/sd_fusing.py?h=tizen --output-document=sd_fusing.py
+        $ wget https://git.tizen.org/cgit/platform/kernel/tizen-fusing-scripts/plain/scripts/sd_fusing.py?h=tizen --output-document=sd_fusing.py
         $ chmod +x sd_fusing.py
         ```
 
