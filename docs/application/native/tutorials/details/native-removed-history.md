@@ -384,6 +384,15 @@ The following table provides detailed information regarding removed functions an
 | Multimedia - Media Controller Server | mc_server_set_shuffle_ability() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_server_set_ability_support() |
 | Multimedia - Media Controller Server | mc_server_set_repeat_ability() | Mobile, Wearable | Since 5.5 | 9.0 | Better alternative | mc_server_set_ability_support() |
 | Multimedia - Media Streamer | All functions of this module | Mobile, Wearable | Since 7.0 | 9.0 | No longer available | - |
+| Content - Media Content - Media Face | All functions of this module | Mobile, Wearable | Since 8.0 | 10.0 | No longer available | - |
+| Content - Media Content - Media Information - Image Metadata | image_meta_get_exposure_time | Mobile, Wearable | Since 8.0 | 10.0 | No longer available | - |
+| Content - Media Content - Media Information - Image Metadata | image_meta_get_fnumber | Mobile, Wearable | Since 8.0 | 10.0 | No longer available | - |
+| Content - Media Content - Media Information - Image Metadata | image_meta_get_iso | Mobile, Wearable | Since 8.0 | 10.0 | No longer available | - |
+| Content - Media Content - Media Information - Image Metadata | image_meta_get_model | Mobile, Wearable | Since 8.0 | 10.0 | No longer available | - |
+| Content - Media Content - Media Information | media_info_get_face_count_from_db | Mobile, Wearable | Since 8.0 | 10.0 | No longer available | - |
+| Content - Media Content - Media Information | media_info_foreach_face_from_db | Mobile, Wearable | Since 8.0 | 10.0 | No longer available | - |
+| Content - Media Content - Media Information | media_info_start_face_detection | Mobile, Wearable | Since 8.0 | 10.0 | No longer available | - |
+| Content - Media Content - Media Information | media_info_cancel_face_detection | Mobile, Wearable | Since 8.0 | 10.0 | No longer available | - |
 
 ## Related information
 
