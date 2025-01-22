@@ -5,21 +5,21 @@ HTTP (Hypertext Transfer Protocol) is a networking protocol for distributed, col
 
 The main features of the HTTP API include:
 
-- HTTP session
+- HTTP session (Deprecated since 9.0)
 
   A session is a set of 1 or more transactions. You must [create an HTTP session](#session) before you can create transactions.
 
-- HTTP transaction
+- HTTP transaction (Deprecated since 9.0)
 
   A transaction represents a single operation between a client and a server (a single request to the Web server). To [request for a resource from a Web server](#transaction), create a transaction handle and open an HTTP transaction from the HTTP session.
 
-- HTTP request
+- HTTP request (Deprecated since 9.0)
 
   A request is message sent from a client to a server (for example, a request to fetch a resource from the Web server).
 
   To send a request, set the remote Web server resource path with the `http_transaction_request_set_uri()` function, and submit the request with the `http_transaction_submit()` function.
 
-- HTTP response
+- HTTP response (Deprecated since 9.0)
 
   A response is a message sent from a server to a client.
 
