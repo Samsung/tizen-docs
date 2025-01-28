@@ -37,19 +37,23 @@ You must have the supported binary images in your computer. To download the bina
 
 
      -   RPI4 Headless 32-bit:
-          -   Boot Image: tizen-boot-armv7l-rpi4/
+          -   Boot Image (Until Tizen-9.0): tizen-boot-armv7l-rpi4/
+          -   Boot Image: tizen-boot-armv7l-rpi/
           -   Platform Image: tizen-headless-armv7l/
 
      -   RPI4 Headless 64-bit:
-          -   Boot Image: tizen-boot-arm64-rpi4/
+          -   Boot Image (Until Tizen-9.0): tizen-boot-arm64-rpi4/
+          -   Boot Image: tizen-boot-aarch64-rpi/
           -   Platform Image: tizen-headless-aarch64/
 
      -   RPI4 Headed 32-bit:
-          -   Boot Image: tizen-boot-armv7l-rpi4/
+          -   Boot Image (Until Tizen-9.0): tizen-boot-armv7l-rpi4/
+          -   Boot Image: tizen-boot-armv7l-rpi/
           -   Platform Image: tizen-headed-armv7l/
 
      -   RPI4 Headed 64-bit:
-          -   Boot Image: tizen-boot-arm64-rpi4/
+          -   Boot Image (Until Tizen-9.0): tizen-boot-arm64-rpi4/
+          -   Boot Image: tizen-boot-aarch64-rpi/
           -   Platform Image: tizen-headed-aarch64/
 
 
