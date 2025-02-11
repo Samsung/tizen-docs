@@ -1975,6 +1975,9 @@ UnknownError - If any other error occurs              </li>
  <em>http://tizen.org/privilege/bluetooth.gap</em> <em>(public level)</em> has been deprecated since 3.0.
 Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
+<p><span class="remark">Remark: </span>
+ Always perform <a href="#BluetoothAdapter::discoverDevices">discoverDevices()</a> before bonding devices. This ensures that the device is available and ready for bonding. Otherwise, the bonding process might fail or end with unexpected result.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
