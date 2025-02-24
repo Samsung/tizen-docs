@@ -39,7 +39,7 @@ How to query error codes for a certain API function is determined by how the fun
   BUNDLE_ERROR_OUT_OF_MEMORY /* Out of memory */
   ```
 
-To obtain the error message for a specific error code, use the `get_error_message()` function to query the meaning of each error code. The pointer returned is a static variable; you must not free it.
+To obtain the error message for a specific error code, use the `get_error_message()` function in [Common Error](../../api/common/latest/group__CAPI__COMMON__ERROR.html) to query the meaning of each error code. The pointer returned is a static variable; you must not free it.
 
 For example:
 
@@ -62,3 +62,5 @@ Every error code in Tizen Native API is represented as an integer value.
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API Reference
+  - [Common Error](../../api/common/latest/group__CAPI__COMMON__ERROR.html)
