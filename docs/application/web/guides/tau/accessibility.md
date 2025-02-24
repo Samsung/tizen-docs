@@ -66,3 +66,4 @@ The `<img>` element supports the image alt text through the `alt` attribute:
 * Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
+* API Reference: [Advanced UI Framework](../../api/latest/ui_fw_api/ui_fw_api_cover.htm)
