@@ -87,3 +87,5 @@ To cancel the routing policy for the connection with the [Tizen](https://www.tiz
 ## Related information
 * Dependencies    
     - Tizen 2.4 and Higher for Mobile
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/networkbearerselection.html)

@@ -104,3 +104,6 @@ To verify whether an application has permission to use a privilege, and to reque
 - Dependencies
   - Tizen 4.0 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/ppm.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/ppm.html)

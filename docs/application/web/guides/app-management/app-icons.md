@@ -82,3 +82,7 @@ Registering a listener for badge count changes to react to new badges and displa
 * Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/application.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/application.html)
+  - [tv](../../api/latest/device_api/tv/tizen/application.html)

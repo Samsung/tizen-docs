@@ -165,3 +165,7 @@ tizen.archive.open('downloads/some_archive.zip', 'r', openSuccess);
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/archive.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/archive.html)
+  - [tv](../../api/latest/device_api/tv/tizen/archive.html)

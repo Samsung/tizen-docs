@@ -132,3 +132,7 @@ The `TensorsData` object keeps data value of the tensors.
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/ml.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/ml.html)
+  - [tv](../../api/latest/device_api/tv/tizen/ml.html)

@@ -292,3 +292,7 @@ single.close();
   - Tizen 7.0 and Higher for Mobile
   - Tizen 7.0 and Higher for Wearable
   - Tizen 7.0 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/ml_trainer.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/ml_trainer.html)
+  - [tv](../../api/latest/device_api/tv/tizen/ml_trainer.html)

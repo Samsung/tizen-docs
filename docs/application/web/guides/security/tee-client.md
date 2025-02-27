@@ -196,3 +196,7 @@ To share a memory block between a client application and a trusted application, 
   - Tizen 4.0 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
   - Tizen 4.0 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/libteec.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/libteec.html)
+  - [tv](../../api/latest/device_api/tv/tizen/libteec.html)

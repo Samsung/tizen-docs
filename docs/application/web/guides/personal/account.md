@@ -256,3 +256,7 @@ Learning how to manage extended data for an account enables you to include accou
   - Tizen 2.4 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
   - Tizen 5.0 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/account.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/account.html)
+  - [tv](../../api/latest/device_api/tv/tizen/account.html)

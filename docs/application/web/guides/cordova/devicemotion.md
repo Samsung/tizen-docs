@@ -120,3 +120,7 @@ To retrieve the acceleration along the X, Y, and Z axes at regular intervals, fo
    - Tizen 3.0 and Higher for Mobile
    - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/cordova/device-motion.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/cordova/device-motion.html)
+  - [tv](../../api/latest/device_api/tv/tizen/cordova/device-motion.html)

@@ -396,3 +396,7 @@ You can monitor attribute changes in a remote resource similarly using the `star
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html)
+  - [tv](../../api/latest/device_api/tv/tizen/iotcon.html)
