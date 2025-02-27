@@ -40,3 +40,7 @@ Cordova defines a common interface for success and error callbacks:
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/cordova/cordova.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/cordova/cordova.html)
+  - [tv](../../api/latest/device_api/tv/tizen/cordova/cordova.html)

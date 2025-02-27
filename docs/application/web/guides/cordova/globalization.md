@@ -437,3 +437,7 @@ To make conversions between strings, numbers, and dates according to the current
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/cordova/globalization.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/cordova/globalization.html)
+  - [tv](../../api/latest/device_api/tv/tizen/cordova/globalization.html)

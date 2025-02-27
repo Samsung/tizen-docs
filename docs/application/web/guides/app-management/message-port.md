@@ -117,3 +117,7 @@ Learning how to send messages to and receive responses from other Tizen applicat
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/messageport.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/messageport.html)
+  - [tv](../../api/latest/device_api/tv/tizen/messageport.html)

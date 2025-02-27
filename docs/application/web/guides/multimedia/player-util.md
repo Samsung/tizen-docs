@@ -43,3 +43,6 @@ try {
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API Reference:
+  - [mobile](../../api/latest/device_api/mobile/tizen/playerutil.html)
+  - [wearable](../../api/latest/device_api/wearable/tizen/playerutil.html)
