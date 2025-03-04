@@ -1721,6 +1721,6 @@ tizen.application.launchAppControl(appControl, null, function() {
 * Dependencies
   - Each application control is available depending on whether the installed application supports it or not.
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/application.html)
-  - [wearable](../../api/latest/device_api/wearable/tizen/application.html)
-  - [tv](../../api/latest/device_api/tv/tizen/application.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/application.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/application.html)
+  - [TV](../../api/latest/device_api/tv/tizen/application.html)

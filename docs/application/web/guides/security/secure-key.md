@@ -157,6 +157,6 @@ To remove data from a repository, follow these steps:
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/keymanager.html)
-  - [wearable](../../api/latest/device_api/wearable/tizen/keymanager.html)
-  - [tv](../../api/latest/device_api/tv/tizen/keymanager.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/keymanager.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/keymanager.html)
+  - [TV](../../api/latest/device_api/tv/tizen/keymanager.html)

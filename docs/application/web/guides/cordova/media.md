@@ -326,6 +326,6 @@ To start and stop recording, follow these steps:
    - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html)
-  - [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html)
-  - [tv](../../api/latest/device_api/tv/tizen/cordova/media.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html)
+  - [TV](../../api/latest/device_api/tv/tizen/cordova/media.html)

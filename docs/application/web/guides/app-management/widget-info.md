@@ -276,5 +276,5 @@ Learning how to send and get the widget content is a useful widget management sk
    - Tizen 3.0 and Higher for Mobile
    - Tizen 2.3.2 and Higher for Wearable
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html)
-  - [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html)

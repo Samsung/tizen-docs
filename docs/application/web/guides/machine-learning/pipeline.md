@@ -478,6 +478,6 @@ To read a model from file and use it in a pipeline, follow these steps:
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html)
-  - [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html)
-  - [tv](../../api/latest/device_api/tv/tizen/ml_pipeline.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html)
+  - [TV](../../api/latest/device_api/tv/tizen/ml_pipeline.html)

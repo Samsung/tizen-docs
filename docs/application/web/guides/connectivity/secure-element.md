@@ -174,5 +174,5 @@ To use secure elements in your application, you must learn to close sessions and
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/se.html)
-  - [wearable](../../api/latest/device_api/wearable/tizen/se.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/se.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/se.html)

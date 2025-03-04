@@ -147,4 +147,4 @@ Retrieving information about FM radio interruptions is a useful FM radio managem
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/fmradio.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/fmradio.html)

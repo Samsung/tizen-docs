@@ -205,6 +205,6 @@ Success.  File uploaded.
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/cordova/filetransfer.html)
-  - [wearable](../../api/latest/device_api/wearable/tizen/cordova/filetransfer.html)
-  - [tv](../../api/latest/device_api/tv/tizen/cordova/filetransfer.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/filetransfer.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/filetransfer.html)
+  - [TV](../../api/latest/device_api/tv/tizen/cordova/filetransfer.html)

@@ -202,4 +202,4 @@ Learning how to register change listeners allows you to synchronize the view of 
 * Dependencies   
   - Tizen 2.4 and Higher for Mobile
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/callhistory.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/callhistory.html)

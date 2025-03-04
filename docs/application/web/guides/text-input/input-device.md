@@ -170,5 +170,5 @@ To manage input device keys, you must learn to change the action of a supported 
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html)
-  - [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html)

@@ -79,5 +79,5 @@ To start and stop playing various types of predefined reactions, follow these st
    - Tizen 3.0 and Higher for Mobile
    - Tizen 3.0 and Higher for Wearable
 * API Reference:
-  - [mobile](../../api/latest/device_api/mobile/tizen/feedback.html)
-  - [wearable](../../api/latest/device_api/wearable/tizen/feedback.html)
+  - [Mobile](../../api/latest/device_api/mobile/tizen/feedback.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/feedback.html)
