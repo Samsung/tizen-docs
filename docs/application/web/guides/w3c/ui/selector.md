@@ -201,3 +201,4 @@ For the complete source code related to this use case, see the following file:
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API Reference: [W3C Level 1](https://www.w3.org/TR/selectors-api/){:target="_blank"}, [W3C Level 2](https://www.w3.org/TR/selectors-api/2){:target="_blank"}

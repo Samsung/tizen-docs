@@ -463,3 +463,4 @@ Many mobile browsers do not support WebGL&trade; or only partially support WebGL
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API Reference: [HTML spec](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext){:target="_blank"}

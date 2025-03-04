@@ -270,3 +270,4 @@ To avoid having a delay in the single tap gesture, you can make the page unscala
 * Dependencies    
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API Reference: [W3C](http://www.w3.org/TR/2013/REC-touch-events-20131010){:target="_blank"}

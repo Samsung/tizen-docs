@@ -329,3 +329,4 @@ If a page has an overflow scroll, use the `-webkit-overflow-scrolling` attribute
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API Reference: [W3C](https://www.w3.org/TR/css-transitions-1/){:target="_blank"}

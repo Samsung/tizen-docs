@@ -295,3 +295,4 @@ For the complete source code related to this use case, see the following files:
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API Reference: [W3C](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#flex-containers){:target="_blank"}
