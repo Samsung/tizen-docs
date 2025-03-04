@@ -528,3 +528,4 @@ For the complete source code related to this use case, see the following files:
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for TV
+* API Reference: [W3C](https://www.w3.org/TR/css-multicol-1/){:target="_blank"}
