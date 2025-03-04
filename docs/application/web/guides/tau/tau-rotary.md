@@ -314,3 +314,4 @@ You can change the value of the circle-shaped progress bar component with the ro
 ## Related information
 * Dependencies
   - Tizen 2.3.1 and Higher for Wearable
+* API Reference: [Advanced UI Framework](../../api/latest/ui_fw_api/ui_fw_api_cover.htm)
