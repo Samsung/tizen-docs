@@ -84,3 +84,6 @@ The fitting modes and suggested use cases are as follows:
 ## Related Information
 - Dependencies
   -   Tizen 4.0 and Higher
+
+- API References
+  - [Resources API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.ImageView.html)

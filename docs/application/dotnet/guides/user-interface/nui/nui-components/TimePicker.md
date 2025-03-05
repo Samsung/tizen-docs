@@ -69,5 +69,5 @@ private void OnTimeChanged(object sender, TimeChangedEventArgs args)
 - Dependencies
   -   Tizen 6.5 and Higher 
 
-
-
+- API References
+  - [TimePicker API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.TimePicker.html)
