@@ -120,3 +120,6 @@ To start and stop listening for value changes in a preference with a given key, 
 * Dependencies  
   - Tizen 3.0 and Higher for Mobile
   - Tizen 2.3.2 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/preference.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/preference.html)

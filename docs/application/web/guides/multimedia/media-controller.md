@@ -836,3 +836,7 @@ watcherId = mcServer.displayRotation.addChangeRequestListener(changeListener);
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 5.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html)
+  - [TV](../../api/latest/device_api/tv/tizen/mediacontroller.html)

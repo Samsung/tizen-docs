@@ -603,3 +603,6 @@ To create engaging applications with various contacts features, export contacts 
 * Dependencies   
   - Tizen 2.4 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/contact.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/contact.html)
