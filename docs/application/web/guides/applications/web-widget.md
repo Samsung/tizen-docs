@@ -1595,6 +1595,6 @@ For the Web widget file and image size limits, see [Performance Considerations](
 ## Related information
 - Dependencies
   - Tizen 2.3.2 for Wearable
-* API Reference:
+* API References
   - [Mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html)
   - [Wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html)

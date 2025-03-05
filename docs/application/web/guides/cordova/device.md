@@ -61,7 +61,7 @@ To retrieve information on the device, Cordova, and operating system, and output
    - Tizen 3.0 and Higher for Mobile
    - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
-* API Reference:
+* API References
   - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/device.html)
   - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/device.html)
   - [TV](../../api/latest/device_api/tv/tizen/cordova/device.html)

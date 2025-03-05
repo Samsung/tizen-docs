@@ -1319,7 +1319,7 @@ To set a callback for read or write value request on a characteristic or a descr
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
    - Tizen 6.0 and Higher for TV
-* API Reference:
+* API References
   - [Mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html)
   - [Wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html)
   - [TV](../../api/latest/device_api/tv/tizen/bluetooth.html)

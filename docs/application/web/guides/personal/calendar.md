@@ -721,6 +721,6 @@ To receive notifications when calendar items are added, updated, or removed, fol
 * Dependencies   
   - Tizen 2.4 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
-* API Reference:
+* API References
   - [Mobile](../../api/latest/device_api/mobile/tizen/calendar.html)
   - [Wearable](../../api/latest/device_api/wearable/tizen/calendar.html)
