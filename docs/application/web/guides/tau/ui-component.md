@@ -173,5 +173,6 @@ To manage the UI components if the jQuery library is loaded, follow the steps be
 
 ## Related information
 * Dependencies   
-   - Tizen 2.4 and Higher for Mobile
-   - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
+* API Reference: [Advanced UI Framework](../../api/latest/ui_fw_api/ui_fw_api_cover.htm)
