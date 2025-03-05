@@ -71,3 +71,6 @@ To create a notification using property, follow these steps:
 ## Related information
 - Dependencies
   -   Tizen 6.0 and Higher
+
+- API Reference
+  - [Notification API](https://docs.tizen.org/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Notification.html)

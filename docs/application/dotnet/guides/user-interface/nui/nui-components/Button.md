@@ -76,3 +76,6 @@ private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e
 
 - Dependencies
   -   Tizen 6.5 and Higher 
+
+- API Reference
+  - [Button API](https://docs.tizen.org/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Button.html)

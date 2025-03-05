@@ -163,3 +163,7 @@ namespace SimpleLayout
 
 - Dependencies
   -  Tizen 5.5 and Higher
+
+- API Reference
+  - [Custom Layout API](https://docs.tizen.org/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.LayoutGroup.html)
+

@@ -79,3 +79,5 @@ The following output is generated when the ScrollableBase is dragged:
 - Dependencies
   -   Tizen 6.5 and Higher
 
+- API Reference
+  - [ScrollableBase API](https://docs.tizen.org/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.ScrollableBase.html)

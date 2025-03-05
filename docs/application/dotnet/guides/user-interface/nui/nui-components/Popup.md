@@ -61,3 +61,5 @@ private void PopupButtonClickEvent(object sender, Popup.ButtonClickEventArgs e)
 - Dependencies
   -   Tizen 6.5 and Higher
 
+- API Reference
+  - [Popup API](https://docs.tizen.org/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Popup.html)

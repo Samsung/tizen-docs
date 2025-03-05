@@ -37,4 +37,5 @@ However, if the `viewBox` size is larger than the `CanvasView` size, the actual 
 - Dependencies
   -   Tizen 6.5 and Higher
 
-
+- API Reference
+  - [CanvasView API](https://docs.tizen.org/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VectorGraphics.CanvasView.html)
