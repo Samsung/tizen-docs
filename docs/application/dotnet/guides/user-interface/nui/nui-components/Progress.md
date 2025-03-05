@@ -48,3 +48,6 @@ The following output is generated when the Progress is created using property:
 
 - Dependencies
   -   Tizen 6.5 and Higher
+
+- API Reference
+  - [Progress API](https://docs.tizen.org/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Progress.html)

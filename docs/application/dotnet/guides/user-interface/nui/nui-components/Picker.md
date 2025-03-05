@@ -68,4 +68,5 @@ private void OnValueChanged(object sender, ValueChangedEventArgs args)
 - Dependencies
   -   Tizen 6.5 and Higher 
 
-
+- API Reference
+  - [Picker API](https://docs.tizen.org/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Picker.html)
