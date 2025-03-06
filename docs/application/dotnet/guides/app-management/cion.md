@@ -433,3 +433,8 @@ tidlc --cion -s -b -i CionTest.tidl -l C# -o CionStub
 ## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
+- API Reference
+  - [Tizen.Applications.Cion](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Cion) namespace
+  - [Tizen.Applications.Cion.ClientBase](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Cion.ClientBase) class
+  - [Tizen.Applications.Cion.ServerBase](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Cion.ServerBase) class
+  - [Tizen.Applications.Cion.GroupBase](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Cion.GroupBase) class

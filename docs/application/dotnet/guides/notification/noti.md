@@ -427,3 +427,6 @@ To create a template from an existing notification, and reuse that template late
 ## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
+* API Reference
+  - [Tizen.Applications.Notifications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications) namespace
+  - [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager) class

@@ -17,3 +17,8 @@ You can use the following notifications and content sharing features in your .NE
 ## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
+* API Reference
+  - [Tizen.Applications.Notifications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications) namespace
+  - [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager) class
+  - [Tizen.Applications.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel) namespace
+  - [Tizen.Applications.AttachPanel.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel) class

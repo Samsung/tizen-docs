@@ -254,3 +254,5 @@ static void Main(string[] args)
 ## Related information
 - Dependencies
   - Tizen 2.4 and Higher
+- API Reference
+  - [Tizen.Applications.Preference](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Preference) class

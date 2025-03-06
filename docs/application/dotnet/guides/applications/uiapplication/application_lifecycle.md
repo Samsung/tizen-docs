@@ -184,3 +184,8 @@ You can check full source code here: [lifecycle sample](source-code/application_
 ## Related information
 - Dependencies
   - Tizen 4.0 and Higher
+- API Reference
+  - [Tizen.Applications.Application](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Application.html) class
+  - [Tizen.Applications.CoreApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class
+  - [Tizen.Applications.CoreUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreUIApplication.html) class
+  

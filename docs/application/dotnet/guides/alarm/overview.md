@@ -13,3 +13,8 @@ You can use the following alarm features in your .NET applications:
 ## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
+* API Reference
+  - [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl) class
+  - [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager) class
+  - [Tizen.Applications.Alarm](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Alarm) class
+  

@@ -127,3 +127,6 @@ For full source code of the example, see [here](./source-code/widget-viewer.cs).
 ## Related information
   - Dependencies
     -   Tizen 4.0 and Higher
+  - API Reference
+    - [Tizen.NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI) namespace
+    - [Tizen.NUI.WidgetViewManager](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetViewManager) class
