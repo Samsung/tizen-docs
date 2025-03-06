@@ -225,3 +225,7 @@ You can set an instance of the [Tizen.Applications.Messages.MessagePort](/applic
 ## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
+* API Reference
+  - [Tizen.Applications.Messages](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages) namespace
+  - [Tizen.Applications.Messages.MessagePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort) class
+  - [Tizen.Applications.Messages.RemotePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort) class
