@@ -56,3 +56,6 @@ With the EFL UI, you can create the following application types:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API Reference
+  - [UI Applications](../../api/common/latest/group__EFL.html)
+  - [EFL](../../api/common/latest/group__EFL.html)

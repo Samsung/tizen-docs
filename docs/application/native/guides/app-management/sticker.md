@@ -425,3 +425,7 @@ destroy_sticker_consumer_handle(sticker_consumer_h sticker_consumer)
 * Dependencies
   - Tizen 5.5 and Higher for Mobile
   - Tizen 5.5 and Higher for Wearable
+* API Reference
+  - [Sticker Data](../../api/common/latest/group__CAPI__UIX__STICKER__DATA__MODULE.html)
+  - [Sticker Consumer](../../api/common/latest/group__CAPI__UIX__STICKER__CONSUMER__MODULE.html)
+  - [Sticker Provider](../../api/common/latest/group__CAPI__UIX__STICKER__PROVIDER__MODULE.html)

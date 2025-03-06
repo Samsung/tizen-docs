@@ -392,3 +392,5 @@ To use the ambient mode:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API Reference
+  - [Watch Applications](../../api/wearable/latest/group__CAPI__WATCH__APP__MODULE.html)

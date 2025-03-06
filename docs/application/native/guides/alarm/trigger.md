@@ -587,3 +587,5 @@ The following table summarizes the corresponding comparison attribute keys, with
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
+- API Reference
+  - [Contextual Trigger](../../api/common/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html)

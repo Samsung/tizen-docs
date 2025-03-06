@@ -491,3 +491,5 @@ To delete all notifications from the database, use `noti_ex_reporter_delete_all(
 - Dependencies
     - Tizen 5.5 and Higher for Mobile
     - Tizen 5.5 and Higher for Wearable
+- API Reference
+  - [Notification Ex](../../api/common/latest/group__NOTIFICATION__EX__MODULE.html)
