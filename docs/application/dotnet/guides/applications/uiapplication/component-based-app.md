@@ -629,3 +629,9 @@ To launch a component based application, follow the steps below:
 ## Related information
 - Dependencies
   - Tizen 5.5 and Higher
+- API Reference
+  - [Tizen.Applications.ComponentBased.Common.ComponentBasedApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.Common.ComponentBasedApplication.html) class
+  - [Tizen.Applications.ComponentBased.Common.ServiceComponent](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.Common.ServiceComponent.html) class
+  - [Tizen.Applications.ComponentBased.Common.WidgetComponent](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.Common.WidgetComponent.html) class
+  - [Tizen.Applications.ComponentBased.Common.FrameComponent](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.Common.FrameComponent.html) class
+  - [Tizen.Applications.ComponentBased.Common.BaseComponent](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.Common.BaseComponent.html) class

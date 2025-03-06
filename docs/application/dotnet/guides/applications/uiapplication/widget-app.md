@@ -495,6 +495,10 @@ For example, a music-player-service service application is needed to control the
 ## Related information
 - Dependencies
   - Tizen 4.0 and Higher
+- API Reference
+  - [Tizen.NUI.NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class
+  - [Tizen.Applications.WidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html) class
+  - [Tizen.Applications.CoreApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class
 
 <script>
     function openTabSection(evt, profileName, sectionId) {

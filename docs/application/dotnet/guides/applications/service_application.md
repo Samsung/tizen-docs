@@ -192,3 +192,7 @@ Describe your service application attributes in the manifest file. The attribute
 ## Related information
   - Dependencies
     -   Tizen 4.0 and Higher
+  - API Reference
+    - [Tizen.Applications.ServiceApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ServiceApplication.html) class
+    - [Tizen.Applications.CoreApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class
+    - [Tizen.Applications.Application](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Application.html) class
