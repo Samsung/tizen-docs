@@ -26,7 +26,7 @@ The application can be suspended while in the background, causing a pause in eve
 
 To enable your application to use the event functionality:
 
-1. To use the functions and data types of the Event API (in [mobile](../../api/mobile/latest/group__CAPI__EVENT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__EVENT__MODULE.html) applications), include the `<app_event.h>` header file in your application:
+1. To use the functions and data types of the [Event API](../../api/common/latest/group__CAPI__EVENT__MODULE.html), include the `<app_event.h>` header file in your application:
 
    ```
    #include <app_event.h>
@@ -346,3 +346,5 @@ The following list shows the events of modules:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
+- API Reference
+  - [Event](../../api/common/latest/group__CAPI__EVENT__MODULE.html)

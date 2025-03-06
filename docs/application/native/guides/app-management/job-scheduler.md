@@ -20,7 +20,7 @@ The main features of the Job Scheduler API include:
 
 To enable your application to use the job scheduler functionality:
 
-1.  To use the Job Scheduler API (in [mobile](../../api/mobile/latest/group__CAPI__JOB__SCHEDULER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__JOB__SCHEDULER__MODULE.html) applications), the application has to request permission. Add the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Job Scheduler API](../../api/common/latest/group__CAPI__JOB__SCHEDULER__MODULE.html), the application has to request permission. Add the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -210,3 +210,5 @@ To retrieve all scheduled jobs:
 ## Related Information
 - Dependencies
   -  Tizen 4.0 and Higher
+- API Reference
+  - [Job Scheduler](../../api/common/latest/group__CAPI__JOB__SCHEDULER__MODULE.html)
