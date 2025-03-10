@@ -124,3 +124,6 @@ var count = out_data.Count;
 ## Related information
 - Dependencies
   - Tizen 5.5 and Higher
+
+- API References
+  - [Tizen.MachineLearning.Inference.SingleShot](/application/dotnet/api/TizenFX/latest/api/Tizen.MachineLearning.Inference.SingleShot.html) class
