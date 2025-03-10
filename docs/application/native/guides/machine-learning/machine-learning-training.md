@@ -918,3 +918,6 @@ You can use the trained model with pipeline API as follows:
   - Tizen 6.0 and Higher for Wearable
   - Tizen 6.0 and Higher for TV
   - Tizen 6.0 and Higher for IoT
+
+- API References
+  - [Training API](../../api/common/latest/group__CAPI__ML__FRAMEWORK.html)

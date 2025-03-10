@@ -20,3 +20,6 @@ You can use the following machine learning features in your .NET applications:
 ## Related information
 - Dependencies
   - Tizen 5.5 and Higher
+
+- API References
+  - [Tizen.MachineLearning.Inference](/application/dotnet/api/TizenFX/latest/api/Tizen.MachineLearning.Inference.html) namespace

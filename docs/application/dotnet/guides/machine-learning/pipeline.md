@@ -298,3 +298,6 @@ Element Properties:
 ## Related information
 - Dependencies
   - Tizen 6.0 and Higher
+
+- API References
+  - [Tizen.MachineLearning.Inference.Pipeline](/application/dotnet/api/TizenFX/latest/api/Tizen.MachineLearning.Inference.pipeline.html) class
