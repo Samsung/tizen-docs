@@ -11,13 +11,13 @@ The main features of the Bluetooth API include:
 
 - Managing the local Bluetooth adapter
 
-  The Bluetooth Adapter API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html) applications) provides functions for setting up Bluetooth and discovering other devices. The API is used to control the Bluetooth adapter: you must [enable the adapter](#enable) before any other Bluetooth actions, and when you no longer need it, disable it to save device power. You can [check and monitor the adapter state](#state).
+  The [Bluetooth Adapter API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html) provides functions for setting up Bluetooth and discovering other devices. The API is used to control the Bluetooth adapter: you must [enable the adapter](#enable) before any other Bluetooth actions, and when you no longer need it, disable it to save device power. You can [check and monitor the adapter state](#state).
 
   You can control the visibility of the device, meaning whether its name appears to others searching for Bluetooth devices. In addition, you can discover neighboring Bluetooth devices. This process is asynchronous, so you must build and hold the list of devices in the neighborhood.
 
 - Discovering devices
 
-  The Bluetooth Device API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html) applications) provides functions for managing bonds with other devices and searching for supported services. The API is used to handle the connection with other devices and to search for services available on remote devices.
+  The [Bluetooth Device API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html) provides functions for managing bonds with other devices and searching for supported services. The API is used to handle the connection with other devices and to search for services available on remote devices.
 
   You can [discover other Bluetooth devices](#find). The device discovery process can retrieve multiple types of Bluetooth devices, such as printers, mobile phones, and headphones.
 
@@ -29,7 +29,7 @@ The main features of the Bluetooth API include:
 
 - Connecting to and exchanging data with a Bluetooth device using a Bluetooth socket
 
-  The Bluetooth Socket API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__SOCKET__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__SOCKET__MODULE.html) applications) provides functions for managing connections to other devices and exchanging data. The API is used for exchanging data between 2 Bluetooth devices, where your device can have the role both of a server (service provider) and client (service user). The connection creation process depends on the role. After the connection is established, the processes for exchanging data and disconnecting are the same for both roles.
+  The [Bluetooth Socket API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__SOCKET__MODULE.html) provides functions for managing connections to other devices and exchanging data. The API is used for exchanging data between 2 Bluetooth devices, where your device can have the role both of a server (service provider) and client (service user). The connection creation process depends on the role. After the connection is established, the processes for exchanging data and disconnecting are the same for both roles.
 
   When you attempt to open a connection to another device, a Service Discovery Protocol (SDP) look-up is performed on the device, and the protocol and channel to be used for the connection are determined. If a connection is established and the socket is opened successfully, a `BluetoothSocket` instance with an open state is returned. The socket is subsequently used for exchanging data between the connected devices.
 
@@ -37,11 +37,11 @@ The main features of the Bluetooth API include:
 
 - Connecting to audio devices with Bluetooth
 
-  Connect to Bluetooth audio devices, such as headset, hand-free, and headphone using the Bluetooth Audio API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html) applications).
+  Connect to Bluetooth audio devices, such as headset, hand-free, and headphone using the [Bluetooth Audio API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html).
 
 - Handling attributes with Bluetooth GATT
 
-  The Bluetooth GATT API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html) applications) provides functions for creating and destroying the GATT client handle, discovering, reading, and modifying attributes, and setting and releasing callbacks to be notified when characteristic values are changed at the remote device.
+  The [Bluetooth GATT API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html) provides functions for creating and destroying the GATT client handle, discovering, reading, and modifying attributes, and setting and releasing callbacks to be notified when characteristic values are changed at the remote device.
 
   As a client, you can connect to and use a specific service on the server device. Once the connection is established, the client can manage the service attributes. When the GATT client operations are no longer required, deregister the callbacks and destroy the GATT client handle.
 
@@ -49,7 +49,7 @@ The main features of the Bluetooth API include:
 
 - Connecting to health devices with Bluetooth HDP
 
-  Manage connections to health devices and exchange data using the Bluetooth HDP API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html) applications).
+  Manage connections to health devices and exchange data using the [Bluetooth HDP API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html).
 
   The following figure illustrates the Tizen HDP architecture.
 
@@ -59,7 +59,7 @@ The main features of the Bluetooth API include:
 
 - Connecting to devices with Bluetooth HID
 
-  Connect to a Bluetooth HID, such as a keyboard or mouse, using the Bluetooth HID API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html) applications).
+  Connect to a Bluetooth HID, such as a keyboard or mouse, using the [Bluetooth HID API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html).
 
 - Sending and receiving objects with the Bluetooth OPP client and server
 
@@ -67,7 +67,7 @@ The main features of the Bluetooth API include:
 
 - Exchanging data with Bluetooth LE
 
-  The Bluetooth LE Adapter API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html) applications) provides functions for managing the Bluetooth Low Energy (BLE) connections with other BLE devices and exchanging data between them.
+  The [Bluetooth LE Adapter API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html) provides functions for managing the Bluetooth Low Energy (BLE) connections with other BLE devices and exchanging data between them.
 
   You can control the visibility of the BLE device, meaning whether its name appears to others searching for BLE devices. In addition, you discover neighboring BLE devices. This process is asynchronous, so you must build and hold the list of devices in the neighborhood.
 
@@ -78,7 +78,7 @@ The main features of the Bluetooth API include:
 
 - Controlling remote audio and video devices with Bluetooth AVRCP
 
-  The Bluetooth AVRCP feature (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__AVRCP__MODULE.html) applications) provides functions for remotely controlling audio and video devices.
+  The [Bluetooth AVRCP feature](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__AVRCP__MODULE.html) provides functions for remotely controlling audio and video devices.
 
   Bluetooth AVRCP is used with A2DP. You can handle remote controls (such as play, pause, stop, equalizer, repeat, shuffle, and scan) through AVRCP.
 
@@ -90,7 +90,7 @@ Bluetooth use is based on profiles. Tizen Bluetooth features support the Audio, 
 
 To enable your application to use the Bluetooth functionality:
 
-1. To use the Bluetooth API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [Bluetooth API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -269,7 +269,7 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
      - The first callback parameter defines the result of the Bluetooth discovery process. If successful, the parameter value is `BT_ERROR_NONE`. If the discovery failed to start due to an error, the parameter value is `BT_ERROR_TIMEOUT`.
 
-     - The second callback parameter defined the current state of the discovery process using the enumerators `bt_adapter_device_discovery_state_e` (classic Bluetooth) (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd) applications):
+     - The second callback parameter defined the current state of the discovery process using the enumerators `bt_adapter_device_discovery_state_e` (classic Bluetooth)[enumeration](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd):
      - When you start the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_STARTED` state.
 
          Similarly, when you stop the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FINISHED` state.
@@ -571,7 +571,7 @@ To connect to other devices:
 
   3. Register the socket connection state change callback using the `bt_socket_set_connection_state_changed_cb()` function.
 
-     The callback in invoked whenever the connection state changes (for example, when a client connects to your service). In its parameters, the callback provides the result of the connection state change, the new connection state, and a pointer to the `bt_socket_connection_s` structure (in [mobile](../../api/mobile/latest/structbt__socket__connection__s.html) and [wearable](../../api/wearable/latest/structbt__socket__connection__s.html) applications) that specifies the details of the connection, including the client device MAC address.
+     The callback in invoked whenever the connection state changes (for example, when a client connects to your service). In its parameters, the callback provides the result of the connection state change, the new connection state, and a pointer to the `bt_socket_connection_s` [struct](../../api/common/latest/structbt__socket__connection__s.html) that specifies the details of the connection, including the client device MAC address.
 
      ```
      void
@@ -636,7 +636,7 @@ To connect to other devices:
 
   2. Request a connection to the Bluetooth server using the `bt_socket_connect_rfcomm()` function.
 
-     The first parameter is the address of the remote device. You can get it from the `bt_device_info_s` structure (in [mobile](../../api/mobile/latest/structbt__device__info__s.html) and [wearable](../../api/wearable/latest/structbt__device__info__s.html) applications), which is returned in a callback after you bond with the server device or query a previously bonded device. The second parameter is the UUID for the specific RFCOMM-based service on a remote device. The UUID must match the UUID used by the server device in the `bt_socket_create_rfcomm()` function.
+     The first parameter is the address of the remote device. You can get it from the `bt_device_info_s` [struct](../../api/common/latest/structbt__device__info__s.html), which is returned in a callback after you bond with the server device or query a previously bonded device. The second parameter is the UUID for the specific RFCOMM-based service on a remote device. The UUID must match the UUID used by the server device in the `bt_socket_create_rfcomm()` function.
 
      ```
      const char *service_uuid="00001101-0000-1000-8000-00805F9B34FB";
@@ -670,7 +670,7 @@ To share data between devices after establishing a connection:
 
 2. To read data from other devices, you must set up the data received callback, which is invoked when your device receives data from other Bluetooth devices.
 
-   Use the `bt_socket_set_data_received_cb()` function to register the data received callback. In the callback, the first parameter is a pointer to the `bt_socket_received_data_s` structure (in [mobile](../../api/mobile/latest/structbt__socket__received__data__s.html) and [wearable](../../api/wearable/latest/structbt__socket__received__data__s.html) applications) that can specify the received data, data size, and socket file descriptor.
+   Use the `bt_socket_set_data_received_cb()` function to register the data received callback. In the callback, the first parameter is a pointer to the `bt_socket_received_data_s` [struct](../../api/common/latest/structbt__socket__received__data__s.html) that can specify the received data, data size, and socket file descriptor.
 
    ```
    bt_error_e ret;
@@ -2178,3 +2178,12 @@ if (ret != BT_ERROR_NONE)
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [Bluetooth Adapter API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html)
+  - [Bluetooth Device API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html)
+  - [Bluetooth Socket API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__SOCKET__MODULE.html)
+  - [Bluetooth Audio API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html)
+  - [Bluetooth GATT API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html)
+  - [Bluetooth HDP API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html)
+  - [Bluetooth LE Adapter API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html)
+  - [Bluetooth AVRCP feature](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__AVRCP__MODULE.html)
