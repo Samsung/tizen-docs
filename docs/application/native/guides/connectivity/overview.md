@@ -75,7 +75,7 @@ You can use the following connectivity and wireless features in your native appl
   - [Near Field Communication (NFC)](../../api/common/latest/group__CAPI__NETWORK__NFC__MODULE.html)
   - [Smart Card](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__MODULE.html)
   - [Wi-Fi](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html)
-  - [Wi-Fi Direct](../../api/common/latest/group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html)
+  - [Wi-Fi Direct&reg;](../../api/common/latest/group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html)
   - [Software Access Point (SoftAP)](../../api/common/latest/group__CAPI__NETWORK__SOFTAP__MODULE.html)
   - [Intelligent Network Monitoring (INM)](../../api/common/latest/group__CAPI__NETWORK__INM__MODULE.html)
   - [Smart Traffic Control (STC)](../../api/common/latest/group__CAPI__NETWORK__STC__MODULE.html)
