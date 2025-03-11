@@ -161,6 +161,9 @@ To retrieve the statistics about total network data consumed by the applications
     
    ```
  
- ## Related information
+## Related information
 - Dependencies
-  -   Tizen 5.5 and Higher
+    - Tizen 5.5 and Higher
+- API References
+    - [Tizen.Network.Stc](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Stc.html) class
+
