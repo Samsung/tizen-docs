@@ -821,9 +821,9 @@ done:
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
 - API References
-  - [Connection API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MODULE.htm)
+  - [Connection API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MODULE.html)
   - [Connection Manager API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)
-  - [Connection Profile API] (../../api/common/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html)
+  - [Connection Profile API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html)
   - [Wi-Fi Profile API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__WIFI__PROFILE__MODULE.html)
   - [Cellular Profile API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html)
   - [Connection Statistics API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html)
