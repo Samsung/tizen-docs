@@ -666,3 +666,10 @@ To monitor the changes in a resource:
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
+- API References
+  - [IoTCon API](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__MODULE.html)
+  - [Resource API](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__SERVER__RESOURCE__MODULE.html)
+  - [Client API](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html)
+  - [Remote Resource API](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html)
+  - [Response API](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__RESPONSE__MODULE.html)
+  - [Representation API](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__REPRESENTATION__MODULE.html)
