@@ -150,7 +150,7 @@ To discover devices:
 
    - The service list includes all services supported by the device.
 
-     Each service has either the `CONV_SERVICE_APP_TO_APP_COMMUNICATION` or `CONV_SERVICE_REMOTE_APP_CONTROL` type and auxiliary data. The service type constants are defined in the `conv_service_e` [enumeration](../../api/wearable/latest/group__CAPI__D2D__CONVERGENCE__MANAGER__SERVICE__MODULE.html#gaea7544e24c248a658abc06d7015719a6).
+     Each service has either the `CONV_SERVICE_APP_TO_APP_COMMUNICATION` or `CONV_SERVICE_REMOTE_APP_CONTROL` type and auxiliary data. The service type constants are defined in the `conv_service_e` [enumeration](../../api/common/latest/group__CAPI__D2D__CONVERGENCE__MANAGER__SERVICE__MODULE.html#gaea7544e24c248a658abc06d7015719a6).
 
    > **Note**  
    > The device ID and device type are defined in the platform, and cannot be changed.The `jservice` data is used by the framework internally for the connection and execution of the service. You as a developer do not need to know these details.

@@ -27,7 +27,7 @@ The main features of the HTTP API include:
 
 To enable your application to use the HTTP functionality:
 
-1. To use the functions and data types of the HTTP API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__HTTP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__HTTP__MODULE.html) applications), include the `<http.h>` header file in your application:
+1. To use the functions and data types of the [HTTP API](../../api/common/latest/group__CAPI__NETWORK__HTTP__MODULE.html), include the `<http.h>` header file in your application:
 
    ```
    #include <http.h>
@@ -104,7 +104,7 @@ To manage HTTP transactions:
 
 1. Create an HTTP transaction handle with the `http_session_open_transaction()` function and the session handle.
 
-   The function requires the HTTP method defined by the `http_method_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__HTTP__MODULE.html#ga43d17339ae0c54fb1b72ec6bb73285ec) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__HTTP__MODULE.html#ga43d17339ae0c54fb1b72ec6bb73285ec) applications) as its first parameter. The main methods are:
+   The function requires the HTTP method defined by the `http_method_e`[enumerator](../../api/common/latest/group__CAPI__NETWORK__HTTP__MODULE.html#ga43d17339ae0c54fb1b72ec6bb73285ec) as its first parameter. The main methods are:
    - GET: The application can retrieve a resource from a remote Web server.
    - POST: The application can send data to a Web server.
    - PUT: The application can replace all current representations of the Web server resource with the uploaded content.
@@ -285,3 +285,5 @@ if (ret != HTTP_ERROR_NONE)
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
+- API Reference
+  - [HTTP API](../../api/common/latest/group__CAPI__NETWORK__HTTP__MODULE.html)

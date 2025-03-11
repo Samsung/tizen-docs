@@ -11,7 +11,7 @@ This feature is supported in mobile, TV, and wearable profile.
 
 To enable your application to use the INM API:
 
-1. To use the [INM](../../api/mobile/latest/group__CAPI__NETWORK__INM__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [INM API](../../api/common/latest/group__CAPI__NETWORK__INM__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```xml
    <privileges>

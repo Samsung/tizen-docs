@@ -40,7 +40,7 @@ The Smartcard API is a reference implementation of the SIMalliance Open Mobile 3
 >
 > On some Tizen devices, after a specified time, the screen is automatically switched off and the CPU goes to the resting state. If this occurs during communication with the SE using the Smartcard API, the API may not function normally.
 >
-> To avoid the screen switching off and the CPU going to the resting state, use the [Device](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__MODULE.html) API to lock the device CPU (not the display):
+> To avoid the screen switching off and the CPU going to the resting state, use the [Device API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__MODULE.html) to lock the device CPU (not the display):
 > ```
 > #include <nfc.h>
 > #include <device/power.h>
@@ -507,3 +507,4 @@ To send a transmission:
   - [Reader API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__READER__MODULE.html)
   - [Session API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__SESSION__MODULE.html)
   - [Channel API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__CHANNEL__MODULE.html)
+  - [Device API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__MODULE.html)
