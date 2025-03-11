@@ -15,7 +15,7 @@ The main features of the Connection API include:
 
   - Access various network details, such as the IP address, proxy, and gateway information.
 
-    You can use the `connection_address_family_e` enumerator in [enumeration](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE).html#ga5910989495b39e8c4dbbd05ec9482d19 to get the IPv4 or IPv6 address family. You can use it as a parameter when you retrieve the IP address of the current connection or proxy.
+    You can use the `connection_address_family_e` enumerator in [enumeration](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19) to get the IPv4 or IPv6 address family. You can use it as a parameter when you retrieve the IP address of the current connection or proxy.
 
   - [Register property change callbacks](#register).
 
@@ -23,7 +23,7 @@ The main features of the Connection API include:
 
 - Mapping connection profiles
 
-  You can map a connection profile to retrieve details about specific connections, using the [Connection Profile API] (../../api/common/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html).
+  You can map a connection profile to retrieve details about specific connections, using the [Connection Profile API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html).
 
   Each connection profile is defined by a set of configuration information defined in the `connection_profile_h` handle. The profile provides different information according to the connection type (such as Bluetooth, cellular, Ethernet, and Wi-Fi). You can access various profile details, such as the state, type, and name with the `connection_profile_get_XXX()` functions.
 
@@ -66,7 +66,7 @@ To manage IP sockets, you can:
 
 To enable your application to use the connection functionality:
 
-1. To use the [Connection API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MODULE.htm), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Connection API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
