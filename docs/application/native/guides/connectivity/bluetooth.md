@@ -269,7 +269,7 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
      - The first callback parameter defines the result of the Bluetooth discovery process. If successful, the parameter value is `BT_ERROR_NONE`. If the discovery failed to start due to an error, the parameter value is `BT_ERROR_TIMEOUT`.
 
-     - The second callback parameter defined the current state of the discovery process using the enumerators `bt_adapter_device_discovery_state_e` (classic Bluetooth)[enumeration](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd):
+     - The second callback parameter defined the current state of the discovery process using `bt_adapter_device_discovery_state_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd) (classic Bluetooth):
      - When you start the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_STARTED` state.
 
          Similarly, when you stop the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FINISHED` state.

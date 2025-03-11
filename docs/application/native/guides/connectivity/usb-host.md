@@ -167,7 +167,7 @@ To receive notifications when a USB device is attached or detached:
 
 1. Define and register a callback, which is called when the device is attached or detached.
 
-   Define the events you want to monitor in the third parameter of the `usb_host_set_hotplug_cb()` function, using the values of the [usb\_host\_hotplug\_event\_e](../../api/common/latest/group__CAPI__USB__HOST__HOTPLUG__MODULE.html#ga1c4a0899703bf547abd2cf4dc36fffe9) enumeration.
+   Define the events you want to monitor in the third parameter of the `usb_host_set_hotplug_cb()` function, using the values of the `usb_host_hotplug_event_e` [enumerator](../../api/common/latest/group__CAPI__USB__HOST__HOTPLUG__MODULE.html#ga1c4a0899703bf547abd2cf4dc36fffe9).
 
 
    ```

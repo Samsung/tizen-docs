@@ -13,7 +13,7 @@ The main features of the VPN Service API include:
 
   You can also [set various details](#set_param), such as the MTU for the tunnel interface, and the session name.
 
-  The `vpnsvc_tun_s` structure contains detailed information about the tunnel interface, such as the ID, name, and MTU. The possible errors are defined with the vpnsvc_error_e[enumeration](../../api/common/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#ga8d8e9c964218d7aad622115bb51491e8) enumerator.
+  The `vpnsvc_tun_s` structure contains detailed information about the tunnel interface, such as the ID, name, and MTU. The possible errors are defined with the `vpnsvc_error_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#ga8d8e9c964218d7aad622115bb51491e8).
 
   **Table: Common macros**
 

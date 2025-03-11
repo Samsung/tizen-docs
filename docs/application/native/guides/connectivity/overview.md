@@ -21,7 +21,7 @@ You can use the following connectivity and wireless features in your native appl
 
   You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. You can activate and deactivate a local Wi-Fi device, and to connect to a WLAN network in the infrastructure mode.
 
-- [Wi-Fi Direct&reg;](wifi-direct.md) **in mobile applications only**
+- [Wi-Fi Direct&reg;](wifi-direct.md)
 
   Find a Wi-Fi Direct device, discover its details, and then form a Wi-Fi Direct group to communicate over a peer-to-peer link without using wireless access points (base stations) in the infrastructure mode.
 

@@ -11,11 +11,11 @@ The main features of the Connection API include:
 
   - [Get a state of the connection interface](#detail).
 
-    You can access the state of the Bluetooth, cellular, and Wi-Fi connections only. Use the `connection_get_[interface]_state()` function to retrieve the state as the `connection_bt_state_e` [enumeration](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gaf4abc0a653145fb9dec7e885c9081395), `connection_cellular_state_e` [enumeration](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396), or `connection_wifi_state_e` [enumeration](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) enumerator.
+    You can access the state of the Bluetooth, cellular, and Wi-Fi connections only. Use the `connection_get_[interface]_state()` function to retrieve the state as the `connection_bt_state_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gaf4abc0a653145fb9dec7e885c9081395), `connection_cellular_state_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396), or `connection_wifi_state_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd).
 
   - Access various network details, such as the IP address, proxy, and gateway information.
 
-    You can use the `connection_address_family_e` enumerator in [enumeration](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19) to get the IPv4 or IPv6 address family. You can use it as a parameter when you retrieve the IP address of the current connection or proxy.
+    You can use the `connection_address_family_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19) to get the IPv4 or IPv6 address family. You can use it as a parameter when you retrieve the IP address of the current connection or proxy.
 
   - [Register property change callbacks](#register).
 

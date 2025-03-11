@@ -123,7 +123,7 @@ To create and register resources:
 
 2. Register the resource by calling the `iotcon_resource_create()` function.
 
-   In the function, set the URI path, resource types, interfaces (`iotcon_resource_interfaces_h` resource interface handle in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) applications), policies (1 or more `iotcon_resource_policy_e` enumeration values in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f) applications), and the request handler callback function called when a request arrives from a client.
+   In the function, set the URI path, resource types, interfaces (`iotcon_resource_interfaces_h` [resource interface handle](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8)), policies (1 or more `iotcon_resource_policy_e` [enumerator](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f)), and the request handler callback function called when a request arrives from a client.
 
     The URI path must be unique. The `iotcon_resource_create()` function fails, if you use an existing URI to register another resource.
 
@@ -151,7 +151,7 @@ To find resources:
 
 1. To find a resource, call the `iotcon_find_resource()` function.
 
-   In the function, set the host address, connectivity type (an `iotcon_connectivity_type_e` enumeration value in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gad35385ec940df271d516337a17185453) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gad35385ec940df271d516337a17185453) applications), query, secure flag, and the found callback function called whenever the resource is found during the timeout.
+   In the function, set the host address, connectivity type (an `iotcon_connectivity_type_e` [enumerator](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gad35385ec940df271d516337a17185453)), query, secure flag, and the found callback function called whenever the resource is found during the timeout.
 
    The host address can be `IOTCON_MULTICAST_ADDRESS` for multicast.
 

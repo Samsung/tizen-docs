@@ -25,7 +25,7 @@ The main Telephony Information API features are:
 
 - State changes
 
-  You can receive notifications for various information change events related to call, SIM card, and network information. To monitor state change events, register state change callbacks with the `telephony_set_noti_cb()` function, by specifying the notification ID. The available notification IDs are defined in the `telephony_noti_e` [enumeration](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d).
+  You can receive notifications for various information change events related to call, SIM card, and network information. To monitor state change events, register state change callbacks with the `telephony_set_noti_cb()` function, by specifying the notification ID. The available notification IDs are defined in the `telephony_noti_e` [enumerator](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d).
 
 The following figure illustrates the telephony service and APIs.
 
@@ -396,7 +396,7 @@ Getting network information involves:
 <a name="network_state"></a>
 ### Getting the Network Service State
 
-To get the state, call the `telephony_network_get_service_state()` function. It returns the network service state in its second parameter, using the values of the `telephony_network_service_state_e` [enumeration](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#gae9f3b6e54a1086b8734f4acc71fd001b).
+To get the state, call the `telephony_network_get_service_state()` function. It returns the network service state in its second parameter, using the values of the `telephony_network_service_state_e` [enumerator](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#gae9f3b6e54a1086b8734f4acc71fd001b).
 
 ```
 void
