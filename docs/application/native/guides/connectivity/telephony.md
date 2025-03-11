@@ -522,4 +522,4 @@ tutorial_telephony_modem_get_imei()
   - [Network API](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html)
   - [Modem API](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION__MODEM.html)
   - [Telephony Information API](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION.html)
-  s
+  
