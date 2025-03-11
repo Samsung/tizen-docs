@@ -131,7 +131,7 @@ To get the type of the current connection, IP address, and proxy information:
     }
     ```
 
-2. To get the connection IPv4 address, use the `connection_get_ip_address()` function. The Connection API supports both IPv4 and IPv6, as defined in the `connection_address_family_e` enumerator ((../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19.
+2. To get the connection IPv4 address, use the `connection_get_ip_address()` function. The Connection API supports both IPv4 and IPv6, as defined in the `connection_address_family_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19).
 
     The IP address can be printed using the dlog util tool (as in the following example), or shown to the user in another way. Free the memory allocated for the `ip_addr` temporary variable.
     ```

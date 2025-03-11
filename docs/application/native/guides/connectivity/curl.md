@@ -76,7 +76,7 @@ To enable your application to use the Curl functionality:
 
 There are 2 ways for getting and setting the proxy address:
 
-- To get the proxy address directly, use the `connection_get_proxy()` function of the [Connection Manager API](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html):
+- To get the proxy address directly, use the `connection_get_proxy()` function of the [Connection Manager API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html):
     ```
     char *proxy_address;
     conn_err = connection_get_proxy(connection, CONNECTION_ADDRESS_FAMILY_IPV4, &proxy_address);
@@ -124,4 +124,5 @@ if (curl_err != CURLE_OK)
   - Tizen 2.3.1 and Higher for Wearable
 - API References
   - [Curl API](../../api/common/latest/group__OPENSRC__CURL__FRAMEWORK.html)
-  - [Connection Manager API](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)
+  - [Connection Manager API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)
+  

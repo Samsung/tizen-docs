@@ -59,7 +59,7 @@ To enable your application to use the network service discovery functionality:
 
 - To use the SSDP protocol:
 
-  1. To use the functions and data types of the [SSDP API](../../api/wearable/latest/group__CAPI__NETWORK__SSDP__MODULE.html), include the `<ssdp.h>` header file in your application:
+  1. To use the functions and data types of the [SSDP API](../../api/common/latest/group__CAPI__NETWORK__SSDP__MODULE.html), include the `<ssdp.h>` header file in your application:
 
      ```
      #include <ssdp.h>
@@ -454,4 +454,4 @@ To search for available services on a network, use a service type or target info
   - Tizen 3.0 and Higher for Wearable
 - API References
   - [DNSSD API](../../api/common/latest/group__CAPI__NETWORK__DNSSD__MODULE.html)
-  - [SSDP API](../../api/wearable/latest/group__CAPI__NETWORK__SSDP__MODULE.html)  
+  - [SSDP API](../../api/common/latest/group__CAPI__NETWORK__SSDP__MODULE.html)  

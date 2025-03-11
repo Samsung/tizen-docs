@@ -61,7 +61,7 @@ The main features of the SoftAP API includes:
 
 ## Prerequisites
 
-1. To use the [SoftAP API](../../api/wearable/latest/group__CAPI__NETWORK__SOFTAP__MODULE.html), the application must request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [SoftAP API](../../api/common/latest/group__CAPI__NETWORK__SOFTAP__MODULE.html), the application must request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -341,4 +341,4 @@ To release the SoftAP resources:
    - Tizen 5.0 and Higher for Mobile
    - Tizen 5.0 and Higher for Wearable
 - API Reference
-   - [SoftAP API](../../api/wearable/latest/group__CAPI__NETWORK__SOFTAP__MODULE.html)
+   - [SoftAP API](../../api/common/latest/group__CAPI__NETWORK__SOFTAP__MODULE.html)

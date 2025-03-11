@@ -56,7 +56,7 @@ The main features of the NFC API include:
 
   ![Traditional card emulation](./media/nfc_card_emulation.png)
 
-  With the [Card Emulation API](../../api/wearable/latest/group__CAPI__NETWORK__NFC__SE__MODULE.html), you can:
+  With the [Card Emulation API](../../api/common/latest/group__CAPI__NETWORK__NFC__SE__MODULE.html), you can:
 
   - Enable and disable the card emulation mode.
   - Retrieve the card emulation status.
@@ -303,7 +303,7 @@ To work with NFC manually, you need to register for notifications and handle con
 
       When a tag is discovered, the `on_nfc_tag_discovered()` callback registered earlier is called. In the callback, you can check the NFC discovered type from the first callback parameter. The `nfc_discovered_type_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402) defines the possible values. If the value is `NFC_DISCOVERED_TYPE_ATTACHED`, the tag has connected to the device, and you can read and print out information from the tag:
 
-      1. Get the type of the tag with the `nfc_tag_get_type()` function. The first parameter is the tag handle (received in the second callback parameter) and the second is a pointer to an `nfc_tag_type_e` [enumerator](../../api/wearable/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html#gac77f833a3dde9e3e12d2171f923d8fcb), where the tag type is stored.
+      1. Get the type of the tag with the `nfc_tag_get_type()` function. The first parameter is the tag handle (received in the second callback parameter) and the second is a pointer to an `nfc_tag_type_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html#gac77f833a3dde9e3e12d2171f923d8fcb), where the tag type is stored.
 
          ```
          nfc_tag_get_type(tag, &tag_type);
@@ -520,7 +520,7 @@ To work with NFC manually, you need to register for notifications and handle con
 
    1. When the device is connected to a P2P target, you can exchange NDEF data with that peer target by sending and receiving messages.
 
-      In the registered `on_nfc_p2p_target_discovered()` callback, check the value of the first parameter, which defines the type of the NFC discovery using the `nfc_discovered_type_e` [enumerator](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402). If the type is `NFC_DISCOVERED_TYPE_ATTACHED`, the remote device is attached to the device:
+      In the registered `on_nfc_p2p_target_discovered()` callback, check the value of the first parameter, which defines the type of the NFC discovery using the `nfc_discovered_type_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402). If the type is `NFC_DISCOVERED_TYPE_ATTACHED`, the remote device is attached to the device:
 
       ```
       if (type == NFC_DISCOVERED_TYPE_ATTACHED)
@@ -1337,4 +1337,4 @@ To send and receive messages using the NFC P2P mode:
   - [NDEF API](../../api/common/latest/group__CAPI__NETWORK__NFC__NDEF__MODULE.html)
   - [TAG API](../../api/common/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html)
   - [Peer to Peer API](../../api/common/latest/group__CAPI__NETWORK__NFC__P2P__MODULE.html)
-  - [Card Emulation API](../../api/wearable/latest/group__CAPI__NETWORK__NFC__SE__MODULE.html)
+  - [Card Emulation API](../../api/common/latest/group__CAPI__NETWORK__NFC__SE__MODULE.html)
