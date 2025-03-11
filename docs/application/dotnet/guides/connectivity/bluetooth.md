@@ -1303,5 +1303,7 @@ avrcpProfile.RepeatModeChanged -= EventHandlerRepeatModeChanged;
 
 
 ## Related information
-  * Dependencies
+- Dependencies
     -   Tizen 4.0 and Higher
+- API References
+    - [Tizen.Network.Bluetooth](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.html) class
