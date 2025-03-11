@@ -32,7 +32,7 @@ When you stop the download:
 
 ## Prerequisites
 
-To use the functions and data types of the [Download API](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html) API, include the `<download.h>` header file in your application:
+To use the functions and data types of the [Download API](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html), include the `<download.h>` header file in your application:
 
 ```
 #include <download.h>
