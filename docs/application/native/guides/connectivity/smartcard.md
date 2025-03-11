@@ -7,19 +7,19 @@ The main components of the Smartcard API include:
 
 - SE service
 
-  The SE Service API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__SMARTCARD__SE__SERVICE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__SMARTCARD__SE__SERVICE__MODULE.html) applications) allows you to [initialize and deinitialize the smart card features](#service), and get the available readers. The SE service functions as a connector to the SE framework system.
+  The [SE Service API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__SE__SERVICE__MODULE.html) allows you to [initialize and deinitialize the smart card features](#service), and get the available readers. The SE service functions as a connector to the SE framework system.
 
 - Reader
 
-  The Reader API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__SMARTCARD__READER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__SMARTCARD__READER__MODULE.html) applications) allows you to access the SE connected with the selected reader. You can [get the reader name and open and close sessions](#reader).
+  The [Reader API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__READER__MODULE.html) allows you to access the SE connected with the selected reader. You can [get the reader name and open and close sessions](#reader).
 
 - Session
 
-  A session is an open connection between an application on the device and a SE. The Session API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__SMARTCARD__SESSION__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__SMARTCARD__SESSION__MODULE.html) applications) allows you to [open and close basic and logical channels](#session), and get ATR (answer to reset).
+  A session is an open connection between an application on the device and a SE. The [Session API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__SESSION__MODULE.html) allows you to [open and close basic and logical channels](#session), and get ATR (answer to reset).
 
 - Channel
 
-  A channel is an open connection between an application on the device and an applet on the SE. The Channel API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__SMARTCARD__CHANNEL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__SMARTCARD__CHANNEL__MODULE.html) applications) allows you to [close channels and transmit application protocol data units](#channel) (APDU).
+  A channel is an open connection between an application on the device and an applet on the SE. The [Channel API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__CHANNEL__MODULE.html) allows you to [close channels and transmit application protocol data units](#channel) (APDU).
 
 All of the above are used when you [send a transmission](#send).
 
@@ -54,7 +54,7 @@ The Smartcard API is a reference implementation of the SIMalliance Open Mobile 3
 
 To enable your application to use the smart card functionality:
 
-1. To use the Smartcard API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__SMARTCARD__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__SMARTCARD__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [Smartcard API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -501,3 +501,9 @@ To send a transmission:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [Smartcard API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__MODULE.html)
+  - [SE Service API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__SE__SERVICE__MODULE.html)
+  - [Reader API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__READER__MODULE.html)
+  - [Session API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__SESSION__MODULE.html)
+  - [Channel API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__CHANNEL__MODULE.html)
