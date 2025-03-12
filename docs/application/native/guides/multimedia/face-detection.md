@@ -198,3 +198,5 @@ Finally, clean up by releasing the allocated resources and destroying the handle
 ## Related information
 - Dependencies
   - Tizen 9.0 and Higher for TV
+- API Reference
+  - [Face Detection API](../../api/common/latest/group__CAPI__MEDIA__VISION__FACE__DETECTION__MODULE.html)

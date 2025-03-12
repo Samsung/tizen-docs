@@ -6,7 +6,7 @@ ROI Tracker is one of the main features of the Media Vision API. This API allows
 
 To enable your application to use the media vision ROI Tracker functionality, follow these steps:
 
-1. To use the functions and data types of the Media Vision ROI Tracker API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html) applications), include the `<mv_roi_tracker.h>` header file in your application:
+1. To use the functions and data types of the [Media Vision ROI Tracker API](../../api/common/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html), include the `<mv_roi_tracker.h>` header file in your application:
 
    ```c
    #include <mv_roi_tracker.h>
@@ -73,7 +73,7 @@ To track the ROI coordinates of an image, follow these steps:
 		dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
     ```
 
-    For more information on the configuration attributes, such as `MV_ROI_TRACKER_TYPE_BALANCE`, see Media Vision ROI Tracker API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html) applications).
+    For more information on the configuration attributes, such as `MV_ROI_TRACKER_TYPE_BALANCE`, see [Media Vision ROI Tracker API](../../api/common/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html).
 
 5. Use `mv_roi_tracker_configure()` to configure `handle` ROI Tracker handle with `config`:
 
@@ -131,3 +131,5 @@ To track the ROI coordinates of an image, follow these steps:
 - Dependencies
   - Tizen 7.0 and Higher for Mobile
   - Tizen 7.0 and Higher for Wearable
+- API Reference
+  - [Media Vision ROI Tracker API](../../api/common/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html)

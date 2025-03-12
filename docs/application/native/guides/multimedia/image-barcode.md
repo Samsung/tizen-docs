@@ -107,7 +107,7 @@ To initialize the barcode detection and generation engines for use:
           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
       ```
 
-      For example, to define the detection target, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_DETECT_ATTR_TARGET` attribute. The possible values are defined in the `mv_barcode_detect_attr_target_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) applications). The default value is `MV_BARCODE_DETECT_ATTR_TARGET_ALL`.
+      For example, to define the detection target, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_DETECT_ATTR_TARGET` attribute. The possible values are defined in the `mv_barcode_detect_attr_target_e` enumeration in [the Guide](../../api/common/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6). The default value is `MV_BARCODE_DETECT_ATTR_TARGET_ALL`.
 
    4. To provide camera preview images, create the camera handle, set the camera display and the camera preview callback, and start the camera preview:
 
@@ -181,7 +181,7 @@ To initialize the barcode detection and generation engines for use:
           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
       ```
 
-      For example, to define whether the barcode is generated with text, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_GENERATE_ATTR_TEXT` attribute. The possible values for the attribute are defined in the `mv_barcode_generate_attr_text_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gaff049431f2259d00cfd0fdc7ee721858) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gaff049431f2259d00cfd0fdc7ee721858) applications). The default value is `MV_BARCODE_GENERATE_ATTR_TEXT_INVISIBLE`.
+      For example, to define whether the barcode is generated with text, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_GENERATE_ATTR_TEXT` attribute. The possible values for the attribute are defined in the `mv_barcode_generate_attr_text_e` enumeration in [the Guide](../../api/common/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gaff049431f2259d00cfd0fdc7ee721858). The default value is `MV_BARCODE_GENERATE_ATTR_TEXT_INVISIBLE`.
 
 <a name="detect"></a>
 ## Detecting Barcodes
@@ -510,3 +510,5 @@ mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_EMBED
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
+- API Reference
+  - [Image Barcode API](../../api/common/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html)
