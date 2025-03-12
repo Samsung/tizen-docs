@@ -24,3 +24,9 @@ You can use the following machine learning features in your native applications:
   - Tizen 5.5 and Higher for Wearable
   - Tizen 5.5 and Higher for TV
   - Tizen 5.5 and Higher for IoT
+
+- API References
+  - [Singleshot API](../../api/common/latest/group__CAPI__ML__NNSTREAMER__SINGLE__MODULE.html)
+  - [Pipeline API](../../api/common/latest/group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html)
+  - [ML-Service API](../../api/common/latest/group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html)
+  - [Training API](../../api/common/latest/group__CAPI__ML__FRAMEWORK.html)
