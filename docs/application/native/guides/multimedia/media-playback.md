@@ -78,7 +78,7 @@ The following figure illustrates what happens when the player gets interrupted b
 <a name="features"></a>
 ## Player Features
 
-The Player API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) applications) provides the following features:
+The [Player API](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) provides the following features:
 
 - Operating general controls for the [audio](#audio) and [video](#video) content, such as play, pause, resume, and stop
 
@@ -102,35 +102,35 @@ The Player sub-APIs offer the following features:
 
 - Display
 
-  Use the Display API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) applications) to play a video stream.
+  Use the [Display API](../../api/common/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) to play a video stream.
 
   After changing to the IDLE state, create the display handle and [set the display type](#set_parameters).
 
 - Stream information
 
-  Use the Stream Information API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html) applications) to play a video stream.
+  Use the [Stream Information API](../../api/common/latest/group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html) to play a video stream.
 
   After changing to the READY state, you can [retrieve stream information](#get_stream).
 
 - Audio effect
 
-  Use the Audio Effect API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__AUDIO__EFFECT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__AUDIO__EFFECT__MODULE.html) applications) to set and get the audio effect.
+  Use the [Audio Effect API](../../api/common/latest/group__CAPI__MEDIA__PLAYER__AUDIO__EFFECT__MODULE.html) to set and get the audio effect.
 
   After changing to the IDLE state, you can adjust the audio effect.
 
 - Subtitles
 
-  Use the Subtitle API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html) applications) to [read the subtitle track](#insert).
+  Use the [Subtitle API](../../api/common/latest/group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html) to [read the subtitle track](#insert).
 
   After changing to the READY state, the subtitles can be read.
 
 - Media Streams
 
-  Use the media stream API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) applications) to play and control the external demuxed stream.
+  Use the [Media stream API](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) to play and control the external demuxed stream.
 
 - Spherical Video Playback
 
-  Use the Spherical Video API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__360__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__360__MODULE.html) applications) to set the rendering attributes for spherical video playback.
+  Use the [Spherical Video API](../../api/common/latest/group__CAPI__MEDIA__PLAYER__360__MODULE.html) to set the rendering attributes for spherical video playback.
 
 
 <a name="stream"></a>
@@ -154,11 +154,11 @@ The player supports the streaming protocol features:
 <a name="wav"></a>
 ## WAV Player
 
-The WAV Player API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) applications) provides controlling functions for using audio resources (media files stored on the device). Use the WAV Player API to enable your application to play audio and control playback. You can use the WAV and OGG audio formats.
+The [WAV Player API](../../api/common/latest/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) provides controlling functions for using audio resources (media files stored on the device). Use the WAV Player API to enable your application to play audio and control playback. You can use the WAV and OGG audio formats.
 
 Tizen enables your application to play WAVE format audio in 1 of 2 ways:
 
-- Through the multimedia application control **in mobile applications only**
+- Through the multimedia application control
 
   When using the [multimedia application control](../app-management/common-appcontrols.md#multimedia), the device standard media player application is launched to play audio.
 
@@ -179,12 +179,12 @@ The following figure illustrates the general WAV player state changes.
 <a name="tone"></a>
 ## Tone Player
 
-Tizen enables your application to play a tone or a list of tones using the Tone Player API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html) applications).
+Tizen enables your application to play a tone or a list of tones using the [Tone Player API](../../api/common/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html).
 
 You can generate tones in 2 ways:
 
 - Specify the frequency values. You can specify either 1 or 2 frequencies.
-- Use a DTMF (Dual Tone Multi Frequency) preset frequency value of the `tone_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) applications).
+- Use a DTMF (Dual Tone Multi Frequency) preset frequency value of the [`tone_type_e`](../../api/common/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) enumerator.
 
 You can [start and stop playing a tone](#play_tone), and [play a tone for a specified duration](#duration).
 
@@ -198,7 +198,7 @@ The following figures illustrate the general tone player state changes.
 
 To enable your application to use the playback functionality:
 
-1. To use the functions and data types of the Player API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) applications), include the `<player.h>` header file in your application:
+1. To use the functions and data types of the [Player API](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html), include the `<player.h>` header file in your application:
 
    ```
    #include <player.h>
@@ -280,7 +280,7 @@ To enable your application to use the playback functionality:
    int tone_player_id;
    ```
 
-4. To use the functions and data types of the WAV Player API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) applications), include the `<wav_player.h>` header file in your application:
+4. To use the functions and data types of the [WAV Player API](../../api/common/latest/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html), include the `<wav_player.h>` header file in your application:
 
    ```
    #include <wav_player.h>
@@ -288,7 +288,7 @@ To enable your application to use the playback functionality:
    #include <sound_manager.h>
    ```
 
-   In this guide, you also need the `<stdio.h>` and `<sound_manager.h>` header files to use standard file input and output functions and the Sound Manager API functions (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications).
+   In this guide, you also need the `<stdio.h>` and `<sound_manager.h>` header files to use standard file input and output functions and the [Sound Manager API](../../api/common/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) functions.
 
 <a name="prepare"></a>
 ## Preparing the Player
@@ -449,7 +449,7 @@ To play a video file:
    <a name="play_video_display"></a>
 2. Set the display on which the video is played.
 
-   To retrieve the correct display handle, use the `GET_DISPLAY()` function. To set the display, use the `player_set_display()` function with the player handle, display type (a `player_display_type_e` enumerator in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab) applications), and display handle:
+   To retrieve the correct display handle, use the `GET_DISPLAY()` function. To set the display, use the `player_set_display()` function with the player handle, display type [`player_display_type_e`](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab) enumerator, and display handle:
 
    ```
    error_code = player_set_display(g_player, PLAYER_DISPLAY_TYPE_OVERLAY, GET_DISPLAY(evas_obj));
@@ -700,7 +700,7 @@ To set the display parameters for playing a video file:
      dlog_print(DLOG_ERROR, LOG_TAG, "player_set_display_mode = %d", error_code);
      ```
 
-     The available display modes are defined in the `player_display_mode_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gaafcf6f7487d8cb376e1851a6e1253f3a) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gaafcf6f7487d8cb376e1851a6e1253f3a) applications).
+     The available display modes are defined in the [`player_display_mode_e`](../../api/common/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gaafcf6f7487d8cb376e1851a6e1253f3a) enumeration.
 
    - Set the display rotation using the `player_set_display_rotation()` function:
 
@@ -709,7 +709,7 @@ To set the display parameters for playing a video file:
      dlog_print(DLOG_ERROR, LOG_TAG, "player_set_display_mode = %d", error_code);
      ```
 
-     The available display rotations are defined in the `player_display_rotation_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gab8c4c170d4b2628a09831edc8d652302) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gab8c4c170d4b2628a09831edc8d652302) applications).
+     The available display rotations are defined in the [`player_display_rotation_e`](../../api/common/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gab8c4c170d4b2628a09831edc8d652302) enumeration.
 
 <a name="get_stream"></a>
 ## Retrieving Stream Information
@@ -786,7 +786,7 @@ To retrieve information about the audio and video streams:
 
    - Content metadata
 
-     Retrieve information about the album, artist, author, genre, title, and year using the `player_get_content_info()` function. The available metadata attributes are defined in the `player_content_info_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga2d25f300270965c3ea302b7a7e845f12) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga2d25f300270965c3ea302b7a7e845f12) applications).
+     Retrieve information about the album, artist, author, genre, title, and year using the `player_get_content_info()` function. The available metadata attributes are defined in the [`player_content_info_e`](../../api/common/latest/group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga2d25f300270965c3ea302b7a7e845f12) enumeration.
 
      ```
      char *album;
@@ -908,7 +908,7 @@ To start and stop playing a tone:
 
 1. Start playback using the `tone_player_start_new()` function.
 
-   The first parameter should be the tone_type_e (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) applications) enumerators which can define the available values for the tone type.
+   The first parameter should be the [`tone_type_e`](../../api/common/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) enumerators which can define the available values for the tone type.
 
    The second parameter should be sound information handle which can created by `sound_manager_create_stream_information()`.
 
