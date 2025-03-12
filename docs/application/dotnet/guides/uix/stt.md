@@ -669,3 +669,9 @@ To set the STT options and control recording, follow these steps:
 ## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
+
+- API References
+  - [Tizen.Uix.Stt](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.html)
+  - [Tizen.Uix.Stt.SttClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html)
+  - [Tizen.Uix.Stt.RecognitionType](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.RecognitionType.html)
+  - [Tizen.Uix.Stt.SilenceDetection](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.SilenceDetection.html)

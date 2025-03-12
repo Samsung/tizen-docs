@@ -33,7 +33,7 @@ The main features of the VCE API include:
 
 To enable your application to use the VCE functionality:
 
-1. To use the VCE API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [VCE API](../../api/common/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -43,7 +43,7 @@ To enable your application to use the VCE functionality:
    </privileges>
    ```
 
-2. To use the functions and data types of the VCE API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) applications), include the `<vce.h>` header file in your application:
+2. To use the functions and data types of the [VCE API](../../api/common/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html), include the `<vce.h>` header file in your application:
 
     ```
     #include <vce.h>
@@ -83,7 +83,7 @@ To register and define event callbacks for the VCE service application:
 
 1. The VCE developer must register the `initialize()`, `deinitialize()`, `get_info()`, `get_recording_format()`, `foreach_langs()`, `is_lang_supported()`, `set_language()`, `set_commands()`, `unset_commands()`, `start()`, `set_recording()`, `stop()`, `cancel()`, `set_audio_type()`, `set_domain()`, `process_text()`, `process_list_event()`, `process_haptic_event()` callbacks.
 
-   - Add the callbacks to the vce_request_callback_s structure (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html)  applications), and pass the structure as a parameter to the vce_main() function:
+   - Add the callbacks to the vce_request_callback_s structure by referring to [VCE API](../../api/common/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html), and pass the structure as a parameter to the vce_main() function:
 
       ```
        static int initialize(void);
@@ -528,3 +528,6 @@ You can send the following result information about the VCE:
 - Dependencies
   - Tizen 5.0 and Higher for Mobile
   - Tizen 5.0 and Higher for Wearable
+
+- API Reference
+  - [VCE API](../../api/common/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html)
