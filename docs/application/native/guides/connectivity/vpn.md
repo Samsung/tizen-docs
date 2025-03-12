@@ -420,7 +420,7 @@ To read or write data:
       printf("vpnsvc_read: %d bytes written!\n", ret);
   ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
 - API References

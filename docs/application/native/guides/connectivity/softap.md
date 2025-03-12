@@ -336,7 +336,7 @@ To release the SoftAP resources:
    ```
 
 
-## Related Information
+## Related information
 - Dependencies
    - Tizen 5.0 and Higher for Mobile
    - Tizen 5.0 and Higher for Wearable

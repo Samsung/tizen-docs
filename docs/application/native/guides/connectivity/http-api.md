@@ -281,7 +281,7 @@ if (ret != HTTP_ERROR_NONE)
     printf("http_transaction_submit failed: %d", ret);
 ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

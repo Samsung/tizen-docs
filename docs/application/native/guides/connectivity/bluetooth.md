@@ -2174,7 +2174,7 @@ if (ret != BT_ERROR_NONE)
     dlog_print(DLOG_ERROR, LOG_TAG, "[bt_deinitialize] failed.");
 ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

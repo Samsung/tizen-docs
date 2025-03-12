@@ -66,7 +66,7 @@ You can use the following connectivity and wireless features in your native appl
 
   You can perform network service discoveries to announce local services and search for remote services.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

@@ -512,7 +512,7 @@ tutorial_telephony_modem_get_imei()
 }
 ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

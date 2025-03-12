@@ -529,7 +529,7 @@ The success or failure result (including the correctness of the passcode input i
 | `conv_service_publish()` | -`"result_type"`: `"onPublish"`<br>-`"app_control_reply"`: Application control data, only valid if the receiver replied with an `app_control`, which means that the sender sent a payload with a `"reply"` of `"1"`.<br>-`"app_control_request"`: Requested application control data, only valid if the receiver replied with an `app_control` value, which means that the sender sent a payload with a `"reply"` of `"1"`.<br>-`"app_control_result"`: The `app_control_result_e` value for the request, only valid if the receiver replied with a value, which means that the sender sent a payload with a `"reply"` of `"1"`. |
 | `conv_service_stop()`    | `"result_type"`: `"onStop"`              |
 
-## Related Information
+## Related information
 - Dependencies
  - Tizen 2.4 and Higher for Mobile
  - Tizen 2.3.1 and Higher for Wearable

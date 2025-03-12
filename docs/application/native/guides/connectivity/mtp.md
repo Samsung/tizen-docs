@@ -411,7 +411,7 @@ application_test_event_callback(void)
 }
 ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
 - API References

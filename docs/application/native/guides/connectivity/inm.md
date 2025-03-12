@@ -163,7 +163,7 @@ You can retrieve information about a particular connection by iterating through 
     
 You can monitor other types of state changes using certain callback functions, such as `inm_set_cellular_state_changed_cb()` or `inm_set_ethernet_state_changed_cb()`.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 5.0 and Higher for Mobile
   - Tizen 5.0 and Higher for Wearable

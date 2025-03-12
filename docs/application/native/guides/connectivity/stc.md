@@ -265,7 +265,7 @@ To retrieve statistics about total network data consumed by applications:
    }
    ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 4.0 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable

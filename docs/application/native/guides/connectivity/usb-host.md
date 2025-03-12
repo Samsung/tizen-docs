@@ -244,7 +244,7 @@ Asynchronous transfer is a way to allow the system to handle the data traffic in
 The asynchronous transfer includes isochronous and control transfers. For more information and examples, see [Asynchronous IO API](../../api/common/latest/group__CAPI__USB__HOST__ASYNC__MODULE.html).
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
 - API References

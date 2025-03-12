@@ -421,7 +421,7 @@ To deactivate Wi-Fi Direct when it is no longer needed (or the application is ex
    wifi_direct_deinitialize();
    ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
 - API References

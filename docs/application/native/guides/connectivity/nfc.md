@@ -1327,7 +1327,7 @@ To send and receive messages using the NFC P2P mode:
    Depending on the record type, some obtained values must be freed and others must not. For example, you must free the obtained text from a text record.
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

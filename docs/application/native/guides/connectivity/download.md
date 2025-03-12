@@ -213,7 +213,7 @@ To download content:
    error = download_destroy(download_id);
    ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
 - API References

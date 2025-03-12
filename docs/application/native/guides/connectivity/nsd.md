@@ -448,7 +448,7 @@ To search for available services on a network, use a service type or target info
    ssdp_stop_browsing_service(browser_handle);
    ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

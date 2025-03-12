@@ -497,7 +497,7 @@ To send a transmission:
        dlog_print(DLOG_INFO, LOG_TAG, "smartcard deinitialize failed");
    ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

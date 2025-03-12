@@ -662,7 +662,7 @@ To monitor the changes in a resource:
         /* Error handling */
     ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
