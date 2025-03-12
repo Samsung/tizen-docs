@@ -533,5 +533,5 @@ The success or failure result (including the correctness of the passcode input i
 - Dependencies
  - Tizen 2.4 and Higher for Mobile
  - Tizen 2.3.1 and Higher for Wearable
--API Reference
-  - [Convergence API](../../api/common/latest/group__CAPI__CONVERGENCE__FRAMEWORK.html)
+- API References
+ - [Convergence API](../../api/common/latest/group__CAPI__CONVERGENCE__FRAMEWORK.html)

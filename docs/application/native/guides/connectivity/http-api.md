@@ -285,5 +285,5 @@ if (ret != HTTP_ERROR_NONE)
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
-- API Reference
+- API References
   - [HTTP API](../../api/common/latest/group__CAPI__NETWORK__HTTP__MODULE.html)

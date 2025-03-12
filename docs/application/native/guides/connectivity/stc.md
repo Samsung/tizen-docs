@@ -269,5 +269,5 @@ To retrieve statistics about total network data consumed by applications:
 - Dependencies
   - Tizen 4.0 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
-- API Reference
+- API References
   - [STC API](../../api/common/latest/group__CAPI__NETWORK__STC__MODULE.html)

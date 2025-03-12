@@ -216,5 +216,5 @@ To download content:
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
-- API Reference
+- API References
   - [Download API](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)

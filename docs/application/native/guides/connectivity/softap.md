@@ -340,5 +340,5 @@ To release the SoftAP resources:
 - Dependencies
    - Tizen 5.0 and Higher for Mobile
    - Tizen 5.0 and Higher for Wearable
-- API Reference
+- API References
    - [SoftAP API](../../api/common/latest/group__CAPI__NETWORK__SOFTAP__MODULE.html)

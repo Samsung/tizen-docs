@@ -168,5 +168,5 @@ You can monitor other types of state changes using certain callback functions, s
   - Tizen 5.0 and Higher for Mobile
   - Tizen 5.0 and Higher for Wearable
   - Tizen 5.0 and Higher for TV
-- API Reference
+- API References
   - [INM API](../../api/common/latest/group__CAPI__NETWORK__INM__MODULE.html)
