@@ -259,3 +259,5 @@ The output of the example is as follows:
 - Dependencies
   -   Tizen 6.5 and Higher
 
+- API References
+  - [Shape and Stroke API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VectorGraphics.Shape.html)

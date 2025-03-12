@@ -103,3 +103,6 @@ The following methods return colors that are appropriate for use over the swatch
 ## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
+
+- API References
+  - [Palette API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Palette.html)

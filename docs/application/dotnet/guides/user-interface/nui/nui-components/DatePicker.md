@@ -67,5 +67,8 @@ private void OnDateChanged(object sender, DateChangedEventArgs args)
 ## Related information
 
 - Dependencies
-  -   Tizen 6.5 and Higher 
+  - Tizen 6.5 and Higher 
+
+- API References
+  - [DatePicker API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.DatePicker.html)
 

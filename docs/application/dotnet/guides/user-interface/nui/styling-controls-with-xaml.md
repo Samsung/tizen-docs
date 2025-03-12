@@ -241,3 +241,6 @@ class AlwaysBlueTextLabel : TextLabel
   - [XAML Todo List](https://github.com/dalihub/nui-demo/tree/master/ThemeExample/TodoList)
 - Dependencies
   -   Tizen 6.5 and Higher
+
+- API References
+  - [Styling UI components API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.ViewStyle.html)
