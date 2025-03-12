@@ -181,5 +181,5 @@ To detect human pose from an image, proceed as follows:
 - Dependencies
   - Tizen 6.5 and Higher
 
-- API Reference
+- API References
   - [PoseLandmarkDetector](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.PoseLandmarkDetector.html) class

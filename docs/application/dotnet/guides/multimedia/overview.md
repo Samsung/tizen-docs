@@ -70,7 +70,7 @@ You can use the following multimedia features in your .NET applications:
 - Dependencies
   -   Tizen 4.0 and Higher
 
-- API Reference
+- API References
   - [Tizen.Content.MediaContent](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html) namespace
     - APIs for MediaContent
   - [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) namespace
