@@ -1097,3 +1097,12 @@ To create a command group and commands, follow these steps:
 ## Related information
 * Dependencies
   -   Tizen 5.5 and Higher
+
+- API References
+  - [Tizen.Uix.VoiceControlManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html)
+  - [Tizen.Uix.VoiceControlManager.VoiceControlManagerClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.html)
+  - [Tizen.Uix.VoiceControlManager.ServiceState](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.ServiceState.html)
+  - [Tizen.Uix.VoiceControlManager.State](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.State.html)
+  - [Tizen.Uix.VoiceControlManager.RecognitionModeType](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.RecognitionModeType.html)
+  - [Tizen.Uix.VoiceControlManager.CommandType](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.CommandType.html)
+  - [Tizen.Uix.VoiceControlManager.VoiceCommandsGroup](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.VoiceCommandsGroup.html)
