@@ -21,7 +21,7 @@ You can use the following connectivity and wireless features in your native appl
 
   You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. You can activate and deactivate a local Wi-Fi device, and to connect to a WLAN network in the infrastructure mode.
 
-- [Wi-Fi Direct&reg;](wifi-direct.md) **in mobile applications only**
+- [Wi-Fi Direct&reg;](wifi-direct.md)
 
   Find a Wi-Fi Direct device, discover its details, and then form a Wi-Fi Direct group to communicate over a peer-to-peer link without using wireless access points (base stations) in the infrastructure mode.
 
@@ -66,7 +66,23 @@ You can use the following connectivity and wireless features in your native appl
 
   You can perform network service discoveries to announce local services and search for remote services.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [Bluetooth](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html)
+  - [Near Field Communication (NFC)](../../api/common/latest/group__CAPI__NETWORK__NFC__MODULE.html)
+  - [Smart Card](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__MODULE.html)
+  - [Wi-Fi](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html)
+  - [Wi-Fi Direct&reg;](../../api/common/latest/group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html)
+  - [Software Access Point (SoftAP)](../../api/common/latest/group__CAPI__NETWORK__SOFTAP__MODULE.html)
+  - [Intelligent Network Monitoring (INM)](../../api/common/latest/group__CAPI__NETWORK__INM__MODULE.html)
+  - [Smart Traffic Control (STC)](../../api/common/latest/group__CAPI__NETWORK__STC__MODULE.html)
+  - [Telephony Information](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION.html)
+  - [USB Host](../../api/common/latest/group__CAPI__USB__HOST__MODULE.html)
+  - [Internet and Content Downloads](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)
+  - [File Transfer with MTP](../../api/common/latest/group__CAPI__NETWORK__MTP__MODULE.html)
+  - [VPN Connections](../../api/common/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html)
+  - [IoT Connectivity](../../api/common/latest/group__CAPI__IOT__CONNECTIVITY__MODULE.html)
+  - [Network Service Discovery](../../api/common/latest/group__CAPI__NETWORK__DNSSD__MODULE.html)
