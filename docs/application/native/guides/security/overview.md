@@ -39,3 +39,5 @@ For information on how to minimize any accidental introduction of security vulne
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+    - [Security API](../../api/common/latest/group__CAPI__SECURITY__FRAMEWORK.html)
