@@ -192,3 +192,6 @@ You can list all scheduled alarms, and cancel alarms either one by one or all at
 ## Related information
   * Dependencies
     -   Tizen 4.0 and Higher
+  * API Reference
+    - [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager) class
+    - [Tizen.Applications.Alarm](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Alarm) class

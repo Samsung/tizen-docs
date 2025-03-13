@@ -169,3 +169,5 @@ To get information on the current application, follow these steps:
 ## Related information
   - Dependencies
     -   Tizen 4.0 and Higher
+  - API Reference
+    - [Tizen.Applications.ApplicationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ApplicationManagerhtml) class

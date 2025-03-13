@@ -132,3 +132,6 @@ To communicate with the running widget instances, follow these steps:
 ## Related information
   - Dependencies
     -   Tizen 4.0 and Higher
+  - API Reference
+    - [Tizen.Applications.WidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication) class
+    - [Tizen.Applications.WidgetControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetControl) class

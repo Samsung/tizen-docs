@@ -112,3 +112,7 @@ If the registered timer source is no longer needed, you should remove it by call
 ## Related information
 - Dependencies
   - Tizen 9.0
+- API Reference
+  - [Tizen.Core.TizenCore](/application/dotnet/api/TizenFX/latest/api/Tizen.Core.TizenCore.html) class
+  - [Tizen.Core.Task](/application/dotnet/api/TizenFX/latest/api/Tizen.Core.Task.html) class
+

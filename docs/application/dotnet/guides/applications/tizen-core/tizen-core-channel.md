@@ -83,3 +83,8 @@ After receiving the object, its ownership is transferred to the receiving party,
 ## Related information
 - Dependencies
   - Tizen 9.0
+- API Reference
+  - [Tizen.Core.Channel](/application/dotnet/api/TizenFX/latest/api/Tizen.Core.Channel.html) class
+  - [Tizen.Core.ChannelObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Core.ChannelObject.html) class
+  - [Tizen.Core.ChannelReceiver](/application/dotnet/api/TizenFX/latest/api/Tizen.Core.ChannelReceiver.html) class
+  - [Tizen.Core.ChannelSender](/application/dotnet/api/TizenFX/latest/api/Tizen.Core.ChannelSender.html) class
