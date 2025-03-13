@@ -198,5 +198,5 @@ Finally, clean up by releasing the allocated resources and destroying the handle
 ## Related information
 - Dependencies
   - Tizen 9.0 and Higher for TV
-- API Reference
+- API References
   - [Object Detection API](../../api/common/latest/group__CAPI__MEDIA__VISION__OBJECT__DETECTION__MODULE.html)

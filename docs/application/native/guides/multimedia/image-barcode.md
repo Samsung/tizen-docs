@@ -510,5 +510,5 @@ mv_engine_config_set_string_attribute(engine_cfg, MV_BARCODE_GENERATE_ATTR_EMBED
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
-- API Reference
+- API References
   - [Image Barcode API](../../api/common/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html)

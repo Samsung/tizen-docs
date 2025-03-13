@@ -437,5 +437,5 @@ To track images:
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
-- API Reference
+- API References
   - [Image Recognition API](../../api/common/latest/group__CAPI__MEDIA__VISION__IMAGE__MODULE.html)
