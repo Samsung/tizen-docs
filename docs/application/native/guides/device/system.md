@@ -844,3 +844,5 @@ The following table lists the TizenID system keys:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [System Information API](../../api/common/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html)

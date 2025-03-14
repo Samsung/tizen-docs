@@ -47,3 +47,5 @@ You can use the following device settings and systems features in your native ap
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 7.0 and Higher for TV
   - Tizen 7.0 and Higher for IoT
+- API References
+  - [System API](../../api/common/latest/group__CAPI__SYSTEM__FRAMEWORK.html)

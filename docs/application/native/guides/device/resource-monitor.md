@@ -303,3 +303,5 @@ The following table lists the required controls for some resources, which are pa
   - Tizen 7.0 and Higher for Wearable
   - Tizen 7.0 and Higher for TV
   - Tizen 7.0 and Higher for IoT
+- API References
+  - [Resource Monitor API](../../api/common/latest/group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html)
