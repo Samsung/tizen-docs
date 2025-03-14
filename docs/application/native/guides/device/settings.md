@@ -217,3 +217,5 @@ The following table lists the available system setting keys.
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [System Settings API](../../api/common/latest/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html)
