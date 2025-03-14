@@ -25,7 +25,7 @@ The main features of the Bundle API include:
 
 To enable your application to use the bundle functionality:
 
-1. To use the functions and data types of the Bundle API (in [mobile](../../api/mobile/latest/group__CORE__LIB__BUNDLE__MODULE.html) and [wearable](../../api/wearable/latest/group__CORE__LIB__BUNDLE__MODULE.html) applications), include the `<bundle.h>` header file in your application:
+1. To use the functions and data types of the [Bundle API](../../api/common/latest/group__CORE__LIB__BUNDLE__MODULE.html), include the `<bundle.h>` header file in your application:
 
    ```
    #include <bundle.h>
@@ -210,3 +210,6 @@ test_bundle_encode_decode(void)
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API Reference
+  - [Bundle](../../api/common/latest/group__CORE__LIB__BUNDLE__MODULE.html)
+  

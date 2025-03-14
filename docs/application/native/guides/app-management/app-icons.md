@@ -33,7 +33,7 @@ To enable your application to use the application icon functionality:
 
 - To handle badges:
 
-  1. To use the Badge API (in [mobile](../../api/mobile/latest/group__BADGE__MODULE.html) and [wearable](../../api/wearable/latest/group__BADGE__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+  1. To use the [Badge API](../../api/common/latest/group__BADGE__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
      ```
      <privileges>
@@ -63,7 +63,7 @@ To enable your application to use the application icon functionality:
 
 - To handle shortcuts:
 
-  1. To use the [Shortcut](../../api/mobile/latest/group__SHORTCUT__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+  1. To use the [Shortcut API](../../api/common/latest/group__SHORTCUT__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
      ```
      <privileges>
         <privilege>http://tizen.org/privilege/shortcut</privilege>
@@ -209,3 +209,6 @@ To add a widget to the home screen:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API Reference
+  - [Badge (Deprecated)](../../api/common/latest/group__BADGE__MODULE.html)
+  - [Shortcut (Deprecated)](../../api/common/latest/group__SHORTCUT__MODULE.html)

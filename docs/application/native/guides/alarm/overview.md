@@ -17,3 +17,6 @@ You can use the following alarms and scheduling features in your native applicat
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API Reference
+  - [Alarm](../../api/common/latest/group__CAPI__ALARM__MODULE.html)
+  - [Contextual Trigger](../../api/common/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html)

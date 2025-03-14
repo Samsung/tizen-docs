@@ -807,3 +807,5 @@ To create a template from an existing notification, and reuse that template late
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
+- API Reference
+  - [Notification](../../api/common/latest/group__NOTIFICATION__MODULE.html)

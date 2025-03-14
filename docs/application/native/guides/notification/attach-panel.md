@@ -306,3 +306,5 @@ To manage an attach panel content, you can set extra data to a previously added 
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
+- API Reference
+  - [Attach Panel](../../api/common/latest/group__CAPI__PANEL__ATTACH__MODULE.html)
