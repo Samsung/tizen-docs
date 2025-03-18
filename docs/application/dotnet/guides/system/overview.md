@@ -22,5 +22,7 @@ You can use the following device settings and systems features in your .NET appl
     You can access information about the system settings. You can retrieve the system configuration related to user preferences.
 
 ## Related information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher
+- API References
+  - [Tizen.System](/application/dotnet/api/TizenFX/latest/api/Tizen.System.html)
