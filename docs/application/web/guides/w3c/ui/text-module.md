@@ -169,3 +169,5 @@ The following figure shows examples of manipulating the text properties.
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [W3C](https://www.w3.org/TR/css-text-3/){:target="_blank"}
