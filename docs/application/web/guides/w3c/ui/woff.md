@@ -82,4 +82,5 @@ To use the WOFF (Web Open Font Format) file format, which is a W3C standard font
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
-* API Reference: [W3C](https://www.w3.org/TR/WOFF/){:target="_blank"}
+* API References
+  - [W3C](https://www.w3.org/TR/WOFF/){:target="_blank"}

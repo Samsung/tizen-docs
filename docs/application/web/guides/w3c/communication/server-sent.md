@@ -118,4 +118,5 @@ For the complete source code related to this use case, see the following files:
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for TV
-* API Reference: [W3C](https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface){:target="_blank"}
+* API References
+  - [W3C](https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface){:target="_blank"}

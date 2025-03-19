@@ -107,4 +107,5 @@ For the complete source code related to this use case, see the following file:
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-* API Reference: [W3C](https://www.w3.org/TR/geolocation/#geolocation_interface){:target="_blank"}
+* API References
+  - [W3C](https://www.w3.org/TR/geolocation/#geolocation_interface){:target="_blank"}
