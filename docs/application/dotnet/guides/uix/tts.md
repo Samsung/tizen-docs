@@ -752,3 +752,6 @@ To decide between the client-side playback mode and the service-side playback mo
 ## Related information
 - Dependencies
   -   Tizen 4.0 and Higher
+
+- API Reference
+  - [Tizen.Uix.Tts.TtsClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html)
