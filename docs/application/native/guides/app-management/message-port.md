@@ -222,5 +222,5 @@ Trusted communication works similarly as normal message port communication. The 
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-- API Reference
+- API References
   - [Message Port](../../api/common/latest/group__CAPI__MESSAGE__PORT__MODULE.html)

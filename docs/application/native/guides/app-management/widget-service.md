@@ -116,5 +116,5 @@ Widget Service API provides functions to trigger the event that changes the stat
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-- API Reference
+- API References
   - [Widget Service](../../api/common/latest/group__CAPI__WIDGET__SERVICE__MODULE.html)

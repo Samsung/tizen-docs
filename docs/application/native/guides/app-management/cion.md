@@ -234,7 +234,7 @@ tidlc --cion -s -b -i CionTest.tidl -l C -o CionStub
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for iot
-- API Reference
+- API References
   - [Cion](../../api/common/latest/group__CAPI__CION__MODULE.html)
   - [Cion Client](../../api/common/latest/group__CAPI__CION__CLIENT__MODULE.html)
   - [Cion Group](../../api/common/latest/group__CAPI__CION__GROUP__MODULE.html)

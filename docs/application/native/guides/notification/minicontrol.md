@@ -106,6 +106,6 @@ To hide the quick panel:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 5.0 and Higher for Wearable
-- API Reference
+- API References
   - [Minicontrol](../../api/common/latest/group__MINICONTROL__LIBRARY.html)
   - [Minicontrol Provider](../../api/common/latest/group__CAPI__MINICONTROL__PROVIDER__MODULE.html)

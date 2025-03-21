@@ -511,7 +511,7 @@ For example, a music-player-service service application is needed to control the
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-- API Reference
+- API References
   - [Widget Application](../../api/common/latest/group__CAPI__WIDGET__APP__MODULE.html)
   - [Preference](../../api/common/latest/group__CAPI__PREFERENCE__MODULE.html)
   - [Data Control](../../api/common/latest/group__CAPI__DATA__CONTROL__MODULE.html)

@@ -295,7 +295,7 @@ To get the installed information and its details, and to operate on the informat
 - Dependencies
   - Tizen 5.5 and Higher for Mobile
   - Tizen 5.5 and Higher for Wearable
-- API Reference
+- API References
   - [Component Manager](../../api/common/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html)
   - [Component Context](../../api/common/latest/group__CAPI__COMPONENT__CONTEXT__MODULE.html)
   - [Component Information](../../api/common/latest/group__CAPI__COMPONENT__INFO__MODULE.html)

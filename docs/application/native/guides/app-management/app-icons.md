@@ -209,6 +209,6 @@ To add a widget to the home screen:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-- API Reference
+- API References
   - [Badge (Deprecated)](../../api/common/latest/group__BADGE__MODULE.html)
   - [Shortcut (Deprecated)](../../api/common/latest/group__SHORTCUT__MODULE.html)

@@ -26,7 +26,7 @@ You can use the following notifications and content sharing features in your nat
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
-- API Reference
+- API References
   - [Notification](../../api/common/latest/group__NOTIFICATION__MODULE.html)
   - [Notification Ex](../../api/common/latest/group__NOTIFICATION__EX__MODULE.html)
   - [Attach Panel](../../api/common/latest/group__CAPI__PANEL__ATTACH__MODULE.html)

@@ -210,5 +210,5 @@ To retrieve all scheduled jobs:
 ## Related Information
 - Dependencies
   -  Tizen 4.0 and Higher
-- API Reference
+- API References
   - [Job Scheduler](../../api/common/latest/group__CAPI__JOB__SCHEDULER__MODULE.html)

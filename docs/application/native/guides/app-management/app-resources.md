@@ -191,5 +191,5 @@ To check how the resources are shown on different device configurations, create 
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
-- API Reference
+- API References
   - [Resource Manager](../../api/common/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html)
