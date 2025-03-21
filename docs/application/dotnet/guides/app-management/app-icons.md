@@ -171,5 +171,10 @@ To add a widget to the home screen, follow these steps:
     ```
 
 ## Related information
-  * Dependencies
-    -   Tizen 4.0 and Higher
+- Dependencies
+    - Tizen 4.0 and Higher
+- API References
+    - [Tizen.Applications.Badge](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Badge.html) class
+    - [Tizen.Applications.BadgeControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.BadgeControl.html) class
+    - [Tizen.Applications.Shortcut](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Shortcut.html) namespace
+    - [Tizen.Applications.Shortcut.ShortcutManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Shortcut.ShortcutManager.html) class

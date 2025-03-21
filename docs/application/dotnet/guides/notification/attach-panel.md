@@ -377,5 +377,8 @@ public void SetTotalSizeOfSelectedItems()
 
 
 ## Related information
-* Dependencies
-  -   Tizen 4.0 and Higher
+- Dependencies
+  - Tizen 4.0 and Higher
+- API References
+  - [Tizen.Applications.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel) namespace
+  - [Tizen.Applications.AttachPanel.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel) class
