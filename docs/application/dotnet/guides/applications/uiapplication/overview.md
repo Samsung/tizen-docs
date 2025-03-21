@@ -25,7 +25,7 @@ The UI application is the most common Tizen .NET application model, described be
     A widget application (or widget) is a specialized application that provides the user with a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
 
 ## Related information
-- API Reference
+- API References
   - [Tizen.NUI.NUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIApplication.html) class
   - [Tizen.Applications.CoreUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreUIApplication.html) class
   - [Tizen.NUI.NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class

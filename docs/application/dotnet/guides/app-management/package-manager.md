@@ -139,8 +139,8 @@ If you want to use this API, you need to add the below privilege on `tizen-manif
 
 
 ## Related information
-  * Dependencies
-    -   Tizen 4.0 and Higher
-  * API Reference
+- Dependencies
+    - Tizen 4.0 and Higher
+- API References
     - [Tizen.Applications.PackageManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager) class
     - [Tizen.Applications.Package](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Package) class

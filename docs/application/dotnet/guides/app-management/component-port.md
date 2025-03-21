@@ -468,7 +468,7 @@ Using [Tizen.Applications.ComponentBased.ComponentTask](/application/dotnet/api/
 ## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
-- API Reference
+- API References
   - [Tizen.Applications.ComponentBased](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased) namespace
   - [Tizen.Applications.ComponentBased.ComponentPort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentPort) class
   - [Tizen.Applications.ComponentBased.ComponentTask](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentTask) class

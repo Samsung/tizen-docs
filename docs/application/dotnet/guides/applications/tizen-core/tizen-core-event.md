@@ -58,6 +58,6 @@ If you want to deliver `Tizen.Core.EventObject` only to a specific `Tizen.Core.E
 ## Related information
 - Dependencies
   - Tizen 9.0
-- API Reference
+- API References
   - [Tizen.Core.Event](/application/dotnet/api/TizenFX/latest/api/Tizen.Core.Event.html) class
   - [Tizen.Core.EventObject](/application/dotnet/api/TizenFX/latest/api/Tizen.Core.EventObject.html) class

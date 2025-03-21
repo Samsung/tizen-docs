@@ -506,9 +506,9 @@ The following table contains an example data model of a data control provider.
 
 
 ## Related information
-  * Dependencies
-    -   Tizen 4.0 and Higher
-  * API Reference
+- Dependencies
+   - Tizen 4.0 and Higher
+- API References
     - [Tizen.Applications.DataControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl) namespace
     - [Tizen.Applications.DataControl.Provider](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Provider) class
     - [Tizen.Applications.DataControl.Consumer](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl.Consumer) class
