@@ -33,7 +33,7 @@ To enable your application to use the message port functionality:
 
 2. To use trusted message port communication, both applications must have the same certificate. To create and register an author certificate, go to the Tizen Studio menu and select **Tools > Certificate Manager**. For more information, see [Working with the Certificate Profile](../../../tizen-studio/common-tools/certificate-registration.md).
 
-3. To use the functions and data types of the Message Port API (in [mobile](../../api/mobile/latest/group__CAPI__MESSAGE__PORT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MESSAGE__PORT__MODULE.html) applications), include the `<message_port.h>` header file in your application:
+3. To use the functions and data types of the [Message Port API](../../api/common/latest/group__CAPI__MESSAGE__PORT__MODULE.html), include the `<message_port.h>` header file in your application:
 
    ```
    #include <message_port.h>
@@ -222,3 +222,5 @@ Trusted communication works similarly as normal message port communication. The 
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [Message Port](../../api/common/latest/group__CAPI__MESSAGE__PORT__MODULE.html)

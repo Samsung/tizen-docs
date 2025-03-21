@@ -22,7 +22,7 @@ Tizen provides various application models to allow you to create applications ta
 
 ## Native Application Life-Cycle
 
-The Tizen Native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](../../api/mobile/latest/group__CAPI__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APPLICATION__MODULE.html) applications). It provides functions to manage the main event loop, the application state change events, and basic system events.
+The Tizen Native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the [Application API](../../api/common/latest/group__CAPI__APPLICATION__MODULE.html). It provides functions to manage the main event loop, the application state change events, and basic system events.
 
 Tizen supports both UI applications (which have a graphical user interface) and service applications (which have no graphical user interface). The UI and service applications can be packaged together, if necessary; however, a combined application package must contain only one UI application, while it can have several service applications.
 
@@ -72,3 +72,7 @@ Application state changes are managed by the underlying framework. For more info
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [UI Applications](../../api/common/latest/group__CAPI__APPLICATION__MODULE.html)
+  - [Service Applications](../../api/common/latest/group__CAPI__SERVICE__APP__MODULE.html)
+  - [Component Based Applications](../../api/common/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html)

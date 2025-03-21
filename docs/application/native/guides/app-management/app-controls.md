@@ -507,7 +507,7 @@ The main application group features include:
 
 To enable your application to use the application control functionality:
 
-1. To use the App Control API (in [mobile](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APP__CONTROL__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [App Control API](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -648,7 +648,7 @@ create_base_gui(appdata_s *ad)
 
 2. When the button is clicked, use an application control to launch the sub application.
 
-   Define the launch mode for the application to be called using the `app_control_set_launch_mode()` function. The second parameter defines the launch mode with the `app_control_launch_mode_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html#gadf26b03f2f6b18acba4a946e7eb7b31c) applications).
+   Define the launch mode for the application to be called using the `app_control_set_launch_mode()` function. The second parameter defines the launch mode with the `app_control_launch_mode_e` [enumerator](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html#gadf26b03f2f6b18acba4a946e7eb7b31c).
 
    ```
    static void
@@ -818,7 +818,7 @@ The following common application controls are available:
 > [!NOTE]
 > Application Control URI is supported since Tizen 5.5.
 
-[Application Control URIs](../../api/mobile/5.5/group__CAPI__APP__CONTROL__URI__MODULE.html) provide functions to set, get, and build URI data that conforms to [RFC 3986](https://tools.ietf.org/html/rfc3986).
+[Application Control URIs](../../api/common/latest/group__CAPI__APP__CONTROL__URI__MODULE.html) provide functions to set, get, and build URI data that conforms to [RFC 3986](https://tools.ietf.org/html/rfc3986).
 
 - Syntax
 
@@ -858,3 +858,6 @@ The following common application controls are available:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html)
+  - [App Control URI](../../api/common/latest/group__CAPI__APP__CONTROL__URI__MODULE.html)

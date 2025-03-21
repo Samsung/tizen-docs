@@ -215,3 +215,6 @@ if (ret != ALARM_ERROR_NONE)
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [Alarm](../../api/common/latest/group__CAPI__ALARM__MODULE.html)
+  - [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html)

@@ -86,7 +86,7 @@ Describe your service application attributes in the manifest file. The attribute
 
 ## Prerequisites
 
-To use the functions and data types of the Service Application API (in [mobile](../../api/mobile/latest/group__CAPI__SERVICE__APP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SERVICE__APP__MODULE.html) applications), include the `<service_app.h>` header file in your application:
+To use the functions and data types of the Service [Application API](../../api/common/latest/group__CAPI__SERVICE__APP__MODULE.html), include the `<service_app.h>` header file in your application:
 
 ```
 #include <service_app.h>
@@ -206,3 +206,5 @@ To monitor application state change and system events, proceed as follows:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [Service Applications](../../api/common/latest/group__CAPI__SERVICE__APP__MODULE.html)
