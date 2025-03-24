@@ -804,9 +804,9 @@ To set the STT options and control recording:
     ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
 
-- API Reference
+- API References
   - [STT API](../../api/common/latest/group__CAPI__UIX__STT__MODULE.html)

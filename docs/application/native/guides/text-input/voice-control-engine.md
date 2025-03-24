@@ -529,5 +529,5 @@ You can send the following result information about the VCE:
   - Tizen 5.0 and Higher for Mobile
   - Tizen 5.0 and Higher for Wearable
 
-- API Reference
+- API References
   - [VCE API](../../api/common/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html)

@@ -857,5 +857,5 @@ To decide between the client-side playback mode and the service-side playback mo
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
 
-- API Reference
+- API References
   - [TTS API](../../api/common/latest/group__CAPI__UIX__TTS__MODULE.html)

@@ -667,8 +667,8 @@ To set the STT options and control recording, follow these steps:
 
 
 ## Related information
-* Dependencies
-  -   Tizen 4.0 and Higher
+- Dependencies
+  - Tizen 4.0 and Higher
 
 - API References
   - [Tizen.Uix.Stt](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Stt.html)

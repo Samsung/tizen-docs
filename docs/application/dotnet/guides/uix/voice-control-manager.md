@@ -1095,8 +1095,8 @@ To create a command group and commands, follow these steps:
     ```
 
 ## Related information
-* Dependencies
-  -   Tizen 5.5 and Higher
+- Dependencies
+  - Tizen 5.5 and Higher
 
 - API References
   - [Tizen.Uix.VoiceControlManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControlManager.html)
