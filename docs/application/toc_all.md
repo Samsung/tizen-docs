@@ -985,6 +985,7 @@
 #### [Smart Card](/application/native/guides/connectivity/smartcard.md)
 #### [Wi-Fi](/application/native/guides/connectivity/wifi.md)
 #### [Wi-Fi Direct&reg;](/application/native/guides/connectivity/wifi-direct.md)
+#### [Wi-Fi Aware&reg;](/application/native/guides/connectivity/wifi-aware.md)
 #### [SoftAP](/application/native/guides/connectivity/softap.md)
 #### [Intelligent Network Monitoring (INM)](/application/native/guides/connectivity/inm.md)
 #### [Smart Traffic Control (STC)](/application/native/guides/connectivity/stc.md)
