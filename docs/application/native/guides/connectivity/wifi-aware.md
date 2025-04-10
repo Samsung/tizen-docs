@@ -139,7 +139,7 @@ To create a Wi-Fi Aware session:
    If session creation fails then session handle will be `NULL`.
 
    Set callbacks for Wi-Fi Aware subscribe session events:
-   Define the `wifi_aware_service_discovered_cb()` and `wifi_aware_message_received_cb()` callback function, which are invoked whenever a Wi-Fi Aware service publisher is dicovered or a message is received from publisher. In the following example, an information message is printed in the console.
+   Define the `wifi_aware_service_discovered_cb()` and `wifi_aware_message_received_cb()` callback function, which are invoked whenever a Wi-Fi Aware service publisher is discovered or a message is received from publisher. In the following example, an information message is printed in the console.
    ```
 	static void __wifi_aware_service_discovered_cb(wifi_aware_session_h session, const char *service_name, const unsigned char *service_specific_info, int ssi_len, const char *match_filter, int match_filter_len, int distance_mm, void *user_data)
 	{
