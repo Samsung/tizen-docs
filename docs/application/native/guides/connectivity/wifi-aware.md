@@ -65,7 +65,7 @@ To enable your application to use the Wi-Fi Aware functionality:
 <a name="Enable"></a>
 ## Enabling Wi-Fi Aware
 
-Enabling Wi-Fi Aware allow you to start the Wi-Fi Aware daemon service (aka nan-manager) on your device which allow you to control the availability of Wi-Fi Aware capabilities and Wi-Fi aware operations like service discovery, data path creation, etc. on the device.
+Enabling Wi-Fi Aware allows you to start the Wi-Fi Aware daemon service (aka NAN-manager) on your device, which allows you to control the availability of Wi-Fi Aware capabilities and Wi-Fi Aware operations, such as, service discovery, data path creation, etc., on the device.
 To enable a Wi-Fi Aware local device:
 
 1. Define callbacks for the Wi-Fi Aware enable/disable events:
