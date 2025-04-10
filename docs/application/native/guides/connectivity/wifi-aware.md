@@ -29,7 +29,7 @@ The main features of the Wi-Fi Aware API include the following:
 - Sending messages to peers.
   You can [send messages to peers](#send-message).
 
-- Setting up data paths between peers
+- Setting up data paths between peers.
   You can [set up data path](#data-path-setup) between peers.
 
 Overall, the Wi-Fi Aware module provides a comprehensive set of APIs to control and interact with Wi-Fi Aware functionalities, allowing developers to leverage the power of Wi-Fi Aware for direct device-to-device communication.
