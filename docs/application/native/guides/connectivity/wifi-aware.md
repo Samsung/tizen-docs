@@ -101,7 +101,7 @@ To enable a Wi-Fi Aware local device:
 <a name="session_creation"></a>
 ## Session Creation
 
-Wi-Fi aware session will be required to perform Wi-Fi aware operations like service discovery, data path creation, etc. on the device.
+Wi-Fi Aware session will be required to perform Wi-Fi Aware operations such as, service discovery, data path creation, etc., on the device.
 To create a Wi-Fi Aware session:
 
 1. For Wi-Fi Aware publish session handle use `wifi_aware_session_create()` function with type `WIFI_AWARE_SESSION_PUBLISH`:
