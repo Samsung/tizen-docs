@@ -169,7 +169,7 @@ To create a Wi-Fi Aware session:
 <a name="service_discovery"></a>
 ## Service Discovery
 
-This is the process of publishing or subscribing to Wi-Fi Aware services which will advertise and discover Wi-Fi Aware services respectively.
+This is the process of publishing or subscribing to Wi-Fi Aware services that will advertise and discover Wi-Fi Aware services respectively.
 To perform Wi-Fi Aware service discovery:
 
 <a name="publish_service"></a>
