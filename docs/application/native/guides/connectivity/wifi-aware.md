@@ -39,7 +39,7 @@ Overall, the Wi-Fi Aware module provides a comprehensive set of APIs to control 
 
 ## Prerequisites
 
-To enable your application to use the Wi-Fi Aware functionality:
+To enable your application to use the Wi-Fi Aware functionality, follow these steps:
 
 1. To use the [Wi-Fi Aware](../../api/common/latest/group__CAPI__NETWORK__WIFI__AWARE__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
