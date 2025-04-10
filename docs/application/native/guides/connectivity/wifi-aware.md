@@ -7,8 +7,8 @@ Wi-Fi Aware networking operates by establishing clusters. A Wi-Fi Aware device c
 
 The main features of the Wi-Fi Aware API include the following:
 
-- Initialization and deinitialization of Wi-Fi Aware functionalities
-  You can initialize Wi-Fi Aware functionalities using the `wifi_aware_initialize()` API and deinitialize them using the `wifi_aware_deinitialize()` API. These APIs allow you to initialize and deinitialize the Wi-Fi Aware module in your application.
+- Initialization and deinitialization of Wi-Fi Aware functionalities.
+  You can initialize Wi-Fi Aware functionalities using the `wifi_aware_initialize()` API, and deinitialize them using the `wifi_aware_deinitialize()` API. These APIs allow you to initialize and deinitialize the Wi-Fi Aware module in your application.
 
 - Enabling and disabling Wi-Fi Aware functionalities.
   You can [enable](#enabling-wi-fi-aware) or [disable](#disabling-wi-fi-aware) Wi-Fi Aware functionalities.
