@@ -2,7 +2,7 @@
 
 Wi-Fi Aware&reg; is a technology that enable devices to discover and connect directly to each other without any other type of connectivity between them or without wireless access points (base stations) in the infrastructure mode. Wi-Fi Aware is a synonym for Wi-Fi NAN (Neighbor Awareness Networking).
 
-Wi-Fi Aware networking operates by establishing clusters. A Wi-Fi Aware device can join an existing cluster or create a new cluster if that device is the first in the area. Once a cluster is established, devices can start service discvoery and messaging using publish, subscribe and send message APIs. After service discovery data path can be established by devices to send and receive data over network layer.
+Wi-Fi Aware networking operates by establishing clusters. A Wi-Fi Aware device can join an existing cluster or create a new cluster if that device is the first in the area. Once a cluster is established, devices can start service discovery and messaging using publish, subscribe and send message APIs. After service discovery data path can be established by devices to send and receive data over network layer.
 ## Features
 
 The main features of the Wi-Fi Aware API include the following:
