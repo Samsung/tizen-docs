@@ -23,7 +23,7 @@ The main features of the Wi-Fi Aware API include the following:
 - Updating existing publish session
   You can update an existing publish session using the `wifi_aware_session_update_publish()` API. This allows you to modify the parameters of an ongoing publish service session.
 
-- Updating existing subscribe session
+- Updating existing subscribe session.
   You can update an existing subscription using the `wifi_aware_session_update_subscribe()` API. This allows you to modify the parameters of an ongoing subscribe service session.
 
 - Sending messages to peers
