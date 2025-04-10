@@ -20,7 +20,7 @@ The main features of the Wi-Fi Aware API include the following:
   Based on session type you can [start publish session](#publish-service) or [subscribe session](#subscribe-service).
   You can [stop an active Wi-Fi Aware session](#stop-service-discovery).
 
-- Updating existing publish session
+- Updating existing publish session.
   You can update an existing publish session using the `wifi_aware_session_update_publish()` API. This allows you to modify the parameters of an ongoing publish service session.
 
 - Updating existing subscribe session.
