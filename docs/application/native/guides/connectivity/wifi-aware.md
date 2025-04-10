@@ -369,7 +369,7 @@ To terminate an established Wi-Fi Aware data path:
    ```
 
 <a name="Disabling"></a>
-## Disabling Wi-Fi Aware
+## To disable Wi-Fi Aware
 
 To disable Wi-Fi Aware when it is no longer needed (or the application is exiting):
 
