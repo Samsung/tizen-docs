@@ -34,7 +34,7 @@ The main features of the Wi-Fi Aware API include:
 
 Overall, the Wi-Fi Aware module provides a comprehensive set of APIs to control and interact with Wi-Fi Aware functionalities, allowing developers to leverage the power of Wi-Fi Aware for direct device-to-device communication.
 
-> **Note**
+> [!NOTE]
 > You can test the Wi-Fi Aware functionality on a target device only. The [emulator](../../../tizen-studio/common-tools/emulator.md) does not support this feature.
 
 ## Prerequisites
