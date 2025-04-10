@@ -13,8 +13,8 @@ The main features of the Wi-Fi Aware API include the following:
 - Enabling and disabling Wi-Fi Aware functionalities.
   You can [enable](#enabling-wi-fi-aware) or [disable](#disabling-wi-fi-aware) Wi-Fi Aware functionalities.
 
-- Creating and destroying Wi-Fi Aware sessions
-  You can [create a new Wi-Fi Aware session](#session-creation) and [destroy an existing session](#disabling-wi-fi-aware)
+- Creating and destroying Wi-Fi Aware sessions.
+  You can [create a new Wi-Fi Aware session](#session-creation) and [destroy an existing session](#disabling-wi-fi-aware).
 
 - Starting and Stopping Wi-Fi Aware sessions.
   Based on session type you can [start publish session](#publish-service) or [subscribe session](#subscribe-service)
