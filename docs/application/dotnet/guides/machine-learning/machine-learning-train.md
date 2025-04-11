@@ -785,3 +785,6 @@ var pipeline = new Pipeline(description);
 
 - Dependencies
   - Tizen 7.0 and Higher
+
+- API References
+  - [Tizen.MachineLearning.Train](/application/dotnet/api/TizenFX/latest/api/Tizen.MachineLearning.Train.html) namespace

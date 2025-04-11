@@ -6,11 +6,11 @@ The main features of Component Manager API include:
 
 - Managing component context
 
-  You can retrieve the running component context and operate on it. The `component_context_h` handle of Component Context API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__CONTEXT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__CONTEXT__MODULE.html) applications) is related to the running components and can be used to [manage the component context](#manage_context).
+  You can retrieve the running component context and operate on it. The `component_context_h` handle of [Component Context API](../../api/common/latest/group__CAPI__COMPONENT__CONTEXT__MODULE.html) is related to the running components and can be used to [manage the component context](#manage_context).
 
 - Managing component information
 
-  The `component_info_h` handle of Component Information API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__INFO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__INFO__MODULE.html) applications) is related to the available components that are installed but not necessarily running.
+  The `component_info_h` handle of [Component Information API](../../api/common/latest/group__CAPI__COMPONENT__INFO__MODULE.html) is related to the available components that are installed but not necessarily running.
 
 Iterator functions are used to travel through a list of components. `component_manager_foreach_component_context()` is used in running components and `component_manager_foreach_component_info()` is used in available components. Each function calls a callback function `component_manager_component_context_cb()` or `component_manager_component_info_cb()`, passing the handle for each component.
 
@@ -18,7 +18,7 @@ Iterator functions are used to travel through a list of components. `component_m
 
 To enable your application to use the component management functionality:
 
-1. To use Component Manager API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use [Component Manager API](../../api/common/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -295,3 +295,7 @@ To get the installed information and its details, and to operate on the informat
 - Dependencies
   - Tizen 5.5 and Higher for Mobile
   - Tizen 5.5 and Higher for Wearable
+- API References
+  - [Component Manager](../../api/common/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html)
+  - [Component Context](../../api/common/latest/group__CAPI__COMPONENT__CONTEXT__MODULE.html)
+  - [Component Information](../../api/common/latest/group__CAPI__COMPONENT__INFO__MODULE.html)

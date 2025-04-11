@@ -261,3 +261,6 @@ Additionally, stability monitor sends diagnostic event `AbnormalityDetected` in 
 - Dependencies
   - Tizen 6.0 and Higher for Mobile
   - Tizen 6.0 and Higher for Wearable
+- API References
+  - [Diagnostics API](../../api/common/latest/group__CAPI__SYSTEM__DIAGNOSTICS_MODULE.html)
+

@@ -26,7 +26,7 @@ You can use the following Internet and content download features in your native 
   You can access Web pages and Web content in your application. You can also use various features for Web browsing, such as loading and displaying Web pages and navigating through the browsing history.
 
 
-## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+## Related information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

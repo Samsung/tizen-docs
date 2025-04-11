@@ -41,5 +41,15 @@ You can use the following connectivity and wireless features in your .NET applic
     You can use IoTivity features in Tizen. You can use the seamless device-to-device connectivity to address the needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications.
 
 ## Related information
-* Dependencies
+- Dependencies
     -   Tizen 4.0 and Higher
+- API References
+    - [Tizen.Network.Connection](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.html) class
+    - [Tizen.Network.Nsd](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nsd.html) class
+    - [Tizen.Network.WiFi](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.html) class
+    - [Tizen.Network.WiFiDirect](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFiDirect.html) class
+    - [Tizen.Network.Bluetooth](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Bluetooth.html) class
+    - [Tizen.Network.Nfc](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.html) class
+    - [Tizen.Network.Smartcard](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Smartcard.html) class
+    - [Tizen.Network.Stc](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Stc.html) class
+    - [Tizen.Network.IoTConnectivity](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.html) class

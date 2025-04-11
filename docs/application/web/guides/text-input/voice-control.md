@@ -193,3 +193,7 @@ To create a command list and commands, follow these steps:
   - Tizen 4.0 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
   - Tizen 4.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/voicecontrol.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/voicecontrol.html)
+  - [TV](../../api/latest/device_api/tv/tizen/voicecontrol.html)

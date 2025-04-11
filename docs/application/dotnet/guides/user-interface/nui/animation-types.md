@@ -44,3 +44,6 @@ The third parameter is the forward vector in a local space coordinate system and
 ## Related Information
 - Dependencies
   -   Tizen 4.0 and Higher
+
+- API References
+  - [Advanced Animation API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Animation.html)

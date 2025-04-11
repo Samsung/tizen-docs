@@ -53,3 +53,6 @@ private void OnAnimationFinished(object sender, EventArgs e)
 
 - Dependencies
   -   Tizen 6.5 and Higher
+
+- API References
+  - [LottieAnimationView API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.LottieAnimationView.html)

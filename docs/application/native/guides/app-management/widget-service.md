@@ -17,7 +17,7 @@ The main features of the Widget Service API include:
 
 ## Prerequisites
 
-1.  To use the Widget Service API (in [mobile](../../api/mobile/latest/group__CAPI__WIDGET__SERVICE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__WIDGET__SERVICE__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Widget Service API](../../api/common/latest/group__CAPI__WIDGET__SERVICE__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```xml
     <privileges>
@@ -116,3 +116,5 @@ Widget Service API provides functions to trigger the event that changes the stat
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [Widget Service](../../api/common/latest/group__CAPI__WIDGET__SERVICE__MODULE.html)

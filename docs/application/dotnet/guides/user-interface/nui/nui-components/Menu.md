@@ -84,3 +84,6 @@ To create a Menu, follow these steps:
 
 - Dependencies
   -   Tizen 6.5 and Higher 
+
+- API References
+  - [Menu API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Menu.html)

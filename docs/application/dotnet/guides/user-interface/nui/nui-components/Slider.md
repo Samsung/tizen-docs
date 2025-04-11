@@ -97,3 +97,6 @@ private void OnSlidingFinished(object sender, SliderSlidingFinishedEventArgs arg
 
 - Dependencies
   -   Tizen 6.5 and Higher 
+
+- API References
+  - [Slider API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Slider.html)

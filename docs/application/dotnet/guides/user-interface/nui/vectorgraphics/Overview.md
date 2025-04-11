@@ -27,3 +27,5 @@ The following lists the available feature using VectorGraphics:
 - Dependencies
   -   Tizen 6.5 and Higher
 
+- API References
+  - [Vector Graphics API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VectorGraphics.html)

@@ -104,3 +104,6 @@ private void OnSelectedChanged(object sender, SelectedChangedEventArgs e)
 
 - Dependencies
   -   Tizen 6.5 and Higher 
+
+- API References
+  - [Switch API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Switch.html)

@@ -156,5 +156,7 @@ To change the active connection profile and access connection details, follow th
 
 
 ## Related information
-* Dependencies
-  -   Tizen 4.0 and Higher
+- Dependencies
+    - Tizen 4.0 and Higher
+- API References
+    - [Tizen.Network.Connection](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.html) class

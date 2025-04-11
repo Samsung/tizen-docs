@@ -343,6 +343,9 @@ The following figure shows how to use the `FlexGrow` property:
 - Dependencies
   -    Tizen 5.5 and Higher
 
+- API References
+  - [Flex Layout API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.FlexLayout.html)
+
 <script>
     function openTabSection(evt, profileName, sectionId) {
         var i, tabcontent, tablinks, section;

@@ -86,3 +86,5 @@ The return value defines whether retrieving the feedback information was success
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
+- API References
+  - [Feedback API](../../api/common/latest/group__CAPI__SYSTEM__FEEDBACK__MODULE.html)

@@ -142,3 +142,6 @@ Learning how to monitor changes in the sound device state makes it easier for yo
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/sound.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/sound.html)

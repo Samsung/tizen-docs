@@ -168,3 +168,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
   - Tizen 6.0 and Higher for Mobile
   - Tizen 6.0 and Higher for Wearable
   - Tizen 6.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/metadata.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/metadata.html)
+  - [TV](../../api/latest/device_api/tv/tizen/metadata.html)

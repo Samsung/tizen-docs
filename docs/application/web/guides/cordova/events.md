@@ -133,3 +133,7 @@ When you press the buttons, the result is shown in the system console.
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/events.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/events.html)
+  - [TV](../../api/latest/device_api/tv/tizen/cordova/events.html)
