@@ -47,7 +47,7 @@ The **Connection Explorer** view shows the devices and emulators connected to th
 
 The **Log View** helps you debug your application by capturing all the events logged by the platform and your application. The **Log View** shows the logs through the Tizen logging system.
 
-To create log messages, reference the Tizen library in your project and call the functions of the [Tizen.Log](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Log.html) class:
+To create log messages, reference the Tizen library in your project and call the functions of the Tizen.Log class:
 
 ```csharp
 using System;
