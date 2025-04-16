@@ -291,3 +291,7 @@ Learning how to add a listener allows you to receive notifications about DataCon
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.2 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html)
+  - [TV](../../api/latest/device_api/tv/tizen/datacontrol.html)

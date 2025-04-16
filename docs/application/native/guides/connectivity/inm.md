@@ -11,7 +11,7 @@ This feature is supported in mobile, TV, and wearable profile.
 
 To enable your application to use the INM API:
 
-1. To use the [INM](../../api/mobile/latest/group__CAPI__NETWORK__INM__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [INM API](../../api/common/latest/group__CAPI__NETWORK__INM__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```xml
    <privileges>
@@ -163,8 +163,10 @@ You can retrieve information about a particular connection by iterating through 
     
 You can monitor other types of state changes using certain callback functions, such as `inm_set_cellular_state_changed_cb()` or `inm_set_ethernet_state_changed_cb()`.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 5.0 and Higher for Mobile
   - Tizen 5.0 and Higher for Wearable
   - Tizen 5.0 and Higher for TV
+- API References
+  - [INM API](../../api/common/latest/group__CAPI__NETWORK__INM__MODULE.html)

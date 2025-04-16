@@ -114,3 +114,5 @@ To take advantage of the camera features, you must learn to deallocate the camer
 ## Related information
 * Dependencies   
    - Tizen 2.3.1 and Higher for Wearable
+* API References
+   - [getUserMedia](../../multimedia/getusermedia)

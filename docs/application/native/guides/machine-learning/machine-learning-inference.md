@@ -632,3 +632,7 @@ For your convenience, NNStreamer provides an interface for processing the tensor
   - Tizen 5.5 and Higher for Wearable
   - Tizen 5.5 and Higher for TV
   - Tizen 5.5 and Higher for IoT
+
+- API References
+  - [Singleshot API](../../api/common/latest/group__CAPI__ML__NNSTREAMER__SINGLE__MODULE.html)
+  - [Pipeline API](../../api/common/latest/group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html)

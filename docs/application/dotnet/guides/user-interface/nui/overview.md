@@ -80,3 +80,7 @@ To get started with NUI development, see [NUI Quick Start](../../../get-started/
 ## Related information
 - Dependencies
   -   Tizen 4.0 and Higher
+
+- API References
+  - [Natural User Interface API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html)
+  

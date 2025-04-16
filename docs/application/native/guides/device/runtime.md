@@ -254,3 +254,5 @@ The following table lists the available runtime information keys.
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [Runtime Information API](../../api/common/latest/group__CAPI__SYSTEM__RUNTIME__INFO__MODULE.html)

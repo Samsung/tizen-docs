@@ -330,3 +330,5 @@ To monitor device changes in, for example, the device display state:
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+- API References
+  - [Device API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__MODULE.html)

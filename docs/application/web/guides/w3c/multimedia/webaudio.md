@@ -260,3 +260,5 @@ For the complete source code related to this use case, see the following file:
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for TV
+* API References
+  - [W3C](https://www.w3.org/TR/webaudio/#AudioContext){:target="_blank"}

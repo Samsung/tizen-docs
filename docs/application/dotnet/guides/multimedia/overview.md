@@ -67,5 +67,19 @@ You can use the following multimedia features in your .NET applications:
 
 
 ## Related information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher
+
+- API References
+  - [Tizen.Content.MediaContent](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.html) namespace
+    - APIs for MediaContent
+  - [Tizen.Multimedia](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.html) namespace
+    - APIs for AudioIO, AudioManager, Camera, MediaPlayer, MediaTool, MetadataEditor, MetadataExtractor, Radio, Recorder TonePlayer, WavPlayer, Common Data types
+  - [Tizen.Multimedia.MediaCodec](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.html) namespace
+    - APIs for MediaCodec
+  - [Tizen.Multimedia.Remoting](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.html) namespace
+    - APIs for MediaController, ScreenMirroring, WebRTC
+  - [Tizen.Multimedia.Util](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Util.html) namespace
+    - APIs for ImageUtil, ThumbnailExtractor
+  - [Tizen.Multimedia.Vision](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.html) namespace
+    - APIs for MediaVision

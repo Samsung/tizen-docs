@@ -149,3 +149,6 @@ NUI `WebView` provides several APIs to control JavaScript in a currently loaded 
 ## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
+
+- API References
+  - [WebView API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.WebView.html)

@@ -37,7 +37,7 @@ The following figure shows an overview of the USB host architecture.
 
 To enable your application to use the USB host functionality:
 
-1. The [USB Host](../../api/mobile/latest/group__CAPI__USB__HOST__MODULE.html) API does not require any Tizen privileges to be defined, instead the user is asked for confirmation when performing a potentially privileged operation.
+1. The [USB Host API](../../api/common/latest/group__CAPI__USB__HOST__MODULE.html) does not require any Tizen privileges to be defined, instead the user is asked for confirmation when performing a potentially privileged operation.
 
    ![USB Host access](./media/usb_host_access.png)
 
@@ -167,7 +167,7 @@ To receive notifications when a USB device is attached or detached:
 
 1. Define and register a callback, which is called when the device is attached or detached.
 
-   Define the events you want to monitor in the third parameter of the `usb_host_set_hotplug_cb()` function, using the values of the [usb\_host\_hotplug\_event\_e](../../api/mobile/latest/group__CAPI__USB__HOST__HOTPLUG__MODULE.html#ga1c4a0899703bf547abd2cf4dc36fffe9) enumeration.
+   Define the events you want to monitor in the third parameter of the `usb_host_set_hotplug_cb()` function, using the values of the `usb_host_hotplug_event_e` [enumerator](../../api/common/latest/group__CAPI__USB__HOST__HOTPLUG__MODULE.html#ga1c4a0899703bf547abd2cf4dc36fffe9).
 
 
    ```
@@ -241,9 +241,12 @@ dlog_print(DLOG_INFO, LOG_TAG, "%d bytes of response received: %s", bytes_transf
 ## Asynchronous Transfer
 
 Asynchronous transfer is a way to allow the system to handle the data traffic in the background without having to wait for the asynchronous transfer to finish. A program can request an asynchronous transfer and proceed with its operations. The program is notified by the system as soon as the request is handled.
-The asynchronous transfer includes isochronous and control transfers. For more information and examples, see [Asynchronous IO](../../api/mobile/latest/group__CAPI__USB__HOST__ASYNC__MODULE.html).
+The asynchronous transfer includes isochronous and control transfers. For more information and examples, see [Asynchronous IO API](../../api/common/latest/group__CAPI__USB__HOST__ASYNC__MODULE.html).
 
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 3.0 and Higher for Mobile
+- API References
+  - [USB Host API](../../api/common/latest/group__CAPI__USB__HOST__MODULE.html)
+  - [Asynchronous IO API](../../api/common/latest/group__CAPI__USB__HOST__ASYNC__MODULE.html)

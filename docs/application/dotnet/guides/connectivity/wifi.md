@@ -239,5 +239,7 @@ catch (Exception e)
 
 
 ## Related information
-* Dependencies
-  -   Tizen 4.0 and Higher
+- Dependencies
+    -  Tizen 4.0 and Higher
+- API References
+    - [Tizen.Network.WiFi](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFi.html) class

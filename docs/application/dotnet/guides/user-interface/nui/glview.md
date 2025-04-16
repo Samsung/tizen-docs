@@ -335,3 +335,6 @@ namespace GLViewSample
 ## Related information
 - Dependencies
   -   Tizen 7.0 and Higher
+
+- API References
+  - [GLView API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.GLView.html)
