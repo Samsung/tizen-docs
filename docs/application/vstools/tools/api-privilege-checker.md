@@ -8,7 +8,7 @@ The API Checker currently detects the following issues in Tizen .NET application
 
     Flags an error if the application uses a method which requires a privilege, but that privilege has not been defined in the application manifest file.
 
-    For example, the `GetCallHandleList()` method of the [Tizen.Telephony.Call](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Call.html) class requires the `http://tizen.org/privilege/telephony` privilege. If an application uses this method without the privilege being defined in the manifest file, the method fails when you try to run the application.
+    For example, the `GetCallHandleList()` method of the Tizen.Telephony.Call class requires the `http://tizen.org/privilege/telephony` privilege. If an application uses this method without the privilege being defined in the manifest file, the method fails when you try to run the application.
 
     The API Checker enables you to detect undefined privileges at compile time and fix them using the Quick Actions functionality in Visual Studio.
 
