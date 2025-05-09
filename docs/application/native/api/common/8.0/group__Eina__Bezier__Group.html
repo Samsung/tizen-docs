@@ -112,8 +112,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the bezier at a given length.  <a href="#gaaadbe22729999bb3714f68ced5843da5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Bezier__Group.html#ga4ce3cde8ade6b16d9293d96e6d5273e3">eina_bezier_bounds_get</a> (const <a class="el" href="group__Eina__Bezier__Group.html#gae7355b5d4e854353bb91e04565978f50">Eina_Bezier</a> *b, double *x, double *y, double *w, double *h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the bounding box for the bezier.  <a href="#ga4ce3cde8ade6b16d9293d96e6d5273e3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Bezier__Group.html#ga01bdfa965c05937b508b1c655f8baa0f">eina_bezier_on_interval</a> (<a class="el" href="group__Eina__Bezier__Group.html#gae7355b5d4e854353bb91e04565978f50">Eina_Bezier</a> *b, double t0, double t1, <a class="el" href="group__Eina__Bezier__Group.html#gae7355b5d4e854353bb91e04565978f50">Eina_Bezier</a> *result)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the bezier between the given interval.  <a href="#ga01bdfa965c05937b508b1c655f8baa0f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eina_Bezier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Bezier__Group.html#gae7355b5d4e854353bb91e04565978f50">Eina_Bezier</a></td></tr>
@@ -260,58 +258,6 @@ Typedefs</h2></td></tr>
 <p>No check is done on <code>b</code>. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga01bdfa965c05937b508b1c655f8baa0f"></a><!-- doxytag: member="eina_bezier.h::eina_bezier_on_interval" ref="ga01bdfa965c05937b508b1c655f8baa0f" args="(Eina_Bezier *b, double t0, double t1, Eina_Bezier *result)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Eina__Bezier__Group.html#ga01bdfa965c05937b508b1c655f8baa0f">eina_bezier_on_interval</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Eina__Bezier__Group.html#gae7355b5d4e854353bb91e04565978f50">Eina_Bezier</a> *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>t0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>t1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Bezier__Group.html#gae7355b5d4e854353bb91e04565978f50">Eina_Bezier</a> *&#160;</td>
-          <td class="paramname"><em>result</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Finds the bezier between the given interval. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The floating point bezier. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">t0</td><td>The start of the interval. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">t1</td><td>The end of the interval. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>The resulting bezier.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>No check is done on <code>b</code>. </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
 
 </div>
 </div>

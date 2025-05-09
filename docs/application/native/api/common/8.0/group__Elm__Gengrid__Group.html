@@ -128,7 +128,7 @@ Usage hints</h2>
 <p>If the user wants to have multiple items selected at the same time, <a class="el" href="group__Elm__Gengrid__Group.html#ga3c0ea3e1cf60979a75729c5866932322" title="Enable or disable multi-selection in a given gengrid widget.">elm_gengrid_multi_select_set()</a> will permit it. If the gengrid is single-selection only (the default), then elm_gengrid_select_item_get() will return the selected item or <code>NULL</code>, if none is selected. If the gengrid is under multi-selection, then <a class="el" href="group__Elm__Gengrid__Group.html#gaa0a25bf5c1fe6b0699dd0c3365af6ed0" title="Get a list of selected items in a given gengrid.">elm_gengrid_selected_items_get()</a> will return a list (that is only valid as long as no items are modified (added, deleted, selected or unselected) of child items on a gengrid.</p>
 <p>If an item changes (internal (boolean) state, text or content changes), then use <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga3db494e2d108905a029d1c88b1f7cfde" title="Update the contents of a given gengrid item.">elm_gengrid_item_update()</a> to have gengrid update the item with the new state. A gengrid will re-"realize" the item, thus calling the functions in the #Elm_Gengrid_Item_Class set for that item.</p>
 <p>To programmatically (un)select an item, use <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga7e66b56863ae43408670ffcdc4b8103c" title="Control whether a given gengrid item is selected or not.">elm_gengrid_item_selected_set()</a>. To get its selected state use <a class="el" href="group__Elm__Gengrid__Item__Group.html#gada149225a3c24fd03f80a8b0e6f5829f" title="Control whether a given gengrid item is selected or not.">elm_gengrid_item_selected_get()</a>. To make an item disabled (unable to be selected and appear differently) use <a class="el" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set()</a> to set this and <a class="el" href="group__Elm__General.html#ga6c8e825bd196185a7851db289e2b061c" title="Control the disabled state of a widget item.">elm_object_item_disabled_get()</a> to get the disabled state.</p>
-<p>Grid cells will only have their selection smart callbacks called when firstly getting selected. Any further clicks will do nothing, unless you enable the "always select mode", with <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_ALWAYS, thus making every click to issue selection callbacks. <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_NONE will turn off the ability to select items entirely in the widget and they will neither appear selected nor call the selection smart callbacks.</p>
+<p>Grid cells will only have their selection smart callbacks called when firstly getting selected. Any further clicks will do nothing, unless you enable the "always select mode", with <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_ALWAYS, thus making every click to issue selection callbacks. <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_NONE will turn off the ability to select items entirely in the widget and they will neither appear selected nor call the selection smart callbacks.</p>
 <p>Remember that you can create new styles and add your own theme augmentation per application with <a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a>. If you absolutely must have a specific style that overrides any theme the user or system sets up you can use <a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> to add such a file.</p>
 <h2><a class="anchor" id="Gengrid_Smart_Events"></a>
 Gengrid smart events</h2>
@@ -231,12 +231,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size for the group items of a given gengrid widget.  <a href="#gae66da25db9f865963444747f1d5f0760"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga8d6eefdf129f4c396899850b5dbd72af">elm_gengrid_group_item_size_get</a> (const Elm_Gengrid *obj, int *w, int *h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size set for the group items of a given gengrid widget.  <a href="#ga8d6eefdf129f4c396899850b5dbd72af"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga3505f2018657f9308c6f4b0100ec0d8f">elm_gengrid_longpress_timeout_set</a> (Elm_Gengrid *obj, double timeout)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timeout in seconds for the longpress event.  <a href="#ga3505f2018657f9308c6f4b0100ec0d8f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gaab394560e460e7d0e6447f2a1c44ac83">elm_gengrid_longpress_timeout_get</a> (const Elm_Gengrid *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timeout in seconds for the longpress event.  <a href="#gaab394560e460e7d0e6447f2a1c44ac83"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6">elm_gengrid_select_mode_set</a> (Elm_Gengrid *obj, <a class="el" href="group__Elm__General.html#ga8e4aa5aa238e472f33813babfff0d56f">Elm_Object_Select_Mode</a> mode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the gengrid select mode.  <a href="#ga8df7786837dd94e2c1b3fc7dcb06d5d6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timeout in seconds for the longpress event.  <a href="#ga8df7786837dd94e2c1b3fc7dcb06d5d6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga8e4aa5aa238e472f33813babfff0d56f">Elm_Object_Select_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gaafad89c2c13febd0924f9247129e3589">elm_gengrid_select_mode_get</a> (const Elm_Gengrid *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the gengrid select mode.  <a href="#gaafad89c2c13febd0924f9247129e3589"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga6fa97484e1cb0c38baf5c0817989b866">elm_gengrid_reorder_mode_set</a> (Elm_Gengrid *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> reorder_mode)</td></tr>
@@ -247,18 +243,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether the gengrid items' should be highlighted when item selected.  <a href="#ga86d79811c6646a3ee35db5c02d9c2a60"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga8e5a4dcf8f12077f0c6e7c2861bc354c">elm_gengrid_highlight_mode_get</a> (const Elm_Gengrid *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether the gengrid items' should be highlighted when item selected.  <a href="#ga8e5a4dcf8f12077f0c6e7c2861bc354c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga618cb32b3b7348fd9f01045a793b27fa">elm_gengrid_reorder_type_set</a> (Elm_Gengrid *obj, <a class="el" href="group__Elm__Gengrid__Group.html#gaba5e0c7f9b5e490a705aba135dccab4b">Elm_Gengrid_Reorder_Type</a> type)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Gengrid reorder type.  <a href="#ga618cb32b3b7348fd9f01045a793b27fa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754">elm_gengrid_item_size_set</a> (Elm_Gengrid *obj, int w, int h)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size for the items of a given gengrid widget.  <a href="#gadea5cce647305f0a8f7bca8778131754"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Gengrid reorder type.  <a href="#gadea5cce647305f0a8f7bca8778131754"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga40be48ed2f0dbc8b72e12ddba158e341">elm_gengrid_item_size_get</a> (const Elm_Gengrid *obj, int *w, int *h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size set for the items of a given gengrid widget.  <a href="#ga40be48ed2f0dbc8b72e12ddba158e341"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga568c28a316b55438dfdaeb38ab6f8cec">elm_gengrid_multi_select_mode_set</a> (Elm_Gengrid *obj, <a class="el" href="group__Elm__General.html#ga3b3c003b0471181f7aff71d50c0d1a5d">Elm_Object_Multi_Select_Mode</a> mode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the gengrid multi select mode.  <a href="#ga568c28a316b55438dfdaeb38ab6f8cec"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga3b3c003b0471181f7aff71d50c0d1a5d">Elm_Object_Multi_Select_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga8aab708f7365cd637a802a7fccf59684">elm_gengrid_multi_select_mode_get</a> (const Elm_Gengrid *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the gengrid multi select mode.  <a href="#ga8aab708f7365cd637a802a7fccf59684"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659">elm_gengrid_horizontal_set</a> (Elm_Gengrid *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the direction in which a given gengrid widget will expand while placing its items.  <a href="#gabaf4b5619ff307173b9403b525851659"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the gengrid multi select mode.  <a href="#gabaf4b5619ff307173b9403b525851659"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga98d51c0e5d7b45cf61b6023e46b11b21">elm_gengrid_horizontal_get</a> (const Elm_Gengrid *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get for what direction a given gengrid widget will expand while placing its items.  <a href="#ga98d51c0e5d7b45cf61b6023e46b11b21"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga63c9ba21ffd124ef645250165cca12ea">elm_gengrid_selected_item_get</a> (const Elm_Gengrid *obj)</td></tr>
@@ -289,27 +279,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all items from a given gengrid widget.  <a href="#gaeddd05025a024895cab48060ca9d650e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gadacd73e5606bc2899f595da8494c51fd">elm_gengrid_item_sorted_insert</a> (Elm_Gengrid *obj, const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Gengrid_Item_Class</a> *itc, const void *data, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> comp, Evas_Smart_Cb func, const void *func_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an item in a gengrid widget using a user-defined sort function.  <a href="#gadacd73e5606bc2899f595da8494c51fd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga7c4a7151bffae84ac5949f7744f1c809">elm_gengrid_search_by_text_item_get</a> (Elm_Gengrid *obj, Elm_Widget_Item *item_to_search_from, const char *part_name, const char *pattern, Elm_Glob_Match_Flags flags)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get gengrid item by given string.  <a href="#ga7c4a7151bffae84ac5949f7744f1c809"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga0ec10595876618997af020a1837afa37">elm_gengrid_reorder_mode_start</a> (Elm_Gengrid *obj, <a class="el" href="group__Ecore__Animator__Group.html#ga1047011623d9e2ea31b7e5678b451016">Ecore_Pos_Map</a> tween_mode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the reorder mode of Gengrid.  <a href="#ga0ec10595876618997af020a1837afa37"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gaa9f53466849a073205067ddb58649e44">elm_gengrid_reorder_mode_stop</a> (Elm_Gengrid *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga059356c1c19666be08243f9904c898e0">elm_gengrid_nth_item_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, unsigned int nth)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gacbeeb8474617c2dae73909abfca28e07">elm_gengrid_scroller_policy_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Scroller__Group.html#gae4532876fde43d8d37fc9440a1e36a84">Elm_Scroller_Policy</a> policy_h, <a class="el" href="group__Elm__Scroller__Group.html#gae4532876fde43d8d37fc9440a1e36a84">Elm_Scroller_Policy</a> policy_v)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gab085c95f1f6f917bda6b95e939038011">elm_gengrid_scroller_policy_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Scroller__Group.html#gae4532876fde43d8d37fc9440a1e36a84">Elm_Scroller_Policy</a> *policy_h, <a class="el" href="group__Elm__Scroller__Group.html#gae4532876fde43d8d37fc9440a1e36a84">Elm_Scroller_Policy</a> *policy_v)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gaa577ac10e58ede2e69797ab97b77bc53">elm_gengrid_bounce_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> h_bounce, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> v_bounce)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga8ed5ac4acbf8f4dd303b067f1ac14ebb">elm_gengrid_bounce_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> *h_bounce, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> *v_bounce)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gad6c98a111ac5ab3072358fb517956f3b">elm_gengrid_page_size_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int h_pagesize, int v_pagesize)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a given gengrid widget's scrolling page size.  <a href="#gad6c98a111ac5ab3072358fb517956f3b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga94757a3fddcb2f49ef9944a2f1edd6f3">elm_gengrid_page_relative_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double h_pagerel, double v_pagerel)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control a given gengrid widget's scrolling page size, relative to its viewport size.  <a href="#ga94757a3fddcb2f49ef9944a2f1edd6f3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga788d4448e4c9de383a772a6c1868408c">elm_gengrid_page_relative_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double *h_pagerel, double *v_pagerel)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control a given gengrid widget's scrolling page size, relative to its viewport size.  <a href="#ga788d4448e4c9de383a772a6c1868408c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#gaf5b9d92c2f0686088d2107186006bba1">elm_gengrid_wheel_disabled_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable mouse wheel to be used to scroll the gengrid.  <a href="#gaf5b9d92c2f0686088d2107186006bba1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid__Group.html#ga11386b5d13af9c54892914b03814b8a6">elm_gengrid_wheel_disabled_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value whether mouse wheel is enabled or not.  <a href="#ga11386b5d13af9c54892914b03814b8a6"></a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="gaba5e0c7f9b5e490a705aba135dccab4b"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::Elm_Gengrid_Reorder_Type" ref="gaba5e0c7f9b5e490a705aba135dccab4b" args="" -->
@@ -360,11 +331,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new gengrid widget handle or <code>NULL</code>, on errors</dd></dl>
 <p>This function inserts a new gengrid widget on the canvas.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Gengrid__Group.html#gae66da25db9f865963444747f1d5f0760" title="Set the size for the group items of a given gengrid widget.">elm_gengrid_group_item_size_set()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659" title="Set the direction in which a given gengrid widget will expand while placing its items.">elm_gengrid_horizontal_set()</a> </dd>
+<a class="el" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659" title="Set the gengrid multi select mode.">elm_gengrid_horizontal_set()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Gengrid__Group.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append()</a> </dd>
 <dd>
@@ -527,96 +498,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The item at the coordinates or <code>null</code> if none. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga8ed5ac4acbf8f4dd303b067f1ac14ebb"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_bounce_get" ref="ga8ed5ac4acbf8f4dd303b067f1ac14ebb" args="(const Evas_Object *obj, Eina_Bool *h_bounce, Eina_Bool *v_bounce)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Gengrid__Group.html#ga8ed5ac4acbf8f4dd303b067f1ac14ebb">elm_gengrid_bounce_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> *&#160;</td>
-          <td class="paramname"><em>h_bounce</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> *&#160;</td>
-          <td class="paramname"><em>v_bounce</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get whether bouncing effects are enabled or disabled, for a given gengrid widget, on each axis</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The gengrid object </td></tr>
-    <tr><td class="paramname">h_bounce</td><td>Pointer to a variable where to store the horizontal bouncing flag. </td></tr>
-    <tr><td class="paramname">v_bounce</td><td>Pointer to a variable where to store the vertical bouncing flag.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000488">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaa577ac10e58ede2e69797ab97b77bc53"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_bounce_set" ref="gaa577ac10e58ede2e69797ab97b77bc53" args="(Evas_Object *obj, Eina_Bool h_bounce, Eina_Bool v_bounce)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Gengrid__Group.html#gaa577ac10e58ede2e69797ab97b77bc53">elm_gengrid_bounce_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>h_bounce</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>v_bounce</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Enable or disable bouncing effect for a given gengrid widget</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The gengrid object </td></tr>
-    <tr><td class="paramname">h_bounce</td><td><code>EINA_TRUE</code>, to enable <b>horizontal</b> bouncing, <code>EINA_FALSE</code> to disable it </td></tr>
-    <tr><td class="paramname">v_bounce</td><td><code>EINA_TRUE</code>, to enable <b>vertical</b> bouncing, <code>EINA_FALSE</code> to disable it</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>The bouncing effect occurs whenever one reaches the gengrid's edge's while panning it -- it will scroll past its limits a little bit and return to the edge again, in a animated for, automatically.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>By default, gengrids have bouncing enabled on both axis</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000487">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> </dd></dl>
 
 </div>
 </div>
@@ -949,7 +830,25 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the direction in which a given gengrid widget will expand while placing its items. </p>
+<p>Set the gengrid multi select mode. </p>
+<p><a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5daf346ccf7970275abb55cc914859444b2">ELM_OBJECT_MULTI_SELECT_MODE_DEFAULT</a> means that select/unselect items whenever each item is clicked. <a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5da7d9bb9ff2912434a7003e68850877db0">ELM_OBJECT_MULTI_SELECT_MODE_WITH_CONTROL</a> means that only one item will be selected although multi-selection is enabled, if clicked without pressing control key. This mode is only available with multi-selection.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The multi select mode.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Get the gengrid multi select mode.</dd></dl>
+<p>If getting mode fails, it returns <a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5dada9f008b6653ea50694a631ae62418bc">ELM_OBJECT_MULTI_SELECT_MODE_MAX</a>.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The multi select mode.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 Set the direction in which a given gengrid widget will expand while placing its items.</dd></dl>
 <p>When in "horizontal mode" ($true), items will be placed in columns, from top to bottom and, when the space for a column is filled, another one is started on the right, thus expanding the grid horizontally. When in "vertical mode" ($false), though, items will be placed in rows, from left to right and, when the space for a row is filled, another one is started below, thus expanding the grid vertically.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>By default, gengrid is in vertical mode, <code>false</code>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1633,7 +1532,7 @@ elm_gengrid_item_cursor_set() for more details </dd></dl>
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> changes item's select mode.</p>
+<p><a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set()</a> changes item's select mode.</p>
 <ul>
 <li>ELM_OBJECT_SELECT_MODE_DEFAULT : The item will only call their selection func and callback when first becoming selected. Any further clicks will do nothing, unless you set always select mode.</li>
 <li>ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected, every click will make the selected callbacks be called.</li>
@@ -1721,7 +1620,15 @@ elm_gengrid_item_cursor_set() for more details </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Set the size for the items of a given gengrid widget. </p>
+<p>Set the Gengrid reorder type. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Reorder type value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 Set the size for the items of a given gengrid widget.</dd></dl>
 <p>A gengrid, after creation, has still no information on the size to give to each of its cells. So, you most probably will end up with squares one finger wide, the default size. Use this function to force a custom size for you items, making them as big as you wish.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1964,70 +1871,6 @@ elm_gengrid_item_cursor_set() for more details </dd></dl>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gaab394560e460e7d0e6447f2a1c44ac83"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_longpress_timeout_get" ref="gaab394560e460e7d0e6447f2a1c44ac83" args="(const Elm_Gengrid *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="group__Elm__Gengrid__Group.html#gaab394560e460e7d0e6447f2a1c44ac83">elm_gengrid_longpress_timeout_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const Elm_Gengrid *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the timeout in seconds for the longpress event. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Timeout in seconds. Default is elm config value (1.0). </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga3505f2018657f9308c6f4b0100ec0d8f"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_longpress_timeout_set" ref="ga3505f2018657f9308c6f4b0100ec0d8f" args="(Elm_Gengrid *obj, double timeout)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Group.html#ga3505f2018657f9308c6f4b0100ec0d8f">elm_gengrid_longpress_timeout_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Gengrid *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>timeout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the timeout in seconds for the longpress event. </p>
-<p>This option will change how long it takes to send an event "longpressed" after the mouse down signal is sent to the list. If this event occurs, no "clicked" event will be sent.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>If you set the longpress timeout value with this API, your gengrid will not be affected by the longpress value of elementary config value later.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Timeout in seconds. Default is elm config value (1.0). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="ga99f7c3585fb0a36a4e4e182fc46cfb1e"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_multi_select_get" ref="ga99f7c3585fb0a36a4e4e182fc46cfb1e" args="(const Elm_Gengrid *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2054,72 +1897,6 @@ elm_gengrid_item_cursor_set() for more details </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a68">gengrid_example.c</a>.</dd>
 </dl>
-</div>
-</div>
-<a class="anchor" id="ga8aab708f7365cd637a802a7fccf59684"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_multi_select_mode_get" ref="ga8aab708f7365cd637a802a7fccf59684" args="(const Elm_Gengrid *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Elm__General.html#ga3b3c003b0471181f7aff71d50c0d1a5d">Elm_Object_Multi_Select_Mode</a> <a class="el" href="group__Elm__Gengrid__Group.html#ga8aab708f7365cd637a802a7fccf59684">elm_gengrid_multi_select_mode_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const Elm_Gengrid *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the gengrid multi select mode. </p>
-<p>If getting mode fails, it returns <a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5dada9f008b6653ea50694a631ae62418bc">ELM_OBJECT_MULTI_SELECT_MODE_MAX</a>.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The multi select mode.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga568c28a316b55438dfdaeb38ab6f8cec"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_multi_select_mode_set" ref="ga568c28a316b55438dfdaeb38ab6f8cec" args="(Elm_Gengrid *obj, Elm_Object_Multi_Select_Mode mode)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Group.html#ga568c28a316b55438dfdaeb38ab6f8cec">elm_gengrid_multi_select_mode_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Gengrid *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga3b3c003b0471181f7aff71d50c0d1a5d">Elm_Object_Multi_Select_Mode</a>&#160;</td>
-          <td class="paramname"><em>mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the gengrid multi select mode. </p>
-<p><a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5daf346ccf7970275abb55cc914859444b2">ELM_OBJECT_MULTI_SELECT_MODE_DEFAULT</a> means that select/unselect items whenever each item is clicked. <a class="el" href="group__Elm__General.html#gga3b3c003b0471181f7aff71d50c0d1a5da7d9bb9ff2912434a7003e68850877db0">ELM_OBJECT_MULTI_SELECT_MODE_WITH_CONTROL</a> means that only one item will be selected although multi-selection is enabled, if clicked without pressing control key. This mode is only available with multi-selection.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The multi select mode.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-
 </div>
 </div>
 <a class="anchor" id="ga3c0ea3e1cf60979a75729c5866932322"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_multi_select_set" ref="ga3c0ea3e1cf60979a75729c5866932322" args="(Elm_Gengrid *obj, Eina_Bool multi)" -->
@@ -2197,135 +1974,6 @@ elm_gengrid_item_cursor_set() for more details </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The item stored in <code>obj</code> at position <code>nth</code> or <code>NULL</code>, if there's no item with that index (and on errors)</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga788d4448e4c9de383a772a6c1868408c"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_page_relative_get" ref="ga788d4448e4c9de383a772a6c1868408c" args="(const Evas_Object *obj, double *h_pagerel, double *v_pagerel)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Group.html#ga788d4448e4c9de383a772a6c1868408c">elm_gengrid_page_relative_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>h_pagerel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>v_pagerel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Control a given gengrid widget's scrolling page size, relative to its viewport size. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h_pagerel</td><td>Page relation horizontal </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">v_pagerel</td><td>Page relation vertical </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga94757a3fddcb2f49ef9944a2f1edd6f3"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_page_relative_set" ref="ga94757a3fddcb2f49ef9944a2f1edd6f3" args="(Evas_Object *obj, double h_pagerel, double v_pagerel)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Group.html#ga94757a3fddcb2f49ef9944a2f1edd6f3">elm_gengrid_page_relative_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>h_pagerel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>v_pagerel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Control a given gengrid widget's scrolling page size, relative to its viewport size. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h_pagerel</td><td>Page relation horizontal </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">v_pagerel</td><td>Page relation vertical </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gad6c98a111ac5ab3072358fb517956f3b"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_page_size_set" ref="gad6c98a111ac5ab3072358fb517956f3b" args="(Evas_Object *obj, int h_pagesize, int v_pagesize)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Group.html#gad6c98a111ac5ab3072358fb517956f3b">elm_gengrid_page_size_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>h_pagesize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>v_pagesize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set a given gengrid widget's scrolling page size. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">h_pagesize</td><td>Page size horizontal </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">v_pagesize</td><td>Page size vertical </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -2450,253 +2098,6 @@ elm_gengrid_item_cursor_set() for more details </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga0ec10595876618997af020a1837afa37"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_reorder_mode_start" ref="ga0ec10595876618997af020a1837afa37" args="(Elm_Gengrid *obj, Ecore_Pos_Map tween_mode)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Group.html#ga0ec10595876618997af020a1837afa37">elm_gengrid_reorder_mode_start</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Gengrid *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Ecore__Animator__Group.html#ga1047011623d9e2ea31b7e5678b451016">Ecore_Pos_Map</a>&#160;</td>
-          <td class="paramname"><em>tween_mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Starts the reorder mode of Gengrid. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tween_mode</td><td>Position mappings for animation</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaa9f53466849a073205067ddb58649e44"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_reorder_mode_stop" ref="gaa9f53466849a073205067ddb58649e44" args="(Elm_Gengrid *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Group.html#gaa9f53466849a073205067ddb58649e44">elm_gengrid_reorder_mode_stop</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Gengrid *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Stops the reorder mode of Gengrid</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga618cb32b3b7348fd9f01045a793b27fa"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_reorder_type_set" ref="ga618cb32b3b7348fd9f01045a793b27fa" args="(Elm_Gengrid *obj, Elm_Gengrid_Reorder_Type type)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Group.html#ga618cb32b3b7348fd9f01045a793b27fa">elm_gengrid_reorder_type_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Gengrid *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Elm__Gengrid__Group.html#gaba5e0c7f9b5e490a705aba135dccab4b">Elm_Gengrid_Reorder_Type</a>&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the Gengrid reorder type. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Reorder type value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gab085c95f1f6f917bda6b95e939038011"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_scroller_policy_get" ref="gab085c95f1f6f917bda6b95e939038011" args="(const Evas_Object *obj, Elm_Scroller_Policy *policy_h, Elm_Scroller_Policy *policy_v)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Gengrid__Group.html#gab085c95f1f6f917bda6b95e939038011">elm_gengrid_scroller_policy_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Elm__Scroller__Group.html#gae4532876fde43d8d37fc9440a1e36a84">Elm_Scroller_Policy</a> *&#160;</td>
-          <td class="paramname"><em>policy_h</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Elm__Scroller__Group.html#gae4532876fde43d8d37fc9440a1e36a84">Elm_Scroller_Policy</a> *&#160;</td>
-          <td class="paramname"><em>policy_v</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get the scrollbar policy</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The gengrid object </td></tr>
-    <tr><td class="paramname">policy_h</td><td>Pointer to store the horizontal scrollbar policy. </td></tr>
-    <tr><td class="paramname">policy_v</td><td>Pointer to store the vertical scrollbar policy.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000486">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a></dd>
-<dd>
-<a class="el" href="group__Elm__Gengrid__Group.html#gacbeeb8474617c2dae73909abfca28e07">elm_gengrid_scroller_policy_set()</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gacbeeb8474617c2dae73909abfca28e07"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_scroller_policy_set" ref="gacbeeb8474617c2dae73909abfca28e07" args="(Evas_Object *obj, Elm_Scroller_Policy policy_h, Elm_Scroller_Policy policy_v)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Gengrid__Group.html#gacbeeb8474617c2dae73909abfca28e07">elm_gengrid_scroller_policy_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Elm__Scroller__Group.html#gae4532876fde43d8d37fc9440a1e36a84">Elm_Scroller_Policy</a>&#160;</td>
-          <td class="paramname"><em>policy_h</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Elm__Scroller__Group.html#gae4532876fde43d8d37fc9440a1e36a84">Elm_Scroller_Policy</a>&#160;</td>
-          <td class="paramname"><em>policy_v</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the scrollbar policy</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The gengrid object </td></tr>
-    <tr><td class="paramname">policy_h</td><td>Horizontal scrollbar policy. </td></tr>
-    <tr><td class="paramname">policy_v</td><td>Vertical scrollbar policy.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This sets the scrollbar visibility policy for the given gengrid scroller. <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars. Default is <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a>.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000485">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a></dd>
-<dd>
-<a class="el" href="group__Elm__Gengrid__Group.html#gab085c95f1f6f917bda6b95e939038011">elm_gengrid_scroller_policy_get()</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga7c4a7151bffae84ac5949f7744f1c809"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_search_by_text_item_get" ref="ga7c4a7151bffae84ac5949f7744f1c809" args="(Elm_Gengrid *obj, Elm_Widget_Item *item_to_search_from, const char *part_name, const char *pattern, Elm_Glob_Match_Flags flags)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Gengrid__Group.html#ga7c4a7151bffae84ac5949f7744f1c809">elm_gengrid_search_by_text_item_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Gengrid *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
-          <td class="paramname"><em>item_to_search_from</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>part_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>pattern</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Elm_Glob_Match_Flags&#160;</td>
-          <td class="paramname"><em>flags</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get gengrid item by given string. </p>
-<p>It takes pointer to the gengrid item that will be used to start search from it.</p>
-<p>This function uses globs (like "*.jpg") for searching and takes search flags as last parameter That is a bitfield with values to be ored together or 0 for no flags.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">item_to_search_from</td><td>Pointer to item to start search from. If <code>null</code>, search will be started from the first item of the gengrid. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">part_name</td><td>Name of the TEXT part of gengrid item to search string in. If <code>null</code>, search by "elm.text" parts. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>The search pattern. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Search flags.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the gengrid item which matches search_string in case of success, otherwise <code>null</code>.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="gaafad89c2c13febd0924f9247129e3589"></a><!-- doxytag: member="elm_gengrid_eo.legacy.h::elm_gengrid_select_mode_get" ref="gaafad89c2c13febd0924f9247129e3589" args="(const Elm_Gengrid *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2749,7 +2150,18 @@ elm_gengrid_item_cursor_set() for more details </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Set the gengrid select mode. </p>
+<p>Set the timeout in seconds for the longpress event. </p>
+<p>This option will change how long it takes to send an event "longpressed" after the mouse down signal is sent to the list. If this event occurs, no "clicked" event will be sent.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>If you set the longpress timeout value with this API, your gengrid will not be affected by the longpress value of elementary config value later.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Timeout in seconds. Default is elm config value (1.0). Get the timeout in seconds for the longpress event.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Timeout in seconds. Default is elm config value (1.0). Set the gengrid select mode.</dd></dl>
 <p>This changes item select mode in the gengrid widget. <a class="el" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a> means that items will only call their selection func and callback when first becoming selected. Any further clicks will do nothing, unless you set always select mode. <a class="el" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab3cfbf566fdbea2079f3081969f0c59c">ELM_OBJECT_SELECT_MODE_ALWAYS</a> means that even if selected, every click will make the selected callbacks be called. <a class="el" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa0f0e25088d651a379b4eb8b915d2e13f">ELM_OBJECT_SELECT_MODE_NONE</a> will turn off the ability to select items entirely and they will neither appear selected nor call selected callback functions.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2819,71 +2231,6 @@ elm_gengrid_item_cursor_set() for more details </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a11">gengrid_example.c</a>.</dd>
 </dl>
-</div>
-</div>
-<a class="anchor" id="ga11386b5d13af9c54892914b03814b8a6"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_wheel_disabled_get" ref="ga11386b5d13af9c54892914b03814b8a6" args="(const Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Gengrid__Group.html#ga11386b5d13af9c54892914b03814b8a6">elm_gengrid_wheel_disabled_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get a value whether mouse wheel is enabled or not. </p>
-<p>Mouse wheel can be used for the user to scroll up and down the gengrid.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Use <code>true</code> to disable mouse wheel or <code>false</code> to enable it. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaf5b9d92c2f0686088d2107186006bba1"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_wheel_disabled_set" ref="gaf5b9d92c2f0686088d2107186006bba1" args="(Evas_Object *obj, Eina_Bool disabled)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Gengrid__Group.html#gaf5b9d92c2f0686088d2107186006bba1">elm_gengrid_wheel_disabled_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>disabled</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Enable or disable mouse wheel to be used to scroll the gengrid. </p>
-<p>Mouse wheel can be used for the user to scroll up and down the gengrid.</p>
-<p>Wheel is enabled by default.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">disabled</td><td>Use <code>true</code> to disable mouse wheel or <code>false</code> to enable it. </td></tr>
-  </table>
-  </dd>
-</dl>
-
 </div>
 </div>
 </div><!-- contents -->

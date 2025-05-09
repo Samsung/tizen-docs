@@ -188,8 +188,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga0658673fda8367d26084b248b5283a1e">elm_layout_content_unset</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *swallow)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga8d1105463d52787a7b0ca8d7402cd3ea">elm_layout_file_set</a> (Eo *obj, const char *file, const char *group)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga8fa2e7c3b0947a5ebc98df762fcc41c8">elm_layout_file_get</a> (Eo *obj, const char **file, const char **group)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga927970e03abdb54c1a75962a66dfbee6">elm_layout_mmap_set</a> (Eo *obj, const <a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403">Eina_File</a> *file, const char *group)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga314a8a4c130a571840167e829e2cb454">elm_layout_mmap_get</a> (Eo *obj, const <a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403">Eina_File</a> **file, const char **group)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#gadeb82643323bef562e0d91ef5dc59786">elm_layout_freeze</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Freezes the Elementary layout object.  <a href="#gadeb82643323bef562e0d91ef5dc59786"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#gafcb30a9481eabc7f501b3efcea75f341">elm_layout_box_append</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append child to layout box part.  <a href="#gafcb30a9481eabc7f501b3efcea75f341"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga558e5e6627b954153bf8acdae0948427">elm_layout_box_prepend</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child)</td></tr>
@@ -210,8 +210,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all the child objects of the given part table.  <a href="#ga9d267b448bb42b752abc0bba97d7aa29"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga29b7c0fb4a44526c76154782bc4e3b8e">elm_layout_data_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *key)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the edje data from the given layout.  <a href="#ga29b7c0fb4a44526c76154782bc4e3b8e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#gadeb82643323bef562e0d91ef5dc59786">elm_layout_freeze</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Freezes the Elementary layout object.  <a href="#gadeb82643323bef562e0d91ef5dc59786"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga4e409a951db66af75fc721f38ffd298c">elm_layout_thaw</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Thaws the Elementary object.  <a href="#ga4e409a951db66af75fc721f38ffd298c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Layout.html#ga08d021fce14ac123d0b81d2c8dcb8ae9">elm_layout_text_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, const char *text)</td></tr>
@@ -471,7 +469,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a31">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a30">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -566,7 +564,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a32">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a31">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1040,85 +1038,6 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Freezes the Elementary layout object. </p>
-<p>This function puts all changes on hold. Successive freezes will nest, requiring an equal number of thaws.</p>
-<p>See also <a class="el" href="group__Elm__Layout.html#ga4e409a951db66af75fc721f38ffd298c">elm_layout_thaw</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The frozen state or 0 on error. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga314a8a4c130a571840167e829e2cb454"></a><!-- doxytag: member="elm_layout_legacy.h::elm_layout_mmap_get" ref="ga314a8a4c130a571840167e829e2cb454" args="(Eo *obj, const Eina_File **file, const char **group)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Layout.html#ga314a8a4c130a571840167e829e2cb454">elm_layout_mmap_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">Eo *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403">Eina_File</a> **&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char **&#160;</td>
-          <td class="paramname"><em>group</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get the loaded mmap file</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file</td><td>Eina_File (edj) used as layout </td></tr>
-    <tr><td class="paramname">group</td><td>The group that the layout belongs in edje file</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga927970e03abdb54c1a75962a66dfbee6"></a><!-- doxytag: member="elm_layout_legacy.h::elm_layout_mmap_set" ref="ga927970e03abdb54c1a75962a66dfbee6" args="(Eo *obj, const Eina_File *file, const char *group)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Layout.html#ga927970e03abdb54c1a75962a66dfbee6">elm_layout_mmap_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">Eo *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403">Eina_File</a> *&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>group</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
 <p>Set the mmap file that will be used as layout</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>(1 = success, 0 = error)</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1128,7 +1047,22 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Get the loaded mmap file</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>Eina_File (edj) used as layout </td></tr>
+    <tr><td class="paramname">group</td><td>The group that the layout belongs in edje file</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 This function puts all changes on hold. Successive freezes will nest, requiring an equal number of thaws.</dd></dl>
+<p>See also <a class="el" href="group__Elm__Layout.html#ga4e409a951db66af75fc721f38ffd298c">elm_layout_thaw</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The frozen state or 0 on error. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
+<p>This function puts all changes on hold. Successive freezes will nest, requiring an equal number of thaws.</p>
+<p>See also <a class="el" href="group__Elm__Layout.html#ga4e409a951db66af75fc721f38ffd298c">elm_layout_thaw</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The frozen state or 0 on error. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

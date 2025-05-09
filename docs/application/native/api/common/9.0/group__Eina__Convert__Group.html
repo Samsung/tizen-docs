@@ -183,8 +183,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 32.32 fixed point number to a string.  <a href="#gac82a72cd56dfc8e518175383ab3991b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Convert__Group.html#ga8180722fb1d9a50b16a61b380f5f1485">eina_convert_atofp</a> (const char *src, int length, <a class="el" href="group__Eina__Fp__Group.html#ga5264584bb5c6d81dd71d36f9e4e517f1">Eina_F32p32</a> *fp)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to a 32.32 fixed point number.  <a href="#ga8180722fb1d9a50b16a61b380f5f1485"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Convert__Group.html#ga294ab2eda051cbddd0b7e5d482c03664">eina_convert_strtod_c</a> (const char *nptr, char **endptr)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to a floating point number.  <a href="#ga294ab2eda051cbddd0b7e5d482c03664"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga750cfd2578a81ef7901a14c6d0984956"></a><!-- doxytag: member="eina_convert.h::eina_convert_atod" ref="ga750cfd2578a81ef7901a14c6d0984956" args="(const char *src, int length, long long *m, long *e)" -->
@@ -423,44 +421,6 @@ Functions</h2></td></tr>
 <p>This function converts <code>n</code> to a null terminated string. The converted string is in decimal base. As no check is done, <code>s</code> must be a buffer that is sufficiently large to store the integer.</p>
 <p>The returned value is the length of the string, including the null terminated character. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga294ab2eda051cbddd0b7e5d482c03664"></a><!-- doxytag: member="eina_convert.h::eina_convert_strtod_c" ref="ga294ab2eda051cbddd0b7e5d482c03664" args="(const char *nptr, char **endptr)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="group__Eina__Convert__Group.html#ga294ab2eda051cbddd0b7e5d482c03664">eina_convert_strtod_c</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>nptr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>endptr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Converts a string to a floating point number. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">nptr</td><td>a string to convert. It shouldn't be NULL. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">endptr</td><td>If <code>endptr</code> is not NULL, a pointer to the character after the last character used in the conversion is stored in the location referenced by endptr. If <code>nptr</code> is NULL, this will also be set to NULL. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>a double type floating point number.</dd></dl>
-<p>This function returns converted floating point number with locale-independency. Actually, it use "C" locale for strtod_l function internally. If you need strtod without locale-dependency, this function can replace strtod. For more information, please refer documents of strtod, strtod_l. </p>
 
 </div>
 </div>

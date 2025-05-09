@@ -109,8 +109,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an (Edje) message to a given Edje object.  <a href="#gac89a6483d3197cbe6268c83b04e8b525"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Communication__Interface__Message.html#gafb925682f637932b82c3d0201168ad79">edje_object_message_signal_process</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an object's message queue.  <a href="#gafb925682f637932b82c3d0201168ad79"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Communication__Interface__Message.html#gac585b9de0e9c8337bef6e6f5ac990a96">edje_object_message_signal_recursive_process</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an object's message queue recursively.  <a href="#gac585b9de0e9c8337bef6e6f5ac990a96"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Edje__Message__String.html">_Edje_Message_String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Communication__Interface__Message.html#gad11774d440f6f8a81d9eb944883ec822">Edje_Message_String</a></td></tr>
@@ -483,30 +481,8 @@ Typedefs</h2></td></tr>
 
 <p>Processes an object's message queue. </p>
 <p>This function goes through the object message queue processing the pending messages for this specific Edje object. Normally they'd be processed only at idle time. Child objects will not be affected.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Communication__Interface__Message.html#gac585b9de0e9c8337bef6e6f5ac990a96" title="Processes an object&#39;s message queue recursively.">edje_object_message_signal_recursive_process</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>edje_object_message_signal_recursive_process </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac585b9de0e9c8337bef6e6f5ac990a96"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_message_signal_recursive_process" ref="gac585b9de0e9c8337bef6e6f5ac990a96" args="(Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Edje__Object__Communication__Interface__Message.html#gac585b9de0e9c8337bef6e6f5ac990a96">edje_object_message_signal_recursive_process</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Processes an object's message queue recursively. </p>
-<p>This function goes through the object message queue processing the pending messages for this specific Edje object. Normally they'd be processed only at idle time. This will also propagate the processing to all child objects.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Communication__Interface__Message.html#gafb925682f637932b82c3d0201168ad79" title="Processes an object&#39;s message queue.">edje_object_message_signal_process</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
 
 </div>
 </div>

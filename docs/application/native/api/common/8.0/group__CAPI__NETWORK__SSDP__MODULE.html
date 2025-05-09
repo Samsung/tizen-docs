@@ -124,7 +124,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#gac6c22ef6295a3221b8d731dba334aafc">ssdp_destroy_local_service</a> (<a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga336314e90d6bdb18fc5f428308b714a7">ssdp_service_h</a> local_service)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the SSDP local service handle.  <a href="#gac6c22ef6295a3221b8d731dba334aafc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga738214501f6269fac8c75597486e82ce">ssdp_service_set_usn</a> (<a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga336314e90d6bdb18fc5f428308b714a7">ssdp_service_h</a> local_service, const char *usn)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the USN (Unique Service Name) of SSDP local service. The USN format is specified in UPnP forum (<a href="http://upnp.org">http://upnp.org</a>).  <a href="#ga738214501f6269fac8c75597486e82ce"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the USN (Unique Service Name) of SSDP local service. The USN format is specified in UPnP standard (<a href="https://openconnectivity.org/developer/specifications/upnp-resources/upnp/">https://openconnectivity.org/developer/specifications/upnp-resources/upnp/</a>).  <a href="#ga738214501f6269fac8c75597486e82ce"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga297e13f8a036a55a0905ce6db1ff408b">ssdp_service_set_url</a> (<a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga336314e90d6bdb18fc5f428308b714a7">ssdp_service_h</a> local_service, const char *url)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the URL (Uniform Resource Locator) for description of SSDP local service. See RFC 3986.  <a href="#ga297e13f8a036a55a0905ce6db1ff408b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#gab8a4f3ba8dd0eccca487b891339aa838">ssdp_service_get_target</a> (<a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga336314e90d6bdb18fc5f428308b714a7">ssdp_service_h</a> service, char **target)</td></tr>
@@ -340,7 +340,7 @@ Typedefs</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <em>local_service</em> using <a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#gac6c22ef6295a3221b8d731dba334aafc" title="Destroys the SSDP local service handle.">ssdp_destroy_local_service()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">target</td><td>The SSDP local service's target. It may be a device type or a service type specified in UPnP forum (<a href="http://upnp.org">http://upnp.org</a>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">target</td><td>The SSDP local service's target. It may be a device type or a service type specified in UPnP standard (<a href="https://openconnectivity.org/developer/specifications/upnp-resources/upnp/">https://openconnectivity.org/developer/specifications/upnp-resources/upnp/</a>) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">local_service</td><td>The SSDP local service handle </td></tr>
   </table>
   </dd>
@@ -554,7 +554,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>This API needs <a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga738214501f6269fac8c75597486e82ce" title="Sets the USN (Unique Service Name) of SSDP local service. The USN format is specified in UPnP forum (...">ssdp_service_set_usn()</a> and <a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga297e13f8a036a55a0905ce6db1ff408b" title="Sets the URL (Uniform Resource Locator) for description of SSDP local service. See RFC 3986...">ssdp_service_set_url()</a> before use. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>This API needs <a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga738214501f6269fac8c75597486e82ce" title="Sets the USN (Unique Service Name) of SSDP local service. The USN format is specified in UPnP standar...">ssdp_service_set_usn()</a> and <a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga297e13f8a036a55a0905ce6db1ff408b" title="Sets the URL (Uniform Resource Locator) for description of SSDP local service. See RFC 3986...">ssdp_service_set_url()</a> before use. </dd></dl>
 
 </div>
 </div>
@@ -783,7 +783,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the USN (Unique Service Name) of SSDP local service. The USN format is specified in UPnP forum (<a href="http://upnp.org">http://upnp.org</a>). </p>
+<p>Sets the USN (Unique Service Name) of SSDP local service. The USN format is specified in UPnP standard (<a href="https://openconnectivity.org/developer/specifications/upnp-resources/upnp/">https://openconnectivity.org/developer/specifications/upnp-resources/upnp/</a>). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must pass only unregistered <em>local_service</em> created using <a class="el" href="group__CAPI__NETWORK__SSDP__MODULE.html#ga4ae077eeb5cf21cc5b5af9dc8837e5cd" title="Creates a SSDP local service handle.">ssdp_create_local_service()</a>. If <em>local_service</em> is already registered, you cannot set <em>usn</em>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

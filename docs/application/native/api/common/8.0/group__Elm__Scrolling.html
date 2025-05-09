@@ -115,10 +115,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#ga453d4bd25706cf215ad18a0d15b8f799">elm_config_scroll_thumbscroll_hold_threshold_set</a> (unsigned int threshold)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#gae54af6d751a4b9b0698bd64977f9df17">elm_config_scroll_thumbscroll_momentum_threshold_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#ga9c96882b2df7abc8c08d82bda994d6c1">elm_config_scroll_thumbscroll_momentum_threshold_set</a> (double threshold)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#ga5d55cbb3891e7f2328bd199384670e22">elm_config_scroll_thumbscroll_momentum_distance_max_get</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#gac5576ee06daadfbef1b3c6a528821d66">elm_config_scroll_thumbscroll_momentum_distance_max_set</a> (unsigned int distance)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#ga9c653ea3a042ba53c7d1b96501681e69">elm_config_scroll_thumbscroll_momentum_friction_get</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#ga18594ea32a4649807a01f1b44d4a00ae">elm_config_scroll_thumbscroll_momentum_friction_set</a> (double friction)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#gadeafc6babe35b48655dce35fba0c30c7">elm_config_scroll_thumbscroll_border_friction_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#gaa222d42fc9d2f5d039e0254f86793033">elm_config_scroll_thumbscroll_border_friction_set</a> (double friction)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scrolling.html#gaf75c278472c8e924ab6629d5fe9cd928">elm_config_scroll_thumbscroll_sensitivity_friction_get</a> (void)</td></tr>
@@ -592,7 +588,23 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the amount of lag between your actual mouse cursor dragging movement and a scroller's view movement itself, while pushing it into bounce state manually.</p>
+<p>Get the number of pixels the maximum distance which can be flicked. If it is flicked more than this, the flick distance is same with maximum distance.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the thumb scroll maximum flick distance Set the number of pixels the maximum distance which can be flicked. If it is flicked more than this, the flick distance is same with maximum distance.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">distance</td><td>the thumb scroll maximum flick distance</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_config_thumbscroll_momentum_distance_max_get() Get the scale ratio of geometric sequence as a kind of inertia a scroller will impose at self scrolling animations.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the thumb scroll friction Set the scale ratio of geometric sequence as a kind of inertia a scroller will impose at self scrolling animations.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">friction</td><td>the thumb scroll friction</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_config_thumbscroll_momentum_friction_get() Get the amount of lag between your actual mouse cursor dragging movement and a scroller's view movement itself, while pushing it into bounce state manually.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the thumb scroll border friction </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
@@ -909,94 +921,6 @@ All other functions namespaced with "thumbscroll" will only have effect if this 
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000372">Deprecated:</a></b></dt><dd></dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>elm_config_thumbscroll_min_friction_get() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga5d55cbb3891e7f2328bd199384670e22"></a><!-- doxytag: member="elm_config.h::elm_config_scroll_thumbscroll_momentum_distance_max_get" ref="ga5d55cbb3891e7f2328bd199384670e22" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int <a class="el" href="group__Elm__Scrolling.html#ga5d55cbb3891e7f2328bd199384670e22">elm_config_scroll_thumbscroll_momentum_distance_max_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get the number of pixels the maximum distance which can be flicked. If it is flicked more than this, the flick distance is same with maximum distance.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the thumb scroll maximum flick distance </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac5576ee06daadfbef1b3c6a528821d66"></a><!-- doxytag: member="elm_config.h::elm_config_scroll_thumbscroll_momentum_distance_max_set" ref="gac5576ee06daadfbef1b3c6a528821d66" args="(unsigned int distance)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Scrolling.html#gac5576ee06daadfbef1b3c6a528821d66">elm_config_scroll_thumbscroll_momentum_distance_max_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>distance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the number of pixels the maximum distance which can be flicked. If it is flicked more than this, the flick distance is same with maximum distance.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">distance</td><td>the thumb scroll maximum flick distance</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>elm_config_thumbscroll_momentum_distance_max_get() </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga9c653ea3a042ba53c7d1b96501681e69"></a><!-- doxytag: member="elm_config.h::elm_config_scroll_thumbscroll_momentum_friction_get" ref="ga9c653ea3a042ba53c7d1b96501681e69" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="group__Elm__Scrolling.html#ga9c653ea3a042ba53c7d1b96501681e69">elm_config_scroll_thumbscroll_momentum_friction_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get the scale ratio of geometric sequence as a kind of inertia a scroller will impose at self scrolling animations.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the thumb scroll friction </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga18594ea32a4649807a01f1b44d4a00ae"></a><!-- doxytag: member="elm_config.h::elm_config_scroll_thumbscroll_momentum_friction_set" ref="ga18594ea32a4649807a01f1b44d4a00ae" args="(double friction)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Scrolling.html#ga18594ea32a4649807a01f1b44d4a00ae">elm_config_scroll_thumbscroll_momentum_friction_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>friction</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the scale ratio of geometric sequence as a kind of inertia a scroller will impose at self scrolling animations.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">friction</td><td>the thumb scroll friction</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>elm_config_thumbscroll_momentum_friction_get() </dd></dl>
 
 </div>
 </div>
