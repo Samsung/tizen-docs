@@ -186,7 +186,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Layout.html#ga300b36af78c7503a3ae0ec85cfe2aaaf" title="Insert child to layout table part.">elm_layout_table_pack</a>(layout, TABLE, icon2, 1, 0, 1, 1);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon2);
 
-   clk = <a name="a30"></a><a class="code" href="group__Elm__Clock.html#gaaa9f775111dedb6487a61f382aaab41b">elm_clock_add</a>(win);
+   clk = elm_clock_add(win);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(clk, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(clk, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Layout.html#ga300b36af78c7503a3ae0ec85cfe2aaaf" title="Insert child to layout table part.">elm_layout_table_pack</a>(layout, TABLE, clk, 2, 0, 1, 1);
@@ -204,7 +204,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    elm_object_text_set(item, <span class="stringliteral">&quot;Position 0&quot;</span>);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(item, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(item, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   <a name="a31"></a><a class="code" href="group__Elm__Layout.html#ga0f7045569f06f65f15f0dc2eb7ee5085" title="Insert child to layout box part at a given position.">elm_layout_box_insert_at</a>(layout, BOX, item, 0);
+   <a name="a30"></a><a class="code" href="group__Elm__Layout.html#ga0f7045569f06f65f15f0dc2eb7ee5085" title="Insert child to layout box part at a given position.">elm_layout_box_insert_at</a>(layout, BOX, item, 0);
    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(item, <span class="stringliteral">&quot;clicked&quot;</span>, _box_btn_cb, layout);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(item);
 
@@ -212,23 +212,23 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    elm_object_text_set(item, <span class="stringliteral">&quot;Prepended&quot;</span>);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(item, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(item, EVAS_HINT_FILL, EVAS_HINT_FILL);
-   <a name="a32"></a><a class="code" href="group__Elm__Layout.html#ga558e5e6627b954153bf8acdae0948427" title="Prepend child to layout box part.">elm_layout_box_prepend</a>(layout, BOX, item);
+   <a name="a31"></a><a class="code" href="group__Elm__Layout.html#ga558e5e6627b954153bf8acdae0948427" title="Prepend child to layout box part.">elm_layout_box_prepend</a>(layout, BOX, item);
    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(item, <span class="stringliteral">&quot;clicked&quot;</span>, _box_btn_cb, layout);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(item);
 
    bt2 = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
    elm_object_text_set(bt2, <span class="stringliteral">&quot;Delete All&quot;</span>);
-   <a name="a33"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(layout, SWALLOW, bt2);
+   <a name="a32"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(layout, SWALLOW, bt2);
    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt2, <span class="stringliteral">&quot;clicked&quot;</span>, _swallow_btn_cb, layout);
 
-   <a name="a34"></a><a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 320, 320);
+   <a name="a33"></a><a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 320, 320);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a35"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a34"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a36"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a35"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
