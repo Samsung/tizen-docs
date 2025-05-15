@@ -152,7 +152,7 @@ _event_handler2_cb(<span class="keywordtype">void</span> *data, <span class="key
 }
 </pre></div></p>
 <p>The second event handler will check if the event data is equal to 5, and if that's the case, it will change the event handler data of the first event handler to another string. Then it checks if the event data is higher than 10, and if so, it will request the main loop to quit.</p>
-<p>An interesting point of this example is that although the second event handler requests the main loop to finish after the 11th event being received, it will process all the events that were already fired, and call their respective event handlers, before the main loop stops. If we didn't want these event handlers to be called after the 11th event, we would need to unregister them with <a class="el" href="group__Ecore__Event__Group.html#ga5eb9f359e0c52a63767c235d2f413197" title="Deletes an event handler.">ecore_event_handler_del()</a> at this point.</p>
+<p>An interesting point of this example is that although the second event handler requests the main loop to finish after the 11th event being received, it will process all the events that were already fired, and call their respective event handlers, before the main loop stops. If we didn't want these event handlers to be called after the 11th event, we would need to unregister them with <a class="el" href="group__Ecore__Event__Group.html#ga5eb9f359e0c52a63767c235d2f413197" title="Adds an event handler to the beginning of the handler list.">ecore_event_handler_del()</a> at this point.</p>
 <p>Now some basic initialization of the context, and the Ecore library itself:</p>
 <p><div class="fragment"><pre class="fragment">
 <span class="keywordtype">int</span>
