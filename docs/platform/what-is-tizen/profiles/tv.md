@@ -30,8 +30,8 @@ The Samsung Smart TV SDK combines TV features with web-based technologies. The S
 To develop applications for Tizen TV, refer to the following:
 
 - [Smart TV Quick-start Guide](http://developer.samsung.com/tv/develop/getting-started/quick-start-guide){:target="_blank"}
-- [Create Tizen TV .NET Applications](https://developer.samsung.com/smarttv/develop/getting-started/creating-tv-applications.html){:target="_blank"}
-- [Create Tizen TV TV Web applications](https://developer.samsung.com/smarttv/develop/tizen-net-tv/getting-started/creating-net-tv-applications.html){:target="_blank"}
+- [Create Tizen TV .NET Applications](https://developer.samsung.com/smarttv/develop/tizen-net-tv/getting-started/creating-net-tv-applications.html){:target="_blank"}
+- [Create Tizen TV TV Web applications](https://developer.samsung.com/smarttv/develop/getting-started/creating-tv-applications.html){:target="_blank"}
 
 
 ## Tizen TV devices
