@@ -1,6 +1,6 @@
 # Voice Control
-[!NOTE]
-All Voice Control Elementary APIs are deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
+> [!NOTE]
+> All Voice Control Elementary APIs are deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 
 Voice control features allow the user to control the device through their voice. You can register [general voice commands](#voice), which trigger a callback when the user speaks them. You can also register [voice commands for EFL-supported UI components](#elementary) to perform component-related actions, such as button clicks.
@@ -72,8 +72,8 @@ The following figure illustrates the voice control life-cycle states.
 
 <a name="elementary"></a>
 ## Voice Control with Elementary Components
-[!NOTE]
-All Voice Control Elementary APIs are deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
+> [!NOTE]
+> All Voice Control Elementary APIs are deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 You can register voice commands for EFL-supported UI components to allow the user to interact with visible UI components inside the application using their voice. The Voice control elementary library recognizes spoken commands from registered UI components.
 
