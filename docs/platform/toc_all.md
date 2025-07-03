@@ -36,7 +36,6 @@
 ## [Flashing an Image to RPI](/platform/developing/flashing-rpi.md)
 ## [Development Tips](/platform/developing/tips.md)
 
-
 # Porting
 ## [Overview](/platform/porting/overview.md)
 ## [Kernel](/platform/porting/kernel.md)
