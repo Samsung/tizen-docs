@@ -36,18 +36,12 @@ Each Tizen profile is based on the Tizen Common libraries, which are a set of li
 
 The currently-available profiles are:
 
-- Mobile: for handsets and tablets
-- Wearable: for watches
 - TV: for DTV/STB/IPTV systems
-
-Additional profiles are expected in the future, potentially including:
-
-- IVI: for In-Vehicle Infotainment systems
-
+- IoT: for interconnected, data-driven, and automated systems
 
 **Figure: Tizen profiles**
 
-![Tizen profiles](media/tizen-profiles-small.png)
+![Tizen profiles](media/tizen-profiles-small-new.png)
 
 The Tizen Compliance Tests measure conformance to the requirements of a given Tizen profile.
 
@@ -55,11 +49,11 @@ The Tizen Compliance Tests measure conformance to the requirements of a given Ti
 
 To get a Tizen device certified, follow these steps:
 
-1. A Tizen device implementer gets the [Tizen source code](https://review.tizen.org/git/) and creates a new Tizen device.
-2. A Tizen device implementer obtains the compliance specification (TCS), compliance tests (TCT), and [Tizen branding request form](media/tizen_branding_request_form_for_tizen_mobile_profile_v1.0_1.pdf) ![PDF icon](media/application-pdf.png).
+1. A Tizen device implementer gets the [Tizen source code](https://review.tizen.org/gerrit/) and creates a new Tizen device.
+2. A Tizen device implementer obtains the compliance specification (TCS), compliance tests (TCT), and Tizen certification request form for [TV](media/Tizen-certification-request-form-for-tv-profile.pdf) and [IoT](media/Tizen-certification-request-form-for-iot-profile.pdf) ![PDF icon](media/application-pdf.png).
 3. Once the new Tizen device passes 100% of the compliance tests, the Tizen device implementer submits the test results with a Tizen branding request form to the Tizen Association.
 4. The Tizen Association reviews, approves, and certifies the device as Tizen compliant. Any technical review required to decide approval or failure is referred to the Tizen Steering Group by the Tizen Association.
 
 ## Feedback
 
-The Tizen Project welcomes feedback and input on Tizen Compliance. If a Tizen device implementer has questions or concerns about the specification or compliance tests, they are welcome to discuss these on the [Tizen compliance mailing list](https://lists.tizen.org/listinfo/compliance).
+The Tizen Project welcomes feedback and input on Tizen Compliance. If a Tizen device implementer has questions or concerns about the specification or compliance tests, please contact us at [info@tizen.org](mailto:info@tizen.org).
