@@ -18,7 +18,7 @@ The main features of the Autofill Manager API include:
 
 ## Prerequisites
 
-1. To use the Autofill Manager API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__AUTOFILL__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__AUTOFILL__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [Autofill Manager API](../../api/common/latest/group__CAPI__UIX__AUTOFILL__MANAGER__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```xml
    <privileges>
@@ -171,5 +171,4 @@ After you have finished working with the Autofill Manager library, destroy the A
 ## Related Information
 
 - Dependencies
-  - Tizen 5.5 and Higher for Mobile
-  - Tizen 5.5 and Higher for Wearable
+  - Tizen 5.5
