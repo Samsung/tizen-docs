@@ -14,7 +14,7 @@ You can use the following notifications and content sharing features in your nat
   An application can use expandable notifications to inform users about important information. You can provide a more complex form of notification using Notification EX API.
   The Notification EX API is designed to create large and expandable notifications.
 
-- [Attach Panel](attach-panel.md) **in mobile applications only**
+- [Attach Panel](attach-panel.md)
 
   The attach panel is a method that allows the user to attach various content into an application. You can attach images, take pictures, record voice, and select files on the attach panel. You can also select new applications to be launched.
 
@@ -24,8 +24,7 @@ You can use the following notifications and content sharing features in your nat
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Notification](../../api/common/latest/group__NOTIFICATION__MODULE.html)
   - [Notification Ex](../../api/common/latest/group__NOTIFICATION__EX__MODULE.html)

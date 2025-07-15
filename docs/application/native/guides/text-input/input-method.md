@@ -75,7 +75,7 @@ The [Input Method Manager](../../api/common/latest/group__CAPI__UIX__INPUTMETHOD
 
 To enable your application to use the input method functionality:
 
-1. To use the [Input Method Manager API]((../../api/common/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [Input Method Manager API](../../api/common/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -83,7 +83,7 @@ To enable your application to use the input method functionality:
    </privileges>
    ```
 
-2. To use the functions and data types of the [Input Method API]((../../api/common/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html), include the `<inputmethod.h>` header file in your application:
+2. To use the functions and data types of the [Input Method API](../../api/common/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html), include the `<inputmethod.h>` header file in your application:
 
     ```
     #include <inputmethod.h>
@@ -427,4 +427,4 @@ To check the current default keyboard or whether a specific IME is enabled, or t
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4
+  - Since Tizen 2.4

@@ -108,5 +108,5 @@ If you mold your programming paradigm around this scene graph and state engine, 
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
+  

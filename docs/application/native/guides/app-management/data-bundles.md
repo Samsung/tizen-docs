@@ -208,8 +208,7 @@ test_bundle_encode_decode(void)
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Bundle](../../api/common/latest/group__CORE__LIB__BUNDLE__MODULE.html)
   

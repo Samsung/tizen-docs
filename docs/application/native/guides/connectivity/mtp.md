@@ -3,8 +3,6 @@
 
 The Media Transfer Protocol (MTP) is an extension of the Picture Transfer Protocol (PTP), a protocol for file transfers between 2 devices.
 
-This feature is supported in mobile applications only.
-
 The extension consists of the MTP initiator and MTP responder. The host, which connects to the MTP device, is called the MTP initiator, and the MTP device is called the MTP responder. One MTP initiator can manage multiple MTP responders. The MTP initiator only sends requests to the MTP responder, and the MTP responder only responds to the MTP initiator.
 
 The MTP consists of 3 components:
@@ -413,7 +411,7 @@ application_test_event_callback(void)
 
 ## Related information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
+  - Since Tizen 3.0
 - API References
   - [MTP Manager API](../../api/common/latest/group__CAPI__NETWORK__MTP__MANAGER__MODULE.html)
   - [MTP Device Information API](../../api/common/latest/group__CAPI__NETWORK__MTP__DEVICEINFO__MODULE.html)

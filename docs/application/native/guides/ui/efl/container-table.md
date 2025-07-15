@@ -1,6 +1,6 @@
 # Table
 
-The table container acts like a box container, but with 2 dimensions. It provides the same kind of APIs as a box. An item inside a table can span multiple columns and rows, and even overlap with other items. For more information, see the Table API (in [mobile](../../../api/mobile/latest/group__Elm__Table__Group.html) and [wearable](../../../api/wearable/latest/group__Elm__Table__Group.html) applications).
+The table container acts like a box container, but with 2 dimensions. It provides the same kind of APIs as a box. An item inside a table can span multiple columns and rows, and even overlap with other items. For more information, see the [Table API](../../../api/common/latest/group__Elm__Table__Group.html).
 
 **Figure: Table component structure**
 
@@ -116,5 +116,4 @@ To manage the table items:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

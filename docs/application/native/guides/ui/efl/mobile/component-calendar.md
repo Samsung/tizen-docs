@@ -1,6 +1,6 @@
 # Calendar
 
-The calendar UI component displays month views. For more information, see the [Calendar](../../../../api/mobile/latest/group__Elm__Calendar.html) API.
+The calendar UI component displays month views. For more information, see the [Calendar](../../../../api/common/latest/group__Elm__Calendar.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -100,4 +100,4 @@ You can register callback functions connected to the following signals for a cal
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

@@ -99,4 +99,4 @@ evas_object_smart_callback_add(index, "selected", _index_selected_cb, NULL);
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.3.1

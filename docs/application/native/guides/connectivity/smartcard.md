@@ -499,8 +499,7 @@ To send a transmission:
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Smartcard API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__MODULE.html)
   - [SE Service API](../../api/common/latest/group__CAPI__NETWORK__SMARTCARD__SE__SERVICE__MODULE.html)

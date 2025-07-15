@@ -171,4 +171,4 @@ After you have finished working with the Autofill Manager library, destroy the A
 ## Related Information
 
 - Dependencies
-  - Tizen 5.5
+  - Since Tizen 5.5

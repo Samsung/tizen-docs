@@ -68,7 +68,7 @@ For additional OpenAL code samples, see [Example Code](https://github.com/kcat/o
 
 To enable your application to use the OpenAL functionality:
 
-1. To use the functions and data types of the OpenAL API (in [mobile](../../api/mobile/latest/group__OPENSRC__OPENAL__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__OPENSRC__OPENAL__FRAMEWORK.html) applications), include the `<AL/al.h>` and `<AL/alc.h>` header files in your application:
+1. To use the functions and data types of the [OpenAL API](../../api/common/latest/group__OPENSRC__OPENAL__FRAMEWORK.html), include the `<AL/al.h>` and `<AL/alc.h>` header files in your application:
 
    ```
    #include <AL/al.h>
@@ -296,5 +296,4 @@ To queue and play multiple buffers:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

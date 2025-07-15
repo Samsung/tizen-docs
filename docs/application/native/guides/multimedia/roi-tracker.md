@@ -129,7 +129,6 @@ To track the ROI coordinates of an image, follow these steps:
 
 ## Related information
 - Dependencies
-  - Tizen 7.0 and Higher for Mobile
-  - Tizen 7.0 and Higher for Wearable
+  - Since Tizen 7.0
 - API References
   - [Media Vision ROI Tracker API](../../api/common/latest/group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html)
