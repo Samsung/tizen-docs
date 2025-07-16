@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Sound API</title>
-<meta data-version="9.0" data-profile="mobile">
+<meta data-version="10.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Sound">
@@ -261,8 +261,7 @@ There is a tizen.sound object that allows accessing the functionality of the Sou
     void setVolumeChangeListener(<a href="#SoundVolumeChangeCallback">SoundVolumeChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetVolumeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getConnectedDeviceList() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    <a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getActivatedDeviceList() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    long addDeviceStateChangeListener(<a href="#SoundDeviceStateChangeCallback">SoundDeviceStateChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addDeviceStateChangeListener(<a href="#SoundDeviceStateChangeCallback">SoundDeviceStateChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeDeviceStateChangeListener(long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -541,44 +540,6 @@ for (var i = 0; i &lt; infoArr.length; i++)
 </pre>
 </div>
 </dd>
-<dt class="deprecated method" id="SoundManager::getActivatedDeviceList">
-<a class="backward-compatibility-anchor" name="::Sound::SoundManager::getActivatedDeviceList"></a><code><b><span class="methodName">getActivatedDeviceList</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Gets a list of activated sound devices.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 8.0. 'Activated' concept is deprecated and replaced with 'running'. Use <a href="sound.html#SoundManager::getConnectedDeviceList">SoundManager::getConnectedDeviceList</a> and check <var>isRunning</var> property to get running devices.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getActivatedDeviceList();</pre></div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">SoundDeviceInfo[]:</span>
- List of activated sound devices.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError in any other error case.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var infoArr = tizen.sound.getActivatedDeviceList();
-
-for (var i = 0; i &lt; infoArr.length; i++)
-{
-  console.log(infoArr[i].device);
-}
-</pre>
-</div>
-</dd>
 <dt class="method" id="SoundManager::addDeviceStateChangeListener">
 <a class="backward-compatibility-anchor" name="::Sound::SoundManager::addDeviceStateChangeListener"></a><code><b><span class="methodName">addDeviceStateChangeListener</span></b></code>
 </dt>
@@ -707,8 +668,7 @@ tizen.sound.removeDeviceStateChangeListener(id);
     readonly attribute <a href="#SoundDeviceType">SoundDeviceType</a> device;
     readonly attribute <a href="#SoundIOType">SoundIOType</a> direction;
     readonly attribute boolean isConnected;
-<span class="nocode deprecated">    readonly attribute boolean isActivated;
-</span>    readonly attribute boolean isRunning;
+    readonly attribute boolean isRunning;
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -757,18 +717,6 @@ tizen.sound.removeDeviceStateChangeListener(id);
 </span><span class="type">boolean </span><span class="name">isConnected</span></span><div class="brief">
  True if the sound device state is connected
             </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute deprecated" id="SoundDeviceInfo::isActivated">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">boolean </span><span class="name">isActivated</span></span><div class="brief">
- True if the sound device state is activated
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 8.0. Instead, use <a href="sound.html#SoundDeviceInfo::isRunning">SoundDeviceInfo::isRunning</a>.
-            </p>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
