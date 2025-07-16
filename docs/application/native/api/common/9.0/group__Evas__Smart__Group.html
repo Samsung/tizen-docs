@@ -482,7 +482,7 @@ Defines</h2></td></tr>
 <p>After the macro's usage, the following will be defined for use:</p>
 <ul>
 <li>&lt;prefix&gt;_parent_sc: A pointer to the <b>parent</b> smart class. When calling parent functions from overloaded ones, use this global variable.</li>
-<li>&lt;prefix&gt;_smart_class_new(): this function returns the #Evas_Smart needed to create smart objects with this class, which should be passed to <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add()</a>.</li>
+<li>&lt;prefix&gt;_smart_class_new(): this function returns the #Evas_Smart needed to create smart objects with this class, which should be passed to <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05" title="Get if the canvas is currently calculating smart objects.">evas_object_smart_add()</a>.</li>
 </ul>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>smart_name</code> has to be a pointer to a globally available string! The smart class created here will just have a pointer set to that, and all object instances will depend on it for smart class name lookup. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a5">evas-smart-interface.c</a>.</dd>
@@ -585,7 +585,7 @@ Defines</h2></td></tr>
 <p>After the macro's usage, the following will be defined for use:</p>
 <ul>
 <li>&lt;prefix&gt;_parent_sc: A pointer to the <b>parent</b> smart class. When calling parent functions from overloaded ones, use this global variable.</li>
-<li>&lt;prefix&gt;_smart_class_new(): this function returns the #Evas_Smart needed to create smart objects with this class, which should be passed to <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05">evas_object_smart_add()</a>.</li>
+<li>&lt;prefix&gt;_smart_class_new(): this function returns the #Evas_Smart needed to create smart objects with this class, which should be passed to <a class="el" href="group__Evas__Smart__Object__Group.html#gad80de73a33446f902d4b39141a8d0a05" title="Get if the canvas is currently calculating smart objects.">evas_object_smart_add()</a>.</li>
 </ul>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>smart_name</code> has to be a pointer to a globally available string! The smart class created here will just have a pointer set to that, and all object instances will depend on it for smart class name lookup. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-object_8c-example.html#a1">evas-smart-object.c</a>.</dd>

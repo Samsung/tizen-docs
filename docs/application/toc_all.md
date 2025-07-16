@@ -168,10 +168,6 @@
 #### [Push](/application/dotnet/guides/messaging/push.md)
 #### [Push Server](/application/dotnet/guides/messaging/push-server.md)
 
-### Natural Language Processing
-#### [Overview](/application/dotnet/guides/nlp/overview.md)
-#### [Natural Language Processing (NLP)](/application/dotnet/guides/nlp/nlp.md)
-
 ### Notifications and Content Sharing
 #### [Overview](/application/dotnet/guides/notification/overview.md)
 #### [Notifications](/application/dotnet/guides/notification/noti.md)

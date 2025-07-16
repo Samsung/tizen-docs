@@ -167,7 +167,9 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/keymanager.extended</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If password in <em>policy_private_key</em> or <em>policy_public_key</em> is provided, the stored key is additionally encrypted with it. </dd>
 <dd>
-Currently supported KEM types are: <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga51db58445b6d5e593b5f7ebedaf359d5a7ec6924e2f65d856abdacf8d0c5d82f7">CKMC_ML_KEM_768</a>, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga51db58445b6d5e593b5f7ebedaf359d5a315f43932147f2e2e4a4c8f17ca09a20">CKMC_ML_KEM_1024</a>.</dd></dl>
+Currently supported KEM types are: <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga51db58445b6d5e593b5f7ebedaf359d5a7ec6924e2f65d856abdacf8d0c5d82f7">CKMC_ML_KEM_768</a>, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga51db58445b6d5e593b5f7ebedaf359d5a315f43932147f2e2e4a4c8f17ca09a20">CKMC_ML_KEM_1024</a>. </dd>
+<dd>
+The <em>private_key_alias</em> must be different than <em>public_key_alias</em>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">kem_type</td><td>The type of KEM key to be created </td></tr>
