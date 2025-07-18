@@ -250,4 +250,4 @@ The enum values, as well as the parameter details, for the callback parameters a
 
 ## Related information
 * Dependencies
-  - Tizen 6.0 and Higher for Wearable
+  - Since Tizen 6.0

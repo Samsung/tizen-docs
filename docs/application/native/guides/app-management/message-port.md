@@ -220,7 +220,6 @@ Trusted communication works similarly as normal message port communication. The 
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Message Port](../../api/common/latest/group__CAPI__MESSAGE__PORT__MODULE.html)

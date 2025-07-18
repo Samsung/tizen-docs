@@ -48,7 +48,7 @@ The following SDL features are currently supported in Tizen:
 
   Use the `SDL_platform.h` and `SDL_power.h` header files.
 
-For the list of features not currently supported in Tizen, see the SDL API (in [mobile](../../api/mobile/latest/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__OPENSRC__SDL__FRAMEWORK.html) applications). In Tizen, SDL supports the Vulkan and OpenGL&reg; ES graphics libraries only; the `SDL_render` library is not supported.
+For the list of features not currently supported in Tizen, see the [SDL API](../../api/common/latest/group__OPENSRC__SDL__FRAMEWORK.html). In Tizen, SDL supports the Vulkan and OpenGL&reg; ES graphics libraries only; the `SDL_render` library is not supported.
 
 > **Note**
 >
@@ -234,7 +234,7 @@ To handle SDL events specifically added to the Tizen Application framework:
 
   This event is invoked when the device is low on battery. Use it to reduce power consumption, if possible. In Tizen, this event is called in the `_tizen_app_low_battery()` function.
 
-  Get the low battery status from the given event info by calling the `app_event_get_low_battery_status()` function. The `app_event_low_battery_status_e` (in [mobile](../../api/mobile/latest/group__CAPI__APP__COMMON__MODULE.html#gacd053e5be8bdd4a4e3cc5bb20916af00) and [wearable](../../api/wearable/latest/group__CAPI__APP__COMMON__MODULE.html#gacd053e5be8bdd4a4e3cc5bb20916af00) applications) is the enumeration for the battery status: `APP_EVENT_LOW_BATTERY_POWER_OFF` means that the battery charge is under 1% and `APP_EVENT_LOW_BATTERY_CRITICAL_LOW` under 5%.
+  Get the low battery status from the given event info by calling the `app_event_get_low_battery_status()` function. The [`app_event_low_battery_status_e` enumerator](../../api/common/latest/group__CAPI__APP__COMMON__MODULE.html#gacd053e5be8bdd4a4e3cc5bb20916af00) is the enumeration for the battery status: `APP_EVENT_LOW_BATTERY_POWER_OFF` means that the battery charge is under 1% and `APP_EVENT_LOW_BATTERY_CRITICAL_LOW` under 5%.
 
     ```
     #include <app.h>
@@ -326,5 +326,4 @@ The following table lists the available status bar opacity values.
 
 ## Related Information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 3.0

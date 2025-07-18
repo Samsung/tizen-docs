@@ -2,7 +2,7 @@
 
 Tizen enables you to define rules as a combination of a contextual event, conditions, and an action. When the rule is enabled, the system starts to monitor the device status or user activities corresponding to the event defined in the rule. When the event is detected, the conditions are evaluated, and if the conditions are met, the action is triggered.
 
-This feature is supported in mobile applications only.
+This API is supported on specifc Tizen devices that support [contextual trigger features](#prerequisites).
 
 A rule always consists of 3 main components:
 
@@ -269,7 +269,15 @@ To use the conjunctions and disjunctions:
 
 ## Prerequisites
 
-To use the functions and data types of the [Contextual Trigger](../../api/mobile/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html) API, include the `<context_trigger.h>` header file in your application:
+To enable your application to use the contextual trigger functionality:
+
+1. To use the screen mirroring features, include the following feature in your tizen-manifest.xml file.
+
+   ```
+   <feature name="http://tizen.org/feature/contextual_trigger"/>
+   ```
+
+2. To use the functions and data types of the [Contextual Trigger](../../api/common/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html) API, include the `<context_trigger.h>` header file in your application:
 
 ```
 #include <context_trigger.h>
@@ -424,7 +432,7 @@ To set an action:
   context_trigger_rule_set_action_app_control(rule, app);
   ```
 
-  The application launch request is manipulated with an application control handle. For more information, see the [App Control](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html) API. You can utilize the application control functionalities by developing an application with the corresponding application controls to execute a series of tasks when a rule is satisfied.
+  The application launch request is manipulated with an application control handle. For more information, see the [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html) API. You can utilize the application control functionalities by developing an application with the corresponding application controls to execute a series of tasks when a rule is satisfied.
 
 - To register a notification posting request:
 
@@ -548,7 +556,7 @@ The following comparison operators are allowed for specific attribute data types
   - `CONTEXT_TRIGGER_EQUAL_TO`
   - `CONTEXT_TRIGGER_NOT_EQUAL_TO`
 
-The following table summarizes the corresponding comparison attribute keys, with respect to the event and condition items, and the valid right operands for each attribute key. For information on the necessary privileges for each item, see the [Contextual Trigger](../../api/mobile/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html) API.
+The following table summarizes the corresponding comparison attribute keys, with respect to the event and condition items, and the valid right operands for each attribute key. For information on the necessary privileges for each item, see the [Contextual Trigger](../../api/common/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html) API.
 
 **Table: Attribute keys and corresponding operands**
 
@@ -586,6 +594,6 @@ The following table summarizes the corresponding comparison attribute keys, with
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4
 - API References
   - [Contextual Trigger](../../api/common/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html)

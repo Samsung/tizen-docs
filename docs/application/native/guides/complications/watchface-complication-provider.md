@@ -287,4 +287,4 @@ In this case, watchface must add the specific privileges to get the complication
 
 ## Related Information
 - Dependencies
-  - Tizen 5.0 and Higher for Wearable
+  - Since Tizen 5.0

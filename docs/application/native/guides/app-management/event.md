@@ -344,7 +344,6 @@ The following list shows the events of modules:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Event](../../api/common/latest/group__CAPI__EVENT__MODULE.html)

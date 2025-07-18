@@ -48,4 +48,4 @@ To get credentials:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

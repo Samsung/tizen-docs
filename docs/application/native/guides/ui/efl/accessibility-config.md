@@ -62,5 +62,5 @@ To change the system font size:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 2.4
+  

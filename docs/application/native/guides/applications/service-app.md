@@ -204,7 +204,6 @@ To monitor application state change and system events, proceed as follows:
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Service Applications](../../api/common/latest/group__CAPI__SERVICE__APP__MODULE.html)

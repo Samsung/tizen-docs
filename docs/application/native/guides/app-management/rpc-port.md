@@ -47,7 +47,6 @@ To enable your application to use `rpc_port_proxy_connect()` API:
 
 ## Related Information
 - Dependencies
-  - Tizen 4.0 and Higher for Mobile
-  - Tizen 5.0 and Higher for Wearable
+  - Since Tizen 4.0
 - API References
   - [RPC Port](../../api/common/latest/group__CAPI__RPC__PORT__MODULE.html)

@@ -1,10 +1,10 @@
 # Image
 
-This feature is supported in mobile applications only.
-
 The image component can load and display an image from a disk file or a memory region.
 
-For more information, see the [Image](../../../../api/mobile/latest/group__Elm__Image.html) API.
+For more information, see the [Image](../../../../api/common/latest/group__Elm__Image.html) API.
+
+This feature is supported in mobile applications only.
 
 **Figure: Image component**
 
@@ -124,4 +124,4 @@ clicked_cb(void *data, Evas_Object *obj, void *event_info)
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

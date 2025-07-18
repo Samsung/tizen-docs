@@ -23,7 +23,7 @@ The main features of the Runtime Information API include:
 
 ## Prerequisites
 
-To use the functions and data types of the Runtime information API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__RUNTIME__INFO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__RUNTIME__INFO__MODULE.html) applications), include the `<runtime_info.h>` header file in your application:
+To use the functions and data types of the [Runtime information API](../../api/common/latest/group__CAPI__SYSTEM__RUNTIME__INFO__MODULE.html), include the `<runtime_info.h>` header file in your application:
 
 ```
 #include <runtime_info.h>
@@ -252,7 +252,6 @@ The following table lists the available runtime information keys.
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Runtime Information API](../../api/common/latest/group__CAPI__SYSTEM__RUNTIME__INFO__MODULE.html)

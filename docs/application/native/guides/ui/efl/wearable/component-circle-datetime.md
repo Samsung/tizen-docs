@@ -48,4 +48,4 @@ To configure the circle properties of the circle datetime:
 
 ## Related Information
 - Dependencies
-  - Tizen 4.0 and Higher for Wearable
+  - Since Tizen 4.0

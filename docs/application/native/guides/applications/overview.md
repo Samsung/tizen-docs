@@ -1,6 +1,6 @@
 # Applications
 
-A Tizen native application is similar to a conventional Linux application, with some additional features optimized for mobile and wearable devices. The additional features have constraints, such as a relatively small screen size and lack of system resources compared to a larger system. For example, for power management reasons, the application can take actions to reduce usage when it finds out that it has its display window covered over by another application window. State change events are delivered to make it possible to detect these situations.
+A Tizen native application is similar to a conventional Linux application, with some additional features optimized for TV, IoT, and other devices. The additional features have constraints, such as a relatively small screen size and lack of system resources compared to a larger system. For example, for power management reasons, the application can take actions to reduce usage when it finds out that it has its display window covered over by another application window. State change events are delivered to make it possible to detect these situations.
 
 ## Native Application Models
 
@@ -70,8 +70,7 @@ Application state changes are managed by the underlying framework. For more info
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [UI Applications](../../api/common/latest/group__CAPI__APPLICATION__MODULE.html)
   - [Service Applications](../../api/common/latest/group__CAPI__SERVICE__APP__MODULE.html)

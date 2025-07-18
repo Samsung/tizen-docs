@@ -29,7 +29,7 @@ For a list of privacy-related privileges, see [Security and API Privileges](../.
 
 To enable your application to use the privacy-related privileges functionality:
 
-1. To use the functions and data types of the Privacy Privilege Manager API (in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) applications), include the `<privacy_privilege_manager.h>` header file in your application:
+1. To use the functions and data types of the Privacy [Privilege Manager API](../../api/common/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html), include the `<privacy_privilege_manager.h>` header file in your application:
 
     ```
     #include <privacy_privilege_manager.h>
@@ -61,7 +61,7 @@ To check whether an application has permission to use a privilege, and to reques
         int ret = ppm_check_permission(privilege, &result);
     ```
 
-    The result of the call is stored in the variable passed as the second parameter (for available results, see the `ppm_check_result_e` enumeration in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) applications).
+    The result of the call is stored in the variable passed as the second parameter (for available results, see the [`ppm_check_result_e` enumeration](../../api/common/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c).
 
 2. React to the permission check appropriately:
 
@@ -103,7 +103,7 @@ To check whether an application has permission to use a privilege, and to reques
 
 3. If you need to request user permission, handle the user decision within the callback.
 
-   The user decision is returned in the callback as a value of the `ppm_request_result_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) applications).
+   The user decision is returned in the callback as a value of the [`ppm_request_result_e` enumeration](../../api/common/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b).
 
    ```
    void
@@ -162,7 +162,7 @@ To check whether an application has permission to use a privilege, and to reques
         int ret = ppm_check_permissions(privileges, sizeof(privileges) / sizeof(privileges[0]), results);
     ```
 
-    The results of the call is stored in the variable passed as the second parameter (for available results, see the `ppm_check_result_e` enumeration in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) applications).
+    The results of the call is stored in the variable passed as the second parameter (for available results, see the [`ppm_check_result_e` enumeration](../../api/common/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c).
 
 2. React to the permissions check appropriately:
 
@@ -209,7 +209,7 @@ To check whether an application has permission to use a privilege, and to reques
 
 3. If you need to request user permissions, handle the user decisions within the callback.
 
-   The user decisions is returned in the callback as a value of the `ppm_request_result_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) applications).
+   The user decisions is returned in the callback as a value of the [`ppm_request_result_e` enumeration](../../api/common/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b).
 
     ```
     void
@@ -261,9 +261,8 @@ To check whether the application with the specified app_id has permission to use
     }
     ```
 
-    The result of the call is stored in the variable passed as the second parameter (for available results, see the `ppm_check_result_e` enumeration in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) applications).
+    The result of the call is stored in the variable passed as the second parameter (for available results, see the [`ppm_check_result_e` enumeration](../../api/common/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c).
 
 ## Related Information
 - Dependencies
-  - Tizen 4.0 and Higher for Mobile
-  - Tizen 4.0 and Higher for Wearable
+  - Since Tizen 4.0

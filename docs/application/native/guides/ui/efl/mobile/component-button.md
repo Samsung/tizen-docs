@@ -1,6 +1,6 @@
 # Button
 
-The button UI component works as a clickable input element to trigger events. For more information, see the [Button](../../../../api/mobile/latest/group__Elm__Button.html) API.
+The button UI component works as a clickable input element to trigger events. For more information, see the [Button](../../../../api/common/latest/group__Elm__Button.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -160,4 +160,4 @@ You can register callback functions connected to the following signals for a but
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

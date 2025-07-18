@@ -937,5 +937,4 @@ When you set the duration to a specified time, playback stops automatically afte
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

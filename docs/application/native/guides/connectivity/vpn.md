@@ -3,8 +3,6 @@
 
 A Virtual Private Network (VPN) connects 2 computers securely and privately over the internet. Using the VPN service, you can allow the users of your application to initialize the VPN device, and manage routing, DNS, and firewall features. A VPN connection consists of [multiple components](#components), mainly with the VPN server and client connecting over a tunnel.
 
-This feature is supported in mobile applications only.
-
 The main features of the VPN Service API include:
 
 - VPN manager
@@ -422,6 +420,6 @@ To read or write data:
 
 ## Related information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
+  - Since Tizen 3.0
 - API References
   - [VPN Service API](../../api/common/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html)

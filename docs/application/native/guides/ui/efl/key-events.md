@@ -2,7 +2,7 @@
 
 The menu and back functions are common UX behaviors in applications. Generally, the user taps the **Back** hardware key to return to the previous screen. The applications also provide option menus to manipulate their functions through the **Menu** hardware key.
 
-This feature is supported in mobile applications only.
+This API is supported on specifc Tizen devices that support the **Menu** and **Back** keys.
 
 Normally, the key events are only delivered to the object in focus. However, with the EFL Extension functions, you can let visible objects without focus get events from the **Menu** and **Back** keys.
 
@@ -38,7 +38,7 @@ The following example application has a window with a naviframe, and registers t
 
 To manage hardware key events:
 
-1. To use the functions and data types of the [Efl Extension](../../../api/mobile/latest/group__CAPI__EFL__EXTENSION__MODULE.html) API, include the `<efl_extension.h>` header file in your application:
+1. To use the functions and data types of the [Efl Extension](../../../api/common/latest/group__CAPI__EFL__EXTENSION__MODULE.html) API, include the `<efl_extension.h>` header file in your application:
 
    ```
    #include <efl_extension.h>
@@ -138,4 +138,4 @@ To manage hardware key events:
 
 ## Related Information
 - Dependencies
-    - Tizen 2.4 and Higher for Mobile
+    - Since Tizen 2.4

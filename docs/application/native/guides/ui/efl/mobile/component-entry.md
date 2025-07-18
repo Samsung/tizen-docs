@@ -11,9 +11,9 @@ The entry component is a box where the user can enter text. It supports the foll
 - Read/write from a file
 - Theme style overrides
 
-The entry component includes an Evas [Textblock](../../../../api/mobile/latest/group__Evas__Object__Textblock.html) in it, which means that it supports the features of the textblock component, such as text wrapping and formatted markup text.
+The entry component includes an Evas [Textblock](../../../../api/common/latest/group__Evas__Object__Textblock.html) in it, which means that it supports the features of the textblock component, such as text wrapping and formatted markup text.
 
-For more information, see the [Entry](../../../../api/mobile/latest/group__Elm__Entry__Group.html) API.
+For more information, see the [Entry](../../../../api/common/latest/group__Elm__Entry__Group.html) API.
 
 **Figure: Entry component**
 
@@ -270,7 +270,7 @@ You can format the entry text in many ways:
 
 - Format the entry text with markup elements that are defined in the theme.
 
-  For example, you can use the `<br>` element to insert a line break. For a list of available markup elements, see [Formatted text](../../../../api/mobile/latest/group__Elm__Entry__Group.html#entry-markup).
+  For example, you can use the `<br>` element to insert a line break. For a list of available markup elements, see [Formatted text](../../../../api/common/latest/group__Elm__Entry__Group.html#entry-markup).
 
 - Add special markups within the entry text:
 
@@ -349,7 +349,7 @@ You can format the entry text in many ways:
 
 ## Setting the Input Panel Layout and Return Key Type
 
-The input panel has different input types, such as number, date, URL, and emoticon. You can specify the keyboard layout type you want for the entry component with the [Elm\_Input\_Panel\_Layout](../../../../api/mobile/latest/group__Elm__Entry__Group.html) enumerator, which defines the available input types.
+The input panel has different input types, such as number, date, URL, and emoticon. You can specify the keyboard layout type you want for the entry component with the [Elm\_Input\_Panel\_Layout](../../../../api/common/latest/group__Elm__Entry__Group.html) enumerator, which defines the available input types.
 
 To set the input panel layout to the phone number layout:
 
@@ -369,7 +369,7 @@ elm_entry_input_panel_layout_set(entry, ELM_INPUT_PANEL_LAYOUT_PHONENUMBER);
 
 ![DATETIME](./media/input_panel_DATETIME.png) ![EMOTICON](./media/input_panel_EMOTICON.png)
 
-You can change the return key type in the input panel layout. You can specify the return key type you want for the entry component with the [Elm\_Input\_Panel\_Return\_Key\_Type](../../../../api/mobile/latest/group__Elm__Entry__Group.html) enumerator, which defines the available return key types.
+You can change the return key type in the input panel layout. You can specify the return key type you want for the entry component with the [Elm\_Input\_Panel\_Return\_Key\_Type](../../../../api/common/latest/group__Elm__Entry__Group.html) enumerator, which defines the available return key types.
 
 To set the return key type to the join key:
 
@@ -454,4 +454,4 @@ focused_cb(void *data, Evas_Object *obj, void *event_info)
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

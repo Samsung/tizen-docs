@@ -1,6 +1,6 @@
 # Check
 
-The check UI component accepts user input by the method of toggling. It is similar to the [radio](component-radio.md) component, except that it does not work as a group. For more information, see the [Check](../../../../api/mobile/latest/group__Elm__Check.html) API.
+The check UI component accepts user input by the method of toggling. It is similar to the [radio](component-radio.md) component, except that it does not work as a group. For more information, see the [Check](../../../../api/common/latest/group__Elm__Check.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -116,4 +116,4 @@ You can register callback functions connected to the following signals for a che
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

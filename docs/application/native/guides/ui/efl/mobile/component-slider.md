@@ -1,6 +1,6 @@
 # Slider
 
-The slider UI component is a draggable item used to select a value within a certain range. For more information, see the [Slider](../../../../api/mobile/latest/group__Elm__Slider.html) API.
+The slider UI component is a draggable item used to select a value within a certain range. For more information, see the [Slider](../../../../api/common/latest/group__Elm__Slider.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -203,4 +203,4 @@ You can register callback functions connected to the following signals for a sli
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

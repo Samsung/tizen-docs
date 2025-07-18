@@ -443,4 +443,4 @@ To keep the Multi-assistant framework updated about the current progress on voic
 
 ## Related information
 - Dependencies
-  - Tizen 5.5
+  - Since Tizen 5.5

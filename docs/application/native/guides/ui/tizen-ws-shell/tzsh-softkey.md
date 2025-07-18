@@ -24,7 +24,7 @@ If you set the opacity state to transparent, the background changes to 32-bit co
 
 ## Prerequisites
 
-To use the functions and structures of the TZSH-Softkey API (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) applications), include the `<tzsh_softkey.h>` header file in your application:
+To use the functions and structures of the [TZSH-Softkey API](../../../api/common/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html), include the `<tzsh_softkey.h>` header file in your application:
 
 ```
 #include <tzsh_softkey.h>
@@ -32,7 +32,7 @@ To use the functions and structures of the TZSH-Softkey API (in [mobile](../../.
 
 ## Create TZSH-Softkey Handler
 
-After you have created the main window of your application, call `tzsh_create()` and `tzsh_softkey_create()` with a native window ID to create the `tzsh_softkey_h` structure (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#ga2ee6e5dec1081136fe1139d6a611e58d) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#ga2ee6e5dec1081136fe1139d6a611e58d) applications):
+After you have created the main window of your application, call `tzsh_create()` and `tzsh_softkey_create()` with a native window ID to create the [`tzsh_softkey_h` structure](../../../api/common/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#ga2ee6e5dec1081136fe1139d6a611e58d):
 	
 ```
 #include <Elementary.h>
@@ -208,5 +208,4 @@ deinit(void)
 
 ## Related Information
  - Dependencies
-   - Tizen 5.5 and Higher for Mobile
-   - Tizen 5.5 and Higher for Wearable
+   - Since Tizen 5.5

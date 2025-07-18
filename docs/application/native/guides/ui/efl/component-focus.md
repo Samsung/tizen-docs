@@ -122,5 +122,5 @@ If an Evas object has several sub-objects, set its focus chain using the same fu
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
+  

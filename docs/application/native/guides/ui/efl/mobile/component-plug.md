@@ -4,7 +4,7 @@ This feature is supported in mobile applications only.
 
 The plug component shows an `Evas_Object` created by another process. It can be used anywhere in the same way as any other Elementary UI component.
 
-For more information, see the [Plug](../../../../api/mobile/latest/group__Elm__Plug__Group.html) API.
+For more information, see the [Plug](../../../../api/common/latest/group__Elm__Plug__Group.html) API.
 
 **Figure: Plug hierarchy**
 
@@ -87,4 +87,4 @@ clicked_cb(void *data, Evas_Object *obj, void *event_info)
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

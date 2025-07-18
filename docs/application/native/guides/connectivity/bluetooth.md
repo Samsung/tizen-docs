@@ -2176,8 +2176,7 @@ if (ret != BT_ERROR_NONE)
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Bluetooth Adapter API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html)
   - [Bluetooth Device API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html)

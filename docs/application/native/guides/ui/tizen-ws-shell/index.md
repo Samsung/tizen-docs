@@ -69,5 +69,4 @@ deinit(void)
 
 ## Related Information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 3.0

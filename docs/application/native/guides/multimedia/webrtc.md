@@ -22,7 +22,7 @@ The main features of the WebRTC API include the following:
 
 ## Prerequisites
 
-To use the functions and data types of the WebRTC API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__WEBRTC__MODULE.html), [wearable](../../api/wearable/latest/group__CAPI__MEDIA__WEBRTC__MODULE.html) and [IoT headed](../../api/iot-headed/latest/group__CAPI__MEDIA__WEBRTC__MODULE.html) applications), include the `<webrtc.h>` header file in your application:
+To use the functions and data types of the [WebRTC API](../../api/common/latest/group__CAPI__MEDIA__WEBRTC__MODULE.html), include the `<webrtc.h>` header file in your application:
 
 ```c
 #include <webrtc.h>
@@ -678,7 +678,4 @@ You can decide how to handle audio/video streaming data received from a remote p
     ```
 ## Related information
 - Dependencies
-  - Tizen 6.5 and Higher for Mobile
-  - Tizen 6.5 and Higher for Wearable
-  - Tizen 6.5 and Higher for IoT Headed
-    
+  - Since Tizen 6.5

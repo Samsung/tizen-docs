@@ -2,8 +2,6 @@
 
 Intelligent Network Monitoring (INM) API is used to get information about the network, provided by Linux functions. Some features of this API are detecting IP collision, dumping network status, dumping TCP, monitoring ethernet, monitoring Wi-Fi module state and getting network statistics.
 
-This feature is supported in mobile, TV, and wearable profile.
-
 > [!NOTE]
 > You can test the INM functionality on a target device only. The [Tizen emulator](../../../tizen-studio/common-tools/emulator.md) does not support this feature.
 
@@ -165,8 +163,6 @@ You can monitor other types of state changes using certain callback functions, s
 
 ## Related information
 - Dependencies
-  - Tizen 5.0 and Higher for Mobile
-  - Tizen 5.0 and Higher for Wearable
-  - Tizen 5.0 and Higher for TV
+  - Since Tizen 5.0
 - API References
   - [INM API](../../api/common/latest/group__CAPI__NETWORK__INM__MODULE.html)

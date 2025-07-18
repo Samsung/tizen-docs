@@ -365,4 +365,4 @@ void _on_complication_clicked(complication_h handle)
 
 ## Related Information
 - Dependencies
-  - Tizen 5.0 and Higher for Wearable
+  - Since Tizen 5.0

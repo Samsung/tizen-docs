@@ -1127,8 +1127,6 @@ To create a command list and commands:
 ## Related information
 
 - Dependencies
-  - Tizen 5.0 and Higher for Mobile
-  - Tizen 5.0 and Higher for Wearable
-
+  - Since Tizen 5.0
 - API References
   - [Voice control manager API](../../api/common/latest/group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html)

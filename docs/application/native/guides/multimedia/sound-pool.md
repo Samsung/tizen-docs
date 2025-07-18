@@ -47,7 +47,7 @@ When a sound stream reaches the `SOUND_POOL_STREAM_STATE_STOPPED` or the `SOUND_
 
 ## Prerequisites
 
-To use the functions and data types of the Sound Pool API (in [mobile](../../api/mobile/latest/group__CAPI__SOUND__POOL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOUND__POOL__MODULE.html) applications), include the `<sound_pool.h>` and `<sound_pool_type.h>` header files in your application:
+To use the functions and data types of the [Sound Pool API](../../api/common/latest/group__CAPI__SOUND__POOL__MODULE.html), include the `<sound_pool.h>` and `<sound_pool_type.h>` header files in your application:
 
 ```
 #include <sound_pool.h>
@@ -123,5 +123,4 @@ To manage playback with sound pools:
 
 ## Related Information
 - Dependencies
-    - Tizen 4.0 and Higher for Mobile
-    - Tizen 4.0 and Higher for Wearable
+    - Since Tizen 4.0

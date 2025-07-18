@@ -155,8 +155,7 @@ To get information on filtered applications:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Application Manager](../../api/common/latest/group__CAPI__APPLICATION__MANAGER__MODULE.html)
   - [Application Context](../../api/common/latest/group__CAPI__APP__CONTEXT__MODULE.html)

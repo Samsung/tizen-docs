@@ -239,8 +239,7 @@ To monitor package events, such as installation, uninstallation, and updates:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Package Manager](../../api/common/latest/group__CAPI__APPLICATION__MANAGER__MODULE.html)
   - [Package Manager Request](../../api/common/latest/group__CAPI__PACKAGE__REQUEST__MODULE.html)

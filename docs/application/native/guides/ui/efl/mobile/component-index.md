@@ -1,6 +1,6 @@
 # Index
 
-The index UI component gives you an index for quick access to a group of other UI items. The index component is hidden by default, but it appears when the user clicks over its reserved area on the canvas. For more information, see the [Index](../../../../api/mobile/latest/group__Elm__Index__Group.html) API.
+The index UI component gives you an index for quick access to a group of other UI items. The index component is hidden by default, but it appears when the user clicks over its reserved area on the canvas. For more information, see the [Index](../../../../api/common/latest/group__Elm__Index__Group.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -184,4 +184,4 @@ You can register callback functions connected to the following signals for an in
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

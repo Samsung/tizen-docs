@@ -135,7 +135,6 @@ After displaying widget, you can retrieve information about widget instances:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Widget Viewer](../../api/common/latest/group__CAPI__WIDGET__VIEWER__EVAS__MODULE.html)

@@ -632,7 +632,6 @@ The component based application also provides an [application group feature](../
 
 ## Related Information
 - Dependencies
-  - Tizen 5.5 and Higher for Mobile
-  - Tizen 5.5 and Higher for Wearable
+  - Since Tizen 5.5
 - API References
   - [Component Based Applications](../../api/common/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html)

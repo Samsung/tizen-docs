@@ -25,7 +25,7 @@ The main features of the Notification EX API include:
 
 To enable your application to use the Notification EX API functionality:
 
-1. To use the Notification EX API (in [mobile](../../api/mobile/latest/group__NOTIFICATION__EX__MODULE.html) and [wearable](../../api/wearable/latest/group__NOTIFICATION__EX__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [Notification EX API](../../api/common/latest/group__NOTIFICATION__EX__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
     ```
     <privileges>
         <privilege>http://tizen.org/privilege/notification</privilege>
@@ -489,7 +489,6 @@ To delete all notifications from the database, use `noti_ex_reporter_delete_all(
 
 ## Related Information
 - Dependencies
-    - Tizen 5.5 and Higher for Mobile
-    - Tizen 5.5 and Higher for Wearable
+    - Since Tizen 5.5
 - API References
   - [Notification Ex](../../api/common/latest/group__NOTIFICATION__EX__MODULE.html)

@@ -87,4 +87,4 @@ slide_end_cb(void *data, Evas_Object *obj, void *event_info)
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.3.1

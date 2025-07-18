@@ -1,6 +1,6 @@
 # Colorselector
 
-The colorselector UI component allows users to select a color. For more information, see the [Colorselector](../../../../api/mobile/latest/group__Elm__Colorselector.html) API.
+The colorselector UI component allows users to select a color. For more information, see the [Colorselector](../../../../api/common/latest/group__Elm__Colorselector.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -129,4 +129,4 @@ You can register callback functions connected to the following signals for a col
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

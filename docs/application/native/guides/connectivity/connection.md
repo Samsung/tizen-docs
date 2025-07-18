@@ -818,8 +818,7 @@ done:
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Connection API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MODULE.html)
   - [Connection Manager API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)

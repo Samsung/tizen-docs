@@ -3,7 +3,7 @@
 
 You can use the USB host functionality to learn about connected USB devices and communicate with them on the USB protocol layer.
 
-This feature is supported in mobile applications only.
+This API is supported on specifc Tizen devices that support [USB host features](#prerequisites).
 
 **Figure: USB host mode overview**
 
@@ -37,17 +37,23 @@ The following figure shows an overview of the USB host architecture.
 
 To enable your application to use the USB host functionality:
 
-1. The [USB Host API](../../api/common/latest/group__CAPI__USB__HOST__MODULE.html) does not require any Tizen privileges to be defined, instead the user is asked for confirmation when performing a potentially privileged operation.
+1. To use the USB host features, include the following feature in your tizen-manifest.xml file.
+
+   ```
+   <feature name="http://tizen.org/feature/usb.host"/>
+   ```
+
+2. The [USB Host API](../../api/common/latest/group__CAPI__USB__HOST__MODULE.html) does not require any Tizen privileges to be defined, instead the user is asked for confirmation when performing a potentially privileged operation.
 
    ![USB Host access](./media/usb_host_access.png)
 
-2. To use the functions and data types of the USB Host API, include the `<usb_host.h>` header file in your application:
+3. To use the functions and data types of the USB Host API, include the `<usb_host.h>` header file in your application:
 
    ```
    #include <usb_host.h>
    ```
 
-3. Initialize the interface context.
+4. Initialize the interface context.
 
    A single instance is enough for the entire lifetime of your program.
 
@@ -62,7 +68,7 @@ To enable your application to use the USB host functionality:
        dlog_print(DLOG_INFO, LOG_TAG, "USB Host failed to initialize");
    ```
 
-4. When the functionality is no longer needed, deinitialize it:
+5. When the functionality is no longer needed, deinitialize it:
 
    ```
    usb_host_context_h context;
@@ -246,7 +252,7 @@ The asynchronous transfer includes isochronous and control transfers. For more i
 
 ## Related information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
+  - Since Tizen 3.0
 - API References
   - [USB Host API](../../api/common/latest/group__CAPI__USB__HOST__MODULE.html)
   - [Asynchronous IO API](../../api/common/latest/group__CAPI__USB__HOST__ASYNC__MODULE.html)

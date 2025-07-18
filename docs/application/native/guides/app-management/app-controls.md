@@ -856,8 +856,7 @@ The following common application controls are available:
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html)
   - [App Control URI](../../api/common/latest/group__CAPI__APP__CONTROL__URI__MODULE.html)

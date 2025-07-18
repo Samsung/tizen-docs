@@ -1,6 +1,6 @@
 # Conformant
 
-The conformant container accounts for the space taken by the indicator, virtual keyboard, and softkey windows. The content area of the conformant is resized and positioned based on the space available. For more information, see the Conformant API (in [mobile](../../../api/mobile/latest/group__Elm__Conformant.html) and [wearable](../../../api/wearable/latest/group__Elm__Conformant.html) applications).
+The conformant container accounts for the space taken by the indicator, virtual keyboard, and softkey windows. The content area of the conformant is resized and positioned based on the space available. For more information, see the [Conformant API](../../../api/common/latest/group__Elm__Conformant.html).
 
 **Figure: Conformant component structure**
 
@@ -48,5 +48,4 @@ You can register callback functions connected to the following signals for a con
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

@@ -278,8 +278,7 @@ The background category of your application can be specified in the [application
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [UI Applications](../../api/common/latest/group__CAPI__APPLICATION__MODULE.html)
   - [App Control](../../common/latest/group__CAPI__APP__CONTROL__MODULE.html)

@@ -1,6 +1,6 @@
 # Flipselector
 
-The flipselector UI component has a set of text items and a selector that flips up or down to change the text on it. For more information, see the [Flipselector](../../../../api/mobile/latest/group__Elm__Flipselector.html) API.
+The flipselector UI component has a set of text items and a selector that flips up or down to change the text on it. For more information, see the [Flipselector](../../../../api/common/latest/group__Elm__Flipselector.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -151,4 +151,4 @@ You can register callback functions connected to the following signals for a fli
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4
