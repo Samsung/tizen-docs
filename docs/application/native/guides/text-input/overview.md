@@ -21,10 +21,6 @@ You can use the following text input, gesture and voice features in your native 
 
   You can create an Autofill manager application that shows installed Autofill service and switches to the selected Autofill service.
 
-- [Gesture](capi-ui-gesture.md) **in wearable applications only**
-
-  You can recognize hand gestures from input sensor data.
-
 - [Speech-to-text](stt.md)
 
   You can recognize sound data recorded by the user and send the result as text. The result text can, for example, be displayed on the screen.
@@ -55,5 +51,4 @@ You can use the following text input, gesture and voice features in your native 
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

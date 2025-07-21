@@ -6,7 +6,7 @@ The hoversel component is a button that pops up a list of items (automatically c
 
 The hoversel component inherits from the button component, which means that button functions can be used on the hoversel component.
 
-For more information, see the [Hoversel](../../../../api/mobile/latest/group__Elm__Hoversel.html) API.
+For more information, see the [Hoversel](../../../../api/common/latest/group__Elm__Hoversel.html) API.
 
 **Figure: Hoversel component**
 
@@ -157,4 +157,4 @@ dismissed_cb(void *data, Evas_Object *obj, void *event_info)
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

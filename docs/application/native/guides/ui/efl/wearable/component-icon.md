@@ -62,4 +62,4 @@ In both cases, the `event_info` callback parameter is `NULL`.
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.3.1

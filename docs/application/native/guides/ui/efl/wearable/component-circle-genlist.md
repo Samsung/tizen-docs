@@ -98,4 +98,4 @@ For more information, see [Circle Object](component-circle-object.md) and the [E
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.3.1

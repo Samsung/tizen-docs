@@ -389,6 +389,6 @@ This example describes how to register callbacks and read results from the fd in
 
 ## Related Information
 - Dependencies
-  - Tizen 9.0
+  - Since Tizen 9.0
 - API References
   - [Tizen Core](../../api/common/latest/group__CAPI__TIZEN__CORE__MODULE.html)

@@ -12,14 +12,14 @@ The main features of the Device Policy Manager API include:
 
 - Managing policies
 
-  You can [track the state between the device admin client and the device policy manager](#client_application) with a device policy manager handle, provided by the Policy Manager Interface API (in [mobile](../../api/mobile/latest/group__CAPI__DPM__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DPM__MANAGER__MODULE.html) applications).
+  You can [track the state between the device admin client and the device policy manager](#client_application) with a device policy manager handle, provided by the [Policy Manager Interface API](../../api/common/latest/group__CAPI__DPM__MANAGER__MODULE.html).
 
 
 - Checking restrictions
 
-  You can [check the restriction states of the device](#client_application), such as camera, microphone, Wi-Fi, Bluetooth, and USB, using the getter functions of the Restriction policy group API (in [mobile](../../api/mobile/latest/group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html) applications).
+  You can [check the restriction states of the device](#client_application), such as camera, microphone, Wi-Fi, Bluetooth, and USB, using the getter functions of the [Restriction policy group API](../../api/common/latest/group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html).
 
-  You can also check the external and internal storage encryption state using the Security policy group API (in [mobile](../../api/mobile/latest/group__CAPI__DPM__SECURITY__POLICY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DPM__SECURITY__POLICY__MODULE.html) applications) and get the name of the created zone and the zone state using the Zone policy group API (in [mobile](../../api/mobile/latest/group__CAPI__DPM__ZONE__POLICY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DPM__ZONE__POLICY__MODULE.html) applications).
+  You can also check the external and internal storage encryption state using the [Security policy group API](../../api/common/latest/group__CAPI__DPM__SECURITY__POLICY__MODULE.html) and get the name of the created zone and the zone state using the [Zone policy group API](../../api/common/latest/group__CAPI__DPM__ZONE__POLICY__MODULE.html).
 
 The following figure illustrates the DPM framework process.
 
@@ -29,7 +29,7 @@ The following figure illustrates the DPM framework process.
 
 ## Prerequisites
 
-To use the functions and data types of the Device Policy Manager API (in [mobile](../../api/mobile/latest/group__CAPI__SECURITY__DPM__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SECURITY__DPM__MODULE.html) applications), include the `<dpm/device-policy-manager.h>` header file in your application:
+To use the functions and data types of the [Device Policy Manager API](../../api/common/latest/group__CAPI__SECURITY__DPM__MODULE.html), include the `<dpm/device-policy-manager.h>` header file in your application:
 
 ```
 #include <dpm/device-policy-manager.h>
@@ -107,5 +107,4 @@ To manage device policies:
 
 ## Related Information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 3.0

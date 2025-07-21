@@ -1589,7 +1589,7 @@ To use the inline list:
      list = eina_inlist_append_relative(list, EINA_INLIST_GET(d), list);
      ```
 
-4. To sort and iterate an inline list, to find and move list elements, and to perform other inline list operations, see the [Inline List](../../../api/mobile/latest/group__Eina__Inline__List__Group.html) API.
+4. To sort and iterate an inline list, to find and move list elements, and to perform other inline list operations, see the [Inline List](../../../api/common/latest/group__Eina__Inline__List__Group.html) API.
 
 5. When the inline list is no longer needed, destroy it by looping over the list to free each `EINA_INLIST` structure and the data using allocated memory. Use the `eina_inlist_remove()` function on each node.
 
@@ -1679,5 +1679,4 @@ To manage the generic value:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

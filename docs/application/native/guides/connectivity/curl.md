@@ -120,8 +120,7 @@ if (curl_err != CURLE_OK)
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Curl API](../../api/common/latest/group__OPENSRC__CURL__FRAMEWORK.html)
   - [Connection Manager API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)

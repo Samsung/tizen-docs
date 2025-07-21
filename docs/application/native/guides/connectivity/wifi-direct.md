@@ -423,6 +423,6 @@ To deactivate Wi-Fi Direct when it is no longer needed (or the application is ex
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4
 - API References
   - [Wi-Fi Direct](../../api/common/latest/group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html)

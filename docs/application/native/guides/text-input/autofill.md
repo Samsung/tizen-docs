@@ -358,4 +358,4 @@ To store entered data by the user in the Autofill service:
 ## Related Information
 
 - Dependencies
-  - Tizen 5.5
+  - Since Tizen 5.5

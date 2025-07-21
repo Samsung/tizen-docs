@@ -2041,5 +2041,4 @@ pub mod message {
 
 ## Related Information
 - Dependencies
-  - Tizen 4.0 and Higher for Mobile
-  - Tizen 5.0 and Higher for Wearable
+  - Since Tizen 4.0

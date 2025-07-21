@@ -42,7 +42,7 @@ You can use the following connectivity and wireless features in your native appl
   1. Access various information about voice and voice call status that currently uses SIM card and Modem from the Telephony Service.
   2. Retrieve general details about the telephony network from the currently connected device.
 
-- [USB Host](usb-host.md) **in mobile applications only**
+- [USB Host](usb-host.md)
 
   You can connect to other devices using USB. You can gather information about the device and find a suitable interface and configuration.
 
@@ -50,11 +50,11 @@ You can use the following connectivity and wireless features in your native appl
 
   You can connect to the Internet and access its various services. You can download files, transfer content through socket and libcurl connections, and create a Web view in your application to allow Internet browsing.
 
-- [File Transfer with MTP](mtp.md) **in mobile applications only**
+- [File Transfer with MTP](mtp.md)
 
   You can transfer files between 2 devices. You can manage the Media Transfer Protocol (MTP) and get files from the MTP responder.
 
-- [VPN Connections](vpn.md) **in mobile applications only**
+- [VPN Connections](vpn.md)
 
   You can allow the users to initialize the VPN device, and manage routing, DNS, and firewall features.
 
@@ -68,8 +68,7 @@ You can use the following connectivity and wireless features in your native appl
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Bluetooth](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html)
   - [Near Field Communication (NFC)](../../api/common/latest/group__CAPI__NETWORK__NFC__MODULE.html)

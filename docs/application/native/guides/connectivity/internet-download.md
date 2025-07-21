@@ -9,7 +9,7 @@ You can use the following Internet and content download features in your native 
 
   You can get information about the connected network, and set up and configure network and socket connections. You can also track connection information, such as the size of the sent and received data.
 
-- [Download](download.md) **in mobile applications only**
+- [Download](download.md)
 
   You can download files from the Internet by creating a download process, configuring the download URL or destination, and launching the process. You can manage and monitor 1 or more downloads at the same time.
 
@@ -28,5 +28,4 @@ You can use the following Internet and content download features in your native 
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

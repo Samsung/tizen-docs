@@ -398,8 +398,6 @@ You can send the following personal voice information about the TTSE:
 
 ## Related information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
-
+  - Since Tizen 3.0
 - API References
   - [TTSE API](../../api/common/latest/group__CAPI__UIX__TTSE__MODULE.html)

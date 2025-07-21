@@ -5,14 +5,14 @@ For example, media player application needs to close the Quickpanel service wind
 
 ## Prerequisites
 
-To use the functions and structures of the TZSH-Quickpanel API (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) applications), include the `<tzsh_quickpanel.h>` header file in your application:
+To use the functions and structures of the [TZSH-Quickpanel API](../../../api/common/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html), include the `<tzsh_quickpanel.h>` header file in your application:
 
 ```
 #include <tzsh_quickpanel.h>
 ```
 
 ## Create TZSH-Quickpanel Handler
-After you have created the main window of your application, call `tzsh_quickpanel_create_with_type()` with a native window ID to create the `tzsh_quickpanel_h` structure (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) applications):
+After you have created the main window of your application, call `tzsh_quickpanel_create_with_type()` with a native window ID to create the [`tzsh_quickpanel_h` structure](../../../api/common/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac):
 
 ```
 #include <Elementary.h>
@@ -121,5 +121,4 @@ deinit(void)
 
 ## Related Information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 3.0

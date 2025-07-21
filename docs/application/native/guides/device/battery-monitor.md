@@ -195,4 +195,4 @@ The following table lists the available resource keys, which are part of the `ba
 
 ## Related Information
 - Dependencies
-  - Tizen 5.5 and Higher for Wearable
+  - Since Tizen 5.5

@@ -319,4 +319,4 @@ To receive notifications about the genlist events, listen for the following sign
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.3.1
