@@ -107,31 +107,3 @@ Discover a rich set of interfaces allowing you to build compelling TV, mobile, a
     </div>
 </div>
 
-## Try tutorials on Tizen School
-
-<div class="row cards-container-infra">
-    <div class="col col-12 col-md-6 col-xl-4">
-        <a href="https://samsung.github.io/TizenSchool/tutorials/143" target="_blank" class="card card-infra card-img-external h-100">
-            <img class="card-img-top" src="https://samsung.github.io/TizenSchool/assets/images/tutorials/143/Getting_Started_Creating_NET.jpg">
-            <div class="card-body">
-                <p class="h5 card-title">Getting Started with Creating a .NET App</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-12 col-md-6 col-xl-4">
-        <a href="https://samsung.github.io/TizenSchool/tutorials/199" target="_blank" class="card card-infra card-img-external h-100">
-            <img class="card-img-top" src="https://samsung.github.io/TizenSchool/assets/images/tutorials/199/Workout_thumbnail.png">
-            <div class="card-body">
-                <p class="h5 card-title">Workout application guide</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-12 col-md-6 col-xl-4">
-        <a href="https://samsung.github.io/TizenSchool/tutorials/147" target="_blank" class="card card-infra card-img-external h-100">
-            <img class="card-img-top" src="https://samsung.github.io/TizenSchool/assets/images/tutorials/147/tn-watchface.png">
-            <div class="card-body">
-                <p class="h5 card-title">How to create Digital WatchFace</p>
-            </div>
-        </a>
-    </div>
-</div>
