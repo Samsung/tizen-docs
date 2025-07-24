@@ -93,4 +93,4 @@ Tizen Studio contains many tools familiar from the old Tizen SDK, but with some 
   ![Dynamic Analyzer](media/overview_da.png)
 
 
-For more information, see [Release Notes](release-notes/release-notes.md).
+For more information, Please see [Release Notes](release-notes/release-notes.md).
