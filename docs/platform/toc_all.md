@@ -40,24 +40,15 @@
 # Porting
 ## HAL
 ### [Overview](/platform/HAL/overview.md)
-### Multimedia
-#### [Audio](/platform/HAL/audio.md)
-#### [Camera](/platform/HAL/camera.md)
-#### [Radio](/platform/HAL/radio.md)
-#### [Codec](/platform/HAL/codec.md)
-#### [DRM](/platform/HAL/drm.md)
-#### [HDCP](/platform/HAL/hdcp.md)
-### System
-#### [Device](/platform/HAL/device.md)
-#### [Sensor](/platform/HAL/sensor.md)
-#### [Power](/platform/HAL/power.md)
-### Connectivity
-#### [Bluetooth](/platform/HAL/bluetooth.md)
-#### [Wi-Fi](/platform/HAL/wifi.md)
-### Security
-#### [Security](/platform/HAL/security.md)
-### Machine Learning
-#### [ML](/platform/HAL/ml.md)
+### [System](/platform/HAL/system.md)
+### [Window System](/platform/HAL/windowsystem.md)
+### [Security](/platform/HAL/security.md)
+### [Multimedia](/platform/HAL/multimedia.md)
+### [Connectivity](/platform/HAL/connectivity.md)
+### [Machine Learning](/platform/HAL/ml.md)
+### [Location](/platform/HAL/location.md)
+
+
 ### API Reference
 #### [1.0](/platform/HAL/api/1.0/index.html){:target="_blank"}
 ## Archive
