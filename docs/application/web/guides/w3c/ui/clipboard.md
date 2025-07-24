@@ -229,5 +229,3 @@ For the complete source code related to this use case, see the following file:
 ## Related Information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
-* API References
-  - [W3C](https://www.w3.org/TR/clipboard-apis/){:target="_blank"}

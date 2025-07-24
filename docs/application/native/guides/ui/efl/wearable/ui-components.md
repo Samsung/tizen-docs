@@ -249,4 +249,4 @@ The following tables list the styles for each UI component, including the names 
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.3.1
+  - Tizen 2.3.1 and Higher for Wearable

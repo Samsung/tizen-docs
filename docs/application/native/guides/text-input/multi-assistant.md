@@ -78,7 +78,7 @@ To use functionalities of the Multi-assistant framework:
 
 To enable your application to use the Multi-assistant functionality:
 
-1. To use the functions and data types of the [Multi-assistant API](../../api/common/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html), include the `<multi_assistant.h>` header file in your application:
+1. To use the functions and data types of the Multi-assistant API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html) applications), include the `<multi_assistant.h>` header file in your application:
 
    ```c
    #include <multi_assistant.h>
@@ -443,4 +443,5 @@ To keep the Multi-assistant framework updated about the current progress on voic
 
 ## Related information
 - Dependencies
-  - Since Tizen 5.5
+  - Tizen 5.5 and Higher for Mobile
+  - Tizen 5.5 and Higher for Wearable

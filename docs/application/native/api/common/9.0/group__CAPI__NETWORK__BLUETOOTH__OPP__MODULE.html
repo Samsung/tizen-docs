@@ -97,7 +97,15 @@ Required Header</h2>
 <p>#include &lt;bluetooth.h&gt;</p>
 <h2><a class="anchor" id="CAPI_NETWORK_BLUETOOTH_OPP_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>OPP profile let users exchange objects between two devices. </p>
+<p>Bluetooth Object Push Profile (OPP) Client APIs supply a set of operations geared toward transferring files like images. Core elements comprise:</p>
+<ul>
+<li>Initialization of Bluetooth OPP client modules</li>
+<li>Deinitialization of Bluetooth OPP client modules</li>
+<li>Addition of files intended for transmission</li>
+<li>Clearing of queued files awaiting transfer</li>
+<li>Asynchronous dispatch of file pushes to remote devices, coupled with event callbacks signaling response reception, progress updates, and task conclusion</li>
+<li>Cancellation of active push requests, also implemented asynchronously Through this framework, developers can effortlessly orchestrate Bluetooth-based object transfers involving OPP clients. </li>
+</ul>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

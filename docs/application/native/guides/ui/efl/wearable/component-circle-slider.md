@@ -165,4 +165,4 @@ You can register callback functions connected to the following signals for a cir
 
 ## Related Information
 - Dependencies
-  - Since Tizen 4.0
+  - Tizen 4.0 and Higher for Wearable

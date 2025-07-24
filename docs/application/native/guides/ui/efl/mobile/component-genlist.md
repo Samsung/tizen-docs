@@ -1,10 +1,10 @@
 # Genlist
 
-The genlist UI component displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only visible items are allocated in the memory. For more information, see the [Genlist](../../../../api/common/latest/group__Elm__Genlist__Group.html) API.
-
-To save memory and speed up processing when many items exist, the genlist uses the concept of "realization" when managing items. It means that a genlist item creates its text and content (realizes) when the user scrolls the list and the item shows up on the screen, and frees them (unrealizes) when the item is scrolled out of the screen. Since item realization is dynamic, you cannot set content in advance. You need to fill the item in the form of a callback function. That is the key point of using a genlist component.
+The genlist UI component displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only visible items are allocated in the memory. For more information, see the [Genlist](../../../../api/mobile/latest/group__Elm__Genlist__Group.html) API.
 
 This feature is supported in mobile applications only.
+
+To save memory and speed up processing when many items exist, the genlist uses the concept of "realization" when managing items. It means that a genlist item creates its text and content (realizes) when the user scrolls the list and the item shows up on the screen, and frees them (unrealizes) when the item is scrolled out of the screen. Since item realization is dynamic, you cannot set content in advance. You need to fill the item in the form of a callback function. That is the key point of using a genlist component.
 
 ## Basic Usage
 
@@ -481,4 +481,4 @@ You can register callback functions connected to the following signals for a gen
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

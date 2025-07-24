@@ -78,7 +78,7 @@ To create a Tizen RPK project, follow these steps:
    > [!NOTE] 
    > An info popup will be displayed, showing the message "Resource project is Installed, but resource project cannot be launched by Run".
 
-
+<!--
 ## Tizen workspace YAML validation
 
 1. Create Tizen project using command **Tizen: Create Tizen project**.
@@ -107,3 +107,5 @@ To create a Tizen RPK project, follow these steps:
    > [!NOTE] 
    > Dotnet workload installation requires .NET Core SDK (.NET6 or higher).
    > Download and install the latest version of .NET Core SDK from <https://www.microsoft.com/net/download/>
+
+-->

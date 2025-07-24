@@ -1,6 +1,6 @@
 # Radio
 
-The radio UI component displays 1 or more options and allows users to select 1 of them. For more information, see the [Radio](../../../../api/common/latest/group__Elm__Radio__Group.html) API.
+The radio UI component displays 1 or more options and allows users to select 1 of them. For more information, see the [Radio](../../../../api/mobile/latest/group__Elm__Radio__Group.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -143,4 +143,4 @@ You can register callback functions connected to the following signals for a rad
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

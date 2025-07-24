@@ -33,10 +33,9 @@ You can use the following security features in your native applications:
 
   You can use cryptography services (digital certificates and keys) for authentication and secure communication with another system.
 
-For information on how to minimize any accidental introduction of security vulnerabilities in your application, see [Security Tips](security-tip.md)
+For information on how to minimize any accidental introduction of security vulnerabilities in your application, see [Security Tips](security-tip.md) (**in mobile applications only**).
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
-- API References
-  - [Security API](../../api/common/latest/group__CAPI__SECURITY__FRAMEWORK.html)
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

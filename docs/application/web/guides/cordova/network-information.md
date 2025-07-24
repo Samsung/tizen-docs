@@ -115,7 +115,3 @@ Manage the situations where the device connects to and disconnects from a networ
    - Tizen 3.0 and Higher for Mobile
    - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/networkInformation.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/networkInformation.html)
-  - [TV](../../api/latest/device_api/tv/tizen/cordova/networkInformation.html)

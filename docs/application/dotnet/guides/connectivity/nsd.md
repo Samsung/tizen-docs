@@ -90,7 +90,5 @@ To discover remote DNS-SD services, follow these steps:
 
 
 ## Related information
-- Dependencies
-    -  Tizen 4.0 and Higher
-- API References
-    - [Tizen.Network.Nsd](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nsd.html) class
+* Dependencies
+    -   Tizen 4.0 and Higher

@@ -1,7 +1,7 @@
 # Resource Localization
 
 
-Tizen provides localized resources to make your application usable for different countries. The localization is based on the [Internationalization API](../../api//latest/group__CAPI__I18N__MODULE.html), which makes strings translatable and places them in `.po` (portable object) files.
+Tizen provides localized resources to make your application usable for different countries. The localization is based on the Internationalization API (in [mobile](../../api/mobile/latest/group__CAPI__I18N__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__I18N__MODULE.html) applications), which makes strings translatable and places them in `.po` (portable object) files.
 
 > **Note**
 >
@@ -202,4 +202,5 @@ Take advantage of the following tips to smoothly internationalize your applicati
 
 ## Related Information
 * Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

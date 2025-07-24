@@ -14,7 +14,7 @@ The main features of the Device Certificate Manager API include:
 
 To enable your application to use the Device Certificate Manager functionality:
 
-1. To use the [Device Certificate Manager API](../../api/common/latest/group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html), the application must request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Device Certificate Manager API (in [mobile](../../api/mobile/latest/group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html) applications), the application must request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -134,4 +134,5 @@ To enable your application to use the Device Certificate Manager functionality:
 
 ## Related information
 - Dependencies
-  - Since Tizen 5.0
+  - Tizen 5.0 and Higher for Mobile
+  - Tizen 5.0 and Higher for Wearable

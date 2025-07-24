@@ -1,6 +1,6 @@
 # Box
 
-The box container arranges UI components in a linear order, horizontally or vertically. It is a non-graphical object: it adds no graphics to or around the objects it holds. For more information, see the [Box API](../../../api/common/latest/group__Elm__Box__Group.html).
+The box container arranges UI components in a linear order, horizontally or vertically. It is a non-graphical object: it adds no graphics to or around the objects it holds. For more information, see the Box API (in [mobile](../../../api/mobile/latest/group__Elm__Box__Group.html) and [wearable](../../../api/wearable/latest/group__Elm__Box__Group.html) applications).
 
 **Figure: Box component structure**
 
@@ -258,4 +258,5 @@ evas_object_size_hint_align_set(image, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

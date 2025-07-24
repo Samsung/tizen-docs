@@ -146,4 +146,4 @@ You can register callback functions connected to the following signals for a win
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.3.1
+  - Tizen 2.3.1 and Higher for Wearable

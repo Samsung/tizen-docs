@@ -21,7 +21,7 @@ The main features of the Phonenumber utils API include:
 
 To enable your application to use the phonenumber utils functionality:
 
-1. To use the [Phonenumber utils API](../../api/common/latest/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Phonenumber utils API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -107,4 +107,5 @@ free(normalized_number);
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

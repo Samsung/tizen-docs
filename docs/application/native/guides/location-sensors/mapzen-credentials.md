@@ -53,4 +53,4 @@ Not all queries count towards your rate limit. Mapzen uses server caching to del
 
 ## Related Information
 * Dependencies
-  - Since Tizen 3.0
+  - Tizen 3.0 and Higher for Mobile

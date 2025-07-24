@@ -142,5 +142,3 @@ The following figure shows examples of manipulating the text font properties.
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-* API References
-  - [W3C](http://www.w3.org/TR/2013/CR-css-fonts-3-20131003){:target="_blank"}

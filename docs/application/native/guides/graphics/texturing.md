@@ -105,7 +105,7 @@ When an image file is to be used as a texture, it is first loaded into the OpenG
 
 ## Texturing Example
 
-In order to generate a texture in OpenGL&reg; ES, you usually have to decode the image file stored in the file system. In Tizen, you can use the [Evas API](../../api/common/latest/group__Evas.html) to get the decoded bitmap buffer from the image file, as shown in the following example. The code creates an independent `Ecore_Evas` object, which contains `Evas_Object`. It provides a method to decode the designated image file and store the bitmap data into its own buffer. You can get the internal buffer pointer and then upload the buffer to the texture.
+In order to generate a texture in OpenGL&reg; ES, you usually have to decode the image file stored in the file system. In Tizen, you can use the Evas API (in [mobile](../../api/mobile/latest/group__Evas.html) and [wearable](../../api/wearable/latest/group__Evas.html) applications) to get the decoded bitmap buffer from the image file, as shown in the following example. The code creates an independent `Ecore_Evas` object, which contains `Evas_Object`. It provides a method to decode the designated image file and store the bitmap data into its own buffer. You can get the internal buffer pointer and then upload the buffer to the texture.
 
 ```
 /*
@@ -173,4 +173,5 @@ create_texture(Evas_Object *parent, const char *filename)
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

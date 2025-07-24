@@ -299,7 +299,3 @@ For full source code of the example, see [here](./source-code/application-launch
 ## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
-* API References
-  - [Tizen.NUI](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI) namespace
-  - [Tizen.Applications.PackageManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.PackageManager) class
-  - [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl) class

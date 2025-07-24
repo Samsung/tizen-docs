@@ -24,11 +24,11 @@ Since Tizen 2.4, the Alarm API is changed to reduce the power consumption of the
 
 When you migrate your application from Tizen 2.3 to Tizen 2.4, check the changes and modify your application to conform with the Tizen 2.4 Alarm APIs.
 
-## Tizen Application Event System
+## Tizen Application Event System in Mobile Applications
 
 Tizen 2.4 introduces new Tizen Application Event APIs for subscribing system events and publishing and subscribing application events to other applications.
 
-Using the Tizen Application Event APIs, you can register your service application to be launched when a specified event is published. You can specify the event name through the `<app-control>` element in the application manifest file. This launch-on-event allows your service application to only run after receiving an event from the platform or other application. Note that UI applications cannot be launched using the launch-on-event mechanism. For more information, see the [Event](../api/common/latest/group__CAPI__EVENT__MODULE.html) API.
+Using the Tizen Application Event APIs, you can register your service application to be launched when a specified event is published. You can specify the event name through the `<app-control>` element in the application manifest file. This launch-on-event allows your service application to only run after receiving an event from the platform or other application. Note that UI applications cannot be launched using the launch-on-event mechanism. For more information, see the [Event](../api/mobile/latest/group__CAPI__EVENT__MODULE.html) API.
 
 ## Application Group Launching Management
 
@@ -49,4 +49,5 @@ For more information, see [Managing Application Groups](app-management/app-contr
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

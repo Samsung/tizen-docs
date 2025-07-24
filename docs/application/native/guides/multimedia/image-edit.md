@@ -37,7 +37,7 @@ The main features of the Image Util API include the following:
 
 To enable your application to use the image util functionality, follow these steps:
 
-1. To use the functions and data types of the [Image Util API](../../api/common/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html), include the `<image_util.h>` header file in your application:
+1. To use the functions and data types of the Image Util API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html) applications), include the `<image_util.h>` header file in your application:
 
    ```
    #include <image_util.h>
@@ -64,7 +64,7 @@ To enable your application to use the image util functionality, follow these ste
                                                image_util_supported_colorspace_cb callback, void *user_data);
    ```
 
-   The possible color spaces are defined in the [`image_util_colorspace_e` enumeration](../../api/common/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#gad3ea89a72a617912df9ddbd50be1b991).
+   The possible color spaces are defined in the `image_util_colorspace_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#gad3ea89a72a617912df9ddbd50be1b991) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__MODULE.html#gad3ea89a72a617912df9ddbd50be1b991) applications).
 
 4. To support `image_util_transform_run()`, which is used for all image transformations, set the source image and create a handle for it (to be used as the second parameter):
 
@@ -249,7 +249,7 @@ To rotate an image, follow these steps:
    ret = image_util_transform_set_rotation(transform_h, rotation);
    ```
 
-   The possible values for the `rotation` parameter are defined in the [`image_util_rotation_e` enumeration](../../api/common/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107).
+   The possible values for the `rotation` parameter are defined in the `image_util_rotation_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) applications).
 
 3. Execute the transformation using `image_util_transform_run2()` or `image_util_transform_run2_async()`:
 
@@ -286,7 +286,7 @@ To rotate a media packet, follow these steps:
    ret = image_util_transform_set_rotation(transform_h, rotation);
    ```
 
-    The possible values for the `rotation` parameter are defined in the [`image_util_rotation_e` enumeration](../../api/common/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107).
+    The possible values for the `rotation` parameter are defined in the `image_util_rotation_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) applications).
 
 3. Execute the transformation using `image_util_transform_run()`:
 
@@ -579,4 +579,5 @@ The following table shows the effect on the image quality and file sizes when us
 
 ## Related information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

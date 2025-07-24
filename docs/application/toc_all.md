@@ -168,6 +168,10 @@
 #### [Push](/application/dotnet/guides/messaging/push.md)
 #### [Push Server](/application/dotnet/guides/messaging/push-server.md)
 
+### Natural Language Processing
+#### [Overview](/application/dotnet/guides/nlp/overview.md)
+#### [Natural Language Processing (NLP)](/application/dotnet/guides/nlp/nlp.md)
+
 ### Notifications and Content Sharing
 #### [Overview](/application/dotnet/guides/notification/overview.md)
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
@@ -981,7 +985,6 @@
 #### [Smart Card](/application/native/guides/connectivity/smartcard.md)
 #### [Wi-Fi](/application/native/guides/connectivity/wifi.md)
 #### [Wi-Fi Direct&reg;](/application/native/guides/connectivity/wifi-direct.md)
-#### [Wi-Fi Aware&reg;](/application/native/guides/connectivity/wifi-aware.md)
 #### [SoftAP](/application/native/guides/connectivity/softap.md)
 #### [Intelligent Network Monitoring (INM)](/application/native/guides/connectivity/inm.md)
 #### [Smart Traffic Control (STC)](/application/native/guides/connectivity/stc.md)
@@ -1184,9 +1187,9 @@
 #### [Memory Profiler](/application/vscode-ext/tools/memory-profiler-user-manual.md)
 
 #### Memory Profiler (9.0)
-##### [Overview](/application/vscode-ext/tools/memory-profiler-9.0/index.md)
-##### [Getting Started](/application/vscode-ext/tools/memory-profiler-9.0/getting-started.md)
-##### [Key Features](/application/vscode-ext/tools/memory-profiler-9.0/key-features.md)
+#### [Overview](/application/vscode-ext/tools/memory-profiler-9.0/index.md)
+#### [Getting Started](/application/vscode-ext/tools/memory-profiler-9.0/getting-started.md)
+#### [Key Features](/application/vscode-ext/tools/memory-profiler-9.0/key-features.md)
 
 #### [Address Sanitizer](/application/vscode-ext/tools/address-sanitizer-user-manual.md)
 #### [Leak Sanitizer](/application/vscode-ext/tools/leak-sanitizer-user-manual.md)
@@ -1331,7 +1334,6 @@
 #### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ### Release Notes
-#### [6.1 (Apr 16, 2025)](/application/tizen-studio/release-notes/6-1-release-notes.md)
 #### [6.0 (Nov 4, 2024)](/application/tizen-studio/release-notes/6-0-release-notes.md)
 #### [5.6 (Mar 29, 2024)](/application/tizen-studio/release-notes/5-6-release-notes.md)
 #### [5.5 (Oct 30, 2023)](/application/tizen-studio/release-notes/5-5-release-notes.md)

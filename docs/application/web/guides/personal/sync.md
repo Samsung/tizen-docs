@@ -85,5 +85,3 @@ To start and monitor the data synchronization process, follow these steps:
 ## Related information
 * Dependencies   
   - Tizen 2.4 and Higher for Mobile
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/datasync.html)

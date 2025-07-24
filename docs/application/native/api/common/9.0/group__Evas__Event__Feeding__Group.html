@@ -105,8 +105,12 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#gae1c145ffcfeb301faa1d52d3b1086c42">evas_device_push</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, Evas_Device *dev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#ga18273057afa4a086a0f3e459e90323ad">evas_device_pop</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#gae75c9ad6a7df347d7a6c894e9b48dce8">evas_device_list</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, const Evas_Device *dev)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Evas_Device *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#ga0668285b767211283605fd08da722fdd">evas_device_get</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, const char *name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Evas_Device *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#ga03c5d11a5105efef1ccbd256eb4b659d">evas_device_get_by_seat_id</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *eo_e, unsigned int id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#ga37f4666b0a0dad0b8e1dfb3b5bc016ee">evas_device_name_set</a> (Evas_Device *dev, const char *name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#gaec5dc5b3582c7cd8959635f09eeafb4a">evas_device_name_get</a> (const Evas_Device *dev)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#ga71194a3ce21cd25d0c80f30c5b01f04b">evas_device_seat_id_set</a> (Evas_Device *dev, unsigned int id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#ga741e6f386eafe4069ae32eba423e897b">evas_device_seat_id_get</a> (const Evas_Device *dev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#ga9621012a50076697ce5d1c5c73584638">evas_device_description_set</a> (Evas_Device *dev, const char *desc)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#gaba810711417b80d8fb154fe0fb9cb37c">evas_device_description_get</a> (const Evas_Device *dev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Event__Feeding__Group.html#ga617f020f7470e997d86287e6c8baf0a3">evas_device_parent_set</a> (Evas_Device *dev, Evas_Device *parent) <a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a></td></tr>
@@ -297,14 +301,7 @@ evas_device_add_full </dd></dl>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the seat id of a device</p>
-<p><code>dev</code> The device to set the seat id of <code>name</code> The seat id</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 Get the seat id of a device</dd></dl>
-<p><code>dev</code> The device to query </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The device seat id or 0 if none is set</dd></dl>
-<p>This gets the seat id set by evas_device_seat id_set().</p>
-<p>A seat id is the hardware id of the seat.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 Set the description of a device as a string</dd></dl>
+<p>Set the description of a device as a string</p>
 <p><code>dev</code> The device to set the description of <code>name</code> The description string as a readable C UTF8 string</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
@@ -373,6 +370,82 @@ evas_device_add_full </dd></dl>
 <p>Devices may not be real, but may be emulated by listening to input on other devices and modifying or interpeting it to generate output on an emulated device (example a finger on a touchscreen will often emulate a mouse when it presses). This allows you to set which device primarily emulates <code>dev</code> so the user can choose to ignore events from emulated devices if they also pay attention to source device events for example.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0668285b767211283605fd08da722fdd"></a><!-- doxytag: member="Evas_Common.h::evas_device_get" ref="ga0668285b767211283605fd08da722fdd" args="(Evas *e, const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Evas_Device* <a class="el" href="group__Evas__Event__Feeding__Group.html#ga0668285b767211283605fd08da722fdd">evas_device_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get a device by its name</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>The canvas to find the device on </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the device.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Gets the first occurrence of a device named as <code>name</code> on Evas <code>e</code> list of devices.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the device or NULL if an error occurred, no name was provided, or no device with a matching name was found.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga03c5d11a5105efef1ccbd256eb4b659d"></a><!-- doxytag: member="Evas_Common.h::evas_device_get_by_seat_id" ref="ga03c5d11a5105efef1ccbd256eb4b659d" args="(Evas *eo_e, unsigned int id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Evas_Device* <a class="el" href="group__Evas__Event__Feeding__Group.html#ga03c5d11a5105efef1ccbd256eb4b659d">evas_device_get_by_seat_id</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
+          <td class="paramname"><em>eo_e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get a device by its seat id</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eo_e</td><td>The canvas to find the device on </td></tr>
+    <tr><td class="paramname">id</td><td>The seat id of the device.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Gets the device with id <code>id</code> on Evas <code>e</code> list of devices.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the device or NULL if no device with a matching id was found.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
 
 </div>
 </div>
@@ -475,27 +548,7 @@ evas_device_add_full </dd></dl>
       </table>
 </div>
 <div class="memdoc">
-<p>Get a device by its name</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e</td><td>The canvas to find the device on </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the device.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Gets the first occurrence of a device named as <code>name</code> on Evas <code>e</code> list of devices.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the device or NULL if an error occurred, no name was provided, or no device with a matching name was found.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Get a device by its seat id</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">eo_e</td><td>The canvas to find the device on </td></tr>
-    <tr><td class="paramname">id</td><td>The seat id of the device.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Gets the device with id <code>id</code> on Evas <code>e</code> list of devices.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the device or NULL if no device with a matching id was found.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 Set the name of a device as a string</dd></dl>
+<p>Set the name of a device as a string</p>
 <p><code>dev</code> The device to set the name of <code>name</code> The name string as a readable C UTF8 string</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
@@ -638,6 +691,59 @@ evas_device_add_full </dd></dl>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Event__Feeding__Group.html#ga18273057afa4a086a0f3e459e90323ad">evas_device_pop</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga741e6f386eafe4069ae32eba423e897b"></a><!-- doxytag: member="Evas_Common.h::evas_device_seat_id_get" ref="ga741e6f386eafe4069ae32eba423e897b" args="(const Evas_Device *dev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="group__Evas__Event__Feeding__Group.html#ga741e6f386eafe4069ae32eba423e897b">evas_device_seat_id_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Evas_Device *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the seat id of a device</p>
+<p><code>dev</code> The device to query </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The device seat id or 0 if none is set</dd></dl>
+<p>This gets the seat id set by evas_device_seat id_set().</p>
+<p>A seat id is the hardware id of the seat.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga71194a3ce21cd25d0c80f30c5b01f04b"></a><!-- doxytag: member="Evas_Common.h::evas_device_seat_id_set" ref="ga71194a3ce21cd25d0c80f30c5b01f04b" args="(Evas_Device *dev, unsigned int id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Event__Feeding__Group.html#ga71194a3ce21cd25d0c80f30c5b01f04b">evas_device_seat_id_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Evas_Device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the seat id of a device</p>
+<p><code>dev</code> The device to set the seat id of <code>name</code> The seat id</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
 
 </div>
 </div>

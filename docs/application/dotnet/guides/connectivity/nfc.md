@@ -777,7 +777,5 @@ To send HCE responses to the NFC reader, follow the steps below:
 
 
 ## Related information
-- Dependencies
-    - Tizen 4.0 and Higher
-- API References
-    - [Tizen.Network.Nfc](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nfc.html) class
+* Dependencies
+  -   Tizen 4.0 and Higher

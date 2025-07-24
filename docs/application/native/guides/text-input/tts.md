@@ -73,7 +73,7 @@ You can get the following information about TTS:
 
 To enable your application to use the TTS functionality, follow the steps below:
 
-1. To use the functions and data types of the [TTS (text-to-speech) API](../../api/common/latest/group__CAPI__UIX__TTS__MODULE.html), include the `<tts.h>` header file in your application:
+1. To use the functions and data types of the TTS (text-to-speech) API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTS__MODULE.html) applications), include the `<tts.h>` header file in your application:
    ```cpp
    #include <tts.h>
    ```
@@ -854,6 +854,5 @@ To decide between the client-side playback mode and the service-side playback mo
 
 ## Related information
 - Dependencies
-  - Since Tizen 2.4
-- API References
-  - [TTS API](../../api/common/latest/group__CAPI__UIX__TTS__MODULE.html)
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

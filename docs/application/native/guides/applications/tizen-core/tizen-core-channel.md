@@ -137,6 +137,4 @@ After receiving the object, its ownership is transferred to the receiving party,
 
 ## Related Information
 - Dependencies
-  - Since Tizen 9.0
-- API References
-  - [Tizen Core Channel](../../../api/common/latest/group__CAPI__TIZEN__CORE__CHANNEL__MODULE.html)
+  - Tizen 9.0

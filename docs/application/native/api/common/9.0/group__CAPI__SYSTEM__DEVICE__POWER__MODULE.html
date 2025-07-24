@@ -247,7 +247,7 @@ You cannot combine with an enum below. </dd>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/display </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If display feature(<a href="http://tizen.org/feature/display">http://tizen.org/feature/display</a>) is false, then only the type POWER_LOCK_CPU is effective, and the other type returns DEVICE_ERROR_NOT_SUPPORTED. And even thoguh the display feature is false, it requires display privilege(<a href="http://tizen.org/privilege/display">http://tizen.org/privilege/display</a>). </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The display state feature(<a href="http://tizen.org/feature/display.state">http://tizen.org/feature/display.state</a>) also should be checked. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The power type to release lock </td></tr>
@@ -305,22 +305,11 @@ You cannot combine with an enum below. </dd>
 <div class="memdoc">
 
 <p>Locks the given specific power lock type for a specified time. </p>
-<p>After the given <em>timeout_ms</em> (in milliseconds), unlock the given lock state automatically. Scenario 1. If the same application requests the same power lock more than twice before it is released or expired, <br/>
- the timeout will be updated to the latest requested time. <br/>
- For example: The first request has a timeout of 5000ms. <br/>
- The second request has a timeout of 1000ms. <br/>
- If the second request is made before the first request is released or expired, <br/>
- the timeout will be updated to the latest requested time, which is 1000ms.</p>
-<p>Scenario 2. If different applications request the same power lock type, <br/>
- the power state timeout will be set to the maximum of the requested timeouts. <br/>
- For example: Application A requests POWER_LOCK_CPU with a timeout of 5000ms. <br/>
- Application B requests the same POWER_LOCK_CPU with a timeout of 1000ms. <br/>
- Unless Application A releases the POWER_LOCK_CPU lock, <br/>
- the timeout for POWER_LOCK_CPU will remain at the maximum requested time, which is 5000ms.</p>
+<p>After the given <em>timeout_ms</em> (in milliseconds), unlock the given lock state automatically. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/display </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the process dies after success request lock, then every lock will be removed. If display feature(<a href="http://tizen.org/feature/display">http://tizen.org/feature/display</a>) is false, then only the type POWER_LOCK_CPU is effective, and the other type returns DEVICE_ERROR_NOT_SUPPORTED. And even thoguh the display feature is false, it requires display privilege(<a href="http://tizen.org/privilege/display">http://tizen.org/privilege/display</a>). </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the process dies after success request lock, then every lock will be removed. The display state feature(<a href="http://tizen.org/feature/display.state">http://tizen.org/feature/display.state</a>) also should be checked. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The power type to request lock </td></tr>

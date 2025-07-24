@@ -1,6 +1,6 @@
 # Toolbar
 
-The toolbar UI component has a scrollable list of items which can be selected. Only one item can be selected at a time. For more information, see the [Toolbar](../../../../api/common/latest/group__Elm__Toolbar.html) API.
+The toolbar UI component has a scrollable list of items which can be selected. Only one item can be selected at a time. For more information, see the [Toolbar](../../../../api/mobile/latest/group__Elm__Toolbar.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -226,4 +226,4 @@ You can register callback functions connected to the following signals for a too
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

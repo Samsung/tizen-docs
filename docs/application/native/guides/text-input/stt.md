@@ -78,7 +78,7 @@ You can get the following information about the STT:
 
 To enable your application to use the STT functionality:
 
-1. To use the functions and data types of the [STT (speech-to-text) API](../../api/common/latest/group__CAPI__UIX__STT__MODULE.html), include the `<stt.h>` header file in your application:
+1. To use the functions and data types of the STT (speech-to-text) API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__STT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__STT__MODULE.html) applications), include the `<stt.h>` header file in your application:
 
     ```
     #include <stt.h>
@@ -804,7 +804,6 @@ To set the STT options and control recording:
     ```
 
 ## Related Information
-- Dependencies
-  - Since Tizen 2.4
-- API References
-  - [STT API](../../api/common/latest/group__CAPI__UIX__STT__MODULE.html)
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

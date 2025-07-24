@@ -21,7 +21,7 @@ The `media_format_h` handle has a specific design for increasing and decreasing 
 
 To enable your application to use the media tool functionality:
 
-- To use the media format handle of the [Media Tool API](../../api/common/latest/group__CAPI__MEDIA__TOOL__MODULE.html), include the `<media_format.h>` header file in your application:
+- To use the media format handle of the Media Tool API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TOOL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TOOL__MODULE.html) applications), include the `<media_format.h>` header file in your application:
 
   ```
   #include <media_format.h>
@@ -251,4 +251,5 @@ The following table describes the reference count design of the `media_format_h`
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

@@ -4,11 +4,11 @@ Tizen provides various methods for setting the fonts of the application text. Ba
 
 The font handling methods include:
 
-- [Setting the font for a UI component](#setting-the-font-for-a-ui-component) using the Elementary [Fonts API](../../../api/common/latest/group__Elm__Fonts.html)
+- [Setting the font for a UI component](#setting-the-font-for-a-ui-component) using the Elementary Fonts API (in [mobile](../../../api/mobile/latest/group__Elm__Fonts.html) and [wearable](../../../api/wearable/latest/group__Elm__Fonts.html) applications)
 
 - [Setting the font using the EDC file](#setting-the-font-using-edc)
 
-- [Changing the font and text size](#using-the-edje-text-class) using the Edje Class: [Text API](../../../api/common/latest/group__Edje__Object__Text__Class.html)
+- [Changing the font and text size](#using-the-edje-text-class) using the Edje Class: Text API (in [mobile](../../../api/mobile/latest/group__Edje__Object__Text__Class.html) and [wearable](../../../api/wearable/latest/group__Edje__Object__Text__Class.html) applications)
 
   In the application, you can create text classes to apply the same font and font size to various text (textblock) parts.
 
@@ -131,7 +131,7 @@ font=TizenSans font_style=Regular font_weight=Bold /* Textblock */
 
 ## Setting the Font for a UI Component
 
-You can use the Elementary [Fonts API](../../../api/common/latest/group__Elm__Fonts.html).
+You can use the Elementary Fonts API (in [mobile](../../../api/mobile/latest/group__Elm__Fonts.html) and [wearable](../../../api/wearable/latest/group__Elm__Fonts.html) applications) to set the font for an application.
 
 To set a font for a UI component:
 
@@ -146,7 +146,7 @@ To set a font for a UI component:
   elm_object_part_text_set(layout, "textblock1", buf);
   ```
 
-- Set the font for an [entry component](../../../api/common/latest/group__Elm__Entry__Group.html). It overrides the default style of the entry component for each attribute.
+- Set the font for an entry component (in [mobile](../../../api/mobile/latest/group__Elm__Entry__Group.html) and [wearable](../../../api/wearable/latest/group__Elm__Entry__Group.html) applications) using the `elm_entry_text_style_user_push()` function. It overrides the default style of the entry component for each attribute.
 
   > **Note**
   >
@@ -236,7 +236,7 @@ To create a layout with text using the EDC, you can set the font for each text o
 
 ## Using the Edje Text Class
 
-You can use the Edje [Class: Text API](../../../api/common/latest/group__Edje__Object__Text__Class.html) to change multiple text occurrences as a batch. If you set a new font or font size to a text class, the change is applied to multiple objects.
+You can use the Edje Class: Text API (in [mobile](../../../api/mobile/latest/group__Edje__Object__Text__Class.html) and [wearable](../../../api/wearable/latest/group__Edje__Object__Text__Class.html) applications) to change multiple text occurrences as a batch. If you set a new font or font size to a text class, the change is applied to multiple objects.
 
 > **Note**
 >
@@ -313,4 +313,5 @@ To set the text class, you can use reserved words or make your own text class:
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

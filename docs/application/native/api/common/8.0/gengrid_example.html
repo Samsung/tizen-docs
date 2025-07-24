@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This application is a thorough exercise on the gengrid widget's API. We place an Elementary gengrid widget on a window, with various knobs below its viewport, each one acting on it somehow.</p>
 <p>The code's relevant part begins at the grid's creation. After instantiating it, we set its items sizes, so that we don't end with items one finger size wide, only. We're setting them to fat, 150 pixel wide ones, for this example. We give it some size hints, not to be discussed in this context and, than, we register a callback on one of its smart events -- the one coming each time an item gets doubly clicked. There, we just print the item handle's value.  <div class="fragment"><pre class="fragment">   grid = <a class="code" href="group__Elm__Gengrid__Group.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
-   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 150, 150);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, grid);
@@ -291,7 +291,7 @@ _bring_1st_clicked(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Elm__Gengrid__Item__Group.html#ga0f40aecfe40cac4fc2e557006077f4f9" title="Animatedly bring in, to the visible area of a gengrid, a given item on it.">elm_gengrid_item_bring_in</a>(gg_it, <a class="code" href="group__Elm__Gengrid__Item__Group.html#gga40161f81baa7e0c89b14f84b80c71735a2752198ebed6ede5edf236c45307679e">ELM_GENGRID_ITEM_SCROLLTO_IN</a>);
 }
 </pre></div></p>
-<p>The "Show last", in its turn, will use <a class="el" href="group__Elm__Gengrid__Group.html#ga6096f8d90a13de0f52879fd3efc2a3ee" title="Get the last item in a given gengrid widget.">elm_gengrid_last_item_get()</a> and <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga60cf57e89b4f95230fe618168707bb28" title="Custom size mode for non-homogeneous gengrid.">elm_gengrid_item_show()</a>. The latter differs from <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga0f40aecfe40cac4fc2e557006077f4f9" title="Animatedly bring in, to the visible area of a gengrid, a given item on it.">elm_gengrid_item_bring_in()</a> in that it immediately replaces the contents of the grid's viewport with the region containing the item in question:  <div class="fragment"><pre class="fragment"><span class="comment">/* show last item */</span>
+<p>The "Show last", in its turn, will use <a class="el" href="group__Elm__Gengrid__Group.html#ga6096f8d90a13de0f52879fd3efc2a3ee" title="Get the last item in a given gengrid widget.">elm_gengrid_last_item_get()</a> and <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga60cf57e89b4f95230fe618168707bb28" title="Show the portion of a gengrid&#39;s internal grid containing a given item, immediately.">elm_gengrid_item_show()</a>. The latter differs from <a class="el" href="group__Elm__Gengrid__Item__Group.html#ga0f40aecfe40cac4fc2e557006077f4f9" title="Animatedly bring in, to the visible area of a gengrid, a given item on it.">elm_gengrid_item_bring_in()</a> in that it immediately replaces the contents of the grid's viewport with the region containing the item in question:  <div class="fragment"><pre class="fragment"><span class="comment">/* show last item */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _show_last_clicked(<span class="keywordtype">void</span>        *data,
                    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
@@ -301,7 +301,7 @@ _show_last_clicked(<span class="keywordtype">void</span>        *data,
 
    <span class="keywordflow">if</span> (!gg_it) <span class="keywordflow">return</span>;
 
-   <a class="code" href="group__Elm__Gengrid__Item__Group.html#ga60cf57e89b4f95230fe618168707bb28" title="Custom size mode for non-homogeneous gengrid.">elm_gengrid_item_show</a>(gg_it, <a class="code" href="group__Elm__Gengrid__Item__Group.html#gga40161f81baa7e0c89b14f84b80c71735a2752198ebed6ede5edf236c45307679e">ELM_GENGRID_ITEM_SCROLLTO_IN</a>);
+   <a class="code" href="group__Elm__Gengrid__Item__Group.html#ga60cf57e89b4f95230fe618168707bb28" title="Show the portion of a gengrid&#39;s internal grid containing a given item, immediately.">elm_gengrid_item_show</a>(gg_it, <a class="code" href="group__Elm__Gengrid__Item__Group.html#gga40161f81baa7e0c89b14f84b80c71735a2752198ebed6ede5edf236c45307679e">ELM_GENGRID_ITEM_SCROLLTO_IN</a>);
 }
 </pre></div></p>
 <p>To change the grid's cell (items) size, we've placed a spinner, which has the following <code>"changed"</code> smart callback:  <div class="fragment"><pre class="fragment"><span class="comment">/* change items&#39; size */</span>
@@ -313,7 +313,7 @@ _size_changed(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
    <span class="keywordtype">int</span> size = <a class="code" href="group__Elm__Spinner__Group.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj);
 
-   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, size, size);
+   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, size, size);
 }
 </pre></div></p>
 <p>Experiment with it and see how the items are affected. The "Disable
@@ -339,10 +339,10 @@ _horizontal_grid(<span class="keywordtype">void</span>        *data,
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
 
-   <a class="code" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659" title="Set the gengrid multi select mode.">elm_gengrid_horizontal_set</a>(grid, <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj));
+   <a class="code" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659" title="Set the direction in which a given gengrid widget will expand while placing its items.">elm_gengrid_horizontal_set</a>(grid, <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj));
 }
 </pre></div></p>
-<p>If you toggle the check right after that one, "Always select", you'll notice all subsequent clicks on the <b>same</b> grid item will still issue the selection callback on it, what is different from when it's not checked. This is the <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set()</a> behavior:  <div class="fragment"><pre class="fragment"><span class="comment">/* &quot;always select&quot; callback */</span>
+<p>If you toggle the check right after that one, "Always select", you'll notice all subsequent clicks on the <b>same</b> grid item will still issue the selection callback on it, what is different from when it's not checked. This is the <a class="el" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> behavior:  <div class="fragment"><pre class="fragment"><span class="comment">/* &quot;always select&quot; callback */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _always_select_change(<span class="keywordtype">void</span>        *data,
                       <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
@@ -352,9 +352,9 @@ _always_select_change(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> always = <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
 
    <span class="keywordflow">if</span> (always)
-     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab3cfbf566fdbea2079f3081969f0c59c">ELM_OBJECT_SELECT_MODE_ALWAYS</a>);
+     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab3cfbf566fdbea2079f3081969f0c59c">ELM_OBJECT_SELECT_MODE_ALWAYS</a>);
    <span class="keywordflow">else</span>
-     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a>);
+     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a>);
 
    printf(<span class="stringliteral">&quot;\&quot;Always select\&quot; mode for gengrid items is now %s\n&quot;</span>,
            always ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);
@@ -411,9 +411,9 @@ _no_sel_change(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> no_sel = <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
 
    <span class="keywordflow">if</span> (no_sel)
-     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa0f0e25088d651a379b4eb8b915d2e13f">ELM_OBJECT_SELECT_MODE_NONE</a>);
+     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa0f0e25088d651a379b4eb8b915d2e13f">ELM_OBJECT_SELECT_MODE_NONE</a>);
    <span class="keywordflow">else</span>
-     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a>);
+     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a>);
 
    printf(<span class="stringliteral">&quot;Selection for gengrid items is now %s\n&quot;</span>,
            no_sel ? <span class="stringliteral">&quot;disabled&quot;</span> : <span class="stringliteral">&quot;enabled&quot;</span>);

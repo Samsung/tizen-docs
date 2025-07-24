@@ -32,7 +32,7 @@ The following example shows the steps to create an OpenGL&reg; ES application. F
    - `ELM_GLVIEW_STENCIL`: Enable the stencil buffer for rendering.
    - `ELM_GLVIEW_MULTISAMPLE_LOW`: Use MSAA with a minimum number of samples.
 
-   For more information, see the [`Elm_GLView_Mode` enumerator](../../api/common/latest/group__Elm__Glview__Group.html#ga4d0a2281e13c66d7274987ef24e7abe7).
+   For more information, see the `Elm_GLView_Mode` enumerator (in [mobile](../../api/mobile/latest/group__Elm__Glview__Group.html#ga4d0a2281e13c66d7274987ef24e7abe7) and [wearable](../../api/wearable/latest/group__Elm__Glview__Group.html#ga4d0a2281e13c66d7274987ef24e7abe7) applications).
 
    In the following example, the alpha channel and depth buffer are enabled.
 
@@ -173,4 +173,5 @@ The following example shows the steps to create an OpenGL&reg; ES application. F
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

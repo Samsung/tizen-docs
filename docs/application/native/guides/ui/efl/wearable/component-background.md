@@ -113,4 +113,4 @@ The following table lists the available component styles.
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.3.1
+  - Tizen 2.3.1 and Higher for Wearable

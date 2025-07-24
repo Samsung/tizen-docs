@@ -515,13 +515,5 @@ To create a command list and commands, follow these steps:
 
 
 ## Related information
-- Dependencies
-  - Tizen 4.0 and Higher
-
-- API References
-  - [Tizen.Uix.VoiceControl.VoiceControlClient](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceControlClient.html)
-  - [Tizen.Uix.VoiceControl.State](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.State.html)
-  - [Tizen.Uix.VoiceControl.VoiceCommandList](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceCommandList.html)
-  - [Tizen.Uix.VoiceControl.VoiceCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.VoiceCommand.html)
-  - [Tizen.Uix.VoiceControl.ServiceState](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.ServiceState.html)
-  - [Tizen.Uix.VoiceControl.CommandType](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.VoiceControl.CommandType.html)
+* Dependencies
+  -   Tizen 4.0 and Higher

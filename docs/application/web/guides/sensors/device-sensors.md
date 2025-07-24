@@ -199,6 +199,3 @@ The following table lists the sensor capabilities you can use to [determine whet
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/sensor.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/sensor.html)

@@ -133,6 +133,4 @@ If you want to deliver `tizen_core_event_object_h` only to a specific `tizen_cor
 
 ## Related Information
 - Dependencies
-  - Since Tizen 9.0
-- API References
-  - [Tizen Core Event](../../../api/common/latest/group__CAPI__TIZEN__CORE__EVENT__MODULE.html)
+  - Tizen 9.0

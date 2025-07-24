@@ -100,10 +100,7 @@ Required Header</h2>
 <p>#include &lt;bluetooth.h&gt;</p>
 <h2><a class="anchor" id="CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>This set of function is used to control a bluetooth adapter. You can also control visibility of the device, its appearance for others (adapter name). In addition, this api is used to discover neighboring bluetooth devices. This process is asynchronous, so it is up to you to build and hold list of devices in the neighborhood</p>
-<ul>
-<li>the api does not provide this list. Before starting a device discovery, you can find a device from the connected devices. This functionality is implemented by foreach loop.</li>
-</ul>
+<p>The Bluetooth Adapter APIs allow you to retrieve and set the current state, address, and name of your local Bluetooth adapter. Additionally, it enables checking the visibility mode of the adapter, starting/stopping device discovery, retrieving information about connected devices, determining whether specific services are being utilized, registering callbacks for various types of updates, and unregistering those callbacks when no longer needed. This functionality is implemented by foreach loop.</p>
 <h2><a class="anchor" id="CAPI_NETWORK_BLUETOOTH_ADAPTER_MODULE_FEATURE"></a>
 Related Features</h2>
 <p>This API is related with the following features:<br/>

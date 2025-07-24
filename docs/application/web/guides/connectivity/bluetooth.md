@@ -359,7 +359,7 @@ To create a bond with a Bluetooth device, follow these steps:
    ```
 
    > [!NOTE]
-   > The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAddress), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAddress), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods. Address of the bonding device should always be retrieved with one of the mentioned methods, as bonding to the address provided by-hand can lead to an unexpected result or failure.
+   > The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAddress), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAddress), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods.
 
 3. To end the bond with a remote device, use the `destroyBonding()` method:
 
@@ -1319,7 +1319,3 @@ To set a callback for read or write value request on a characteristic or a descr
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
    - Tizen 6.0 and Higher for TV
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html)
-  - [TV](../../api/latest/device_api/tv/tizen/bluetooth.html)

@@ -4,19 +4,19 @@ You can take advantage of various EFL utilities in your application:
 
 - Managing notification windows
 
-  A window that belongs to the [notification layer](#window-layers-and-notification-levels) within the Tizen window layer hierarchy is called a "notification window". You can [create notification windows](#managing-notification-windows) and access their current notification levels (as long as they are of the EFL window type) using the [EFL UTIL API](../../../api/common/latest/group__CAPI__EFL__UTIL__MODULE.html).
+  A window that belongs to the [notification layer](#window-layers-and-notification-levels) within the Tizen window layer hierarchy is called a "notification window". You can [create notification windows](#managing-notification-windows) and access their current notification levels (as long as they are of the EFL window type) using the EFL UTIL API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__MODULE.html) applications).
 
 - Taking screenshots
 
-  You can [capture screenshots](#taking-screenshots) and store the screenshot data as a TBM surface, using the [EFL UTIL SCREENSHOT API](../../../api/common/latest/group__CAPI__EFL__UTIL__SCREENSHOT__MODULE.html).
+  You can [capture screenshots](#taking-screenshots) and store the screenshot data as a TBM surface, using the EFL UTIL SCREENSHOT API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__SCREENSHOT__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__SCREENSHOT__MODULE.html) applications).
 
 - Using input generator
 
-  You can generate input events using the [EFL UTIL INPUT API](../../../api/common/latest/group__CAPI__EFL__UTIL__INPUT__MODULE.html). You can generate [key input events](#generating-key-input-events) that emulate various hardware key presses, [touch input events](#generating-touch-input-events) that emulate screen touches, and [point input events](#generating-point-input-events) that emulate mouse moves or clicks.
+  You can generate input events using the EFL UTIL INPUT API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__INPUT__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__INPUT__MODULE.html) applications). You can generate [key input events](#generating-key-input-events) that emulate various hardware key presses, [touch input events](#generating-touch-input-events) that emulate screen touches, and [point input events](#generating-point-input-events) that emulate mouse moves or clicks.
 
 - Handling global gestures
 
-  You can handle [global gestures](#global-gestures) using the [EFL UTIL GESTURE API](../../../api/common/latest/group__CAPI__EFL__UTIL__GESTURE__MODULE.html). You can [grab](#grabbing-gestures) and [deactivate](#deactivating-gestures) global gestures, and [select](#selecting-gestures) and [deactivate](#deactivating-gestures-in-a-window) them in a window.
+  You can handle [global gestures](#global-gestures) using the EFL UTIL GESTURE API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__GESTURE__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__GESTURE__MODULE.html) applications). You can [grab](#grabbing-gestures) and [deactivate](#deactivating-gestures) global gestures, and [select](#selecting-gestures) and [deactivate](#deactivating-gestures-in-a-window) them in a window.
 
 ## Window Layers and Notification Levels
 
@@ -116,7 +116,7 @@ You can implement the following gesture types:
 
 ## Prerequisites
 
-To use the functions and data types of the [EFL UTIL API](../../../api/common/latest/group__CAPI__EFL__UTIL__MODULE.html), include the `<efl_util.h>` header file in your application:
+To use the functions and data types of the EFL UTIL API (in [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__MODULE.html) applications), include the `<efl_util.h>` header file in your application:
 
 ```
 #include <efl_util.h>
@@ -1026,4 +1026,5 @@ To deactivate and re-activate gestures in a window:
 
 ## Related Information
 - Dependencies
-   - Since Tizen 2.4
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable

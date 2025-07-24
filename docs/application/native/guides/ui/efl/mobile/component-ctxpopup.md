@@ -1,6 +1,6 @@
 # Ctxpopup
 
-The ctxpopup UI component pops up and shows a list of items inside it. For more information, see the [Ctxpopup](../../../../api/common/latest/group__Elm__Ctxpopup__Group.html) API.
+The ctxpopup UI component pops up and shows a list of items inside it. For more information, see the [Ctxpopup](../../../../api/mobile/latest/group__Elm__Ctxpopup__Group.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -186,4 +186,4 @@ You can register callback functions connected to the following signals for a ctx
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

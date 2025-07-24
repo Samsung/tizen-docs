@@ -1,6 +1,6 @@
 # Map
 
-The map UI component displays a geographic map. The default map data is provided by the [OpenStreetMap project](http://www.openstreetmap.org/). For more information, see the [Map](../../../../api/common/latest/group__Elm__Map__Group.html) API.
+The map UI component displays a geographic map. The default map data is provided by the [OpenStreetMap project](http://www.openstreetmap.org/). For more information, see the [Map](../../../../api/mobile/latest/group__Elm__Map__Group.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -144,4 +144,4 @@ You can register callback functions connected to the following signals for a map
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

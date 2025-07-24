@@ -19,9 +19,3 @@ Tizen provides various application models to allow you to create applications ta
 ## Related information
 - Dependencies
   - Tizen 4.0 and Higher
-- API References
-  - [Tizen.NUI.NUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIApplication.html) class
-  - [Tizen.Applications.CoreUIApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreUIApplication.html) class
-  - [Tizen.Applications.ServiceApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ServiceApplication.html) class
-  - [Tizen.Applications.CoreApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class
-  - [Tizen.Applications.Application](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Application.html) class

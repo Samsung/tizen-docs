@@ -114,5 +114,5 @@ For examples on the use of the alignment, weight, and minimum and maximum size p
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
-  
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

@@ -125,6 +125,28 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga257d21fd61ea774ec12dbab99818efba">eina_matrix3_quaternion_get</a> (Eina_Quaternion *q, const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga0a2272caba9118aee6620885f8ae1757">eina_matrix4_quaternion_to</a> (Eina_Quaternion *rotation, Eina_Quaternion *perspective, Eina_Point_3D *translation, Eina_Point_3D *scale, Eina_Point_3D *skew, const <a class="el" href="structEina__Matrix4.html">Eina_Matrix4</a> *m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga575ee7c63e9314c35efaec336aa0e1f6">eina_quaternion_matrix4_to</a> (<a class="el" href="structEina__Matrix4.html">Eina_Matrix4</a> *m, const Eina_Quaternion *rotation, const Eina_Quaternion *perspective, const Eina_Point_3D *translation, const Eina_Point_3D *scale, const Eina_Point_3D *skew)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga566ea79ff5104cd71d516c81e2624bdc">eina_quaternion_inverse</a> (Eina_Quaternion *out, const Eina_Quaternion *q)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the inverse of the given quaternion.  <a href="#ga566ea79ff5104cd71d516c81e2624bdc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga5119754cbe7ea37f490a7005be35e25b">eina_quaternion_array_set</a> (Eina_Quaternion *dst, const double *v)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set array to quaternion.  <a href="#ga5119754cbe7ea37f490a7005be35e25b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga1c02c23d75a091bf594f5c67f1445023">eina_quaternion_copy</a> (Eina_Quaternion *dst, const Eina_Quaternion *src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy quaternion.  <a href="#ga1c02c23d75a091bf594f5c67f1445023"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga7d54742476ffb93f17114572edb72bd0">eina_quaternion_homogeneous_regulate</a> (Eina_Quaternion *out, const Eina_Quaternion *v)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Homogeneous quaternion.  <a href="#ga7d54742476ffb93f17114572edb72bd0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga6d4193a399da5f97dee68bb4955624a7">eina_quaternion_subtract</a> (Eina_Quaternion *out, const Eina_Quaternion *a, const Eina_Quaternion *b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract two quaternions.  <a href="#ga6d4193a399da5f97dee68bb4955624a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga05b8f87fd54ffc1adfa0a3b704005358">eina_quaternion_length_get</a> (const Eina_Quaternion *v)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the length of the given quaternion.  <a href="#ga05b8f87fd54ffc1adfa0a3b704005358"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga987e747e758c4b90bf183fa87c908609">eina_quaternion_length_square_get</a> (const Eina_Quaternion *v)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the length in square of the given quaternion.  <a href="#ga987e747e758c4b90bf183fa87c908609"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#gaacb9bfb6bae6f443ce1f81a39e8ecf90">eina_quaternion_distance_get</a> (const Eina_Quaternion *a, const Eina_Quaternion *b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the distance between of two quaternions.  <a href="#gaacb9bfb6bae6f443ce1f81a39e8ecf90"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga7113bf783eb09c6ffb76aedbccab8d9e">eina_quaternion_distance_square_get</a> (const Eina_Quaternion *a, const Eina_Quaternion *b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the distance in square between of two quaternions.  <a href="#ga7113bf783eb09c6ffb76aedbccab8d9e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#gacf7ea5cc47c9522e8804efaf07a0aefb">eina_quaternion_transform</a> (Eina_Quaternion *out, const Eina_Quaternion *v, const <a class="el" href="structEina__Matrix4.html">Eina_Matrix4</a> *m)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform quaternion.  <a href="#gacf7ea5cc47c9522e8804efaf07a0aefb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Quaternion__Group.html#ga689db46db625c2c86ea6365e08967d39">eina_quaternion_angle_plains</a> (Eina_Quaternion *a, Eina_Quaternion *b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the angle plains between of two quaternions.  <a href="#ga689db46db625c2c86ea6365e08967d39"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga257d21fd61ea774ec12dbab99818efba"></a><!-- doxytag: member="eina_quaternion.h::eina_matrix3_quaternion_get" ref="ga257d21fd61ea774ec12dbab99818efba" args="(Eina_Quaternion *q, const Eina_Matrix3 *m)" -->
@@ -244,6 +266,82 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga689db46db625c2c86ea6365e08967d39"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_angle_plains" ref="ga689db46db625c2c86ea6365e08967d39" args="(Eina_Quaternion *a, Eina_Quaternion *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="group__Eina__Quaternion__Group.html#ga689db46db625c2c86ea6365e08967d39">eina_quaternion_angle_plains</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the angle plains between of two quaternions. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first quaternion. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second quaternion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The angle.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5119754cbe7ea37f490a7005be35e25b"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_array_set" ref="ga5119754cbe7ea37f490a7005be35e25b" args="(Eina_Quaternion *dst, const double *v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__Quaternion__Group.html#ga5119754cbe7ea37f490a7005be35e25b">eina_quaternion_array_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set array to quaternion. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>The result quaternion </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>The the array[4] for set</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Set to quaternion first 4 elements from array</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga9fdc0a2da11e54a1ef9cde90e1152a12"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_conjugate" ref="ga9fdc0a2da11e54a1ef9cde90e1152a12" args="(Eina_Quaternion *out, const Eina_Quaternion *in)" -->
 <div class="memitem">
 <div class="memproto">
@@ -270,6 +368,119 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1c02c23d75a091bf594f5c67f1445023"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_copy" ref="ga1c02c23d75a091bf594f5c67f1445023" args="(Eina_Quaternion *dst, const Eina_Quaternion *src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__Quaternion__Group.html#ga1c02c23d75a091bf594f5c67f1445023">eina_quaternion_copy</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy quaternion. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>The quaternion copy </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The quaternion for copy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaacb9bfb6bae6f443ce1f81a39e8ecf90"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_distance_get" ref="gaacb9bfb6bae6f443ce1f81a39e8ecf90" args="(const Eina_Quaternion *a, const Eina_Quaternion *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="group__Eina__Quaternion__Group.html#gaacb9bfb6bae6f443ce1f81a39e8ecf90">eina_quaternion_distance_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the distance between of two quaternions. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first quaternion. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second quaternion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The distance.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7113bf783eb09c6ffb76aedbccab8d9e"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_distance_square_get" ref="ga7113bf783eb09c6ffb76aedbccab8d9e" args="(const Eina_Quaternion *a, const Eina_Quaternion *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="group__Eina__Quaternion__Group.html#ga7113bf783eb09c6ffb76aedbccab8d9e">eina_quaternion_distance_square_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the distance in square between of two quaternions. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first quaternion. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second quaternion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The distance in square.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
 
 </div>
 </div>
@@ -747,6 +958,135 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga7d54742476ffb93f17114572edb72bd0"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_homogeneous_regulate" ref="ga7d54742476ffb93f17114572edb72bd0" args="(Eina_Quaternion *out, const Eina_Quaternion *v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__Quaternion__Group.html#ga7d54742476ffb93f17114572edb72bd0">eina_quaternion_homogeneous_regulate</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Homogeneous quaternion. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The resulting quaternion </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>The given quaternion</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga566ea79ff5104cd71d516c81e2624bdc"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_inverse" ref="ga566ea79ff5104cd71d516c81e2624bdc" args="(Eina_Quaternion *out, const Eina_Quaternion *q)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__Quaternion__Group.html#ga566ea79ff5104cd71d516c81e2624bdc">eina_quaternion_inverse</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>q</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compute the inverse of the given quaternion. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The quaternion to invert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">q</td><td>The quaternion matrix.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function inverses the quaternion <code>q</code> and stores the result in <code>out</code>.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga05b8f87fd54ffc1adfa0a3b704005358"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_length_get" ref="ga05b8f87fd54ffc1adfa0a3b704005358" args="(const Eina_Quaternion *v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="group__Eina__Quaternion__Group.html#ga05b8f87fd54ffc1adfa0a3b704005358">eina_quaternion_length_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the length of the given quaternion. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">v</td><td>The quaternion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The length.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga987e747e758c4b90bf183fa87c908609"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_length_square_get" ref="ga987e747e758c4b90bf183fa87c908609" args="(const Eina_Quaternion *v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="group__Eina__Quaternion__Group.html#ga987e747e758c4b90bf183fa87c908609">eina_quaternion_length_square_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the length in square of the given quaternion. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">v</td><td>The quaternion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The length in square.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga8329f4bac5ae075da45357745b4a3f1a"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_lerp" ref="ga8329f4bac5ae075da45357745b4a3f1a" args="(Eina_Quaternion *out, const Eina_Quaternion *a, const Eina_Quaternion *b, double pos)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1177,6 +1517,94 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6d4193a399da5f97dee68bb4955624a7"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_subtract" ref="ga6d4193a399da5f97dee68bb4955624a7" args="(Eina_Quaternion *out, const Eina_Quaternion *a, const Eina_Quaternion *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__Quaternion__Group.html#ga6d4193a399da5f97dee68bb4955624a7">eina_quaternion_subtract</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Subtract two quaternions. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The resulting quaternion </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first member of the subtract </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second member of the subtract</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gacf7ea5cc47c9522e8804efaf07a0aefb"></a><!-- doxytag: member="eina_quaternion.h::eina_quaternion_transform" ref="gacf7ea5cc47c9522e8804efaf07a0aefb" args="(Eina_Quaternion *out, const Eina_Quaternion *v, const Eina_Matrix4 *m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Eina__Quaternion__Group.html#gacf7ea5cc47c9522e8804efaf07a0aefb">eina_quaternion_transform</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eina_Quaternion *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structEina__Matrix4.html">Eina_Matrix4</a> *&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Transform quaternion. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The result quaternion. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>The quaternion for transform. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The matrix for transform.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
 
 </div>
 </div>

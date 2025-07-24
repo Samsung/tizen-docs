@@ -502,6 +502,3 @@ foreach (var stat in stats)
 ## Related information
 - Dependencies
   - Tizen 6.5 and Higher
-
-- API References
-  - [WebRTC](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.WebRTC.html) class

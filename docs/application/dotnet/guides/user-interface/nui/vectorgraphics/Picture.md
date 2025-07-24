@@ -33,6 +33,3 @@ canvasView.AddDrawable(pictureSVG);
 ## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
-
-- API References
-  - [Picture API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VectorGraphics.Picture.html)

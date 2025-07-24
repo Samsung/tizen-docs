@@ -112,7 +112,5 @@ To monitor, for example, when the ringtone for incoming calls changes:
 
 
 ## Related information
-- Dependencies
+* Dependencies
   -   Tizen 4.0 and Higher
-- API References
-  - [System Settings](/application/dotnet/api/TizenFX/latest/api/Tizen.System.SystemSettings.html)

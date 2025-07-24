@@ -119,7 +119,7 @@ Related Features</h2>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#ga0bc31ef86537319c9baa9064e1e692e9">telephony_call_get_preferred_voice_subscription</a> (<a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gab36536fddb4c6e0438ecc278432ede6c">telephony_h</a> handle, <a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#gafbb8572dabc68ea7cdb93a4eb8f9c719">telephony_call_preferred_voice_subs_e</a> *call_sub)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current value for the preferred voice call subscription.  <a href="#ga0bc31ef86537319c9baa9064e1e692e9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current value for the preferred voice call subscription.  This function is used to retrieve the current value for the preferred voice call subscription. It requires the handle obtained from the <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#ga68b04bc2303b20d59f2fec3f82fc979b" title="Acquires the list of available handles to use the telephony API.">telephony_init()</a> function as an argument and returns the currently set preferred call subscription value in the form of telephony_call_preferred_voice_subs_e.  <a href="#ga0bc31ef86537319c9baa9064e1e692e9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#gab42ee5f6e97913c66410c44ab92a7481">telephony_call_get_call_list</a> (<a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gab36536fddb4c6e0438ecc278432ede6c">telephony_h</a> handle, unsigned int *count, <a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#ga2349b82349241972b7ba6a97eb5abb3e">telephony_call_h</a> **call_list)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of the current call.  <a href="#gab42ee5f6e97913c66410c44ab92a7481"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#ga05907d7c44a5ddfed17a362638510e06">telephony_call_release_call_list</a> (unsigned int count, <a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#ga2349b82349241972b7ba6a97eb5abb3e">telephony_call_h</a> **call_list)</td></tr>
@@ -374,7 +374,7 @@ telephony_call_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div class="memdoc">
 
 <p>Gets whether the call is conference call or not. </p>
-<p>This function checks if a call is part of a conference call or a single individual call based on the provided call handle. By fetching the required call handle using the <a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#gab42ee5f6e97913c66410c44ab92a7481" title="Gets the list of the current call.">telephony_call_get_call_list()</a> API, you can determine the nature of the call and adjust your application's functionality accordingly.</p>
+<p>This function checks if a call is part of a conference call or a single individual call based on the provided call handle. By fetching the required call handle using the 'telephony_call_get_call_list' API, you can determine the nature of the call and adjust your application's functionality accordingly.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -522,7 +522,7 @@ telephony_call_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 
 <p>Gets the call number. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
-<p>This function retrieves the phone number associated with a specified call handle. By providing the call handle obtained from the <a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#gab42ee5f6e97913c66410c44ab92a7481" title="Gets the list of the current call.">telephony_call_get_call_list()</a> API as input, you can obtain the corresponding call number.</p>
+<p>This function retrieves the phone number associated with a specified call handle. By providing the call handle obtained from the 'telephony_call_get_call_list' API as input, you can obtain the corresponding call number.</p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <code>number</code> using free() on success case.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -570,15 +570,14 @@ telephony_call_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </div>
 <div class="memdoc">
 
-<p>Gets the current value for the preferred voice call subscription. </p>
-<p>This function is used to retrieve the current value for the preferred voice call subscription. It requires the handle obtained from the <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#ga68b04bc2303b20d59f2fec3f82fc979b" title="Acquires the list of available handles to use the telephony API.">telephony_init()</a> function as an argument and returns the currently set preferred call subscription value in the form of <a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#gafbb8572dabc68ea7cdb93a4eb8f9c719" title="Enumeration for the preferred voice call subscription.">telephony_call_preferred_voice_subs_e</a>.</p>
+<p>Gets the current value for the preferred voice call subscription.  This function is used to retrieve the current value for the preferred voice call subscription. It requires the handle obtained from the <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#ga68b04bc2303b20d59f2fec3f82fc979b" title="Acquires the list of available handles to use the telephony API.">telephony_init()</a> function as an argument and returns the currently set preferred call subscription value in the form of telephony_call_preferred_voice_subs_e. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/telephony</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle from <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#ga68b04bc2303b20d59f2fec3f82fc979b" title="Acquires the list of available handles to use the telephony API.">telephony_init()</a> </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">call_sub</td><td>The currently set preferred call subscription value. (<a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#gafbb8572dabc68ea7cdb93a4eb8f9c719" title="Enumeration for the preferred voice call subscription.">telephony_call_preferred_voice_subs_e</a>)</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">call_sub</td><td>The currently set preferred call subscription value. (telephony_call_preferred_voice_subs_e)</td></tr>
   </table>
   </dd>
 </dl>
@@ -720,7 +719,7 @@ telephony_call_info_s *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div class="memdoc">
 
 <p>Releases the list allocated from <a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#gab42ee5f6e97913c66410c44ab92a7481" title="Gets the list of the current call.">telephony_call_get_call_list()</a>. </p>
-<p>This function releases the memory occupied by the call list obtained through the <a class="el" href="group__CAPI__TELEPHONY__INFORMATION__CALL.html#gab42ee5f6e97913c66410c44ab92a7481" title="Gets the list of the current call.">telephony_call_get_call_list()</a> API. By invoking this API, you ensure that the resources consumed by the call list are freed up, allowing them to be reused elsewhere within your application or system. Remember that before releasing the call list, it is crucial to validate its validity using the 'telephony_call_validate_call_list' function.</p>
+<p>This function releases the memory occupied by the call list obtained through the 'telephony_call_get_call_list' API. By invoking this API, you ensure that the resources consumed by the call list are freed up, allowing them to be reused elsewhere within your application or system. Remember that before releasing the call list, it is crucial to validate its validity using the 'telephony_call_validate_call_list' function.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

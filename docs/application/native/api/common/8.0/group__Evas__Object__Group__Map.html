@@ -281,8 +281,10 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Evas_Map *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#gad93200ad44041b2ef049b45212b1b716">evas_map_dup</a> (const Evas_Map *m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#gab3e18d6086e352b121a57c130041bb24">evas_map_free</a> (Evas_Map *m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#gae356aae5e2949c26f1b32ba0b2cddd8f">evas_map_count_get</a> (const Evas_Map *m)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#gaab6e7b97f6d563392379868b2d19a17b">evas_map_coords_get</a> (const Evas_Map *m, double x, double y, double *mx, double *my, int grab)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set</a> (Evas_Map *m, int idx, Evas_Coord x, Evas_Coord y, Evas_Coord z)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#ga87812b35a91cec3ad383f7ed47d86027">evas_map_point_coord_get</a> (const Evas_Map *m, int idx, Evas_Coord *x, Evas_Coord *y, Evas_Coord *z)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#ga67479d40c8c5583b20d253224acef7ea">evas_map_point_precise_coord_set</a> (Evas_Map *m, int idx, double x, double y, double z)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#ga2fb20190d6c00e995ac867c8196735dc">evas_map_point_precise_coord_get</a> (const Evas_Map *m, int idx, double *x, double *y, double *z)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#ga2f1b4d78f055c1752ab254a7ebce13b3">evas_map_point_image_uv_set</a> (Evas_Map *m, int idx, double u, double v)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Map.html#ga8949b9b334eeaa205c2fb49f152cd860">evas_map_point_image_uv_get</a> (const Evas_Map *m, int idx, double *u, double *v)</td></tr>
@@ -353,6 +355,71 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a3">evas-map-utils.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="gaab6e7b97f6d563392379868b2d19a17b"></a><!-- doxytag: member="Evas_Legacy.h::evas_map_coords_get" ref="gaab6e7b97f6d563392379868b2d19a17b" args="(const Evas_Map *m, double x, double y, double *mx, double *my, int grab)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Group__Map.html#gaab6e7b97f6d563392379868b2d19a17b">evas_map_coords_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Evas_Map *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>mx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>my</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grab</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Apply a map transformation on given coordinate</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>map to use to transform x and y </td></tr>
+    <tr><td class="paramname">x</td><td>point x source coordinate </td></tr>
+    <tr><td class="paramname">y</td><td>point y source coordinate </td></tr>
+    <tr><td class="paramname">mx</td><td>point x after transformation by m </td></tr>
+    <tr><td class="paramname">my</td><td>point y after transformation by m </td></tr>
+    <tr><td class="paramname">grab</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success interpolation, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="gae356aae5e2949c26f1b32ba0b2cddd8f"></a><!-- doxytag: member="Evas_Legacy.h::evas_map_count_get" ref="gae356aae5e2949c26f1b32ba0b2cddd8f" args="(const Evas_Map *m)" -->
@@ -716,20 +783,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Apply a map transformation on given coordinate</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">m</td><td>map to use to transform x and y </td></tr>
-    <tr><td class="paramname">x</td><td>point x source coordinate </td></tr>
-    <tr><td class="paramname">y</td><td>point y source coordinate </td></tr>
-    <tr><td class="paramname">mx</td><td>point x after transformation by m </td></tr>
-    <tr><td class="paramname">my</td><td>point y after transformation by m </td></tr>
-    <tr><td class="paramname">grab</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success interpolation, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 Change the map point's coordinate.</dd></dl>
+<p>Change the map point's coordinate.</p>
 <p>This sets the fixed point's coordinate in the map. Note that points describe the outline of a quadrangle and are ordered either clockwise or counter-clockwise. It is suggested to keep your quadrangles concave and non-complex, though these polygon modes may work, they may not render a desired set of output. The quadrangle will use points 0 and 1 , 1 and 2, 2 and 3, and 3 and 0 to describe the edges of the quadrangle.</p>
 <p>The X and Y and Z coordinates are in canvas units. Z is optional and may or may not be honored in drawing. Z is a hint and does not affect the X and Y rendered coordinates. It may be used for calculating fills with perspective correct rendering.</p>
 <p>Remember all coordinates are canvas global ones like with move and resize in evas.</p>
@@ -908,6 +962,51 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga67479d40c8c5583b20d253224acef7ea"></a><!-- doxytag: member="Evas_Legacy.h::evas_map_point_precise_coord_set" ref="ga67479d40c8c5583b20d253224acef7ea" args="(Evas_Map *m, int idx, double x, double y, double z)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Map.html#ga67479d40c8c5583b20d253224acef7ea">evas_map_point_precise_coord_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Evas_Map *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 
 </div>

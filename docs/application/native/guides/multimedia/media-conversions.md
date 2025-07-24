@@ -35,7 +35,7 @@ After you have initialized the codecs, you can:
 
 To enable your application to use the media conversion functionalities:
 
-1. To use the functions and data types of the [Media Codec API](../../api/common/latest/group__CAPI__MEDIA__CODEC__MODULE.html), include the `<media_codec.h>` header file in your application:
+1. To use the functions and data types of the Media Codec API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CODEC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CODEC__MODULE.html) applications), include the `<media_codec.h>` header file in your application:
 
    ```
    #include <media_codec.h>
@@ -60,7 +60,7 @@ To prepare the media codecs:
    ret = mediacodec_set_codec(mediacodec, (mediacodec_codec_type_e)codecid, flag);
    ```
 
-   The [`mediacodec_codec_type_e`](../../api/common/latest/group__CAPI__MEDIA__CODEC__MODULE.html#ga2e7775fb3609e4349c742b1d9eb5febc) and [`mediacodec_support_type_e`](../../api/common/latest/group__CAPI__MEDIA__CODEC__MODULE.html#gab01ad3dbb4989537108a5c9f2062447a) enumerations define the media codec type and support type (second and third parameters).
+   The `mediacodec_codec_type_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CODEC__MODULE.html#ga2e7775fb3609e4349c742b1d9eb5febc) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CODEC__MODULE.html#ga2e7775fb3609e4349c742b1d9eb5febc) applications) and `mediacodec_support_type_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CODEC__MODULE.html#gab01ad3dbb4989537108a5c9f2062447a) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CODEC__MODULE.html#gab01ad3dbb4989537108a5c9f2062447a) applications) enumerations define the media codec type and support type (second and third parameters).
 
 3. To configure the video and audio encoder and decoder:
 
@@ -238,4 +238,5 @@ To run the media codec loop:
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

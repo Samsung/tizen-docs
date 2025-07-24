@@ -1,6 +1,6 @@
 # Hybrid application development
 
-The VS code extension installation can be done in two different ways. Refer to [VS code extension installation](dotnet.md) section for details. 
+Tizen platform allows you to create hybrid application packages combining .NET, Native, and Web applications. This document explains how to develop hybrid applications using Visual Studio Code Extension for Tizen.
 
 ## Develop Hybrid application
 
@@ -155,6 +155,8 @@ To debug dotnet application, set dotnet app as main app, set native app as depen
 
 Deselected projects will be removed from dependency project list from main app.
 
+<!--
+
 ## Import Tizen project
 
 ### Import Tizen workspace folder
@@ -223,3 +225,6 @@ Before importing wgt file, Select the workspace folder (empty folder) in which t
 7. Current workspace folder will be updated with imported wgt file.
 
    ![Select folder](media/Tizen_import_finish_wgt.png)
+
+
+-->

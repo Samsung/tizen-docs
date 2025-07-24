@@ -97,7 +97,13 @@ Required Header</h2>
 <p>#include &lt;bluetooth.h&gt;</p>
 <h2><a class="anchor" id="CAPI_NETWORK_BLUETOOTH_HID_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>In HID Profile, there are two roles - <em>Host</em> and <em>Device</em>. The <em>Host</em> is a device that uses or requests the services of a HID. The <em>Device</em> is a device that provides the service of human data input and output to and from th</p>
+<p>In HID Profile, there are two roles - <em>Host</em> and <em>Device</em>. The <em>Host</em> is a device that uses or requests the services of a HID. The <em>Device</em> is a device that provides the service of human data input and output to and from th Bluetooth Human Interface Device (HID) APIs furnish a collection of functionalities tailored towards linking with Bluetooth HID peripherals, such as keyboards and mouse. Primary offerings entail:</p>
+<ul>
+<li>Initialization of Bluetooth HID Host, accompanied by optional callbacks for tracking connection state changes</li>
+<li>Deinitialization of Bluetooth HID Host</li>
+<li>Connection setup with remote devices featuring HID services, performed asynchronously</li>
+<li>Disconnection of remote devices equipped with HID services, likewise conducted asynchronously By harnessing these capabilities, developers gain access to simplified pathways for interfacing with Bluetooth HID accessories.</li>
+</ul>
 <h2><a class="anchor" id="CAPI_NETWORK_BLUETOOTH_HID_MODULE_FEATURE"></a>
 Related Features</h2>
 <p>This API is related with the following features:<br/>

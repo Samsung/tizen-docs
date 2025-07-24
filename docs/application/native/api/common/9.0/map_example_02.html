@@ -207,7 +207,7 @@ _box_get(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0
    bx = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(obj);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
-   img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(obj));
+   img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(obj));
    <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(img, data-&gt;file, NULL);
    <a class="code" href="group__Evas__Object__Image.html#ga26dff9f60428cac5e02bc822b025031a" title="Set whether the image object&#39;s fill property should track the object&#39;s size.">evas_object_image_filled_set</a>(img, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Evas__Object__Group.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(img, 64, 64);
@@ -281,7 +281,7 @@ _bt_zoom_fill(<span class="keywordtype">void</span> *data, <a class="code" href=
 _nasty_hack(<span class="keywordtype">void</span> *data)
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o = data;
-   <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e = <a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(o);
+   <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e = <a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(o);
    <a class="code" href="group__Evas__Smart__Object__Group.html#ga0cfa7df81a1c781997f7cdcb8aa4f69e">evas_smart_objects_calculate</a>(e);
    <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#gae0c653baad8836232c0dc27f91f875d6">ECORE_CALLBACK_CANCEL</a>;
 }
@@ -321,7 +321,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    bx = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(obj);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
-   img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(obj));
+   img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(obj));
    <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(img, data-&gt;file, NULL);
    <a class="code" href="group__Evas__Object__Image.html#ga26dff9f60428cac5e02bc822b025031a" title="Set whether the image object&#39;s fill property should track the object&#39;s size.">evas_object_image_filled_set</a>(img, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Evas__Object__Group.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(img, 64, 64);

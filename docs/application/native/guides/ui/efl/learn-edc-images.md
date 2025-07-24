@@ -73,5 +73,5 @@ images {
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
-  
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

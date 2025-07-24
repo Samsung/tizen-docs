@@ -343,9 +343,5 @@ To deactivate Wi-Fi Direct when it is no longer needed (or the application is ex
 
 
 ## Related information
-- Dependencies
-    - Tizen 4.0 and Higher
-- API References
-    - [Tizen.Network.WiFiDirect](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.WiFiDirect.html) class
-
-
+* Dependencies
+  -   Tizen 4.0 and Higher

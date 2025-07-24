@@ -289,4 +289,4 @@ To get the current disabled status of the circle object, use the `eext_circle_ob
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.3.1
+  - Tizen 2.3.1 and Higher for Wearable

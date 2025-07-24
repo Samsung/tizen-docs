@@ -80,6 +80,5 @@ You can use the following application data exchange features in your native appl
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
-- API References
-  - [Application Framework](../../api/common/latest/group__CAPI__APPLICATION__FRAMEWORK.html)
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

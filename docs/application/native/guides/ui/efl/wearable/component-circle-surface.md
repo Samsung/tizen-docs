@@ -72,4 +72,4 @@ eext_circle_surface_del(surface);
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.3.1
+  - Tizen 2.3.1 and Higher for Wearable

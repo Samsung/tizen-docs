@@ -23,7 +23,7 @@ The main features of the STC API include:
 
 To enable your application to use the STC API:
 
-1. To use the [STC API](../../api/common/latest/group__CAPI__NETWORK__STC__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [STC](../../api/mobile/latest/group__CAPI__NETWORK__STC__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -265,8 +265,7 @@ To retrieve statistics about total network data consumed by applications:
    }
    ```
 
-## Related information
+## Related Information
 - Dependencies
-  - Since Tizen 4.0
-- API References
-  - [STC API](../../api/common/latest/group__CAPI__NETWORK__STC__MODULE.html)
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

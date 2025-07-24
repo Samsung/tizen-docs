@@ -562,6 +562,6 @@ By modifying the configuration file, you can construct various AI service, such 
 ## Related information
 
 - Dependencies
-  - Since Tizen 7.0
-- API References
-  - [ML-Service API](../../api/common/latest/group__CAPI__ML__NNSTREAMER__SERVICE__MODULE.html)
+  - Tizen 7.0 and Higher for Mobile
+  - Tizen 7.0 and Higher for Wearable
+  - Tizen 7.0 and Higher for IoT

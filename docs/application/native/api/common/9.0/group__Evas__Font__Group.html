@@ -87,8 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Font Functions</div>  </div>
 <div class="ingroups"><a class="el" href="group__Evas__Canvas.html">Canvas Functions</a></div></div><!--header-->
@@ -99,49 +98,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#ga3d9a43a227b620240301f9ad8e3bb0a7">evas_font_reinit</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#ga7c97d3ef5fd5523f480869fa2964d05f">evas_font_glyph_lru_size_set</a> (int size)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#ga47187f24f0cb1b431ddcb46dae2fef44">evas_font_glyph_lru_size_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#ga0bc19847e663aea912d41c1684dd6336">evas_font_available_list_free</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *available)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#ga37cc20978a90734c166ffeda434ade5c">evas_font_hinting_set</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <a class="el" href="group__Evas__Font__Group.html#gadb0596384c817a29f757d7ecb2f987d8">Evas_Font_Hinting_Flags</a> hinting)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the font hinting for the given evas.  <a href="#ga37cc20978a90734c166ffeda434ade5c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Font__Group.html#gadb0596384c817a29f757d7ecb2f987d8">Evas_Font_Hinting_Flags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#gad9a9567cb9734f24bae23e2dc3fef2ab">evas_font_hinting_get</a> (const <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the font hinting used by the given evas.  <a href="#gad9a9567cb9734f24bae23e2dc3fef2ab"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__Evas__Font__Group.html#ga5412a04a9e6bae18f40818d1ab6aae85">_Evas_Render_Sync_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Font__Group.html#gaab8d709d27fcc136296bd6dffbe87210">Evas_Render_Sync_Type</a></td></tr>
 </table>
-<hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="gaab8d709d27fcc136296bd6dffbe87210"></a><!-- doxytag: member="Evas_Common.h::Evas_Render_Sync_Type" ref="gaab8d709d27fcc136296bd6dffbe87210" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="group__Evas__Font__Group.html#ga5412a04a9e6bae18f40818d1ab6aae85">_Evas_Render_Sync_Type</a>  <a class="el" href="group__Evas__Font__Group.html#gaab8d709d27fcc136296bd6dffbe87210">Evas_Render_Sync_Type</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set glyphs lru list size as byte. It is used for trimming bitmap data of least recently used glyphs. It helps reducing memory usage. If the given size is 0, Evas will not trim bitmap data.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Get glyphs lru list size as byte.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
-
-</div>
-</div>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="ga5412a04a9e6bae18f40818d1ab6aae85"></a><!-- doxytag: member="Evas_Common.h::_Evas_Render_Sync_Type" ref="ga5412a04a9e6bae18f40818d1ab6aae85" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__Evas__Font__Group.html#ga5412a04a9e6bae18f40818d1ab6aae85">_Evas_Render_Sync_Type</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set glyphs lru list size as byte. It is used for trimming bitmap data of least recently used glyphs. It helps reducing memory usage. If the given size is 0, Evas will not trim bitmap data.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Get glyphs lru list size as byte.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="gadb0596384c817a29f757d7ecb2f987d8"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Font_Hinting_Flags" ref="gadb0596384c817a29f757d7ecb2f987d8" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -203,6 +168,44 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga47187f24f0cb1b431ddcb46dae2fef44"></a><!-- doxytag: member="Evas_Common.h::evas_font_glyph_lru_size_get" ref="ga47187f24f0cb1b431ddcb46dae2fef44" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Evas__Font__Group.html#ga47187f24f0cb1b431ddcb46dae2fef44">evas_font_glyph_lru_size_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get glyphs lru list size as byte.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7c97d3ef5fd5523f480869fa2964d05f"></a><!-- doxytag: member="Evas_Common.h::evas_font_glyph_lru_size_set" ref="ga7c97d3ef5fd5523f480869fa2964d05f" args="(int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#ga7c97d3ef5fd5523f480869fa2964d05f">evas_font_glyph_lru_size_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set glyphs lru list size as byte. It is used for trimming bitmap data of least recently used glyphs. It helps reducing memory usage. If the given size is 0, Evas will not trim bitmap data.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
 
 </div>
 </div>

@@ -91,43 +91,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Edje Part</div>  </div>
-<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a> &#124; <a class="el" href="group__Edje__Object__Text__Class.html">Edje Class: Text</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions that deal with layout components. </p>
-<p>Sets Edje text class for edje file (if loaded)</p>
-<p>Parts are layout components, but as a layout, they are objects too.</p>
-<p>There are several types of parts, these types can be divided into two main categories, the first being containers. Containers are parts that are in effect a group of elements. The second group is that of the elements, these part types may not contain others.</p>
-<p>This section has some functions specific for some types and others that could be applied to any type.</p>
-<p>This function sets the text class for All Edje Objects created from Edje file. (if edje file loaded before)</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>edje file path </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">font</td><td>Font name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Font Size</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error Delete the file text class.</dd></dl>
-<p>This function deletes any values at the file level for the specified file and text class.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class to be deleted. Gets font and font size from edje file if loaded.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function gets the font and the font size from the file text class.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The text class name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">font</td><td>Font name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>Font Size</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error</dd></dl>
-<p>Functions that deal with layout components</p>
 <p>Parts are layout components, but as a layout, they are objects too.</p>
 <p>There are several types of parts, these types can be divided into two main categories, the first being containers. Containers are parts that are in effect a group of elements. The second group is that of the elements, these part types may not contain others.</p>
 <p>This section has some functions specific for some types and others that could be applied to any type. </p>
@@ -149,7 +116,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga84d72a9952f1cb3ffb2d9a226338e168">edje_object_part_box_insert_before</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child, const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *reference)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the box.  <a href="#ga84d72a9952f1cb3ffb2d9a226338e168"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385">edje_object_part_box_insert_at</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child, unsigned int pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the box.  <a href="#ga10611460a18e65464a61ecfc3db79385"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an object to the box.  <a href="#ga10611460a18e65464a61ecfc3db79385"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga1c1c8227ae277a252479163f238a9b96">edje_object_part_box_remove_at</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, unsigned int pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an object from the box.  <a href="#ga1c1c8227ae277a252479163f238a9b96"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga266eb9640281744a4bc041d5b7c9b3d5">edje_object_part_box_remove</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *child)</td></tr>
@@ -168,6 +135,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all object from the table.  <a href="#ga0d16422be3bf0fba913f52bc83915b66"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#gaafac342db79c85b50cb063b73ab1bffd">edje_object_part_text_select_allow_set</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> allow)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables selection if the entry is an EXPLICIT selection mode type.  <a href="#gaafac342db79c85b50cb063b73ab1bffd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga50107a7dfb10db095fce4212fd626744">edje_object_part_text_select_disable_set</a> (const Edje_Object *obj, const char *part, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disable)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable selection if the entry is an EXPLICIT selection mode type include keyboard input.  <a href="#ga50107a7dfb10db095fce4212fd626744"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#gafd2241781aedc44a0f4cdc63bb029784">edje_object_part_text_set</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, const char *text)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a given text to an Edje object <code>TEXT</code> or TEXTBLOCK parts.  <a href="#gafd2241781aedc44a0f4cdc63bb029784"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga385d473b7cac211a561a0e23bc08f3a9">edje_object_part_text_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
@@ -200,8 +169,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the content (char) at the cursor position. <a class="el" href="group__Evas__Object__Textblock__Group.html#ga0c9f707f2b0ee70ceeaf7eb0a3fdd5b8">evas_textblock_cursor_content_get</a>.  <a href="#ga352a0534af02aa73a2c7dff5534c7dff"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga2367bd56c681c022efd31fc4d9287861">edje_object_part_text_cursor_geometry_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, int *x, int *y, int *w, int *h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cursor geometry of the part relative to the edje object.  <a href="#ga2367bd56c681c022efd31fc4d9287861"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga889458ba7fb65acd1d83cdf87225519b">edje_object_part_text_hide_visible_password</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides visible last character for password mode.  <a href="#ga889458ba7fb65acd1d83cdf87225519b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#gabb9e16e04a33af447c4a6f66e43228f4">edje_object_part_text_cursor_is_format_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Edje.html#ga4cbf85e8bb09d4c37ba98fdc9ec10d79">Edje_Cursor</a> cur)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides visible last character for password mode.  <a href="#gabb9e16e04a33af447c4a6f66e43228f4"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the cursor points to a format. <a class="el" href="group__Evas__Object__Textblock__Group.html#ga900e91fec4b6afcceb64bf19a8710a8c">evas_textblock_cursor_is_format</a>.  <a href="#gabb9e16e04a33af447c4a6f66e43228f4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga4c119913250e1676a024498c3fb9a395">edje_object_part_text_cursor_is_visible_format_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, <a class="el" href="group__Edje.html#ga4cbf85e8bb09d4c37ba98fdc9ec10d79">Edje_Cursor</a> cur)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if the cursor points to a visible format For example \t, \n, item and etc. <a class="el" href="group__Evas__Object__Textblock__Group.html#ga11e20ff8787ab159708f020f114e0b2a">evas_textblock_cursor_format_is_visible_get</a>.  <a href="#ga4c119913250e1676a024498c3fb9a395"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga27ee1369a0dc6ce13febe7d5e4fe0030">edje_object_part_text_anchor_geometry_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, const char *anchor)</td></tr>
@@ -282,8 +253,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the attribute to show the input panel in case of only a user's explicit Mouse Up event. It doesn't request to show the input panel even though it has focus.  <a href="#ga7513192254197bc22050f2a65bdceca2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga991ae18915558984c0e2e94eb2aac693">edje_object_part_text_input_panel_show_on_demand_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the attribute to show the input panel in case of only a user's explicit Mouse Up event.  <a href="#ga991ae18915558984c0e2e94eb2aac693"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#gaab134792b4a140b9b2eaa2e525c5f541">edje_object_part_text_prediction_hint_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, const char *prediction_hint)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the prediction hint to use an intelligent reply suggestion service.  <a href="#gaab134792b4a140b9b2eaa2e525c5f541"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga76465e370e8683b2bf669d9cd1975a0b">edje_object_part_text_prediction_hint_hash_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, const char *key, const char *value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the prediction hint data at the specified key.  <a href="#ga76465e370e8683b2bf669d9cd1975a0b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#gaaa5b79ce1a4d8b800e9fab89293fb24c">edje_object_part_text_prediction_hint_hash_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part, const char *key)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the prediction hint data identified by a key.  <a href="#gaaa5b79ce1a4d8b800e9fab89293fb24c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#gafae8fa8ee096a255acf63614bd4192d1">edje_object_part_text_select_begin</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the prediction hint to use an intelligent reply suggestion service.  <a href="#gafae8fa8ee096a255acf63614bd4192d1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts selecting at current cursor position.  <a href="#gafae8fa8ee096a255acf63614bd4192d1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga87d1313dd81b751b216195e4a257ed18">edje_object_part_text_select_abort</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Aborts any selection action on a part.  <a href="#ga87d1313dd81b751b216195e4a257ed18"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga2948089b960b055a13e46705e5bb8411">edje_object_part_text_select_extend</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *part)</td></tr>
@@ -490,18 +467,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Adds an object to the box. </p>
-<p>Inserts child in the box given by part, in the position marked by reference.</p>
-<p>See also <a class="el" href="group__Edje__Object__Part.html#gad50eb55892c1e06edc3928e8fe8baca4">edje_object_part_box_append()</a>, <a class="el" href="group__Edje__Object__Part.html#ga3dc70b8e5e25a042a2de7a498d999853">edje_object_part_box_prepend()</a>, <a class="el" href="group__Edje__Object__Part.html#ga84d72a9952f1cb3ffb2d9a226338e168">edje_object_part_box_insert_before()</a> and <a class="el" href="group__Edje__Object__Part.html#ga10611460a18e65464a61ecfc3db79385">edje_object_part_box_insert_at()</a></p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">child</td><td>The object to insert </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">reference</td><td>The object to be used as reference</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true:</code> Successfully added. <code>false:</code> An error occurred.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Inserts an object to the box.</dd></dl>
+<p>Inserts an object to the box. </p>
 <p>Adds child to the box indicated by part, in the position given by pos.</p>
 <p>See also <a class="el" href="group__Edje__Object__Part.html#gad50eb55892c1e06edc3928e8fe8baca4">edje_object_part_box_append()</a>, <a class="el" href="group__Edje__Object__Part.html#ga3dc70b8e5e25a042a2de7a498d999853">edje_object_part_box_prepend()</a>, <a class="el" href="group__Edje__Object__Part.html#ga84d72a9952f1cb3ffb2d9a226338e168">edje_object_part_box_insert_before()</a> and edje_object_part_box_insert_after()</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1958,15 +1924,7 @@ this function will not check if parameter value is valid using <a class="el" hre
 </div>
 <div class="memdoc">
 
-<p>Hides visible last character for password mode. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the visible character is hidden. <code>false</code> if there is no visible character or the object is not set for password mode.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18.0 Returns whether the cursor points to a format. <a class="el" href="group__Evas__Object__Textblock__Group.html#ga900e91fec4b6afcceb64bf19a8710a8c">evas_textblock_cursor_is_format</a></dd></dl>
+<p>Returns whether the cursor points to a format. <a class="el" href="group__Evas__Object__Textblock__Group.html#ga900e91fec4b6afcceb64bf19a8710a8c">evas_textblock_cursor_is_format</a>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
@@ -2417,6 +2375,43 @@ this function will not check if parameter value is valid using <a class="el" hre
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The text set on the part, <code>null</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga889458ba7fb65acd1d83cdf87225519b"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_part_text_hide_visible_password" ref="ga889458ba7fb65acd1d83cdf87225519b" args="(Evas_Object *obj, const char *part)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Part.html#ga889458ba7fb65acd1d83cdf87225519b">edje_object_part_text_hide_visible_password</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>part</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Hides visible last character for password mode. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the visible character is hidden. <code>false</code> if there is no visible character or the object is not set for password mode.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18.0 </dd></dl>
 
 </div>
 </div>
@@ -3578,6 +3573,144 @@ this function will not check if parameter value is valid using <a class="el" hre
 
 </div>
 </div>
+<a class="anchor" id="gaaa5b79ce1a4d8b800e9fab89293fb24c"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_part_text_prediction_hint_hash_del" ref="gaaa5b79ce1a4d8b800e9fab89293fb24c" args="(Evas_Object *obj, const char *part, const char *key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Part.html#gaaa5b79ce1a4d8b800e9fab89293fb24c">edje_object_part_text_prediction_hint_hash_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>part</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Removes the prediction hint data identified by a key. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key of the prediction hint</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga76465e370e8683b2bf669d9cd1975a0b"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_part_text_prediction_hint_hash_set" ref="ga76465e370e8683b2bf669d9cd1975a0b" args="(Evas_Object *obj, const char *part, const char *key, const char *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Part.html#ga76465e370e8683b2bf669d9cd1975a0b">edje_object_part_text_prediction_hint_hash_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>part</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the prediction hint data at the specified key. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key of the prediction hint </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The data to replace</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaab134792b4a140b9b2eaa2e525c5f541"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_part_text_prediction_hint_set" ref="gaab134792b4a140b9b2eaa2e525c5f541" args="(Evas_Object *obj, const char *part, const char *prediction_hint)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Edje__Object__Part.html#gaab134792b4a140b9b2eaa2e525c5f541">edje_object_part_text_prediction_hint_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>part</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>prediction_hint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the prediction hint to use an intelligent reply suggestion service. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prediction_hint</td><td>Prediction hint</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20.0 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga87d1313dd81b751b216195e4a257ed18"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_part_text_select_abort" ref="ga87d1313dd81b751b216195e4a257ed18" args="(const Evas_Object *obj, const char *part)" -->
 <div class="memitem">
 <div class="memproto">
@@ -3722,34 +3855,7 @@ this function will not check if parameter value is valid using <a class="el" hre
 </div>
 <div class="memdoc">
 
-<p>Sets the prediction hint to use an intelligent reply suggestion service. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">prediction_hint</td><td>Prediction hint</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20.0 Sets the prediction hint data at the specified key.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key of the prediction hint </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The data to replace</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21.0 Removes the prediction hint data identified by a key</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key of the prediction hint</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21.0 Starts selecting at current cursor position</dd></dl>
+<p>Starts selecting at current cursor position. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
@@ -3757,6 +3863,50 @@ this function will not check if parameter value is valid using <a class="el" hre
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga50107a7dfb10db095fce4212fd626744"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_part_text_select_disable_set" ref="ga50107a7dfb10db095fce4212fd626744" args="(const Edje_Object *obj, const char *part, Eina_Bool disable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Edje__Object__Part.html#ga50107a7dfb10db095fce4212fd626744">edje_object_part_text_select_disable_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Edje_Object *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>part</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>disable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Disable selection if the entry is an EXPLICIT selection mode type include keyboard input. </p>
+<p>The default is to not allow selection. This function only affects user selection, functions such as <a class="el" href="group__Edje__Object__Part.html#ga512fb3acdebd983589acc57ee2697779" title="Sets the selection to be everything.">edje_object_part_text_select_all()</a> and <a class="el" href="group__Edje__Object__Part.html#gaa353f2ce979d07f5f37267d59816c07a" title="Sets the selection to be none.">edje_object_part_text_select_none()</a> are not affected.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">part</td><td>The part name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">disable</td><td>true to disble, false otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

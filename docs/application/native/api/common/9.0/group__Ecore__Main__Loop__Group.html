@@ -123,6 +123,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This function suspends the main loop in a know state.  <a href="#ga0624ccd91c607ed241f45ac1da8875a6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Main__Loop__Group.html#gabd2ff96845800d5fcb7cd2607fffa296">ecore_thread_main_loop_end</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the main loop.  <a href="#gabd2ff96845800d5fcb7cd2607fffa296"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Main__Loop__Group.html#ga66c4b3703845a382acc104e13bc6957f">efl_loop_register</a> (Efl_Loop *obj, const Efl_Class *klass, const Efl_Object *provider)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Main__Loop__Group.html#gaf0948b2f8061dc90e3ed9f4abd794197">efl_loop_unregister</a> (Efl_Loop *obj, const Efl_Class *klass, const Efl_Object *provider)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Main__Loop__Group.html#ga12ab18010a0d8f6831af86ad9d6d2d9e">efl_exit</a> (int exit_code)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Quits the main loop once all the events currently on the queue have been processed.  <a href="#ga12ab18010a0d8f6831af86ad9d6d2d9e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Eina__Future__Scheduler.html">Eina_Future_Scheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Main__Loop__Group.html#gaa9ce199ee85731d898e772a414fc7fa3">efl_loop_future_scheduler_get</a> (const Eo *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the future scheduler for the current loop.  <a href="#gaa9ce199ee85731d898e772a414fc7fa3"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Ecore_Version&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Main__Loop__Group.html#gaa252ceca1589e2f652ef61f72efdbe94">Ecore_Version</a></td></tr>
@@ -817,6 +823,127 @@ You don't need to call this function if Ecore was compiled with. --with-glib=alw
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="efl_thread_1_8c-example.html#a3">efl_thread_1.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ga12ab18010a0d8f6831af86ad9d6d2d9e"></a><!-- doxytag: member="Ecore_Eo.h::efl_exit" ref="ga12ab18010a0d8f6831af86ad9d6d2d9e" args="(int exit_code)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Main__Loop__Group.html#ga12ab18010a0d8f6831af86ad9d6d2d9e">efl_exit</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>exit_code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Quits the main loop once all the events currently on the queue have been processed. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">exit_code</td><td>Returned value by begin()</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function can only be called from the main loop. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_cxx_example_02_8cc-example.html#a1">bg_cxx_example_02.cc</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gaa9ce199ee85731d898e772a414fc7fa3"></a><!-- doxytag: member="Ecore_Eo.h::efl_loop_future_scheduler_get" ref="gaa9ce199ee85731d898e772a414fc7fa3" args="(const Eo *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__Eina__Future__Scheduler.html">Eina_Future_Scheduler</a>* <a class="el" href="group__Ecore__Main__Loop__Group.html#gaa9ce199ee85731d898e772a414fc7fa3">efl_loop_future_scheduler_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Eo *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the future scheduler for the current loop. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>An object which is either a loop or a loop consumer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The current loop's future scheduler. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga66c4b3703845a382acc104e13bc6957f"></a><!-- doxytag: member="Ecore_Eo.h::efl_loop_register" ref="ga66c4b3703845a382acc104e13bc6957f" args="(Efl_Loop *obj, const Efl_Class *klass, const Efl_Object *provider)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Main__Loop__Group.html#ga66c4b3703845a382acc104e13bc6957f">efl_loop_register</a> </td>
+          <td>(</td>
+          <td class="paramtype">Efl_Loop *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Efl_Class *&#160;</td>
+          <td class="paramname"><em>klass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Efl_Object *&#160;</td>
+          <td class="paramname"><em>provider</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Please use efl_provider_register instead. </p>
+
+</div>
+</div>
+<a class="anchor" id="gaf0948b2f8061dc90e3ed9f4abd794197"></a><!-- doxytag: member="Ecore_Eo.h::efl_loop_unregister" ref="gaf0948b2f8061dc90e3ed9f4abd794197" args="(Efl_Loop *obj, const Efl_Class *klass, const Efl_Object *provider)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Main__Loop__Group.html#gaf0948b2f8061dc90e3ed9f4abd794197">efl_loop_unregister</a> </td>
+          <td>(</td>
+          <td class="paramtype">Efl_Loop *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Efl_Class *&#160;</td>
+          <td class="paramname"><em>klass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Efl_Object *&#160;</td>
+          <td class="paramname"><em>provider</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Please use efl_provider_unregister instead. </p>
+
 </div>
 </div>
 <hr/><h2>Variable Documentation</h2>

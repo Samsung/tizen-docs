@@ -7,7 +7,7 @@ The main features of the NFC API include:
 
 - NFC management
 
-  With the [Manager API](../../api/common/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html), you can, for example:
+  With the Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html) applications), you can, for example:
 
   - Initialize and deinitialize NFC.
   - [Enable and disable NFC](#enable).
@@ -20,7 +20,7 @@ The main features of the NFC API include:
 
   The NFC Data Exchange Format (NDEF) is a packet message format used in the reader/writer and peer-to-peer modes.
 
-  With the [NDEF API](../../api/common/latest/group__CAPI__NETWORK__NFC__NDEF__MODULE.html), you can:
+  With the NDEF API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__NDEF__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__NDEF__MODULE.html) applications), you can:
 
   - Create NDEF records.
   - Retrieve a specific field of an NDEF record.
@@ -29,7 +29,7 @@ The main features of the NFC API include:
 
 - Reader/writer mode
 
-  With the [TAG API](../../api/common/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html), you can, for example:
+  With the TAG API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html) applications), you can, for example:
 
   - Retrieve the tag type.
   - Read an NDEF message from a tag.
@@ -39,7 +39,7 @@ The main features of the NFC API include:
 
 - Peer-to-peer mode
 
-  With the [Peer to Peer API](../../api/common/latest/group__CAPI__NETWORK__NFC__P2P__MODULE.html), you can:
+  With the Peer to Peer API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__P2P__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__P2P__MODULE.html) applications), you can:
 
   - [Send an NDEF message](#send) to a peer device.
   - Receive an NDEF message from a peer device.
@@ -56,7 +56,7 @@ The main features of the NFC API include:
 
   ![Traditional card emulation](./media/nfc_card_emulation.png)
 
-  With the [Card Emulation API](../../api/common/latest/group__CAPI__NETWORK__NFC__SE__MODULE.html), you can:
+  With the Card Emulation API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__SE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__SE__MODULE.html) applications), you can:
 
   - Enable and disable the card emulation mode.
   - Retrieve the card emulation status.
@@ -107,7 +107,7 @@ The main features of the NFC API include:
 
 To enable your application to use the NFC functionality:
 
-1. To use the [NFC API](../../api/common/latest/group__CAPI__NETWORK__NFC__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the NFC API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -236,7 +236,7 @@ To work with NFC manually, you need to register for notifications and handle con
       }
       ```
 
-   2. Use the `nfc_manager_set_tag_filter()` function to declare the tag filtering option. Use a bit operation of the `nfc_tag_filter_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gaaedb205391ef13ef62d0c9a318a802ad) to specify the type of filtering. The default value is `NFC_TAG_FILTER_ALL_ENABLE`, which means that all tag types are enabled.
+   2. Use the `nfc_manager_set_tag_filter()` function to declare the tag filtering option. Use a bit operation of the `nfc_tag_filter_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gaaedb205391ef13ef62d0c9a318a802ad) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gaaedb205391ef13ef62d0c9a318a802ad) applications) to specify the type of filtering. The default value is `NFC_TAG_FILTER_ALL_ENABLE`, which means that all tag types are enabled.
 
       ```
       nfc_manager_set_tag_filter(NFC_TAG_FILTER_ALL_ENABLE);
@@ -301,9 +301,9 @@ To work with NFC manually, you need to register for notifications and handle con
 
    1. Get basic tag information.
 
-      When a tag is discovered, the `on_nfc_tag_discovered()` callback registered earlier is called. In the callback, you can check the NFC discovered type from the first callback parameter. The `nfc_discovered_type_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402) defines the possible values. If the value is `NFC_DISCOVERED_TYPE_ATTACHED`, the tag has connected to the device, and you can read and print out information from the tag:
+      When a tag is discovered, the `on_nfc_tag_discovered()` callback registered earlier is called. In the callback, you can check the NFC discovered type from the first callback parameter. The `nfc_discovered_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402) applications) defines the possible values. If the value is `NFC_DISCOVERED_TYPE_ATTACHED`, the tag has connected to the device, and you can read and print out information from the tag:
 
-      1. Get the type of the tag with the `nfc_tag_get_type()` function. The first parameter is the tag handle (received in the second callback parameter) and the second is a pointer to an `nfc_tag_type_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html#gac77f833a3dde9e3e12d2171f923d8fcb), where the tag type is stored.
+      1. Get the type of the tag with the `nfc_tag_get_type()` function. The first parameter is the tag handle (received in the second callback parameter) and the second is a pointer to an `nfc_tag_type_e` variable (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html#gac77f833a3dde9e3e12d2171f923d8fcb) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html#gac77f833a3dde9e3e12d2171f923d8fcb) applications), where the tag type is stored.
 
          ```
          nfc_tag_get_type(tag, &tag_type);
@@ -520,7 +520,7 @@ To work with NFC manually, you need to register for notifications and handle con
 
    1. When the device is connected to a P2P target, you can exchange NDEF data with that peer target by sending and receiving messages.
 
-      In the registered `on_nfc_p2p_target_discovered()` callback, check the value of the first parameter, which defines the type of the NFC discovery using the `nfc_discovered_type_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402). If the type is `NFC_DISCOVERED_TYPE_ATTACHED`, the remote device is attached to the device:
+      In the registered `on_nfc_p2p_target_discovered()` callback, check the value of the first parameter, which defines the type of the NFC discovery using the `nfc_discovered_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402) applications). If the type is `NFC_DISCOVERED_TYPE_ATTACHED`, the remote device is attached to the device:
 
       ```
       if (type == NFC_DISCOVERED_TYPE_ATTACHED)
@@ -1327,13 +1327,7 @@ To send and receive messages using the NFC P2P mode:
    Depending on the record type, some obtained values must be freed and others must not. For example, you must free the obtained text from a text record.
 
 
-## Related information
+## Related Information
 - Dependencies
-  - Since Tizen 2.4
-- API References
-  - [NFC API](../../api/common/latest/group__CAPI__NETWORK__NFC__MODULE.html)
-  - [Manager API](../../api/common/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html)
-  - [NDEF API](../../api/common/latest/group__CAPI__NETWORK__NFC__NDEF__MODULE.html)
-  - [TAG API](../../api/common/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html)
-  - [Peer to Peer API](../../api/common/latest/group__CAPI__NETWORK__NFC__P2P__MODULE.html)
-  - [Card Emulation API](../../api/common/latest/group__CAPI__NETWORK__NFC__SE__MODULE.html)
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

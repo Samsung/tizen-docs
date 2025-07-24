@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Evas__Object__Group.html#ga8c5243311efac47b9ed242c72905ccdf" title="Sets the hints for an object&#39;s aspect ratio.">evas_object_size_hint_aspect_set</a>(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
 
    <span class="comment">/* file selector entry */</span>
-   fs_entry = elm_fileselector_entry_add(win);
+   fs_entry = <a class="code" href="group__Elm__File__Selector__Entry.html#ga4f15d30896e40e7ccba49fda045ac1fe">elm_fileselector_entry_add</a>(win);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(fs_entry, EVAS_HINT_FILL, 0);
    elm_fileselector_path_set(fs_entry, <span class="stringliteral">&quot;/tmp&quot;</span>);
    elm_object_text_set(fs_entry, <span class="stringliteral">&quot;Select a file&quot;</span>);
@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, fs_entry);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fs_entry);
 </pre></div></p>
-<p>Note that we set on it's button both icon and label decorations. It's set to exhibit the path of (and list the contents of, when internal file selector is launched) the <code>"/tmp"</code> directory, also, with elm_fileselector_entry_path_set(). What follows are checkboxes to exercise some of its API functions:  <div class="fragment"><pre class="fragment">   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+<p>Note that we set on it's button both icon and label decorations. It's set to exhibit the path of (and list the contents of, when internal file selector is launched) the <code>"/tmp"</code> directory, also, with <a class="el" href="group__Elm__File__Selector__Entry.html#gaa6be3beb4e8dbc297c8e426ae0df4b53">elm_fileselector_entry_path_set()</a>. What follows are checkboxes to exercise some of its API functions:  <div class="fragment"><pre class="fragment">   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
    elm_object_text_set(ck, <span class="stringliteral">&quot;editable selection&quot;</span>);
    <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, elm_fileselector_is_save_get(fs_entry));
    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _current_sel_toggle, fs_entry);

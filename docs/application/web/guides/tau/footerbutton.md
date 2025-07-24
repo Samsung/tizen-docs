@@ -117,4 +117,3 @@ To implement footer buttons:
 ## Related information
 * Dependencies     
   - Tizen 2.3.1 and Higher for Wearable
-* API Reference: [Advanced UI Framework](../../api/latest/ui_fw_api/ui_fw_api_cover.htm)

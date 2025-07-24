@@ -1,6 +1,6 @@
 # Flip
 
-The flip UI component is used for a transition effect, which can hold 2 `Evas_Objects` and flip between them using several predefined animations. For more information, see the [Flip](../../../../api/common/latest/group__Elm__Flip.html) API.
+The flip UI component is used for a transition effect, which can hold 2 `Evas_Objects` and flip between them using several predefined animations. For more information, see the [Flip](../../../../api/mobile/latest/group__Elm__Flip.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -98,4 +98,4 @@ You can register callback functions connected to the following signals for a fli
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

@@ -48,6 +48,3 @@ The following output is generated when the Loading is created using property:
 
 - Dependencies
   -   Tizen 6.5 and Higher 
-
-- API References
-  - [Loading API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Loading.html)

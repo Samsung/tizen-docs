@@ -27,7 +27,7 @@ The main features of the Curl API include:
 
 To enable your application to use the Curl functionality:
 
-1. To use the [Curl API](../../api/common/latest/group__OPENSRC__CURL__FRAMEWORK.html) and the libcurl library, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Curl API (in [mobile](../../api/mobile/latest/group__OPENSRC__CURL__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__OPENSRC__CURL__FRAMEWORK.html) applications) and the libcurl library, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -76,7 +76,7 @@ To enable your application to use the Curl functionality:
 
 There are 2 ways for getting and setting the proxy address:
 
-- To get the proxy address directly, use the `connection_get_proxy()` function of the [Connection Manager API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html):
+- To get the proxy address directly, use the `connection_get_proxy()` function of the Connection Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) applications):
     ```
     char *proxy_address;
     conn_err = connection_get_proxy(connection, CONNECTION_ADDRESS_FAMILY_IPV4, &proxy_address);
@@ -118,10 +118,7 @@ if (curl_err != CURLE_OK)
     /* Error handling */
 ```
 
-## Related information
+## Related Information
 - Dependencies
-  - Since Tizen 2.4
-- API References
-  - [Curl API](../../api/common/latest/group__OPENSRC__CURL__FRAMEWORK.html)
-  - [Connection Manager API](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)
-  
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

@@ -122,7 +122,7 @@ _horizontal_grid(<span class="keywordtype">void</span>        *data,
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
 
-   <a class="code" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659" title="Set the gengrid multi select mode.">elm_gengrid_horizontal_set</a>(grid, <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj));
+   <a class="code" href="group__Elm__Gengrid__Group.html#gabaf4b5619ff307173b9403b525851659" title="Set the direction in which a given gengrid widget will expand while placing its items.">elm_gengrid_horizontal_set</a>(grid, <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj));
 }
 
 <span class="comment">/* &quot;always select&quot; callback */</span>
@@ -135,9 +135,9 @@ _always_select_change(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> always = <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
 
    <span class="keywordflow">if</span> (always)
-     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab3cfbf566fdbea2079f3081969f0c59c">ELM_OBJECT_SELECT_MODE_ALWAYS</a>);
+     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab3cfbf566fdbea2079f3081969f0c59c">ELM_OBJECT_SELECT_MODE_ALWAYS</a>);
    <span class="keywordflow">else</span>
-     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a>);
+     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a>);
 
    printf(<span class="stringliteral">&quot;\&quot;Always select\&quot; mode for gengrid items is now %s\n&quot;</span>,
            always ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);
@@ -194,9 +194,9 @@ _no_sel_change(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> no_sel = <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
 
    <span class="keywordflow">if</span> (no_sel)
-     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa0f0e25088d651a379b4eb8b915d2e13f">ELM_OBJECT_SELECT_MODE_NONE</a>);
+     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa0f0e25088d651a379b4eb8b915d2e13f">ELM_OBJECT_SELECT_MODE_NONE</a>);
    <span class="keywordflow">else</span>
-     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the timeout in seconds for the longpress event.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a>);
+     <a class="code" href="group__Elm__Gengrid__Group.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, <a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fa69bb485be5448b469c86485fd884d649">ELM_OBJECT_SELECT_MODE_DEFAULT</a>);
 
    printf(<span class="stringliteral">&quot;Selection for gengrid items is now %s\n&quot;</span>,
            no_sel ? <span class="stringliteral">&quot;disabled&quot;</span> : <span class="stringliteral">&quot;enabled&quot;</span>);
@@ -324,7 +324,7 @@ _show_last_clicked(<span class="keywordtype">void</span>        *data,
 
    <span class="keywordflow">if</span> (!gg_it) <span class="keywordflow">return</span>;
 
-   <a class="code" href="group__Elm__Gengrid__Item__Group.html#ga60cf57e89b4f95230fe618168707bb28" title="Custom size mode for non-homogeneous gengrid.">elm_gengrid_item_show</a>(gg_it, <a class="code" href="group__Elm__Gengrid__Item__Group.html#gga40161f81baa7e0c89b14f84b80c71735a2752198ebed6ede5edf236c45307679e">ELM_GENGRID_ITEM_SCROLLTO_IN</a>);
+   <a class="code" href="group__Elm__Gengrid__Item__Group.html#ga60cf57e89b4f95230fe618168707bb28" title="Show the portion of a gengrid&#39;s internal grid containing a given item, immediately.">elm_gengrid_item_show</a>(gg_it, <a class="code" href="group__Elm__Gengrid__Item__Group.html#gga40161f81baa7e0c89b14f84b80c71735a2752198ebed6ede5edf236c45307679e">ELM_GENGRID_ITEM_SCROLLTO_IN</a>);
 }
 
 <span class="comment">/* disable selected item */</span>
@@ -350,7 +350,7 @@ _size_changed(<span class="keywordtype">void</span>        *data,
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
    <span class="keywordtype">int</span> size = <a class="code" href="group__Elm__Spinner__Group.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj);
 
-   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, size, size);
+   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, size, size);
 }
 
 <span class="comment">/* item double click callback */</span>
@@ -514,7 +514,7 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
    grid = <a class="code" href="group__Elm__Gengrid__Group.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
-   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+   <a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 150, 150);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, grid);
@@ -639,7 +639,7 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <a class="code" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742" title="Set the (exact) length of the bar region of a given slider widget.">elm_slider_span_size_set</a>(sl, 100);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sl, 0.5, EVAS_HINT_FILL);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sl, 0.0, EVAS_HINT_EXPAND);
-   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="This enables two indicators in slider.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
+   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="Set the format string for the indicator label.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
    <a class="code" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d" title="Set the value the slider displays.">elm_slider_value_set</a>(sl, h);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_3, sl);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sl);
@@ -651,7 +651,7 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <a class="code" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742" title="Set the (exact) length of the bar region of a given slider widget.">elm_slider_span_size_set</a>(sl, 100);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sl, 0.5, EVAS_HINT_FILL);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sl, 0.0, EVAS_HINT_EXPAND);
-   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="This enables two indicators in slider.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
+   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="Set the format string for the indicator label.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
    <a class="code" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d" title="Set the value the slider displays.">elm_slider_value_set</a>(sl, v);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_3, sl);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sl);
@@ -665,7 +665,7 @@ elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
    <a class="code" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742" title="Set the (exact) length of the bar region of a given slider widget.">elm_slider_span_size_set</a>(sl, 100);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(sl, 0.5, EVAS_HINT_FILL);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(sl, 0.0, EVAS_HINT_EXPAND);
-   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="This enables two indicators in slider.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
+   <a class="code" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2" title="Set the format string for the indicator label.">elm_slider_indicator_format_set</a>(sl, <span class="stringliteral">&quot;%1.1f&quot;</span>);
    <a class="code" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d" title="Set the value the slider displays.">elm_slider_value_set</a>(sl, h);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx_3, sl);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sl);

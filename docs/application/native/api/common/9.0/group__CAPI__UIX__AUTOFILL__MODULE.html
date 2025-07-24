@@ -94,7 +94,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The <a class="el" href="group__CAPI__UIX__AUTOFILL__MODULE.html">Autofill</a> API provides the functions for supporting users to use autofill feature. </p>
 <h2><a class="anchor" id="CAPI_UIX_AUTOFILL_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>Autofill is a feature that allows you to fill out the data previously entered by the user such as email, account and address in a text input field. </p>
+<p>Autofill is a feature that allows you to fill out the data previously entered by the user such as email, account and address in a text input field.</p>
+<p>The main features of the Autofill API include:</p>
+<ul>
+<li>Autofill Data and Autofill Authentication Information<br/>
+ You can request to get the autofill service information, such as Autofill service name, service message, and service logo image. You can get the existing Autofill data for each view in the Autofill service information received.<br/>
+</li>
+</ul>
+<ul>
+<li>Data Entered and Stored in Autofill Service<br/>
+ You can retrieve the data that was stored in the Autofill service.<br/>
+</li>
+</ul>
+<ul>
+<li>Save Autofill Data<br/>
+ You can store the data entered by the user in an Autofill service.<br/>
+</li>
+</ul>
+<h2><a class="anchor" id="CAPI_UIX_AUTOFILL_MODULE_PREREQUISITES"></a>
+Prerequisites</h2>
+<p>To configure the Autofill Service:<br/>
+ Set Autofill Service in the Setting Application from Settings &gt; Language and input &gt; Input Assistance &gt; Autofill service. In some other environments, the Autofill Service can be found within the system configuration.<br/>
+ To use the Autofill API, include the &lt;autofill.h&gt; header file in your application. </p>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -17,10 +17,7 @@ The main feature of the `Tizen.Applications.ComponentBased.ComponentPort` class 
 To enable your component to use the component port functionality, follow these steps:
 
 1.  You need two components to communicate with each other through the component port.
-2.  To use the methods and properties of the [Tizen.Applications.ComponentBased.ComponentPort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentPort.html) and [Tizen.Applications.ComponentBased.ComponentTask](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentTask.html) classes, include the [Tizen.Applications.ComponentBased](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.html) namespace in your component:- API Reference
-  - [Tizen.Applications.ComponentBased](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased) namespace
-  - [Tizen.Applications.ComponentBased.ComponentPort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentPort) class
-  - [Tizen.Applications.ComponentBased.ComponentTask](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentTask) class
+2.  To use the methods and properties of the [Tizen.Applications.ComponentBased.ComponentPort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentPort.html) and [Tizen.Applications.ComponentBased.ComponentTask](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentTask.html) classes, include the [Tizen.Applications.ComponentBased](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.html) namespace in your component:
 
     ```csharp
     using Tizen.Applications.ComponentBased;
@@ -468,7 +465,3 @@ Using [Tizen.Applications.ComponentBased.ComponentTask](/application/dotnet/api/
 ## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
-- API References
-  - [Tizen.Applications.ComponentBased](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased) namespace
-  - [Tizen.Applications.ComponentBased.ComponentPort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentPort) class
-  - [Tizen.Applications.ComponentBased.ComponentTask](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentTask) class

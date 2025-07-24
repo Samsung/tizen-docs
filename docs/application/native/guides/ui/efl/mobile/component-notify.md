@@ -1,6 +1,6 @@
 # Notify
 
-The notify UI component displays a container in a particular region of the parent object. It can receive some content, and become automatically hidden after a certain amount of time. The [popup](component-popup.md) component is very similar to the notify component, but supports many common layouts. For more information, see the [Notify](../../../../api/common/latest/group__Elm__Notify__Group.html) API.
+The notify UI component displays a container in a particular region of the parent object. It can receive some content, and become automatically hidden after a certain amount of time. The [popup](component-popup.md) component is very similar to the notify component, but supports many common layouts. For more information, see the [Notify](../../../../api/mobile/latest/group__Elm__Notify__Group.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -120,4 +120,4 @@ You can register callback functions connected to the following signals for a not
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

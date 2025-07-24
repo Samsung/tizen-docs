@@ -50,7 +50,3 @@ Learning how to use generic, predefined event handlers allows you handle applica
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/tizen.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/tizen.html)
-  - [TV](../../api/latest/device_api/tv/tizen/tizen.html)

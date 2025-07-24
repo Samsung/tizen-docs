@@ -4,7 +4,7 @@ This feature is supported in mobile applications only.
 
 The list is a very simple UI component used to manage a limited number of items. For lists with a lot of items, use the [Genlist](component-genlist.md).
 
-For more information, see the [List](../../../../api/common/latest/group__Elm__List__Group.html) API.
+For more information, see the [List](../../../../api/mobile/latest/group__Elm__List__Group.html) API.
 
 **Figure: List component**
 
@@ -224,4 +224,4 @@ double_clicked_cb(void *data, Evas_Object *obj, void *event_info)
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

@@ -588,9 +588,6 @@ relativeLayoutView.Add(blackView);
 - Dependencies
   -  Tizen 6.5 and Higher
 
-- API References
-  - [Relative Layout API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.RelativeLayout.html)
-
 <script>
     function openTabSection(evt, profileName, sectionId) {
         var i, tabcontent, tablinks, section;

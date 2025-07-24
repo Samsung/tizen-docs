@@ -28,7 +28,7 @@ In case of a file, thumbnails are encoded with a user-specified extension.
 
 To enable your application to use the thumbnail util functionality:
 
-1. To use the functions and data types of the [Thumbnail Util API](../../api/common/latest/group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html), include the `<thumbnail_util.h>` header file in your application:
+1. To use the functions and data types of the Thumbnail Util API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html) applications), include the `<thumbnail_util.h>` header file in your application:
 
    ```
    #include <thumbnail_util.h>
@@ -125,4 +125,5 @@ To extract a thumbnail from the file:
 
 ## Related Information
 - Dependencies
-  - Since Tizen 5.0
+  - Tizen 5.0 and Higher for Mobile
+  - Tizen 5.0 and Higher for Wearable

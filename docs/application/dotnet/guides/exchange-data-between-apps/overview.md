@@ -49,10 +49,5 @@ Message port provides an encrypted communication using the author's certificate.
 ![Message Port](./media/overview_msgport.png)
 
 ## Related information
-- Dependencies
+* Dependencies
   -   Tizen 4.0 and Higher
-- API References
-  - [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl) class
-  - [Tizen.Applications.DataControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.DataControl) namespace
-  - [Tizen.Applications.EventManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.EventManager) namespace
-  - [Tizen.Applications.Messages](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages) namespace

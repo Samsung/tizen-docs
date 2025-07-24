@@ -1,6 +1,6 @@
 # Icon
 
-The icon UI component is used to display standard icon images ("delete", "home", and "apps") or images coming from a custom file (such as PNG, JPG, and Edje) in icon contexts. The icon component inherits from the [image](component-image.md) component, which means that image functions can be used on icon objects. For more information, see the [Icon](../../../../api/common/latest/group__Elm__Icon.html) API.
+The icon UI component is used to display standard icon images ("delete", "home", and "apps") or images coming from a custom file (such as PNG, JPG, and Edje) in icon contexts. The icon component inherits from the [image](component-image.md) component, which means that image functions can be used on icon objects. For more information, see the [Icon](../../../../api/mobile/latest/group__Elm__Icon.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -179,4 +179,4 @@ You can register callback functions connected to the following signals for an ic
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

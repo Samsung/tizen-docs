@@ -31,7 +31,4 @@ To create an AlertDialog, follow these steps:
 ## Related information
 
 - Dependencies
-  -   Tizen 6.5 and Higher
-
-- API References
-  - [AlertDialog API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.AlertDialog.html)
+  -   Tizen 6.5 and Higher 

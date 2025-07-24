@@ -2,7 +2,7 @@
 
 Elementary library provides a set of pre-built UI components that allow you to build a rich graphical user interface for your applications. Each profile provides a different set of UI components, as you can see in [Mobile UI Components](mobile/ui-components.md) and [Wearable UI Components](wearable/ui-components.md).
 
-The preconditions of using Elementary UI components are covered in [Getting Started with EFL UI Programming](./getting-started.md). Elementary UI components share the same APIs for general features. For more information, see the [General API](../../../api/common/latest/group__Elm__General.html).
+The preconditions of using Elementary UI components are covered in [Getting Started with EFL UI Programming](./getting-started.md). Elementary UI components share the same APIs for general features. For more information, see the General API (in [mobile](../../../api/mobile/latest/group__Elm__General.html) and [wearable](../../../api/wearable/latest/group__Elm__General.html) applications).
 
 **Figure: Mobile UI components**
 
@@ -123,4 +123,5 @@ For more information on UI components in general, see the following topics:
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

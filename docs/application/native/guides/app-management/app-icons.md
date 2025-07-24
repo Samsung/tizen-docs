@@ -3,8 +3,6 @@
 
 You can show the mobile application icon as a shortcut on the home screen to allow the user to easily launch the application. In the device application list, you can show a badge with the application icon to provide additional information about the application state or notifications to the user.
 
-This API is supported on specifc Tizen devices that support [badge and shortcut features](#prerequisites).
-
 The main features of the Badge and Shortcut API include:
 
 - Creating and removing a badge
@@ -17,11 +15,11 @@ The main features of the Badge and Shortcut API include:
 
   You can [get and set the count and display attributes for the badge](#manage).
 
-- Adding a shortcut
+- Adding a shortcut **in mobile applications only**
 
   You can [add a shortcut](#add) to the home screen to launch an application.
 
-- Adding a widget
+- Adding a widget **in mobile applications only**
 
   If you have created a widget application, you can [add the widget](#add_widget) to the home screen.
 
@@ -33,16 +31,9 @@ The main features of the Badge and Shortcut API include:
 
 To enable your application to use the application icon functionality:
 
-To use the badge and shortcut features, include the following feature in your tizen-manifest.xml file.
-
-   ```
-   <feature name="http://tizen.org/feature/badge"/>
-   <feature name="http://tizen.org/feature/shortcut"/>
-   ```
-
 - To handle badges:
 
-  1. To use the [Badge API](../../api/common/latest/group__BADGE__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+  1. To use the Badge API (in [mobile](../../api/mobile/latest/group__BADGE__MODULE.html) and [wearable](../../api/wearable/latest/group__BADGE__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
      ```
      <privileges>
@@ -72,7 +63,7 @@ To use the badge and shortcut features, include the following feature in your ti
 
 - To handle shortcuts:
 
-  1. To use the [Shortcut API](../../api/common/latest/group__SHORTCUT__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+  1. To use the [Shortcut](../../api/mobile/latest/group__SHORTCUT__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
      ```
      <privileges>
         <privilege>http://tizen.org/privilege/shortcut</privilege>
@@ -154,7 +145,7 @@ To manage the badge:
   ```
 
 <a name="add"> </a>
-## Adding a Shortcut
+## Adding a Shortcut in Mobile Applications
 
 To add a shortcut to the home screen:
 
@@ -185,7 +176,7 @@ To add a shortcut to the home screen:
    ```
 
 <a name="add_widget"></a>
-## Adding a Widget
+## Adding a Widget in Mobile Applications
 
 To add a widget to the home screen:
 
@@ -216,7 +207,5 @@ To add a widget to the home screen:
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
-- API References
-  - [Badge (Deprecated)](../../api/common/latest/group__BADGE__MODULE.html)
-  - [Shortcut (Deprecated)](../../api/common/latest/group__SHORTCUT__MODULE.html)
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

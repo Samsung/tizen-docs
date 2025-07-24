@@ -19,7 +19,7 @@ The main features of the Storage API include:
 
 To enable your application to use the storage functionality:
 
-1. To use the functions and data types of the [Storage API](../../api/common/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html), include the `<storage.h>` header file in your application:
+1. To use the functions and data types of the Storage API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications), include the `<storage.h>` header file in your application:
 
    ```
    #include <storage.h>
@@ -118,7 +118,7 @@ To retrieve storage information:
 
   The function retrieves the absolute path to the directory.
 
-  The second parameter defines the directory type based on the [`storage_directory_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gaacf2209a06b947c1cee4ba223679383a).
+  The second parameter defines the directory type based on the `storage_directory_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gaacf2209a06b947c1cee4ba223679383a) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gaacf2209a06b947c1cee4ba223679383a) applications).
 
   To get the media directory:
 
@@ -132,7 +132,7 @@ To retrieve storage information:
 
 - Get the storage type of a specific storage by using the `storage_get_type()` function.
 
-  The [`storage_type_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gabdf32571260b6c253da5bfcdecaa2f1f) defines the available storage types.
+  The `storage_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gabdf32571260b6c253da5bfcdecaa2f1f) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gabdf32571260b6c253da5bfcdecaa2f1f) applications) defines the available storage types.
 
     ```
     int error;
@@ -142,7 +142,7 @@ To retrieve storage information:
 
 - Get the mount state of a specific storage by using the `storage_get_state()` function.
 
-  The [`storage_state_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gac72d0e57e790d888dfd7bd57d52fbfee) defines the available storage states.
+  The `storage_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gac72d0e57e790d888dfd7bd57d52fbfee) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gac72d0e57e790d888dfd7bd57d52fbfee) applications) defines the available storage states.
 
     ```
     int error;
@@ -230,4 +230,5 @@ The following table lists the supported virtual roots.
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

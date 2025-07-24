@@ -2,7 +2,7 @@
 
 You can push events from an application server to your application on a Tizen device. If the message sending fails for any reason, an error code identifying the failure reason is returned. You can use the [error code](#error_codes) to determine how to handle the failure.
 
-The Push API is optional feature, which means that it may not be supported on specific devices.
+The Push API is optional for the Tizen Wearable profile, which means that it may not be supported on all wearable devices.
 
 The main features of the Push API for the server developers include:
 
@@ -603,7 +603,7 @@ To send push notifications:
 
 Since Tizen 3.0, you can decorate push notifications you send from the application server to Tizen devices. For example, you can add images and sounds to the notifications. The push service creates a notification using the resources from the application and notifies the user. You can compose the push message using a set of REST APIs.
 
-To decorate push notifications, you have to understand the notification functions. In addition to the existing `message` field, more fields are provided. For more information on the functions to use to create a notification, see the [Notification API](../../api/common/latest/group__NOTIFICATION__MODULE.html). When you include a key and value in the message field, the push service creates a notification as the application creates a notification using the Notification API.
+To decorate push notifications, you have to understand the notification functions. In addition to the existing `message` field, more fields are provided. For more information on the functions to use to create a notification, see the Notification API (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html) applications). When you include a key and value in the message field, the push service creates a notification as the application creates a notification using the Notification API.
 
 Prepare all the resource files under the `/shared/res` folder in your application, and you can directly address the resource files. For example, `imageTypeIcon=image.png` means that the `/share/res/image.png` image is displayed as an icon in the notification panel. You can perform the same action by calling the `notification_set_image(noti, NOTIFICATION_IMAGE_TYPE_ICON, "image.png")` function.
 
@@ -722,7 +722,7 @@ app_control(app_control_h app_control, void *data)
 }
 ```
 
-Since Tizen 3.0, you can use a notification template to reuse well-decorated notification content without having to define it from scratch each time. When you want to use the same notification multiple times, you can make and save a template for it. Use the `notification_save_as_template()` function to save the notification handle. For more information on the function, see the [Notification API](../../api/common/latest/group__NOTIFICATION__MODULE.html).
+Since Tizen 3.0, you can use a notification template to reuse well-decorated notification content without having to define it from scratch each time. When you want to use the same notification multiple times, you can make and save a template for it. Use the `notification_save_as_template()` function to save the notification handle. For more information on the function, see the Notification API (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html) applications).
 
 Once you save a notification template with a specific name, you can use the `template` key in the message field to load the template when you send a notification.
 
@@ -799,4 +799,5 @@ If sending a push notification request fails for some reason, the response messa
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.3
+  - Tizen 2.3 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

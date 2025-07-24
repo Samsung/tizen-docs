@@ -317,6 +317,3 @@ Learning how to manage notification templates allows you to create a template fr
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/notification.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/notification.html)

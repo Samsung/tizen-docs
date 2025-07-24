@@ -3,6 +3,8 @@
 
 The Media Transfer Protocol (MTP) is an extension of the Picture Transfer Protocol (PTP), a protocol for file transfers between 2 devices.
 
+This feature is supported in mobile applications only.
+
 The extension consists of the MTP initiator and MTP responder. The host, which connects to the MTP device, is called the MTP initiator, and the MTP device is called the MTP responder. One MTP initiator can manage multiple MTP responders. The MTP initiator only sends requests to the MTP responder, and the MTP responder only responds to the MTP initiator.
 
 The MTP consists of 3 components:
@@ -21,19 +23,19 @@ The main features of the MTP API include:
 
 - Managing MTP
 
-  With the [MTP Manager API](../../api/common/latest/group__CAPI__NETWORK__MTP__MANAGER__MODULE.html) you can initialize and deinitialize the MTP, [set callbacks for MTP events](#events), and get various information, such as the [device list](#device_list), [storage list](#storages), [object handle](#object_handle), [object, and thumbnail](#object_and_thumbnail).
+  With the [MTP Manager](../../api/mobile/latest/group__CAPI__NETWORK__MTP__MANAGER__MODULE.html) API you can initialize and deinitialize the MTP, [set callbacks for MTP events](#events), and get various information, such as the [device list](#device_list), [storage list](#storages), [object handle](#object_handle), [object, and thumbnail](#object_and_thumbnail).
 
 - Retrieving device information
 
-  The [MTP Device Information API](../../api/common/latest/group__CAPI__NETWORK__MTP__DEVICEINFO__MODULE.html) allows you to [obtain various device details](#device_info), such as the device manufacturer name, model name, serial number, and version.
+  The [MTP Device Information](../../api/mobile/latest/group__CAPI__NETWORK__MTP__DEVICEINFO__MODULE.html) API allows you to [obtain various device details](#device_info), such as the device manufacturer name, model name, serial number, and version.
 
 - Retrieving storage information
 
-  The [MTP Storage Information API](../../api/common/latest/group__CAPI__NETWORK__MTP__STORAGEINFO__MODULE.html) allows you to [obtain various storage details](#storage_info), such as the storage free space, description, and type.
+  The [MTP Storage Information](../../api/mobile/latest/group__CAPI__NETWORK__MTP__STORAGEINFO__MODULE.html) API allows you to [obtain various storage details](#storage_info), such as the storage free space, description, and type.
 
 - Retrieving object information
 
-  The [MTP Object Information API](../../api/common/latest/group__CAPI__NETWORK__MTP__OBJECTINFO__MODULE.html) allows you to [obtain various object details](#object_info), such as the object format, name, and size.
+  The [MTP Object Information](../../api/mobile/latest/group__CAPI__NETWORK__MTP__OBJECTINFO__MODULE.html) API allows you to [obtain various object details](#object_info), such as the object format, name, and size.
 
 The MTP API can be used in other profiles, but it is most popular in the TV profile.
 
@@ -49,7 +51,7 @@ The internal implementation of the MTP references the [MTP specification](https:
 
 To enable your application to use the MTP functionality:
 
-1. To use the [MTP API](../../api/common/latest/group__CAPI__NETWORK__MTP__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [MTP](../../api/mobile/latest/group__CAPI__NETWORK__MTP__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -409,11 +411,6 @@ application_test_event_callback(void)
 }
 ```
 
-## Related information
+## Related Information
 - Dependencies
-  - Since Tizen 3.0
-- API References
-  - [MTP Manager API](../../api/common/latest/group__CAPI__NETWORK__MTP__MANAGER__MODULE.html)
-  - [MTP Device Information API](../../api/common/latest/group__CAPI__NETWORK__MTP__DEVICEINFO__MODULE.html)
-  - [MTP Storage Information API](../../api/common/latest/group__CAPI__NETWORK__MTP__STORAGEINFO__MODULE.html)
-  - [MTP Object Information API](../../api/common/latest/group__CAPI__NETWORK__MTP__OBJECTINFO__MODULE.html)
+  - Tizen 3.0 and Higher for Mobile

@@ -188,6 +188,3 @@ canvasView.AddDrawable(picture2);
 ## Related information
 - Dependencies
   -   Tizen 6.5 and Higher
-
-- API References
-  - [Transformation API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VectorGraphics.Drawable.html)

@@ -3,7 +3,7 @@
 
 The Tizen platform collects data on the device usage. Based on this data, the applications can take advantage of the user's application usage patterns through statistical analysis.
 
-The Contextual History API provides history data about application usage, media playback, communications, and device settings. Among context history data types, `CONTEXT_HISTORY_RECENTLY_USED_APP`, `CONTEXT_HISTORY_FREQUENTLY_USED_APP`, `CONTEXT_HISTORY_BATTERY_USAGE`, and `CONTEXT_HISTORY_RECENT_BATTERY_USAGE` are available. The other history data types are deprecated.
+The Contextual History API provides history data about application usage, media playback, communications, and device settings. Among context history data types, `CONTEXT_HISTORY_RECENTLY_USED_APP`, `CONTEXT_HISTORY_FREQUENTLY_USED_APP`, `CONTEXT_HISTORY_BATTERY_USAGE`, and `CONTEXT_HISTORY_RECENT_BATTERY_USAGE` are available for both mobile and wearable devices. The other history data types are supported in mobile applications only.
 
 The main features of the Contextual History API include:
 
@@ -31,7 +31,7 @@ The main features of the Contextual History API include:
 
 ## Prerequisites
 
-To use the functions and data types of the [Contextual History API](../../api/common/latest/group__CAPI__CONTEXT__HISTORY__MODULE.html), include the `<context_history.h>` header file in your application:
+To use the functions and data types of the Contextual History API (in [mobile](../../api/mobile/latest/group__CAPI__CONTEXT__HISTORY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__CONTEXT__HISTORY__MODULE.html) applications), include the `<context_history.h>` header file in your application:
 
 ```
 #include <context_history.h>
@@ -406,4 +406,5 @@ The history data records retrieved through the contextual history API contain th
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

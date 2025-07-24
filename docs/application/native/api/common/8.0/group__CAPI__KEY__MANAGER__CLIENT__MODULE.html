@@ -105,8 +105,6 @@ Overview</h2>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga31d2793501c5ab52b46256550bba836f">ckmc_save_key</a> (const char *alias, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196">ckmc_key_s</a> key, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> policy)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a key inside key manager based on the provided policy.  <a href="#ga31d2793501c5ab52b46256550bba836f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga10353768cd7a839448e12e12e88ff8c0">ckmc_update_key</a> (const char *alias, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196">ckmc_key_s</a> key, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> policy)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the key inside the key manager based on the provided policy.  <a href="#ga10353768cd7a839448e12e12e88ff8c0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga82e5fd3b5d8475a7f6b2e4c6aff589c2">ckmc_remove_key</a> (const char *alias) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a key from key manager.  <a href="#ga82e5fd3b5d8475a7f6b2e4c6aff589c2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaf7f16c0e45010112874a765699c6d1e1">ckmc_get_key</a> (const char *alias, const char *password, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196">ckmc_key_s</a> **ppkey)</td></tr>
@@ -117,8 +115,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information about all of the aliases of keys that the client can access.  <a href="#ga1efcd39b80ccac5f5cffb782d6d6cdaa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga0dacf4de009cbc4b485e433d46aae164">ckmc_save_cert</a> (const char *alias, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga9ead6ec9000737ad0b017ca8fe77159b">ckmc_cert_s</a> cert, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> policy)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a certificate inside key manager based on the provided policy.  <a href="#ga0dacf4de009cbc4b485e433d46aae164"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga6d3992bfd99eba5977dd7d18b32f6273">ckmc_update_cert</a> (const char *alias, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga9ead6ec9000737ad0b017ca8fe77159b">ckmc_cert_s</a> cert, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> policy)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the certificate inside the key manager based on the provided policy.  <a href="#ga6d3992bfd99eba5977dd7d18b32f6273"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga6254e0de54532825613df621c2689732">ckmc_remove_cert</a> (const char *alias) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a certificate from key manager.  <a href="#ga6254e0de54532825613df621c2689732"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga8127321a270ff2ed6436b5b5156cfe95">ckmc_get_cert</a> (const char *alias, const char *password, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga9ead6ec9000737ad0b017ca8fe77159b">ckmc_cert_s</a> **ppcert)</td></tr>
@@ -129,14 +125,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information about all the aliases of certificates that the client can access.  <a href="#ga7d5fb01f09d1ccef73d2d1a4bdb79967"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa087858cba2abc4a198cb695892e9177">ckmc_save_pkcs12</a> (const char *alias, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaddbcd674f80987f13b325e06b6f462dc">ckmc_pkcs12_s</a> *pkcs, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> key_policy, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> cert_policy)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores PKCS12's contents inside key manager based on the provided policies.  <a href="#gaa087858cba2abc4a198cb695892e9177"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga03a5194c129415912b6449cffac7f189">ckmc_update_pkcs12</a> (const char *alias, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaddbcd674f80987f13b325e06b6f462dc">ckmc_pkcs12_s</a> *pkcs, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> key_policy, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> cert_policy)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates PKCS12's contents inside the key manager based on the provided policies. All items from the PKCS12 use the same alias.  <a href="#ga03a5194c129415912b6449cffac7f189"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gac361db3003e7fa0f090337e18971c414">ckmc_get_pkcs12</a> (const char *alias, const char *key_password, const char *cert_password, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaddbcd674f80987f13b325e06b6f462dc">ckmc_pkcs12_s</a> **pkcs12)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a pkcs12 from key manager.  <a href="#gac361db3003e7fa0f090337e18971c414"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga01cf538f84f4801d4e69b53bff96154e">ckmc_save_data</a> (const char *alias, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga74fe4f0f17113b37de7fe9bf4a9ad27d">ckmc_raw_buffer_s</a> data, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> policy)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a data inside key manager based on the provided policy.  <a href="#ga01cf538f84f4801d4e69b53bff96154e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gae5c07ecb3740d4bfdc8ecd5f1e1178a3">ckmc_update_data</a> (const char *alias, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga74fe4f0f17113b37de7fe9bf4a9ad27d">ckmc_raw_buffer_s</a> data, const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a> policy)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the data inside the key manager based on the provided policy.  <a href="#gae5c07ecb3740d4bfdc8ecd5f1e1178a3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga60178ca994ba294a329f9814b904791a">ckmc_remove_data</a> (const char *alias) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a data from key manager.  <a href="#ga60178ca994ba294a329f9814b904791a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga8154d35b6add83a23ef4a00d2a204f4c">ckmc_get_data</a> (const char *alias, const char *password, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga74fe4f0f17113b37de7fe9bf4a9ad27d">ckmc_raw_buffer_s</a> **ppdata)</td></tr>
@@ -408,7 +400,7 @@ The <em>ppout</em> will be set to NULL if the output is empty.</dd></dl>
 <dd>
 The <em>context</em> must point to NULL if it's the first call. Otherwise, it must point to the previously returned context. </dd>
 <dd>
-To perform the encryption/decryption, one or more calls to <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gafda534126f8e6679cff70b602222972b" title="Performs symmetric encryption or decryption of the input and places the result in the output...">ckmc_cipher_update()</a> must be followed by one call to <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gac45384074ac19149b9cb870d86742ea6" title="Finalizes symmetric encryption or decryption and returns remaining output if any.">ckmc_cipher_finalize()</a>. </dd>
+To perform the encryption/decryption, one or more calls to <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gafda534126f8e6679cff70b602222972b" title="Performs symmetric encryption or decryption of the input and places the result in the output...">ckmc_cipher_update()</a> must be folowed by one call to <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gac45384074ac19149b9cb870d86742ea6" title="Finalizes symmetric encryption or decryption and returns remaining output if any.">ckmc_cipher_finalize()</a>. </dd>
 <dd>
 To pass <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4a2846798d61983a4b8b186dfed97aad739e27a76ac95a95e93b3af4367759c">CKMC_PARAM_ED_AAD</a> in multiple chunks call the <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaea56febe44a440589cb2ff9c4f825e34" title="Sets up a symmetric encryption or decryption context with given key and parameters.">ckmc_cipher_initialize()</a> multiple times with consecutive portions of the AAD in the <em>params</em> and the <em>context</em> returned from the first call. It must be done before the first call to <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gafda534126f8e6679cff70b602222972b" title="Performs symmetric encryption or decryption of the input and places the result in the output...">ckmc_cipher_update()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -482,7 +474,7 @@ To pass <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga8b4
 
 <p>Performs symmetric encryption or decryption of the input and places the result in the output. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The function may be called multiple times to encrypt successive blocks of data. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The function may be called multiple times to encrypt succcessive blocks of data. </dd>
 <dd>
 The newly created <em>ppout</em> must be destroyed using <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga2a26c45625b706951dc37b6a5aa1900c" title="Destroys the ckmc_raw_buffer_s handle and releases all its resources.">ckmc_buffer_free()</a> when it's no longer needed. </dd>
 <dd>
@@ -632,9 +624,7 @@ If password in the policy is provided, the key is additionally encrypted with th
 <dd>
 The supported sizes are: <code>1024</code>, <code>2048</code>, <code>3072</code> and (Since 7.0) <code>4096</code> bits. </dd>
 <dd>
-If password in the policy is provided, the key is additionally encrypted with the password in the policy. </dd>
-<dd>
-The <em>private_key_alias</em> must be different than <em>public_key_alias</em>.</dd></dl>
+If password in the policy is provided, the key is additionally encrypted with the password in the policy.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size of key strength to be created </td></tr>
@@ -717,9 +707,7 @@ The <em>private_key_alias</em> must be different than <em>public_key_alias</em>.
 <dd>
 If password in the policy is provided, the key is additionally encrypted with the password in the policy. </dd>
 <dd>
-Currently supported elliptic curves of ECDSA are: <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga77c093d4b9b5032ad93e0d3bf6a24fc7a96fcdb9cdc35d2684751c22243971726">CKMC_EC_PRIME192V1</a>, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga77c093d4b9b5032ad93e0d3bf6a24fc7a19314c4e4ecc048db5ed9a522c3c4dba">CKMC_EC_PRIME256V1</a>, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga77c093d4b9b5032ad93e0d3bf6a24fc7a509a617a7420e30b13d0e6143abf876f">CKMC_EC_SECP384R1</a> </dd>
-<dd>
-The <em>private_key_alias</em> must be different than <em>public_key_alias</em>.</dd></dl>
+Currently supported elliptic curves of ECDSA are: <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga77c093d4b9b5032ad93e0d3bf6a24fc7a96fcdb9cdc35d2684751c22243971726">CKMC_EC_PRIME192V1</a>, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga77c093d4b9b5032ad93e0d3bf6a24fc7a19314c4e4ecc048db5ed9a522c3c4dba">CKMC_EC_PRIME256V1</a>, <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gga77c093d4b9b5032ad93e0d3bf6a24fc7a509a617a7420e30b13d0e6143abf876f">CKMC_EC_SECP384R1</a></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of elliptic curve of ECDSA </td></tr>
@@ -804,9 +792,7 @@ The <em>private_key_alias</em> must be different than <em>public_key_alias</em>.
 <dd>
 The supported sizes are: <code>1024</code>, <code>2048</code>, <code>3072</code> and <code>4096</code> bits. </dd>
 <dd>
-If password in the policy is provided, the key is additionally encrypted with the password in the policy. </dd>
-<dd>
-The <em>private_key_alias</em> must be different than <em>public_key_alias</em>.</dd></dl>
+If password in the policy is provided, the key is additionally encrypted with the password in the policy.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size of key strength to be created </td></tr>
@@ -2523,7 +2509,7 @@ exit:
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>User is already logged in and the user key is already loaded into memory in plain text form. </dd>
 <dd>
 <em>pcert_chain_list</em> is created with <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga761097dcbbe6b44d562131da2a1e17bc" title="Verifies a certificate chain and returns that chain.">ckmc_get_cert_chain()</a> or <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gae77c8b1a47faab1cf9d597c954634410" title="Verifies a certificate chain using an alias list of untrusted certificates and returns that chain...">ckmc_get_cert_chain_with_alias()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga761097dcbbe6b44d562131da2a1e17bc" title="Verifies a certificate chain and returns that chain.">ckmc_get_cert_chain()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga761097dcbbe6b44d562131da2a1e17bc" title="Verifies a certificate chain and returns that chain.">ckmc_get_cert_chain()</a>) </dd>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gab634614fa1c68de96e8a2c65d4321e96" title="Destroys the certificate list handle and releases all its resources from the provided first handle ca...">ckmc_cert_list_all_free()</a> </dd></dl>
 
@@ -3088,346 +3074,6 @@ Previous permission mask will be replaced with the new mask value passed by <em>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>User is already logged in and the user key is already loaded into memory in plain text form. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga6d3992bfd99eba5977dd7d18b32f6273"></a><!-- doxytag: member="ckmc&#45;manager.h::ckmc_update_cert" ref="ga6d3992bfd99eba5977dd7d18b32f6273" args="(const char *alias, const ckmc_cert_s cert, const ckmc_policy_s policy)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga6d3992bfd99eba5977dd7d18b32f6273">ckmc_update_cert</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>alias</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga9ead6ec9000737ad0b017ca8fe77159b">ckmc_cert_s</a>&#160;</td>
-          <td class="paramname"><em>cert</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a>&#160;</td>
-          <td class="paramname"><em>policy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Updates the certificate inside the key manager based on the provided policy. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>8.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The certificate's binary value will be converted and updated as binary DER encoded certificate. </dd>
-<dd>
-If password exists in the provided policy, the certificate is additionally encrypted with the password from the provided policy. </dd>
-<dd>
-If password changes in the provided policy, the certificate is re-encrypted with the new password inside the key manager. </dd>
-<dd>
-If nothing exists inside the key manager under the provided alias, the certificate is saved inside the key manager based on the provided policy. </dd>
-<dd>
-If anything exists inside the key manager under the provided alias, the old data is replaced with the certificate inside the key manager based on the provided policy. </dd>
-<dd>
-If extractable flag changes in the provided policy, the extractable flag is updated inside the key manager. </dd>
-<dd>
-If backend changes, the certificate is removed from the old backend and saved in the new backend. </dd>
-<dd>
-Existing permissions are reset inside the key manager.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">alias</td><td>The name of the certificate to be updated </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cert</td><td>The certificate's binary value to be stored </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">policy</td><td>The policy about how to update the certificate securely</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value</dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a7b4a460669cd695bfddca9830e87dc13">CKMC_ERROR_PERMISSION_DENIED</a></td><td>Failed to access key manager </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a0cc0954b6274ac1131c680e2cda7238a">CKMC_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a2f9999fc055014f8525704e3044fcba5">CKMC_ERROR_DB_LOCKED</a></td><td>A user key is not loaded in memory (a user is not logged in) </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a716d09f31bf227deb3748d04637bf70e">CKMC_ERROR_INVALID_FORMAT</a></td><td>The format of raw_cert is not valid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124ac70c3e3305f13a354e2d8205960b0f0d">CKMC_ERROR_DB_ERROR</a></td><td>Failed due to a database error</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>User is already logged in and the user key is already loaded into memory in plain text form.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga0dacf4de009cbc4b485e433d46aae164" title="Stores a certificate inside key manager based on the provided policy.">ckmc_save_cert()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga8127321a270ff2ed6436b5b5156cfe95" title="Gets a certificate from key manager.">ckmc_get_cert()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaaa80110488f0cb11fd4c7551d4f2e421" title="Gets all alias of certificates which the client can access.">ckmc_get_cert_alias_list()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga9ead6ec9000737ad0b017ca8fe77159b" title="The structure for certificate used in key manager CAPI.">ckmc_cert_s</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264" title="The structure for a policy for storing key/certificate/binary data.">ckmc_policy_s</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gae5c07ecb3740d4bfdc8ecd5f1e1178a3"></a><!-- doxytag: member="ckmc&#45;manager.h::ckmc_update_data" ref="gae5c07ecb3740d4bfdc8ecd5f1e1178a3" args="(const char *alias, ckmc_raw_buffer_s data, const ckmc_policy_s policy)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gae5c07ecb3740d4bfdc8ecd5f1e1178a3">ckmc_update_data</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>alias</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga74fe4f0f17113b37de7fe9bf4a9ad27d">ckmc_raw_buffer_s</a>&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a>&#160;</td>
-          <td class="paramname"><em>policy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Updates the data inside the key manager based on the provided policy. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>8.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If password exists in the provided policy, the data is additionally encrypted with the password from the provided policy. </dd>
-<dd>
-If password changes in the provided policy, the data is re-encrypted with the new password inside the key manager. </dd>
-<dd>
-If nothing exists inside the key manager under the provided alias, the data is saved inside the key manager based on the provided policy. </dd>
-<dd>
-If anything exists inside the key manager under the provided alias, the old data is replaced with the new data inside the key manager based on the provided policy. </dd>
-<dd>
-If extractable flag changes in the provided policy, the extractable flag is updated inside the key manager. </dd>
-<dd>
-If backend changes, the data is removed from the old backend and saved in the new backend. </dd>
-<dd>
-Existing permissions are reset inside the key manager.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">alias</td><td>The name of the data to be updated </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The binary value to be stored </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">policy</td><td>The policy about how to store the data securely</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value</dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a7b4a460669cd695bfddca9830e87dc13">CKMC_ERROR_PERMISSION_DENIED</a></td><td>Failed to access key manager </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a0cc0954b6274ac1131c680e2cda7238a">CKMC_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a2f9999fc055014f8525704e3044fcba5">CKMC_ERROR_DB_LOCKED</a></td><td>A user key is not loaded in memory (a user is not logged in) </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124ac70c3e3305f13a354e2d8205960b0f0d">CKMC_ERROR_DB_ERROR</a></td><td>Failed due to a database error</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>User is already logged in and the user key is already loaded into memory in plain text form.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga01cf538f84f4801d4e69b53bff96154e" title="Stores a data inside key manager based on the provided policy.">ckmc_save_data()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga8154d35b6add83a23ef4a00d2a204f4c" title="Gets a data from key manager.">ckmc_get_data()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gae95c7627348e75b44b9f1687d4376a6c" title="Gets all alias of data which the client can access.">ckmc_get_data_alias_list()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga74fe4f0f17113b37de7fe9bf4a9ad27d" title="The structure for binary buffer used in key manager CAPI.">ckmc_raw_buffer_s</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264" title="The structure for a policy for storing key/certificate/binary data.">ckmc_policy_s</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga10353768cd7a839448e12e12e88ff8c0"></a><!-- doxytag: member="ckmc&#45;manager.h::ckmc_update_key" ref="ga10353768cd7a839448e12e12e88ff8c0" args="(const char *alias, const ckmc_key_s key, const ckmc_policy_s policy)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga10353768cd7a839448e12e12e88ff8c0">ckmc_update_key</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>alias</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196">ckmc_key_s</a>&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a>&#160;</td>
-          <td class="paramname"><em>policy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Updates the key inside the key manager based on the provided policy. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>8.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Currently API supports nine types of keys. These are RSA public/private key, DSA public/private key, ECDSA public/private key, KEM public/private key and AES symmetric key. </dd>
-<dd>
-key_type in the key manager may be set to <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggabb915d623f9d58ad52499fca077f7092a4662cab83ced68d25078849b1fa958d4">CKMC_KEY_NONE</a> as an input. key_type is determined inside the key manager during updating key. </dd>
-<dd>
-Some private key files are protected with the password. If raw_key in the key is encrypted with the password, the password should be provided in the <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196" title="The structure for key used in key manager CAPI.">ckmc_key_s</a> structure. </dd>
-<dd>
-If password exists in the provided policy, the key is additionally encrypted with the password from the provided policy. </dd>
-<dd>
-If password changes in the provided policy, the key is re-encrypted with the new password inside the key manager. </dd>
-<dd>
-If nothing exists inside the key manager under the provided alias, the key is saved inside the key manager based on the provided policy. </dd>
-<dd>
-If anything exists inside the key manager under the provided alias, the old data is replaced with the key inside the key manager based on the provided policy. </dd>
-<dd>
-If extractable flag changes in the provided policy, the extractable flag is updated inside the key manager. </dd>
-<dd>
-If backend changes, the key is removed from the old backend and saved in the new backend. </dd>
-<dd>
-Existing permissions are reset inside the key manager.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">alias</td><td>The name of the key to be updated </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key's binary value to be updated </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">policy</td><td>The policy about how to update the key securely</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a7b4a460669cd695bfddca9830e87dc13">CKMC_ERROR_PERMISSION_DENIED</a></td><td>Failed to access the key manager </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a0cc0954b6274ac1131c680e2cda7238a">CKMC_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a2f9999fc055014f8525704e3044fcba5">CKMC_ERROR_DB_LOCKED</a></td><td>The user key is not loaded in memory (a user is not logged in) </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a716d09f31bf227deb3748d04637bf70e">CKMC_ERROR_INVALID_FORMAT</a></td><td>The format of raw_key is not valid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124ac70c3e3305f13a354e2d8205960b0f0d">CKMC_ERROR_DB_ERROR</a></td><td>Failed due to a database error</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>User is already logged in and the user key is already loaded into memory in plain text form.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga31d2793501c5ab52b46256550bba836f" title="Stores a key inside key manager based on the provided policy.">ckmc_save_key()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaf7f16c0e45010112874a765699c6d1e1" title="Gets a key from key manager.">ckmc_get_key()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaebc92f477d7b48d720296c767f244e9e" title="Gets a list of all of the keys aliases that the client can access.">ckmc_get_key_alias_list()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga0b412af80e83c316b1cba0e6e0bd8196" title="The structure for key used in key manager CAPI.">ckmc_key_s</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264" title="The structure for a policy for storing key/certificate/binary data.">ckmc_policy_s</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga03a5194c129415912b6449cffac7f189"></a><!-- doxytag: member="ckmc&#45;manager.h::ckmc_update_pkcs12" ref="ga03a5194c129415912b6449cffac7f189" args="(const char *alias, const ckmc_pkcs12_s *pkcs, const ckmc_policy_s key_policy, const ckmc_policy_s cert_policy)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#ga03a5194c129415912b6449cffac7f189">ckmc_update_pkcs12</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>alias</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaddbcd674f80987f13b325e06b6f462dc">ckmc_pkcs12_s</a> *&#160;</td>
-          <td class="paramname"><em>pkcs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a>&#160;</td>
-          <td class="paramname"><em>key_policy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264">ckmc_policy_s</a>&#160;</td>
-          <td class="paramname"><em>cert_policy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Updates PKCS12's contents inside the key manager based on the provided policies. All items from the PKCS12 use the same alias. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>8.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If password exists in the provided key/certificate policy, the key/certificate/chain is additionally encrypted with the password from the provided key/certificate policy. </dd>
-<dd>
-If password changes in the provided key/certificate policy, the key/certificate/chain is re-encrypted with the new password inside the key manager. </dd>
-<dd>
-If nothing exists inside the key manager under the provided alias, the pkcs12 is saved inside the key manager based on the provided policy. </dd>
-<dd>
-If anything exists inside the key manager under the provided alias, the old data is replaced with the pkcs12 inside the key manager based on the provided policy. </dd>
-<dd>
-If extractable flag changes in the provided policy, the extractable flag is updated inside the key manager. </dd>
-<dd>
-If backend changes, the pkcs12 is removed from the old backend and saved in the new backend.</dd>
-<dd>
-Existing permissions are reset inside the key manager.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">alias</td><td>The name of the pkcs12 to be updated </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">pkcs</td><td>Pointer to the pkcs12 structure to be updated </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key_policy</td><td>The policy about how to store pkcs's private key </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cert_policy</td><td>The policy about how to store pkcs's certificate and certificate chain</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value</dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a097e9486879b06be85c2252efc7bac03">CKMC_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a7b4a460669cd695bfddca9830e87dc13">CKMC_ERROR_PERMISSION_DENIED</a></td><td>Failed to access key manager </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a0cc0954b6274ac1131c680e2cda7238a">CKMC_ERROR_INVALID_PARAMETER</a></td><td>Input parameter is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a2f9999fc055014f8525704e3044fcba5">CKMC_ERROR_DB_LOCKED</a></td><td>A user key is not loaded in memory (a user is not logged in) </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124a716d09f31bf227deb3748d04637bf70e">CKMC_ERROR_INVALID_FORMAT</a></td><td>The format of raw_key or raw_cert is not valid </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ggaf453091029b4d7d4fd3ff58ae4d2e124ac70c3e3305f13a354e2d8205960b0f0d">CKMC_ERROR_DB_ERROR</a></td><td>Failed due to a database error</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>User is already logged in and the user key is already loaded into memory in plain text form.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa087858cba2abc4a198cb695892e9177" title="Stores PKCS12&#39;s contents inside key manager based on the provided policies.">ckmc_save_pkcs12()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gaa7991303ca1785fe2e3862d4d4948fda" title="Removes an entry (no matter of type) from the key manager.">ckmc_remove_alias()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gac361db3003e7fa0f090337e18971c414" title="Gets a pkcs12 from key manager.">ckmc_get_pkcs12()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__CLIENT__MODULE.html#gae95c7627348e75b44b9f1687d4376a6c" title="Gets all alias of data which the client can access.">ckmc_get_data_alias_list()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaf18d9f6f50ed320155411eb04cee7d08" title="Creates a new ckmc_pkcs12_s handle from a given PKCS#12 file and returns it.">ckmc_pkcs12_load()</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gaddbcd674f80987f13b325e06b6f462dc" title="The structure for PKCS12 used in key manager CAPI.">ckmc_pkcs12_s</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga444aae84efc85802fb99b5cb21dbb264" title="The structure for a policy for storing key/certificate/binary data.">ckmc_policy_s</a> </dd></dl>
 
 </div>
 </div>

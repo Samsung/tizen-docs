@@ -23,7 +23,7 @@ The main features of the Widget Viewer API include:
 
 To enable your application to use the Widget Viewer functionality:
 
-1.  To use the [Widget Viewer API](../../api/common/latest/group__CAPI__WIDGET__VIEWER__EVAS__MODULE.html), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the Widget Viewer API (in [mobile](../../api/mobile/latest/group__CAPI__WIDGET__VIEWER__EVAS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__WIDGET__VIEWER__EVAS__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -135,6 +135,5 @@ After displaying widget, you can retrieve information about widget instances:
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
-- API References
-  - [Widget Viewer](../../api/common/latest/group__CAPI__WIDGET__VIEWER__EVAS__MODULE.html)
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

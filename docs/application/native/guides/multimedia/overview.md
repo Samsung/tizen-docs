@@ -65,7 +65,7 @@ You can use the following multimedia features in your native applications:
 
   You can handle media keys in your application to control multimedia playback. When the user clicks a media key, you can detect the event in the application and adjust the media playback accordingly.
 
-- [Screen Mirroring](screen-mirroring.md)
+- [Screen Mirroring](screen-mirroring.md) **in mobile applications only**
 
   You can mirror the device screen and sound to another device wirelessly. Tizen supports the screen mirroring feature as a sink, which receives shared data from a source device that supports the Wi-Fi Display Technical Specification and displays it.
 
@@ -87,6 +87,5 @@ You can use the following multimedia features in your native applications:
 
 ## Related information
 - Dependencies
-  - Since Tizen 2.4
-- API References
-  - [Multimedia](../../api/common/latest/group__CAPI__MEDIA__FRAMEWORK.html)
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

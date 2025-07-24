@@ -112,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
         snprintf(buff, <span class="keyword">sizeof</span>(buff), <span class="stringliteral">&quot;%s/objects/test.edj&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
         parent = <a class="code" href="group__Elm__WidgetNavigation.html#ga0b5f83c403948f1418e434f3ed94973f">elm_object_parent_widget_get</a>(o_bg);
-        over = <a class="code" href="group__Edje__Object__Group.html#ga2fb20b8db9d2c4384cca17e2f7637c40" title="Instantiates a new Edje object.">edje_object_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(parent));
+        over = <a class="code" href="group__Edje__Object__Group.html#ga2fb20b8db9d2c4384cca17e2f7637c40" title="Instantiates a new Edje object.">edje_object_add</a>(<a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(parent));
         <a class="code" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set</a>(over, buff, <span class="stringliteral">&quot;bg_overlay&quot;</span>);
         <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o_bg, <span class="stringliteral">&quot;overlay&quot;</span>, over);
      }

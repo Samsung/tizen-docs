@@ -1,6 +1,6 @@
 # Multibuttonentry
 
-The multi-button entry UI component allows the user to enter text so that the text is divided into chunks and managed as a set of buttons. For more information, see the [Multibuttonentry](../../../../api/common/latest/group__Multibuttonentry.html) API.
+The multi-button entry UI component allows the user to enter text so that the text is divided into chunks and managed as a set of buttons. For more information, see the [Multibuttonentry](../../../../api/mobile/latest/group__Multibuttonentry.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -19,4 +19,4 @@ The following table lists the available component styles.
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

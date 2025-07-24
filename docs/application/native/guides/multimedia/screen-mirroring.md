@@ -3,7 +3,7 @@
 
 You can mirror the device screen and sound to another device wirelessly using the screen mirroring feature. Tizen follows the Wi-Fi Display Technical Specification and supports the feature as a sink, which receives shared data from a source device that supports the Wi-Fi Display, and displays it. Remember to prepare your application to use the screen mirroring sink functionality and set up the necessary callbacks before you start, and release the resources when you are done.
 
-This API is supported on specifc Tizen devices that support [screen-mirroring features](#prerequisites).
+This feature is supported in mobile applications only.
 
 The main features of the Screen Mirroring API include:
 
@@ -37,20 +37,14 @@ The following figures illustrates the state and function call diagrams of the sc
 
 To enable your application to use the screen mirroring functionality:
 
-1. To use the screen mirroring features, include the following feature in your tizen-manifest.xml file.
-
-   ```
-   <feature name="http://tizen.org/feature/network.wifi.direct.display"/>
-   ```
-
-2. To use the functions and data types of the [Screen Mirroring](../../api/common/latest/group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html) API, include the `<scmirroring_type.h>` and `<scmirroring_sink.h>` header files in your application:
+1. To use the functions and data types of the [Screen Mirroring](../../api/mobile/latest/group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html) API, include the `<scmirroring_type.h>` and `<scmirroring_sink.h>` header files in your application:
 
    ```
    #include <scmirroring_type.h>
    #include <scmirroring_sink.h>
    ```
 
-3. Create a handle for the screen mirroring sink using the `scmirroring_sink_create()` function.
+2. Create a handle for the screen mirroring sink using the `scmirroring_sink_create()` function.
 
    The function sets the screen mirroring state to `SCMIRRORING_STATE_NULL`.
 
@@ -161,7 +155,7 @@ To prepare the screen mirroring sink:
    }
    ```
 
-3. Create the display object based on the applicable [scmirroring_display_type_e](../../api/common/latest/group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html#ga2c7d012d260b35e0e550618c2546f751) enumerator value:
+3. Create the display object based on the applicable [scmirroring_display_type_e](../../api/mobile/latest/group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html#ga2c7d012d260b35e0e550618c2546f751) enumerator value:
 
    ```
    #define PACKAGE_NAME "SCREEN_MIRRORING_SINK_APP"
@@ -380,4 +374,5 @@ scmirroring_state_callback(scmirroring_error_e error_code, scmirroring_state_e s
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

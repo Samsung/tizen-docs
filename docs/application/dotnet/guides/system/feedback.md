@@ -70,7 +70,5 @@ The return value defines whether the pattern is supported for the feedback type.
 
 
 ## Related information
-- Dependencies
+* Dependencies
   -   Tizen 4.0 and Higher
-- API References
-  - [Sound and Vibration Feedback](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Feedback.html)

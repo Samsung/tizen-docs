@@ -140,7 +140,7 @@ You can control the acceleration (tween) mode of the animation. The `Elm_Transit
 
 To manage the tween mode:
 
-- To change the tween mode, use the `elm_transit_tween_mode_set()` function. The first parameter is the `Elm_Transit` instance and the second is the tween mode of the transition, which is defined by the [`Elm_Transit_Tween_Mode` enumeration](../../../api/common/latest/group__Elm__Transit.html#ga954ecd9ba6266a18a0bde0e5861ccc53).
+- To change the tween mode, use the `elm_transit_tween_mode_set()` function. The first parameter is the `Elm_Transit` instance and the second is the tween mode of the transition, which is defined by the `Elm_Transit_Tween_Mode` enumeration (in [mobile](../../../api/mobile/latest/group__Elm__Transit.html#ga954ecd9ba6266a18a0bde0e5861ccc53) and [wearable](../../../api/wearable/latest/group__Elm__Transit.html#ga954ecd9ba6266a18a0bde0e5861ccc53) applications).
 
   ```
   elm_transit_tween_mode_set(transit, ELM_TRANSIT_TWEEN_MODE_LINEAR);
@@ -631,4 +631,5 @@ To build a custom resizing animation:
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

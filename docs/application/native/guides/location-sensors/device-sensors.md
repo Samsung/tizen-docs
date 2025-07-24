@@ -62,7 +62,7 @@ The main features of the Sensor API include:
 
 ## Prerequisites
 
-To use the functions and data types of the [Sensor API](../../api/common/latest/group__CAPI__SYSTEM__SENSOR__MODULE.html), include the `<sensor.h>` header file in your application:
+To use the functions and data types of the Sensor API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SENSOR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SENSOR__MODULE.html) applications), include the `<sensor.h>` header file in your application:
 
 ```cpp
 #include <sensor.h>
@@ -818,4 +818,5 @@ The following table lists the measurement data that the uncalibrated magnetic se
 
 ## Related information
 * Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

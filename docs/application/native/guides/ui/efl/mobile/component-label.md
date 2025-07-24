@@ -1,6 +1,6 @@
 # Label
 
-The label UI component displays texts with a simple HTML-like markup. For more information, see the [Label](../../../../api/common/latest/group__Elm__Label__Group.html) API.
+The label UI component displays texts with a simple HTML-like markup. For more information, see the [Label](../../../../api/mobile/latest/group__Elm__Label__Group.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -109,4 +109,4 @@ You can register callback functions connected to the following signals for a lab
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

@@ -24,7 +24,7 @@ The main features of the Autofill API include:
    Set Autofill Service in the Setting Application from **Settings > Language and input > Input Assistance > Autofill service**.
    In some other environments, the Autofill Service can be found within the system configuration.
 
-2. To use the [Autofill API](../../api/common/latest/group__CAPI__UIX__AUTOFILL__MODULE.html), include the `<autofill.h>` header file in your application:
+2. To use the Autofill API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__AUTOFILL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__AUTOFILL__MODULE.html) applications), include the `<autofill.h>` header file in your application:
 
    ```c
    #include <autofill.h>
@@ -358,4 +358,5 @@ To store entered data by the user in the Autofill service:
 ## Related Information
 
 - Dependencies
-  - Since Tizen 5.5
+  - Tizen 5.5 and Higher for Mobile
+  - Tizen 5.5 and Higher for Wearable

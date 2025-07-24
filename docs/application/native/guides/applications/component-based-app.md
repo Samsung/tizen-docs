@@ -222,7 +222,7 @@ Following are the main attributes:
 
 ## Prerequisites
 
-To use the functions and data types of the [component based application API](../../api/common/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html), include the `<component_based_app.h>` header file in your application:
+To use the functions and data types of the component based application API (in [mobile](../../api/mobile/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) applications), include the `<component_based_app.h>` header file in your application:
 
 ```
 #include <component_based_app.h>
@@ -632,6 +632,5 @@ The component based application also provides an [application group feature](../
 
 ## Related Information
 - Dependencies
-  - Since Tizen 5.5
-- API References
-  - [Component Based Applications](../../api/common/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html)
+  - Tizen 5.5 and Higher for Mobile
+  - Tizen 5.5 and Higher for Wearable

@@ -98,4 +98,3 @@ The following components can be used on both rectangular and circular devices.
 ## Related Information
 * Dependencies
   - Tizen 2.3.1 and Higher for Wearable
-* API Reference: [Advanced UI Framework](../../api/latest/ui_fw_api/ui_fw_api_cover.htm)

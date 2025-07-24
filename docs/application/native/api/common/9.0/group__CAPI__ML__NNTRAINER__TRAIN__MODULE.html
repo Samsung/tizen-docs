@@ -95,11 +95,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>The NNTrainer function provides interfaces to create and train Machine Learning models on the device locally. </p>
-<h2><a class="anchor" id="CAPI_ML_NNTRAINER_TRAIN_MODULE_HEADER"></a>
+<h2><a class="anchor" id="CAPI_ML_NNTRAINER_TRAIN_HEADER"></a>
 Required Header</h2>
 <p>#include &lt;nntrainer/nntrainer.h&gt;<br/>
  </p>
-<h2><a class="anchor" id="CAPI_ML_NNTRAINER_TRAIN_MODULE_OVERVIEW"></a>
+<h2><a class="anchor" id="CAPI_ML_NNTRAINER_TRAIN_OVERVIEW"></a>
 Overview</h2>
 <p>The NNTrainer API provides interfaces to create and train Machine Learning models on the device locally.</p>
 <p>This function allows the following operations with NNTrainer:</p>
@@ -113,7 +113,7 @@ Overview</h2>
 <li>Utility functions to set properties for the models and its various sub-parts.</li>
 </ul>
 <p>Note that this function set is supposed to be thread-safe.</p>
-<h2><a class="anchor" id="CAPI_ML_NNTRAINER_TRAIN_MODULE_FEATURE"></a>
+<h2><a class="anchor" id="CAPI_ML_NNTRAINER_TRAIN_FEATURE"></a>
 Related Features</h2>
 <p>This function is related with the following features:<br/>
 </p>
@@ -519,12 +519,6 @@ Typedefs</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggadfc66a860eaaf7384702672af52af65ba54155813658cd4cdc8e47f8ee9d733a8"></a><!-- doxytag: member="ML_TRAIN_LAYER_TYPE_IDENTITY" ref="ggadfc66a860eaaf7384702672af52af65ba54155813658cd4cdc8e47f8ee9d733a8" args="" -->ML_TRAIN_LAYER_TYPE_IDENTITY</em>&nbsp;</td><td>
 <p>Identity Layer type (Since 8.0) </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggadfc66a860eaaf7384702672af52af65bafa13e3c5fb8a2966043c4d9ebec2db1a"></a><!-- doxytag: member="ML_TRAIN_LAYER_TYPE_SWIGLU" ref="ggadfc66a860eaaf7384702672af52af65bafa13e3c5fb8a2966043c4d9ebec2db1a" args="" -->ML_TRAIN_LAYER_TYPE_SWIGLU</em>&nbsp;</td><td>
-<p>Swiglu Layer type </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggadfc66a860eaaf7384702672af52af65ba9b03c00f0ab9275c9c9d6408f440f2fc"></a><!-- doxytag: member="ML_TRAIN_LAYER_TYPE_WEIGHT" ref="ggadfc66a860eaaf7384702672af52af65ba9b03c00f0ab9275c9c9d6408f440f2fc" args="" -->ML_TRAIN_LAYER_TYPE_WEIGHT</em>&nbsp;</td><td>
-<p>Weight Layer type (Since 9.0) </p>
-</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggadfc66a860eaaf7384702672af52af65ba9146465984c17f23c31013e50e46f7ef"></a><!-- doxytag: member="ML_TRAIN_LAYER_TYPE_PREPROCESS_FLIP" ref="ggadfc66a860eaaf7384702672af52af65ba9146465984c17f23c31013e50e46f7ef" args="" -->ML_TRAIN_LAYER_TYPE_PREPROCESS_FLIP</em>&nbsp;</td><td>
 <p>Preprocess flip Layer (Since 6.5) </p>
 </td></tr>
@@ -542,9 +536,6 @@ Typedefs</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggadfc66a860eaaf7384702672af52af65baf93ff1f1126c4983b591a1325ff61273"></a><!-- doxytag: member="ML_TRAIN_LAYER_TYPE_LOSS_CROSS_ENTROPY_SOFTMAX" ref="ggadfc66a860eaaf7384702672af52af65baf93ff1f1126c4983b591a1325ff61273" args="" -->ML_TRAIN_LAYER_TYPE_LOSS_CROSS_ENTROPY_SOFTMAX</em>&nbsp;</td><td>
 <p>Cross Entropy with Softmax Loss Layer type (Since 6.5) </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggadfc66a860eaaf7384702672af52af65badb80bef12431e0079538e6d7891ef42b"></a><!-- doxytag: member="ML_TRAIN_LAYER_TYPE_RMSNORM" ref="ggadfc66a860eaaf7384702672af52af65badb80bef12431e0079538e6d7891ef42b" args="" -->ML_TRAIN_LAYER_TYPE_RMSNORM</em>&nbsp;</td><td>
-<p>Cross Entropy with </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggadfc66a860eaaf7384702672af52af65bac92442be0b6cffb1f7af755d7921c288"></a><!-- doxytag: member="ML_TRAIN_LAYER_TYPE_UNKNOWN" ref="ggadfc66a860eaaf7384702672af52af65bac92442be0b6cffb1f7af755d7921c288" args="" -->ML_TRAIN_LAYER_TYPE_UNKNOWN</em>&nbsp;</td><td>
 <p>Unknown Layer </p>

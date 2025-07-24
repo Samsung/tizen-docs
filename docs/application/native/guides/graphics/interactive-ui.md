@@ -86,7 +86,7 @@ The following examples show how to register callback functions for handling touc
 
 In order to allow GLView to update scenes continuously, you must trigger the GLView rendering at every frame. The `Ecore_Animator` represents a method to enable the automatic update. It invokes the registered callback at every `N` seconds where `N` is the frametime interval set by the `ecore_animator_frametime_set()` function. Then you can call the `elm_glview_changed_set()` function at the animator's callback to keep the 3D scene being rendered while the animator works.
 
-The `Ecore_Animator` instance can be replaced by `Ecore_Timer`, which produces the same result as `Ecore_Animator`. However, since `Ecore_Animator` provides more advantages in maintaining the update loop, preferably use `Ecore_Animator` instead of `Ecore_Timer`. For more information, see the [Ecore Animator API](../../api/common/latest/group__Ecore__Animator__Group.html).
+The `Ecore_Animator` instance can be replaced by `Ecore_Timer`, which produces the same result as `Ecore_Animator`. However, since `Ecore_Animator` provides more advantages in maintaining the update loop, preferably use `Ecore_Animator` instead of `Ecore_Timer`. For more information, see the Ecore Animator API (in [mobile](../../api/mobile/latest/group__Ecore__Animator__Group.html) and [wearable](../../api/wearable/latest/group__Ecore__Animator__Group.html) applications).
 
 The following example adds and deletes an animator with the callback function:
 
@@ -186,4 +186,5 @@ clicked_cb(void *user_data, Evas_Object *obj, void *event_info)
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

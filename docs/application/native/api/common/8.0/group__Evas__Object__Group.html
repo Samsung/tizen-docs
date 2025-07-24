@@ -211,8 +211,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scaling factor for an Evas object. Does not affect all objects.  <a href="#ga6a40eef0595ad7355b93c9c271dd8bff"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga8c06486a4b15d9f39db3dc904a2401f4">evas_object_scale_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the scaling factor for the given Evas object.  <a href="#ga8c06486a4b15d9f39db3dc904a2401f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#gaffc38dff73db2271b7f282344727b30e">evas_object_pointer_inside_by_device_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Efl_Input_Device *dev)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse pointer is logically inside the object.  <a href="#gaffc38dff73db2271b7f282344727b30e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga27d964f518956874334e33559eb0ccf4">evas_object_pointer_inside_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the default mouse pointer is logically inside the object.  <a href="#ga27d964f518956874334e33559eb0ccf4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga31057fde2ffbe2dc4791d157fe255fb7">evas_object_pointer_coords_inside_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *eo_obj, int x, int y)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the coords are logically inside the object.  <a href="#ga31057fde2ffbe2dc4791d157fe255fb7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf">evas_object_evas_get</a> (const Eo *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse pointer is logically inside the object.  <a href="#gae1058082dae7b97590c41f43405dfdbf"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Evas to which this object belongs to.  <a href="#gae1058082dae7b97590c41f43405dfdbf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga78db7f5391fb317ac8787975c32e4266">evas_object_map_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const Evas_Map *map)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set current object transformation map.  <a href="#ga78db7f5391fb317ac8787975c32e4266"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const Evas_Map *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga0e93f49776c3ef1da93df46cfcec93c9">evas_object_map_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
@@ -221,8 +227,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the map that is set.  <a href="#ga80bc36afa9fa3d0118d32ca4402f0fe1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga9665dfc21a8551a6c93aaf2fa5ce1ff9">evas_object_map_enable_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the map is enabled or not.  <a href="#ga9665dfc21a8551a6c93aaf2fa5ce1ff9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga9ac4de1380a82966a400649c8adeedba">evas_object_text_filter_program_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *code) <a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set direct render of map.  <a href="#ga9ac4de1380a82966a400649c8adeedba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga6e125858ad03c548595b0841d0f06f46">evas_map_direct_render_set</a> (Evas_Map *m, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> direct_render)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set direct render of map.  <a href="#ga6e125858ad03c548595b0841d0f06f46"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga276c0bc5290519ec91628b75d768b1a6">evas_object_is_frame_object_set</a> (<a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> is_frame)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If <code>true</code> the object belongs to the window border decorations.  <a href="#ga276c0bc5290519ec91628b75d768b1a6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group.html#ga5467665fd707f95965b975714dc9fce3">evas_object_is_frame_object_get</a> (const <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *obj)</td></tr>
@@ -322,6 +328,43 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga6e125858ad03c548595b0841d0f06f46"></a><!-- doxytag: member="Evas_Legacy.h::evas_map_direct_render_set" ref="ga6e125858ad03c548595b0841d0f06f46" args="(Evas_Map *m, Eina_Bool direct_render)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group.html#ga6e125858ad03c548595b0841d0f06f46">evas_map_direct_render_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Evas_Map *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>direct_render</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set direct render of map. </p>
+<p>This interface has very special purpose to optimize memory usage of map. It works when a map object has only one image object through its smart object tree. In this case, it regards the map has one image object which of buffer can be directly draw on the main surface so that it skips to create an additional frame buffer to composite the contents of the map. If the condition is not satisfied, map works as it's supposed to do in the default behavior.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>map to enable direct render. </td></tr>
+    <tr><td class="paramname">direct_render</td><td><code>true</code> to enable direct render. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gabf63d12bfc70a0e2d4242eed3975021e"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_above_get" ref="gabf63d12bfc70a0e2d4242eed3975021e" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -605,33 +648,10 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns whether the mouse pointer is logically inside the object. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The pointer device.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the pointer is inside, <code>false</code> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 Returns whether the default mouse pointer is logically inside the object.</dd></dl>
-<p>When this function is called it will return a value of either <code>false</code> or <code>true</code>, depending on if event_feed_mouse_in or event_feed_mouse_out have been called to feed in a mouse enter event into the object.</p>
-<p>A return value of <code>true</code> indicates the mouse is logically inside the object, and <code>false</code> implies it is logically outside the object.</p>
-<p>If <code>e</code> is not a valid object, the return value is undefined.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the mouse pointer is inside the object, <code>false</code> otherwise Returns whether the coords are logically inside the object.</dd></dl>
-<p>When this function is called it will return a value of either <code>false</code> or <code>true</code>, depending on if the coords are inside the object's current geometry.</p>
-<p>A return value of <code>true</code> indicates the position is logically inside the object, and <code>false</code> implies it is logically outside the object.</p>
-<p>If <code>e</code> is not a valid object, the return value is undefined.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The canvas-relative x coordinate. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The canvas-relative y coordinate.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the coords are inside the object, <code>false</code> otherwise Get the Evas to which this object belongs to</dd></dl>
+<p>Get the Evas to which this object belongs to. </p>
 <p>The object may be an evas object, an elementary object or window, or an evas 3D / VG object. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a7">bg_example_03.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a10">bubble_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a14">check_example_01.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a15">colorselector_example_01.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a12">ctxpopup_example_01.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a7">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a6">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a10">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a11">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a13">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a15">efl_thread_6.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a5">evas-aspect-hints.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a19">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a16">evas-smart-object.c</a>, <a class="el" href="flip_example_01_8c-example.html#a8">flip_example_01.c</a>, <a class="el" href="frame_example_01_8c-example.html#a8">frame_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a10">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a10">hoversel_example_01.c</a>, <a class="el" href="map_example_01_8c-example.html#a7">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a5">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a14">map_example_03.c</a>, <a class="el" href="menu_example_01_8c-example.html#a16">menu_example_01.c</a>, <a class="el" href="separator_example_01_8c-example.html#a13">separator_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a13">table_example_02.c</a>, <a class="el" href="transit_example_04_8c-example.html#a40">transit_example_04.c</a>, and <a class="el" href="web_example_02_8c-example.html#a23">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a7">bg_example_03.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a10">bubble_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a14">check_example_01.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a15">colorselector_example_01.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a12">ctxpopup_example_01.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a7">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a6">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a10">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a11">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a13">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a15">efl_thread_6.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a5">evas-aspect-hints.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a19">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a16">evas-smart-object.c</a>, <a class="el" href="flip_example_01_8c-example.html#a8">flip_example_01.c</a>, <a class="el" href="frame_example_01_8c-example.html#a8">frame_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a10">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a10">hoversel_example_01.c</a>, <a class="el" href="map_example_01_8c-example.html#a7">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a5">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a14">map_example_03.c</a>, <a class="el" href="menu_example_01_8c-example.html#a16">menu_example_01.c</a>, <a class="el" href="separator_example_01_8c-example.html#a13">separator_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a13">table_example_02.c</a>, <a class="el" href="transit_example_04_8c-example.html#a40">transit_example_04.c</a>, and <a class="el" href="web_example_02_8c-example.html#a22">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -828,19 +848,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>If <code>true</code> the object belongs to the window border decorations. </p>
-<p>Creates a new smart rectangle object on the given Evas <code>e</code> canvas.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e</td><td>The given canvas. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The created object handle.</dd></dl>
-<p>This provides a smart version of the typical "event rectangle", which allows objects to set this as their parent and route events to a group of objects. Events will not propagate to non-member objects below this object.</p>
-<p>Adding members is done just like a normal smart object, using efl_canvas_group_member_add (Eo API) or evas_object_smart_member_add (legacy).</p>
-<p>Child objects are not modified in any way, unlike other types of smart objects.</p>
-<p>It is a user error for any child objects to be stacked above the event grabber parent while the event grabber is visible. A critical error will be raised if this is detected at any point.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 This will be <code>false</code> by default, and should be <code>false</code> for all objects created by the application, unless swallowed in some very specific parts of the window.</dd></dl>
+<p>This will be <code>false</code> by default, and should be <code>false</code> for all objects created by the application, unless swallowed in some very specific parts of the window.</p>
 <p>It is very unlikely that an application needs to call this manually, as the window will handle this feature automatically.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1248,6 +1256,112 @@ Typedefs</h2></td></tr>
 </dl>
 </div>
 </div>
+<a class="anchor" id="ga31057fde2ffbe2dc4791d157fe255fb7"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_pointer_coords_inside_get" ref="ga31057fde2ffbe2dc4791d157fe255fb7" args="(const Evas_Object *eo_obj, int x, int y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Group.html#ga31057fde2ffbe2dc4791d157fe255fb7">evas_object_pointer_coords_inside_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>eo_obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns whether the coords are logically inside the object. </p>
+<p>When this function is called it will return a value of either <code>false</code> or <code>true</code>, depending on if the coords are inside the object's current geometry.</p>
+<p>A return value of <code>true</code> indicates the position is logically inside the object, and <code>false</code> implies it is logically outside the object.</p>
+<p>If <code>e</code> is not a valid object, the return value is undefined.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The canvas-relative x coordinate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The canvas-relative y coordinate.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the coords are inside the object, <code>false</code> otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaffc38dff73db2271b7f282344727b30e"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_pointer_inside_by_device_get" ref="gaffc38dff73db2271b7f282344727b30e" args="(const Evas_Object *obj, Efl_Input_Device *dev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Group.html#gaffc38dff73db2271b7f282344727b30e">evas_object_pointer_inside_by_device_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Efl_Input_Device *&#160;</td>
+          <td class="paramname"><em>dev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns whether the mouse pointer is logically inside the object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The pointer device.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the pointer is inside, <code>false</code> otherwise.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga27d964f518956874334e33559eb0ccf4"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_pointer_inside_get" ref="ga27d964f518956874334e33559eb0ccf4" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Group.html#ga27d964f518956874334e33559eb0ccf4">evas_object_pointer_inside_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns whether the default mouse pointer is logically inside the object. </p>
+<p>When this function is called it will return a value of either <code>false</code> or <code>true</code>, depending on if event_feed_mouse_in or event_feed_mouse_out have been called to feed in a mouse enter event into the object.</p>
+<p>A return value of <code>true</code> indicates the mouse is logically inside the object, and <code>false</code> implies it is logically outside the object.</p>
+<p>If <code>e</code> is not a valid object, the return value is undefined.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the mouse pointer is inside the object, <code>false</code> otherwise </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga973ec56c541053c06e3fca15c92adacf"></a><!-- doxytag: member="efl_canvas_object_eo.legacy.h::evas_object_pointer_mode_get" ref="ga973ec56c541053c06e3fca15c92adacf" args="(const Efl_Canvas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1650,7 +1764,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a16">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a7">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a19">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a46">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a40">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a14">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a10">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a24">button_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a11">check_example_01.c</a>, <a class="el" href="codegen_example_8c-example.html#a19">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a19">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a28">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a16">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a18">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a29">ctxpopup_example_01.c</a>, <a class="el" href="dayselector_example_8c-example.html#a15">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a17">diskselector_example_01.c</a>, <a class="el" href="ecore_animator_example_8c-example.html#a5">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a16">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a8">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a12">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a8">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a9">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a4">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a65">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a17">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a4">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a11">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a13">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a4">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a4">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a22">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a4">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a5">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a13">edje-text.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a9">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a8">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a12">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a13">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a15">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a18">efl_thread_6.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a4">eina_tiler_01.c</a>, <a class="el" href="entry_example_8c-example.html#a86">entry_example.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a1">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a11">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a4">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a1">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a1">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a3">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a27">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a30">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a1">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a10">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a7">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a3">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a3">evas-table.c</a>, <a class="el" href="evas-text_8c-example.html#a3">evas-text.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a25">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a21">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a20">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a9">flip_example_01.c</a>, <a class="el" href="frame_example_01_8c-example.html#a12">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a38">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a80">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a24">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a64">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a32">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a52">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a55">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a62">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a15">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a19">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a19">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a23">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a30">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a35">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a29">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a12">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a33">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a17">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a27">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a16">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a23">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a34">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a25">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a47">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a36">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a30">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a24">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a14">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a20">notify_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a17">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a14">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a13">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a20">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a8">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a23">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a24">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a19">prefs_example_03.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a6">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a6">relative_container_example_02.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a19">scroller_example_01.c</a>, <a class="el" href="slideshow_example_8c-example.html#a37">slideshow_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a21">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a20">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a14">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a21">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a19">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a17">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a17">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a10">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a8">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a48">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a35">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a58">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a57">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a16">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a7">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a19">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a46">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a40">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a14">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a10">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a24">button_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a11">check_example_01.c</a>, <a class="el" href="codegen_example_8c-example.html#a19">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a19">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a28">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a16">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a18">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a29">ctxpopup_example_01.c</a>, <a class="el" href="dayselector_example_8c-example.html#a15">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a17">diskselector_example_01.c</a>, <a class="el" href="ecore_animator_example_8c-example.html#a5">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a16">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a8">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a12">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a8">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a9">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a4">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a65">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a17">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a4">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a11">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a13">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a4">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a4">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a22">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a4">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a5">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a13">edje-text.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a9">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a8">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a12">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a13">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a15">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a18">efl_thread_6.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a4">eina_tiler_01.c</a>, <a class="el" href="entry_example_8c-example.html#a85">entry_example.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a1">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a11">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a4">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a1">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a1">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a3">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a27">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a30">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a1">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a10">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a7">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a3">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a3">evas-table.c</a>, <a class="el" href="evas-text_8c-example.html#a3">evas-text.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a26">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a22">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a20">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a9">flip_example_01.c</a>, <a class="el" href="frame_example_01_8c-example.html#a12">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a38">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a80">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a24">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a64">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a32">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a52">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a55">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a62">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a15">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a19">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a19">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a23">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a30">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a35">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a29">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a12">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a34">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a17">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a27">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a16">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a23">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a34">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a25">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a47">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a36">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a30">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a24">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a14">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a20">notify_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a17">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a14">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a13">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a20">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a8">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a23">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a24">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a19">prefs_example_03.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a6">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a6">relative_container_example_02.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a19">scroller_example_01.c</a>, <a class="el" href="slideshow_example_8c-example.html#a37">slideshow_example.c</a>, <a class="el" href="theme_example_01_8c-example.html#a21">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a20">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a14">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a21">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a19">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a17">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a17">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a10">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a8">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a48">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a35">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a57">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a57">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1813,7 +1927,7 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.5</d
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a11">actionslider_example_01.c</a>, <a class="el" href="bg_example_03_8c-example.html#a26">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a31">box_example_02.c</a>, <a class="el" href="button_example_01_8c-example.html#a6">button_example_01.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a12">calendar_example_04.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a12">calendar_example_06.c</a>, <a class="el" href="codegen_example_8c-example.html#a8">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a12">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a10">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a12">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a13">conformant_example_02.c</a>, <a class="el" href="datetime_example_8c-example.html#a14">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a11">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a11">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a18">diskselector_example_02.c</a>, <a class="el" href="entry_example_8c-example.html#a21">entry_example.c</a>, <a class="el" href="evas-hints_8c-example.html#a15">evas-hints.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a14">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a13">fileselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a26">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a57">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a59">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a8">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a45">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a52">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a48">glview_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a20">index_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a12">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a6">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a24">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a12">list_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a29">list_example_03.c</a>, <a class="el" href="map_example_03_8c-example.html#a31">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a16">mapbuf_example.c</a>, <a class="el" href="panel_example_01_8c-example.html#a16">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a13">panes_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a18">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a18">prefs_example_02.c</a>, <a class="el" href="progressbar_example_8c-example.html#a20">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a19">radio_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a10">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a13">relative_container_example_02.c</a>, <a class="el" href="separator_example_01_8c-example.html#a16">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a13">slider_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a13">spinner_example.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a12">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a13">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a12">toolbar_example_03.c</a>, <a class="el" href="transit_example_03_8c-example.html#a12">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a10">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a11">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a30">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a11">actionslider_example_01.c</a>, <a class="el" href="bg_example_03_8c-example.html#a26">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a31">box_example_02.c</a>, <a class="el" href="button_example_01_8c-example.html#a6">button_example_01.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a12">calendar_example_04.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a12">calendar_example_06.c</a>, <a class="el" href="codegen_example_8c-example.html#a8">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a12">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a10">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a12">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a13">conformant_example_02.c</a>, <a class="el" href="datetime_example_8c-example.html#a14">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a11">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a11">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a18">diskselector_example_02.c</a>, <a class="el" href="entry_example_8c-example.html#a21">entry_example.c</a>, <a class="el" href="evas-hints_8c-example.html#a15">evas-hints.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a15">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a13">fileselector_example.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a26">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a57">gengrid_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a59">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a8">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a45">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a52">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a48">glview_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a20">index_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a12">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a6">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a24">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a12">list_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a29">list_example_03.c</a>, <a class="el" href="map_example_03_8c-example.html#a31">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a16">mapbuf_example.c</a>, <a class="el" href="panel_example_01_8c-example.html#a16">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a13">panes_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a18">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a18">prefs_example_02.c</a>, <a class="el" href="progressbar_example_8c-example.html#a20">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a19">radio_example_01.c</a>, <a class="el" href="relative_container_example_01_8c-example.html#a10">relative_container_example_01.c</a>, <a class="el" href="relative_container_example_02_8c-example.html#a13">relative_container_example_02.c</a>, <a class="el" href="separator_example_01_8c-example.html#a16">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a13">slider_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a13">spinner_example.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a12">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a13">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a12">toolbar_example_03.c</a>, <a class="el" href="transit_example_03_8c-example.html#a12">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a10">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a11">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a30">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2653,46 +2767,6 @@ If <code>obj</code> is invalid, then the hint components will be set with 0.0.</
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga9ac4de1380a82966a400649c8adeedba"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_text_filter_program_set" ref="ga9ac4de1380a82966a400649c8adeedba" args="(Evas_Object *obj, const char *code) EINA_DEPRECATED" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Object__Group.html#ga9ac4de1380a82966a400649c8adeedba">evas_object_text_filter_program_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>code</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set direct render of map. </p>
-<p>This interface has very special purpose to optimize memory usage of map. It works when a map object has only one image object through its smart object tree. In this case, it regards the map has one image object which of buffer can be directly draw on the main surface so that it skips to create an additional frame buffer to composite the contents of the map. If the condition is not satisfied, map works as it's supposed to do in the default behavior.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">m</td><td>map to enable direct render. </td></tr>
-    <tr><td class="paramname">direct_render</td><td><code>true</code> to enable direct render. Apply an evas filter program on this text object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Note: the preferred method for filters is to edit EDC styles, rather than calling this API directly.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>

@@ -186,7 +186,7 @@ _bt_zoom_fill(<span class="keywordtype">void</span> *data, <a class="code" href=
 _nasty_hack(<span class="keywordtype">void</span> *data)
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o = data;
-   <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e = <a name="a14"></a><a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Returns whether the mouse pointer is logically inside the object.">evas_object_evas_get</a>(o);
+   <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e = <a name="a14"></a><a class="code" href="group__Evas__Object__Group.html#gae1058082dae7b97590c41f43405dfdbf" title="Get the Evas to which this object belongs to.">evas_object_evas_get</a>(o);
    <a name="a15"></a><a class="code" href="group__Evas__Smart__Object__Group.html#ga0cfa7df81a1c781997f7cdcb8aa4f69e">evas_smart_objects_calculate</a>(e);
    <span class="keywordflow">return</span> <a name="a16"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gae0c653baad8836232c0dc27f91f875d6">ECORE_CALLBACK_CANCEL</a>;
 }

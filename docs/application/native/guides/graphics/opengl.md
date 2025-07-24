@@ -572,4 +572,5 @@ If the window is rotated and the Direct Rendering flag is set, Client Side Rotat
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

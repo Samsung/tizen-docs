@@ -359,8 +359,5 @@ To monitor the changes in a resource, follow the steps below:
 
 
 ## Related information
-- Dependencies
-    - Tizen 4.0 and Higher
-- API References
-    - [Tizen.Network.IoTConnectivity](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.IoTConnectivity.html) class
-
+* Dependencies
+  -   Tizen 4.0 and Higher

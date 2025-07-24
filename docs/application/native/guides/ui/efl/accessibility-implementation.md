@@ -62,7 +62,7 @@ An accessible application requires the following features to be implemented:
 
 ## Creating an Accessible Application
 
-You can use the native [UI Components](/development/sample/native/UI/UI_Components) sample application provided within Tizen Studio to see how the most important accessibility features are implemented in practice. The sample application contains an AT-SPI2 compliant screen reader, which you can use to test the accessibility features on a device. Enable the screen reader by running the sample application and selecting **Accessibility > Screen Reader > Screen Reader (TTS)**.
+You can use the mobile native [UI Components](/development/sample/native/UI/UI_Components) sample application provided within Tizen Studio to see how the most important accessibility features are implemented in practice. The sample application contains an AT-SPI2 compliant screen reader, which you can use to test the accessibility features on a device. Enable the screen reader by running the sample application and selecting **Accessibility > Screen Reader > Screen Reader (TTS)**.
 
 In the Tizen 2.4 release, the screen reader is available only inside the UI Components application. This means that when the UI Components application is terminated or paused and sent to the background, the screen reader is automatically disabled, and when the UI Components application is restored, the screen reader is enabled.
 
@@ -72,7 +72,7 @@ In the Tizen 2.4 release, the screen reader is available only inside the UI Comp
 
 > **Note**
 >
-> If reading of any arbitrary text directly from the application needs to be synchronized with the screen reader voice output, you must use the [Tizen platform TTS API](../../../api/common/latest/group__CAPI__UIX__TTS__MODULE.html), which is also used by the screen reader.
+> If reading of any arbitrary text directly from the application needs to be synchronized with the screen reader voice output, you must use the Tizen platform TTS API (in [mobile](../../../api/mobile/latest/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__UIX__TTS__MODULE.html) applications), which is also used by the screen reader.
 
 ### Making UI Components Readable
 
@@ -481,4 +481,5 @@ create_custom_frame(Evas_Object *parent)
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

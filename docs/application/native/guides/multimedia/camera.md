@@ -17,7 +17,7 @@ The main features of the Camera API include:
 
   You can preview images in real time with the `camera_start_preview()` function. The feature provides:
 
-  - Support for several pixel formats which are defined in the [`camera_pixel_format_e` enumeration](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece)
+  - Support for several pixel formats which are defined in the `camera_pixel_format_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece) applications)
   - Preview at the frame rate
   - Rotation and flip of the preview
 
@@ -76,7 +76,7 @@ The following figure illustrates the camera state changes in the normal mode:
 
 To enable your application to use the camera functionality:
 
-1. To use the functions and data types of the [Camera API](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html), include the `<camera.h>` header file in your application:
+1. To use the functions and data types of the Camera API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html) applications), include the `<camera.h>` header file in your application:
 
    ```
    #include <camera.h>
@@ -116,7 +116,7 @@ To enable your application to use the camera functionality:
        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
    ```
 
-   The `CAMERA_DEVICE_CAMERA0` parameter means that the currently activated device camera is 0, which is the primary camera. You can select between the primary (0) and secondary (1) camera. These values are defined in the [`camera_device_e` enumeration](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#gab030be4ec6b05144c3f2a732541e4104).
+   The `CAMERA_DEVICE_CAMERA0` parameter means that the currently activated device camera is 0, which is the primary camera. You can select between the primary (0) and secondary (1) camera. These values are defined in the `camera_device_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#gab030be4ec6b05144c3f2a732541e4104) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#gab030be4ec6b05144c3f2a732541e4104) applications).
 
 5. Check the current state of the camera using the `camera_get_state()` function:
 
@@ -127,7 +127,7 @@ To enable your application to use the camera functionality:
    error_code = camera_get_state(cam_data.g_camera, &state);
    ```
 
-   The returned state is one of the values defined in the [`camera_state_e` enumeration](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga28cde1b92417f9ce43dde605ed822cde). If the state is not `CAMERA_STATE_CREATED`, re-initialize the camera by recreating the handle.
+   The returned state is one of the values defined in the `camera_state_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga28cde1b92417f9ce43dde605ed822cde) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga28cde1b92417f9ce43dde605ed822cde) applications). If the state is not `CAMERA_STATE_CREATED`, re-initialize the camera by recreating the handle.
 
 <a name="configuring_callback"></a>
 ## Configuring the Camera and its Callbacks
@@ -144,7 +144,7 @@ To configure the camera:
 
    The image quality value can range from 1 (lowest quality) to 100 (highest quality).
 
-2. Set the display for showing preview images by using the `camera_set_display()` function with 1 of the camera display types (`CAMERA_DISPLAY_TYPE_EVAS` or `CAMERA_DISPLAY_TYPE_OVERLAY`). These values are defined in the [`camera_display_type_e` enumeration](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga3ddd0982778fdfacd3694d643d1610ac).
+2. Set the display for showing preview images by using the `camera_set_display()` function with 1 of the camera display types (`CAMERA_DISPLAY_TYPE_EVAS` or `CAMERA_DISPLAY_TYPE_OVERLAY`). These values are defined in the `camera_display_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga3ddd0982778fdfacd3694d643d1610ac) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga3ddd0982778fdfacd3694d643d1610ac) applications).
 
    > **Note**
    >
@@ -238,7 +238,7 @@ To configure the camera:
    error_code = camera_set_capture_format(cam_data.g_camera, CAMERA_PIXEL_FORMAT_JPEG);
    ```
 
-   The [`camera_pixel_format_e` enumeration](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece) defines the available capture formats.
+   The `camera_pixel_format_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece) applications) defines the available capture formats.
 
 5. To register callbacks for handling the camera preview and auto-focus:
 <a name="callbacks_preview"></a>
@@ -501,7 +501,7 @@ To take a photo:
 <a name="attributes"></a>
 ## Setting Camera Attributes
 
-You can set various camera attributes with the [Attributes API](../../api/common/latest/group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html).
+You can set various camera attributes with the Attributes API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html) applications).
 
 To set some attributes:
 
@@ -594,4 +594,5 @@ After you have finished working with the camera, stop the camera and clean up th
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

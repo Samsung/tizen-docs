@@ -184,7 +184,7 @@ _page_grid_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
    <span class="keywordflow">if</span> (!emos) <span class="keywordflow">return</span> NULL;
 
    grid = <a name="a18"></a><a class="code" href="group__Elm__Gengrid__Group.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(parent);
-   <a name="a19"></a><a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 64, 80);
+   <a name="a19"></a><a class="code" href="group__Elm__Gengrid__Group.html#gadea5cce647305f0a8f7bca8778131754" title="Set the size for the items of a given gengrid widget.">elm_gengrid_item_size_set</a>(grid, 64, 80);
    <a name="a20"></a><a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a name="a21"></a><a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
@@ -438,11 +438,11 @@ _image_insert_cb(<span class="keywordtype">void</span> *data, <a class="code" hr
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(naviframe);
 
    o = _page_grid_add(ad-&gt;win, aid);
-   <a name="a51"></a><a class="code" href="group__Elm__Naviframe__Group.html#ga330cd6d2040875fdba5451aa8081cc86" title="Version of item_push with extra animations.">elm_naviframe_item_simple_push</a>(naviframe, o);
+   elm_naviframe_item_simple_push(naviframe, o);
    aid-&gt;grid = o;
 
    o = _page_settings_add(ad-&gt;win, aid);
-   <a class="code" href="group__Elm__Naviframe__Group.html#ga330cd6d2040875fdba5451aa8081cc86" title="Version of item_push with extra animations.">elm_naviframe_item_simple_push</a>(naviframe, o);
+   elm_naviframe_item_simple_push(naviframe, o);
    aid-&gt;settings = o;
 
    <a class="code" href="group__Elm__Naviframe__Group.html#gada1d362c52eed9f09e5f4cc3d1b270ab" title="Simple version of item_promote.">elm_naviframe_item_simple_promote</a>(naviframe, aid-&gt;grid);
@@ -482,17 +482,17 @@ _format_change_cb(<span class="keywordtype">void</span> *data, <a class="code" h
    snprintf(fmt_open, <span class="keyword">sizeof</span>(fmt_open), <span class="stringliteral">&quot;&lt;%s&gt;&quot;</span>, sel);
    snprintf(fmt_close, <span class="keyword">sizeof</span>(fmt_close), <span class="stringliteral">&quot;&lt;/%s&gt;&quot;</span>, sel);
 
-   buf = <a name="a52"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga6f3c9ce942e61364a10ec7c0ea01cedc" title="Creates a new string buffer.">eina_strbuf_new</a>();
+   buf = <a name="a51"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga6f3c9ce942e61364a10ec7c0ea01cedc" title="Creates a new string buffer.">eina_strbuf_new</a>();
 
-   cursor = <a name="a53"></a><a class="code" href="group__Elm__Entry__Group.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(ad-&gt;edit_buffer);
-   <a name="a54"></a><a class="code" href="group__Elm__Entry__Group.html#ga8ee511b7603abc14b1a413532665d9ca" title="Sets the visibility of the end widget of the entry, set by elm_object_part_content_set(ent, &quot;end&quot;, content).">elm_entry_cursor_begin_set</a>(ad-&gt;edit_buffer);
-   <a name="a55"></a><a class="code" href="group__Elm__Entry__Group.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(ad-&gt;edit_buffer);
-   <a name="a56"></a><a class="code" href="group__Elm__Entry__Group.html#ga103d3179e4e832632f24ab3c13418b94" title="Sets the cursor position in the entry to the given value.">elm_entry_cursor_pos_set</a>(ad-&gt;edit_buffer, cursor);
-   <a name="a57"></a><a class="code" href="group__Elm__Entry__Group.html#ga0a642462f4c8e431b6251b12d927b2f4">elm_entry_cursor_selection_end</a>(ad-&gt;edit_buffer);
-   sel = <a name="a58"></a><a class="code" href="group__Elm__Entry__Group.html#gaa9a1c7e2b63fc9d3fb38d534203c2133" title="Get any selected text within the entry.">elm_entry_selection_get</a>(ad-&gt;edit_buffer);
+   cursor = <a name="a52"></a><a class="code" href="group__Elm__Entry__Group.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(ad-&gt;edit_buffer);
+   <a name="a53"></a><a class="code" href="group__Elm__Entry__Group.html#ga8ee511b7603abc14b1a413532665d9ca">elm_entry_cursor_begin_set</a>(ad-&gt;edit_buffer);
+   <a name="a54"></a><a class="code" href="group__Elm__Entry__Group.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(ad-&gt;edit_buffer);
+   <a name="a55"></a><a class="code" href="group__Elm__Entry__Group.html#ga103d3179e4e832632f24ab3c13418b94" title="Sets the cursor position in the entry to the given value.">elm_entry_cursor_pos_set</a>(ad-&gt;edit_buffer, cursor);
+   <a name="a56"></a><a class="code" href="group__Elm__Entry__Group.html#ga0a642462f4c8e431b6251b12d927b2f4">elm_entry_cursor_selection_end</a>(ad-&gt;edit_buffer);
+   sel = <a name="a57"></a><a class="code" href="group__Elm__Entry__Group.html#gaa9a1c7e2b63fc9d3fb38d534203c2133" title="Get any selected text within the entry.">elm_entry_selection_get</a>(ad-&gt;edit_buffer);
    <span class="keywordflow">if</span> (!sel || !sel[0])
      {
-        <a name="a59"></a><a class="code" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append</a>(buf, fmt_open);
+        <a name="a58"></a><a class="code" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append</a>(buf, fmt_open);
         <span class="keywordflow">goto</span> all_done;
      }
    what = fmt_open;
@@ -507,20 +507,20 @@ _format_change_cb(<span class="keywordtype">void</span> *data, <a class="code" h
    <span class="keywordflow">if</span> (what == fmt_close)
      {
         <a class="code" href="group__Elm__Entry__Group.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(ad-&gt;edit_buffer);
-        <a name="a60"></a><a class="code" href="group__Elm__Entry__Group.html#ga6336f667855800817c5d9faf8b8c318d">elm_entry_cursor_end_set</a>(ad-&gt;edit_buffer);
+        <a name="a59"></a><a class="code" href="group__Elm__Entry__Group.html#ga6336f667855800817c5d9faf8b8c318d">elm_entry_cursor_end_set</a>(ad-&gt;edit_buffer);
         <a class="code" href="group__Elm__Entry__Group.html#ga0a642462f4c8e431b6251b12d927b2f4">elm_entry_cursor_selection_end</a>(ad-&gt;edit_buffer);
         sel = <a class="code" href="group__Elm__Entry__Group.html#gaa9a1c7e2b63fc9d3fb38d534203c2133" title="Get any selected text within the entry.">elm_entry_selection_get</a>(ad-&gt;edit_buffer);
         <span class="keywordflow">if</span> (sel)
           {
              <a class="code" href="group__Eina__String__Buffer__Group.html#ga467437cff14cf09945351b739abf702c">Eina_Strbuf</a> *buf2 = <a class="code" href="group__Eina__String__Buffer__Group.html#ga6f3c9ce942e61364a10ec7c0ea01cedc" title="Creates a new string buffer.">eina_strbuf_new</a>();
              <a class="code" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append</a>(buf2, sel);
-             <a name="a61"></a><a class="code" href="group__Eina__String__Buffer__Group.html#gadb9be08a24e6b4a8702ca9930cf1ea17" title="Replaces the first occurrence of a substring with another string.">eina_strbuf_replace_first</a>(buf2, fmt_close, <span class="stringliteral">&quot;&quot;</span>);
+             <a name="a60"></a><a class="code" href="group__Eina__String__Buffer__Group.html#gadb9be08a24e6b4a8702ca9930cf1ea17" title="Replaces the first occurrence of a substring with another string.">eina_strbuf_replace_first</a>(buf2, fmt_close, <span class="stringliteral">&quot;&quot;</span>);
              <a class="code" href="group__Elm__Entry__Group.html#gacf27a8e1b5f1af931284fb840c7251b0" title="Inserts the given text into the entry at the current cursor position.">elm_entry_entry_insert</a>(ad-&gt;edit_buffer,
-                                    <a name="a62"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf2));
-             <a name="a63"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf2);
+                                    <a name="a61"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf2));
+             <a name="a62"></a><a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf2);
           }
      }
-   <a name="a64"></a><a class="code" href="group__Elm__Entry__Group.html#gaaf4d71b5b72f8cca01e5f9cdd5d95f2b">elm_entry_select_none</a>(ad-&gt;edit_buffer);
+   <a name="a63"></a><a class="code" href="group__Elm__Entry__Group.html#gaaf4d71b5b72f8cca01e5f9cdd5d95f2b">elm_entry_select_none</a>(ad-&gt;edit_buffer);
    <a class="code" href="group__Elm__Entry__Group.html#ga103d3179e4e832632f24ab3c13418b94" title="Sets the cursor position in the entry to the given value.">elm_entry_cursor_pos_set</a>(ad-&gt;edit_buffer, cursor);
 
 all_done:
@@ -532,10 +532,10 @@ all_done:
 _autosave_change_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
 {
    App_Data *ad = data;
-   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> state = <a name="a65"></a><a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> state = <a name="a64"></a><a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
 
-   <a name="a66"></a><a class="code" href="group__Elm__Entry__Group.html#gaf11dbad4cd1e5309fb655910e4f14771" title="This sets the entry object to &#39;autosave&#39; the loaded text file or not.">elm_entry_autosave_set</a>(ad-&gt;edit_buffer, state);
-   <span class="keywordflow">if</span> (state) <a name="a67"></a><a class="code" href="group__Elm__Entry__Group.html#gaa44cb80b64207a3706fad36d35e92bc7">elm_entry_file_save</a>(ad-&gt;edit_buffer);
+   <a name="a65"></a><a class="code" href="group__Elm__Entry__Group.html#gaf11dbad4cd1e5309fb655910e4f14771" title="This sets the entry object to &#39;autosave&#39; the loaded text file or not.">elm_entry_autosave_set</a>(ad-&gt;edit_buffer, state);
+   <span class="keywordflow">if</span> (state) <a name="a66"></a><a class="code" href="group__Elm__Entry__Group.html#gaa44cb80b64207a3706fad36d35e92bc7">elm_entry_file_save</a>(ad-&gt;edit_buffer);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -546,12 +546,12 @@ _edit_dblclick_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a cl
 
    current_cursor = <a class="code" href="group__Elm__Entry__Group.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(obj);
 
-   <span class="keywordflow">while</span> (<a name="a68"></a><a class="code" href="group__Elm__Entry__Group.html#ga95c490e60101d05f72a660be8e75b18f" title="Allow selection in the entry.">elm_entry_cursor_prev</a>(obj))
+   <span class="keywordflow">while</span> (<a name="a67"></a><a class="code" href="group__Elm__Entry__Group.html#ga95c490e60101d05f72a660be8e75b18f" title="This moves the cursor one place to the left within the entry.">elm_entry_cursor_prev</a>(obj))
      {
         <span class="keyword">const</span> <span class="keywordtype">char</span> *content;
-        <span class="keywordflow">if</span> (<a name="a69"></a><a class="code" href="group__Elm__Entry__Group.html#ga64f82ec87268674d1981d571ba2b0636" title="Get if the current cursor position holds a visible format node.">elm_entry_cursor_is_visible_format_get</a>(obj))
+        <span class="keywordflow">if</span> (<a name="a68"></a><a class="code" href="group__Elm__Entry__Group.html#ga64f82ec87268674d1981d571ba2b0636" title="Get if the current cursor position holds a visible format node.">elm_entry_cursor_is_visible_format_get</a>(obj))
           <span class="keywordflow">break</span>;
-        content = <a name="a70"></a><a class="code" href="group__Elm__Entry__Group.html#ga327ec36bbb20846b619fef3e8f8c4c98" title="Get the character pointed by the cursor at its current position.">elm_entry_cursor_content_get</a>(obj);
+        content = <a name="a69"></a><a class="code" href="group__Elm__Entry__Group.html#ga327ec36bbb20846b619fef3e8f8c4c98" title="Get the character pointed by the cursor at its current position.">elm_entry_cursor_content_get</a>(obj);
         <span class="keywordflow">if</span> (content &amp;&amp; (content[0] == <span class="charliteral">&#39; &#39;</span>))
           <span class="keywordflow">break</span>;
      }
@@ -559,7 +559,7 @@ _edit_dblclick_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a cl
    <span class="keywordflow">if</span> (current_cursor == <a class="code" href="group__Elm__Entry__Group.html#ga7fd85bdd49063cf46dc33881a0467b5e" title="Get the current position of the cursor in the entry.">elm_entry_cursor_pos_get</a>(obj))
      <span class="keywordflow">return</span>;
 
-   <a name="a71"></a><a class="code" href="group__Elm__Entry__Group.html#gabfa4a0f5a6b9774cb4d1ebe289e65935" title="This moves the cursor one place to the right within the entry.">elm_entry_cursor_next</a>(obj);
+   <a name="a70"></a><a class="code" href="group__Elm__Entry__Group.html#gabfa4a0f5a6b9774cb4d1ebe289e65935" title="This moves the cursor one place to the right within the entry.">elm_entry_cursor_next</a>(obj);
    <a class="code" href="group__Elm__Entry__Group.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(obj);
    <a class="code" href="group__Elm__Entry__Group.html#ga103d3179e4e832632f24ab3c13418b94" title="Sets the cursor position in the entry to the given value.">elm_entry_cursor_pos_set</a>(obj, current_cursor);
    <span class="keywordflow">while</span> (<a class="code" href="group__Elm__Entry__Group.html#gabfa4a0f5a6b9774cb4d1ebe289e65935" title="This moves the cursor one place to the right within the entry.">elm_entry_cursor_next</a>(obj))
@@ -578,9 +578,9 @@ _edit_dblclick_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a cl
 _edit_tplclick_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
                   <span class="keywordtype">void</span> *event EINA_UNUSED)
 {
-   <a name="a72"></a><a class="code" href="group__Elm__Entry__Group.html#gaf523d39624b8e70aba49c93b0bd4570f">elm_entry_cursor_line_begin_set</a>(obj);
+   <a name="a71"></a><a class="code" href="group__Elm__Entry__Group.html#gaf523d39624b8e70aba49c93b0bd4570f">elm_entry_cursor_line_begin_set</a>(obj);
    <a class="code" href="group__Elm__Entry__Group.html#gabe7d304abb5916c82d77fe4ea9998d62">elm_entry_cursor_selection_begin</a>(obj);
-   <a name="a73"></a><a class="code" href="group__Elm__Entry__Group.html#ga5f8f18958079b4b65cf4c8c71936a1ec">elm_entry_cursor_line_end_set</a>(obj);
+   <a name="a72"></a><a class="code" href="group__Elm__Entry__Group.html#ga5f8f18958079b4b65cf4c8c71936a1ec">elm_entry_cursor_line_end_set</a>(obj);
    <a class="code" href="group__Elm__Entry__Group.html#ga0a642462f4c8e431b6251b12d927b2f4">elm_entry_cursor_selection_end</a>(obj);
 }
 
@@ -592,14 +592,14 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    memset(&amp;app, 0, <span class="keyword">sizeof</span>(app));
 
-   <a name="a74"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(<a name="a75"></a><a class="code" href="group__Elm__General.html#ggaa16f3378ecdbf660fa378402e3c5a0a9a02fadb6faada04b19d0fa42c11a8d32a">ELM_POLICY_QUIT</a>, <a name="a76"></a><a class="code" href="group__Elm__General.html#gga46af37e6ac2c406321060be827117196abbe0962d88ae12afe1a173da881f56cd">ELM_POLICY_QUIT_LAST_WINDOW_CLOSED</a>);
+   <a name="a73"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(<a name="a74"></a><a class="code" href="group__Elm__General.html#ggaa16f3378ecdbf660fa378402e3c5a0a9a02fadb6faada04b19d0fa42c11a8d32a">ELM_POLICY_QUIT</a>, <a name="a75"></a><a class="code" href="group__Elm__General.html#gga46af37e6ac2c406321060be827117196abbe0962d88ae12afe1a173da881f56cd">ELM_POLICY_QUIT_LAST_WINDOW_CLOSED</a>);
 
-   win = <a name="a77"></a><a class="code" href="group__Elm__Win__Group.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;entry-example&quot;</span>, <span class="stringliteral">&quot;Emacs Lite&quot;</span>);
-   <a name="a78"></a><a class="code" href="group__Elm__Win__Group.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   win = <a name="a76"></a><a class="code" href="group__Elm__Win__Group.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;entry-example&quot;</span>, <span class="stringliteral">&quot;Emacs Lite&quot;</span>);
+   <a name="a77"></a><a class="code" href="group__Elm__Win__Group.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
    box = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a name="a79"></a><a class="code" href="group__Elm__Win__Group.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a name="a78"></a><a class="code" href="group__Elm__Win__Group.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
 
    tb = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
@@ -609,8 +609,8 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, tb);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(tb);
 
-   o = <a name="a80"></a><a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
-   <a name="a81"></a><a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(o, <a name="a82"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   o = <a name="a79"></a><a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   <a name="a80"></a><a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(o, <a name="a81"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
    elm_object_text_set(o, <span class="stringliteral">&quot;Autosave&quot;</span>);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(tb, o);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
@@ -641,13 +641,13 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
          icon, <span class="stringliteral">&quot;entry&quot;</span>, <span class="stringliteral">&quot;emoticon/haha&quot;</span>, <span class="stringliteral">&quot;default&quot;</span>))
      fprintf(stderr, <span class="stringliteral">&quot;Failed to set layout&quot;</span>);
 
-   <a name="a83"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o, <span class="stringliteral">&quot;icon&quot;</span>, icon);
+   <a name="a82"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o, <span class="stringliteral">&quot;icon&quot;</span>, icon);
 
    <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _image_insert_cb, &amp;app);
 
    en = <a class="code" href="group__Elm__Entry__Group.html#ga9b6db43001f1f765aa38f8805411b822">elm_entry_add</a>(win);
    <a class="code" href="group__Elm__Entry__Group.html#gaf11dbad4cd1e5309fb655910e4f14771" title="This sets the entry object to &#39;autosave&#39; the loaded text file or not.">elm_entry_autosave_set</a>(en, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-   <a name="a84"></a><a class="code" href="group__Elm__Entry__Group.html#ga873dc14aec6498faa47db768f8ea0028">elm_entry_file_set</a>(en, <span class="stringliteral">&quot;/tmp/da_test.txt&quot;</span>, <a name="a85"></a><a class="code" href="group__Elm__General.html#gga0813d45294f8b2213aeded2ddebe627ea1175b97770899a9423de08909a7d762c">ELM_TEXT_FORMAT_MARKUP_UTF8</a>);
+   <a name="a83"></a><a class="code" href="group__Elm__Entry__Group.html#ga873dc14aec6498faa47db768f8ea0028">elm_entry_file_set</a>(en, <span class="stringliteral">&quot;/tmp/da_test.txt&quot;</span>, <a name="a84"></a><a class="code" href="group__Elm__General.html#gga0813d45294f8b2213aeded2ddebe627ea1175b97770899a9423de08909a7d762c">ELM_TEXT_FORMAT_MARKUP_UTF8</a>);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(en, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(en, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Elm__Box__Group.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, en);
@@ -663,15 +663,15 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    <a class="code" href="group__Elm__Focus.html#ga05e39b5e60ad861c63100c811855ef55">elm_object_focus_set</a>(app.edit_buffer, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   <a name="a86"></a><a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 300, 780);
+   <a name="a85"></a><a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 300, 780);
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a87"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a86"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a88"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a87"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

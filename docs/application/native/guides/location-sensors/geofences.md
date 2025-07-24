@@ -5,7 +5,7 @@
 
 A geofence is a virtual perimeter for a real-world geographic area. A geofence is defined by either a geopoint and radius for geopoint geofences, or by a MAC address for Wi-Fi and Bluetooth geofences. The geofence feature alerts the user when the geofence state changes (the user crosses the perimeter).
 
-This API is supported on specifc Tizen devices that support [geofence features](#prerequisites).
+This feature is supported in mobile applications only.
 
 The main features of the Geofence Manager API include:
 
@@ -40,14 +40,14 @@ The geofence manager is set to `GEOFENCE_MANAGER_ERROR_NONE` if it is working co
 
 If the user revokes permission to use the location information, the geofence manager state is set to `GEOFENCE_MANAGER_PERMISSION_DENIED` and the same error is returned to the application attempting to use the geofence service.
 
-Asynchronous geofence-related alerts (in or out) and event callbacks (a fence added or removed) are implemented with callback interfaces. Geofence alerts are received using the `GEOFENCE_STATE_UNCERTAIN`, `GEOFENCE_STATE_IN`, and `GEOFENCE_STATE_OUT` values of the [geofence_state_e](../../api/common/latest/group__CAPI__GEOFENCE__MANAGER__MODULE.html#ga266085fcc5f8fa9af62e54efe08cd912) enumerator.
+Asynchronous geofence-related alerts (in or out) and event callbacks (a fence added or removed) are implemented with callback interfaces. Geofence alerts are received using the `GEOFENCE_STATE_UNCERTAIN`, `GEOFENCE_STATE_IN`, and `GEOFENCE_STATE_OUT` values of the [geofence_state_e](../../api/mobile/latest/group__CAPI__GEOFENCE__MANAGER__MODULE.html#ga266085fcc5f8fa9af62e54efe08cd912) enumerator.
 
 <a name="definition"></a>
 ## Geofence Definition
 
 Geofence definition defines the parameters of a geofence.
 
-The 3 types of available geofences are geopoint, Wi-Fi, and Bluetooth. When creating the geofence, define the type using the `GEOFENCE_TYPE_GEOPOINT`, `GEOFENCE_TYPE_WIFI`, and `GEOFENCE_TYPE_BT` values of the [geofence_type_e](../../api/common/latest/group__CAPI__GEOFENCE__MANAGER__MODULE.html#ga15a724d2959e78b49b78b877e964f513) enumerator.
+The 3 types of available geofences are geopoint, Wi-Fi, and Bluetooth. When creating the geofence, define the type using the `GEOFENCE_TYPE_GEOPOINT`, `GEOFENCE_TYPE_WIFI`, and `GEOFENCE_TYPE_BT` values of the [geofence_type_e](../../api/mobile/latest/group__CAPI__GEOFENCE__MANAGER__MODULE.html#ga15a724d2959e78b49b78b877e964f513) enumerator.
 
 Creating a geopoint geofence requires a geopoint and a radius, whereas Wi-Fi and Bluetooth geofences require a MAC address. Based on the defined geofence type, the geofence manager creates the fence for the particular application.
 
@@ -64,20 +64,11 @@ My places controls the adding, removing, and updating of places and fences. **Ho
 
 ## Prerequisites
 
-This section explains, how you can enable your application to use the geofence functionality:
+To use the functions and data types of the [Geofence Manager](../../api/mobile/latest/group__CAPI__GEOFENCE__MANAGER__MODULE.html) API, include the `<geofence_manager.h>` header file in your application:
 
-1. To use the geofence features, include the following feature in your tizen-manifest.xml file.
-
-   ```
-   <feature name="http://tizen.org/feature/location"/>
-   <feature name="http://tizen.org/feature/location.geofence"/>
-   ```
-
-2. To use the functions and data types of the [Geofence Manager](../../api/common/latest/group__CAPI__GEOFENCE__MANAGER__MODULE.html) API, include the `<geofence_manager.h>` header file in your application:
-
-   ```
-   #include <geofence_manager.h>
-   ```
+```
+#include <geofence_manager.h>
+```
 
 <a name="start"></a>
 ## Starting the Geofence Service
@@ -305,4 +296,4 @@ To get information about a geofence:
 
 ## Related Information
 - Dependencies
-  - Since Tizen 2.4
+  - Tizen 2.4 and Higher for Mobile

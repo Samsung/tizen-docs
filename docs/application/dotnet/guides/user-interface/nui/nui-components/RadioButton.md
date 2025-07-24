@@ -76,6 +76,3 @@ private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e
 
 - Dependencies
   -   Tizen 6.5 and Higher 
-
-- API References
-  - [RadioButton API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.RadioButton.html)

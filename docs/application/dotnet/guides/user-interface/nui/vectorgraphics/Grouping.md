@@ -47,5 +47,3 @@ You can scale this logic and build a complex scene by compositing multiple `Draw
 - Dependencies
   -   Tizen 6.5 and Higher
 
-- API References
-  - [Grouping API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VectorGraphics.DrawableGroup.html)

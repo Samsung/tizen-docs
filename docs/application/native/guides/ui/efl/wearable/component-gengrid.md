@@ -219,4 +219,4 @@ You can register callback functions connected to the following signals for a gen
 
 ## Related information
 - Dependencies
-  - Since Tizen 6.0
+  - Tizen 6.0 and Higher for Wearable
