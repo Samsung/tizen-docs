@@ -3274,6 +3274,15 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CAMERA_COMMAND_SWITCH_DEVICE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__CAMERA__MODULE.html</Path>
+    <Anchor>gga62f899123cfb759c439a7bba11793df4af9ae8099bf6c1932787feb92b7faedf6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CAMERA_EFFECT_NONE</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -8516,6 +8525,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>index</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>hal_hdcp_buffer_s</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
+    <Anchor>a9f0702e51ed7f499897ebf9b1f865ac5</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>is_secure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -8553,6 +8572,26 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
     <Anchor>a9c9b3990df0619703820c8afa4814b33</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>iv_size</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>hal_hdcp_crypto_info_s</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
+    <Anchor>a4950ea40c0a3ec678bc94cac8dcdbf81</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>iv</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>hal_hdcp_crypto_info_s</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
+    <Anchor>a6fd9974dfa18e71bc52cbfc2c19d00a4</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8636,103 +8675,103 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_open</Name>
+      <Name>open</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>aa2a4a468297680ff7d0838007500c511</Anchor>
+    <Anchor>a42da1d30d8319604c2ac4ce459b31ac1</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_close</Name>
+      <Name>close</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>ad585438525f95122a3929b76516fcac1</Anchor>
+    <Anchor>a35d3811c062ded9a22d8c820aa55175b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_start_receiver</Name>
+      <Name>start_receiver</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>afed34f8a39e62de3d3d21855973cbe96</Anchor>
+    <Anchor>a0866149d9571723a0a60b2704986f8d8</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_stop_receiver</Name>
+      <Name>stop_receiver</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>a1ae15d3de6bb4e4fcae12ad117add16f</Anchor>
+    <Anchor>a634210f51ee03dfeef42ee5c41bd66d5</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_start_transmitter</Name>
+      <Name>start_transmitter</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>ae793264afb6749bfdc21cc4409c11424</Anchor>
+    <Anchor>afe236c52171f6621f9a82d72c9901cac</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_stop_transmitter</Name>
+      <Name>stop_transmitter</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>a452dd84e04f65d664356c229b3a144bf</Anchor>
+    <Anchor>ae29ccf28792f9c37cab6163f816f6e3e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_allocate_output_buffer</Name>
+      <Name>allocate_output_buffer</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>acdd1d557bc3137360364c1253c173abb</Anchor>
+    <Anchor>a57812f14d1f467728686f481acf78529</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_release_output_buffer</Name>
+      <Name>release_output_buffer</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>a6a8eed2f838c4790c1bc0fabf580a8af</Anchor>
+    <Anchor>a5ede841b062d338b8feb8629726a0bcf</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_decrypt</Name>
+      <Name>decrypt</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>a308b3e9117132741812f9657e1d8d7f2</Anchor>
+    <Anchor>ae7c224df7cb2581d9777ebbf10bf0a6c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hdcp_encrypt</Name>
+      <Name>encrypt</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>a34b4ef855c81f58bd5ddc17e60084f39</Anchor>
+    <Anchor>aa67a2eb732a6aa6513b8bba7e43c403b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -11755,6 +11794,176 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__LOCATION__MODULE.html</Path>
     <Anchor>gga49c85ec3d01e977b5403db012310604aa72815f9785f29629814386e80ad11348</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HALAPI_HAL_ML_MODULE</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Abstract>The Machine Learning provides functions for ml.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>hal_backend_ml_funcs</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>ga2f0cb5df3ed9be037ccf68dac472422a</Anchor>
+    <Abstract>The HAL backend structure for ML. This should be implemented by each HAL backend.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>hal_ml_error_e</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>gadba39c6527a88baaab0c3c5f8dbf58cc</Anchor>
+    <Abstract>Enumeration for the error codes of hal-ml.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>init</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_ml_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>a012deb7f048e6a60a42dff5388edbc85</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deinit</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_ml_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>aa335b6b3ac01bf875393d401539c8bab</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>configure_instance</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_ml_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>aec8792722d389180d8cdfa6f855c3552</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>invoke</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_ml_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>acb0c0f615a0071e575165957be2ad6ba</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>invoke_dynamic</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_ml_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>a2c922252bcce42f941b5c28b1cda2623</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_framework_info</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_ml_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>a4b9ba3a0026f5004b67d64f70f699e7e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_model_info</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_ml_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>a64cc5473ad5fd9befab27c19139b4226</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_ML_ERROR_NONE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>gga7ee72b1082fd0c5c6dc581ad96dd5172a607dbdcaa813a6c902f161b2498b479c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_ML_ERROR_INVALID_PARAMETER</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>gga7ee72b1082fd0c5c6dc581ad96dd5172adff9ff0e4acfa2135aae342e6735ab0c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_ML_ERROR_NOT_SUPPORTED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>gga7ee72b1082fd0c5c6dc581ad96dd5172aad4ac8cc1cf229d612cfa91f4fb2cd8d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_ML_ERROR_UNKNOWN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>gga7ee72b1082fd0c5c6dc581ad96dd5172a87f11be79edd0de5d44a6209225763d9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_ML_ERROR_OUT_OF_MEMORY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>gga7ee72b1082fd0c5c6dc581ad96dd5172af2d189e038858f8735f5d5ecde69ebef</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_ML_ERROR_PERMISSION_DENIED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>gga7ee72b1082fd0c5c6dc581ad96dd5172a4d13aaefcd3b2e10e2d0757253ade36d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_ML_ERROR_IO_ERROR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>gga7ee72b1082fd0c5c6dc581ad96dd5172aff2bebac9a5f2dd4f655ef41500a0f48</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_ML_ERROR_RUNTIME_ERROR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__ML__MODULE.html</Path>
+    <Anchor>gga7ee72b1082fd0c5c6dc581ad96dd5172a4160c953b45f2dd291b96aa446868b86</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -22079,7 +22288,7 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
     <Anchor>gac818cb57a292be37811af8dec3cbf46a</Anchor>
-    <Abstract>hal_tbm_bo_handle abstraction of the memory handle by HAL_TBM_DEVICE_TYPE</Abstract>
+    <Abstract>hal_tbm_bo_handle abstraction of the memory handle by hal_tbm_bo_device_type</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -22933,6 +23142,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>bufmgr_import_key</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tbm_bufmgr_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
+    <Anchor>a0962652e478cb7d83d110f5b66b0c06a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>surface_free</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -22960,6 +23179,16 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
     <Anchor>a66768f1e498210bf10c1db86247d1e7d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>surface_export</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tbm_surface_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
+    <Anchor>aaeb77367d8a15a118a23ed38769cf64c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23050,6 +23279,16 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
     <Anchor>ab3ad15f66d29efd929bf97d534dcc0c8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bo_export_key</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tbm_bo_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
+    <Anchor>adf705e636da029e9a24e71edbeb2ed4c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23236,6 +23475,15 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
     <Anchor>gga44b7a76360be2c1645c8299ae8bedeb5a453b35ad587ba789b1de5e249f932dfe</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_TBM_BO_PROTECTED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
+    <Anchor>gga44b7a76360be2c1645c8299ae8bedeb5aeaa137affd99b2d7bf571f53cdb881ec</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23605,7 +23853,7 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
     <Anchor>gaf7836d7e2e07f1b1eb26eb1ec693333d</Anchor>
-    <Abstract>The posistion structure.</Abstract>
+    <Abstract>The position structure.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23675,7 +23923,7 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
     <Anchor>gac17e7cb9a360ce13db589260d10774c7</Anchor>
-    <Abstract>The information structre to use post-processing.</Abstract>
+    <Abstract>The information structure to use post-processing.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23685,7 +23933,7 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
     <Anchor>ga8d456cb4651fecad5357d5f43abc61b2</Anchor>
-    <Abstract>The capture info structre.</Abstract>
+    <Abstract>The capture info structure.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -24239,6 +24487,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>display_voutput_create</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tdm_display_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>a60c4e0724a490c93b06aa2dee116b7c4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>output_get_capability</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -24389,6 +24647,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>output_unset_mirror</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tdm_output_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>a46a565ca80b2984c5ee49bb8080009cc</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>voutput_destroy</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -24466,6 +24734,16 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
     <Anchor>aea0bc8b8b5060a605bc7f79071a22f59</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>voutput_set_target_buffer_queue_flag</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tdm_voutput_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>a9a511792e3658fc3eb9223620e1ed7b9</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -24649,6 +24927,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>hwc_set_client_target_buffer_info</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tdm_hwc_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>ac28a1d6aceb620e80d8f72cea8dc2b13</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>hwc_window_destroy</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -24769,6 +25057,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>hwc_window_set_acquire_fence</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tdm_hwc_window_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>af8f89a78d622162c2517e02f9b3b3b8c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>pp_destroy</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -24809,6 +25107,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>pp_set_done_handler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tdm_pp_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>a547885c42cf71459b8b20784d090d449</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>capture_destroy</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -24846,6 +25154,16 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
     <Anchor>a7080036f8f0efc9636680991218930d2</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>capture_set_done_handler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_tdm_capture_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>a2c4719614ed03335931d467c28fc0efd</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -26077,6 +26395,15 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>HAL_TDM_HWC_COMMIT_INTERVAL_VBLANK</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>ggaff049053f578957d7654aa0d9475a344aec253d3bb893d3f52ae5096566dc373b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>HAL_TDM_HWC_WIN_COMPOSITION_NONE</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -26113,12 +26440,30 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>HAL_TDM_HWC_WIN_COMPOSITION_VIDEO</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>ggaf75c8b3c74dfbf62c681c9d4e88c8396a8f1df923f484c215566f6b20385f93e8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>HAL_TDM_HWC_WIN_CONSTRAINT_NONE</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
     <Anchor>gga57b5a0e7863122347d7ed45301f62f79a1cd112138923fe8899aee0e9f70457ef</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+    <Anchor>gga57b5a0e7863122347d7ed45301f62f79ac07e558b9d81e107cc3840c86795829b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -26929,10 +27274,38 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>HALAPI_HAL_CONNECTIVITY</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__CONNECTIVITY.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>TIZEN_HAL_BASE</Name>
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
     <Path>group__TIZEN__HAL__BASE.html</Path>
     <Abstract>The base module provides functions to .</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HALAPI_HAL_MULTIMEDIA</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__MULTIMEDIA.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HALAPI_HAL_SYSTEM</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__SYSTEM.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HALAPI_HAL_WINDOW</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__WINDOW.html</Path>
   </Token>
 </Tokens>
