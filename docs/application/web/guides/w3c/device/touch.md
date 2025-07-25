@@ -55,7 +55,7 @@ Learning how to handle touch events improves the user interaction of your applic
    ```
    <div id="touchable">
       Touch or drag this box with one finger.
-      <img src="https://www.tizen.org/sites/all/themes/tizen_theme/logo.png" alt="Tizen logo">
+      <img src="https://www.tizen.org/wp-content/themes/tizentheme/logo.png" alt="Tizen logo">
    </div>
    <div id="log"></div>
    ```

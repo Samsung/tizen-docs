@@ -37,21 +37,21 @@ To use the WOFF (Web Open Font Format) file format, which is a W3C standard font
       @font-face {
          font-family: MuseoSans;
          src: local('MuseoSans'),
-              url('https://www.tizen.org/sites/all/themes/tizen_theme/webfonts/244CBE_1_0.woff') format('woff');
+              url('https://www.tizen.org/wp-content/themes/tizentheme/webfonts/244CBE_1_0.woff') format('woff');
       }
 
       @font-face {
          font-family: MuseoSans;
          font-weight: bold;
          src: local('MuseoSans'),
-              url('https://www.tizen.org/sites/all/themes/tizen_theme/webfonts/244CBE_0_0.woff') format('woff');
+              url('https://www.tizen.org/wp-content/themes/tizentheme/webfonts/244CBE_0_0.woff') format('woff');
       }
 
       @font-face {
          font-family: MuseoSans;
          font-weight: 900;
          src: local('MuseoSans'),
-              url('https://www.tizen.org/sites/all/themes/tizen_theme/webfonts/244CBE_2_0.woff') format('woff');
+              url('https://www.tizen.org/wp-content/themes/tizentheme/webfonts/244CBE_2_0.woff') format('woff');
       }
 
       p:nth-child(2) {font-family: MuseoSans}

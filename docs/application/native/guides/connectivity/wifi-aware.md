@@ -393,6 +393,6 @@ To disable Wi-Fi Aware when it is no longer needed (or the application is exitin
 
 ## Related information
 - Dependencies
-  - Tizen 9.0 and Higher for Mobile
+  - Since Tizen 9.0
 - API References
   - [Wi-Fi Aware](../../api/common/latest/group__CAPI__NETWORK__WIFI__AWARE__MODULE.html)

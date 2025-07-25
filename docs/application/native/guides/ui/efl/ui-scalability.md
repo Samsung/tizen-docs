@@ -2,7 +2,7 @@
 
 Supporting UI scalability in a user interface toolkit means that container components and UI components are scaled properly when the resolution or screen size changes. The Elementary library allows you to manipulate scaling on a per-UI-component basis using a scale factor based on the screen resolution, size, and profile configurations.
 
-Tizen native applications can run on different types of devices, such as wearable, phone, tablet, and TV. Tizen also supports various resolutions (WVGA - XQXGA) with the same layouts and resources. However, remember that you must always polish your work to create an optimal application for each device.
+Tizen native applications can run on different types of devices, such as TV, IoT, and other devices. Tizen also supports various resolutions (WVGA - XQXGA) with the same layouts and resources. However, remember that you must always polish your work to create an optimal application for each device.
 
 The main scalability features are:
 
@@ -20,7 +20,7 @@ The main scalability features are:
 
 ## Scaling UI Components
 
-Through its configuration (Elementary Config API in [mobile](../../../api/mobile/latest/group__Elm__Config.html) and [wearable](../../../api/wearable/latest/group__Elm__Config.html) applications), Elementary provides a way to scale UI components with 2 different parameters:
+Through its configuration [Elementary Config API](../../../api/common/latest/group__Elm__Config.html), Elementary provides a way to scale UI components with 2 different parameters:
 
 - The `finger_size` parameter is used when the interactive (clickable or editable) zones of the UI components need to be scaled in order to be comfortably used with a finger.
 
@@ -186,5 +186,4 @@ When you make an object scalable, you must also consider how any images within t
 
 ## Related Information
 - Dependencies  
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

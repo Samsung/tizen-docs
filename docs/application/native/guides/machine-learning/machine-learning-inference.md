@@ -628,11 +628,7 @@ For your convenience, NNStreamer provides an interface for processing the tensor
 ## Related information
 
 - Dependencies
-  - Tizen 5.5 and Higher for Mobile
-  - Tizen 5.5 and Higher for Wearable
-  - Tizen 5.5 and Higher for TV
-  - Tizen 5.5 and Higher for IoT
-
+  - Since Tizen 5.5
 - API References
   - [Singleshot API](../../api/common/latest/group__CAPI__ML__NNSTREAMER__SINGLE__MODULE.html)
   - [Pipeline API](../../api/common/latest/group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html)

@@ -30,7 +30,7 @@ The basic procedures for getting monitoring data are simple and unified as below
 
 To enable your application to use the Resource Monitor functionalities, follow these steps:
 
-1. To use the [Resource Monitor](../../api/wearable/latest/group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Resource Monitor](../../api/common/latest/group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```xml
     <privileges>
@@ -299,9 +299,6 @@ The following table lists the required controls for some resources, which are pa
 
 ## Related information
 - Dependencies
-  - Tizen 7.0 and Higher for Mobile
-  - Tizen 7.0 and Higher for Wearable
-  - Tizen 7.0 and Higher for TV
-  - Tizen 7.0 and Higher for IoT
+  - Since Tizen 7.0
 - API References
   - [Resource Monitor API](../../api/common/latest/group__CAPI__SYSTEM__RESOURCE__MONITOR__MODULE.html)

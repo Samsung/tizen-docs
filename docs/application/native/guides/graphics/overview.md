@@ -23,5 +23,4 @@ You can use the following graphics features in your native applications:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

@@ -785,5 +785,5 @@ To add lighting for the objects, which is useful with 3D transforms, use the `ev
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
+  

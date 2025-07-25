@@ -45,7 +45,7 @@ To create text and images, use the `svg` tag in HTML `<body>` element:
 
   ```
   <svg xmlns="http://www.w3.org/2000/svg">
-     <image xlink:href="http://developer.tizen.org/sites/all/themes/tizen_theme/logo.png"
+     <image xlink:href="https://developer.tizen.org/wp-content/themes/tizendevtheme/logo.png"
             x="10" y="10" width="224" height="74"/>
   </svg>
   ```

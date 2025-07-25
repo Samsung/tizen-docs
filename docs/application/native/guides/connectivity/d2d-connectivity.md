@@ -1,7 +1,7 @@
 # Convergence
 
 
-As the number of Tizen devices is increasing, platform features that allow connections between different devices as well as sharing data and commands among them is required. Tizen device-to-device (D2D) connectivity framework provides this feature through a collection of D2D convergence services and the Convergence API. Being a part of the platform, the D2D connectivity framework is available on all Tizen TV, mobile, and wearable devices. The D2D connectivity features are aimed at streamlining the application development process and guaranteeing the compatibility and extensibility in the future.
+As the number of Tizen devices is increasing, platform features that allow connections between different devices as well as sharing data and commands among them is required. Tizen device-to-device (D2D) connectivity framework provides this feature through a collection of D2D convergence services and the Convergence API. Being a part of the platform, the D2D connectivity framework is available on all Tizen TV, IoT, and other devices. The D2D connectivity features are aimed at streamlining the application development process and guaranteeing the compatibility and extensibility in the future.
 
 The D2D connectivity framework allows applications and devices in the network to discover, connect, and communicate to each other through convergence services. The app communication service opens logical channels for exchanging messages across devices, while the remote app control service starts and controls an application on a remote device.
 
@@ -531,7 +531,6 @@ The success or failure result (including the correctness of the passcode input i
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
 - API References
   - [Convergence API](../../api/common/latest/group__CAPI__CONVERGENCE__FRAMEWORK.html)

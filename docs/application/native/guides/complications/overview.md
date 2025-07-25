@@ -16,4 +16,4 @@ You can use the following watch face complication and complication provider feat
 
 ## Related Information
 - Dependencies
-  - Tizen 5.0 and Higher for Wearable
+  - Since Tizen 5.0

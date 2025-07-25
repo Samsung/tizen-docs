@@ -4,7 +4,7 @@ The location and sensor features introduce how you can manage information about 
 
 You can use the following location and sensor features in your native applications:
 
-- [Geofences](geofences.md) **in mobile applications only**
+- [Geofences](geofences.md)
 
   You can create geofences, which are virtual perimeters for a real-world geographic area. When a geofence is active, you can monitor the user location and receive alerts when the user enters or leaves the geofence area.
 
@@ -27,5 +27,4 @@ You can use the following location and sensor features in your native applicatio
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

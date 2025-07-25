@@ -3,8 +3,6 @@
 
 When you design an application or service, you must minimize any accidental introduction of security vulnerabilities. The following practices aim to reduce the likelihood of security vulnerabilities caused by programming in the Tizen platform.
 
-This feature is supported in mobile applications only.
-
 ## Storing Data Safely
 
 By using a proper way to store data, you can minimize any data-related security concerns. Tizen provides 3 fundamental ways for an application to store data on the device:
@@ -113,4 +111,4 @@ The consumer can request data from any provider, as long as the consumer knows t
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

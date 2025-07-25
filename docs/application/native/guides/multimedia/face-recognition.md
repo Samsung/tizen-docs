@@ -156,7 +156,6 @@ To register a new face image with a given label, follow these steps:
 
 ## Related information
 - Dependencies
-  - Tizen 7.0 and Higher for Mobile
-  - Tizen 7.0 and Higher for TV
+  - Since Tizen 7.0
 - API References
   - [Face Recognition API](../../api/common/latest/group__CAPI__MEDIA__VISION__FACE__RECOGNITION__MODULE.html)

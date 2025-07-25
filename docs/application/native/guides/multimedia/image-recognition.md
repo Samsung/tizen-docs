@@ -17,7 +17,7 @@ The main features of the Media Vision Image API include:
 
 To enable your application to use the media vision image functionality:
 
-1. To use the functions and data types of the Media Vision Image API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__IMAGE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__IMAGE__MODULE.html) applications), include the `<mv_image.h>` header file in your application.
+1. To use the functions and data types of the [Media Vision Image API](../../api/common/latest/group__CAPI__MEDIA__VISION__IMAGE__MODULE.html), include the `<mv_image.h>` header file in your application.
 
    In addition, you must include the `<image_util.h>` header file to handle the image decoding tasks, or the `<camera.h>` header file to provide preview images.
 
@@ -435,7 +435,6 @@ To track images:
 
 ## Related Information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 3.0
 - API References
   - [Image Recognition API](../../api/common/latest/group__CAPI__MEDIA__VISION__IMAGE__MODULE.html)
