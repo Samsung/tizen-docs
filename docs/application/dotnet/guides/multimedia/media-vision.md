@@ -16,7 +16,7 @@ You can use the following visual detection and recognition features in your .NET
 
 -   [Face Detection, Recognition, and Tracking](face-detection.md)
 
-    You can [detect a face](https://docs.tizen.org/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceDetector.html) from an image,
+    You can [detect a face](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceDetector.html) from an image,
     and [recognize a face](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceRecognizer.html) with a set of examples.
     You can also [track a face](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Vision.FaceTracker.html) within the camera preview stream.
 

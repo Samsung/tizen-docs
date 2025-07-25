@@ -227,7 +227,7 @@ Active Notifications contain buttons or a text field which the user can use to r
    }
    ```
 
-   Learn more about app control from [Application Controls](https://docs.tizen.org/application/web/guides/app-management/app-controls/)
+   Learn more about app control from [Application Controls](../app-management/app-controls.md)
 
 ## Manage notifications
 
