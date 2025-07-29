@@ -91,6 +91,7 @@ For more information on the Download features, see <a href="/application/web/gui
 <div>
 <a href="#DownloadRequest">DownloadRequest</a> <a href="#DownloadManager::getDownloadRequest">getDownloadRequest</a> (long downloadId)</div>
 <div>DOMString <a href="#DownloadManager::getMIMEType">getMIMEType</a> (long downloadId)</div>
+<div>unsigned long <a href="#DownloadManager::getLimitRate">getLimitRate</a> (long downloadId)</div>
 <div>void <a href="#DownloadManager::setListener">setListener</a> (long downloadId, <a href="#DownloadCallback">DownloadCallback</a> downloadCallback)</div>
 </td>
 </tr>
@@ -219,6 +220,7 @@ The <em>tizen.download</em> object allows access to the functionality of the Dow
     attribute DOMString? fileName;
     attribute <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType;
     attribute <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader;
+    attribute unsigned long? rateKbps;
   };</pre>
 <p><span class="version">Since: </span>
  2.0
@@ -314,6 +316,26 @@ req.httpHeader["X-Agent"] = "Tizen Sample App";
 </pre>
 </div>
 </li>
+<li class="attribute" id="DownloadRequest::rateKbps">
+<span class="attrName"><span class="type">unsigned long </span><span class="name">rateKbps</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Specifies the maximum download rate limit in kilobytes per second.
+            </div>
+<div class="description">
+            <p>
+Setting this attribute controls the maximum download bandwidth allowed.
+A value of <var>null</var> or <var>0</var> removes any download rate restriction.
+Positive integer values (e.g., 512) enforce the corresponding kilobytes per second limit.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
+ 10.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var req = new tizen.DownloadRequest("http://download.tizen.org/tools/README.txt");
+req.rateKbps = 1000;
+</pre>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -331,6 +353,7 @@ req.httpHeader["X-Agent"] = "Tizen Sample App";
     <a href="#DownloadState">DownloadState</a> getState(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#DownloadRequest">DownloadRequest</a> getDownloadRequest(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getMIMEType(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long getLimitRate(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setListener(long downloadId, <a href="#DownloadCallback">DownloadCallback</a> downloadCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -790,6 +813,59 @@ var MIMEtype = tizen.download.getMIMEType(downloadId);
 </pre>
 </div>
 </dd>
+<dt class="method" id="DownloadManager::getLimitRate">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::getLimitRate"></a><code><b><span class="methodName">getLimitRate</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Retrieves the current download rate in kilobytes per second for a specified download operation.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long getLimitRate(long downloadId);</pre></div>
+<p><span class="version">Since: </span>
+ 2.0
+            </p>
+<p><span class="remark">Remark: </span>
+ This function returns the download rate limit for the started download operation.
+If there is no limit, returned value will be 0.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>:
+ The ID of download to get the download rate limit.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">unsigned long:</span>
+ The current download rate in kilobytes per second.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match
+any download operation in progress.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input
+parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var download_rate = tizen.download.getLimitRate(downloadId);
+</pre>
+</div>
+</dd>
 <dt class="method" id="DownloadManager::setListener">
 <a class="backward-compatibility-anchor" name="::Download::DownloadManager::setListener"></a><code><b><span class="methodName">setListener</span></b></code>
 </dt>
@@ -1068,6 +1144,7 @@ DownloadNetworkType <em>ALL</em> can be available on a ethernet-enabled device. 
     attribute DOMString? fileName;
     attribute <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType;
     attribute <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader;
+    attribute unsigned long? rateKbps;
   };
   [NoInterfaceObject] interface DownloadManager {
     long start(<a href="#DownloadRequest">DownloadRequest</a> downloadRequest, optional <a href="#DownloadCallback">DownloadCallback</a>? downloadCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1078,6 +1155,7 @@ DownloadNetworkType <em>ALL</em> can be available on a ethernet-enabled device. 
     <a href="#DownloadState">DownloadState</a> getState(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#DownloadRequest">DownloadRequest</a> getDownloadRequest(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getMIMEType(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long getLimitRate(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setListener(long downloadId, <a href="#DownloadCallback">DownloadCallback</a> downloadCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Callback, NoInterfaceObject] interface DownloadCallback {
