@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Messaging API</title>
+<meta data-version="10.0" data-profile="mobile">
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Messaging">
+<div class="supported-platforms"><img class="mobile-optional emulator-partial" title="Optional, Supported by Tizen Mobile emulator - Emulator supports only e-mail" src="mobile_s_w_optional.png"></div>
+<div class="title"><h1>Messaging API</h1></div>
+<div class="brief">
+ The Messaging API provides interfaces and methods for managing SMS, MMS, and email messages.
+        </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+        </p>
+<div class="description">
+        <p>
+The Messaging API provides access to these capabilities:
+        </p>
+        <ul>
+          <li>
+Sending messages through different technologies: SMS, MMS, and email messages          </li>
+          <li>
+Retrieving available message services          </li>
+          <li>
+Searching for messages          </li>
+          <li>
+Managing messages: update, delete, and add          </li>
+          <li>
+Subscribing to receive notifications of message storage modifications          </li>
+          <li>
+Fetching conversations and subscribing to conversation updates          </li>
+        </ul>
+        <p>
+<b id="StorageRemark">Remark:</b> In order to access files, a proper privilege has to be defined additionally:
+        </p>
+        <ul>
+          <li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
+          <li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
+          <li>
+for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
+          <li>
+Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
+        </ul>
+        <p>
+For more information on the Messaging features, see <a href="/application/web/guides/messaging/messages">Messaging Guide</a>.
+        </p>
+       </div>
+<p><span class="version">Since: </span>
+ 1.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc"></ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+<div class="typedefs" id="typedefs-section"><h2>1. Type Definitions</h2></div>
+<div class="interfaces" id="interfaces-section"><h2>2. Interfaces</h2></div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the sms application runs on a device with telephony(SMS) feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.telephony</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the mms application runs on a device with MMS feature, define below in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.telephony.mms</li>
+</div>
+<p></p>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Messaging {
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>
