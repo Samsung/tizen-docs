@@ -3,8 +3,6 @@
 ## Devices
 ### [TV](/platform/what-is-tizen/profiles/tv.md)
 ### [Custom](/platform/what-is-tizen/profiles/tizen_custom.md)
-### [Mobile](/platform/what-is-tizen/profiles/mobile.md)
-### [Wearable](/platform/what-is-tizen/profiles/wearable.md)
 ## Versions
 ### [Tizen 9.0](/platform/what-is-tizen/versions/tizen-9-0-m2.md)
 ### [Tizen 8.0](/platform/what-is-tizen/versions/tizen-8-0-m2.md)

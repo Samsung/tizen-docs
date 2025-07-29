@@ -96,43 +96,6 @@
 					</topic>
 				</topic>
 			</topic>
-			<topic href="7.0/ui_fw_api/ui_fw_api_cover.htm" label="Tizen Advanced UI framework (TAU)">
-				<topic href="7.0/ui_fw_api/Base/base.htm" label="Base">
-					<topic href="7.0/ui_fw_api/Base/page.htm" label="Page Handling"/>
-					<topic href="7.0/ui_fw_api/Base/popup.htm" label="Popup Handling"/>
-				</topic>
-				<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"/>
-					<topic href="7.0/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"/>
-				</topic>
-				<topic href="7.0/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-					<topic href="7.0/ui_fw_api/Gesture_Events/drag.htm" label="Drag"/>
-					<topic href="7.0/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"/>
-				</topic>
-				<topic href="7.0/ui_fw_api/Globalization/globalization.htm" label="Globalization"/>
-				<topic href="7.0/ui_fw_api/Animation/animation.htm" label="Animation"/>
-			</topic>
 			<topic href="7.0/w3c_api/w3c_api_m.html" label="W3C/HTML5 and Supplementaries API Reference">
 				<topic href="7.0/w3c_api/w3c_api_m.html" invisible-node="true" label="Mobile Web">
 					<topic href="7.0/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
