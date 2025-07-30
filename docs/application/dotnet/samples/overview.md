@@ -49,14 +49,3 @@ Using .NET MAUI, you can develop apps that can run on Tizen, Android, iOS, macOS
 ### Related Information
 * Dependencies
   -   Tizen 7.0 and Higher
-
-
-## Xamarin.Forms Samples (Deprecated)
-
-It is generally used to develop native cross-platform applications for Tizen, Android, iOS, and Windows.
-
-Since Tizen 7.0, .NET MAUI is supported and Xamarin.Forms is deprecated.
-
-### Related Information
-* Dependencies
-  -   Tizen 4.0 and Higher

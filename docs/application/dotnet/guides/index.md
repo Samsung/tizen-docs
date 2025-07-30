@@ -399,8 +399,6 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces, and 
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="user-interface/nui/overview.md">NUI</a></li>
-                        <li><a href="user-interface/wcircularui/index.md">Wearable Circular UI</a></li>
-                        <li><a href="user-interface/xamarin/overview.md">Xamarin.Forms first application</a></li>
                     </ul>
                 </div>
             </div>

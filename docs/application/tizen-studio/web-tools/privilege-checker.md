@@ -32,7 +32,7 @@ You can set the following check levels:
 - Warning
 - Error (default)
 
-You can exclude JS files from parsing by specifying pattern strings, separated by a comma, in the **Exclude files that match these patterns from validation** field. The default value in this field is **min, jquery, jqm-docs, phonegap, sencha, tizen-web-ui-fw, dowhide, globalize, coderdeck, modernizr, tau**. For instance, since parsing the `jquery.min.js` file generates many warnings, the default pattern string values exclude the parsing of this JS file.
+You can exclude JS files from parsing by specifying pattern strings, separated by a comma, in the **Exclude files that match these patterns from validation** field. The default value in this field is **min, jquery, jqm-docs, phonegap, sencha, tizen-web-ui-fw, dowhide, globalize, coderdeck, modernizr**. For instance, since parsing the `jquery.min.js` file generates many warnings, the default pattern string values exclude the parsing of this JS file.
 
 The check results are displayed in the **Problems** view and vertical ruler. To resolve an alarm, click the annotation on the vertical ruler and select an entry from the proposal list. The required privilege is automatically added into the `config.xml` file (for a quick fix, use the **Ctrl + 1** keyboard shortcut).
 

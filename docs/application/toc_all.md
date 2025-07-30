@@ -4,8 +4,6 @@
 
 ## Tizen Profiles
 ### [Overview](/application/profiles/index.md)
-### [Wearable](/application/profiles/wearable.md)
-### [Mobile](/application/profiles/mobile.md)
 ### [IoT](/application/profiles/iot.md)
 ### [TV](/application/profiles/tv.md)
 
@@ -57,7 +55,6 @@
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
 ##### [Tizen .NET Application Life Cycle](/application/dotnet/guides/applications/uiapplication/application_lifecycle.md)
-##### [Watch Application](/application/dotnet/guides/applications/uiapplication/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
 
 #### Tizen Core
@@ -290,18 +287,6 @@
 ###### [Define UI Components in XAML](/application/dotnet/guides/user-interface/nui/xaml/ui-component-in-xaml.md)
 ###### [Layout Define Example](/application/dotnet/guides/user-interface/nui/xaml/layout-define-example.md)
 
-#### Wearable Circular UI
-##### [Overview](/application/dotnet/guides/user-interface/wcircularui/index.md)
-##### [Quickstart](/application/dotnet/guides/user-interface/wcircularui/quickstart.md)
-##### [Tizen Wearable XAML App Template](/application/dotnet/guides/user-interface/wcircularui/quickstart_tizenxamlapptemplate.md)
-
-#### Xamarin Forms
-##### [Overview](/application/dotnet/guides/user-interface/xamarin/overview.md)
-##### [IoT Application](/application/dotnet/guides/user-interface/xamarin/iot/first-app.md)
-##### [Mobile Application](/application/dotnet/guides/user-interface/xamarin/mobile/first-app.md)
-##### [TV Application](/application/dotnet/guides/user-interface/xamarin/tv/first-app.md)
-##### [Wearable Application](/application/dotnet/guides/user-interface/xamarin/wearable/first-app.md)
-##### [Wearable XAML Application](/application/dotnet/guides/user-interface/xamarin/wearable/first-xaml-app.md)
 
 ## [API Reference](/application/dotnet/api/overview.md)
 
@@ -310,24 +295,6 @@
 ### NUI
 #### [UI](/application/dotnet/samples/nui/ui/overview.md)
 #### [UIX](/application/dotnet/samples/nui/uix/overview.md)
-### Xamarin.Forms (Deprecated)
-#### [Account](/application/dotnet/samples/account/overview.md)
-#### [AppFW](/application/dotnet/samples/appfw/overview.md)
-#### [Content](/application/dotnet/samples/content/overview.md)
-#### [Context](/application/dotnet/samples/context/overview.md)
-#### [General](/application/dotnet/samples/general/overview.md)
-#### [Location](/application/dotnet/samples/location/overview.md)
-#### [Machine Learning](/application/dotnet/samples/machinelearning/overview.md)
-#### [Messaging](/application/dotnet/samples/messaging/overview.md)
-#### [Multimedia](/application/dotnet/samples/multimedia/overview.md)
-#### [Network](/application/dotnet/samples/network/overview.md)
-#### [Security](/application/dotnet/samples/security/overview.md)
-#### [Social](/application/dotnet/samples/social/overview.md)
-#### [System](/application/dotnet/samples/system/overview.md)
-#### [Telephony](/application/dotnet/samples/telephony/overview.md)
-#### [UI](/application/dotnet/samples/ui/overview.md)
-#### [UIX](/application/dotnet/samples/uix/overview.md)
-#### [Watch](/application/dotnet/samples/watch/overview.md)
 
 
 # Web Application
@@ -405,36 +372,6 @@
 #### [Media Playback and Recording](/application/web/guides/cordova/media.md)
 #### [Network Information](/application/web/guides/cordova/network-information.md)
 #### [Notification Dialogs](/application/web/guides/cordova/dialogs.md)
-
-### Tizen Advanced UI
-#### [Overview](/application/web/guides/tau/tau.md)
-#### [Downloading TAU](/application/web/guides/tau/download-tau.md)
-#### [Hello World](/application/web/guides/tau/helloworld.md)
-#### [Managing Pages](/application/web/guides/tau/managing-page.md)
-#### [Event Handling](/application/web/guides/tau/event-handling.md)
-#### [UI Components](/application/web/guides/tau/ui-component.md)
-#### [Creating a Notepad UI Application](/application/web/guides/tau/notepad.md)
-
-#### [Applications for Circular UI](/application/web/guides/tau/circular-ui.md)
-#####  [Handling Rotary Events](/application/web/guides/tau/tau-rotary.md)
-#####  [Using the Helper Script](/application/web/guides/tau/helper.md)
-#####  [Creating Snap Lists](/application/web/guides/tau/list.md)
-#####  [Creating Expandable Headers](/application/web/guides/tau/header.md)
-#####  [Creating Circle-shaped Progress Bars](/application/web/guides/tau/circle-progressbar.md)
-#####  [Creating Full Size Processing Components](/application/web/guides/tau/processing.md)
-#####  [Creating Footer Buttons](/application/web/guides/tau/footerbutton.md)
-#####  [Creating Thumbnails](/application/web/guides/tau/thumbnail.md)
-#####  [Creating Popup Buttons](/application/web/guides/tau/popup.md)
-#####  [Creating Index Scroll Bars](/application/web/guides/tau/indexscrollbar.md)
-#####  [Implementing More Options](/application/web/guides/tau/moreoptions.md)
-
-#### [Accessibility](/application/web/guides/tau/accessibility.md)
-#### [Globalization](/application/web/guides/tau/globalization.md)
-#### Animation
-##### [Overview](/application/web/guides/tau/animation.md)
-##### [Creating Applications with Animation](/application/web/guides/tau/creating-animation.md)
-
-#### [2.4 Porting Guide](/application/web/guides/tau/tau-porting.md)
 
 ### [Localization](/application/web/guides/localization/localization.md)
 ### [Notifications](/application/web/guides/notification/notification.md)
@@ -702,7 +639,6 @@
 ##### EFL Applications
 ###### [Overview](/application/native/guides/applications/efl-app.md)
 ###### [Basic UI Application](/application/native/guides/applications/efl-ui-app.md)
-###### [Watch Application](/application/native/guides/applications/watch-app.md)
 ###### [Widget Application](/application/native/guides/applications/widget-app.md)
 
 #### [Service Applications](/application/native/guides/applications/service-app.md)
@@ -1085,11 +1021,6 @@
 ### Performance
 #### [Overview](/application/native/guides/performance/overview.md)
 #### [Tracepoints](/application/native/guides/performance/tracepoints.md)
-
-### Watchface Complication
-#### [Overview](/application/native/guides/complications/overview.md)
-#### [Watchface Complication](/application/native/guides/complications/watchface-complication.md)
-#### [Complication Provider](/application/native/guides/complications/watchface-complication-provider.md)
 
 ### [Migration Guide](/application/native/guides/migration-guide.md)
 

@@ -1277,9 +1277,6 @@ It is important to prevent unnecessary performance degradation in widgets. As a 
 
   ```
   <!--HTML-->
-  <script src="lib/tau/wearable/js/tau.js"/>
-  <link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.css">
-
   <script src="libs/jquery/1.12.0/jquery.min.js"/>
   ```
 

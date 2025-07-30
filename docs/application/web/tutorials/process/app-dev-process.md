@@ -28,11 +28,6 @@ you can select a specific template or sample. Based on the selection, the Tizen 
 
 After creating the application project, you can [configure the properties of the project and the Web application](setting-properties.md) to achieve the required functionality and features for your application.
 
-<a name="design"></a>
-## Design the application UI
-
-You can design the application UI using the UI components defined in the [Tizen Advanced UI Framework](../../api/latest/ui_fw_api/ui_fw_api_cover.htm).
-
 <a name="code"></a>
 ## Code the application
 
