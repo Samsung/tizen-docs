@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
 <div class="title">TDM</div>  </div>
-</div><!--header-->
+<div class="ingroups"><a class="el" href="group__HALAPI__HAL__WINDOW.html">Window System</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>The <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html">TDM</a> provides functions for managing display server. </p>
@@ -136,7 +136,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#struct__hal__tdm__size">_hal_tdm_size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3b03b1f44150880e99967bc3b0b30729">hal_tdm_size</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The size structure.  <a href="#ga3b03b1f44150880e99967bc3b0b30729"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#struct__hal__tdm__pos">_hal_tdm_pos</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gaf7836d7e2e07f1b1eb26eb1ec693333d">hal_tdm_pos</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The posistion structure.  <a href="#gaf7836d7e2e07f1b1eb26eb1ec693333d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The position structure.  <a href="#gaf7836d7e2e07f1b1eb26eb1ec693333d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
 <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#struct__hal__tdm__caps__display">_hal_tdm_caps_display</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga25d46b8c18492c250f76e9344b6a445b">hal_tdm_caps_display</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The display capability structure for CAPTURE.  <a href="#ga25d46b8c18492c250f76e9344b6a445b"></a><br/></td></tr>
@@ -152,10 +152,10 @@ Typedefs</h2></td></tr>
 <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#struct__hal__tdm__hwc__window__info">_hal_tdm_hwc_window_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gae157e96b7c59c5597cba19e77ddf9cea">hal_tdm_hwc_window_info</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The hwc window info structure to composite.  <a href="#gae157e96b7c59c5597cba19e77ddf9cea"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#struct__hal__tdm__info__pp">_hal_tdm_info_pp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gac17e7cb9a360ce13db589260d10774c7">hal_tdm_info_pp</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The information structre to use post-processing.  <a href="#gac17e7cb9a360ce13db589260d10774c7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The information structure to use post-processing.  <a href="#gac17e7cb9a360ce13db589260d10774c7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
 <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#struct__hal__tdm__info__capture">_hal_tdm_info_capture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga8d456cb4651fecad5357d5f43abc61b2">hal_tdm_info_capture</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The capture info structre.  <a href="#ga8d456cb4651fecad5357d5f43abc61b2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The capture info structure.  <a href="#ga8d456cb4651fecad5357d5f43abc61b2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga9ff28c2a6992040cb7e937433df0d421">hal_tdm_fd</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The tdm fd.  <a href="#ga9ff28c2a6992040cb7e937433df0d421"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga5227c70c621b5c2589b435c56e93e019">hal_tdm_display</a></td></tr>
@@ -493,6 +493,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ae64574bd7ce0ff97691d7a552997c355">display_get_fd</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga5227c70c621b5c2589b435c56e93e019">hal_tdm_display</a> *display, int *fd)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a27eff0d63aeedd38801297e6858c74ba">display_handle_events</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga5227c70c621b5c2589b435c56e93e019">hal_tdm_display</a> *display)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga0bc767798aabb5345408517fb91097c4">hal_tdm_pp</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a88c6aa01beb2f7154b1df09570151a02">display_create_pp</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga5227c70c621b5c2589b435c56e93e019">hal_tdm_display</a> *display, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a> *error)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga25f01fa801e5a933554c2f5ef0a7e3e9">hal_tdm_voutput</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a60c4e0724a490c93b06aa2dee116b7c4">display_voutput_create</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga5227c70c621b5c2589b435c56e93e019">hal_tdm_display</a> *display, const char *name, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a> *error)</td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
 <a class="anchor" id="a88c6aa01beb2f7154b1df09570151a02"></a><!-- doxytag: member="_hal_tdm_display_funcs::display_create_pp" ref="a88c6aa01beb2f7154b1df09570151a02" args=")(hal_tdm_display *display, hal_tdm_error *error)" -->
@@ -505,7 +506,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Create the virtual output object of hal_tdm_display. </p>
+<p>Create the post-processing object of hal_tdm_display. </p>
 
 </div>
 </div>
@@ -519,7 +520,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>&lt; Get the display capabilities of hal_tdm_display. Get the post-processing capabilities of hal_tdm_display. </p>
+<p>Get the display capabilities of hal_tdm_display. </p>
 
 </div>
 </div>
@@ -533,7 +534,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the output array of hal_tdm_display. </p>
+<p>Get the capture capabilities of the hal_tdm_display. </p>
 
 </div>
 </div>
@@ -547,7 +548,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Handle the events which happens on the fd of hal_tdm_display. </p>
+<p>Get the file descriptor of hal_tdm_display. </p>
 
 </div>
 </div>
@@ -561,7 +562,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the file descriptor of hal_tdm_display. </p>
+<p>Get the output array of hal_tdm_display. </p>
 
 </div>
 </div>
@@ -575,7 +576,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the capture capabilities of the hal_tdm_display. </p>
+<p>Get the post-processing capabilities of hal_tdm_display. </p>
 
 </div>
 </div>
@@ -589,7 +590,21 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Create the post-processing object of hal_tdm_display. </p>
+<p>Handle the events which happens on the fd of hal_tdm_display. </p>
+
+</div>
+</div>
+<a class="anchor" id="a60c4e0724a490c93b06aa2dee116b7c4"></a><!-- doxytag: member="_hal_tdm_display_funcs::display_voutput_create" ref="a60c4e0724a490c93b06aa2dee116b7c4" args=")(hal_tdm_display *display, const char *name, hal_tdm_error *error)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga25f01fa801e5a933554c2f5ef0a7e3e9">hal_tdm_voutput</a>*(* <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a60c4e0724a490c93b06aa2dee116b7c4">_hal_tdm_display_funcs::display_voutput_create</a>)(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga5227c70c621b5c2589b435c56e93e019">hal_tdm_display</a> *display, const char *name, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a> *error)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Create the virtual output object of hal_tdm_display. </p>
 
 </div>
 </div>
@@ -625,6 +640,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ae553070c8a94ebc81fd23be1810f128e">output_set_dpms_async</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gaf6465053634aaf823bad96e1af13d048">hal_tdm_output</a> *output, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1c4331bf80d727c95c128521bec9236d">hal_tdm_output_dpms</a> dpms_value, int *sync)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga853d62b092249bfea126ab3470290ff6">hal_tdm_hwc</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a45bfce3336d1cd7ebfc5d126230b3f18">output_get_hwc</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gaf6465053634aaf823bad96e1af13d048">hal_tdm_output</a> *output, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a> *error)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ab2a32d747c46f93add6e10a308c388ab">output_set_mirror</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gaf6465053634aaf823bad96e1af13d048">hal_tdm_output</a> *output, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gaf6465053634aaf823bad96e1af13d048">hal_tdm_output</a> *src_output, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga22cde5c32061e36550d4f201de9a642b">hal_tdm_transform</a> transform)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a46a565ca80b2984c5ee49bb8080009cc">output_unset_mirror</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gaf6465053634aaf823bad96e1af13d048">hal_tdm_output</a> *output)</td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
 <a class="anchor" id="a1ea4769c0fb319d2a9f05357ebe0fcd5"></a><!-- doxytag: member="_hal_tdm_output_funcs::output_create_capture" ref="a1ea4769c0fb319d2a9f05357ebe0fcd5" args=")(hal_tdm_output *output, hal_tdm_error *error)" -->
@@ -637,7 +653,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the output connection status handler. </p>
+<p>Create the capture object from the output object. </p>
 
 </div>
 </div>
@@ -651,7 +667,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>&lt; Get the capabilities of the hal_tdm_output object. Set the output's property which has the given id. </p>
+<p>Get the capabilities of the hal_tdm_output object. </p>
 
 </div>
 </div>
@@ -665,7 +681,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set one of available modes of the output object. </p>
+<p>Get DPMS of the output object. </p>
 
 </div>
 </div>
@@ -679,7 +695,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the mirror image of the src_output to the output. </p>
+<p>Get the hwc object of the output object. </p>
 
 </div>
 </div>
@@ -693,7 +709,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Create the capture object from the output object. </p>
+<p>Get the mode of the output object. </p>
 
 </div>
 </div>
@@ -707,7 +723,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Wait for VBLANK of output. </p>
+<p>Get the output's property which has the given id. </p>
 
 </div>
 </div>
@@ -721,7 +737,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get DPMS of the output object. </p>
+<p>Set DPMS of the output object synchronously. </p>
 
 </div>
 </div>
@@ -735,7 +751,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the hwc object of the output object. </p>
+<p>Set DPMS of the output object asynchronously. </p>
 
 </div>
 </div>
@@ -749,7 +765,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set DPMS of the output object asynchronously. </p>
+<p>Set the output's dpms handler. </p>
 
 </div>
 </div>
@@ -763,7 +779,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Unset the mirror image. </p>
+<p>Set the mirror image of the src_output to the output. </p>
 
 </div>
 </div>
@@ -777,7 +793,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the mode of the output object. </p>
+<p>Set one of available modes of the output object. </p>
 
 </div>
 </div>
@@ -791,7 +807,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the output's property which has the given id. </p>
+<p>Set the output's property which has the given id. </p>
 
 </div>
 </div>
@@ -805,7 +821,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the output's dpms handler. </p>
+<p>Set the output connection status handler. </p>
 
 </div>
 </div>
@@ -819,7 +835,21 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set DPMS of the output object synchronously. </p>
+<p>Set the handler of vblank. </p>
+
+</div>
+</div>
+<a class="anchor" id="a46a565ca80b2984c5ee49bb8080009cc"></a><!-- doxytag: member="_hal_tdm_output_funcs::output_unset_mirror" ref="a46a565ca80b2984c5ee49bb8080009cc" args=")(hal_tdm_output *output)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(* <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a46a565ca80b2984c5ee49bb8080009cc">_hal_tdm_output_funcs::output_unset_mirror</a>)(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gaf6465053634aaf823bad96e1af13d048">hal_tdm_output</a> *output)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Unset the mirror image. </p>
 
 </div>
 </div>
@@ -833,7 +863,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the handler of vblank. </p>
+<p>Wait for VBLANK of output. </p>
 
 </div>
 </div>
@@ -862,6 +892,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gaf6465053634aaf823bad96e1af13d048">hal_tdm_output</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ae9e383474cbbcf6e2b9a04d7df8fd681">voutput_get_output</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga25f01fa801e5a933554c2f5ef0a7e3e9">hal_tdm_voutput</a> *voutput, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a> *error)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#af7fe0329f40a6355c7ec6b927896c466">voutput_set_commit_func</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga25f01fa801e5a933554c2f5ef0a7e3e9">hal_tdm_voutput</a> *voutput, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga80519ff48f772d8cdc71235b0a628fdb">hal_tdm_voutput_commit_handler</a> commit_func)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#aea0bc8b8b5060a605bc7f79071a22f59">voutput_commit_done</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga25f01fa801e5a933554c2f5ef0a7e3e9">hal_tdm_voutput</a> *voutput)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a9a511792e3658fc3eb9223620e1ed7b9">voutput_set_target_buffer_queue_flag</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga25f01fa801e5a933554c2f5ef0a7e3e9">hal_tdm_voutput</a> *voutput, int flags)</td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
 <a class="anchor" id="aea0bc8b8b5060a605bc7f79071a22f59"></a><!-- doxytag: member="_hal_tdm_voutput_funcs::voutput_commit_done" ref="aea0bc8b8b5060a605bc7f79071a22f59" args=")(hal_tdm_voutput *voutput)" -->
@@ -874,7 +905,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set target buffer queue flag of the virtual output's hwc object </p>
+<p>Notify commit done to backend. </p>
 
 </div>
 </div>
@@ -888,7 +919,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set disconnect status of the virtual output object. </p>
+<p>Set connect status of the virtual output object. </p>
 
 </div>
 </div>
@@ -902,7 +933,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>&lt; Destroy the virtual output object of the backend module. Set available modes of the virtual output object. </p>
+<p>Destroy the virtual output object of the backend module. </p>
 
 </div>
 </div>
@@ -916,7 +947,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get output object from virtual output object. </p>
+<p>Set disconnect status of the virtual output object. </p>
 
 </div>
 </div>
@@ -930,7 +961,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the user commit function </p>
+<p>Get output object from virtual output object. </p>
 
 </div>
 </div>
@@ -944,7 +975,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set physical size(mm) of the virtual output object. </p>
+<p>Set available modes of the virtual output object. </p>
 
 </div>
 </div>
@@ -958,7 +989,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Notify commit done to backend. </p>
+<p>Set the user commit function </p>
 
 </div>
 </div>
@@ -972,7 +1003,21 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set connect status of the virtual output object. </p>
+<p>Set physical size(mm) of the virtual output object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9a511792e3658fc3eb9223620e1ed7b9"></a><!-- doxytag: member="_hal_tdm_voutput_funcs::voutput_set_target_buffer_queue_flag" ref="a9a511792e3658fc3eb9223620e1ed7b9" args=")(hal_tdm_voutput *voutput, int flags)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(* <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a9a511792e3658fc3eb9223620e1ed7b9">_hal_tdm_voutput_funcs::voutput_set_target_buffer_queue_flag</a>)(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga25f01fa801e5a933554c2f5ef0a7e3e9">hal_tdm_voutput</a> *voutput, int flags)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set target buffer queue flag of the virtual output's hwc object </p>
 
 </div>
 </div>
@@ -1011,6 +1056,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a9171c64de7c0c9d430eddd6640928b3a">hwc_set_property</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga853d62b092249bfea126ab3470290ff6">hal_tdm_hwc</a> *hwc, uint32_t id, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#unionhal__tdm__value">hal_tdm_value</a> value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a5f786b03f0a4a8f155aed1e2d1143826">hwc_get_property</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga853d62b092249bfea126ab3470290ff6">hal_tdm_hwc</a> *hwc, uint32_t id, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#unionhal__tdm__value">hal_tdm_value</a> *value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a6bba78292392185a91b491aaba48f499">hwc_get_commit_interval</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga853d62b092249bfea126ab3470290ff6">hal_tdm_hwc</a> *hwc, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gaff049053f578957d7654aa0d9475a344">hal_tdm_hwc_commit_interval</a> *interval)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ac28a1d6aceb620e80d8f72cea8dc2b13">hwc_set_client_target_buffer_info</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga853d62b092249bfea126ab3470290ff6">hal_tdm_hwc</a> *hwc, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gae157e96b7c59c5597cba19e77ddf9cea">hal_tdm_hwc_window_info</a> *info)</td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
 <a class="anchor" id="ae08e41dc48ee3fb12b4792ac534e333e"></a><!-- doxytag: member="_hal_tdm_hwc_funcs::hwc_accept_validation" ref="ae08e41dc48ee3fb12b4792ac534e333e" args=")(hal_tdm_hwc *hwc)" -->
@@ -1023,7 +1069,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Commit changes for the hwc object. </p>
+<p>Accepts the validation required by the backend. </p>
 
 </div>
 </div>
@@ -1037,7 +1083,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the user commit handler. </p>
+<p>Commit changes for the hwc object. </p>
 
 </div>
 </div>
@@ -1051,7 +1097,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>&lt; Create a new window on the given hwc. Get video the supported format array for the hwc windows of the hwc object. </p>
+<p>Create a new window on the given hwc. </p>
 
 </div>
 </div>
@@ -1065,7 +1111,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the client target buffer queue. </p>
+<p>Get the available property array of the hwc object. </p>
 
 </div>
 </div>
@@ -1079,7 +1125,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the available property array of the hwc object. </p>
+<p>Get the hwc capabilities. </p>
 
 </div>
 </div>
@@ -1093,7 +1139,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Accepts the validation required by the backend. </p>
+<p>Get changed composition types. </p>
 
 </div>
 </div>
@@ -1107,7 +1153,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the client target buffer. </p>
+<p>Get the client target buffer queue. </p>
 
 </div>
 </div>
@@ -1121,7 +1167,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get release fences. </p>
+<p>Get commit fence. </p>
 
 </div>
 </div>
@@ -1135,7 +1181,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the information of the client target buffer. </p>
+<p>Get the commit interval. </p>
 
 </div>
 </div>
@@ -1149,7 +1195,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the commit interval. </p>
+<p>Get the property which has the given id on the hwc object. </p>
 
 </div>
 </div>
@@ -1163,7 +1209,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the property which has the given id on the hwc object. </p>
+<p>Get release fences. </p>
 
 </div>
 </div>
@@ -1177,7 +1223,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the hwc capabilities. </p>
+<p>Get the available video property array of the hwc object. </p>
 
 </div>
 </div>
@@ -1191,7 +1237,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the available video property array of the hwc object. </p>
+<p>Get video the supported format array for the hwc windows of the hwc object. </p>
 
 </div>
 </div>
@@ -1205,7 +1251,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Validate the hwc. </p>
+<p>Set the acquire fence of client target buffer. </p>
 
 </div>
 </div>
@@ -1219,7 +1265,21 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the acquire fence of client target buffer. </p>
+<p>Set the client target buffer. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac28a1d6aceb620e80d8f72cea8dc2b13"></a><!-- doxytag: member="_hal_tdm_hwc_funcs::hwc_set_client_target_buffer_info" ref="ac28a1d6aceb620e80d8f72cea8dc2b13" args=")(hal_tdm_hwc *hwc, hal_tdm_hwc_window_info *info)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(* <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ac28a1d6aceb620e80d8f72cea8dc2b13">_hal_tdm_hwc_funcs::hwc_set_client_target_buffer_info</a>)(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga853d62b092249bfea126ab3470290ff6">hal_tdm_hwc</a> *hwc, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gae157e96b7c59c5597cba19e77ddf9cea">hal_tdm_hwc_window_info</a> *info)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the information of the client target buffer. </p>
 
 </div>
 </div>
@@ -1233,7 +1293,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get commit fence. </p>
+<p>Set the user commit handler. </p>
 
 </div>
 </div>
@@ -1247,7 +1307,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the property which has the given id on the hwc object. </p>
+<p>Set the property which has the given id on the hwc object. </p>
 
 </div>
 </div>
@@ -1261,7 +1321,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get changed composition types. </p>
+<p>Validate the hwc. </p>
 
 </div>
 </div>
@@ -1294,6 +1354,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a8622ba92efd6b1a780243ecdeed01878">hwc_window_get_constraints</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3b7949a76da0d45754854bd20d489034">hal_tdm_hwc_window</a> *hwc_window, int *constraints)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a40954eb8c5e27ae58b159804e1518379">hwc_window_set_name</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3b7949a76da0d45754854bd20d489034">hal_tdm_hwc_window</a> *hwc_window, const char *name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a0935c1519b7d81d2fe6dc605b254fbd2">hwc_window_set_cursor_image</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3b7949a76da0d45754854bd20d489034">hal_tdm_hwc_window</a> *hwc_window, int width, int height, int stride, void *ptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#af8f89a78d622162c2517e02f9b3b3b8c">hwc_window_set_acquire_fence</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3b7949a76da0d45754854bd20d489034">hal_tdm_hwc_window</a> *hwc_window, int acquire_fence)</td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
 <a class="anchor" id="adf1e0e7ef0184fe292be4a2c61fe199e"></a><!-- doxytag: member="_hal_tdm_hwc_window_funcs::hwc_window_acquire_buffer_queue" ref="adf1e0e7ef0184fe292be4a2c61fe199e" args=")(hal_tdm_hwc_window *hwc_window, hal_tdm_error *error)" -->
@@ -1306,7 +1367,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Release the buffer queue for the window object. </p>
+<p>Acquire the buffer queue handle for the window object. </p>
 
 </div>
 </div>
@@ -1320,7 +1381,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>&lt; Destroys the given window. Acquire the buffer queue handle for the window object. </p>
+<p>Destroys the given window. </p>
 
 </div>
 </div>
@@ -1334,7 +1395,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the name of hwc_window. </p>
+<p>Get the constraints of hwc_window. </p>
 
 </div>
 </div>
@@ -1348,7 +1409,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the constraints of hwc_window. </p>
+<p>Get the property which has the given id. </p>
 
 </div>
 </div>
@@ -1362,7 +1423,21 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Sets the desired composition type of the given window. </p>
+<p>Release the buffer queue for the window object. </p>
+
+</div>
+</div>
+<a class="anchor" id="af8f89a78d622162c2517e02f9b3b3b8c"></a><!-- doxytag: member="_hal_tdm_hwc_window_funcs::hwc_window_set_acquire_fence" ref="af8f89a78d622162c2517e02f9b3b3b8c" args=")(hal_tdm_hwc_window *hwc_window, int acquire_fence)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(* <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#af8f89a78d622162c2517e02f9b3b3b8c">_hal_tdm_hwc_window_funcs::hwc_window_set_acquire_fence</a>)(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3b7949a76da0d45754854bd20d489034">hal_tdm_hwc_window</a> *hwc_window, int acquire_fence)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the acquire fence of hwc_window. </p>
 
 </div>
 </div>
@@ -1376,7 +1451,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the property which has the given id. </p>
+<p>Set the TDM buffer to the window object. </p>
 
 </div>
 </div>
@@ -1390,7 +1465,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the information to the window object. </p>
+<p>Set the buffer damage. </p>
 
 </div>
 </div>
@@ -1404,7 +1479,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the buffer damage. </p>
+<p>Sets the desired composition type of the given window. </p>
 
 </div>
 </div>
@@ -1418,7 +1493,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the acquire fence of hwc_window. </p>
+<p>Set the cursor image to hwc_window. </p>
 
 </div>
 </div>
@@ -1432,7 +1507,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the TDM buffer to the window object. </p>
+<p>Set the information to the window object. </p>
 
 </div>
 </div>
@@ -1446,7 +1521,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the cursor image to hwc_window. </p>
+<p>Set the name of hwc_window. </p>
 
 </div>
 </div>
@@ -1460,7 +1535,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the property which has the given id. </p>
+<p>Set the property which has the given id. </p>
 
 </div>
 </div>
@@ -1485,6 +1560,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a162b5cb6a849a5908879c268ef632680">pp_set_info</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga0bc767798aabb5345408517fb91097c4">hal_tdm_pp</a> *pp, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#gac17e7cb9a360ce13db589260d10774c7">hal_tdm_info_pp</a> *info)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a216a7f387df97cb156520905bd0dfcd3">pp_attach</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga0bc767798aabb5345408517fb91097c4">hal_tdm_pp</a> *pp, tbm_surface_h src, tbm_surface_h dst)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ab02cec01d3c11bfb9b6d6ea57de37d35">pp_commit</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga0bc767798aabb5345408517fb91097c4">hal_tdm_pp</a> *pp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a547885c42cf71459b8b20784d090d449">pp_set_done_handler</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga0bc767798aabb5345408517fb91097c4">hal_tdm_pp</a> *pp, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga95dd82bb3cf1b0b3303bedf421aff60f">hal_tdm_pp_done_handler</a> func, void *user_data)</td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
 <a class="anchor" id="a216a7f387df97cb156520905bd0dfcd3"></a><!-- doxytag: member="_hal_tdm_pp_funcs::pp_attach" ref="a216a7f387df97cb156520905bd0dfcd3" args=")(hal_tdm_pp *pp, tbm_surface_h src, tbm_surface_h dst)" -->
@@ -1497,7 +1573,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Commit changes for the post-processing object. </p>
+<p>Attach the source buffer and the destination buffer to the post-processing object. </p>
 
 </div>
 </div>
@@ -1511,7 +1587,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the processing done handler to the post-processing object. </p>
+<p>Commit changes for the post-processing object. </p>
 
 </div>
 </div>
@@ -1525,7 +1601,21 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>&lt; Destroy the post-processing object. Set the geometry information to the post-processing object. </p>
+<p>Destroy the post-processing object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a547885c42cf71459b8b20784d090d449"></a><!-- doxytag: member="_hal_tdm_pp_funcs::pp_set_done_handler" ref="a547885c42cf71459b8b20784d090d449" args=")(hal_tdm_pp *pp, hal_tdm_pp_done_handler func, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(* <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a547885c42cf71459b8b20784d090d449">_hal_tdm_pp_funcs::pp_set_done_handler</a>)(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga0bc767798aabb5345408517fb91097c4">hal_tdm_pp</a> *pp, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga95dd82bb3cf1b0b3303bedf421aff60f">hal_tdm_pp_done_handler</a> func, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the processing done handler to the post-processing object. </p>
 
 </div>
 </div>
@@ -1539,7 +1629,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Attach the source buffer and the destination buffer to the post-processing object. </p>
+<p>Set the geometry information to the post-processing object. </p>
 
 </div>
 </div>
@@ -1564,6 +1654,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a958ea0b49161a19c25034dd7bc3d1615">capture_set_info</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3801003ba37a7de3ca9151616d32dbac">hal_tdm_capture</a> *capture, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga8d456cb4651fecad5357d5f43abc61b2">hal_tdm_info_capture</a> *info)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a5751b229adb4d9f95873a0568aa70ee7">capture_attach</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3801003ba37a7de3ca9151616d32dbac">hal_tdm_capture</a> *capture, tbm_surface_h buffer)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a7080036f8f0efc9636680991218930d2">capture_commit</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3801003ba37a7de3ca9151616d32dbac">hal_tdm_capture</a> *capture)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a2c4719614ed03335931d467c28fc0efd">capture_set_done_handler</a> )(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3801003ba37a7de3ca9151616d32dbac">hal_tdm_capture</a> *capture, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga2d93e5cb277534a5f224dcc02f3263c4">hal_tdm_capture_done_handler</a> func, void *user_data)</td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
 <a class="anchor" id="a5751b229adb4d9f95873a0568aa70ee7"></a><!-- doxytag: member="_hal_tdm_capture_funcs::capture_attach" ref="a5751b229adb4d9f95873a0568aa70ee7" args=")(hal_tdm_capture *capture, tbm_surface_h buffer)" -->
@@ -1576,7 +1667,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Commit changes for the capture object. </p>
+<p>Attach the TDM buffer to the capture object </p>
 
 </div>
 </div>
@@ -1590,7 +1681,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the capture done handler to the capture object. </p>
+<p>Commit changes for the capture object. </p>
 
 </div>
 </div>
@@ -1604,7 +1695,21 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>&lt; Destroy the capture object. Set the geometry information to the capture object. </p>
+<p>Destroy the capture object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2c4719614ed03335931d467c28fc0efd"></a><!-- doxytag: member="_hal_tdm_capture_funcs::capture_set_done_handler" ref="a2c4719614ed03335931d467c28fc0efd" args=")(hal_tdm_capture *capture, hal_tdm_capture_done_handler func, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga1d03bbce5af3ec9912cdaea2c7edf762">hal_tdm_error</a>(* <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#a2c4719614ed03335931d467c28fc0efd">_hal_tdm_capture_funcs::capture_set_done_handler</a>)(<a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga3801003ba37a7de3ca9151616d32dbac">hal_tdm_capture</a> *capture, <a class="el" href="group__HALAPI__HAL__TDM__MODULE.html#ga2d93e5cb277534a5f224dcc02f3263c4">hal_tdm_capture_done_handler</a> func, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the capture done handler to the capture object. </p>
 
 </div>
 </div>
@@ -1618,7 +1723,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Attach the TDM buffer to the capture object </p>
+<p>Set the geometry information to the capture object. </p>
 
 </div>
 </div>
@@ -1684,7 +1789,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<div class="textblock"><p>The posistion structure. </p>
+<div class="textblock"><p>The position structure. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0 </dd></dl>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Data Fields</h3></td></tr>
@@ -2376,7 +2481,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<div class="textblock"><p>The information structre to use post-processing. </p>
+<div class="textblock"><p>The information structure to use post-processing. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0 </dd></dl>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Data Fields</h3></td></tr>
@@ -2397,7 +2502,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The destination window's inforamtion </p>
+<p>The destination window's information </p>
 
 </div>
 </div>
@@ -2425,7 +2530,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The source window's inforamtion </p>
+<p>The source window's information </p>
 
 </div>
 </div>
@@ -2470,7 +2575,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<div class="textblock"><p>The capture info structre. </p>
+<div class="textblock"><p>The capture info structure. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0 </dd></dl>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Data Fields</h3></td></tr>
@@ -2491,7 +2596,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The window's coordnate &amp; size inforamtion to capture </p>
+<p>The window's coordnate &amp; size information to capture </p>
 
 </div>
 </div>
@@ -2533,7 +2638,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The window's transform inforamtion to capture </p>
+<p>The window's transform information to capture </p>
 
 </div>
 </div>
@@ -2713,7 +2818,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The minimun height. </p>
+<p>The minimum height. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>1.5.0 </dd></dl>
 
 </div>
@@ -2728,7 +2833,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The minimun width. </p>
+<p>The minimum width. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>1.5.0 </dd></dl>
 
 </div>
@@ -2743,7 +2848,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The prefered align. </p>
+<p>The preferred align. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>1.5.0 </dd></dl>
 
 </div>
@@ -2800,7 +2905,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The minimun height </p>
+<p>The minimum height </p>
 
 </div>
 </div>
@@ -2814,7 +2919,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The minimun width </p>
+<p>The minimum width </p>
 
 </div>
 </div>
@@ -2828,7 +2933,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The physical height (milimeter) </p>
+<p>The physical height (millimeter) </p>
 
 </div>
 </div>
@@ -2842,7 +2947,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The physical width (milimeter) </p>
+<p>The physical width (millimeter) </p>
 
 </div>
 </div>
@@ -2912,7 +3017,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The prefered align </p>
+<p>The preferred align </p>
 
 </div>
 </div>
@@ -3123,7 +3228,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The minimun height </p>
+<p>The minimum height </p>
 
 </div>
 </div>
@@ -3137,7 +3242,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The minimun width </p>
+<p>The minimum width </p>
 
 </div>
 </div>
@@ -3151,7 +3256,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The prefered align </p>
+<p>The preferred align </p>
 
 </div>
 </div>
@@ -3165,7 +3270,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The prefered align vertical </p>
+<p>The preferred align vertical </p>
 
 </div>
 </div>
@@ -3291,7 +3396,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The minimun height </p>
+<p>The minimum height </p>
 
 </div>
 </div>
@@ -3305,7 +3410,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The minimun width </p>
+<p>The minimum width </p>
 
 </div>
 </div>
@@ -3319,7 +3424,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The prefered align </p>
+<p>The preferred align </p>
 
 </div>
 </div>
@@ -3577,7 +3682,7 @@ Defines</h2></td></tr>
 
 <p>The event_loop_fd handler. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0</dd></dl>
-<p>This handler will be called when the output object is createed in runtime. </p>
+<p>This handler will be called when the output object is created in runtime. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event_fd</td><td>The file descriptor of event. </td></tr>
@@ -3741,7 +3846,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>The capture info structre. </p>
+<p>The capture info structure. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0 </dd></dl>
 
 </div>
@@ -3773,7 +3878,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>The information structre to use post-processing. </p>
+<p>The information structure to use post-processing. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0 </dd></dl>
 
 </div>
@@ -3903,7 +4008,7 @@ hal_tdm_backend_get_master_drm_fd(). </dd></dl>
 
 <p>The output create handler. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0</dd></dl>
-<p>This handler will be called when the output object is createed in runtime. </p>
+<p>This handler will be called when the output object is created in runtime. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dpy</td><td>The pointer of hal_tdm_display. </td></tr>
@@ -3928,7 +4033,7 @@ hal_tdm_backend_get_master_drm_fd(). </dd></dl>
 
 <p>The output destroy handler. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0</dd></dl>
-<p>This handler will be called when the output object is destroied in runtime. </p>
+<p>This handler will be called when the output object is destroyed in runtime. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">output</td><td>The pointer of output. </td></tr>
@@ -4012,7 +4117,7 @@ hal_tdm_backend_get_master_drm_fd(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">output</td><td>The pointer of output. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The index of avaliable modes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The index of available modes </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data. </td></tr>
   </table>
   </dd>
@@ -4082,7 +4187,7 @@ hal_tdm_backend_get_master_drm_fd(). </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>The posistion structure. </p>
+<p>The position structure. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0 </dd></dl>
 
 </div>
@@ -4547,7 +4652,10 @@ hal_tdm_backend_get_master_drm_fd(). </dd></dl>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggaff049053f578957d7654aa0d9475a344a4d44da19427bcaf7ebc83f14cf1c9ef4"></a><!-- doxytag: member="HAL_TDM_HWC_COMMIT_INTERVAL_NONE" ref="ggaff049053f578957d7654aa0d9475a344a4d44da19427bcaf7ebc83f14cf1c9ef4" args="" -->HAL_TDM_HWC_COMMIT_INTERVAL_NONE</em>&nbsp;</td><td>
-<p>Default interval of HWC's composition. If this interval is set by tdm backend, the compositor call commit per vblank even if the handler of commit isn't called. </p>
+<p>Default interval of HWC's composition. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaff049053f578957d7654aa0d9475a344aec253d3bb893d3f52ae5096566dc373b"></a><!-- doxytag: member="HAL_TDM_HWC_COMMIT_INTERVAL_VBLANK" ref="ggaff049053f578957d7654aa0d9475a344aec253d3bb893d3f52ae5096566dc373b" args="" -->HAL_TDM_HWC_COMMIT_INTERVAL_VBLANK</em>&nbsp;</td><td>
+<p>If this interval is set by tdm backend, the compositor call commit per vblank even if the handler of commit isn't called. </p>
 </td></tr>
 </table>
 </dd>
@@ -4571,20 +4679,23 @@ hal_tdm_backend_get_master_drm_fd(). </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggaf75c8b3c74dfbf62c681c9d4e88c8396a41eeed1ca03e7d6fcf32f323ebbb5829"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_COMPOSITION_NONE" ref="ggaf75c8b3c74dfbf62c681c9d4e88c8396a41eeed1ca03e7d6fcf32f323ebbb5829" args="" -->HAL_TDM_HWC_WIN_COMPOSITION_NONE</em>&nbsp;</td><td>
 <p>The composition type for an invisible window. The value by default.</p>
-<p>The backend ignores windows of this type. The compostion type for an window to be compsoited by the client.</p>
+<p>The backend ignores windows of this type. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaf75c8b3c74dfbf62c681c9d4e88c8396abdacd6b7f4e6eb8f78cecd479811b131"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_COMPOSITION_CLIENT" ref="ggaf75c8b3c74dfbf62c681c9d4e88c8396abdacd6b7f4e6eb8f78cecd479811b131" args="" -->HAL_TDM_HWC_WIN_COMPOSITION_CLIENT</em>&nbsp;</td><td>
+<p>The composition type for an window to be compsoited by the client.</p>
 <p>When the client sets this composition type, the backend MUST NOT modify this composition type into other types.</p>
 <p>When the backend changes TDM_HWC_WIN_COMPOSITION_DEVICE or TDM_HWC_WIN_COMPOSITION_CURSOR to this composition type at the time of tdm_hwc_validate and tdm_hwc_get_changed_composition_types, the client has to composite this window with gl or other drawing operations. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaf75c8b3c74dfbf62c681c9d4e88c8396abdacd6b7f4e6eb8f78cecd479811b131"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_COMPOSITION_CLIENT" ref="ggaf75c8b3c74dfbf62c681c9d4e88c8396abdacd6b7f4e6eb8f78cecd479811b131" args="" -->HAL_TDM_HWC_WIN_COMPOSITION_CLIENT</em>&nbsp;</td><td>
-<p>The compostion type for an window to be set to the hw overlay.</p>
+<tr><td valign="top"><em><a class="anchor" id="ggaf75c8b3c74dfbf62c681c9d4e88c8396a1e3628150b8096a90813356822f75287"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_COMPOSITION_DEVICE" ref="ggaf75c8b3c74dfbf62c681c9d4e88c8396a1e3628150b8096a90813356822f75287" args="" -->HAL_TDM_HWC_WIN_COMPOSITION_DEVICE</em>&nbsp;</td><td>
+<p>The composition type for an window to be set to the hw overlay.</p>
 <p>The client sets this composition type to the visible windows before requesting the tdm_hwc_validate. Nomally, the backend leave it if the backend sets the window to the hw overlay. If the backend does not set the window to the hw overlay at the time of tdm_hwc_validate, the backend changes the composition type of the window into TDM_HWC_WIN_COMPOSITION_CLIENT. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaf75c8b3c74dfbf62c681c9d4e88c8396a1e3628150b8096a90813356822f75287"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_COMPOSITION_DEVICE" ref="ggaf75c8b3c74dfbf62c681c9d4e88c8396a1e3628150b8096a90813356822f75287" args="" -->HAL_TDM_HWC_WIN_COMPOSITION_DEVICE</em>&nbsp;</td><td>
-<p>The compostion type for an window to be set to the cursor hw overlay.</p>
+<tr><td valign="top"><em><a class="anchor" id="ggaf75c8b3c74dfbf62c681c9d4e88c8396a7a7a2a2fe4a2ad1992f1070bd1d26eb3"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_COMPOSITION_CURSOR" ref="ggaf75c8b3c74dfbf62c681c9d4e88c8396a7a7a2a2fe4a2ad1992f1070bd1d26eb3" args="" -->HAL_TDM_HWC_WIN_COMPOSITION_CURSOR</em>&nbsp;</td><td>
+<p>The composition type for an window to be set to the cursor hw overlay.</p>
 <p>The client sets this composition type to the cursor window before requesting the tdm_hwc_validate. If the backend does not support the cursor hw overlay, the backend can change the comopsition type into the TDM_HWC_WIN_COMPOSITION_CLIENT. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaf75c8b3c74dfbf62c681c9d4e88c8396a7a7a2a2fe4a2ad1992f1070bd1d26eb3"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_COMPOSITION_CURSOR" ref="ggaf75c8b3c74dfbf62c681c9d4e88c8396a7a7a2a2fe4a2ad1992f1070bd1d26eb3" args="" -->HAL_TDM_HWC_WIN_COMPOSITION_CURSOR</em>&nbsp;</td><td>
-<p>The compostion type for an window to be set to the video hw overlay.</p>
+<tr><td valign="top"><em><a class="anchor" id="ggaf75c8b3c74dfbf62c681c9d4e88c8396a8f1df923f484c215566f6b20385f93e8"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_COMPOSITION_VIDEO" ref="ggaf75c8b3c74dfbf62c681c9d4e88c8396a8f1df923f484c215566f6b20385f93e8" args="" -->HAL_TDM_HWC_WIN_COMPOSITION_VIDEO</em>&nbsp;</td><td>
+<p>The composition type for an window to be set to the video hw overlay.</p>
 <p>The client sets this composition type to the video window before requesting the tdm_hwc_validate. If the backend does not support the video hw overlay, the backend can change the comopsition type into the TDM_HWC_WIN_COMPOSITION_CLIENT. Normally, this VIDEO window displays under the primary hw overlayer of the output. </p>
 </td></tr>
 </table>
@@ -4608,7 +4719,10 @@ hal_tdm_backend_get_master_drm_fd(). </dd></dl>
 <dl class="user"><dt><b>Since:</b></dt><dd>HAL_MODULE_TDM 1.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga57b5a0e7863122347d7ed45301f62f79a1cd112138923fe8899aee0e9f70457ef"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_CONSTRAINT_NONE" ref="gga57b5a0e7863122347d7ed45301f62f79a1cd112138923fe8899aee0e9f70457ef" args="" -->HAL_TDM_HWC_WIN_CONSTRAINT_NONE</em>&nbsp;</td><td>
-<p>Default mode of HWC's composition. If the client needs to render to the specific buffer for compositing with TDM_HWC_WIN_COMPOSITION_DEVICE, the backend needs to set TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE to hwc_window until the hwc_window is not TDM_HWC_WIN_COMPOSITION_DEVICE. The client gets the tbm_surface_queue_h through the tdm_hwc_window_aquire_buffer_queue. It will render the frames on the buffers which gets from the tbm_surface_queue_h. </p>
+<p>Default mode of HWC's composition. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga57b5a0e7863122347d7ed45301f62f79ac07e558b9d81e107cc3840c86795829b"></a><!-- doxytag: member="HAL_TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE" ref="gga57b5a0e7863122347d7ed45301f62f79ac07e558b9d81e107cc3840c86795829b" args="" -->HAL_TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE</em>&nbsp;</td><td>
+<p>If the client needs to render to the specific buffer for compositing with TDM_HWC_WIN_COMPOSITION_DEVICE, the backend needs to set TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE to hwc_window until the hwc_window is not TDM_HWC_WIN_COMPOSITION_DEVICE. The client gets the tbm_surface_queue_h through the tdm_hwc_window_acquire_buffer_queue. It will render the frames on the buffers which gets from the tbm_surface_queue_h. </p>
 </td></tr>
 </table>
 </dd>
