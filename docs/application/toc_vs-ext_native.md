@@ -63,4 +63,4 @@
 ##### [Hybrid Application Development](/application/vstools/Tizen/hybrid.md)
 ##### [TizenNUIGadget RPK Development](/application/vstools/Tizen/nuigadget-rpk.md)
 
-### [Tool Index](/application/sdktool_index.md)
+## [Tool Index](/application/sdktool_index.md)
