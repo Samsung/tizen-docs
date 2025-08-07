@@ -82,40 +82,6 @@
 					</topic>
 				</topic>
 			</topic>
-			<topic href="6.0/ui_fw_api/ui_fw_api_cover.htm" label="Tizen Advanced UI framework (TAU)">
-				<topic href="6.0/ui_fw_api/Base/base.htm" label="Base">
-					<topic href="6.0/ui_fw_api/Base/page.htm" label="Page Handling"/>
-					<topic href="6.0/ui_fw_api/Base/popup.htm" label="Popup Handling"/>
-				</topic>
-				<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"/>
-					<topic href="6.0/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"/>
-				</topic>
-				<topic href="6.0/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-					<topic href="6.0/ui_fw_api/Gesture_Events/drag.htm" label="Drag"/>
-					<topic href="6.0/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"/>
-				</topic>
-				<topic href="6.0/ui_fw_api/Globalization/globalization.htm" label="Globalization"/>
-				<topic href="6.0/ui_fw_api/Animation/animation.htm" label="Animation"/>
-			</topic>
 			<topic href="6.0/wearable_widget/web_widget.html" label="Tizen Wearable Web Widget Specification">
 				<topic href="6.0/wearable_widget/web_widget.html" invisible-node="true" label="Tizen Wearable Web Widget Specification"/>
 			</topic>

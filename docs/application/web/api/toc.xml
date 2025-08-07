@@ -101,44 +101,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -2120,41 +2082,6 @@
 							<topic href="html/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
 					</topic>
-				</topic>
-
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
@@ -4256,44 +4183,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -6275,41 +6164,6 @@
 							<topic href="html/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
 					</topic>
-				</topic>
-
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
@@ -8411,44 +8265,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -10430,41 +10246,6 @@
 							<topic href="html/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
 					</topic>
-				</topic>
-
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
@@ -12566,44 +12347,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -14584,41 +14327,6 @@
 							<topic href="html/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
 					</topic>
-				</topic>
-
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
@@ -16714,50 +16422,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Dimmer.htm" label="Dimmer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_extended_component_list.htm" label="Extended Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Coverflow.htm" label="Coverflow"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Graph.htm" label="Graph"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Interactive3D.htm" label="Interactive 3D"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -18737,50 +18401,6 @@
 							<topic href="html/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
 					</topic>
-				</topic>
-
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_datepicker.htm" label="DatePicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_dimmer.htm" label="Dimmer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_numberpicker.htm" label="NumberPicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_timepicker.htm" label="TimePicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_extended_component_list.htm" label="Extended Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_Coverflow.htm" label="Coverflow"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_graph.htm" label="Graph"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_interactive3D.htm" label="Interactive 3D"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
@@ -20874,50 +20494,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Dimmer.htm" label="Dimmer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_extended_component_list.htm" label="Extended Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Coverflow.htm" label="Coverflow"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Graph.htm" label="Graph"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Interactive3D.htm" label="Interactive 3D"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -22872,50 +22448,6 @@
 							<topic href="html/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
 					</topic>
-				</topic>
-
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_datepicker.htm" label="DatePicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_dimmer.htm" label="Dimmer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_numberpicker.htm" label="NumberPicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_timepicker.htm" label="TimePicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_extended_component_list.htm" label="Extended Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_Coverflow.htm" label="Coverflow"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_graph.htm" label="Graph"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_interactive3D.htm" label="Interactive 3D"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
@@ -24975,44 +24507,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -26902,44 +26396,6 @@
 							<topic href="html/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
 					</topic>
-				</topic>
-
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_datepicker.htm" label="DatePicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_numberpicker.htm" label="NumberPicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_timepicker.htm" label="TimePicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
@@ -28912,44 +28368,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -30760,44 +30178,6 @@
 							<topic href="html/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
 					</topic>
-				</topic>
-
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_datepicker.htm" label="DatePicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_numberpicker.htm" label="NumberPicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_timepicker.htm" label="TimePicker"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
@@ -32657,45 +32037,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -34392,48 +33733,6 @@
 							<topic href="html/device_api/wearable/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
 					</topic>
-				</topic>
-
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm" label="Wearable UI Components">
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="Circle ProgressBar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="Circular index scroll bar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
-
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="Index scroll bar"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="Page Indicator"></topic>
-
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_progress.htm" label="Progress"></topic>
-
-
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_sectionchanger.htm" label="Section changer"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_selector.htm" label="Selector"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
-
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="Swipe list"></topic>
-
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="Toggle switch"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="View Switcher"></topic>
-						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="Virtual list"></topic>
-					</topic>
-
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
@@ -36174,46 +35473,6 @@
 					</topic>
 				</topic>
 
-				<topic label="Tizen Advanced UI framework (TAU)" href="html/ui_fw_api/ui_fw_api_cover.htm">
-					<topic href="html/ui_fw_api/Base/base.htm" label="Base">
-						<topic href="html/ui_fw_api/Base/page.htm" label="Page Handling"></topic>
-						<topic href="html/ui_fw_api/Base/popup.htm" label="Popup Handling"></topic>
-					</topic>
-					<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"></topic>
-						<topic href="html/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"></topic>
-					</topic>
-
-					<topic href="html/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
-						<topic href="html/ui_fw_api/Gesture_Events/drag.htm" label="Drag"></topic>
-						<topic href="html/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"></topic>
-					</topic>
-
-					<topic href="html/ui_fw_api/Globalization/globalization.htm" label="Globalization"></topic>
-					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
-				</topic>
-
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_m.html">
 					<topic label="Mobile Web" href="html/w3c_api/w3c_api_m.html" invisible-node="true">
 						<topic href="html/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
@@ -37426,83 +36685,6 @@
 						</topic>
 					</topic>
 				</topic>
-				<topic label="Tizen Web UI Framework Reference" href="html/ui_fw_api/wearable/index.htm">
-
-					<topic label="Wearable Web" href="html/ui_fw_api/wearable/index.htm" invisible-node="true">
-						<topic href="html/ui_fw_api/wearable/exit_application/exit_application.htm" label="How to Exit Application"></topic>
-						<topic href="html/ui_fw_api/wearable/page/app_page_layout.htm" label="Application Page Layout">
-							<topic href="html/ui_fw_api/wearable/page/multi_page.htm" label="Multi-page Layout"></topic>
-							<topic href="html/ui_fw_api/wearable/page/page_change.htm" label="Changing Pages"></topic>
-							<topic href="html/ui_fw_api/wearable/page/page_event.htm" label="Handling Page Events"></topic>
-						</topic>
-						<topic href="html/ui_fw_api/wearable/widgets/widget_reference.htm" label="UI Component Reference">
-							<topic href="html/ui_fw_api/wearable/widgets/widget_button.htm" label="Button">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_checkbox.htm" label="Checkbox and Radio Button">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_circleprogressbar.htm" label="Circle ProgressBar">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_circularindexscrollbar.htm" label="Circular Index Scroll Bar">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_drawer.htm" label="Drawer">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_indexscrollbar.htm" label="Index Scroll Bar">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_list.htm" label="List">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_marquee.htm" label="Marquee">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_pageindicator.htm" label="Page Indicator">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_popup.htm" label="Popup">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_processing.htm" label="Processing">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_progress.htm" label="Progress">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_section_changer.htm" label="Section Changer">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_selector.htm" label="Selector">
-							</topic>
-							<topic href="html/ui_fw_api/wearablee/widgets/widget_slider.htm" label="Slider">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_snaplistview.htm" label="SnapListview">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_swipelist.htm" label="Swipe List">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_toggleswitch.htm" label="Toggle Switch">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_viewSwitcher.htm" label="ViewSwitcher">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_virtuallist.htm" label="Virtual List">
-							</topic>
-						</topic>
-						<topic href="html/ui_fw_api/wearable/event/events.htm" label="Events">
-							<topic href="html/ui_fw_api/wearable/event/gesture.htm" label="Gesture Events">
-								<topic href="html/ui_fw_api/wearable/event/drag.htm" label="Drag Event"></topic>
-								<topic href="html/ui_fw_api/wearable/event/swipe.htm" label="Swipe Event"></topic>
-							</topic>
-						</topic>
-						<topic href="html/ui_fw_api/wearable/helper/helper.htm" label="Helper">
-							<topic href="html/ui_fw_api/wearable/helper/helper_listmarqueestyle.htm" label="SnapListMarqueeStyle">
-							</topic>
-						</topic>
-						<topic href="html/ui_fw_api/wearable/circular_support/circular_support.htm" label="Support for Circular UI">
-							<topic href="html/ui_fw_api/wearable/circular_support/components/scrollbar.htm" label="How to support Circular Scroll Bar"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/rotaryevent.htm" label="How to handle Rotary Event"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/snaplist.htm" label="How to support List"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/progress.htm" label="How to support Circle Progress Bar"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/indexscroll.htm" label="How to support Index Scroll Bar"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/processing.htm" label="How to support Processing"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/moreoptions.htm" label="How to support More options"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/footerbutton.htm" label="How to support Footer Button"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/thumbnail.htm" label="How to support Thumbnail"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/popup.htm" label="How to support Popup"></topic>
-						</topic>
-
-
-					</topic>
-				</topic>
 
 				<topic label="Tizen Wearable Web Widget Specification" href="html/widget_spec/web_widget.html">
 					<topic label="Tizen Wearable Web Widget Specification" href="html/widget_spec/web_widget.html" invisible-node="true">
@@ -38489,50 +37671,6 @@
 						<topic href="html/device_api/mobile/index.html#User Interface" label="User     Interface">
 							<topic href="html/device_api/mobile/tizen/badge.html" label="Badge" ></topic>
 							<topic href="html/device_api/mobile/tizen/notification.html" label="Notification" ></topic>
-						</topic>
-					</topic>
-				</topic>
-
-				<topic label="Tizen Web UI Framework Reference" href="html/ui_fw_api/mobile/index.htm">
-					<topic label="Mobile Web" href="html/ui_fw_api/mobile/index.htm" invisible-node="true">
-						<topic href="html/ui_fw_api/mobile/exit_application/exit_application.htm" label="How to Exit Application"></topic>
-						<topic href="html/ui_fw_api/mobile/page/app_page_layout.htm" label="Application Page Layout">
-							<topic href="html/ui_fw_api/mobile/page/multi_page.htm" label="Multi-page Layout"></topic>
-							<topic href="html/ui_fw_api/mobile/page/page_change.htm" label="Page Changes"></topic>
-							<topic href="html/ui_fw_api/mobile/page/page_event.htm" label="Page Events and Methods"></topic>
-						</topic>
-
-						<topic href="html/ui_fw_api/mobile/widget_reference.htm" label="UI Component Reference">
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Autodividers.htm" label="Autodividers"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Button.htm" label="Button"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Checkboxradio.htm" label="Checkbox Radio"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Collapsible.htm" label="Collapsible"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Controlgroup.htm" label="Control Group"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Datetimepicker.htm" label="Date-time Picker"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Drawer.htm" label="Drawer"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_FastScroll.htm" label="Fast Scroll"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Fliptoggle.htm" label="Flip Toggle Switch"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Gallery.htm" label="Gallery"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_ListDivider.htm" label="List Divider"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Listview.htm" label="List View"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_MultimediaView.htm" label="Multimedia View"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Navigation.htm" label="Navigation Bar"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Notification.htm" label="Notification"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Popup.htm" label="Popup"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Progress.htm" label="Progress"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_ProgressBar.htm" label="Progress Bar"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_ScrollHandler.htm" label="Scroll Handler"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_SearchBar.htm" label="Search Bar"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_SelectMenu.htm" label="Select Menu"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Slider.htm" label="Slider"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Swipe.htm" label="Swipe"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_TabBar.htm" label="Tab Bar"></topic>
-							<topic href="html/ui_fw_api/mobile/ns_widget_mobile_Tokentextarea.htm" label="Token Text Area"></topic>
-						</topic>
-
-						<topic href="html/ui_fw_api/mobile/util/util.htm" label="Utilities">
-							<topic href="html/ui_fw_api/mobile/util/ns_util_DOM.htm" label="DOM Utility"></topic>
-							<topic href="html/ui_fw_api/mobile/util/ns_util_selectors.htm" label="Selectors Utility"></topic>
 						</topic>
 					</topic>
 				</topic>
@@ -39532,79 +38670,6 @@
 						</topic>
 					</topic>
 
-				</topic>
-
-				<topic label="Tizen Web UI Framework Reference" href="html/ui_fw_api/wearable/index.htm">
-					<topic label="Wearable Web" href="html/ui_fw_api/wearable/index.htm" invisible-node="true">
-						<topic href="html/ui_fw_api/wearable/exit_application/exit_application.htm" label="How to Exit Application"></topic>
-						<topic href="html/ui_fw_api/wearable/page/app_page_layout.htm" label="Application Page Layout">
-							<topic href="html/ui_fw_api/wearable/page/multi_page.htm" label="Multi-page Layout"></topic>
-							<topic href="html/ui_fw_api/wearable/page/page_change.htm" label="Changing Pages"></topic>
-							<topic href="html/ui_fw_api/wearable/page/page_event.htm" label="Handling Page Events"></topic>
-						</topic>
-						<topic href="html/ui_fw_api/wearable/widgets/widget_reference.htm" label="UI Component Reference">
-							<topic href="html/ui_fw_api/wearable/widgets/widget_button.htm" label="Button">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_checkbox.htm" label="Checkbox and Radio Button">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_circleprogressbar.htm" label="Circle ProgressBar">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_drawer.htm" label="Drawer">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_indexscrollbar.htm" label="Index Scroll Bar">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_list.htm" label="List">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_marquee.htm" label="Marquee">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_pageindicator.htm" label="Page Indicator">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_popup.htm" label="Popup">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_processing.htm" label="Processing">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_progress.htm" label="Progress">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_section_changer.htm" label="Section Changer">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_selector.htm" label="Selector">
-							</topic>
-							<topic href="html/ui_fw_api/wearablee/widgets/widget_slider.htm" label="Slider">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_snaplistview.htm" label="SnapListview">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_swipelist.htm" label="Swipe List">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_toggleswitch.htm" label="Toggle Switch">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_viewSwitcher.htm" label="ViewSwitcher">
-							</topic>
-							<topic href="html/ui_fw_api/wearable/widgets/widget_virtuallist.htm" label="Virtual List">
-							</topic>
-						</topic>
-						<topic href="html/ui_fw_api/wearable/event/events.htm" label="Events">
-							<topic href="html/ui_fw_api/wearable/event/gesture.htm" label="Gesture Events">
-								<topic href="html/ui_fw_api/wearable/event/drag.htm" label="Drag Event"></topic>
-								<topic href="html/ui_fw_api/wearable/event/swipe.htm" label="Swipe Event"></topic>
-							</topic>
-						</topic>
-						<topic href="html/ui_fw_api/wearable/helper/helper.htm" label="Helper">
-							<topic href="html/ui_fw_api/wearable/helper/helper_listmarqueestyle.htm" label="ListMarqueeStyle">
-							</topic>
-						</topic>
-						<topic href="html/ui_fw_api/wearable/circular_support/circular_support.htm" label="Support for Circular UI">
-							<topic href="html/ui_fw_api/wearable/circular_support/components/scrollbar.htm" label="How to support Circular Scroll Bar"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/rotaryevent.htm" label="How to handle Rotary Event"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/snaplist.htm" label="How to support List"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/progress.htm" label="How to support Circle Progress Bar"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/indexscroll.htm" label="How to support Index Scroll Bar"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/processing.htm" label="How to support Processing"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/moreoptions.htm" label="How to support More options"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/footerbutton.htm" label="How to support Footer Button"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/thumbnail.htm" label="How to support Thumbnail"></topic>
-							<topic href="html/ui_fw_api/wearable/circular_support/components/popup.htm" label="How to support Popup"></topic>
-						</topic>
-					</topic>
 				</topic>
 
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_w.html">
