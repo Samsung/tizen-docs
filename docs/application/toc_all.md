@@ -235,7 +235,6 @@
 ###### [CollectionView](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView.md)
 ###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
 ###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
-###### [LottieAnimationView](/application/dotnet/guides/user-interface/nui/nui-components/LottieAnimationView.md)
 ###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/Notification.md)
 ###### [Menu](/application/dotnet/guides/user-interface/nui/nui-components/Menu.md)
 ###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/Pagination.md)
@@ -851,11 +850,6 @@
 ##### [Interactive UI](/application/native/guides/graphics/interactive-ui.md)
 ##### [Advanced Rendering](/application/native/guides/graphics/adv-rendering.md)
 ##### [Advanced Performance](/application/native/guides/graphics/adv-performance.md)
-
-#### Simple DirectMedia Layer (SDL)
-##### [Overview](/application/native/guides/graphics/sdl.md)
-##### [SDL Graphics with Vulkan&reg;](/application/native/guides/graphics/vulkan.md)
-##### [SDL Graphics with OpenGL&reg; ES](/application/native/guides/graphics/sdl-opengles.md)
 
 ### Notifications and Content Sharing
 #### [Overview](/application/native/guides/notification/overview.md)
