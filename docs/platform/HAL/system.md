@@ -33,3 +33,38 @@ SENSOR_GEOMAGNETIC_ORIENTATION|Rotation of device(Azimuth, Pitch, Roll)|SENSOR_G
 SENSOR_HRM_BATCH|Batch data of Heart rate monitor<br>(provide datas saved in buffer)|Physical Sensor
 SENSOR_HRM_LED_GREEN_BATCH|Batch data of Green LED light for HRM<br>(provide datas saved in buffer)|Physical Sensor
 SENSOR_HUMAN_PEDOMETER|Pedometer(steps)|SENSOR_ACCELEROMETER
+
+
+## Power Resource Management
+It includes PASS (system daemon), hal-api-power, and hal-backend-power.
+
+PASS (Power-Aware System Service) is a daemon that handles devices such as CPU, memory bus, GPU, memory, and battery.
+Hal-api-power is an interface to connect pass and hal-backend-power.
+Hal-backend-power requests the control of the device to Linux kernel.
+
+**Figure: Power Resource Management HAL hierarchy**
+
+<img src="media/tizen-hal-power.png" width=600/>
+
+
+These are supported HAL API Device modules
+- CPU
+- Memory Bus
+- GPU
+- Memory
+- Battery
+
+### CPU
+The CPU HAL module provides management of CPU frequency, thermal, and CPU hotplug. 
+
+### Memory Bus
+The memory bus module provides management of Device Frequency Scaling (devfreq) and thermal of memory bus.  
+
+### GPU
+The GPU module provides management of GPU frequency and thermal.
+
+### Memory
+The Memory module provides management of physical memory size during a page fault.
+
+### Battery
+The battery module provides management of battery such as thermal, charging status, and charging current.
