@@ -15,7 +15,8 @@
 ###### [Configure the Package Manager](/application/tizen-studio/common-tools/pkgmgr-advanced-configuration.md)
 
 ### Native Application Development
-#### [Overview](/application/vstools/getting-started/creating-application-projects.md)
+<!-- #### [Overview](/application/vstools/getting-started/creating-application-projects.md) -->
+#### [Overview](/application/vstools/getting-started/vs-native-development-activity-tools.md)
 
 #### Managing Project
 ##### [Create App](/application/vstools/Tizen/native.md)
