@@ -18,7 +18,12 @@ The benefit of using the latest Tizen 3.0 platform is the software, which provid
 - **Voice Touch**  
 Voice Touch, one of the new Smart TV "touch" capabilities, provides the user with a more intuitive way to use the voice recognition function. When the user wants to run an app on the TV, they can say the title out loud on their remote control. The icon is then activated and the application launches without navigation or other actions.
 - **Making applications with Tizen .NET**  
-The .NET framework provides a robust and efficient environment for building rich user interfaces and robust back-end logic, leveraging its extensive libraries and tools.
+Tizen .NET enables TV application development using C# and the .NET ecosystem, providing:
+  - Access to TV-specific APIs through TizenFX
+  - High-performance application development
+  - Cross-platform capabilities with .NET Standard
+  - Robust memory management and security features
+Developers can leverage these capabilities to build efficient TV applications that integrate with Smart TV features like Voice Touch and Samsung Checkout.
 
 
 ## Develop applications for Tizen TV
