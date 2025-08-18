@@ -1,6 +1,6 @@
 # Tizen Development Activity and Native Application Tools
 
-"Visual Studio Code for Tizen" provides  comprehensive development tools to help you through the overall dotnet development process phases and you can perform all the development activities from the application project creation to testing.
+"Visual Studio Code for Tizen" provides  comprehensive development tools to help you through the overall native development process phases and you can perform all the development activities from the application project creation to testing.
 
 ## Managing Projects
 <!-- 
