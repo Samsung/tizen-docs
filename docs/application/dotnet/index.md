@@ -73,13 +73,5 @@ Discover a rich set of interfaces allowing you to build compelling TV, mobile, a
             </div>
         </a>
     </div>
-    <div class="col col-6 col-xl-3">
-        <a href="https://github.com/TizenAPI/ElottieSharp" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">ElottieSharp</p>
-                <p class="card-text">A native Lottie animation view for Tizen .NET</p>
-            </div>
-        </a>
-    </div>
 </div>
 

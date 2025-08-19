@@ -17,10 +17,6 @@ You can use the following graphics features in your native applications:
 
   You can create OpenGL&reg; ES applications in Tizen with the EGL&trade; layer. Tizen native applications can use OpenGL&reg; ES not only for creating a 3D scene but also for a 2D scene that requires fast interaction. OpenGL&reg; ES is also good for improving performance and reducing power consumption when the native application performs computation-intensive tasks that can be run in parallel.
 
-- [Simple DirectMedia Layer (SDL)](sdl.md)
-
-  Simple DirectMedia Layer (SDL) is a cross-platform development library designed to provide a low-level hardware abstraction layer to computer multimedia hardware components. You can get high-efficiency access to graphics and computing on modern GPUs with Vulkan&reg; or OpenGL&reg; ES. You can use cutting-edge 3D programming tools to create high-quality games and real-time graphics in your applications.
-
 ## Related Information
 - Dependencies
   - Since Tizen 2.4
