@@ -11,8 +11,6 @@ Release date: Oct. 27, 2020
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20201008.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20201008.1/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20201020.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20201020.1/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 
