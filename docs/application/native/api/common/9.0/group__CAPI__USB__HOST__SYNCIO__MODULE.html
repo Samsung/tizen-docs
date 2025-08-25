@@ -107,7 +107,7 @@ Overview</h2>
  <a class="code" href="group__CAPI__USB__HOST__CONFIG__MODULE.html#ga183724c27bd08b08a57a24a129f84938" title="Gets a USB interface from given USB configuration.">usb_host_config_get_interface</a>(cfg, interface_number, &amp;iface);
  <a class="code" href="group__CAPI__USB__HOST__INTERFACE__MODULE.html#ga62d1e6594f4a95c6936178291501feb6" title="Gets an endpoint via index from given USB interface.">usb_host_interface_get_endpoint</a>(iface, ep_number, &amp;ep);
 
- ret = <a class="code" href="group__CAPI__USB__HOST__SYNCIO__MODULE.html#gac6a130c38d76f525cbcb2ef8d24fdd17" title="Performs unidirectional transfer on given endpoint.">usb_host_transfer</a>(ep, data, length, &amp;transfered, 0);
+ ret = <a class="code" href="group__CAPI__USB__HOST__SYNCIO__MODULE.html#gac6a130c38d76f525cbcb2ef8d24fdd17" title="Performs unidirectional transfer on given endpoint.">usb_host_transfer</a>(ep, data, length, &amp;transferred, 0);
  <span class="keywordflow">if</span> (ret &lt; 0)
      error();
 </pre></div><p>In this example data buffer contains data received from device. Value of transfered is set to the number of received bytes.</p>
