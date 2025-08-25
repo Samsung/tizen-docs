@@ -158,7 +158,7 @@ Isochronous transfers</h2>
 <div class="fragment"><pre class="fragment"> ret = <a class="code" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#gafe451bdc0f6519408c686bd0ea4e3465" title="Prepares an asynchronous USB isochronous transfer and provides a handle to it.">usb_host_create_isochronous_transfer</a>(ep, transfer_callback, data, length, num_iso_packets, user_data, timeout, &amp;transfer);
 </pre></div><p>Before submitting the transfer you must setup isochronous packets lengths (and data, if making out transfer). </p>
 <div class="fragment"><pre class="fragment"> <span class="keywordflow">for</span> (i = 0; i &lt; num_iso_packets; ++i) {
-    ret = <a class="code" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#gae9d6ee400258cfd6eb7f5b4e653b9dfe" title="Sets an isochronous individual packet length for a transfer handle.">usb_host_transfer_set_iso_packet_length</a>(transfer, i, packet_lenght);
+    ret = <a class="code" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#gae9d6ee400258cfd6eb7f5b4e653b9dfe" title="Sets an isochronous individual packet length for a transfer handle.">usb_host_transfer_set_iso_packet_length</a>(transfer, i, packet_length);
     <span class="comment">//...</span>
 
     ret = <a class="code" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga575ca11e405128a328880d34c5a685eb" title="Gets data buffer of isochronous packet from a transfer handle.">usb_host_transfer_get_iso_packet_data</a>(transfer, i, &amp;data, &amp;len);
@@ -170,7 +170,7 @@ Isochronous transfers</h2>
 <h2><a class="anchor" id="CAPI_USB_HOST_ASYNC_MODULE_CONTROL"></a>
 Control transfers</h2>
 <p>You can make asynchronous control transfers as well. They use the same data type as other asynchronous transfers (<a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga1f956271e363bdb4c9bd0550c26499d0" title="An opaque handle representing an asynchronous USB transfer.">usb_host_transfer_h</a>) and can be handled in similar way.</p>
-<p>A control transfer need specific format of data in buffer, i.e. first 8 bytes of buffer need to contain a setup packet. You can find more informations about setup packets in usb protocol specification. This API provides functions helping with filling the setup packet.</p>
+<p>A control transfer needs specific format of data in buffer, i.e. first 8 bytes of buffer need to contain a setup packet. You can find more information about setup packets in usb protocol specification. This API provides functions helping with filling the setup packet.</p>
 <div class="fragment"><pre class="fragment"> <span class="comment">// Create a transfer handle</span>
  ret = <a class="code" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#gaf75e57be83cf84fc7e5b61135bf39fc1" title="Prepares an asynchronous USB control transfer and provides a handle to it.">usb_host_create_control_transfer</a>(dev, transfer_callback, data, length, user_data, timeout, &amp;transfer);
  <span class="keywordflow">if</span> (ret &lt; 0)
