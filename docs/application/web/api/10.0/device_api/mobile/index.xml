@@ -90,9 +90,9 @@
 						<topic href="10.0/device_api/mobile/tizen/cordova/networkInformation.html" label="Network Information"/>
 					</topic>
 					<topic href="10.0/device_api/mobile/index.html#Deprecated API" label="Deprecated API">
-						<topic href="10.0/device_api/mobile/tizen/messaging.html" label="Messaging" deprecatedSince="9.0"/>
+						<topic href="10.0/device_api/mobile/tizen/messaging.html" label="Messaging" deprecatedSince="8.0"/>
 						<topic href="10.0/device_api/mobile/tizen/libteec.html" label="LibTeec" deprecatedSince="6.5"/>
-						<topic href="10.0/device_api/mobile/tizen/ppm.html" label="PrivacyPrivilege" deprecatedSince="9.0"/>
+						<topic href="10.0/device_api/mobile/tizen/ppm.html" label="PrivacyPrivilege" deprecatedSince="8.0"/>
 					</topic>
 				</topic>
 			</topic>
