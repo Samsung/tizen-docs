@@ -8,7 +8,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 6.0 M1 source codes are under **tizen_6.0** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 6.0 M1 source codes are under **tizen_6.0** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/)
@@ -705,4 +705,3 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 
 - ML/Inference pipeline C-API and .NET API
   - If APPSRC is used with DO NOT FREE mode, an additional memcpy per input frame has been added as a workaround. This work around is expect to be removed with a performance fix in the later releases.
-

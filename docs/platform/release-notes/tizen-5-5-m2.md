@@ -7,7 +7,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 5.5 M2 source codes are under **tizen_5.5** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 5.5 M2 source codes are under **tizen_5.5** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20191011.2/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20191011.2/)

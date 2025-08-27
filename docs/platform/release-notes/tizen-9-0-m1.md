@@ -4,7 +4,7 @@ Release date: May 31, 2024
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 9.0 M1 source codes are under **tizen** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 9.0 M1 source codes are under **tizen** branch.)
 
 - Getting binaries and images
   - Base: https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20240516.070242/
