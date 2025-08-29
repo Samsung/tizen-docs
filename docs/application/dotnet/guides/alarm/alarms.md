@@ -50,6 +50,8 @@ To enable your application to use the alarm functionality, follow these steps:
     using Tizen.Applications.Notifications;
     ```
 
+4. To set alarm for service application, the alarm registered with [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) needs to have a [background category](../../guides/applications/efl-ui-app.md#describing-the-background-category).
+
 
 <a name="scenario_1"></a>
 ## Set an alarm with a specific delay
