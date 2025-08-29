@@ -7,7 +7,7 @@ Tizen 3.0 public M3 has been released, mainly containing security fixes.
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 3.0 M3 source codes are under **tizen_3.0_{profile}** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 3.0 M3 source codes are under **tizen_3.0_{profile}** branch.)
 
 - [Getting binaries and images](http://download.tizen.org/releases/milestone/tizen/3.0.m3/)
 

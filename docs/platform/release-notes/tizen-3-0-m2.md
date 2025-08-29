@@ -7,7 +7,7 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 3.0 M2 source codes are under **tizen_3.0_m2** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 3.0 M2 source codes are under **tizen_3.0_m2** branch.)
 
 - [Getting binaries and images](http://download.tizen.org/releases/milestone/tizen/3.0.m2)
 
@@ -852,4 +852,3 @@ As a common feature, multi-user support has been added.
   - gcc Version: 4.9.2 (Linaro '15 Jun version)
   - glibc Version: 2.20 (Linaro '14 Nov version)
   - binutils Version: 2.25 (Linaro '15 Oct version)
-

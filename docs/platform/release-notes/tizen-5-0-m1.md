@@ -7,7 +7,7 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/)(Tizen 5.0 M1 source codes are under **tizen_5.0** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/)(Tizen 5.0 M1 source codes are under **tizen_5.0** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180518.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180518.1/)

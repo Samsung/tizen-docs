@@ -7,7 +7,7 @@ The Tizen 2.2 release provides developers with the Tizen kernel, device drivers,
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 2.2 source codes are under **tizen_2.2** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 2.2 source codes are under **tizen_2.2** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.2/tizen-2.2)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.2_Image_to_Reference_Device)
 

@@ -8,7 +8,7 @@ The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD 
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 5.5 M2 source codes are under **tizen_5.5** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 5.5 M2 source codes are under **tizen_5.5** branch.)
 
 - Getting binaries and images
 

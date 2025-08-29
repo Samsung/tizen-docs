@@ -7,7 +7,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 2.3 source codes are under **tizen_2.3** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 2.3 source codes are under **tizen_2.3** branch.)
 
 - [Getting binaries and images](http://download.tizen.org/releases/2.3)
 

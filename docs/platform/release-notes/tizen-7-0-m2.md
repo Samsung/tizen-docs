@@ -4,7 +4,7 @@ Release date: Oct. 31, 2022
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 7.0 M2 source codes are under **tizen_7.0** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/it/) (Tizen 7.0 M2 source codes are under **tizen_7.0** branch.)
 
 
 - Getting binaries and images
