@@ -17,8 +17,6 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
   - Mobile: [http://download.tizen.org/releases/milestone/tizen/3.0.m2/3.0.m2-mobile/tizen-3.0.m2-mobile_20170111.1/](http://download.tizen.org/releases/milestone/tizen/3.0.m2/3.0.m2-mobile/tizen-3.0.m2-mobile_20170111.1/)
   - Wearable: [http://download.tizen.org/releases/milestone/tizen/3.0.m2/3.0.m2-wearable/tizen-3.0.m2-wearable_20170111.1/](http://download.tizen.org/releases/milestone/tizen/3.0.m2/3.0.m2-wearable/tizen-3.0.m2-wearable_20170111.1/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

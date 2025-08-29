@@ -13,8 +13,6 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20191011.2/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20191011.2/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20191024.2/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20191024.2/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

@@ -15,8 +15,6 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - Wearable: [http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20171027.1/images/standard/wearable-wayland-armv7l-tw2/](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20171027.1/images/standard/wearable-wayland-armv7l-tw2/)
   - TV: [http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20171027.1/images/standard/tv-wayland-armv7l-odroidu3/](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20171027.1/images/standard/tv-wayland-armv7l-odroidu3/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

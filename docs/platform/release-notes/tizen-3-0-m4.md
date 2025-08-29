@@ -14,8 +14,6 @@ Tizen 3.0 public M4 has been released, mainly containing security fixes.
   - Mobile: [http://download.tizen.org/releases/milestone/tizen/3.0-mobile/tizen-3.0-mobile_20171119.1/](http://download.tizen.org/releases/milestone/tizen/3.0-mobile/tizen-3.0-mobile_20171119.1/)
   - Wearable: [http://download.tizen.org/releases/milestone/tizen/3.0-wearable/tizen-3.0-wearable_20171121.1/](http://download.tizen.org/releases/milestone/tizen/3.0-wearable/tizen-3.0-wearable_20171121.1/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

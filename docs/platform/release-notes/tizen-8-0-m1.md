@@ -10,7 +10,7 @@ Release date: May 31, 2023
   - Base: [http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20230515.082838/](http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20230515.082838/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20230524.002652/](http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20230524.002652/)
 
-- [How to flash to a device](../developing/flashing.md)
+- [How to flash to a device](../developing/flashing-rpi.md)
 
 
 ## Release notes

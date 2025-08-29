@@ -30,7 +30,6 @@
 ## [Contributing Code to Tizen](/platform/developing/contributing.md)
 ## [Creating Tizen Images with MIC](/platform/developing/creating.md)
 ## [Creating Tizen Images with TIC](/platform/developing/creating-tic.md)
-## [Flashing an Image to Device](/platform/developing/flashing.md)
 ## [Flashing an Image to RPI](/platform/developing/flashing-rpi.md)
 ## [Development Tips](/platform/developing/tips.md)
 
@@ -45,7 +44,6 @@
 ## [Location](/platform/porting/location.md)
 ## [Telephony](/platform/porting/telephony.md)
 ## [Application](/platform/porting/application.md)
-## [Legacy Porting](/platform/porting/legacy-porting.md)
 
 # Reference
 ## [Gerrit](/platform/reference/gerrit-usage.md)

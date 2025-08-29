@@ -11,8 +11,6 @@ Release date: May 31, 2021
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20210503.2/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20210503.2/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20210513.3/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20210513.3/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

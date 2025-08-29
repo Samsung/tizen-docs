@@ -13,8 +13,6 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180928.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180928.1/)
   - Mobile(Fridge) / Wearable / TV /  IOT : [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

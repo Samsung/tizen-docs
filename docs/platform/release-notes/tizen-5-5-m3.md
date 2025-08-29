@@ -15,8 +15,6 @@ The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD 
   - Base: [http://download.tizen.org/releases/milestone/tizen/5.5-base/tizen-5.5-base_20200621.1/](http://download.tizen.org/releases/milestone/tizen/5.5-base/tizen-5.5-base_20200621.1/)
   - Profile(Wearable): [http://download.tizen.org/releases/milestone/tizen/5.5-unified/tizen-5.5-unified_20200812.1/](http://download.tizen.org/releases/milestone/tizen/5.5-unified/tizen-5.5-unified_20200812.1/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

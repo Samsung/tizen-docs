@@ -14,8 +14,6 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20200521.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20200521.1/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 
