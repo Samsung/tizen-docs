@@ -1,4 +1,4 @@
-# Window System Hal Layer
+# Window System's HAL Layer
 
 ## Overview
 The Tizen Window System Hardware Abstraction Layer (HAL) is a critical component that bridges the gap between the high-level window system software and the underlying graphics and display hardware. Its primary purpose is to provide a standardized and consistent interface for window system operations, enabling Tizen to function across a wide variety of hardware configurations with different chipsets and GPUs.
