@@ -1,5 +1,7 @@
 # Network Service Discovery
 
+> [!NOTE]
+> Since Tizen 10.0, all SSDP related APIs are deprecated and will be removed after two releases without any alternatives.
 
 You can use 2 different protocols to perform network service discoveries to announce local services and search for remote services on a network, DNS-SD (DNS Service Discovery) and SSDP (Simple Service Discovery Protocol).
 
