@@ -12,14 +12,14 @@ This section explains the Bluetooth architecture on the Tizen platform and how T
 
 ![Tizen Bluetooth architecture](media/800px-bluetooth.png)
 
-The Bluetooth framework provides a dialogue for the user to control the BlueZ, ObexD, and PulseAudio daemons. Bluetooth provides a standard interface between the Bluetooth chip and AP, called the HCI (Host Controller Interface). HCI can be implemented on USB, UART, and SDIO, but for the mobile environment, UART is the most common. HCI activation can differ depending on the chip vendor. The vendor provides the HCI configuration and the initial scripts. For example, Broadcom and Spreadtrum provide firmware and a loading tool. Tizen supports Bluetooth version 5.0, and the GATT, FTP, OPP, MAP, PBAP, A2DP, AVRCP, HSP/HFP, RFCOMM, HID, HDP, and PAN profiles.
+The Bluetooth framework provides a dialogue for the user to control the BlueZ and ObexD daemons. Bluetooth provides a standard interface between the Bluetooth chip and AP, called the HCI (Host Controller Interface). HCI can be implemented on USB, UART, and SDIO, but for the mobile environment, UART is the most common. HCI activation can differ depending on the chip vendor. The vendor provides the HCI configuration and the initial scripts. For example, Broadcom and Spreadtrum provide firmware and a loading tool. Tizen supports Bluetooth version 5.0, and the GATT, FTP, OPP, MAP, PBAP, A2DP, AVRCP, HSP/HFP, RFCOMM, HID, HDP, and PAN profiles.
 
 The Tizen Bluetooth framework is based on the open source BlueZ project. BlueZ provides the DBUS API and based on it, Tizen Bluetooth framework provides the C Language API. Using the Tizen Bluetooth framework is recommended.
 
 The following components are necessary for Bluetooth:
 
 - Application
-  - User dialogue that controls the BlueZ, ObexD, and PulseAudio daemons
+  - User dialogue that controls the BlueZ and ObexD daemons
 - ObexD
   - Open source component
   - Object exchange daemon
@@ -38,7 +38,7 @@ The following components are necessary for Bluetooth:
 - Bluetooth firmware loading module
   - Depending on the environment, it loads the Bluetooth firmware to the Bluetooth chip
   - Tizen and the chipset vendor need to implement this together
-  - Package: `bluetooth-tools`
+  - Package: `bluetooth-firmware-bcm`
 
 ### Porting the HAL Backend interface
 
@@ -58,7 +58,7 @@ The process is as follows:
 
 ### References
 
-Open source component version: BlueZ 5.79
+Open source component : BlueZ
 
 For more information, see [http://www.bluez.org/](http://www.bluez.org/).
 
