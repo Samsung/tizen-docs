@@ -15,7 +15,8 @@
 ###### [Configure the Package Manager](/application/tizen-studio/common-tools/pkgmgr-advanced-configuration.md)
 
 ### Web Application Development
-#### [Overview](/application/vstools/getting-started/creating-application-projects.md)
+<!-- #### [Overview](/application/vstools/getting-started/creating-application-projects.md) -->
+#### [Overview](/application/vstools/getting-started/vs-web-development-activity-tools.md)
 
 #### Managing Project
 ##### [Create App](/application/vstools/Tizen/web.md)
@@ -59,4 +60,4 @@
 ##### [Hybrid Application Development](/application/vstools/Tizen/hybrid.md)
 ##### [TizenNUIGadget RPK Development](/application/vstools/Tizen/nuigadget-rpk.md)
 
-### [Tool Index](/application/sdktool_index.md)
+## [Tool Index](/application/sdktool_index.md)

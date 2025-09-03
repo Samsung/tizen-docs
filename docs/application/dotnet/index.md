@@ -36,14 +36,6 @@ The guides library introduce various features of .NET applications. The features
 
 <div class="row cards-container-infra">
     <div class="col col-6 col-xl-3">
-        <a href="guides/user-interface/wcircularui/index.md" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">Tizen Wearable CircularUI</p>
-                <p class="card-text">Learn how to create Tizen Wearable Xamarin Forms application more easily and efficiently.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-6 col-xl-3">
         <a href="guides/sensors/device-sensors.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">Device Sensors</p>
@@ -78,30 +70,6 @@ Discover a rich set of interfaces allowing you to build compelling TV, mobile, a
             <div class="card-body">
                 <p class="h3 card-title">TizenFX</p>
                 <p class="card-text">C# Device APIs for Tizen.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-6 col-xl-3">
-        <a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarin-forms" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">Xamarin Forms</p>
-                <p class="card-text">Provides APIs for creating user interfaces that can be shared across platforms.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-6 col-xl-3">
-        <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">Tizen Wearable CircularUI</p>
-                <p class="card-text">Set of extension APIs of Xamarin Forms.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-6 col-xl-3">
-        <a href="https://github.com/TizenAPI/ElottieSharp" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">ElottieSharp</p>
-                <p class="card-text">A native Lottie animation view for Tizen .NET</p>
             </div>
         </a>
     </div>

@@ -15,7 +15,8 @@
 ###### [Configure the Package Manager](/application/tizen-studio/common-tools/pkgmgr-advanced-configuration.md)
 
 ### Native Application Development
-#### [Overview](/application/vstools/getting-started/creating-application-projects.md)
+<!-- #### [Overview](/application/vstools/getting-started/creating-application-projects.md) -->
+#### [Overview](/application/vstools/getting-started/vs-native-development-activity-tools.md)
 
 #### Managing Project
 ##### [Create App](/application/vstools/Tizen/native.md)
@@ -63,4 +64,4 @@
 ##### [Hybrid Application Development](/application/vstools/Tizen/hybrid.md)
 ##### [TizenNUIGadget RPK Development](/application/vstools/Tizen/nuigadget-rpk.md)
 
-### [Tool Index](/application/sdktool_index.md)
+## [Tool Index](/application/sdktool_index.md)

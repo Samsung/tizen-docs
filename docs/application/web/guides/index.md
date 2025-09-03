@@ -177,17 +177,6 @@ You can manage the device filesystem, individual files, and various events, acce
 - API Reference: [Cordova](../api/latest/device_api/mobile/index.html#Cordova)
 </td>
 </tr>
-<tr>
-<td>Web UI Framework</td>
-<td>These APIs contain classes and interfaces that enable you to manage the Tizen Advanced UI (TAU) features.<br>
-You can create and manage various kinds of UI components.
-</td>
-<td>
-
-- Guides: [Tizen Advanced UI](tau/tau.md)
-- API Reference: [Advanced UI Framework](../api/latest/ui_fw_api/ui_fw_api_cover.htm)
-</td>
-</tr>
 
 </table>
 
@@ -346,17 +335,7 @@ You can manage the device filesystem, individual files, and various events, acce
 - API Reference: [Cordova](../api/latest/device_api/wearable/index.html#Cordova)
 </td>
 </tr>
-<tr>
-<td>Web UI Framework</td>
-<td>These APIs contain classes and interfaces that enable you to manage the Tizen Advanced UI (TAU) features.<br>
-You can create and manage various kinds of UI components.
-</td>
-<td>
 
-- Guides: [Tizen Advanced UI](tau/tau.md)
-- API Reference: [Advanced UI Framework](../api/latest/ui_fw_api/ui_fw_api_cover.htm)
-</td>
-</tr>
 </table>
 
 The following table lists the features provided by the [TV Web Device API Reference](../api/latest/device_api/tv/index.html).

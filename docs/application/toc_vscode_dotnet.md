@@ -68,4 +68,4 @@
 ##### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
 ##### [Tizen VSCode Command](/application/vscode-ext/Tizen/command.md)
 
-### [Tool Index](/application/sdktool_index.md)
+## [Tool Index](/application/sdktool_index.md)

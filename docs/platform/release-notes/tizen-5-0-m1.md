@@ -7,7 +7,7 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/)(Tizen 5.0 M1 source codes are under **tizen_5.0** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/)(Tizen 5.0 M1 source codes are under **tizen_5.0** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180518.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180518.1/)
@@ -15,8 +15,6 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
   - Wearable: [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/wearable-wayland-armv7l-tw2/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/wearable-wayland-armv7l-tw2/)
   - TV: [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/tv-wayland-armv7l-odroidu3/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/tv-wayland-armv7l-odroidu3/)
   - IOT: [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/iot-headless-2parts-armv7l-artik530_710/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/iot-headless-2parts-armv7l-artik530_710/)
-
-- [How to flash to a device](../developing/flashing.md)
 
 
 ## Release notes

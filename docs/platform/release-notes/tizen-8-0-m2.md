@@ -4,13 +4,13 @@ Release date: Oct 31, 2023
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 8.0 M2 source codes are under **tizen_8.0** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 8.0 M2 source codes are under **tizen_8.0** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/TIZEN/Tizen-8.0/Tizen-8.0-Base/tizen-8.0-base_20231016.131614/](http://download.tizen.org/releases/milestone/TIZEN/Tizen-8.0/Tizen-8.0-Base/tizen-8.0-base_20231016.131614/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/TIZEN/Tizen-8.0/Tizen-8.0-Unified/tizen-8.0-unified_20231019.221723/](http://download.tizen.org/releases/milestone/TIZEN/Tizen-8.0/Tizen-8.0-Unified/tizen-8.0-unified_20231019.221723/)
 
-- [How to flash to a device](../developing/flashing.md)
+- [How to flash to a device](../developing/flashing-rpi.md)
 
 
 ## Release notes

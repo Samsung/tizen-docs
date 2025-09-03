@@ -7,14 +7,12 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 4.0 M2 source codes are under **tizen_4.0** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 4.0 M2 source codes are under **tizen_4.0** branch.)
 
 - [Getting binaries and images](http://download.tizen.org/releases/milestone/tizen/4.0-unified/)
   - Base: [http://download.tizen.org/releases/milestone/tizen/4.0-base/tizen-4.0-base_20180817.1/](http://download.tizen.org/releases/milestone/tizen/4.0-base/tizen-4.0-base_20180817.1/)
   - Mobile: [http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/mobile-wayland-armv7l-tm1/](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/mobile-wayland-armv7l-tm1/)
   - Wearable: [http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/wearable-wayland-armv7l-tw2/](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/wearable-wayland-armv7l-tw2/)
-
-- [How to flash to a device](../developing/flashing.md)
 
 
 ## Release notes
@@ -270,4 +268,3 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - Xamarin.Forms version 3.1.0 Service Release 2 is supported.
   - New Tizen.Wearable.CircularUI API set have been added for wearable apps.
   - New Tizen application project templates (Tizen Wearable App and Tizen Watchface App) have been added.
-

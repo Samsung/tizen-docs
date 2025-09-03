@@ -3,8 +3,6 @@
 ## Devices
 ### [TV](/platform/what-is-tizen/profiles/tv.md)
 ### [Custom](/platform/what-is-tizen/profiles/tizen_custom.md)
-### [Mobile](/platform/what-is-tizen/profiles/mobile.md)
-### [Wearable](/platform/what-is-tizen/profiles/wearable.md)
 ## Versions
 ### [Tizen 9.0](/platform/what-is-tizen/versions/tizen-9-0-m2.md)
 ### [Tizen 8.0](/platform/what-is-tizen/versions/tizen-8-0-m2.md)
@@ -32,7 +30,6 @@
 ## [Contributing Code to Tizen](/platform/developing/contributing.md)
 ## [Creating Tizen Images with MIC](/platform/developing/creating.md)
 ## [Creating Tizen Images with TIC](/platform/developing/creating-tic.md)
-## [Flashing an Image to Device](/platform/developing/flashing.md)
 ## [Flashing an Image to RPI](/platform/developing/flashing-rpi.md)
 ## [Development Tips](/platform/developing/tips.md)
 
@@ -47,7 +44,6 @@
 ## [Location](/platform/porting/location.md)
 ## [Telephony](/platform/porting/telephony.md)
 ## [Application](/platform/porting/application.md)
-## [Legacy Porting](/platform/porting/legacy-porting.md)
 
 # Reference
 ## [Gerrit](/platform/reference/gerrit-usage.md)

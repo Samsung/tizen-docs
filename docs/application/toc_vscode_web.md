@@ -19,7 +19,7 @@
 #### [Overview](/application/vscode-ext/getting-started/web-development-activity-tools.md)
 
 #### Managing Project
-##### [Create App](/application/vscode-ext/getting-started/creating-dotnet-application-projects.md)
+##### [Create App](/application/vscode-ext/getting-started/creating-web-application-projects.md)
 ##### [Web Assembly](/application/vscode-ext/tools/wasm.md)
 ##### [Tizen Project Configure](/application/vscode-ext/getting-started/configuring-tizen-project.md)
 ##### Tizen Certificate Management
@@ -62,4 +62,4 @@
 ##### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
 ##### [Tizen VSCode Command](/application/vscode-ext/Tizen/command.md)
 
-### [Tool Index](/application/sdktool_index.md)
+## [Tool Index](/application/sdktool_index.md)

@@ -21,8 +21,6 @@ Tizen is built to work on the following diverse devices:
 
 - [TV device](profiles/tv.md)
 - [Tizen custom device](profiles/tizen_custom.md)
-- [Wearable device](profiles/wearable.md)
-- [Mobile device](profiles/mobile.md)
 
 Tizen devices provide product-optimized functionality and performance.
 
