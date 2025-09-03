@@ -16,8 +16,6 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
   - TV: [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/tv-wayland-armv7l-odroidu3/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/tv-wayland-armv7l-odroidu3/)
   - IOT: [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/iot-headless-2parts-armv7l-artik530_710/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/iot-headless-2parts-armv7l-artik530_710/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

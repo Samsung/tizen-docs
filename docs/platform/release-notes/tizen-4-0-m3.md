@@ -14,8 +14,6 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - Mobile: [http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/mobile-wayland-armv7l-tm1/](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/mobile-wayland-armv7l-tm1/)
   - Wearable: [http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/wearable-wayland-armv7l-tw2/](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/wearable-wayland-armv7l-tw2/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

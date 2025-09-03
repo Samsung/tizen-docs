@@ -10,7 +10,7 @@ Release date: Oct 31, 2023
   - Base: [http://download.tizen.org/releases/milestone/TIZEN/Tizen-8.0/Tizen-8.0-Base/tizen-8.0-base_20231016.131614/](http://download.tizen.org/releases/milestone/TIZEN/Tizen-8.0/Tizen-8.0-Base/tizen-8.0-base_20231016.131614/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/TIZEN/Tizen-8.0/Tizen-8.0-Unified/tizen-8.0-unified_20231019.221723/](http://download.tizen.org/releases/milestone/TIZEN/Tizen-8.0/Tizen-8.0-Unified/tizen-8.0-unified_20231019.221723/)
 
-- [How to flash to a device](../developing/flashing.md)
+- [How to flash to a device](../developing/flashing-rpi.md)
 
 
 ## Release notes

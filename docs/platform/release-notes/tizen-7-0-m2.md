@@ -11,8 +11,6 @@ Release date: Oct. 31, 2022
   - Base: [http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20220916.024010/](http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20220916.024010/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20221017.061100/](http://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20221017.061100/)
 
-- [How to flash to a device](../developing/flashing.md)
-
 
 ## Release notes
 

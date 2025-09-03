@@ -10,7 +10,7 @@ Release date: Oct 31, 2024
   - Base: https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20240929.112120/
   - Profile (Unified): https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20241025.103727/
 
-- [How to flash an image to device](../developing/flashing.md)
+- [How to flash an image to device](../developing/flashing-rpi.md)
 
 
 ## Release notes
