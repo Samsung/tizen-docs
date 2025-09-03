@@ -60,6 +60,8 @@ To retrieve all package information for installed packages:
        bool system;
        bool removable;
        bool preload;
+       int installed_time = 0;
+       time_t first_installed_time = 0;
 
        package_info_get_package(package_info, &pkg);
        package_info_get_label(package_info, &label);
@@ -70,6 +72,8 @@ To retrieve all package information for installed packages:
        package_info_is_system_package(package_info, &system);
        package_info_is_removable_package(package_info, &removable);
        package_info_is_preload_package(package_info, &preload);
+       package_info_get_installed_time(package_info, &installed_time);
+       package_info_get_first_installed_time(package_info, &first_installed_time);
 
        dlog_print(DLOG_INFO, TAG, "pkg \t= [%s]\n", pkg);
        dlog_print(DLOG_INFO, TAG, "label \t= [%s]\n", label);
@@ -80,6 +84,8 @@ To retrieve all package information for installed packages:
        dlog_print(DLOG_INFO, TAG, "system \t= [%d]\n", system);
        dlog_print(DLOG_INFO, TAG, "removable \t= [%d]\n", removable);
        dlog_print(DLOG_INFO, TAG, "preload \t= [%d]\n", preload);
+       dlog_print(DLOG_INFO, TAG, "installed_time \t= [%d]", installed_time);
+       dlog_print(DLOG_INFO, TAG, "first_installed_time \t= [%ld]", first_installed_time);
 
        free(pkg);
        free(label);
