@@ -113,18 +113,6 @@
             <Subnodes>
             </Subnodes>
            </Node>
-           <Node>
-            <Name>Nfc</Name>
-            <Path>group__HALAPI__HAL__NFC__MODULE.html</Path>
-            <Subnodes>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>Wi-Fi</Name>
-            <Path>group__HALAPI__HAL__WIFI__MODULE.html</Path>
-            <Subnodes>
-            </Subnodes>
-           </Node>
           </Subnodes>
          </Node>
          <Node>
@@ -179,6 +167,12 @@
             <Subnodes>
             </Subnodes>
            </Node>
+          </Subnodes>
+         </Node>
+         <Node>
+          <Name>Nfc</Name>
+          <Path>group__HALAPI__HAL__NFC__MODULE.html</Path>
+          <Subnodes>
           </Subnodes>
          </Node>
          <Node>
@@ -305,6 +299,12 @@
             <Subnodes>
             </Subnodes>
            </Node>
+          </Subnodes>
+         </Node>
+         <Node>
+          <Name>Wi-Fi</Name>
+          <Path>group__HALAPI__HAL__WIFI__MODULE.html</Path>
+          <Subnodes>
           </Subnodes>
          </Node>
          <Node>

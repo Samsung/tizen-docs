@@ -176,6 +176,8 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#a11499601b830c878068e1488f70d6d7b">get_max_chunk_size</a> )(const <a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#structhal__security__keys__context__s">hal_security_keys_context_s</a> context, size_t *chunk_size)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#a99c7e6728a92da1de6c2b08ad478f9c0">create_key_dbp</a> )(const bool destroy_old)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#ac2f22078b4f316034ce557608eb9391e">encrypt_data_dbp</a> )(const <a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#ga81f77dba0509f9319625c5207817c396">hal_security_keys_dbp_scheme_version_e</a> dbp_scheme_version, const <a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#structhal__security__keys__data__s">hal_security_keys_data_s</a> data, const <a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#structhal__security__keys__data__s">hal_security_keys_data_s</a> iv, <a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#structhal__security__keys__data__s">hal_security_keys_data_s</a> *out)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#ac5bf9b7029434a9706dc52e2b70e88ba">is_tz_supported</a> )(void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#ab6dd6f7237677ef756290dccf3087e0a">is_se_supported</a> )(void)</td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
 <a class="anchor" id="a3296fd33d8398a9ed6152bbdc46fd781"></a><!-- doxytag: member="_hal_backend_security_keys_funcs::cipher_add_aad" ref="a3296fd33d8398a9ed6152bbdc46fd781" args=")(const hal_security_keys_context_s context, const hal_security_keys_cipher_context_t cipher_context, const hal_security_keys_data_s aad)" -->
@@ -623,6 +625,34 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Import wrapped key </p>
+
+</div>
+</div>
+<a class="anchor" id="ab6dd6f7237677ef756290dccf3087e0a"></a><!-- doxytag: member="_hal_backend_security_keys_funcs::is_se_supported" ref="ab6dd6f7237677ef756290dccf3087e0a" args=")(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* <a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#ab6dd6f7237677ef756290dccf3087e0a">_hal_backend_security_keys_funcs::is_se_supported</a>)(void)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Check if SE backend is supported </p>
+
+</div>
+</div>
+<a class="anchor" id="ac5bf9b7029434a9706dc52e2b70e88ba"></a><!-- doxytag: member="_hal_backend_security_keys_funcs::is_tz_supported" ref="ac5bf9b7029434a9706dc52e2b70e88ba" args=")(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* <a class="el" href="group__HALAPI__HAL__SECURITY__KEYS__MODULE.html#ac5bf9b7029434a9706dc52e2b70e88ba">_hal_backend_security_keys_funcs::is_tz_supported</a>)(void)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Check if TZ backend is supported </p>
 
 </div>
 </div>
