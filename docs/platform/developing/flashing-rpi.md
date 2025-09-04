@@ -74,8 +74,10 @@ To flash the SD card for Raspberry Pi 4 or 5, follow the steps below:
     4.  Fusing-script for Raspberry Pi 4 (fusing script is same for RPI5):
 
         ```
-        $ wget https://git.tizen.org/cgit/platform/kernel/tizen-fusing-scripts/plain/scripts/sd_fusing.py?h=tizen --output-document=sd_fusing.py
-        $ chmod +x sd_fusing.py
+        git clone git://review.tizen.org/git/platform/kernel/tizen-fusing-scripts -b tizen
+        cd tizen-fusing-scripts
+        $ ./scripts/sd_fusing.py
+        usage: sd_fusing.py [-h] [-b BINARIES [BINARIES ...]] [--create] [--debug] [-d DEVICE] [--format] [--log-level LOG_LEVEL] [--partition-size [PARTITION_SIZES ...]] [--size SIZE] -t TARGET [--update {a,b,ab}] [--version] [--YES] [--super_delivered]
         ```
 
 2.  Flash the SD card to ensure it is ready to be used for Tizen:
@@ -140,7 +142,7 @@ To flash the SD card for Raspberry Pi 4 or 5, follow the steps below:
 
         ```
         $ sudo ./sd_fusing.py -d /dev/sdb -t rpi4 --format
-        $ sudo ./sd_fusing.py -d /dev/sdb -b tizen-unified_20241125.014042_tizen-boot-armv7l-rpi4.tar.gz tizen-unified_20241125.014042_tizen-headed-armv7l.tar.gz -t rpi4
+        $ sudo ./sd_fusing.py -d /dev/sdb -b tizen-unified_{DATE}_tizen-boot-armv7l-rpi4.tar.gz tizen-unified_{DATE}_tizen-headed-armv7l.tar.gz -t rpi4
         ```
 
 3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Set up Raspberry Pi 4](#set-up-raspberry-pi-4).

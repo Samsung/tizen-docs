@@ -2,6 +2,9 @@
 
 For information on how to set up the Tizen OS development environment, see [Setting up the Development Environment](../developing/setting-up.md).
 
+## Prerequisite
+
+If you want to contribute to Tizen, You need to register Tizen Account, see [Get started with Tizen](../get-started/open-source-project.md#get-started-with-tizen)
 
 ## U-Boot build
 
@@ -10,10 +13,7 @@ To build the Tizen U-boot for The Raspberry Pi 4 board, follow below steps:
 1. Install and setup cross-compile tools on your system if the host has a different architecture than the target (such as x86 or x86_64).
 2. Prepare the U-boot source code for Tizen from `platform/kernel/u-boot`:
    ```
-	git: https://review.tizen.org/git/?p=platform/kernel/u-boot.git
-	or
-	cgit: https://git.tizen.org/cgit/platform/kernel/u-boot
-	branch: tizen
+	git clone git://review.tizen.org/git/platform/kernel/u-boot -b tizen
 	```
 3. If your u-boot source has been used to create binaries for another architecture, start by cleaning them up.
 4. Set up the .config file for RPi4:
@@ -50,10 +50,7 @@ To build the Tizen kernel for the Raspberry Pi 4 board, follow these steps:
 1. Install and set up cross-compile tools on your system if the host has a different architecture than the target (such as x86).
 2. Prepare the kernel source code for Raspberry Pi 4 from `platform/kernel/linux-rpi`:
    ```
-   git: https://review.tizen.org/git/?p=platform/kernel/linux-rpi.git
-   or
-   cgit: https://git.tizen.org/cgit/platform/kernel/linux-rpi
-   branch: tizen
+   git clone git://review.tizen.org/git/platform/kernel/linux-rpi -b tizen
    ```
 3. If your kernel source has been used to create binaries for another architecture, start by cleaning them up.
 4. Use the build-rpi4.sh script to build Tizen Rasbperry Pi 4 kernel.
