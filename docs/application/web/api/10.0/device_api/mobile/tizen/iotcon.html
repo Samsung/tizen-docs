@@ -13,6 +13,9 @@
 <div class="brief">
  The Iotcon API provides functions for IoT connectivity.
         </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+        </p>
 <div class="description">
         <p>
 It allows to register, discover and access to resources via RESTful API.
@@ -40,85 +43,85 @@ For more information on the IoT features, see <a href="/application/web/guides/c
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>
+<li class="deprecated">
                     1.1. <a href="#ResourceType">ResourceType</a>
 </li>
-<li>
+<li class="deprecated">
                     1.2. <a href="#QosLevel">QosLevel</a>
 </li>
-<li>
+<li class="deprecated">
                     1.3. <a href="#ResponseResult">ResponseResult</a>
 </li>
-<li>
+<li class="deprecated">
                     1.4. <a href="#PresenceResponseResultType">PresenceResponseResultType</a>
 </li>
-<li>
+<li class="deprecated">
                     1.5. <a href="#PresenceTriggerType">PresenceTriggerType</a>
 </li>
-<li>
+<li class="deprecated">
                     1.6. <a href="#ConnectivityType">ConnectivityType</a>
 </li>
-<li>
+<li class="deprecated">
                     1.7. <a href="#ResourceInterface">ResourceInterface</a>
 </li>
-<li>
+<li class="deprecated">
                     1.8. <a href="#ObservePolicy">ObservePolicy</a>
 </li>
-<li>
+<li class="deprecated">
                     1.9. <a href="#ObserveType">ObserveType</a>
 </li>
 </ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
-<li>2.1. <a href="#IotconObject">IotconObject</a>
+<li class="deprecated">2.1. <a href="#IotconObject">IotconObject</a>
 </li>
-<li>2.2. <a href="#Iotcon">Iotcon</a>
+<li class="deprecated">2.2. <a href="#Iotcon">Iotcon</a>
 </li>
-<li>2.3. <a href="#Client">Client</a>
+<li class="deprecated">2.3. <a href="#Client">Client</a>
 </li>
-<li>2.4. <a href="#Server">Server</a>
+<li class="deprecated">2.4. <a href="#Server">Server</a>
 </li>
-<li>2.5. <a href="#RemoteResource">RemoteResource</a>
+<li class="deprecated">2.5. <a href="#RemoteResource">RemoteResource</a>
 </li>
-<li>2.6. <a href="#ResourcePolicy">ResourcePolicy</a>
+<li class="deprecated">2.6. <a href="#ResourcePolicy">ResourcePolicy</a>
 </li>
-<li>2.7. <a href="#Resource">Resource</a>
+<li class="deprecated">2.7. <a href="#Resource">Resource</a>
 </li>
-<li>2.8. <a href="#Representation">Representation</a>
+<li class="deprecated">2.8. <a href="#Representation">Representation</a>
 </li>
-<li>2.9. <a href="#PresenceResponse">PresenceResponse</a>
+<li class="deprecated">2.9. <a href="#PresenceResponse">PresenceResponse</a>
 </li>
-<li>2.10. <a href="#Query">Query</a>
+<li class="deprecated">2.10. <a href="#Query">Query</a>
 </li>
-<li>2.11. <a href="#IotconOption">IotconOption</a>
+<li class="deprecated">2.11. <a href="#IotconOption">IotconOption</a>
 </li>
-<li>2.12. <a href="#Request">Request</a>
+<li class="deprecated">2.12. <a href="#Request">Request</a>
 </li>
-<li>2.13. <a href="#Response">Response</a>
+<li class="deprecated">2.13. <a href="#Response">Response</a>
 </li>
-<li>2.14. <a href="#RemoteResponse">RemoteResponse</a>
+<li class="deprecated">2.14. <a href="#RemoteResponse">RemoteResponse</a>
 </li>
-<li>2.15. <a href="#DeviceInfo">DeviceInfo</a>
+<li class="deprecated">2.15. <a href="#DeviceInfo">DeviceInfo</a>
 </li>
-<li>2.16. <a href="#PlatformInfo">PlatformInfo</a>
+<li class="deprecated">2.16. <a href="#PlatformInfo">PlatformInfo</a>
 </li>
-<li>2.17. <a href="#RequestCallback">RequestCallback</a>
+<li class="deprecated">2.17. <a href="#RequestCallback">RequestCallback</a>
 </li>
-<li>2.18. <a href="#FoundResourceSuccessCallback">FoundResourceSuccessCallback</a>
+<li class="deprecated">2.18. <a href="#FoundResourceSuccessCallback">FoundResourceSuccessCallback</a>
 </li>
-<li>2.19. <a href="#PresenceEventCallback">PresenceEventCallback</a>
+<li class="deprecated">2.19. <a href="#PresenceEventCallback">PresenceEventCallback</a>
 </li>
-<li>2.20. <a href="#FoundDeviceInfoSuccessCallback">FoundDeviceInfoSuccessCallback</a>
+<li class="deprecated">2.20. <a href="#FoundDeviceInfoSuccessCallback">FoundDeviceInfoSuccessCallback</a>
 </li>
-<li>2.21. <a href="#FoundPlatformInfoSuccessCallback">FoundPlatformInfoSuccessCallback</a>
+<li class="deprecated">2.21. <a href="#FoundPlatformInfoSuccessCallback">FoundPlatformInfoSuccessCallback</a>
 </li>
-<li>2.22. <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a>
+<li class="deprecated">2.22. <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a>
 </li>
-<li>2.23. <a href="#ResourceStateChangeCallback">ResourceStateChangeCallback</a>
+<li class="deprecated">2.23. <a href="#ResourceStateChangeCallback">ResourceStateChangeCallback</a>
 </li>
-<li>2.24. <a href="#CacheUpdatedCallback">CacheUpdatedCallback</a>
+<li class="deprecated">2.24. <a href="#CacheUpdatedCallback">CacheUpdatedCallback</a>
 </li>
-<li>2.25. <a href="#GeneratedPinCallback">GeneratedPinCallback</a>
+<li class="deprecated">2.25. <a href="#GeneratedPinCallback">GeneratedPinCallback</a>
 </li>
 </ul>
 </li>
@@ -134,166 +137,19 @@ For more information on the IoT features, see <a href="/application/web/guides/c
 <th>Interface</th>
 <th>Method</th>
 </tr></thead>
-<tbody>
-<tr>
-<td><a href="#IotconObject">IotconObject</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#Iotcon">Iotcon</a></td>
-<td>
-<div>void <a href="#Iotcon::initialize">initialize</a> (DOMString filePath)</div>
-<div>
-<a href="#Client">Client</a> <a href="#Iotcon::getClient">getClient</a> ()</div>
-<div>
-<a href="#Server">Server</a> <a href="#Iotcon::getServer">getServer</a> ()</div>
-<div>long <a href="#Iotcon::getTimeout">getTimeout</a> ()</div>
-<div>void <a href="#Iotcon::setTimeout">setTimeout</a> (long timeout)</div>
-<div>long <a href="#Iotcon::addGeneratedPinListener">addGeneratedPinListener</a> (<a href="#GeneratedPinCallback">GeneratedPinCallback</a> successCallback)</div>
-<div>void <a href="#Iotcon::removeGeneratedPinListener">removeGeneratedPinListener</a> (long watchId)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#Client">Client</a></td>
-<td>
-<div>void <a href="#Client::findResource">findResource</a> (DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType, <a href="#FoundResourceSuccessCallback">FoundResourceSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>long <a href="#Client::addPresenceEventListener">addPresenceEventListener</a> (DOMString? hostAddress, <a href="#ResourceType">ResourceType</a>? resourceType, <a href="#ConnectivityType">ConnectivityType</a> connectivityType, <a href="#PresenceEventCallback">PresenceEventCallback</a> successCallback)</div>
-<div>void <a href="#Client::removePresenceEventListener">removePresenceEventListener</a> (long watchId)</div>
-<div>void <a href="#Client::findDeviceInfo">findDeviceInfo</a> (DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType, <a href="#FoundDeviceInfoSuccessCallback">FoundDeviceInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#Client::findPlatformInfo">findPlatformInfo</a> (DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType, <a href="#FoundPlatformInfoSuccessCallback">FoundPlatformInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#Server">Server</a></td>
-<td>
-<div>
-<a href="#Resource">Resource</a>[] <a href="#Server::getResources">getResources</a> ()</div>
-<div>
-<a href="#Resource">Resource</a> <a href="#Server::createResource">createResource</a> (DOMString uriPath, <a href="#ResourceType">ResourceType</a>[] resourceTypes, <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces, <a href="#RequestCallback">RequestCallback</a> listener, optional <a href="#ResourcePolicy">ResourcePolicy</a> policy)</div>
-<div>void <a href="#Server::removeResource">removeResource</a> (<a href="#Resource">Resource</a> resource)</div>
-<div>void <a href="#Server::startPresence">startPresence</a> (unsigned long timeToLive)</div>
-<div>void <a href="#Server::stopPresence">stopPresence</a> ()</div>
-</td>
-</tr>
-<tr>
-<td><a href="#RemoteResource">RemoteResource</a></td>
-<td>
-<div>void <a href="#RemoteResource::methodGet">methodGet</a> (<a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#RemoteResource::methodPut">methodPut</a> (<a href="#Representation">Representation</a> representation, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#RemoteResource::methodPost">methodPost</a> (<a href="#Representation">Representation</a> representation, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#RemoteResource::methodDelete">methodDelete</a> (<a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#RemoteResource::startObserving">startObserving</a> (<a href="#ObservePolicy">ObservePolicy</a> observePolicy, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> successCallback, optional <a href="#Query">Query</a>? query)</div>
-<div>void <a href="#RemoteResource::stopObserving">stopObserving</a> ()</div>
-<div>void <a href="#RemoteResource::startCaching">startCaching</a> (optional <a href="#CacheUpdatedCallback">CacheUpdatedCallback</a>? updatedCallback)</div>
-<div>void <a href="#RemoteResource::stopCaching">stopCaching</a> ()</div>
-<div>void <a href="#RemoteResource::setResourceStateChangeListener">setResourceStateChangeListener</a> (<a href="#ResourceStateChangeCallback">ResourceStateChangeCallback</a> successCallback)</div>
-<div>void <a href="#RemoteResource::unsetResourceStateChangeListener">unsetResourceStateChangeListener</a> ()</div>
-</td>
-</tr>
-<tr>
-<td><a href="#ResourcePolicy">ResourcePolicy</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#Resource">Resource</a></td>
-<td>
-<div>void <a href="#Resource::notify">notify</a> (<a href="#QosLevel">QosLevel</a> qosLevel, optional long[]? observerIds)</div>
-<div>void <a href="#Resource::addResourceTypes">addResourceTypes</a> (<a href="#ResourceType">ResourceType</a>[] types)</div>
-<div>void <a href="#Resource::addResourceInterface">addResourceInterface</a> (<a href="#ResourceInterface">ResourceInterface</a> interface)</div>
-<div>void <a href="#Resource::addChildResource">addChildResource</a> (<a href="#Resource">Resource</a> resource)</div>
-<div>void <a href="#Resource::removeChildResource">removeChildResource</a> (<a href="#Resource">Resource</a> resource)</div>
-<div>void <a href="#Resource::setRequestListener">setRequestListener</a> (<a href="#RequestCallback">RequestCallback</a> listener)</div>
-<div>void <a href="#Resource::unsetRequestListener">unsetRequestListener</a> ()</div>
-</td>
-</tr>
-<tr>
-<td><a href="#Representation">Representation</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#PresenceResponse">PresenceResponse</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#Query">Query</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#IotconOption">IotconOption</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#Request">Request</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#Response">Response</a></td>
-<td><div>void <a href="#Response::send">send</a> ()</div></td>
-</tr>
-<tr>
-<td><a href="#RemoteResponse">RemoteResponse</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#DeviceInfo">DeviceInfo</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#PlatformInfo">PlatformInfo</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#RequestCallback">RequestCallback</a></td>
-<td>
-<div>void <a href="#RequestCallback::onget">onget</a> (<a href="#Request">Request</a> request)</div>
-<div>void <a href="#RequestCallback::onput">onput</a> (<a href="#Request">Request</a> request)</div>
-<div>void <a href="#RequestCallback::onpost">onpost</a> (<a href="#Request">Request</a> request)</div>
-<div>void <a href="#RequestCallback::ondelete">ondelete</a> (<a href="#Request">Request</a> request)</div>
-<div>void <a href="#RequestCallback::onobserving">onobserving</a> (<a href="#Request">Request</a> request, <a href="#ObserveType">ObserveType</a> observeType, unsigned long observeId)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#FoundResourceSuccessCallback">FoundResourceSuccessCallback</a></td>
-<td><div>void <a href="#FoundResourceSuccessCallback::onfound">onfound</a> (<a href="#RemoteResource">RemoteResource</a> remoteResource)</div></td>
-</tr>
-<tr>
-<td><a href="#PresenceEventCallback">PresenceEventCallback</a></td>
-<td><div>void <a href="#PresenceEventCallback::onreceived">onreceived</a> (<a href="#PresenceResponse">PresenceResponse</a> presenceResponse)</div></td>
-</tr>
-<tr>
-<td><a href="#FoundDeviceInfoSuccessCallback">FoundDeviceInfoSuccessCallback</a></td>
-<td><div>void <a href="#FoundDeviceInfoSuccessCallback::onsuccess">onsuccess</a> (<a href="#DeviceInfo">DeviceInfo</a> info)</div></td>
-</tr>
-<tr>
-<td><a href="#FoundPlatformInfoSuccessCallback">FoundPlatformInfoSuccessCallback</a></td>
-<td><div>void <a href="#FoundPlatformInfoSuccessCallback::onsuccess">onsuccess</a> (<a href="#PlatformInfo">PlatformInfo</a> info)</div></td>
-</tr>
-<tr>
-<td><a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a></td>
-<td><div>void <a href="#RemoteResourceResponseCallback::onsuccess">onsuccess</a> (<a href="#RemoteResponse">RemoteResponse</a> response)</div></td>
-</tr>
-<tr>
-<td><a href="#ResourceStateChangeCallback">ResourceStateChangeCallback</a></td>
-<td><div>void <a href="#ResourceStateChangeCallback::onchanged">onchanged</a> (boolean isAlive)</div></td>
-</tr>
-<tr>
-<td><a href="#CacheUpdatedCallback">CacheUpdatedCallback</a></td>
-<td><div>void <a href="#CacheUpdatedCallback::onupdated">onupdated</a> (<a href="#Representation">Representation</a> representation)</div></td>
-</tr>
-<tr>
-<td><a href="#GeneratedPinCallback">GeneratedPinCallback</a></td>
-<td><div>void <a href="#GeneratedPinCallback::onsuccess">onsuccess</a> (DOMString pin)</div></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
 <div class="typedefs" id="typedefs-section">
 <h2>1. Type Definitions</h2>
-<div class="typedef" id="ResourceType">
+<div class="typedef deprecated" id="ResourceType">
 <a class="backward-compatibility-anchor" name="::Iotcon::ResourceType"></a><h3>1.1. ResourceType</h3>
 <div class="brief">
  A resource type.
           </div>
-<pre class="webidl prettyprint">  typedef DOMString ResourceType;</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  typedef DOMString ResourceType;</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -302,12 +158,15 @@ For more information on the IoT features, see <a href="/application/web/guides/c
 of lowercase alphabetic, numeric, ".", or "-" characters, and contains no white space.
           </p>
 </div>
-<div class="enum" id="QosLevel">
+<div class="enum deprecated" id="QosLevel">
 <a class="backward-compatibility-anchor" name="::Iotcon::QosLevel"></a><h3>1.2. QosLevel</h3>
 <div class="brief">
  Enumeration for quality of service level.
           </div>
-<pre class="webidl prettyprint">  enum QosLevel { "HIGH", "LOW" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum QosLevel { "HIGH", "LOW" };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -323,12 +182,15 @@ LOW - for a low quality of service. packet delivery is best effort            </
           </ul>
          </div>
 </div>
-<div class="enum" id="ResponseResult">
+<div class="enum deprecated" id="ResponseResult">
 <a class="backward-compatibility-anchor" name="::Iotcon::ResponseResult"></a><h3>1.3. ResponseResult</h3>
 <div class="brief">
  Enumeration for result of response.
           </div>
-<pre class="webidl prettyprint">  enum ResponseResult { "SUCCESS", "ERROR", "RESOURCE_CREATED", "RESOURCE_DELETED", "RESOURCE_CHANGED", "SLOW", "FORBIDDEN" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum ResponseResult { "SUCCESS", "ERROR", "RESOURCE_CREATED", "RESOURCE_DELETED", "RESOURCE_CHANGED", "SLOW", "FORBIDDEN" };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -354,12 +216,15 @@ FORBIDDEN - result of response for accessing unauthorized resource            </
           </ul>
          </div>
 </div>
-<div class="enum" id="PresenceResponseResultType">
+<div class="enum deprecated" id="PresenceResponseResultType">
 <a class="backward-compatibility-anchor" name="::Iotcon::PresenceResponseResultType"></a><h3>1.4. PresenceResponseResultType</h3>
 <div class="brief">
  Enumeration for result of presence response.
           </div>
-<pre class="webidl prettyprint">  enum PresenceResponseResultType { "OK", "STOPPED", "TIMEOUT" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum PresenceResponseResultType { "OK", "STOPPED", "TIMEOUT" };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -377,12 +242,15 @@ TIMEOUT - no response of presence for some time            </li>
           </ul>
          </div>
 </div>
-<div class="enum" id="PresenceTriggerType">
+<div class="enum deprecated" id="PresenceTriggerType">
 <a class="backward-compatibility-anchor" name="::Iotcon::PresenceTriggerType"></a><h3>1.5. PresenceTriggerType</h3>
 <div class="brief">
  Enumeration for trigger type of presence. It is set only if a PresenceResponseResultType is OK.
           </div>
-<pre class="webidl prettyprint">  enum PresenceTriggerType { "CREATED", "UPDATED", "DESTROYED" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum PresenceTriggerType { "CREATED", "UPDATED", "DESTROYED" };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -400,12 +268,15 @@ DESTROYED - resource destruction operation of server            </li>
           </ul>
          </div>
 </div>
-<div class="enum" id="ConnectivityType">
+<div class="enum deprecated" id="ConnectivityType">
 <a class="backward-compatibility-anchor" name="::Iotcon::ConnectivityType"></a><h3>1.6. ConnectivityType</h3>
 <div class="brief">
  Enumeration for connectivity types of connection.
           </div>
-<pre class="webidl prettyprint">  enum ConnectivityType { "IP", "PREFER_UDP", "PREFER_TCP", "IPV4_ONLY", "IPV6_ONLY", "ALL" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum ConnectivityType { "IP", "PREFER_UDP", "PREFER_TCP", "IPV4_ONLY", "IPV6_ONLY", "ALL" };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -429,12 +300,15 @@ ALL - All connectivities            </li>
           </ul>
          </div>
 </div>
-<div class="typedef" id="ResourceInterface">
+<div class="typedef deprecated" id="ResourceInterface">
 <a class="backward-compatibility-anchor" name="::Iotcon::ResourceInterface"></a><h3>1.7. ResourceInterface</h3>
 <div class="brief">
  Type of interfaces which can be held in a resource.
           </div>
-<pre class="webidl prettyprint">  typedef DOMString ResourceInterface;</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  typedef DOMString ResourceInterface;</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -456,12 +330,15 @@ The following values are allowed:
           </ul>
          </div>
 </div>
-<div class="enum" id="ObservePolicy">
+<div class="enum deprecated" id="ObservePolicy">
 <a class="backward-compatibility-anchor" name="::Iotcon::ObservePolicy"></a><h3>1.8. ObservePolicy</h3>
 <div class="brief">
  Enumeration for policy of observation.
           </div>
-<pre class="webidl prettyprint">  enum ObservePolicy { "IGNORE_OUT_OF_ORDER", "ACCEPT_OUT_OF_ORDER" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum ObservePolicy { "IGNORE_OUT_OF_ORDER", "ACCEPT_OUT_OF_ORDER" };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -477,12 +354,15 @@ ACCEPT_OUT_OF_ORDER - observation request for all notifications including stale 
           </ul>
          </div>
 </div>
-<div class="enum" id="ObserveType">
+<div class="enum deprecated" id="ObserveType">
 <a class="backward-compatibility-anchor" name="::Iotcon::ObserveType"></a><h3>1.9. ObserveType</h3>
 <div class="brief">
  Enumeration for type of observation.
           </div>
-<pre class="webidl prettyprint">  enum ObserveType { "NO_TYPE", "REGISTER", "DEREGISTER" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum ObserveType { "NO_TYPE", "REGISTER", "DEREGISTER" };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -503,14 +383,17 @@ DEREGISTER - action of unregistering observation            </li>
 </div>
 <div class="interfaces" id="interfaces-section">
 <h2>2. Interfaces</h2>
-<div class="interface" id="IotconObject">
+<div class="interface deprecated" id="IotconObject">
 <a class="backward-compatibility-anchor" name="::Iotcon::IotconObject"></a><h3>2.1. IotconObject</h3>
 <div class="brief">
  This interface defines what is instantiated by the <em>Tizen</em> object from the Tizen platform.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface IotconObject {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface IotconObject {
     readonly attribute <a href="#Iotcon">Iotcon</a> iotcon;
-  };</pre>
+  };</span></pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#IotconObject">IotconObject</a>;</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -533,12 +416,15 @@ There is a <em>tizen.iotcon</em> object that allows access to the Iotcon API.
 </li></ul>
 </div>
 </div>
-<div class="interface" id="Iotcon">
+<div class="interface deprecated" id="Iotcon">
 <a class="backward-compatibility-anchor" name="::Iotcon::Iotcon"></a><h3>2.2. Iotcon</h3>
 <div class="brief">
  This interface provides access to the <em>IotconObject</em> object.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface Iotcon {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface Iotcon {
     attribute DOMString deviceName;
     void initialize(DOMString filePath) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#Client">Client</a> getClient();
@@ -547,7 +433,7 @@ There is a <em>tizen.iotcon</em> object that allows access to the Iotcon API.
     void setTimeout(long timeout) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addGeneratedPinListener(<a href="#GeneratedPinCallback">GeneratedPinCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeGeneratedPinListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -864,12 +750,15 @@ watchId = tizen.iotcon.addGeneratedPinListener(RandomPinSuccess);
 </dl>
 </div>
 </div>
-<div class="interface" id="Client">
+<div class="interface deprecated" id="Client">
 <a class="backward-compatibility-anchor" name="::Iotcon::Client"></a><h3>2.3. Client</h3>
 <div class="brief">
  The Client provides API for client side.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface Client {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface Client {
     void findResource(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                       <a href="#FoundResourceSuccessCallback">FoundResourceSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addPresenceEventListener(DOMString? hostAddress, <a href="#ResourceType">ResourceType</a>? resourceType, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
@@ -880,7 +769,7 @@ watchId = tizen.iotcon.addGeneratedPinListener(RandomPinSuccess);
     void findPlatformInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                           <a href="#FoundPlatformInfoSuccessCallback">FoundPlatformInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -1406,19 +1295,22 @@ System time:
 </dl>
 </div>
 </div>
-<div class="interface" id="Server">
+<div class="interface deprecated" id="Server">
 <a class="backward-compatibility-anchor" name="::Iotcon::Server"></a><h3>2.4. Server</h3>
 <div class="brief">
  Provides functions for creating resource, registering a resource, handling request from client.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface Server {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface Server {
     <a href="#Resource">Resource</a>[] getResources() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#Resource">Resource</a> createResource(DOMString uriPath, <a href="#ResourceType">ResourceType</a>[] resourceTypes, <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces,
                             <a href="#RequestCallback">RequestCallback</a> listener, optional <a href="#ResourcePolicy">ResourcePolicy</a> policy) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeResource(<a href="#Resource">Resource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void startPresence(unsigned long timeToLive) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopPresence() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -1723,12 +1615,15 @@ server.stopPresence();
 </dl>
 </div>
 </div>
-<div class="interface" id="RemoteResource">
+<div class="interface deprecated" id="RemoteResource">
 <a class="backward-compatibility-anchor" name="::Iotcon::RemoteResource"></a><h3>2.5. RemoteResource</h3>
 <div class="brief">
  This interface provides API to manage remote resource for client side.
           </div>
-<pre class="webidl prettyprint">  interface RemoteResource {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  interface RemoteResource {
     readonly attribute DOMString uriPath;
     readonly attribute <a href="#ConnectivityType">ConnectivityType</a> connectivityType;
     readonly attribute DOMString hostAddress;
@@ -1759,7 +1654,7 @@ server.stopPresence();
     void stopCaching() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setResourceStateChangeListener(<a href="#ResourceStateChangeCallback">ResourceStateChangeCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetResourceStateChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -2753,19 +2648,22 @@ Calling this function has no effect if listener is not set.
 </dl>
 </div>
 </div>
-<div class="dictionary" id="ResourcePolicy">
+<div class="dictionary deprecated" id="ResourcePolicy">
 <a class="backward-compatibility-anchor" name="::Iotcon::ResourcePolicy"></a><h3>2.6. ResourcePolicy</h3>
 <div class="brief">
  The ResourcePolicy dictionary specifies resource attributes upon resource creation.
           </div>
-<pre class="webidl prettyprint">  dictionary ResourcePolicy {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  dictionary ResourcePolicy {
     boolean isObservable;
     boolean isDiscoverable;
     boolean isActive;
     boolean isSlow;
     boolean isSecure;
     boolean isExplicitDiscoverable;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -2858,12 +2756,15 @@ The default value is <var>false</var>            </p>
 </dl>
 </div>
 </div>
-<div class="interface" id="Resource">
+<div class="interface deprecated" id="Resource">
 <a class="backward-compatibility-anchor" name="::Iotcon::Resource"></a><h3>2.7. Resource</h3>
 <div class="brief">
  This interface provides API to manage resource for server side.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface Resource {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface Resource {
     readonly attribute DOMString uriPath;
     readonly attribute <a href="#ResourceType">ResourceType</a>[] resourceTypes;
     readonly attribute <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces;
@@ -2883,7 +2784,7 @@ The default value is <var>false</var>            </p>
     void removeChildResource(<a href="#Resource">Resource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setRequestListener(<a href="#RequestCallback">RequestCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetRequestListener();
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -3566,19 +3467,22 @@ Calling this function has no effect if listener was not set.
 </dl>
 </div>
 </div>
-<div class="interface" id="Representation">
+<div class="interface deprecated" id="Representation">
 <a class="backward-compatibility-anchor" name="::Iotcon::Representation"></a><h3>2.8. Representation</h3>
 <div class="brief">
  The Representation Interface contains information of a resource. It can be used to communicate between a client and a server.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString uriPath)]
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Constructor(DOMString uriPath)]
   interface Representation {
     attribute DOMString uriPath;
     attribute <a href="#ResourceType">ResourceType</a>[] resourceTypes;
     attribute <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces;
     attribute object? attributes;
     attribute <a href="#Representation">Representation</a>[]? children;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -3595,7 +3499,7 @@ var representation = new tizen.Representation(uriPath);
 <dt class="method" id="">
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">Representation(DOMString uriPath);</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">Representation(DOMString uriPath);</span></pre>
 </dl>
 </div>
 <div class="attributes">
@@ -3647,18 +3551,21 @@ var representation = new tizen.Representation(uriPath);
 </ul>
 </div>
 </div>
-<div class="interface" id="PresenceResponse">
+<div class="interface deprecated" id="PresenceResponse">
 <a class="backward-compatibility-anchor" name="::Iotcon::PresenceResponse"></a><h3>2.9. PresenceResponse</h3>
 <div class="brief">
  This interface provides API to manage remote resource for client side.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface PresenceResponse {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface PresenceResponse {
     readonly attribute DOMString hostAddress;
     readonly attribute <a href="#ConnectivityType">ConnectivityType</a> connectivityType;
     readonly attribute <a href="#ResourceType">ResourceType</a>? resourceType;
     readonly attribute <a href="#PresenceResponseResultType">PresenceResponseResultType</a> resultType;
     readonly attribute <a href="#PresenceTriggerType">PresenceTriggerType</a>? triggerType;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -3713,16 +3620,19 @@ var representation = new tizen.Representation(uriPath);
 </ul>
 </div>
 </div>
-<div class="dictionary" id="Query">
+<div class="dictionary deprecated" id="Query">
 <a class="backward-compatibility-anchor" name="::Iotcon::Query"></a><h3>2.10. Query</h3>
 <div class="brief">
  The Query dictionary provides a query.
           </div>
-<pre class="webidl prettyprint">  dictionary Query {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  dictionary Query {
     <a href="#ResourceType">ResourceType</a>? resourceType;
     <a href="#ResourceInterface">ResourceInterface</a>? resourceInterface;
     object? filter;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -3765,16 +3675,19 @@ query["filter"] = filter;
 </dl>
 </div>
 </div>
-<div class="interface" id="IotconOption">
+<div class="interface deprecated" id="IotconOption">
 <a class="backward-compatibility-anchor" name="::Iotcon::IotconOption"></a><h3>2.11. IotconOption</h3>
 <div class="brief">
  The IotconOption Interface provides vendor specific options of COAP packet.
           </div>
-<pre class="webidl prettyprint">  [Constructor(unsigned long id, DOMString data)]
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Constructor(unsigned long id, DOMString data)]
   interface IotconOption {
     attribute unsigned long id;
     attribute DOMString data;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -3788,7 +3701,7 @@ query["filter"] = filter;
 <dt class="method" id="">
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (unsigned long, DOMString)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">IotconOption(unsigned long id, DOMString data);</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">IotconOption(unsigned long id, DOMString data);</span></pre>
 </dl>
 </div>
 <div class="attributes">
@@ -3813,18 +3726,21 @@ query["filter"] = filter;
 </ul>
 </div>
 </div>
-<div class="interface" id="Request">
+<div class="interface deprecated" id="Request">
 <a class="backward-compatibility-anchor" name="::Iotcon::Request"></a><h3>2.12. Request</h3>
 <div class="brief">
  The Request interface represents a details from client.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface Request {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface Request {
     readonly attribute DOMString hostAddress;
     readonly attribute <a href="#ConnectivityType">ConnectivityType</a> connectivityType;
     readonly attribute <a href="#Representation">Representation</a>? representation;
     readonly attribute <a href="#IotconOption">IotconOption</a>[] options;
     readonly attribute <a href="#Query">Query</a> query;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -3883,19 +3799,22 @@ query["filter"] = filter;
 </ul>
 </div>
 </div>
-<div class="interface" id="Response">
+<div class="interface deprecated" id="Response">
 <a class="backward-compatibility-anchor" name="::Iotcon::Response"></a><h3>2.13. Response</h3>
 <div class="brief">
  The Response Interface holds response from server for specified request of client. It is server-side object, Response on client-side is hold as <a href="iotcon.html#RemoteResponse">RemoteResponse</a> object.
           </div>
-<pre class="webidl prettyprint">  [Constructor(<a href="#Request">Request</a> request)]
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Constructor(<a href="#Request">Request</a> request)]
   interface Response {
     readonly attribute <a href="#Request">Request</a> request;
     attribute <a href="#ResponseResult">ResponseResult</a> result;
     attribute <a href="#Representation">Representation</a> representation;
     attribute <a href="#IotconOption">IotconOption</a>[]? options;
     void send() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -3971,7 +3890,7 @@ catch (err)
 <dt class="method" id="">
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#Request">Request</a>)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">Response(<a href="#Request">Request</a> request);</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">Response(<a href="#Request">Request</a> request);</span></pre>
 </dl>
 </div>
 <div class="attributes">
@@ -4097,16 +4016,19 @@ response.send();
 </dl>
 </div>
 </div>
-<div class="interface" id="RemoteResponse">
+<div class="interface deprecated" id="RemoteResponse">
 <a class="backward-compatibility-anchor" name="::Iotcon::RemoteResponse"></a><h3>2.14. RemoteResponse</h3>
 <div class="brief">
  The RemoteResponse Interface holds response from server for specified request of client, this is client-side version of <a href="iotcon.html#Response">Response</a> object.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface RemoteResponse {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface RemoteResponse {
     readonly attribute <a href="#ResponseResult">ResponseResult</a> result;
     readonly attribute <a href="#Representation">Representation</a> representation;
     readonly attribute <a href="#IotconOption">IotconOption</a>[]? options;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4144,17 +4066,20 @@ response.send();
 </ul>
 </div>
 </div>
-<div class="interface" id="DeviceInfo">
+<div class="interface deprecated" id="DeviceInfo">
 <a class="backward-compatibility-anchor" name="::Iotcon::DeviceInfo"></a><h3>2.15. DeviceInfo</h3>
 <div class="brief">
  The DeviceInfo interface describes device properties.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface DeviceInfo {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface DeviceInfo {
     readonly attribute DOMString? deviceName;
     readonly attribute DOMString? specVersion;
     readonly attribute DOMString? oicDeviceId;
     readonly attribute DOMString? dataModelVersion;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4200,12 +4125,15 @@ response.send();
 </ul>
 </div>
 </div>
-<div class="interface" id="PlatformInfo">
+<div class="interface deprecated" id="PlatformInfo">
 <a class="backward-compatibility-anchor" name="::Iotcon::PlatformInfo"></a><h3>2.16. PlatformInfo</h3>
 <div class="brief">
  The PlatformInfo interface describes platform properties.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface PlatformInfo {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface PlatformInfo {
     readonly attribute DOMString? platformId;
     readonly attribute DOMString? manufacturerName;
     readonly attribute DOMString? manufacturerUrl;
@@ -4217,7 +4145,7 @@ response.send();
     readonly attribute DOMString? firmwareVersion;
     readonly attribute DOMString? supportUrl;
     readonly attribute DOMString? systemTime;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4326,18 +4254,21 @@ response.send();
 </ul>
 </div>
 </div>
-<div class="interface" id="RequestCallback">
+<div class="interface deprecated" id="RequestCallback">
 <a class="backward-compatibility-anchor" name="::Iotcon::RequestCallback"></a><h3>2.17. RequestCallback</h3>
 <div class="brief">
  The RequestCallback interface that defines the success method to be invoked when a client request is received.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface RequestCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface RequestCallback {
     void onget(<a href="#Request">Request</a> request);
     void onput(<a href="#Request">Request</a> request);
     void onpost(<a href="#Request">Request</a> request);
     void ondelete(<a href="#Request">Request</a> request);
     void onobserving(<a href="#Request">Request</a> request, <a href="#ObserveType">ObserveType</a> observeType, unsigned long observeId);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4463,15 +4394,18 @@ response.send();
 </dl>
 </div>
 </div>
-<div class="interface" id="FoundResourceSuccessCallback">
+<div class="interface deprecated" id="FoundResourceSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Iotcon::FoundResourceSuccessCallback"></a><h3>2.18. FoundResourceSuccessCallback</h3>
 <div class="brief">
  The FoundResourceSuccessCallback interface that defines the success method
 for <em>Client.findResource()</em>.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FoundResourceSuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface FoundResourceSuccessCallback {
     void onfound(<a href="#RemoteResource">RemoteResource</a> remoteResource);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4505,14 +4439,17 @@ for <em>Client.findResource()</em>.
 </dl>
 </div>
 </div>
-<div class="interface" id="PresenceEventCallback">
+<div class="interface deprecated" id="PresenceEventCallback">
 <a class="backward-compatibility-anchor" name="::Iotcon::PresenceEventCallback"></a><h3>2.19. PresenceEventCallback</h3>
 <div class="brief">
  The PresenceEventCallback interface defines the success method to be invoked when client receive presence events from the server.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PresenceEventCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface PresenceEventCallback {
     void onreceived(<a href="#PresenceResponse">PresenceResponse</a> presenceResponse);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4546,14 +4483,17 @@ for <em>Client.findResource()</em>.
 </dl>
 </div>
 </div>
-<div class="interface" id="FoundDeviceInfoSuccessCallback">
+<div class="interface deprecated" id="FoundDeviceInfoSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Iotcon::FoundDeviceInfoSuccessCallback"></a><h3>2.20. FoundDeviceInfoSuccessCallback</h3>
 <div class="brief">
  The FoundDeviceInfoSuccessCallback interface defines the success method to be invoked when getting the device information is successful.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FoundDeviceInfoSuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface FoundDeviceInfoSuccessCallback {
     void onsuccess(<a href="#DeviceInfo">DeviceInfo</a> info);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4587,14 +4527,17 @@ for <em>Client.findResource()</em>.
 </dl>
 </div>
 </div>
-<div class="interface" id="FoundPlatformInfoSuccessCallback">
+<div class="interface deprecated" id="FoundPlatformInfoSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Iotcon::FoundPlatformInfoSuccessCallback"></a><h3>2.21. FoundPlatformInfoSuccessCallback</h3>
 <div class="brief">
  The FoundPlatformInfoSuccessCallback interface defines the success method to be invoked when getting the platform information is successful.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FoundPlatformInfoSuccessCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface FoundPlatformInfoSuccessCallback {
     void onsuccess(<a href="#PlatformInfo">PlatformInfo</a> info);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4628,14 +4571,17 @@ for <em>Client.findResource()</em>.
 </dl>
 </div>
 </div>
-<div class="interface" id="RemoteResourceResponseCallback">
+<div class="interface deprecated" id="RemoteResourceResponseCallback">
 <a class="backward-compatibility-anchor" name="::Iotcon::RemoteResourceResponseCallback"></a><h3>2.22. RemoteResourceResponseCallback</h3>
 <div class="brief">
  The RemoteResourceResponseCallback interface defines the success method to be invoked when a client received response.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface RemoteResourceResponseCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface RemoteResourceResponseCallback {
     void onsuccess(<a href="#RemoteResponse">RemoteResponse</a> response);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4669,14 +4615,17 @@ for <em>Client.findResource()</em>.
 </dl>
 </div>
 </div>
-<div class="interface" id="ResourceStateChangeCallback">
+<div class="interface deprecated" id="ResourceStateChangeCallback">
 <a class="backward-compatibility-anchor" name="::Iotcon::ResourceStateChangeCallback"></a><h3>2.23. ResourceStateChangeCallback</h3>
 <div class="brief">
  The ResourceStateChangeCallback interface defines the success method to be invoked when remote resource's state is changed.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ResourceStateChangeCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface ResourceStateChangeCallback {
     void onchanged(boolean isAlive);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4710,14 +4659,17 @@ for <em>Client.findResource()</em>.
 </dl>
 </div>
 </div>
-<div class="interface" id="CacheUpdatedCallback">
+<div class="interface deprecated" id="CacheUpdatedCallback">
 <a class="backward-compatibility-anchor" name="::Iotcon::CacheUpdatedCallback"></a><h3>2.24. CacheUpdatedCallback</h3>
 <div class="brief">
  The CacheUpdatedCallback interface defines the success method to be invoked when remote resource is changed.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface CacheUpdatedCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface CacheUpdatedCallback {
     void onupdated(<a href="#Representation">Representation</a> representation);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4751,14 +4703,17 @@ for <em>Client.findResource()</em>.
 </dl>
 </div>
 </div>
-<div class="interface" id="GeneratedPinCallback">
+<div class="interface deprecated" id="GeneratedPinCallback">
 <a class="backward-compatibility-anchor" name="::Iotcon::GeneratedPinCallback"></a><h3>2.25. GeneratedPinCallback</h3>
 <div class="brief">
  The GeneratedPinCallback interface defines the success method to be invoked when random pin is generated.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface GeneratedPinCallback {
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 10.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface GeneratedPinCallback {
     void onsuccess(DOMString pin);
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -4811,205 +4766,7 @@ To guarantee this application will run on a device with a Iotcon, add the below 
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Iotcon {
-  typedef DOMString ResourceType;
-  typedef DOMString ResourceInterface;
-  enum QosLevel { "HIGH", "LOW" };
-  enum ResponseResult { "SUCCESS", "ERROR", "RESOURCE_CREATED", "RESOURCE_DELETED", "RESOURCE_CHANGED", "SLOW", "FORBIDDEN" };
-  enum PresenceResponseResultType { "OK", "STOPPED", "TIMEOUT" };
-  enum PresenceTriggerType { "CREATED", "UPDATED", "DESTROYED" };
-  enum ConnectivityType { "IP", "PREFER_UDP", "PREFER_TCP", "IPV4_ONLY", "IPV6_ONLY", "ALL" };
-  enum ObservePolicy { "IGNORE_OUT_OF_ORDER", "ACCEPT_OUT_OF_ORDER" };
-  enum ObserveType { "NO_TYPE", "REGISTER", "DEREGISTER" };
-  dictionary ResourcePolicy {
-    boolean isObservable;
-    boolean isDiscoverable;
-    boolean isActive;
-    boolean isSlow;
-    boolean isSecure;
-    boolean isExplicitDiscoverable;
-  };
-  dictionary Query {
-    <a href="#ResourceType">ResourceType</a>? resourceType;
-    <a href="#ResourceInterface">ResourceInterface</a>? resourceInterface;
-    object? filter;
-  };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#IotconObject">IotconObject</a>;
-  [NoInterfaceObject] interface IotconObject {
-    readonly attribute <a href="#Iotcon">Iotcon</a> iotcon;
-  };
-  [NoInterfaceObject] interface Iotcon {
-    attribute DOMString deviceName;
-    void initialize(DOMString filePath) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Client">Client</a> getClient();
-    <a href="#Server">Server</a> getServer();
-    long getTimeout();
-    void setTimeout(long timeout) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addGeneratedPinListener(<a href="#GeneratedPinCallback">GeneratedPinCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeGeneratedPinListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface Client {
-    void findResource(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
-                      <a href="#FoundResourceSuccessCallback">FoundResourceSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addPresenceEventListener(DOMString? hostAddress, <a href="#ResourceType">ResourceType</a>? resourceType, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
-                                  <a href="#PresenceEventCallback">PresenceEventCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removePresenceEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void findDeviceInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
-                        <a href="#FoundDeviceInfoSuccessCallback">FoundDeviceInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void findPlatformInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
-                          <a href="#FoundPlatformInfoSuccessCallback">FoundPlatformInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface Server {
-    <a href="#Resource">Resource</a>[] getResources() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Resource">Resource</a> createResource(DOMString uriPath, <a href="#ResourceType">ResourceType</a>[] resourceTypes, <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces,
-                            <a href="#RequestCallback">RequestCallback</a> listener, optional <a href="#ResourcePolicy">ResourcePolicy</a> policy) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeResource(<a href="#Resource">Resource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void startPresence(unsigned long timeToLive) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void stopPresence() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  interface RemoteResource {
-    readonly attribute DOMString uriPath;
-    readonly attribute <a href="#ConnectivityType">ConnectivityType</a> connectivityType;
-    readonly attribute DOMString hostAddress;
-    readonly attribute <a href="#ResourceType">ResourceType</a>[] resourceTypes;
-    readonly attribute <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces;
-    readonly attribute boolean isObservable;
-    readonly attribute boolean isDiscoverable;
-    readonly attribute boolean isActive;
-    readonly attribute boolean isSlow;
-    readonly attribute boolean isSecure;
-    readonly attribute boolean isExplicitDiscoverable;
-    readonly attribute DOMString deviceId;
-    readonly attribute DOMString deviceName;
-    attribute <a href="#IotconOption">IotconOption</a>[]? options;
-    readonly attribute <a href="#Representation">Representation</a>? cachedRepresentation;
-    attribute long timeInterval;
-    void methodGet(<a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void methodPut(<a href="#Representation">Representation</a> representation, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query,
-                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void methodPost(<a href="#Representation">Representation</a> representation, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query,
-                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void methodDelete(<a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void startObserving(<a href="#ObservePolicy">ObservePolicy</a> observePolicy, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> successCallback, optional <a href="#Query">Query</a>? query)
-                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void stopObserving() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void startCaching(optional <a href="#CacheUpdatedCallback">CacheUpdatedCallback</a>? updatedCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void stopCaching() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void setResourceStateChangeListener(<a href="#ResourceStateChangeCallback">ResourceStateChangeCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void unsetResourceStateChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface Resource {
-    readonly attribute DOMString uriPath;
-    readonly attribute <a href="#ResourceType">ResourceType</a>[] resourceTypes;
-    readonly attribute <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces;
-    readonly attribute boolean isObservable;
-    readonly attribute boolean isDiscoverable;
-    readonly attribute boolean isActive;
-    readonly attribute boolean isSlow;
-    readonly attribute boolean isSecure;
-    readonly attribute boolean isExplicitDiscoverable;
-    readonly attribute <a href="#Resource">Resource</a>[] resources;
-    readonly attribute long[] observerIds;
-    attribute object? attributes;
-    void notify(<a href="#QosLevel">QosLevel</a> qosLevel, optional long[]? observerIds) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void addResourceTypes(<a href="#ResourceType">ResourceType</a>[] types) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void addResourceInterface(<a href="#ResourceInterface">ResourceInterface</a> interface) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void addChildResource(<a href="#Resource">Resource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeChildResource(<a href="#Resource">Resource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void setRequestListener(<a href="#RequestCallback">RequestCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void unsetRequestListener();
-  };
-  [Constructor(DOMString uriPath)]
-  interface Representation {
-    attribute DOMString uriPath;
-    attribute <a href="#ResourceType">ResourceType</a>[] resourceTypes;
-    attribute <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces;
-    attribute object? attributes;
-    attribute <a href="#Representation">Representation</a>[]? children;
-  };
-  [NoInterfaceObject] interface PresenceResponse {
-    readonly attribute DOMString hostAddress;
-    readonly attribute <a href="#ConnectivityType">ConnectivityType</a> connectivityType;
-    readonly attribute <a href="#ResourceType">ResourceType</a>? resourceType;
-    readonly attribute <a href="#PresenceResponseResultType">PresenceResponseResultType</a> resultType;
-    readonly attribute <a href="#PresenceTriggerType">PresenceTriggerType</a>? triggerType;
-  };
-  [Constructor(unsigned long id, DOMString data)]
-  interface IotconOption {
-    attribute unsigned long id;
-    attribute DOMString data;
-  };
-  [NoInterfaceObject] interface Request {
-    readonly attribute DOMString hostAddress;
-    readonly attribute <a href="#ConnectivityType">ConnectivityType</a> connectivityType;
-    readonly attribute <a href="#Representation">Representation</a>? representation;
-    readonly attribute <a href="#IotconOption">IotconOption</a>[] options;
-    readonly attribute <a href="#Query">Query</a> query;
-  };
-  [Constructor(<a href="#Request">Request</a> request)]
-  interface Response {
-    readonly attribute <a href="#Request">Request</a> request;
-    attribute <a href="#ResponseResult">ResponseResult</a> result;
-    attribute <a href="#Representation">Representation</a> representation;
-    attribute <a href="#IotconOption">IotconOption</a>[]? options;
-    void send() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface RemoteResponse {
-    readonly attribute <a href="#ResponseResult">ResponseResult</a> result;
-    readonly attribute <a href="#Representation">Representation</a> representation;
-    readonly attribute <a href="#IotconOption">IotconOption</a>[]? options;
-  };
-  [NoInterfaceObject] interface DeviceInfo {
-    readonly attribute DOMString? deviceName;
-    readonly attribute DOMString? specVersion;
-    readonly attribute DOMString? oicDeviceId;
-    readonly attribute DOMString? dataModelVersion;
-  };
-  [NoInterfaceObject] interface PlatformInfo {
-    readonly attribute DOMString? platformId;
-    readonly attribute DOMString? manufacturerName;
-    readonly attribute DOMString? manufacturerUrl;
-    readonly attribute DOMString? modelNumber;
-    readonly attribute DOMString? manufactureDate;
-    readonly attribute DOMString? platformVersion;
-    readonly attribute DOMString? operatingSystemVersion;
-    readonly attribute DOMString? hardwareVersion;
-    readonly attribute DOMString? firmwareVersion;
-    readonly attribute DOMString? supportUrl;
-    readonly attribute DOMString? systemTime;
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface RequestCallback {
-    void onget(<a href="#Request">Request</a> request);
-    void onput(<a href="#Request">Request</a> request);
-    void onpost(<a href="#Request">Request</a> request);
-    void ondelete(<a href="#Request">Request</a> request);
-    void onobserving(<a href="#Request">Request</a> request, <a href="#ObserveType">ObserveType</a> observeType, unsigned long observeId);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface FoundResourceSuccessCallback {
-    void onfound(<a href="#RemoteResource">RemoteResource</a> remoteResource);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface PresenceEventCallback {
-    void onreceived(<a href="#PresenceResponse">PresenceResponse</a> presenceResponse);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface FoundDeviceInfoSuccessCallback {
-    void onsuccess(<a href="#DeviceInfo">DeviceInfo</a> info);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface FoundPlatformInfoSuccessCallback {
-    void onsuccess(<a href="#PlatformInfo">PlatformInfo</a> info);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface RemoteResourceResponseCallback {
-    void onsuccess(<a href="#RemoteResponse">RemoteResponse</a> response);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface ResourceStateChangeCallback {
-    void onchanged(boolean isAlive);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface CacheUpdatedCallback {
-    void onupdated(<a href="#Representation">Representation</a> representation);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface GeneratedPinCallback {
-    void onsuccess(DOMString pin);
-  };
 };</pre>
 </div>
 <div id="page-footer">
