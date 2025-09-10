@@ -1,5 +1,7 @@
 # Contextual Device Usage History Data
 
+> [!NOTE]
+> All attach CONTEXT APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 The Tizen platform collects data on the device usage. Based on this data, the applications can take advantage of the user's application usage patterns through statistical analysis.
 
