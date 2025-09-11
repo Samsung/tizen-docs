@@ -180,19 +180,19 @@
           <Path>group__HALAPI__HAL__SECURITY.html</Path>
           <Subnodes>
            <Node>
-            <Name>Security Auth</Name>
+            <Name>Auth</Name>
             <Path>group__HALAPI__HAL__SECURITY__AUTH__MODULE.html</Path>
             <Subnodes>
             </Subnodes>
            </Node>
            <Node>
-            <Name>Security Certs</Name>
+            <Name>Certs</Name>
             <Path>group__HALAPI__HAL__SECURITY__CERTS__MODULE.html</Path>
             <Subnodes>
             </Subnodes>
            </Node>
            <Node>
-            <Name>Security Keys</Name>
+            <Name>Keys</Name>
             <Path>group__HALAPI__HAL__SECURITY__KEYS__MODULE.html</Path>
             <Subnodes>
             </Subnodes>

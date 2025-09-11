@@ -18396,7 +18396,7 @@
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__SECURITY__AUTH__MODULE.html</Path>
-    <Abstract>The Security Auth provides functions to handle the authentication per user.</Abstract>
+    <Abstract>The Auth provides functions to handle the authentication per user.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -18806,7 +18806,7 @@
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__SECURITY__CERTS__MODULE.html</Path>
-    <Abstract>The Security Certs provides functions for device certificates and signing operations.</Abstract>
+    <Abstract>The Certs provides functions for device certificates and signing operations.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -19059,7 +19059,7 @@
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__SECURITY__KEYS__MODULE.html</Path>
-    <Abstract>The Security Keys provides functions to handle keys and data related operations.</Abstract>
+    <Abstract>The Keys provides functions to handle keys and data related operations.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -20106,7 +20106,7 @@
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__SENSOR__MODULE.html</Path>
-    <Abstract>The Sensor provides functions for geting/putting backend and creating sensor devices.</Abstract>
+    <Abstract>The Sensor provides functions for getting/putting backend and creating sensor devices.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
