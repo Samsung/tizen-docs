@@ -53,22 +53,22 @@ To build the Tizen kernel for the Raspberry Pi 4 board, follow these steps:
    git clone git://review.tizen.org/git/platform/kernel/linux-rpi -b tizen
    ```
 3. If your kernel source has been used to create binaries for another architecture, start by cleaning them up.
-4. Use the build-rpi4.sh script to build Tizen Rasbperry Pi 4 kernel.
+4. Use the build-rpi.sh script to build Tizen Rasbperry Pi 4 kernel.
    ```
    /* 32-bit kernel build */
-   $ ./build-rpi4.sh arm
+   $ ./build-rpi.sh arm
    or
    /* 64-bit kernel build */
-   $ ./bulid-rpi4.sh arm64
+   $ ./bulid-rpi.sh arm64
    ```
 5. Created kernel, module and dtb files under output directory.
    ```
    $ ls output/
-   bcm2711-rpi-4-b.dtb  modules.img  tizen-local-202411271526-boot-armv7l-rpi4.tar  zImage
+   bcm2711-rpi-4-b.dtb  modules.img  tizen-local-{DATE}-boot-armv7l-rpi.tar  zImage
    ```
 6. Update modules.img into module partition of SD-card with sd_fusing.py script.
    ```
-   $ ./sd_fusing.py -d /dev/sdb -b tizen-local-202411271525-boot-armv7l-rpi4.tar -t rpi4
+   $ ./sd_fusing.py -d /dev/sdb -b tizen-local-{DATE}-boot-armv7l-rpi.tar -t rpi4
    ```
  7.  Copy dtb / kernel files (`dtb, zImage or Image`) into BOOT partition of SD-card.
      ```
@@ -210,7 +210,7 @@ The `boot` partition is mounted in the `/boot` directory of `rootfs` or detected
 5. The `system-data` partition is mounted in the `/opt` directory and it includes applications, libraries of applications, and the platform database. It can be provided as a `system-data.img` file.
 6. The `user` partition is mounted in the `/opt/usr` directory and it includes data relevant user data. It can be provided as `user.img`.
 
-Each image file, `rootfs.img`, `system-data.img`, and `uer.img` can be zipped for downloading, for example, `<HEADED/HEADLESS>.tar.gz`.
+Each image file, `rootfs.img`, `system-data.img`, and `user.img` can be zipped for downloading, for example, `<HEADED/HEADLESS>.tar.gz`.
 
 #### Supported file systems
 
