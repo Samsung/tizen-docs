@@ -11,8 +11,8 @@
 #### [Install SDK Common Tools & Tizen Platform](/application/vstools/install-sdk-common-tools.md)
 #### [Install TV Extension & Certificate Extension](/application/vstools/tv-certificate-extension.md)
 #### Package Manager
-###### [Overview](/application/tizen-studio/common-tools/package-manager.md)
-###### [Configure the Package Manager](/application/tizen-studio/common-tools/pkgmgr-advanced-configuration.md)
+##### [Overview](/application/tizen-studio/common-tools/package-manager.md)
+##### [Configure the Package Manager](/application/tizen-studio/common-tools/pkgmgr-advanced-configuration.md)
 
 ### .NET Application Development
 <!-- #### [Overview](/application/vstools/getting-started/creating-application-projects.md) -->
@@ -22,17 +22,17 @@
 ##### [Create App](/application/vstools/getting-started/creating-application-projects.md)
 ##### [Import Exsting Tizen Project](/application/vstools/Tizen/import.md)
 ##### [Tool : Project Wizard](/application/vstools/tools/project-wizard.md)
-##### Configure App
-###### [Manifest & Config Editor](/application/vstools/getting-started/configuring-app-manifest-config-editor.md)
-###### [How to Hybrid & MultiApp Packaging](/application/vstools/getting-started/configuring-hybrid-multi-app-packaging.md)
-###### [App Signing Configure](/application/vstools/getting-started/configuring-app-signing.md)
-###### [Workload & Nuget Configure](/application/vstools/getting-started/configuring-app-workload-nuget.md)
-###### [Hotreload(Only Dotnet Application)](/application/vstools/getting-started/configuring-hotreload.md)
+#### Configure App
+##### [Manifest & Config Editor](/application/vstools/getting-started/configuring-app-manifest-config-editor.md)
+##### [How to Hybrid & MultiApp Packaging](/application/vstools/getting-started/configuring-hybrid-multi-app-packaging.md)
+##### [App Signing Configure](/application/vstools/getting-started/configuring-app-signing.md)
+##### [Workload & Nuget Configure](/application/vstools/getting-started/configuring-app-workload-nuget.md)
+##### [Hotreload(Only Dotnet Application)](/application/vstools/getting-started/configuring-hotreload.md)
 ##### [Tool : Certificate Manager](/application/vstools/tools/certificate-manager.md)
-##### Tool : Manifest Editor
-###### [Overview](/application/vstools/tools/manifest-editor.md)
-###### [Metadata Element](/application/vstools/tools/metadata-element.md)
-###### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
+#### Tool : Manifest Editor
+##### [Overview](/application/vstools/tools/manifest-editor.md)
+##### [Metadata Element](/application/vstools/tools/metadata-element.md)
+##### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
 
 #### Coding & Building Application
 ##### [Edit Code](/application/vstools/getting-started/edit-code.md)
@@ -58,9 +58,9 @@
 ##### [Tool : SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 
 #### CLI
-###### [Tizen CLI](/application/tizen-studio/common-tools/command-line-interface.md)
-###### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md)
-###### [Dotnet CLI](/application/vstools/tools/dotnet-cli-ext.md)
+##### [Tizen CLI](/application/tizen-studio/common-tools/command-line-interface.md)
+##### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md)
+##### [Dotnet CLI](/application/vstools/tools/dotnet-cli-ext.md)
 
 #### Report Issues
 ##### [Issue Reporter](/application/vstools/tools/issue-reporter-vs-tools.md)
