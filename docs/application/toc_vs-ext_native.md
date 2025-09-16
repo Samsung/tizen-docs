@@ -11,8 +11,8 @@
 #### [Install SDK Common Tools & Tizen Platform](/application/vstools/install-sdk-common-tools.md)
 #### [Install TV Extension & Certificate Extension](/application/vstools/tv-certificate-extension.md)
 #### Package Manager
-###### [Overview](/application/tizen-studio/common-tools/package-manager.md)
-###### [Configure the Package Manager](/application/tizen-studio/common-tools/pkgmgr-advanced-configuration.md)
+##### [Overview](/application/tizen-studio/common-tools/package-manager.md)
+##### [Configure the Package Manager](/application/tizen-studio/common-tools/pkgmgr-advanced-configuration.md)
 
 ### Native Application Development
 <!-- #### [Overview](/application/vstools/getting-started/creating-application-projects.md) -->
@@ -22,7 +22,7 @@
 ##### [Create App](/application/vstools/Tizen/native.md)
 ##### [Import Exsting Tizen Project](/application/vstools/Tizen/import.md)
 ##### [Tool : Project Wizard](/application/vstools/tools/project-wizard.md)
-##### Configure App
+#### Configure App
 ##### [Tool : Certificate Manager](/application/vstools/tools/certificate-manager.md)
 ##### Tool : Manifest Editor
 ###### [Overview](/application/vstools/tools/manifest-editor.md)
