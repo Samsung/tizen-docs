@@ -55,8 +55,8 @@ To register and deregister a local DNS-SD service, follow these steps:
     DnssdService dnssdService = (DnssdService)service;
 
     // Set required properties before registration
-    dnssdService.Name = "MyWebService";  // Required: Service name
-    dnssdService.Port = 8080;            // Required: Port number
+    dnssdService.Name = "TestService";  // Required: Service name
+    dnssdService.Port = "1234";         // Required: Port number
 
     dnssdService.RegisterService();
     ```
