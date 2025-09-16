@@ -2,6 +2,9 @@
 
 For information on how to set up the Tizen OS development environment, see [Setting up the Development Environment](../developing/setting-up.md).
 
+## Prerequisite
+
+If you want to contribute to Tizen, You need to register Tizen Account, see [Get started with Tizen](../get-started/open-source-project.md#get-started-with-tizen)
 
 ## U-Boot build
 
@@ -10,10 +13,7 @@ To build the Tizen U-boot for The Raspberry Pi 4 board, follow below steps:
 1. Install and setup cross-compile tools on your system if the host has a different architecture than the target (such as x86 or x86_64).
 2. Prepare the U-boot source code for Tizen from `platform/kernel/u-boot`:
    ```
-	git: https://review.tizen.org/git/?p=platform/kernel/u-boot.git
-	or
-	cgit: https://git.tizen.org/cgit/platform/kernel/u-boot
-	branch: tizen
+	git clone git://review.tizen.org/git/platform/kernel/u-boot -b tizen
 	```
 3. If your u-boot source has been used to create binaries for another architecture, start by cleaning them up.
 4. Set up the .config file for RPi4:
@@ -50,28 +50,25 @@ To build the Tizen kernel for the Raspberry Pi 4 board, follow these steps:
 1. Install and set up cross-compile tools on your system if the host has a different architecture than the target (such as x86).
 2. Prepare the kernel source code for Raspberry Pi 4 from `platform/kernel/linux-rpi`:
    ```
-   git: https://review.tizen.org/git/?p=platform/kernel/linux-rpi.git
-   or
-   cgit: https://git.tizen.org/cgit/platform/kernel/linux-rpi
-   branch: tizen
+   git clone git://review.tizen.org/git/platform/kernel/linux-rpi -b tizen
    ```
 3. If your kernel source has been used to create binaries for another architecture, start by cleaning them up.
-4. Use the build-rpi4.sh script to build Tizen Rasbperry Pi 4 kernel.
+4. Use the build-rpi.sh script to build Tizen Rasbperry Pi 4 kernel.
    ```
    /* 32-bit kernel build */
-   $ ./build-rpi4.sh arm
+   $ ./build-rpi.sh arm
    or
    /* 64-bit kernel build */
-   $ ./bulid-rpi4.sh arm64
+   $ ./bulid-rpi.sh arm64
    ```
 5. Created kernel, module and dtb files under output directory.
    ```
    $ ls output/
-   bcm2711-rpi-4-b.dtb  modules.img  tizen-local-202411271526-boot-armv7l-rpi4.tar  zImage
+   bcm2711-rpi-4-b.dtb  modules.img  tizen-local-{DATE}-boot-armv7l-rpi.tar  zImage
    ```
 6. Update modules.img into module partition of SD-card with sd_fusing.py script.
    ```
-   $ ./sd_fusing.py -d /dev/sdb -b tizen-local-202411271525-boot-armv7l-rpi4.tar -t rpi4
+   $ ./sd_fusing.py -d /dev/sdb -b tizen-local-{DATE}-boot-armv7l-rpi.tar -t rpi4
    ```
  7.  Copy dtb / kernel files (`dtb, zImage or Image`) into BOOT partition of SD-card.
      ```
@@ -97,7 +94,7 @@ This section provides a brief overview of the typical booting sequence, starting
 
 ![Tizen bootup sequence](media/800px-boot-1.png)
 
-The Tizen bootup process is same as any other Linux kernel. Make sure that the correct machine ID and the boot arguments are passed from the boot loader.
+The Tizen bootup process is same as any other Linux kernel. Make sure that the correct device-tree and the boot arguments are passed from the boot loader.
 
 After mounting the initial RAM disk image, `initramfs` hands over control to `systemd` as the Tizen platform system manager daemon. From this point, `systemd` is responsible for probing all remaining hardware, mounting all necessary file systems, and spawning all configured services. The system bootup process is split up into discrete steps. To synchronize points during start-up, target units (files whose names end in `.target`) are used for grouping units. The bootup process is highly parallelized in each target so that the order in which specific target units are reached is not determined. The `system-plugin-slp` is an OAL plugin for configuration settings, such as the mount point (`/etc/fstab`).
 
@@ -115,10 +112,6 @@ The following figure shows the early boot sequence after starting the kernel.
 
   Special target unit for basic bootup. At this point, all necessary initialization for general purpose daemons, such as mount points, sockets, timers, and path units, is completed. Tizen-specific services (such as `vconf-setup` and `tizen-debug-level`) are also executed.
 
-- `bootmode.target`
-
-  Special target unit for selecting the boot mode. If the kernel boot parameter (`/proc/cmdline`) has the `charger_detect_boot` option passed by a boot loader, such as `uboot`, the platform boots up in charging mode. In this mode, the system enters the low power mode and charges the battery. If the `charger_detect_boot` option is not included as a kernel boot parameter, a normal boot is started.
-
 The following figure shows the overview of normal booting sequence in Tizen platform.
 
 **Figure: Tizen platform boot sequence**
@@ -127,11 +120,11 @@ The following figure shows the overview of normal booting sequence in Tizen plat
 
 - `multi-user.target`
 
-  Special target unit for setting up a multi-user system with non-graphical support. On the Tizen platform, this target is used for launching platform infrastructure daemons, such as `dbus` (system session), power manager, GPS manager, telephony daemon, WRT (Web Run Time) security daemon, and the media server. Some `systemd`-related daemons (such as `systemd-logind`) are also started in this phase.
+  Special target unit for setting up a multi-user system with non-graphical support. The Tizen platform uses the `systemd` user session for App privilege daemons. On the Tizen platform, this target is used for launching platform infrastructure daemons, such as `dbus` (system session), power manager, GPS manager, telephony daemon, WRT (Web Run Time) security daemon, and the media server. Some `systemd`-related daemons (such as `systemd-logind`) are also started in this phase.
 
 - `graphical.target`
 
-  Special target unit for setting up a graphical environment. Some important daemons (such as the access control and OMA DS agent servers) that must have root permission are launched at this point. The Tizen platform uses the `systemd` user session for App privilege daemons. Some daemons related to the graphics system, such as Enlightenment (window manager), are launched with the App privilege in this phase. The Tizen platform has its special target for middleware and mobile service: `tizen-middleware.target` starts the platform service daemons, such as calendar, contacts, email, message, sound, and download provider. `tizen-mobile-session.target` starts some service daemons related with the mobile session.
+  Special target unit for setting up a graphical environment. Some important daemons (such as the access control and etc) that must have root permission are launched at this point.  Some daemons related to the graphics system, such as Enlightenment (window manager), are launched with the App privilege in this phase.
 
 ## BSP customization
 
@@ -180,11 +173,17 @@ If you want to use `initramfs`, you can use these configurations:
 - `CONFIG_INITRAMFS_ROOT_GID`
 - `CONFIG_INITRAMFS_COMPRESSION_NONE/GZIP/BZIP2/LZNA/LZO`
 
+To use Tizen Platform, Kernel has to enable some configurations. Refer to tizen-kernel-configs git repository.
+
+```
+git clone git://review.tizen.org/git/platform/kernel/tizen-kernel-configs -b tizen
+```
+
 ## Tizen file system
 
 ### Virtual file system (VFS)
 
-The virtual file system (VFS) is an abstraction layer on top of a physical file system (such as ext2, jfs, and ext4). The VFS provides a switching layer between the SCI (System Call Interface) and the file systems supported by the kernel, as shown in the following figure.
+The virtual file system (VFS) is an abstraction layer on top of a physical file system (such as ext4, erofs, and f2fs). The VFS provides a switching layer between the SCI (System Call Interface) and the file systems supported by the kernel, as shown in the following figure.
 
 **Figure: Tizen file system**
 
@@ -202,27 +201,20 @@ The following description is an example of the Tizen partition layout. The produ
 
 ![Tizen partition layout](media/800px-partitionlayout.png)
 
-The `boot` partition is mounted in the `/boot` directory of `rootfs`. Here `s-boot`, `u-boot`, and the kernel image are saved as a file format, provided as `system.tar`.
+The `boot` partition is mounted in the `/boot` directory of `rootfs` or detected from the eerpom. Here `u-boot`, and the kernel image are saved as a file format, provided as `BOOT.tar`. Depending on booting mode, one of postfix `_a` partitions or postfix `_b` partitions are used.
 
-1. The CSA (Configuration Saved Area) partition is for non-volatile data, such as the calibration value of the modem.
-2. The boot partition includes the kernel image, boot loader image, and modem image. Additionally, it can have device driver modules.
+1. The boot partition includes the kernel image, boot loader image, and modem image. Additionally, it can have device driver modules.
+2. module partition is for kernel modules (Out-of-modules will be loaded by ramdisk.)
 3. Third partition is reserved for the future.
-4. The CSC (Customer Software Configuration) partition is mounted in the `/mnt/csc` directory. It can store the customer's software configuration, such as the default language and time zone.
-5. The `platform` partition is mounted on the root directory. It contains fundamental frameworks for Tizen and some general utility for Linux. It can be provided as a `platform.img` file.
-6. The `data` partition is mounted in the `/opt` directory and it includes applications, libraries of applications, and the platform database. It can be provided as a `data.img` file.
-7. The UMS (USB Mass Storage) partition is mounted in the `/opt/media` directory and it includes default (media) contents. It can be provided as `ums.img`.
+4. The `rootfs` partition is mounted on the root directory. It contains fundamental frameworks for Tizen and some general utility for Linux. It can be provided as a `rootfs.img` file.
+5. The `system-data` partition is mounted in the `/opt` directory and it includes applications, libraries of applications, and the platform database. It can be provided as a `system-data.img` file.
+6. The `user` partition is mounted in the `/opt/usr` directory and it includes data relevant user data. It can be provided as `user.img`.
 
-Each image file, `platform.img`, `data.img`, and `ums.img` can be zipped for downloading, for example, `<IMAGE_NAME>.tar.gz`.
-
-Each partition has the hierarchy illustrated in the following figure.
-
-**Figure: Tizen file system hierarchy**
-
-![Tizen file system hierarchy](media/800px-filesystemhierarchy.png)
+Each image file, `rootfs.img`, `system-data.img`, and `user.img` can be zipped for downloading, for example, `<HEADED/HEADLESS>.tar.gz`.
 
 #### Supported file systems
 
-Tizen supports the Extended 4 (ext4) file system. The Tizen kernel has to be compiled to enable support for other file systems, such as JFS, XFS, BTRFS, and ReiserFS.
+Tizen supports the Extended 4 (ext4) file system. The Tizen kernel has to be compiled to enable support for other file systems, such as F2FS, BTRFS, and EROFS.
 
 The Extended 4 (ext4) file system is configured as a default file system for Tizen.
 
@@ -234,6 +226,8 @@ The following ext4 configuration options can be enabled in the kernel configurat
 - `CONFIG_EXT4_FS_XATTR=y`
 - `CONFIG_EXT4_USE_FOR_EXT23=y`
 - `CONFIG_EXT4_FS_SECURITY=y`
+
+Refer to [Kernel configurations](kernel.md#kernel-configurations)
 
 ### MMC/SD/SDIO
 
@@ -257,17 +251,13 @@ The MMC subsystem code structure in the kernel is located at `/driver/mmc` and d
 - Protocol stack for MMC, SD, SDIO located at `/driver/mmc/core/`
 - Host controller driver located at `/driver/mmc/host/`
 
-#### Hotplug MMC event handling
-
-Based on the hotplug event handling, a notification is passed to `deviced` for device status changes. It detects, mounts, and monitors the status of the SD card.
-
 #### Reference
 
 The SDHCI controller is supported in the MMC/SD/SDIO interface. The mobile storage host controller is only supported in the MMC interface.
 
 - **Kernel configuration for MMC Interface**
 
-  `CONFIG_MMC_BLOCK`, `CONFIG_MMC`, `CONFIG_MSHCI` (for Mobile Storage Interface enable)
+  `CONFIG_MMC_BLOCK`, `CONFIG_MMC`, `CONFIG_MMC_SDHCI`, `CONFIG_MMC_DW` (for Mobile Storage Interface enable)
   `sys interface: /dev/mmcblk0pX`
 
 - **Kernel configuration for SD/SDIO Interface**
@@ -275,6 +265,7 @@ The SDHCI controller is supported in the MMC/SD/SDIO interface. The mobile stora
   `CONFIG_MMC_BLOCK`, `CONFIG_MMC`
   `CONFIG_MMC_SDHCI` (for SDHCI host Interface enable)
   `CONFIG_MMC_SDHCI_S3C` (for Samsung SoC)
+  `CONFIG_MMC_DW` (for DesignWare Host Controler Interface enable)
   `sys interface: /dev/mmcblk1pX`
 
 The `X` denotes the MMC partition number. Details of the partition mount point for Tizen are covered under [Tizen Partition Layout](#tizen-partition-layout).

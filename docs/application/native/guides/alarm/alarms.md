@@ -43,6 +43,12 @@ To enable your application to use the alarm functionality:
    ```
    #include <app_alarm.h>
    ```
+
+> **Note**  
+> To set alarm for service application, the alarm registered with [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html) needs to have a [background category](../../guides/applications/efl-ui-app.md#describing-the-background-category).
+> The alarm for service application can only be registered using the 'alarm_schedule_after_delay()' API.
+
+
 <a name="scenario_1"></a>
 ## Setting an Alarm after Specific Time
 
@@ -92,6 +98,16 @@ To set an alarm after a specific time:
        dlog_print(DLOG_INFO, LOG_TAG, "app_control called by Alarm API.");
    }
    ```
+
+> **Note**  
+> Since 6.0, the [alarm_standard_interval_e] is supported. If you alarm registered by using it, The alarm will first go off delay seconds later and then will go off every certain amount of time defined using standard period seconds.
+
+  ```
+      ret = alarm_schedule_after_delay(app_control, DELAY, ALARM_STANDARD_INTERVAL_FIFTEEN_MINUTES, &alarm_id);
+
+      return true;
+  }
+  ```
 
 <a name="scenario_2"></a>
 ## Setting an Alarm on a Specific Date
