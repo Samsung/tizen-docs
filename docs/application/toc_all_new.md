@@ -1021,10 +1021,6 @@
 #### [Overview](/application/native/guides/performance/overview.md)
 #### [Tracepoints](/application/native/guides/performance/tracepoints.md)
 
-
-
-### [Migration Guide](/application/native/guides/migration-guide.md)
-
 ## API Reference
 ### [Overview](/application/native/api/overview.md)
 
