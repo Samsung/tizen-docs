@@ -255,10 +255,6 @@ The following list defines Tizen Native API. The list describes the API modules 
   | Json-Glib     | Allows reading and parsing of JavaScript Object Notation (JSON) documents. | [Latest](../api/common/latest/group__OPENSRC__JSONGLIB__FRAMEWORK.html) |
   | WebView       | Displays and controls Web pages. This submodule API contains interfaces for browsing, tracking browsing history, and downloading Web content. | [Latest](../api/common/latest/group__WEBVIEW.html) | [Web View](connectivity/web-view.md) |
 
-> **Note**
->
-> If you have an application based on Tizen 2.3, use the [Migration Guide](migration-guide.md) to make it conform to Tizen 2.4 Application Framework APIs.
-
 
 ## Related Information
 - Dependencies
