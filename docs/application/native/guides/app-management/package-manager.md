@@ -75,15 +75,15 @@ To retrieve all package information for installed packages:
        package_info_get_installed_time(package_info, &installed_time);
        package_info_get_first_installed_time(package_info, &first_installed_time);
 
-       dlog_print(DLOG_INFO, TAG, "pkg \t= [%s]\n", pkg);
-       dlog_print(DLOG_INFO, TAG, "label \t= [%s]\n", label);
-       dlog_print(DLOG_INFO, TAG, "icon \t= [%s]\n", icon);
-       dlog_print(DLOG_INFO, TAG, "version \t= [%s]\n", version);
-       dlog_print(DLOG_INFO, TAG, "type \t= [%s]\n", type);
-       dlog_print(DLOG_INFO, TAG, "storage \t= [%d]\n", storage);
-       dlog_print(DLOG_INFO, TAG, "system \t= [%d]\n", system);
-       dlog_print(DLOG_INFO, TAG, "removable \t= [%d]\n", removable);
-       dlog_print(DLOG_INFO, TAG, "preload \t= [%d]\n", preload);
+       dlog_print(DLOG_INFO, TAG, "pkg \t= [%s]", pkg);
+       dlog_print(DLOG_INFO, TAG, "label \t= [%s]", label);
+       dlog_print(DLOG_INFO, TAG, "icon \t= [%s]", icon);
+       dlog_print(DLOG_INFO, TAG, "version \t= [%s]", version);
+       dlog_print(DLOG_INFO, TAG, "type \t= [%s]", type);
+       dlog_print(DLOG_INFO, TAG, "storage \t= [%d]", storage);
+       dlog_print(DLOG_INFO, TAG, "system \t= [%d]", system);
+       dlog_print(DLOG_INFO, TAG, "removable \t= [%d]", removable);
+       dlog_print(DLOG_INFO, TAG, "preload \t= [%d]", preload);
        dlog_print(DLOG_INFO, TAG, "installed_time \t= [%d]", installed_time);
        dlog_print(DLOG_INFO, TAG, "first_installed_time \t= [%ld]", first_installed_time);
 
@@ -131,9 +131,9 @@ To retrieve specific package information:
     package_info_get_label(package_info, &label);
     package_info_get_type(package_info, &type);
 
-    dlog_print(DLOG_INFO, TAG, "label \t= [%s]\n", label);
-    dlog_print(DLOG_INFO, TAG, "icon \t= [%s]\n", icon);
-    dlog_print(DLOG_INFO, TAG, "version \t= [%s]\n", version);
+    dlog_print(DLOG_INFO, TAG, "label \t= [%s]", label);
+    dlog_print(DLOG_INFO, TAG, "icon \t= [%s]", icon);
+    dlog_print(DLOG_INFO, TAG, "version \t= [%s]", version);
 
     free(label);
     free(icon);
