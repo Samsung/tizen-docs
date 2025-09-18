@@ -31,7 +31,7 @@ Both protocols allow the application to get details, such as the service names a
 
 ## Prerequisites
 
-To enable your application to use the network service discovery functionality:
+To enable your application to use the network service discovery functionality, ensure that your application has the `http://tizen.org/privilege/internet` privilege to register local services on the network.
 
 - To use the DNS-SD protocol:
 
@@ -182,7 +182,10 @@ To manage a local service, you must create and register the service:
 <a name="dnssd_search"></a>
 ## Browsing Remote Services with DNSSD
 
-To search for available services on a network, use a service type or target information:
+Two primary methods are available for browsing:
+
+-   **One-step browsing**: Retrieves all service details, including IP and port, at once using `dnssd_start_browsing_service()`.
+-   **Two-step browsing**: First discovers service names using `dnssd_browse_service()`, then resolves details like IP and port on demand using `dnssd_resolve_service()`. This method is more efficient, especially when many services are present on the network, as it avoids resolving all services at once.
 
 1. To start searching, use the `dnssd_start_browsing_service()` function.
 
@@ -239,6 +242,8 @@ To search for available services on a network, use a service type or target info
         if (ip_v6_address)
             free(ip_v6_address);
     }
+    /* Note: The strings returned by dnssd_service_get_name(), dnssd_service_get_type(),
+       and dnssd_service_get_ip() must be freed by the caller using free(). */
 
     void
     __found_cb(dnssd_service_state_e state, dnssd_service_h dnssd_remote_service, void *user_data)
@@ -453,4 +458,4 @@ To search for available services on a network, use a service type or target info
   - Since Tizen 3.0
 - API References
   - [DNSSD API](../../api/common/latest/group__CAPI__NETWORK__DNSSD__MODULE.html)
-  - [SSDP API](../../api/common/latest/group__CAPI__NETWORK__SSDP__MODULE.html)  
+  - [SSDP API](../../api/common/latest/group__CAPI__NETWORK__SSDP__MODULE.html)
