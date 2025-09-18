@@ -1,7 +1,5 @@
 # Network Service Discovery
 
-> [!NOTE]
-> Since Tizen 10.0, all SSDP related APIs are deprecated and will be removed after two releases without any alternatives.
 
 You can use 2 different protocols to perform network service discoveries to announce local services and search for remote services on a network, DNS-SD (DNS Service Discovery) and SSDP (Simple Service Discovery Protocol).
 
@@ -287,7 +285,7 @@ Another way to search for services is by first finding the service name and then
 
 1. To start searching, use the `dnssd_browse_service()` function.
     The DNS-SD browser handle is stored in a `dnssd_browser_h` variable. For more information on the service types, see [http://www.dns-sd.org/ServiceTypes.html](http://www.dns-sd.org/ServiceTypes.html){:target="_blank"}:
-   
+
     ```
     dnssd_browser_h browser_handle;
     char *service_type = "_ftp._tcp";
@@ -297,10 +295,10 @@ Another way to search for services is by first finding the service name and then
     if (error_code == DNSSD_ERROR_NONE)
         dlog_print(DLOG_DEBUG, LOG_TAG, "Start browsing");
     ```
-    
+
 2. The callback defined in the `dnssd_browse_service()` function is called when the remote service becomes available or unavailable.
    But at this time, IP address of the found service is not known. To get the IP address, `dnssd_resolve_service()` function is used:
-   
+
     ```
     void
     __found_cb(dnssd_service_h dnssd_remote_service, dnssd_service_state_e state, void *user_data)
@@ -321,9 +319,9 @@ Another way to search for services is by first finding the service name and then
         }
     }
     ```
-    
+
 3. The callback defined in the `dnssd_resolve_service()` function is called when the IP address of the service is successfully resolved:
-   
+
    ```
    void
     __resolved_cb(dnssd_error_e result, dnssd_service_h dnssd_remote_service, void *user_data)
@@ -333,9 +331,9 @@ Another way to search for services is by first finding the service name and then
        }
    }
    ```
-   
+
 4. When the services no longer interest you, stop resolving and browsing using the browser handle:
-   
+
    ```
    dnssd_cancel_resolve_service(browser_handle);
    dnssd_cancel_browse_service(browser_handle);
@@ -456,4 +454,4 @@ To search for available services on a network, use a service type or target info
   - Tizen 3.0 and Higher for Wearable
 - API References
   - [DNSSD API](../../api/common/latest/group__CAPI__NETWORK__DNSSD__MODULE.html)
-  - [SSDP API](../../api/common/latest/group__CAPI__NETWORK__SSDP__MODULE.html)  
+  - [SSDP API](../../api/common/latest/group__CAPI__NETWORK__SSDP__MODULE.html)
