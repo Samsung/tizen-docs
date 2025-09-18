@@ -1,4 +1,4 @@
-# Window System's HAL Layer
+# Window System
 
 ## Overview
 The Tizen Window System Hardware Abstraction Layer (HAL) is a critical component that bridges the gap between the high-level window system software and the underlying graphics and display hardware. Its primary purpose is to provide a standardized and consistent interface for window system operations, enabling Tizen to function across a wide variety of hardware configurations with different chipsets and GPUs.
@@ -12,13 +12,13 @@ For Tizen to be ported to new hardware, a backend module specific to that hardwa
 ## Key Subsystems of the Window System HAL
 The Window System HAL is composed of two primary subsystems, each responsible for a distinct set of functionalities:
 
-- **HAL TBM Module (Tizen Buffer Manager)**
-- **HAL TDM Module (Tizen Display Manager)**
+- **TBM (Tizen Buffer Manager)**
+- **TDM (Tizen Display Manager)**
 
 ---
 
 
-### HAL TBM Module (Tizen Buffer Manager)
+### TBM (Tizen Buffer Manager)
 The HAL TBM Module provides the hardware abstraction layer for Tizen Buffer Manager (TBM). TBM is the system responsible for allocating, managing, and sharing graphics buffers, which are essential for rendering UI elements and displaying content.
 
 **Key Responsibilities:**
@@ -33,7 +33,7 @@ Chipset vendors are required to develop and provide their own backend implementa
 ---
 
 
-### HAL TDM Module (Tizen Display Manager)
+### TDM (Tizen Display Manager)
 
 The HAL TDM Module provides the hardware abstraction layer for the Tizen Display Manager (TDM). The display server (e.g., Wayland compositor in Tizen) is responsible for compositing the final image from various client buffers and presenting it on the screen. The HAL TDM Module equips the display server with the necessary tools to control and manage the display hardware effectively.
 
