@@ -24,10 +24,5 @@ The following API references provide descriptions of all the APIs that can be us
   <li><a href="5.5/device_api/mobile/index.html" target="_blank">5.5</a></li>
   <li><a href="5.0/device_api/mobile/index.html" target="_blank">5.0</a></li>
   <li><a href="4.0/device_api/mobile/index.html" target="_blank">4.0</a></li>
-  <li><a href="3.0/device_api/mobile/index.html" target="_blank">3.0</a></li>
-  <li><a href="2.4/device_api/mobile/index.html" target="_blank">2.4</a></li>
-  <li><a href="2.3.2/device_api/wearable/index.html" target="_blank">2.3.2</a></li>
-  <li><a href="../../native/api/archive/org.tizen.apireference_2.3.1.zip">2.3.1</a></li>
-  <li><a href="../../native/api/archive/org.tizen.apireference_2.3.0.zip">2.3</a></li>
 </ul>
 
