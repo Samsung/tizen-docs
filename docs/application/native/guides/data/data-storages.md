@@ -184,7 +184,7 @@ To monitor storage state changes:
 <a name="space"></a>
 ## Retrieving Storage Space Information
 
-To get the available and total size of the storage, use the `storage_get_total_space()` and `storage_get_available_space()` functions. They return the storage size, excluding the minimum memory size to launch the low memory pop-up in a low memory situation. Consequently, the available size must be less than the original available size, and you must use these functions to get the memory size. For the same reason, you cannot use the `statvfs` function directly in Tizen. Instead, use `storage_get_internal_memory_size()` and `storage_get_external_memory_size()`. The Statvfs structure has a different structure size defined by "\__USE\_FILE\_OFFSET64". However, you can ignore this, since the Storage API uses a proper function automatically.
+To get total and the available size of the storage, use the `storage_get_total_space()` and `storage_get_available_space()` functions. They return the storage size, excluding the minimum memory size to launch the low memory pop-up in a low memory situation. Consequently, the available size must be less than the original available size, and you must use these functions to get the memory size. For the same reason, you cannot use the `statvfs` function directly in Tizen. Instead, use `storage_get_internal_memory_size()` and `storage_get_external_memory_size()`. The Statvfs structure has a different structure size defined by "\__USE\_FILE\_OFFSET64". However, you can ignore this, since the Storage API uses a proper function automatically.
 
 To retrieve storage space information:
 
