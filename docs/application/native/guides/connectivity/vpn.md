@@ -324,7 +324,7 @@ To configure the interface and connect to the VPN service through an application
 
 To block or unblock the network:
 
-Block all traffic, except specified allowed networks, and send the specified UP addresses to a specified interface:
+- Block all traffic, except specified allowed networks, and send the specified UP addresses to a specified interface:
 
 1. Specify networks to be allowed over the VPN Interface (e.g., tun0) For example:
   ```
