@@ -2,7 +2,7 @@
 
 ## Set up the environment
 
-1. Make sure your Tizen device meets the minimum version [requirement](../flutter-tizen.md#supported-devices).
+1. Make sure your Tizen device meets the minimum version [requirement](../../../index.md#supported-devices).
 
    Note: To see which version of Tizen your device is running, [connect the device](configure-device.md) to your PC, run `sdb capability`, and find the `platform_version` value.
 
@@ -14,7 +14,7 @@
    ...
    ```
 
-1. Install [**flutter-tizen**](../flutter-tizen.md#installation) and any required tooling. After installation, run `flutter-tizen doctor` to check if there's any issue. (You can ignore any Android-related warnings. Only `Flutter` and `Tizen toolchain` are required.)
+1. Install [**flutter-tizen**](../../../index.md#installation) and any required tooling. After installation, run `flutter-tizen doctor` to check if there's any issue. (You can ignore any Android-related warnings. Only `Flutter` and `Tizen toolchain` are required.)
 
    ```
    $ flutter-tizen doctor
