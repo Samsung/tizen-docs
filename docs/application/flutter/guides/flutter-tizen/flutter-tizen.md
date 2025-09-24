@@ -1,5 +1,3 @@
-<p align="center"><img src="../../media/flutter-tizen.png" width="500"/></p>
-
 # [Flutter for Tizen](https://github.com/flutter-tizen/flutter-tizen)
 
 An extension to the [Flutter SDK](https://github.com/flutter/flutter) for building Flutter applications for Tizen devices.
@@ -40,28 +38,9 @@ flutter-tizen run --release
 - See [Getting started](doc/get-started.md) to create your first app and try **hot reload**.
 - To **update** the flutter-tizen tool, run `git pull` in this directory.
 
-## Docs
-
-#### Tizen basics
-
-- [Setting up Tizen SDK](doc/install-tizen-sdk.md)
-- [Configuring Tizen devices for development](doc/configure-device.md)
-
-#### App development
-
-- [Getting started](doc/get-started.md)
-- [Debugging apps](doc/debug-app.md)
-- [Flutter Docs](https://docs.flutter.dev)
-
-#### Platform integration
-
+## Platform integration
 - [Flutter plugins for Tizen](../plugins/plugins.md)
 - [Dart bindings for Tizen APIs](../tizen_interop/tizen_interop.md)
-
-#### Miscellaneous
-
-- [Publishing apps on Samsung Galaxy Store and TV Seller Office](doc/publish-app.md)
-- [Wiki](https://github.com/flutter-tizen/flutter-tizen/wiki)
 
 ## Issues
 
