@@ -26,16 +26,11 @@ Managed runtime offers the following advantages to your application development:
 
   Managed runtime helps you to focus on the business logic and the code specific to the application while reducing the number of errors in the code.
 
-- **Cross-platform support**
-
-  The managed code is portable. Tizen .NET applications can have large portions of their logic applied to other systems supported by .NET Core and Xamarin.Forms.
 
 ## Tizen .NET features and components
 
 Tizen .NET enables you to build .NET applications with NUI and Tizen .NET framework. NUI allows you to easily create a user interface, and TizenFX API provides numerous interfaces 
 to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices. NUI (Natural User Interface) is a hardware accelerated C# toolkit which a set of predefined components and layouts for implementing GUI in both 2D and 3D modes. NUI is optimized for speed and low resource usage.
-
-For multiplatform applications Tizen .NET provides Xamarin.Forms framework.
 
 **Figure: Tizen .NET architecture**
 
@@ -49,19 +44,9 @@ Tizen .NET consists of the following main components:
 
   See [About .NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) to learn more about .NET Core, including its characteristics, supported languages and frameworks, and key APIs.
 
-- **Xamarin.Forms**
-
-  [Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/getting-started/) provides cross-platform APIs, which allow you to create user interfaces that can be shared across platforms. Visual Studio Tools for Tizen enable Tizen support for Xamarin.Forms.
-
-- **Tizen.Wearable.CircularUI**
-
-  [Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html) provides Tizen wearable-specific user interfaces. It is a set of extension APIs of Xamarin.Forms. Tizen.Wearable.CircularUI APIs are supported only on Tizen wearable devices with Tizen .NET support, unlike Xamarin.Forms which support cross platforms.
-
 - **TizenFX API**
 
-  [TizenFX API](api/TizenFX/) allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
-
-  TizenFX supports C# APIs, which expose Tizen-specific features such as Tizen application framework, account management, location services, media services, and connectivity.
+  [TizenFX API](api/TizenFX/) supports C# APIs, which expose Tizen-specific features such as Tizen application framework, account management, location services, media services, and connectivity.
 
 ### Visual Studio Tools for Tizen
 

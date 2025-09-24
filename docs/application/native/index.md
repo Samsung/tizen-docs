@@ -231,11 +231,3 @@ The introduction to native applications documentation provides overall informati
 - [Get Started](get-started/overview.md)
 
     Demonstrates how you can create your first simple native application.
-
-- [Overview of Tizen UI Development](tutorials/ui-builder/ui-builder-overview.md)
-
-    Describes the basic characteristics and components of UI development with EFL.
-
-- [Designing Your Native Application](tutorials/ui-builder/ui-builder-app-design.md)
-
-    Teaches you how to develop a native application using the native UI Builder tool.

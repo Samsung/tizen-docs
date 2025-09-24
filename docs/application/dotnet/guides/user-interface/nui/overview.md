@@ -53,14 +53,6 @@ NUI offers the following main features:
 
   An interface for manipulating windows of the system Graphical User Interface (GUI) services.
 
-- [XAML](xaml/xaml-overview.md)
-
-  Supports almost all the features of Xamarin.Forms XAML.
-
-The following are some reference applications:
-| ![WApps](./media/sample_wapps.png) | ![WGallery](./media/sample_wgallery.png) | ![WMessage](./media/sample_wmessage.png) | ![WHome](./media/sample_whome.png) |
-|---|---|---|---|
-| [WApps](https://github.com/dalihub/nui-demo/tree/master/wearable-samples/ReferenceApplication/WApps) | [WGallery](https://github.com/dalihub/nui-demo/tree/master/wearable-samples/ReferenceApplication/WGallery) | [WMessage](https://github.com/dalihub/nui-demo/tree/master/wearable-samples/ReferenceApplication/WMessage) | [WHome](https://github.com/dalihub/nui-demo/tree/master/wearable-samples/ReferenceApplication/WHome) |
 
 <a name="concepts"></a>
 ## Key Concepts
