@@ -176,7 +176,7 @@ To get the interface parameters after successfully initializing the VPN service:
 
 To set the interface parameters:
 
-- Set the MTU configuration for the tunnel interface using the `vpnsvc_set_mtu()` function, and update the value using the `vpnsvc_update_settings()` function:
+- Set the MTU(Maximum Transmission Unit) configuration for the tunnel interface using the `vpnsvc_set_mtu()` function, and update the value using the `vpnsvc_update_settings()` function:
 
     ```
     int ret;
@@ -205,6 +205,8 @@ To set the interface parameters:
     if (ret != VPNSVC_ERROR_NONE)
         printf("vpnsvc_set_session failed!\n");
     ```
+It does not need to use `vpnsvc_update_settings()` function to apply the session name.
+
 
 <a name="config"></a>
 ## Configuring the Interface and Connecting to the Service
@@ -324,42 +326,74 @@ To block or unblock the network:
 
 - Block all traffic, except specified allowed networks, and send the specified UP addresses to a specified interface:
 
+Specify networks to be allowed over the VPN Interface (e.g., tun0) For example:
   ```
-  char *block_nets[2];
-  int block_prefix[2];
-  int block_nr_nets = 2;
-  char *allow_nets[2];
-  int allow_prefix[2];
-  int allow_nr_nets = 2;
-  int ret;
+  size_t num_allow_routes_vpn = 2;
+  char *routes_dest_vpn_addr[num_allow_routes_vpn];
+  int routes_vpn_prefix[num_allow_routes_vpn];
 
-  if (!handle) {
-      printf("invalid handle\n");
+  // Example: Allow a specific corporate server (e.g., an internal resource)
+  memset(routes_dest_vpn_addr[0], 0, sizeof(char) * VPNSVC_IP4_STRING_LEN);
+  strncpy(routes_dest_vpn_addr[0], "10.10.20.30", VPNSVC_IP4_STRING_LEN - 1);
+  routes_vpn_prefix[0] = 32; // 32 means a single host
+  printf("VPN Allowed Network 1: %s/%d\n", routes_dest_vpn_addr[0], routes_vpn_prefix[0]);
 
-      return -1;
-  }
+  memset(routes_dest_vpn_addr[1], 0, sizeof(char) * VPNSVC_IP4_STRING_LEN);
+  strncpy(routes_dest_vpn_addr[1], "203.0.113.10", VPNSVC_IP4_STRING_LEN - 1);
+  routes_vpn_prefix[1] = 32; // 32 for a single host
+  printf("VPN Allowed Network 2: %s/%d\n", routes_dest_vpn_addr[1], routes_vpn_prefix[1]);
+  ```
 
-  block_nets[0] = malloc(sizeof(char) * VPNSVC_IP4_STRING_LEN);
-  block_nets[1] = malloc(sizeof(char) * VPNSVC_IP4_STRING_LEN);
-  memset(block_nets[0], 0, sizeof(char) * VPNSVC_IP4_STRING_LEN);
-  memset(block_nets[1], 0, sizeof(char) * VPNSVC_IP4_STRING_LEN);
-  strncpy(block_nets[0], "125.209.222.141", VPNSVC_IP4_STRING_LEN);
-  block_prefix[0] = 32;
-  strncpy(block_nets[1], "180.70.134.19", VPNSVC_IP4_STRING_LEN);
-  block_prefix[1] = 32;
+Specify networks to be allowed over the original Interface (e.g., wlan0)
+Traffic to these destinations will bypass the VPN and use the physical interface directly. For example:
+  ```
+  size_t num_allow_routes_orig = 2;
+  char *routes_dest_orig_addr[num_allow_routes_orig];
+  int routes_orig_prefix[num_allow_routes_orig];
 
-  allow_nets[0] = malloc(sizeof(char) * VPNSVC_IP4_STRING_LEN);
-  allow_nets[1] = malloc(sizeof(char) * VPNSVC_IP4_STRING_LEN);
-  memset(allow_nets[0], 0, sizeof(char) * VPNSVC_IP4_STRING_LEN);
-  memset(allow_nets[1], 0, sizeof(char) * VPNSVC_IP4_STRING_LEN);
-  strncpy(allow_nets[0], "216.58.221.142", VPNSVC_IP4_STRING_LEN);
-  allow_prefix[0] = 32;
-  strncpy(allow_nets[1], "206.190.36.45", VPNSVC_IP4_STRING_LEN);
-  allow_prefix[1] = 32;
+  memset(routes_dest_orig_addr[0], 0, sizeof(char) * VPNSVC_IP4_STRING_LEN);
+  strncpy(routes_dest_orig_addr[0], "192.168.1.100", VPNSVC_IP4_STRING_LEN - 1);
+  routes_orig_prefix[0] = 32; // /32 for a single host
+  printf("Original Interface Allowed Network 1: %s/%d\n", routes_dest_orig_addr[0], routes_orig_prefix[0]);
 
-  ret = vpnsvc_block_networks(handle, block_nets, block_prefix, block_nr_nets,
-                              allow_nets, allow_prefix, allow_nr_nets);
+  // Example: Allow access to the local router's admin page
+  memset(routes_dest_orig_addr[1], 0, sizeof(char) * VPNSVC_IP4_STRING_LEN);
+  strncpy(routes_dest_orig_addr[1], "192.168.1.1", VPNSVC_IP4_STRING_LEN - 1);
+  routes_orig_prefix[1] = 32; // /32 for a single host
+  printf("Original Interface Allowed Network 2: %s/%d\n", routes_dest_orig_addr[1], routes_orig_prefix[1]);
+  ```
 
+Use the vpnsvc_block_networks() function to allow the specified networks:
+  ```
+  ret = vpnsvc_block_networks(handle,
+                              routes_dest_vpn_addr, routes_vpn_prefix, num_allow_routes_vpn,
+                              routes_dest_orig_addr, routes_orig_prefix, num_allow_routes_orig);
+    if (ret != VPNSVC_ERROR_NONE) {
+        printf("vpnsvc_block_networks failed! Error code: %d\n", ret);
+        // It's good practice to map error codes to messages if possible
+        switch (ret) {
+            case VPNSVC_ERROR_INVALID_PARAMETER:
+                printf("  Reason: Invalid parameter (e.g., NULL handle, empty address arrays, num_routes > 255).\n");
+                break;
+            case VPNSVC_ERROR_IPC_FAILED:
+                printf("  Reason: Cannot connect to VPN service daemon.\n");
+                break;
+            case VPNSVC_ERROR_PERMISSION_DENIED:
+                printf("  Reason: Permission denied. Check if the application has the required privileges:\n");
+                printf("           - http://tizen.org/privilege/vpnservice\n");
+                printf("           - http://tizen.org/privilege/internet\n");
+                break;
+            case VPNSVC_ERROR_NOT_SUPPORTED:
+                printf("  Reason: This feature is not supported on the device.\n");
+                break;
+            default:
+                printf("  Reason: Unknown error.\n");
+                break;
+        }
+    } else {
+        printf("vpnsvc_block_networks succeeded!\n");
+        printf("All network traffic is now blocked EXCEPT for the specified VPN and Original interface routes.\n");
+    }
   if (ret != VPNSVC_ERROR_NONE)
       printf("vpnsvc_block_networks failed!\n");
   else
@@ -378,7 +412,6 @@ To block or unblock the network:
   }
 
   ret = vpnsvc_unblock_networks(handle);
-
   if (ret != VPNSVC_ERROR_NONE)
       printf("vpnsvc_unblock_networks failed!\n");
   else
@@ -396,10 +429,42 @@ To read or write data:
   int ret;
   int timeout_ms = 20;
 
+  // This can block until there is data available for reading from the VPN interface, or the timeout expires.
   ret = vpnsvc_read(handle, timeout_ms);
+  if (ret == VPNSVC_ERROR_NONE) {
+	  read_data(handle);
+  } else if (ret == VPNSVC_ERROR_TIMEOUT) {
+	  // Handle timeout
+  } else {
+	  // Handle errors
+  }
+  ```
+If `VPNSVC_ERROR_NONE` returns, you can proceed to read data from the VPN interface.
+You can obtain the file descriptor using `vpnsvc_get_iface_fd()` and then read the data from it.
+  ```
+  bool get_iftace_fd(vpnsvc_h handle, int* iface_fd) {
+    if (vpnsvc_get_iface_fd(handle, iface_fd) != VPNSVC_ERROR_NONE) {
+        printf("Failed to get VPN interface file descriptor.\n");
+        return false;
+    }
+    if (*iface_fd <= 0) {
+        printf("Invalid file descriptor.\n");
+        return false;
+    }
+    return true;
+  
+  }
 
-  if (ret == VPNSVC_ERROR_NONE)
-      printf("vpnsvc_read: Data available to read!\n");
+  void read_data(vpnsvc_h handle) {
+    int iface_fd = 0;
+    if (!get_iftace_fd(handle, &iface_fd)) {
+        return;
+    }
+
+    char buffer[1024];
+    ssize_t bytes_read = read(iface_fd, buffer, sizeof(buffer));
+    if (bytes_read > 0)
+      // process the read data
   ```
 
 - Write data directly to the underlying socket using a system call for performance. The number of bytes written is returned on success (the same as the system write call).
