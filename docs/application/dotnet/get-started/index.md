@@ -23,7 +23,7 @@ You can also use command line tools to create .NET project on any platform.
         <a href="first-app.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">NUI .NET </p>
-                <p class="card-text">An application that is targeted to run on a wide range of Tizen devices such as mobile devices, TVs, and wearables. NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications.</p>
+                <p class="card-text">An application that is targeted to run on a wide range of Tizen devices such as mobile devices, TVs, and IoTs. NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications.</p>
                 <p></p>
             </div>
         </a>
@@ -34,9 +34,9 @@ You can also use command line tools to create .NET project on any platform.
 
 <div class="row cards-container-infra">
     <div class="col col-6">
-        <a href="wearable-connection/index.md" class="card card-infra card-neutral h-100">
+        <a href="IoT/index.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
-                <p class="h3 card-title">Wearable connection</p>
+                <p class="h3 card-title">IoT</p>
                 <p class="card-text">Test the connection with your device.</p>
             </div>
         </a>
