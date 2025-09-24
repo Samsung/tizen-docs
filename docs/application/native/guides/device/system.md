@@ -148,6 +148,63 @@ func(void)
 }
 ```
 
+## Platform and HAL Feature Combination
+
+Tizen System Information supports both Platform features and HAL (Hardware Abstraction Layer) features. The final feature value is determined by combining Platform and HAL features according to specific rules based on the feature data type.
+
+### Platform and HAL Feature Combination Rules
+
+The behavior differs depending on the feature data type when both Platform and HAL features are defined:
+
+#### int, double, and string types
+- If only Platform feature is defined, the Platform value is used
+- If only HAL feature is defined, the HAL value is used
+- If both Platform and HAL features are defined, the **HAL feature value takes priority** and overrides the Platform feature value
+
+**Table: Platform and HAL feature combination for int, double, and string types**
+
+| Platform Feature | HAL Feature | Final Result | Description |
+|------------------|-------------|--------------|-------------|
+| Defined | Not defined | Platform value | Use Platform feature value only |
+| Not defined | Defined | HAL value | Use HAL feature value only |
+| Defined | Defined | HAL value | HAL feature overrides Platform feature |
+
+#### bool type
+- If only Platform feature is defined, the Platform value is used
+- If only HAL feature is defined, the HAL value is used
+- If both Platform and HAL features are defined, the **AND operation result** of both values is used
+
+The AND operation behavior has important semantic meaning:
+- Platform feature = `true`: The platform provides the framework/API support for the feature
+- Platform feature = `false`: The platform explicitly does not support the feature
+- Platform feature = Not defined: The platform does not have a specific definition for the feature (the platform may not consider this feature)
+- HAL feature = `true`: The actual hardware for the feature is available
+- HAL feature = `false`: The actual hardware for the feature is not available
+- Final result = `true` only when both framework and hardware support are available
+
+**Important Note:** When a Platform feature is not defined (as opposed to explicitly set to `false`), the system uses the HAL feature value directly. This design is intentional because:
+
+- An undefined Platform feature means the platform does not have a specific stance on that feature - it neither explicitly supports nor rejects it
+- A `false` Platform feature means the platform explicitly does not support the feature, regardless of hardware availability
+- Using the HAL feature value when Platform is undefined allows for hardware-specific features to be available even when the platform doesn't have a specific framework for them
+
+For example, if `http://tizen.org/feature/camera` has Platform feature = `true` and HAL feature = `false`, the final result is `false`. This means that while the platform provides camera framework and APIs, the actual camera hardware is not available, making the camera feature unusable.
+
+However, if the Platform feature is not defined and HAL feature = `true`, the final result is `true`. This allows the feature to be available based on hardware capability even when the platform doesn't have a specific framework definition for it.
+
+**Table: Platform and HAL feature combination for bool type**
+
+| Platform Feature | HAL Feature | Final Result | Description |
+|------------------|-------------|--------------|-------------|
+| true | Not defined | true | Platform support only |
+| Not defined | true | true | HAL support only |
+| false | Not defined | false | Platform no support |
+| Not defined | false | false | HAL no support |
+| true | true | true | Both support (AND operation) |
+| true | false | false | Platform support but HAL no support |
+| false | true | false | Platform no support but HAL support |
+| false | false | false | Both no support (AND operation) |
+
 <a name="feature"></a>
 ## Feature Keys
 
