@@ -41,7 +41,7 @@ The main features of the device control include the following:
 
 To enable your application to use the attached device control functionality, follow the steps below:
 
-1.  To use the [Tizen.System.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Display.html), [Tizen.System.Led](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Led.html), and [Tizen.System.Vibrator](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Vibrator.html) classes, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.System.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Display.html), [Tizen.System.Led](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Led.html), [Tizen.System.IR](/application/dotnet/api/TizenFX/latest/api/Tizen.System.IR.html) and [Tizen.System.Vibrator](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Vibrator.html) classes, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```XML
     <privileges>
@@ -49,6 +49,8 @@ To enable your application to use the attached device control functionality, fol
        <privilege>http://tizen.org/privilege/display</privilege>
        <!--To use the Vibrator class -->
        <privilege>http://tizen.org/privilege/haptic</privilege>
+       <!--To use the IR class -->
+       <privilege>http://tizen.org/privilege/use_ir</privilege>
        <!--To use the Led class -->
        <privilege>http://tizen.org/privilege/led</privilege>
     </privileges>
@@ -90,6 +92,15 @@ To retrieve battery information, follow the steps below:
     ```csharp
     BatteryLevelStatus status;
     status = Battery.Level;
+    ```
+
+-   Get the current device's power source with the `PowerSource` property.
+
+    The property contains the device power source type as a value of the [Tizen.System.BatteryPowerSources](/application/dotnet/api/TizenFX/latest/api/Tizen.System.BatteryPowerSource.html) enumeration:
+
+    ```csharp
+    BatteryPowerSource PowerSourceType;
+    PowerSourceType = Battery.PowerSource;
     ```
 
 <a name="display"></a>
