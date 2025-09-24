@@ -8,7 +8,6 @@ _Flutter and the related logo are trademarks of Google LLC. This project is spon
 
 - **Smart TV**: [Tizen 6.0 (2021) or later](https://developer.samsung.com/smarttv/develop/specifications/tv-model-groups.html)
 - **IoT (RPi 3/4)**: Tizen 6.0 or later
-- **Galaxy Watch**: Not supported (use [3.16.2](https://github.com/flutter-tizen/flutter-tizen/tags) or older releases)
 
 ## Installation
 
@@ -41,11 +40,3 @@ flutter-tizen run --release
 ## Platform integration
 - [Flutter plugins for Tizen](../plugins/plugins.md)
 - [Dart bindings for Tizen APIs](../tizen_interop/tizen_interop.md)
-
-## Issues
-
-If you run into any problem, post an [issue](https://github.com/flutter-tizen/flutter-tizen/issues) in this repository to get help. If your issue is clearly not Tizen-specific (i.e. it's reproducible with the regular `flutter` command), you may file an issue in https://github.com/flutter/flutter/issues.
-
-## Contribution
-
-This project is community-driven and we welcome all your contributions and feedback. Consider filing an [issue](https://github.com/flutter-tizen/flutter-tizen/issues) or [pull request](https://github.com/flutter-tizen/flutter-tizen/pulls) to make this project better.
