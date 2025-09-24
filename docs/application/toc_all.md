@@ -192,6 +192,7 @@
 #### [Attached Devices](/application/dotnet/guides/system/attached-devices.md)
 #### [System Information](/application/dotnet/guides/system/system.md)
 #### [System Settings](/application/dotnet/guides/system/settings.md)
+#### [System Logging](/application/dotnet/guides/system/system-logging.md)
 #### [Sound and Vibration Feedback](/application/dotnet/guides/system/feedback.md)
 
 ###  Telephony
