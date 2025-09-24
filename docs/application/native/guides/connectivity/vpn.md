@@ -324,9 +324,9 @@ To configure the interface and connect to the VPN service through an application
 
 To block or unblock the network:
 
-- Block all traffic, except specified allowed networks, and send the specified UP addresses to a specified interface:
+Block all traffic, except specified allowed networks, and send the specified UP addresses to a specified interface:
 
-Specify networks to be allowed over the VPN Interface (e.g., tun0) For example:
+1. Specify networks to be allowed over the VPN Interface (e.g., tun0) For example:
   ```
   size_t num_allow_routes_vpn = 2;
   char *routes_dest_vpn_addr[num_allow_routes_vpn];
@@ -344,7 +344,7 @@ Specify networks to be allowed over the VPN Interface (e.g., tun0) For example:
   printf("VPN Allowed Network 2: %s/%d\n", routes_dest_vpn_addr[1], routes_vpn_prefix[1]);
   ```
 
-Specify networks to be allowed over the original Interface (e.g., wlan0)
+2. Specify networks to be allowed over the original Interface (e.g., wlan0)
 Traffic to these destinations will bypass the VPN and use the physical interface directly. For example:
   ```
   size_t num_allow_routes_orig = 2;
@@ -363,7 +363,7 @@ Traffic to these destinations will bypass the VPN and use the physical interface
   printf("Original Interface Allowed Network 2: %s/%d\n", routes_dest_orig_addr[1], routes_orig_prefix[1]);
   ```
 
-Use the vpnsvc_block_networks() function to allow the specified networks:
+3. Use the vpnsvc_block_networks() function to allow the specified networks:
   ```
   ret = vpnsvc_block_networks(handle,
                               routes_dest_vpn_addr, routes_vpn_prefix, num_allow_routes_vpn,
@@ -439,6 +439,8 @@ To read or write data:
 	  // Handle errors
   }
   ```
+
+ - Read data from the VPN interface:
 If `VPNSVC_ERROR_NONE` returns, you can proceed to read data from the VPN interface.
 You can obtain the file descriptor using `vpnsvc_get_iface_fd()` and then read the data from it.
   ```
