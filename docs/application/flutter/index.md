@@ -30,7 +30,8 @@ The project is an official product by Samsung and maintained by engineers at [Sa
 #### App development
 - [Getting started](./guides/flutter-tizen/doc/get-started.md)
 - [Debugging apps](./guides/flutter-tizen/doc/debug-app.md)
-- [Developing plugins](./guides/flutter-tizen/doc/develop-plugin.md)
+- [Developing plugins with C++](./guides/flutter-tizen/doc/develop-plugin.md)
+- [Developing plugins with C#](./guides/flutter-tizen/doc/develop-plugin-csharp.md)
 
 #### Additional Resources
 - For more information on app, plugin developments, engine builds, and contributing to flutter-tizen, please refer to the [Flutter-tizen Wiki](https://github.com/flutter-tizen/flutter-tizen/wiki) page.
