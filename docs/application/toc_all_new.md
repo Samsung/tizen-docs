@@ -1021,10 +1021,6 @@
 #### [Overview](/application/native/guides/performance/overview.md)
 #### [Tracepoints](/application/native/guides/performance/tracepoints.md)
 
-
-
-### [Migration Guide](/application/native/guides/migration-guide.md)
-
 ## API Reference
 ### [Overview](/application/native/api/overview.md)
 
@@ -1039,8 +1035,6 @@
 ##### [5.5](/application/native/api/wearable/5.5/index.html){:target="_blank"}
 ##### [5.0](/application/native/api/wearable/5.0/index.html){:target="_blank"}
 ##### [4.0](/application/native/api/wearable/4.0/index.html){:target="_blank"}
-##### [3.0](/application/native/api/wearable/3.0/index.html){:target="_blank"}
-##### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
 
 #### Mobile
 ##### [7.0](/application/native/api/mobile/7.0/index.html){:target="_blank"}
@@ -1049,8 +1043,6 @@
 ##### [5.5](/application/native/api/mobile/5.5/index.html){:target="_blank"}
 ##### [5.0](/application/native/api/mobile/5.0/index.html){:target="_blank"}
 ##### [4.0](/application/native/api/mobile/4.0/index.html){:target="_blank"}
-##### [3.0](/application/native/api/mobile/3.0/index.html){:target="_blank"}
-##### [2.4](/application/native/api/mobile/2.4/index.html){:target="_blank"}
 
 #### Iot Headed
 ##### [7.0](/application/native/api/iot-headed/7.0/index.html){:target="_blank"}
