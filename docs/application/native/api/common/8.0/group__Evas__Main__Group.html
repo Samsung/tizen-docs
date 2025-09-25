@@ -97,8 +97,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly initialize Evas and its required dependencies.  <a href="#ga65b3f060b6dd9e488afd0b8cbe101869"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8">evas_init</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly initialize Evas and its required dependencies.  <a href="#ga5dc5f05144dd72e8d58a043344e373b8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09">evas_shutdown</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly shutdown Evas.  <a href="#ga95a8864f81d944a92bb012b77ffd1b09"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Evas_Alloc_Error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835">evas_alloc_error</a> (void)</td></tr>
@@ -253,12 +253,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga65b3f060b6dd9e488afd0b8cbe101869"></a><!-- doxytag: member="Evas_Common.h::evas_init" ref="ga65b3f060b6dd9e488afd0b8cbe101869" args="(void)" -->
+<a class="anchor" id="ga5dc5f05144dd72e8d58a043344e373b8"></a><!-- doxytag: member="Evas_Common.h::evas_init" ref="ga5dc5f05144dd72e8d58a043344e373b8" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8">evas_init</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -269,15 +269,20 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Directly initialize Evas and its required dependencies. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The number of times <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000500">Deprecated:</a></b></dt><dd>This function now returns NULL as cserve2 support has been removed</dd></dl>
+<p>Get the path for the cserve binary to execute</p>
+<p>There is little need for anyone except a desktop environment to call this. This can be called before <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called. It will try and find the full path to the to the cserve binary to run to provide cserve image and font caching services for evas.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>NULL if error, or a string with the full path to the cserve binary.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The number of times <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called.</dd></dl>
 <p>Permits use of Evas independently from <a class="el" href="group__Ecore.html">Ecore</a>. This can be useful in certain types of examples and test programs, as well as by Ecore-Evas' <code><a class="el" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init()</a></code> itself (which is what most EFL applications will be using instead).</p>
-<p>The <a class="el" href="Example_Evas_Buffer_Simple.html">evas-buffer-simple.c</a> example demonstrates use of <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init()</a>, and then manually setting up the canvas:</p>
+<p>The <a class="el" href="Example_Evas_Buffer_Simple.html">evas-buffer-simple.c</a> example demonstrates use of <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a>, and then manually setting up the canvas:</p>
  <div class="fragment"><pre class="fragment"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)
 {
    <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bg, *r1, *r2, *r3;
 
-   <a class="code" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
+   <a class="code" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
 
    <span class="comment">/* After turning Evas on, we create an Evas canvas to work in.</span>
 <span class="comment">    * Canvases are graphical workspaces used for placing and organizing</span>
@@ -345,8 +350,8 @@ Functions</h2></td></tr>
 
 <p>Directly shutdown Evas. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The (decremented) init reference counter.</dd></dl>
-<p>Low level routine to finalize Evas. Decrements a counter of the number of times <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called, and, if appropriate, shuts down associated dependency modules and libraries. A return value of 0 indicates that everything has been properly shut down.</p>
-<p>Ecore-Evas applications will typically use <a class="el" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown()</a> instead, as described in <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init()</a>.</p>
+<p>Low level routine to finalize Evas. Decrements a counter of the number of times <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called, and, if appropriate, shuts down associated dependency modules and libraries. A return value of 0 indicates that everything has been properly shut down.</p>
+<p>Ecore-Evas applications will typically use <a class="el" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown()</a> instead, as described in <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a>.</p>
 <p>The <a class="el" href="Example_Evas_Buffer_Simple.html">evas-buffer-simple.c</a> example shows use of <a class="el" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09" title="Directly shutdown Evas.">evas_shutdown()</a> in its destroy_canvas() routine:</p>
  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span> destroy_canvas(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas);
 <span class="keyword">static</span> <span class="keywordtype">void</span> draw_scene(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas);
@@ -357,7 +362,7 @@ Functions</h2></td></tr>
    <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bg, *r1, *r2, *r3;
 
-   <a class="code" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
+   <a class="code" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
 
    <span class="comment">/* After turning Evas on, we create an Evas canvas to work in.</span>
 <span class="comment">    * Canvases are graphical workspaces used for placing and organizing</span>
@@ -503,7 +508,7 @@ Functions</h2></td></tr>
     fputs(<span class="stringliteral">&quot;ERROR: could not get evas engine info!\n&quot;</span>, stderr);
     <a class="code" href="group__Evas__Canvas.html#gaa0d5d3f1a1e1ffa3b14b09bb374215b4">evas_free</a>(canvas);
 </pre></div></p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869" title="Directly initialize Evas and its required dependencies.">evas_init()</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a34">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a6">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a5">evas-init-shutdown.c</a>.</dd>
 </dl>

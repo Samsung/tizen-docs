@@ -73,7 +73,7 @@ You can get the following information about TTS:
 
 To enable your application to use the TTS functionality, follow the steps below:
 
-1. To use the functions and data types of the TTS (text-to-speech) API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTS__MODULE.html) applications), include the `<tts.h>` header file in your application:
+1. To use the functions and data types of the [TTS (text-to-speech) API](../../api/common/latest/group__CAPI__UIX__TTS__MODULE.html), include the `<tts.h>` header file in your application:
    ```cpp
    #include <tts.h>
    ```
@@ -262,7 +262,24 @@ To set and unset callbacks, follow these steps:
 
    - Utterance started or completed
 
-     If you add text in TTS, that text is handled as an utterance and it obtains its own ID. After you request the TTS process to start, the text is synthesized by an engine and played out. To get a notification when an utterance is started or completed, set the respective callbacks:
+     If you add text in TTS, that text is handled as an utterance and it obtains its own ID. After you request the TTS process to start, the text is synthesized by an engine and played out. Each callback is invoked in the following cases:
+
+     |           Callback           |               Invoked when                | TTS state |
+     | :--------------------------: | :---------------------------------------: | :-------: |
+     |  Utterance started callback  | Playing the synthesized audio is started  | `TTS_STATE_READY` > `TTS_STATE_PLAYING` |
+     | Utterance completed callback | Playing the synthesized audio is finished | `TTS_STATE_PLAYING` (The state is NOT changed until `tts_stop()` is called.) |
+
+        > [!NOTE]
+        > Utterance completed callback is NOT invoked when the following occurs:
+        >
+        > (1) Your application calls `tts_stop()`.
+        >
+        > (2) Playing the synthesized audio is stopped by another application.
+        >
+        > Although the utterance completed callback is not invoked, a state changed callback will be invoked. (The state will be changed from `TTS_STATE_PLAYING` to `TTS_STATE_READY`.)
+
+     
+     To get a notification when an utterance is started or completed, set the respective callbacks:
 
      ```cpp
      /* Started callback */
@@ -428,6 +445,29 @@ To obtain the current state, the supported voice list, and the current voice, fo
     {
         int ret;
         ret = tts_foreach_supported_voices(tts, supported_language_cb, NULL);
+        if (TTS_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
+
+- Obtain a list of personal voices supported by the TTS engine using the `tts_foreach_supported_personal_voices()` function
+
+    The foreach function triggers a separate callback for each supported personal voice. As long as the callback returns `true`, the foreach function continues to loop over the supported personal voices:
+
+    ```cpp
+    bool
+    supported_personal_voice_cb(tts_h tts, const char* language, const char* unique_id, const char* display_name, const char* device_name, void* user_data)
+    {
+        return true; /* To continue to get the next supported personal voice */
+
+        return false; /* To stop the loop */
+    }
+
+    void
+    get_supported_voice(tts_h tts)
+    {
+        int ret;
+        ret = tts_foreach_supported_personal_voices(tts, supported_personal_voice_cb, NULL);
         if (TTS_ERROR_NONE != ret)
             /* Error handling */
     }
@@ -664,6 +704,67 @@ To add text, follow the steps below:
   }
   ```
 
+<a name="synthesis text"></a>
+## Add text with systhesis parameter
+
+The function tts_add_text_with_synthesis_parameter() is an extended version of the tts_add_text() function that allows you to request the TTS library to read a text with various options. For example, it can be used to customize speech by specifying parameters such as pitch, speed, volume, and background volume for the desired text. The TTS library manages added texts using queues, allowing multiple texts to be added simultaneously. Each acquired text receives a speech ID which is used to synthesize and play sound data.
+
+  > [!NOTE]
+  > If the added text is too long, some engines need a long time for synthesis. It is recommended to only use proper length text clips.
+
+  When you do not set the language and use `NULL` for it, the default language is used for synthesizing text.
+
+  You can add text at any point after the `tts_prepare()` function changes the state to `TTS_STATE_READY`:
+
+  ```cpp
+  void
+  add_text_with_synthesis_parameter(tts_h tts)
+  {
+      const char* text = "tutorial"; /* Text for read */
+      const char* language = "en_US"; /* Language */
+      int speed = 10;
+      int pitch = 10;
+      int voice_type = TTS_VOICE_TYPE_FEMALE; /* Voice type */
+      int speed = TTS_SPEED_AUTO; /* Read speed */
+      int utt_id; /* Utterance ID for the requested text */
+
+      static tts_synthesis_parameter_h g_tts_synth_h = NULL;
+      int ret = tts_synthesis_parameter_create(&g_tts_synth_h);
+      ret = tts_synthesis_parameter_set_language(g_tts_synth_h, language);
+      ret = tts_synthesis_parameter_set_speed(g_tts_synth_h, speed);
+      ret = tts_synthesis_parameter_set_pitch(g_tts_synth_h, pitch);
+      ret = tts_synthesis_parameter_set_voice_type(g_tts_synth_h, voice_type);
+      ret = tts_synthesis_parameter_set_volume(g_tts_synth_h, volume);
+      ret = tts_synthesis_parameter_set_background_volume_ratio(g_tts_synth_h, backgroundVolume);
+
+      ret = tts_add_text_with_synthesis_parameter(tts, text, g_tts_synth_h, &utt_id);
+      if (TTS_ERROR_NONE != ret)
+          /* Error handling */
+  }
+  ```
+
+<a name="silent utterance"></a>
+## Add silent utterance
+
+The tts_add_silent_utterance function provides speech with silence for a specific duration. The maximum silent time is 5000 milliseconds (msec). If you need a silent period longer than 5000 msec, call this function multiple times.
+
+  > [!NOTE]
+  > You can add text at any point after the `tts_prepare()` function changes the state to `TTS_STATE_READY`:
+
+  ```cpp
+  void
+  add_silent_utterance(tts_h tts)
+  {
+	  int utt_id = 0;
+	  int ret = 0;
+      int durationInMsec = 3000;
+
+	  ret = tts_add_silent_utterance(tts, durationInMsec, &utt_id);
+        if (TTS_ERROR_NONE != ret)
+            /* Error handling */
+  }
+  ```
+
 <a name="control"></a>
 ## Control playback
 
@@ -753,5 +854,6 @@ To decide between the client-side playback mode and the service-side playback mo
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
+- API References
+  - [TTS API](../../api/common/latest/group__CAPI__UIX__TTS__MODULE.html)

@@ -1,6 +1,6 @@
 # FullScreen API - Mozilla
 
-You can [display an element in the fullscreen mode](#using-the-fullscreen-mode). If the element uses the  [:full-screen](https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI#full-screen_pseudo-class) CSS pseudo-class to switch to the fullscreen mode, a style can be assigned for the fullscreen mode.
+You can [display an element in the fullscreen mode](#using-the-fullscreen-mode). If the element uses the  [:full-screen](https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI#full-screen_pseudo-class){:target="_blank"} CSS pseudo-class to switch to the fullscreen mode, a style can be assigned for the fullscreen mode.
 
 This feature is supported in mobile and TV applications only.
 
@@ -9,16 +9,16 @@ To switch to the fullscreen and back:
 - With the `webkitRequestFullScreen()` method, you can convert a specific element to fullscreen.
 - With the `webkitCancelFullScreen()` method, you can cancel the fullscreen mode.
 
-> **Note**  
+> [!NOTE]
 > Tizen supports the WebKit-based Fullscreen API. When using the Fullscreen API, you must include the webkit prefix.
 
-## Using the Fullscreen Mode
+## Use fullscreen mode
 
-To display and element on full screen, you must learn to use the fullscreen mode:
+To display and element on fullscreen, follow these steps to learn how to use the fullscreen mode:
 
 1. Define the element to be shown in the fullscreen mode.
 
-   In the following example, the screen contains an image, a video playback area, and 2 buttons. For the fullscreen mode, the image and 1 button are defined as an element (`fs-image`). The video playback area (`video`) is another element.
+   In the following example, the screen contains an image, a video playback area, and 2 buttons. For the fullscreen mode, the image and 1 button are defined as an element (`fs-image`). The video playback area (`video`) is another element:
 
    ```
    <h1>FullScreen</h1>
@@ -86,14 +86,16 @@ To display and element on full screen, you must learn to use the fullscreen mode
 
 ![Normal and fullscreen modes](./media/fullscreen.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [fullscreen.html](http://download.tizen.org/misc/examples/w3c_html5/ui/mozilla_fullscreen)
-- [tizen_logo_light.png](http://download.tizen.org/misc/examples/w3c_html5/ui/mozilla_fullscreen/images)
+- [fullscreen.html](http://download.tizen.org/misc/examples/w3c_html5/ui/mozilla_fullscreen){:target="_blank"}
+- [tizen_logo_light.png](http://download.tizen.org/misc/examples/w3c_html5/ui/mozilla_fullscreen/images){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for TV
+* API References
+  - [W3C](https://fullscreen.spec.whatwg.org/){:target="_blank"}

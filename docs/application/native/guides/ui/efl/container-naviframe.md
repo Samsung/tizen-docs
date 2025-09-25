@@ -1,6 +1,6 @@
 # Naviframe
 
-The naviframe container manages many views by stacking them and displaying the topmost one. For more information, see the Naviframe API (in [mobile](../../../api/mobile/latest/group__Elm__Naviframe__Group.html) and [wearable](../../../api/wearable/latest/group__Elm__Naviframe__Group.html) applications).
+The naviframe container manages many views by stacking them and displaying the topmost one. For more information, see the [Naviframe API](../../../api/common/latest/group__Elm__Naviframe__Group.html).
 
 ## Basic Usage
 
@@ -132,5 +132,4 @@ You can register callback functions connected to the following signals for a nav
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

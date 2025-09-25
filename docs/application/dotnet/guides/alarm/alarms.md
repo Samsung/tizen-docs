@@ -50,11 +50,16 @@ To enable your application to use the alarm functionality, follow these steps:
     using Tizen.Applications.Notifications;
     ```
 
+4. To set alarm for service application, the alarm registered with [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl.html) needs to have a [background category](../../guides/applications/efl-ui-app.md#describing-the-background-category).
+
 
 <a name="scenario_1"></a>
 ## Set an alarm with a specific delay
 
 You can set an alarm which, when it expires, either launches an application or sends a notification to the user:
+
+> [!NOTE]
+> Improperly designed alarms can cause battery drain and put a significant load on the server. For this reason, any repeating alarm that uses a (#PERIOD) is considered an inexact alarm.
 
 > [!NOTE]
 > Since Tizen 6.0, the time period value of an alarm can be one of the values of `Tizen.Applications.AlarmStandardPeriod`. For the `CreateAlarm()` method of the `Tizen.Applications.AlarmManager` class, if you use `Tizen.Applications.AlarmStandardPeriod`, the time period value of the alarm is guaranteed. If `Tizen.Applications.AlarmStandardPeriod` is not used, the time period value will be phase-aligned with another time period value of the alarm.
@@ -190,5 +195,8 @@ You can list all scheduled alarms, and cancel alarms either one by one or all at
     ```
 
 ## Related information
-  * Dependencies
-    -   Tizen 4.0 and Higher
+- Dependencies
+    - Tizen 4.0 and Higher
+- API References
+    - [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager) class
+    - [Tizen.Applications.Alarm](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Alarm) class

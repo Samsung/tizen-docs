@@ -7,13 +7,11 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 5.5 M1 source codes are under **tizen_5.5** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 5.5 M1 source codes are under **tizen_5.5** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20190503.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20190503.1/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20190523.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20190523.1/)
-
-- [How to flash to a device](../developing/flashing.md)
 
 
 ## Release notes

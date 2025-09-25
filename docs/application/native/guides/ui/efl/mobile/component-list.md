@@ -4,7 +4,7 @@ This feature is supported in mobile applications only.
 
 The list is a very simple UI component used to manage a limited number of items. For lists with a lot of items, use the [Genlist](component-genlist.md).
 
-For more information, see the [List](../../../../api/mobile/latest/group__Elm__List__Group.html) API.
+For more information, see the [List](../../../../api/common/latest/group__Elm__List__Group.html) API.
 
 **Figure: List component**
 
@@ -214,7 +214,7 @@ To register and define a callback for the `clicked,double` signal:
 void
 double_clicked_cb(void *data, Evas_Object *obj, void *event_info)
 {
-    elm_Object_Item *it = event_info;
+    Elm_Object_Item *it = event_info;
     elm_list_selected_item_set(it, EINA_FALSE);
 }
 ```
@@ -224,4 +224,4 @@ double_clicked_cb(void *data, Evas_Object *obj, void *event_info)
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

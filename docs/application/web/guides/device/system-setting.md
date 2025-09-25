@@ -4,7 +4,7 @@ You can access and modify some [system settings properties](#system-settings-pro
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the System Setting API include:
+The main features of the System Setting API include the following:
 
 - Device wallpaper management
 
@@ -22,7 +22,7 @@ To use the System Setting API (in [mobile](../../api/latest/device_api/mobile/ti
 <tizen:privilege name="http://tizen.org/privilege/setting"/>
 ```
 
-## Managing the Device Wallpapers
+## Manage the device wallpapers
 
 You can change the home and lock screen images by using the `setProperty()` method of the `SystemSettingManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systemsetting.html#SystemSettingManager) and [wearable](../../api/latest/device_api/wearable/tizen/systemsetting.html#SystemSettingManager) applications). Similarly, you can retrieve information about them by using the `getProperty()` method.
 
@@ -56,11 +56,11 @@ To set the device wallpaper and get information about it:
   }
   ```
 
-## Managing Ringtones and Notification Tones
+## Manage ringtones and notification tones
 
 You can modify the incoming call ringtone and notification email tone sound by using the `setProperty()` method of the `SystemSettingManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systemsetting.html#SystemSettingManager) and [wearable](../../api/latest/device_api/wearable/tizen/systemsetting.html#SystemSettingManager) applications). Similarly, you can retrieve information about them by using the `getProperty()` method.
 
-To set ringtones and notification tones:
+To set ringtones and notification tones, follow these steps:
 
 - To set the specified audio file as the notification tone for emails, use the `setProperty()` method of the `SystemSettingManager` interface:
 
@@ -94,7 +94,7 @@ To set ringtones and notification tones:
   }
   ```
 
-## System Settings Properties
+## System settings properties
 
 The following table lists the supported system settings properties.
 
@@ -107,7 +107,10 @@ The following table lists the supported system settings properties.
 | `INCOMING_CALL`      | Provides information about the incoming call ringtone sound of the device. |
 | `NOTIFICATION_EMAIL` | Provides information about the notification email tone sound of the device. |
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/systemsetting.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/systemsetting.html)

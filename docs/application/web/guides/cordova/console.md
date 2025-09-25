@@ -4,7 +4,7 @@ You can write messages to the system console for debugging purposes.
 
 The Console API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Console API include:
+The main features of the Console API include the following:
 
 - Writing log messages and errors
 
@@ -18,7 +18,7 @@ The main features of the Console API include:
 
   You can [measure the time elapsed during an operation](#measuring-timing).
 
-> **Note**  
+> [!NOTE]
 > To see the message writing results, use the system console in the Tizen Studio or use the `sdb dlog` command.
 
 The global `console` object contains some additional features defined by Cordova.
@@ -38,7 +38,7 @@ function onDeviceReady() {
 
 The `console` global object is available earlier, but it points to a default system console.
 
-## Writing Log Messages and Errors
+## Write log messages and errors
 
 To write simple log and error messages to the system console, use the `log()` and `error()` methods:
 
@@ -47,12 +47,12 @@ console.log('console.log works well');
 console.error('console.error works well');
 ```
 
-> **Note**  
+> [!NOTE]
 > To see the writing results, use the system console available in your Tizen Studio or use the `sdb dlog` command.
 
-## Formatting Objects
+## Format objects
 
-To print a JavaScript representation of a specified object:
+To print a JavaScript representation of a specified object, follow these steps:
 
 - To print without formatting:
 
@@ -68,9 +68,9 @@ To print a JavaScript representation of a specified object:
   console.dir('my object %o', john);
   ```
 
-## Measuring Timing
+## Measure time
 
-To measure the time elapsed during an operation:
+To measure the time elapsed during an operation, follow these steps:
 
 1. Start the timer and give it a label (a string), which is used to identify the timer:
 
@@ -97,8 +97,12 @@ To measure the time elapsed during an operation:
    ```
 
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/console.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/console.html)
+  - [TV](../../api/latest/device_api/tv/tizen/cordova/console.html)

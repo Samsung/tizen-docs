@@ -4,7 +4,7 @@ You can play and record audio files using various functionalities, such as play,
 
 The Media API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Media API include:
+The main features of the Media API include the following:
 
 - Playing audio files
 
@@ -32,7 +32,7 @@ The main features of the Media API include:
 
 ## Prerequisites
 
-To enable your application to use the media functionality:
+To enable your application to use the media functionality, follow these steps:
 
 1. To perform any Cordova-related operations, you must wait until Cordova is fully set up (the `deviceready` event occurs):
 
@@ -53,13 +53,13 @@ To enable your application to use the media functionality:
    <tizen:privilege name="http://tizen.org/privilege/volume.set"/>
    ```
 
-## Playing Audio Files
+## Play audio files
 
-To implement simple audio file playback, where the audio is played from the beginning to the end:
+To implement simple audio file playback, where the audio is played from the beginning to the end, follow these steps:
 
 1. Place the audio file in a directory on a device. In this example, it is in the owner home directory: `/home/owner/content/Music/play.mp3`.
 
-2. Construct a new media object from the audio file. No additional parameters are required.
+2. Construct a new media object from the audio file. No additional parameters are required:
 
    ```
    var myMedia = new Media('file:///home/owner/content/Music/play.mp3');
@@ -73,11 +73,11 @@ To implement simple audio file playback, where the audio is played from the begi
 
 Release the media resources when they are no longer needed.
 
-## Seeking Position
+## Seek position
 
-To change the position of the played file:
+To change the position of the played file, follow these steps:
 
-1. Construct a new media object from the audio file.
+1. Construct a new media object from the audio file:
 
    ```
    var myMedia = new Media('file:///home/owner/content/Music/play.mp3');
@@ -89,7 +89,7 @@ To change the position of the played file:
    myMedia.play();
    ```
 
-3. After 5 seconds, seek the position of 10 seconds.
+3. After 5 seconds, seek the position of 10 seconds:
 
    A timer is registered using the `setTimeout()` global function.
 
@@ -108,9 +108,9 @@ To change the position of the played file:
    }, 10000);
    ```
 
-## Changing the Volume
+## Change the volume
 
-To change the volume during playback:
+To change the volume during playback, follow these steps:
 
 1. Construct a new media object from the audio file:
 
@@ -140,7 +140,7 @@ To change the volume during playback:
    }, 5000);
    ```
 
-## Using Playback Callbacks
+## Use playback callbacks
 
 You can monitor the playback status changes by defining a status callback for the `Media` constructor (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html#Media), [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html#Media), and [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#Media) applications). Each time the status changes, the defined callback is called with a status constant as a parameter. The following table lists the available status constants.
 
@@ -154,7 +154,7 @@ You can monitor the playback status changes by defining a status callback for th
 | `Media.MEDIA_PAUSED`   | Playback is paused.   |
 | `Media.MEDIA_STOPPED`  | Playback is stopped.  |
 
-To handle playback callbacks:
+To handle playback callbacks, use the following steps:
 
 1. Define a success callback, which is called when the playback finishes successfully:
 
@@ -164,7 +164,7 @@ To handle playback callbacks:
    };
    ```
 
-2. Define an error callback, which is called when an error occurs. The only parameter contains the error code (for a list of error codes, see the `MediaError` API Reference in [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html#MediaError), [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html#MediaError), and [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#MediaError) applications).
+2. Define an error callback, which is called when an error occurs. The only parameter contains the error code (for a list of error codes, see the `MediaError` API Reference in [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html#MediaError), [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html#MediaError), and [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#MediaError) applications):
 
    ```
    var errorCallback = function(err) {
@@ -195,7 +195,7 @@ To handle playback callbacks:
 
 4. Construct a new media object and pass the callbacks as parameters.
 
-   Since the callbacks are optional, you do not need to provide them all. However, to monitor status changes, you must provide the status callback defined in the previous step.
+   Since the callbacks are optional, you do not need to provide them all. However, to monitor status changes, you must provide the status callback defined in the previous step:
 
    ```
    var src = 'file:///home/owner/content/Music/play.mp3';
@@ -220,9 +220,9 @@ To handle playback callbacks:
    }, 5000);
    ```
 
-## Getting the Duration and Position
+## Get the duration and position
 
-To get the duration of the audio file, and retrieve the current position:
+To get the duration of the audio file, and retrieve the current position, follow these steps:
 
 1. Construct a new media object from an audio file:
 
@@ -230,7 +230,7 @@ To get the duration of the audio file, and retrieve the current position:
    var myMedia = new Media('file:///home/owner/content/Music/play.mp3');
    ```
 
-2. Get the duration and print it to the system log. The -1 value means that the duration is unknown.
+2. Get the duration and print it to the system log. The -1 value means that the duration is unknown:
 
    ```
    console.log('Audio duration in seconds is ' + myMedia.getDuration());
@@ -250,7 +250,7 @@ To get the duration of the audio file, and retrieve the current position:
    };
    ```
 
-5. Define the optional callback for errors in retrieving the position. For the specific error codes, see the `MediaError` API Reference (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html#MediaError), [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html#MediaError), and [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#MediaError) applications).
+5. Define the optional callback for errors in retrieving the position. For the specific error codes, see the `MediaError` API Reference (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html#MediaError), [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html#MediaError), and [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#MediaError) applications):
 
    ```
    var errorCallback = function(err) {
@@ -258,7 +258,7 @@ To get the duration of the audio file, and retrieve the current position:
    };
    ```
 
-6. Request the position. The result is passed asynchronously to the callback function.
+6. Request the position. The result is passed asynchronously to the callback function:
 
    ```
    myMedia.getCurrentPosition(positionCallback, errorCallback);
@@ -279,9 +279,9 @@ To get the duration of the audio file, and retrieve the current position:
    Current position in seconds is 4.919
    ```
 
-## Recording Audio
+## Record audio
 
-To start and stop recording:
+To start and stop recording, follow these steps:
 
 1. Define the optional success and error callbacks:
 
@@ -320,8 +320,12 @@ To start and stop recording:
    Always release the media object when no longer needed.
 
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 3.0 and Higher for Mobile
    - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html)
+  - [TV](../../api/latest/device_api/tv/tizen/cordova/media.html)

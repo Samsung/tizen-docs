@@ -1,6 +1,6 @@
 # Grid
 
-The grid container places its elements at specific positions along a fixed grid, where the position of each object is given as a percentage of the full width and height of the grid. For more information, see the Grid API (in [mobile](../../../api/mobile/latest/group__Elm__Grid__Group.html) and [wearable](../../../api/wearable/latest/group__Elm__Grid__Group.html) applications).
+The grid container places its elements at specific positions along a fixed grid, where the position of each object is given as a percentage of the full width and height of the grid. For more information, see the [Grid API](../../../api/common/latest/group__Elm__Grid__Group.html).
 
 **Figure: Grid component structure**
 
@@ -78,5 +78,4 @@ evas_object_show(button);
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

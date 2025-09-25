@@ -350,11 +350,51 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter</td></tr>
   </table>
   </dd>
 </dl>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> enumeration = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#ga11c838e2ce59ef641d0047202be7b3b9" title="An i18n_uconverter_selector_h handle.">i18n_uconverter_selector_h</a> sel;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> excluded_set = NULL;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *char_str = <span class="stringliteral">&quot;Hello World!&quot;</span>;
+    <span class="keyword">const</span> <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> <span class="keywordtype">string</span>[20] = {0,};
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    int32_t length;
 
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USTRING__MODULE.html#gaf6c8c1db5d5b183c0c9c9db7a8fa0460" title="Converts a UTF-8 string to UTF-16.">i18n_ustring_from_UTF8</a>((<a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> *)<span class="keywordtype">string</span>, I18N_UPRV_LENGTHOF(<span class="keywordtype">string</span>), &amp;length, char_str, 5, &amp;error_code);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ustring_from_UTF8: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#gae018afb9cfe2fb629a56c424a07b836d" title="Creates an empty i18n_uset_h object.">i18n_uset_create_empty</a>(&amp;excluded_set);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_create_empty: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#ga71a26f5f67af4a12af07a79e8e8819dc" title="Creates an i18n_uconverter_selector_h.">i18n_ucnvsel_create</a>(NULL, 0, excluded_set, <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gga732e86ba14f059e5ab664008822d550ba82418522b5b4972729eb29505438d8ed">I18N_UCNV_ROUNDTRIP_AND_FALLBACK_SET</a>, &amp;sel);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucnvsel_create: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(excluded_set);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#gacf02f730f11ce78e9c57139df54fc3d2" title="Selects converters that can map all characters in a UTF-16 string, ignoring the excluded code points...">i18n_ucnvsel_select_for_string</a>(sel, <span class="keywordtype">string</span>, length, &amp;enumeration);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucnvsel_select_for_string: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(excluded_set);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#ga7a21aef1d35aa0ce1e54ca6367bdc29a" title="Destroys an i18n_uconverter_selector_h.">i18n_ucnvsel_destroy</a>(sel);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(excluded_set);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#ga7a21aef1d35aa0ce1e54ca6367bdc29a" title="Destroys an i18n_uconverter_selector_h.">i18n_ucnvsel_destroy</a>(sel);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="ga89be980a3570138da7d5c547994b0565"></a><!-- doxytag: member="utils_i18n_ucnvsel.h::i18n_ucnvsel_select_for_utf8" ref="ga89be980a3570138da7d5c547994b0565" args="(const i18n_uconverter_selector_h sel, const char *string, int32_t length, i18n_uenumeration_h *enumeration)" -->
@@ -410,11 +450,48 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter</td></tr>
   </table>
   </dd>
 </dl>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;string.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
 
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> enumeration = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#ga11c838e2ce59ef641d0047202be7b3b9" title="An i18n_uconverter_selector_h handle.">i18n_uconverter_selector_h</a> sel;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga525eb0719caf60935d858996d4bd25ce" title="An i18n_uset_h handle.">i18n_uset_h</a> excluded_set = NULL;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keywordtype">string</span> = <span class="stringliteral">&quot;Hello World!&quot;</span>;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#gae018afb9cfe2fb629a56c424a07b836d" title="Creates an empty i18n_uset_h object.">i18n_uset_create_empty</a>(&amp;excluded_set);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_uset_create_empty: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#ga71a26f5f67af4a12af07a79e8e8819dc" title="Creates an i18n_uconverter_selector_h.">i18n_ucnvsel_create</a>(NULL, 0, excluded_set, <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCNV__MODULE.html#gga732e86ba14f059e5ab664008822d550ba82418522b5b4972729eb29505438d8ed">I18N_UCNV_ROUNDTRIP_AND_FALLBACK_SET</a>, &amp;sel);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucnvsel_create: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(excluded_set);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#ga89be980a3570138da7d5c547994b0565" title="Selects converters that can map all characters in a UTF-8 string, ignoring the excluded code points...">i18n_ucnvsel_select_for_utf8</a>(sel, <span class="keywordtype">string</span>, strlen(<span class="keywordtype">string</span>), &amp;enumeration);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucnvsel_select_for_utf8: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#ga7a21aef1d35aa0ce1e54ca6367bdc29a" title="Destroys an i18n_uconverter_selector_h.">i18n_ucnvsel_destroy</a>(sel);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(excluded_set);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCONVERTER__SELECTOR__MODULE.html#ga7a21aef1d35aa0ce1e54ca6367bdc29a" title="Destroys an i18n_uconverter_selector_h.">i18n_ucnvsel_destroy</a>(sel);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy</a>(excluded_set);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="ga7be4cbe6aa6b6f61185df98d0d65c2ca"></a><!-- doxytag: member="utils_i18n_ucnvsel.h::i18n_ucnvsel_serialize" ref="ga7be4cbe6aa6b6f61185df98d0d65c2ca" args="(const i18n_uconverter_selector_h sel, void *buffer, int32_t buffer_capacity, int32_t *capacity)" -->

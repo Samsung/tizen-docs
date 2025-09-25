@@ -6,7 +6,7 @@ You can use in your application operations, such as calling, Web browsing, and p
 
 If you want to allow other applications to use your application functionalities, you must [export your application controls](#application-control-export) and be prepared to [receive requests and respond to them](#receiving-and-replying-to-application-control-requests).
 
-## Application Control Request
+## Application control request
 
 The application control can be used to describe either an action to be performed by other applications, or the results of the operation performed by a launched application. You can request other applications to perform specific operations using the `ApplicationControl` (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl), and [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications) and `RequestedApplicationControl` (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#RequestedApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#RequestedApplicationControl), and [TV](../../api/latest/device_api/tv/tizen/application.html#RequestedApplicationControl) applications) interfaces. The operations can be, for example, making a phone call, browsing local files so the user can pick an image of their choosing, or playing a video in a video player.
 
@@ -25,8 +25,7 @@ The application control uses the following primary information:
 
   Used to identify the provider application of the requested application control.
 
-  > **Note**
-  >
+  > [!NOTE]
   > Since Tizen 2.4, the platform-defined application controls and aliased application IDs which were defined in previous Tizen versions may not be supported. If they are used, the application control behavior is undefined and cannot be guaranteed.
 
 - Operation
@@ -49,12 +48,11 @@ There are different types of application control requests for [launching other a
 
 You can take advantage of the Tizen [common application functionalities](#common-application-controls) through the application control feature. You can also [export your application functionality](#application-control-export) to allow other applications to launch your application.
 
-### Explicit Launch
+### Explicit launch
 
 If you specify the exact application ID of the application for the `launchAppControl()` method of the `Application` interface, you can request the application control from a specific application. The application ID determines which application is launched and the application performs the operation as specified in the control request.
 
-> **Note**
->
+> [!NOTE]
 > An explicit launch request cannot be completed if the user does not have the specified application on their device. Hence implicit launches can be more effective, because the system can find an available application to complete the request. The implicit launch can also enhance the user experience because it allows the user to select a preferred application to complete the task.
 
 ### Implicit Launch
@@ -106,7 +104,7 @@ tizen.application.findAppControl(appControl, function(appInfos, appCtrl) {
 });
 ```
 
-### Common Application Controls
+### Common application controls
 
 The Tizen common application controls specify a standard protocol for sharing application functionalities. You can use the common application controls to perform some basic tasks, such as selecting a file or taking a picture.
 
@@ -130,7 +128,7 @@ The following common application controls are available:
   *	[Settings for Wi-Fi](common-appcontrols.md#settings-for-wi-fi)
 - [Voice Recorder](common-appcontrols.md#voice-recorder)
 
-## Application Control Export
+## Application control export
 
 Your application can export application control functionality. This means that the application can register itself as a provider application, allowing it to receive application control requests from other applications. You can [handle an incoming application control request](#receiving-and-replying-to-application-control-requests) using the `getRequestedAppControl()` method of the `Application` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#Application), [wearable](../../api/latest/device_api/wearable/tizen/application.html#Application), and [TV](../../api/latest/device_api/tv/tizen/application.html#Application) applications), and respond to the incoming request using the `RequestedApplicationControl` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#RequestedApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#RequestedApplicationControl), and [TV](../../api/latest/device_api/tv/tizen/application.html#RequestedApplicationControl) applications).
 
@@ -196,7 +194,7 @@ If your application offers the same service (operation) with different parameter
 </tizen:app-control>
 ```
 
-### Preventing Page Reloads for Incoming Requests
+### Prevent page reloads for incoming requests
 
 When a Web application receives an application control request from another application, the receiving application finds the proper page for that request and loads that page. If the found page is already loaded and displayed, the page is reloaded (refreshed) to process the incoming application control request. However, in some cases, a Web application is able to handle the application control request without reloading the page in order to keep the previous context.
 
@@ -236,7 +234,7 @@ To use the Application API (in [mobile](../../api/latest/device_api/mobile/tizen
 <tizen:privilege name="http://tizen.org/privilege/appmanager.kill"/>
 ```
 
-## Retrieving Application Information
+## Retrieve application information
 
 You can retrieve information about applications in various ways:
 
@@ -284,7 +282,7 @@ Learning how to retrieve information about installed and running applications al
 
 - To retrieve basic application information, use the `getAppInfo()` method of the `ApplicationManager` interface.
 
-  Provide the application ID of the application whose information you want as a parameter for the method. If no application ID is set, the method uses the details of the application calling the method.
+  Provide the application ID of the application whose information you want as a parameter for the method. If no application ID is set, the method uses the details of the application calling the method:
 
   ```
   var appinfo = tizen.application.getAppInfo('org.tizen.application');
@@ -294,7 +292,7 @@ Learning how to retrieve information about installed and running applications al
 
 - To retrieve application context information, use the `getAppContext()` method of the `ApplicationManager` interface.
 
-  Provide the context ID of the application whose context information you want as a parameter for the method. If no context ID is set, the method uses the details of the application calling the method.
+  Provide the context ID of the application whose context information you want as a parameter for the method. If no context ID is set, the method uses the details of the application calling the method:
 
   ```
   var appContext = tizen.application.getAppContext();
@@ -303,7 +301,7 @@ Learning how to retrieve information about installed and running applications al
 
 - To retrieve application battery usage information, use the `getBatteryUsageInfo()` method of the `ApplicationManager` interface.
 
-  To retrieve the battery usage information for a limited time period starting from a specific number of days ago, set the number of days in the third parameter of the method. If you leave the parameter at `null`, the time period since the battery was last fully charged is used.
+  To retrieve the battery usage information for a limited time period starting from a specific number of days ago, set the number of days in the third parameter of the method. If you leave the parameter at `null`, the time period since the battery was last fully charged is used:
 
   ```
   var successCallback = function(batteryUsageInfoArray) {
@@ -318,7 +316,7 @@ Learning how to retrieve information about installed and running applications al
 
 - To retrieve application usage statistics, use the `getAppsUsageInfo()` method of the `ApplicationManager` interface. Define the type of statistics (most frequently or recently used applications) in the third parameter.
 
-  To retrieve the statistics from between specific start and end dates, or for a limited time period starting from a specific number of days ago, set the time filter in the fourth parameter of the method. If you leave the parameter at `null`, a time period starting from 30 days ago is used.
+  To retrieve the statistics from between specific start and end dates, or for a limited time period starting from a specific number of days ago, set the time filter in the fourth parameter of the method. If you leave the parameter at `null`, a time period starting from 30 days ago is used:
 
   ```
   var successCallback = function(appsUsageInfo) {
@@ -335,11 +333,10 @@ Learning how to retrieve information about installed and running applications al
   tizen.application.getAppsUsageInfo(successCallback, errorCallback, "RECENTLY");
   ```
 
-> **Note**
->
+> [!NOTE]
 > Statistics are available for the last 90 days. If you set a time filter that starts from more than 90 days ago, only the period that falls within the last 90 days is included in the returned array.
 
-## Managing Applications
+## Manage applications
 
 You can manage and retrieve information about the current application with the `Application` object (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#Application), [wearable](../../api/latest/device_api/wearable/tizen/application.html#Application), and [TV](../../api/latest/device_api/tv/tizen/application.html#Application) applications). The `Application` object is retrieved using the `getCurrentApplication()` method of the `ApplicationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationManager) applications). You can exit or hide the current application using the `Application` interface.
 
@@ -349,7 +346,7 @@ Learning how to launch and stop other applications, and hide or exit application
 
    To launch an application, use the `launch()` method of the `ApplicationManager` interface, and to stop an application, use the `kill()` method.
 
-   In the following example, the application to be launched and stopped is an alarm, with the `"samplealarm"` ID.
+   In the following example, the application to be launched and stopped is an alarm, with the `"samplealarm"` ID:
 
    ```
    /* Launch the application */
@@ -387,7 +384,7 @@ Learning how to launch and stop other applications, and hide or exit application
    currApp.exit();
    ```
 
-## Launching Applications with the Application Control
+## Launch applications with the application control
 
 With the application control, you can send a request to launch other applications based on their functionality using the `launchAppControl()` method of the `ApplicationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationManager) applications) (which can also contain some data).
 
@@ -397,7 +394,7 @@ Learning to use application controls to launch other applications from your appl
 
 1. To use the application control mechanism to pick image files from a list of images, create an `ApplicationControl` object (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl), and [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications).
 
-   Define the functionality required from the external application which you want to launch. The application control request must have an operation type suitable for selecting images, with the URI set as `null`, and the MIME type set as `image/*`.
+   Define the functionality required from the external application which you want to launch. The application control request must have an operation type suitable for selecting images, with the URI set as `null`, and the MIME type set as `image/*`:
 
    ```
    var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/pick', null, 'image/*');
@@ -428,7 +425,7 @@ Learning to use application controls to launch other applications from your appl
    }, appControlReplyCB);
    ```
 
-## Receiving and Replying to Application Control Requests
+## Receive and reply to application control requests
 
 Learning how to handle requests from other applications allows you to create Web applications that can be called from other applications to perform specific actions.
 
@@ -490,11 +487,11 @@ if (reqAppControl) {
 }
 ```
 
-## Broadcasting and Listening for Events
+## Broadcast and listen for events
 
 Since Tizen 2.4, Web applications can broadcast their own events to all listeners who are listening for these events. Web applications can also broadcast trusted events for trusted listeners who have the same certificate as the sender application.
 
-To manage event broadcasting:
+To manage event broadcasting, follow these steps:
 
 - You can broadcast an event with the `broadcastEvent()` or `broadcastTrustedEvent()` method.
 - You can receive event data from other applications with the `addEventListener()` method.
@@ -540,14 +537,13 @@ Learning how to broadcast and listen for events allows you to create Web applica
   app.removeEventListener(watchId);
   ```
 
-## Background Execution
+## Background execution
 
 When a Web application becomes invisible (moves to the background), it is suspended. Before Tizen 2.4, to continue to execute the application in the background, you had to set the `background-support` attribute of the `<tizen:setting>` element to `enable` in the `config.xml` file (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_setting) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_setting) applications).
 
 Since Tizen 2.4, the background process management policy has been changed. The system does not allow applications to run in the background except when they are explicitly declared to do so by having a specific background category. For more information on the available background categories, see the [Allowed background application policy](../../../native/guides/applications/efl-ui-app.md#allow_bg_table) table.
 
-> **Note**
->
+> [!NOTE]
 > To guarantee that a Web application runs in the background, at least 1 `background-category` element must be declared in the `config.xml` file (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_bg_category) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_bg_category) applications), and the `background-support` attribute of the `<tizen:setting>` element must be set to `enable`.
 
 The following `config.xml` file example shows how an application can be configured to run in the background:
@@ -567,13 +563,13 @@ The following `config.xml` file example shows how an application can be configur
 </widget>
 ```
 
-## Monitoring the Application Status
+## Monitor the application status
 
 Learning how to receive notifications allows you to monitor when the status of an application installed on a device is changed (it is enabled or disabled):
 
 1. To receive status change notifications for installed applications, add a listener that is triggered each time the application status changes.
 
-   If you want to monitor the status of a specific application (instead of all installed applications), provide the application ID as a second parameter to the `addAppStatusChangeListener()` method.
+   If you want to monitor the status of a specific application (instead of all installed applications), provide the application ID as a second parameter to the `addAppStatusChangeListener()` method:
 
    ```
    var watchId;
@@ -599,8 +595,12 @@ Learning how to receive notifications allows you to monitor when the status of a
    }
    ```
 
-## Related Information
+## Related information
 * Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/application.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/application.html)
+  - [TV](../../api/latest/device_api/tv/tizen/application.html)

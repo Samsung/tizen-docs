@@ -4,7 +4,7 @@ Preference management allows you to store and retrieve the application preferenc
 
 This feature is supported in mobile and wearable applications only.
 
-> **Note**  
+> [!NOTE]
 > The Preference API is a different feature than the [`preferences` attribute of the `config.xml` file](../../tutorials/process/setting-properties.md#preferences), which is used to set and retrieve name-value pairs using the Widget Interface API (in [mobile](../../api/latest/w3c_api/w3c_api_m.html#widget) and [wearable](../../api/latest/w3c_api/w3c_api_w.html#widget) applications).
 
 The main preference features are:
@@ -25,7 +25,7 @@ The main preference features are:
 
   You can provide a listener method which is called every time a given preference's value changes. [Register the listener](#monitoring-preference-value-changes) with the `setChangeListener()` method. The provided listener is called with a preference key and its new value. If you want to remove the listener, use the `unsetChangeListener()` method.
 
-## Setting up a Preference
+## Set up a preference
 
 To create a preference with a given key or to change a value of an existing one, use the `setValue()` method:
 
@@ -35,9 +35,9 @@ tizen.preference.setValue('key1', 'New value');
 
 If the preference with the given key does not exist, it is created with the given value.  If the preference exists, only its new value is assigned.
 
-## Getting Preference Values
+## Get preference values
 
-To retrieve preference values:
+To retrieve preference values, follow these steps:
 
 - To get the value of a preference with a given key, use the `getValue()` method:
 
@@ -48,7 +48,7 @@ To retrieve preference values:
 
   The value returned by the method can be a string, number, or boolean. If the preference with the given key does not exist, an exception is thrown.  
 
-- To get all preferences, use the asynchronous `getAll()` method. Its callback gets an array of all preferences, where each row of the array consists of a field key and value.
+- To get all preferences, use the asynchronous `getAll()` method. Its callback gets an array of all preferences, where each row of the array consists of a field key and value:
 
   ```
   var successCB = function(preferences) {
@@ -61,7 +61,7 @@ To retrieve preference values:
   tizen.preference.getAll(successCB);
   ```
 
-## Checking Whether a Preference Exists
+## Check whether a preference exists
 
 To determine whether a preference with a given key exists, use the `exists()` method:
 
@@ -75,9 +75,9 @@ if (tizen.preference.exists('key1')) {
 
 The method returns `true` if the preference exists and `false` if it does not.
 
-## Removing Preferences
+## Remove preferences
 
-To remove preferences:
+To remove preferences, follow these steps:
 
 - To remove a single preference with the given key, use the `remove()` method:
    ```
@@ -89,9 +89,9 @@ To remove preferences:
    tizen.preference.removeAll();
    ```
 
-## Monitoring Preference Value Changes
+## Monitor preference value changes
 
-To start and stop listening for value changes in a preference with a given key:
+To start and stop listening for value changes in a preference with a given key, follow these steps:
 
 - To start listening, use the `setChangeListener()` method:
 
@@ -116,7 +116,10 @@ To start and stop listening for value changes in a preference with a given key:
   ```
 
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 3.0 and Higher for Mobile
   - Tizen 2.3.2 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/preference.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/preference.html)

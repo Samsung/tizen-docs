@@ -2,13 +2,13 @@
 
 You can access multimedia streams, such as camera, on a local device. The feature can be used, for example, for real-time communication, recording, and surveillance.
 
-The main features of the getUserMedia API include:
+The main features of the getUserMedia API include the following:
 
 - Retrieving multimedia streams
 
   You can use the `navigator.webkitGetUserMedia()` method to request user access to [retrieve the multimedia streams](#accessing-a-video-stream) of local devices, such as camera. The method returns the media as a JSON object.
 
-  > **Note**  
+  > [!NOTE]
   > The TV applications support the `navigator.webkitGetUserMedia()` method for the microphone only, because a TV has no camera.
 
 
@@ -16,10 +16,10 @@ The main features of the getUserMedia API include:
 
   You can [capture media content](#capturing-a-media-frame) and transform it to various formats.
 
-> **Note**  
-> Tizen supports a WebKit-based `GetUserMedia()` method, so always add the `webkit` prefix to the method name.
+  > [!NOTE]
+  > Tizen supports a WebKit-based `GetUserMedia()` method, so always add the `webkit` prefix to the method name.
 
-## Accessing a Video Stream
+## Access a video stream
 
 Learning how to access a video stream is a basic user media management skill:
 
@@ -55,13 +55,13 @@ Learning how to access a video stream is a basic user media management skill:
    </script>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [video_stream.html](http://download.tizen.org/misc/examples/w3c_html5/media/get_user_media)
+- [video_stream.html](http://download.tizen.org/misc/examples/w3c_html5/media/get_user_media){:target="_blank"}
 
-## Capturing a Media Frame
+## Capture a media frame
 
 Learning how to capture a frame and display it in a video element is a basic user media management skill:
 
@@ -112,14 +112,16 @@ Learning how to capture a frame and display it in a video element is a basic use
    </script>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [capturing_webcam.html](http://download.tizen.org/misc/examples/w3c_html5/media/get_user_media)
+- [capturing_webcam.html](http://download.tizen.org/misc/examples/w3c_html5/media/get_user_media){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [W3C](https://www.w3.org/TR/mediacapture-streams/){:target="_blank"}

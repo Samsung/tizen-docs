@@ -14,7 +14,7 @@ Usage:
   tidlc [OPTION...]
 
   -h, --help                  Show help options.
-  -l, --language=LANGUAGE     Select generating language (C, C++, C#, Java(CION only)).
+  -l, --language=LANGUAGE     Select generating language (C, C++, C#, Java(CION only), Rust).
   -i, --input=INPUT           A tidl interface file.
   -o, --output=OUTPUT         Generate an interface file.
   -p, --proxy                 Generate proxy code.
@@ -29,6 +29,7 @@ Usage:
 > [!NOTE]
 > Generating thread option with `-t` or `--thread`, and using beta version options with `-b` or `--beta` are supported since Tizen 6.0.
 > Generating cion option with `-c` or `--cion` is supported since Tizen 6.5.
+> Generating Rust language type is supported in protocol version 2 since Tizen 9.0.
 
 ## TIDL Syntax
 
@@ -140,18 +141,18 @@ struct Student  {
 ## TIDL Type System
  - Built-in type (`in` direction case)
 
-	| TIDL type   |Size  |C# type |C++ type  |C type|JAVA type|
-	|------------|------|--------|----------|------|---------|
-	| void   |0|void |void  |void|void|void|
-	| char|1|byte|char|char|byte|
-	| short|2|short|short int|short int|short|
-	| int|4|int |int  |int|int|
-	| long|8|long|long long|long long|long|
-	| float|4|float|float|float|float
-	| double|8|double|double|double|double|
-	| bundle|variable|Bundle|Bundle|bundle *|N/A|
-	| string|variable|string|std::string|const char *|String|
-	| bool|1|bool|bool|bool|boolean|
+	| TIDL type   |Size  |C# type |C++ type  |C type|JAVA type|Rust type|
+	|------------|------|--------|----------|------|---------|---------|
+	| void   |0|void |void  |void|void|()|
+	| char|1|byte|char|char|byte|i8|
+	| short|2|short|short int|short int|short|i16|
+	| int|4|int |int  |int|int|i32|
+	| long|8|long|long long|long long|long|i64|
+	| float|4|float|float|float|float|f32|
+	| double|8|double|double|double|double|f64|
+	| bundle|variable|Bundle|Bundle|bundle *|N/A|Bundle|
+	| string|variable|string|std::string|const char *|String|String|
+	| bool|1|bool|bool|bool|boolean|bool|
 > [!NOTE]
 > bundle type is not supported for CION
 
@@ -161,10 +162,10 @@ struct Student  {
 		- Similar to c++ std::list or std::vector
 		- Can be nested
 
-	| TIDL type  | C# type| C++ type |C type |JAVA type|
-	|--|--|--|--|--|
-	| list<>  | LinkedList<> |std::list<> |Handle (pointer)| LinkedList<> |
-	| array<> | List<>|std::vector<> |Handle (pointer)| ArrayList<> |
+	| TIDL type  | C# type| C++ type |C type |JAVA type|Rust type|
+	|--|--|--|--|--|--|
+	| list<>  | LinkedList<> |std::list<> |Handle (pointer)| LinkedList<> | LinkedList<> |
+	| array<> | List<>|std::vector<> |Handle (pointer)| ArrayList<> | Vec<> |
 
   - User-defined type
 	- Name defined by 'struct' syntax
@@ -1377,6 +1378,126 @@ namespace Proxy
 }
 ```
 
+**Rust**
+```Rust
+pub struct RemoteException {
+    pub cause: i32,
+    pub message: String,
+}
+
+impl RemoteException {
+    pub fn new() -> Self;
+    pub fn with_message(message: &str) -> Self;
+    pub fn with_cause_and_message(cause: i32, message: &str) -> Self;
+    pub fn get_cause(&self) -> i32;
+    pub fn get_message(&self) -> &String;
+}
+
+pub mod message_base {
+    pub struct MessageBase {
+        pub id: i32,
+        pub name: String,
+        pub msg: String,
+    }
+}
+
+pub mod message_derived {
+    pub struct MessageDerived {
+        pub id: i32,
+        pub name: String,
+        pub msg: String,
+        pub address: String,
+    }
+}
+
+pub mod message {
+    pub struct OnReceived<'a> {
+        base: DelegateBase,
+        callback: Box<dyn Fn(String, message_base::MessageBase) + Send + 'a>
+    }
+
+    impl<'b> OnReceived<'b> {
+        pub fn new(once: bool) -> OnReceived<'b>;
+        pub fn on_received<F>(&mut self, handler: F) where F: Fn(String, message_base::MessageBase) + Send + 'b;
+    }
+
+    pub struct Message<'a> {
+        proxy: Arc<Mutex<Proxy<'a>>>,
+        delegate_list: Vec<Box<dyn Delegate + Send + 'a>>,
+    }
+
+    impl<'b> Message<'b> {
+        /// <summary>
+        /// Constructor for this struct
+        /// </summary>
+        pub fn new() -> Arc<Mutex<Message<'b>>>;
+
+        /// <summary>
+        /// Connects to the service app.
+        /// </summary>
+        /// <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+        /// <privilege>http://tizen.org/privilege/datasharing</privilege>
+        /// <param name="appid">The service app ID to connect</param>
+        /// <exception cref="InvalidParameter">
+        /// Returns when the appid to connect is invalid.
+        /// </exception>
+        /// <exception cref="IoError">
+        /// Returns when internal I/O error happen.
+        /// </exception>
+        /// <exception cref="PermissionDenied">
+        /// Returns when the permission is denied.
+        /// </exception>
+        /// <remark> If you want to use this method, you must add privileges.</remark>
+        pub fn try_connect(&self, appid: &str) -> Result<(), ErrorId>;
+
+
+        /// <summary>
+        /// Connects to the service app synchornously.
+        /// </summary>
+        /// <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+        /// <privilege>http://tizen.org/privilege/datasharing</privilege>
+        /// <param name="appid">The service app ID to connect</param>
+        /// <exception cref="InvalidParameter">
+        /// Returns when the appid to connect is invalid.
+        /// </exception>
+        /// <exception cref="IoError">
+        /// Returns when internal I/O error happen.
+        /// </exception>
+        /// <exception cref="PermissionDenied">
+        /// Returns when the permission is denied.
+        /// </exception>
+        /// <remark> If you want to use this method, you must add privileges.</remark>
+        pub fn try_connect_sync(&self, appid: &str) -> Result<(), ErrorId>;
+
+
+        /// <summary>
+        /// This method will be invoked when the client app is connected to the service app.
+        /// </summary>
+        /// <param name="handler">The handler to be invoked when the client app is connected</param>
+        pub fn on_connected<F>(&mut self, handler: F) where F: Fn(&str, &str, Port) + 'b;
+
+        /// <summary>
+        /// This method will be invoked after the client app was disconnected from the service app.
+        /// </summary>
+        /// <param name="handler">The handler to be invoked when the client app is disconnected</param>
+        pub fn on_disconnected<F>(&mut self, handler: F) where F: Fn(&str, &str) + 'b;
+
+        /// <summary>
+        /// This method will be invoked when the service app rejects the client app.
+        /// </summary>
+        /// <param name="handler">The handler to be invoked when the service app rejects the client app</param>
+        pub fn on_rejected<F>(&mut self, handler: F) where F: Fn(&str, &str) + 'b;
+
+        pub fn register(&mut self, sender: String, callback: OnReceived<'b>) -> Result<i32, Exception>;
+
+        pub fn unregister(&mut self, ) -> Result<(), Exception>;
+
+        pub fn send(&mut self, message: message_base::MessageBase) -> Result<i32, Exception>;
+    }
+}
+
+
+```
 
 <a name="stub-interface-1"></a>
 #### Stub interface
@@ -1796,7 +1917,128 @@ namespace Stub
 }
 ```
 
+**Rust**
+```Rust
+pub struct RemoteException {
+    pub cause: i32,
+    pub message: String,
+}
+
+impl RemoteException {
+    pub fn new() -> Self;
+    pub fn with_message(message: &str) -> Self;
+    pub fn with_cause_and_message(cause: i32, message: &str) -> Self;
+    pub fn get_cause(&self) -> i32;
+    pub fn get_message(&self) -> &String;
+}
+
+
+pub mod message_base {
+    pub struct MessageBase {
+        pub id: i32,
+        pub name: String,
+        pub msg: String,
+    }
+}
+pub mod message_derived {
+    pub struct MessageDerived {
+        pub id: i32,
+        pub name: String,
+        pub msg: String,
+        pub address: String,
+    }
+}
+
+pub mod message {
+    pub struct Peer {
+        sender: String,
+        instance: String,
+        port: Option<Port>,
+    }
+
+    impl Peer {
+        /// <summary>
+        /// Gets client app ID
+        /// </summary>
+        pub fn get_sender(&self) -> String;
+
+        /// <summary>
+        /// Gets client instance ID
+        /// </summary>
+        pub fn get_instance(&self) -> String;
+
+        /// <summary>
+        /// Disconnects from the client app
+        /// </summary>
+        /// <exception cref="IoError">
+        /// Returns when internal I/O error happen.
+        /// </exception>
+        pub fn disconnect(&mut self) -> Result<(), ErrorId>;
+    }
+
+    pub struct OnReceived {
+        id: i32,
+        seq_id: i32,
+        once: bool,
+        callback_port: Arc<Port>,
+        valid: bool,
+    }
+
+    impl OnReceived {
+        pub fn invoke(&mut self, sender: String, message: message_base::MessageBase) -> Result<(), ErrorId>;
+    }
+
+    pub trait ServiceHandler {
+        /// <summary>
+        /// The method for making service instances
+        /// </summary>
+        /// <param name="peer">The peer object</param>
+        fn new(peer: Arc<Mutex<Peer>>) -> Box<dyn ServiceHandler + Send> where Self: Sized;
+
+        /// <summary>
+        /// This method will be called when the client is connected
+        /// </summary>
+        fn on_create(&mut self);
+
+        /// <summary>
+        /// This method will be called when the client is disconnected
+        /// </summary>
+        fn on_terminate(&mut self);
+        fn register(&mut self, sender: String, callback: OnReceived) -> Result<i32, RemoteException>;
+        fn unregister(&mut self, ) -> Result<(), RemoteException>;
+        fn send(&mut self, message: message_base::MessageBase) -> Result<i32, RemoteException>;
+    }
+
+    pub struct Message<'a> {
+        stub: Arc<Mutex<Stub<'a>>>,
+        services: Vec<Box<Service>>,
+    }
+
+    impl<'b> Message<'b> {
+        /// <summary>
+        /// Constructor for this struct
+        /// </summary>
+        pub fn new<T: ServiceHandler>() -> Arc<Mutex<Message<'b>>>;
+
+        /// <summary>
+        /// Gets the port
+        /// </summary>
+        /// <param name="port_type">The port type</param>
+        /// <param name="instance">The instance id of the connection</param>
+        pub fn get_port(&self, port_type: &PortType, instance: &str) -> Port;
+
+        /// <summary>
+        /// Listens to client apps
+        /// </summary>
+        /// <exception cref="IoError">
+        /// Returns when internal I/O error happen.
+        /// </exception>
+        pub fn listen(&mut self) -> Result<(), ErrorId>;
+    }
+}
+
+```
+
 ## Related Information
 - Dependencies
-  - Tizen 4.0 and Higher for Mobile
-  - Tizen 5.0 and Higher for Wearable
+  - Since Tizen 4.0

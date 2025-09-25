@@ -12,7 +12,7 @@ The following sensor features apply in **mobile and wearable applications only**
 
   You can read and manage data from various sensors on the device, and also receive notifications when the sensor data changes. You can access information from various environmental sensors, such as the light and magnetic sensors, and from user-related sensors, such as the heart rate monitor.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

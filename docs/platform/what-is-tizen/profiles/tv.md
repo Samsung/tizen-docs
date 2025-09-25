@@ -18,7 +18,12 @@ The benefit of using the latest Tizen 3.0 platform is the software, which provid
 - **Voice Touch**  
 Voice Touch, one of the new Smart TV "touch" capabilities, provides the user with a more intuitive way to use the voice recognition function. When the user wants to run an app on the TV, they can say the title out loud on their remote control. The icon is then activated and the application launches without navigation or other actions.
 - **Making applications with Tizen .NET**  
-By the end of 2017, Samsung plans to make the Tizen .NET framework public. Since announcing last November its collaboration with Microsoft on .NET open-source projects, such as .NET Core and Xamarin.Forms, Samsung has steadily released preview versions of the Tizen .NET SDK to help you build more powerful applications. The previews allow you to practice on the new framework and encourage you to participate in the framework's ongoing development.
+Tizen .NET enables TV application development using C# and the .NET ecosystem, providing:
+  - Access to TV-specific APIs through TizenFX
+  - High-performance application development
+  - Cross-platform capabilities with .NET Standard
+  - Robust memory management and security features
+Developers can leverage these capabilities to build efficient TV applications that integrate with Smart TV features like Voice Touch and Samsung Checkout.
 
 
 ## Develop applications for Tizen TV
@@ -30,8 +35,8 @@ The Samsung Smart TV SDK combines TV features with web-based technologies. The S
 To develop applications for Tizen TV, refer to the following:
 
 - [Smart TV Quick-start Guide](http://developer.samsung.com/tv/develop/getting-started/quick-start-guide){:target="_blank"}
-- [Create Tizen TV .NET Applications](https://developer.samsung.com/smarttv/develop/getting-started/creating-tv-applications.html){:target="_blank"}
-- [Create Tizen TV TV Web applications](https://developer.samsung.com/smarttv/develop/tizen-net-tv/getting-started/creating-net-tv-applications.html){:target="_blank"}
+- [Create Tizen TV .NET Applications](https://developer.samsung.com/smarttv/develop/tizen-net-tv/getting-started/creating-net-tv-applications.html){:target="_blank"}
+- [Create Tizen TV Web applications](https://developer.samsung.com/smarttv/develop/getting-started/creating-tv-applications.html){:target="_blank"}
 
 
 ## Tizen TV devices

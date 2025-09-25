@@ -2,7 +2,7 @@
 
 You can use the Single API to load the existing neural network model from the storage. After loading the model, you can invoke it with a single instance of input data. Then, you can get the inference output result.
 
-The main features of the Single API include:
+The main features of the Single API include the following:
 
 - Loading a neural network model
 
@@ -36,7 +36,7 @@ Additionally, to access files using the Single API (in [mobile](../../api/latest
     var model = tizen.ml.single.openModel("documents/mobilenet_v1_1.0_224_quant.tflite");
     ```
 
-2. If the model supports dynamic tensors, you can:
+2. If the model supports dynamic tensors, you can do the following:
 
     - provide custom input and output tensors:
         ```javascript
@@ -183,3 +183,7 @@ If the invoke time is longer than 100 ms, you encounter `TimeoutError`.
   - Tizen 6.5 and Higher for Mobile
   - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/ml_single.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/ml_single.html)
+  - [TV](../../api/latest/device_api/tv/tizen/ml_single.html)

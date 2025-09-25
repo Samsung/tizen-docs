@@ -7,7 +7,7 @@ The main features of the Device API include:
 
 - Battery information
 
-  You can [get battery details](#battery), such as the current percentage, the charging state, and the current level state, using the Battery API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html) applications).
+  You can [get battery details](#battery), such as the current percentage, the charging state, and the current level state, using the [Battery API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html).
 
 - Device control
 
@@ -15,23 +15,23 @@ The main features of the Device API include:
 
   - Display
 
-    You can [get and set display details](#display), such as the number of displays, the maximum brightness of the display, the current brightness, and the display state, using the Display API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html) applications).
+    You can [get and set display details](#display), such as the number of displays, the maximum brightness of the display, the current brightness, and the display state, using the [Display API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html).
 
   - Haptic
 
-    You can [manage haptic devices](#haptic) by, for example, getting the number of haptic devices, opening or closing the haptic handle, and requesting vibration effect playback, with the Haptic API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html) applications).
+    You can [manage haptic devices](#haptic) by, for example, getting the number of haptic devices, opening or closing the haptic handle, and requesting vibration effect playback, with the [Haptic API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html).
 
   - IR
 
-    You can [manage IR devices](#ir) by, for example, determining whether an IR device is available and transmitting an IR pattern, using the IR API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__IR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__IR__MODULE.html) applications).
+    You can [manage IR devices](#ir) by, for example, determining whether an IR device is available and transmitting an IR pattern, using the [IR API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__IR__MODULE.html).
 
   - LED
 
-    You can [manage the camera flash LED](#led) by, for example, getting the maximum and current brightness of the LED. You can also change the current brightness of the camera flash LED, and request the service LED to play effects using the Led API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html) applications).
+    You can [manage the camera flash LED](#led) by, for example, getting the maximum and current brightness of the LED. You can also change the current brightness of the camera flash LED, and request the service LED to play effects using the [Led API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html).
 
   - Power
 
-    You can [request the power state](#power) to be locked or unlocked using the Power API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html) applications).
+    You can [request the power state](#power) to be locked or unlocked using the [Power API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html).
 
 - Change monitoring
 
@@ -41,7 +41,7 @@ The main features of the Device API include:
 
 To enable your application to use the device functionality:
 
-1. To use the Device API submodules (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Device API submodules](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -56,13 +56,13 @@ To enable your application to use the device functionality:
 
 2. To use the functions and data types of the Device API submodules, include the related header files in your application:
 
-   - For the Battery API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html) applications), include `<device/battery.h>`.
-   - For the Display API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html) applications), include `<device/display.h>`.
-   - For the Haptic API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html) applications), include `<device/haptic.h>`.
-   - For the IR API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__IR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__IR__MODULE.html) applications), include `<device/ir.h>`.
-   - For the Led API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html) applications), include `<device/led.h>`.
-   - For the Power API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html) applications), include `<device/power.h>`.
-   - For the Callback API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__CALLBACK__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__CALLBACK__MODULE.html) applications), include `<device/callback.h>`.
+   - For the [Battery API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html), include `<device/battery.h>`.
+   - For the [Display API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html), include `<device/display.h>`.
+   - For the [Haptic API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html), include `<device/haptic.h>`.
+   - For the [IR API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__IR__MODULE.html), include `<device/ir.h>`.
+   - For the [Led API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html), include `<device/led.h>`.
+   - For the [Power API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html), include `<device/power.h>`.
+   - For the [Callback API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__CALLBACK__MODULE.html), include `<device/callback.h>`.
 
    ```
    /* To retrieve battery information */
@@ -106,7 +106,7 @@ To retrieve battery information:
 
 - Get the current battery level with the `device_battery_get_level_status()` function.
 
-  The `device_battery_level_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#ga63913a4983cc34e35dcdd670e8fe99e4) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#ga63913a4983cc34e35dcdd670e8fe99e4) applications) defines the available battery levels.
+  The [`device_battery_level_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#ga63913a4983cc34e35dcdd670e8fe99e4) defines the available battery levels.
 
     ```
     int error;
@@ -149,7 +149,7 @@ To retrieve and set display properties:
 
 - Get and set the display state with the `device_display_get_state()` and `device_display_change_state()` functions.
 
-  The `display_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f) applications) defines the available display states.
+  The [`display_state_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f) defines the available display states.
 
     ```
     int error;
@@ -253,7 +253,7 @@ To control a LED device:
 
 - Play and stop a custom effect on the service LED with the `device_led_play_custom()` and `device_led_stop_custom()` functions.
 
-  The `led_custom_flags` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) applications) defines the available custom effects.
+  The [`led_custom_flags` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) defines the available custom effects.
 
   The custom effect plays on the service LED that is located on the front of the device.
 
@@ -273,7 +273,7 @@ To lock and unlock the power state:
 
   The function locks the specific lock type for a specified time. After the given timeout, the lock type is unlocked automatically. If the process is destroyed, every lock is removed.
 
-  The `power_lock_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html#gabc47c58cfcfdaaba177f6004d6395af2) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html#gabc47c58cfcfdaaba177f6004d6395af2) applications) defines the available lock types.
+  The [`power_lock_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html#gabc47c58cfcfdaaba177f6004d6395af2) defines the available lock types.
 
     ```
     int error;
@@ -296,7 +296,7 @@ To monitor device changes in, for example, the device display state:
 
 1. Define a callback, which is called when the device status changes.
 
-   The `device_callback_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__CALLBACK__MODULE.html#gaa55ba4e8bf4d8877b500686e1d78f2d7) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__CALLBACK__MODULE.html#gaa55ba4e8bf4d8877b500686e1d78f2d7) applications) defines the available callback types.
+   The [`device_callback_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__CALLBACK__MODULE.html#gaa55ba4e8bf4d8877b500686e1d78f2d7) defines the available callback types.
 
    ```
    static void
@@ -328,5 +328,6 @@ To monitor device changes in, for example, the device display state:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
+- API References
+  - [Device API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__MODULE.html)

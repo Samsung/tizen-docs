@@ -1,10 +1,10 @@
 # Data Synchronization
 
-You can synchronize device data, such as contacts and calendar events, with the OMA DS server using the [OMA](http://openmobilealliance.org/) DS (Data Synchronization) 1.2 protocol.
+You can synchronize device data, such as contacts and calendar events, with the OMA DS server using the [OMA](http://openmobilealliance.org/){:target="_blank"} DS (Data Synchronization) 1.2 protocol.
 
 This feature is supported in mobile applications only.
 
-The main features of the Data Synchronization API include:
+The main features of the Data Synchronization API include the following:
 
 - Creating a sync profile   
 
@@ -16,7 +16,7 @@ The main features of the Data Synchronization API include:
 
   After starting the synchronization process, you can [monitor the progress](#starting-and-monitoring-data-synchronization) of the operation.
 
-> **Note**  
+> [!NOTE]
 > As a prerequisite to synchronizing your device data with the server, you must create an OMA DS server account.
 
 ## Prerequisites
@@ -27,9 +27,9 @@ To use the [Data Synchronization](../../api/latest/device_api/mobile/tizen/datas
 <tizen:privilege name="http://tizen.org/privilege/datasync"/>
 ```
 
-## Creating a Sync Profile
+## Create a sync profile
 
-To create a sync profile:
+To create a sync profile, follow these steps:
 
 1. Check whether there are available profile slots on the device using the `getProfilesNum()` and `getMaxProfilesNum()` methods of the [DataSynchronizationManager](../../api/latest/device_api/mobile/tizen/datasync.html#DataSynchronizationManager) interface:
 
@@ -57,11 +57,11 @@ To create a sync profile:
    }
    ```
 
-## Starting and Monitoring Data Synchronization
+## Start and monitor data synchronization
 
 After starting the synchronization process using the `startSync()` method of the `DataSynchronizationManager` interface, you can monitor the progress of the operation. Use the [SyncProgressCallback](../../api/latest/device_api/mobile/tizen/datasync.html#SyncProgressCallback) interface to define listeners for receiving notifications. After the synchronization is completed, you can retrieve statistics using the `getLastSyncStatistics()` method.
 
-To start and monitor the data synchronization process:
+To start and monitor the data synchronization process, follow these steps:
 
 1. Define the event handlers for the notifications using the `SyncProgressCallback` listener interface:
 
@@ -82,6 +82,8 @@ To start and monitor the data synchronization process:
    tizen.datasync.startSync(profileId, syncCallback);
    ```
 
-## Related Information
+## Related information
 * Dependencies   
   - Tizen 2.4 and Higher for Mobile
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/datasync.html)

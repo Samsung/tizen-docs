@@ -4,7 +4,7 @@ You can access user accounts and account providers. After getting a specific acc
 
 This feature is supported in mobile, wearable and tv applications.
 
-The main features of the Account API include:
+The main features of the Account API include the following:
 
 - Accessing accounts
 
@@ -38,7 +38,7 @@ To understand account management, you must be familiar with the following basic 
 
 ## Prerequisites
 
-To enable your application to use the account functionality:
+To enable your application to use the account functionality, follow these steps:
 
 1. To make your application visible in the official site for Tizen applications only for devices that support the account feature, the application must specify the following feature in the `config.xml` file:
 
@@ -79,7 +79,7 @@ To enable your application to use the account functionality:
      - `http://tizen.org/account/capability/contact` is used when the account is related to contacts.
      - `http://tizen.org/account/capability/calendar` is used when the account is related to the calendar.
 
-## Retrieving Accounts
+## Retrieve accounts
 
 Learning how to retrieve account information enables you to include account support into your applications:
 
@@ -103,7 +103,7 @@ Learning how to retrieve account information enables you to include account supp
   var account = tizen.account.getAccount(my_account_id);
   ```
 
-## Retrieving Providers
+## Retrieve providers
 
 To create accounts, you must learn how to get access to account providers:
 
@@ -129,12 +129,11 @@ To create accounts, you must learn how to get access to account providers:
   tizen.account.getProviders(getProvidersSuccess, getProvidersError, 'http://tizen.org/account/capability/contact');
   ```
 
-## Managing Accounts
+## Manage accounts
 
 Creating, adding, updating, and deleting accounts is a basic account management skill:
 
-> **Note**
->
+> [!NOTE]
 > To perform these operations, your application must be the account provider.
 
 1. To create an account, first get an account provider. If your application is an account provider application (meaning that it contains the `<tizen:account>` element, in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_account), [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_account) and [tv](../../../tizen-studio/web-tools/config-editor.md#ww_account) applications, in its `config.xml` file), use the `getProvider()` method:
@@ -174,7 +173,7 @@ Creating, adding, updating, and deleting accounts is a basic account management 
    tizen.account.remove(account.id);
    ```
 
-## Receiving Notifications on Account Changes
+## Receive notifications on account changes
 
 Learning how to register change listeners enables you to synchronize the view of your application with the changes in the account database:
 
@@ -206,7 +205,7 @@ Learning how to register change listeners enables you to synchronize the view of
    tizen.account.removeAccountListener(watchId);
    ```
 
-## Managing Extended Account Data
+## Manage extended account data
 
 Learning how to manage extended data for an account enables you to include account support into your applications:
 
@@ -238,7 +237,7 @@ Learning how to manage extended data for an account enables you to include accou
        var value = account.getExtendedData(key);
        ```
 
-     - To retrieve all extended data for an account, use the asynchronous version of the `getExtendedData()` method. The success callback contains an array of the extended data key-value pairs.
+     - To retrieve all extended data for an account, use the asynchronous version of the `getExtendedData()` method. The success callback contains an array of the extended data key-value pairs:
 
        ```
        account.getExtendedData(function(extendedData) {
@@ -252,8 +251,12 @@ Learning how to manage extended data for an account enables you to include accou
        });
        ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
   - Tizen 5.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/account.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/account.html)
+  - [TV](../../api/latest/device_api/tv/tizen/account.html)

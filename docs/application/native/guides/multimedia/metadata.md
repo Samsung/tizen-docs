@@ -3,7 +3,7 @@
 
 To handle content metadata, you can use the following features:
 
-- Metadata editing
+- Metadata editing (Deprecated since 9.0)
 
   You can [edit the metadata](#edit_metadata) of several popular audio formats using the metadata editor. You can add and remove album art, or update the information for the audio file.
 
@@ -27,7 +27,7 @@ To handle content metadata, you can use the following features:
 
 To enable your application to use the metadata functionality:
 
-1. To use the functions and data types of the Metadata Editor API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html) applications), include the `<metadata_editor.h>` header file in your application:
+1. To use the functions and data types of the [Metadata Editor API](../../api/common/latest/group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html), include the `<metadata_editor.h>` header file in your application:
 
    ```
    #include <metadata_editor.h>
@@ -95,7 +95,7 @@ To enable your application to use the metadata functionality:
    }
    ```
 
-4. To use the functions and data types of the Metadata Extractor API (in [mobile](../../api/mobile/latest/group__CAPI__METADATA__EXTRACTOR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__METADATA__EXTRACTOR__MODULE.html) applications), include the `<metadata_extractor.h>` header file in your application:
+4. To use the functions and data types of the [Metadata Extractor API](../../api/common/latest/group__CAPI__METADATA__EXTRACTOR__MODULE.html), include the `<metadata_extractor.h>` header file in your application:
 
    ```
    #include <metadata_extractor.h>
@@ -182,7 +182,7 @@ To enable your application to use the metadata functionality:
    }
    ```
 
-7. To use the functions and data types of the MIME Type API (in [mobile](../../api/mobile/latest/group__CAPI__CONTENT__MIME__TYPE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__CONTENT__MIME__TYPE__MODULE.html) applications), include the `<mime_type.h>` header file in your application:
+7. To use the functions and data types of the [MIME Type API](../../api/common/latest/group__CAPI__CONTENT__MIME__TYPE__MODULE.html), include the `<mime_type.h>` header file in your application:
 
    ```
    #include <mime_type.h>
@@ -209,7 +209,7 @@ To edit the metadata and artwork in the file:
 
 3. Edit the metadata in the file using the `metadata_editor_set_metadata()` function. Edit each piece of metadata (each metadata attribute) individually.
 
-   As parameters, define the metadata editor handle, the attribute you want to edit, and the new value you want to set to the attribute. The possible attributes are defined in the `metadata_editor_attr_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1c6a8dcf861f527302e9c55152692df3) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1c6a8dcf861f527302e9c55152692df3) applications).
+   As parameters, define the metadata editor handle, the attribute you want to edit, and the new value you want to set to the attribute. The possible attributes are defined in the [`metadata_editor_attr_e` enumeration](../../api/common/latest/group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1c6a8dcf861f527302e9c55152692df3).
 
    The following example code edits the title of the audio content. You can edit other attributes by defining a different attribute enumerator (and a corresponding new value).
 
@@ -287,7 +287,7 @@ To retrieve metadata from the file:
 
 3. Retrieve the metadata from the file using the `metadata_extractor_get_metadata()` function. Retrieve each piece of metadata (each metadata attribute) individually.
 
-   As parameters, define the metadata extractor handle, the attribute you want to retrieve, and a pointer to the `char` variable in which you want to store the attribute value. The possible attributes are defined in the `metadata_extractor_attr_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__METADATA__EXTRACTOR__MODULE.html#ga5b27fedbf5aaa22106f88b831c596872)and [wearable](../../api/wearable/latest/group__CAPI__METADATA__EXTRACTOR__MODULE.html#ga5b27fedbf5aaa22106f88b831c596872) applications).
+   As parameters, define the metadata extractor handle, the attribute you want to retrieve, and a pointer to the `char` variable in which you want to store the attribute value. The possible attributes are defined in the [`metadata_extractor_attr_e` enumeration](../../api/common/latest/group__CAPI__METADATA__EXTRACTOR__MODULE.html#ga5b27fedbf5aaa22106f88b831c596872).
 
    The following example code retrieves the duration and prints it on the screen. You can retrieve other attributes by defining a different attribute enumerator as the second parameter.
 
@@ -532,5 +532,4 @@ The following table lists the extractable metadata.
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

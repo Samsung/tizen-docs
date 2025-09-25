@@ -7,23 +7,23 @@ The main features of the Wi-Fi Manager API include:
 
 - Wi-Fi device and connection management
 
-  You can to implement and manage Wi-Fi connections with the Wi-Fi Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) applications). For example, you can [activate or deactivate](#activate) a local Wi-Fi device, [connect to an access point](#connect) asynchronously, and [scan for available access points](#scan) and retrieve information from the found access points.
+  You can to implement and manage Wi-Fi connections with the [Wi-Fi Manager API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html). For example, you can [activate or deactivate](#activate) a local Wi-Fi device, [connect to an access point](#connect) asynchronously, and [scan for available access points](#scan) and retrieve information from the found access points.
 
 - <a name="ap"></a>Access point management
 
-  You can connect to a specific access point (AP) with the Access Point API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html) applications). The infrastructure mode is used to connect to a wireless local area network (WLAN). The infrastructure mode requires a wireless AP. To connect to a WLAN, a client must be configured to use the same service set identifier (SSID) as the AP.
+  You can connect to a specific access point (AP) with the [Access Point API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html). The infrastructure mode is used to connect to a wireless local area network (WLAN). The infrastructure mode requires a wireless AP. To connect to a WLAN, a client must be configured to use the same service set identifier (SSID) as the AP.
 
   To manage APs, you must create an AP handle (`wifi_manager_ap_h`), which allows you to retrieve Wi-Fi network and security information:
 
-  - Network information details, such as the SSID, frequency band, and maximum speed of the access point, are available through the Network Information API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html) applications).
+  - Network information details, such as the SSID, frequency band, and maximum speed of the access point, are available through the [Network Information API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html).
 
-  - Security information details, such as the used encryption type and whether WPS is supported, are available through the Security Information API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html) applications).
+  - Security information details, such as the used encryption type and whether WPS is supported, are available through the [Security Information API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html).
 
-    You can also obtain EAP information through the EAP API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html) applications).
+    You can also obtain EAP information through the [EAP API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html).
 
 - Wi-Fi state monitoring
 
-  You can register a callback with the Wi-Fi Monitor API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html) applications) to monitor the Wi-Fi connection state changes. The supported states are defined in the `wifi_manager_connection_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2) applications).
+  You can register a callback with the [Wi-Fi Monitor API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html) to monitor the Wi-Fi connection state changes. The supported states are defined in the `wifi_manager_connection_state_e` [enumerator](../../api/commmon/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2).
 
   You can also register callbacks for monitoring changes in the Wi-Fi device state (whether Wi-Fi is activated) and the RSSI level of the Wi-Fi connection.
 
@@ -35,7 +35,7 @@ The main features of the Wi-Fi Manager API include:
 
 To enable your application to use the Wi-Fi functionality:
 
-1. To use the Wi-Fi Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Wi-Fi Manager API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -54,9 +54,10 @@ To enable your application to use the Wi-Fi functionality:
 3. To be able to use all Wi-Fi functions, initialize Wi-Fi using the `wifi_manager_initialize()` function:
 
    ```
+   wifi_manager_h wifi;
    int error_code;
 
-   error_code = wifi_manager_initialize(wifi);
+   error_code = wifi_manager_initialize(&wifi);
    if (error_code != WIFI_ERROR_NONE)
        return;
    ```
@@ -289,7 +290,13 @@ To make a connection using a specific access point:
    }
    ```
 
-## Related Information
+## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
+- API References
+  - [Wi-Fi Manager API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html)
+  - [Access Point API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html)
+  - [Network Information API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html)
+  - [Security Information API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html)
+  - [EAP API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html)
+  - [Wi-Fi Monitor API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html)

@@ -3,8 +3,6 @@
 
 When you design an application or service, you must minimize any accidental introduction of security vulnerabilities. The following practices aim to reduce the likelihood of security vulnerabilities caused by programming in the Tizen platform.
 
-This feature is supported in mobile applications only.
-
 ## Storing Data Safely
 
 By using a proper way to store data, you can minimize any data-related security concerns. Tizen provides 3 fundamental ways for an application to store data on the device:
@@ -57,7 +55,7 @@ In a mandatory access control system, an application that accesses sensitive res
 
 - Tizen provides API-level access control for security-sensitive operations that can harm user privacy and system stability, if not used properly. If the application uses such sensitive APIs, it must declare the required privileges in the manifest file.
 
-  To determine whether an API requires privileges to be used, see the [API Reference](../../api/mobile/latest/index.html).
+  To determine whether an API requires privileges to be used, see the [API Reference](../../api/common/latest/index.html).
 
 In Tizen 3.0, the platform uses core privileges for access control, but the concept of the application privilege declaration is not changed. As in Tizen 2.X, the application can declare required privileges in the manifest file according to their own application type.
 
@@ -113,4 +111,4 @@ The consumer can request data from any provider, as long as the consumer knows t
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4

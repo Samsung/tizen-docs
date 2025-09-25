@@ -151,5 +151,6 @@ At the end of application, destroy all used resources (such as, user handle, ser
 
 ## Related information
 - Dependencies
-  - Tizen 6.5 and Higher for Mobile
-  - Tizen 6.5 and Higher for Wearable
+  - Since Tizen 6.5
+- API References
+  - [User Awareness API](../../api/common/latest/group__CAPI__NETWORK__UA__MODULE.html)

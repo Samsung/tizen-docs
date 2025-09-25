@@ -1,7 +1,7 @@
 # Alarms
 
 
-You can launch an application at a specific time using alarms. The mechanism involved in launching the application is the App Control API (in [mobile](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APP__CONTROL__MODULE.html) applications).
+You can launch an application at a specific time using alarms. The mechanism involved in launching the application is the [App Control API](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html).
 
 The AppControl API allows [launching an application](../app-management/app-controls.md) explicitly, giving its package name, or providing certain criteria that the application must meet. For example, the criteria can include the type of data on which the application must be able to operate. The structure containing the criteria is called an application control.
 
@@ -27,7 +27,7 @@ The main features of the Alarm API include:
 
 To enable your application to use the alarm functionality:
 
-1. To use the Alarm API (in [mobile](../../api/mobile/latest/group__CAPI__ALARM__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__ALARM__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Alarm API](../../api/common/latest/group__CAPI__ALARM__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
    ```
    <privileges>
        <privilege>http://tizen.org/privilege/alarm.get</privilege>
@@ -43,6 +43,12 @@ To enable your application to use the alarm functionality:
    ```
    #include <app_alarm.h>
    ```
+
+> **Note**  
+> To set alarm for service application, the alarm registered with [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html) needs to have a [background category](../../guides/applications/efl-ui-app.md#describing-the-background-category).
+> The alarm for service application can only be registered using the 'alarm_schedule_after_delay()' API.
+
+
 <a name="scenario_1"></a>
 ## Setting an Alarm after Specific Time
 
@@ -93,6 +99,16 @@ To set an alarm after a specific time:
    }
    ```
 
+> **Note**  
+> Since 6.0, the [alarm_standard_interval_e] is supported. If you alarm registered by using it, The alarm will first go off delay seconds later and then will go off every certain amount of time defined using standard period seconds.
+
+  ```
+      ret = alarm_schedule_after_delay(app_control, DELAY, ALARM_STANDARD_INTERVAL_FIFTEEN_MINUTES, &alarm_id);
+
+      return true;
+  }
+  ```
+
 <a name="scenario_2"></a>
 ## Setting an Alarm on a Specific Date
 
@@ -129,7 +145,7 @@ ret = alarm_schedule_at_date(app, &date, 0, &alarm_id);
 
 To schedule an alarm on a specific time of the day with a recurrence, use the `alarm_schedule_with_recurrence_week_flag()` function.
 
-The third parameter defines the day of the week on which the alarm recurs. The value is defined with the `enum alarm_week_flag_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__ALARM__MODULE.html#gaa2b3960fe55c63cb3f6739758bd172ee) and [wearable](../../api/wearable/latest/group__CAPI__ALARM__MODULE.html#gaa2b3960fe55c63cb3f6739758bd172ee) applications), and can be a combination of days, for example `ALARM_WEEK_FLAG_TUESDAY | ALARM_WEEK_FLAG_FRIDAY`. The value can also be a binary, such as `1<<3 | 1<<6`.
+The third parameter defines the day of the week on which the alarm recurs. The value is defined with the [`enum alarm_week_flag_e` enumerator](../../api/common/latest/group__CAPI__ALARM__MODULE.html#gaa2b3960fe55c63cb3f6739758bd172ee), and can be a combination of days, for example `ALARM_WEEK_FLAG_TUESDAY | ALARM_WEEK_FLAG_FRIDAY`. The value can also be a binary, such as `1<<3 | 1<<6`.
 
 The following code schedules an application control to invoke on TUESDAY and FRIDAY:
 
@@ -213,5 +229,7 @@ if (ret != ALARM_ERROR_NONE)
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
+- API References
+  - [Alarm](../../api/common/latest/group__CAPI__ALARM__MODULE.html)
+  - [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html)

@@ -4,7 +4,7 @@ You can access the [acceleration values](#acceleration-values) from the device a
 
 The Device Motion API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Device Motion API include:
+The main features of the Device Motion API include the following:
 
 - Getting the current acceleration        
 
@@ -14,7 +14,7 @@ The main features of the Device Motion API include:
 
   You can [get the acceleration along the X, Y, and Z axes at regular intervals](#monitoring-the-acceleration-values).
 
-## Acceleration Values
+## Acceleration values
 
 The acceleration data is captured into the `Acceleration` interface (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/device-motion.html#Acceleration), [wearable](../../api/latest/device_api/wearable/tizen/cordova/device-motion.html#Acceleration), and [TV](../../api/latest/device_api/tv/tizen/cordova/device-motion.html#Acceleration) applications). The acceleration values include the effect of gravity (9.81 m/s2), so that when a device lies flat and facing up, the x, y, and z values returned must be 0, 0, and 9.81.
 
@@ -41,9 +41,9 @@ function onDeviceReady() {
 }
 ```
 
-## Getting the Current Acceleration
+## Get the current acceleration
 
-To get the current acceleration along the X, Y, and Z axes:
+To get the current acceleration along the X, Y, and Z axes, follow these steps:
 
 1. Define a callback method to be invoked with the current acceleration values:
 
@@ -70,9 +70,9 @@ To get the current acceleration along the X, Y, and Z axes:
    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
    ```
 
-## Monitoring the Acceleration Values
+## Monitor the acceleration values
 
-To retrieve the acceleration along the X, Y, and Z axes at regular intervals:
+To retrieve the acceleration along the X, Y, and Z axes at regular intervals, follow these steps:
 
 1. Define a callback method to be invoked with the current acceleration values:
 
@@ -115,8 +115,12 @@ To retrieve the acceleration along the X, Y, and Z axes at regular intervals:
    ```
 
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 3.0 and Higher for Mobile
    - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/device-motion.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/device-motion.html)
+  - [TV](../../api/latest/device_api/tv/tizen/cordova/device-motion.html)

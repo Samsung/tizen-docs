@@ -1,6 +1,6 @@
 # Geolocation API Specification
 
-Geolocation defines a location information interface. Common sources of location information are GPS, location inferred from the network (such as IP address), RFID, Wi-Fi, Bluetooth MAC address, and GSM/CDMA cell IDs. The [Geolocation](http://www.w3.org/TR/2013/REC-geolocation-API-20131024/#geolocation_interface) interface is implemented by the `Navigator` object instances. The location information is represented by the latitude and longitude coordinates.
+Geolocation defines a location information interface. Common sources of location information are GPS, location inferred from the network (such as IP address), RFID, Wi-Fi, Bluetooth MAC address, and GSM/CDMA cell IDs. The [Geolocation](https://www.w3.org/TR/geolocation/#geolocation_interface){:target="_blank"} interface is implemented by the `Navigator` object instances. The location information is represented by the latitude and longitude coordinates.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -13,16 +13,16 @@ Using the `Geolocation` interface, you can [retrieve position information](#retr
   - `timeout` defines the maximum length of time that is allowed to pass from the call until the corresponding success event handler is invoked.
   - `maximumAge` indicates that the application can accept cached location information whose age is no greater than the specified time.
 
-> **Note**  
+> [!NOTE]
 > In almost all cases, the location information reveals the location of the device user. To provide privacy for the user, a confirmation mechanism is provided for the geolocation features.
 
-## Retrieving Location Information
+## Retrieve location information
 
 To provide users with location-based features, you must learn to create a mobile GPS application to retrieve location information:
 
 1. Create event handlers for the location requests.		
 
-   The [Geolocation](http://www.w3.org/TR/2013/REC-geolocation-API-20131024/#geolocation_interface) interface allows 2 types of location requests: "one-shot" position request and repeated position updates. Both request types use the same event handlers. The success event handler is invoked when an attempt to obtain the current location is successful, while the error event handler is invoked when the attempt fails. The success event handler is mandatory, and contains a `position` parameter that hold the actual position information.
+   The [Geolocation](https://www.w3.org/TR/geolocation/#geolocation_interface){:target="_blank"} interface allows 2 types of location requests: "one-shot" position request and repeated position updates. Both request types use the same event handlers. The success event handler is invoked when an attempt to obtain the current location is successful, while the error event handler is invoked when the attempt fails. The success event handler is mandatory, and contains a `position` parameter that hold the actual position information:
 
    ```
    function successCallback(position) {
@@ -52,7 +52,7 @@ To provide users with location-based features, you must learn to create a mobile
 
 2. Create a "one-shot" position request with the `getCurrentPosition()` method.
 
-   The `maximumAge` parameter determines that if the user agent does not have cached position information that is fresher than 60000 milliseconds (1 minute), new location information is automatically obtained.
+   The `maximumAge` parameter determines that if the user agent does not have cached position information that is fresher than 60000 milliseconds (1 minute), new location information is automatically obtained:
 
    ```
    function oneShotFunc() {
@@ -97,13 +97,15 @@ The following figure illustrates the GPS application.
 
 ![GPS application (in mobile applications only)](./media/geolocation.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [geolocation tutorial.html](http://download.tizen.org/misc/examples/w3c_html5/location/geolocation_api_specification)
+- [geolocation tutorial.html](http://download.tizen.org/misc/examples/w3c_html5/location/geolocation_api_specification){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [W3C](https://www.w3.org/TR/geolocation/#geolocation_interface){:target="_blank"}

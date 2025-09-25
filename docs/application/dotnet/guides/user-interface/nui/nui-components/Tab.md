@@ -111,4 +111,5 @@ private void tabButtonSelectedHandler(object sender, TabButtonSelectedEventArgs 
 - Dependencies
   -   Tizen 6.5 and Higher
 
-
+- API References
+  - [Tab API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Components.Tab.html)

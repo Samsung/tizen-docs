@@ -61,5 +61,4 @@ The triangle mesh stored in the OBJ file is imported into the OpenGL&reg; ES pro
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4

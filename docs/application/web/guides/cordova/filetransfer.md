@@ -4,7 +4,7 @@ You can transfer files using HTTP requests, and download and upload files. You c
 
 The File Transfer API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the File Transfer API include:
+The main features of the File Transfer API include the following:
 
 - Download
 
@@ -53,7 +53,7 @@ To enable your application to use the file transfer functionality:
    <tizen:privilege name="http://tizen.org/privilege/internet"/>
    ```
 
-## Downloading Files
+## Download files
 
 To download a file from a server, you must create a `FileTransfer` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/filetransfer.html#FileTransfer), [wearable](../../api/latest/device_api/wearable/tizen/cordova/filetransfer.html#FileTransfer), and [TV](../../api/latest/device_api/tv/tizen/cordova/filetransfer.html#FileTransfer) applications) and call its `download()` method with callbacks:
 
@@ -92,7 +92,7 @@ The following output is shown in the system log:
 download complete: file:///home/owner/apps_rw/Gk6hf8hjk/tmp/file.txt
 ```
 
-## Uploading Files
+## Upload files
 
 The upload operation is very similar to download. To upload a file to a server, you must create a `FileTransfer` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/filetransfer.html#FileTransfer), [wearable](../../api/latest/device_api/wearable/tizen/cordova/filetransfer.html#FileTransfer), and [TV](../../api/latest/device_api/tv/tizen/cordova/filetransfer.html#FileTransfer) applications) and call its `upload()` method providing as parameters the URL of the uploaded file, server location, and a success callback function, which is invoked when the upload is finished successfully. You can also provide an optional error callback.
 
@@ -127,7 +127,7 @@ Response = OK
 Sent = 1024
 ```
 
-## Aborting Transfers
+## Abort transfers
 
 To abort an in-progress transfer, you must create the `FileTransfer` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/filetransfer.html#FileTransfer), [wearable](../../api/latest/device_api/wearable/tizen/cordova/filetransfer.html#FileTransfer), and [TV](../../api/latest/device_api/tv/tizen/cordova/filetransfer.html#FileTransfer) applications), start the download or upload transfer operation (as described above), and call the `abort()` method.  The method stops the transfer and sends the `FileTransferError.ABORT_ERR` error to the error callback (if provided).
 
@@ -161,7 +161,7 @@ upload error source file:///home/owner/apps_rw/Gk6hf8hjk/tmp/file.txt
 upload error target http://some.server.com/file.txt
 ```
 
-## Tracking Transfer Progress
+## Track transfer progress
 
 To track the progress of a file transfer, the `FileTransfer` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/filetransfer.html#FileTransfer), [wearable](../../api/latest/device_api/wearable/tizen/cordova/filetransfer.html#FileTransfer), and [TV](../../api/latest/device_api/tv/tizen/cordova/filetransfer.html#FileTransfer) applications) has the `onprogress` property, which is used to set up a method invoked each time a chunk of data is transferred. As a parameter, the method gets a `ProgressEvent` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#ProgressEvent), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#ProgressEvent), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#ProgressEvent) applications).
 
@@ -199,8 +199,12 @@ uploaded: 1024
 Success.  File uploaded.
 ```
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/filetransfer.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/filetransfer.html)
+  - [TV](../../api/latest/device_api/tv/tizen/cordova/filetransfer.html)

@@ -319,7 +319,7 @@
            </Node>
            <Node>
             <Name>Shortcut</Name>
-            <Path>group__SHORTCUT__MODULE.html</Path>
+            <Path>group__CAPI__SHORTCUT__MODULE.html</Path>
             <Subnodes>
             </Subnodes>
            </Node>
@@ -2229,6 +2229,12 @@
               <Subnodes>
               </Subnodes>
              </Node>
+             <Node>
+              <Name>Key Manager Extended</Name>
+              <Path>group__CAPI__KEY__MANAGER__CLIENT__EXTENDED__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
             </Subnodes>
            </Node>
            <Node>
@@ -2252,6 +2258,12 @@
            <Node>
             <Name>Trusted Execution Framework</Name>
             <Path>group__CAPI__TEF__MODULE.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>Web Authentication</Name>
+            <Path>group__CAPI__WEBAUTHN__MODULE.html</Path>
             <Subnodes>
             </Subnodes>
            </Node>
@@ -3207,6 +3219,60 @@
                   <Name>Edje Class: Text</Name>
                   <Path>group__Edje__Object__Text__Class.html</Path>
                   <Subnodes>
+                   <Node>
+                    <Name>Edje Part</Name>
+                    <Path>group__Edje__Object__Part.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Edje Box Part</Name>
+                      <Path>group__Edje__Part__Box.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Edje Drag</Name>
+                      <Path>group__Edje__Part__Drag.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Edje Swallow Part</Name>
+                      <Path>group__Edje__Part__Swallow.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Edje Table Part</Name>
+                      <Path>group__Edje__Part__Table.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Edje Text Part</Name>
+                      <Path>group__Edje__Part__Text.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Edje Text Cursor</Name>
+                        <Path>group__Edje__Text__Cursor.html</Path>
+                        <Subnodes>
+                        </Subnodes>
+                       </Node>
+                       <Node>
+                        <Name>Edje Text Entry</Name>
+                        <Path>group__Edje__Text__Entry.html</Path>
+                        <Subnodes>
+                        </Subnodes>
+                       </Node>
+                       <Node>
+                        <Name>Edje Text Selection</Name>
+                        <Path>group__Edje__Text__Selection.html</Path>
+                        <Subnodes>
+                        </Subnodes>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
                   </Subnodes>
                  </Node>
                  <Node>
@@ -4204,6 +4270,12 @@
                 <Name>Icon</Name>
                 <Path>group__Elm__Icon.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>Password show last</Name>
+                  <Path>group__Elm__Password__last__show.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
                 </Subnodes>
                </Node>
                <Node>
@@ -4828,13 +4900,13 @@
             <Subnodes>
              <Node>
               <Name>Provider</Name>
-              <Path>group__MINICONTROL__PROVIDER__MODULE.html</Path>
+              <Path>group__CAPI__MINICONTROL__PROVIDER__MODULE.html</Path>
               <Subnodes>
               </Subnodes>
              </Node>
              <Node>
               <Name>Viewer</Name>
-              <Path>group__MINICONTROL__VIEWER__MODULE.html</Path>
+              <Path>group__CAPI__MINICONTROL__VIEWER__MODULE.html</Path>
               <Subnodes>
               </Subnodes>
              </Node>

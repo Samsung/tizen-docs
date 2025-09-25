@@ -86,8 +86,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Shared Image Cache Server</div>  </div>
 <div class="ingroups"><a class="el" href="group__Evas.html">Evas</a></div></div><!--header-->
@@ -95,121 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Evas has an (optional) module that provides client-server infrastructure to <b>share bitmaps across multiple processes</b>, saving data and processing power.</p>
 <p>Be warned that it <b>doesn't</b> work when <b>threaded image preloading</b> is enabled for Evas, though. </p>
-<table class="memberdecls">
-<tr><td colspan="2"><h2><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#ga665321372e0668b483c69755e54ac340">evas_cserve_want_get</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#ga6dbad4284ba54468100ffb8fc48b4939">evas_cserve_connected_get</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#gafc2722c552a1142bfadea61d1b284954">evas_cserve_stats_get</a> (<a class="el" href="struct__Evas__Cserve__Stats.html">Evas_Cserve_Stats</a> *stats)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#gad494b69917572d0b97685196c23c5530">evas_cserve_image_cache_contents_clean</a> (<a class="el" href="struct__Evas__Cserve__Image__Cache.html">Evas_Cserve_Image_Cache</a> *cache)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Cserve.html#ga0f34f9aaebaf62e8ce2421fef0f275b2">evas_cserve_disconnect</a> (void)</td></tr>
-</table>
-<hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga6dbad4284ba54468100ffb8fc48b4939"></a><!-- doxytag: member="Evas_Common.h::evas_cserve_connected_get" ref="ga6dbad4284ba54468100ffb8fc48b4939" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Cserve.html#ga6dbad4284ba54468100ffb8fc48b4939">evas_cserve_connected_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Retrieves if the system is connected to the server used to share bitmaps.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it's connected, <code>EINA_FALSE</code> otherwise. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga0f34f9aaebaf62e8ce2421fef0f275b2"></a><!-- doxytag: member="Evas_Common.h::evas_cserve_disconnect" ref="ga0f34f9aaebaf62e8ce2421fef0f275b2" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Cserve.html#ga0f34f9aaebaf62e8ce2421fef0f275b2">evas_cserve_disconnect</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Force the system to disconnect from the bitmap caching server. </p>
-
-</div>
-</div>
-<a class="anchor" id="gad494b69917572d0b97685196c23c5530"></a><!-- doxytag: member="Evas_Common.h::evas_cserve_image_cache_contents_clean" ref="gad494b69917572d0b97685196c23c5530" args="(Evas_Cserve_Image_Cache *cache)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Cserve.html#gad494b69917572d0b97685196c23c5530">evas_cserve_image_cache_contents_clean</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Evas__Cserve__Image__Cache.html">Evas_Cserve_Image_Cache</a> *&#160;</td>
-          <td class="paramname"><em>cache</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Completely discard/clean a given images cache, thus re-setting it.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cache</td><td>A handle to the given images cache. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gafc2722c552a1142bfadea61d1b284954"></a><!-- doxytag: member="Evas_Common.h::evas_cserve_stats_get" ref="gafc2722c552a1142bfadea61d1b284954" args="(Evas_Cserve_Stats *stats)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Cserve.html#gafc2722c552a1142bfadea61d1b284954">evas_cserve_stats_get</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Evas__Cserve__Stats.html">Evas_Cserve_Stats</a> *&#160;</td>
-          <td class="paramname"><em>stats</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Retrieves statistics from a running bitmap sharing server. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stats</td><td>pointer to structure to fill with statistics about the bitmap cache server.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>stats</code> were filled with data, <code>EINA_FALSE</code> otherwise (when <code>stats</code> is untouched) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga665321372e0668b483c69755e54ac340"></a><!-- doxytag: member="Evas_Common.h::evas_cserve_want_get" ref="ga665321372e0668b483c69755e54ac340" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Cserve.html#ga665321372e0668b483c69755e54ac340">evas_cserve_want_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Retrieves if the system wants to share bitmaps using the server. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it wants, <code>EINA_FALSE</code> otherwise. </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

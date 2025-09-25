@@ -3,6 +3,8 @@
 
 You can use 2 different protocols to perform network service discoveries to announce local services and search for remote services on a network: DNS-SD (DNS Service Discovery) and SSDP (Simple Service Discovery Protocol).
 
+> **Note**: SSDP (Simple Service Discovery Protocol) has been deprecated since API level 13. For new application development, it is recommended to use DNS-SD instead.
+
 The main features of the Tizen.Network.Nsd namespace includes the following:
 
 -   Managing local services
@@ -51,10 +53,23 @@ To register and deregister a local DNS-SD service, follow these steps:
     /// Register service
     INsdService service = new DnssdService("_http._tcp");
     DnssdService dnssdService = (DnssdService)service;
+
+    // Set required properties before registration
+    dnssdService.Name = "TestService";  // Required: Service name
+    dnssdService.Port = "1234";         // Required: Port number
+
     dnssdService.RegisterService();
     ```
 
-2.  Deregister the service by using the `DeregisterService()` method.
+2.  (Optional) Add TXT records to provide additional service metadata:
+
+    ```csharp
+    // Add TXT records after service registration
+    dnssdService.AddTXTRecord("path", "/api");
+    dnssdService.AddTXTRecord("version", "1.0");
+    ```
+
+3.  Deregister the service by using the `DeregisterService()` method.
 
     When the `Tizen.Network.Nsd.DnssdService` class instance is no longer needed, destroy it with the `Dispose()` method:
 
@@ -69,12 +84,20 @@ To register and deregister a local DNS-SD service, follow these steps:
 
 To discover remote DNS-SD services, follow these steps:
 
-1.  Start discovery by creating a new instance of the [Tizen.Network.Nsd.DnssdBrowser](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nsd.DnssdBrowser.html) class and using its `StartDiscovery()` method:
+1.  Start discovery by creating a new instance of the [Tizen.Network.Nsd.DnssdBrowser](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nsd.DnssdBrowser.html) class and register an event handler for service notifications:
 
     ```csharp
     /// Start discovery
     INsdBrowser browser = new DnssdBrowser("_http._tcp");
     DnssdBrowser dnssdBrowser = (DnssdBrowser)browser;
+
+    // Register event handler to handle discovered services
+    dnssdBrowser.ServiceFound += (sender, e) =>
+    {
+        // Process the discovered service information here
+        // Access service properties through e.Service.Name, e.Service.Port, etc.
+    };
+
     dnssdBrowser.StartDiscovery();
     ```
 
@@ -90,5 +113,7 @@ To discover remote DNS-SD services, follow these steps:
 
 
 ## Related information
-* Dependencies
-    -   Tizen 4.0 and Higher
+- Dependencies
+    -  Tizen 4.0 and Higher
+- API References
+    - [Tizen.Network.Nsd](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Nsd.html) class

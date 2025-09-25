@@ -708,7 +708,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates a string enumerator of all locales for which a valid collator may be created. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>locales</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">locales</td><td>A string enumeration over locale strings. The caller is responsible for releasing the result.</td></tr>
@@ -718,7 +719,22 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> locales;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga58899cf779dc37494b1b15b3aa1f302e" title="Creates a string enumerator of all locales for which a valid collator may be created.">i18n_ucollator_create_available_locales</a>(&amp;locales);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucollator_create_available_locales: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy</a>(locales);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -836,7 +852,8 @@ Typedefs</h2></td></tr>
 
 <p>Produces an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a> instance according to the rules supplied. </p>
 <p>The rules are used to change the default ordering, defined in the UCA in a process called tailoring. The resulting <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a> pointer can be used in the same way as the one obtained by <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gaff475bbe6efdb783c1fe0cb4640be294" title="Compares two strings.">i18n_ucollator_str_collator()</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>collator</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">rules</td><td>A string describing the collation rules. For the syntax of the rules please see users guide </td></tr>
@@ -869,7 +886,28 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gab98fa2aea12b567a67240337cd1f7da7" title="Clones the given collator, the cloning is thread-safe.">i18n_ucollator_safe_clone()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy()</a> </dd></dl>
+<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;string.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a> collator = NULL;
+    <a class="code" href="structi18n__uparse__error__s.html" title="Struct used to returned detailed information about parsing errors.">i18n_uparse_error_s</a> parse_error;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *test_rules = <span class="stringliteral">&quot;&amp;9 &lt; a, A &lt; b, B &lt; c, C; ch, cH, Ch, CH &lt; d, D, e, E&quot;</span>;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCHAR__MODULE.html#gae6871ae4101c3d6462efc5d2dd9a6122" title="i18n_uchar.">i18n_uchar</a> rules[128];
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__USTRING__MODULE.html#ga8e886fa1c415282fd37e4d0168b80b4f" title="Copies a byte string encoded in the default codepage to a ustring.">i18n_ustring_copy_ua</a>(rules, test_rules);
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga8661c74c3ff3ac0538b90799676f4d34" title="Produces an i18n_ucollator_h instance according to the rules supplied.">i18n_ucollator_create_rules</a>(rules, strlen(test_rules), <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gga610d62a97e9010634a1aa0694cda1357a6f086580148ea83cbc9f30e6b3d8e8e6">I18N_UCOLLATOR_ON</a>, <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gga610d62a97e9010634a1aa0694cda1357aafa2b3e7bdb2fc9fc7a77f4de989c0d9">I18N_UCOLLATOR_DEFAULT_STRENGTH</a>,
+                                        &amp;parse_error, &amp;collator);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucollator_create_rules: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy</a>(collator);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>
@@ -1060,7 +1098,8 @@ Typedefs</h2></td></tr>
 
 <p>Gets a locale for which collation rules are available. </p>
 <p>An <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a> in a locale returned by this function will perform the correct collation for the locale. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>locale</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">locale_index</td><td>The index of the desired locale </td></tr>
@@ -1071,7 +1110,16 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment">    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *locale = NULL;
+    int32_t locale_index = 0;
+
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga7b6e4e67a69c2435eeb6ec9c53aeb68f" title="Gets a locale for which collation rules are available.">i18n_ucollator_get_available</a>(locale_index, &amp;locale);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucollator_get_available: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1451,7 +1499,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Given a keyword, create a string enumeration of all values for that keyword that are currently in use. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>keywords</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">keyword</td><td>A particular keyword as enumerated by <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga8115720301ada6a204de8fc532dacf15" title="Creates a string enumerator of all possible keywords that are relevant to collation.">i18n_ucollator_get_keywords()</a>. If any other keyword is passed in, returns <a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a> </td></tr>
@@ -1462,7 +1511,22 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> keyword;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gaff9405169e7a43b32d0093f25a3dc34e" title="Given a keyword, create a string enumeration of all values for that keyword that are currently in use...">i18n_ucollator_get_keyword_values</a>(<span class="stringliteral">&quot;collation&quot;</span>, &amp;keyword);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucollator_get_keyword_values: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy</a>(keyword);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1508,7 +1572,8 @@ Typedefs</h2></td></tr>
 
 <p>Given a key and a locale, returns an array of string values in a preferred order that would make a difference. </p>
 <p>These are all and only those values where the creation of the service with the locale formed from the input locale plus input keyword and that value has different behavior than creation with the input locale alone. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>keywords</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>One of the keys supported by this service. For now, only "collation" is supported </td></tr>
@@ -1521,7 +1586,22 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> keywords;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga1b562f16fed541c74e225ababf5f6dde" title="Given a key and a locale, returns an array of string values in a preferred order that would make a di...">i18n_ucollator_get_keyword_values_for_locale</a>(<span class="stringliteral">&quot;collation&quot;</span>, <span class="stringliteral">&quot;en_US&quot;</span>, <span class="keyword">false</span>, &amp;keywords);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucollator_get_keyword_values_for_locale: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy</a>(keywords);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1545,7 +1625,8 @@ Typedefs</h2></td></tr>
 
 <p>Creates a string enumerator of all possible keywords that are relevant to collation. </p>
 <p>At this point, the only recognized keyword for this service is "collation". </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>keywords</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">keywords</td><td>A string enumeration over locale strings. The caller is responsible for releasing the result.</td></tr>
@@ -1555,7 +1636,22 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adea0358311249efd5c9795180044a70ddf6">I18N_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga0f8c6d7162c8452e21a997710d6bde6d" title="Structure representing an enumeration.">i18n_uenumeration_h</a> keywords;
+
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga8115720301ada6a204de8fc532dacf15" title="Creates a string enumerator of all possible keywords that are relevant to collation.">i18n_ucollator_get_keywords</a>(&amp;keywords);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucollator_get_keywords: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html#ga13029ff3f776315b0f5158704deb92a3" title="Disposes of resources in use by the iterator.">i18n_uenumeration_destroy</a>(keywords);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1595,7 +1691,8 @@ Typedefs</h2></td></tr>
 
 <p>Gets the locale name of the collator. </p>
 <p>If the collator is instantiated from the rules, then this function returns <code>NULL</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>locale</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">collator</td><td>The <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a> for which the locale is needed </td></tr>
@@ -1757,7 +1854,8 @@ Typedefs</h2></td></tr>
 
 <p>Gets the collation tailoring rules from a <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a>. </p>
 <p>The rules will follow the rule syntax. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>rules</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">collator</td><td>The <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a> to query </td></tr>
@@ -1990,7 +2088,8 @@ Typedefs</h2></td></tr>
 
 <p>Gets a Unicode set that contains all the characters and sequences tailored in this collator. </p>
 <p>The result must be disposed of by using <a class="el" href="group__CAPI__BASE__UTILS__I18N__USET__MODULE.html#ga45f328cb3e9290f008cf103fe44223c9" title="Disposes of the storage used by a i18n_uset_h object.">i18n_uset_destroy()</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>uset</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">collator</td><td>The <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a> for which we want to get tailored chars </td></tr>
@@ -2494,7 +2593,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Clones the given collator, the cloning is thread-safe. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>clone</em> should be released using <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">collator</td><td>The collator to be cloned </td></tr>
@@ -2513,7 +2613,30 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga8661c74c3ff3ac0538b90799676f4d34" title="Produces an i18n_ucollator_h instance according to the rules supplied.">i18n_ucollator_create_rules()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy()</a> </dd></dl>
+<a class="el" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy()</a> <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdio.h&gt;</span>
+<span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
+<span class="preprocessor"> #include &lt;utils_i18n.h&gt;</span>
+ <span class="keywordtype">int</span> main() {
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#ga5ff3597a44d9e4d893a474cd586b9ade" title="Enumeration for error codes to replace exception handlings.">i18n_error_code_e</a> error_code;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a> collator = NULL;
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga47b7951a5e0575f355f609f51227a5e7" title="Structure representing a collator object instance.">i18n_ucollator_h</a> clone = NULL;
+
+  error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#ga5ff5db2a434150f92ac23e47f2bc1ff5" title="Creates a i18n_ucollator_h for comparing strings.">i18n_ucollator_create</a>(<span class="stringliteral">&quot;en_US&quot;</span>, &amp;collator);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucollator_create: %d\n&quot;</span>, error_code);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    error_code = <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gab98fa2aea12b567a67240337cd1f7da7" title="Clones the given collator, the cloning is thread-safe.">i18n_ucollator_safe_clone</a>(collator, &amp;clone);
+    <span class="keywordflow">if</span> (error_code != <a class="code" href="group__CAPI__BASE__UTILS__I18N__MODULE.html#gga5ff3597a44d9e4d893a474cd586b9adeaa88da6b0ffb3ce7c4ce9b52e39cb28da">I18N_ERROR_NONE</a>) {
+        printf(<span class="stringliteral">&quot;Error i18n_ucollator_safe_clone: %d\n&quot;</span>, error_code);
+        <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy</a>(collator);
+        <span class="keywordflow">return</span> EXIT_FAILURE;
+    }
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy</a>(clone);
+    <a class="code" href="group__CAPI__BASE__UTILS__I18N__UCOLLATOR__MODULE.html#gae69dc999b7bda370a92017ef92e2e031" title="Destroys a i18n_ucollator_h.">i18n_ucollator_destroy</a>(collator);
+    <span class="keywordflow">return</span> EXIT_SUCCESS;
+ }
+</pre></div> </dd></dl>
 
 </div>
 </div>

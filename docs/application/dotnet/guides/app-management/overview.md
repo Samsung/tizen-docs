@@ -47,3 +47,5 @@ You can use the following application management features in your .NET applicati
 ## Related information
 - Dependencies
   - Tizen 4.0 and Higher
+- API References
+  - [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace

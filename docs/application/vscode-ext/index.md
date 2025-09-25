@@ -1,46 +1,39 @@
 # Prerequisites of Visual Studio Code Extension for Tizen
 
-Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tizen Web applications easily using Visual Studio Code. To work with VS Code Extension for Tizen, your computer must have below prerequisites:
+Visual Studio Code Extension for Tizen enables you to develop Tizen .NET, Tizen Web and Tizen Native applications easily using Visual Studio Code. To work with VS Code Extension for Tizen, your computer must have the following prerequisites:
 
 - Supported host platform
+- VS Code with version 1.92.0 and above
 
-  VS Code Extension for Tizen supports the following operating systems:
+    VS Code Extension for Tizen supports the following operating systems:
 
-  - Windows 10 (64 bit)
-  - Ubuntu 18.04/20.04 (64 bit)
-  - macOS 11.4(Big Sur)/12.3(Monterey)
+    - Windows 10 and above (64 bit)
+    - Ubuntu 20.04 and above (64 bit)
+    - macOS 11.4 (Big Sur) / 12.3 (Monterey)
 
-- Required tools
+- Required tools:
 
-  To use VS Code Extension for Tizen, you must install the following tools:
+    To use VS Code Extension for Tizen, you must install the following tools:
 
-  - .NET Core SDK 2.0 or later **for Tizen .NET only**
+    - .NET Core SDK 6.0 or later **for Tizen .NET only**
 
-    Download from <https://www.microsoft.com/net/download/>.
+      Download from <https://www.microsoft.com/net/download/>.
 
-  - Node.js
+    - Python 2.7 (only for macOS)
 
-    Download from <https://nodejs.org>.
+      Download from <https://www.python.org/ftp/python/2.7.18/python-2.7.18-macosx10.9.pkg>.
 
-  - Python 2.7 (only for macOS)
+    - Tizen Baseline SDK or Tizen Studio
 
-    Download from <https://www.python.org/ftp/python/2.7.18/python-2.7.18-macosx10.9.pkg>.
+      If neither of these is found, VS Code Extension for Tizen installs the Baseline SDK.
 
-  - Tizen Baseline SDK or Tizen Studio
+## Emulator Requirements
 
-    If neither of these is found, VS Code Extension for Tizen installs the Baseline SDK.
+Tizen Emulator for VS Code Extension for Tizen has the same requirements as the Emulator in Tizen Studio. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator):
 
-  - Microsoft C\# extension for Visual Studio Code **for Tizen .NET only**
+### Using Intel&reg; HAXM Driver
 
-    Install from the Visual Studio Code Marketplace.
-
-## Emulator requirements
-
-Tizen Emulator for VS Code Extension for Tizen has the same requirements as the emulator in Tizen Studio. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
-
-### Option 1
-
-- Intel&reg; Hardware Acceleration Execution Manager (Intel&reg; HAXM) speeds up the Tizen emulation on Intel-VT-enabled systems. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md).
+- Intel&reg; Hardware Accelerated Execution Manager (Intel&reg; HAXM) speeds up Tizen Emulation on Intel-VT-enabled systems. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md).
 
 > [!NOTE]
 > This option will not be applicable to and will not work on AMD processors.
@@ -52,13 +45,11 @@ Tizen Emulator for VS Code Extension for Tizen has the same requirements as the 
 
   3. Disable **Hyper-V** and click **OK**.
 
-     Additional note: make sure **Virtual Machine Platform** should be disabled as well to use HAXM.
-
-     ![Disable Hyper-V](media/cs_prerequisite-disable-hyperv.png)
+     ![Disable Hyper-V](./media/cs_prerequisite-disable-hyperv.png)
 
   4. Reboot the computer.
 
-### Option 2
+### Using Microsoft&reg; Hyper-V and Hypervisor Platform
 
 - Microsoft's Hyper-V and the Windows Hypervisor Platform (WHPX). Hyper-V is a virtualization feature of Windows that makes it possible to run virtualized computer systems on a physical host computer.
 
@@ -79,6 +70,7 @@ Tizen Emulator for VS Code Extension for Tizen has the same requirements as the 
      > Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All\
      > Enable-WindowsOptionalFeature -Online -FeatureName HypervisorPlatform -All
 
-     ![Enable Hyper-V](media/cs_prerequisite-enable-hyperv.png)
+     ![Enable Hyper-V](./media/cs_prerequisite-enable-hyperv.png)
 
   3. Reboot the computer.
+

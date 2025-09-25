@@ -630,6 +630,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets a i18n_unormalizer_h which uses the specified data file and composes or decomposes text according to the specified mode. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>normalizer</em> should not be released.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">package_name</td><td><code>NULL</code> for ICU built-in data, otherwise application data package name. </td></tr>
@@ -668,6 +669,7 @@ Typedefs</h2></td></tr>
 <p>Returns an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a> instance for Unicode NFC normalization. </p>
 <p>Same as <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gacbb4863dd84c255716eb99f56a8b65e7" title="Gets a i18n_unormalizer_h which uses the specified data file and composes or decomposes text accordin...">i18n_unormalization_get_instance</a>(NULL, "nfc", I18N_UNORM2_COMPOSE, n2). Returns an unmodifiable singleton instance. Do not delete it. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>normalizer</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">normalizer</td><td>The requested <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a>, if successful </td></tr>
@@ -704,6 +706,7 @@ Typedefs</h2></td></tr>
 <p>Returns an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a> instance for Unicode NFD normalization. </p>
 <p>Same as <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gacbb4863dd84c255716eb99f56a8b65e7" title="Gets a i18n_unormalizer_h which uses the specified data file and composes or decomposes text accordin...">i18n_unormalization_get_instance</a>(NULL, "nfc", I18N_UNORMALIZATION_DECOMPOSE, n2). Returns an unmodifiable singleton instance. Do not delete it. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>normalizer</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">normalizer</td><td>The requested <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a>, if successful </td></tr>
@@ -740,6 +743,7 @@ Typedefs</h2></td></tr>
 <p>Returns an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a> instance for Unicode NFKC_Casefold normalization. </p>
 <p>Same as <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gacbb4863dd84c255716eb99f56a8b65e7" title="Gets a i18n_unormalizer_h which uses the specified data file and composes or decomposes text accordin...">i18n_unormalization_get_instance</a>(NULL, "nfkc_cf", I18N_UNORM2_COMPOSE, n2). Returns an unmodifiable singleton instance. Do not delete it. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>normalizer</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">normalizer</td><td>The requested <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a>, if successful </td></tr>
@@ -776,6 +780,7 @@ Typedefs</h2></td></tr>
 <p>Returns an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a> instance for Unicode NFKC normalization. </p>
 <p>Same as <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gacbb4863dd84c255716eb99f56a8b65e7" title="Gets a i18n_unormalizer_h which uses the specified data file and composes or decomposes text accordin...">i18n_unormalization_get_instance</a>(NULL, "nfkc", I18N_UNORM2_COMPOSE, n2). Returns an unmodifiable singleton instance. Do not delete it. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>normalizer</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">normalizer</td><td>The requested <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a>, if successful </td></tr>
@@ -812,6 +817,7 @@ Typedefs</h2></td></tr>
 <p>Returns an <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a> instance for Unicode NFKD normalization. </p>
 <p>Same as <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gacbb4863dd84c255716eb99f56a8b65e7" title="Gets a i18n_unormalizer_h which uses the specified data file and composes or decomposes text accordin...">i18n_unormalization_get_instance</a>(NULL, "nfkc", I18N_UNORMALIZATION_DECOMPOSE, n2). Returns an unmodifiable singleton instance. Do not delete it. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>6.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>normalizer</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">normalizer</td><td>The requested <a class="el" href="group__CAPI__BASE__UTILS__I18N__UNORMALIZATION__MODULE.html#gac31215e37ade956bd8640b62b31f5238" title="i18n_unormalizer_h.">i18n_unormalizer_h</a>, if successful </td></tr>

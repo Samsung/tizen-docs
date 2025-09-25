@@ -2,13 +2,13 @@
 
 A Web storage stores data in key-value format. The process is similar to existing cookies, but by using the Web Storage API, structured objects can be stored, and the storage capacity is increased to 5 MB per domain. In addition, no server request is needed, so server traffic is significantly reduced.
 
-The Web Storage API provides 2 storage types:
+The Web Storage API provides the following 2 storage types:
 
--   Local storage (in [mobile](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-localstorage-attribute), [wearable](http://www.w3.org/TR/2011/WD-webstorage-20110901/#the-localstorage-attribute), and [TV](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-localstorage-attribute) applications)
+-   Local storage (in [mobile](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute){:target="_blank"} applications)
 
     Stores data to be used in multiple windows, beyond the current session, with no expiration date. The stored data is not deleted when the browser window is closed, and can be shared between browser windows.
 
--   Session storage (in [mobile](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-sessionstorage-attribute), [wearable](http://www.w3.org/TR/2011/WD-webstorage-20110901/#the-sessionstorage-attribute), and [TV](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-sessionstorage-attribute) applications)
+-   Session storage (in [mobile](https://html.spec.whatwg.org/multipage/webstorage.html#the-sessionstorage-attribute){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/webstorage.html#the-sessionstorage-attribute){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/webstorage.html#the-sessionstorage-attribute){:target="_blank"} applications)
 
     Valid for only a single session.
 
@@ -18,7 +18,7 @@ The Web Storage API provides 2 storage types:
 
 You can [save and read data in the local and session storages](#managing-data-in-local-and-session-storage). You can also [use the local storage](#using-a-local-storage) to delete the data.
 
-## Using a Local Storage
+## Use a local storage
 
 Saving, reading, and deleting data in a local Web storage is a useful data management skill:
 
@@ -30,8 +30,8 @@ Saving, reading, and deleting data in a local Web storage is a useful data manag
    </script>
    ```
 
- > **Note**  
- > If the size of the data exceeds 5 MB, an error occurs.
+> [!NOTE]
+> If the size of the data exceeds 5 MB, an error occurs.
 
 2. To get the saved data, use the `getItem()` method with the data key:
 
@@ -61,16 +61,16 @@ Saving, reading, and deleting data in a local Web storage is a useful data manag
      </script>
      ```
 
-		> **Note**  
+		> [!NOTE]
 		> The `clear()` method deletes all data within the same domain.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [local_storage_session_storage.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/web_storage)
+- [local_storage_session_storage.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/web_storage){:target="_blank"}
 
-## Managing Data in Local and Session Storage
+## Manage data in local and session storage
 
 With the `setItem()` method, you can store searches on certain conditions used in the browser by the user. When the user reconnects, the `getItem()` method is called to retrieve the stored data.
 
@@ -148,14 +148,16 @@ Knowing how the same data is saved in local storage and session storage, and che
 
    ![Displaying data after reopening the browser (in mobile applications only)](./media/web_storage2.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [local_storage_session_storage.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/web_storage)
+- [local_storage_session_storage.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/web_storage){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [W3C](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute){:target="_blank"}

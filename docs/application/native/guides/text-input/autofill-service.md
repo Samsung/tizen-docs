@@ -18,7 +18,7 @@ The main features of the Autofill Service API include:
 
 ## Prerequisites
 
-1. To use the Autofill Service API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__AUTOFILL__SERVICE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__AUTOFILL__SERVICE__MODULE.html) applications), the application must have metadata key in the `tizen-manifest.xml` file to be recognized as an Autofill Service:
+1. To use the [Autofill Service API](../../api/common/latest/group__CAPI__UIX__AUTOFILL__SERVICE__MODULE.html), the application must have metadata key in the `tizen-manifest.xml` file to be recognized as an Autofill Service:
 
    ```xml
     <service-application ...>
@@ -328,5 +328,4 @@ After you have finished working with the Autofill Service library, deinitialize 
 ## Related Information
 
 - Dependencies
-  - Tizen 5.5 and Higher for Mobile
-  - Tizen 5.5 and Higher for Wearable
+  - Since Tizen 5.5

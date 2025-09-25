@@ -286,5 +286,9 @@ The following list shows the events of modules:
 
 
 ## Related information
-* Dependencies
+- Dependencies
   - Tizen 5.5 and Higher
+- API References
+  - [Tizen.Applications.EventManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.EventManager) namespace
+  - [Tizen.Applications.EventManager.ApplicationEventManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.EventManager.ApplicationEventManager) class
+  - [Tizen.Applications.EventManager.EventReceiver](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.EventManager.EventReceiver) class

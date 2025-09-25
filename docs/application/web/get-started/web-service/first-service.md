@@ -35,13 +35,13 @@ The following instructions help you to create and run a basic Web service, which
 When you are developing a more complex Web service, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing Web applications that use the Web service.
 
 <a name="create"></a>
-## Create a Project
+## Create a project
 
 The following example shows you how to create and configure a basic Web service project in Tizen Studio.
 
 A Web service project contains all the files required for developing a Web service. Web service runs in the background and does not have a graphical interface, which means that you can create a Web service, but it is dependent on the corresponding Web application to run.
 
-To create the Web service project:
+To create the Web service project, follow these steps:
 
 1.  Launch Tizen Studio.
 
@@ -59,7 +59,7 @@ To create the Web service project:
 
         ![Selecting the project type](media/create_project_wizard_type.png)
 
-	2.  Select the profile (**Mobile**) and version from a drop-down list and click **Next**.
+	  2.  Select the profile (**Mobile**) and version from a drop-down list and click **Next**.
 
         The version depends on the platform version you have installed and with which you are developing the Web service.
 
@@ -82,7 +82,7 @@ To create the Web service project:
         The Project Wizard sets up configurations and creates the Web service files using the template. For more information on the Project Wizard and the available templates, see [Create Tizen Projects with Tizen Project Wizard](../../../tizen-studio/web-tools/project-wizard.md).
 
 <a name="build"></a>
-## Build Web Service Package
+## Build Web service package
 
 After the Web service project is created, you can implement the required features. In the following example, only the default features from the project template are used, thus no code changes are required.
 
@@ -97,14 +97,14 @@ To build the signed Web service package, right-click the project in the **Projec
 After you have built the Web service, run it.
 
 <a name="run"></a>
-## Run your Web Service
+## Run your Web service
 
 You can run the Web service on the [emulator](../../tutorials/process/run-debug-app.md#emulator) or a [real target device](../../tutorials/process/run-debug-app.md#target).
 
 <a name="emulator"></a>
-### Run on Emulator
+### Run on emulator
 
-To run the Web service on the emulator:
+To run the Web service on the emulator, follow these steps:
 
 1. Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
     1. In Tizen Studio menu, select **Tools \> Emulator Manager**.
@@ -143,7 +143,7 @@ To run the Web service on the emulator:
       ![Selecting the emulator to use](media/start_stop_buttons.png)
 
 <a name="emulator"></a>
-### Run on Target Device
+### Run on target device
 
 To run the Web service on the real target device:
 
@@ -215,7 +215,7 @@ The following example shows a Web application that runs or terminates Web servic
 <a name="structure_service"></a>
 ## Structure Web Service
 
-The following code shows a simple Web service with Web service life-cycle callbacks. The callbacks are called by the Web application with `startService()` and `stopService()`.
+The following code shows a simple Web service with Web service life-cycle callbacks. The callbacks are called by the Web application with `startService()` and `stopService()`:
 
 ```
 module.exports.onStart = function() {

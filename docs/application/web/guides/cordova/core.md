@@ -22,7 +22,7 @@ Cordova defines a common interface for success and error callbacks:
   - `name`: Short text representing the type of the error
   - `message`: Text containing information about the error
 
-> **Note**  
+> [!NOTE]
 > To perform any Cordova-related operations, you must wait until Cordova is fully set up (the `deviceready` event occurs):
 > ```
 > document.addEventListener('deviceready', onDeviceReady, false);
@@ -35,8 +35,12 @@ Cordova defines a common interface for success and error callbacks:
 
 
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/cordova.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/cordova.html)
+  - [TV](../../api/latest/device_api/tv/tizen/cordova/cordova.html)

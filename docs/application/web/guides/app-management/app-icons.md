@@ -26,9 +26,9 @@ To use the Badge API (in [mobile](../../api/latest/device_api/mobile/tizen/badge
 <tizen:privilege name="http://tizen.org/privilege/notification"/>
 ```
 
-## Managing Badges
+## Manage badges
 
-Getting and setting the badge number is a useful UI management skill:
+Getting and setting the badge number is a useful UI management skill, follow these steps to get and set the badge number:
 
 1. Retrieve application identifier using the `getCurrentApplication()` method:
 
@@ -56,7 +56,7 @@ Getting and setting the badge number is a useful UI management skill:
    tizen.badge.setBadgeCount(appId, 0);
    ```
 
-## Receiving Notifications on Badge Changes
+## Receive notifications on badge changes
 
 Registering a listener for badge count changes to react to new badges and display your badges is a useful UI management skill:
 
@@ -78,8 +78,11 @@ Registering a listener for badge count changes to react to new badges and displa
    tizen.badge.removeChangeListener(['BDb5tZJe47.TestSample']);
    ```
 
-
 ## Related information
 * Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/application.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/application.html)
+  - [TV](../../api/latest/device_api/tv/tizen/application.html)

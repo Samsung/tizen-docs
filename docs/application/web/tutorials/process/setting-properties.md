@@ -1,18 +1,18 @@
 
-# Setting Project Properties
+# Set Project Properties
 
 Before you implement the actual application functionality, define all the necessary properties for your application project:
 
 - To set the application project properties for [build](#set) and [JSON properties](#set_json), right-click the project in Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
 - To define the [Web application configuration](#set_widget), edit the `config.xml` file.  
-  > **Note**  
+  > [!NOTE]
   > Only modify the Web application configuration by using the
     configuration editor in Tizen Studio. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
 
 After you have finished setting the project properties, you are ready to [design the UI](app-dev-process.md#design).
 
 <a name="set"></a>
-## Setting Build Properties
+## Set build properties
 
 You can set build properties for your project. To select the build properties:
 
@@ -21,7 +21,7 @@ You can set build properties for your project. To select the build properties:
 2. Check **Optimize web resources**, and add any files for excluding    optimization in the **Optimization** panel.
 
 <a name="set_json"></a>
-## Setting the JSON Property
+## Set the JSON property
 
 You can set a JSON property for your project. To select the JSON property:
 
@@ -29,7 +29,7 @@ You can set a JSON property for your project. To select the JSON property:
 2. Check **Enable JSON validation in project**.
 
 <a name="set_widget"></a>
-## Setting the Web Application Configuration
+## Set the Web application configuration
 
 The Web application configuration consists of application information, such as version, features, and privileges, which are available for the application. To configure the application information in the Web application configuration editor, double-click the application `config.xml` file in the **Project Explorer** view.
 
@@ -40,7 +40,7 @@ The Web application configuration consists of application information, such as v
 You can [edit the application properties using the form tabs of the Web application configuration editor](../../../tizen-studio/web-tools/config-editor.md#edit).
 
 <a name="overview"></a>
-### Defining and Editing General Information in the Overview Tab
+### Define and edit general information in the Overview tab
 
 You can define and edit general information about the application in the **Overview** tab of the Web application configuration editor.
 
@@ -89,11 +89,11 @@ You can perform the following tasks using the **Overview** tab:
 (maximized fullscreen).
 
 <a name="feature"></a>
-### Declaring Required Software or Hardware Features in the Features Tab
+### Declare required software or hardware features in the Features tab
 
 You can declare any device software or hardware features that your application requires to run properly. The declaration can be used for application filtering in the official site for Tizen applications.
 
-To enable filtering for your Web application:
+To enable filtering for your Web application, follow these steps:
 
 1.  In the **Features** tab, click **+**.
 2.  Select the needed features from the [predefined list of features available for filtering](../app-filtering.md).
@@ -108,11 +108,11 @@ After saving the feature information with the Web application configuration edit
 ```
 
 <a name="privilege"></a>
-### Specifying Privileges in the Privileges Tab
+### Specify privileges in the Privileges tab
 
 You can use features and services provided by privileged APIs, which handle platform and user-sensitive data. You can specify an API, or API groups, accessed and used by the Web application in the **Privileges** tab of the Web application configuration editor. The tab serves as a standardized tool to request the binding of an IRI-identifiable runtime component for a Web application to use at runtime.
 
-To add a privilege:
+To add a privilege, follow these steps:
 
 1.  In the **Privileges** tab, click **+**.
 2.  In the **Add privilege** window, select an option:
@@ -128,7 +128,7 @@ After saving the privilege information with the Web application configuration ed
 ```
 
 <a name="policy"></a>
-### Defining External Access Policies in the Policy Tab
+### Define external access policies in the Policy tab
 
 According to the W3C Access Requests Policy (WARP), you cannot access external network resources by default. If you require access to an external network resource, you must request network resource permissions for the Web application using the **Policy** tab of the Web application configuration editor.
 
@@ -147,7 +147,7 @@ The following table lists the policy properties you can edit in the **Policy** t
   **content-security-policy** </td>
   <td>
 
-  Used to define an additional content security policy for a packaged or hosted application. The policy string is defined according to [Content Security Policy Level 2](http://www.w3.org/TR/2015/CR-CSP2-20150721/) (in mobile and TV applications) and [Content Security Policy 1.0](http://www.w3.org/TR/2012/CR-CSP-20121115/) (in wearable applications).</td>
+  Used to define an additional content security policy for a packaged or hosted application. The policy string is defined according to [Content Security Policy Level 2](https://www.w3.org/TR/CSP2/){:target="_blank"} (in mobile and TV applications) and [Content Security Policy 1.0](https://www.w3.org/TR/CSP1/){:target="_blank"} (in wearable applications).</td>
 </tr>
 <tr>
   <td>
@@ -184,7 +184,7 @@ After setting the policy information with the Web application configuration edit
 ```
 
 <a name="localization"></a>
-### Adding Localized Application Details in the Localization Tab
+### Add localized application details in the Localization tab
 
 You can provide localized versions of the application name, description, and license in the **Localization** tab of the Web application configuration editor.
 
@@ -216,7 +216,7 @@ To add a localized name, description, or license:
 You can localize a Web application to adapt to various languages and cultural environments by creating different Web application versions for different languages. For more information, see [Localizing Web Applications](../../../tizen-studio/web-tools/web-localization.md).
 
 <a name="preferences"></a>
-### Declaring Name-value Pairs in the Preferences Tab
+### Declare name-value pairs in the Preferences tab
 
 You can declare name-value pairs which can be set and retrieved using the Widget Interface API (in [mobile](../../api/latest/w3c_api/w3c_api_m.html#widget), [wearable](../../api/latest/w3c_api/w3c_api_w.html#widget), and [TV](../../api/latest/w3c_api/w3c_api_tv.html#widget) applications) in the **Preferences** tab of the Web application configuration editor. These name-value pairs, or preferences, are used by the Web application during execution.
 
@@ -229,7 +229,7 @@ After saving the preference information with the Web application configuration e
 ```
 
 <a name="tizen"></a>
-### Configuring the Tizen Schema Extension in the Tizen Tab
+### Configure the Tizen schema extension in the Tizen tab
 
 The **Tizen** tab of the Web application configuration editor shows the Tizen schema extension. Some of the attributes specified on this tab are mandatory and must be defined, whereas others are optional.
 
@@ -529,10 +529,10 @@ The following table describes the schema extension properties that you can edit.
 </table>
 
 <a name="source"></a>
-### Editing the config.xml File in the Source Tab
+### Edit the config.xml file in the Source tab
 
 The **Source** tab of the Web application configuration editor shows the code of the `config.xml` file. You can [edit the basic syntax of the XML document](../../../tizen-studio/web-tools/config-editor.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
 
-> **Note**  
+> [!NOTE]
 > The `config.xml` must conform not only to the XML file format
 but also to the W3C specification requirements. If you edit application information manually in the `config.xml` file source code, you can introduce errors preventing the application from running normally.

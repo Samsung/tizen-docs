@@ -347,5 +347,7 @@ void GetStickerData(StickerData stickerData)
 ```
 
 ## Related information
-* Dependencies
+- Dependencies
   - Tizen 7.0 and Higher
+- API References
+  - [Tizen.Uix.Sticker](/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.Sticker.html) class

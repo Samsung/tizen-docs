@@ -137,5 +137,10 @@ To get the installed information and its details, and to operate on the informat
 
 
 ## Related information
-  * Dependencies
-    -   Tizen 5.5 and Higher
+- Dependencies
+  -   Tizen 5.5 and Higher
+- API References
+    - [Tizen.Applications.ComponentBased](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased) namespace
+    - [Tizen.Applications.ComponentBased.ComponentManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentManager) class
+    - [Tizen.Applications.ComponentBased.ComponentInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ComponentBased.ComponentInfo) class
+

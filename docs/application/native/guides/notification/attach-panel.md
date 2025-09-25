@@ -1,9 +1,11 @@
 # Attach Panel
 
+> [!NOTE]
+> All attach panel APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
 
 The attach panel allows you to attach various content into an application that contains an attach panel. You can attach images, take pictures, record voice, and select files on the attach panel.
 
-This API is supported on Tizen mobile devices that support [attach panel features](#prerequisites).
+This API is supported on specifc Tizen devices that support [attach panel features](#prerequisites).
 
 The main features of the Attach panel API are the following:
 
@@ -62,7 +64,7 @@ The following figure explains the content types. From left to right: images, cam
 
 This section explains, how you can enable your application to use the attach panel functionality:
 
-1. To use the [Attach panel](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html) API, the application must request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Attach panel](../../api/common/latest/group__CAPI__PANEL__ATTACH__MODULE.html) API, the application must request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -135,7 +137,7 @@ This section explains, how you can enable your application to use the attach pan
     s_info.attach_panel = attach_panel;
     ```
 
-2. Select the type of content for the attach panel. Add content categories using the `attach_panel_add_content_category()` function. The available content categories are defined in the [attach_panel_content_category](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#gada3a2db6ac8e7d42b7dff7c3cc48720b) enumeration.
+2. Select the type of content for the attach panel. Add content categories using the `attach_panel_add_content_category()` function. The available content categories are defined in the [attach_panel_content_category](../../api/common/latest/group__CAPI__PANEL__ATTACH__MODULE.html#gada3a2db6ac8e7d42b7dff7c3cc48720b) enumeration.
 
     The content categories in the **More** tab are shown in the frequency of recently used and alphabetical sequence.
 
@@ -166,7 +168,7 @@ This section explains, how you can enable your application to use the attach pan
 3. Register and define callbacks:
 
    - To get the data that you select in the called application, register a callback using the `attach_panel_set_result_cb()` function. Select and confirm the content category for the caller application to trigger the event. When you use this callback, you must use the `app_control_get_extra_data_array()` function to get the received data.
-   - To get the published events from the panel side, register a callback using the `attach_panel_set_event_cb()` function. Publish the reserved events (defined in the [attach_panel_event](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#ga722a6d81e76fc1c4567a1bf920b4da3e) enumeration) from the panel side to trigger the event.
+   - To get the published events from the panel side, register a callback using the `attach_panel_set_event_cb()` function. Publish the reserved events (defined in the [attach_panel_event](../../api/common/latest/group__CAPI__PANEL__ATTACH__MODULE.html#ga722a6d81e76fc1c4567a1bf920b4da3e) enumeration) from the panel side to trigger the event.
 
    ```
    static void
@@ -303,4 +305,6 @@ To manage an attach panel content, you can set extra data to a previously added 
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Since Tizen 2.4
+- API References
+  - [Attach Panel](../../api/common/latest/group__CAPI__PANEL__ATTACH__MODULE.html)

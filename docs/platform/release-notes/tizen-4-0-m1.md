@@ -7,15 +7,13 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 4.0 Public M1 source codes are under **tizen_4.0** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 4.0 Public M1 source codes are under **tizen_4.0** branch.)
 
 - [Getting binaries and images](http://download.tizen.org/releases/milestone/tizen/4.0.m1/)
   - Base: [http://download.tizen.org/releases/milestone/tizen/4.0.m1/tizen-base_20170520.1/](http://download.tizen.org/releases/milestone/tizen/4.0.m1/tizen-base_20170520.1/)
   - Mobile: [http://download.tizen.org/releases/milestone/tizen/4.0.m1/tizen-unified_20170529.1/images/standard/mobile-wayland-armv7l-tm1/](http://download.tizen.org/releases/milestone/tizen/4.0.m1/tizen-unified_20170529.1/images/standard/mobile-wayland-armv7l-tm1/)
   - Wearable: [http://download.tizen.org/releases/milestone/tizen/4.0.m1/tizen-unified_20170529.1/images/standard/wearable-wayland-armv7l-tw2/](http://download.tizen.org/releases/milestone/tizen/4.0.m1/tizen-unified_20170529.1/images/standard/wearable-wayland-armv7l-tw2/)
   - TV: [http://download.tizen.org/releases/milestone/tizen/4.0.m1/tizen-unified_20170529.1/images/standard/tv-wayland-armv7l-odroidu3/](http://download.tizen.org/releases/milestone/tizen/4.0.m1/tizen-unified_20170529.1/images/standard/tv-wayland-armv7l-odroidu3/)
-
-- [How to flash to a device](../developing/flashing.md)
 
 
 ## Release notes

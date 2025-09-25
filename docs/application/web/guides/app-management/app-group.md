@@ -35,7 +35,7 @@ To use the Application API (in [mobile](../../api/latest/device_api/mobile/tizen
 <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
 ```
 
-## Controlling the Launch Mode
+## Control the launch mode
 
 You can set the application launch mode in the `config.xml` file (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_application) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_application) applications) with one of the following values:
 
@@ -44,7 +44,7 @@ You can set the application launch mode in the `config.xml` file (in [mobile](..
 
 Additionally, if the launch mode is not set to `SINGLE` in the `config.xml` file and the application is launched by the `launchAppControl()` method of the `ApplicationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationManager) applications) with the `ApplicationControl` object (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl), and [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications), the `launchMode` property of this object overrides the launch mode of the called application. If the launch mode in the `config.xml` file is set to `SINGLE`, the value of the `ApplicationControl.launchMode` property is ignored and the sub application is always called in the `SINGLE` mode.
 
-To launch an application in a `GROUP` mode:
+To launch an application in a `GROUP` mode, follow these steps:
 
 1. Define the application control object with the `GROUP` mode:
 
@@ -78,8 +78,12 @@ To launch an application in a `GROUP` mode:
    }, appControlReplyCallback);
    ```
 
-## Related Information
+## Related information
 * Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/application.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/application.html)
+  - [TV](../../api/latest/device_api/tv/tizen/application.html)

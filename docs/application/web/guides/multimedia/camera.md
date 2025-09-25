@@ -4,7 +4,7 @@ You can use the camera features in the Tizen Wearable Web applications.
 
 This feature is supported in wearable applications only.
 
-The main features of the Camera API (Tizen Extension) API include:
+The main features of the Camera API (Tizen Extension) API include the following:
 
 - Accessing the camera device    
 
@@ -21,11 +21,11 @@ The main features of the Camera API (Tizen Extension) API include:
 
   You can [deallocate the camera preview stream resources](#deallocating-the-camera-preview-stream) when the application is invisible so that the preview stream can be assigned to another Web application.
 
-## Accessing the Camera Device
+## Access the camera device
 
-To take advantage of the camera features, you must learn to access the camera device:
+To take advantage of the camera features, you must learn to access the camera device by following these steps:
 
-1. Access the camera with the stream that you can receive from the `getUserMedia()` method. The second parameter for that method is an event handler that is triggered when the stream is successfully retrieved.
+1. Access the camera with the stream that you can receive from the `getUserMedia()` method. The second parameter for that method is an event handler that is triggered when the stream is successfully retrieved:
 
    ```
    var stream;
@@ -36,7 +36,7 @@ To take advantage of the camera features, you must learn to access the camera de
    }
    ```
 
-2. Use the received stream as the first parameter for the `createCameraControl()` method, which returns the `cameraControl` object. The `createCameraControl()` method is a member object of `tizCamera` from the navigator.
+2. Use the received stream as the first parameter for the `createCameraControl()` method, which returns the `cameraControl` object. The `createCameraControl()` method is a member object of `tizCamera` from the navigator:
 
    ```
    navigator.tizCamera.createCameraControl(stream, gotCameraCallback, noCameraCallback);
@@ -48,9 +48,9 @@ To take advantage of the camera features, you must learn to access the camera de
    function gotCameraCallback(cameraControl) {}
    ```
 
-## Managing the Camera
+## Manage the camera
 
-To take advantage of the camera features, you must learn to manage the camera:
+To take advantage of the camera features, you must learn to manage the camera by following these steps:
 
 - You can record videos with the `cameraControl` object.   
   Use the `start()` to start the recording, and the `stop()` method to stop the recording:
@@ -77,10 +77,10 @@ To take advantage of the camera features, you must learn to manage the camera:
                                        recorderSettingErrorCallback);
   ```
 
-> **Note**  
+> [!NOTE]
 > If a setting cannot be set, the error callback is called to resolve the issue.
 
-## Deallocating the Camera Preview Stream
+## Deallocate the camera preview stream
 
 To take advantage of the camera features, you must learn to deallocate the camera preview stream resources when the application is invisible, so that the preview stream can be assigned to another application:
 
@@ -98,7 +98,7 @@ To take advantage of the camera features, you must learn to deallocate the camer
    }
    ```
 
-2. Use the `onVisibilityChange()` event listener to detect changes in the visibility state of the application. When the application becomes invisible, the `cameraStream.stop()` method is called to release the preview stream. When the application becomes visible again, the preview stream is re-initialized.
+2. Use the `onVisibilityChange()` event listener to detect changes in the visibility state of the application. When the application becomes invisible, the `cameraStream.stop()` method is called to release the preview stream. When the application becomes visible again, the preview stream is re-initialized:
 
    ```
    function onVisibilityChange() {
@@ -110,6 +110,6 @@ To take advantage of the camera features, you must learn to deallocate the camer
    }
    ```
 
-## Related Information
+## Related information
 * Dependencies   
    - Tizen 2.3.1 and Higher for Wearable

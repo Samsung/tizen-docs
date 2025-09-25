@@ -5,13 +5,11 @@ Release date: Oct. 27, 2020
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 6.0 M2 source codes are under **tizen_6.0** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 6.0 M2 source codes are under **tizen_6.0** branch.)
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20201008.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20201008.1/)
   - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20201020.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20201020.1/)
-
-- [How to flash to a device](../developing/flashing.md)
 
 
 ## Release notes
@@ -416,4 +414,3 @@ Release date: Oct. 27, 2020
 - Machine Learning Inference API
   - Incorrect error codes have been fixed.
   - The edge-TPU and Movidius-X runtime issues have been fixed.
-

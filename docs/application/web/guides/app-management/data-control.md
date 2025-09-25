@@ -30,13 +30,13 @@ To use the Data Control API (in [mobile](../../api/latest/device_api/mobile/tize
 <tizen:privilege name="http://tizen.org/privilege/appmanager.launch"/>
 ```
 
-## Managing Data in Key-value Pairs
+## Manage data in key-value pairs
 
 Learning how to manage map-type data allows you to use key-value pairs exposed by a DataControl provider:
 
 1. Retrieve the `MappedDataControlConsumer` object (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#MappedDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#MappedDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications) using the `getDataControlConsumer()` method of the `DataControlManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#DataControlManager), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#DataControlManager), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#DataControlManager) applications). This object allows accessing the key-value data stored by the DataControl provider.
 
-   You need a running DataControl provider application, which uses the `"http://tizen.org/datacontrol/provider/DictionaryDataControlProvider"` provider ID.
+   You need a running DataControl provider application, which uses the `"http://tizen.org/datacontrol/provider/DictionaryDataControlProvider"` provider ID:
 
    ```
    /* Get the map-type DataControlConsumerObject */
@@ -45,7 +45,7 @@ Learning how to manage map-type data allows you to use key-value pairs exposed b
    }
    ```
 
-2. To meet the API requirement of using unique request identifiers, define a global variable, which is incremented every time a new request ID is needed. When the Data Control API responds to a request, it provides the request ID, which allows connecting the response with the specific request.
+2. To meet the API requirement of using unique request identifiers, define a global variable, which is incremented every time a new request ID is needed. When the Data Control API responds to a request, it provides the request ID, which allows connecting the response with the specific request:
 
    ```
    var globalReqId = new Date().getTime() % 2e9;
@@ -106,13 +106,13 @@ Learning how to manage map-type data allows you to use key-value pairs exposed b
      }
      ```
 
-## Managing SQL-type Data
+## Manage SQL-type data
 
 Learning how to manage SQL-type data allows you to use databases exposed by a DataControl provider:
 
 1. To retrieve a `SQLDataControlConsumer` object (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#SQLDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#SQLDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications), use the `getDataControlConsumer()` method of the `DataControlManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#DataControlManager), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#DataControlManager), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#DataControlManager) applications). This object allows accessing the data stored by the DataControl provider.
 
-   You need a running DataControl provider application, which uses the `"http://tizen.org/datacontrol/provider/DictionaryDataControlProvider"` provider ID.
+   You need a running DataControl provider application, which uses the `"http://tizen.org/datacontrol/provider/DictionaryDataControlProvider"` provider ID:
 
    ```
    /* Get the SQL type DataControlConsumerObject */
@@ -121,7 +121,7 @@ Learning how to manage SQL-type data allows you to use databases exposed by a Da
    }
    ```
 
-2. To meet the API requirement of using unique request identifiers, define a global variable, which is incremented every time new request ID is needed. When the Data Control API responds to a request, it provides the request ID, which allows connecting the response with the specific request.
+2. To meet the API requirement of using unique request identifiers, define a global variable, which is incremented every time new request ID is needed. When the Data Control API responds to a request, it provides the request ID, which allows connecting the response with the specific request:
 
    ```
    var globalReqId = new Date().getTime() % 2e9;
@@ -206,13 +206,13 @@ Learning how to manage SQL-type data allows you to use databases exposed by a Da
      }
      ```
 
-## Monitoring Provider Data Changes
+## Monitor provider data changes
 
 Learning how to add a listener allows you to receive notifications about DataControl provider data changes:
 
 1. To monitor changes in the DataControl provider data, you must retrieve a `SQLDataControlConsumer` object (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#SQLDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#SQLDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications) or a `MappedDataControlConsumer` object (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#MappedDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#MappedDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications). Retrieve the required object using the `getDataControlConsumer()` method of the `DataControlManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#DataControlManager), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#DataControlManager), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#DataControlManager) applications).
 
-   You need a running DataControl provider application, which uses the `"http://tizen.org/datacontrol/provider/DictionaryDataControlProvider"` provider ID.
+   You need a running DataControl provider application, which uses the `"http://tizen.org/datacontrol/provider/DictionaryDataControlProvider"` provider ID:
 
    ```
    /* Get the map-type DataControlConsumerObject */
@@ -282,7 +282,7 @@ Learning how to add a listener allows you to receive notifications about DataCon
    }
    ```
 
-> **Note**  
+> [!NOTE]
 > To monitor DataControl provider data changes, it is not enough to implement a listener in the DataControl consumer. You also need to implement the data change sending functionality in the DataControl provider.  
 > The data sending implementation determines the actual change data returned to the DataControl consumer. For more information on the DataControl provider implementation, see [Monitoring Data Changes](../../../native/guides/app-management/data-control.md#monitoring-data-changes).
 
@@ -291,3 +291,7 @@ Learning how to add a listener allows you to receive notifications about DataCon
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.2 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html)
+  - [TV](../../api/latest/device_api/tv/tizen/datacontrol.html)

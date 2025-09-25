@@ -6,7 +6,7 @@ The Tizen 2.1 Nectarine release provides developers with the Tizen kernel, devic
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 2.1 Nectarine source codes are under **tizen_2.1** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 2.1 Nectarine source codes are under **tizen_2.1** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.1/tizen-2.1)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.1_Image_to_Reference_Device)
 
@@ -765,4 +765,3 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 - Install Manager
 
   - A shortcut is not provided in Mac OS X
-

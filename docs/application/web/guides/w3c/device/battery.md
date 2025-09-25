@@ -4,11 +4,11 @@ You can programmatically determine the battery status of the device on which you
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Battery Status API include:
+The main features of the Battery Status API include the following:
 
 - Retrieving the battery status   
 
-  You can use the attributes of the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/2016/CR-battery-status-20160707/#the-batterymanager-interface) and [wearable](http://www.w3.org/TR/2012/CR-battery-status-20120508/#batterymanager-interface) applications) to [check the battery status information](#retrieving-battery-status-information), such as battery charging status and battery charge level.
+  You can use the attributes of the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/battery-status/#the-batterymanager-interface){:target="_blank"} and [wearable](https://www.w3.org/TR/battery-status/#the-batterymanager-interface){:target="_blank"} applications) to [check the battery status information](#retrieving-battery-status-information), such as battery charging status and battery charge level.
 
 - Detecting battery status changes
 
@@ -19,7 +19,7 @@ Knowing the battery status of the device helps you to defer or scale back work w
 - A Web-based email client can modify how often it checks the server for new email depending on the battery status. It can make the check every few seconds if the device is charging or has a full battery, but less often if the device is not charging or is low on battery.
 - A Web-based word processor can monitor the battery level and prevent data loss by saving any changes before the battery runs out.
 
-## Retrieving Battery Status Information
+## Retrieve battery status information
 
 To enhance the user interaction with the device, you must learn to retrieve and display the battery status:
 
@@ -39,7 +39,7 @@ To enhance the user interaction with the device, you must learn to retrieve and 
    </script>
    ```
 
-3. Use the attributes of the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/2016/CR-battery-status-20160707/#the-batterymanager-interface) and [wearable](http://www.w3.org/TR/2012/CR-battery-status-20120508/#batterymanager-interface) applications) to display the battery charging status and battery charge level:
+3. Use the attributes of the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/2016/CR-battery-status-20160707/#the-batterymanager-interface){:target="_blank"} and [wearable](https://www.w3.org/TR/battery-status/#the-batterymanager-interface){:target="_blank"} applications) to display the battery charging status and battery charge level:
 
    ```
    <script>
@@ -57,13 +57,13 @@ To enhance the user interaction with the device, you must learn to retrieve and 
 
 ![Displaying battery status (in mobile applications only)](./media/charging_battery.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [show_battery_state.htm](http://download.tizen.org/misc/examples/w3c_html5/device/battery_status_api)
+- [show_battery_state.htm](http://download.tizen.org/misc/examples/w3c_html5/device/battery_status_api){:target="_blank"}
 
-## Detecting Battery Status Changes
+## Detect battery status changes
 
 To enhance the user interaction with the device, you must learn to set event handlers to detect changes in the battery status:
 
@@ -87,7 +87,7 @@ To enhance the user interaction with the device, you must learn to set event han
    </script>
    ```
 
-3. Set event listeners with the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/2016/CR-battery-status-20160707/#the-batterymanager-interface) and [wearable](http://www.w3.org/TR/2012/CR-battery-status-20120508/#batterymanager-interface) applications) attributes to detect changes in the battery status:
+3. Set event listeners with the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/battery-status/#the-batterymanager-interface){:target="_blank"} and [wearable](https://www.w3.org/TR/battery-status/#the-batterymanager-interface){:target="_blank"} applications) attributes to detect changes in the battery status:
 
    ```
    <script>
@@ -133,13 +133,15 @@ To enhance the user interaction with the device, you must learn to set event han
 
 ![Battery status (in mobile applications only)](./media/changing_batterystatus.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [battery_event.htm](http://download.tizen.org/misc/examples/w3c_html5/device/battery_status_api)
+- [battery_event.htm](http://download.tizen.org/misc/examples/w3c_html5/device/battery_status_api){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [W3C](https://www.w3.org/TR/battery-status/#the-batterymanager-interface){:target="_blank"}

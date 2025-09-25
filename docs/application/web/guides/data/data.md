@@ -20,7 +20,7 @@ You can use the following data storage and management features in your Web appli
 
   You can manage ZIP archives on the device. You can create and browse the archives, and extract files from the archive.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

@@ -32,7 +32,7 @@ Use the [sync manager variables](#variables) with the sync job functions. The sy
 | Rule                       | Description                              |
 |----------------------------|------------------------------------------|
 | Data changes on the server | A server sends a push message to the account provider service and service applications. When the data is changed on the server, a push message is sent from the server. Then, the device which receives the push message can trigger an on-demand sync job. |
-| Data changes on the device | A subscribed callback function is invoked whenever a database change occurs for a registered capability. The data change listener notices the changes by using the Calendar (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CALENDAR__SVC__MODULE.html) applications), Contacts (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html) applications), and Media Content (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html) applications) APIs. If there are any changes in the corresponding data, the sync manager notices the changes and schedules a sync job.<br>Changing data in the Calendar database includes adding, updating, and deleting books, events, and todos. Changing data in the Contacts database includes adding, removing, and modifying contacts. The Media Content API provides notifications for changes in media types, such as image, music, sound, and video. |
+| Data changes on the device | A subscribed callback function is invoked whenever a database change occurs for a registered capability. The data change listener notices the changes by using the [Calendar](../../api/common/latest/group__CAPI__SOCIAL__CALENDAR__SVC__MODULE.html), [Contacts](../../api/common/latest/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html), and [Media Content](../../api/common/latest/group__CAPI__MEDIA__CONTENT__MODULE.html) APIs. If there are any changes in the corresponding data, the sync manager notices the changes and schedules a sync job.<br>Changing data in the Calendar database includes adding, updating, and deleting books, events, and todos. Changing data in the Contacts database includes adding, removing, and modifying contacts. The Media Content API provides notifications for changes in media types, such as image, music, sound, and video. |
 | Network availability       | When a status change in the Wi-Fi or data network is detected, the behavior of the sync operation changes. |
 | On demand sync             | The on-demand sync means that you can schedule a sync job once. You can use this feature with the `sync_manager_on_demand_sync_job()` function. |
 | Periodic sync              | The periodic sync means that you can schedule a sync job to be performed regularly. You can use this feature with the `sync_manager_add_periodic_sync_job()` function. You can also use the sync intervals through various enumerators provided through the Sync Manager API.<br> When using the Sync Manager API, you can set an alarm indirectly. |
@@ -42,7 +42,7 @@ Use the [sync manager variables](#variables) with the sync job functions. The sy
 
 > **Note**
 >
-> The Sync Adapter API (in [mobile](../../api/mobile/latest/group__CAPI__SYNC__ADAPTER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYNC__ADAPTER__MODULE.html) applications) operations must be carried out by a service application (which operates data synchronization) before using the Sync Manager API.
+> The [Sync Adapter API](../../api/common/latest/group__CAPI__SYNC__ADAPTER__MODULE.html) operations must be carried out by a service application (which operates data synchronization) before using the Sync Manager API.
 >
 > The number of service applications that can set callbacks is restricted to only 1 per package.
 
@@ -52,13 +52,13 @@ The Sync Adapter API allows you to:
 
 - Start a sync operation with an app control, so that the application's daemon needs not to stay awake.
 
-  The Sync Adapter API allows you to use this mechanism without using the App Control API (in [mobile](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APP__CONTROL__MODULE.html) applications) separately. In other words, when using the Sync Adapter API, you can use the App Control API indirectly.
+  The Sync Adapter API allows you to use this mechanism without using the [App Control API](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html) separately. In other words, when using the Sync Adapter API, you can use the App Control API indirectly.
 
 ## Prerequisites
 
 To enable your application to use the synchronization management functionality:
 
-1. To use the Sync Manager API (in [mobile](../../api/mobile/latest/group__CAPI__SYNC__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYNC__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Sync Manager API](../../api/common/latest/group__CAPI__SYNC__MANAGER__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -88,7 +88,7 @@ To enable your application to use the synchronization management functionality:
     result = sync_adapter_set_callbacks(on_start_cb, on_cancel_cb);
     ```
 
-	A UI application cannot initialize and set callbacks through the Sync Adapter API (in [mobile](../../api/mobile/latest/group__CAPI__SYNC__ADAPTER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYNC__ADAPTER__MODULE.html) applications). Instead, the UI application must call the Sync Manager API to request sync operations.
+	A UI application cannot initialize and set callbacks through the [Sync Adapter API](../../api/common/latest/group__CAPI__SYNC__ADAPTER__MODULE.html). Instead, the UI application must call the Sync Manager API to request sync operations.
 
 4. To use the functions and data types of the Sync Manager API, include the `<sync_manager.h>` header file in the UI application:
 
@@ -512,7 +512,7 @@ The following table lists the variables used with the sync manager.
 			<td>Interval for adding a periodic sync job.
 			<p>If the interval is provided, the sync job is performed periodically. If you set the periodic interval to 30 minutes, a time interval is set as a power of 2 less than 30. This means that a time interval set to 16 minutes operates the sync job every 16 minutes while skipping the first notification (so the first is in 32 minutes). The same logic applies to other cases.</p>
 			<p>This variable provides a periodic sync job with an inexact time. Coupling various periodic sync jobs with an interval as a power of 2 prevents the device from waking up the service application too many times.</p>
-			<p>The <code>sync_period_e</code> enumerator (in <a href="../../api/mobile/latest/group__CAPI__SYNC__MANAGER__MODULE.html#gad6f301bc84c4e758aee1636b0122dd7e">mobile</a> and <a href="../../api/wearable/latest/group__CAPI__SYNC__MANAGER__MODULE.html#gad6f301bc84c4e758aee1636b0122dd7e">wearable</a> applications) defines the available period intervals.</p>
+			<p>The <a href="../../api/common/latest/group__CAPI__SYNC__MANAGER__MODULE.html#gad6f301bc84c4e758aee1636b0122dd7e">sync_period_e</a> enumerator defines the available period intervals.</p>
 			</td>
 		</tr>
 		<tr>
@@ -558,5 +558,4 @@ The following table lists the variables used with the sync manager.
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 2.4

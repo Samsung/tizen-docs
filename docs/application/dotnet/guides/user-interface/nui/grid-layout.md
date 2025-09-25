@@ -155,6 +155,9 @@ The `HorizontalAlignment` and `VerticalAlignment` properties specify the alignme
 - Dependencies
   -  Tizen 5.5 and Higher
 
+- API References
+  - [Grid Layout API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.GridLayout.html)
+
 <script>
     function openTabSection(evt, profileName, sectionId) {
         var i, tabcontent, tablinks, section;

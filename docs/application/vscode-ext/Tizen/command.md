@@ -1,0 +1,54 @@
+# Tizen Commands from VSCode Extension's command Palette
+
+Visual Stuido code Extension for Tizen prvides various Tizen specific commands to be used from the **Command Palette**(`CTRL` + `SHIFT` + `P` or `F1`).
+
+## Command List
+
+
+| Command                                                                | Group    | Description                                                                                                                                |
+| ---------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Tizen: Create Tizen Project                                            | Common   | Create Tizen Project with Templates. You can select native, web, .NET, and rpk type project.                                               |
+| Tizen: Set Tizen Baseline SDK path or install a new Tizen Baseline SDK | Common   | This one is command line based baseline sdk install tool.                                                                                  |
+| Tizen: Launch Tizen Certificate Manager                                | Common   | Execute Certificate Manager for secure profile management.                                                                                 |
+| Tizen: Set Tizen working folder                                        | Common   | Set the working folder where the application will be built and managed.                                                                    |
+| Tizen: Restart Sdb Server                                              | Common   | execute "sdb kill-server" and "sdb start-server" internally.                                                                               |
+| Tizen: Debug Tizen application                                         | Common   | Run application with debugging mode.                                                                                                       |
+| Tizen: Run Tizen application                                           | Common   | Run application without debugging                                                                                                          |
+| Tizen: Build Tizen Project                                             | Common   | Build Application and make the tizen application package (.rpk, .tpk, .wgt)                                                                |
+| Tizen: Launch Tizen Package Manager                                    | Common   | Run Tizen Package manager to insatll/update some tizen related tools and platform.                                                         |
+| Tizen: Report Tizen Platform or tools issues                           | Common   | Open Tizen.Issue github issue page to report platform and sdk bugs                                                                         |
+| Tizen: Connect to Remote Target                                        | Common   | Connect Remote device for testing. It might be shown in Connected Device List.                                                             |
+| Tizen: Disconnect from Remote Target                                   | Common   | Disconnect Remote device from Connected Device List.                                                                                       |
+| Tizen: Build Tizen project for multiple architectures                  | Common   | Build Project to retrieve packages for multiple architecture at the same time (ie. aarch64, arm, x86, x86_64)                              |
+| Tizen: Clean Tizen project                                             | Common   | Clear all intermediate files and built artifacts.                                                                                          |
+| Tizen: Focus on Actions View                                           | Internal | Move the focus to Acitons veiw                                                                                                             |
+| Tizen:  Focus on Connected Device View                                 | Internal | Move the focus to Connected Device view                                                                                                    |
+| Tizen: Focus on Report Platform Bug View                               | Internal | Move the focus to Report Platform Bug view                                                                                                 |
+| Tizen: Focus on Tizen Tools View                                       | Internal | Move the focus to Tizen Tools view                                                                                                         |
+| Tizen: Focus on Welcom View                                            | Internal | Move the foucus to Welcom view                                                                                                             |
+| Tizen: Install Tizen application                                       | Common   | Simplify install the output package to connected device.                                                                                   |
+| Tizen: Launch Tizen Device Manager                                     | Common   | Run Tizen Device Manager for log viewer and file explorer of connected target.                                                             |
+| Tizen: set analytics logging option                                    | Common   | Enable/Disable collecting of sdk tool's analytics log                                                                                      |
+| Tizen: Set Tizen arch                                                  | Common   | Set the target architecture for the application. This could be x86, x64, ARM, etc., depending on the target device's architecture.         |
+| Tizen: Set Tizen build mode                                            | Common   | Set the build type for the application. This could be Debug, Release, or any other custom build configuration.                             |
+| Tizen: Set Tizen device                                                | Common   | Configure the target device where the application will be deployed.                                                                        |
+| Tizen: Show full log in the output panel                               | Common   | Enable/Disable Show full log option                                                                                                        |
+| Tizen: Uninstall Tizen application                                     | Common   | Uninstall Tizen application from connected device.                                                                                         |
+| Tizen: Wizard to set Tizen Baseline SDK path or install a new.         | Common   | GUI based Baseline SDK Installer (The Functionality is same with "Tizen: Set Tizen Baseline SDK path or install a new Tizen Baseline SDK") |
+| Tizen Web: Activate Tizen WASM emsdk.                                  | Web      | Activate the emsdk tool to be used by Tizen VS Code extension.                                                                             |
+| Tizen Web: Add WASM Module                                             | Web      | Add the WASM Module which is provided by template.                                                                                         |
+| Tizen Web: Run Privilege Checker                                       | Web      | Identify potential problems in the application code related to the API and privilege use                                                   |
+| Tizen Web: Wizard to set Tizen WASM emsdk path                         | Web      | Download Tizen Emscripten SDK                                                                                                              |
+| Tizen Native: Profile for Memory Errors                                | Native   | Run CLang's ASAN (Address Sanitizer)                                                                                                       |
+| Tizen Native:Profile with Leak Sanitizer                               | Native   | Run LSAN (Leak Sanitizer)                                                                                                                  |
+| Tizen Native: Run Unit Test and Coverage                               | Native   | Run Unit Test and show that test result and coverage                                                                                       |
+| Tizen: Change TIDL Build Configuration                                 | Native   | Move to TIDL related setting (configuration for Proxy/Rpclib/Stub/Tread code genration)                                                    |
+| Tizen: Compile TIDL Files                                              | Native   | Compile TIDL File with TIDL Compiler                                                                                                       |
+| Tizen (C/C++): Update Tizen(C/C++) Intellisense                        | Native   | Reset the Intellisense configuration to default value.                                                                                     |
+| Tizen .NET: Add Tizen nuget source                                     | .NET     | Add nuget package source or URL                                                                                                            |
+| Tizen: Update .NET Workload                                            | .NET     | Update Tizen .NET workload version to latest                                                                                               |
+| Tizen .NET: Install dotnet dianostics package                          | .NET     | Install dotnet diagnostics tool to connected target.                                                                                       |
+| Tizen .NET: Run dotnet dianostics tools                                | .NET     | Run .NET Diagnostics Tool (dotnet dump, gc dump, dotnet trace)                                                                             |
+| Tizen .NET: Run Tizen core profiler                                    | .NET     | Run core profiler for .NET application                                                                                                     |
+| Tizen .NET: Run Tizen memory profiler                                  | .NET     | Run memory profiler for .NET application (Legacy memory profiler tool)                                                                     |
+| Tizen Memory Profiler: Run                                             | .NET     | Run Memory Profiler filer for .NET application (New Memor profiler supporting Live Mixed type profiling)                                   |

@@ -4,7 +4,7 @@ The key manager allows you to [control data access](#data-access-control) by sec
 
 The Key Manager API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of the Key Manager API include:
+The main features of the Key Manager API include the following:
 
 - Saving data		
 
@@ -18,7 +18,7 @@ The main features of the Key Manager API include:
 
   You can [remove data](#removing-data) from a repository. You can remove both data that you have added yourself, and data that another application has added and granted you permissions to remove.
 
-## Data Access Control
+## Data access control
 
 With the key manager, you can control various security aspects of your application:
 
@@ -44,9 +44,9 @@ With the key manager, you can control various security aspects of your applicati
 
 ![Key manager process](./media/key_manager.png)
 
-## Saving Data
+## Save data
 
-To save data in a repository:
+To save data in a repository, follow these steps:
 
 1. Save the data using the `saveData()` method:
 
@@ -75,9 +75,9 @@ To save data in a repository:
    }
    ```
 
-## Getting Data
+## Get data
 
-To retrieve data from a repository:
+To retrieve data from a repository, follow these steps:
 
 - Retrieve data which your application has added:
 
@@ -113,9 +113,9 @@ To retrieve data from a repository:
   }
   ```
 
-## Removing Data
+## Remove data
 
-To remove data from a repository:
+To remove data from a repository, follow these steps:
 
 1. Remove data which your application has added:
 
@@ -151,8 +151,12 @@ To remove data from a repository:
    }
    ```
 
-## Related Information
+## Related information
 * Dependencies   
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/keymanager.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/keymanager.html)
+  - [TV](../../api/latest/device_api/tv/tizen/keymanager.html)

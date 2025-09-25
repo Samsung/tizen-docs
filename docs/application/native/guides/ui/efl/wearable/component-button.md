@@ -131,4 +131,4 @@ To manage the autorepeat feature:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.3.1

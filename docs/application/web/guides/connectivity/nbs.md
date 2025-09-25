@@ -5,7 +5,7 @@ You can set a cellular network as a preferred route for Internet connections wit
 
 This feature is supported in mobile applications only.
 
-The main features of the Network Bearer Selection API include:
+The main features of the Network Bearer Selection API include the following:
 
 -   Requesting a route
 
@@ -33,9 +33,9 @@ To use the [Network Bearer Selection](../../api/latest/device_api/mobile/tizen/n
 
 <a name="request"></a>
 
-## Requesting a Route
+## Request a route
 
-To request a preferred route for Internet connection with the "www.tizen.org" host:
+To request a preferred route for Internet connection with the [Tizen](https://www.tizen.org/){:target="_blank"} host, follow these steps:
 
 1.  Define the needed callbacks:
 
@@ -62,9 +62,9 @@ To request a preferred route for Internet connection with the "www.tizen.org" ho
 
 
 <a name="release"></a>
-## Releasing a Route
+## Release a Route
 
-To cancel the routing policy for the connection with the "www.tizen.org" host:
+To cancel the routing policy for the connection with the [Tizen](https://www.tizen.org/){:target="_blank"} host, follow these steps:
 
 1.  Define the needed callbacks:
 
@@ -84,6 +84,8 @@ To cancel the routing policy for the connection with the "www.tizen.org" host:
     tizen.networkbearerselection.releaseRouteToHost('CELLULAR', 'www.tizen.org', onsuccess, onerror);
     ```
 
-## Related Information
+## Related information
 * Dependencies    
     - Tizen 2.4 and Higher for Mobile
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/networkbearerselection.html)

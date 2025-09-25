@@ -2,43 +2,43 @@
 
 You can access a local storage to read file information. In mobile applications, you can also manipulate files by accessing sandboxed file systems.
 
-The main features of the File API include:
+The main features of the File API include the following:
 
 - Local file management
 
   - Reading local file information
 
-    You can select a local file to upload using the `FileList` interface (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filelist), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#dfn-filelist), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filelist) applications), which creates and returns a `File` object (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#file), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#file), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#file) applications).
+    You can select a local file to upload using the `FileList` interface (in [mobile](https://www.w3.org/TR/FileAPI/#filelist-section){:target="_blank"}, [wearable](https://www.w3.org/TR/FileAPI/#filelist-section){:target="_blank"}, and [TV](https://www.w3.org/TR/FileAPI/#filelist-section){:target="_blank"} applications), which creates and returns a `File` object (in [mobile](https://www.w3.org/TR/FileAPI/#file-section){:target="_blank"}, [wearable](https://www.w3.org/TR/FileAPI/#file-section){:target="_blank"}, and [TV](https://www.w3.org/TR/FileAPI/#file-section){:target="_blank"} applications).
 
     The `File` object is used to [read basic file information](#reading-local-file-information).
 
   - Reading local file content
 
-    You can use the reading methods of the `FileReader` interface (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filereader), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#FileReader-interface), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filereader) applications) to [read file content](#reading-local-file-content) in text, binary, or `dataURL` format. If the data is loaded, the `onload` event occurs. This event uses the data reading methods according to file format.
+    You can use the reading methods of the `FileReader` interface (in [mobile](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"}, [wearable](https://www.w3.org/TR/FileAPI/#dfn-filereader){:target="_blank"}, and [TV](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"} applications) to [read file content](#reading-local-file-content) in text, binary, or `dataURL` format. If the data is loaded, the `onload` event occurs. This event uses the data reading methods according to file format.
 
   - Slicing local files
 
-    You can use the `slice()` method with a local file or the `Blob` interface (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#blob), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#blob), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#blob) applications) to [slice data objects](#slicing-blob). You can use the created blob to read data as a binary string using the `FileReader` interface.
+    You can use the `slice()` method with a local file or the `Blob` interface (in [mobile](https://www.w3.org/TR/FileAPI/#blob-section){:target="_blank"}, [wearable](https://www.w3.org/TR/FileAPI/#blob-section){:target="_blank"}, and [TV](https://www.w3.org/TR/FileAPI/#blob-section){:target="_blank"} applications) to [slice data objects](#slicing-blob). You can use the created blob to read data as a binary string using the `FileReader` interface.
 
 - Sandboxed file system management **in mobile applications only**
 
   - Accessing sandboxed file systems
 
-    You can [request access to a sandboxed file system](#accessing-a-sandboxed-file-system-in-mobile-applications) using the [LocalFileSystem](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#using-localfilesystem) interface.
+    You can [request access to a sandboxed file system](#accessing-a-sandboxed-file-system-in-mobile-applications) using the [LocalFileSystem](https://www.w3.org/TR/file-system-api/){:target="_blank"} interface.
 
   - Displaying files in a sandboxed file system
 
-    You can use `readEntries()` method of the [DirectoryReader](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#the-directoryreader-interface) interface to [display directories or files](#displaying-files-in-a-sandboxed-file-system-in-mobile-applications).
+    You can use `readEntries()` method of the [DirectoryReader](https://www.w3.org/TR/file-system-api/){:target="_blank"} interface to [display directories or files](#displaying-files-in-a-sandboxed-file-system-in-mobile-applications).
 
   - Creating a directory or file within a sandboxed file system
 
-    You can use the `getDirectory()` and `getFile()` methods of the [DirectoryEntry](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#the-directoryentry-interface) interface) to [create a directory or file](#creating-a-directory-or-file-in-mobile-applications).
+    You can use the `getDirectory()` and `getFile()` methods of the [DirectoryEntry](https://www.w3.org/TR/file-system-api/){:target="_blank"} interface to [create a directory or file](#creating-a-directory-or-file-in-mobile-applications).
 
   - Deleting a directory or file within a sandboxed file system
 
-    You can use the `removeRecursively()` method of the `DirectoryEntry` interface and the `remove()` method of the [Entry](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#the-entry-interface) interface to [delete a directory or file](#removing-a-directory-or-file-in-mobile-applications).
+    You can use the `removeRecursively()` method of the `DirectoryEntry` interface and the `remove()` method of the [Entry](https://www.w3.org/TR/file-system-api/){:target="_blank"} interface to [delete a directory or file](#removing-a-directory-or-file-in-mobile-applications).
 
-## Reading Local File Information
+## Read local file information
 
 Reading basic information, such as file name, size, MIME type, modification date, and path, of a local file is a useful file management skill:
 
@@ -49,10 +49,10 @@ Reading basic information, such as file name, size, MIME type, modification date
    <div id="selectedFileInfoList"></div>
    ```
 
-	> **Note**  
+	> [!NOTE]
 	> To enable multiple upload, use the `multiple` attribute.
 
-2. Create a `FileList` instance (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filelist), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#dfn-filelist), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filelist) applications):
+2. Create a `FileList` instance (in [mobile](https://www.w3.org/TR/FileAPI/#filelist-section){:target="_blank"}, [wearable](https://www.w3.org/TR/FileAPI/#filelist-section){:target="_blank"}, and [TV](https://www.w3.org/TR/FileAPI/#filelist-section){:target="_blank"} applications):
 
    ```
    <script>
@@ -87,13 +87,13 @@ Reading basic information, such as file name, size, MIME type, modification date
    **Figure: Displaying file information (in mobile applications only)**  
    ![Displaying file information (in mobile applications only)](./media/file1.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [file_api_reading_local_files_info.html](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api)
+- [file_api_reading_local_files_info.html](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api){:target="_blank"}
 
-## Reading Local File Content
+## Read local file content
 
 Reading a local image file in a Web application is a useful file management skill:
 
@@ -104,7 +104,7 @@ Reading a local image file in a Web application is a useful file management skil
    <div id="selectedFileInfoList"></div>
    ```
 
-2. Create a `FileReader` instance (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filereader), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#FileReader-interface), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filereader) applications) to read the content of the local image file. Use the `readAsDataURL()` method to read data in the `dataURL` format.
+2. Create a `FileReader` instance (in [mobile](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"}, [wearable](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"}, and [TV](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"} applications) to read the content of the local image file. Use the `readAsDataURL()` method to read data in the `dataURL` format.
 
    If the data is loaded, an `onload` event is fired. Create an `img` element to allocate the event result property value for rendering:
 
@@ -146,15 +146,15 @@ Reading a local image file in a Web application is a useful file management skil
    **Figure: Displaying an image file (in mobile applications only)**  
    ![Displaying an image file (in mobile applications only)](./media/file2.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [file_api_reading_local_files.html](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api)
+- [file_api_reading_local_files.html](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api){:target="_blank"}
 
-## Slicing Blob
+## Slice blob
 
-Slicing a local file using the `Blob` interface (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#blob), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#blob), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#blob) applications) is a useful file management skill:
+Slicing a local file using the `Blob` interface (in [mobile](https://www.w3.org/TR/FileAPI/#blob-section){:target="_blank"}, [wearable](https://www.w3.org/TR/FileAPI/#blob-section){:target="_blank"}, and [TV](https://www.w3.org/TR/FileAPI/#blob-section){:target="_blank"} applications) is a useful file management skill:
 
 1. Create the `<input type="file">` element, the element for inputting the start byte and the end byte for slice, and the element for displaying the slicing result:
 
@@ -167,7 +167,7 @@ Slicing a local file using the `Blob` interface (in [mobile](http://www.w3.org/T
    <div id="result" style="padding: 25px 10px 0 20px;"></div>
    ```
 
-2. To read the local file, create a `FileReader` instance (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filereader), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#FileReader-interface), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filereader) applications):
+2. To read the local file, create a `FileReader` instance (in [mobile](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"}, [wearable](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"}, and [TV](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"} applications):
 
    ```
    <script>
@@ -175,7 +175,7 @@ Slicing a local file using the `Blob` interface (in [mobile](http://www.w3.org/T
    </script>
    ```
 
-3. Slice the defined byte range (from `startByte` to `endByte`) using the `slice()` method of the `File` interface (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#file), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#file), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#file) applications):
+3. Slice the defined byte range (from `startByte` to `endByte`) using the `slice()` method of the `File` interface (in [mobile](https://www.w3.org/TR/FileAPI/#file-section){:target="_blank"}, [wearable](https://www.w3.org/TR/FileAPI/#file-section){:target="_blank"}, and [TV](https://www.w3.org/TR/FileAPI/#file-section){:target="_blank"} applications):
 
    ```
    <script>
@@ -218,17 +218,17 @@ Slicing a local file using the `Blob` interface (in [mobile](http://www.w3.org/T
    **Figure: Slicing a file (in mobile applications only)**  
    ![Slicing a file (in mobile applications only)](./media/file3.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [file_api_slicing_blob.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api)
+- [file_api_slicing_blob.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api){:target="_blank"}
 
-## Accessing a Sandboxed File System in Mobile Applications
+## Access a sandboxed file system in Mobile Applications
 
 Requesting access to sandboxed sections of a local file system is a useful file management skill:
 
-1. Use the `requestFileSystem()` method of the [LocalFileSystem](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#using-localfilesystem) interface to request access to sandboxed sections of a local file system:
+1. Use the `requestFileSystem()` method of the [LocalFileSystem](https://www.w3.org/TR/file-system-api/){:target="_blank"} interface to request access to sandboxed sections of a local file system:
 
    ```
    <script>
@@ -253,18 +253,18 @@ Requesting access to sandboxed sections of a local file system is a useful file 
    </script>
    ```
 
-   > **Note**  
+   > [!NOTE]
    > The `requestFileSystem()` method is created in the Web application program when it is initially called.
  
    The directory file in the file system root can be searched, created and deleted by accessing local file system.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [file_api_file_system.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api)
+- [file_api_file_system.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api){:target="_blank"}
 
-## Displaying Files in a Sandboxed File System in Mobile Applications
+## Display files in a sandboxed file system in Mobile Applications
 
 Reading a file or directory in a sandboxed section of a local file system is a useful file management skill:
 
@@ -275,7 +275,7 @@ Reading a file or directory in a sandboxed section of a local file system is a u
    <ul id="resultSection"></ul>
    ```
 
-2. To read the entry within the file system, use the `createReader()` method of the [DirectoryEntry](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#the-directoryentry-interface) interface:
+2. To read the entry within the file system, use the `createReader()` method of the [DirectoryEntry](https://www.w3.org/TR/file-system-api/){:target="_blank"} interface:
 
    ```
    <script>
@@ -288,13 +288,13 @@ Reading a file or directory in a sandboxed section of a local file system is a u
            var dirReader = root.createReader();
    ```
 
-3. Use the `readEntries()` method of the [DirectoryReader](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#the-directoryreader-interface) interface to read all entries:
+3. Use the `readEntries()` method of the [DirectoryReader](https://www.w3.org/TR/file-system-api/){:target="_blank"} interface to read all entries:
 
    ```
            dirReader.readEntries(function(entries) {
    ```
 
-4. Display the list of the relevant entries using the [Entry](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#the-entry-interface) interface:
+4. Display the list of the relevant entries using the [Entry](https://www.w3.org/TR/file-system-api/){:target="_blank"} interface:
 
    ```
                if (!entries.length) {
@@ -323,22 +323,22 @@ Reading a file or directory in a sandboxed section of a local file system is a u
    </script>
     ```
 
-> **Note**  
+> [!NOTE]
 > For error handling, see [Accessing a Sandboxed File System](#accessing-a-sandboxed-file-system-in-mobile-applications).
 
 **Figure: Displaying files**
 
 ![Displaying files](./media/file4.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [file_api_file_system.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api)
-- [icon_file.png](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api/img)
-- [icon_folder.png](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api/img)
+- [file_api_file_system.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api){:target="_blank"}
+- [icon_file.png](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api/img){:target="_blank"}
+- [icon_folder.png](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api/img){:target="_blank"}
 
-## Creating a Directory or File in Mobile Applications
+## Create a directory or file in Mobile Applications
 
 Creating a directory or file in a sandboxed section of a local file system is a useful file management skill:
 
@@ -380,19 +380,19 @@ Creating a directory or file in a sandboxed section of a local file system is a 
     </script>
     ```
 
-    > **Note**  
+    > [!NOTE]
     > For error handling, see [Accessing a Sandboxed File System](#accessing-a-sandboxed-file-system-in-mobile-applications).
 
     **Figure: Adding a file**  
     ![Adding a file](./media/file5.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [file_api_file_system.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api)
+- [file_api_file_system.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api){:target="_blank"}
 
-## Removing a Directory or File in Mobile Applications
+## Remove a directory or file in Mobile Applications
 
 Deleting a directory or file in a sandboxed section of a local file system is a useful file management skill:
 
@@ -427,20 +427,22 @@ Deleting a directory or file in a sandboxed section of a local file system is a 
    </script>
    ```
 
-   > **Note**  
+   > [!NOTE]
    > For error handling, see [Accessing a Sandboxed File System](#accessing-a-sandboxed-file-system-in-mobile-applications).
 
    **Figure: Deleting files**  
    ![Deleting files](./media/file6.png)
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [file_api_file_system.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api)
+- [file_api_file_system.htm](http://download.tizen.org/misc/examples/w3c_html5/storage/file_api){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [W3C](https://www.w3.org/TR/file-system-api/){:target="_blank"}

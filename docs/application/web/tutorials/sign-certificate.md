@@ -26,7 +26,7 @@ Through application signing, Tizen achieves the following goals:
     used by the application by signing a key with a proper privilege.
 
 <a name="type"></a>
-## Signature Type
+## Signature type
 
 All Tizen applications must have at least 2 signatures:
 
@@ -51,7 +51,7 @@ All Tizen applications must have at least 2 signatures:
 ![Signature type](./media/signature_type.png)
 
 <a name="sec_priv"></a>
-## Certificate and API Privileges
+## Certificate and API privileges
 
 Tizen API privileges represent the ability to use a certain set of
 sensitive APIs and secure system resources. The privileges are
@@ -80,7 +80,7 @@ signing key) privilege level and the API privilege level.
 | Platform level | Allowed | Allowed | Allowed |
 
 <a name="flow"></a>
-## Signing Flow and Getting Certificates
+## Sign flow and get certificates
 
 You can sign your application with your own author signing key and a
 testing distributor signing key in Tizen Studio. With those, you can
@@ -113,14 +113,14 @@ also disallows unauthorized applications to be installed on its Tizen
 devices. In such cases, you must get an author certificate and a
 distributor certificate from the device vendor. For more information,
 see [Issuing a Tizen Certificate and Running Applications in Commercial
-Devices](https://developer.tizen.org/community/tip-tech/issuing-tizen-certificate-certificate-extension-ver-1.2).
+Devices](https://developer.tizen.org/community/tip-tech/issuing-tizen-certificate-certificate-extension-ver-1.2){:target="_blank"}.
 
 <a name="specification"></a>
-## Signature Specification
+## Signature specification
 
 The application signing scheme of Tizen follows the specification of the
 [XML Digital Signatures for Widgets specified by
-W3C](http://www.w3.org/TR/2011/PR-widgets-digsig-20110811/).
+W3C](https://www.w3.org/TR/widgets-digsig/){:target="_blank"}.
 
 The following figure shows the signature file structure.
 

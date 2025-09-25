@@ -34,7 +34,7 @@ The main features of the Resource Manager API include:
 
 ## Prerequisites
 
-To use the functions and resource types of the Resource Manager API (in [mobile](../../api/mobile/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html) applications), include the `<app_resource_manager.h>` header file in your application:
+To use the functions and resource types of the [Resource Manager API](../../api/common/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html), include the `<app_resource_manager.h>` header file in your application:
 
 ```
 #include <app_resource_manager.h>
@@ -95,7 +95,7 @@ To get the appropriate resource file path in your code:
 
     - Resource type
 
-      The resource type defines whether the resource is an image, layout, sound, or some other file type. There are 4 resource types, which are defined in the `app_resource_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html#ga83dadea23a885e1eb257ad1f115513e9) and [wearable](../../api/wearable/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html#ga83dadea23a885e1eb257ad1f115513e9) applications).
+      The resource type defines whether the resource is an image, layout, sound, or some other file type. There are 4 resource types, which are defined in the `app_resource_e` [enumerator](../../api/common/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html#ga83dadea23a885e1eb257ad1f115513e9).
 
       Resources with the same resource type are grouped as a folder. The folder name is irrelevant to the actual resource type within it.
 
@@ -189,5 +189,6 @@ To check how the resources are shown on different device configurations, create 
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 2.4
+- API References
+  - [Resource Manager](../../api/common/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html)

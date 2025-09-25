@@ -50,6 +50,7 @@ For example, see the "Privilege:" section in the following picture:
 
 ## Versions
 <ul>
+<li><a href="common/9.0/index.html" target="_blank">9.0</a></li>
 <li><a href="common/8.0/index.html" target="_blank">8.0</a></li>
 </li>
 <li>Wearable
@@ -60,9 +61,6 @@ For example, see the "Privilege:" section in the following picture:
     <li><a href="wearable/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="wearable/5.0/index.html" target="_blank">5.0</a></li>
     <li><a href="wearable/4.0/index.html" target="_blank">4.0</a></li>
-    <li><a href="wearable/3.0/index.html" target="_blank">3.0</a></li>
-    <li><a href="wearable/2.3.2/index.html" target="_blank">2.3.2</a></li>
-    <li><a href="archive/org.tizen.apireference_2.3.1.zip">2.3.1</a></li>
   </ul>
 </li>
 <li>Mobile
@@ -73,10 +71,6 @@ For example, see the "Privilege:" section in the following picture:
     <li><a href="mobile/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="mobile/5.0/index.html" target="_blank">5.0</a></li>
     <li><a href="mobile/4.0/index.html" target="_blank">4.0</a></li>
-    <li><a href="mobile/3.0/index.html" target="_blank">3.0</a></li>
-    <li><a href="mobile/2.4/index.html" target="_blank">2.4</a></li>
-    <li><a href="archive/org.tizen.apireference_2.3.1.zip">2.3.1</a></li>
-    <li><a href="archive/org.tizen.apireference_2.3.0.zip">2.3</a></li>
   </ul>
 </li>
 <li>Iot-Headed

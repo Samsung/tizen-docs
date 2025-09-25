@@ -4,29 +4,29 @@ You can include high-quality sound in your application by setting space and dire
 
 This feature is supported in mobile and TV applications only.
 
-The main features of the Web Audio API include:
+The main features of the Web Audio API include the following:
 
 - Loading source data
 
   You must [load source data](#loading-data-and-creating-audio-context) before using the Web Audio API. You can do this using [XMLHttprequest](../communication/xmlhttprequest.md).
 
-  The [AudioContext](https://www.w3.org/TR/2015/WD-webaudio-20151208/#AudioContext) interface is used to manage and play the sound. It creates a high quality sound and connects to the destination of the sound.
+  The [AudioContext](https://www.w3.org/TR/webaudio/#AudioContext){:target="_blank"} interface is used to manage and play the sound. It creates a high quality sound and connects to the destination of the sound.
 
 - Modular routing
 
-  [Modular routing](https://www.w3.org/TR/2015/WD-webaudio-20151208/#ModularRouting) means [routing audio data](#using-modular-routing) either in a direct manner, such as speaker output, or through a connection to [AudioNodes](https://www.w3.org/TR/2015/WD-webaudio-20151208/#the-audionode-interface), which handle, for example, volume adjustment and filters.
+  [Modular routing](https://www.w3.org/TR/webaudio/#ModularRouting){:target="_blank"} means [routing audio data](#using-modular-routing) either in a direct manner, such as speaker output, or through a connection to [AudioNodes](https://www.w3.org/TR/webaudio/#AudioNode){:target="_blank"}, which handle, for example, volume adjustment and filters.
 
 - Playing sound
 
   Use the `noteOn(time)` or `start(time)` method to [play sound](#playing-sound) with the time parameter for specifying the time interval in seconds after which the audio is played. For example, the `0` time value implies playing the audio immediately and the `currentTime + 0.75` time value implies that the audio is played after 0.75 seconds.
 
-  You can use the `noteOff(time)` or `stop(time)` methods similarly to stop the sound. After stopping sound, recreate the [AudioBufferSourceNode](https://www.w3.org/TR/2015/WD-webaudio-20151208/#AudioBufferSourceNode) interface instance to play sound again.
+  You can use the `noteOff(time)` or `stop(time)` methods similarly to stop the sound. After stopping sound, recreate the [AudioBufferSourceNode](https://www.w3.org/TR/webaudio/#AudioBufferSourceNode){:target="_blank"} interface instance to play sound again.
 
-## Loading Data and Creating Audio Context
+## Load data and create audio context
 
-To provide users with sophisticated audio features, you must learn to modulate source data into decoded audio data using [XMLHttpRequest](../communication/xmlhttprequest.md), and create an instance of the [AudioContext](https://www.w3.org/TR/2015/WD-webaudio-20151208/#AudioContext) interface:
+To provide users with sophisticated audio features, you must learn to modulate source data into decoded audio data using [XMLHttpRequest](../communication/xmlhttprequest.md), and create an instance of the [AudioContext](https://www.w3.org/TR/webaudio/#AudioContext){:target="_blank"} interface:
 
-1. To load source audio data:
+1. To load source audio data, follow these steps:
 
    1. Load a source audio file using XMLHttpRequest. Set the `responseType` to `arraybuffer` to receive binary response:
 
@@ -53,7 +53,7 @@ To provide users with sophisticated audio features, you must learn to modulate s
       </script>
       ```
 
-      This data is used in the [AudioBuffer](https://www.w3.org/TR/2015/WD-webaudio-20151208/#AudioBuffer).
+      This data is used in the [AudioBuffer](https://www.w3.org/TR/webaudio/#AudioBuffer){:target="_blank"}.
 
 2. To create an audio context:
 
@@ -68,11 +68,11 @@ To provide users with sophisticated audio features, you must learn to modulate s
 
    AudioContext instance supports various sound inputs, and it is possible to create an audio graph. You can create 1 or more sound sources to manage sound and connect to the sound destination.
 
-   The majority of the Web Audio API features, such as creating audio file data, decoding it, and creating [AudioNodes](https://www.w3.org/TR/2015/WD-webaudio-20151208/#the-audionode-interface) are managed using the methods of the `AudioContext` interface.
+   The majority of the Web Audio API features, such as creating audio file data, decoding it, and creating [AudioNodes](https://www.w3.org/TR/webaudio/#AudioNode){:target="_blank"} are managed using the methods of the `AudioContext` interface.
 
 3. To create an audio buffer:
 
-   Create an [AudioBuffer](https://www.w3.org/TR/2015/WD-webaudio-20151208/#AudioBuffer) interface using the array buffer of audio data response attributes of the `XMLHttpRequest()` method. Select from the following options:
+   Create an [AudioBuffer](https://www.w3.org/TR/webaudio/#AudioBuffer){:target="_blank"} interface using the array buffer of audio data response attributes of the `XMLHttpRequest()` method. Select from the following options:
 
    - Create the audio buffer using the `createBuffer()` method:
 
@@ -133,19 +133,19 @@ To provide users with sophisticated audio features, you must learn to modulate s
 
    To use an audio buffer created with the `createBuffer()` or `decodeAudioData()` method, the buffer must be allocated to the `audioBufferSourceNode` buffer.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [web_audio_basic_playback.html](http://download.tizen.org/misc/examples/w3c_html5/media/web_audio_api)
+- [web_audio_basic_playback.html](http://download.tizen.org/misc/examples/w3c_html5/media/web_audio_api){:target="_blank"}
 
-## Using Modular Routing
+## Use modular routing
 
-To provide users with sophisticated audio features, you must learn to enable routing audio source data using [AudioNode](https://www.w3.org/TR/2015/WD-webaudio-20151208/#the-audionode-interface) objects:
+To provide users with sophisticated audio features, you must learn to enable routing audio source data using [AudioNode](https://www.w3.org/TR/webaudio/#AudioNode){:target="_blank"} objects:
 
 1. To route to speaker output in a direct sound destination:
 
-   1. Create a WebKit-based [AudioContext](https://www.w3.org/TR/2015/WD-webaudio-20151208/#AudioContext) instance:
+   1. Create a WebKit-based [AudioContext](https://www.w3.org/TR/webaudio/#AudioContext){:target="_blank"} instance:
 
       ```
       <script>
@@ -169,7 +169,7 @@ To provide users with sophisticated audio features, you must learn to enable rou
       </script>
       ```
 
-      All routing occurs within an `AudioContext` containing a single [AudioDestinationNode](https://www.w3.org/TR/2015/WD-webaudio-20151208/#AudioDestinationNode).
+      All routing occurs within an `AudioContext` containing a single [AudioDestinationNode](https://www.w3.org/TR/webaudio/#AudioDestinationNode){:target="_blank"}.
 
       ![Direct routing](./media/web_audio1.png)
 
@@ -212,19 +212,19 @@ To provide users with sophisticated audio features, you must learn to enable rou
 
       ![Routing from multiple sources](./media/web_audio2.png)
 
-`AudioNodes` can be used to activate sound effects, and create tweaks, audio parameters, and audio graphs using the [GainNode](https://www.w3.org/TR/2015/WD-webaudio-20151208/#GainNode) interface, or filter sounds using the [BiquadFilterNode](https://www.w3.org/TR/2015/WD-webaudio-20151208/#the-biquadfilternode-interface) interface.
+`AudioNodes` can be used to activate sound effects, and create tweaks, audio parameters, and audio graphs using the [GainNode](https://www.w3.org/TR/webaudio/#GainNode){:target="_blank"} interface, or filter sounds using the [BiquadFilterNode](https://www.w3.org/TR/webaudio/#BiquadFilterNode){:target="_blank"} interface.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [web_audio_basic_playback.html](http://download.tizen.org/misc/examples/w3c_html5/media/web_audio_api)
+- [web_audio_basic_playback.html](http://download.tizen.org/misc/examples/w3c_html5/media/web_audio_api){:target="_blank"}
 
-## Playing Sound
+## Play sound
 
 To provide users with sophisticated audio features, you must learn to play sound:
 
-1. Create a WebKit-based [AudioContext](https://www.w3.org/TR/2015/WD-webaudio-20151208/#AudioContext) instance:
+1. Create a WebKit-based [AudioContext](https://www.w3.org/TR/webaudio/#AudioContext){:target="_blank"} instance:
 
    ```
    <script>
@@ -248,15 +248,17 @@ To provide users with sophisticated audio features, you must learn to play sound
 
    You can also use time as parameter of the `noteOff()` method. If you set the value as '0', the playback stops immediately.
 
-The `AudioContext` instance digitally modulates the audio source file into audio data. After creating the sound source, playback is implemented by processing audio data using [AudioNodes](https://www.w3.org/TR/2015/WD-webaudio-20151208/#the-audionode-interface) either directly to the speaker, or in the middle.
+The `AudioContext` instance digitally modulates the audio source file into audio data. After creating the sound source, playback is implemented by processing audio data using [AudioNodes](https://www.w3.org/TR/webaudio/#AudioNode){:target="_blank"} either directly to the speaker, or in the middle.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [web_audio_basic_playback.html](http://download.tizen.org/misc/examples/w3c_html5/media/web_audio_api)
+- [web_audio_basic_playback.html](http://download.tizen.org/misc/examples/w3c_html5/media/web_audio_api){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for TV
+* API References
+  - [W3C](https://www.w3.org/TR/webaudio/#AudioContext){:target="_blank"}

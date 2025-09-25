@@ -4,17 +4,17 @@ You can detect device motion and provide interaction between the user and device
 
 This feature is supported in mobile and wearable applications only.
 
-The main orientation event features include:
+The main orientation event features include the following:
 
 - Detecting rotation
 
-  You can use the [deviceorientation](http://www.w3.org/TR/2011/WD-orientation-event-20111201/#deviceorientation) event to [detect rotation data](#detecting-device-rotation) in order to rotate game characters or elements.
+  You can use the [deviceorientation](https://www.w3.org/TR/orientation-event/#deviceorientation){:target="_blank"} event to [detect rotation data](#detecting-device-rotation) in order to rotate game characters or elements.
 
 - Detecting acceleration
 
-  You can [use rotation speed (acceleration of the device) information](#detecting-device-acceleration), including gravity, with the [devicemotion](http://www.w3.org/TR/2011/WD-orientation-event-20111201/#devicemotion) event. You can move game characters or elements, and capture acceleration values to add certain events.
+  You can [use rotation speed (acceleration of the device) information](#detecting-device-acceleration), including gravity, with the [devicemotion](https://www.w3.org/TR/orientation-event/#devicemotion){:target="_blank"} event. You can move game characters or elements, and capture acceleration values to add certain events.
 
-## Detecting Device Rotation
+## Detect device rotation
 
 Learning how to detect device rotation is a basic device motion handling skill:
 
@@ -37,7 +37,7 @@ Learning how to detect device rotation is a basic device motion handling skill:
        var gammaElem = document.getElementById('gamma');
    ```
 
-2. To track changes in device rotation, subscribe to the [deviceorientation](http://www.w3.org/TR/2011/WD-orientation-event-20111201/#deviceorientation) event:
+2. To track changes in device rotation, subscribe to the [deviceorientation](https://www.w3.org/TR/orientation-event/#deviceorientation){:target="_blank"} event:
 
    ```
        window.addEventListener('deviceorientation', function(e) {
@@ -51,13 +51,13 @@ Learning how to detect device rotation is a basic device motion handling skill:
    </script>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [device_orientation.html](http://download.tizen.org/misc/examples/w3c_html5/device/device_orientation_event_specification)
+- [device_orientation.html](http://download.tizen.org/misc/examples/w3c_html5/device/device_orientation_event_specification){:target="_blank"}
 
-## Detecting Device Acceleration
+## Detecting device acceleration
 
 Learning how to detect device acceleration is a basic device motion handling skill:
 
@@ -105,13 +105,15 @@ Learning how to detect device acceleration is a basic device motion handling ski
    </script>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [device_motion.html](http://download.tizen.org/misc/examples/w3c_html5/device/device_orientation_event_specification)
+- [device_motion.html](http://download.tizen.org/misc/examples/w3c_html5/device/device_orientation_event_specification){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [W3C](https://www.w3.org/TR/orientation-event/#deviceorientation){:target="_blank"}

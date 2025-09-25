@@ -12,27 +12,31 @@ You can use the following visual detection and recognition features in your nati
 
   You can register, unregister and recognize a face in your application with more accuracy, which uses Deep Learning technique.
 
-- [Face Detection, Recognition, and Tracking](face-detection.md)
+- [Deep Learning Based Face Detection](face-detection.md)
 
-  You can detect a face from an image, and recognize a face with a set of examples. You can also track a face within the camera preview stream.
+  You can detect faces from an image and get a bounding boxes for the face regions.
 
-- [Image Recognition and Tracking](image-recognition.md)
-  
-  You can extract features of an image object and recognize it from specific images. You can also track the image object within the camera preview stream.
+- [Deep Learning Based Object Detection](object-detection.md)
 
-- [Image Classification](image-classification.md)
+  You can detect objects from an image and get bounding boxes for the object regions.
+
+- [Deep Learning Based Image Classification](image-classification.md)
   
   You can classify an image that belongs to corresponding labels.
 
-- [Pose Detection](pose-detection.md)
-  
-  You can detect a human body and recognize the pose with a specific motion data describing the pose.
+- [Deep Learning Based Facial Landmark](facial-landmark.md)
+
+  You can detect a face from an image and retrieve its landmark positions.
+
+- [Deep Learning Based Pose Landmark](pose-landmark.md)
+
+  You can detect a human body from an image and retrieve its landmark positions.
+
 - [ROI Tracker](roi-tracker.md)
 
   You can obtain the proper ROI coordinates that the user wants to track.
 ## Related Information
 
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 2.4
 

@@ -9,11 +9,13 @@ You can use the following alarms and scheduling features in your native applicat
 
   You can define individual or recurring alarms and store them on the device. The alarm can trigger at specific times or on a specific date. When the alarm is triggered, it launches a specified application using the application control mechanism.
 
-- [Contextual System Event Trigger](trigger.md) **in mobile applications only**
+- [Contextual System Event Trigger](trigger.md)
 
   You can create rules (contextual triggers consisting of an event, conditions, and an action) to monitor the device status or user activities. When the rule is enabled, the system starts to monitor the device status or user activities. When a specific event with certain conditions occurs, a defined action is triggered.
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Since Tizen 2.4
+- API References
+  - [Alarm](../../api/common/latest/group__CAPI__ALARM__MODULE.html)
+  - [Contextual Trigger](../../api/common/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html)

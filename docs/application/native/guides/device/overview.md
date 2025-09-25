@@ -33,17 +33,12 @@ You can use the following device settings and systems features in your native ap
 
   You can play a feedback pattern using sound or vibration. You can use specific patterns, or specific type and pattern. You can also check whether a specific pattern is supported.
 
-- [Battery Monitor](battery-monitor.md) **in wearable applications only**
-
-   You can access the battery usage-related information for a particular application, or an available hardware resource over a specific duration of time.
-
 - [Resource Monitor](resource-monitor.md)
 
    You can get various information about system, devices, and logical resources in a single unified method.
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
-  - Tizen 7.0 and Higher for TV
-  - Tizen 7.0 and Higher for IoT
+  - Since Tizen 2.4
+- API References
+  - [System API](../../api/common/latest/group__CAPI__SYSTEM__FRAMEWORK.html)

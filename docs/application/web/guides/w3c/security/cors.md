@@ -1,25 +1,25 @@
 # Cross-Origin Resource Sharing
 
-Tizen supports the mechanism of cross-origin resource sharing (CORS), which can activate a client-side [cross-origin request](http://www.w3.org/TR/2014/REC-cors-20140116/#cross-origin-request-0) (COR).
+Tizen supports the mechanism of cross-origin resource sharing (CORS), which can activate a client-side [cross-origin request](https://fetch.spec.whatwg.org/#cross-origin-resource-policy-header){:target="_blank"} (COR).
 
 In CORS, new headers related to HTTP communication have been added to allow you to accept or reject CORs:
 
-- [Origin](http://www.w3.org/TR/2014/REC-cors-20140116/#origin-request-header) request header
+- [Origin](https://fetch.spec.whatwg.org/#origin-header){:target="_blank"} request header
 
   Includes the domain information which has incurred the COR, and is used for the purpose of checking the source of the domain side that has received the relevant request. In addition, this header is protected in the browser side and cannot be changed from the application side.
 
-- [Access-Control-Allow-Origin](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-allow-origin-response-header) response header
+- [Access-Control-Allow-Origin](https://fetch.spec.whatwg.org/#http-responses){:target="_blank"} response header
 
   Allows a relevant response only when the information in the `Origin` request header matches. If the `Access-Control-Allow-Origin` header is a wildcard (*), it unconditionally allows the response regardless of the `Origin` request header information.
 
-  > **Note**  
+  > [!NOTE]
   > If an extremely permissive CORS policy is used, it can lead to spoofing, data stealing, relay, and other attacks through communication with malicious application programs. To avoid unexpected consequences, pay attention when defining the response header.
 
 CORS supports 2 request types: simple and preflight.
 
-## Simple Request
+## Simple request
 
-The request is considered to be a [simple request](http://www.w3.org/TR/2014/REC-cors-20140116/#resource-requests), if all the conditions following conditions are met:
+The request is considered to be a [simple request](https://fetch.spec.whatwg.org/#requests){:target="_blank"}, if all the conditions following conditions are met:
 
 - HTTP methods can only use `GET`, `POST`, and `HEAD`.
 - No custom header is allowed.
@@ -30,34 +30,34 @@ The request is considered to be a [simple request](http://www.w3.org/TR/2014/REC
 
 When [using simple requests](#using-simple-requests), the response is set in the server side with the following response headers:
 
-- [Access-Control-Allow-Origin](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-allow-origin-response-header) (mandatory)
-- [Access-Control-Allow-Credentials](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-allow-credentials-response-header) (optional)
-- [Access-Control-Expose-Headers](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-expose-headers-response-header) (optional)
+- [Access-Control-Allow-Origin](https://fetch.spec.whatwg.org/#origin-header){:target="_blank"} (mandatory)
+- [Access-Control-Allow-Credentials](https://fetch.spec.whatwg.org/#origin-header){:target="_blank"} (optional)
+- [Access-Control-Expose-Headers](https://fetch.spec.whatwg.org/#origin-header){:target="_blank"} (optional)
 
 **Figure: Simple request workflow**
 
 ![Simple request workflow](./media/cors_simple.png)
 
-## Preflight Request
+## Preflight request
 
-If a request is not a simple request, it is considered to be a [preflight (non-simple) request](http://www.w3.org/TR/2014/REC-cors-20140116/#resource-preflight-requests), which is [case-insensitive](http://www.w3.org/TR/2014/REC-cors-20140116/#terminology).
+If a request is not a simple request, it is considered to be a [preflight (non-simple) request](https://fetch.spec.whatwg.org/#cors-preflight-request){:target="_blank"}, which is [case-insensitive](http://www.w3.org/TR/2014/REC-cors-20140116/#terminology).
 
 If the access authority is allowed through the preflight request, the actual request for sending the actual data is made. The preflight request can allow access based on various standards other than `Origin`, such as HTTP certification, HTTP method (for example, `GET`, `POST`, or `PUT…`), or the existence of a certain header.
 
 When [using preflight requests](#using-preflight-requests), the response is set in the server side with the following response headers:
 
-- [Access-Control-Allow-Origin](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-allow-origin-response-header) (mandatory)
-- [Access-Control-Allow-Methods](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-allow-methods-response-header) (mandatory)
-- [Access-Control-Allow-Headers](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-allow-headers-response-header) (mandatory, if a custom header is used)
-- [Access-Control-Allow-Credentials](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-allow-credentials-response-header) (optional)
-- [Access-Control-Expose-Headers](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-expose-headers-response-header) (optional)
-- [Access-Control-Max-Age](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-max-age-response-header) (optional)
+- [Access-Control-Allow-Origin](https://fetch.spec.whatwg.org/#http-responses){:target="_blank"} (mandatory)
+- [Access-Control-Allow-Methods](https://fetch.spec.whatwg.org/#http-responses){:target="_blank"} (mandatory)
+- [Access-Control-Allow-Headers](https://fetch.spec.whatwg.org/#http-responses){:target="_blank"} (mandatory, if a custom header is used)
+- [Access-Control-Allow-Credentials](https://fetch.spec.whatwg.org/#http-responses){:target="_blank"} (optional)
+- [Access-Control-Expose-Headers](https://fetch.spec.whatwg.org/#http-responses){:target="_blank"} (optional)
+- [Access-Control-Max-Age](https://fetch.spec.whatwg.org/#http-responses){:target="_blank"} (optional)
 
 **Figure: Preflight request workflow**
 
 ![Preflight request workflow](./media/cors_preflight.png)
 
-## Using Simple Requests
+## Usie simple requests
 
 Learning how to handle a simple request based on an XML HTTP Request enhances the security features of your application:
 
@@ -92,7 +92,7 @@ Learning how to handle a simple request based on an XML HTTP Request enhances th
 
 3. Check the request header.
 
-   If you check the request header through the network log, you find that an additional `Origin` header has been added. This header informs the relevant server of the sender side domain. The `Origin` header is protected in the browser side, and cannot be changed by the user.
+   If you check the request header through the network log, you find that an additional `Origin` header has been added. This header informs the relevant server of the sender side domain. The `Origin` header is protected in the browser side, and cannot be changed by the user:
 
    ```
    GET http://origin-domain.com/CORS/simple_reqeust.html HTTP/1.1
@@ -102,7 +102,7 @@ Learning how to handle a simple request based on an XML HTTP Request enhances th
 
 4. Check the response header:
 
-   - If the request is received from a domain with access authority, the server allows a response. The response header includes the `Access-Control-Allow-Origin` header set in the server side.
+   - If the request is received from a domain with access authority, the server allows a response. The response header includes the `Access-Control-Allow-Origin` header set in the server side:
 
      ```
      HTTP/1/1 200 OK
@@ -116,20 +116,20 @@ Learning how to handle a simple request based on an XML HTTP Request enhances th
      Origin http://another-domain.com/CORS is not allowed by Access-Control-Allow-Origin.
      ```
 
-   > **Note**  
-   > You must define the authorized domains on the server side to ensure that CORS is handled properly. For more information on setting the authorization settings on different platforms, see [Enable CORS Web site](http://enable-cors.org/server.html).
+   > [!NOTE]
+   > You must define the authorized domains on the server side to ensure that CORS is handled properly. For more information on setting the authorization settings on different platforms, see [Enable CORS Web site](http://enable-cors.org/server.html){:target="_blank"}.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [simple_request.html](http://download.tizen.org/misc/examples/w3c_html5/security/cross_origin_resource_sharing)
+- [simple_request.html](http://download.tizen.org/misc/examples/w3c_html5/security/cross_origin_resource_sharing){:target="_blank"}
 
-## Using Preflight Requests
+## Use preflight requests
 
 Learning how to handle a preflight request based on an XML HTTP Request enhances the security features of your application.
 
-1. Create an [XML HTTP request](../communication/xmlhttprequest.md) on the client side, using JavaScript code that requests Ajax communication. In addition, define the request `Content-Type` and add a custom header.
+1. Create an [XML HTTP request](../communication/xmlhttprequest.md) on the client side, using JavaScript code that requests Ajax communication. In addition, define the request `Content-Type` and add a custom header:
 
    ```
    <script>
@@ -143,7 +143,7 @@ Learning how to handle a preflight request based on an XML HTTP Request enhances
    </script>
    ```
 
-2. On the server side, define the domain from which requests are allowed. In this case, the `http://110.0.0.160:8081` domain has the required authority. In addition, define various server settings.
+2. On the server side, define the domain from which requests are allowed. In this case, the `http://110.0.0.160:8081` domain has the required authority. In addition, define various server settings:
 
    ```
    <?php
@@ -221,10 +221,10 @@ Learning how to handle a preflight request based on an XML HTTP Request enhances
    Request header field Header-Custom-Tizen is not allowed by Access-Control-Allow-Headers.
    ```
 
-	> **Note**  
-	> You must define the authorized domains on the server side to ensure that CORS is handled properly. For more information on setting the authorization settings on different platforms, see [Enable CORS Web site](http://enable-cors.org/server.html).
+	> [!NOTE]
+	> You must define the authorized domains on the server side to ensure that CORS is handled properly. For more information on setting the authorization settings on different platforms, see [Enable CORS Web site](http://enable-cors.org/server.html){:target="_blank"}.
 
-## Related Information
+## Related information
 * Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

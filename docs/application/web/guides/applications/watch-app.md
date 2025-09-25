@@ -6,7 +6,7 @@ This feature is supported in wearable applications only.
 
 To build a watch face application, you must follow these general steps:
 
-1. Before you get started with developing Tizen applications, download and install the [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download).
+1. Before you get started with developing Tizen applications, download and install the [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download){:target="_blank"}.
 
    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
@@ -27,4 +27,4 @@ To build a watch face application, you must follow these general steps:
    This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
 
-Creating Your First Tizen Wearable Web Watch Application [Create a wearable Web watch project](../../get-started/wearable-watch/first-app-watch.md) describes the main steps required to develop a watch face application using Tizen Studio. For more detailed information about the application development process, see [Web Application Development Process](../../tutorials/process/app-dev-process.md). To learn how to design a watch face, see the Gear UI guides on the [Samsung Developers](https://developer.samsung.com/home.do) site.
+Creating Your First Tizen Wearable Web Watch Application [Create a wearable Web watch project](../../get-started/wearable-watch/first-app-watch.md) describes the main steps required to develop a watch face application using Tizen Studio. For more detailed information about the application development process, see [Web Application Development Process](../../tutorials/process/app-dev-process.md). To learn how to design a watch face, see the Gear UI guides on the [Samsung Developers](https://developer.samsung.com/home.do){:target="_blank"} site.

@@ -7,7 +7,7 @@ Web Application addons are software programs that run on the Web applications. T
 ![Addon concept](./media/addon_concept.png)
 
 > [!NOTE]
-> This feature is supported from Tizen version 5.5.
+> This feature is supported since Tizen version 5.5.
 
 The main features of the service application include:
 
@@ -120,7 +120,7 @@ Addons are not standalone software programs, and only run when a Web application
 ![Addon mechanism](./media/addon_mechanism.png)
 
 <a name="compare"></a>
-## Comparing to Chrome Extensions
+## Comparison to Chrome Extensions
 
 Following are the differences from Chrome Extensions:
 
@@ -145,7 +145,7 @@ Addon APIs are provided to support the way to handle the window in both the brow
 | messaging | onMessage<br><br>sendMessage | They provide a way to communicate between the browser process and the renderer process.<br>Renderer is not the one of Web application but the one for the addon’s own page. | Browser<br><br>Renderer |
 
 <a name="packaging"></a>
-## Packaging
+## Package
 
 To generate a package for an addon, you can use Tizen Studio.
 
@@ -166,7 +166,7 @@ Following is an example of the config.xml file:
    </widget>
    ```
 
-`<tizen:addon>` is a child element of the `<widget>` tag. You can set traits of an addon such as package id and required version. For required version, you must set it as 4.0 or higher. However, it is recommended to use 5.5 as addons are supported from Tizen version 5.5.
+`<tizen:addon>` is a child element of the `<widget>` tag. You can set traits of an addon such as package ID and required version. For required version, you must set it as 4.0 or higher. However, it is recommended to use 5.5 as addons are supported from Tizen version 5.5.
 
 > [!NOTE]
 > `<tizen:application>` is removed. It is replaced with `<tizen:addon>` in addon packaging.

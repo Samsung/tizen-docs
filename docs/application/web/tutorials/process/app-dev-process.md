@@ -7,7 +7,7 @@ Tizen provides the tools required to manage your Web application life-cycle from
 ![Web application development process](./media/app_dev_process_mw.png)
 
 <a name="plan"></a>
-## Planning and Designing the Application
+## Plan and design the application
 
 The first step in creating a Tizen Web application is planning and designing it using the design tools of your choice.
 
@@ -16,7 +16,7 @@ For information on planning and designing your applications, see [Tizen Web Guid
 Once you have finished the application plan and design, you are ready to create the application project.
 
 <a name="create"></a>
-## Creating the Application Project
+## Create the application project
 
 After you have planned and designed your application, you are ready to [create the application project](creating-app-project.md) in Tizen Studio.
 
@@ -24,24 +24,19 @@ Tizen Studio provides various project templates that make it easier for you to s
 you can select a specific template or sample. Based on the selection, the Tizen Web [Project Wizard](../../../tizen-studio/web-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
 
 <a name="set"></a>
-## Setting Project Properties
+## Set project properties
 
 After creating the application project, you can [configure the properties of the project and the Web application](setting-properties.md) to achieve the required functionality and features for your application.
 
-<a name="design"></a>
-## Designing the Application UI
-
-You can design the application UI using the UI components defined in the [Tizen Advanced UI Framework](../../api/latest/ui_fw_api/ui_fw_api_cover.htm).
-
 <a name="code"></a>
-## Coding the Application
+## Code the application
 
 [Code your application](coding-app.md) in Tizen Studio using the APIs defined in the Web [API References](../../api/latest/device_api/mobile/index.html).
 
 Once you have finished coding your application, you are ready to build your application.
 
 <a name="build"></a>
-## Building the Application
+## Build the application
 
 When Tizen Studio builds an application, the following process is executed:  
   1. Validation check for:
@@ -50,12 +45,12 @@ When Tizen Studio builds an application, the following process is executed:
      - Privilege
 
   2. Compile for:
-     - Coffeescript
+     - CoffeeScript
      - Less
 
- > **Note**  
- > About the output files:  
- > -   Compiled coffeescript output file name is `<file name>.js`. This file is used when the project is packed to the WGT package file, but the script tag's reference path must be changed manually.
+ > [!NOTE]
+ > About the output files:
+ > -   Compiled CoffeeScript output file name is `<file name>.js`. This file is used when the project is packed to the WGT package file, but the script tag's reference path must be changed manually.
  > -   Compiled less output file name is `<file name>.css`. This file is   used when the project is packed to the WGT package file, but the script tag's reference path must be changed manually.
 
 If the project has errors, they are shown in the **Problems** and **Project Explorer** views after the build.
@@ -74,7 +69,7 @@ You can build a Web application automatically or manually:
 
     You can build your project at your convenience. If you want to use the manual build, ensure that the **Project &gt; Build Automatically** option is not selected.
 
-  > **Note**  
+  > [!NOTE]
   > In the manual build mode:  
   > -   Ensure that you have the latest build output before you run or debug a project.
   > -   To remove a project build output, select `Project > Clean` in the Tizen Studio menu.
@@ -92,7 +87,7 @@ You can build a Web application automatically or manually:
     Set the options in Tizen Studio menu: **Window &gt; Preferences &gt; Tizen Studio &gt; Web &gt; Editor &gt; Privilege**.
 
 <a name="run"></a>
-## Running and Debugging the Application
+## Run and debug the application
 
 When Tizen Studio runs or debugs the application, the following process is executed:
 
@@ -116,7 +111,7 @@ You can run your application in one of the following environments:
 
 -   [Simulator](run-debug-app.md#simulator)
 
-    The Tizen Web simulator allows you to run application that use the Tizen Web APIs.
+    Tizen Web simulator allows you to run application that use the Tizen Web APIs.
 
 You can run the application smartly:
 
@@ -126,7 +121,7 @@ You can run the application smartly:
 For more information on the debugging process and tools, see [Debugging Web Applications](run-debug-app.md#debug).
 
 <a name="package"></a>
-## Packaging the Application
+## Package the application
 
 When Tizen Studio packages the application, the following process is executed:
 
@@ -172,16 +167,16 @@ actual project files.
 Additionally, you can [localize the Web application](setting-properties.md#localization) to support different languages and environments.
 
 <a name="multi"></a>
-## Developing Multiple Projects as a Combined Package
+## Develope multiple projects as a combined package
 
 Tizen supports multi-project applications that combine different types of application templates in hybrid and companion applications.
 
 <a name="hybrid"></a>
-### Packaging Hybrid Applications
+### Packaging hybrid applications
 
 A hybrid application package combines a Web application and 1 or more native service applications.
 
-To create and run a hybrid application:
+To create and run a hybrid application, follow these steps:
 
 1. Create a project for a [Web UI application](creating-app-project.md) and [native service application](../../../native/tutorials/process/app-dev-process.md#creating).
 2. To establish a project reference between a UI and service application:  
@@ -196,7 +191,7 @@ To create and run a hybrid application:
     To modify the build configuration of the service application, see [Building the
     Application](../../../native/tutorials/process/app-dev-process.md#build).
 
-> **Note**  
+> [!NOTE]
 > Tizen has limited a multi-project application combination policy for device usability. If you do not follow the policy, the submission of your application to the store can be rejected.
 
 
@@ -250,11 +245,11 @@ For more information on hybrid applications and their package structure, see Hyb
 [Hybrid Application Package](../../index.md#hap).
 
 <a name="cert"></a>
-## Certifying and Publishing the Application
+## Certify and publish the application
 
 After you have packaged your application, you are ready to certify and publish your application.
 
-To certify and publish your application:
+To certify and publish your application, follow these steps:
 
 -   Upload your mobile Web application to the official site for Tizen applications, your wearable Web application to the Samsung Galaxy Apps Store, or your TV Web application to the Samsung App Store for registration.
 
@@ -267,11 +262,11 @@ To certify and publish your application:
 You can also upgrade your application after certification. If you want to withdraw your application from distribution and operation, you need to request for application retirement from the store.
 
 <a name="upgrade"></a>
-## Upgrading the Application
+## Upgrade the application
 
 You can upgrade your application even after you have certified and published it at the official site for Tizen applications, Samsung Galaxy Apps Store, or Samsung App Store.
 
-To upgrade your application:
+To upgrade your application, follow these steps:
 
 1.  Update your application version, and if needed the privileges, in the `config.xml` configuration file in Tizen Studio.
 2.  Update the application code as needed.

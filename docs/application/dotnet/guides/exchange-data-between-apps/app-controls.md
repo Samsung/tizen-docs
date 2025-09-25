@@ -688,5 +688,10 @@ AppControl.SendLaunchRequest(appControl);
 
 
 ## Related information
-* Dependencies
-  -   Tizen 4.0 and Higher
+- Dependencies
+  - Tizen 4.0 and Higher
+- API References
+  - [Tizen.Applications.AppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControl) class
+  - [Tizen.Applications.AppControlOperations](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControlOperations) class
+  - [Tizen.Applications.ReceivedAppControl](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.ReceivedAppControl) class
+  - [Tizen.Applications.AppControlData](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AppControlData) class

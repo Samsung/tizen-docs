@@ -268,5 +268,11 @@ To manage device display status change events, follow these steps:
 
 
 ## Related information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher
+- API References
+  - [Tizen.System.Battery](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Battery.html)
+  - [Tizen.System.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Display.html)
+  - [Tizen.System.Vibrator](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Vibrator.html)
+  - [Tizen.System.IR](/application/dotnet/api/TizenFX/latest/api/Tizen.System.IR.html)
+  - [Tizen.System.Led](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Led.html)

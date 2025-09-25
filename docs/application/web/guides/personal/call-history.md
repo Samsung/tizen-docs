@@ -4,7 +4,7 @@ You can access information about various telephony services for circuit-switched
 
 This feature is supported in mobile applications only.
 
-The main features of the Call History API include:
+The main features of the Call History API include the following:
 
 - Call history tracking   
 
@@ -27,7 +27,7 @@ To use the [Call History](../../api/latest/device_api/mobile/tizen/callhistory.h
 <tizen:privilege name="http://tizen.org/privilege/callhistory.write"/>
 ```
 
-## Searching for Call History Items
+## Search for call history items
 
 Learning how to retrieve call history items using different parameters allows you to view specific items in a specific order, making call history monitoring easy and convenient.
 
@@ -40,7 +40,7 @@ Learning how to retrieve call history items using different parameters allows yo
 
 2. Use the `SuccessCallback` parameter of the `find()` method to define an event handler for the query result set.
 
-   In the following code snippet, the found call history items are appended to the console log.
+   In the following code snippet, the found call history items are appended to the console log:
 
    ```
    function onSuccess(results) {
@@ -108,11 +108,11 @@ Learning how to retrieve call history items using different parameters allows yo
 
    For example, if your search results consist of 100 matching results and you have specified an offset of 10 and a limit of 20, you get the objects from 10-29. The matching results from 0-9 are skipped due to the offset, and the 20 results starting from the first result after the offset are returned.
 
-## Removing Call History Items
+## Remove call history items
 
 Learning how to remove call history items allows you to keep the call history list organized and save storage space on the device:
 
-1.  Use the `remove()` method of the [CallHistory](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistory) interface to remove a specific item from the call history. First, search for the entry to be removed with the `find()` method, and then handle the removal in the event handler that is called when the `find()` method is successful.
+1.  Use the `remove()` method of the [CallHistory](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistory) interface to remove a specific item from the call history. First, search for the entry to be removed with the `find()` method, and then handle the removal in the event handler that is called when the `find()` method is successful:
 
     ```
     /* Remove the found call history item */
@@ -148,9 +148,9 @@ Learning how to remove call history items allows you to keep the call history li
     tizen.callhistory.removeAll();
     ```
 
-## Monitoring the Call History
+## Monitor the call history
 
-Learning how to register change listeners allows you to synchronize the view of your application to changes in the call history database.
+Learning how to register change listeners allows you to synchronize the view of your application to changes in the call history database:
 
 1. Define the `onadded` event handler of the [CallHistoryChangeCallback](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryChangeCallback) listener interface, which tracks all new incoming and outgoing calls that are added to the call history.
 
@@ -165,7 +165,7 @@ Learning how to register change listeners allows you to synchronize the view of 
 
 2. Define the `onchanged` event handler, which tracks all changes in the call history.
 
-   The event handler receives as an argument an array of [CallHistoryEntry](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) instances, which represent the changed items in the call history.
+   The event handler receives as an argument an array of [CallHistoryEntry](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) instances, which represent the changed items in the call history:
 
    ```
        onchanged: function(changedItems) {
@@ -198,6 +198,8 @@ Learning how to register change listeners allows you to synchronize the view of 
    tizen.callhistory.removeChangeListener(callHistoryListener);
    ```
 
-## Related Information
+## Related information
 * Dependencies   
   - Tizen 2.4 and Higher for Mobile
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/callhistory.html)

@@ -172,5 +172,7 @@ The runtime feature keys have the `runtimefeature` prefix. The available runtime
 
 
 ## Related information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher
+- API References
+  - [System Information](/application/dotnet/api/TizenFX/latest/api/Tizen.System.html)

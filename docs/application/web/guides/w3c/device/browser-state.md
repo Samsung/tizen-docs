@@ -14,10 +14,10 @@ The `navigator.onLine` attribute returns `false`, if the browser cannot establis
 | `online`           | Event            | When the return value of the `onLine` attribute changes from `false` to `true`, a connection is established and this event is triggered. |
 | `offline`          | Event            | When the return value of the `onLine` attribute changes from `true` to `false`, a connection is lost and this event is triggered. |
 
-> **Note**  
+> [!NOTE]
 > The device can be connected to the network without access to the Internet.
 
-## Retrieving the Browser State
+## Retrieve the browser state
 
 To enhance the user interaction with the device, you must learn to retrieve the browser state:
 
@@ -59,13 +59,13 @@ To enhance the user interaction with the device, you must learn to retrieve the 
    </html>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [browser_state.htm](http://download.tizen.org/misc/examples/w3c_html5/device/html5_browser_state)
+- [browser_state.htm](http://download.tizen.org/misc/examples/w3c_html5/device/html5_browser_state){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for TV

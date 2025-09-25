@@ -88,7 +88,7 @@ When the user speaks a command corresponding to a visible EFL Elementary compone
 ![Voice command process](./media/voice_control_elm.png)
 
 > **Note**  
-> The detailed implementation of the preloaded voice application (how to trigger and recognize the user speaking) can vary depending on the device (mobile, wearable, or TV).
+> The detailed implementation of the preloaded voice application (how to trigger and recognize the user speaking) can vary depending on the device (TV, IoT, or other).
 
 The main features of the Voice control elementary API include:
 
@@ -154,7 +154,7 @@ To use the voice commands:
 
 To enable your application to use the voice control functionality:
 
-1. To use the functions and data types of the Voice control API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__MODULE.html) applications), include the `<voice_control.h>` header file in your application:
+1. To use the functions and data types of the [Voice control API](../../api/common/latest/group__CAPI__UIX__VOICE__CONTROL__MODULE.html), include the `<voice_control.h>` header file in your application:
 
    ```
    #include <voice_control.h>
@@ -220,7 +220,7 @@ To enable your application to use the voice control functionality:
    > **Note**  
    > Do not call the `vc_deinitialize()` function in a callback. Within a callback, the `vc_deinitialize()` function fails and returns `VC_ERROR_OPERATION_FAILED`.
 
-5. To use the functions and data types of the Voice control elementary API (in [mobile](../../api/mobile/latest/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) and [wearable](../../api/wearable/latest/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) applications), include the `<voice_control_elm.h>` header file in your application:
+5. To use the functions and data types of the [Voice control elementary API](../../api/common/latest/group__VOICE__CONTROL__ELEMENTARY__MODULE.html), include the `<voice_control_elm.h>` header file in your application:
 
    ```
    #include <voice_control_elm.h>
@@ -1014,5 +1014,7 @@ To set and unset commands and hints, and define the hint direction and offset:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 2.4
+- API References
+  - [Voice control API](../../api/common/latest/group__CAPI__UIX__VOICE__CONTROL__MODULE.html)
+  - [Voice control elementary API](../../api/common/latest/group__VOICE__CONTROL__ELEMENTARY__MODULE.html)

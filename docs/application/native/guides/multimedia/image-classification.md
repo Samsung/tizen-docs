@@ -1,222 +1,201 @@
-# Image Classification
+# Deep Learning Based Image Classification
 
-Image classification is one of the main features of the Media Vision Inference API. This API allows inference engine to classify a given image and apply corresponding labels.
-For example, when an image consisting of a food item is provided as input to this API, the Media Vision framework while doing inference of the decoded image data, will make use of the pre-trained model to classify the food item and apply a corresponding label.
+This guide provides instructions on how to utilize the provided Image Classification API within your application to classify objects in a given image.
 
 ## Prerequisites
-
-To enable your application to use the media vision inference functionality, follow these steps:
-
-1. To use the functions and data types of the Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications), include the `<mv_inference.h>` header file in your application.
-
-   In addition, you must include the `<image_util.h>` header file to handle the image decoding tasks, or the `<camera.h>` header file to provide the preview images:
-
-   ```c
-   #include <mv_inference.h>
-
-   /* Image decoding for image recognition */
-   #include <image_util.h>
-   /* Preview images for image tracking */
-   #include <camera.h>
-   ```
-
-2. Create a structure to store the global data.
-
-     For image classification, use the following `imagedata_s` structure:
-
-     ```c
-     struct _imagedata_s {
-         mv_source_h g_source;
-         mv_engine_config_h g_engine_config;
-         mv_inference_h g_inferece;
-     };
-     typedef struct _imagedata_s imagedata_s;
-     static imagedata_s imagedata;
-     ```
-
-<a name="classify"></a>
-## Classify image
-
-To classify an image, follow these steps:
-
-1. Create the source and engine configuration handles:
-
-    ```c
-    int error_code = 0;
-
-    error_code = mv_create_source(&imagedata.g_source);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-
-    error_code = mv_create_engine_config(&imagedata.g_engine_config);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
+Ensure the following prerequisites are satisfied:
+Include the necessary headers `mv_image_classification.h` in your project
     ```
+	#include <mv_image_classification.h>
+	```
 
-2. Decode the image file and fill the `g_source` handle with the decoded raw data.
+Optionally, include additional headers for handling image decoding `image_util.h` or acquiring preview images from cameras
+    ```
+	#include <image_util.h>  // Optional: Image decoding support
+    #include <camera.h>      // Optional: Acquiring preview images from cameras
+	```
 
-   In the following example, `sample.jpg` is the image to be classified, and it is in the `<OwnDataPath>`.
-   The `<OwnDataPath>` refers to your own data path:
+## Classify objects in an image
+Follow these steps to implement image classification in your application:
 
-    ```c
-    /* For details, see the Image Util API Reference */
+Step 1: Initialize and Prepare
+First, create an image classification handle and prepare the environment for image classification:
+    ```
+    mv_image_classification_h handle;
+    int ret = 0;
+
+    ret = mv_image_classification_create(&handle);
+    if (ret != MEDIA_VISION_ERROR_NONE) {
+        // handle an error.
+    }
+
+    ret = mv_image_classification_configure(handle);
+    if (ret != MEDIA_VISION_ERROR_NONE) {
+        // handle an error.
+    }
+
+    ret = mv_image_classification_prepare(handle);
+    if (ret != MEDIA_VISION_ERROR_NONE) {
+        // handle an error.
+    }
+	```
+
+Step 2: Input Source Setup
+Next, set up the input source containing the image data. Here, we'll demonstrate decoding an image file and filling the resulting data into a mv_source:
+    ```
+    char filePath[1024];
     unsigned char *dataBuffer = NULL;
     size_t bufferSize = 0;
     unsigned int width = 0;
     unsigned int height = 0;
     image_util_decode_h imageDecoder = NULL;
+    mv_source_h mv_source = NULL;
     image_util_image_h decodedImage = NULL;
 
-    error_code = image_util_decode_create(&imageDecoder);
-    if (error_code != IMAGE_UTIL_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    ret = mv_create_source(&mv_source);
+    if (ret != MEDIA_VISION_ERROR_NONE) {
+        // handle an error.
+    }
 
-    error_code = image_util_decode_set_input_path(imageDecoder, "/<OwnDataPath>/sample.jpg");
-    if (error_code != IMAGE_UTIL_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    ret = image_util_decode_create(&imageDecoder);
+    if (ret != IMAGE_UTIL_ERROR_NONE) {
+        // handle an error.
+    }
 
-    error_code = image_util_decode_set_colorspace(imageDecoder, IMAGE_UTIL_COLORSPACE_RGB888);
-    if (error_code != IMAGE_UTIL_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    /* Decode image and fill the image data to mv_source handle */
+    snprintf(filePath, 1024, "/path/to/classification_image.jpg");
+    ret = image_util_decode_set_input_path(imageDecoder, filePath);
+    if (ret != IMAGE_UTIL_ERROR_NONE) {
+        // handle an error.
+    }
 
-    error_code = image_util_decode_run2(imageDecoder, &decodedImage);
-    if (error_code != IMAGE_UTIL_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    ret = image_util_decode_set_colorspace(imageDecoder, IMAGE_UTIL_COLORSPACE_RGB888);
+    if (ret != IMAGE_UTIL_ERROR_NONE) {
+        // handle an error.
+    }
 
-    error_code = image_util_get_image(decodedImage, &width, &height, NULL, &dataBuffer, &bufferSize);
-    if (error_code != IMAGE_UTIL_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    ret = image_util_decode_run2(imageDecoder, &decodedImage);
+    if (ret != IMAGE_UTIL_ERROR_NONE) {
+        // handle an error.
+    }
 
-    error_code = image_util_decode_destroy(imageDecoder);
-    if (error_code != IMAGE_UTIL_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    ret = image_util_get_image(decodedImage, &width, &height, NULL, &dataBuffer, &bufferSize);
+    if (ret != IMAGE_UTIL_ERROR_NONE) {
+        // handle an error.
+    }
 
-    /* Fill the dataBuffer to g_source */
-    error_code = mv_source_fill_by_buffer(imagedata.g_source, dataBuffer, (unsigned int)bufferSize,
-                                          width, height, MEDIA_VISION_COLORSPACE_RGB888);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    ret = mv_source_fill_by_buffer(mv_source, dataBuffer, (unsigned int)bufferSize, width, height, MEDIA_VISION_COLORSPACE_RGB888);
+    if (ret != MEDIA_VISION_ERROR_NONE) {
+        free(dataBuffer);
+        // handle an error.
+    }
 
-    error_code = image_util_destroy_image(decodedImage);
-    if (error_code != IMAGE_UTIL_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-    decodedImage = NULL;
-    ```
+    ret = image_util_decode_destroy(imageDecoder);
+    if (ret != IMAGE_UTIL_ERROR_NONE) {
+        // handle an error.
+    }
 
-3. To classify the `sample.jpg` image, create a `g_inference` media vision inference handle:
-
-    ```c
-    error_code = mv_inference_create(&imagedata.g_inference);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-    ```
-
-4. Configure `g_engine_config` with classification model data to classify the image.
-   The default engine is configured by the system. You can see the supported engines in Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f) applications).
-
-    In the following example, TensorFlow Lite model is used, and `data.tflite`, `meta.json`, and `label.txt` are in the `<OwnDataPath>`.
-	Model data is available in open model zoo, such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models).
-  Its corresponding model meta file is available in [meta file template](https://review.tizen.org/gerrit/gitweb?p=platform/core/api/mediavision.git;a=tree;f=meta-template;hb=refs/heads/tizen_6.5):
-
-    ```c
-    #define MODEL_DATA "OwnDataPath/data.tflite"
-    #define MODEL_LABEL "OwnDataPath/label.txt"
-    #define MODEL_META "OwnDataPath/meta.json"
-
-    error_code = mv_engine_config_set_string_attribute(handle,
-                      MV_INFERENCE_MODEL_WEIGHT_FILE_PATH,
-                      MODEL_DATA);
-
-    error_code = mv_engine_config_set_string_attribute(handle,
-                      MV_INFERENCE_MODEL_USER_FILE_PATH,
-                      MODEL_LABEL);
-
-    error_code = mv_engine_config_set_string_attribute(handle,
-                      MV_INFERENCE_MODEL_META_FILE_PATH,
-                      MODEL_META);
-
-    error_code = mv_engine_config_set_int_attribute(handle,
-                      MV_INFERENCE_BACKEND_TYPE,
-                      MV_INFERENCE_BACKEND_TFLITE);
-    ```
-    For more information on the configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications).
-
-5. Use `mv_inference_configure()` to configure `g_inference` inference handle with `g_engine_config`:
-    ```c
-    error_code = mv_inference_configure(imagedata.g_inference, imagedata.g_engine_config);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-    ```
-
-6. Use `mv_inference_prepare()` to prepare inference:
-    ```c
-    error_code = mv_inference_prepare(imagedata.g_inference);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-    ```
-
-7. Use `mv_inference_image_classify()` to classify the image:
-
-    ```c
-    error_code = mv_inference_image_classify(imagedata.g_source, &imagedata.g_inference, NULL, _on_image_classified_cb, NULL);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-    ```
-
-   `mv_inference_image_classify()` invokes `_on_image_classified_cb()` callback.
-    The following callback example prints the classified image labels with their scores:
-
-    ```c
-    static void
-    _on_image_classified_cb(mv_source_h source, const int number_of_classes,
-                  const int *indices, const char **names,
-                  const float *confidences, void *user_data)
-    {
-      dlog_print(DLOG_INFO, LOG_TAG, "classified %d labels\n", number_of_classes);
-
-      for (int n = 0; n < number_of_classes; ++n)
-        dlog_print(DLOG_INFO, LOG_TAG, "%s with %.3f score\n", names[n], confidences[n]);
+    ret = image_util_destroy_image(decodedImage);
+    if (ret != IMAGE_UTIL_ERROR_NONE) {
+        // handle an error.
     }
     ```
 
-8. After the image classification is complete, destroy the source, engine configuration, and the inference handles using `mv_destroy_source()`, `mv_destroy_engine_config()`, and `mv_inference_destroy()`:
+Step 3: Image Classification Execution
+There are two modes available for executing image classification: synchronous and asynchronous. Choose the appropriate mode based on your application requirements:
 
-    ```c
-    error_code = mv_destroy_source(imagedata.g_source);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+[Synchronous Mode]
+For synchronous processing, call mv_image_classification_inference() with the prepared mv_source. This API will be returned after the completion of the inference request:
+     ```
+     // Classify objects in a given image.
+     ret = mv_image_classification_inference(handle, mv_source);
+     if (ret != MEDIA_VISION_ERROR_NONE) {
+         // handle an error.
+     }
+ 	```
 
-    error_code = mv_destroy_engine_config(imagedata.g_engine_config);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+Afterwards, retrieve the number of classified objects and obtain their respective labels and confidence scores:
+     ```
+ 	unsigned long frame_number;
+ 	unsigned int number_of_objects;
 
-    error_code = mv_inference_destroy(imagedata.g_inference);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-    ```
-## Timestamp
+ 	ret = mv_image_classification_get_result_count(handle, &frame_number, &number_of_objects);
+ 	if (ret!= MEDIA_VISION_ERROR_NONE) {
+ 		// handle an error.
+ 	}
 
-Time is important for camera data, and you may want to bring time information from the camera system to mediavision.  
-In such a case, if you want to include time information in the mv_source data, there is a method.
-Use `mv_source_{get,set}_timestamp()` to handle timedata:
+ 	for (unsigned int idx = 0; idx < number_of_objects; ++idx) {
+ 		char *label = NULL;
+ 
+ 		int ret = mv_image_classification_get_label(handle, idx, &label);
+ 		if (ret!= MEDIA_VISION_ERROR_NONE) {
+ 			// handle an error.
+ 		}
+ 	}
 
-```c
-mv_source_h mv_source;
-uint64_t timestamp;
-error_code = mv_create_source(&mv_source);
-if (error_code != MEDIA_VISION_ERROR_NONE)
-dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+ 	// Process label...
+     ```
 
-error_code = mv_source_set_timestamp(mv_source, 2);
-if (error_code != MEDIA_VISION_ERROR_NONE)
-dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+[Asynchronous Mode]
+The asynchronous API, mv_image_classification_inference_async(), returns immediately after being called, and inference results can be obtained by creating a thread and calling the mv_image_classification_get_result_count() API within its callback function.
+If asynchronous processing is preferred, invoke mv_image_classification_inference_async() with the prepared mv_source, and handle the results via a callback function:
+ 	```
+ 	void image_classification_callback(void *user_data)
+ 	{
+         mv_image_classification_h handle = (mv_image_classification_h)user_data;
+ 		bool is_loop_exit = false;
 
-error_code = mv_source_get_timestamp(mv_source, &timestamp);
-if (error_code != MEDIA_VISION_ERROR_NONE)
-dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-```
+ 		while (!is_loop_exit) {
+ 			unsigned long frame_number;
+ 			unsigned int number_of_objects;
+
+ 			int ret = mv_image_classification_get_result_count(handle, &frame_number, &number_of_objects);
+ 			if (ret!= MEDIA_VISION_ERROR_NONE) {
+ 				// handle an error.
+ 			}
+
+ 			for (unsigned int idx = 0; idx < number_of_objects; ++idx) {
+ 				char *label = NULL;
+ 
+ 				int ret = mv_image_classification_get_label(handle, idx, &label);
+ 				if (ret!= MEDIA_VISION_ERROR_NONE) {
+ 					// handle an error.
+ 				}
+ 			}
+ 		}
+ 	}
+
+    void some_function()
+	{
+		...
+
+		// Classify objects in a given image.
+		ret = mv_image_classification_inference_async(handle, mv_source);
+		if (ret!= MEDIA_VISION_ERROR_NONE) {
+			// handle an error.
+		}
+
+		// Create a new thread to wait for the inference result.
+		thread *thread_handle = new thread(&image_classification_callback, (void *)handle);
+		if (thread_handle == NULL) {
+			// handle an error.
+		}
+
+		thread_handle->join();
+	}
+ 	```
+
+Step 4: Cleanup
+Finally, clean up by releasing the allocated resources and destroying the handle:
+ ```
+ ret = mv_image_classification_destroy(handle);
+ if (ret != MEDIA_VISION_ERROR_NONE) {
+     // handle an error.
+ }
+ ```
 
 ## Related information
 - Dependencies
-  - Tizen 5.5 and Higher for Mobile
-  - Tizen 5.5 and Higher for Wearable
+  - Since Tizen 9.0
+- API References
+  - [Image Classification API](../../api/common/latest/group__CAPI__MEDIA__VISION__IMAGE__CLASSIFICATION__MODULE.html)

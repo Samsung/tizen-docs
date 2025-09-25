@@ -1,6 +1,8 @@
 # Flash an Image to RPI
 
-This topic describes how to flash Tizen on an SD card and setting up Raspberry Pi 3 or 4.
+This topic describes how to flash Tizen on an SD card and setting up Raspberry Pi 4.
+> [!NOTE]
+> Raspberry Pi 3 was not supported since Tizen 8.0. Raspberry Pi 5 (64bit-only) can be using for experimental.
 
 ## Supported systems
 
@@ -15,50 +17,50 @@ This topic describes how to flash Tizen on an SD card and setting up Raspberry P
 
 ### Operating system
 
-Ubuntu 18.04 LTS and later
+Ubuntu 18.04 LTS and later (Recommended to use Ubuntu 20.04 / 22.04)
 
+### Update EEPROM on RPi target
+
+Tizen is using GPT partition since Tizen 7.0. It has to update the EEPROM that is supported GPT partition.
+   > [!IMPORTANT]
+   > (If eeprom is upper than 2022.04.26 version, This step can be optional.)
+
+1.  Refer to https://github.com/raspberrypi/rpi-eeprom/releases
 
 ### Download binaries
 
 You must have the supported binary images in your computer. To download the binary images, follow these steps:
 
 1. Download images from [Downloads](http://download.tizen.org/releases/milestone/TIZEN){:target="_blank"}.
-2. Select **Tizen-7.0 (or "Tizen" whichever is present) > Tizen-7.0-Unified (or "Tizen-unified" whichever is present) > latest > images > standard**.
+2. Select **Tizen-9.0 (or "Tizen" whichever is present) > Tizen-9.0-Unified (or "Tizen-unified" whichever is present) > latest > images > standard**.
 3. Download the compressed file for different devices or profiles from:
 
-     -   RPI3 Headless 32-bit:
-          -   Boot Image: tizen-boot-armv7l-rpi3/
-          -   Platform Image: tizen-headless-armv7l/
-
-     -   RPI3 Headed 32-bit:
-          -   Boot Image: tizen-boot-armv7l-rpi3/
-          -   Platform Image: tizen-headed-armv7l/
 
      -   RPI4 Headless 32-bit:
-          -   Boot Image: tizen-boot-armv7l-rpi4/
+          -   Boot Image (Until Tizen-9.0): tizen-boot-armv7l-rpi4/
+          -   Boot Image: tizen-boot-armv7l-rpi/
           -   Platform Image: tizen-headless-armv7l/
 
      -   RPI4 Headless 64-bit:
-          -   Boot Image: tizen-boot-arm64-rpi4/
+          -   Boot Image (Until Tizen-9.0): tizen-boot-arm64-rpi4/
+          -   Boot Image: tizen-boot-aarch64-rpi/
           -   Platform Image: tizen-headless-aarch64/
 
      -   RPI4 Headed 32-bit:
-          -   Boot Image: tizen-boot-armv7l-rpi4/
+          -   Boot Image (Until Tizen-9.0): tizen-boot-armv7l-rpi4/
+          -   Boot Image: tizen-boot-armv7l-rpi/
           -   Platform Image: tizen-headed-armv7l/
 
-     -   RPI3 Headed 64-bit:
-          -   Boot Image: tizen-boot-arm64-rpi3/
-          -   Platform Image: tizen-headed-aarch64/
-
      -   RPI4 Headed 64-bit:
-          -   Boot Image: tizen-boot-arm64-rpi4/
+          -   Boot Image (Until Tizen-9.0): tizen-boot-arm64-rpi4/
+          -   Boot Image: tizen-boot-aarch64-rpi/
           -   Platform Image: tizen-headed-aarch64/
 
 
 ### Flash through the command line
 
 You can flash the SD card through the command line on a Linux computer.
-To flash the SD card for Raspberry Pi 3 or 4, follow the steps below:
+To flash the SD card for Raspberry Pi 4 or 5, follow the steps below:
 
 1.  Complete the following prerequisites:
     1.  Install the `pv` package in the Linux computer:
@@ -67,20 +69,22 @@ To flash the SD card for Raspberry Pi 3 or 4, follow the steps below:
         $ sudo apt-get install pv
         ```
 
-    2.  Ensure that you have an SD card of 8 GB or more.
+    2.  Ensure that you have an SD card of 16 GB or more.
     3.  Verify whether the binary image files are in your computer.
-    4.  Fusing-script for Raspberry Pi 3 (fusing script is same for RPI3 and RPI4):
+    4.  Fusing-script for Raspberry Pi 4 (fusing script is same for RPI5):
 
         ```
-        $ wget https://git.tizen.org/cgit/platform/kernel/u-boot/plain/scripts/tizen/sd_fusing_rpi3.sh?h=tizen --output-document=sd_fusing_rpi3.sh
-        $ chmod 755 sd_fusing_rpi3.sh
+        git clone git://review.tizen.org/git/platform/kernel/tizen-fusing-scripts -b tizen
+        cd tizen-fusing-scripts
+        $ ./scripts/sd_fusing.py
+        usage: sd_fusing.py [-h] [-b BINARIES [BINARIES ...]] [--create] [--debug] [-d DEVICE] [--format] [--log-level LOG_LEVEL] [--partition-size [PARTITION_SIZES ...]] [--size SIZE] -t TARGET [--update {a,b,ab}] [--version] [--YES] [--super_delivered]
         ```
 
 2.  Flash the SD card to ensure it is ready to be used for Tizen:
     1.  Insert an SD card to the Linux computer and verify its device node.
-
-        > [!NOTE]
-        > To verify the device node:
+        > [!WARNING]
+        > It MUST check the device node of SD-card  on host PC side. Otherwise, other block device can be formatted.
+        > Follow the below step. To verify the device node:
         >
         > 1.  Run the following command before inserting the SD card into the Linux computer:
         >
@@ -130,29 +134,29 @@ To flash the SD card for Raspberry Pi 3 or 4, follow the steps below:
 	3.  Run the following commands:
 
         ```
-        $ sudo ./sd_fusing_rpi3.sh -d <SD card device node> --format
-        $ sudo ./sd_fusing_rpi3.sh -d <SD card device node> -b <Boot Image path> <Platform Image path>
+        $ sudo ./sd_fusing.py -d <SD card device node> -t <Target Board> --format
+        $ sudo ./sd_fusing.py -d <SD card device node> -b <Boot Image> <Platform Image> -t <Target Board>
         ```
 
         For example:
 
         ```
-        $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb --format
-        $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb -b tizen-unified_20221017.061100_tizen-boot-armv7l-rpi3.tar.gz tizen-unified_20221017.061100_tizen-headed-armv7l.tar.gz
+        $ sudo ./sd_fusing.py -d /dev/sdb -t rpi4 --format
+        $ sudo ./sd_fusing.py -d /dev/sdb -b tizen-unified_{DATE}_tizen-boot-armv7l-rpi4.tar.gz tizen-unified_{DATE}_tizen-headed-armv7l.tar.gz -t rpi4
         ```
 
-3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Set up Raspberry Pi 3 or 4](#set-up-raspberry-pi-3-or-4).
+3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Set up Raspberry Pi 4](#set-up-raspberry-pi-4).
 
     > [!NOTE]
     > Repeat `sdb connect 192.168.1.11` in the Linux shell (Linux) or the command window (Windows) whenever you power cycle the device, in order to reconnect the SDB tool.
 
-## Set up Raspberry Pi 3 or 4
+## Set up Raspberry Pi  4
 
 ### Connect the board to the PC
 
 To configure the Raspberry Pi board, follow the steps below:
 
-1.  Insert the SD card, in which Tizen IoT binaries and the drivers are flashed into the Raspberry Pi board.
+1.  Insert the SD card, in which Tizen Platform binaries and the drivers are flashed into the Raspberry Pi board.
 2.  For the serial communication connection:
     1.  Connect the host computer to the Raspberry Pi with a **UART-to-USB** dongle such as PL2303 or FT232 USB UART board.
 
@@ -277,8 +281,8 @@ To configure the Raspberry Pi board, follow the steps below:
 
 1.  Connect Smart Development Bridge (SDB) as described in [Connect the board to the PC](#connect-the-board-to-the-pc).
 2.  Install the connectivity drivers for each board:
-    -   **Raspberry Pi 3/4**
-        1.  Download the plugin zip file from the **Raspberry Pi 3/4(7.0) Plugin** section at [Tizen Device Firmware](http://developer.samsung.com/tizendevice/firmware){:target="_blank"} and follow the instructions.
+    -   **Raspberry Pi 4**
+        1.  Download the plugin zip file from the **Raspberry Pi 4(9.0) Plugin** section at [Tizen Device Firmware](http://developer.samsung.com/tizendevice/firmware){:target="_blank"} and follow the instructions.
 
         2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
 

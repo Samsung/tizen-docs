@@ -4,16 +4,16 @@ As there is no mouse on a mobile device, user actions must be handled with touch
 
 This feature is supported in mobile and wearable applications only.
 
-The main touch event features include:
+The main touch event features include the following:
 
 - Touch event types
 
   You can [define event handlers](#handling-touch-events) for different types of touch events:
 
-  - [touchstart](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchstart-event) handles an event which occurs when a finger comes in contact with the device screen.
-  - [touchmove](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchmove-event) handles an event which occurs when a finger moves while it is in contact with the screen.
-  - [touchend](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchend-event) handles an event which occurs when a finger is removed from the screen.
-  - [touchcancel](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchcancel-event) handles an event which occurs when a touch is cancelled.
+  - [touchstart](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchstart-event){:target="_blank"} handles an event which occurs when a finger comes in contact with the device screen.
+  - [touchmove](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchmove-event){:target="_blank"} handles an event which occurs when a finger moves while it is in contact with the screen.
+  - [touchend](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchend-event){:target="_blank"} handles an event which occurs when a finger is removed from the screen.
+  - [touchcancel](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchcancel-event){:target="_blank"} handles an event which occurs when a touch is cancelled.
 
   These events are similar to the `mousedown`, `mousemove`, and `mouseup` mouse events.
 
@@ -25,11 +25,11 @@ The main touch event features include:
 
 - Multi-point touch control
 
-  Unlike with mouse events, multiple concurrent touch events (represented by the [Touch](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-Touch) interface) can occur. To [control multi-point touch events](#controlling-multi-point-touches), the [TouchList](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-TouchList) interface is used to save the respective event status (based on the `touches`, `targetTouches`, and `changedTouches` attributes). The status stored in the `TouchList` instance is renewed every time a new touch event occurs.
+  Unlike with mouse events, multiple concurrent touch events (represented by the [Touch](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-Touch){:target="_blank"} interface) can occur. To [control multi-point touch events](#controlling-multi-point-touches), the [TouchList](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-TouchList){:target="_blank"} interface is used to save the respective event status (based on the `touches`, `targetTouches`, and `changedTouches` attributes). The status stored in the `TouchList` instance is renewed every time a new touch event occurs.
 
 A touch-based mobile operating system uses tap and double-tap gestures. The tap is used to generate a click event, and double-tap used for zooming. To recognize the touch gestures, the OS sets a timer which starts at the first tap and checks for a second before the event is fired. This causes a delay in the single tap event, making the touch responsiveness of the application suffer.  To avoid the delay, you can [enhance the touch event responsiveness](#enhancing-touch-responsiveness) by making the page unscalable, or modifying touch responses.
 
-## Handling Touch Events
+## Handle touch events
 
 Depending on the touch type, different touch events occur:
 
@@ -45,17 +45,17 @@ Depending on the touch type, different touch events occur:
 **Figure: Canceling touch with a long press (in mobile applications only)**  
 ![Canceling touch with a long press (in mobile applications only)](./media/touch3.png)
 
-  > **Note**  
+  > [!NOTE]
   > In Tizen, the `touchcancel` event occurs when a context menu is activated by a long press of a DOM element, such as text or image.
 
 Learning how to handle touch events improves the user interaction of your application:
 
-1. Define the element from which you want to trigger touch events. In this case, an area with a text and an image is defined as an element.
+1. Define the element from which you want to trigger touch events. In this case, an area with a text and an image is defined as an element:
 
    ```
    <div id="touchable">
       Touch or drag this box with one finger.
-      <img src="https://www.tizen.org/sites/all/themes/tizen_theme/logo.png" alt="Tizen logo">
+      <img src="https://www.tizen.org/wp-content/themes/tizentheme/logo.png" alt="Tizen logo">
    </div>
    <div id="log"></div>
    ```
@@ -89,7 +89,7 @@ Learning how to handle touch events improves the user interaction of your applic
    </script>
    ```
 
-> **Note**  
+> [!NOTE]
 > Since the device input takes place by touching the screen, sometimes the features of your application and the browser can respond simultaneously to the same touch event. To prevent the unintended effects (for example, the customized gesture and the browser scroll operating simultaneously), use the `preventDefault()` method to prevent the basic browser events:
 >
 >```
@@ -104,17 +104,17 @@ Learning how to handle touch events improves the user interaction of your applic
 >```
 
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [touch_event_types.html](http://download.tizen.org/misc/examples/w3c_html5/device/touch_events_version_1)
+- [touch_event_types.html](http://download.tizen.org/misc/examples/w3c_html5/device/touch_events_version_1){:target="_blank"}
 
-## Retrieving the Event Point Occurrence
+## Retrieve the event point occurrence
 
 Learning how to retrieve the coordinate of the touch event point occurrence improves the user interaction of your application:
 
-1. Define the element from which you want to trigger touch events. In this case, an area with a text is defined as an element.
+1. Define the element from which you want to trigger touch events. In this case, an area with a text is defined as an element:
 
    ```
    <div id="touchable">
@@ -123,7 +123,7 @@ Learning how to retrieve the coordinate of the touch event point occurrence impr
    <div id="log"></div>
    ```
 
-2. Add an event listener and handler for the [touchmove](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchmove-event) event to the defined element:
+2. Add an event listener and handler for the [touchmove](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchmove-event){:target="_blank"} event to the defined element:
 
    ```
    <script>
@@ -148,25 +148,25 @@ Learning how to retrieve the coordinate of the touch event point occurrence impr
    </script>
    ```
 
-   Each time the `touchmove` event is triggered, the position of the touch point is renewed. The position is returned in 2D coordinates of the page, client, and screen. You can use the position to compare the coordinates to the [touchstart](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchstart-event) and [touchend](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchend-event) events, and to analyze the gesture of the user by using the consequent `touchmove` events to determine the movement direction.
+   Each time the `touchmove` event is triggered, the position of the touch point is renewed. The position is returned in 2D coordinates of the page, client, and screen. You can use the position to compare the coordinates to the [touchstart](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchstart-event){:target="_blank"} and [touchend](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchend-event){:target="_blank"} events, and to analyze the gesture of the user by using the consequent `touchmove` events to determine the movement direction.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [event_handling_prevent_default.html](http://download.tizen.org/misc/examples/w3c_html5/device/touch_events_version_1)
+- [event_handling_prevent_default.html](http://download.tizen.org/misc/examples/w3c_html5/device/touch_events_version_1){:target="_blank"}
 
-## Controlling Multi-point Touches
+## Control multi-point touches
 
 Learning how to control multiple concurrent touch events improves the user interaction of your application:
 
-1. Define the element from which you want to trigger touch events. In this case, an area with a text is defined as an element.
+1. Define the element from which you want to trigger touch events. In this case, an area with a text is defined as an element:
 
    ```
    <div id="touchable"> Touch this box with two finger. </div>
    ```
 
-2. Add an event listener and handler for the [touchstart](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchstart-event) event to the defined element:
+2. Add an event listener and handler for the [touchstart](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchstart-event){:target="_blank"} event to the defined element:
 
    ```
    <script>
@@ -198,16 +198,16 @@ Learning how to control multiple concurrent touch events improves the user inter
    </script>
    ```
 
-   When a touch events is triggered, its details, such as the event coordinates, identification number, and the subject of the touch, are stored in the [Touch](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-Touch) interface instance. To access the details, the `touches.item()` method can be used in an array format.  
+   When a touch events is triggered, its details, such as the event coordinates, identification number, and the subject of the touch, are stored in the [Touch](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-Touch){:target="_blank"} interface instance. To access the details, the `touches.item()` method can be used in an array format.  
    A multi-point touch event refers to additional instances being pushed to the `touches.item(index)` array. For example, the first touch event is pushed to `touches.item(0)`, and if a second touch event is triggered without removing the first finger from the screen, the second event is pushed to `touches.item(1)`.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [multi_touch.html](http://download.tizen.org/misc/examples/w3c_html5/device/touch_events_version_1)
+- [multi_touch.html](http://download.tizen.org/misc/examples/w3c_html5/device/touch_events_version_1){:target="_blank"}
 
-## Enhancing Touch Responsiveness
+## Enhance touch responsiveness
 
 To avoid having a delay in the single tap gesture, you can make the page unscalable, or modify touch responses:
 
@@ -252,7 +252,7 @@ To avoid having a delay in the single tap gesture, you can make the page unscala
 
     To avoid activating the click event after the touch event, set the return type to `false`.
 
-  - You can also use the `vclick` event provided by jQuery Mobile. The `vclick` event is based on the touch event and generated only if the touched point is not moved.
+  - You can also use the `vclick` event provided by jQuery Mobile. The `vclick` event is based on the touch event and generated only if the touched point is not moved:
 
     ```
     <a id="test" href="#">Click test using touch event</a>
@@ -266,7 +266,9 @@ To avoid having a delay in the single tap gesture, you can make the page unscala
     </script>
     ```
 
-## Related Information
+## Related information
 * Dependencies    
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [W3C](http://www.w3.org/TR/2013/REC-touch-events-20131010){:target="_blank"}

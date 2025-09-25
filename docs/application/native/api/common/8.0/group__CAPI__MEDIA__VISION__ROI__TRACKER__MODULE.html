@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2><a class="anchor" id="CAPI_MEDIA_VISION_ROI_TRACKER_MODULE_HEADER"></a>
 Required Header</h2>
 <p>#include &lt;mv_roi_tracker.h&gt;</p>
+<h2><a class="anchor" id="CAPI_MEDIA_VISION_ROI_TRACKER_MODULE_OVERVIEW"></a>
+Overview</h2>
+<p><a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html">Media Vision Roi tracker</a> contains <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#ga006c72ba8483060a792fe770d211d266" title="The ROI tracker handle.">mv_roi_tracker_h</a> handle to perform roi tracking. Roi Tracker handle should be created with <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#gafe041b782b8b3a57e549fc7a656721f8" title="Creates tracker handle.">mv_roi_tracker_create()</a> and destroyed with <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#ga1c0cd1d6616e5e35cee7a4198c0dfbf8" title="Destroys tracker handle and release all its resources.">mv_roi_tracker_destroy()</a>. After creation, <a class="el" href="group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga22dbc3e57010b97040ab64ba0cf02fb9" title="The inference handle.">mv_inference_h</a> should be set by calling mv_roi_tracker_set_coordinate() which sets coordinates of roi. After setting coordinates, mv_roi_tracker_set_tracker_type() could be called optionally in case of setting other tracker type. It is set to MV_ROI_TRACKER_TYPE_BALANCE as default. After setting tracker type, <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#ga1add04c1608a6b308088464c67007c8e" title="Tracks with a given tracker on the source.">mv_roi_tracker_perform()</a> has to be called to tracking roi of images on <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga2e4229d3b8a8ad4b373894ff049f0906" title="The handle to the source.">mv_source_h</a>, and it sets newly generated coordinates to result parameter.</p>
 <h2><a class="anchor" id="CAPI_MEDIA_VISION_ROI_TRACKER_MODULE_FEATURE"></a>
 Related Features</h2>
 <p>This API is related with the following features:<br/>
@@ -110,10 +113,7 @@ Related Features</h2>
 <p>It is recommended to use features in your application for reliability.<br/>
  You can check if the device supports the related features for this API by using System Information, and control your application's actions accordingly.<br/>
  To ensure your application is only running on devices with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on using features in your application can be found in <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>. </a></p>
-<h2><a class="anchor" id="CAPI_MEDIA_VISION_ROI_TRACKER_MODULE_OVERVIEW"></a>
-Overview</h2>
-<p><a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html">Media Vision Roi tracker</a> contains <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#ga006c72ba8483060a792fe770d211d266" title="The ROI tracker handle.">mv_roi_tracker_h</a> handle to perform roi tracking. Roi Tracker handle should be created with <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#gafe041b782b8b3a57e549fc7a656721f8" title="Creates tracker handle.">mv_roi_tracker_create()</a> and destroyed with <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#ga1c0cd1d6616e5e35cee7a4198c0dfbf8" title="Destroys tracker handle and release all its resources.">mv_roi_tracker_destroy()</a>. After creation, <a class="el" href="group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga22dbc3e57010b97040ab64ba0cf02fb9" title="The inference handle.">mv_inference_h</a> should be set by calling mv_roi_tracker_set_coordinate() which sets coordinates of roi. After setting coordinates, mv_roi_tracker_set_tracker_type() could be called optionally in case of setting other tracker type. It is set to MV_ROI_TRACKER_TYPE_BALANCE as default. After setting tracker type, <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#ga1add04c1608a6b308088464c67007c8e" title="Tracks with a given tracker on the source.">mv_roi_tracker_perform()</a> has to be called to tracking roi of images on <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga2e4229d3b8a8ad4b373894ff049f0906" title="The handle to the source.">mv_source_h</a>, and it sets newly generated coordinates to result parameter. </p>
+ More details on using features in your application can be found in <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>. </a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -156,7 +156,7 @@ Defines</h2></td></tr>
  <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#gga4c94636a11a110c285e421de37fb7496a99c14cbd931d6cb4f50a061baf7dd6c4">MV_ROI_TRACKER_TYPE_BALANCE</a>,<br/>
  <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#gga4c94636a11a110c285e421de37fb7496a8ecf5c1702a7080137f58320a77464a7">MV_ROI_TRACKER_TYPE_SPEED</a>.<br/>
 </p>
-<p>The default type is MV_ROI_TRACKER_TYPE_BALANCE.</p>
+<p>The default type is <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#gga4c94636a11a110c285e421de37fb7496a99c14cbd931d6cb4f50a061baf7dd6c4">MV_ROI_TRACKER_TYPE_BALANCE</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gac6e5f51937e5c33ee69f06dcb76ed1d8" title="Sets the integer attribute to the configuration.">mv_engine_config_set_int_attribute()</a> </dd>
 <dd>
@@ -401,7 +401,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Tracks with a given tracker on the <em>source</em>. </p>
-<p>Use this function to track with a given source and ROI information which is set to 'mv_roi_tracker_prepare'. This function returns a proper ROI coordinates of the tracked region inside given source.</p>
+<p>Use this function to track with a given source and ROI information which is set to '<a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#ga4bcb1c084fd573413deae36befc9e001" title="Prepares roi tracker.">mv_roi_tracker_prepare()</a>'. This function returns a proper ROI coordinates of the tracked region inside given source.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -424,7 +424,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a new tracker handle by calling <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#gafe041b782b8b3a57e549fc7a656721f8">mv_roi_tracker_create()</a> </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a new tracker handle by calling <a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#gafe041b782b8b3a57e549fc7a656721f8" title="Creates tracker handle.">mv_roi_tracker_create()</a> </dd></dl>
 
 </div>
 </div>
@@ -472,7 +472,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Prepares roi tracker. </p>
-<p>Use this function to prepare roi tracker based on the configuration. ROI related variables are used when 'mv_roi_tracker_perform' is executed.</p>
+<p>Use this function to prepare roi tracker based on the configuration. ROI related variables are used when '<a class="el" href="group__CAPI__MEDIA__VISION__ROI__TRACKER__MODULE.html#ga1add04c1608a6b308088464c67007c8e" title="Tracks with a given tracker on the source.">mv_roi_tracker_perform()</a>' is executed.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>7.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

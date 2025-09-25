@@ -4,7 +4,7 @@ You can provide notifications to the user about application events.
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Notification API include:
+The main features of the Notification API include the following:
 
 - Creating simple notifications   
 
@@ -28,7 +28,7 @@ The main features of the Notification API include:
 
 To display a notification, you need to create a `Notification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#Notification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#Notification) applications), or its subtype.
 
-> **Note**  
+> [!NOTE]
 > The `StatusNotification` subtype (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#StatusNotification) applications) is deprecated since Tizen 4.0. To display notifications in the status bar, use the `UserNotification` subtype (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications).
 
 ## Prerequisites
@@ -39,7 +39,7 @@ To use the Notification API (in [mobile](../../api/latest/device_api/mobile/tize
 <tizen:privilege name="http://tizen.org/privilege/notification"/>
 ```
 
-## Creating Simple Notifications
+## Create simple notifications
 
 Learning how to create notifications allows you to design interactive applications that provide the user information about their events:
 
@@ -70,7 +70,7 @@ Learning how to create notifications allows you to design interactive applicatio
 
    The path in the `iconPath` and `soundPath` parameters means a relative file location defined in the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html) and [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html) applications). The path is not an absolute file location, but instead uses a [virtual root location](../data/file-system.md#supported-virtual-roots) (such as `images` in `images/image1.jpg`).
 
-2. To be able to display the notification, create a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step.
+2. To be able to display the notification, create a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step:
 
    ```
    var notification = new tizen.UserNotification('SIMPLE', 'Simple notification', notificationGroupDict);
@@ -82,7 +82,7 @@ Learning how to create notifications allows you to design interactive applicatio
    tizen.notification.post(notification);
    ```
 
-## Creating Progress Notifications
+## Create progress notifications
 
 Learning how to create progress notifications allows you to design interactive applications that inform the user about the progress of an activity:
 
@@ -135,18 +135,18 @@ Learning how to create progress notifications allows you to design interactive a
 
 4. To post the notification, use the `post()` method of the `NotificationManager` interface. If the progress value is set, the progress bar is displayed in the notification. The progress value can change the amount of progress as it moves forward or backward.
 
-   The application must keep the progress value for its job, because the saved value in the notification panel can be different (rounded) from the exact progress value.
+   The application must keep the progress value for its job, because the saved value in the notification panel can be different (rounded) from the exact progress value:
 
    ```
    tizen.notification.post(notification);
    updateProgressNotification(0);
    ```
 
-## Creating Active Notifications
+## Create active notifications
 
 Active Notifications contain buttons or a text field which the user can use to reply to the notification directly.
 
-### Active Notification with buttons
+### Active notification with buttons
 
 1. Use `NotificationButton` class to create buttons, as arguments provide text to show, an action and optionally a path to an image to display on a button:
 
@@ -182,7 +182,7 @@ Active Notifications contain buttons or a text field which the user can use to r
    tizen.notification.post(notification);
    ```
 
-### Active Notification with a text field
+### Active notification with a text field
 
 1. Define the notification properties of the `UserNotificationInit` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotificationInit) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotificationInit) applications) where you can define properties of text input:
 
@@ -227,9 +227,9 @@ Active Notifications contain buttons or a text field which the user can use to r
    }
    ```
 
-   Learn more about app control from https://docs.tizen.org/application/web/guides/app-management/app-controls/
+   Learn more about app control from [Application Controls](../app-management/app-controls.md)
 
-## Managing Notifications
+## Manage notifications
 
 Learning how to manage notifications allows you to design interactive applications that provide the user information about their events:
 
@@ -275,14 +275,14 @@ Learning how to manage notifications allows you to design interactive applicatio
      tizen.notification.removeAll();
      ```
 
-## Managing Notification Templates
+## Manage notification templates
 
 Learning how to manage notification templates allows you to create a template from an existing notification, and reuse that template later to quickly create other notifications with the same pattern:
 
-- To create a template:  
+- To create a template, follow these steps:  
 
   1. Create a [simple](#creating-simple-notifications) or [progress](#creating-progress-notifications) notification to be used as a template.  
-     You do not need to post the notification to save it as a template.
+     You do not need to post the notification to save it as a template:
 
      ```
      /* Assume that myNotification is a valid tizen.UserNotification object */
@@ -313,7 +313,10 @@ Learning how to manage notification templates allows you to create a template fr
 
   This method returns a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications), even if the template was created based on a `StatusNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#StatusNotification) applications).
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/notification.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/notification.html)

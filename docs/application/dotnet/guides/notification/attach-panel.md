@@ -1,5 +1,7 @@
 # Attach Panel
 
+> [!NOTE]
+> All Attach Panel APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
 
 The attach panel allows you to attach various content to an application that contains an attach panel. You can attach images, take pictures, record voice, and select files on the attach panel.
 
@@ -375,5 +377,8 @@ public void SetTotalSizeOfSelectedItems()
 
 
 ## Related information
-* Dependencies
-  -   Tizen 4.0 and Higher
+- Dependencies
+  - Tizen 4.0 and Higher
+- API References
+  - [Tizen.Applications.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel) namespace
+  - [Tizen.Applications.AttachPanel.AttachPanel](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel) class

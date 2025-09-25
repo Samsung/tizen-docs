@@ -21,8 +21,6 @@ Tizen is built to work on the following diverse devices:
 
 - [TV device](profiles/tv.md)
 - [Tizen custom device](profiles/tizen_custom.md)
-- [Wearable device](profiles/wearable.md)
-- [Mobile device](profiles/mobile.md)
 
 Tizen devices provide product-optimized functionality and performance.
 
@@ -65,7 +63,7 @@ To facilitate developing Tizen applications, [Tizen Studio](../../application/ti
 
 The latest versions of the Tizen platform include the following:
 
-
+- [Tizen 9.0](versions/tizen-9-0-m2.md)
 - [Tizen 8.0](versions/tizen-8-0-m2.md)
 - [Tizen 7.0](versions/tizen-7-0-m2.md)
 - [Tizen 6.5](versions/tizen-6-5-m2.md)

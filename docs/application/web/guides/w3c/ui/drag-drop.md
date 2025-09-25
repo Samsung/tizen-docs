@@ -240,3 +240,5 @@ For the complete source code related to this use case, see the following files:
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
+* API References
+  - [W3C](https://www.w3.org/TR/2011/WD-html5-20110405/){:target="_blank"}

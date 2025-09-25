@@ -2,7 +2,7 @@
 
 You can extract metadata information from multimedia files. Metadata is the information about multimedia files.
 
-The main features of the Metadata API include:
+The main features of the Metadata API include the following:
 
 - Extracting simple metadata informations
 
@@ -65,7 +65,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
 
 ## Extract artwork
 
-1. Create a file handle using `createFileHandle()`. Ensure your file includes an artwork.
+1. Create a file handle using `createFileHandle()`. Ensure your file includes an artwork:
 
    ```javascript
    var filePath = "music/sample.mp3";
@@ -78,7 +78,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
    var artwork = fileHandle.getArtwork();
    ```
 
-3. Blob object can be easily shown in your application in html *&lt;img&gt;* tag
+3. Blob object can be easily shown in your application in html *&lt;img&gt;* tag:
 
    ```javascript
    var elem = document.getElementById("blobImage");
@@ -89,7 +89,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
 
 ## Extract thumbnail frame
 
-1. Create a file handle using `createFileHandle()` for a video file.
+1. Create a file handle using `createFileHandle()` for a video file:
 
    ```javascript
    var filePath = "videos/sample_video.mp4";
@@ -102,7 +102,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
    var thumbnail = fileHandle.getThumbnailFrame();
    ```
 
-3. Blob object can be easily shown in your application in html *&lt;img&gt;* tag
+3. Blob object can be easily shown in your application in html *&lt;img&gt;* tag:
 
    ```javascript
    var elem = document.getElementById("blobImage");
@@ -113,14 +113,14 @@ When all the needed metadata is extracted, the file handle needs to be released 
 
 ## Extract certain frame
 
-1. Create a file handle using `createFileHandle()` for a video file.
+1. Create a file handle using `createFileHandle()` for a video file:
 
    ```javascript
    var filePath = "videos/sample_video.mp4";
    var fileHandle = tizen.metadata.createFileHandle(filePath);
    ```
 
-2. When the file handle is created, thumbnail frame can be extracted. You need to provide timestamp information (in milliseconds) and a flag indicating accuracy. When the flag value is set to `true`, flag indicates extracting an exact frame for the given time. When the value is `false`, flag indicates extracting an <a href="https://en.wikipedia.org/wiki/Video_compression_picture_types">I-frame</a> nearest to the given time. Gathering nearest I-frame has better performance.
+2. When the file handle is created, thumbnail frame can be extracted. You need to provide timestamp information (in milliseconds) and a flag indicating accuracy. When the flag value is set to `true`, flag indicates extracting an exact frame for the given time. When the value is `false`, flag indicates extracting an [I-frame](https://en.wikipedia.org/wiki/Video_compression_picture_types){:target="_blank"} nearest to the given time. Gathering nearest I-frame has better performance:
 
    ```javascript
    var timestamp = 2000;
@@ -128,7 +128,7 @@ When all the needed metadata is extracted, the file handle needs to be released 
    var frame = fileHandle.getFrameAtTime(timestamp, returnExactFrame);
    ```
 
-3. Blob object can be easily shown in your application in html *&lt;img&gt;* tag
+3. Blob object can be easily shown in your application in html *&lt;img&gt;* tag:
 
    ```javascript
    var elem = document.getElementById("blobImage");
@@ -139,14 +139,14 @@ When all the needed metadata is extracted, the file handle needs to be released 
 
 ## Extract lyrics
 
-1. Create a file handle using `createFileHandle()`. Lyrics need to be included in multimedia file as SYLT metadata tag. Supported formats of encoding are at least <a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-8</a> and <a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a>. Other formats can be ignored depending on the platform.
+1. Create a file handle using `createFileHandle()`. Lyrics need to be included in multimedia file as SYLT metadata tag. Supported formats of encoding are at least [UTF-8](http://www.ietf.org/rfc/rfc2279.txt){:target="_blank"} and [ISO-8859-1](http://en.wikipedia.org/wiki/ISO/IEC_8859-1){:target="_blank"}. Other formats can be ignored depending on the platform:
 
    ```javascript
    var filePath = "music/sample.mp3";
    var fileHandle = tizen.metadata.createFileHandle(filePath);
    ```
 
-2. When the file handle is created, check how many lyrics are included.
+2. When the file handle is created, check how many lyrics are included:
 
    ```javascript
    var lyricsNum = fileHandle.get("SYNCLYRICS_NUM");
@@ -163,8 +163,12 @@ When all the needed metadata is extracted, the file handle needs to be released 
 
 4. After use, release the file handle.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 6.0 and Higher for Mobile
   - Tizen 6.0 and Higher for Wearable
   - Tizen 6.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/metadata.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/metadata.html)
+  - [TV](../../api/latest/device_api/tv/tizen/metadata.html)

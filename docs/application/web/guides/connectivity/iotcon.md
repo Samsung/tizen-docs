@@ -1,12 +1,12 @@
 # IoT Connectivity
 
-[IoTivity](https://iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications. IoT connectivity (Iotcon) provides the means of using IoTivity in Tizen.
+[IoTivity](https://iotivity.org/){:target="_blank"}s offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications. IoT connectivity (Iotcon) provides the means of using IoTivity in Tizen.
 
 The Iotcon API is optional for Tizen Mobile, Wearable, and TV profiles, which means that it may not be supported on all mobile, wearable, and TV devices. The Iotcon API is supported on all Tizen emulators.
 
 IoT connectivity is usually handled with a server and client. The server is responsible for creating and providing resources, and the client can access those resources through requests.
 
-The main features of the Iotcon API include:
+The main features of the Iotcon API include the following:
 
 - Creating a server
 
@@ -28,7 +28,7 @@ The main features of the Iotcon API include:
 
 ## Prerequisites
 
-To enable your application to use the IoT functionality:
+To enable your application to use the IoT functionality, follow these steps:
 
 1. To use the Iotcon API (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
@@ -56,15 +56,15 @@ To enable your application to use the IoT functionality:
    }
    ```
 
-For more information on OIC IoT standard specifications, see the [Open Connectivity Foundation (OCF) Web site](https://openconnectivity.org/).
+For more information on OIC IoT standard specifications, see the [Open Connectivity Foundation (OCF) Web site](https://openconnectivity.org/){:target="_blank"}.
 
-## Creating a New Resource
+## Create a new resource
 
-To create a new resource:
+To create a new resource, follow these stepss:
 
 1. Initialize a server and set the device name:
 
-   1. For managing secure virtual resources, a CBOR format file (Concise Binary Object Representation) must be	available, preferably in the application local storage.
+   1. For managing secure virtual resources, a CBOR format file (Concise Binary Object Representation) must be	available, preferably in the application local storage:
 
       ```
       var cborPath = 'path_to_my_app_storage/iotcon-server-test.dat';
@@ -94,7 +94,7 @@ To create a new resource:
 
    2. Prepare handlers for the get, put, post, delete, and observing requests from the client.
 
-      The exact list of required handlers depends on the resource interfaces. The following example uses the "oic.if.b" interface.
+      The exact list of required handlers depends on the resource interfaces. The following example uses the "oic.if.b" interface:
 
       ```
       var requestCallbacks = {
@@ -106,9 +106,9 @@ To create a new resource:
       }
       ```
 
-   3. Fill the `onget` handler with a code that sends a response to the client. Other handlers remain empty in this example (you can modify attributes in them).
+   3. Fill the `onget` handler with a code that sends a response to the client. Other handlers remain empty in this example (you can modify attributes in them):
 
-      To send a response to the client:
+      To send a response to the client, follow these steps:
 
       1. Create a new `Response` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Response), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Response), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Response) applications) from the `Request` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Request), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Request), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Request) applications): `new tizen.Response(request)`
       2. Create a new `Representation` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Representation), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Representation), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Representation) applications), to be sent inside the response: `new tizen.Representation(doorResource.uriPath)`
@@ -150,13 +150,13 @@ To create a new resource:
       doorResource = iotServer.createResource(uriPath, resourceTypes, resourceInterfaces, requestCallbacks, policy);
       ```
 
-## Finding Remote Resources
+## Find remote resources
 
-To find remote resources:
+To find remote resources, follow these stepss:
 
 1. Initialize a client and set the device name:
 
-   1. For managing secure virtual resources, a CBOR format file (Concise Binary Object Representation) must be	available, preferably in the application local storage.
+   1. For managing secure virtual resources, a CBOR format file (Concise Binary Object Representation) must be	available, preferably in the application local storage:
 
       ```
       var cborPath = 'path_to_my_app_storage/iotcon-client-test.dat';
@@ -187,7 +187,7 @@ To find remote resources:
 
    2. Set the remote server address and connectivity type.
 
-      The `hostAddress` value must be in the Constrained Application Protocol (CoAP) format (`coap(s)://address:port`), for example, `coaps://[fe80::ae5a:14ff:fe24:b8fe]:12345` or `coaps://192.168.1.10:12345`. The `null` value indicates that the client communicates with all nodes (multicast).
+      The `hostAddress` value must be in the Constrained Application Protocol (CoAP) format (`coap(s)://address:port`), for example, `coaps://[fe80::ae5a:14ff:fe24:b8fe]:12345` or `coaps://192.168.1.10:12345`. The `null` value indicates that the client communicates with all nodes (multicast):
 
       ```
       var hostAddress = null;
@@ -236,7 +236,7 @@ To find remote resources:
       }
       ```
 
-## Retrieving Device and Platform Information
+## Retrieve device and platform information
 
 On the client side, you can get device and platform information from the server for a given remote resource:
 
@@ -291,7 +291,7 @@ On the client side, you can get device and platform information from the server 
 
      The success callback is called with the `DeviceInfo` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#DeviceInfo), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#DeviceInfo), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#DeviceInfo) applications) as a parameter. You can access the device information in the object attributes.
 
-## Sending GET Requests
+## Send GET requests
 
 On the client side, you can read resource attributes:
 
@@ -316,7 +316,7 @@ On the client side, you can read resource attributes:
 
 2. [Find a remote resource](#finding-remote-resources).
 
-3. Once you have a `RemoteResource` object, use the `methodGet()` method to send a request to the server. For a list of resource attributes you can request, see the API Reference (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#RemoteResource) applications).
+3. Once you have a `RemoteResource` object, use the `methodGet()` method to send a request to the server. For a list of resource attributes you can request, see the API Reference (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#RemoteResource) applications):
 
    ```
    /* filter results, query = null means no filter */
@@ -326,7 +326,7 @@ On the client side, you can read resource attributes:
 
    As a result, the `onresponse` or (optional) `onerror` callback is called.
 
-## Sending PUT Requests
+## Send PUT requests
 
 On the client side, you can modify remote resource attributes using the PUT method:
 
@@ -341,7 +341,7 @@ On the client side, you can modify remote resource attributes using the PUT meth
 
 2. [Find a remote resource](#finding-remote-resources).
 
-3. Once you have a `RemoteResource` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#RemoteResource) applications), use the success callback to create a `Representation` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Representation), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Representation), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Representation) applications). This object represents the changes in attributes, types, and interfaces.
+3. Once you have a `RemoteResource` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#RemoteResource) applications), use the success callback to create a `Representation` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Representation), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Representation), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Representation) applications). This object represents the changes in attributes, types, and interfaces:
 
    ```
    representation = new tizen.Representation(uriPath);
@@ -359,7 +359,7 @@ On the client side, you can modify remote resource attributes using the PUT meth
 
    After a successful request, the `onresponse` callback is called with the result and updated resource representation. On a failure, the (optional) `onerror` callback is called.
 
-## Observing Resource Changes
+## Observe resource changes
 
 On the client side, you can observe remote resource attribute changes with the `startObserving()` method, and the `isAlive` state with the `setResourceStateChangeListener()` method:
 
@@ -391,8 +391,12 @@ On the client side, you can observe remote resource attribute changes with the `
 
 You can monitor attribute changes in a remote resource similarly using the `startObserving()` method on the `RemoteResource` object.
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/iotcon.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/iotcon.html)
+  - [TV](../../api/latest/device_api/tv/tizen/iotcon.html)

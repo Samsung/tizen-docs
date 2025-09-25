@@ -33,7 +33,7 @@ You can play a feedback pattern using sound or vibration:
 
 ## Prerequisites
 
-To use the functions and data types of the Feedback API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__FEEDBACK__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__FEEDBACK__MODULE.html) applications), include the `<feedback.h>` header file in your application:
+To use the functions and data types of the [Feedback API](../../api/common/latest/group__CAPI__SYSTEM__FEEDBACK__MODULE.html), include the `<feedback.h>` header file in your application:
 
 ```
 #include <feedback.h>
@@ -84,5 +84,6 @@ The return value defines whether retrieving the feedback information was success
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 2.4
+- API References
+  - [Feedback API](../../api/common/latest/group__CAPI__SYSTEM__FEEDBACK__MODULE.html)

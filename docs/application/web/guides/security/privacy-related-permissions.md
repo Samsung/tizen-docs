@@ -9,7 +9,7 @@ Before Tizen 4.0, the pop-up requesting the user's consent to use privacy-relate
 > [!NOTE]
 > Since Tizen 8.0, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternative.
 
-The main features of the Privacy Privilege API include:
+The main features of the Privacy Privilege API include the following:
 
 -   Checking privilege status
 
@@ -27,9 +27,9 @@ For a list of privacy-related privileges, see [Security and API Privileges](../.
 > Use `requestPermissions()` to request multiple privileges instead of calling `requestPermission()` multiple times.
 
 <a name="requesting"></a>
-## Requesting Permissions
+## Request permissions
 
-To verify whether an application has permission to use a privilege, and to request permission if required:
+To verify whether an application has permission to use a privilege, and to request permission if required, follow these steps:
 
 1.  To verify whether an application has permission to use a particular privilege, use the `checkPermission()` method:
 
@@ -41,7 +41,7 @@ To verify whether an application has permission to use a privilege, and to reque
     The result of the call is returned as a value of the `PermissionType` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PermissionType) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PermissionType) applications).
 
 2. React to the permission check appropriately:
-    - If the result value is `PPM_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
+    - If the result value is `PPM_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities:
 
       ```
       switch (result) {
@@ -50,7 +50,7 @@ To verify whether an application has permission to use a privilege, and to reque
 		      break;
       ```
 
-    - If the result value is `PPM_DENY`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API method that involves the privilege results in an error.
+    - If the result value is `PPM_DENY`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API method that involves the privilege results in an error:
 
       ```
 	      case "PPM_DENY":
@@ -60,7 +60,7 @@ To verify whether an application has permission to use a privilege, and to reque
 
     - If the result value is `PPM_ASK`, the application must request permission from the user with the `requestPermission()` method, which displays a dialog box. When the user makes a decision, a callback defined as the second parameter is invoked.
 
-      The dialog box asking for user permission is shown only if the `requestPermission()` method does not throw an exception.
+      The dialog box asking for user permission is shown only if the `requestPermission()` method does not throw an exception:
 
       ```
 	      case "PPM_ASK":
@@ -71,7 +71,7 @@ To verify whether an application has permission to use a privilege, and to reque
 
 3. If you need to request user permission, handle the user decision within the `PermissionSuccessCallback` callback used in the `requestPermission()` method.
 
-    The user decision is returned in the first parameter of the callback as a value of the `PermissionRequestResult` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PermissionRequestResult) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PermissionRequestResult) applications). The second parameter contains the permission that is being requested.
+    The user decision is returned in the first parameter of the callback as a value of the `PermissionRequestResult` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PermissionRequestResult) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PermissionRequestResult) applications). The second parameter contains the permission that is being requested:
 
     ```
     /* Define PermissionSuccessCallback */
@@ -100,7 +100,10 @@ To verify whether an application has permission to use a privilege, and to reque
 > [!NOTE]
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 4.0 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/ppm.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/ppm.html)

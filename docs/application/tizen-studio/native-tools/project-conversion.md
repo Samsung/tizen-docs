@@ -18,10 +18,30 @@ Tizen Studio and CLI differ in how they describe the project properties and buil
 
 ![Project conversion](./media/project_conversion_export_to_CLI.png)
 
+## About the Structure of the CLI Project
+
+The CLI project structure is similar to the Tizen Studio project structure. The CLI project has the following properties and make files for supporting custom build and packaging.
+
+**Table: CLI Project files**
+| File               | Location            | Description                |
+|--------------------|---------------------|----------------------------|
+| project_def.prop | ./ | Describes the user-defined properties of the project.|
+| build_def.prop | ./ | Describes the definitions related to the project build. (Pre/Post Process scripts are also included here. )|
+| makefile | ./Build | Entry point of build script|
+| makefile.mk | ./Build | Main build script|
+| tooldef.mk | ./Build | Define related to tool chain. Defines the location of the binary of utilities that are mainly used internally. Most define the alias of the toolchain delivered by the SBI|
+| basedef.mk | ./Build | Defines the basic variables delivered in sdk or platform|
+| flasgs.mk | ./Build | It includes compilation and link options of C/C++. This file is usually changed when the IDE is exported.|
+| build_c.mk | ./Build | .c/.cpp script for compilation|
+| build_edc.mk | ./Build | Script for edc compilation|
+| build_po.mk | ./Build | Script for .po compilation|
+| appendix.mk | ./Build | Define other scripts|
+
 ## About the project_def.prop File
 
 The `project_def.prop` file describes the project properties, such as project type and list of source files. When you edit the properties in the `project_def.prop` file to manipulate the build or packaging process, use the following characters:
 
+- It should be described in the form of "key = value".
 - "/" is a path separator character (in Windows&reg;, Ubuntu, and macOS).
 - "\\" is a multi-line character, which is used at the end of each line.
 - "\\ " (backslash + space) is a space character, used in a path name that contains a space.
@@ -51,6 +71,45 @@ The `project_def.prop` file describes the project properties, such as project ty
 | `USER_EDCS_FONT_DIRS`  | List of EDC reference paths for compiling, such as the `-fd` option of Tizen Studio. </br>An absolute path can be available. |
 | `USER_POS`             | List of `.po` file paths.</br>The list can be used with wildcard characters, such as *.</br>If there are more than 2 files, a white-space character separator is used.</br>For example: `USER_POS = res/po/*.po` |
 
+For an example of build_def.prop
+
+```
+PROJECT_VERSION = 1.0
+ 
+APPNAME = test
+type = app
+profile = tizen-8.0
+ 
+USER_SRCS = src/*.c src2/testapp1.c \
+            $(workspace_loc)/testfunc/testfunc1.c \
+            c:/test\ users/app1/src/*.c
+USER_DEFS = ABC DEF
+USER_UNDEFS =
+USER_LIBS =
+USER_OBJS =
+USER_INC_DIRS = inc \
+                $(workspace_loc)/extlib/lib
+USER_INC_FILES =
+ 
+USER_EXT_C_KEYS = KEY1 KEY2
+ 
+USER_EXT_KEY1_SRCS = $(workspace_loc)/testfunc/src/*.c $(workspace_loc)/testfunc/src/cpp/*.cpp
+USER_EXT_KEY1_DEFS =
+USER_EXT_KEY1_CPP_DEFS =
+USER_EXT_KEY1_INC_DIRS = inc
+ 
+USER_EXT_KEY2_SRCS = c:/Program\ Files/testfunc/src/*.c
+USER_EXT_KEY2_DEFS =
+USER_EXT_KEY2_CPP_DEFS =
+USER_EXT_KEY2_INC_DIRS = inc
+ 
+USER_LIB_DIRS = lib/testfunc.a \
+                $(workspace_loc)/testfunc/lib/testfunc2.a
+  
+USER_EDCS = res/edje/*.edc
+USER_POS = res/po/*.po
+```
+
 ## About the build_def.prop File
 
 The `build_def.prop` file describes some build configurations. You can run pre-build and post-build commands by describing the following properties.
@@ -74,7 +133,7 @@ In addition, you can use some environment variables to describe the pre- and pos
 | `BUILD_CONFIG` | Build configuration: `Debug` or `Release` |
 | `BUILD_ARCH`   | Architecture type: `x86` or `arm`        |
 
-For example:
+For an example of build_def.prop:
 
 ```
 # Adding pre/post build command to build_def.prop

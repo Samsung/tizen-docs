@@ -28,3 +28,10 @@ You can use the following security features in your .NET applications:
 ## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
+* API References
+  - [Tizen.Security](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.html)
+  - [Tizen.Security.DevicePolicyManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.DevicePolicyManager.html)
+  - [Tizen.Security.Tizen.Security.SecureRepository](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.html)
+  - [Tizen.Security.Tizen.Security.SecureRepository.Crypto](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Crypto.html)
+  - [Tizen.Security.Tizen.Security.TEEC](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.html)
+  - [Tizen.Security.Tizen.Security.WebAuthn](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.WebAuthn.html)

@@ -14,7 +14,7 @@ The vibration interface is implemented by all `Navigator` instances. With the `v
 
   The `pattern` parameter defines a vibration pattern as a list of time entries. Odd entries represent the vibration time in milliseconds, and even entries represent still periods in milliseconds between the vibrations.
 
-## Managing Vibrations
+## Manage vibrations
 
 To enhance the user interaction with the device, learn to manage vibrations:
 
@@ -47,7 +47,7 @@ To enhance the user interaction with the device, learn to manage vibrations:
              }
    ```
 
-3. To stop the vibration before it ends naturally, use the `vibrate()` method with `0` or `[]` as a parameter. The method call cancels all existing vibrations.
+3. To stop the vibration before it ends naturally, use the `vibrate()` method with `0` or `[]` as a parameter. The method call cancels all existing vibrations:
 
    ```
              function stopVibration() {
@@ -89,13 +89,15 @@ To enhance the user interaction with the device, learn to manage vibrations:
    </html>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
 - [vibration_tutorial.html](http://download.tizen.org/misc/examples/w3c_html5/device/vibration_api)
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [W3C](https://www.w3.org/TR/vibration/){:target="_blank"}

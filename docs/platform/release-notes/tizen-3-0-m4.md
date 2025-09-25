@@ -7,14 +7,12 @@ Tizen 3.0 public M4 has been released, mainly containing security fixes.
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/git/) (Tizen 3.0 M4 source codes are under **tizen_3.0** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 3.0 M4 source codes are under **tizen_3.0** branch.)
 
 - [Getting binaries and images](http://download.tizen.org/releases/milestone/tizen/)
   - Base: [http://download.tizen.org/releases/milestone/tizen/3.0-base/tizen-3.0-base_20171108.1/](http://download.tizen.org/releases/milestone/tizen/3.0-base/tizen-3.0-base_20171108.1/)
   - Mobile: [http://download.tizen.org/releases/milestone/tizen/3.0-mobile/tizen-3.0-mobile_20171119.1/](http://download.tizen.org/releases/milestone/tizen/3.0-mobile/tizen-3.0-mobile_20171119.1/)
   - Wearable: [http://download.tizen.org/releases/milestone/tizen/3.0-wearable/tizen-3.0-wearable_20171121.1/](http://download.tizen.org/releases/milestone/tizen/3.0-wearable/tizen-3.0-wearable_20171121.1/)
-
-- [How to flash to a device](../developing/flashing.md)
 
 
 ## Release notes

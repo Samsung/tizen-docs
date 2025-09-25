@@ -2,7 +2,7 @@
 
 Web workers run JavaScript in an independent thread instead of the main UI thread, improving the [JavaScript performance](#javascript-performance) without affecting the UI.
 
-The main features of the Web Workers API include:
+The main features of the Web Workers API include  the following:
 
 - [Creating workers](#creating-a-web-worker-and-handling-errors)
 
@@ -20,10 +20,10 @@ The main features of the Web Workers API include:
 
 Web workers are not DOM-dependent. They handle pure data, which makes them especially suitable for JavaScript code that takes a long time to execute.
 
-> **Note**  
+> [!NOTE]
 > Workers use a same-origin policy and therefore using some of the browser resources, such as `DOM`, `document`, `window`, and `parent`, is not possible, and they must be activated by creating separate JavaScript files. However, ECMA JavaScript and the methods included in the Web Workers API, such as `postMessage()`, `location`, `navigator`, and `importScripts()` can be used. The `self` and `location` attributes are also supported.
 
-## Creating a Web Worker and Handling Errors
+## Create a Web worker and handle errors
 
 Learning how to create Web workers is a useful resource management skill:
 
@@ -97,7 +97,7 @@ Learning how to create Web workers is a useful resource management skill:
      worker.addEventListener('error', errorMessage, false);
      ```
 
-## Sending Messages Between Web Workers
+## Send messages between Web workers
 
 Learning how to send messages between Web workers is a useful resource management skill:
 
@@ -162,25 +162,25 @@ Learning how to send messages between Web workers is a useful resource managemen
 
    The `postMessage()` method can also execute the worker and respond to a message simultaneously.
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following files:
 
-- [web_worker_1.html](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/web_workers)
-- [web_worker_2.html](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/web_workers)
-- [worker_1.js](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/web_workers)
-- [worker_2.js](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/web_workers)
+- [web_worker_1.html](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/web_workers){:target="_blank"}
+- [web_worker_2.html](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/web_workers){:target="_blank"}
+- [worker_1.js](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/web_workers){:target="_blank"}
+- [worker_2.js](http://download.tizen.org/misc/examples/w3c_html5/performance_and_optimization/web_workers){:target="_blank"}
 
 ## Multi-threading
 
-Generally, Web applications are built and run using a single UI thread. Since only 1 task can be handled at a time, the Web application may not respond due to the execution time of a script block, resulting in lower application performance. To solve these performance-related issues, multi-thread Web workers (in [mobile](http://www.w3.org/TR/2015/WD-workers-20150924/), [wearable](http://www.w3.org/TR/2012/CR-workers-20120501/), and [TV](http://www.w3.org/TR/2015/WD-workers-20150924/) applications) can be used to provide distributed processing in applications. Use Web workers in applications that require complex calculations or parallel processing for better application performance.
+Generally, Web applications are built and run using a single UI thread. Since only 1 task can be handled at a time, the Web application may not respond due to the execution time of a script block, resulting in lower application performance. To solve these performance-related issues, multi-thread Web workers (in [mobile](https://html.spec.whatwg.org/multipage/workers.html#workers){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/workers.html#workers){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/workers.html#workers){:target="_blank"} applications) can be used to provide distributed processing in applications. Use Web workers in applications that require complex calculations or parallel processing for better application performance.
 
 Since the task of changing the image color using a canvas involves allocating a color value for each pixel of the image displayed on the screen, the program requires a complicated calculation to execute loops by the number of the pixels. The following examples of applying a color filter effects to an image to change the color show:
 
 - [Problems with using UI threads](#using-ui-threads)
 - [Advantages of using multi-thread Web workers](#using-multi-thread-web-workers)
 
-### Using UI Threads
+### UI threads
 
 The following example uses a UI thread to apply a color filter effect on an image and to display the time taken to apply the filter. Since all the calculations are performed in a single UI thread using the `colorFilter()` method, the execution time is high (16218 milliseconds).
 
@@ -241,10 +241,10 @@ You can test the application performance using the [Web Inspector](../../../../t
 
 ![UI thread application memory performance](./media/uithreadapp_memory_inspector.png)
 
-> **Note**  
+> [!NOTE]
 > Since launching the Web Inspector takes up a lot of CPU resources, a lot of additional delays are recorded in the Timeline panel. If the Web Inspector is not used, the delay is approximately 6000 milliseconds.
 
-### Using Multi-thread Web Workers
+### Multi-thread Web workers
 
 The following example uses 4 Web workers to apply a color filter effect on an image by dividing the image into 4 horizontal areas and working on each area simultaneously. The time taken by the application to apply the filter is also displayed on the screen. Since all the calculations are performed by 4 Web workers simultaneously, the execution time is significantly lower (2254 milliseconds).
 
@@ -292,7 +292,7 @@ function colorFilterStart() {
 }
 ```
 
-The `worker.js` file contains code to perform calculations for all 4 Web workers simultaneously.
+The `worker.js` file contains code to perform calculations for all 4 Web workers simultaneously:
 
 ```
 onmessage = function(e) {
@@ -357,11 +357,11 @@ The following table shows the response speed and memory performance based on the
 | 7                 | 2340 milliseconds | 23.73 KB |
 | 8                 | 2400 milliseconds | 23.73 KB |
 
-> **Note**  
+> [!NOTE]
 > The Web worker support depends on the type and version of the operating system. If the system does not support multiple processors, using multiple Web workers does not greatly improve the application performance. However, since Web workers are based on HTML5 Web optimization and can use multiple cores, they provide much better performance in Tizen as in other operating systems.
 
 <a name="js_performance"></a>
-## JavaScript Performance
+## JavaScript performance
 
  JavaScript was originally used for simple inspections and request handling. Therefore, the execution time was not an issue. However, with more advanced UI usage, the use of JavaScript code has been increased and become more complicated, significantly influencing the application performance.
 
@@ -371,7 +371,7 @@ Improving performance through effective JavaScript code consists of the followin
 - [JavaScript and CSS minification](./minify-js-css.md)
 - [jQuery performance improvement](./jquery-performance-improvement.md)
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

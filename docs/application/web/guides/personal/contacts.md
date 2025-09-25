@@ -4,7 +4,7 @@ You can manage the contacts and persons listed in your address books. A `Contact
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Contact API include:
+The main features of the Contact API include the following:
 
 - Address book management
 
@@ -22,7 +22,7 @@ The main features of the Contact API include:
 
   You can also [create](#adding-multiple-contacts-in-the-batch-mode) and [manage](#managing-multiple-contacts-in-the-batch-mode) multiple contacts simultaneously using the batch mode. The batch mode provides faster, optimized processing of multiple contacts.
 
-   > **Note**  
+   > [!NOTE]
    > The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Additionally, breaking down a batch operation helps you avoid blocking other database operations, such as add or remove.
 
   If you want to receive notifications for batch mode operations, note that each requested batch operation generates only a single event.
@@ -35,7 +35,7 @@ The main features of the Contact API include:
 
 - vCard format conversions
 
-  You can convert the contacts to [vCard format](https://tools.ietf.org/html/rfc2426) or back to [import](#importing-contacts) and [export](#exporting-contacts) contacts.
+  You can convert the contacts to [vCard format](https://tools.ietf.org/html/rfc2426){:target="_blank"} or back to [import](#importing-contacts) and [export](#exporting-contacts) contacts.
 
   The vCard (RFC 2426) file format (`.vcf` or `.vcard`) is a standard for electronic business cards, which contain contact information, such as name, address, phone numbers, email addresses, URLs, logos, photographs, and audio clips.
 
@@ -43,7 +43,7 @@ The main features of the Contact API include:
 
 ## Prerequisites
 
-To enable your application to use the contact functionality:
+To enable your application to use the contact functionality, follow these steps:
 
 1. To make your application visible in the official site for Tizen applications only for devices that support the contact feature, the application must specify the following feature in the `config.xml` file:
 
@@ -62,12 +62,12 @@ To enable your application to use the contact functionality:
    <tizen:privilege name="http://tizen.org/privilege/contact.write"/>
    ```
 
-## Creating an Address Book
+## Create an address book
 
-> **Note**  
+> [!NOTE]
 > The created address book is associated with a specified account. Therefore, you must retrieve the account before creating a new address book.
 
-To create a new address book:
+To create a new address book, follow these steps:
 
 1. Declare a variable to store the created address book:
 
@@ -90,17 +90,17 @@ To create a new address book:
    }
    ```
 
-3. To retrieve available accounts, use the `getAccounts()` method. The following method call invokes the `getAccountsSuccess` event handler defined above.
+3. To retrieve available accounts, use the `getAccounts()` method. The following method call invokes the `getAccountsSuccess` event handler defined above:
 
    ```
    tizen.account.getAccounts(getAccountsSuccess, function(err));
    ```
 
-## Getting Address Books
+## Get address books
 
 You must retrieve the `Contact` object (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#Contact) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#Contact) applications) from the applicable address book to access an existing contact.
 
-To access the address books in which the contacts are listed:
+To access the address books in which the contacts are listed, follow these steps:
 
 - To get the default address book, use the `getDefaultAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications) to retrieve the default address book as an `AddressBook` object (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications):
 
@@ -111,7 +111,7 @@ To access the address books in which the contacts are listed:
   myAddressbook = tizen.contact.getDefaultAddressBook();
   ```
 
-- To get all available address books, use the `getAddressBooks()` method. This method passes an array of `AddressBook` objects to the success event handler.
+- To get all available address books, use the `getAddressBooks()` method. This method passes an array of `AddressBook` objects to the success event handler:
 
   ```
   var addressBook;
@@ -129,11 +129,11 @@ To access the address books in which the contacts are listed:
 
   All available address books on the device are retrieved. You can use an `AddressBook` object ID to select a specific address book with the `getAddressBook()` method, if you know the ID of the address book in advance.
 
-## Adding a Contact
+## Add a contact
 
 You can add a contact using the applicable methods of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications).
 
-To add a contact to an address book:
+To add a contact to an address book, follow these steps:
 
 1. Retrieve the default system address book using the `getDefaultAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications):
 
@@ -156,14 +156,14 @@ To add a contact to an address book:
    addressbook.add(contact);
    ```
 
-## Managing a Contact
+## Manage a contact
 
 You can manage a contact by using the applicable methods of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications). When managing a single contact at a time, the operations are handled in a synchronous mode.
 
-To manage a contact in your address book:
+To manage a contact in your address book, follow these steps:
 
 1. To retrieve a single contact, use the `get()` method of the `AddressBook` interface with the `ContactID` as a parameter:  
-   The following example uses the object of the `ContactRef` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactRef) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactRef) applications). The `ContactRef` object contains both `AddressBook` ID and `Contact` ID (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#Contact) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#Contact) applications).
+   The following example uses the object of the `ContactRef` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactRef) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactRef) applications). The `ContactRef` object contains both `AddressBook` ID and `Contact` ID (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#Contact) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#Contact) applications):
 
    ```
    /* contactRef is retrieved by other APIs */
@@ -177,7 +177,7 @@ To manage a contact in your address book:
 
 2. To manage a single contact:    
 
-   1. Retrieve the default address book using the `getDefaultAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications).
+   1. Retrieve the default address book using the `getDefaultAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications):
 
       ```
       var addressbook = tizen.contact.getDefaultAddressBook();
@@ -200,7 +200,7 @@ To manage a contact in your address book:
 
    3. Update or delete the found contact inside the `contactsFoundCB` event handler.
 
-      In this example, the first name of the first contact is changed and the contact is updated in the address book using the `update()` method. The second contact is deleted using the `remove()` method.
+      In this example, the first name of the first contact is changed and the contact is updated in the address book using the `update()` method. The second contact is deleted using the `remove()` method:
 
       ```
       /* Define the event success callback */
@@ -216,13 +216,13 @@ To manage a contact in your address book:
       }
       ```
 
-## Receiving Notifications on Contact Changes
+## Receive notifications on contact changes
 
 You can keep the address book in your application synchronized with the external contact manager by receiving notifications in your application when contact information is added, updated, or deleted.
 
 The `addChangeListener()` method of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications) registers an event listener, which starts asynchronously once the `addChangeListener()` method returns the subscription identifier for the listener. You can use the `AddressBookChangeCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBookChangeCallback) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBookChangeCallback) applications) to define listener event handlers for receiving the notifications.
 
-To receive notifications when contact information changes:
+To receive notifications when contact information changes, follow these steps:
 
 1. Define the needed variables:
 
@@ -261,7 +261,7 @@ To receive notifications when contact information changes:
    watcherId = addressbook.addChangeListener(watcher);
    ```
 
-   > **Note**  
+   > [!NOTE]
    > The listener object that is the first argument of the `addChangeListener()` method must have at least 1 event handler defined. If no handlers are defined, a `TypeMismatchError` error occurs.
 
 4. To stop the notifications, use the `removeChangeListener()` method of the `Addressbook` interface:
@@ -271,11 +271,11 @@ To receive notifications when contact information changes:
    ```
 
 <a name="adding_multiple_contact"></a>
-## Adding Multiple Contacts in the Batch Mode
+## Add multiple contacts in the batch mode
 
 You can create multiple contacts simultaneously using the `addBatch()` method.
 
-To add multiple contacts to an address book in the batch mode:
+To add multiple contacts to an address book in the batch mode, follow these steps:
 
 1. Retrieve the default system address book using the `getDefaultAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications):
 
@@ -303,16 +303,16 @@ To add multiple contacts to an address book in the batch mode:
    addressbook.addBatch([c1, c2]);
    ```
 
-   > **Note**  
+   > [!NOTE]
    > The `addBatch()` method is asynchronous. Make sure you provide success and error callbacks with it.
 
-## Managing Multiple Contacts in the Batch Mode
+## Manage multiple contacts in the batch mode
 
 You can manage multiple contacts simultaneously using the applicable batch methods: `updateBatch()` and `removeBatch()`.
 
 To manage multiple contacts in your address books in the batch mode:
 
-1. Retrieve the default address book using the `getDefaultAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications).
+1. Retrieve the default address book using the `getDefaultAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications):
 
    ```
    var addressbook = tizen.contact.getDefaultAddressBook();
@@ -360,12 +360,12 @@ To manage multiple contacts in your address books in the batch mode:
    }
    ```
 
-> **Note**  
+> [!NOTE]
 > The `updateBatch()` and `removeBatch()` methods are asynchronous. Make sure you provide success and error callbacks with them.
 
-## Managing Contact Groups
+## Manage contact groups
 
-To create engaging applications with various contact features, learn to manage contact groups:
+To create engaging applications with various contact features, learn to manage contact groups, follow these steps:
 
 1. Retrieve the default system address book using the `getDefaultAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications):
 
@@ -422,11 +422,11 @@ To create engaging applications with various contact features, learn to manage c
      }
      ```
 
-## Managing Persons
+## Manage persons
 
 You can manage persons, including searching, updating, and deleting, using the applicable methods of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications).
 
-To manage persons in your contact database:
+To manage persons in your contact database, follow these steps:
 
 - To manage a single person:   
 
@@ -434,7 +434,7 @@ To manage persons in your contact database:
 
   1. To retrieve persons, use the `find()` method of the `ContactManager` interface.
 
-     You can retrieve the most frequently used persons using the sort mode as the final parameter.
+     You can retrieve the most frequently used persons using the sort mode as the final parameter:
 
      ```
      var sortMode = new tizen.SortMode('usageCount', 'ASC');
@@ -443,7 +443,7 @@ To manage persons in your contact database:
 
      When searching for persons, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#contact-filter-attributes).  You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, all contacts are retrieved (since no filter is defined), and the result is sorted in the ascending order based on the most frequently used persons.
 
-  2. Update or delete the found persons in the `personsFoundCB()` event handler. In this example, the favorite flag of the first person is changed and the contact is updated using the `update()` method. The second person is deleted using the `remove()` method.
+  2. Update or delete the found persons in the `personsFoundCB()` event handler. In this example, the favorite flag of the first person is changed and the contact is updated using the `update()` method. The second person is deleted using the `remove()` method:
 
      ```
      /* Define the event success callback */
@@ -536,7 +536,7 @@ To manage persons in your contact database:
     tizen.contact.resetUsageCountBatch([person1_id, person2_id], 'INCOMING_CALLS');
     ```
 
-## Importing Contacts
+## Import contacts
 
 To create engaging applications with various contacts features, import contacts with the help of the vCard format:
 
@@ -570,7 +570,7 @@ To create engaging applications with various contacts features, import contacts 
 
 To convert multiple strings and import them to an address book, convert the strings one by one and then use the `addBatch()` method of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications) to [add all the contacts at once in the batch mode](#adding_multiple_contact).
 
-## Exporting Contacts
+## Export contacts
 
 To create engaging applications with various contacts features, export contacts with the help of the vCard format:
 
@@ -590,7 +590,7 @@ To create engaging applications with various contacts features, export contacts 
 
 2. Convert a contact to a vCard string in the success event handler of the `find()` method.
 
-   In the following example, the first found contact is exported by converting it to the vCard version 3.0 format.
+   In the following example, the first found contact is exported by converting it to the vCard version 3.0 format:
 
    ```
    function contactsFoundCB(contacts) {
@@ -599,7 +599,10 @@ To create engaging applications with various contacts features, export contacts 
    }
    ```
 
-## Related Information
+## Related information
 * Dependencies   
   - Tizen 2.4 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/contact.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/contact.html)

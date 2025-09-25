@@ -4,7 +4,7 @@ You can search for content (such as images, videos, and music) located in the lo
 
 The Content API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
-The main features of Content API include:
+The main features of Content API include the following:
 
 - Content retrieval   
 
@@ -36,7 +36,7 @@ The main features of Content API include:
 
 The Content API uses the same `ContentManager` interface instance (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentManager) applications) for all content-related functionalities. The instance provides higher efficiency by performing batch operations on content items.
 
-> **Note**  
+> [!NOTE]
 > The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Breaking down a batch operation also helps you avoid blocking other database operations, such as add or remove.
 
 ## Prerequisites
@@ -48,11 +48,11 @@ To use the Content API (in [mobile](../../api/latest/device_api/mobile/tizen/con
 <tizen:privilege name="http://tizen.org/privilege/content.write"/>
 ```
 
-## Browsing Content
+## Browse content
 
 You can browse and search for content directories and content using the `getDirectories()` and `find()` methods of the `ContentManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentManager) applications). When searching for content items, you can create [attribute filters](./data-filter.md#creating-attribute-filters), [attribute range filters](./data-filter.md#creating-attribute-range-filters), and [composite filters](./data-filter.md#creating-composite-filters) based on [specific filter attributes](./data-filter.md#content-filter-attributes) of the `ContentManager` interface. You can also [sort the search results](./data-filter.md#using-sorting-modes).
 
-To browse and search for content directories and content items in directories:
+To browse and search for content directories and content items in directories, follow these steps:
 
 1. Retrieve the `ContentManager` interface instance using the `tizen` global object:
 
@@ -60,7 +60,7 @@ To browse and search for content directories and content items in directories:
    var manager = tizen.content;
    ```
 
-2. To search for content directories on the local device, use the `getDirectories()` method of the `ContentManager` interface. The method returns an array of `ContentDirectory` objects (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentDirectory), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentDirectory), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentDirectory) applications).
+2. To search for content directories on the local device, use the `getDirectories()` method of the `ContentManager` interface. The method returns an array of `ContentDirectory` objects (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentDirectory), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentDirectory), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentDirectory) applications):
 
    ```
    function onDirectoryArraySuccess(directories) {
@@ -72,7 +72,7 @@ To browse and search for content directories and content items in directories:
    manager.getDirectories(onDirectoryArraySuccess);
    ```
 
-3. To search for the content items in all directories, use the `find()` method of the `ContentManager` interface. The method returns an array of `Content` objects (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#Content), [wearable](../../api/latest/device_api/wearable/tizen/content.html#Content), and [TV](../../api/latest/device_api/tv/tizen/content.html#Content) applications).
+3. To search for the content items in all directories, use the `find()` method of the `ContentManager` interface. The method returns an array of `Content` objects (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#Content), [wearable](../../api/latest/device_api/wearable/tizen/content.html#Content), and [TV](../../api/latest/device_api/tv/tizen/content.html#Content) applications):
 
    ```
    function onContentItemArraySuccess(contents) {
@@ -88,9 +88,9 @@ To browse and search for content directories and content items in directories:
 
    In the `find()` method in the above example, the directory ID parameter is set to `null` (which means that all directories are searched), the filter retrieves all content items whose type is `VIDEO`, and no sorting order is defined (which means that the default sorting order is used).
 
-## Managing Content
+## Manage content
 
-You can manage content in many ways:
+You can manage content in the following ways:
 
 - You can view content item details with the `find()` method.
 - You can update some attributes of a content item, for example its isFavorite property, with the `update()` method.
@@ -98,14 +98,14 @@ You can manage content in many ways:
 - If a content item is copied or moved, you cannot find it because a scan is not performed automatically. You can retrieve a copied or moved item with the `find()` method after calling the `scanFile()` method.
 - You can create a thumbnail for a content item using the `createThumbnail()` method.
 
-> **Note**  
+> [!NOTE]
 > You can only view (and not update) the read-only attributes.
 
 To view and update content details:
 
 1. Retrieve the `ContentManager` interface instance (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentManager) applications) using the `tizen` global object, and search for the item whose details you want to update.
 
-   In the following example, the item whose title is `image7.jpg` is retrieved.
+   In the following example, the item whose title is `image7.jpg` is retrieved:
 
    ```
    var manager = tizen.content;
@@ -127,7 +127,7 @@ To view and update content details:
    }
    ```
 
-3. To update the editable attributes of the content item, use the `update()` method. In the following example, the isFavorite property of the content item is switched.
+3. To update the editable attributes of the content item, use the `update()` method. In the following example, the isFavorite property of the content item is switched:
 
    ```
    function update(item) {
@@ -142,7 +142,7 @@ To view and update content details:
    }
    ```
 
-4. To scan for the content item file, use the `scanFile()` method. Because scanning is not performed automatically when the content file is copied or moved, call the `scanFile()` method to find the file.
+4. To scan for the content item file, use the `scanFile()` method. Because scanning is not performed automatically when the content file is copied or moved, call the `scanFile()` method to find the file:
 
    ```
    /* Assume the images/photo.jpg is copied to the device */
@@ -171,11 +171,11 @@ To view and update content details:
    tizen.content.find(findCB);
    ```
 
-## Receiving Notifications on Content Changes
+## Receive notifications on content changes
 
 You can receive notifications when a content item is added, updated, or deleted. The `addChangeListener()` method of the `ContentManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentManager) applications) registers a change listener. You can use the `ContentChangeCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentChangeCallback), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentChangeCallback) applications) to define listener event handlers for receiving the notifications.
 
-To receive notifications when content items are added, updated, or removed:
+To receive notifications when content items are added, updated, or removed, follow these steps:
 
 1. Define the event handlers for different notifications using the `ContentChangeCallback` listener instance (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentChangeCallback), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentChangeCallback) applications):
 
@@ -210,7 +210,7 @@ To receive notifications when content items are added, updated, or removed:
    tizen.content.removeChangeListener(listenerId);
    ```
 
-## Creating a Playlist
+## Create a playlist
 
 Learning how to create a new playlist enables adding a playlist from your application:
 
@@ -237,7 +237,7 @@ Learning how to create a new playlist enables adding a playlist from your applic
   });
   ```
 
-## Managing Playlists
+## Manage playlists
 
 Learning how to retrieve and remove playlists is a basic playlist management skill:
 
@@ -266,11 +266,11 @@ Learning how to retrieve and remove playlists is a basic playlist management ski
   });
   ```
 
-## Managing Playlist Items
+## Manage playlist items
 
 Learning how to manage list items is a basic playlist management skill:
 
-- To add items to a playlist:
+- To add items to a playlist, follow these steps:
 
   1. Retrieve the multimedia content using the `find()` method of the `ContentManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentManager) applications):
 
@@ -322,7 +322,7 @@ Learning how to manage list items is a basic playlist management skill:
   ```
 
 - To change the position of a single playlist item (track), use the `move()` method of the `Playlist` interface. The second parameter indicates how much and in which direction the item is moved.  
-   Note that before moving the item, first you must retrieve it using the `get()` method.
+   Note that before moving the item, first you must retrieve it using the `get()` method:
 
   ```
   var myItem; /* Assume that it was retrieved using the get() method */
@@ -362,8 +362,12 @@ Learning how to manage list items is a basic playlist management skill:
      ```
 
 
-## Related Information
+## Related information
 * Dependencies     
      - Tizen 2.4 and Higher for Mobile
      - Tizen 2.3.1 and Higher for Wearable
      - Tizen 3.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/content.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/content.html)
+  - [TV](../../api/latest/device_api/tv/tizen/content.html)

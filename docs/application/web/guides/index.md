@@ -6,8 +6,7 @@ The Tizen platform supports hybrid applications (1 Web application and 1 or more
 
 Tizen provides a wide range of Web API modules that allow you to take full advantage of various Tizen features.
 
-> **Note**
->
+> [!NOTE]
 > The feature support differs depending on the application profile (mobile, wearable, or TV).
 
 The following table lists the features provided by the [Mobile Web Device API Reference](../api/latest/device_api/mobile/index.html).
@@ -178,17 +177,6 @@ You can manage the device filesystem, individual files, and various events, acce
 - API Reference: [Cordova](../api/latest/device_api/mobile/index.html#Cordova)
 </td>
 </tr>
-<tr>
-<td>Web UI Framework</td>
-<td>These APIs contain classes and interfaces that enable you to manage the Tizen Advanced UI (TAU) features.<br>
-You can create and manage various kinds of UI components.
-</td>
-<td>
-
-- Guides: [Tizen Advanced UI](tau/tau.md)
-- API Reference: [Advanced UI Framework](../api/latest/ui_fw_api/ui_fw_api_cover.htm)
-</td>
-</tr>
 
 </table>
 
@@ -347,17 +335,7 @@ You can manage the device filesystem, individual files, and various events, acce
 - API Reference: [Cordova](../api/latest/device_api/wearable/index.html#Cordova)
 </td>
 </tr>
-<tr>
-<td>Web UI Framework</td>
-<td>These APIs contain classes and interfaces that enable you to manage the Tizen Advanced UI (TAU) features.<br>
-You can create and manage various kinds of UI components.
-</td>
-<td>
 
-- Guides: [Tizen Advanced UI](tau/tau.md)
-- API Reference: [Advanced UI Framework](../api/latest/ui_fw_api/ui_fw_api_cover.htm)
-</td>
-</tr>
 </table>
 
 The following table lists the features provided by the [TV Web Device API Reference](../api/latest/device_api/tv/index.html).
@@ -710,8 +688,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 </table>
 -->
 
-> **Note**
->
+> [!NOTE]
 > In Tizen Web Device APIs, there are two types of APIs: mandatory and optional.
 >
 > The mandatory APIs are always available on all Tizen devices. The optional APIs provide functionality that depends on the available device hardware or software capabilities, and they may not be available on all Tizen devices. For example, the Bluetooth and NFC API hardware features are optional, and not supported on all devices.

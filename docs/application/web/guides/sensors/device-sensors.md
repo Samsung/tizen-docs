@@ -4,7 +4,7 @@ You can access and manage sensor data from [various sensors on the device](#supp
 
 This feature is supported in mobile and wearable applications only.
 
-The main features of the Sensor API include:
+The main features of the Sensor API include the following:
 
 - Managing sensors
 
@@ -18,9 +18,9 @@ The main features of the Sensor API include:
 
   You can [retrieve information about the technical limits of the sensor](#obtaining-sensor-hardware-information).
 
-## Managing Sensors
+## Manage sensors
 
-Learning how to start, read and stop a sensor is a basic sensor management skill:
+Learning how to start, read and stop a sensor is a basic sensor management skill, follow these steps to manage sensors:
 
 <a name="support"></a>
 1. Check that the sensor is supported by the device using the `getCapability()` method of the `SystemInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo) and [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfo) applications) for the proper [capability](#capability) related to the sensor:
@@ -77,7 +77,7 @@ Learning how to start, read and stop a sensor is a basic sensor management skill
    proximitySensor.stop();
    ```
 
-## Receiving Notifications on Sensor Data Changes
+## Receive notifications on sensor data changes
 
 Learning how to register a change event handler for sensor data enables your application to react to changes without the need to check current values constantly:
 
@@ -91,9 +91,9 @@ Learning how to register a change event handler for sensor data enables your app
 
 2. Register a change listener to be called when the sensor data changes.
 
-   To register a  change listener, use the `setChangeListener()` method of the `Sensor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#Sensor) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#Sensor) applications).
+   To register a  change listener, use the `setChangeListener()` method of the `Sensor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#Sensor) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#Sensor) applications):
 
-   This command requires 3 parameters:
+   This command requires the following 3 parameters:
 
    - The first one is a handle to the callback method, which is invoked for every incoming event.
    - The second determines the amount of time (in milliseconds) passing between 2 consecutive events. Valid values are integers from 10 to 1000, inclusively. For example, the value 100 results in approximately 10 events being send every second.
@@ -132,17 +132,17 @@ Learning how to register a change event handler for sensor data enables your app
    lightSensor.start(onsuccessCB);
    ```
 
-3. To stop receiving notifications on sensor data changes, use the `unsetChangeListener()` method of the Sensor interface.
+3. To stop receiving notifications on sensor data changes, use the `unsetChangeListener()` method of the Sensor interface:
 
    ```
    lightSensor.unsetChangeListener();
    ```
 
-## Obtaining Sensor Hardware Information
+## Obtain sensor hardware information
 
 Learning how to retrieve information about the sensor hardware enables your application to know the sensor's technical limits:
 
-1. Define a success callback for handling a `SensorHardwareInfo` object (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#SensorHardwareInfo) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#SensorHardwareInfo) applications). You can also define an optional error callback.
+1. Define a success callback for handling a `SensorHardwareInfo` object (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#SensorHardwareInfo) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#SensorHardwareInfo) applications). You can also define an optional error callback:
 
    ```
    function onsuccessCB(hwInfo) {
@@ -170,7 +170,7 @@ Learning how to retrieve information about the sensor hardware enables your appl
    ```
 
 <a name="capability"></a>
-## Supported Sensors
+## Supported sensors
 
 The following table lists the sensor capabilities you can use to [determine whether a specific sensor is supported](#support) on a device.
 
@@ -195,7 +195,10 @@ The following table lists the sensor capabilities you can use to [determine whet
 | Proximity sensor                         | `http://tizen.org/feature/sensor.proximity` |
 | Ultraviolet sensor                       | `http://tizen.org/feature/sensor.ultraviolet` |
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/sensor.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/sensor.html)

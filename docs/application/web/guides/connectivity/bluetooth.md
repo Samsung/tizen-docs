@@ -109,7 +109,7 @@ To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/app
 With Bluetooth API, you can handle UUIDs and binary data.
 
 ### Handle UUIDs
-According to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/), UUIDs that are used to represent Bluetooth objects can take the following three forms:
+According to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/){:target="_blank"}, UUIDs that are used to represent Bluetooth objects can take the following three forms:
 
    - 128-bit representation: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", where each 'X' stands for a hexadecimal digit.
    For example: "198d3a9c-e21a-4f72-a48b-39a6bad7e583".
@@ -200,7 +200,7 @@ The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary
       ```
       `first`, `second`, and `third` variables are equal.
 
-## Manage the Local Bluetooth Adapter
+## Manage the local Bluetooth adapter
 
 You can enable or disable the local Bluetooth adapter, and set the device name using the system-provided service through the `ApplicationControl` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl), and [tv](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications).
 
@@ -293,7 +293,7 @@ The device discovery process can retrieve multiple types of Bluetooth devices, s
 
 You can also retrieve the known devices which were bonded or found in a prior discovery process.
 
-To search for remote devices and get the known devices:
+To search for remote devices and get the known devices, follow these steps:
 
 1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
 
@@ -336,7 +336,7 @@ To search for remote devices and get the known devices:
 
 ### Create a bond with a Bluetooth device
 
-To create a bond with a Bluetooth device:
+To create a bond with a Bluetooth device, follow these steps:
 
 1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
 
@@ -359,7 +359,7 @@ To create a bond with a Bluetooth device:
    ```
 
    > [!NOTE]
-   > The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAddress), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAddress), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods.
+   > The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAddress), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAddress), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods. Address of the bonding device should always be retrieved with one of the mentioned methods, as bonding to the address provided by-hand can lead to an unexpected result or failure.
 
 3. To end the bond with a remote device, use the `destroyBonding()` method:
 
@@ -373,7 +373,7 @@ When you attempt to open a connection to another device, a Service Discovery Pro
 
 The Radio Frequency Communication (RFCOMM) is a set of transport protocols which allows multiple simultaneous connections to a device. If a device allows other devices to use its functionalities through this kind of connection, it is said to provide a service and it is called a server device. The devices that request the service are called client devices.
 
-To connect to services provided by a server device to the client devices:
+To connect to services provided by a server device to the client devices, follow these steps:
 
 1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
 
@@ -427,7 +427,7 @@ To connect to services provided by a server device to the client devices:
 
 ### Discover Bluetooth Low Energy devices
 
-To search for remote Bluetooth devices:
+To search for remote Bluetooth devices, follow these steps:
 
 1. Define a scan event handler by implementing the `BluetoothLEScanCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEScanCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEScanCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEScanCallback) applications).
     The callback is invoked when a remote device has been detected:
@@ -461,7 +461,7 @@ To search for remote Bluetooth devices:
 
 ### Connect to a Bluetooth Low Energy device
 
-To connect to other Bluetooth Low Energy devices:
+To connect to other Bluetooth Low Energy devices, follow these steps:
 
 1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
@@ -515,7 +515,7 @@ To connect to other Bluetooth Low Energy devices:
 
 ### Receive notifications on connection state changes
 
-To receive notifications whenever the device connection is established or lost:
+To receive notifications whenever the device connection is established or lost, follow these steps:
 
 1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
@@ -572,7 +572,7 @@ To receive notifications whenever the device connection is established or lost:
 
 ### Retrieve Bluetooth GATT services
 
-To retrieve a list of GATT services (Generic Attribute) provided by a remote device:
+To retrieve a list of GATT services (Generic Attribute) provided by a remote device, follow these steps:
 
 1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 
@@ -621,7 +621,7 @@ To retrieve a list of GATT services (Generic Attribute) provided by a remote dev
 
 ### Access the Bluetooth GATT characteristic value
 
-To read and write a value of the Bluetooth characteristic:
+To read and write a value of the Bluetooth characteristic, follow these steps:
 
 1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 
@@ -685,7 +685,7 @@ To read and write a value of the Bluetooth characteristic:
 
 ### Receive notifications on characteristic value changes
 
-To monitor changes in a Bluetooth characteristic:
+To monitor changes in a Bluetooth characteristic, follow these steps:
 
 1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 
@@ -729,7 +729,7 @@ To monitor changes in a Bluetooth characteristic:
 
 ### Access the Bluetooth GATT descriptor value
 
-To read and write a value of the Bluetooth descriptor:
+To read and write a value of the Bluetooth descriptor, follow these steps:
 
 1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 
@@ -806,11 +806,11 @@ To get the ATT MTU value or request change of the ATT MTU value, follow these st
    device.requestAttMtuChange(newAttMtuValue);
    ```
    > [!NOTE]
-   > After calling `requestAttMtuChange()` ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
+   > After calling `requestAttMtuChange()` ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/){:target="_blank"}.
 
 ### Receive notifications on ATT MTU changes
 
-To receive notifications on ATT MTU value changes:
+To receive notifications on ATT MTU value changes, follow these steps:
 
 1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 2. If the `device` is connected, call `addAttMtuChangeListener()` providing as a parameter the callback to be called on each change of the ATT MTU value:
@@ -828,7 +828,7 @@ To receive notifications on ATT MTU value changes:
    ```
    The change of ATT MTU value will trigger the callback.
    > [!NOTE]
-   > After calling `requestAttMtuChange()` ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
+   > After calling `requestAttMtuChange()` ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/){:target="_blank"}.
 
 4. When a listener monitoring the ATT MTU value changes is no longer needed, you can remove it. To do this, call `removeAttMtuChangeListener()` providing the identifier of the listener you want to remove:
    ```
@@ -840,7 +840,7 @@ To receive notifications on ATT MTU value changes:
 
 The Bluetooth Low Energy technology allows a device to broadcast some information without a connection between devices. The Bluetooth Low Energy API provides methods to control this advertising (broadcasting).
 
-To control what information is advertised by the device:
+To control what information is advertised by the device, follow these steps:
 
 1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
@@ -877,7 +877,7 @@ To control what information is advertised by the device:
 
 ### Start the server
 
-To start the local GATT server:
+To start the local GATT server, follow these steps:
 
 1. Retrieve `BluetoothGATTServer` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) with `getGATTServer()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
@@ -901,7 +901,7 @@ To start the local GATT server:
 
 ### Stop the server
 
-To stop the local GATT server:
+To stop the local GATT server, follow these steps:
 
 1. Retrieve `BluetoothGATTServer` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) with `getGATTServer()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
@@ -925,7 +925,7 @@ To stop the local GATT server:
 
 ### Receive notifications on GATT connection state changes
 
-To receive notifications whenever a GATT connection with the device is established or lost:
+To receive notifications whenever a GATT connection with the device is established or lost, follow these steps:
 
 1. Define `BluetoothLEConnectChangeCallback`:
 
@@ -957,7 +957,7 @@ To receive notifications whenever a GATT connection with the device is establish
 
 ### Access connection's ATT MTU
 
-To get the value of connection's ATT MTU value:
+To get the value of connection's ATT MTU value, follow these steps:
 
 1. Define the `ConnectionMtuCallback` and (optionally) the error callback:
 
@@ -980,7 +980,7 @@ To get the value of connection's ATT MTU value:
    ```
 
 ### Register services
-To register a GATT service in the local server:
+To register a GATT service in the local server, follow these steps:
 
 1. Define the init data of the service and all of its components:
 
@@ -1033,7 +1033,7 @@ To register a GATT service in the local server:
 ### Unregister services
 GATT services can be unregistered either one at a time or all at once.
 
-To unregister a single service from the local GATT server:
+To unregister a single service from the local GATT server, follow these steps:
 
 1. Choose the service to be unregistered:
    ```
@@ -1084,7 +1084,7 @@ The server can send two types of such updates - `notifications` and `indications
 The difference in notifications and indications is that the clients receiving indications have to acknowledge them. This means that the clients must send a message back to the server, telling that they received the new value. Clients do not acknowledge notifications.
 
 Notifications and indications are not enabled in characteristics by default.
-To enable notifications or indications in a characteristic:
+To enable notifications or indications in a characteristic, follow these steps:
 
 1. Set its `isNotify` or `isIndication` property:
 
@@ -1096,7 +1096,7 @@ To enable notifications or indications in a characteristic:
    };
    ```
 2. The characteristic requires a special kind of descriptor, Client Characteristic Configuration Descriptor (CCCD).
-For more details about CCCD, see [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
+For more details about CCCD, see [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/){:target="_blank"}.
 To define a CCCD and add it to the characteristic:
 
    ```
@@ -1184,7 +1184,7 @@ The notification is sent and `notificationCallback`'s members will be called soo
 
 In order to react and respond to the read and write value requests from a client connected to the server running on the device, the callbacks need to be set on the characteristics or on the descriptors.
 
-To set a callback for read or write value request on a characteristic or a descriptor:
+To set a callback for read or write value request on a characteristic or a descriptor, follow these steps:
 
 1. Prepare a GATT service containing at least one characteristic or a characteristic with at least one descriptor, that can be read or written:
    ```
@@ -1319,3 +1319,7 @@ To set a callback for read or write value request on a characteristic or a descr
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
    - Tizen 6.0 and Higher for TV
+* API References
+  - [Mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html)
+  - [Wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html)
+  - [TV](../../api/latest/device_api/tv/tizen/bluetooth.html)

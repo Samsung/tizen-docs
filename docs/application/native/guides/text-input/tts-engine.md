@@ -29,7 +29,7 @@ The main features of the TTSE API include the following:
 
 To enable your application to use the TTSE functionality, follow these steps:
 
-1. To use the functions and data types of the TTSE API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTSE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTSE__MODULE.html) applications), include the `<ttse.h>` header file in your application:
+1. To use the functions and data types of the [TTSE API](../../api/common/latest/group__CAPI__UIX__TTSE__MODULE.html), include the `<ttse.h>` header file in your application:
 
     ```
     #include <ttse.h>
@@ -69,7 +69,7 @@ To register and define event callbacks for the TTSE service application, follow 
 
 1. The TTSE developer must register the `initialize()`, `deinitialize()`, `get_info()`, `foreach_voices()`, `is_valid_voice()`, `set_pitch()`, `load_voice()`, `unload_voice()`, `start_synth()`, `cancel_synth()`, `check_app_agreed()`, `need_app_credential()` callbacks:
 
-    - Add the callbacks to the ttse_request_callback_s structure (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTSE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTSE__MODULE.html)  applications), and pass the structure as a parameter to the ttse_main() function:
+    - Add the callbacks to the ttse_request_callback_s structure by referring to [TTSE API](../../api/common/latest/group__CAPI__UIX__TTSE__MODULE.html), and pass the structure as a parameter to the ttse_main() function:
 
         ```
         static int initialize(void);
@@ -214,12 +214,13 @@ To register and define event callbacks for the TTSE service application, follow 
 
 3. Implement the optional callbacks, as needed:
 
-    - You can register optional callbacks with the `ttse_set_private_data_set_cb()`, `ttse_set_private_data_requested_cb()`, `ttse_set_activated_mode_changed_cb()` functions:
+    - You can register optional callbacks with the `ttse_set_private_data_set_cb()`, `ttse_set_private_data_requested_cb()`, `ttse_set_activated_mode_changed_cb()`, `ttse_set_personal_tts_id_set_cb` functions:
 
         ```
         static int private_data_set_cb(const char* key, const char* data);
         static int private_data_requested_cb(const char* key, char** data);
         static void activated_mode_changed_cb(int activated_mode);
+        static int personal_tts_id_set_cb(const char* ptts_id, void* user_data);
 
         void
         int main(int argc, char* argv[])
@@ -233,6 +234,7 @@ To register and define event callbacks for the TTSE service application, follow 
             ttse_set_private_data_set_cb(private_data_set_cb);
             ttse_set_private_data_requested_cb(private_data_requested_cb);
             ttse_set_activated_mode_changed_cb(activated_mode_changed_cb);
+            ttse_set_personal_tts_id_set_cb(personal_tts_id_set_cb, NULL);
 
             ...
         }
@@ -258,6 +260,12 @@ To register and define event callbacks for the TTSE service application, follow 
     activated_mode_changed_cb(int activated_mode)
     {
         return ;	/* get activated modes changed succeed */
+    }
+
+    static int
+    personal_tts_id_set_cb(const char* ptts_id, void* user_data)
+    {
+
     }
     ```
 
@@ -362,8 +370,34 @@ You can send the following result information about the TTSE:
     }
     ```
 
+<a name="send_personal_voice"></a>
+## Send personal voice
+
+You can send the following personal voice information about the TTSE:
+
+- Send the personal voice's information (ex, language, unique id, display name, device name) to the engine service user using the `ttse_send_result()` function:
+
+    ```
+    void
+    send_personal_voice(void)
+    {
+        int ret = TTSE_ERROR_NONE;
+        char* language = "en_US";
+        char* unique_id = "12345678"
+        char* display_name = "my_voice";
+        char* device_name = "my_mobile";
+
+		...
+
+        ret = ttse_send_personal_voice(language, unique_id, display_name, device_name);
+
+        if(TTSE_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
 
 ## Related information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Since Tizen 3.0
+- API References
+  - [TTSE API](../../api/common/latest/group__CAPI__UIX__TTSE__MODULE.html)

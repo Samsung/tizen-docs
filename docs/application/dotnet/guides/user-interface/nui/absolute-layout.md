@@ -155,6 +155,9 @@ absoluteLayoutView.Add(magentaView);
 - Dependencies
   - Tizen 6.5 and Higher
 
+- API References
+  - [Absolute Layout API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.AbsoluteLayout.html)
+
 <script>
     function openTabSection(evt, profileName, sectionId) {
         var i, tabcontent, tablinks, section;

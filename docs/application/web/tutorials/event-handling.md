@@ -8,7 +8,7 @@ handle various events in your application.
 This feature is supported in wearable applications only.
 
 <a name="rotary"></a>
-## Rotary Events
+## Rotary events
 
 The Tizen platform supports rotary events for user interaction on a
 wearable rotary device or sensor. The rotary device can rotate clockwise
@@ -48,7 +48,7 @@ document.addEventListener('rotarydetent', function(ev) {
 ```
 
 <a name="ambient"></a>
-## Ambient Events
+## Ambient events
 
 On a low-powered wearable device, an ambient mode is available for watch
 applications. To reduce power consumption, a Tizen watch application
@@ -74,7 +74,7 @@ device supports the high color mode, use the following code:
 var isHighColorMode = tizen.systeminfo.getCapability('http://tizen.org/feature/screen.always_on.high_color');
 ```
 
-> **Note**  
+> [!NOTE]
 > To use the ambient mode, the user must enable it in the    device settings. In addition, on the Gear S2 device, the ambient mode activates only when you are wearing the watch on the wrist.
 
 The following table describes the ambient mode events.

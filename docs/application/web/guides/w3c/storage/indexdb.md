@@ -2,11 +2,11 @@
 
 In HTML5, an indexed database is a local storage used to store and manipulate key-value format data in a client. You can implement effective searches using an index, which is a specialized persistent key-value storage containing entries from the database based on specific property values.
 
-The main features of the Indexed Database API include:
+The main features of the Indexed Database API include the following:
 
 - Creating a database
 
-  Use the `IndexedDB.open()` method to [create a database](#creating-a-database). In a database (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#database-concept), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept) applications), at least 1 object store (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#object-store-concept), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#object-store-concept), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#object-store-concept) applications) must be present.
+  Use the `IndexedDB.open()` method to [create a database](#creating-a-database). In a database (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#database-operations){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept){:target="_blank"} applications), at least 1 object store (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#object-store-concept){:target="_blank"}, [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#object-store-concept){:target="_blank"}, and [TV](https://www.w3.org/TR/IndexedDB/#object-store-construct){:target="_blank"} applications) must be present.
 
 - Creating an object store
 
@@ -20,17 +20,16 @@ The main features of the Indexed Database API include:
 
   The stored data creates a key, assigned to a `keypath`, which in turn creates a value as a JSON object.
 
-  > **Note**
-  >
-  > Tizen supports the `READ_ONLY`, `READ_WRITE`, and `VERSION_CHANGE` transactions (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#transaction), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction) applications) with the `unsigned short` type.
+  > [!NOTE]
+  > Tizen supports the `READ_ONLY`, `READ_WRITE`, and `VERSION_CHANGE` transactions (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#transaction-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction){:target="_blank"} applications) with the `unsigned short` type.
 
 - Creating an index
 
-  In the object store, you can use the `createIndex()` method to [generate an index](#index). You can search for and retrieve records stored in the index (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#index-concept), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept) applications) using other properties than the key, as the key is not always unique. You can also retrieve records containing arrays as keys.
+  In the object store, you can use the `createIndex()` method to [generate an index](#index). You can search for and retrieve records stored in the index (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#index-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept){:target="_blank"} applications) using other properties than the key, as the key is not always unique. You can also retrieve records containing arrays as keys.
 
-## Creating a Database
+## Create a database
 
-Creating and deleting a database is a useful data management skill:
+Creating and deleting a database is a useful data management skill, follow these steps to create and delete a database:
 
 1. Use the `window.webkitIndexedDB.open()` method to generate a database named `TizenIndexedDB` in order to create an object store for storage:
 
@@ -50,8 +49,7 @@ Creating and deleting a database is a useful data management skill:
 
    Check whether an indexed database is supported in the `window` object. If the database is generated properly, the `onsuccess` event handler is called.
 
-   > **Note**
-   >
+   > [!NOTE]
    > The name of the database can be any string type, including an empty string. To change the version of the database, use the `VERSION_CHANGE` transaction.
 
 2. Delete the generated database using the `window.webkitIndexedDB.deleteDatabase()` method:
@@ -66,20 +64,20 @@ Creating and deleting a database is a useful data management skill:
 
 For the complete source code related to this use case, see the following file:
 
-- [indexedDB_opening_database.html](http://download.tizen.org/misc/examples/w3c_html5/storage/indexed_database_api)
+- [indexedDB_opening_database.html](http://download.tizen.org/misc/examples/w3c_html5/storage/indexed_database_api){:target="_blank"}
 
-## Creating an Object Store
+## Create an object store
 
 An object store can derive keys from the following sources:
 
-- Key generator (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#dfn-key-generator), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator) applications)
+- Key generator (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#key-generator-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator){:target="_blank"} applications)
 
     Generates an increasing number every time a key is needed.
-- Key path (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#key-path-construct), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct) applications)
+- Key path (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#key-path-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct){:target="_blank"} applications)
 
     Key is derived through a key path.
 
-- Value (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#value-construct), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct) applications)
+- Value (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#value-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct){:target="_blank"} applications)
 
     Key is specified when a value is stored in the object store.
 
@@ -110,15 +108,15 @@ Creating and deleting an object store is a useful data management skill:
    </script>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [indexedDB_creating_objectStore.html](http://download.tizen.org/misc/examples/w3c_html5/storage/indexed_database_api)
+- [indexedDB_creating_objectStore.html](http://download.tizen.org/misc/examples/w3c_html5/storage/indexed_database_api){:target="_blank"}
 
-## Managing Data
+## Manage data
 
-Saving, accessing, and deleting data in an object store is a useful data management skill:
+Saving, accessing, and deleting data in an object store is a useful data management skill, follow these steps to save, access, and delete a data:
 
 1. Access the object store using the `readwrite` transaction and save data using the `put()` method:
 
@@ -168,16 +166,16 @@ Saving, accessing, and deleting data in an object store is a useful data managem
    </script>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [indexedDB_saving_data.html](http://download.tizen.org/misc/examples/w3c_html5/storage/indexed_database_api)
+- [indexedDB_saving_data.html](http://download.tizen.org/misc/examples/w3c_html5/storage/indexed_database_api){:target="_blank"}
 
 <a name="index"> </a>
-## Creating an Index
+## Create an index
 
-Creating, accessing, and deleting an index is a useful data management skill:
+Creating, accessing, and deleting an index is a useful data management skill, follow these steps to create, access, and delete an index:
 
 1. Create an index named `tizen01` to search for stored data in records based on its property (`text`):
 
@@ -200,14 +198,16 @@ Creating, accessing, and deleting an index is a useful data management skill:
    </script>
    ```
 
-### Source Code
+### Source code
 
 For the complete source code related to this use case, see the following file:
 
-- [indexedDB_creating_index.html](http://download.tizen.org/misc/examples/w3c_html5/storage/indexed_database_api)
+- [indexedDB_creating_index.html](http://download.tizen.org/misc/examples/w3c_html5/storage/indexed_database_api){:target="_blank"}
 
-## Related Information
+## Related information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [W3C](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept){:target="_blank"}
