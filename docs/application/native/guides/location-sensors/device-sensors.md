@@ -18,6 +18,8 @@ The main features of the Sensor API include:
 
   When running an application on the emulator, you can use Emulator Control Panel to simulate sensor data for the application.
 
+  [A working example for sensor listeners](#sensorlistenerexample) is provided.
+
 - Sensor handle
 
   With the sensor handle, you can access the sensor hardware data:
@@ -277,6 +279,136 @@ You can query the recorded sensor data with several query parameters. The query 
         sensor_recorder_get_double(data, SENSOR_RECORDER_DATA_DISTANCE, &distance);
     }
     ```
+
+<a name="sensorlistenerexample"></a>
+## Working example for sensor listeners
+This example demonstrates how to create a sensor listener for the accelerometer and listen for sensor events.
+```cpp
+#include <stdio.h>
+#include <stdbool.h>
+#include <errno.h>
+
+#include <glib.h> /* use GMainLoop to run sensor listener */
+
+#include <sensor.h>
+
+/* Check if sensor exists and create sensor listener */
+static int create_sensor_listener(sensor_type_e sensor_type, sensor_listener_h *sensor_listener)
+{
+    int ret = 0;
+    bool supported = false;
+    sensor_h sensor = NULL;
+    sensor_listener_h listener = NULL;
+
+    if (!sensor_listener) {
+        printf("Invalid parameter: sensor_listener is NULL\n");
+        return -EINVAL;
+    }
+
+    ret = sensor_is_supported(sensor_type, &supported);
+    if (ret != SENSOR_ERROR_NONE) {
+        printf("Failed to call sensor_is_supported: ret(%d)\n", ret);
+        return ret;
+    }
+    if (!supported) {
+        printf("Accelerometer is not supported on the current device\n");
+        return -EINVAL;
+    }
+
+    ret = sensor_get_default_sensor(sensor_type, &sensor);
+    if (ret != SENSOR_ERROR_NONE) {
+        printf("Failed to call sensor_get_default_sensor: ret(%d)\n", ret);
+        return ret;
+    }
+    if (!sensor) {
+        printf("Failed to get sensor\n");
+        return -EINVAL;
+    }
+
+    ret = sensor_create_listener(sensor, &listener);
+    if (ret != SENSOR_ERROR_NONE) {
+        printf("Failed to call sensor_create_listener: ret(%d)\n", ret);
+        return ret;
+    }
+    if (!listener) {
+        printf("Failed to create listener\n");
+        return -EINVAL;
+    }
+
+    *sensor_listener = listener;
+    return 0;
+}
+
+/* An callback function when accelerometer event is occured */
+static void accelerometer_callback(sensor_h sensor, sensor_event_s events[], int events_count, void *user_data)
+{
+    int ret = 0;
+    sensor_type_e type;
+
+    ret = sensor_get_type(sensor, &type);
+    if (ret != SENSOR_ERROR_NONE) {
+        printf("Failed to get sensor type: ret(%d)\n", ret);
+        return;
+    }
+    if (type != SENSOR_ACCELEROMETER) {
+        printf("Invalid sensor type: expected accelerometer(%d) but %d was given\n",
+                SENSOR_ACCELEROMETER, type);
+        return;
+    }
+
+    for (int i = 0; i < events_count; ++i) {
+        printf("Accelerometer: [ ");
+        for (int j = 0; j < events[i].value_count; ++j)
+            printf("%f, ", events[i].values[j]);
+        printf("time: %llu(us) ]\n", events[i].timestamp);
+    }
+}
+
+int main(int argc, char **argv)
+{
+    int ret = 0;
+    sensor_listener_h listener = NULL;
+    GMainLoop *mainloop = NULL;
+
+    ret = create_sensor_listener(SENSOR_ACCELEROMETER, &listener);
+    if (ret != 0) {
+        printf("Failed to create sensor listener: ret(%d)\n", ret);
+        return EINVAL;
+    }
+
+    /* Set the sensor reading interval as 100ms */
+    ret = sensor_listener_set_interval(listener, 100);
+    if (ret != SENSOR_ERROR_NONE) {
+        printf("Failed to set interval: ret(%d)\n", ret);
+        sensor_destroy_listener(listener);
+        return EINVAL;
+    }
+
+    /* Set listener callback */
+    ret = sensor_listener_set_events_cb(listener, accelerometer_callback, NULL);
+    if (ret != SENSOR_ERROR_NONE) {
+        printf("Failed to set event callback: ret(%d)\n", ret);
+        sensor_destroy_listener(listener);
+        return EINVAL;
+    }
+
+    /* Start to listen the sensor */
+    ret = sensor_listener_start(listener);
+    if (ret != SENSOR_ERROR_NONE) {
+        printf("Failed to start sensor listener: ret(%d)\n", ret);
+        sensor_destroy_listener(listener);
+        return EINVAL;
+    }
+
+    mainloop = g_main_loop_new(NULL, FALSE);
+    g_main_loop_run(loop);
+
+    /* The listener should be destroied after use */
+    sensor_destroy_listener(listener);
+
+    return 0;
+}
+```
 
 <a name="accelerometer"></a>
 ## Accelerometer
