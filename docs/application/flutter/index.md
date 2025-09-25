@@ -24,18 +24,17 @@ The project is an official product by Samsung and maintained by engineers at [Sa
 - [macOS (x64)](./guides/flutter-tizen/doc/macos-install.md)
 
 #### Tizen basics
+
 - [Setting up Tizen SDK](./guides/flutter-tizen/doc/install-tizen-sdk.md)
 - [Configuring Tizen devices for development](./guides/flutter-tizen/doc/configure-device.md)
 
 #### App development
+
 - [Getting started](./guides/flutter-tizen/doc/get-started.md)
 - [Debugging apps](./guides/flutter-tizen/doc/debug-app.md)
 - [Developing plugins with C++](./guides/flutter-tizen/doc/develop-plugin.md)
 - [Developing plugins with C#](./guides/flutter-tizen/doc/develop-plugin-csharp.md)
 
 #### Additional Resources
+
 - For more information on app, plugin developments, engine builds, and contributing to flutter-tizen, please refer to the [Flutter-tizen Wiki](https://github.com/flutter-tizen/flutter-tizen/wiki) page.
-
-# Release plans
-
-The project's target framework version is synched up with the [latest stable release](https://docs.flutter.dev/development/tools/sdk/releases) of the Flutter framework. All other updates are offered on a best-efforts basis. Not all functions are fully tested, and there could be bugs or [missing features](https://github.com/flutter-tizen/flutter-tizen/wiki/Limitations) although we try to minimize them. Therefore, we recommend using the [most recently released version](https://github.com/flutter-tizen/flutter-tizen/releases) rather than the latest commit on the flutter-tizen master branch.
