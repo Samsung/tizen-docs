@@ -170,7 +170,7 @@ This section provides a step-by-step explanation of what is involved in adding a
 
 **Figure: Tizen Wi-FI architecture**
 
-![Tizen Wi-FI architecture](wlan.png)
+![Tizen Wi-FI architecture](media/wlan.png)
 
 Feature overview:
 
@@ -411,8 +411,6 @@ Enable the following configuration options in the kernel `.config` file:
 Using Pn544: CONFIG_PN544_NFC
 Using Pn65n: CONFIG_PN65N_NFC
 ```
-
-API references are available in the [Tizen 3.0 Porting Guide appendix](https://wiki.tizen.org/Tizen_3.0_Porting_Guide#Appendix_2).
 
 For more information, see [http://nfc-forum.org/](http://nfc-forum.org/).
 
