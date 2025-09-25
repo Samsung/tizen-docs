@@ -118,7 +118,7 @@ To monitor storage state changes, follow the steps below:
 <a name="space"></a>
 ## Retrieve storage space information
 
-To get the available and total size of the storage, use the `TotalSpace` and `AvailableSpace` properties in the [Tizen.System.Storage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Storage.html) class. For internal storage, they return the storage size, excluding the minimum memory size to launch the low memory pop-up in a low memory situation. Consequently, the available size must be less than the original available size, and you must use these properties to get the memory size.
+To get total and the available size of the storage, use the `TotalSpace` and `AvailableSpace` properties in the [Tizen.System.Storage](/application/dotnet/api/TizenFX/latest/api/Tizen.System.Storage.html) class. For internal storage, they return the storage size, excluding the minimum memory size to launch the low memory pop-up in a low memory situation. Consequently, the available size must be less than the original available size, and you must use these properties to get the memory size.
 
 To retrieve storage space information, follow the steps below:
 
