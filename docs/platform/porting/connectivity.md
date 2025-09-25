@@ -170,7 +170,7 @@ This section provides a step-by-step explanation of what is involved in adding a
 
 **Figure: Tizen Wi-FI architecture**
 
-![Tizen Wi-FI architecture](media/785px-wlan.png)
+![Tizen Wi-FI architecture](wlan.png)
 
 Feature overview:
 
@@ -190,22 +190,12 @@ The `wpa_supplicant` interface is a WPA Supplicant with support for WPA and WPA2
 
 The WLAN driver plugin is specific to a Wi-Fi chipset. This includes firmware and chipset-specific tools. Wi-Fi chipset firmware and tool files must be copied to the WLAN driver plugin directory, built, and installed before testing the Wi-Fi functionality. Because of Tizen platform requirements, the Wi-Fi driver must create the `/opt/etc/.mac.info` file, which has the device MAC address.
 
-The WLAN driver plugin contains the `wlan.sh` file (located in `/usr/bin/wlan.sh`), which is used to load or unload the Wi-Fi driver firmware.
-
-When the `wifi_activate()` function is called, the load driver request is sent to the NET-CONFIG daemon. The NET-CONFIG daemon loads the Wi-Fi driver using the `wlan.sh` script file. Similarly, the `wifi_deactivate()` function requests unloading of the Wi-Fi driver. In case of Wi-Fi Direct&reg;, the `wifi_direct_activate()` and `wifi_direct_deactivate()` functions make the Wi-Fi Direct manager load or unload the Wi-Fi driver using the `wlan.sh` script.
-
-Using the `/usr/bin/wlan.sh` script:
-
-- `wlan.sh start`: Power up the Wi-Fi driver in station mode by loading the driver and running the firmware file.
-- `wlan.sh p2p`: Power up the Wi-Fi driver in Wi-Fi Direct mode by loading the driver and running the firmware file.
-- `wlan.sh softap`: Power up the Wi-Fi driver in Soft AP mode by loading the driver and running the firmware file.
-- `wlan.sh stop`: Power down the Wi-Fi driver.
+When the `wifi_manager_activate()` function is called, the request is sent to the NET-CONFIG daemon to call `hal_wifi_sta_start()` in HAL_API Wi-Fi. Similarly, the `wifi_manager_deactivate()` function calls `hal_wifi_stop()` through NET_CONFIG daemon. In case of Wi-Fi Direct&reg;, the `wifi_direct_activate()` and `wifi_direct_deactivate()` functions make the Wi-Fi Direct manager load or unload the Wi-Fi driver using the `wpa_supplicant`.
 
 All other Wi-Fi related functionality is handled by the ConnMan daemon.
 
 ### References
 
-- Connection Manager (ConnMan) project website: [https://01.org/connman](https://01.org/connman)
 - Linux wireless (IEEE-802.11) subsystem: [https://wireless.wiki.kernel.org](https://wireless.wiki.kernel.org)
 - Information on Linux WPA/WPA2/IEEE 802.1X Supplicant: [http://hostap.epitest.fi/wpa_supplicant/](http://hostap.epitest.fi/wpa_supplicant/)
 - Latest ConnMan release: [http://git.kernel.org/?p=network/connman/connman.git;a=summary](http://git.kernel.org/?p=network/connman/connman.git;a=summary)
@@ -241,91 +231,102 @@ The NFC application enables the user to:
 
 The NFC implementation has the following main components:
 
-- **NFC client** acts as an interface between the NFC application and the NFC manager, while writing or editing tag information in any physical tag.
-- **NFC manager** is the main interface, which actually deals with NFC physical tags, creates a connection with tags, and detects it. It is a daemon process to control the NFC chipset (such as NXP pn544). It provides the read and write service and basic P2P communication service, as well as the basic API for the client application.
-- **NFC stack** contains the required plugin, based on the NFC chipset. Currently, the `nfc-plugin-nxp` is used for the NXP chipset. The NFC plugin acts as an interface between the NFC chipset with the NFC framework (`nfc-manager`). It must be implemented according to the interface provided by the `nfc-manager`.
+- **Tizen NFC Framework** contains the NFC manager API layer, the NFC common library and the NFC manager daemon. The `nfc-manager` is the main interface, which actually deals with NFC physical tags, creates a connection with tags, and detects it. It is a daemon process to control the NFC chipset (such as NXP pn544). It provides the read and write service and basic P2P communication service, as well as the basic API for the client application.
+- **NFC HAL** contains the NFC HAL API, and the OAL layer. The NFC HAL acts as an interface between the NFC chipset with the NFC framework (`nfc-manager`). It must be implemented according to the interface provided by the `nfc-manager`.
 
 ### Porting the OAL interface
 
-The NFC plugin is implemented as a shared library and it interfaces the Tizen `nfc-manager` and the vendor NFC chip. The NFC manager loads the `libnfc-plugin.so` library at runtime from the `/usr/lib/libnfc-plugin.so` directory. Any vendor-specific plugin is installed within the same path. The plugin must be written with predefined OAL API interfaces.
+The NFC HAL is implemented as a shared library and it interfaces the Tizen NFC Framework and the vendor NFC chip. The NFC manager loads the `libnfc-common.so` library at runtime. Any vendor-specific function is installed within the same path. The library must be written with predefined OAL API interfaces.
 
-During initialization, the `nfc-manager` loads the `nfc-plugin.so` library, searches for the `onload()` function, and calls the function with an interface structure instance as an argument for mapping all the OAL interfaces. These OAL/OEM interfaces are implemented according to the underlying NFC chipset. Once the mapping is done, the NFC manager interacts with `nfc-plugin`, which implements the vendor-specific OAL interfaces.
+During initialization, the `nfc-manager` loads the `/hal/api/nfc` library, searches for the `net_nfc_controller_onload()` function, and calls the `hal_nfc_get_backend()` function which creates an interface structure instance for mapping all the OAL interfaces. These OAL/OEM interfaces are implemented according to the underlying NFC chipset. Once the mapping is done, the NFC manager interacts with `/hal/api/nfc`, which implements the vendor-specific OAL interfaces.
 
-The following example shows the `onload()` function:
+The following example shows the `hal_nfc_get_backend()` function:
 
 ```cpp
-Bool
-onload(net_nfc_oem_interface_s *oem_interfaces) {
-    oem_interfaces->init = xxx;  /* xxx refers to plugin APIs */
-    oem_interfaces->deinit = xxx;
-    oem_interfaces->register_listener = xxx;
-    oem_interfaces->unregister_listener = xxx;
-    oem_interfaces->check_firmware_version = xxx;
-
-    return true;
+int hal_nfc_get_backend(void)
+{
+  g_nfc_funcs = calloc(1, sizeof(hal_backend_nfc_funcs));
 }
 ```
 
 The NFC OAL interfaces are defined in the following structure. Use the `net_nfc_oem_controller.h` header file:
 
 ```cpp
-typedef struct _net_nfc_oem_interface_s {
-    net_nfc_oem_controller_init init;
-    net_nfc_oem_controller_deinit deinit;
-    net_nfc_oem_controller_register_listener register_listener;
-    net_nfc_oem_controller_unregister_listener unregister_listener;
-    net_nfc_oem_controller_check_firmware_version check_firmware_version;
-    net_nfc_oem_controller_update_firmware update_firmware;
-    net_nfc_oem_controller_get_stack_information get_stack_information;
-    net_nfc_oem_controller_configure_discovery configure_discovery;
-    net_nfc_oem_controller_get_secure_element_list get_secure_element_list;
-    net_nfc_oem_controller_set_secure_element_mode set_secure_element_mode;
-    net_nfc_oem_controller_connect connect;
-    net_nfc_oem_controller_connect disconnect;
-    net_nfc_oem_controller_check_ndef check_ndef;
-    net_nfc_oem_controller_check_target_presence check_presence;
-    net_nfc_oem_controller_read_ndef read_ndef;
-    net_nfc_oem_controller_write_ndef write_ndef;
-    net_nfc_oem_controller_make_read_only_ndef make_read_only_ndef;
-    net_nfc_oem_controller_transceive transceive;
-    net_nfc_oem_controller_format_ndef format_ndef;
-    net_nfc_oem_controller_exception_handler exception_handler;
-    net_nfc_oem_controller_is_ready is_ready;
-    net_nfc_oem_controller_llcp_config config_llcp;
-    net_nfc_oem_controller_llcp_check_llcp check_llcp_status;
-    net_nfc_oem_controller_llcp_activate_llcp activate_llcp;
-    net_nfc_oem_controller_llcp_create_socket create_llcp_socket;
-    net_nfc_oem_controller_llcp_bind bind_llcp_socket;
-    net_nfc_oem_controller_llcp_listen listen_llcp_socket;
-    net_nfc_oem_controller_llcp_accept accept_llcp_socket;
-    net_nfc_oem_controller_llcp_connect_by_url connect_llcp_by_url;
-    net_nfc_oem_controller_llcp_connect connect_llcp;
-    net_nfc_oem_controller_llcp_disconnect disconnect_llcp;
-    net_nfc_oem_controller_llcp_socket_close close_llcp_socket;
-    net_nfc_oem_controller_llcp_recv recv_llcp;
-    net_nfc_oem_controller_llcp_send send_llcp;
-    net_nfc_oem_controller_llcp_recv_from recv_from_llcp;
-    net_nfc_oem_controller_llcp_send_to send_to_llcp;
-    net_nfc_oem_controller_llcp_reject reject_llcp;
-    net_nfc_oem_controller_llcp_get_remote_config get_remote_config;
-    net_nfc_oem_controller_llcp_get_remote_socket_info get_remote_socket_info;
-    net_nfc_oem_controller_sim_test sim_test;
-    net_nfc_oem_controller_test_mode_on test_mode_on;
-    net_nfc_oem_controller_test_mode_off test_mode_off;
-    net_nfc_oem_controller_support_nfc support_nfc;
-} net_nfc_oem_interface_s;
+typedef struct _hal_backend_nfc_funcs {
+	int (*start)(void);
+	int (*stop)(void);
+	int (*register_listener)(net_nfc_target_detection_listener_cb target_detection_listener,
+        net_nfc_se_transaction_listener_cb se_transaction_listener,
+        net_nfc_llcp_event_listener_cb llcp_event_listener,
+        net_nfc_hce_apdu_listener_cb hce_apdu_listener);
+	int (*unregister_listener)(void);
+	int (*get_firmware_version)(net_nfc_data_s ** data);
+	int (*support_nfc)(void);
+	int (*check_firmware_version)(void);
+	int (*update_firmware)(void);
+	int (*get_stack_information)(net_nfc_stack_information_s * stack_info);
+	int (*configure_discovery)(net_nfc_discovery_mode_e mode, net_nfc_event_filter_e config);
+	int (*check_target_presence)(net_nfc_target_handle_s * handle);
+	int (*connect)(net_nfc_target_handle_s * handle);
+	int (*disconnect)(net_nfc_target_handle_s * handle);
+	int (*check_ndef)(net_nfc_target_handle_s * handle, uint8_t * ndef_card_state, int *max_data_size, int *real_data_size);
+	int (*read_ndef)(net_nfc_target_handle_s * handle, net_nfc_data_s ** data);
+	int (*write_ndef)(net_nfc_target_handle_s * handle, net_nfc_data_s * data);
+	int (*make_read_only_ndef)(net_nfc_target_handle_s * handle);
+	int (*format_ndef)(net_nfc_target_handle_s * handle, net_nfc_data_s * secure_key);
+	int (*transceive)(net_nfc_target_handle_s * handle, net_nfc_transceive_info_s * info, net_nfc_data_s ** data);
+	int (*exception_handler)(void);
+	int (*is_ready)(void);
+	int (*llcp_config)(net_nfc_llcp_config_info_s * config);
+	int (*llcp_check_llcp)(net_nfc_target_handle_s * handle);
+	int (*llcp_activate_llcp)(net_nfc_target_handle_s * handle);
+	int (*llcp_create_socket)(net_nfc_llcp_socket_t * socket, net_nfc_socket_type_e type, uint16_t miu, uint8_t rw, void *user_param);
+	int (*llcp_bind)(net_nfc_llcp_socket_t socket, uint8_t service_access_point);
+	int (*llcp_listen)(net_nfc_target_handle_s * handle, uint8_t * service_access_name, net_nfc_llcp_socket_t socket, void *user_param);
+	int (*llcp_accept)(net_nfc_llcp_socket_t socket, void *user_param);
+	int (*llcp_connect_by_url)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, uint8_t * service_access_name, void *user_param);
+	int (*llcp_connect)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, uint8_t service_access_point, void *user_param);
+	int (*llcp_disconnect)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, void *user_param);
+	int (*llcp_socket_close)(net_nfc_llcp_socket_t socket);
+	int (*llcp_recv)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_data_s * data, void *user_param);
+	int (*llcp_send)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_data_s * data, void *user_param);
+	int (*llcp_recv_from)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_data_s * data, void *user_param);
+	int (*llcp_send_to)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_data_s * data, uint8_t service_access_point, void *user_param);
+	int (*llcp_reject)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket);
+	int (*llcp_get_remote_config)(net_nfc_target_handle_s * handle, net_nfc_llcp_config_info_s * config);
+	int (*llcp_get_remote_socket_info)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_llcp_socket_option_s * option);
+	int (*secure_element_open)(net_nfc_secure_element_type_e element_type, net_nfc_target_handle_s ** handle);
+	int (*secure_element_get_atr)(net_nfc_target_handle_s * handle, net_nfc_data_s ** atr);
+	int (*secure_element_send_apdu)(net_nfc_target_handle_s * handle, net_nfc_data_s * command, net_nfc_data_s ** response);
+	int (*secure_element_close)(net_nfc_target_handle_s * handle);
+	int (*get_secure_element_list)(net_nfc_secure_element_info_s * list, int *count);
+	int (*set_secure_element_mode)(net_nfc_secure_element_type_e element_type, net_nfc_secure_element_mode_e mode);
+	int (*test_mode_on)(void);
+	int (*test_mode_off)(void);
+	int (*hce_response_apdu)(net_nfc_target_handle_s * handle, net_nfc_data_s * response);
+	int (*secure_element_route_aid)(net_nfc_data_s * aid, net_nfc_se_type_e se_type, int power);
+	int (*secure_element_unroute_aid)(net_nfc_data_s * aid);
+	int (*secure_element_commit_routing)(void);
+	int (*secure_element_set_default_route)(net_nfc_se_type_e switch_on, net_nfc_se_type_e switch_off, net_nfc_se_type_e battery_off);
+	int (*secure_element_clear_aid_table)(void);
+	int (*secure_element_get_aid_table_size)(int *table_size);
+	int (*secure_element_set_route_entry)(net_nfc_se_entry_type_e type, net_nfc_se_tech_protocol_type_e value, net_nfc_se_type_e route, int power);
+	int (*secure_element_clear_routing_entry)(net_nfc_se_entry_type_e type);
+	int (*secure_element_set_listen_tech_mask)(net_nfc_se_tech_protocol_type_e screen_state);
+	int (*set_screen_state)(net_nfc_screen_state_type_e screen_state);
+} hal_backend_nfc_funcs;
 ```
 
-The `nfc_oem_interface_s` struct is exported in the `nfc-plugin`. Using this interface structure, the `nfc-manager` communicates with the OAL interfaces at runtime. The NFC plugin loads when the `nfc-manager` is started and the plugin `init()` function is called to initialize the NFC chip:
+The `_hal_backend_nfc_funcs` struct is exported in the `/hal/api/nfc`. Using this interface structure, the `nfc-manager` communicates with the OAL interfaces at runtime. The NFC HAL loads when the `nfc-manager` is started and the `hal_nfc_start()` function is called to initialize the NFC module:
 
 ```cpp
-int (*init) (net_nfc_oem_controller_init*);
+int hal_nfc_start(void) (start());
 ```
 
-The `nfc-manager` issues the `deinit()` function to deinitialize the NFC chip:
+The `nfc-manager` issues the `hal_nfc_stop` function to deinitialize the NFC chip:
 
 ```cpp
-int (*deinit) (net_nfc_oem_controller_deinit *);
+int hal_nfc_start(void) (stop());
 ```
 
 Pay attention to the following:
@@ -333,63 +334,74 @@ Pay attention to the following:
 - Sending the notification to the upper layer (NFC service)  
 See the `phdal4nfc_message_glib.c` file. The `g_idle_add_full` is used for handling the message in the NFC service. You can use the callback client asynchronously in the client context. Post a message in queue, and the message is processed by a client thread.
 - Reference implementation of the NFC plugin  
-Sample code snippets cannot be reproduced. Code is proprietary. For reference, see the `nfc-plugin-emul` and `nfc-plugin-nxp` files.
+Sample code snippets cannot be reproduced. Code is proprietary. For reference, see the `nfc-plugin-emul` files.
 
-#### NFC OAL API
+#### NFC HAL API
 
-The following table lists all the NFC OAL API functions.
+The following table lists all the NFC HAL API functions.
 
-**Table: NFC OAL API functions**
+**Table: NFC HAL API functions**
 
-| Function                                 | Description                              | Parameter                                |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `net_nfc_oem_controller_init init;`      | Initializes the NFC chip.                | `net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_deinit deinit;`  | Deinitializes the NFC chip.              | -                                     |
-| `net_nfc_oem_controller_register_listener register_listener;` | Registers a callback function for a tag event, SE event, and llcp event. | `target_detection_listener_cb target_detection_listener`: Tag event callback function<br>`se_transaction_listener_cb se_transaction_listener`: SE event callback function<br>`llcp_event_listener_cb llcp_event_listener`: llcp event callback function<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_unregister_listener unregister_listener;` | Releases a callback function for a tag event, SE event, and llcp event. | -                                     |
-| `net_nfc_oem_controller_check_firmware_version check_firmware_version;` | Checks the firmware version of the NFC chip. | `net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_update_firmware update_firmware;` | Updates the NFC chip firmware.           | `net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_get_stack_information get_stack_information;` | Gets the list of supported tags and the current firmware version. | `net_nfc_stack_information_s`: Pointer value to get the information of support tags and the current firmware version<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_configure_discovery configure_discovery;` | Delivers the config information on discovery. | `net_nfc_discovery_mode_e`: Start/stop mode<br>`net_nfc_event_filter_e config`: Information for tag filtering<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_get_secure_element_list get_secure_element_list;` | Gets the information of the current secure element. | `net_nfc_secure_element_info_s`: Pointer value to get secure element information<br>`int`: Pointer value to get the count of the secure element<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_set_secure_element_mode set_secure_element_mode;` | Sets the secure element to use.          | `net_nfc_secure_element_type_e`: Secure element information<br>`net_nfc_secure_element_mode_e`: Mode information to set<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_connect connect;` | Connects to the detected tag/target.     | `net_nfc_target_handle_s`: Tag/target handle for connecting<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_connect disconnect;` | Disconnects the connected tag/target.    | `net_nfc_target_handle_s`: Tag/target handle for disconnecting<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_check_ndef check_ndef;` | Checks the tag for ndef support.      | `net_nfc_target_handle_s`: Tag handle to check ndef<br>`int`: Max size supported in the tag<br>`int`: Real data size saved in the tag<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_check_target_presence check_presence;` | Checks whether a tag exists in the RF range.   | `net_nfc_target_handle_s`: Tag handle to check presence<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_read_ndef read_ndef;` | Reads ndef data in a tag.                | `net_nfc_target_handle_s`: Tag handle to read<br>`data_s`: Pointer value to save the ndef data<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_write_ndef write_ndef;` | Writes the data to the tag.              | `net_nfc_target_handle_s`: Handle to write<br>`data_s`: Data to write<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_make_read_only_ndef make_read_only_ndef;` | Makes the tag to a read-only tag.        | `net_nfc_target_handle_s`: Target tag handle<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_transceive transceive;` | Sends and receives the low command to the tag or target. | `net_nfc_target_handle_s`: Tag or target handle to transceive<br>`net_nfc_transceive_info_s`: Pointer value including command or data to send and data to receive<br>`data_s`: Pointer value to send the information of context<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_format_ndef format_ndef;` | Formats the tag.                         | `net_nfc_target_handle_s`: Tag handle to format<br>`data_s`: Key value to send the tag for formatting<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_exception_handler exception_handler;` | When the `nfc-manager` faces an unwanted exception, it tries to deinitialize and initialize the stack before unregistering and registering the callback function. | -                                     |
-| `net_nfc_oem_controller_is_ready is_ready;` | Checks the status of the NFC stack.      | `net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_config config_llcp;` | Sets the llcp configuration (miu, lto, wks, option). | `net_nfc_target_handle_s`: Target handle to set llcp<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_check_llcp check_llcp_status;` | Checks the llcp configuration (miu, lto, wks, option). | `net_nfc_target_handle_s`: Target handle to check llcp<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_activate_llcp activate_llcp;` | Activates the llcp functionality.        | `net_nfc_target_handle_s`: Target handle to activate<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_create_socket create_llcp_socket;` | Creates the llcp socket.                  | `net_nfc_llcp_socket_t`: Pointer value to receive the socket information<br>`net_nfc_socket_type_e socketType`: Type of socket to create<br>`uint16_t miu`: miu value<br>`uint8_t rw`: rw value<br>`net_nfc_error_e`: Returns an error code on failure<br>`void`: value to control the context (can be set to `NULL`) |
-| `net_nfc_oem_controller_llcp_bind bind_llcp_socket;` | Binds the socket.                        | `net_nfc_llcp_socket_t socket`: Information about the socket to bind<br>`uint8_t service_access_point`: Information of access point to bind<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_listen listen_llcp_socket;` | Sets the socket to listen.               | `net_nfc_target_handle_s`: Target handle<br>`uint8_t`: Service name to listen<br>`net_nfc_llcp_socket_t socket`: Socket information<br>`net_nfc_error_e`: Returns an error code on failure<br>`void`: Value to control the context (can be set to `NULL`) |
-| `net_nfc_oem_controller_llcp_accept accept_llcp_socket;` | Accepts the connect request in listening status. | `net_nfc_llcp_socket_t socket`: Socket information to accept<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_connect_by_url connect_llcp_by_url;` | Connects the server with the service name. | `net_nfc_target_handle_s`: Handle of the target to connect<br>`net_nfc_llcp_socket_t socket`: Socket information<br>`uint8_t`: Service name to connect<br>`net_nfc_error_e`: Returns an error code on failure<br>`void`: Value to control the context (can be set to `NULL`) |
-| `net_nfc_oem_controller_llcp_connect connect_llcp;` | Connects to the server with access point (port number). | `net_nfc_target_handle_s`: Target handle<br>`net_nfc_llcp_socket_t socket`: Socket information<br>`uint8_t service_access_point`: Access point number<br>`net_nfc_error_e`: Returns an error code on failure<br>`void`: Value to control the context (can be set to `NULL`) |
-| `net_nfc_oem_controller_llcp_disconnect disconnect_llcp;` | Disconnects the llcp link.               | `net_nfc_target_handle_s`: Socket information to disconnect<br>`net_nfc_llcp_socket_t socket`: Information of the socket to disconnect<br>`net_nfc_error_e`: Returns an error code on failure<br>`void`: Value to control the context (can be set to `NULL`) |
-| `net_nfc_oem_controller_llcp_socket_close close_llcp_socket;` | Closes the llcp socket.                  | `net_nfc_llcp_socket_t socket`: Socket information to close<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_recv recv_llcp;` | Receives the data using the llcp link.   | `net_nfc_target_handle_s`: Target handle to receive<br>`net_nfc_llcp_socket_t socket`: Socket information to receive<br>`data_s`: Pointer value to receive the data<br>`net_nfc_error_e`: Returns an error code on failure<br>`void`: Value to control the context (can be set to `NULL`) |
-| `net_nfc_oem_controller_llcp_send send_llcp;` | Sends the data using llcp link.          | `net_nfc_target_handle_s`: Target handle to send<br>`net_nfc_llcp_socket_t socket`: Socket information to send<br>`data_s`: Data to send<br>`net_nfc_error_e`: Returns an error code on failure<br>`void`: Value to control the context (can be set to `NULL`) |
-| `net_nfc_oem_controller_llcp_recv_from recv_from_llcp;` | Rejects the connect request from the client socket. | `net_nfc_target_handle_s`: Target handle to reject<br>`net_nfc_llcp_socket_t socket`: Socket information to reject<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_send_to send_to_llcp;` | Sends the data using the service access point. | `net_nfc_target_handle_s`: Peer target handle<br>`net_nfc_llcp_socket_t socket`: Socket information<br>`data_s`: Data to send<br>`uint8_t service_access_point`: Service access point to send<br>`net_nfc_error_e`: Returns an error code on failure<br>`void`: Value to control the context (can be set to `NULL`) |
-| `net_nfc_oem_controller_llcp_reject reject_llcp;` | Rejects the connect request from the client socket. | `net_nfc_target_handle_s`: Target handle to reject<br>`net_nfc_llcp_socket_t socket`: Socket information to reject<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_get_remote_config get_remote_config;` | Gets the llcp socket config information of the peer device. | `net_nfc_target_handle_s`: Peer target handle<br>`net_nfc_llcp_config_info_s`: Pointer value to get config information of peer device's llcp socket<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_llcp_get_remote_socket_info get_remote_socket_info;` | Gets the llcp socket information of the peer device. | `net_nfc_target_handle_s`: Peer target handle<br>`net_nfc_llcp_socket_t socket`: llcp socket information<br>`net_nfc_llcp_socket_option_s`: Pointer value to save the information of remote socket<br>`net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_sim_test sim_test;` | Tests the SWP link with SIM and NFC chipset. | `net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_test_mode_on test_mode_on;` | Changes the NFC chip to test mode. (Test mode exists only in the NXP case. If there are none, it does not need to implemented.) | `net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_test_mode_off test_mode_off;` | Changes the status of the NFC chip from test mode to normal mode. (Test mode exists only in the NXP case. If there are none, it does not need to implemented.) | `net_nfc_error_e`: Returns an error code on failure |
-| `net_nfc_oem_controller_support_nfc support_nfc` | Checks each device file of each chip. |  -                                        |
-
-### Configuration
-
-The `nfc-plugin` package must be saved to the `/usr/lib/libnfc-plugin.so` directory when installed. When the `nfc-manager` starts, it looks for the plugin library and loads it dynamically from this path.
+| Function | Description | Parameter |
+| --- | --- | --- |
+| `int (*start)(void);` | Starts the NFC module. | - |
+| `int (*stop)(void);` | Stops the NFC module. | - |
+| `int (*register_listener)(net_nfc_target_detection_listener_cb target_detection_listener, net_nfc_se_transaction_listener_cb se_transaction_listener, net_nfc_llcp_event_listener_cb llcp_event_listener, net_nfc_hce_apdu_listener_cb hce_apdu_listener);` | Registers listeners for specific events. | `net_nfc_target_detection_listener_cb target_detection_listener`: Callback for target detection events<br>`net_nfc_se_transaction_listener_cb se_transaction_listener`: Callback for SE transaction events<br>`net_nfc_llcp_event_listener_cb llcp_event_listener`: Callback for LLCP events<br>`net_nfc_hce_apdu_listener_cb hce_apdu_listener`: Callback for HCE APDU events |
+| `int (*unregister_listener)(void);` | Unregisters the registered listener. | - |
+| `int (*get_firmware_version)(net_nfc_data_s ** data);` | Gets the firmware version of the NFC module. | `net_nfc_data_s ** data`: Pointer to store the firmware version data |
+| `int (*support_nfc)(void);` | Checks whether the NFC module is supported. | - |
+| `int (*check_firmware_version)(void);` | Checks the firmware version of the NFC module. | - |
+| `int (*update_firmware)(void);` | Updates the firmware of the NFC module. | - |
+| `int (*get_stack_information)(net_nfc_stack_information_s * stack_info);` | Gets the stack information of the NFC module. | `net_nfc_stack_information_s * stack_info`: Pointer to store the stack information |
+| `int (*configure_discovery)(net_nfc_discovery_mode_e mode, net_nfc_event_filter_e config);` | Configures the discovery mode and settings. | `net_nfc_discovery_mode_e mode`: Discovery mode (start/stop)<br>`net_nfc_event_filter_e config`: Information for tag filtering |
+| `int (*check_target_presence)(net_nfc_target_handle_s * handle);` | Checks whether a target is present. | `net_nfc_target_handle_s * handle`: Target handle to check presence |
+| `int (*connect)(net_nfc_target_handle_s * handle);` | Connects to a target. | `net_nfc_target_handle_s * handle`: Target handle for connecting |
+| `int (*disconnect)(net_nfc_target_handle_s * handle);` | Disconnects from a target. | `net_nfc_target_handle_s * handle`: Target handle for disconnecting |
+| `int (*check_ndef)(net_nfc_target_handle_s * handle, uint8_t * ndef_card_state, int *max_data_size, int *real_data_size);` | Checks whether an NDEF message is supported. | `net_nfc_target_handle_s * handle`: Tag handle to check NDEF<br>`uint8_t * ndef_card_state`: Pointer to store NDEF card state<br>`int *max_data_size`: Pointer to store max NDEF size<br>`int *real_data_size`: Pointer to store current NDEF data size |
+| `int (*read_ndef)(net_nfc_target_handle_s * handle, net_nfc_data_s ** data);` | Reads an NDEF message. | `net_nfc_target_handle_s * handle`: Tag handle to read<br>`net_nfc_data_s ** data`: Pointer to store the NDEF data |
+| `int (*write_ndef)(net_nfc_target_handle_s * handle, net_nfc_data_s * data);` | Writes an NDEF message. | `net_nfc_target_handle_s * handle`: Handle to write<br>`net_nfc_data_s * data`: Data to write |
+| `int (*make_read_only_ndef)(net_nfc_target_handle_s * handle);` | Makes an NDEF message read-only. | `net_nfc_target_handle_s * handle`: Target tag handle |
+| `int (*format_ndef)(net_nfc_target_handle_s * handle, net_nfc_data_s * secure_key);` | Formats an NDEF message. | `net_nfc_target_handle_s * handle`: Tag handle to format<br>`net_nfc_data_s * secure_key`: Key value to send the tag for formatting |
+| `int (*transceive)(net_nfc_target_handle_s * handle, net_nfc_transceive_info_s * info, net_nfc_data_s ** data);` | Transceives data with a target. | `net_nfc_target_handle_s * handle`: Tag or target handle to transceive<br>`net_nfc_transceive_info_s * info`: Pointer including command or data to send and data to receive<br>`net_nfc_data_s ** data`: Pointer to store the received data |
+| `int (*exception_handler)(void);` | Handles exceptions. | - |
+| `int (*is_ready)(void);` | Checks whether the NFC module is ready. | - |
+| `int (*llcp_config)(net_nfc_llcp_config_info_s * config);` | Configures LLCP settings. | `net_nfc_llcp_config_info_s * config`: LLCP configuration (miu, lto, wks, option) |
+| `int (*llcp_check_llcp)(net_nfc_target_handle_s * handle);` | Checks whether LLCP is supported. | `net_nfc_target_handle_s * handle`: Target handle to check LLCP |
+| `int (*llcp_activate_llcp)(net_nfc_target_handle_s * handle);` | Activates LLCP. | `net_nfc_target_handle_s * handle`: Target handle to activate |
+| `int (*llcp_create_socket)(net_nfc_llcp_socket_t * socket, net_nfc_socket_type_e type, uint16_t miu, uint8_t rw, void *user_param);` | Creates a socket. | `net_nfc_llcp_socket_t * socket`: Pointer to receive the socket information<br>`net_nfc_socket_type_e type`: Type of socket to create<br>`uint16_t miu`: MIU value<br>`uint8_t rw`: RW value<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_bind)(net_nfc_llcp_socket_t socket, uint8_t service_access_point);` | Binds a socket. | `net_nfc_llcp_socket_t socket`: Information about the socket to bind<br>`uint8_t service_access_point`: Information of access point to bind |
+| `int (*llcp_listen)(net_nfc_target_handle_s * handle, uint8_t * service_access_name, net_nfc_llcp_socket_t socket, void *user_param);` | Listens on a socket. | `net_nfc_target_handle_s * handle`: Target handle<br>`uint8_t * service_access_name`: Service name to listen<br>`net_nfc_llcp_socket_t socket`: Socket information<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_accept)(net_nfc_llcp_socket_t socket, void *user_param);` | Accepts a connection request. | `net_nfc_llcp_socket_t socket`: Socket information to accept<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_connect_by_url)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, uint8_t * service_access_name, void *user_param);` | Connects using a URL. | `net_nfc_target_handle_s * handle`: Handle of the target to connect<br>`net_nfc_llcp_socket_t socket`: Socket information<br>`uint8_t * service_access_name`: Service name to connect<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_connect)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, uint8_t service_access_point, void *user_param);` | Connects using a service access point. | `net_nfc_target_handle_s * handle`: Target handle<br>`net_nfc_llcp_socket_t socket`: Socket information<br>`uint8_t service_access_point`: Access point number<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_disconnect)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, void *user_param);` | Disconnects from a socket. | `net_nfc_target_handle_s * handle`: Socket information to disconnect<br>`net_nfc_llcp_socket_t socket`: Information of the socket to disconnect<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_socket_close)(net_nfc_llcp_socket_t socket);` | Closes a socket. | `net_nfc_llcp_socket_t socket`: Socket information to close |
+| `int (*llcp_recv)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_data_s * data, void *user_param);` | Receives data on a socket. | `net_nfc_target_handle_s * handle`: Target handle to receive<br>`net_nfc_llcp_socket_t socket`: Socket information to receive<br>`net_nfc_data_s * data`: Pointer to receive the data<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_send)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_data_s * data, void *user_param);` | Sends data on a socket. | `net_nfc_target_handle_s * handle`: Target handle to send<br>`net_nfc_llcp_socket_t socket`: Socket information to send<br>`net_nfc_data_s * data`: Data to send<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_recv_from)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_data_s * data, void *user_param);` | Receives data from a specific service access point. | `net_nfc_target_handle_s * handle`: Target handle to receive<br>`net_nfc_llcp_socket_t socket`: Socket information to receive<br>`net_nfc_data_s * data`: Pointer to receive the data<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_send_to)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_data_s * data, uint8_t service_access_point, void *user_param);` | Sends data to a specific service access point. | `net_nfc_target_handle_s * handle`: Peer target handle<br>`net_nfc_llcp_socket_t socket`: Socket information<br>`net_nfc_data_s * data`: Data to send<br>`uint8_t service_access_point`: Service access point to send<br>`void *user_param`: User parameter (can be `NULL`) |
+| `int (*llcp_reject)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket);` | Rejects a connection request. | `net_nfc_target_handle_s * handle`: Target handle to reject<br>`net_nfc_llcp_socket_t socket`: Socket information to reject |
+| `int (*llcp_get_remote_config)(net_nfc_target_handle_s * handle, net_nfc_llcp_config_info_s * config);` | Gets the remote LLCP configuration. | `net_nfc_target_handle_s * handle`: Peer target handle<br>`net_nfc_llcp_config_info_s * config`: Pointer to get config information of peer device's LLCP socket |
+| `int (*llcp_get_remote_socket_info)(net_nfc_target_handle_s * handle, net_nfc_llcp_socket_t socket, net_nfc_llcp_socket_option_s * option);` | Gets the remote socket information. | `net_nfc_target_handle_s * handle`: Peer target handle<br>`net_nfc_llcp_socket_t socket`: LLCP socket information<br>`net_nfc_llcp_socket_option_s * option`: Pointer to save the information of remote socket |
+| `int (*secure_element_open)(net_nfc_secure_element_type_e element_type, net_nfc_target_handle_s ** handle);` | Opens a secure element. | `net_nfc_secure_element_type_e element_type`: Type of secure element to open<br>`net_nfc_target_handle_s ** handle`: Pointer to store the handle of the opened SE |
+| `int (*secure_element_get_atr)(net_nfc_target_handle_s * handle, net_nfc_data_s ** atr);` | Gets the ATR information of a secure element. | `net_nfc_target_handle_s * handle`: Handle of the SE<br>`net_nfc_data_s ** atr`: Pointer to store the ATR data |
+| `int (*secure_element_send_apdu)(net_nfc_target_handle_s * handle, net_nfc_data_s * command, net_nfc_data_s ** response);` | Sends an APDU command to a secure element. | `net_nfc_target_handle_s * handle`: Handle of the SE<br>`net_nfc_data_s * command`: APDU command to send<br>`net_nfc_data_s ** response`: Pointer to store the APDU response |
+| `int (*secure_element_close)(net_nfc_target_handle_s * handle);` | Closes a secure element. | `net_nfc_target_handle_s * handle`: Handle of the SE to close |
+| `int (*get_secure_element_list)(net_nfc_secure_element_info_s * list, int *count);` | Gets the list of secure elements. | `net_nfc_secure_element_info_s * list`: Pointer to store secure element information<br>`int * count`: Pointer to store the count of secure elements |
+| `int (*set_secure_element_mode)(net_nfc_secure_element_type_e element_type, net_nfc_secure_element_mode_e mode);` | Sets the mode of a secure element. | `net_nfc_secure_element_type_e element_type`: Secure element type<br>`net_nfc_secure_element_mode_e mode`: Mode information to set |
+| `int (*test_mode_on)(void);` | Enables test mode. | - |
+| `int (*test_mode_off)(void);` | Disables test mode. | - |
+| `int (*hce_response_apdu)(net_nfc_target_handle_s * handle, net_nfc_data_s * response);` | Sends a response APDU in HCE mode. | `net_nfc_target_handle_s * handle`: Target handle<br>`net_nfc_data_s * response`: APDU response to send |
+| `int (*secure_element_route_aid)(net_nfc_data_s * aid, net_nfc_se_type_e se_type, int power);` | Routes an AID to a secure element. | `net_nfc_data_s * aid`: AID to route<br>`net_nfc_se_type_e se_type`: Destination SE type<br>`int power`: Power state for the route |
+| `int (*secure_element_unroute_aid)(net_nfc_data_s * aid);` | Unroutes an AID from a secure element. | `net_nfc_data_s * aid`: AID to unroute |
+| `int (*secure_element_commit_routing)(void);` | Commits the routing table. | - |
+| `int (*secure_element_set_default_route)(net_nfc_se_type_e switch_on, net_nfc_se_type_e switch_off, net_nfc_se_type_e battery_off);` | Sets the default route for different states. | `net_nfc_se_type_e switch_on`: Default SE when screen on<br>`net_nfc_se_type_e switch_off`: Default SE when screen off<br>`net_nfc_se_type_e battery_off`: Default SE when battery off |
+| `int (*secure_element_clear_aid_table)(void);` | Clears the AID table. | - |
+| `int (*secure_element_get_aid_table_size)(int *table_size);` | Gets the size of the AID table. | `int *table_size`: Pointer to store the AID table size |
+| `int (*secure_element_set_route_entry)(net_nfc_se_entry_type_e type, net_nfc_se_tech_protocol_type_e value, net_nfc_se_type_e route, int power);` | Sets a routing entry. | `net_nfc_se_entry_type_e type`: Entry type (tech, protocol, AID)<br>`net_nfc_se_tech_protocol_type_e value`: Technology/Protocol value<br>`net_nfc_se_type_e route`: Destination SE for the route<br>`int power`: Power state for the route |
+| `int (*secure_element_clear_routing_entry)(net_nfc_se_entry_type_e type);` | Clears a routing entry. | `net_nfc_se_entry_type_e type`: Entry type to clear |
+| `int (*secure_element_set_listen_tech_mask)(net_nfc_se_tech_protocol_type_e screen_state);` | Sets the technology mask for listening. | `net_nfc_se_tech_protocol_type_e screen_state`: Screen state to configure tech mask for |
+| `int (*set_screen_state)(net_nfc_screen_state_type_e screen_state);` | Sets the screen state. | `net_nfc_screen_state_type_e screen_state`: Screen state to set |
 
 ### References
 
