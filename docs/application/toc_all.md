@@ -190,6 +190,7 @@
 ### System
 #### [Overview](/application/dotnet/guides/system/overview.md)
 #### [Attached Devices](/application/dotnet/guides/system/attached-devices.md)
+#### [USB Devices](/application/dotnet/guides/system/usb-host.md)
 #### [System Information](/application/dotnet/guides/system/system.md)
 #### [System Settings](/application/dotnet/guides/system/settings.md)
 #### [Sound and Vibration Feedback](/application/dotnet/guides/system/feedback.md)
