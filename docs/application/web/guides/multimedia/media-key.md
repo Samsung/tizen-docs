@@ -2,7 +2,7 @@
 
 You can manage media key events in your application. The media keys are used to [control multimedia playback](#managing-media-key-state-changes). The user can click keys, such as **PLAY** and **FAST FORWARD**, and you can detect the key clicks in your application and change the playback accordingly.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 The main features of the Media Key API include the following:
 
@@ -48,10 +48,6 @@ Learning how to register key event listener is a basic media key management skil
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/mediakey.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/mediakey.html)
   - [TV](../../api/latest/device_api/tv/tizen/mediakey.html)

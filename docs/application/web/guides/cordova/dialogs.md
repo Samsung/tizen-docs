@@ -2,7 +2,7 @@
 
 You can make different types of notifications to the user, so that each time a notification dialog box is closed, the result is provided in a callback function. The `navigator.notification` object allows access to the Dialogs API.
 
-The Dialogs API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Dialogs API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Dialogs API include the following:
 
@@ -92,7 +92,7 @@ To show a prompt dialog box where the user can put some text, with a set of butt
 
 1. Define a callback method to be invoked when the user clicks a button.
 
-   The callback has 1 parameter: the `PromptData` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/dialogs.html#PromptData), [wearable](../../api/latest/device_api/wearable/tizen/cordova/dialogs.html#PromptData), and [TV](../../api/latest/device_api/tv/tizen/cordova/dialogs.html#PromptData) applications) containing the user input and pressed button index:
+   The callback has 1 parameter: the `PromptData` object (in [TV](../../api/latest/device_api/tv/tizen/cordova/dialogs.html#PromptData) applications) containing the user input and pressed button index:
 
    ```
    var promptCallback = function(results) {
@@ -134,10 +134,6 @@ To make a beep sound once or more, follow these steps:
 
 ## Related information
 * Dependencies  
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/dialogs.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/dialogs.html)
   - [TV](../../api/latest/device_api/tv/tizen/cordova/dialogs.html)

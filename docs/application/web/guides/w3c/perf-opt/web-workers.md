@@ -10,7 +10,7 @@ The main features of the Web Workers API include  the following:
 
 - [Messaging between workers](#sending-messages-between-web-workers)
 
-  A subworker can communicate with the host worker using the `postMessage()` method of the HTML5 Web Messaging API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#messaging), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#messaging), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#messaging) applications). This process is normally used to give work orders to workers or subworkers, or deliver an operation result.
+  A subworker can communicate with the host worker using the `postMessage()` method of the HTML5 Web Messaging API (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#messaging) applications). This process is normally used to give work orders to workers or subworkers, or deliver an operation result.
   
   If a worker triggers a message event, the `onmessage()` event handler can be used to check the sent message.
 
@@ -173,7 +173,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Multi-threading
 
-Generally, Web applications are built and run using a single UI thread. Since only 1 task can be handled at a time, the Web application may not respond due to the execution time of a script block, resulting in lower application performance. To solve these performance-related issues, multi-thread Web workers (in [mobile](https://html.spec.whatwg.org/multipage/workers.html#workers){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/workers.html#workers){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/workers.html#workers){:target="_blank"} applications) can be used to provide distributed processing in applications. Use Web workers in applications that require complex calculations or parallel processing for better application performance.
+Generally, Web applications are built and run using a single UI thread. Since only 1 task can be handled at a time, the Web application may not respond due to the execution time of a script block, resulting in lower application performance. To solve these performance-related issues, multi-thread Web workers (in [TV](https://html.spec.whatwg.org/multipage/workers.html#workers){:target="_blank"} applications) can be used to provide distributed processing in applications. Use Web workers in applications that require complex calculations or parallel processing for better application performance.
 
 Since the task of changing the image color using a canvas involves allocating a color value for each pixel of the image displayed on the screen, the program requires a complicated calculation to execute loops by the number of the pixels. The following examples of applying a color filter effects to an image to change the color show:
 
@@ -184,9 +184,9 @@ Since the task of changing the image color using a canvas involves allocating a 
 
 The following example uses a UI thread to apply a color filter effect on an image and to display the time taken to apply the filter. Since all the calculations are performed in a single UI thread using the `colorFilter()` method, the execution time is high (16218 milliseconds).
 
-**Figure: Color filter application using UI thread (in mobile applications only)**
+**Figure: Color filter application using UI thread (Optional feature)**
 
-![Color filter application using UI thread (in mobile applications only)](./media/color_filter_app_ui_thread.png)
+![Color filter application using UI thread](./media/color_filter_app_ui_thread.png)
 
 ```
 function colorFilterStart() {
@@ -248,9 +248,9 @@ You can test the application performance using the [Web Inspector](../../../../t
 
 The following example uses 4 Web workers to apply a color filter effect on an image by dividing the image into 4 horizontal areas and working on each area simultaneously. The time taken by the application to apply the filter is also displayed on the screen. Since all the calculations are performed by 4 Web workers simultaneously, the execution time is significantly lower (2254 milliseconds).
 
-**Figure: Color filter application using multi-thread Web workers (in mobile applications only)**
+**Figure: Color filter application using multi-thread Web workers (Optional feature)**
 
-![Color filter application using multi-thread Web workers (in mobile applications only)](./media/color_filter_app_multi_thread.png)
+![Color filter application using multi-thread Web workers](./media/color_filter_app_multi_thread.png)
 
 ```
 function colorFilterStart() {
@@ -373,6 +373,4 @@ Improving performance through effective JavaScript code consists of the followin
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

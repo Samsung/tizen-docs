@@ -195,7 +195,7 @@ You can use media queries to determine the styles to be used in a Web document. 
    </div>
    ```
 
-2. Define basic styles for the page, using a flexible box (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#flexi), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#flexi), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#flexi) applications) and multi-column (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#multicolumn) and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#multicolumn) applications only) layout with 2 columns. (The following figure applies to mobile applications only.)
+2. Define basic styles for the page, using a flexible box (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#flexi) applications) and multi-column (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#multicolumn) applications only) layout with 2 columns. (The following figure applies to specific applications only.)
 
    ```
    .container {
@@ -215,7 +215,7 @@ You can use media queries to determine the styles to be used in a Web document. 
    }
    ```
 
-   ![Fixed layout example (in mobile applications only)](./media/media_queries1.png)
+   ![Fixed layout example](./media/media_queries1.png)
 
    The page is easy to view as long as the screen width is about 600 px; however, in a smaller screen below 400 px, the legibility rapidly decreases. You can edit the layout by reducing the number of columns to 1 and moving the **Aside** area at the bottom of the screen, but those changes then decrease legibility on a wider screen.
 
@@ -231,9 +231,9 @@ You can use media queries to determine the styles to be used in a Web document. 
    }
    ```
 
-   With the above media query, the normal resolution has 2 columns (shown on the right in the figure), while in a smaller resolution in a portrait mode only 1 column is used (shown on the left). (The following figure applies to mobile applications only.)
+   With the above media query, the normal resolution has 2 columns (shown on the right in the figure), while in a smaller resolution in a portrait mode only 1 column is used (shown on the left). (The following figure applies to specific applications only.)
 
-   ![Liquid layout example (in mobile applications only)](./media/media_queries3.png)
+   ![Liquid layout example](./media/media_queries3.png)
 
 4. If you need to define specific styles for a certain resolution range, simply add more media queries. However, too many conditions make the maintenance harder, so carefully consider what kind of resolution ranges you need.
 
@@ -263,8 +263,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://www.w3.org/TR/mediaqueries-3/){:target="_blank"}

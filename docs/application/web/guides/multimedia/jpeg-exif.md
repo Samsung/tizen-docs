@@ -2,7 +2,7 @@
 
 You can access and modify EXIF information in a JPEG file (with the common `.jpg` extension).
 
-The Exif API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Exif API is mandatory for Tizen TV and IoT, other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Exif API include the following:
 
@@ -42,7 +42,7 @@ Learning how to retrieve EXIF data from JPEG files is a useful content managemen
    tizen.filesystem.resolve('images/tizen.jpg', resolveSuccess, resolveFail);
    ```
 
-2. With a valid `File` object, use the `getExifInfo()` method of the `ExifManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/exif.html#ExifManager), [wearable](../../api/latest/device_api/wearable/tizen/exif.html#ExifManager), and [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifManager) applications) and pass the URI to the method:
+2. With a valid `File` object, use the `getExifInfo()` method of the `ExifManager` interface (in [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifManager) applications) and pass the URI to the method:
 
    ```
    function onSuccess(exifInfo) {
@@ -56,7 +56,7 @@ Learning how to retrieve EXIF data from JPEG files is a useful content managemen
    tizen.exif.getExifInfo(fileURI, onSuccess, onError);
    ```
 
-   With a valid `exifInfo` object, you can access various `ExifInformation` attributes (in [mobile](../../api/latest/device_api/mobile/tizen/exif.html#ExifInformation), [wearable](../../api/latest/device_api/wearable/tizen/exif.html#ExifInformation), and [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifInformation) applications), such as width, height, orientation, and flash.
+   With a valid `exifInfo` object, you can access various `ExifInformation` attributes (in [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifInformation) applications), such as width, height, orientation, and flash.
 
 3. To retrieve the EXIF thumbnail from the image, follow these steps:
 
@@ -95,7 +95,7 @@ Learning how to retrieve EXIF data from JPEG files is a useful content managemen
 
 Learning how to add EXIF data to JPEG files is a useful content management skill:
 
-1. Create a new `ExifInformation` object (in [mobile](../../api/latest/device_api/mobile/tizen/exif.html#ExifInformation), [wearable](../../api/latest/device_api/wearable/tizen/exif.html#ExifInformation), and [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifInformation) applications):
+1. Create a new `ExifInformation` object (in [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifInformation) applications):
 
    ```
    var myNewExif = new tizen.ExifInformation();
@@ -119,7 +119,7 @@ Learning how to add EXIF data to JPEG files is a useful content management skill
    tizen.filesystem.resolve('images/image_without_exif.jpg', resolveSuccess, resolveFail);
    ```
 
-3. When you have a valid URI to the file, set it in the `myNewExif` object and call the `saveExifInfo()` method of the  `ExifManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/exif.html#ExifManager), [wearable](../../api/latest/device_api/wearable/tizen/exif.html#ExifManager), and [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifManager) applications):
+3. When you have a valid URI to the file, set it in the `myNewExif` object and call the `saveExifInfo()` method of the  `ExifManager` interface (in [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifManager) applications):
 
    ```
    function onSaveSuccess() {
@@ -138,7 +138,7 @@ Learning how to add EXIF data to JPEG files is a useful content management skill
 
 Learning how to update EXIF data in JPEG files is a useful content management skill:
 
-1. To update the EXIF data, load the `ExifInformation` object (in [mobile](../../api/latest/device_api/mobile/tizen/exif.html#ExifInformation), [wearable](../../api/latest/device_api/wearable/tizen/exif.html#ExifInformation), and [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifInformation) applications) from the file and change the values of the object properties.
+1. To update the EXIF data, load the `ExifInformation` object (in [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifInformation) applications) from the file and change the values of the object properties.
 
    You can remove information from the file by setting the property to `null`:
 
@@ -157,7 +157,7 @@ Learning how to update EXIF data in JPEG files is a useful content management sk
    });
    ```
 
-2. After updating the property values, use the `saveExifInfo()` method of the `ExifManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/exif.html#ExifManager), [wearable](../../api/latest/device_api/wearable/tizen/exif.html#ExifManager), and [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifManager) applications) to save the changes to the file:
+2. After updating the property values, use the `saveExifInfo()` method of the `ExifManager` interface (in [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifManager) applications) to save the changes to the file:
 
    ```
    function saveSuccess(exifInfo) {
@@ -171,7 +171,7 @@ Learning how to update EXIF data in JPEG files is a useful content management sk
 
 Learning how to copy EXIF data between JPEG files is a useful content management skill:
 
-1. Get the `ExifInformation` object (in [mobile](../../api/latest/device_api/mobile/tizen/exif.html#ExifInformation), [wearable](../../api/latest/device_api/wearable/tizen/exif.html#ExifInformation), and [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifInformation) applications) and resolve the output file, and then change the `sourceExifInfo.uri` attribute to point to the output JPEG file:
+1. Get the `ExifInformation` object (in [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifInformation) applications) and resolve the output file, and then change the `sourceExifInfo.uri` attribute to point to the output JPEG file:
 
    ```
    var sourceExifInfo = null;
@@ -194,7 +194,7 @@ Learning how to copy EXIF data between JPEG files is a useful content management
    tizen.exif.getExifInfo(fileURI, onSuccess);
    ```
 
-2. Use the `saveExifInfo()` method of the `ExifManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/exif.html#ExifManager), [wearable](../../api/latest/device_api/wearable/tizen/exif.html#ExifManager), and [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifManager) applications) to save the changes in the output JPEG file:
+2. Use the `saveExifInfo()` method of the `ExifManager` interface (in [TV](../../api/latest/device_api/tv/tizen/exif.html#ExifManager) applications) to save the changes in the output JPEG file:
 
    ```
    function onSaveSuccess() {
@@ -214,10 +214,6 @@ Learning how to copy EXIF data between JPEG files is a useful content management
 
 ## Related information
 * Dependencies   
-   - Tizen 2.4 and Higher for Mobile
-   - Tizen 2.3.1 and Higher for Wearable
-   - Tizen 3.0 and Higher for TV
+  - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/exif.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/exif.html)
   - [TV](../../api/latest/device_api/tv/tizen/exif.html)

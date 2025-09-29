@@ -16,16 +16,15 @@ The main storage features are:
 
   Enables you to use session storage and local storage.
 
-- [HTML5 Application caches](./appcache.md) **in mobile and TV applications only**
+- [HTML5 Application caches](./appcache.md) **(Optional feature)**
 
   Enables you to activate project resource caching, and manage the cached resources.
 
-- [Web SQL Database](./websql.md) **in mobile applications only**
+- [Web SQL Database](./websql.md) **(Optional feature)**
 
   Enables you to create databases and access them using SQL statements.
 
 ## Related information
 * Dependencies  
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV

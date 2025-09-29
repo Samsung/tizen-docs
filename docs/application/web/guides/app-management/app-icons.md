@@ -2,7 +2,7 @@
 
 When an application has new information requiring user attention, such as missed calls or new messages, it has a number in the upper-right corner of the application icon. This number is called a badge. For example, when a new message is received, the badge appears on the application icon. The badge remains until the user reads the message.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 **Figure: Badge**
 
@@ -12,15 +12,15 @@ The main features of the Badge API include:
 
 - Managing badges  
 
-  You can [set and get the badge number](#managing-badges).
+  You can [set and get the badge number](#manage-badges).
 
 - Listening for badge changes  
 
-  You can [receive notifications on badge changes](#receiving-notifications-on-badge-changes) to display and react to badges.
+  You can [receive notifications on badge changes](#receive-notifications-on-badge-changes) to display and react to badges.
 
 ## Prerequisites
 
-To use the Badge API (in [mobile](../../api/latest/device_api/mobile/tizen/badge.html) and [wearable](../../api/latest/device_api/wearable/tizen/badge.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the Badge API, the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/notification"/>
@@ -36,7 +36,7 @@ Getting and setting the badge number is a useful UI management skill, follow the
    var appId = tizen.application.getCurrentApplication().appInfo.id;
    ```
 
-2. To check the badge number of the current application, use the `getBadgeCount()` method of the `BadgeManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/badge.html#BadgeManager) and [wearable](../../api/latest/device_api/wearable/tizen/badge.html#BadgeManager) applications):
+2. To check the badge number of the current application, use the `getBadgeCount()` method of the `BadgeManager` interface:
 
    ```
    var count = tizen.badge.getBadgeCount(appId);
@@ -60,7 +60,7 @@ Getting and setting the badge number is a useful UI management skill, follow the
 
 Registering a listener for badge count changes to react to new badges and display your badges is a useful UI management skill:
 
-1. To register an event handler for receiving a notification about badge changes, use the `addChangeListener()` method of the `BadgeManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/badge.html#BadgeManager) and [wearable](../../api/latest/device_api/wearable/tizen/badge.html#BadgeManager) applications), specifying a list of application IDs:
+1. To register an event handler for receiving a notification about badge changes, use the `addChangeListener()` method of the `BadgeManager` interface, specifying a list of application IDs:
 
    ```
    function watcher(appId, count) {
@@ -80,9 +80,6 @@ Registering a listener for badge count changes to react to new badges and displa
 
 ## Related information
 * Dependencies
-   - Tizen 2.4 and Higher for Mobile
-   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 2.4 and Higher
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/application.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/application.html)
   - [TV](../../api/latest/device_api/tv/tizen/application.html)

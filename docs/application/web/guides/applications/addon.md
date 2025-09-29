@@ -2,6 +2,8 @@
 
 Web Application addons are software programs that run on the Web applications. They work as part of each Web application. You can use addons to add or customize the Web application behavior according to your needs or preferences in all commonly installed Web applications. Web technologies such as HTML, JavaScript, and CSS are used to build them.
 
+This feature is optional.
+
 **Figure: Addon Concept**
 
 ![Addon concept](./media/addon_concept.png)
@@ -198,5 +200,4 @@ Web App Addon Setting is pre-installed in the Tizen platform binary. It provides
 
 ## Related information
 * Dependencies
-   - Tizen 5.5 and Higher for Mobile
-   - Tizen 5.5 and Higher for Wearable
+   - Tizen 5.5 and Higher

@@ -2,7 +2,7 @@
 
 You can play and record audio files using various functionalities, such as play, stop, pause, volume change, and seek to position.
 
-The Media API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Media API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Media API include the following:
 
@@ -44,7 +44,7 @@ To enable your application to use the media functionality, follow these steps:
    }
    ```
 
-2. To use the Media API (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html), [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html), and [TV](../../api/latest/device_api/tv/tizen/cordova/media.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+2. To use the Media API (in [TV](../../api/latest/device_api/tv/tizen/cordova/media.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
    ```
    <!--To record audio-->
@@ -142,7 +142,7 @@ To change the volume during playback, follow these steps:
 
 ## Use playback callbacks
 
-You can monitor the playback status changes by defining a status callback for the `Media` constructor (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html#Media), [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html#Media), and [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#Media) applications). Each time the status changes, the defined callback is called with a status constant as a parameter. The following table lists the available status constants.
+You can monitor the playback status changes by defining a status callback for the `Media` constructor (in [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#Media) applications). Each time the status changes, the defined callback is called with a status constant as a parameter. The following table lists the available status constants.
 
 **Table: Playback status changes**
 
@@ -164,7 +164,7 @@ To handle playback callbacks, use the following steps:
    };
    ```
 
-2. Define an error callback, which is called when an error occurs. The only parameter contains the error code (for a list of error codes, see the `MediaError` API Reference in [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html#MediaError), [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html#MediaError), and [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#MediaError) applications):
+2. Define an error callback, which is called when an error occurs. The only parameter contains the error code (for a list of error codes, see the `MediaError` API Reference in [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#MediaError) applications):
 
    ```
    var errorCallback = function(err) {
@@ -250,7 +250,7 @@ To get the duration of the audio file, and retrieve the current position, follow
    };
    ```
 
-5. Define the optional callback for errors in retrieving the position. For the specific error codes, see the `MediaError` API Reference (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html#MediaError), [wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html#MediaError), and [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#MediaError) applications):
+5. Define the optional callback for errors in retrieving the position. For the specific error codes, see the `MediaError` API Reference (in [TV](../../api/latest/device_api/tv/tizen/cordova/media.html#MediaError) applications):
 
    ```
    var errorCallback = function(err) {
@@ -322,10 +322,6 @@ To start and stop recording, follow these steps:
 
 ## Related information
 * Dependencies   
-   - Tizen 3.0 and Higher for Mobile
-   - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/media.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/media.html)
   - [TV](../../api/latest/device_api/tv/tizen/cordova/media.html)

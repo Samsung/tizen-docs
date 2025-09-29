@@ -2,7 +2,7 @@
 
 You can arrange the screen content into columns. Using the CSS `column-` properties, the content elements can flow between columns when the column height or number changes. You can use the properties alone to [create a basic layout](#creating-a-basic-layout), or add JavaScript code to [make the layout dynamic](#creating-a-layout-with-dynamic-content).
 
-This feature is supported in mobile and TV applications only.
+This feature is optional.
 
 You can manage the following column-related features:
 
@@ -526,7 +526,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://www.w3.org/TR/css-multicol-1/){:target="_blank"}

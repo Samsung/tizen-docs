@@ -12,17 +12,16 @@ The main supplementary features are:
 
   Enables you to use the WebGL&trade; graphics library to create 3D visual elements.
 
-- [FullScreen API - Mozilla](./fullscreen.md) **in mobile and TV applications only**
+- [FullScreen API - Mozilla](./fullscreen.md) **(Optional feature)**
 
   Enables you to display an element on fullscreen.
 
-- [Camera API (Tizen Extension)](./camera.md) **in wearable applications only**
+- [Camera API (Tizen Extension)](./camera.md) **(Optional feature)**
 
   Enables you to control the camera options, capture images, and record video.
 
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV

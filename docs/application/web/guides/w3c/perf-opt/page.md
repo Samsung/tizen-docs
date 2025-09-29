@@ -58,9 +58,9 @@ To optimize the performance of your application, you must learn to retrieve the 
 > [!NOTE]
 > Since Tizen supports the WebKit-based page visibility, you must include the webkit prefix in the attributes.
 
-**Figure: Page visibility (in mobile applications only)**
+**Figure: Page visibility (Optional feature)**
 
-![Page visibility (in mobile applications only)](./media/page_visibility_get.png)
+![Page visibility](./media/page_visibility_get.png)
 
 ### Source code
 
@@ -136,9 +136,9 @@ To optimize the performance of your application, you must learn to track changes
 
 If the video page becomes hidden with a tab screen transition, the playback is paused. When the video page is visible again, the playback resumes.
 
-**Figure: Video player (in mobile applications only)**
+**Figure: Video player (Optional feature)**
 
-![Video player (in mobile applications only)](./media/page_visibility_change.png)
+![Video player](./media/page_visibility_change.png)
 
 ### Source code
 
@@ -149,6 +149,4 @@ For the complete source code related to this use case, see the following files:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

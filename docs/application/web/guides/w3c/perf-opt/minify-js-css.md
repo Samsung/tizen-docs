@@ -256,5 +256,4 @@ After running the Grunt plug-in, the following comparison result is shown throug
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher

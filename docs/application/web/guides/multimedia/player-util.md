@@ -2,7 +2,7 @@
 
 You can control the audio latency mode of the W3C player.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optionals.
 
 The main features of the Player Util API include the following:
 
@@ -29,7 +29,7 @@ try {
 
 ## Set the latency mode
 
-To set a new latency mode, use one of the available modes defined in the `LatencyMode` enumerator (in [mobile](../../api/latest/device_api/mobile/tizen/playerutil.html#LatencyMode) and [wearable](../../api/latest/device_api/wearable/tizen/playerutil.html#LatencyMode) applications):
+To set a new latency mode, use one of the available modes defined in the `LatencyMode` enumerator:
 
 ```
 try {
@@ -41,8 +41,4 @@ try {
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/playerutil.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/playerutil.html)
+  - Tizen 2.4 and Higher

@@ -4,11 +4,11 @@ A Web storage stores data in key-value format. The process is similar to existin
 
 The Web Storage API provides the following 2 storage types:
 
--   Local storage (in [mobile](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute){:target="_blank"} applications)
+-   Local storage (in [TV](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute){:target="_blank"} applications)
 
     Stores data to be used in multiple windows, beyond the current session, with no expiration date. The stored data is not deleted when the browser window is closed, and can be shared between browser windows.
 
--   Session storage (in [mobile](https://html.spec.whatwg.org/multipage/webstorage.html#the-sessionstorage-attribute){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/webstorage.html#the-sessionstorage-attribute){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/webstorage.html#the-sessionstorage-attribute){:target="_blank"} applications)
+-   Session storage (in [TV](https://html.spec.whatwg.org/multipage/webstorage.html#the-sessionstorage-attribute){:target="_blank"} applications)
 
     Valid for only a single session.
 
@@ -138,15 +138,15 @@ Knowing how the same data is saved in local storage and session storage, and che
    </script>
    ```
 
-   **Figure: Displaying local and session storage data (in mobile applications only)**
+   **Figure: Displaying local and session storage data (Optional feature)**
 
-   ![Displaying local and session storage data (in mobile applications only)](./media/web_storage1.png)
+   ![Displaying local and session storage data](./media/web_storage1.png)
 
    If the browser is closed and reopened, only the local storage data can be displayed, as illustrated in the following figure.
 
-   **Figure: Displaying data after reopening the browser (in mobile applications only)**
+   **Figure: Displaying data after reopening the browser (Optional feature)**
 
-   ![Displaying data after reopening the browser (in mobile applications only)](./media/web_storage2.png)
+   ![Displaying data after reopening the browser](./media/web_storage2.png)
 
 ### Source code
 
@@ -156,8 +156,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute){:target="_blank"}

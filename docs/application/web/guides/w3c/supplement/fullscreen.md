@@ -2,7 +2,7 @@
 
 You can [display an element in the fullscreen mode](#using-the-fullscreen-mode). If the element uses the  [:full-screen](https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI#full-screen_pseudo-class){:target="_blank"} CSS pseudo-class to switch to the fullscreen mode, a style can be assigned for the fullscreen mode.
 
-This feature is supported in mobile and TV applications only.
+This feature is optional.
 
 To switch to the fullscreen and back:
 
@@ -95,7 +95,6 @@ For the complete source code related to this use case, see the following files:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://fullscreen.spec.whatwg.org/){:target="_blank"}

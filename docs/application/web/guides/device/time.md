@@ -2,7 +2,7 @@
 
 You can use locale-specific calendar features by retrieving date and time information. You can also change the date, time, and time zone, and make some date- and time-related calculations. The Time API overcomes several limitations of the JavaScript `Date` object.
 
-The Time API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Time API is mandatory for Tizen TV and IoT profiles, which means that it is supported on all TV and IoT devices. All mandatory APIs are supported on the Tizen emulators.
 
 Locale refers to the set of information that is specific to a language and a country. It affects the numeric formats (decimal and list separators), date formats, and the character sorting order. It determines how a locale-specific functionality behaves; for example, how numbers are displayed or strings converted to dates.
 
@@ -26,7 +26,7 @@ The main features of the Time API include the following:
 
 ## Retrieve date and time
 
-With the `TimeUtil` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeUtil) applications), you can retrieve the current date, time, and time zone, and the number of available time zones, and determine whether a year is a leap year.
+With the `TimeUtil` interface (in [TV](../../api/latest/device_api/tv/tizen/time.html#TimeUtil) applications), you can retrieve the current date, time, and time zone, and the number of available time zones, and determine whether a year is a leap year.
 
 You can also perform other date-and time-related tasks, such as getting the date of the next and previous daylight saving time transition, converting current time to UTC standard time, and getting the time zone abbreviation.
 
@@ -96,7 +96,7 @@ To handle date and time formats in your application, follow these steps:
 
 ## Calculate date and time information
 
-Calculate and compare time and date information using the applicable methods of the `TimeDuration` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeDuration), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeDuration), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeDuration) applications):
+Calculate and compare time and date information using the applicable methods of the `TimeDuration` interface (in [TV](../../api/latest/device_api/tv/tizen/time.html#TimeDuration) applications):
 
 1. To calculate the duration difference between 2 date or time events, use the `difference()` method of the `TimeDuration` object:
 
@@ -185,7 +185,7 @@ Getting notifications when the user changes the time or time zone allows you to 
 
 2. When the event handlers are defined, register them as listeners:
 
-   - Register the time change listener using the `setDateTimeChangeListener()` method of the `TimeUtil` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeUtil) applications):
+   - Register the time change listener using the `setDateTimeChangeListener()` method of the `TimeUtil` interface (in [TV](../../api/latest/device_api/tv/tizen/time.html#TimeUtil) applications):
 
      ```
      tizen.time.setDateTimeChangeListener(timeChangedCallback);
@@ -213,10 +213,6 @@ Getting notifications when the user changes the time or time zone allows you to 
 
 ## Related information
 * Dependencies     
-     - Tizen 2.4 and Higher for Mobile
-     - Tizen 2.3.1 and Higher for Wearable
-     - Tizen 3.0 and Higher for TV
+  - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/time.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/time.html)
   - [TV](../../api/latest/device_api/tv/tizen/time.html)

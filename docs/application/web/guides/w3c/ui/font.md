@@ -131,16 +131,15 @@ If the assigned font is not installed on the target, a different font is obtaine
 
 The following figure shows examples of manipulating the text font properties.
 
-**Figure: Font properties (in mobile applications only)**
+**Figure: Font properties (Optional feature)**
 
-![Font properties (in mobile applications only)](./media/font_properties.png)
+![Font properties](./media/font_properties.png)
 
 > **Note**  
-> For a complete list of CSS Fonts Module Level 3 font properties (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#font), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#font), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#font) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/#property-index).
+> For a complete list of CSS Fonts Module Level 3 font properties (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#font) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/#property-index).
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
 * API References
   - [W3C](http://www.w3.org/TR/2013/CR-css-fonts-3-20131003){:target="_blank"}

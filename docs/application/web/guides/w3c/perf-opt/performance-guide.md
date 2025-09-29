@@ -12,7 +12,7 @@ The main performance and optimization features are:
 
   Enables you to control animation speed by scheduling frame update requests.
 
-- [Performance Improvement](./performance-improvement.md) **in wearable applications only**
+- [Performance Improvement](./performance-improvement.md) **(Optional feature)**
 
   Allows you to improve the performance of Tizen Web applications.
 
@@ -35,6 +35,4 @@ The main performance and optimization features are:
 
 ## Related information
 * Dependencies  
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
