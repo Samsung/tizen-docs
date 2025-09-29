@@ -28,23 +28,23 @@ The main HTML and CSS features are:
 
     Enables you to manage the browsing history of a device.
 
-  - [Multiple Screen Support](./multiple-screens.md) **in mobile applications only**
+  - [Multiple Screen Support](./multiple-screens.md) **(Optional feature)**
 
     Allows you to create an application that is both scalable and adaptive to multiple screen resolutions.
 
-  - [Multiple UI Layouts](./ui-layout.md) **in wearable applications only**
+  - [Multiple UI Layouts](./ui-layout.md) **(Optional feature)**
 
   - Allows you to design your application layout so that your application can run on multiple Tizen devices.
 
-  - [Frame Flattening](./frame-flattening.md) **in mobile applications only**
+  - [Frame Flattening](./frame-flattening.md) **(Optional feature)**
 
     Allows you to improve the scrollability of small screens.
 
-  - [Clipboard API and events](./clipboard.md) **in mobile applications only**
+  - [Clipboard API and events](./clipboard.md) **(Optional feature)**
 
     Enables you to copy content and paste it in an editable area.
 
-  - [HTML5 Drag and Drop](./drag-drop.md) **in mobile applications only**
+  - [HTML5 Drag and Drop](./drag-drop.md) **(Optional feature)**
 
     Enables you to create and manage draggable elements and implement drag events.
 
@@ -92,7 +92,7 @@ The main HTML and CSS features are:
 
     Enables you to encode and decode font data easily.
 
-  - [CSS Multi-column Layout Module](./multi.md) **in mobile and TV applications only**
+  - [CSS Multi-column Layout Module](./multi.md) **(Optional feature)**
 
     Enables you to create multi-column layouts for Web applications.
 
@@ -106,16 +106,15 @@ The main HTML and CSS features are:
 
     Enables you to define the font-face and font-family, to avoid layout incompatibility due to the default system font changes after OS upgrades.
 
-  - [Multiple Screen Support](./multiple-screens.md) **in mobile applications only**
+  - [Multiple Screen Support](./multiple-screens.md) **(Optional feature)**
 
     Allows you to create an application that is both scalable and adaptive to multiple screen resolutions.
 
-  - [Multiple UI Layouts](./ui-layout.md) **in wearable applications only**
+  - [Multiple UI Layouts](./ui-layout.md) **(Optional feature)**
 
     Allows you to design your application layout so that your application can run on multiple Tizen devices.
 
 ## Related Information
 * Dependencies    
-    - Tizen 2.4 and Higher for Mobile
-    - Tizen 2.3.1 and Higher for Wearable
+    - Tizen 2.4 and Higher
     - Tizen 3.0 and Higher for TV

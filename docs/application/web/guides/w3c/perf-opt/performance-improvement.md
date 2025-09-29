@@ -1,6 +1,6 @@
 # Performance Improvement
 
-With the following instructions, you can improve the performance of your wearable Web applications. The instructions summarize some representative tips that are frequently used in the Web community.
+With the following instructions, you can improve the performance of your Web applications. The instructions summarize some representative tips that are frequently used in the Web community.
 
 - [Reducing the access time for variables](#reducing-the-access-time-for-variables)
 - [Improving the event handler response time](#improving-the-event-handler-response-time)
@@ -8,7 +8,7 @@ With the following instructions, you can improve the performance of your wearabl
 - [Minimizing the document flow](#minimizing-the-document-flow)
 - [Improving the application launch time](#improving-the-application-launch-time)
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 For more detailed and comprehensive information, study the following documentation:
 
@@ -299,4 +299,4 @@ The basic principle of improving the launch time of a Web application is simply 
 
 ## Related information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.3.1 and Higher

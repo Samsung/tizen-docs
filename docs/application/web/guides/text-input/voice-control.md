@@ -2,7 +2,7 @@
 
 You can enable the user to control the device through their voice. You can register general voice commands, which trigger a listener when the user speaks them. The voice control service recognizes the sound data recorded by the user and sends the result as a predefined command.
 
-The Voice Control API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Voice Control API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Voice Control API include the following:
 
@@ -190,10 +190,6 @@ To create a command list and commands, follow these steps:
 
 ## Related information
 * Dependencies
-  - Tizen 4.0 and Higher for Mobile
-  - Tizen 4.0 and Higher for Wearable
   - Tizen 4.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/voicecontrol.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/voicecontrol.html)
   - [TV](../../api/latest/device_api/tv/tizen/voicecontrol.html)

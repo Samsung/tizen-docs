@@ -2,7 +2,7 @@
 
 You can receive notifications from a push server. The push service is a client daemon that maintains a permanent connection between the device and the push server. Push enables you to push events from an application server to your application on a Tizen device. Connection with the push service is used to deliver push notifications to the application, and process the registration and deregistration requests.
 
-The Push API is optional for Tizen Mobile, Wearable, and TV profiles, which means that it may not be supported on all mobile, wearable, and TV devices. The Push API is supported on all Tizen emulators.
+The Push API is optional for Tizen TV and IoT profiles, which means that it may not be supported on all TV and IoT devices. The Push API is supported on all Tizen emulators.
 
 Push notification helps your application server send data to your application on a device over a network, even if the application is not running. Using the push service can reduce battery consumption and data transfer.
 
@@ -28,14 +28,14 @@ The main features of the Push API include the following:
 
 - Sending push notifications  
 
-  The push service implements the RESTful open API for sending a push message. For more information on sending push notifications, see [Push Server](../../../native/guides/messaging/push-server.md).
+  The push service implements the RESTful open API for sending a push message. For more information on sending push notifications, see [Native Push Server](../../../native/guides/messaging/push-server.md).
 
 > [!NOTE]
-> Remember about security issues when sending notifications with sensitive information. For a list of strongly recommended rules, see [Managing Security](../../../native/guides/messaging/push.md#managing-security).
+> Remember about security issues when sending notifications with sensitive information. For a list of strongly recommended rules, see [Native Managing Security](../../../native/guides/messaging/push.md#managing-security).
 
 ## Architecture
 
-The architecture of the Tizen Push service is described in detail in the [mobile native Push guide](../../../native/guides/messaging/push.md#service-architecture).
+The architecture of the Tizen Push service is described in detail in the [Native Push guide](../../../native/guides/messaging/push.md#service-architecture).
 
 **Figure: Service architecture**
 
@@ -53,7 +53,7 @@ To receive push notifications for your application, follow these steps:
 
 To enable your application to use the push functionality, follow these steps:
 
-1. To use the Push API (in [mobile](../../api/latest/device_api/mobile/tizen/push.html), [wearable](../../api/latest/device_api/wearable/tizen/push.html), and [TV](../../api/latest/device_api/tv/tizen/push.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+1. To use the Push API (in [TV](../../api/latest/device_api/tv/tizen/push.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
    ```
    <tizen:privilege name="http://tizen.org/privilege/push"/>
@@ -164,7 +164,7 @@ Since Tizen 3.0, you must connect to the push service before getting the registr
 
 ## Receive push notifications
 
-You can connect to the push service and start receiving push notifications with the `connectService()` method up to Tizen 2.4, or with the `connect()` method since Tizen 3.0. Up to Tizen 2.4, you must pass the `PushNotificationCallback` listener (in [mobile](../../api/latest/device_api/mobile/tizen/push.html#PushNotificationCallback) and  [wearable](../../api/latest/device_api/wearable/tizen/push.html#PushNotificationCallback) applications) as a parameter in the method to receive push notifications. Since Tizen 3.0, you must pass the `PushRegistrationStateChangeCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/push.html#PushRegistrationStateChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/push.html#PushRegistrationStateChangeCallback), and [TV](../../api/latest/device_api/tv/tizen/push.html#PushRegistrationStateChangeCallback) applications) and `PushNotificationCallback` callbacks (in [mobile](../../api/latest/device_api/mobile/tizen/push.html#PushNotificationCallback), [wearable](../../api/latest/device_api/wearable/tizen/push.html#PushNotificationCallback), and [TV](../../api/latest/device_api/tv/tizen/push.html#PushNotificationCallback) applications) as parameters in the method. The first callback is called when the registration change state changes. This callback is called at least once, just after the connection is established. The second callback is called when notification messages arrive. You can also pass the `ErrorCallback` as a parameter to be called if the connection request fails.
+You can connect to the push service and start receiving push notifications with the `connectService()` method up to Tizen 2.4, or with the `connect()` method since Tizen 3.0. Up to Tizen 2.4, you must pass the `PushNotificationCallback` listener as a parameter in the method to receive push notifications. Since Tizen 3.0, you must pass the `PushRegistrationStateChangeCallback` (in [TV](../../api/latest/device_api/tv/tizen/push.html#PushRegistrationStateChangeCallback) applications) and `PushNotificationCallback` callbacks (in [TV](../../api/latest/device_api/tv/tizen/push.html#PushNotificationCallback) applications) as parameters in the method. The first callback is called when the registration change state changes. This callback is called at least once, just after the connection is established. The second callback is called when notification messages arrive. You can also pass the `ErrorCallback` as a parameter to be called if the connection request fails.
 
 When a notification arrives at the device, its delivery mechanism depends on whether the application is running:
 
@@ -382,10 +382,6 @@ To retrieve and read the last message, follow these steps:
 
 ## Related information
 * Dependencies   
-   - Tizen 2.4 and Higher for Mobile
-   - Tizen 2.3.1 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/push.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/push.html)
   - [TV](../../api/latest/device_api/tv/tizen/push.html)

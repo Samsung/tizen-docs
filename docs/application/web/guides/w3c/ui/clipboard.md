@@ -2,7 +2,7 @@
 
 The clipboard and events feature is used for cutting, copying, and pasting content to easily transfer it between Web applications.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The main features of Clipboard API and events include:
 
@@ -228,6 +228,6 @@ For the complete source code related to this use case, see the following file:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.4 and Higher
 * API References
   - [W3C](https://www.w3.org/TR/clipboard-apis/){:target="_blank"}

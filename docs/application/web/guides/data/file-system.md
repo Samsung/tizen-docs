@@ -6,7 +6,7 @@
 
 You can [access the files and directories](#file-and-directory-access) in the device file system.
 
-The Filesystem API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on Tizen emulators.
+The Filesystem API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on Tizen emulators.
 
 The Filesystem API provides access to accessible parts of the file system, which are represented as [virtual root locations](#supported-virtual-roots).
 
@@ -28,7 +28,7 @@ The main features of the Filesystem API include the following:
 
 ## File and directory access
 
-You can access the virtual file system using the `FileSystemManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications):
+You can access the virtual file system using the `FileSystemManager` interface (in [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications):
 
 - To access a file or directory within the virtual file system, you can use the fully qualified path, `<rootname>/<path>`, where `<rootname>` is the name of the virtual root and `<path>` is the relative path to the file or directory within the root. Alternatively, you can use the absolute path to a file located in the target device memory. Regardless of virtual root usage, rights to access file location as well as rights to read and write to a file are needed when applicable.
 
@@ -37,7 +37,7 @@ You can access the virtual file system using the `FileSystemManager` interface (
 
 ## Prerequisites
 
-To use the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Filesystem API (in [TV](../../api/latest/device_api/tv/tizen/filesystem.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
@@ -46,7 +46,7 @@ To use the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/
 
 ## Manage file storages
 
-You can manage different storages on the device with the `FileSystemManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications).
+You can manage different storages on the device with the `FileSystemManager` interface (in [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications).
 
 You can retrieve additional information about the storages, including listing available storages and receiving storage change notifications with the `listStorages()` and `addStorageStateChangeListener()` methods provided by the `FileSystemManager` interface.
 
@@ -54,7 +54,7 @@ To manage file storages, follow these steps:
 
 - To list available storages, use the `listStorages()` method of the `FileSystemManager` interface to search for the storages available on the device.
 
-   If the search is successful, the list of found `FileSystemStorage` objects (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemStorage), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemStorage), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemStorage) applications) is passed to the success event handler:
+   If the search is successful, the list of found `FileSystemStorage` objects (in [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemStorage) applications) is passed to the success event handler:
 
    ```
    /* Success event handler */
@@ -248,11 +248,11 @@ You can retrieve a list of files or file URIs using the `listDirectory()` and `t
 
 You can manage files and directories in many ways:
 
-- You can read and write to a file by first using the `openFile()` method to open the file. You can specify the file mode. The `openFile()` method returns a `FileHandle` object (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileHandle), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileHandle), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileHandle) applications), which is a handle to the opened file. All actual operations, such as read, write, or close, on the file are performed through the `FileHandle` object based on a current position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object.
+- You can read and write to a file by first using the `openFile()` method to open the file. You can specify the file mode. The `openFile()` method returns a `FileHandle` object (in [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileHandle) applications), which is a handle to the opened file. All actual operations, such as read, write, or close, on the file are performed through the `FileHandle` object based on a current position, which can be obtained or modified through calling `seek()` operation on `FileHandle` object.
 
 To write to files:
 
-- To open or create a file, use the `openFile()` method of the `FileSystemManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications).
+- To open or create a file, use the `openFile()` method of the `FileSystemManager` interface (in [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications).
 
    The method returns a `FileHandle` object, which is a handle to the opened or newly created file.
 
@@ -385,10 +385,6 @@ The virtual roots form a collection of locations that function as a single virtu
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/filesystem.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/filesystem.html)
   - [TV](../../api/latest/device_api/tv/tizen/filesystem.html)

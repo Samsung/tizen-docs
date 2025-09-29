@@ -22,6 +22,6 @@ You can use the following machine learning features in your web applications:
 
 ## Related information
 - Dependencies
-  - Tizen 6.5 and Higher for Mobile
-  - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV
+* API References
+  - [TV](../../api/latest/device_api/tv/tizen/ml_trainer.html)

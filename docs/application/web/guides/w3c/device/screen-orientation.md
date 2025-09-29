@@ -2,7 +2,7 @@
 
 You can [manage the screen orientation state](#managing-the-screen-orientation) through the `Screen` interface.
 
-This feature is supported in mobile and TV applications only.
+This feature is optional.
 
 The main features of the Screen Orientation API include the following:
 
@@ -130,7 +130,6 @@ For the complete source code related to this use case, see the following file:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://www.w3.org/TR/screen-orientation/){:target="_blank"}

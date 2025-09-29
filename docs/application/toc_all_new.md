@@ -347,7 +347,6 @@
 #### [Overview](/application/web/guides/applications/overview.md)
 
 #### UI Application
-##### [Watch Application](/application/web/guides/applications/watch-app.md)
 ##### [Widget Application](/application/web/guides/applications/web-widget.md)
 
 #### [Service Application](/application/web/guides/applications/service-app.md)

@@ -4,7 +4,7 @@ The device settings and systems features introduce how you can set and get infor
 
 You can use the following device settings and systems features in your Web applications:
 
-- [Power States](./power.md) **in mobile and wearable applications only**
+- [Power States](./power.md) **(Optional feature)**
 
   You can access the state of the device power resource. You can request a specific power state and control the brightness of the screen.
 
@@ -12,7 +12,7 @@ You can use the following device settings and systems features in your Web appli
 
   You can access and monitor various device details, such as the battery level, available device storage, version number, model name, and the cellular network being used.
 
-- [System Settings](./system-setting.md) **in mobile and wearable applications only**
+- [System Settings](./system-setting.md) **(Optional feature)**
 
   You can manage the device wallpaper settings, such as the home screen and lock screen wallpaper image, incoming call ringtone, and email notification tone.
 
@@ -20,17 +20,15 @@ You can use the following device settings and systems features in your Web appli
 
   You can use locale-specific calendar features by retrieving date and time information. You can also manage time features, such as change the date, time, and time zone, and make some date- and time-related calculations.
 
-- [Web View Settings](./web-view.md) **in mobile and TV applications only**
+- [Web View Settings](./web-view.md) **(Optional feature)**
 
   You can set Web view properties, such as set Web view user agents. You can also delete Web view cookies.
 
-- [Sound and Vibration Feedback](./feedback.md) **in mobile and wearable applications only**
+- [Sound and Vibration Feedback](./feedback.md) **(Optional feature)**
 
   You can play a feedback pattern using sound or vibration. You can set specific patterns, and check whether a specific pattern is supported.
 
 
 ## Related information
 * Dependencies  
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

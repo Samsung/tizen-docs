@@ -2,7 +2,7 @@
 
 A widget application (or widget) is a specialized application that provides users with a quick view of specific information from the parent application. In addition, the widget can allow the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application set.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 Web widgets are implemented using the Web programming technologies, such as HTML, CSS, and JavaScript; but only a subset of Tizen Web APIs. Web widgets run on wearable devices and are available to users in the widget board, which can be accessed by swiping right on the home screen (watch face).
 
@@ -777,7 +777,7 @@ Web widgets can communicate with other applications in various ways. As shown in
 <a name="comm_parent"></a>
 ### Communicate with a web application on a wearable device
 
-For data sharing between a Web widget and its parent application on the same device, use the Tizen [Preference API](../../api/latest/device_api/wearable/tizen/preference.html). The Preference API allows a Web widget to communicate with its parent Web app (and vice versa) by storing key-value pairs in a hashtable-like data structure. The data stored by the Preference API has a "package" scope, which means that any widgets (or a Web app) in a package can access the data stored by the other widgets (or a Web app) in the same package. In addition, the Preference API does not need additional permissions, so no modifications in the `config.xml` file are required.
+For data sharing between a Web widget and its parent application on the same device, use the Tizen Preference API. The Preference API allows a Web widget to communicate with its parent Web app (and vice versa) by storing key-value pairs in a hashtable-like data structure. The data stored by the Preference API has a "package" scope, which means that any widgets (or a Web app) in a package can access the data stored by the other widgets (or a Web app) in the same package. In addition, the Preference API does not need additional permissions, so no modifications in the `config.xml` file are required.
 
 The following table lists the Preference API methods.
 
@@ -836,7 +836,7 @@ window.onload = function() {
 
 #### Tizen Application API
 
-The [Application](../../api/latest/device_api/wearable/tizen/application.html) API allows a widget to launch and access installed applications on the same device. For this, you need to set the following privileges:
+The [Application](../../api/latest/device_api/tv/tizen/application.html) API allows a widget to launch and access installed applications on the same device. For this, you need to set the following privileges:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/application.info"/>
@@ -1591,7 +1591,4 @@ For the Web widget file and image size limits, see [Performance Considerations](
 
 ## Related information
 - Dependencies
-  - Tizen 2.3.2 for Wearable
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html)
+  - Tizen 2.3.2 and higher

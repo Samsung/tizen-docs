@@ -2,7 +2,7 @@
 
 You can set Web view properties.
 
-This feature is supported in mobile and TV applications only.
+This feature is optional.
 
 The main features of the Web Setting API include the following:
 
@@ -42,5 +42,4 @@ tizen.websetting.removeAllCookies(CookiesRemovedSuccessCallback);
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Tizen 2.4 and Higher

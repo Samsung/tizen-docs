@@ -2,28 +2,28 @@
 
 Preference management allows you to store and retrieve the application preferences. You can create, store, and retrieve all custom preferences needed by your application. Each preference has its own key and value, where the value can be a string, number, or a boolean value.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 > [!NOTE]
-> The Preference API is a different feature than the [`preferences` attribute of the `config.xml` file](../../tutorials/process/setting-properties.md#preferences), which is used to set and retrieve name-value pairs using the Widget Interface API (in [mobile](../../api/latest/w3c_api/w3c_api_m.html#widget) and [wearable](../../api/latest/w3c_api/w3c_api_w.html#widget) applications).
+> The Preference API is a different feature than the [`preferences` attribute of the `config.xml` file](../../tutorials/process/setting-properties.md#preferences), which is used to set and retrieve name-value pairs using the Widget Interface API.
 
 The main preference features are:
 
 - Setting up a preference
 
-  You can [set up a preference](#setting-up-a-preference) with the `setValue()` method.  If the preference exists before setting up, its value is set. If the preference does not exist, it is created.
+  You can [set up a preference](#set-up-a-preference) with the `setValue()` method.  If the preference exists before setting up, its value is set. If the preference does not exist, it is created.
 
 - Getting a preference value
 
-  You can [retrieve a value of a single preference or values of all preferences](#getting-preference-values) using the `getValue()` or `getAll()` method. You can also [check whether a preference exists](#checking-whether-a-preference-exists) using the `exists()` method.
+  You can [retrieve a value of a single preference or values of all preferences](#get-preference-values) using the `getValue()` or `getAll()` method. You can also [check whether a preference exists](#check-whether-a-preference-exists) using the `exists()` method.
 
 - Removing a preference
 
-  You can [remove a preference](#removing-preferences) with the `remove()` and `removeAll()` functions. The first removes only 1 preference while the second removes them all.
+  You can [remove a preference](#remove-preferences) with the `remove()` and `removeAll()` functions. The first removes only 1 preference while the second removes them all.
 
 - Monitoring preference value changes
 
-  You can provide a listener method which is called every time a given preference's value changes. [Register the listener](#monitoring-preference-value-changes) with the `setChangeListener()` method. The provided listener is called with a preference key and its new value. If you want to remove the listener, use the `unsetChangeListener()` method.
+  You can provide a listener method which is called every time a given preference's value changes. [Register the listener](#monitor-preference-value-changes) with the `setChangeListener()` method. The provided listener is called with a preference key and its new value. If you want to remove the listener, use the `unsetChangeListener()` method.
 
 ## Set up a preference
 
@@ -118,8 +118,4 @@ To start and stop listening for value changes in a preference with a given key, 
 
 ## Related information
 * Dependencies  
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 2.3.2 and Higher for Wearable
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/preference.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/preference.html)
+  - Tizen 3.0 and Higher

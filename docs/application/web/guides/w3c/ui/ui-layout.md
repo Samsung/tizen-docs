@@ -2,7 +2,7 @@
 
 To ensure the largest possible market for your application, you have to design your application layout so that your application can run on multiple Tizen devices.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 Although the Web was originally designed to structure documents for large-scaled Internet world, with CSS (Cascading Style Sheet), JavaScript, and various device APIs, it is quickly evolving to a complete runtime environment for applications. In addition, its W3C open development model and the flexibility of its CSS-based presentation make it every developer's choice as the next development platform. CSS is the key technology for flexible presentation, and it is used to describe the look and formatting of HTML documents. The role of CSS is to determine how the logical structure of the document is displayed to the user.
 
@@ -195,11 +195,11 @@ The following figure shows a final view when the 320 px is set as a target devic
 
 ![Original layout on a target device](./media/layout_original.png)
 
-The following figure shows that the relative layout and scaling are correctly applied even when the same application is run on a mobile device with the aspect ratio of 16:9.
+The following figure shows that the relative layout and scaling are correctly applied even when the same application is run on a specific device with the aspect ratio of 16:9.
 
-**Figure: Scaled layout on a 16:9 mobile device**
+**Figure: Scaled layout on a 16:9 specific device**
 
-![Scaled layout on a 16:9 mobile device](./media/layout_original_scaled.png)
+![Scaled layout on a 16:9 specific device](./media/layout_original_scaled.png)
 
 The following code snippet shows an example where the background color is replaced with an image while the layout is exactly same as in the 4 box example. The following figures show how the layout including media elements (such as images) functions exactly like the basic box layout.
 
@@ -239,9 +239,9 @@ html, body {width: 100%; height: 100%; overflow-x: hidden;}
 
 ![Image-based layout on a target device](./media/layout_image.png)
 
-**Figure: Image-based scaled layout on a 16:9 mobile device**
+**Figure: Image-based scaled layout on a 16:9 specific device**
 
-![Image-based scaled layout on a 16:9 mobile device](./media/layout_image_scaled.png)
+![Image-based scaled layout on a 16:9 specific device](./media/layout_image_scaled.png)
 
 ## Multiple Layouts for Multiple Devices
 
@@ -351,7 +351,7 @@ The display mode can be classified as portrait or landscape for a rectangle-shap
 
 #### Portrait and Landscape
 
-You can configure the device landscape and portrait mode using the `device-aspect-ratio` attribute in media queries. This approach is already commonly used in creating mobile Web applications. The following example shows how the `max-device-aspect-ratio` feature is used.
+You can configure the device landscape and portrait mode using the `device-aspect-ratio` attribute in media queries. This approach is already commonly used in creating Web applications. The following example shows how the `max-device-aspect-ratio` feature is used.
 
 If you use the `orientation: portrait/landscape` feature, the layout can change unexpectedly when the virtual keypad is displayed. To avoid the problem, use the `device-aspect-ratio` to configure the portrait and landscape mode.
 
@@ -572,4 +572,4 @@ To migrate the application, use the following steps:
 
 ## Related Information
 * Dependencies   
-   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 2.3.1 and Higher

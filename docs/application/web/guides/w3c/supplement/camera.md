@@ -1,8 +1,8 @@
 # Camera API (Tizen Extension)
 
-You can use the camera features in the Tizen wearable Web applications.
+You can use the camera features in the Tizen Web applications.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The main features of the Camera API (Tizen Extension) API include the following:
 
@@ -113,6 +113,6 @@ To take advantage of the camera features, you must learn to deallocate the camer
 
 ## Related information
 * Dependencies   
-   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 2.3.1 and Higher
 * API References
    - [getUserMedia](../../multimedia/getusermedia)

@@ -33,9 +33,9 @@ for (var i = 0, len = array_list.length; i < len; i++) {
 }
 ```
 
-**Figure: JavaScript performance improvement result (in mobile applications only)**
+**Figure: JavaScript performance improvement result (Optional feature)**
 
-![JavaScript performance improvement result (in mobile applications only)](./media/js_perform_result_debug.png)
+![JavaScript performance improvement result](./media/js_perform_result_debug.png)
 
 **Table: JavaScript performance improvement result**
 
@@ -65,9 +65,9 @@ for (var i = 0, len = array_list.length; i < len; i++) {
 }
 ```
 
-**Figure: JavaScript performance improvement result (in mobile applications only)**
+**Figure: JavaScript performance improvement result (Optional feature)**
 
-![JavaScript performance improvement result (in mobile applications only)](./media/js_perform_result_loop.png)
+![JavaScript performance improvement result](./media/js_perform_result_loop.png)
 
 > [!NOTE]
 > By caching the `array_list.length` before using it, as shown in the second example above, better performance is achieved. For more information, see [Using cached array length](#arraylength).
@@ -110,9 +110,9 @@ for (i = 0, arrayLen = array_list.length; i < arrayLen; i++) {
 }
 ```
 
-**Figure: JavaScript performance improvement result (in mobile applications only)**
+**Figure: JavaScript performance improvement result (Optional feature)**
 
-![JavaScript performance improvement result (in mobile applications only)](./media/js_perform_result_array.png)
+![JavaScript performance improvement result](./media/js_perform_result_array.png)
 
 **Table: JavaScript performance improvement result**
 
@@ -140,9 +140,9 @@ for (var i = 0; i < 100; i++) {
 }
 ```
 
-**Figure: JavaScript performance improvement result (in mobile applications only)**
+**Figure: JavaScript performance improvement result (Optional feature)**
 
-![JavaScript performance improvement result (in mobile applications only)](./media/js_perform_result_literal.png)
+![JavaScript performance improvement result](./media/js_perform_result_literal.png)
 
 **Table: JavaScript performance improvement result**
 
@@ -183,9 +183,9 @@ for (var i = 0; i < 100; i++) {
 }
 ```
 
-**Figure: JavaScript performance improvement result (in mobile applications only)**
+**Figure: JavaScript performance improvement result (Optional feature)**
 
-![JavaScript performance improvement result (in mobile applications only)](./media/js_perform_result_js_dom.png)
+![JavaScript performance improvement result](./media/js_perform_result_js_dom.png)
 
 **Table: JavaScript performance improvement result**
 
@@ -195,6 +195,4 @@ for (var i = 0; i < 100; i++) {
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

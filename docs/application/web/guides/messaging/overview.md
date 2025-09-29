@@ -4,7 +4,7 @@ The messaging features introduce how you can use email, SMS, and MMS messaging i
 
 You can use the following messaging features in your Web applications:
 
-- [Messages](./messages.md) **in mobile applications only**
+- [Messages](./messages.md) **(Optional feature)**
 
   You can create, send, and read text, multimedia, and email messages. You can also manage messages in the message storage, and handle a situation where the device has multiple SIM cards and you need to determine which SIM card is used to send the text messages.
 
@@ -14,6 +14,6 @@ You can use the following messaging features in your Web applications:
 
 ## Related information
 * Dependencies  
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [TV](../../api/latest/device_api/tv/tizen/package.html)

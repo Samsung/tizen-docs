@@ -26,7 +26,7 @@ The main features of the Metadata API include the following:
 
 ## Prerequisites
 
-To access files using the Metadata API (in [mobile](../../api/latest/device_api/mobile/tizen/metadata.html), [wearable](../../api/latest/device_api/wearable/tizen/metadata.html), and [TV](../../api/latest/device_api/tv/tizen/metadata.html) applications), the application has to request storage privileges by adding the following privileges to the `config.xml` file:
+To access files using the Metadata API (in [TV](../../api/latest/device_api/tv/tizen/metadata.html) applications), the application has to request storage privileges by adding the following privileges to the `config.xml` file:
 
 
 ```xml
@@ -37,7 +37,7 @@ To access files using the Metadata API (in [mobile](../../api/latest/device_api/
 ```
 
 
-Additionally, to access files using the Metadata API (in [mobile](../../api/latest/device_api/mobile/tizen/metadata.html) and [wearable](../../api/latest/device_api/wearable/tizen/metadata.html) applications), the application has to request [proper storage permissions](../security/privacy-related-permissions.md) using the PPM API (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html) applications).
+Additionally, to access files using the Metadata API, the application has to request [proper storage permissions](../security/privacy-related-permissions.md) using the PPM API.
 
 
 ## Extract metadata
@@ -165,10 +165,6 @@ When all the needed metadata is extracted, the file handle needs to be released 
 
 ## Related information
 - Dependencies
-  - Tizen 6.0 and Higher for Mobile
-  - Tizen 6.0 and Higher for Wearable
   - Tizen 6.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/metadata.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/metadata.html)
   - [TV](../../api/latest/device_api/tv/tizen/metadata.html)

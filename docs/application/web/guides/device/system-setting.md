@@ -2,7 +2,7 @@
 
 You can access and modify some [system settings properties](#system-settings-properties), such as the home screen and lock screen wallpaper image, incoming call ringtone, and email notification tone.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 The main features of the System Setting API include the following:
 
@@ -16,7 +16,7 @@ The main features of the System Setting API include the following:
 
 ## Prerequisites
 
-To use the System Setting API (in [mobile](../../api/latest/device_api/mobile/tizen/systemsetting.html) and [wearable](../../api/latest/device_api/wearable/tizen/systemsetting.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the System Setting API, the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/setting"/>
@@ -24,7 +24,7 @@ To use the System Setting API (in [mobile](../../api/latest/device_api/mobile/ti
 
 ## Manage the device wallpapers
 
-You can change the home and lock screen images by using the `setProperty()` method of the `SystemSettingManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systemsetting.html#SystemSettingManager) and [wearable](../../api/latest/device_api/wearable/tizen/systemsetting.html#SystemSettingManager) applications). Similarly, you can retrieve information about them by using the `getProperty()` method.
+You can change the home and lock screen images by using the `setProperty()` method of the `SystemSettingManager` interface. Similarly, you can retrieve information about them by using the `getProperty()` method.
 
 To set the device wallpaper and get information about it:
 
@@ -58,7 +58,7 @@ To set the device wallpaper and get information about it:
 
 ## Manage ringtones and notification tones
 
-You can modify the incoming call ringtone and notification email tone sound by using the `setProperty()` method of the `SystemSettingManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systemsetting.html#SystemSettingManager) and [wearable](../../api/latest/device_api/wearable/tizen/systemsetting.html#SystemSettingManager) applications). Similarly, you can retrieve information about them by using the `getProperty()` method.
+You can modify the incoming call ringtone and notification email tone sound by using the `setProperty()` method of the `SystemSettingManager` interface. Similarly, you can retrieve information about them by using the `getProperty()` method.
 
 To set ringtones and notification tones, follow these steps:
 
@@ -109,8 +109,4 @@ The following table lists the supported system settings properties.
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/systemsetting.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/systemsetting.html)
+  - Tizen 2.4 and Higher

@@ -2,7 +2,7 @@
 
 HTML5 application caches can be used to store and utilize resources needed in Web applications, such as HTML, CSS, and JavaScript files, and images. You can cache certain files in the browser to use them in an offline state, or define them to be always updated from the server.
 
-This feature is supported in mobile and TV applications only.
+This feature is optional.
 
 HTML5 application caches provide you with the following benefits:
 
@@ -225,5 +225,5 @@ To check the current status of the cache, follow these steps:
 
 ## Related information
 * Dependencies   
-   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.4 and Higher
    - Tizen 3.0 and Higher for TV

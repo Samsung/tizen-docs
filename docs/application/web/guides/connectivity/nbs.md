@@ -3,7 +3,7 @@ Network Bearer Selection
 
 You can set a cellular network as a preferred route for Internet connections with specified domains.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The main features of the Network Bearer Selection API include the following:
 
@@ -23,7 +23,7 @@ The main features of the Network Bearer Selection API include the following:
 Prerequisites
 -------------
 
-To use the [Network Bearer Selection](../../api/latest/device_api/mobile/tizen/networkbearerselection.html) API, the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Network Bearer Selection API, the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/internet"/>
@@ -54,7 +54,7 @@ To request a preferred route for Internet connection with the [Tizen](https://ww
     }
     ```
 
-2. To request a routing policy, use the `requestRouteToHost()` method of the [NetworkBearerSelection](../../api/latest/device_api/mobile/tizen/networkbearerselection.html#NetworkBearerSelection) interface:
+2. To request a routing policy, use the `requestRouteToHost()` method of the NetworkBearerSelection interface:
 
     ```
     tizen.networkbearerselection.requestRouteToHost('CELLULAR', 'www.tizen.org', statuscb, onerror);
@@ -78,7 +78,7 @@ To cancel the routing policy for the connection with the [Tizen](https://www.tiz
     }
     ```
 
-2. To terminate the policy, use the `releaseRouteToHost()` method of the [NetworkBearerSelection](../../api/latest/device_api/mobile/tizen/networkbearerselection.html#NetworkBearerSelection) interface:
+2. To terminate the policy, use the `releaseRouteToHost()` method of the NetworkBearerSelection interface:
 
     ```
     tizen.networkbearerselection.releaseRouteToHost('CELLULAR', 'www.tizen.org', onsuccess, onerror);
@@ -86,6 +86,4 @@ To cancel the routing policy for the connection with the [Tizen](https://www.tiz
 
 ## Related information
 * Dependencies    
-    - Tizen 2.4 and Higher for Mobile
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/networkbearerselection.html)
+    - Tizen 2.4 and Higher

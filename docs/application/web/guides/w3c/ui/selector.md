@@ -52,9 +52,9 @@ To use selectors for handling page elements and selecting a single node:
    var targetObj = obj.querySelector('tbody > tr:nth-child(2) :last-child');
    ```
 
-   **Figure: Single node selection (in mobile applications only)**
+   **Figure: Single node selection (Optional feature)**
 
-   ![Single node selection (in mobile applications only)](./media/single_node_selection.png)
+   ![Single node selection](./media/single_node_selection.png)
 
 ### Source Code
 
@@ -93,9 +93,9 @@ To use selectors for handling page elements and selecting multiple nodes in a no
    }
    ```
 
-   **Figure: Multiple node selection (in mobile applications only)**
+   **Figure: Multiple node selection (Optional feature)**
 
-   ![Multiple node selection (in mobile applications only)](./media/multi_node_selection.png)
+   ![Multiple node selection](./media/multi_node_selection.png)
 
 ### Source Code
 
@@ -107,7 +107,7 @@ For the complete source code related to this use case, see the following file:
 
 You can retrieve element nodes from the DOM tree and create a simple accordion menu.
 
-The accordion menu is created using the CSS3 Basic User Interface Module Level 3 API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#basicui), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#basicui), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#basicui) applications). When a title is touched, the relevant content is shown, and other content is hidden.
+The accordion menu is created using the CSS3 Basic User Interface Module Level 3 API (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#basicui) applications). When a title is touched, the relevant content is shown, and other content is hidden.
 
 1. Create the HTML layout:
 
@@ -186,9 +186,9 @@ The accordion menu is created using the CSS3 Basic User Interface Module Level 3
    testAccordion('.accordion');
    ```
 
-   **Figure: Accordion menu (in mobile applications only)**
+   **Figure: Accordion menu (Optional feature)**
 
-   ![Accordion menu (in mobile applications only)](./media/accordion_menu.png)
+   ![Accordion menu](./media/accordion_menu.png)
 
 ### Source Code
 
@@ -198,8 +198,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C Level 1](https://www.w3.org/TR/selectors-api/){:target="_blank"}, [W3C Level 2](https://www.w3.org/TR/selectors-api/2){:target="_blank"}

@@ -101,7 +101,7 @@ To package the Web service with a Web application, define the service in the `co
     <feature name="http://tizen.org/feature/screen.size.all"/>
     <icon src="icon.png"/>
     <name>ServiceSample</name>
-    <tizen:profile name="mobile"/>
+    <tizen:profile name="tv"/>
     <tizen:service id="pmQZIjNqwQ.Service" type="ui">
         <tizen:content src="service/service.js"/>
         <tizen:name>WebUIService</tizen:name>
@@ -156,6 +156,4 @@ The Web application terminates a Web service by calling the `stopService()` meth
 
 ## Related information
 - Dependencies
-  - Tizen 5.5 and Higher for Mobile
-  - Tizen 5.5 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

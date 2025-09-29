@@ -2,7 +2,7 @@
 
 You can define the application launch mode and group your applications into entities that can be managed together.
 
-The Application API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Application API is mandatory for Tizen TV and IoT profiles, which means that it is supported on all TV and IoT devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main application group features include:
 
@@ -12,7 +12,7 @@ The main application group features include:
 
 - Controlling the launch mode
 
-  The launch mode determines how a newly launched application is grouped. You can [control the launch mode](#controlling-the-launch-mode) by:
+  The launch mode determines how a newly launched application is grouped. You can [control the launch mode](#controll-the-launch-mode) by:
 
   - Setting it in the application `config.xml` file.
   - Defining it in an application control that is used to launch the application.
@@ -29,7 +29,7 @@ If an application is launched in a group, it can be terminated by the main (firs
 
 ## Prerequisites
 
-To use the Application API (in [mobile](../../api/latest/device_api/mobile/tizen/application.html), [wearable](../../api/latest/device_api/wearable/tizen/application.html), and [TV](../../api/latest/device_api/tv/tizen/application.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the Application API (in [TV](../../api/latest/device_api/tv/tizen/application.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
@@ -37,12 +37,12 @@ To use the Application API (in [mobile](../../api/latest/device_api/mobile/tizen
 
 ## Control the launch mode
 
-You can set the application launch mode in the `config.xml` file (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_application) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_application) applications) with one of the following values:
+You can set the application launch mode in the `config.xml` file with one of the following values:
 
 - The `SINGLE` launch mode means that the application is launched as a main application (in a new group).
 - The `GROUP` launch mode means that the application can be launched as a sub application      belonging to the same group as the caller application which is causing the application to be launched.
 
-Additionally, if the launch mode is not set to `SINGLE` in the `config.xml` file and the application is launched by the `launchAppControl()` method of the `ApplicationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationManager) applications) with the `ApplicationControl` object (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl), and [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications), the `launchMode` property of this object overrides the launch mode of the called application. If the launch mode in the `config.xml` file is set to `SINGLE`, the value of the `ApplicationControl.launchMode` property is ignored and the sub application is always called in the `SINGLE` mode.
+Additionally, if the launch mode is not set to `SINGLE` in the `config.xml` file and the application is launched by the `launchAppControl()` method of the `ApplicationManager` interface (in [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationManager) applications) with the `ApplicationControl` object (in [TV](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications), the `launchMode` property of this object overrides the launch mode of the called application. If the launch mode in the `config.xml` file is set to `SINGLE`, the value of the `ApplicationControl.launchMode` property is ignored and the sub application is always called in the `SINGLE` mode.
 
 To launch an application in a `GROUP` mode, follow these steps:
 
@@ -80,10 +80,6 @@ To launch an application in a `GROUP` mode, follow these steps:
 
 ## Related information
 * Dependencies
-   - Tizen 2.4 and Higher for Mobile
-   - Tizen 2.3.1 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/application.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/application.html)
   - [TV](../../api/latest/device_api/tv/tizen/application.html)

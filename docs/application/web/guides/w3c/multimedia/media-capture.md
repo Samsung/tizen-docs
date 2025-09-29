@@ -2,7 +2,7 @@
 
 Media capture uses the `capture` attribute of the [HTMLInputElement](https://www.w3.org/TR/html-media-capture/){:target="_blank"} interface to [activate features](#activating-the-media-capture), such as camera or microphone, to enable direct media capture when the user is uploading a file.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The following media formats can be used with the `capture` attribute:
 
@@ -43,7 +43,7 @@ To provide users with the HTML media capture feature, you must learn to activate
     > [!NOTE]
     > In the current version of Tizen Studio, the `microphone` format for the capture attribute is not available as the voice recorder application is not included.
 
-   The `accept` attribute (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#attr-input-accept){:target="_blank"} and [wearable](https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#attr-input-accept){:target="_blank"} applications) indicates which file types are appropriate. If used with a device that has a camera, it activates the device camera. With a device without a camera, it activates the My photo folder.
+   The [`accept` attribute](http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#attr-input-accept){:target="_blank"} applications) indicates which file types are appropriate. If used with a device that has a camera, it activates the device camera. With a device without a camera, it activates the My photo folder.
 
    ![Activating media features](./media/media_capture_activating_features.png)
 
@@ -55,6 +55,6 @@ For the complete source code related to this use case, see the following file:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.4 and Higher
 * API References
   - [W3C](https://www.w3.org/TR/html-media-capture/){:target="_blank"}

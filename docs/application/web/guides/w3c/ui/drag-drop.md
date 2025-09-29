@@ -2,7 +2,7 @@
 
 HTML5 drag and drop activates through event-based JavaScript and added attributes.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The main features of the HTML5 Drag and drop API include:
 
@@ -239,6 +239,6 @@ For the complete source code related to this use case, see the following files:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.4 and Higher
 * API References
   - [W3C](https://www.w3.org/TR/2011/WD-html5-20110405/){:target="_blank"}

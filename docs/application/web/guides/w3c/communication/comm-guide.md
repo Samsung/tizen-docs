@@ -16,12 +16,10 @@ The main communication features are:
 
   Enables you to use cross-origin resource sharing (CORS) to request and send data of various content types, and to monitor the operation progress.
 
-- [Server-Sent Events](./server-sent.md) **in mobile and TV applications only**
+- [Server-Sent Events](./server-sent.md) **(Optional feature)**
 
   Enables you to exchange push data with the server.
 
 ## Related information
 * Dependencies  
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

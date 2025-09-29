@@ -2,7 +2,7 @@
 
 To provide responsiveness on user interaction, Tizen WebKit plays sounds when a user taps an element and specific conditions are fulfilled.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 Sound is not played on a tap event for:
 
@@ -41,4 +41,4 @@ Sound is played on a tap event for:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.4 and Higher

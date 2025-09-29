@@ -1,6 +1,6 @@
 # HTML Priorities
 
-The HTML markup is not as important as before, because JavaScript APIs can be used to create various functionalities. For example, graphics APIs (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#graphics), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#graphics), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#graphics) applications) can be used for making games, media APIs (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#media), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#media), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#media) applications) for creating video chats, and communication APIs (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#communication), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#communication), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#communication) applications) for various types of messaging. However, HTML remains the basis of Web applications, and it is useful to be familiar with its behavior.
+The HTML markup is not as important as before, because JavaScript APIs can be used to create various functionalities. For example, graphics APIs (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#graphics) applications) can be used for making games, media APIs (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#media) applications) for creating video chats, and communication APIs (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#communication) applications) for various types of messaging. However, HTML remains the basis of Web applications, and it is useful to be familiar with its behavior.
 
 The structure of the HTML document can be classified into DOCTYPE and HTML DOM (Document Object Model). When an HTML document is loaded, the browser renders the contents in its screen as follows:
 
@@ -50,7 +50,7 @@ The `<head>` element contains the information that the browser refers to when re
 <html>
    <head>
       <meta charset="utf-8"/>
-      <title> Tizen (in mobile applications) or Tizen Wearable (in wearable applications) </title>
+      <title> Tizen applications </title>
       <link rel="stylesheet" href="css/style.css"/>
       <script src="/common/js/ui.js"></script>
    </head>
@@ -83,7 +83,7 @@ The `<body>` element defines the area displaying content on the browser screen:
    <body>
       <section id="tizen_wrap">
          <header>
-            <h1>Tizen Web App (in mobile applications) or Tizen Wearable Web App (in wearable applications)</h1>
+            <h1>Tizen Web App</h1>
          </header>
          <section id="contents">
             <!--Content-->
@@ -102,9 +102,9 @@ The basic rule of HTML, CSS, and JavaScript is that the code is applied from the
 
 The following figure illustrates this problem in mobile applications by applying a font color to a black background.
 
-**Figure: Expected and actual result of applying a font color (in mobile applications only)**
+**Figure: Expected and actual result of applying a font color (Optional feature)**
 
-![Expected and actual result of applying a font color (in mobile applications only)](./media/css_result.png)
+![Expected and actual result of applying a font color](./media/css_result.png)
 
 ### Basic CSS Rules
 
@@ -381,6 +381,5 @@ To provide users with JavaScript-based features, you must learn to use JavaScrip
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
