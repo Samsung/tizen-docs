@@ -21,6 +21,10 @@ You can use the following device settings and systems features in your .NET appl
 
     You can access information about the system settings. You can retrieve the system configuration related to user preferences.
 
+-   [System Logging](system-logging.md)
+
+    You can send messages to the system logger, to retrieve it later for debugging or diagnostics.
+
 ## Related information
 - Dependencies
   -   Tizen 4.0 and Higher
