@@ -18,7 +18,7 @@ The main features of the Single API include the following:
 
 ## Prerequisites
 
-To access files using the Single API (in [mobile](../../api/latest/device_api/mobile/tizen/ml_single.html), [wearable](../../api/latest/device_api/wearable/tizen/ml_single.html), and [TV](../../api/latest/device_api/tv/tizen/ml_single.html) applications), the application has to request storage privileges by adding the following privileges to the `config.xml` file:
+To access files using the Single API (in [TV](../../api/latest/device_api/tv/tizen/ml_single.html) applications), the application has to request storage privileges by adding the following privileges to the `config.xml` file:
 
   ```xml
   <!-- for accessing internal storage only -->
@@ -27,7 +27,7 @@ To access files using the Single API (in [mobile](../../api/latest/device_api/mo
   <tizen:privilege name="http://tizen.org/privilege/externalstorage"/>
   ```
 
-Additionally, to access files using the Single API (in [mobile](../../api/latest/device_api/mobile/tizen/ml_single.html) and [wearable](../../api/latest/device_api/wearable/tizen/ml_single.html) applications), the application has to request [proper storage permissions](../security/privacy-related-permissions.md) using the PPM API (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html) applications).
+Additionally, to access files using the Single API (in [TV](../../api/latest/device_api/tv/tizen/ml_single.html) applications).
 
 ## Open the model
 
@@ -180,10 +180,6 @@ If the invoke time is longer than 100 ms, you encounter `TimeoutError`.
 ## Related information
 
 - Dependencies
-  - Tizen 6.5 and Higher for Mobile
-  - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/ml_single.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/ml_single.html)
   - [TV](../../api/latest/device_api/tv/tizen/ml_single.html)

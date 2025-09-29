@@ -12,20 +12,19 @@ The main media features are the following:
 
   Enables you to control multimedia playback, retrieve information about playback duration and media content downloading progress, and check supported media formats using the HTML5 `<audio>` and `<video>` elements.
 
-- [HTML Media Capture](./media-capture.md) **in mobile applications only**
+- [HTML Media Capture](./media-capture.md) **(Optional feature)**
 
   Enables you to easily access the media capture capabilities, such as a camera or microphone, based on their type using the HTML `capture` attribute.
 
-- [Web Audio](./webaudio.md) **in mobile and TV applications only**
+- [Web Audio](./webaudio.md) **(Optional feature)**
 
   Enables you to play audio content using the HTML5 `<audio>` element.
 
-- [Tizen WebKit Tap Sound Policy](./sound-policy.md) **in mobile applications only**
+- [Tizen WebKit Tap Sound Policy](./sound-policy.md) **(Optional feature)**
 
   Allows you to play sounds to provide responsiveness on user interaction.
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV

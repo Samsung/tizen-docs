@@ -2,7 +2,7 @@
 
 You can access the [acceleration values](#acceleration-values) from the device accelerometer.
 
-The Device Motion API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Device Motion API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Device Motion API include the following:
 
@@ -16,7 +16,7 @@ The main features of the Device Motion API include the following:
 
 ## Acceleration values
 
-The acceleration data is captured into the `Acceleration` interface (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/device-motion.html#Acceleration), [wearable](../../api/latest/device_api/wearable/tizen/cordova/device-motion.html#Acceleration), and [TV](../../api/latest/device_api/tv/tizen/cordova/device-motion.html#Acceleration) applications). The acceleration values include the effect of gravity (9.81 m/s2), so that when a device lies flat and facing up, the x, y, and z values returned must be 0, 0, and 9.81.
+The acceleration data is captured into the `Acceleration` interface (in [TV](../../api/latest/device_api/tv/tizen/cordova/device-motion.html#Acceleration) applications). The acceleration values include the effect of gravity (9.81 m/s2), so that when a device lies flat and facing up, the x, y, and z values returned must be 0, 0, and 9.81.
 
 **Table: Acceleration values**
 
@@ -117,10 +117,6 @@ To retrieve the acceleration along the X, Y, and Z axes at regular intervals, fo
 
 ## Related information
 * Dependencies   
-   - Tizen 3.0 and Higher for Mobile
-   - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/device-motion.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/device-motion.html)
   - [TV](../../api/latest/device_api/tv/tizen/cordova/device-motion.html)

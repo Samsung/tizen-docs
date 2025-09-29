@@ -18,6 +18,6 @@ You can use the following security features in your Web applications:
 
 ## Related Information
 * Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [TV](../../api/latest/device_api/tv/tizen/archive.html)

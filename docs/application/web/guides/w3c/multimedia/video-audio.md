@@ -2,7 +2,7 @@
 
 You can use the HTML5 `audio` and `video` elements to play multimedia files streaming, without a separate plug-in.
 
-Using JavaScript, the playback can be controlled with [media events](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Events){:target="_blank"}. The audio and video elements used as media elements inherit all the properties and methods of the `HTMLMediaElement` interface (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element){:target="_blank"}, [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#media-element){:target="_blank"}, and [TV](https://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element){:target="_blank"} applications).
+Using JavaScript, the playback can be controlled with [media events](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Events){:target="_blank"}. The audio and video elements used as media elements inherit all the properties and methods of the `HTMLMediaElement` interface (in [TV](https://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element){:target="_blank"} applications).
 
 The main features of the audio and video elements with JavaScript include the following:
 
@@ -12,7 +12,7 @@ The main features of the audio and video elements with JavaScript include the fo
 
 - Controlling the playback
 
-  You can use the `Play()` and `Pause()` methods of the `Media` object (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-elements){:target="_blank"}, [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#media-elements){:target="_blank"}, and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-elements) applications){:target="_blank"} to [control playing and pausing](#playing-media-files) media files. With media events, additional features can be used.
+  You can use the `Play()` and `Pause()` methods of the `Media` object (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-elements) applications){:target="_blank"} to [control playing and pausing](#playing-media-files) media files. With media events, additional features can be used.
 
 - Retrieving duration and play time
 
@@ -20,7 +20,7 @@ The main features of the audio and video elements with JavaScript include the fo
 
 - Playing from a random position
 
-  You can indicate the playback time by [playing the media file from a random position](#moving-the-timeline-position). To do this, you must change the `currentTime` value of the `Media` object to trigger the `timeupdate` event (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#event-media-timeupdate){:target="_blank"}, [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#event-media-timeupdate){:target="_blank"}, and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#event-media-timeupdate){:target="_blank"} applications).
+  You can indicate the playback time by [playing the media file from a random position](#moving-the-timeline-position). To do this, you must change the `currentTime` value of the `Media` object to trigger the `timeupdate` event (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#event-media-timeupdate){:target="_blank"} applications).
 
 - Retrieving progress state
 
@@ -65,7 +65,7 @@ To provide users with HTML5 audio and video features, you must learn to create a
 > The `preload` attribute is set to `auto` by default, meaning that the media metadata is automatically loaded. If you do not want to load the metadata, set the attribute value as `metadata` or `none`.
 
 > [!NOTE]
-> Carefully consider before using the `autoplay` feature (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-media-autoplay){:target="_blank"}, [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-media-autoplay){:target="_blank"}, and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-media-autoplay){:target="_blank"} applications), which plays content automatically in the mobile environment without user interaction. The user can face unintended Internet packet fees or interfering factors, such as playback being stopped unintentionally.
+> Carefully consider before using the `autoplay` feature (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-media-autoplay){:target="_blank"} applications), which plays content automatically in the mobile environment without user interaction. The user can face unintended Internet packet fees or interfering factors, such as playback being stopped unintentionally.
 
 ### Source code
 
@@ -95,7 +95,7 @@ To provide users with HTML5 audio and video features, you must learn to play and
 
    The **Pause** button is disabled until the play event occurs.
 
-2. Define the button functions. Play and pause the media file using the `play()` and `pause()` methods of the `HTMLMediaElement` interface (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element){:target="_blank"}, [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#media-element){:target="_blank"}, and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element){:target="_blank"} applications):
+2. Define the button functions. Play and pause the media file using the `play()` and `pause()` methods of the `HTMLMediaElement` interface (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element){:target="_blank"} applications):
 
    ```
    <script>
@@ -133,9 +133,9 @@ To provide users with HTML5 audio and video features, you must learn to play and
    </script>
    ```
 
-   **Figure: Playing files (in mobile applications only)**
+   **Figure: Playing files (Optional feature)**
 
-   ![Playing files (in mobile applications only)](./media/video_audio4.png)
+   ![Playing files](./media/video_audio4.png)
 
 ### Source code
 
@@ -232,9 +232,9 @@ To provide users with HTML5 audio and video features, you must learn to retrieve
    </script>
    ```
 
-   **Figure: Displaying the duration and play time (in mobile applications only)**
+   **Figure: Displaying the duration and play time (Optional feature)**
 
-   ![Displaying the duration and play time (in mobile applications only)](./media/video_audio5.png)
+   ![Displaying the duration and play time](./media/video_audio5.png)
 
 ### Source code
 
@@ -288,9 +288,9 @@ To provide users with HTML5 audio and video features, you must learn to move the
 
    If the metadata of the media file is loaded, you can move to the assigned timeline position even when the media file is not playing. For more information, see [Retrieving Media Information.](#retrieve)
 
-   **Figure: Moving the timeline position (in mobile applications only)**
+   **Figure: Moving the timeline position (Optional feature)**
 
-   ![Moving the timeline position (in mobile applications only)](./media/video_audio6.png)
+   ![Moving the timeline position](./media/video_audio6.png)
 
 ### Source code
 
@@ -341,9 +341,9 @@ To provide users with HTML5 audio and video features, you must learn to check th
    </script>
    ```
 
-   **Figure: Displaying the progress state (in mobile applications only)**
+   **Figure: Displaying the progress state (Optional feature)**
 
-   ![Displaying progress state (in mobile applications only)](./media/video_audio7.png)
+   ![Displaying progress state](./media/video_audio7.png)
 
 ### Source code
 
@@ -397,9 +397,9 @@ To provide users with HTML5 audio and video features, you must learn to resize t
    </script>
    ```
 
-   **Figure: Resizing the video screen (in mobile applications only)**
+   **Figure: Resizing the video screen (Optional feature)**
 
-   ![Resizing the video screen (in mobile applications only)](./media/video_audio8.png)
+   ![Resizing the video screen](./media/video_audio8.png)
 
 ### Source code
 
@@ -431,7 +431,7 @@ To provide users with HTML5 audio and video features, you must learn to check wh
    </div>
    ```
 
-2. Use the `canPlayType()` method (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#dom-navigator-canplaytype){:target="_blank"}, [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#dom-navigator-canplaytype){:target="_blank"}, and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#dom-navigator-canplaytype){:target="_blank"} applications) to check, whether the selected media files have an acceptable MIME type, and can be played:
+2. Use the `canPlayType()` method (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#dom-navigator-canplaytype){:target="_blank"} applications) to check, whether the selected media files have an acceptable MIME type, and can be played:
 
    ```
    <script>
@@ -535,8 +535,7 @@ The following tables list the codecs supported in Tizen.
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-element){:target="_blank"}

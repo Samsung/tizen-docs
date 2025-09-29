@@ -1,6 +1,6 @@
 # HTML5 Canvas
 
-The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#canvas2d), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#canvas2d), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
+The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
 
 The main features of the Canvas Element API include the following:
 
@@ -24,7 +24,7 @@ The main features of the Canvas Element API include the following:
 
 For all canvas objects (images, shapes, text, and lines), you can define colors (the `fillStyle` and `strokeStyle` attributes), shadows (the `shadowColor` and `shadowBlur` attributes), and gradation (the `createLinearGradient()` method). You can also use the transformation methods, such as `scale()`, `translate()`, `transform()`, and `rotate()`, to implement, for example, transparency or shape gradient transformations.
 
-In mobile applications only, in HTML5, the [Scalable Vector Graphics (SVG) 2](../../../api/latest/w3c_api/w3c_api_m.html#svg) API provides similar features as the canvas. Their difference is that SVG expresses graphics using vectors, while the canvas is based on pixels. To express complex graphics, use the canvas, and to express graphics with a liberal expansion or reduction, use [SVG](./svg.md).
+In specific applications only, in HTML5, the [Scalable Vector Graphics (SVG) 2](../../../api/latest/w3c_api/w3c_api_m.html#svg) API provides similar features as the canvas. Their difference is that SVG expresses graphics using vectors, while the canvas is based on pixels. To express complex graphics, use the canvas, and to express graphics with a liberal expansion or reduction, use [SVG](./svg.md).
 
 > [!NOTE]
 > The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL&trade;](https://www.khronos.org/registry/webgl/specs/1.0/){:target="_blank"} API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL&trade; in mobile applications, see [Performance Comparison of Canvas 2D and WebGL&trade;](#comparison).
@@ -47,7 +47,7 @@ To create a canvas in your application, follow these steps:
 
 2. To check the information on the image connected to the canvas, use the `toDataURL([Optional], [Variadic])` method to restore the URL of the image used on the canvas. To create a blob object of the image file, use the `getContext(contextId)` method.
 
-3. Use the `CanvasRenderingContext2D` interface (in [mobile](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext){:target="_blank"} applications) to connect to the canvas and get the canvas context:
+3. Use the `CanvasRenderingContext2D` interface (in [TV](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext){:target="_blank"} applications) to connect to the canvas and get the canvas context:
 
    ```
    var canvas = document.querySelector('canvas'),
@@ -137,9 +137,9 @@ To use images on a canvas, follow these steps:
    context.restore();
    ```
 
-   The following figure applies to mobile applications only.
+   The following figure applies to specific applications only.
    
-   ![Using images on the canvas (in mobile applications only)](./media/canvas_using_images.png)
+   ![Using images on the canvas](./media/canvas_using_images.png)
 
 ### Source code
 
@@ -171,13 +171,13 @@ To create and draw shapes on a canvas, follow these steps:
    context.clearRect(50, 50, 100, 100);
    ```
 
-   The following figure applies to mobile applications only.
+   The following figure applies to specific applications only.
    
-   ![Assign rectangle attributes (in mobile applications only)](./media/canvas_drawing_shapes1.png)
+   ![Assign rectangle attributes](./media/canvas_drawing_shapes1.png)
 
 2. Use the `arc()` method to create a circle.
 
-   Use the canvas context to assign the circle attributes, such as position and radius. (The following figure applies to mobile applications only.)
+   Use the canvas context to assign the circle attributes, such as position and radius. (The following figure applies to specific applications only.)
 
    ```
    /* Create a circle */
@@ -201,7 +201,7 @@ To create and draw shapes on a canvas, follow these steps:
    context.stroke();
    ```
 
-   ![Assign circle attributes (in mobile applications only)](./media/canvas_drawing_shapes2.png)
+   ![Assign circle attributes](./media/canvas_drawing_shapes2.png)
 
 3. Use the `CanvasTransformation` interface to transform the created shapes. With compositing, a certain part of the shape can be made transparent.
 
@@ -218,9 +218,9 @@ To create and draw shapes on a canvas, follow these steps:
    context.fillStyle = 'tomato';
    ```
 
-   The following figure applies to mobile applications only.
+   The following figure applies to specific applications only.
    
-   ![Transform shapes (in mobile applications only)](./media/canvas_drawing_shapes3.png)
+   ![Transform shapes](./media/canvas_drawing_shapes3.png)
 
 > [!NOTE]
 > For a canvas, the rendering occurs in the order from the back of the input source.
@@ -427,7 +427,7 @@ For the complete source code related to this use case, see the following files:
 - [Text_Styles_4.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context){:target="_blank"}
 
 <a name="comparison"></a>
-## Performance comparison of Canvas 2D and WebGL&trade; in mobile applications
+## Performance comparison of Canvas 2D and WebGL&trade; (Optional feature)
 
 In Web documents prior to HTML5, only simple image loading was supported. To create graphic animations, you had to use a separate plug-in. However, as the graphic-related APIs have become more standardized, you can now express graphics by using only JavaScript, without a separate plug-in.
 
@@ -438,7 +438,7 @@ To compare the performance, 2 simple Web applications must be created, using the
 1. Create the applications with the following logic:
    1. Load an image.
    2. Render the loaded image in the random location of the canvas.
-   3. Use the `requestAnimationFrame()` method of the Timing control for script-based animations API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#timing), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#timing), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#timing) applications) to change the color of the loaded image, based on different times.
+   3. Use the `requestAnimationFrame()` method of the Timing control for script-based animations API (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#timing) applications) to change the color of the loaded image, based on different times.
    4. Create a logic that measures FPS (frames per second) in order to check the performance.
 2. Execute the applications and measure the FPS.
 3. Increase only the number of objects so that the same 1\~N images, under the same conditions, are shown repeatedly based on 1\~N.
@@ -460,8 +460,7 @@ Many mobile browsers do not support WebGL&trade; or only partially support WebGL
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [HTML spec](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext){:target="_blank"}

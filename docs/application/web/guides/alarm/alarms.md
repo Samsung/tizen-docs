@@ -2,7 +2,7 @@
 
 You can schedule an application to run at a specific time. When an alarm is triggered, the application is launched (unless it is already running).
 
-The Alarm API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on Tizen emulators.
+The Alarm API is mandatory for Tizen TV and IoT profiles, which means that it is supported on all TV and IoT devices. All mandatory APIs are supported on Tizen emulators.
 
 The main features of the Alarm API include the following:
 
@@ -18,13 +18,13 @@ The main features of the Alarm API include the following:
 
   You can [retrieve information about the next alarm event](#checking-for-alarm-events).
 
-- Alarm notification management **in mobile and wearable applications only**   
+- Alarm notification management **(Optional Feature)**   
 
-  You can create alarm notifications, which [post a notification](#managing-alarm-notifications-in-mobile-and-wearable-applications) when the alarm is triggered. You can also obtain the details of the created notifications.
+  You can create alarm notifications, which [post a notification](#manage-alarm-notifications-optional-feature) when the alarm is triggered. You can also obtain the details of the created notifications.
 
 ## Prerequisites
 
-To use the Alarm API (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html), and [TV](../../api/latest/device_api/tv/tizen/alarm.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the Alarm API (in [TV](../../api/latest/device_api/tv/tizen/alarm.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/alarm"/>
@@ -45,7 +45,7 @@ To obtain a list of alarms, create and delete them, follow these steps:
 
 2. To create an alarm:
 
-   - To create an absolute alarm, create an instance of the `AlarmAbsolute` interface (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmAbsolute), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmAbsolute), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmAbsolute) applications).
+   - To create an absolute alarm, create an instance of the `AlarmAbsolute` interface (in [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmAbsolute) applications).
 
      You must define the time and date when the alarm is triggered as a `Date` object:
 
@@ -55,9 +55,9 @@ To obtain a list of alarms, create and delete them, follow these steps:
      var alarm1 = new tizen.AlarmAbsolute(date);
      ```
 
-   - To create a relative alarm, create an instance of the `AlarmRelative` interface (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmRelative), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmRelative), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmRelative) applications).
+   - To create a relative alarm, create an instance of the `AlarmRelative` interface (in [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmRelative) applications).
 
-     You must define the delay after which the alarm is triggered. Use the predefined constants from the `AlarmManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmManager), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmManager), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmManager) applications):
+     You must define the delay after which the alarm is triggered. Use the predefined constants from the `AlarmManager` interface (in [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmManager) applications):
 
      ```
      /* Alarm is triggered in 3 hours */
@@ -140,7 +140,7 @@ Learning how to launch applications with alarms is a basic alarm management skil
 
 ## Check for alarm events
 
-You can retrieve information about the next alarm event using the `AlarmAbsolute` (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmAbsolute), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmAbsolute), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmAbsolute) applications) and `AlarmRelative` (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmRelative), [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmRelative), and [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmRelative) applications) interfaces. They provide the time and date of the next scheduled absolute alarm, or the time remaining before the next relative alarm.
+You can retrieve information about the next alarm event using the `AlarmAbsolute` (in [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmAbsolute) applications) and `AlarmRelative` (in [TV](../../api/latest/device_api/tv/tizen/alarm.html#AlarmRelative) applications) interfaces. They provide the time and date of the next scheduled absolute alarm, or the time remaining before the next relative alarm.
 
 1. Create an absolute alarm:
 
@@ -170,9 +170,9 @@ You can retrieve information about the next alarm event using the `AlarmAbsolute
    console.log('The alarm triggers ' + alarm.getRemainingSeconds() + ' seconds later');
    ```
 
-## Manage alarm notifications in mobile and wearable applications
+## Manage alarm notifications (Optional Feature)
 
-Alarm notification is an alarm which, when triggered, automatically posts a [notification](../../api/latest/device_api/mobile/tizen/notification.html#Notification). You can create alarm notifications with both `AlarmAbsolute` (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmAbsolute) and [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmAbsolute) applications) and `AlarmRelative` (in [mobile](../../api/latest/device_api/mobile/tizen/alarm.html#AlarmRelative) and [wearable](../../api/latest/device_api/wearable/tizen/alarm.html#AlarmRelative) applications) alarm types. The notification is shown in the status bar on the device.
+Alarm notification is an alarm which, when triggered, automatically posts a notification. You can create alarm notifications with both `AlarmAbsolute` and `AlarmRelative` alarm types. The notification is shown in the status bar on the device.
 
 To create an alarm notification with the `AlarmRelative` alarm type and `UserNotification` notification type, where the alarm is periodic and the notification is posted after the alarm is triggered:
 
@@ -223,10 +223,6 @@ To create an alarm notification with the `AlarmRelative` alarm type and `UserNot
 
 ## Related information
 * Dependencies   
-   - Tizen 2.4 and Higher for Mobile
-   - Tizen 2.3.1 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/alarm.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/alarm.html)
   - [TV](../../api/latest/device_api/tv/tizen/alarm.html)

@@ -2,7 +2,7 @@
 
 You can decode and restore font data easily.
 
-The new text features in WOFF File Format 2.0 (in mobile and TV applications) and 1.0 (in wearable applications) include:
+The new text features in WOFF File Format 2.0 (in TV applications) and 1.0 (in specific applications) include:
 
 - Decoding and restoring font data
 
@@ -73,14 +73,13 @@ To use the WOFF (Web Open Font Format) file format, which is a W3C standard font
    </html>
    ```
 
-**Figure: Implementing the @font-face rules (in mobile applications only)**
+**Figure: Implementing the @font-face rules (Optional feature)**
 
-![Implementing the @font-face rules (in mobile applications only)](./media/font_face.png)
+![Implementing the @font-face rules](./media/font_face.png)
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://www.w3.org/TR/WOFF/){:target="_blank"}

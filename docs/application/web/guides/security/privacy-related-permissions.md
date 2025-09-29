@@ -2,7 +2,7 @@
 
 You can check current permissions for privacy-related privileges and request user permission to use specified privileges.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 Before Tizen 4.0, the pop-up requesting the user's consent to use privacy-related privileges was triggered by first access to protected resources or functionality. Since Tizen 4.0, you can decide the moment in the application life-cycle when permissions are granted. It can be at the application startup, or at the moment when some additional functionality is to be used. For example, a notepad application where the user can enter both text notes and photographs does not automatically require camera access in order to be used (maybe the user only wants to add text notes). Optimally, the application requests the user to grant camera access permission only when the user needs the camera.
 
@@ -38,7 +38,7 @@ To verify whether an application has permission to use a privilege, and to reque
     var result = tizen.ppm.checkPermission(cameraPrivilege);
     ```
 
-    The result of the call is returned as a value of the `PermissionType` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PermissionType) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PermissionType) applications).
+    The result of the call is returned as a value of the `PermissionType` enumeration.
 
 2. React to the permission check appropriately:
     - If the result value is `PPM_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities:
@@ -71,7 +71,7 @@ To verify whether an application has permission to use a privilege, and to reque
 
 3. If you need to request user permission, handle the user decision within the `PermissionSuccessCallback` callback used in the `requestPermission()` method.
 
-    The user decision is returned in the first parameter of the callback as a value of the `PermissionRequestResult` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PermissionRequestResult) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PermissionRequestResult) applications). The second parameter contains the permission that is being requested:
+    The user decision is returned in the first parameter of the callback as a value of the `PermissionRequestResult` enumeration. The second parameter contains the permission that is being requested:
 
     ```
     /* Define PermissionSuccessCallback */
@@ -95,15 +95,11 @@ To verify whether an application has permission to use a privilege, and to reque
 
     If the decision is definitive, any subsequent `requestPermission()` calls result in an immediate response with an appropriate result: `PPM_ALLOW_FOREVER` or `PPM_DENY_FOREVER`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
 
-4. Since Tizen 5.0 you can check and request multiple privacy privileges at once. To do that please use `checkPermissions` [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PrivacyPrivilegeManager::checkPermissions) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PrivacyPrivilegeManager::checkPermissions) and `requestPermissions` [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PrivacyPrivilegeManager::requestPermissions) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PrivacyPrivilegeManager::requestPermissions).
+4. Since Tizen 5.0 you can check and request multiple privacy privileges at once. To do that please use `checkPermissions` and `requestPermissions`.
 
 > [!NOTE]
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
 
 ## Related information
 - Dependencies
-  - Tizen 4.0 and Higher for Mobile
-  - Tizen 4.0 and Higher for Wearable
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/ppm.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/ppm.html)
+  - Tizen 4.0 and Higher

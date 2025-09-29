@@ -1,6 +1,6 @@
 # HTML5 Session History
 
-You can manage the session history of browsing contexts. The `history` interface (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#the-history-interface), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#the-history-interface), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#the-history-interface) applications) is used to save in the session history the page information that has been read by the user. You can also use the `state` object (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#state-object), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object) applications) to directly store the page information which has already been analyzed in the URL, or general information which is not stored in the URL (such as location, or the scroll state of the page or a certain DOM element).
+You can manage the session history of browsing contexts. The `history` interface (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#the-history-interface) applications) is used to save in the session history the page information that has been read by the user. You can also use the `state` object (in  [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object) applications) to directly store the page information which has already been analyzed in the URL, or general information which is not stored in the URL (such as location, or the scroll state of the page or a certain DOM element).
 
 The main features of the HTML5 session history of browsing contexts API include:
 
@@ -10,13 +10,13 @@ The main features of the HTML5 session history of browsing contexts API include:
 
 - Detecting session history status changes
 
-  The `popstate` event (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#event-popstate), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#event-popstate), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#event-popstate) applications) is fired when the user navigates to a page stored in the session history. The `popstate` event references the information stored with the `pushState()` or `replaceState()` methods, and enables you to [change the status of the page based on the stored session history](#detecting-session-history-changes) (such as moving focus to a certain DOM element).
+  The `popstate` event (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#event-popstate) applications) is fired when the user navigates to a page stored in the session history. The `popstate` event references the information stored with the `pushState()` or `replaceState()` methods, and enables you to [change the status of the page based on the stored session history](#detecting-session-history-changes) (such as moving focus to a certain DOM element).
 
 ## Managing Session History Entries
 
 Learning how to manage the session history enhances the user browsing experience in your application:
 
-1. To add an entry to the session history, use the `pushState()` method of the `history` interface (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#the-history-interface), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#the-history-interface), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#the-history-interface) applications):
+1. To add an entry to the session history, use the `pushState()` method of the `history` interface (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#the-history-interface) applications):
 
    ```
    <script>
@@ -51,7 +51,7 @@ Learning how to manage the session history enhances the user browsing experience
       <a href="http://tizen.org/">Tizen.org</a>
       ```
 
-   2. When the user clicks the buttons, the current index value (representing page numbers) is changed and stored in the `state` object (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#state-object), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object) applications) of the `history` interface:
+   2. When the user clicks the buttons, the current index value (representing page numbers) is changed and stored in the `state` object (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object) applications) of the `history` interface:
 
       ```
       var currentIndex = 0;
@@ -98,7 +98,7 @@ For the complete source code related to this use case, see the following file:
 
 Learning how to track session history changes enhances the user browsing experience in your application:
 
-1. A page with data stored in the session history fires a `popstate` event (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#event-popstate), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#event-popstate), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#event-popstate) applications) when the page is loaded (for example, because it is refreshed or moved to from the previous page).
+1. A page with data stored in the session history fires a `popstate` event (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#event-popstate) applications) when the page is loaded (for example, because it is refreshed or moved to from the previous page).
 
    Register the event listener:
 
@@ -106,7 +106,7 @@ Learning how to track session history changes enhances the user browsing experie
    window.addEventListener('popstate', foo, false);
    ```
 
-2. Define the event handler for the event. You can use the data stored in the `state` object (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#state-object), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object) applications) to retrieve the correct location on the page to be loaded.
+2. Define the event handler for the event. You can use the data stored in the `state` object (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object) applications) to retrieve the correct location on the page to be loaded.
 
    ```
    var output = document.querySelector('output');
@@ -127,8 +127,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://www.w3.org/TR/2009/WD-html5-20090825/history.html){:target="_blank"}

@@ -81,9 +81,9 @@ var search_button = $('button');
 var search_button = $('#contents button');
 ```
 
-**Figure: jQuery performance improvement result (in mobile applications only)**
+**Figure: jQuery performance improvement result (Optional feature)**
 
-![jQuery performance improvement result (in mobile applications only)](./media/js_perform_result_selector1.png)
+![jQuery performance improvement result](./media/js_perform_result_selector1.png)
 
 **Table: jQuery performance improvement result**
 
@@ -108,9 +108,9 @@ var search_button = $('button.blue');
 var search_button = $('#contents button.blue');
 ```
 
-**Figure: jQuery performance improvement result (in mobile applications only)**
+**Figure: jQuery performance improvement result (Optional feature)**
 
-![jQuery performance improvement result (in mobile applications only)](./media/js_perform_result_selector2.png)
+![jQuery performance improvement result](./media/js_perform_result_selector2.png)
 
 **Table: jQuery performance improvement result**
 
@@ -141,9 +141,9 @@ $search_button.removeClass('blue');
 $search_button.addClass('red');
 ```
 
-**Figure: jQuery performance improvement result (in mobile applications only)**
+**Figure: jQuery performance improvement result (Optional feature)**
 
-![jQuery performance improvement result (in mobile applications only)](./media/js_perform_result_cache.png)
+![jQuery performance improvement result](./media/js_perform_result_cache.png)
 
 **Table: jQuery performance improvement result**
 
@@ -169,9 +169,9 @@ $('#contents').('background-color', 'red');
 $('#contents').addClass('active').css('border', '1px solid').('background-color', 'red');
 ```
 
-**Figure: jQuery performance improvement result (in mobile applications only)**
+**Figure: jQuery performance improvement result (Optional feature)**
 
-![jQuery performance improvement result (in mobile applications only)](./media/js_perform_result_chaining.png)
+![jQuery performance improvement result](./media/js_perform_result_chaining.png)
 
 **Table: jQuery performance improvement result**
 
@@ -207,9 +207,9 @@ for (var i = 0, len = array_list.length; i < len; i++) {
 $contents_list.append(list);
 ```
 
-**Figure: jQuery performance improvement result (in mobile applications only)**
+**Figure: jQuery performance improvement result (Optional feature)**
 
-![jQuery performance improvement result (in mobile applications only)](./media/js_perform_result_jquery_dom.png)
+![jQuery performance improvement result](./media/js_perform_result_jquery_dom.png)
 
 **Table: jQuery performance improvement result**
 
@@ -219,6 +219,4 @@ $contents_list.append(list);
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

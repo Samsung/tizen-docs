@@ -41,9 +41,9 @@ To use pseudo-class selectors:
    > **Note**  
    > In the versions prior to CSS3, pseudo-classes, such as `:hover`, `:active`, and `:focus`, were used, and required an attribute selector. Since the `:enabled` and `:disabled` classes are not influenced by the `display` and `visibility` attributes, they improve the accessibility.
 
-2. To control the state of the HTML5 Web Forms (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#forms), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#forms), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#forms) applications), use the `:in-range` and `:out-of-range` pseudo-classes.
+2. To control the state of the HTML5 Web Forms (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#forms) applications), use the `:in-range` and `:out-of-range` pseudo-classes.
 
-   They check for any values that have exceeded the inserted range. (The following figure applies to mobile applications only.)
+   They check for any values that have exceeded the inserted range. (The following figure applies to specific applications only.)
    
    ```
    <!--HTML-->
@@ -56,9 +56,9 @@ To use pseudo-class selectors:
    input[type="number"]: out-of-range {border: 3px solid red; width: 90%}
    ```
 
-   ![Element ranges (in mobile applications only)](./media/pseudo_elements_selector_range.png)
+   ![Element ranges (Optional feature)](./media/pseudo_elements_selector_range.png)
 
-3. To apply different styles to required input items and option items, use the `:required` and `:optional` pseudo-classes. (The following figure applies to mobile applications only.)
+3. To apply different styles to required input items and option items, use the `:required` and `:optional` pseudo-classes. (The following figure applies to specific applications only.)
 
    ```
    <!--HTML-->
@@ -78,7 +78,7 @@ To use pseudo-class selectors:
    input: optional, textarea: optional {border: 1px solid #777}
    ```
 
-   ![Required and optional elements (in mobile applications only)](./media/pseudo_elements_selector_required.png)
+   ![Required and optional elements](./media/pseudo_elements_selector_required.png)
 
 ### Source Code
 
@@ -133,9 +133,9 @@ To use the box model properties in your application:
 
 The following figure illustrates the box model properties; from left to right, it shows the effects of the box sizing, outline, and text overflow properties.
 
-**Figure: Box model properties (in mobile applications only)**
+**Figure: Box model properties (Optional feature)**
 
-![Box model properties (in mobile applications only)](./media/box_model_properties.png)
+![Box model properties](./media/box_model_properties.png)
 
 ### Source Code
 
@@ -147,8 +147,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://www.w3.org/TR/css-ui-3/){:target="_blank"}

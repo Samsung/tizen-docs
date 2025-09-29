@@ -17,8 +17,3 @@ features:
 -   [Polygons on the canvas](app-graphics-polygon.md)
     -   You can draw a triangle on the canvas.
     -   You can add and display a pentagon on the same canvas.
--   [Animations](app-graphics-animation.md)
-    -   You can create rectangles on the screen, and use animations to
-        change their position, size, and color.
-    -   You can manage the animations to make them start at specific
-        moments and run for a predefined duration.

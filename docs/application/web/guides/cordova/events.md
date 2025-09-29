@@ -2,21 +2,21 @@
 
 You can use events provided by Cordova in Web applications by registering custom listeners with no parameters. The Events API has no objects or properties.
 
-The Events API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Events API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
 The Events API provides the following events:
 
 - `deviceready`  
-    The `deviceready` event is a prerequisite for all Cordova operations. You can use the `deviceready` event to receive a signal when Cordova's device APIs have loaded and are ready to access. You can also use this event to [register event listeners](#adding-event-listeners) for other events you are interested in.    
+    The `deviceready` event is a prerequisite for all Cordova operations. You can use the `deviceready` event to receive a signal when Cordova's device APIs have loaded and are ready to access. You can also use this event to [register event listeners](#add-event-listeners) for other events you are interested in.    
 
 - `pause`  
-    You can [use the `pause` event](#handling-pause-and-resume-events) to receive a signal when the application is put to the background. This happens typically when the screen is being locked or when the user switches to a different application.    
+    You can [use the `pause` event](#handle-pause-and-resume-events) to receive a signal when the application is put to the background. This happens typically when the screen is being locked or when the user switches to a different application.    
 
 - `resume`  
-    You can [use the `resume` event](#handling-pause-and-resume-events) to receive a signal when the application is retrieved from the background.    
+    You can [use the `resume` event](#handle-pause-and-resume-events) to receive a signal when the application is retrieved from the background.    
 
 - Button press events  
-  You can [add event listeners for specific button press events](#handling-button-press-events).
+  You can [add event listeners for specific button press events](#handle-button-press-events).
 
 ## Prerequisites
 
@@ -77,7 +77,7 @@ To handle the `pause` and `resume` events:
    }
    ```
 
-2. In the `deviceready` event handler, [add the listeners](#adding-event-listeners):
+2. In the `deviceready` event handler, [add the listeners](#add-event-listeners):
 
    ```
    document.addEventListener('pause', onPause);
@@ -116,7 +116,7 @@ To add event listeners for the menu, volume up, and volume down buttons, follow 
    }
    ```
 
-2. In the `deviceready` event handler, [add the listeners](#adding-event-listeners).
+2. In the `deviceready` event handler, [add the listeners](#add-event-listeners).
 
    In this example, the same listener is used for both the volume up and down buttons:
 
@@ -130,10 +130,6 @@ When you press the buttons, the result is shown in the system console.
 
 ## Related information
 * Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/events.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/events.html)
   - [TV](../../api/latest/device_api/tv/tizen/cordova/events.html)

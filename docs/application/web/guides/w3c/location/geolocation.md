@@ -2,7 +2,7 @@
 
 Geolocation defines a location information interface. Common sources of location information are GPS, location inferred from the network (such as IP address), RFID, Wi-Fi, Bluetooth MAC address, and GSM/CDMA cell IDs. The [Geolocation](https://www.w3.org/TR/geolocation/#geolocation_interface){:target="_blank"} interface is implemented by the `Navigator` object instances. The location information is represented by the latitude and longitude coordinates.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 Using the `Geolocation` interface, you can [retrieve position information](#retrieving-location-information) with "one-shot" position requests (with the `getCurrentPosition()` method) or repeated position updates (with the `watchPosition()` method). Both methods take the following parameters:
 
@@ -93,9 +93,9 @@ To provide users with location-based features, you must learn to create a mobile
 
 The following figure illustrates the GPS application.
 
-**Figure: GPS application (in mobile applications only)**
+**Figure: GPS application (Optional feature)**
 
-![GPS application (in mobile applications only)](./media/geolocation.png)
+![GPS application](./media/geolocation.png)
 
 ### Source code
 
@@ -105,7 +105,6 @@ For the complete source code related to this use case, see the following file:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
 * API References
   - [W3C](https://www.w3.org/TR/geolocation/#geolocation_interface){:target="_blank"}

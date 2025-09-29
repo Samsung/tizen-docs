@@ -2,7 +2,7 @@
 
 You can control the volume level of several sound types and get information about the current sound mode and the state of the current sound devices. The available sound types include, for example, system, notifications, alarms, and media.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 The main features of the Sound API include the following:
 
@@ -24,7 +24,7 @@ The main features of the Sound API include the following:
 
 ## Prerequisites
 
-To use the Sound API (in [mobile](../../api/latest/device_api/mobile/tizen/sound.html) and [wearable](../../api/latest/device_api/wearable/tizen/sound.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the Sound API, the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/volume.set"/>
@@ -140,8 +140,4 @@ Learning how to monitor changes in the sound device state makes it easier for yo
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/sound.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/sound.html)
+  - Tizen 2.4 and Higher

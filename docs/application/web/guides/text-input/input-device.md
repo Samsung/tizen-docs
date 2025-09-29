@@ -2,7 +2,7 @@
 
 You can manage input device keys and monitor key events.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 The main features of the Input Device API include the following:
 
@@ -24,7 +24,7 @@ The key names are listed in the [DOM Level 3 KeyboardEvent key Values](https://w
 
 To get a list of all supported keys, follow this step:
 
-1. To get a supported key list, use the `getSupportedKeys()` method of the `InputDeviceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications):
+1. To get a supported key list, use the `getSupportedKeys()` method of the `InputDeviceManager` interface:
 
    ```
    var keyCodes = {};
@@ -43,7 +43,7 @@ To get a list of all supported keys, follow this step:
 
 To gather information about the key by its name, follow these steps:
 
-1. Create a list of keys for which you want the information by using the `InputDeviceKey` object (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceKey) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceKey) applications).
+1. Create a list of keys for which you want the information by using the `InputDeviceKey` object.
 
    If you do not want to gather information about all supported keys, create a separate list of keys for information gathering. If you want information about all supported keys, use the list retrieved in the previous use case:
 
@@ -52,7 +52,7 @@ To gather information about the key by its name, follow these steps:
    var keyCodes = {};
    ```
 
-2. Check each key separately using the `getKey()` method of the `InputDeviceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications).
+2. Check each key separately using the `getKey()` method of the `InputDeviceManager` interface.
 
    If the result of the `getKey()` method is not `null`, you can access the key information. If the result is `null`, the key is not supported:
 
@@ -74,7 +74,7 @@ To gather information about the key by its name, follow these steps:
 
 ## Register and deregister keys
 
-When you want to react to input device key presses, register the applicable key using the `InputDeviceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications). After registering the input device key, the application receives a DOM keyboard event when the key is pressed or released. When the events are no longer needed, deregister the key.
+When you want to react to input device key presses, register the applicable key using the `InputDeviceManager` interface. After registering the input device key, the application receives a DOM keyboard event when the key is pressed or released. When the events are no longer needed, deregister the key.
 
 > [!NOTE]
 > The application cannot register the mandatory keys (**ArrowLeft**, **ArrowRight**, **ArrowUp**, **ArrowDown**, **Enter**, and **Back**).
@@ -167,8 +167,4 @@ To manage input device keys, you must learn to change the action of a supported 
 
 ## Related information
 * Dependencies   
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
-* API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html)
+  - Tizen 3.0 and Higher

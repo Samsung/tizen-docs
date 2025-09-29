@@ -2,7 +2,7 @@
 
 By localizing your application, you can ensure that your application works around the world in different locales.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 To localize a Tizen Web application:
 
@@ -152,5 +152,4 @@ To localize a Tizen Web application:
 
 ## Related information
 * Dependencies   
-   - Tizen 2.4 and Higher for Mobile
-   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 2.4 and Higher

@@ -6,7 +6,7 @@ The main features of the Indexed Database API include the following:
 
 - Creating a database
 
-  Use the `IndexedDB.open()` method to [create a database](#creating-a-database). In a database (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#database-operations){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept){:target="_blank"} applications), at least 1 object store (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#object-store-concept){:target="_blank"}, [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#object-store-concept){:target="_blank"}, and [TV](https://www.w3.org/TR/IndexedDB/#object-store-construct){:target="_blank"} applications) must be present.
+  Use the `IndexedDB.open()` method to [create a database](#creating-a-database). In a database (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept){:target="_blank"} applications), at least 1 object store (in [TV](https://www.w3.org/TR/IndexedDB/#object-store-construct){:target="_blank"} applications) must be present.
 
 - Creating an object store
 
@@ -21,11 +21,11 @@ The main features of the Indexed Database API include the following:
   The stored data creates a key, assigned to a `keypath`, which in turn creates a value as a JSON object.
 
   > [!NOTE]
-  > Tizen supports the `READ_ONLY`, `READ_WRITE`, and `VERSION_CHANGE` transactions (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#transaction-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction){:target="_blank"} applications) with the `unsigned short` type.
+  > Tizen supports the `READ_ONLY`, `READ_WRITE`, and `VERSION_CHANGE` transactions (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction){:target="_blank"} applications) with the `unsigned short` type.
 
 - Creating an index
 
-  In the object store, you can use the `createIndex()` method to [generate an index](#index). You can search for and retrieve records stored in the index (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#index-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept){:target="_blank"} applications) using other properties than the key, as the key is not always unique. You can also retrieve records containing arrays as keys.
+  In the object store, you can use the `createIndex()` method to [generate an index](#index). You can search for and retrieve records stored in the index (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept){:target="_blank"} applications) using other properties than the key, as the key is not always unique. You can also retrieve records containing arrays as keys.
 
 ## Create a database
 
@@ -70,14 +70,14 @@ For the complete source code related to this use case, see the following file:
 
 An object store can derive keys from the following sources:
 
-- Key generator (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#key-generator-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator){:target="_blank"} applications)
+- Key generator (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator){:target="_blank"} applications)
 
     Generates an increasing number every time a key is needed.
-- Key path (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#key-path-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct){:target="_blank"} applications)
+- Key path (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct){:target="_blank"} applications)
 
     Key is derived through a key path.
 
-- Value (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct){:target="_blank"}, [wearable](https://www.w3.org/TR/IndexedDB/#value-construct){:target="_blank"}, and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct){:target="_blank"} applications)
+- Value (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct){:target="_blank"} applications)
 
     Key is specified when a value is stored in the object store.
 
@@ -206,8 +206,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept){:target="_blank"}

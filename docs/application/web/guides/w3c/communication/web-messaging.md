@@ -10,13 +10,13 @@ The main features of the HTML5 Web Messaging API include the following:
 
 - Channel messaging
 
-   You can [send and receive messages through the port](#using-channel-messaging) of the `MessageChannel` interface (in [mobile](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"} applications).
+   You can [send and receive messages through the port](#using-channel-messaging) of the `MessageChannel` interface (in [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"} applications).
 
-With the Web Messaging API, messages are sent and received asynchronously using the `MessageEvent` object (in [mobile](https://html.spec.whatwg.org/multipage/comms.html#the-messageevent-interface){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/comms.html#the-messageevent-interface){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/comms.html#the-messageevent-interface){:target="_blank"} applications), within 1 domain or between different domains.
+With the Web Messaging API, messages are sent and received asynchronously using the `MessageEvent` object (in [TV](https://html.spec.whatwg.org/multipage/comms.html#the-messageevent-interface){:target="_blank"} applications), within 1 domain or between different domains.
 
 ## Use cross-document messaging
 
-Send the message from the sending page using the `postMessage()` method of the receiving page window object (in [mobile](https://html.spec.whatwg.org/multipage/web-messaging.html#posting-messages){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/web-messaging.html#posting-messages){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#posting-messages){:target="_blank"} applications). To receive the page, the receiving page window object must be registered to receive messages.
+Send the message from the sending page using the `postMessage()` method of the receiving page window object (in [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#posting-messages){:target="_blank"} applications). To receive the page, the receiving page window object must be registered to receive messages.
 
 The `postMessage()` method supports the following parameters:
 
@@ -72,7 +72,7 @@ The `MessageChannel` instance broadcasts message sending and receiving, and has 
 
 Learning how to use channel messaging enhances the communication capabilities of your application:
 
-1. To send a message from document A to document B, create in document A a `MessageChannel` interface instance (in [mobile](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"} applications), which has 2 `message port` attributes (in [mobile](https://html.spec.whatwg.org/multipage/web-messaging.html#message-ports){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/web-messaging.html#message-ports){:target="_blank"}, [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#message-ports){:target="_blank"} applications): `port1` and `port2`.
+1. To send a message from document A to document B, create in document A a `MessageChannel` interface instance (in [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"} applications), which has 2 `message port` attributes (in [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#message-ports){:target="_blank"} applications): `port1` and `port2`.
 
    The `port2` attribute of the `MessageChannel` instance is delivered to document B through the `postMessage()` method of the document B window object:
 
@@ -98,7 +98,7 @@ Learning how to use channel messaging enhances the communication capabilities of
    ```
 
    > [!NOTE]
-   > The `postMessage()` method can have 3 parameters: `message`, `origin` (in [mobile](https://html.spec.whatwg.org/multipage/web-messaging.html#posting-messages){:target="_blank"}, [wearable](https://html.spec.whatwg.org/multipage/web-messaging.html#posting-messages){:target="_blank"}, and [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#posting-messages){:target="_blank"} applications), and `ports`.  
+   > The `postMessage()` method can have 3 parameters: `message`, `origin` (in [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#posting-messages){:target="_blank"} applications), and `ports`.  
    > According to the W3C specifications, the arguments are ordered as `message`, `origin`, and `ports`. However, in Tizen, the order used is actually `message`, `ports`, and `origin`. This approach is used in all browsers that currently support the `MessageChannel` interface.
 
 2. Define a `message` event in the `window` object of document B, and register the event handler in the `port` sent from document A:
@@ -130,8 +130,6 @@ For the complete source code related to this use case, see the following files:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://html.spec.whatwg.org/multipage/web-messaging.html#posting-messages){:target="_blank"}

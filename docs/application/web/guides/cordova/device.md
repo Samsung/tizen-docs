@@ -2,9 +2,9 @@
 
 You can use a `device` global dictionary to access the device information, such as hardware UUID (unique ID) and software version.
 
-The Device API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Device API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
-The following table lists the properties available in the global `Device` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/device.html#Device), [wearable](../../api/latest/device_api/wearable/tizen/cordova/device.html#Device), and [TV](../../api/latest/device_api/tv/tizen/cordova/device.html#Device) applications), and which allow you to [access specific device information](#loginfo).
+The following table lists the properties available in the global `Device` object (in [TV](../../api/latest/device_api/tv/tizen/cordova/device.html#Device) applications), and which allow you to [access specific device information](#loginfo).
 
 **Table: Device properties**
 
@@ -58,10 +58,6 @@ To retrieve information on the device, Cordova, and operating system, and output
 
 ## Related information
 * Dependencies   
-   - Tizen 3.0 and Higher for Mobile
-   - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/device.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/device.html)
   - [TV](../../api/latest/device_api/tv/tizen/cordova/device.html)

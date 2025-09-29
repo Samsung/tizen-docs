@@ -4,9 +4,7 @@
 >
 > Unauthorized use or replication of external APIs is prohibited.
 
-The Tizen Native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](api/mobile/latest/group__CAPI__APPLICATION__MODULE.html)
-and [wearable](api/wearable/latest/group__CAPI__APPLICATION__MODULE.html)
-applications). It provides functions to manage the main event loop, the application state change events, and basic system events.
+The Tizen Native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [Latest Native API Reference](api/common/latest/group__CAPI__APPLICATION__MODULE.html)). It provides functions to manage the main event loop, the application state change events, and basic system events.
 
 Tizen supports both UI applications (which have a graphical user interface) and service applications (which have no graphical user
 interface). The UI and service applications can be packaged together, if necessary; however, a combined application package must contain only 1 UI application, while it can have several service applications.
@@ -20,8 +18,7 @@ The following figure shows the UI and service application life-cycle.
 
 ![UI and service application life-cycle](./media/multiple_apps.png)
 
-A Tizen native application is similar to a conventional Linux application, with some additional features optimized for mobile and
-wearable devices. These devices have constraints, such as relatively small screen sizes and lack of system resources compared to a larger system.
+A Tizen native application is similar to a conventional Linux application, with some additional features optimized for TV, IoT, and other devices. These devices have constraints, such as relatively small screen sizes and lack of system resources compared to a larger system.
 
 For example, for power management reasons, well-designed applications reduce resource usage when they detect that their display window is covered by another application window. State change events make the detection possible.
 
@@ -231,11 +228,3 @@ The introduction to native applications documentation provides overall informati
 - [Get Started](get-started/overview.md)
 
     Demonstrates how you can create your first simple native application.
-
-- [Overview of Tizen UI Development](tutorials/ui-builder/ui-builder-overview.md)
-
-    Describes the basic characteristics and components of UI development with EFL.
-
-- [Designing Your Native Application](tutorials/ui-builder/ui-builder-app-design.md)
-
-    Teaches you how to develop a native application using the native UI Builder tool.

@@ -2,7 +2,7 @@
 
 The Web SQL database provides a way to store databases that can be queried using various SQL statements. Each Tizen application can store multiple databases and each one of them can store multiple tables. Databases can be accessed using the SQL language, which is a common standard for these kinds of applications.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 When working with the SQL database, you can use the following approaches:
 
@@ -263,4 +263,4 @@ try {
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.4 and Higher
