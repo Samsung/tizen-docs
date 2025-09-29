@@ -1,5 +1,7 @@
 # Minicontrol Window
 
+> [!NOTE]
+> All minicontrol APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 Minicontrol is a small application view that can be shown on the quick panel or lock screen.
 
