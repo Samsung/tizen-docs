@@ -9,6 +9,10 @@ You can use the following device settings and systems features in your .NET appl
 
     You can control any external devices attached to the actual user device, and monitor changes in their state. For example, you can access information about the device battery, display, camera flash LED, and power state.
 
+-   [USB Devices](usb-host.md)
+
+    You can access USB devices directly, to perform raw data transfer.
+
 -   [Sound and Vibration Feedback](feedback.md)
 
     You can play a feedback pattern using sound or vibration. You can use specific patterns, or specific type and pattern. You can also check whether a specific pattern is supported.
