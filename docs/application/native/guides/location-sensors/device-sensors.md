@@ -43,12 +43,12 @@ The main features of the Sensor API include:
   | [Accelerometer](#accelerometer)                               | [Heart rate monitor LED green batch sensor](#hrm_green_batch) | [Proximity sensor](#proximity)      |
   | [Geomagnetic orientation sensor](#mag_orientation)            | [Heart rate monitor LED IR sensor](#hrm_ir)      | [Rotation vector sensor](#rotation)              |
   | [Geomagnetic rotation vector sensor](#mag_rotation)           | [Heart rate monitor LED red sensor](#hrm_red)    | [Significant motion sensor](#significant_motion) |
-  | [Gravity sensor](#gravity)                                    | [Humidity sensor](#humidity)                     | [Sleep detector](#sleep_detector)                |
-  | [Gyroscope](#gyro)                                            | [Light sensor](#light)                           | [Sleep monitor](#sleep_monitor)                  |
-  | [Gyroscope orientation sensor](#gyro_orientation)             | [Linear acceleration sensor](#lin_accelerometer) | [Temperature sensor](#temperature)              |
-  | [Gyroscope rotation vector sensor](#gyro_rotation)            | [Magnetic sensor](#magnetic)                     | [Ultraviolet sensor](#ultraviolet)              |
-  | [Heart rate monitor sensor](#hrm)                             | [Orientation sensor](#orientation)               | [Uncalibrated gyroscope](#uncal_gyro)            |
-  | [Heart rate monitor batch sensor](#hrm_batch)                 | [Pedometer](#pedometer)                          | [Uncalibrated magnetic sensor](#uncal_magnetic)  |
+  | [Gravity sensor](#gravity)                                    | [Humidity sensor](#humidity)                     | [Sleep monitor](#sleep_monitor)                  |
+  | [Gyroscope](#gyro)                                            | [Light sensor](#light)                           | [Temperature sensor](#temperature)              |
+  | [Gyroscope orientation sensor](#gyro_orientation)             | [Linear acceleration sensor](#lin_accelerometer) | [Ultraviolet sensor](#ultraviolet)              |
+  | [Gyroscope rotation vector sensor](#gyro_rotation)            | [Magnetic sensor](#magnetic)                     | [Uncalibrated gyroscope](#uncal_gyro)            |
+  | [Heart rate monitor sensor](#hrm)                             | [Orientation sensor](#orientation)               | [Uncalibrated magnetic sensor](#uncal_magnetic)  |
+  | [Heart rate monitor batch sensor](#hrm_batch)                 | [Pedometer](#pedometer)                          |                                                  |
   | [Heart rate monitor LED green sensor](#hrm_green)             | [Pressure sensor](#pressure)                     |                                                  |
 
 
@@ -856,18 +856,6 @@ The following table lists the measurement data that the significant motion senso
 |----------------------------------------|----------------------|-------|--------------|
 | Timestamp                              | `unsigned long long` | -     | Microseconds |
 | values[0]: significant motion detected | `float`              | -     | -            |
-
-<a name="sleep_detector"></a>
-## Sleep detector
-
-The sleep detector detects the user's sleep quality.
-
-**Table: Measurement data detected by the sleep detector**
-
-| Measurement                   | Type                   | Unit         |
-|-------------------------------|------------------------|--------------|
-| Timestamp                     | `unsigned long long`   | Microseconds |
-| values[0]: user's sleep state | `sensor_sleep_state_e` | -            |
 
 <a name="sleep_monitor"></a>
 ## Sleep monitor
