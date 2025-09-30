@@ -19,11 +19,11 @@ The main data handling features of the Tizen API include the following:
   - `CompositeFilter` (in [TV](../../api/latest/device_api/tv/tizen/tizen.html#CompositeFilter) applications)	  
    Combines several filters into a set.
 
-  You can create [attribute filters](#creating-attribute-filters), [attribute range filters](#creating-attribute-range-filters), and [composite filters](#creating-composite-filters) to search for specific data and [make complex queries](#making-complex-queries-using-filters). The attributes you can use with the filter types vary depending on the API you are using. For example, query methods related to the [calendar](#calendar-filter-attributes), [call history](#call-history-filter-attributes), [contact](#contact-filter-attributes), [content](#content-filter-attributes), and [messaging](#messaging-filter-attributes) data each have their own sets of supported filter attributes.
+  You can create [attribute filters](#create-attribute-filters), [attribute range filters](#create-attribute-range-filters), and [composite filters](#create-composite-filters) to search for specific data and [make complex queries](#make-complex-queries-using-filters). The attributes you can use with the filter types vary depending on the API you are using. For example, query methods related to the [calendar](#calendar-filter-attributes), [call history](#call-history-filter-attributes), [contact](#contact-filter-attributes), [content](#content-filter-attributes), and [messaging](#message-filter-attributes) data each have their own sets of supported filter attributes.
 
 - Sorting   
 
-  You can [sort the results of queried data](#using-sorting-modes) using the `SortMode` interface (in [TV](../../api/latest/device_api/tv/tizen/tizen.html#SortMode) applications).
+  You can [sort the results of queried data](#use-sorting-modes) using the `SortMode` interface (in [TV](../../api/latest/device_api/tv/tizen/tizen.html#SortMode) applications).
 
 ## Create attribute filters
 

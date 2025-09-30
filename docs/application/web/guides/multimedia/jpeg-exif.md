@@ -8,19 +8,19 @@ The main features of the Exif API include the following:
 
 - Loading EXIF information
 
-  You can [retrieve EXIF information from a JPEG file](#loading-the-exif-data). You can also retrieve the thumbnail image of the file.
+  You can [retrieve EXIF information from a JPEG file](#load-the-exif-data). You can also retrieve the thumbnail image of the file.
 
 - Adding EXIF information
 
-  You can [save EXIF information to  a JPEG file](#adding-exif-data) which currently has no EXIF information.
+  You can [save EXIF information to  a JPEG file](#add-exif-data) which currently has no EXIF information.
 
 - Updating EXIF information
 
-  You can [modify EXIF information in a JPEG file](#updating-the-exif-data) and save the file.
+  You can [modify EXIF information in a JPEG file](#update-the-exif-data) and save the file.
 
 - Copying EXIF information
 
-  You can [copy EXIF information from one JPEG file to another](#copying-the-exif-data).
+  You can [copy EXIF information from one JPEG file to another](#copy-the-exif-data).
 
 ## Load the EXIF data
 

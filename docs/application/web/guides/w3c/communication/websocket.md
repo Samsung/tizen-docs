@@ -10,19 +10,19 @@ The main features of the WebSocket API include the following:
 
 - Connecting to a server
 
-  To [connect to a server](#connecting-to-the-socket-server), you must create a [WebSocket](https://websockets.spec.whatwg.org//#the-websocket-interface){:target="_blank"} interface with the socket server URL as a mandatory parameter. The [URL format has some restrictions](https://websockets.spec.whatwg.org//#the-websocket-interface){:target="_blank"}, for example, it must use the `ws` or `wss` protocol. If the URL is not valid or uses a wrong protocol, a syntax error occurs.
+  To [connect to a server](#connect-to-the-socket-server), you must create a [WebSocket](https://websockets.spec.whatwg.org//#the-websocket-interface){:target="_blank"} interface with the socket server URL as a mandatory parameter. The [URL format has some restrictions](https://websockets.spec.whatwg.org//#the-websocket-interface){:target="_blank"}, for example, it must use the `ws` or `wss` protocol. If the URL is not valid or uses a wrong protocol, a syntax error occurs.
 
 - Sending data
 
-  By using the `send()` method of the`WebSocket` interface, you can [send data to the server](#sending-data-to-the-server). The data is transmitted using the established connection. If the `readyState` attribute value is `CONNECTING`, the method throws an `InvalidStateError` exception.
+  By using the `send()` method of the`WebSocket` interface, you can [send data to the server](#send-data-to-the-server). The data is transmitted using the established connection. If the `readyState` attribute value is `CONNECTING`, the method throws an `InvalidStateError` exception.
 
 - Receiving data
 
-  You can [receive data from the server](#receiving-data-from-the-server) through the `message` event.
+  You can [receive data from the server](#receive-data-from-the-server) through the `message` event.
 
 - Closing a socket
 
-  When the connection is no longer needed, you can [close the connection](#closing-the-socket-connection) with the `close()` method.
+  When the connection is no longer needed, you can [close the connection](#close-the-socket-connection) with the `close()` method.
 
 ## Connect to the socket server
 

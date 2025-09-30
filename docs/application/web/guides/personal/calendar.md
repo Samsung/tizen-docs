@@ -8,26 +8,26 @@ The main features of the Calendar API include the following:
 
 - Calendar management
 
-  You can [create a new calendar](#creating-a-calendar) using the `addCalendar()` method of the `CalendarManager` interface (you also need the Account API).
+  You can [create a new calendar](#create-a-calendar) using the `addCalendar()` method of the `CalendarManager` interface (you also need the Account API).
 
 - Calendar item management   
 
-  You can manage calendar items (add a new [event](#adding-events-to-a-calendar) or [task](#adding-tasks-to-a-calendar) to a calendar, or manage a single calendar [event](#managing-a-single-event) or [task](#managing-a-single-task)) by using the applicable methods of the `Calendar` interface. You can also delete or [update a single instance of a recurring event](#updating-recurring-events).
+  You can manage calendar items (add a new [event](#add-events-to-a-calendar) or [task](#add-tasks-to-a-calendar) to a calendar, or manage a single calendar [event](#manage-a-single-event) or [task](#manage-a-single-task)) by using the applicable methods of the `Calendar` interface. You can also delete or [update a single instance of a recurring event](#update-recurring-events).
 
   When creating an important event or task, such as a monthly meeting or a task of paying a utility bill, you can set an alarm for it by using the `CalendarAlarm` interface. The alarm is triggered at a defined time to remind the user of the event or task.
 
-  You can create multiple [events](#adding-events-to-a-calendar-in-the-batch-mode) or [tasks](#adding-tasks-to-a-calendar-in-the-batch-mode), and manage multiple calendar [events](#managing-multiple-events-in-the-batch-mode) or [tasks](#managing-multiple-tasks-in-the-batch-mode) simultaneously by using the applicable batch methods. The batch mode provides faster, optimized processing of multiple calendar items.
+  You can create multiple [events](#add-events-to-a-calendar-in-the-batch-mode) or [tasks](#add-tasks-to-a-calendar-in-the-batch-mode), and manage multiple calendar [events](#manage-multiple-events-in-the-batch-mode) or [tasks](#manage-multiple-tasks-in-the-batch-mode) simultaneously by using the applicable batch methods. The batch mode provides faster, optimized processing of multiple calendar items.
 
   > [!NOTE]
   > The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Breaking down a batch operation also helps you avoid blocking other database operations, such as add or remove.
 
 - iCalendar 2.0 format conversions
 
-  You can convert a calendar [event](#converting-event-formats) or [task](#converting-task-formats) to the iCalendar format and back.
+  You can convert a calendar [event](#convert-event-formats) or [task](#convert-task-formats) to the iCalendar format and back.
 
 - Calendar change notifications   
 
-  You can keep the calendar in your application synchronized with user-specific calendars, such as a calendar on a social networking Web site, by [receiving notifications](#receiving-notifications-on-calendar-changes) in your application when calendar items change.
+  You can keep the calendar in your application synchronized with user-specific calendars, such as a calendar on a social networking Web site, by [receiving notifications](#receive-notifications-on-calendar-changes) in your application when calendar items change.
 
 The Calendar API uses the `TZDate` object of the Time API and not the standard JavaScript `Date` object to handle difficult issues related to the time zone, because the `TZDate` object handles exact time and provides various utility methods.
 
@@ -384,7 +384,7 @@ To convert the events to iCalendar format and back, follow these steps:
      }
      ```
 
-      To convert multiple strings and import them to a calendar, convert the strings one by one and then use the `addBatch()` method to [add all the events at once in a batch mode](#adding-events-to-a-calendar-in-the-batch-mode).
+      To convert multiple strings and import them to a calendar, convert the strings one by one and then use the `addBatch()` method to [add all the events at once in a batch mode](#add-events-to-a-calendar-in-the-batch-mode).
 
 - To convert an event to the iCalendar format:    
 
@@ -635,7 +635,7 @@ To convert the task to iCalendar format and back, follow these steps:
      console.log('Task added with id ' + task.id);
      ```
 
-  To convert multiple strings and import them to a calendar, convert the strings one by one and then use the `addBatch()` method to [add all the tasks at once in a batch mode](#adding-tasks-to-a-calendar-in-the-batch-mode).
+  To convert multiple strings and import them to a calendar, convert the strings one by one and then use the `addBatch()` method to [add all the tasks at once in a batch mode](#add-tasks-to-a-calendar-in-the-batch-mode).
 
 - To convert a task to the iCalendar format:    
 

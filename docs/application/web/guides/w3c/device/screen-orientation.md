@@ -1,6 +1,6 @@
 # Screen Orientation
 
-You can [manage the screen orientation state](#managing-the-screen-orientation) through the `Screen` interface.
+You can [manage the screen orientation state](#manage-the-screen-orientation) through the `Screen` interface.
 
 This feature is optional.
 

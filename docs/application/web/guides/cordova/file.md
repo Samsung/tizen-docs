@@ -8,23 +8,23 @@ The main features of the File API include the following:
 
 - Resolving the filesystem
 
-  A basic step necessary to perform other file actions is to [resolve a filesystem](#resolving-filesystem-entries), which results in a `FileSystem` object (in [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
+  A basic step necessary to perform other file actions is to [resolve a filesystem](#resolve-filesystem-entries), which results in a `FileSystem` object (in [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
 
 - Operating on directories
 
-  You can [create or remove a directory or file, or read all entries from a specific directory](#operating-on-directories).
+  You can [create or remove a directory or file, or read all entries from a specific directory](#operate-on-directories).
 
 - Operating on entries
 
-  You can [get metadata, and move, copy, and remove entries](#operating-on-entries). You can also look up the parent directory of the entry or return the entry URL.
+  You can [get metadata, and move, copy, and remove entries](#operate-on-entries). You can also look up the parent directory of the entry or return the entry URL.
 
 - Operating on files
 
-  You can [access file details](#operating-on-files).
+  You can [access file details](#operate-on-files).
 
 - Reading and writing file content
 
-  You can [read file content, and create and write data to a file](#reading-and-writing-file-content). Using the file readers and writers, you can read Blob objects in a specific format (data URL, test, binary string, and array buffer).
+  You can [read file content, and create and write data to a file](#read-and-write-file-content). Using the file readers and writers, you can read Blob objects in a specific format (data URL, test, binary string, and array buffer).
 
 ## Prerequisites
 
@@ -311,7 +311,7 @@ To move, copy, and delete entries, or access entry metadata, parent information,
 
 ## Operate on files
 
-To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entries). To create a writer for a file and access file details, follow these steps:
+To create files, see [Resolving Filesystem Entries](#resolve-filesystem-entries). To create a writer for a file and access file details, follow these steps:
 
 - To create a `FileWriter` object (in [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileWriter) applications), use the `createWriter()` method:
 

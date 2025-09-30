@@ -1,6 +1,6 @@
 # HTML Media Capture
 
-Media capture uses the `capture` attribute of the [HTMLInputElement](https://www.w3.org/TR/html-media-capture/){:target="_blank"} interface to [activate features](#activating-the-media-capture), such as camera or microphone, to enable direct media capture when the user is uploading a file.
+Media capture uses the `capture` attribute of the [HTMLInputElement](https://www.w3.org/TR/html-media-capture/){:target="_blank"} interface to [activate features](#activate-the-media-capture), such as camera or microphone, to enable direct media capture when the user is uploading a file.
 
 This feature is optional.
 
