@@ -2,7 +2,7 @@
 
 The sensor features introduce how you can manage sensor and human activity data from various sensors on the device.
 
-The following sensor features apply in **mobile and wearable applications only**:
+The following sensor features are optional:
 
 - [Human Activity Monitor](./ham.md)
 
@@ -14,5 +14,4 @@ The following sensor features apply in **mobile and wearable applications only**
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher

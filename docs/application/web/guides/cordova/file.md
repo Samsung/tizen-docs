@@ -2,13 +2,13 @@
 
 You can perform operations on files and directories stored in the device filesystem.
 
-The File API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The File API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the File API include the following:
 
 - Resolving the filesystem
 
-  A basic step necessary to perform other file actions is to [resolve a filesystem](#resolving-filesystem-entries), which results in a `FileSystem` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileSystem), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileSystem), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
+  A basic step necessary to perform other file actions is to [resolve a filesystem](#resolving-filesystem-entries), which results in a `FileSystem` object (in [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
 
 - Operating on directories
 
@@ -40,7 +40,7 @@ To enable your application to use the file functionality, follow these steps:
    }
    ```
 
-2. To use the File API (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+2. To use the File API (in [TV](../../api/latest/device_api/tv/tizen/cordova/file.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
    ```
    <!--To read from files-->
@@ -79,7 +79,7 @@ To resolve the initial root for other filesystem operations, follow these steps:
     ```
 
 - Use the `resolveLocalFileSystemURL()` global async method.  
-   This method is used to retrieve `DirectoryEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#DirectoryEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#DirectoryEntry), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#DirectoryEntry) applications) or `FileEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileEntry), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileEntry) applications) using a local URI.
+   This method is used to retrieve `DirectoryEntry` objects (in [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#DirectoryEntry) applications) or `FileEntry` objects (in [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileEntry) applications) using a local URI.
 
     - Define the callbacks:
 
@@ -313,7 +313,7 @@ To move, copy, and delete entries, or access entry metadata, parent information,
 
 To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entries). To create a writer for a file and access file details, follow these steps:
 
-- To create a `FileWriter` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileWriter), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileWriter), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileWriter) applications), use the `createWriter()` method:
+- To create a `FileWriter` object (in [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileWriter) applications), use the `createWriter()` method:
 
   ```
   var f; /* Must be a FileEntry object resolved using the methods presented before */
@@ -328,7 +328,7 @@ To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entrie
   created fileWriter object for testFile.txt
   ```
 
-- To access a `File` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#File), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#File), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#File) applications), use the `file()` method. The object represents the current state of the file:
+- To access a `File` object (in [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#File) applications), use the `file()` method. The object represents the current state of the file:
 
   ```
   var f; /* Must be a FileEntry object resolved using methods presented before */
@@ -530,10 +530,6 @@ To read and write file content, follow these steps:
 
 ## Related information
 * Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html)
   - [TV](../../api/latest/device_api/tv/tizen/cordova/file.html)

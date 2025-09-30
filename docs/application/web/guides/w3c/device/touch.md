@@ -2,7 +2,7 @@
 
 As there is no mouse on a mobile device, user actions must be handled with touch events instead of mouse events.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 The main touch event features include the following:
 
@@ -34,16 +34,16 @@ A touch-based mobile operating system uses tap and double-tap gestures. The tap 
 Depending on the touch type, different touch events occur:
 
 - When the user first touches the element and removes their finger from the screen, the [touchstart](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchstart-event) and [touchend](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchend-event) events occur.  
-**Figure: Simple touch (in mobile applications only)**  
-![Simple touch (in mobile applications only)](./media/touch1.png)
+**Figure: Simple touch (Optional feature)**  
+![Simple touch](./media/touch1.png)
 
 - When the user moves their finger across the element, and then removes their finger, the `touchstart`, [touchmove](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchmove-event), and `touchend` events occur.  
-**Figure: Moving touch (in mobile applications only)**  
-![Moving touch (in mobile applications only)](./media/touch2.png)
+**Figure: Moving touch (Optional feature)**  
+![Moving touch](./media/touch2.png)
 
 - When the user long-presses the DOM element, such as text or image, in the element, the `touchstart` and [touchcancel](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchcancel-event) events occur.  
-**Figure: Canceling touch with a long press (in mobile applications only)**  
-![Canceling touch with a long press (in mobile applications only)](./media/touch3.png)
+**Figure: Canceling touch with a long press (Optional feature)**  
+![Canceling touch with a long press](./media/touch3.png)
 
   > [!NOTE]
   > In Tizen, the `touchcancel` event occurs when a context menu is activated by a long press of a DOM element, such as text or image.
@@ -268,7 +268,6 @@ To avoid having a delay in the single tap gesture, you can make the page unscala
 
 ## Related information
 * Dependencies    
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
 * API References
   - [W3C](http://www.w3.org/TR/2013/REC-touch-events-20131010){:target="_blank"}

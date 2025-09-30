@@ -145,7 +145,7 @@ You can create an animation where element properties can be assigned and changed
 2. The Tizen logo gradually appears in the middle of the screen, and as it moves to the right, it becomes smaller.
 3. Each letter in the word "TIZEN" consecutively comes in from the left of the screen and moves to the right to its correct location.
 
-**Figure: Logo animation (in mobile applications only)**
+**Figure: Logo animation (Optional feature)**
 
 ![Logo animation](./media/animation1.png)
 
@@ -273,8 +273,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://www.w3.org/TR/css-animations-1/){:target="_blank"}

@@ -5,7 +5,7 @@ Timing control is used mainly in animations for cyclic script execution synchron
 Making script-based animations requires updating the properties of the animated objects in each frame. In computerized animations, the frame rate is normally 30 or 60 fps (frames per second), because the human eye perceives a sequence of images as an animation when they change at least 12-15 times per second. The `requestAnimationFrame()` (or `webkitRequestAnimationFrame()`) method enables [scheduling the animation frame update requests](#creating-an-application-with-a-controllable-animation). The frame update rate depends on implementation. In Tizen 2.2, it is about 60 fps.
 
 > [!NOTE]
-> In mobile applications, when using the emulator, you must include the  `webkit` prefix in method names, such as `window.performance.webkitNow()`. However, when using a device, the prefix must not be used. In addition, when using the emulator, methods assigned to variables must be formatted as follows:
+> In specific applications, when using the emulator, you must include the  `webkit` prefix in method names, such as `window.performance.webkitNow()`. However, when using a device, the prefix must not be used. In addition, when using the emulator, methods assigned to variables must be formatted as follows:
 
 ```
 window.performance.windowNow = window.performance.now || window.performance.webkitNow || Date.now;
@@ -25,9 +25,9 @@ To optimize the performance of your application, you must learn to create a simp
 
 This example creates a screen with a Tizen pinwheel rotating on it, and buttons to increase or decrease the rotation speed and start or stop the animation.
 
-**Figure: Controllable animation (in mobile applications only)**
+**Figure: Controllable animation (Optional feature)**
 
-![Controllable animation (in mobile applications only)](./media/timing.png)
+![Controllable animation](./media/timing.png)
 
 1. Create the HTML layout, including a `<nav>` element with 3 buttons and `<div>` elements for the pinwheel image and text:
 
@@ -157,6 +157,4 @@ For the complete source code related to this use case, see the following file:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

@@ -2,7 +2,7 @@
 
 You can establish connections between different devices as well as propagate data and commands among them using a collection of device-to-device Convergence services. The Convergence services are remote functions to access and control nearby devices. If you implement an application with the Convergence API, the application can discover devices within the same network, obtain information about available device-to-device Convergence services, connect to applicable devices, and execute the services remotely, while you need no understanding of the communication details, such as connectivity type.
 
-This feature is supported in mobile and wearable applications only.
+This feature is optional.
 
 The main features of the Convergence API include:
 
@@ -33,7 +33,7 @@ The following Convergence services are currently provided:
 
 ## Prerequisites
 
-To use the Convergence API (in [mobile](../../api/latest/device_api/mobile/tizen/convergence.html) and [wearable](../../api/latest/device_api/wearable/tizen/convergence.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Convergence API, the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/bluetooth"/>
@@ -363,5 +363,4 @@ The `ApplicationControl` object is used to request applications to perform parti
 
 ## Related Information
 * Dependencies   
-   - Tizen 4.0 and Higher for Mobile
-   - Tizen 4.0 and Higher for Wearable
+   - Tizen 4.0 and Higher

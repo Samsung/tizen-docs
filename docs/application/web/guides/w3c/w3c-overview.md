@@ -31,7 +31,7 @@ You can use the following W3C, HTML5, and supplementary features in your Web app
 
   You can use Web workers to run scripts in the background. To manage application performance further, you can control the animation rate and page visibility.
 
-- [Location](./location/location-guide.md) **in mobile and wearable applications only**
+- [Location](./location/location-guide.md) **(Optional feature)**
 
   You can determine the geographical position of the device using various positioning methods, such as the Global Positioning System (GPS) and network positioning system. You can retrieve the user position only once, or continue to receive updates to see how the position changes.
 
@@ -45,6 +45,4 @@ You can use the following W3C, HTML5, and supplementary features in your Web app
 
 ## Related information
 * Dependencies  
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

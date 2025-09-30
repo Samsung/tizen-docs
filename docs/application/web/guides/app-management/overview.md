@@ -8,11 +8,11 @@ The application controls allow you to share an application's functionality. Usin
 
   The applications can be launched in groups. You can define the application launch mode and group your applications into entities that can be managed together.
 
-- [Application Preferences](preference.md) **in mobile and wearable applications only**
+- [Application Preferences](preference.md) **(Optional feature)**
 
   You can store and retrieve the application preferences. You can create, store, and retrieve all custom preferences needed by your application.
 
-- [Application Icons](app-icons.md) **in mobile and wearable applications only**
+- [Application Icons](app-icons.md) **(Optional feature)**
 
   You can set up application badges. In the device application list, you can show a badge with the application icon to provide additional information about the application state or notifications to the user.
 
@@ -24,7 +24,7 @@ The application controls allow you to share an application's functionality. Usin
 
   The common application introduces the required parameters, such as a specific operation, URI, MIME type, and extra data when the application launches other applications with App Control API.
 
-- [Widget Information](widget-info.md) **in mobile and wearable applications only**
+- [Widget Information](widget-info.md) **(Optional feature)**
 
   You can manage installed widgets and widget instances in various ways, such as retrieving information about widgets, or getting the widget instances and receiving notifications when the state of the widget changes.
 
@@ -47,6 +47,6 @@ You can use the following application data exchange features in your Web applica
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+* API References
+  - [TV](../../api/latest/device_api/tv/tizen/tizen.html)

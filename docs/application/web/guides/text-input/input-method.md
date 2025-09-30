@@ -2,7 +2,7 @@
 
 Tizen Web IME (Input Method Editor) applications are written in HTML5 for Tizen, combining HTML, JavaScript, and CSS into a package that can be installed on a Tizen device, such as Samsung Gear, or Tizen Emulator. Both the Tizen device and the emulator must run Tizen version 2.3 or higher to run Web IME applications.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 ## Architecture
 
@@ -233,7 +233,7 @@ A Web IME in the visible or invisible state can move on to the terminated state 
 To create an IME application, follow these steps:
 
 1. To create the Web IME project, launch Tizen Studio and go to **File > New > Tizen Project**.
-2. In the Project Wizard, select **Template** as the project type, **WEARABLE** profile and applicable version, **Web Application** type, and **Web Input Method Editor** template.
+2. In the Project Wizard, select **Template** as the project type, **Applicable** profile and applicable version, **Web Application** type, and **Web Input Method Editor** template.
 3. Enter the project name and click **Finish**.   
 ![Create a Web IME project](./media/web_ime_create_project.png)
 4. Modify the source code in, for example, the `index.html` and `style.css` files, as needed.
@@ -243,4 +243,4 @@ To create an IME application, follow these steps:
 
 ## Related information
 * Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.3.1 and Higher

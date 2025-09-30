@@ -48,7 +48,7 @@ The main features of the Pipeline API include the following:
 
 ## Prerequisites
 
-To access files, camera or recorder using the Pipeline API (in [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html), and [TV](../../api/latest/device_api/tv/tizen/ml_pipeline.html) applications), the application has to define proper privileges in its `config.xml`:
+To access files, camera or recorder using the Pipeline API (in [TV](../../api/latest/device_api/tv/tizen/ml_pipeline.html) applications), the application has to define proper privileges in its `config.xml`:
 
   ```xml
   <!-- for accessing internal storage only -->
@@ -60,8 +60,6 @@ To access files, camera or recorder using the Pipeline API (in [mobile](../../ap
   <!-- for accessing recorder -->
   <tizen:privilege name="http://tizen.org/privilege/recorder"/>
   ```
-
-As these are [privacy-related privileges](../../tutorials/sec-privileges.md), the application has to [request proper permissions using the PPM API](../security/privacy-related-permissions.md) (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html) applications).
 
 ## Create and dispose machine learning inference pipelines
 
@@ -108,7 +106,7 @@ The disposed pipelines enter the `NULL` state, and cannot be restarted. Any atte
 ## Observe pipeline state and respond to its changes
 
 Pipeline state reflects what the pipeline is doing right now and defines which methods can be called.
-To see how pipelines transition between different states, see the API reference (for [mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html#PipelineState), [wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html#PipelineState), and [TV](../../api/latest/device_api/tv/tizen/ml_pipeline.html#PipelineState) applications).
+To see how pipelines transition between different states, see the API reference (for [TV](../../api/latest/device_api/tv/tizen/ml_pipeline.html#PipelineState) applications).
 
 Pipeline API allows you to register listeners triggered by pipeline state changes and to poll current pipeline state.
 
@@ -474,10 +472,6 @@ To read a model from file and use it in a pipeline, follow these steps:
 ## Related information
 
 - Dependencies
-  - Tizen 6.5 and Higher for Mobile
-  - Tizen 6.5 and Higher for Wearable
   - Tizen 6.5 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/ml_pipeline.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/ml_pipeline.html)
   - [TV](../../api/latest/device_api/tv/tizen/ml_pipeline.html)

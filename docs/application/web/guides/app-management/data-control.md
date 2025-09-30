@@ -2,25 +2,25 @@
 
 Data control allows you to read and modify data stored and provided by another application, and monitor changes in that data. The application storing and controlling the data is called a DataControl provider application. The application using the data is called a DataControl consumer application. A single DataControl provider can serve multiple DataControl consumers.
 
-The Data Control API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Data Control API is mandatory for Tizen TV and IoT profiles, which means that it is supported on all TV and IoT devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main data control features are:
 
 - Data storage as key-value pairs   
 
-  You can [get, add, update, and remove values assigned to a key](#managing-data-in-key-value-pairs) using the `MappedDataControlConsumer` interface (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#MappedDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#MappedDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications).
+  You can [get, add, update, and remove values assigned to a key](#manage-data-in-key-value-pairs) using the `MappedDataControlConsumer` interface (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications).
 
 - Complex data storage using a SQL-type database and queries   
 
-  You can [select, insert, update, and remove data](#managing-sql-type-data) using the `SQLDataControlConsumer` interface (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#SQLDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#SQLDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications).
+  You can [select, insert, update, and remove data](#manage-sql-type-data) using the `SQLDataControlConsumer` interface (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications).
 
 - Provider data change monitoring   
 
-  You can [receive notifications](#monitoring-provider-data-changes) about changes in DataControl provider applications.
+  You can [receive notifications](#monitor-provider-data-changes) about changes in DataControl provider applications.
 
 ## Prerequisites
 
-To use the Data Control API (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Data Control API (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/datacontrol.consumer"/>
@@ -34,7 +34,7 @@ To use the Data Control API (in [mobile](../../api/latest/device_api/mobile/tize
 
 Learning how to manage map-type data allows you to use key-value pairs exposed by a DataControl provider:
 
-1. Retrieve the `MappedDataControlConsumer` object (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#MappedDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#MappedDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications) using the `getDataControlConsumer()` method of the `DataControlManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#DataControlManager), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#DataControlManager), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#DataControlManager) applications). This object allows accessing the key-value data stored by the DataControl provider.
+1. Retrieve the `MappedDataControlConsumer` object (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications) using the `getDataControlConsumer()` method of the `DataControlManager` interface (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#DataControlManager) applications). This object allows accessing the key-value data stored by the DataControl provider.
 
    You need a running DataControl provider application, which uses the `"http://tizen.org/datacontrol/provider/DictionaryDataControlProvider"` provider ID:
 
@@ -110,7 +110,7 @@ Learning how to manage map-type data allows you to use key-value pairs exposed b
 
 Learning how to manage SQL-type data allows you to use databases exposed by a DataControl provider:
 
-1. To retrieve a `SQLDataControlConsumer` object (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#SQLDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#SQLDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications), use the `getDataControlConsumer()` method of the `DataControlManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#DataControlManager), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#DataControlManager), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#DataControlManager) applications). This object allows accessing the data stored by the DataControl provider.
+1. To retrieve a `SQLDataControlConsumer` object (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications), use the `getDataControlConsumer()` method of the `DataControlManager` interface (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#DataControlManager) applications). This object allows accessing the data stored by the DataControl provider.
 
    You need a running DataControl provider application, which uses the `"http://tizen.org/datacontrol/provider/DictionaryDataControlProvider"` provider ID:
 
@@ -210,7 +210,7 @@ Learning how to manage SQL-type data allows you to use databases exposed by a Da
 
 Learning how to add a listener allows you to receive notifications about DataControl provider data changes:
 
-1. To monitor changes in the DataControl provider data, you must retrieve a `SQLDataControlConsumer` object (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#SQLDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#SQLDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications) or a `MappedDataControlConsumer` object (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#MappedDataControlConsumer), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#MappedDataControlConsumer), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications). Retrieve the required object using the `getDataControlConsumer()` method of the `DataControlManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html#DataControlManager), [wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html#DataControlManager), and [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#DataControlManager) applications).
+1. To monitor changes in the DataControl provider data, you must retrieve a `SQLDataControlConsumer` object (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications) or a `MappedDataControlConsumer` object (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications). Retrieve the required object using the `getDataControlConsumer()` method of the `DataControlManager` interface (in [TV](../../api/latest/device_api/tv/tizen/datacontrol.html#DataControlManager) applications).
 
    You need a running DataControl provider application, which uses the `"http://tizen.org/datacontrol/provider/DictionaryDataControlProvider"` provider ID:
 
@@ -288,10 +288,6 @@ Learning how to add a listener allows you to receive notifications about DataCon
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.2 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/datacontrol.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/datacontrol.html)
   - [TV](../../api/latest/device_api/tv/tizen/datacontrol.html)

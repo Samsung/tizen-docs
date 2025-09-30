@@ -12,11 +12,11 @@ You can use the following media and camera features in your Web applications:
 
   You can extract metadata information from multimedia files.
 
-- [Audio Management](./audio.md) **in mobile and wearable applications only**
+- [Audio Management](./audio.md) **(Optional feature)**
 
   You can control the volume level of several sound types. You can also retrieve information about the current sound mode and the state of the current sound devices, and monitor changes in the sound device states.
 
-- [Audio Latency](./player-util.md) **in mobile and wearable applications only**
+- [Audio Latency](./player-util.md) **(Optional feature)**
 
   You can control the audio latency mode of the W3C player. You can both retrieve the current mode and set a new mode.
 
@@ -24,20 +24,18 @@ You can use the following media and camera features in your Web applications:
 
   You can communicate between the media controller server and client. The client can send requests to the server to modify the media, and the server can respond to the requests by modifying the media directly as requested. For the media controller feature to work, you must create both the client and server applications.
 
-- [Media Key Events](./media-key.md) **in mobile and wearable applications only**
+- [Media Key Events](./media-key.md) **(Optional feature)**
 
   You can handle media keys in your application to control multimedia playback. When the user clicks a media key, you can detect the event in the application and adjust the media playback accordingly.
 
-- [Radio](./radio.md) **in mobile applications only**
+- [Radio](./radio.md) **(Optional feature)**
 
   You can allow the user to listen to the FM radio on the device. You can scan for available frequencies and change between found frequencies. You can control the radio playback, and get information about interruptions from other sound sources.
 
-- [Camera](./camera.md) **in wearable applications only**
+- [Camera](./camera.md) **(Optional feature)**
 
   You can control the device camera by using the camera options. You can capture images and record video.
 
 ## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

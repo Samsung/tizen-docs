@@ -10,10 +10,6 @@ The introduction to native applications documentation provides overall informati
 
   Introduces the Tizen platform, its architecture, and some useful programming concepts you need to take into account when designing Tizen applications.
 
-- [Overview of Tizen UI Development](ui-builder/ui-builder-overview.md)
-
-  Describes the basic characteristics and components of UI development with EFL.
-
 - [Creating Applications with Connectivity and Network](feature/app-connectivity.md)
 
   Demonstrates how you can create applications with connectivity to access various networks to use data services, or connect to other devices.

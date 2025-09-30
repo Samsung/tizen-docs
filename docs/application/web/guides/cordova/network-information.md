@@ -2,7 +2,7 @@
 
 You can access information about the connection (such as cellular, Wi-Fi, or Ethernet) by reading the `navigator.connection.type` property. It is a textual representation of the current network status. Each time a connection is established or closed, the type changes.
 
-The Network Information API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Network Information API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Network Information API include the following:
 
@@ -28,7 +28,7 @@ To enable your application to use the network information functionality:
    }
    ```
 
-2. To use the Network Information API (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/networkInformation.html), [wearable](../../api/latest/device_api/wearable/tizen/cordova/networkInformation.html), and [TV](../../api/latest/device_api/tv/tizen/cordova/networkInformation.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+2. To use the Network Information API (in [TV](../../api/latest/device_api/tv/tizen/cordova/networkInformation.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
    ```
    <tizen:privilege name="http://tizen.org/privilege/telephony"/>
@@ -112,10 +112,6 @@ Manage the situations where the device connects to and disconnects from a networ
 
 ## Related information
 * Dependencies   
-   - Tizen 3.0 and Higher for Mobile
-   - Tizen 3.0 and Higher for Wearable
    - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/networkInformation.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/networkInformation.html)
   - [TV](../../api/latest/device_api/tv/tizen/cordova/networkInformation.html)

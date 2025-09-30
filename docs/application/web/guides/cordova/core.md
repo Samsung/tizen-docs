@@ -2,7 +2,7 @@
 
 You can handle common Cordova functionality, such as interfaces for success and error handlers.
 
-The Cordova API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
+The Cordova API is mandatory for Tizen TV, IoT, and other profiles, which means that it is supported on all TV, IoT, and other devices. All mandatory APIs are supported on the Tizen emulators.
 
 The Cordova API defines a global interface, containing only 1 empty member: `cordova`. The `window` element implements the interface.
 
@@ -37,10 +37,6 @@ Cordova defines a common interface for success and error callbacks:
 
 ## Related information
 * Dependencies
-  - Tizen 3.0 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
 * API References
-  - [Mobile](../../api/latest/device_api/mobile/tizen/cordova/cordova.html)
-  - [Wearable](../../api/latest/device_api/wearable/tizen/cordova/cordova.html)
   - [TV](../../api/latest/device_api/tv/tizen/cordova/cordova.html)

@@ -2,7 +2,7 @@
 
 You can [access information about the network connection state of the browser](#retrieving-the-browser-state).
 
-This feature is supported in mobile and TV applications only.
+This feature is optional feature.
 
 The `navigator.onLine` attribute returns `false`, if the browser cannot establish a connection to the network when a remote page is requested. To track the changes in the connection state, you must subscribe to the applicable events: `online` and `offline`. The events can be executed in the `Window` or `WorkerGlobalScope` object.
 
@@ -67,5 +67,5 @@ For the complete source code related to this use case, see the following file:
 
 ## Related information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV

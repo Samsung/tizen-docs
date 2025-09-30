@@ -346,8 +346,7 @@ The following table lists the new input element attributes available for your fo
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://www.w3.org/TR/2011/WD-html5-20110405/){:target="_blank"}

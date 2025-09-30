@@ -9,6 +9,10 @@ The main features of the Device API include:
 
   You can [get battery details](#battery), such as the current percentage, the charging state, and the current level state, using the [Battery API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html).
 
+- Temperature information
+
+  You can [get the temperature](#thermal) depends on the device type using the [Thermal API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__THERMAL__MODULE.html).
+
 - Device control
 
   You can manage various components and elements on the device:
@@ -63,6 +67,7 @@ To enable your application to use the device functionality:
    - For the [Led API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html), include `<device/led.h>`.
    - For the [Power API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html), include `<device/power.h>`.
    - For the [Callback API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__CALLBACK__MODULE.html), include `<device/callback.h>`.
+   - For the [Thermal API](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__THERMAL__MODULE.html), include `<device/temperature.h>`.
 
    ```
    /* To retrieve battery information */
@@ -79,6 +84,8 @@ To enable your application to use the device functionality:
    #include <device/power.h>
    /* To monitor device changes */
    #include <device/callback.h>
+   /* To get a temperature information */
+   #include <device/temperature.h>
    ```
 
 <a name="battery"></a>
@@ -112,6 +119,60 @@ To retrieve battery information:
     int error;
     device_battery_level_e level;
     error = device_battery_get_level_status(&level);
+    ```
+
+- Gets the current device's battery health information with the `device_battery_get_health()` function.
+
+  The [`device_battery_health_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#gaea93d03bd48b6c41cf70bf5db661a05f) defines the status of battery health.
+
+    ```
+    device_battery_health_e batt_health = DEVICE_BATTERY_HEALTH_GOOD;
+    int ret = 0;
+    ret = device_battery_get_health(&batt_health);
+    ```
+
+- Gets the current device's power source information with the `device_battery_get_power_source()` function.
+
+  The [`device_battery_power_source_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#gada984c555ae9b02ae00a9fb26d7c791f) defines the power source type.
+
+    ```
+    device_battery_power_source_e batt_power_src = DEVICE_BATTERY_POWER_SOURCE_NONE;
+    int ret = 0;
+    ret = device_battery_get_power_source(&batt_power_src);
+    ```
+
+- Gets the current device's battery properties information with the `device_battery_get_property()` function.
+
+  The [`device_battery_property_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#ga779f86190397843f45f4d22d3ce6ef8a) defines the battery properties.
+
+    ```
+    int value = 0;
+    int ret = 0;
+    ret = device_battery_get_property(DEVICE_BATTERY_PROPERTY_CAPACITY, &value);
+    ```
+
+- Gets the current device's battery status as degree of charge with the `device_battery_get_status()` function.
+
+  The [`device_battery_status_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#ga9651aa475ba0624473d7c5eb5adbfc76) defines the battery status.
+
+    ```
+    device_battery_status_e batt_status = DEVICE_BATTERY_STATUS_CHARGING;
+    int ret = 0;
+    ret = device_battery_get_property(&batt_status);
+    ```
+
+<a name="thermal"></a>
+## Retrieving Temperature Information
+
+To get temerature information:
+
+- Get the temperature of specified device type with the `device_thermal_get_temperature()` function.
+  The [`device_thermal_e` enumerator](../../api/common/latest/group__CAPI__SYSTEM__DEVICE__THERMAL__MODULE.html#gaeb03a057c74aed9560ce7357eb96950b) defines the device type for getting temperature.
+
+    ```
+    int temperature = 0;
+    int ret = 0;
+    ret = device_thermal_get_temperature(DEVICE_THERMAL_AP, &temperature);
     ```
 
 <a name="display"></a>

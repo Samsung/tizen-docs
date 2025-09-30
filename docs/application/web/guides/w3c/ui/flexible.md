@@ -6,11 +6,11 @@ Tizen supports the CSS Flexible Box Layout Module API that enables you to create
 
 The main components of the flexible box layout include:
 
--   Flex container (in [mobile](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-containers), [wearable](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#flex-containers), and [TV](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-containers) applications), which refers to flex or inline-flex DOM elements assigned by the display.
+-   Flex container (in [TV](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-containers) applications), which refers to flex or inline-flex DOM elements assigned by the display.
 
     You can [use the flex container](#using-the-flex-container) to assign a flex area and the flex items included in it. The flex container properties are used to assign the indication area and alignment method.
 
--   Flex item (in [mobile](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-items), [wearable](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#flex-items), and [TV](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-items) applications), which refers to the child nodes of the flex container.
+-   Flex item (in [TV](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-items) applications), which refers to the child nodes of the flex container.
 
     The flex item changes its size fluidly according to the area of the flex container. You can [define flex item properties](#using-the-flex-items) to assign the sizes of the respective items and the alignment method.
 
@@ -90,9 +90,9 @@ To assign size and alignment to a flex container:
 
 The following figure shows examples of flex containers and how their flex items have been aligned.
 
-**Figure: Flex container properties (in mobile applications only)**
+**Figure: Flex container properties (Optional feature)**
 
-![Flex container properties (in mobile applications only)](./media/flexcontainer_properties.png)
+![Flex container properties](./media/flexcontainer_properties.png)
 
 ### Source Code
 
@@ -137,9 +137,9 @@ To assign size and alignment to the flex items in a flex container:
 
 The following figure shows examples of how flex items can be placed and sized within a flex container.
 
-**Figure: Flex items (in mobile applications only)**
+**Figure: Flex items (Optional feature)**
 
-![Flex items (in mobile applications only)](./media/flexitem_properties.png)
+![Flex items](./media/flexitem_properties.png)
 
 ### Source Code
 
@@ -179,7 +179,7 @@ To create a flexible box layout with CSS3:
    </div>
    ```
 
-2. Define styles to decorate the article areas. (The following figure applies to mobile applications only.)
+2. Define styles to decorate the article areas. (The following figure applies to specific applications only.)
 
    ```
    <!--Border for the article areas-->
@@ -224,7 +224,7 @@ To create a flexible box layout with CSS3:
    }
    ```
 
-   ![Article areas with styles defined (in mobile applications only)](./media/flexible_default_structure.png)
+   ![Article areas with styles defined](./media/flexible_default_structure.png)
 
 3. Define a flexible alignment for the article areas to support screen orientation changes and ensure that the content fills up the entire available screen area regardless of the orientation:
 
@@ -234,7 +234,7 @@ To create a flexible box layout with CSS3:
 
       - For the icon list, align the icon list so that the first and last icon are placed at the ends and the gaps between the rest of the icons are equal.
 
-      (The following figure applies to mobile applications only.)
+      (The following figure applies to specific applications only.)
 
       ```
       <!--Flexible alignment of text list-->
@@ -258,9 +258,9 @@ To create a flexible box layout with CSS3:
       }
       ```
 
-      ![Article areas with a flexible box layout defined (in mobile applications only)](./media/flexible_box_alignment.png)
+      ![Article areas with a flexible box layout defined](./media/flexible_box_alignment.png)
 
-   2. Special consideration can be given for some screen sizes. The following example defines a specific layout for small screens (where the screen width is less than 390 pixels). (The following figure applies to mobile applications only.)
+   2. Special consideration can be given for some screen sizes. The following example defines a specific layout for small screens (where the screen width is less than 390 pixels). (The following figure applies to specific applications only.)
 
       ```
       @media screen and (min-width: 390px) {
@@ -277,7 +277,7 @@ To create a flexible box layout with CSS3:
       }
       ```
 
-      ![Article areas with a flexible box layout for small screens (in mobile applications only)](./media/flexible_screen_size.png)
+      ![Article areas with a flexible box layout for small screens](./media/flexible_screen_size.png)
 
       For more information on defining screen-size-specific rules, see [Media Queries](./media-query.md).
 
@@ -292,8 +292,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#flex-containers){:target="_blank"}

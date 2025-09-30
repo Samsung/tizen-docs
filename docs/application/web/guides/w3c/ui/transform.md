@@ -672,8 +672,7 @@ If a page has an overflow scroll, use the `-webkit-overflow-scrolling` attribute
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher
   - Tizen 3.0 and Higher for TV
 * API References
   - [W3C](https://www.w3.org/TR/css-transforms-1/){:target="_blank"}

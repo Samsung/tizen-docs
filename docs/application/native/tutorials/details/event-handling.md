@@ -85,6 +85,4 @@ applications).
 ## Ambient Events in Wearable Applications
 
 
-An ambient mode is available on a low-powered wearable device. For more
-information on ambient events in the mobile native profile, see the
-[Watch Application](../../guides/applications/watch-app.md) guide.
+An ambient mode is available on a low-powered wearable device.

@@ -2,7 +2,7 @@
 
 Tizen is available on various devices which support different screen sizes and resolutions. When developing Tizen Web applications, you must take this into account if you want your application to function well on various device models.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 Before [implementing multiple screen support](#creating-applications-supporting-multiple-screens), make sure you are familiar with the [key concepts of multiple screen support](#key-concepts).
 
@@ -367,4 +367,4 @@ The following example shows how CSS3 animation can be implemented:
 
 ## Related Information
 * Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.4 and Higher

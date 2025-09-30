@@ -347,9 +347,11 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces, and 
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="system/attached-devices.md">Attached Devices</a></li>
+                        <li><a href="system/usb-host.md">USB</a></li>
                         <li><a href="system/feedback.md">Feedback</a></li>
                         <li><a href="system/settings.md">System Settings</a></li>
                         <li><a href="system/system.md">System Information</a></li>
+                        <li><a href="system/system-logging.md">System Logging</a></li>
                     </ul>
                 </div>
             </div>
