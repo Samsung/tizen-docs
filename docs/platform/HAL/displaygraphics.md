@@ -1,19 +1,20 @@
-# Window System
+# Display & Graphics
 
 ## Overview
-The Tizen Window System Hardware Abstraction Layer (HAL) is a critical component that bridges the gap between the high-level window system software and the underlying graphics and display hardware. Its primary purpose is to provide a standardized and consistent interface for window system operations, enabling Tizen to function across a wide variety of hardware configurations with different chipsets and GPUs.
+The Hardware Abstraction Layer (HAL) for Display and Graphics provides a guide for hardware porting to support display output and control on the Tizen platform, as well as GPU and graphics buffer utilization in Tizen UI applications. This layer is essential for enabling Tizen to function across diverse hardware configurations by abstracting hardware-specific details and providing standardized interfaces for Display and Graphics system operations.
 
-By abstracting the hardware-specific details, the Window System HAL allows the core window system components—such as the client applications and the display server—to interact with graphics and display hardware in a unified manner. This abstraction facilitates hardware rendering, efficient buffer sharing between processes, and organized management of display outputs.
-
-For Tizen to be ported to new hardware, a backend module specific to that hardware must be implemented for the Window System HAL.
+The HAL facilitates the implementation of hardware-specific backend modules that enable efficient GPU utilization, graphics buffer management, and display control mechanisms required by Tizen UI applications.
 
 
-
-## Key Subsystems of the Window System HAL
-The Window System HAL is composed of two primary subsystems, each responsible for a distinct set of functionalities:
+## Key Subsystems of the Display and Graphics HAL
+The Display and Graphics HAL is composed of two primary subsystems, each responsible for a distinct set of functionalities:
 
 - **TBM (Tizen Buffer Manager)**
 - **TDM (Tizen Display Manager)**
+
+**Figure: Tizen Display & Graphics HAL hierarchy**
+
+<img src="media/tizen-hal-displaygraphics.png" width=600/>
 
 ---
 
@@ -25,7 +26,7 @@ The HAL TBM Module provides the hardware abstraction layer for Tizen Buffer Mana
  - **Buffer Allocation and Management:** Provides interfaces for creating and managing graphics memory buffers (e.g., for surfaces, windows, and textures).
  - **Hardware-Specific Backend:** The backend of the HAL TBM Module is inherently hardware-dependent. It implements the actual buffer operations (allocation, locking, unlocking, etc.) using the native capabilities of the target system's GPU and memory management unit.
  - **Inter-Process Buffer Sharing:** Enables efficient sharing of graphics buffers between different processes (e.g., between a client application and the display server). To facilitate this, the HAL TBM Module provides interface of file descriptor (fd) and a key for each buffer, allowing other processes to access the shared graphics memory directly without data duplication.
- - **Unified Interface:** Exposes a consistent API to the upper layers of the window system, regardless of the underlying hardware.
+ - **Unified Interface:** Exposes a consistent API to the upper layers of the Display and Graphics system, regardless of the underlying hardware.
 
 **Implementation Requirement:**
 Chipset vendors are required to develop and provide their own backend implementations for the HAL TBM Module. This ensures that TBM can leverage the specific features and optimizations of the target hardware, leading to optimal performance and stability on the Tizen platform.
@@ -59,7 +60,7 @@ Porting OpenGL ES (OpenGLES) and the Embedded-System Graphics Library (EGL) to T
 
 - **`libtbm` (Tizen Buffer Manager):** As described in the HAL TBM Module section, `libtbm` is the user-space library for managing graphics buffers. When porting EGL, `libtbm` serves as the front-end to the hardware-specific TBM backend module (the "hap tbm module"). The EGL implementation must use `libtbm` to allocate and manage the native pixel buffers (surfaces) that will be used for rendering. This ensures that the buffers are compatible with Tizen's display pipeline and can be efficiently shared with the display server (via the Wayland protocol, for example).
 
-- **`libtpl-egl` (Tizen Platform Library for EGL):** This library acts as a bridge or a wrapper between the standard EGL API and Tizen's underlying window system and hardware abstraction layer. `libtpl-egl` is responsible for adapting EGL calls to work with Tizen's specific components, such as the Wayland compositor and the TBM/TDM HAL modules. It handles the creation of EGL surfaces in a way that is native to Tizen, often by integrating with the Wayland display server for surface creation and buffer swapping.
+- **`libtpl-egl` (Tizen Platform Library for EGL):** This library acts as a bridge or a wrapper between the standard EGL API and Tizen's underlying Display and Graphics system and hardware abstraction layer. `libtpl-egl` is responsible for adapting EGL calls to work with Tizen's specific components, such as the Wayland compositor and the TBM/TDM HAL modules. It handles the creation of EGL surfaces in a way that is native to Tizen, often by integrating with the Wayland display server for surface creation and buffer swapping.
 
     Furthermore, `libtpl-egl` utilizes `libtdm` (the user-space library for the Tizen Display Manager) to receive vertical synchronization (VSync) signals from the display hardware. This allows the rendering loop to be synchronized with the display's refresh rate, which is essential for smooth, tear-free visuals and optimal power management.
 
@@ -74,7 +75,7 @@ The general approach to porting OpenGLES/EGL involves the following steps:
     *   The EGL implementation must obtain a `tbm_surface_h` (a TBM surface handle) for the native window. This handle is crucial as it represents the buffer that the GPU will render into.
 
 2.  **Integrate with `libtpl-egl` for EGL Surface Creation:**
-    *   `libtpl-egl` provides the necessary functions to create EGL surfaces that are compatible with Tizen's window system. When an application creates an EGL surface, `libtpl-egl` works with the Wayland compositor to establish a native window (e.g., a `wl_surface`).
+    *   `libtpl-egl` provides the necessary functions to create EGL surfaces that are compatible with Tizen's Display and Graphics system. When an application creates an EGL surface, `libtpl-egl` works with the Wayland compositor to establish a native window (e.g., a `wl_surface`).
     *   It then uses this native window to create an EGLSurface, ensuring that the underlying buffers are TBM buffers managed by `libtbm`. This integration is vital for the display server to correctly composite and present the rendered content.
 
 3.  **Utilize Existing HAL TBM and TDM Modules:**
@@ -88,6 +89,6 @@ The general approach to porting OpenGLES/EGL involves the following steps:
 
 ### Summary
 
-In essence, porting OpenGLES/EGL to Tizen is not about rewriting EGL from scratch but about adapting it to use Tizen's native graphics stack. By using `libtbm` for buffer management (which interfaces with the HAL TBM backend) and `libtpl-egl` for integrating with the Tizen window system, the EGL implementation can leverage the hardware-accelerated capabilities of the target device.
+In essence, porting OpenGLES/EGL to Tizen is not about rewriting EGL from scratch but about adapting it to use Tizen's native graphics stack. By using `libtbm` for buffer management (which interfaces with the HAL TBM backend) and `libtpl-egl` for integrating with the Tizen's Display and Graphics system, the EGL implementation can leverage the hardware-accelerated capabilities of the target device.
 
 A key aspect of this integration is `libtpl-egl`'s use of `libtdm` to receive VSync signals from the display hardware via the HAL TDM module. This synchronizes rendering with the display's refresh rate, preventing visual tearing and enhancing performance. This approach ensures that rendering is performant, buffers are shared efficiently between processes, and the final output is correctly managed and presented by the display server. The vendor's responsibility is to provide robust HAL TBM and TDM backend implementations, upon which `libtbm`, `libtpl-egl`, and the EGL port can build.
