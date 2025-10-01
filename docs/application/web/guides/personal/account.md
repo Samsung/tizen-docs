@@ -8,23 +8,23 @@ The main features of the Account API include the following:
 
 - Accessing accounts
 
-  You can [get a specific account or all available accounts](#retrieving-accounts).
+  You can [get a specific account or all available accounts](#retrieve-accounts).
 
 - Accessing account providers
 
-  You can [get a specific provider or all available providers](#retrieving-providers).
+  You can [get a specific provider or all available providers](#retrieve-providers).
 
 - Managing accounts
 
-  You can [add, update, and remove accounts](#managing-accounts).
+  You can [add, update, and remove accounts](#manage-accounts).
 
 - Monitoring account changes
 
-  You can [register a listener](#receiving-notifications-on-account-changes) and track changes in the account database.
+  You can [register a listener](#receive-notifications-on-account-changes) and track changes in the account database.
 
 - Managing extended data
 
-  You can [set and get extended data](#managing-extended-account-data) for an account. The extended data is defined as key-value pairs.
+  You can [set and get extended data](#manage-extended-account-data) for an account. The extended data is defined as key-value pairs.
 
 To understand account management, you must be familiar with the following basic concepts:
 
@@ -209,7 +209,7 @@ Learning how to register change listeners enables you to synchronize the view of
 
 Learning how to manage extended data for an account enables you to include account support into your applications:
 
-1. [Retrieve the account object](#retrieving-accounts).
+1. [Retrieve the account object](#retrieve-accounts).
 
 2. Manage the extended data for the retrieved account:
 

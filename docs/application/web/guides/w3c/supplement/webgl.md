@@ -12,18 +12,18 @@ The main features of WebGL&trade; include the following:
 
 - Using programs and shaders
 
-  You can use shaders, such as the vertex shader and fragment shader, to convert shape data to display it on the screen as pixels. [Shaders must be initialized](#initializing-programs-and-shaders) and attached to programs. The vertex shader sets the final position of a vertex, and the fragment shader sets the final colors of each pixel.
+  You can use shaders, such as the vertex shader and fragment shader, to convert shape data to display it on the screen as pixels. [Shaders must be initialized](#initialize-programs-and-shaders) and attached to programs. The vertex shader sets the final position of a vertex, and the fragment shader sets the final colors of each pixel.
 
 - Using buffers
 
-  A buffer is a memory block for storing temporary data. In WebGL&trade;, you must [create a vertex buffer object (VBO) to store vertex attributes](#initializing-buffers), such as location, color, and texture coordinates.
+  A buffer is a memory block for storing temporary data. In WebGL&trade;, you must [create a vertex buffer object (VBO) to store vertex attributes](#initialize-buffers), such as location, color, and texture coordinates.
 
   > [!NOTE]
   > The `deleteBuffer()` method can be used to delete the buffer.
 
 - Drawing on the screen
 
-  You can use shader attributes to define which buffer to pass to the application, and then record the buffer in the drawing buffer to [display the content on the screen](#drawing-shapes-on-the-screen).
+  You can use shader attributes to define which buffer to pass to the application, and then record the buffer in the drawing buffer to [display the content on the screen](#draw-shapes-on-the-screen).
 
 - Applying realistic 3D effects
 
@@ -31,19 +31,19 @@ The main features of WebGL&trade; include the following:
 
   - Texture
 
-    You can [set the color value](#setting-colors) and [map an image](#setting-textures) on the object surface.
+    You can [set the color value](#set-colors) and [map an image](#set-textures) on the object surface.
 
     Each vertex can have a unique color. When converting a vertex shader to a fragment shader, all the middle pixels are filled, and through linear interpolation of the vertex attributes, the color differences between vertices are automatically given gradation effects.
 
   - Animation
 
-    You can apply object and timer coordinate changes to [create a moving animation](#creating-an-animation).
+    You can apply object and timer coordinate changes to [create a moving animation](#create-an-animation).
 
   - 3D perspective
 
-    You can use Z-index and matrix to [create a 3D perspective](#creating-a-3d-perspective).
+    You can use Z-index and matrix to [create a 3D perspective](#create-a-3d-perspective).
 
-  You can also [use touch effects](#using-touch-events) with textures and 3D perspectives.
+  You can also [use touch effects](#use-touch-events) with textures and 3D perspectives.
 
 - WebGL&trade; frameworks
 

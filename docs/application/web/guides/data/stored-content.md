@@ -8,15 +8,15 @@ The main features of Content API include the following:
 
 - Content retrieval   
 
-  You can [browse and search for content directories and content items](#browsing-content).
+  You can [browse and search for content directories and content items](#browse-content).
 
 - Content management   
 
-  You can [view and edit content item details](#managing-content). The details are common file information and metadata attributes of the media file.
+  You can [view and edit content item details](#manage-content). The details are common file information and metadata attributes of the media file.
 
 - Content change notifications   
 
-  You can keep the content in your application synchronized with an external content manager by [receiving notifications](#receiving-notifications-on-content-changes) in your application when the content changes.
+  You can keep the content in your application synchronized with an external content manager by [receiving notifications](#receive-notifications-on-content-changes) in your application when the content changes.
 
 - Playlist management   
 
@@ -24,15 +24,15 @@ The main features of Content API include the following:
 
   - Create playlists
 
-    You can [create a new playlist](#creating-a-playlist) and add items to it. You can also create a new playlist by copying the content of an existing playlist.
+    You can [create a new playlist](#create-a-playlist) and add items to it. You can also create a new playlist by copying the content of an existing playlist.
 
   - Manage playlists
 
-    You can [retrieve playlists and delete them](#managing-playlists).
+    You can [retrieve playlists and delete them](#manage-playlists).
 
   - Manage playlist items
 
-    You can [manage playlist items](#managing-playlist-items) by adding and retrieving items, and changing the position of a single item or the order of all items.
+    You can [manage playlist items](#manage-playlist-items) by adding and retrieving items, and changing the position of a single item or the order of all items.
 
 The Content API uses the same `ContentManager` interface instance (in [TV](../../api/latest/device_api/tv/tizen/content.html#ContentManager) applications) for all content-related functionalities. The instance provides higher efficiency by performing batch operations on content items.
 

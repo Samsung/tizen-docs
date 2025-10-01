@@ -8,15 +8,15 @@ The main features of the Sensor API include the following:
 
 - Managing sensors
 
-  You can [enable the sensor, read sensor data, and disable the sensor](#managing-sensors).
+  You can [enable the sensor, read sensor data, and disable the sensor](#manage-sensors).
 
 - Receiving notifications
 
-  You can [receive notifications on sensor data changes](#receiving-notifications-on-sensor-data-changes).
+  You can [receive notifications on sensor data changes](#receive-notifications-on-sensor-data-changes).
 
 - Obtaining sensor hardware information
 
-  You can [retrieve information about the technical limits of the sensor](#obtaining-sensor-hardware-information).
+  You can [retrieve information about the technical limits of the sensor](#obtain-sensor-hardware-information).
 
 ## Manage sensors
 

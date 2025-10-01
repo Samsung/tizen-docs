@@ -8,11 +8,11 @@ The main features of the Feedback API include the following:
 
 - Checking for pattern support
 
-  You can [determine whether a specified media pattern type is available](#checking-the-pattern).
+  You can [determine whether a specified media pattern type is available](#check-the-pattern).
 
 - Setting a pattern
 
-  You can [set a predefined system pattern to be played as a reaction](#setting-the-media-pattern) to specific actions.
+  You can [set a predefined system pattern to be played as a reaction](#set-the-media-pattern) to specific actions.
 
 Each feedback pattern can have separate media files of sound and vibration type. For example, when receiving a new email message, a predefined sound and vibration feedback pattern can be played.
 

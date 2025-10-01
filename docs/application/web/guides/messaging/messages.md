@@ -10,25 +10,25 @@ The main features of the Messaging API include the following:
 
 - Message writing and sending   
 
-  You can [create and send messages](#creating-and-sending-messages), and save message drafts.
+  You can [create and send messages](#create-and-send-messages), and save message drafts.
 
-  You can also retrieve information on available SIM cards and [select the SIM card with which to send a message](#selecting-the-sim-card-for-sending-messages).
+  You can also retrieve information on available SIM cards and [select the SIM card with which to send a message](#select-the-sim-card-for-sending-messages).
 
 - Message management   
 
-  You can [find, update, and delete messages](#managing-messages) in the message storage.
+  You can [find, update, and delete messages](#manage-messages) in the message storage.
 
 - Finding folders   
 
-  You can [find message folders](#finding-folders) belonging to a message service.
+  You can [find message folders](#find-folders) belonging to a message service.
 
 - Full message content retrieval from the email server   
 
-  You can [load email messages and attachments](#synchronizing-with-the-server) from the email service and synchronize your email accounts.
+  You can [load email messages and attachments](#synchronize-with-the-server) from the email service and synchronize your email accounts.
 
 - Message storage change notifications   
 
-  You can [receive notifications](#receiving-notifications-on-message-storage-changes) when messages are added, updated, or deleted.
+  You can [receive notifications](#receive-notifications-on-message-storage-changes) when messages are added, updated, or deleted.
 
 ## Prerequisites
 
@@ -181,7 +181,7 @@ To work with messages in the message store, follow these steps:
 
    The `findMessages()` method returns an array of Message objects as the search result.
 
-   The search result does not contain the actual bodies of the messages. To [load a message body](#synchronizing-with-the-server), call the `loadMessageBody()` method of the MessageService interface.
+   The search result does not contain the actual bodies of the messages. To [load a message body](#synchronize-with-the-server), call the `loadMessageBody()` method of the MessageService interface.
 
 2. To update a message in the message storage, use the `updateMessages()` method. The method uses an array of `Message` objects found previously by the `findMessages()` method as a parameter.
 

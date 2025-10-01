@@ -8,17 +8,17 @@ The main features of the Web Audio API include the following:
 
 - Loading source data
 
-  You must [load source data](#loading-data-and-creating-audio-context) before using the Web Audio API. You can do this using [XMLHttprequest](../communication/xmlhttprequest.md).
+  You must [load source data](#load-data-and-create-audio-context) before using the Web Audio API. You can do this using [XMLHttprequest](../communication/xmlhttprequest.md).
 
   The [AudioContext](https://www.w3.org/TR/webaudio/#AudioContext){:target="_blank"} interface is used to manage and play the sound. It creates a high quality sound and connects to the destination of the sound.
 
 - Modular routing
 
-  [Modular routing](https://www.w3.org/TR/webaudio/#ModularRouting){:target="_blank"} means [routing audio data](#using-modular-routing) either in a direct manner, such as speaker output, or through a connection to [AudioNodes](https://www.w3.org/TR/webaudio/#AudioNode){:target="_blank"}, which handle, for example, volume adjustment and filters.
+  [Modular routing](https://www.w3.org/TR/webaudio/#ModularRouting){:target="_blank"} means [routing audio data](#use-modular-routing) either in a direct manner, such as speaker output, or through a connection to [AudioNodes](https://www.w3.org/TR/webaudio/#AudioNode){:target="_blank"}, which handle, for example, volume adjustment and filters.
 
 - Playing sound
 
-  Use the `noteOn(time)` or `start(time)` method to [play sound](#playing-sound) with the time parameter for specifying the time interval in seconds after which the audio is played. For example, the `0` time value implies playing the audio immediately and the `currentTime + 0.75` time value implies that the audio is played after 0.75 seconds.
+  Use the `noteOn(time)` or `start(time)` method to [play sound](#play-sound) with the time parameter for specifying the time interval in seconds after which the audio is played. For example, the `0` time value implies playing the audio immediately and the `currentTime + 0.75` time value implies that the audio is played after 0.75 seconds.
 
   You can use the `noteOff(time)` or `stop(time)` methods similarly to stop the sound. After stopping sound, recreate the [AudioBufferSourceNode](https://www.w3.org/TR/webaudio/#AudioBufferSourceNode){:target="_blank"} interface instance to play sound again.
 

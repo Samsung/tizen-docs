@@ -2,11 +2,11 @@
 
 The following techniques of writing JavaScript code can be used to improve application performance:
 
-- [Removing the debugging statement](#removing-the-debugging-statement)
-- [Removing slow loop statements](#removing-slow-loop-statements)
-- [Using cached array length](#using-cached-array-length)
-- [Using literal expressions](#using-literal-expressions)
-- [Managing DOM control](#managing-dom-control)
+- [Removing the debugging statement](#remove-the-debugging-statement)
+- [Removing slow loop statements](#remove-slow-loop-statements)
+- [Using cached array length](#use-cached-array-length)
+- [Using literal expressions](#use-literal-expressions)
+- [Managing DOM control](#manage-dom-control)
 
 ## Remove the debugging statement
 
