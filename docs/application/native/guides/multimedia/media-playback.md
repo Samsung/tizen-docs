@@ -446,7 +446,7 @@ To play a video file:
    ```
    error_code = player_set_uri(ad->player, video_path);
    ```
-   <a name="play_video_display"></a>
+<a name="play_video_display"></a>
 2. Set the display on which the video is played.
 
    To retrieve the correct display handle, use the `GET_DISPLAY()` function. To set the display, use the `player_set_display()` function with the player handle, display type [`player_display_type_e`](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab) enumerator, and display handle:

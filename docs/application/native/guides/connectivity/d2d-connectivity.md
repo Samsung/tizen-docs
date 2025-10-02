@@ -12,17 +12,17 @@ The main features of the Convergence API include:
 
 - Discovering and connecting to devices
 
-  You can [discover nearby devices](#discovery) and get information about them. After discovering a device that provides a service you need, you can [connect to the device service](#connect_service).
+  You can [discover nearby devices](#discovery) and get information about them. After discovering a device that provides a service you need, you can [connect to the device service](#connecting-to-the-app-communication-service).
 
 - Communicating with remote devices
 
-  You can use the [app communication service](#app_communication) to connect to remote services and communicate with remote applications by sending a payload.
+  You can use the [app communication service](#app-communication-service) to connect to remote services and communicate with remote applications by sending a payload.
 
 - Launching applications on remote devices
 
-  You can use the [remote app control service](#remote_app_control) to launch applications on a remote device. The access to the remote device is [controlled using passcodes](#access_control).
+  You can use the [remote app control service](#remote-app-control-service) to launch applications on a remote device. The access to the remote device is [controlled using passcodes](#access-control).
 
-The Convergence API includes features to implement a typical convergence application workflow: discovering nearby devices and browsing available services, connecting to a specific service, and using the service. The payload functions defined for packaging data and transferring messages between end-points accept plain strings, byte arrays, and application control data. The payload also contains several [predefined fields](#payload) for your use.
+The Convergence API includes features to implement a typical convergence application workflow: discovering nearby devices and browsing available services, connecting to a specific service, and using the service. The payload functions defined for packaging data and transferring messages between end-points accept plain strings, byte arrays, and application control data. The payload also contains several [predefined fields](#predefined-payload-fields) for your use.
 
 The following figure illustrates the workflow of the D2D connectivity features.
 
@@ -32,7 +32,7 @@ The following figure illustrates the workflow of the D2D connectivity features.
 
 ## App Communication Service
 
-The convergence architecture allows the app communication service to launch an application on a device equipped with the remote server, and communicate with the server application by [sending a payload](#send_message). The remote server application can also use the app communication service to send responses to the local (client-side) application. In this way, a sophisticated data exchange protocol can be established. Before using the app communication service, [set up the listener callbacks and initialize the application](#init_app_communication).
+The convergence architecture allows the app communication service to launch an application on a device equipped with the remote server, and communicate with the server application by [sending a payload](#sending-messages-to-the-server-application). The remote server application can also use the app communication service to send responses to the local (client-side) application. In this way, a sophisticated data exchange protocol can be established. Before using the app communication service, [set up the listener callbacks and initialize the application](#initializing-the-app-communication-service).
 
 The following figure illustrates the architecture.
 
@@ -71,7 +71,7 @@ The connection between applications is based on [IoTivity](https://www.iotivity.
 
 ![Remote app control service](./media/d2d_remote_app_control.png)
 
-In Tizen 3.0, the remote app control service is supported in mobile and wearable profiles. With this service, you can [use the Tizen App Control feature across remote devices](#init_remote).
+In Tizen 3.0, the remote app control service is supported in mobile and wearable profiles. With this service, you can [use the Tizen App Control feature across remote devices](#using-the-remote-app-control-service).
 
 The typical remote app control service workflow starts with the discovery of the remote app control service on the nearby devices. When the service is found, the [application control](../app-management/app-controls.md) feature can be used to launch an application on the remote device and receive results of operations performed by the launched application.
 
@@ -113,7 +113,7 @@ To enable your application to use the D2D connectivity functionality:
     #include <d2d_conv_manager.h>
     ```
 
-<a name="Discovery"></a>
+<a name="discovery"></a>
 ## Discovering Devices
 
 Discovery is a procedure for searching for convergence services provided by nearby devices in the same device-to-device network.
@@ -400,7 +400,7 @@ The structure of the listener is the same for both server and client sides.
 
 After starting a service channel, you can send a message or data to the remote server application. A payload to send to the other side must be packaged as shown in the following example. The app communication service accepts both string and byte types of payload, using the `conv_payload_set_string()` and `conv_payload_set_byte()` functions.
 
-You can design a set of application-specific key-value pairs for maintaining the communication protocol between remote applications. It requires implementing a publishing routine for sending messages and a [listener routine](#listener_callback) for receiving and recognizing the messages on both client and server sides.
+You can design a set of application-specific key-value pairs for maintaining the communication protocol between remote applications. It requires implementing a publishing routine for sending messages and a [listener routine](#initializing-the-app-communication-service) for receiving and recognizing the messages on both client and server sides.
 
 ```
 int
@@ -424,7 +424,7 @@ publish_example()
 
 The channel used in this example is the same as described before. The `conv_service_publish()` function delivers the payload, composed of the `"user_defined_key"` and `"user_defined_value"` pairs, through the network to the remote server application where it is passed in the listener callback.
 
-In the app communication service, the `conv_service_read()` function is only a command to get the information about the clients connected to the same channel. The `conv_service_read()` is called with `NULL` payload and it does not require additional parameters. You can [receive various information](#result_type) in the `conv_service_read()` function.
+In the app communication service, the `conv_service_read()` function is only a command to get the information about the clients connected to the same channel. The `conv_service_read()` is called with `NULL` payload and it does not require additional parameters. You can [receive various information](#predefined-payload-fields) in the `conv_service_read()` function.
 
 ## Using the Remote App Control Service
 

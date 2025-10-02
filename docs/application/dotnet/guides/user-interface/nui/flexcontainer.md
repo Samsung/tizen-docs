@@ -369,6 +369,7 @@ You can modify the flex item placement through the following properties:
     flexContainer.Add(item5);
     ```
 
+<a name="align-self"></a>
 -   `AlignSelf`
 
     This property specifies how the item aligns along the cross axis. If the `AlignSelf` property is set, it overrides the default alignment defined by the container's `AlignItems` property:

@@ -144,7 +144,7 @@ To manage the record using the handle, you can use the URI, views, or basic type
   calendar_record_set_str(event, _calendar_event.summary, "Meeting");
   ```
 
-  <a name="time"></a>
+<a name="time"></a>
   The calendar time structure property, `calendar_caltime_s`, is defined as follows:
 
   ```

@@ -104,7 +104,8 @@ To send push notifications:
 
 4. Use the Rest APIs for sending push notifications.
 
-   - <a name="single_req"></a>Single request
+<a name="single_req"></a>
+   - Single request
 
      With the created message field, you can construct a notification using a JSON query and send it to the RQM server using the POST method. The following list contains the details:
 

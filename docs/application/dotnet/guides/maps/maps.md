@@ -29,7 +29,7 @@ The main features of Tizen.Maps namespace include the following:
 
     You can create objects, such as markers, polylines, and polygons, in the widget. You can also receive responses about events over the widget, and get various data from the events. You can also [customize service requests](#preference).
 
-<a name="supported_maps"> </a>
+<a name="supported_maps"></a>
 The following map providers are supported:
 
 -   [HERE Maps](https://developer.here.com){:target="_blank"} based on the [HERE REST APIs](https://developer.here.com/rest-apis){:target="_blank"}.
