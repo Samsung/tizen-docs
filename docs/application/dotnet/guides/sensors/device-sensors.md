@@ -192,7 +192,7 @@ The following table provides information about the accelerometer output for a de
 | Z-polarity     | 0                                        | 0                                        | 0                                        | 0                                        | +                                        | -                                        |
 
 
- <a name="auto_rotation"></a>
+<a name="auto_rotation"></a>
 ## AutoRotation sensor
 
 The AutoRotation sensor is a software sensor that uses an accelerometer to compute the orientation of a device. This sensor helps to determine whether a device is placed in a landscape or portrait orientation.
@@ -232,7 +232,7 @@ The following table lists the measurement data that the geomagnetic orientation 
 
 The angular positions are measured using a fixed frame reference (X~E~, Y~E~, Z~E~).
 
- <a name="mag_rotation"></a>
+<a name="mag_rotation"></a>
 ## Geomagnetic rotation vector sensor
 
 The geomagnetic rotation vector sensor is the output of a software/hardware-based sensor fusion solution that uses the accelerometer and magnetic sensors to compute the orientation of the device. In this sensor, the computed orientation is free of any drift, but it is inaccurate compared to a sensor fusion solution using the gyroscope sensor. The geomagnetic rotation vector sensor represents the orientation of the device as a combination of an angle and an axis on which the device has rotated through a specific angle around an axis (X, Y, or Z).
@@ -295,7 +295,7 @@ The following table lists the measurement data that the gyroscope provides.
 | Y           | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
 | Z           | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
 
- <a name="gyro_orientation"></a>
+<a name="gyro_orientation"></a>
 
 ## Gyroscope orientation sensor
 
@@ -319,7 +319,7 @@ The following table lists the measurement data that the gyroscope orientation se
 
 The angular positions are measured using a fixed frame reference (X~E~, Y~E~, Z~E~).
 
- <a name="gyro_rotation"></a>
+<a name="gyro_rotation"></a>
 
 ## Gyroscope rotation vector sensor
 
@@ -422,7 +422,7 @@ The following table lists the measurement data that the humidity sensor provides
 | TimeSpan   | `TimeSpan` | -     | Microseconds |
 | Humidity    | `float`              | 100   | %            |
 
- <a name="light"></a>
+<a name="light"></a>
 
 ## Light sensor
 
@@ -440,7 +440,7 @@ The following table lists the measurement data that the light sensor provides.
 | TimeSpan   | `TimeSpan` | -                                | Microseconds |
 | Level       | `float`              | Min. value = 0<br>Max. value = 45875 | Lux          |
 
- <a name="lin_accelerometer"></a>
+<a name="lin_accelerometer"></a>
 
 ## Linear acceleration sensor
 
@@ -466,7 +466,7 @@ The following table lists the measurement data that the linear acceleration sens
 | Y           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
 | Z           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
 
- <a name="magnetic"></a>
+<a name="magnetic"></a>
 
 ## Magnetic sensor
 
@@ -605,7 +605,7 @@ The following table lists the measurement data that the rotation vector sensor p
 | Z           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
 | W           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
 
- <a name="sleep_monitor"></a>
+<a name="sleep_monitor"></a>
 
 ## Sleep monitor
 
@@ -640,7 +640,7 @@ The following table lists the measurement data that the temperature sensor provi
 | TimeSpan   | `TimeSpan` | -                                | Microseconds |
 | Temperature | `float`              | Min. value = -30<br>Max. value = 100 | °C           |
 
- <a name="ultraviolet"></a>
+<a name="ultraviolet"></a>
 
 ## Ultraviolet sensor
 
@@ -656,7 +656,7 @@ The following table lists the measurement data that the ultraviolet sensor provi
 | TimeSpan        | `TimeSpan` | -                             | Microseconds |
 | UltravioletIndex | `float`              | Min. value = 0<br>Max. value = 15 | UV index     |
 
- <a name="uncal_gyro"></a>
+<a name="uncal_gyro"></a>
 
 ## Uncalibrated gyroscope
 

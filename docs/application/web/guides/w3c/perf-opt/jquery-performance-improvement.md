@@ -2,10 +2,10 @@
 
 The following techniques of writing JavaScript code can be used to improve application performance when using jQuery:
 
-- [Using selectors](#using-selectors)
-- [Using caches](#using-caches)
-- [Using chaining](#using-chaining)
-- [Managing DOM control](#managing-dom-control)
+- [Using selectors](#use-selectors)
+- [Using caches](#use-caches)
+- [Using chaining](#use-chaining)
+- [Managing DOM control](#manage-dom-control)
 
 
 The following example HTML code has been used as a basis when describing the techniques:

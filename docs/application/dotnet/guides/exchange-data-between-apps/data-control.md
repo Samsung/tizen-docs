@@ -85,7 +85,7 @@ If you are not using Visual Studio, this is a sample `tizen-manifest.xml`, that 
 > ```XML
 > "http://org.tizen.example.ProviderSample/datacontrol/provider/Test.dll"
 > ```
-> For consumer example code, see [Managing a consumer](#managing-a-consumer).
+> For consumer example code, see [Managing a consumer](#manage-a-consumer).
 
 
 

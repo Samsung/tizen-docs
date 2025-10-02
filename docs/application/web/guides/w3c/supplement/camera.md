@@ -8,18 +8,18 @@ The main features of the Camera API (Tizen Extension) API include the following:
 
 - Accessing the camera device    
 
-  You can [access the camera device](#accessing-the-camera-device) retrieving the media stream from the camera.
+  You can [access the camera device](#access-the-camera-device) retrieving the media stream from the camera.
 
 - Managing the camera    
 
-  You can [manage the camera features](#managing-the-camera) in many ways:
+  You can [manage the camera features](#manage-the-camera) in many ways:
 
   - You can record videos and capture images.
   - You can access and set the camera settings, such as the file name for the recorded video or captured image.
 
 - Deallocating the camera preview stream    
 
-  You can [deallocate the camera preview stream resources](#deallocating-the-camera-preview-stream) when the application is invisible so that the preview stream can be assigned to another Web application.
+  You can [deallocate the camera preview stream resources](#deallocate-the-camera-preview-stream) when the application is invisible so that the preview stream can be assigned to another Web application.
 
 ## Access the camera device
 

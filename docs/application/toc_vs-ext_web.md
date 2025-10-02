@@ -53,6 +53,9 @@
 ##### [Tizen CLI](/application/tizen-studio/common-tools/command-line-interface.md)
 ##### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 
+#### SDK Diagnostics
+##### [Tizen Doctor](/application/tizen-studio/common-tools/tizen-doctor.md)
+
 #### Report Issues
 ##### [Issue Reporter](/application/vstools/tools/issue-reporter-vs-tools.md)
 

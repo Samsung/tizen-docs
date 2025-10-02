@@ -173,7 +173,7 @@ To track the state of the geofence, use the `GeofenceEventChanged` event of the 
 	> The geofence change event handler is used to let the user know whether the request is successful on the server side. This handler is invoked only in the case of an asynchronous method. For a synchronous method, an error is immediately returned.
 
 
-<a name="track"></a>    
+<a name="track"></a>
 ## Track the user for geofence crossing alerts
 
 To get information about whether the user has crossed the boundary of the geofence, follow these steps:

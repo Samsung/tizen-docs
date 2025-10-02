@@ -8,19 +8,19 @@ The main features of the Archive API include the following:
 
 - Accessing archive content   
 
-  You can [read the content of an archive file](#reading-the-content-of-an-archive).
+  You can [read the content of an archive file](#read-the-content-of-an-archive).
 
 - Creating new archives
 
-  You can [create archive files and add files into them](#creating-an-archive).
+  You can [create archive files and add files into them](#create-an-archive).
 
 - Extracting archived files
 
-  You can [extract a single file or all files from an archive file](#extracting-files-from-an-archive).
+  You can [extract a single file or all files from an archive file](#extract-files-from-an-archive).
 
 - Aborting operations
 
-  You can [abort an on-going archive operation](#aborting-file-operations).
+  You can [abort an on-going archive operation](#abort-file-operations).
 
 To start any kind of ZIP operation (packing or unpacking), you must first call the `open()` method of the `ArchiveManager` interface (in [TV](../../api/latest/device_api/tv/tizen/archive.html#ArchiveManager) applications). The first parameter is a `FileReference` object (in [TV](../../api/latest/device_api/tv/tizen/archive.html#FileReference) applications), which can be a `File` object (in [TV](../../api/latest/device_api/tv/tizen/filesystem.html#File) applications) or the virtual path. The second parameter is a `FileMode` enumerator (in [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileMode) applications), whose values are described in the following table.
 

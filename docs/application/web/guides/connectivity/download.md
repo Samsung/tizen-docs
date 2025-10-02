@@ -8,11 +8,11 @@ The main features of the Download API include the following:
 
 - Managing downloads
 
-  You can [start, pause, resume, cancel, and abandon a download](#managing-downloads) of content using the `DownloadManager` interface (in [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadManager) applications).
+  You can [start, pause, resume, cancel, and abandon a download](#manage-downloads) of content using the `DownloadManager` interface (in [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadManager) applications).
 
 - Checking the download state and information
 
-  You can [access the current download state and retrieve the download information](#checking-the-download-state-and-information) using the `DownloadManager` interface. The states are defined in the `DownloadState` enumerator (in [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadState) applications).
+  You can [access the current download state and retrieve the download information](#check-the-download-state-and-information) using the `DownloadManager` interface. The states are defined in the `DownloadState` enumerator (in [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadState) applications).
 
 ## Prerequisites
 

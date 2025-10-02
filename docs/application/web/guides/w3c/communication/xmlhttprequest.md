@@ -8,7 +8,7 @@ The main features of the XMLHttpRequest API include the following:
 
   In the older XMLHttpRequest API, only same-origin resource sharing was possible. However, the latest XMLHttpRequest API supports [CORS](../security/cors.md).
 
-  To [send a cross-origin request](#sending-a-cross-origin-request), you must create an [XMLHttpRequest](https://www.w3.org/TR/XMLHttpRequest/){:target="_blank"} interface instance and use its `open()` method. Set the request URL method parameter as the cross-origin URL.
+  To [send a cross-origin request](#send-a-cross-origin-request), you must create an [XMLHttpRequest](https://www.w3.org/TR/XMLHttpRequest/){:target="_blank"} interface instance and use its `open()` method. Set the request URL method parameter as the cross-origin URL.
 
  > [!NOTE]
  > For the cross-origin request to work, [the authority for the external domain access must be set](../security/cors.md#using-simple-requests) in the server belonging to the cross-origin URL.
@@ -19,11 +19,11 @@ The main features of the XMLHttpRequest API include the following:
 
 - Supporting form data
 
-  The newly supported [FormData](https://www.w3.org/TR/XMLHttpRequest/){:target="_blank"} interface makes it possible to upload data from an entire form. For more information, see [Uploading Files with Ajax](#uploading-files-with-ajax).
+  The newly supported [FormData](https://www.w3.org/TR/XMLHttpRequest/){:target="_blank"} interface makes it possible to upload data from an entire form. For more information, see [Uploading Files with Ajax](#upload-files-with-ajax).
 
 - Receiving a more fragmented response state on the request progress status
 
-  The XMLHttpRequst API provides more [event handlers](https://www.w3.org/TR/XMLHttpRequest/){:target="_blank"} for [tracking the request status and response](#handling-request-events). In addition, the `onprogress` event handler allows you to [check the send status of a large capacity file download](#tracking-download-progress-state).
+  The XMLHttpRequst API provides more [event handlers](https://www.w3.org/TR/XMLHttpRequest/){:target="_blank"} for [tracking the request status and response](#handle-request-events). In addition, the `onprogress` event handler allows you to [check the send status of a large capacity file download](#track-download-progress-state).
 
 ## Send a cross-origin request
 

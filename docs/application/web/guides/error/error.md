@@ -15,7 +15,7 @@ The main error handling features of the Tizen API include the following:
 
 - Generic event handling  
 
-  You can [handle the results of asynchronous operations](#using-the-generic-event-handlers) with generic events. The operations can implemented using the `SuccessCallback` (in [TV](../../api/latest/device_api/tv/tizen/tizen.html#SuccessCallback) applications) and `ErrorCallback` (in [TV](../../api/latest/device_api/tv/tizen/tizen.html#ErrorCallback) applications) event handlers of the Tizen API.
+  You can [handle the results of asynchronous operations](#use-the-generic-event-handlers) with generic events. The operations can implemented using the `SuccessCallback` (in [TV](../../api/latest/device_api/tv/tizen/tizen.html#SuccessCallback) applications) and `ErrorCallback` (in [TV](../../api/latest/device_api/tv/tizen/tizen.html#ErrorCallback) applications) event handlers of the Tizen API.
 
 ## Use the generic Event Handlers
 

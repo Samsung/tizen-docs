@@ -8,11 +8,11 @@ The main features of the Device Motion API include the following:
 
 - Getting the current acceleration        
 
-  You can [get the current acceleration](#getting-the-current-acceleration) along the X, Y, and Z axes.
+  You can [get the current acceleration](#get-the-current-acceleration) along the X, Y, and Z axes.
 
 - Monitoring the acceleration values        
 
-  You can [get the acceleration along the X, Y, and Z axes at regular intervals](#monitoring-the-acceleration-values).
+  You can [get the acceleration along the X, Y, and Z axes at regular intervals](#monitor-the-acceleration-values).
 
 ## Acceleration values
 

@@ -96,7 +96,7 @@ To send push notifications, follow the steps below:
 
 4. Use the Rest APIs for sending push notifications.
 
-    <a name="single_req"></a>
+<a name="single_req"></a>
 
     -   Single request
 
@@ -424,7 +424,7 @@ To send push notifications, follow the steps below:
                 ```
 
 
-<a name="error_codes"></a>				
+<a name="error_codes"></a>
 ## Error codes
 
 If sending a push notification request fails for some reason, the response message contains an error code.

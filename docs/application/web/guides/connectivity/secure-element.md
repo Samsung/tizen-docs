@@ -8,7 +8,7 @@ The main features of the Secure Element API include the following:
 
 - Managing secure elements   
 
-  You can [manage secure elements](#managing-secure-elements) by retrieving all the available secure element readers and receiving notifications of reader changes using the `SEService` interface. You can also shut down secure elements.
+  You can [manage secure elements](#manage-secure-elements) by retrieving all the available secure element readers and receiving notifications of reader changes using the `SEService` interface. You can also shut down secure elements.
 
 - Opening sessions and channels   
 
@@ -16,7 +16,7 @@ The main features of the Secure Element API include the following:
 
 - Transmitting APDUs to the applet
 
-  You can [transmit application protocol data units (APDU)](#transmitting-apdus-to-secure-elements) to a secure element using a channel.
+  You can [transmit application protocol data units (APDU)](#transmit-apdus-to-secure-elements) to a secure element using a channel.
 
 - Closing sessions and channels
 

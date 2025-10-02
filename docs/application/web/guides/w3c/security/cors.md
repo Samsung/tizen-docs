@@ -28,7 +28,7 @@ The request is considered to be a [simple request](https://fetch.spec.whatwg.org
   - `multipart/form-data`
   - `text/plain`
 
-When [using simple requests](#using-simple-requests), the response is set in the server side with the following response headers:
+When [using simple requests](#use-simple-requests), the response is set in the server side with the following response headers:
 
 - [Access-Control-Allow-Origin](https://fetch.spec.whatwg.org/#origin-header){:target="_blank"} (mandatory)
 - [Access-Control-Allow-Credentials](https://fetch.spec.whatwg.org/#origin-header){:target="_blank"} (optional)
@@ -44,7 +44,7 @@ If a request is not a simple request, it is considered to be a [preflight (non-s
 
 If the access authority is allowed through the preflight request, the actual request for sending the actual data is made. The preflight request can allow access based on various standards other than `Origin`, such as HTTP certification, HTTP method (for example, `GET`, `POST`, or `PUT…`), or the existence of a certain header.
 
-When [using preflight requests](#using-preflight-requests), the response is set in the server side with the following response headers:
+When [using preflight requests](#use-preflight-requests), the response is set in the server side with the following response headers:
 
 - [Access-Control-Allow-Origin](https://fetch.spec.whatwg.org/#http-responses){:target="_blank"} (mandatory)
 - [Access-Control-Allow-Methods](https://fetch.spec.whatwg.org/#http-responses){:target="_blank"} (mandatory)
@@ -57,7 +57,7 @@ When [using preflight requests](#using-preflight-requests), the response is set 
 
 ![Preflight request workflow](./media/cors_preflight.png)
 
-## Usie simple requests
+## Use simple requests
 
 Learning how to handle a simple request based on an XML HTTP Request enhances the security features of your application:
 

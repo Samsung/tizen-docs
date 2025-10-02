@@ -6,11 +6,11 @@ The main features of the HTML5 Web Messaging API include the following:
 
 - Cross-document messaging
 
-  You can [send and receive data between more than 2 Web pages](#using-cross-document-messaging). Because the [Same Origin Policy](http://www.w3.org/2001/tag/dj9/scriptorigin.html){:target="_blank"} is not applied for cross-document messaging, communication between other domains is also possible.
+  You can [send and receive data between more than 2 Web pages](#use-cross-document-messaging). Because the [Same Origin Policy](http://www.w3.org/2001/tag/dj9/scriptorigin.html){:target="_blank"} is not applied for cross-document messaging, communication between other domains is also possible.
 
 - Channel messaging
 
-   You can [send and receive messages through the port](#using-channel-messaging) of the `MessageChannel` interface (in [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"} applications).
+   You can [send and receive messages through the port](#use-channel-messaging) of the `MessageChannel` interface (in [TV](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels){:target="_blank"} applications).
 
 With the Web Messaging API, messages are sent and received asynchronously using the `MessageEvent` object (in [TV](https://html.spec.whatwg.org/multipage/comms.html#the-messageevent-interface){:target="_blank"} applications), within 1 domain or between different domains.
 

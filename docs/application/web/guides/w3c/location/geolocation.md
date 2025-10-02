@@ -4,7 +4,7 @@ Geolocation defines a location information interface. Common sources of location
 
 This feature is optional.
 
-Using the `Geolocation` interface, you can [retrieve position information](#retrieving-location-information) with "one-shot" position requests (with the `getCurrentPosition()` method) or repeated position updates (with the `watchPosition()` method). Both methods take the following parameters:
+Using the `Geolocation` interface, you can [retrieve position information](#retrieve-location-information) with "one-shot" position requests (with the `getCurrentPosition()` method) or repeated position updates (with the `watchPosition()` method). Both methods take the following parameters:
 
 - Success event handler, which is a function invoked when an attempt to obtain the current location is successful.
 - Error event handler, which is a function invoked when an attempt to obtain the current location fails (optional).

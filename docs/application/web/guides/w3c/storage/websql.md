@@ -18,19 +18,19 @@ The main Web SQL database features include:
 
 - SQL database creation
 
-  You can create and open a SQL database [asynchronously](#opening-a-database-asynchronously) or [synchronously](#opening-a-database-synchronously).
+  You can create and open a SQL database [asynchronously](#open-a-database-asynchronously) or [synchronously](#open-a-database-synchronously).
 
 - SQL statement execution
 
-  You can execute SQL statements [asynchronously](#executing-sql-statements-asynchronously) or [synchronously](#executing-sql-statements-synchronously).
+  You can execute SQL statements [asynchronously](#execute-sql-statements-asynchronously) or [synchronously](#execute-sql-statements-synchronously).
 
 - SQL statement result access
 
-  You can access the result object [asynchronously](#accessing-sql-results-asynchronously) or [synchronously](#accessing-sql-results-synchronously).
+  You can access the result object [asynchronously](#access-sql-results-asynchronously) or [synchronously](#access-sql-results-synchronously).
 
 - Error management
 
-  You can handle errors [asynchronously](#handling-a-syntax-error-asynchronously) or [synchronously](#handling-a-syntax-error-synchronously).
+  You can handle errors [asynchronously](#handle-a-syntax-error-asynchronously) or [synchronously](#handle-a-syntax-error-synchronously).
 
   For the properties that can be delivered with the `sqlError` object, see [Errors and exceptions](http://www.w3.org/TR/2010/NOTE-webdatabase-20101118/?cp=3_0_6_0_5_6#errors-and-exceptions){:target="_blank"}.
 

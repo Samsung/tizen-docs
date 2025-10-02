@@ -8,11 +8,11 @@ The main orientation event features include the following:
 
 - Detecting rotation
 
-  You can use the [deviceorientation](https://www.w3.org/TR/orientation-event/#deviceorientation){:target="_blank"} event to [detect rotation data](#detecting-device-rotation) in order to rotate game characters or elements.
+  You can use the [deviceorientation](https://www.w3.org/TR/orientation-event/#deviceorientation){:target="_blank"} event to [detect rotation data](#detect-device-rotation) in order to rotate game characters or elements.
 
 - Detecting acceleration
 
-  You can [use rotation speed (acceleration of the device) information](#detecting-device-acceleration), including gravity, with the [devicemotion](https://www.w3.org/TR/orientation-event/#devicemotion){:target="_blank"} event. You can move game characters or elements, and capture acceleration values to add certain events.
+  You can [use rotation speed (acceleration of the device) information](#detect-device-acceleration), including gravity, with the [devicemotion](https://www.w3.org/TR/orientation-event/#devicemotion){:target="_blank"} event. You can move game characters or elements, and capture acceleration values to add certain events.
 
 ## Detect device rotation
 
@@ -57,7 +57,7 @@ For the complete source code related to this use case, see the following file:
 
 - [device_orientation.html](http://download.tizen.org/misc/examples/w3c_html5/device/device_orientation_event_specification){:target="_blank"}
 
-## Detecting device acceleration
+## Detect device acceleration
 
 Learning how to detect device acceleration is a basic device motion handling skill:
 

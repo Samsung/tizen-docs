@@ -10,7 +10,7 @@ The main features of the Iotcon API include the following:
 
 - Creating a server
 
-  You can [create a resource](#creating-a-new-resource) and send a presence event to the client when it becomes online.
+  You can [create a resource](#create-a-new-resource) and send a presence event to the client when it becomes online.
 
 - Managing resources
 
@@ -18,11 +18,11 @@ The main features of the Iotcon API include the following:
 
 - Creating a client
 
-  You can [find remote resources](#finding-remote-resources), [retrieve device and platform information](#retrieving-device-and-platform-information), and listen for server presence events.
+  You can [find remote resources](#find-remote-resources), [retrieve device and platform information](#retrieve-device-and-platform-information), and listen for server presence events.
 
 - Remotely managing resources
 
-  You can [retrieve](#sending-get-requests) and [modify](#sending-put-requests) the remote resource attributes with GET and PUT methods. You can also use POST and DELETE methods to modify the resources on a remote server. You can [monitor the resource attribute changes and the `isAlive` state](#observing-resource-changes).
+  You can [retrieve](#send-get-requests) and [modify](#send-put-requests) the remote resource attributes with GET and PUT methods. You can also use POST and DELETE methods to modify the resources on a remote server. You can [monitor the resource attribute changes and the `isAlive` state](#observe-resource-changes).
 
   For more information on all available remote resource management methods, see the native [IoT Connectivity](../../../native/guides/connectivity/iotcon.md) guide.
 
@@ -314,7 +314,7 @@ On the client side, you can read resource attributes:
    }
    ```
 
-2. [Find a remote resource](#finding-remote-resources).
+2. [Find a remote resource](#find-remote-resources).
 
 3. Once you have a `RemoteResource` object, use the `methodGet()` method to send a request to the server. For a list of resource attributes you can request, see the API Reference (in [TV](../../api/latest/device_api/tv/tizen/iotcon.html#RemoteResource) applications):
 
@@ -339,7 +339,7 @@ On the client side, you can modify remote resource attributes using the PUT meth
    }
    ```
 
-2. [Find a remote resource](#finding-remote-resources).
+2. [Find a remote resource](#find-remote-resources).
 
 3. Once you have a `RemoteResource` object (in [TV](../../api/latest/device_api/tv/tizen/iotcon.html#RemoteResource) applications), use the success callback to create a `Representation` object (in [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Representation) applications). This object represents the changes in attributes, types, and interfaces:
 
@@ -363,7 +363,7 @@ On the client side, you can modify remote resource attributes using the PUT meth
 
 On the client side, you can observe remote resource attribute changes with the `startObserving()` method, and the `isAlive` state with the `setResourceStateChangeListener()` method:
 
-1. [Find a remote resource](#finding-remote-resources).
+1. [Find a remote resource](#find-remote-resources).
 
 2. Prepare a callback for state change events:
 

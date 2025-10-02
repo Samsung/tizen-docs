@@ -6,7 +6,7 @@ The main features of the getUserMedia API include the following:
 
 - Retrieving multimedia streams
 
-  You can use the `navigator.webkitGetUserMedia()` method to request user access to [retrieve the multimedia streams](#accessing-a-video-stream) of local devices, such as camera. The method returns the media as a JSON object.
+  You can use the `navigator.webkitGetUserMedia()` method to request user access to [retrieve the multimedia streams](#access-a-video-stream) of local devices, such as camera. The method returns the media as a JSON object.
 
   > [!NOTE]
   > The TV applications support the `navigator.webkitGetUserMedia()` method for the microphone only, because a TV has no camera.
@@ -14,7 +14,7 @@ The main features of the getUserMedia API include the following:
 
 - Capturing media
 
-  You can [capture media content](#capturing-a-media-frame) and transform it to various formats.
+  You can [capture media content](#capture-a-media-frame) and transform it to various formats.
 
   > [!NOTE]
   > Tizen supports a WebKit-based `GetUserMedia()` method, so always add the `webkit` prefix to the method name.

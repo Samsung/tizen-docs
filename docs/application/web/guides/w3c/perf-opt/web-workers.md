@@ -4,11 +4,11 @@ Web workers run JavaScript in an independent thread instead of the main UI threa
 
 The main features of the Web Workers API include  the following:
 
-- [Creating workers](#creating-a-web-worker-and-handling-errors)
+- [Creating workers](#create-a-web-worker-and-handle-errors)
 
   The worker creates a new thread, and only runs when it is executed. It does not communicate with the UI thread or other same-level workers, and therefore, you cannot assign a work priority order. However, you can create subworkers using the `importScripts()` method to divide tasks.
 
-- [Messaging between workers](#sending-messages-between-web-workers)
+- [Messaging between workers](#send-messages-between-web-workers)
 
   A subworker can communicate with the host worker using the `postMessage()` method of the HTML5 Web Messaging API (in [TV](../../../api/latest/w3c_api/w3c_api_tv.html#messaging) applications). This process is normally used to give work orders to workers or subworkers, or deliver an operation result.
   
@@ -177,8 +177,8 @@ Generally, Web applications are built and run using a single UI thread. Since on
 
 Since the task of changing the image color using a canvas involves allocating a color value for each pixel of the image displayed on the screen, the program requires a complicated calculation to execute loops by the number of the pixels. The following examples of applying a color filter effects to an image to change the color show:
 
-- [Problems with using UI threads](#using-ui-threads)
-- [Advantages of using multi-thread Web workers](#using-multi-thread-web-workers)
+- [Problems with using UI threads](#ui-threads)
+- [Advantages of using multi-thread Web workers](#multi-thread-web-workers)
 
 ### UI threads
 

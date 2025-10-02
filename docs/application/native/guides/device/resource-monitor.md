@@ -186,7 +186,7 @@ The following table lists the available resource types, which are part of the `r
  | `RESOURCE_MONITOR_TYPE_SYSTEM'`                | Resource type for system overall status   |
  | `RESOURCE_MONITOR_TYPE_DISK`                   | Resource type for disk devices            |
 
- <a name="resource_attributes"></a>
+<a name="resource_attributes"></a>
 
 The following table lists the available attributes for each resource, which are part of the `resource_monitor_attr_id_e` enumeration:
 
@@ -283,7 +283,7 @@ The following table lists the available attributes for each resource, which are 
  | `RESOURCE_MONITOR_DISK_ATTR_WRITE_TOTAL`           | uint64    | Resource attribute for total write amount               |
 
 
- <a name="resource_controls"></a>
+<a name="resource_controls"></a>
 
 The following table lists the required controls for some resources, which are part of the `resource_monitor_ctrl_id_e` enumeration:
 

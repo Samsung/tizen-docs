@@ -22,6 +22,27 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET, Tizen 
     - Python 2.7 (only for macOS)
 
       Download from <https://www.python.org/ftp/python/2.7.18/python-2.7.18-macosx10.9.pkg>.
+    
+    - Python 3.8 (only for Ubuntu)
+
+      You can use below commands to install:
+        ```
+        $ sudo add-apt-repository ppa:deadsnakes/ppa       
+        $ sudo apt update        
+        $ sudo apt install python3.8 python3.8-dev
+        ```
+
+    - isl (only for macOS)
+
+      You can use below command to install:
+        ``` 
+        $ brew install isl        
+        ```
+        <strong>Note</strong><br>
+To install Homebrew, see the <a href="http://brew.sh/">Brew Web site</a>.
+        
+        For macOS Sequoia, isl default version is 23, you need to create symbolink link to 19 for native build for tizen platform 9 and lower. You can use below command to create symbolic link:
+        > $ sudo ln -s  /usr/local/Cellar/isl/0.27/lib/libisl.23.dylib /usr/local/opt/isl/lib/libisl.19.dylib
 
     - Tizen Baseline SDK or Tizen Studio
 

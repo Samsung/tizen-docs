@@ -100,7 +100,8 @@ To check whether an application has permission to use a privilege and to request
         }
         ```
 
-3.  <a name="handler"></a>If you need to request user permission, handle the user decision within an event handler registered for the `ResponseFetched` event of the [Tizen.Security.PrivacyPrivilegeManager.ResponseContext](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.ResponseContext.html) class.
+<a name="handler"></a>
+3.  If you need to request user permission, handle the user decision within an event handler registered for the `ResponseFetched` event of the [Tizen.Security.PrivacyPrivilegeManager.ResponseContext](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.ResponseContext.html) class.
 
     The user decision is returned in the event handler as the `result` property of the [Tizen.Security.RequestResponseEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.RequestResponseEventArgs.html) class.
 

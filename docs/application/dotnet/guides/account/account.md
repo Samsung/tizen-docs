@@ -82,7 +82,7 @@ To enable your application to use the account management functionality, follow t
     using Tizen.Account.AccountManager;
     ```
 
-    <a name="add"></a>
+<a name="add"></a>
 ## Create and manage an account
 
 To create an account, set its properties, and add it to the account database, follow these steps:
@@ -117,7 +117,7 @@ To create an account, set its properties, and add it to the account database, fo
 
     The method returns the account ID (`account_id`) of the newly inserted account.
 
-    <a name="get"></a>
+<a name="get"></a>
 ## Get account information
 
 To get account information, such as user name, display name, domain name, and email ID, follow these steps:
@@ -317,7 +317,7 @@ To perform database queries, follow the steps below:
     account.Dispose();
     ```
 
-    <a name="secret"></a>
+<a name="secret"></a>
 ## Manage account secrecy
 
 To manage account secrecy, follow the steps below:
@@ -363,7 +363,7 @@ To manage account secrecy, follow the steps below:
     My Disp.: Visible
     ```
 
-    <a name="update"></a>
+<a name="update"></a>
 ## Update accounts
 
 To update and track account data, follow these steps:
@@ -418,7 +418,7 @@ To update and track account data, follow these steps:
     AccountService.AccountUpdated -= handler;
     ```
 
-    <a name="type"></a>
+<a name="type"></a>
 ## Retrieve account types
 
 To retrieve account types, follow these steps:

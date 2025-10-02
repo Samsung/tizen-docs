@@ -8,15 +8,15 @@ The main features of the Call History API include the following:
 
 - Call history tracking   
 
-  You can [search and store data about all incoming and outgoing calls](#searching-for-call-history-items) using the CallHistory interface. The retrieved data is displayed as a list using the CallHistoryEntry interface.
+  You can [search and store data about all incoming and outgoing calls](#search-for-call-history-items) using the CallHistory interface. The retrieved data is displayed as a list using the CallHistoryEntry interface.
 
 - Call history item deletion   
 
-  You can manage the call history by [removing unnecessary call history items](#removing-call-history-items) using the `CallHistory` interface.
+  You can manage the call history by [removing unnecessary call history items](#remove-call-history-items) using the `CallHistory` interface.
 
 - Change monitoring   
 
-  You can register event listeners to [monitor changes in the call history](#monitoring-the-call-history) using the CallHistoryChangeCallback listener interface.
+  You can register event listeners to [monitor changes in the call history](#monitor-the-call-history) using the CallHistoryChangeCallback listener interface.
 
 ## Prerequisites
 

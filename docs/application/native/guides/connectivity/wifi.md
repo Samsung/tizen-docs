@@ -9,7 +9,8 @@ The main features of the Wi-Fi Manager API include:
 
   You can to implement and manage Wi-Fi connections with the [Wi-Fi Manager API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html). For example, you can [activate or deactivate](#activate) a local Wi-Fi device, [connect to an access point](#connect) asynchronously, and [scan for available access points](#scan) and retrieve information from the found access points.
 
-- <a name="ap"></a>Access point management
+<a name="ap"></a>
+- Access point management
 
   You can connect to a specific access point (AP) with the [Access Point API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html). The infrastructure mode is used to connect to a wireless local area network (WLAN). The infrastructure mode requires a wireless AP. To connect to a WLAN, a client must be configured to use the same service set identifier (SSID) as the AP.
 

@@ -17,6 +17,10 @@ The main features of the Feedback API include:
 
   You can [determine whether a specific pattern is supported](#support).
 
+- Stopping vibration feedback play
+
+  You can [stop a vibration feedback pattern](#stop).
+
 You can play a feedback pattern using sound or vibration:
 
 - Sound management
@@ -33,10 +37,17 @@ You can play a feedback pattern using sound or vibration:
 
 ## Prerequisites
 
-To use the functions and data types of the [Feedback API](../../api/common/latest/group__CAPI__SYSTEM__FEEDBACK__MODULE.html), include the `<feedback.h>` header file in your application:
+To use the functions and data types of the [Feedback API](../../api/common/latest/group__CAPI__SYSTEM__FEEDBACK__MODULE.html), include the `<feedback.h>` header file in your application. And also use `feedback_initialize()` and `feedback_deinitialize()`:
 
 ```
 #include <feedback.h>
+
+// Call before use feedback function.
+int ret = feedback_initialize();
+if (ret == FEDDBACK_ERROR_NONE) {
+  // If no longer need to user feedback, then deinitialize.
+  feedback_deinitialize();
+}
 ```
 
 <a name="play"></a>
@@ -47,8 +58,11 @@ To play a sound and vibrate with a specific pattern, use the `feedback_play()` f
 Internally, the function invokes the `sound_play` or `vibrator_play` feedback type. It returns success when the pattern enum is valid.
 
 ```
-int ret;
-ret = feedback_play(pattern);
+int ret = feedback_initialize();
+if (ret == FEEDBACK_ERROR_NONE) {
+    ret = feedback_play(pattern);
+    feedback_deinitialize();
+}
 ```
 
 The return value defines whether playing the feedback was successful.
@@ -62,7 +76,11 @@ Internally, the function invokes the `sound_play` or `vibrator_play` feedback ty
 
 ```
 static int ret;
-ret = feedback_play_type(type, pattern);
+ret = feedback_initialize();
+if (ret == FEEDBACK_ERROR_NONE) {
+    ret = feedback_play_type(type, pattern);
+    feedback_deinitialize();
+}
 ```
 
 The return value defines whether playing the feedback was successful.
@@ -81,6 +99,20 @@ ret = feedback_is_supported_pattern(type, pattern, &status);
 ```
 
 The return value defines whether retrieving the feedback information was successful.
+
+<a name="stop"></a>
+## Stopping Vibrate Feedback Play
+To stop vibration patterns, user the `feedback_stop()` function.
+But this function does not support to stop media sound actions.
+
+```
+int ret = feedback_initialize();
+if (ret == FEEDBACK_ERROR_NONE) {
+    feedback_play_type(FEEDBACK_TYPE_HAPTIC, FEEDBACK_PATTERN_TAP);
+    feedback_stop();
+    feedback_deinitialize();
+}
+```
 
 ## Related Information
 - Dependencies

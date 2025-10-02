@@ -8,23 +8,23 @@ The main features of the Notification API include the following:
 
 - Creating simple notifications   
 
-  You can [create a simple notification](#creating-simple-notifications) that provides the user information about their events.
+  You can [create a simple notification](#create-simple-notifications) that provides the user information about their events.
 
 - Creating progress notifications  
 
-  You can [create a progress notification](#creating-progress-notifications) that informs the user about the progress of an activity.
+  You can [create a progress notification](#create-progress-notifications) that informs the user about the progress of an activity.
 
 - Creating active notifications
 
-  You can [create an active notification](#creating-active-notifications) which contains buttons or a text field.
+  You can [create an active notification](#create-active-notifications) which contains buttons or a text field.
 
 - Managing notifications   
 
-  You can [retrieve, update, and remove posted notifications](#managing-notifications).
+  You can [retrieve, update, and remove posted notifications](#manage-notifications).
 
 - Managing notification templates   
 
-  You can [create a template](#managing-notification-templates) that can be reused in multiple notifications.
+  You can [create a template](#manage-notification-templates) that can be reused in multiple notifications.
 
 To display a notification, you need to create a `Notification` object, or its subtype.
 
@@ -281,7 +281,7 @@ Learning how to manage notification templates allows you to create a template fr
 
 - To create a template, follow these steps:  
 
-  1. Create a [simple](#creating-simple-notifications) or [progress](#creating-progress-notifications) notification to be used as a template.  
+  1. Create a [simple](#create-simple-notifications) or [progress](#create-progress-notifications) notification to be used as a template.  
      You do not need to post the notification to save it as a template:
 
      ```

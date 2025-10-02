@@ -77,7 +77,7 @@ The linking between contacts and persons functions as follows:
 
     ![2 persons can be linked](./media/contacts_link_person.png)
 
-    <a name="record"></a>
+<a name="record"></a>
 ## Records
 A record represents an actual record in the internal database, but you can also consider it a piece of information, such as an address, a phone number, or a group of contacts. A record can be a complex set of data, containing other data. For example, a contact record contains the `Address` property, which is a reference to an address record. An address record belongs to a contact record, and its `Id` property is set to the identifier of the corresponding contact. In this case, the address is the child record of the contact and the contact is the parent record.
 
@@ -146,7 +146,8 @@ To manage the record, you can use the URI or views:
 
     A record type is identified by a structure called the view, which contains identifiers of its properties. Every class in the [Tizen.Pims.Contacts.ContactsViews](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.html) namespace has a `Uri` field that uniquely identifies the view. In many cases, you must provide the `Uri` value to indicate what type of record you want to create or operate on.
 
-- <a name="view"></a>Views
+<a name="view"></a>
+- Views
 
     Views are provided to access and handle entities. A data-view is a structure which has property elements. For example, the [Tizen.Pims.Contacts.ContactsViews.Contact](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.Contact.html) class describes the properties of the contact record. Its properties include, for example, name, company, and nickname of the contact. The property elements have their data types and names.
 
@@ -274,7 +275,7 @@ To manage the list, follow these steps:
     manager.Dispose();
     ```
 
-    <a name="filter"></a>
+<a name="filter"></a>
 ## Filters and queries
 
 Queries are used to retrieve [person](#get_contact) data which satisfies a given criteria, such as an integer property being greater than a given value, or a string property containing a given substring. A query needs a filter which can set the conditions for the search. The [Tizen.Pims.Contacts.ContactsQuery](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsQuery.html) class provides methods for sorting set projections and removing duplicated results.
@@ -433,7 +434,7 @@ To enable your application to use the contacts functionality, follow the steps b
     using Tizen.Pims.Contacts.ContactsViews;
     ```
 
-    <a name="create_contact"></a>
+<a name="create_contact"></a>
 ## Create a contact
 
 Creating a new contact involves setting the contact properties and inserting the contact into the contact database.
@@ -573,7 +574,7 @@ To create a new contact, follow these steps:
 
     All child records of the given record are also destroyed.
 
-    <a name="get_contact"></a>
+<a name="get_contact"></a>
 ## Retrieve persons
 
 You can access contact details through persons.
@@ -672,7 +673,7 @@ To retrieve multiple persons:
     } while (persons.MoveNext());
     ```
 
-    <a name="db"></a>
+<a name="db"></a>
 ## Manage database change notifications
 
 To detect the person and group changes in the contacts database, add event handlers using the `AddDBChangedEventHandler()` method of the [Tizen.Pims.Contacts.ContactsDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsDatabase.html) class. To ignore database changes, remove the event handler using the `RemoveDBChangedEventHandler()` method:

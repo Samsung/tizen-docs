@@ -12,19 +12,19 @@ The main features of the Push API include the following:
 
 - Registering to the push service   
 
-  You can [register to the push service](#registering-to-the-push-service) and get the registration identifier.
+  You can [register to the push service](#register-to-the-push-service) and get the registration identifier.
 
 - Receiving push notifications   
 
-  You can [connect to the push service and start receiving push notifications](#receiving-push-notifications).
+  You can [connect to the push service and start receiving push notifications](#receive-push-notifications).
 
 - Retrieving missed push messages   
 
-  While the application is not running, messages cannot be delivered. You can [retrieve such missed push messages](#retrieving-missed-push-messages) later.
+  While the application is not running, messages cannot be delivered. You can [retrieve such missed push messages](#retrieve-missed-push-messages) later.
 
 - Getting push messages when the application is launched by the push service   
 
-  The application can be launched by the push service. In that case, you must [determine the reason for the launch, and react to it](#handling-a-launch-by-the-push-service) appropriately. If the application is launched due to  a notification, you can [retrieve and read the last message delivered from the push service](#retrieving-messages-when-launched-by-the-push-service).
+  The application can be launched by the push service. In that case, you must [determine the reason for the launch, and react to it](#handle-a-launch-by-the-push-service) appropriately. If the application is launched due to  a notification, you can [retrieve and read the last message delivered from the push service](#retrieve-messages-when-launched-by-the-push-service).
 
 - Sending push notifications  
 
@@ -180,13 +180,13 @@ When a notification arrives at the device, its delivery mechanism depends on whe
 
     This happens when the action is set to `LAUNCH` in the message field when sending the notification from the application server. When the notification action arrives at the device, the push service forcibly launches the application and delivers the notification as a bundle.
 
-    For more information, see the [Retrieving Messages When Launched by the Push Service](#retrieving-messages-when-launched-by-the-push-service) use case.
+    For more information, see the [Retrieving Messages When Launched by the Push Service](#retrieve-messages-when-launched-by-the-push-service) use case.
 
   - Store the notification at the push service database and request it later when the application is launched.        
 
     This happens when the action is set to `ALERT` or `SILENT` in the message field when sending the notification from the application server. When such a notification arrives at the device, the push service keeps the notification in the database and waits for the request from the application.
 
-    For more information, see the [Retrieving Missed Push Messages](#retrieving-missed-push-messages) use case.
+    For more information, see the [Retrieving Missed Push Messages](#retrieve-missed-push-messages) use case.
 
     The difference between the `ALERT` and `SILENT` actions is that the former shows an alert message in the quick panel and changes the badge count, while the latter does not. If the user clicks the alert message in the quick panel, the push service forcibly launches the application and delivers the notification.
 

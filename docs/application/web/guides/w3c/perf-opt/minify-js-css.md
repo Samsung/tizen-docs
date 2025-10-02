@@ -50,7 +50,7 @@ Minifying tools, such as [Closure Compiler](https://developers.google.com/closur
 
 Grunt has advantages in terms of expandability by providing various plug-ins. For more information on Grunt, see:
 
-- [Installing and using Grunt](#installing-and-using-grunt)
+- [Installing and using Grunt](#install-and-use-grunt)
 - [Improvement through Grunt](#improvement-through-grunt)
 
 ## Install and use Grunt

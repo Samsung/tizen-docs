@@ -8,21 +8,21 @@ The main features of the System Information API include the following:
 
 - Checking the amount of total and available memory
 
-  You can [retrieve memory amounts](#retrieving-the-memory-state), such as the total and available amount of system memory.
+  You can [retrieve memory amounts](#retrieve-the-memory-state), such as the total and available amount of system memory.
 
 - Retrieving device capability
 
-  You can [check the available capabilities of the device](#retrieving-a-device-capability).
+  You can [check the available capabilities of the device](#retrieve-a-device-capability).
 
 - Checking device property states
 
-  You can [retrieve the current state of a specific device property](#retrieving-the-current-state-of-a-property) to determine, for example, if your application has enough resources available to complete a task or a service successfully.
+  You can [retrieve the current state of a specific device property](#retrieve-the-current-state-of-a-property) to determine, for example, if your application has enough resources available to complete a task or a service successfully.
 
-  You can also [check and monitor the device orientation](#retrieving-and-monitoring-the-device-orientation), and retrieve the number of system property information to check, for example, the number of installed SIM cards in the device.
+  You can also [check and monitor the device orientation](#retrieve-and-monitor-the-device-orientation), and retrieve the number of system property information to check, for example, the number of installed SIM cards in the device.
 
 - Receiving property state updates
 
-  You can [receive state updates](#receiving-notifications-on-property-value-changes) when a specific property changes.
+  You can [receive state updates](#receive-notifications-on-property-value-changes) when a specific property changes.
 
 ## Prerequisites
 

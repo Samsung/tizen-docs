@@ -345,7 +345,7 @@ The widget application starts with the `Main()` function, which creates and init
 3. Override the event callback methods of your new class:
    - The `OnCreate()` callback is triggered when the widget instance is created.
 
-     Initialize resources for this widget instance and [draw the UI](#get_window). If bundle content is not `NULL`, restore the previous status:
+     Initialize resources for this widget instance and [draw the UI](#draw_window). If bundle content is not `NULL`, restore the previous status:
 
      ```csharp
      public override void OnCreate(Bundle content, int w, int h)
@@ -406,7 +406,7 @@ The widget application starts with the `Main()` function, which creates and init
       ```csharp
       public override void OnUpdate(Bundle content, bool isForce) {}
       ```
-
+<a name="draw_window"></a>
 4.  The widget UI is drawn in the `OnCreate()` callback of your widget class:
 
     ```csharp

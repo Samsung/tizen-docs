@@ -22,15 +22,15 @@ The main application cache features include the following:
 
 - Cache activation
 
-  You can use the cache manifest file to [activate the application cache](#setting-the-cache-manifest) and display cache information in the browser as simple text.
+  You can use the cache manifest file to [activate the application cache](#set-the-cache-manifest) and display cache information in the browser as simple text.
 
 - Cache updating
 
-  To update a cached item in the client, you need to [change the manifest file](#updating-the-cache).
+  To update a cached item in the client, you need to [change the manifest file](#update-the-cache).
 
 - Cache management
 
-  Application cache can control JavaScript based on [events](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#appcacheevents){:target="_blank"}. It can [check or update the current cache status](#managing-the-cache-events).
+  Application cache can control JavaScript based on [events](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#appcacheevents){:target="_blank"}. It can [check or update the current cache status](#manage-the-cache-events).
 
 ## Set the cache manifest
 

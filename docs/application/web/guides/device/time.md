@@ -10,19 +10,19 @@ The main features of the Time API include the following:
 
 - Managing the current date, time, and time zone   
 
-  You can [retrieve the current date and time](#retrieving-date-and-time) or all available time zones, and check whether a specific year is a leap year.
+  You can [retrieve the current date and time](#retrieve-date-and-time) or all available time zones, and check whether a specific year is a leap year.
 
 - Getting the locale-specific date and time formats   
 
-  If locale-specific settings have been made on the device, the date must be displayed in the corresponding locale-specific format. Tizen supports several different date and time formats, and you can [retrieve the currently used formats](#retrieving-the-local-date-and-time-format).
+  If locale-specific settings have been made on the device, the date must be displayed in the corresponding locale-specific format. Tizen supports several different date and time formats, and you can [retrieve the currently used formats](#retrieve-the-local-date-and-time-format).
 
 - Performing date- and time-related calculations   
 
-  You can [perform different calculations and comparisons on date and time data](#calculating-date-and-time-information) regardless of the time units used in the compared events.
+  You can [perform different calculations and comparisons on date and time data](#calculate-date-and-time-information) regardless of the time units used in the compared events.
 
 - Monitoring time and time zone changes   
 
-  You can [retrieve notifications on time changes](#retrieving-time-change-notifications) performed by the user.
+  You can [retrieve notifications on time changes](#retrieve-time-change-notifications) performed by the user.
 
 ## Retrieve date and time
 

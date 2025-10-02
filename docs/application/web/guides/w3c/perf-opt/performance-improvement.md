@@ -2,11 +2,11 @@
 
 With the following instructions, you can improve the performance of your Web applications. The instructions summarize some representative tips that are frequently used in the Web community.
 
-- [Reducing the access time for variables](#reducing-the-access-time-for-variables)
-- [Improving the event handler response time](#improving-the-event-handler-response-time)
-- [Cleaning up unused properties and DOM elements](#cleaning-up-unused-properties-and-dom-elements)
-- [Minimizing the document flow](#minimizing-the-document-flow)
-- [Improving the application launch time](#improving-the-application-launch-time)
+- [Reducing the access time for variables](#reduce-the-access-time-for-variables)
+- [Improving the event handler response time](#improve-the-event-handler-response-time)
+- [Cleaning up unused properties and DOM elements](#clean-up-unused-properties-and-dom-elements)
+- [Minimizing the document flow](#minimize-the-document-flow)
+- [Improving the application launch time](#improve-the-application-launch-time)
 
 This feature is optional.
 

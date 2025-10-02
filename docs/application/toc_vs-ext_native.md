@@ -57,6 +57,9 @@
 ##### [Convert Projects for CLI](/application/tizen-studio/native-tools/project-conversion.md)
 ##### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 
+#### SDK Diagnostics
+##### [Tizen Doctor](/application/tizen-studio/common-tools/tizen-doctor.md)
+
 #### Report Issues
 ##### [Issue Reporter](/application/vstools/tools/issue-reporter-vs-tools.md)
 

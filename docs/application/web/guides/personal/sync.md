@@ -8,13 +8,13 @@ The main features of the Data Synchronization API include the following:
 
 - Creating a sync profile   
 
-  You can [create a profile](#creating-a-sync-profile), define the profile name, and provide other profile and operation information using the applicable interfaces.
+  You can [create a profile](#create-a-sync-profile), define the profile name, and provide other profile and operation information using the applicable interfaces.
 
   Tizen sets a limitation on the number of supported OMA DS profiles on the device. Before creating a new profile, you must check whether sync profile slots are available.
 
 - Retrieving synchronization process information   
 
-  After starting the synchronization process, you can [monitor the progress](#starting-and-monitoring-data-synchronization) of the operation.
+  After starting the synchronization process, you can [monitor the progress](#start-and-monitor-data-synchronization) of the operation.
 
 > [!NOTE]
 > As a prerequisite to synchronizing your device data with the server, you must create an OMA DS server account.
