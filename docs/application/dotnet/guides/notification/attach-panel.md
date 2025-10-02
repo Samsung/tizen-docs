@@ -117,7 +117,7 @@ This section explains, how you can enable your application to use the attach pan
         }
         ```
 
-<a name="create"></a>		
+<a name="create"></a>
 ## Create an attach panel
 
 
@@ -240,7 +240,8 @@ This section explains, how you can enable your application to use the attach pan
 
 To create an attach panel in Xamarin, use the custom renderers as described below:
 
-1.  <a name="getConformant"></a>Get the Tizen platform conformant.
+<a name="getConformant"></a>
+1.  Get the Tizen platform conformant.
 
     In Tizen, `BaseLayout.Parent` is the conformant of the main window:
 

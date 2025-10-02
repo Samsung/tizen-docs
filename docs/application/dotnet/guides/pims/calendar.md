@@ -168,7 +168,7 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
     record.Set<CalendarTime>(CalendarViews.Event.Start, input);
     ```
 
-    <a name="children"></a>
+<a name="children"></a>
 ### Child records
 
 A certain record type can be a parent of other records. For example, the attendee records can hold an event identifier in their `ParentId` property. The event is the parent record of the attendee child records.
@@ -339,7 +339,7 @@ To filter calendar data:
     query.Dispose();
     ```
 
-    <a name="change"></a>
+<a name="change"></a>
 ## Database change notifications
 
 To detect the [event](#monitor_event) and [todo](#monitor) changes in the calendar database, register an event handler with the `AddDBChangedDelegate()` method. To deregister the event handler and ignore database changes, use the `RemoveDBChangedDelegate()` method.
@@ -430,7 +430,7 @@ To enable your application to use the calendar functionality, follow these steps
     var manager = new CalendarManager();
     ```
 
-    <a name="create_event"></a>
+<a name="create_event"></a>
 ## Create an event
 
 Creating a new event involves creating an event instance, setting its properties, and inserting it into the calendar database.
@@ -542,7 +542,7 @@ To create a new event, follow these steps:
     int recordId = manager.Database.Insert(record);
     ```
 
-    <a name="get_event"></a>
+<a name="get_event"></a>
 ## Retrieve events
 
 To retrieve a single event, follow the steps below:
@@ -647,7 +647,7 @@ To retrieve multiple events:
     list.Dispose();
     ```
 
-    <a name="update_event"></a>
+<a name="update_event"></a>
 ## Update an event
 
 To update event details, follow the steps below:
@@ -683,7 +683,7 @@ To update event details, follow the steps below:
     manager.Dispose();
     ```
 
-    <a name="delete_event"></a>
+<a name="delete_event"></a>
 ## Delete an event
 
 To delete an event, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
@@ -751,7 +751,7 @@ To remove an event instance from a recurring event, follow these steps:
     record.Dispose();
     ```
 
-    <a name="exception_modify"></a>
+<a name="exception_modify"></a>
 ## Add an exception to a recurring event
 
 To add an exception to a recurring event:
@@ -778,7 +778,7 @@ To add an exception to a recurring event:
     record.Dispose();
     ```
 
-    <a name="monitor_event"></a>
+<a name="monitor_event"></a>
 ## Monitor event changes
 
 To receive a notification whenever an event changes, follow the steps below:
@@ -799,7 +799,7 @@ To receive a notification whenever an event changes, follow the steps below:
     }
     ```
 
-    <a name="create"></a>
+<a name="create"></a>
 ## Create a todo
 
 Creating a new todo involves creating a todo instance, setting its properties, and inserting it into the calendar database.
@@ -868,7 +868,7 @@ To create a new todo, follow the steps below:
     manager.Dispose();
     ```
 
-    <a name="get"></a>
+<a name="get"></a>
 ## Retrieve todos
 
 To retrieve a single todo, follow the steps below:
@@ -972,7 +972,7 @@ To retrieve multiple todos:
     list.Dispose();
     ```
 
-    <a name="update"></a>
+<a name="update"></a>
 ## Update a todo
 
 To update todo details, follow these steps:
@@ -1008,7 +1008,7 @@ To update todo details, follow these steps:
     manager.Dispose();
     ```
 
-    <a name="delete"></a>
+<a name="delete"></a>
 ## Delete a todo
 
 To delete a todo, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class, with the todo ID as the second parameter:
@@ -1039,7 +1039,7 @@ To receive a notification whenever a todo changes, follow the steps below:
     }
     ```
 
-    <a name="make"></a>
+<a name="make"></a>
 ## Create a vCalendar
 
 To create a vCalendar stream from an event, follow these steps:
@@ -1066,7 +1066,7 @@ To create a vCalendar stream from an event, follow these steps:
     list.Dispose();
     ```
 
-    <a name="parse"></a>
+<a name="parse"></a>
 ## Parse a vCalendar
 
 To parse a vCalendar from a file and insert its content into the calendar database, follow the steps below:

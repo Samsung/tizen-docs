@@ -7,11 +7,11 @@ The main media controller features include the following:
 
 - Updating and retrieving the playlist
 
-    You can [create a playlist](#creating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
+    You can [create a playlist](#create-and-retrieve-the-playlist) on the server side, and then retrieve that information on the client side.
 
 -   Updating and retrieving information
 
-    You can [update the playback information](#updating-and-retrieving-information) on the server side, and then retrieve that information on the client side.
+    You can [update the playback information](#update-and-retrieve-information) on the server side, and then retrieve that information on the client side.
 
     The media control server provides current information about the registered application that you can send to the client.
 
@@ -19,15 +19,15 @@ The main media controller features include the following:
 
 - Sending and processing commands
 
-    You can [send a command](#sending-and-processing-commands) on the client side, and then process the command on the server side.
+    You can [send a command](#send-and-process-commands) on the client side, and then process the command on the server side.
 
 - Setting and getting playback capability
 
-    You can [set the playback capability](#setting-and-getting-playback-capability) on the server side, and then get that capability on the client side.
+    You can [set the playback capability](#set-and-get-playback-capability) on the server side, and then get that capability on the client side.
 
  - Media control metadata properties
 
-     You can [set the metadata](#setting-and-getting-media-control-metadata) on the server side, and then get that metadata on the client side.
+     You can [set the metadata](#set-and-get-media-control-metadata) on the server side, and then get that metadata on the client side.
 
 ## Prerequisites
 
@@ -96,7 +96,7 @@ To create a playlist from the server side and retrieve it on the client side, fo
     );
     ```
 
-2. To retrieve the playlist and [metadata](#setting-and-getting-media-control-metadata) information on the client side, use the following code:
+2. To retrieve the playlist and [metadata](#set-and-get-media-control-metadata) information on the client side, use the following code:
 
     ```csharp
     mediaController.PlaylistUpdated += (s, e) =>
