@@ -36,7 +36,7 @@
 1. Right-click again on your **Web project name**.  
 2. Select **Run Tizen Web Unit Test**.  
 3. The test will execute on your selected emulator or connected device.  
-4. Once complete, the test results will be displayed in the output window in a tree format. It shows the passed tests with a green icon and failed tests with a red icon. When you click on certain the test result, it will take you to the tastcase in the generated test file.  
+4. Once complete, the test results will be displayed in the output window in a tree format. It shows the passed tests with a green icon and failed tests with a red icon. When you click on certain testcase result, it will take you to the tastcase in the generated test file.  
 
 ![Web Unit Test Result](media/web_unit_test_result.png)
 ---
