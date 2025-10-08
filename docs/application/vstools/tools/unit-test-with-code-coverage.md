@@ -22,9 +22,8 @@ It helps you:
   - **Statement coverage**
   - **Branch coverage**
 
-The extension uses the **Google Test (gtest)** framework to create and execute test cases.  
+The extension uses the **Google Test (gtest)** framework to create and execute test cases.
 
-> 📘 **Learn more:**  
 > Get started with [Unit Test With Code Coverage for Native Applications on Visual Studio](../getting-started/test-profile-app-unit-test-code-coverage.md)
 
 ---
@@ -37,7 +36,5 @@ These tools allow you to:
 - Execute them on an emulator or target device  
 - View and analyze test results directly in Visual Studio
 
-> 📘 **Learn more:**  
 > Get started with [Unit Test for Web Applications on Visual Studio](../getting-started/web-app-unit-test.md)
-
 ---
