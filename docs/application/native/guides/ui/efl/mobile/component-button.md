@@ -2,7 +2,7 @@
 
 The button UI component works as a clickable input element to trigger events. For more information, see the [Button](../../../../api/common/latest/group__Elm__Button.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 

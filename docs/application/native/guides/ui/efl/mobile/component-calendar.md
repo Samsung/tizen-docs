@@ -2,7 +2,7 @@
 
 The calendar UI component displays month views. For more information, see the [Calendar](../../../../api/common/latest/group__Elm__Calendar.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 **Figure: Calendar component**
 

@@ -1,6 +1,6 @@
 # Popup
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The popup component shows a popup area that can contain:
 

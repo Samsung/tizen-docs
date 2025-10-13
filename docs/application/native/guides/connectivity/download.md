@@ -3,7 +3,7 @@
 
 You can create and manage 1 or more download requests at a time. Each download process goes through a [set of states](#state), and you can manage the process though the states with specific functions.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The following figure illustrates the user scenario for the download:
 

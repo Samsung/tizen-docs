@@ -1,6 +1,6 @@
 # Datetime
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The datetime component displays date and time values.
 
