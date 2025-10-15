@@ -1,5 +1,7 @@
 # Media Muxing
 
+> [!NOTE]
+> Media Muxer / Media Demuxer APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 You can mux encoded media into a multiplexed stream and parse multiplexed media streams.
 
