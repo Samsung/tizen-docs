@@ -1,5 +1,7 @@
 # Telephony Information
 
+> [!NOTE]
+> All Telephony APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 Through the telephony service, you can access various telephony features, such as call, SIM, network, and modem information.
 
