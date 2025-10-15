@@ -1,5 +1,7 @@
 # Smart Card
 
+> [!NOTE]
+> All Smart card APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 You can use smart card functionalities, such as accessing a secure element (SE). Before using the Tizen.Network.Smartcard namespace, make sure you have an SE in the device. The smart card service allows you to open a session on an SE, open a channel to the applet in the SE, send a command to the channel, and finally receive a response to the command.
 
