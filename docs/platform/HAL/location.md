@@ -3,6 +3,7 @@
 ## Overview  
 The Location Hardware Abstraction Layer (HAL) serves as a standardized bridge between Tizen's location services and the underlying hardware components. Its primary role is to provide a standardized and consistent interface for location operations. By abstracting the hardware-specific details, the HAL allows applications to leverage geographical context—such as navigation without hardware-specific complexities.
 
+<img width="689" height="439" alt="tizen-hal-location" src="https://github.com/user-attachments/assets/d60bc113-6fae-4498-b860-822c2c3d6229" />
 
 ### Position Reporting  
 This subsystem processes raw data from multiple sources—such as satellite signals, Wi-Fi networks, and cellular towers—to determine the device's precise location.
