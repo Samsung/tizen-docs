@@ -1,6 +1,6 @@
 # Ctxpopup
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The context popup (ctxpopup) component is a contextual popup that can show a list of items inside it.
 

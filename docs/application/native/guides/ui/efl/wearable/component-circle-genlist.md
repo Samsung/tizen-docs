@@ -1,6 +1,6 @@
 # Circle Genlist
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The circle genlist component is used to visualize and utilize the scroll effect for the [genlist](component-genlist.md) component (`elm_genlist`). While the `elm_genlist` component provides a scrollbar with straight horizontal and vertical movement, the circle genlist provides a scrollbar with circular movement. It is also operated with rotary events to move to the next or previous item.
 

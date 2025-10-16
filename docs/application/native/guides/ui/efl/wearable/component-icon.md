@@ -1,6 +1,6 @@
 # Icon
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The icon component inherits from the image component, which means that image functions can be used on the icon component.
 

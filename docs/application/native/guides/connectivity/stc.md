@@ -3,7 +3,7 @@
 
 STC means Smart Traffic Control. It provides extensible packet-level control services, including per-app data usage, total data quota, and background app's data saving. STC Library provides APIs fulfilling below mentioned features for application development.
 
-This feature is supported in mobile, tv and wearable profile.
+This feature is optional.
 
 The main features of the STC API include:
 

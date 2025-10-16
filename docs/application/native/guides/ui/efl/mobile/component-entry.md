@@ -1,6 +1,6 @@
 # Entry
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The entry component is a box where the user can enter text. It supports the following features:
 

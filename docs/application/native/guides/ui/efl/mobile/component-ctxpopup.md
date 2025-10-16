@@ -2,7 +2,7 @@
 
 The ctxpopup UI component pops up and shows a list of items inside it. For more information, see the [Ctxpopup](../../../../api/common/latest/group__Elm__Ctxpopup__Group.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 

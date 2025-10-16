@@ -2,7 +2,7 @@
 
 The colorselector UI component allows users to select a color. For more information, see the [Colorselector](../../../../api/common/latest/group__Elm__Colorselector.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 
