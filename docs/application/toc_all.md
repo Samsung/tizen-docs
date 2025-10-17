@@ -1007,18 +1007,14 @@
 
 ### Messaging
 #### [Overview](/application/native/guides/messaging/overview.md)
-#### [Email](/application/native/guides/messaging/email.md)
-#### [Messages](/application/native/guides/messaging/messages.md)
 #### [Push](/application/native/guides/messaging/push.md)
 #### [Push Server](/application/native/guides/messaging/push-server.md)
 
 ### Location and Sensors
 #### [Overview](/application/native/guides/location-sensors/overview.md)
-#### [Geofences](/application/native/guides/location-sensors/geofences.md)
 #### [Location Information](/application/native/guides/location-sensors/location.md)
 
 #### Maps and Maps Service
-##### [Overview](/application/native/guides/location-sensors/maps.md)
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
 
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
@@ -1045,7 +1041,6 @@
 #### [Data Synchronization](/application/native/guides/personal/data-sync.md)
 
 #### Authentication and Authorization
-##### [FIDO Universal Authentication Framework](/application/native/guides/personal/fido.md)
 ##### [OAuth 2.0](/application/native/guides/personal/oauth.md)
 
 #### [Calendar](/application/native/guides/personal/calendar.md)
