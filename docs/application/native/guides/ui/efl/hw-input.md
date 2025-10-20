@@ -1,5 +1,8 @@
 # Hardware Input Handling
 
+>[!NOTE]
+>All EFL HW Input APIs have been deprecated since Tizen 10.0 and will be removed after two releases without alternative.
+>
 EFL does not depend on any specific hardware input methods, such as hardware keys, to generate back and home events, or rotary component parts to generate rotary events. Instead, these hardware input events are tightly related to the Tizen UX. As a result, EFL has created the EFL Extension library to support these common UX behaviors between the applications and hardware events.
 
 EFL provides the following hardware event management features:
