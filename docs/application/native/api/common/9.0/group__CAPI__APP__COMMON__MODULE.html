@@ -133,6 +133,222 @@ Getting Information About the Application</h3>
 <li>Get the current orientation of the device</li>
 <li>Get the Internal/External root folders which are shared among all applications </li>
 </ul>
+<h3><a class="anchor" id="CAPI_APP_COMMON_MODULE_USAGE_APP_INFO"></a>
+Getting Application Information</h3>
+<p>You can retrieve basic information about the application such as ID, name, and version:</p>
+<div class="fragment"><pre class="fragment"> <span class="preprocessor">#include &lt;app_common.h&gt;</span>
+ <span class="preprocessor">#include &lt;dlog.h&gt;</span>
+
+ <span class="keywordtype">void</span>
+ get_app_information(<span class="keywordtype">void</span>)
+ {
+     <span class="keywordtype">char</span> *app_id = NULL;
+     <span class="keywordtype">char</span> *app_name = NULL;
+     <span class="keywordtype">char</span> *app_version = NULL;
+     <span class="keywordtype">int</span> ret;
+     
+     <span class="comment">// Get application ID</span>
+     ret = <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#gaaa10cccf46a32ac33d41c5e9e07e7011" title="Gets the ID of the application.">app_get_id</a>(&amp;app_id);
+     <span class="keywordflow">if</span> (ret == APP_ERROR_NONE &amp;&amp; app_id) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Application ID: %s&quot;</span>, app_id);
+         free(app_id);
+     }
+     
+     <span class="comment">// Get application name</span>
+     ret = <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga26b09c3080ccd8e32120bce697863268" title="Gets the localized name of the application.">app_get_name</a>(&amp;app_name);
+     <span class="keywordflow">if</span> (ret == APP_ERROR_NONE &amp;&amp; app_name) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Application Name: %s&quot;</span>, app_name);
+         free(app_name);
+     }
+     
+     <span class="comment">// Get application version</span>
+     ret = <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga5f8c8b4a2c420a9cc92f9f0fa67d2d1f" title="Gets the version of the application package.">app_get_version</a>(&amp;app_version);
+     <span class="keywordflow">if</span> (ret == APP_ERROR_NONE &amp;&amp; app_version) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Application Version: %s&quot;</span>, app_version);
+         free(app_version);
+     }
+ }
+</pre></div><h3><a class="anchor" id="CAPI_APP_COMMON_MODULE_USAGE_PATHS"></a>
+Getting Application Directories</h3>
+<p>Applications can access various directories for storing data, resources, and cache files:</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span>
+ get_app_directories(<span class="keywordtype">void</span>)
+ {
+     <span class="keywordtype">char</span> *data_path = NULL;
+     <span class="keywordtype">char</span> *cache_path = NULL;
+     <span class="keywordtype">char</span> *resource_path = NULL;
+     <span class="keywordtype">char</span> *shared_data_path = NULL;
+     <span class="keywordtype">char</span> *shared_resource_path = NULL;
+     
+     <span class="comment">// Get data directory (read/write)</span>
+     data_path = <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga284ac2d7468a681d41351c0625cef4e3" title="Gets the absolute path to the application's data directory.">app_get_data_path</a>();
+     <span class="keywordflow">if</span> (data_path) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Data path: %s&quot;</span>, data_path);
+         free(data_path);
+     }
+     
+     <span class="comment">// Get cache directory (read/write, can be cleared by system)</span>
+     cache_path = <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga1e2ba9cd4be6a15826c20168b0067e9b" title="Gets the absolute path to the application's cache directory.">app_get_cache_path</a>();
+     <span class="keywordflow">if</span> (cache_path) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Cache path: %s&quot;</span>, cache_path);
+         free(cache_path);
+     }
+     
+     <span class="comment">// Get resource directory (read-only)</span>
+     resource_path = <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga05b4b3b8fc58700720d8fa58004fc393" title="Gets the absolute path to the application resource directory.">app_get_resource_path</a>();
+     <span class="keywordflow">if</span> (resource_path) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Resource path: %s&quot;</span>, resource_path);
+         free(resource_path);
+     }
+     
+     <span class="comment">// Get shared data directory (requires privilege)</span>
+     shared_data_path = <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#gaf3d452b1eedda88ada2a1e6a41bf0b19" title="Gets the absolute path to the application's shared data directory.">app_get_shared_data_path</a>();
+     <span class="keywordflow">if</span> (shared_data_path) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Shared data path: %s&quot;</span>, shared_data_path);
+         free(shared_data_path);
+     }
+     
+     <span class="comment">// Get shared resource directory</span>
+     shared_resource_path = <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#gacbfdcf6e37c98728c3e6d520f9a41464" title="Gets the absolute path to the application's shared resource directory.">app_get_shared_resource_path</a>();
+     <span class="keywordflow">if</span> (shared_resource_path) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Shared resource path: %s&quot;</span>, shared_resource_path);
+         free(shared_resource_path);
+     }
+ }
+</pre></div><h3><a class="anchor" id="CAPI_APP_COMMON_MODULE_USAGE_EVENTS"></a>
+Handling System Events</h3>
+<p>Applications can register callbacks to handle various system events such as low memory, low battery, language changes, etc:</p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">static</span> <span class="keywordtype">void</span>
+ on_low_memory(<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga220de98ec6d0a9d5c2be545c16156f07">app_event_info_h</a> event_info, <span class="keywordtype">void</span> *user_data)
+ {
+     <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga4bf52a172bd755c7e62fbaefe467197f">app_event_low_memory_status_e</a> status;
+     
+     <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#gabde234644bd55110416b493e6dc2a3c5" title="Gets the low memory status from the given event info.">app_event_get_low_memory_status</a>(event_info, &amp;status) == APP_ERROR_NONE) {
+         <span class="keywordflow">switch</span> (status) {
+         <span class="keywordflow">case</span> APP_EVENT_LOW_MEMORY_NORMAL:
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Memory status: Normal&quot;</span>);
+             <span class="keywordflow">break</span>;
+         <span class="keywordflow">case</span> APP_EVENT_LOW_MEMORY_SOFT_WARNING:
+             dlog_print(DLOG_WARN, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Memory status: Soft warning&quot;</span>);
+             <span class="comment">// Free some cached data</span>
+             <span class="keywordflow">break</span>;
+         <span class="keywordflow">case</span> APP_EVENT_LOW_MEMORY_HARD_WARNING:
+             dlog_print(DLOG_ERROR, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Memory status: Hard warning&quot;</span>);
+             <span class="comment">// Free as much memory as possible</span>
+             <span class="keywordflow">break</span>;
+         }
+     }
+ }
+
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ on_low_battery(<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga220de98ec6d0a9d5c2be545c16156f07">app_event_info_h</a> event_info, <span class="keywordtype">void</span> *user_data)
+ {
+     <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#gacd053e5be8bdd4a4e3cc5bb20916af00">app_event_low_battery_status_e</a> status;
+     
+     <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga32102ad86985c212c5a32711871428d4" title="Gets the low battery status from given event info.">app_event_get_low_battery_status</a>(event_info, &amp;status) == APP_ERROR_NONE) {
+         <span class="keywordflow">switch</span> (status) {
+         <span class="keywordflow">case</span> APP_EVENT_LOW_BATTERY_POWER_OFF:
+             dlog_print(DLOG_ERROR, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Battery critical: Power off imminent&quot;</span>);
+             <span class="comment">// Save all data immediately</span>
+             <span class="keywordflow">break</span>;
+         <span class="keywordflow">case</span> APP_EVENT_LOW_BATTERY_CRITICAL_LOW:
+             dlog_print(DLOG_WARN, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Battery critical low&quot;</span>);
+             <span class="comment">// Reduce power consumption</span>
+             <span class="keywordflow">break</span>;
+         }
+     }
+ }
+
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ on_language_changed(<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga220de98ec6d0a9d5c2be545c16156f07">app_event_info_h</a> event_info, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="keywordtype">char</span> *language = NULL;
+     
+     <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga5db58beb729f9265ef050b2ea7028091" title="Gets the language from the given event info.">app_event_get_language</a>(event_info, &amp;language) == APP_ERROR_NONE &amp;&amp; language) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Language changed to: %s&quot;</span>, language);
+         <span class="comment">// Reload localized resources</span>
+         free(language);
+     }
+ }
+
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ on_device_orientation_changed(<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga220de98ec6d0a9d5c2be545c16156f07">app_event_info_h</a> event_info, <span class="keywordtype">void</span> *user_data)
+ {
+     <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga13ad6caa940e764509312a72a8af9d25">app_device_orientation_e</a> orientation;
+     
+     <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#gab311ebf53f6f3d68118f93797c05b7eb" title="Gets the device orientation from the given event info.">app_event_get_device_orientation</a>(event_info, &amp;orientation) == APP_ERROR_NONE) {
+         <span class="keywordflow">switch</span> (orientation) {
+         <span class="keywordflow">case</span> APP_DEVICE_ORIENTATION_0:
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Orientation: 0 degrees&quot;</span>);
+             <span class="keywordflow">break</span>;
+         <span class="keywordflow">case</span> APP_DEVICE_ORIENTATION_90:
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Orientation: 90 degrees&quot;</span>);
+             <span class="keywordflow">break</span>;
+         <span class="keywordflow">case</span> APP_DEVICE_ORIENTATION_180:
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Orientation: 180 degrees&quot;</span>);
+             <span class="keywordflow">break</span>;
+         <span class="keywordflow">case</span> APP_DEVICE_ORIENTATION_270:
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Orientation: 270 degrees&quot;</span>);
+             <span class="keywordflow">break</span>;
+         }
+     }
+ }
+</pre></div><h3><a class="anchor" id="CAPI_APP_COMMON_MODULE_USAGE_DISPLAY"></a>
+Getting Display State</h3>
+<p>Applications can check the current display state:</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span>
+ check_display_state(<span class="keywordtype">void</span>)
+ {
+     <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga5023c5eaa38b422183cea6079f9661a7">app_display_state_e</a> display_state;
+     <span class="keywordtype">int</span> ret;
+     
+     ret = <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga36f560ba228393bfceff473383b4a203" title="Gets the display state.">app_get_display_state</a>(&amp;display_state);
+     <span class="keywordflow">if</span> (ret == APP_ERROR_NONE) {
+         <span class="keywordflow">if</span> (display_state == APP_DISPLAY_STATE_ON) {
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Display is ON&quot;</span>);
+         } <span class="keywordflow">else</span> {
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Display is OFF&quot;</span>);
+         }
+     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ret == APP_ERROR_NOT_SUPPORTED) {
+         dlog_print(DLOG_WARN, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Display state not supported on this device&quot;</span>);
+     }
+ }
+</pre></div><h3><a class="anchor" id="CAPI_APP_COMMON_MODULE_USAGE_WATCHDOG"></a>
+Managing Watchdog Timer</h3>
+<p>Applications can control the watchdog timer to prevent ANR (Application Not Responding) errors during long operations:</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span>
+ perform_long_operation(<span class="keywordtype">void</span>)
+ {
+     <span class="comment">// Disable watchdog timer before long operation</span>
+     <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga712b8c35f3348dc66d6df123271fee7b" title="Sends the disable request to deactivate the watchdog timer.">app_watchdog_timer_disable</a>() == APP_ERROR_NONE) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Watchdog timer disabled&quot;</span>);
+     }
+     
+     <span class="comment">// Perform long operation</span>
+     <span class="comment">// ...</span>
+     
+     <span class="comment">// Re-enable watchdog timer after operation</span>
+     <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga1796b1e42495bfc143b739de340e7dc4" title="Sends the enable request to activate the watchdog timer.">app_watchdog_timer_enable</a>() == APP_ERROR_NONE) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_COMMON&quot;</span>, <span class="stringliteral">&quot;Watchdog timer enabled&quot;</span>);
+     }
+ }
+
+ <span class="keywordtype">void</span>
+ perform_operation_with_periodic_kick(<span class="keywordtype">void</span>)
+ {
+     <span class="keywordtype">int</span> i;
+     
+     <span class="keywordflow">for</span> (i = 0; i &lt; 100; i++) {
+         <span class="comment">// Perform some work</span>
+         <span class="comment">// ...</span>
+         
+         <span class="comment">// Periodically kick watchdog to reset timer</span>
+         <span class="keywordflow">if</span> (i % 10 == 0) {
+             <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga4163563adb7f088871cd870191aecbc6" title="Sends the kick request to reset the watchdog timer.">app_watchdog_timer_kick</a>();
+         }
+     }
+ }
+</pre></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>

@@ -106,6 +106,143 @@ Overview</h2>
 <li>Registering callbacks for application state change events.</li>
 <li>Registering callbacks for basic system events. </li>
 </ul>
+<h3><a class="anchor" id="CAPI_SERVICE_APP_MODULE_USAGE"></a>
+How to Use Service Application API</h3>
+<p>A service application is a Tizen native application without a graphical user interface that runs in the background. The following example demonstrates a basic service application structure:</p>
+<div class="fragment"><pre class="fragment"> <span class="preprocessor">#include &lt;service_app.h&gt;</span>
+ <span class="preprocessor">#include &lt;dlog.h&gt;</span>
+
+ <span class="keyword">typedef</span> <span class="keyword">struct</span> {
+     <span class="comment">// Application data structure</span>
+     <span class="keywordtype">int</span> some_data;
+ } appdata_s;
+
+ <span class="keyword">static</span> <span class="keywordtype">bool</span>
+ service_app_create(<span class="keywordtype">void</span> *user_data)
+ {
+     <span class="comment">// Initialize application resources</span>
+     appdata_s *ad = (appdata_s *)user_data;
+     
+     <span class="comment">// Initialize data</span>
+     ad-&gt;some_data = 0;
+     
+     dlog_print(DLOG_INFO, <span class="stringliteral">&quot;SERVICE_APP&quot;</span>, <span class="stringliteral">&quot;Service application created&quot;</span>);
+     
+     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+ }
+
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ service_app_terminate(<span class="keywordtype">void</span> *user_data)
+ {
+     <span class="comment">// Release all resources</span>
+     appdata_s *ad = (appdata_s *)user_data;
+     
+     dlog_print(DLOG_INFO, <span class="stringliteral">&quot;SERVICE_APP&quot;</span>, <span class="stringliteral">&quot;Service application terminated&quot;</span>);
+ }
+
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ service_app_control(<a class="code" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55" title="The application control handle.">app_control_h</a> app_control, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="comment">// Handle the launch request</span>
+     appdata_s *ad = (appdata_s *)user_data;
+     <span class="keywordtype">char</span> *operation = NULL;
+     
+     <a class="code" href="group__CAPI__APP__CONTROL__MODULE.html#ga4901c0af21b8c79e82e5942194ac2b57" title="Gets the operation to be performed.">app_control_get_operation</a>(app_control, &amp;operation);
+     
+     <span class="keywordflow">if</span> (operation) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;SERVICE_APP&quot;</span>, <span class="stringliteral">&quot;Operation: %s&quot;</span>, operation);
+         free(operation);
+     }
+ }
+
+ <span class="keywordtype">int</span>
+ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+ {
+     appdata_s ad = {0,};
+     <a class="code" href="structservice__app__lifecycle__callback__s.html" title="The structure type containing the set of callback functions for handling application events...">service_app_lifecycle_callback_s</a> event_callback;
+     
+     event_callback.<a class="code" href="structservice__app__lifecycle__callback__s.html#a1c3c7b0c0e7e4c8e0e7e4c8e0e7e4c8e">create</a> = service_app_create;
+     event_callback.terminate = service_app_terminate;
+     event_callback.app_control = service_app_control;
+     
+     <span class="keywordflow">return</span> <a class="code" href="group__CAPI__SERVICE__APP__MODULE.html#gaad16526cf28a7365b795659e49ee368a" title="Runs the main loop of the application until service_app_exit() is called.">service_app_main</a>(argc, argv, &amp;event_callback, &amp;ad);
+ }
+</pre></div><h3><a class="anchor" id="CAPI_SERVICE_APP_MODULE_EVENT_HANDLING"></a>
+Handling System Events</h3>
+<p>Service applications can register event handlers for various system events such as low memory, low battery, language changes, and region format changes:</p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">static</span> <span class="keywordtype">void</span>
+ service_app_low_memory(<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga307bb4c75e0fc2ca10a1bceae9094af6">app_event_info_h</a> event_info, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="comment">// Handle low memory event</span>
+     <span class="comment">// Free cached data and reduce memory usage</span>
+     dlog_print(DLOG_WARN, <span class="stringliteral">&quot;SERVICE_APP&quot;</span>, <span class="stringliteral">&quot;Low memory event occurred&quot;</span>);
+ }
+
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ service_app_low_battery(<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga307bb4c75e0fc2ca10a1bceae9094af6">app_event_info_h</a> event_info, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="comment">// Handle low battery event</span>
+     <span class="comment">// Reduce power consumption</span>
+     dlog_print(DLOG_WARN, <span class="stringliteral">&quot;SERVICE_APP&quot;</span>, <span class="stringliteral">&quot;Low battery event occurred&quot;</span>);
+ }
+
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ service_app_language_changed(<a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga307bb4c75e0fc2ca10a1bceae9094af6">app_event_info_h</a> event_info, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="comment">// Handle language change event</span>
+     <span class="comment">// Reload localized resources, update UI text, etc.</span>
+     dlog_print(DLOG_INFO, <span class="stringliteral">&quot;SERVICE_APP&quot;</span>, <span class="stringliteral">&quot;Language changed event occurred&quot;</span>);
+ }
+
+ <span class="keyword">static</span> <span class="keywordtype">bool</span>
+ service_app_create(<span class="keywordtype">void</span> *user_data)
+ {
+     <a class="code" href="group__CAPI__APP__COMMON__MODULE.html#ga307bb4c75e0fc2ca10a1bceae9094af6">app_event_handler_h</a> handler;
+     
+     <span class="comment">// Register event handlers</span>
+     <a class="code" href="group__CAPI__SERVICE__APP__MODULE.html#gaf92f672ea41f88a1a4960c5daf75d555" title="Adds the system event handler.">service_app_add_event_handler</a>(&amp;handler, APP_EVENT_LOW_MEMORY, 
+                                   service_app_low_memory, user_data);
+     <a class="code" href="group__CAPI__SERVICE__APP__MODULE.html#gaf92f672ea41f88a1a4960c5daf75d555" title="Adds the system event handler.">service_app_add_event_handler</a>(&amp;handler, APP_EVENT_LOW_BATTERY, 
+                                   service_app_low_battery, user_data);
+     <a class="code" href="group__CAPI__SERVICE__APP__MODULE.html#gaf92f672ea41f88a1a4960c5daf75d555" title="Adds the system event handler.">service_app_add_event_handler</a>(&amp;handler, APP_EVENT_LANGUAGE_CHANGED, 
+                                   service_app_language_changed, user_data);
+     
+     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+ }
+</pre></div><h3><a class="anchor" id="CAPI_SERVICE_APP_MODULE_APP_CONTROL"></a>
+Handling App Control</h3>
+<p>Service applications can receive and process app control requests from other applications:</p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">static</span> <span class="keywordtype">void</span>
+ service_app_control(<a class="code" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55" title="The application control handle.">app_control_h</a> app_control, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="keywordtype">char</span> *operation = NULL;
+     <span class="keywordtype">char</span> *uri = NULL;
+     <span class="keywordtype">char</span> *extra_data = NULL;
+     
+     <span class="comment">// Get operation</span>
+     <a class="code" href="group__CAPI__APP__CONTROL__MODULE.html#ga4901c0af21b8c79e82e5942194ac2b57" title="Gets the operation to be performed.">app_control_get_operation</a>(app_control, &amp;operation);
+     
+     <span class="keywordflow">if</span> (operation) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;SERVICE_APP&quot;</span>, <span class="stringliteral">&quot;Operation: %s&quot;</span>, operation);
+         
+         <span class="comment">// Get URI if available</span>
+         <a class="code" href="group__CAPI__APP__CONTROL__MODULE.html#gad9010165be4cf90e887c2eebcc8e2055" title="Gets the URI of the data.">app_control_get_uri</a>(app_control, &amp;uri);
+         <span class="keywordflow">if</span> (uri) {
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;SERVICE_APP&quot;</span>, <span class="stringliteral">&quot;URI: %s&quot;</span>, uri);
+             free(uri);
+         }
+         
+         <span class="comment">// Get extra data</span>
+         <a class="code" href="group__CAPI__APP__CONTROL__MODULE.html#ga4f0b2b2b2b2b2b2b2b2b2b2b2b2b2b2b" title="Gets the extra data from the app_control.">app_control_get_extra_data</a>(app_control, <span class="stringliteral">&quot;my_key&quot;</span>, &amp;extra_data);
+         <span class="keywordflow">if</span> (extra_data) {
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;SERVICE_APP&quot;</span>, <span class="stringliteral">&quot;Extra data: %s&quot;</span>, extra_data);
+             free(extra_data);
+         }
+         
+         free(operation);
+     }
+ }
+</pre></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>

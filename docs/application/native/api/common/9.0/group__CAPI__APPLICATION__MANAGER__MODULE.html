@@ -101,6 +101,220 @@ Required Header</h2>
 <h2><a class="anchor" id="CAPI_APPLICATION_MANAGER_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p>The <a class="el" href="group__CAPI__APPLICATION__MANAGER__MODULE.html">Application Manager</a> API provides information about applications. There are several different sorts of queries. Two iterator functions step through a list of applications. One is used in running applications(<a class="el" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#gae610d72e0828b2f2e049b7510ac3191f" title="Retrieves all application contexts of running applications.">app_manager_foreach_app_context()</a>), and the other is used in available ("installed") but not necessarily running applications(<a class="el" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#gaefe367c29fc6e7222f448d3b9ab7c67c" title="Retrieves all installed applications information.">app_manager_foreach_app_info()</a>). Each will call a callback function, passing the package name of each application found. A query function will respond whether the application represented by a particular package name is running. Other query functions return static information about an application, such as a name, a type, an icon path, or a version. The API provides functions to manage applications also. By using them, it is possible to resume(<a class="el" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#ga8e2c8b6f3907192e6aa3977ecd79e6d4" title="Resumes the application.">app_manager_resume_app</a>) applications. </p>
+<h3><a class="anchor" id="CAPI_APPLICATION_MANAGER_MODULE_USAGE_RUNNING"></a>
+Getting Information About Running Applications</h3>
+<p>You can retrieve information about currently running applications using the foreach function:</p>
+<div class="fragment"><pre class="fragment"> <span class="preprocessor">#include &lt;app_manager.h&gt;</span>
+ <span class="preprocessor">#include &lt;dlog.h&gt;</span>
+
+ <span class="keyword">static</span> <span class="keywordtype">bool</span>
+ app_context_cb(<a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga31d565bb243fb3c176353a7fd1fc69f2">app_context_h</a> app_context, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="keywordtype">char</span> *app_id = NULL;
+     <span class="keywordtype">char</span> *package = NULL;
+     pid_t pid;
+     
+     <span class="comment">// Get application ID</span>
+     <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_context_get_app_id</a>(app_context, &amp;app_id);
+     <span class="keywordflow">if</span> (app_id) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;Running App ID: %s&quot;</span>, app_id);
+         free(app_id);
+     }
+     
+     <span class="comment">// Get package ID</span>
+     <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_context_get_package_id</a>(app_context, &amp;package);
+     <span class="keywordflow">if</span> (package) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;Package ID: %s&quot;</span>, package);
+         free(package);
+     }
+     
+     <span class="comment">// Get process ID</span>
+     <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_context_get_pid</a>(app_context, &amp;pid);
+     dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;PID: %d&quot;</span>, pid);
+     
+     <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// Continue iteration</span>
+ }
+
+ <span class="keywordtype">void</span>
+ list_running_apps(<span class="keywordtype">void</span>)
+ {
+     <span class="keywordtype">int</span> ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#gae610d72e0828b2f2e049b7510ac3191f" title="Retrieves all application contexts of running applications.">app_manager_foreach_app_context</a>(app_context_cb, NULL);
+     <span class="keywordflow">if</span> (ret != APP_MANAGER_ERROR_NONE) {
+         dlog_print(DLOG_ERROR, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;Failed to get running apps&quot;</span>);
+     }
+ }
+</pre></div><h3><a class="anchor" id="CAPI_APPLICATION_MANAGER_MODULE_USAGE_INSTALLED"></a>
+Getting Information About Installed Applications</h3>
+<p>You can retrieve information about all installed applications:</p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">static</span> <span class="keywordtype">bool</span>
+ app_info_cb(<a class="code" href="group__CAPI__APP__INFO__MODULE.html#gadde44ebac727739ca40e158fdf29c17f">app_info_h</a> app_info, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="keywordtype">char</span> *app_id = NULL;
+     <span class="keywordtype">char</span> *label = NULL;
+     <span class="keywordtype">char</span> *icon_path = NULL;
+     <span class="keywordtype">char</span> *version = NULL;
+     <span class="keywordtype">bool</span> nodisplay = <span class="keyword">false</span>;
+     
+     <span class="comment">// Get application ID</span>
+     <a class="code" href="group__CAPI__APP__INFO__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_info_get_app_id</a>(app_info, &amp;app_id);
+     
+     <span class="comment">// Get application label</span>
+     <a class="code" href="group__CAPI__APP__INFO__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_info_get_label</a>(app_info, &amp;label);
+     
+     <span class="comment">// Get icon path</span>
+     <a class="code" href="group__CAPI__APP__INFO__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_info_get_icon</a>(app_info, &amp;icon_path);
+     
+     <span class="comment">// Get version</span>
+     <a class="code" href="group__CAPI__APP__INFO__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_info_get_version</a>(app_info, &amp;version);
+     
+     <span class="comment">// Check if app should be displayed</span>
+     <a class="code" href="group__CAPI__APP__INFO__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_info_is_nodisplay</a>(app_info, &amp;nodisplay);
+     
+     <span class="keywordflow">if</span> (!nodisplay) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;App: %s (%s) v%s&quot;</span>, 
+                    label ? label : <span class="stringliteral">&quot;Unknown&quot;</span>, 
+                    app_id ? app_id : <span class="stringliteral">&quot;Unknown&quot;</span>, 
+                    version ? version : <span class="stringliteral">&quot;Unknown&quot;</span>);
+     }
+     
+     <span class="keywordflow">if</span> (app_id) free(app_id);
+     <span class="keywordflow">if</span> (label) free(label);
+     <span class="keywordflow">if</span> (icon_path) free(icon_path);
+     <span class="keywordflow">if</span> (version) free(version);
+     
+     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+ }
+
+ <span class="keywordtype">void</span>
+ list_installed_apps(<span class="keywordtype">void</span>)
+ {
+     <span class="keywordtype">int</span> ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#gaefe367c29fc6e7222f448d3b9ab7c67c" title="Retrieves all installed applications information.">app_manager_foreach_app_info</a>(app_info_cb, NULL);
+     <span class="keywordflow">if</span> (ret != APP_MANAGER_ERROR_NONE) {
+         dlog_print(DLOG_ERROR, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;Failed to get installed apps&quot;</span>);
+     }
+ }
+</pre></div><h3><a class="anchor" id="CAPI_APPLICATION_MANAGER_MODULE_USAGE_CHECK"></a>
+Checking Application Status</h3>
+<p>You can check if a specific application is running and get its information:</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span>
+ check_app_status(<span class="keyword">const</span> <span class="keywordtype">char</span> *app_id)
+ {
+     <span class="keywordtype">bool</span> running = <span class="keyword">false</span>;
+     <span class="keywordtype">int</span> ret;
+     
+     <span class="comment">// Check if application is running</span>
+     ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#ga7915e1a7bff39626d08979d2004ea27c" title="Checks whether the application with the given ID of the application is running.">app_manager_is_running</a>(app_id, &amp;running);
+     <span class="keywordflow">if</span> (ret == APP_MANAGER_ERROR_NONE) {
+         <span class="keywordflow">if</span> (running) {
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;%s is running&quot;</span>, app_id);
+             
+             <span class="comment">// Get application context</span>
+             <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga31d565bb243fb3c176353a7fd1fc69f2">app_context_h</a> app_context = NULL;
+             ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#ga78bed3537447f612d0a68500f78bdb3a" title="Gets the application context for the given ID of the application.">app_manager_get_app_context</a>(app_id, &amp;app_context);
+             <span class="keywordflow">if</span> (ret == APP_MANAGER_ERROR_NONE &amp;&amp; app_context) {
+                 pid_t pid;
+                 <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_context_get_pid</a>(app_context, &amp;pid);
+                 dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;PID: %d&quot;</span>, pid);
+                 
+                 app_context_destroy(app_context);
+             }
+         } <span class="keywordflow">else</span> {
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;%s is not running&quot;</span>, app_id);
+         }
+     }
+     
+     <span class="comment">// Get application information</span>
+     <a class="code" href="group__CAPI__APP__INFO__MODULE.html#gadde44ebac727739ca40e158fdf29c17f">app_info_h</a> app_info = NULL;
+     ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#gafa0063c9ac2f4b0d7ac4b115bf2932dc" title="Gets the application information for the given application ID.">app_manager_get_app_info</a>(app_id, &amp;app_info);
+     <span class="keywordflow">if</span> (ret == APP_MANAGER_ERROR_NONE &amp;&amp; app_info) {
+         <span class="keywordtype">char</span> *label = NULL;
+         <a class="code" href="group__CAPI__APP__INFO__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_info_get_label</a>(app_info, &amp;label);
+         <span class="keywordflow">if</span> (label) {
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;App name: %s&quot;</span>, label);
+             free(label);
+         }
+         app_info_destroy(app_info);
+     }
+ }
+</pre></div><h3><a class="anchor" id="CAPI_APPLICATION_MANAGER_MODULE_USAGE_MONITOR"></a>
+Monitoring Application Launch and Termination</h3>
+<p>You can register a callback to be notified when applications are launched or terminated:</p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">static</span> <span class="keywordtype">void</span>
+ app_context_event_cb(<a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga31d565bb243fb3c176353a7fd1fc69f2">app_context_h</a> app_context, <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga292a81165aaba9c56128313ddfdf1fd4">app_context_event_e</a> event, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="keywordtype">char</span> *app_id = NULL;
+     pid_t pid;
+     
+     <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_context_get_app_id</a>(app_context, &amp;app_id);
+     <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e">app_context_get_pid</a>(app_context, &amp;pid);
+     
+     <span class="keywordflow">if</span> (event == APP_CONTEXT_EVENT_LAUNCHED) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;App launched: %s (PID: %d)&quot;</span>, 
+                    app_id ? app_id : <span class="stringliteral">&quot;Unknown&quot;</span>, pid);
+     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event == APP_CONTEXT_EVENT_TERMINATED) {
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;App terminated: %s (PID: %d)&quot;</span>, 
+                    app_id ? app_id : <span class="stringliteral">&quot;Unknown&quot;</span>, pid);
+     }
+     
+     <span class="keywordflow">if</span> (app_id) free(app_id);
+ }
+
+ <span class="keywordtype">void</span>
+ start_monitoring(<span class="keywordtype">void</span>)
+ {
+     <span class="keywordtype">int</span> ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#ga12ac00beb77a40645ac8afb4fad96429" title="Registers a callback function to be invoked when the applications get launched or terminated.">app_manager_set_app_context_event_cb</a>(app_context_event_cb, NULL);
+     <span class="keywordflow">if</span> (ret != APP_MANAGER_ERROR_NONE) {
+         dlog_print(DLOG_ERROR, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;Failed to set event callback&quot;</span>);
+     }
+ }
+
+ <span class="keywordtype">void</span>
+ stop_monitoring(<span class="keywordtype">void</span>)
+ {
+     <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#ga279677adc2498495064103076dedf17c" title="Unregisters the callback function.">app_manager_unset_app_context_event_cb</a>();
+ }
+</pre></div><h3><a class="anchor" id="CAPI_APPLICATION_MANAGER_MODULE_USAGE_MANAGE"></a>
+Managing Applications</h3>
+<p>You can resume or terminate background applications:</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span>
+ resume_application(<span class="keyword">const</span> <span class="keywordtype">char</span> *app_id)
+ {
+     <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga31d565bb243fb3c176353a7fd1fc69f2">app_context_h</a> app_context = NULL;
+     <span class="keywordtype">int</span> ret;
+     
+     <span class="comment">// Get application context</span>
+     ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#ga78bed3537447f612d0a68500f78bdb3a" title="Gets the application context for the given ID of the application.">app_manager_get_app_context</a>(app_id, &amp;app_context);
+     <span class="keywordflow">if</span> (ret == APP_MANAGER_ERROR_NONE &amp;&amp; app_context) {
+         <span class="comment">// Resume the application</span>
+         ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#ga8e2c8b6f3907192e6aa3977ecd79e6d4" title="Resumes the application.">app_manager_resume_app</a>(app_context);
+         <span class="keywordflow">if</span> (ret == APP_MANAGER_ERROR_NONE) {
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;Successfully resumed %s&quot;</span>, app_id);
+         } <span class="keywordflow">else</span> {
+             dlog_print(DLOG_ERROR, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;Failed to resume app&quot;</span>);
+         }
+         app_context_destroy(app_context);
+     }
+ }
+
+ <span class="keywordtype">void</span>
+ terminate_background_app(<span class="keyword">const</span> <span class="keywordtype">char</span> *app_id)
+ {
+     <a class="code" href="group__CAPI__APP__CONTEXT__MODULE.html#ga31d565bb243fb3c176353a7fd1fc69f2">app_context_h</a> app_context = NULL;
+     <span class="keywordtype">int</span> ret;
+     
+     ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#ga78bed3537447f612d0a68500f78bdb3a" title="Gets the application context for the given ID of the application.">app_manager_get_app_context</a>(app_id, &amp;app_context);
+     <span class="keywordflow">if</span> (ret == APP_MANAGER_ERROR_NONE &amp;&amp; app_context) {
+         <span class="comment">// Request to terminate background app</span>
+         ret = <a class="code" href="group__CAPI__APPLICATION__MANAGER__MODULE.html#gae97480558d4d96b65e360c89615a1ae1" title="Terminates the back ground application.">app_manager_request_terminate_bg_app</a>(app_context);
+         <span class="keywordflow">if</span> (ret == APP_MANAGER_ERROR_NONE) {
+             dlog_print(DLOG_INFO, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;Requested termination of %s&quot;</span>, app_id);
+         } <span class="keywordflow">else</span> {
+             dlog_print(DLOG_ERROR, <span class="stringliteral">&quot;APP_MANAGER&quot;</span>, <span class="stringliteral">&quot;Failed to terminate app&quot;</span>);
+         }
+         app_context_destroy(app_context);
+     }
+ }
+</pre></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
