@@ -204,7 +204,59 @@ To prepare the screen mirroring sink:
    }
    ```
 
-4. Prepare the screen mirroring sink using the `scmirroring_sink_prepare()` function.
+4. (Optional) Set the display mode using the `scmirroring_sink_set_display_mode()` function.
+
+   This function sets the display mode of the screen mirroring sink, such as letter box, full screen, or custom ROI.
+
+   ```
+   ret = scmirroring_sink_set_display_mode(g_scmirroring, SCMIRRORING_DISPLAY_MODE_FULL_SCREEN);
+   if (ret != SCMIRRORING_ERROR_NONE) {
+       dlog_print(DLOG_ERROR, LOG_TAG, "scmirroring_sink_set_display_mode failed [%d]", ret);
+
+       return FALSE;
+   }
+   ```
+
+5. (Optional) Set the display ROI area using the `scmirroring_sink_set_display_roi()` function.
+
+   This function sets a custom region of interest area when using the `SCMIRRORING_DISPLAY_MODE_CUSTOM_ROI` display mode.
+
+   ```
+   ret = scmirroring_sink_set_display_roi(g_scmirroring, 0, 0, 800, 600);
+   if (ret != SCMIRRORING_ERROR_NONE) {
+       dlog_print(DLOG_ERROR, LOG_TAG, "scmirroring_sink_set_display_roi failed [%d]", ret);
+
+       return FALSE;
+   }
+   ```
+
+6. (Optional) Set the display rotation using the `scmirroring_sink_set_display_rotation()` function.
+
+   This function rotates the video output in a clockwise direction.
+
+   ```
+   ret = scmirroring_sink_set_display_rotation(g_scmirroring, SCMIRRORING_DISPLAY_ROTATION_90);
+   if (ret != SCMIRRORING_ERROR_NONE) {
+       dlog_print(DLOG_ERROR, LOG_TAG, "scmirroring_sink_set_display_rotation failed [%d]", ret);
+
+       return FALSE;
+   }
+   ```
+
+7. (Optional) Set the source device type using the `scmirroring_sink_set_src_device_type()` function.
+
+   This function sets the device type of the screen mirroring source for internal processing optimization.
+
+   ```
+   ret = scmirroring_sink_set_src_device_type(g_scmirroring, SCMIRRORING_DEVICE_TYPE_TV);
+   if (ret != SCMIRRORING_ERROR_NONE) {
+       dlog_print(DLOG_ERROR, LOG_TAG, "scmirroring_sink_set_src_device_type failed [%d]", ret);
+
+       return FALSE;
+   }
+   ```
+
+8. Prepare the screen mirroring sink using the `scmirroring_sink_prepare()` function.
 
    The function sets the screen mirroring state to `SCMIRRORING_STATE_PREPARED`.
 
