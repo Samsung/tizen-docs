@@ -14,7 +14,8 @@ The Display and Graphics HAL is composed of two primary subsystems, each respons
 
 **Figure: Tizen Display & Graphics HAL hierarchy**
 
-<img src="media/tizen-hal-displaygraphics.png" width=600/>
+<img src="media/tizen-hal-displaygraphics.png" width=800/>
+
 
 ---
 
