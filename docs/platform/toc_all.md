@@ -41,7 +41,7 @@
 ## HAL
 ### [Overview](/platform/HAL/overview.md)
 ### [System](/platform/HAL/system.md)
-### [Display & Graphics](/platform/HAL/displaygraphics.md.md)
+### [Display & Graphics](/platform/HAL/displaygraphics.md)
 ### [Security](/platform/HAL/security.md)
 ### [Multimedia](/platform/HAL/multimedia.md)
 ### [Connectivity](/platform/HAL/connectivity.md)
