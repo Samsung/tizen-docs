@@ -1,7 +1,7 @@
-# Test Profile App Unit Test Code Coverage
+# Tizen Native Application Unit Test With Code Coverage
 
 
-> [!NOTE]
+> [NOTE]
 >
 > Before you run the Unit Test and Code Coverage, make sure:
   > - You have an Emulator or a connected target device running.
