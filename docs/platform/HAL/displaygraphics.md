@@ -16,10 +16,6 @@ The Display and Graphics HAL is composed of two primary subsystems, each respons
 
 <img src="media/tizen-hal-displaygraphics.png" width=800/>
 
-
----
-
-
 ### TBM (Tizen Buffer Manager)
 The HAL TBM Module provides the hardware abstraction layer for Tizen Buffer Manager (TBM). TBM is the system responsible for allocating, managing, and sharing graphics buffers, which are essential for rendering UI elements and displaying content.
 
@@ -31,9 +27,6 @@ The HAL TBM Module provides the hardware abstraction layer for Tizen Buffer Mana
 
 **Implementation Requirement:**
 Chipset vendors are required to develop and provide their own backend implementations for the HAL TBM Module. This ensures that TBM can leverage the specific features and optimizations of the target hardware, leading to optimal performance and stability on the Tizen platform.
-
----
-
 
 ### TDM (Tizen Display Manager)
 
