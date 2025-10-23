@@ -170,6 +170,10 @@
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
 #### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
 
+### Performance
+#### [Overview](/application/dotnet/guides/performance/overview.md)
+#### [Tracer](/application/dotnet/guides/performance/tracer.md)
+
 ### Pims
 #### [Overview](/application/dotnet/guides/pims/overview.md)
 #### [Calendar](/application/dotnet/guides/pims/calendar.md)
