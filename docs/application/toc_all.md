@@ -40,7 +40,6 @@
 #### [Synchronization Management](/application/dotnet/guides/account/data-sync.md)
 #### Authentication and Authorization
 ##### [Overview](/application/dotnet/guides/account/authentication.md)
-##### [FIDO Universal Authentication Framework](/application/dotnet/guides/account/fido.md)
 ##### [OAuth 2.0](/application/dotnet/guides/account/oauth.md)
 
 #### [Application Usage History Data](/application/dotnet/guides/account/app-history.md)
@@ -120,7 +119,6 @@
 ### Location
 #### [Overview](/application/dotnet/guides/location/overview.md)
 #### [Location Information](/application/dotnet/guides/location/location.md)
-#### [Geofences](/application/dotnet/guides/location/geofences.md)
 
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
@@ -131,7 +129,6 @@
 #### [Machine Learning Train](/application/dotnet/guides/machine-learning/machine-learning-train.md)
 
 ### Maps
-#### [Overview](/application/dotnet/guides/maps/maps.md)
 #### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
 
 ### Multimedia
@@ -163,8 +160,6 @@
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
-#### [Email](/application/dotnet/guides/messaging/email.md)
-#### [Messages](/application/dotnet/guides/messaging/messages.md)
 #### [Push](/application/dotnet/guides/messaging/push.md)
 #### [Push Server](/application/dotnet/guides/messaging/push-server.md)
 
