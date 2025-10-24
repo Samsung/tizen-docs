@@ -393,6 +393,13 @@ The following table provides detailed information regarding removed functions an
 | Content - Media Content - Media Information | media_info_foreach_face_from_db() | Since 8.0 | 10.0 | No longer available | - |
 | Content - Media Content - Media Information | media_info_start_face_detection() | Since 8.0 | 10.0 | No longer available | - |
 | Content - Media Content - Media Information | media_info_cancel_face_detection() | Since 8.0 | 10.0 | No longer available | - |
+| Messaging - Email | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
+| Messaging - Messages | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
+| Account - FIDO Client | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
+| Location - Geofence Manager | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
+| Location - Maps Service | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
+| Security - Content Screening & Reputation | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
+| UI - External Output Manager | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
 
 ## Related information
 
