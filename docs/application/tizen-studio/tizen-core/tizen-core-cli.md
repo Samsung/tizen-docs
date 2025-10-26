@@ -1022,4 +1022,5 @@ templates, new, add-deps, rem-deps, clean, build, pack, install, run, uninstall,
 
 ## Related information
 - Dependencies  
+
   - Tizen Studio 6.0 and Higher
