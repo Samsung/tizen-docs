@@ -4,7 +4,7 @@ Release date: Oct 31, 2025
 
 ## Release details
 
-- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 10.0 source codes are under **tizen** branch.)
+- [Getting source code](http://review.tizen.org/gerrit/) (Tizen 10.0 source codes are under **tizen_10.0** branch.)
 
 - Getting binaries and images:
   - Base: https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20250923.230953/
