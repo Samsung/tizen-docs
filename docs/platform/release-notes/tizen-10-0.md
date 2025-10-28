@@ -7,8 +7,8 @@ Release date: Oct 31, 2025
 - [Getting source code](http://review.tizen.org/gerrit/) (Tizen 10.0 source codes are under **tizen** branch.)
 
 - Getting binaries and images:
-  - Base: https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20240929.112120/
-  - Profile (Unified): https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20241025.103727/
+  - Base: https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Base/tizen-base_20250923.230953/
+  - Profile (Unified): https://download.tizen.org/releases/milestone/TIZEN/Tizen/Tizen-Unified/tizen-unified_20251024.151443/
 
 - [How to flash an image to device](../developing/flashing-rpi.md)
 
@@ -66,7 +66,7 @@ Release date: Oct 31, 2025
 
   - Diagnostics management
     - The "so_info" file, which includes the RPM information installed under /hal, has been supported when a crash occurs by crash-worker.
-    - Ths stability-monitor has supported the coredump option to enable the coredump according to the configuration value.
+    - The stability-monitor has supported the coredump option to enable the coredump according to the configuration value.
 
 - Open Source
   - libbpf
@@ -243,7 +243,7 @@ Release date: Oct 31, 2025
   - New APIs related to first installed time and update have been added.
 - Configuration
   - The multi user feature has been added to buxton2.
-- Theme mananger
+- Theme manager
   - The RPK(Resource Package) has been supported.
 - Tizen Action Framework
   - A new Tizen Action Framework enabling AI integration within the platform has been added.
@@ -451,7 +451,7 @@ Release date: Oct 31, 2025
   - Fixed ducking to wait finish of another ducking operation of same target stream.
   - Fixed ducking state changed callback is not invoked if the first duration of the ramp is 0 and non-zero thereafter.
   - Fixed built-in device couldn't be selected as a preemptive device.
-  - Fixed unexpected pulseaudio self-kill due to insuffiecient threshold of real-time scheduling.
+  - Fixed unexpected pulseaudio self-kill due to insufficient threshold of real-time scheduling.
   - Fixed focus nodes being disappeared at certain timings.
   - Fixed focus nodes could not be removed on exit due to insufficient permissions.
 - Media Common
@@ -482,7 +482,7 @@ Release date: Oct 31, 2025
   - Rate limiting have been added.
     - The maxinum rate for download.
 - Iotcon
-  - All APIs have beend deprecated.
+  - All APIs have been deprecated.
 - Network
   - New APIs for handling the frequency value of stored Wi-Fi configuration have been added.
   - The URLs used during the online status check has been changed.
