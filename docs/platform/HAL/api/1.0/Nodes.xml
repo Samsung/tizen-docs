@@ -113,6 +113,36 @@
             <Subnodes>
             </Subnodes>
            </Node>
+           <Node>
+            <Name>Nfc</Name>
+            <Path>group__HALAPI__HAL__NFC__MODULE.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>Wi-Fi</Name>
+            <Path>group__HALAPI__HAL__WIFI__MODULE.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+          </Subnodes>
+         </Node>
+         <Node>
+          <Name>Display and Graphics</Name>
+          <Path>group__HALAPI__HAL__WINDOW.html</Path>
+          <Subnodes>
+           <Node>
+            <Name>TBM</Name>
+            <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>TDM</Name>
+            <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
           </Subnodes>
          </Node>
          <Node>
@@ -167,12 +197,6 @@
             <Subnodes>
             </Subnodes>
            </Node>
-          </Subnodes>
-         </Node>
-         <Node>
-          <Name>Nfc</Name>
-          <Path>group__HALAPI__HAL__NFC__MODULE.html</Path>
-          <Subnodes>
           </Subnodes>
          </Node>
          <Node>
@@ -296,30 +320,6 @@
            <Node>
             <Name>Sensor</Name>
             <Path>group__HALAPI__HAL__SENSOR__MODULE.html</Path>
-            <Subnodes>
-            </Subnodes>
-           </Node>
-          </Subnodes>
-         </Node>
-         <Node>
-          <Name>Wi-Fi</Name>
-          <Path>group__HALAPI__HAL__WIFI__MODULE.html</Path>
-          <Subnodes>
-          </Subnodes>
-         </Node>
-         <Node>
-          <Name>Window System</Name>
-          <Path>group__HALAPI__HAL__WINDOW.html</Path>
-          <Subnodes>
-           <Node>
-            <Name>TBM</Name>
-            <Path>group__HALAPI__HAL__TBM__MODULE.html</Path>
-            <Subnodes>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>TDM</Name>
-            <Path>group__HALAPI__HAL__TDM__MODULE.html</Path>
             <Subnodes>
             </Subnodes>
            </Node>

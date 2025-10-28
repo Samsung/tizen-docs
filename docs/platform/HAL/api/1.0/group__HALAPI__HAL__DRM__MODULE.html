@@ -714,6 +714,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ada570719a219cdcb4055568d60acd379">size</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a5cc3210b6e8bb6f7ebd1ce602cc3ddcd">data</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#aa84ec9c239d61bc9d1bc9d1c4ce56294">fd</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a09924bb12f02d2e8eb0d61ebb4803c86">secure_handle</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a5de9a8541ee3f851de1da901a3fd1859">split_offsets</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#afca0f82298f8cbcf915e6e74a0ceeb56">num_of_subsamples</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__subsample__s">hal_drm_subsample_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a920e8a3d5928707816a6bc0da7bacc7c">subsamples</a></td></tr>
@@ -744,7 +745,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The fd(file descriptor) or secure handle of data buffer </p>
+<p>The fd(file descriptor) of data buffer. When fd is not used, it will be set -1 </p>
 
 </div>
 </div>
@@ -801,6 +802,20 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>The information of pattern encryption </p>
+
+</div>
+</div>
+<a class="anchor" id="a09924bb12f02d2e8eb0d61ebb4803c86"></a><!-- doxytag: member="hal_drm_buffer_s::secure_handle" ref="a09924bb12f02d2e8eb0d61ebb4803c86" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a09924bb12f02d2e8eb0d61ebb4803c86">hal_drm_buffer_s::secure_handle</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The secure handle of data buffer. When handle is not used, it will be set 0 </p>
 
 </div>
 </div>
@@ -867,33 +882,35 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a4329dcab7214a046e69f75f4e6704a5b">deinit</a> )(void *drm_handle)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a87a775b1daeddaeec9f7b67db47b6342">set_message_callback</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#gac6464002d7a16a529de0c6b3706e4b95">hal_drm_message_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a56f3fa911ea2b342891cd9ee2815bde2">get_cdm_version</a> )(void *drm_handle, char **version)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a2590868465997da59fa96ce9e1e4632d">session_create</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ga23a2c184bfc03d1f29f49a01af8293da">hal_drm_session_type_e</a> type, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#af65810742f77d77db8c9eebce6b0405a">session_create</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ga23a2c184bfc03d1f29f49a01af8293da">hal_drm_session_type_e</a> type, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **session_id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ad5626a5d87482bec51a867f57aab9f67">session_load</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#aac248b92140555b1e1ec254843a91211">session_generate_request</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#gaaffb8103322c5da83836553f132243c7">hal_drm_init_data_type_e</a> type, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *init_data, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *request)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#aa21d4d44ede27dec5e84164a94b4f90f">session_generate_request</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#gaaffb8103322c5da83836553f132243c7">hal_drm_init_data_type_e</a> type, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *init_data, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **request)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ae9330eca0e1e348f1aeb4c99e013cbd0">session_update</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *license)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a605ee0c36e252ef7c9ef62b2aa757488">session_get_expiration</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, int64_t *expiration)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a32287d4f5dedfe978205ce80ee66a3f5">session_get_key_infos</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__key__info__list__s">hal_drm_key_info_list_s</a> *key_info_list)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a88fcfe4b5773c54fae5245ed37cb1d9d">session_get_key_infos</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__key__info__list__s">hal_drm_key_info_list_s</a> **key_info_list)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a7f3b54d6f151473fc3af0f062ea865ac">session_close</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a79d86e510ce25cee68ddfd99b2204df7">session_remove</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a77f1d83cb24470080df0de467388c997">get_provisioning_request</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *request)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a484d79103dc12c9860937fe91b16075e">get_provisioning_request</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **request)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#aa95104ef6b09003b502d7a04d6f3b5d7">set_provisioning_response</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *response)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ad6d7ae667a84f55de2775376e4809aba">get_service_certificate_request</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *request)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a4d7f1a0ecd2b8a4698816293ac8fd2f5">load_service_certificate_response</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *response, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *certificate)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a22aab6b73230893b0c2fb0bedae90b45">get_service_certificate_request</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **request)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ab12ea337a2d931bb5cf43cef932d0423">load_service_certificate_response</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *response, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **certificate)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#adf03e9726bb71e91d4407277f34147d6">set_service_certificate</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *certificate)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ae3f25570813af750cc9d46411bf5649e">allocate_output_buffer</a> )(void *drm_handle, uint32_t size, bool is_secure, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__buffer__s">hal_drm_buffer_s</a> *buffer)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ad73b25ad93235535791bdf03dc8513cc">allocate_output_buffer</a> )(void *drm_handle, uint32_t size, bool is_secure, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__buffer__s">hal_drm_buffer_s</a> **buffer)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a1fe5cf10ac6d9c7cd7010af0364a833d">release_output_buffer</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__buffer__s">hal_drm_buffer_s</a> *buffer)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a7f7995143d5e3fe9f9d679d7bdec519d">release_data</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a37e537aeadc3f42eb4b7697768bea3a0">release_key_info_list</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__key__info__list__s">hal_drm_key_info_list_s</a> *key_info_list)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ab4ed607e7440ff6c2ef2a91a495130cf">decrypt</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__buffer__s">hal_drm_buffer_s</a> *input, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__crypto__info__s">hal_drm_crypto_info_s</a> *decrypt_info, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__buffer__s">hal_drm_buffer_s</a> *output)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a73dd6778a282b5b79d2476ae39c2910e">set_command</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ga7f0c102b942ceb618a0f9a5a780bcf18">hal_drm_command_e</a> command, void *value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a15e1ff89b99f0c1553c453f8582f560c">get_command</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ga7f0c102b942ceb618a0f9a5a780bcf18">hal_drm_command_e</a> command, void **value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#af596498d39489cfb8a7cf530481085ca">set_batch_command</a> )(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#gad09b445913a6a26ac0dc6c46c72ebf6e">hal_drm_batch_command_control_s</a> *batch_command, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ga7f0c102b942ceb618a0f9a5a780bcf18">hal_drm_command_e</a> *error_command)</td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
-<a class="anchor" id="ae3f25570813af750cc9d46411bf5649e"></a><!-- doxytag: member="_hal_backend_drm_funcs::allocate_output_buffer" ref="ae3f25570813af750cc9d46411bf5649e" args=")(void *drm_handle, uint32_t size, bool is_secure, hal_drm_buffer_s *buffer)" -->
+<a class="anchor" id="ad73b25ad93235535791bdf03dc8513cc"></a><!-- doxytag: member="_hal_backend_drm_funcs::allocate_output_buffer" ref="ad73b25ad93235535791bdf03dc8513cc" args=")(void *drm_handle, uint32_t size, bool is_secure, hal_drm_buffer_s **buffer)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ae3f25570813af750cc9d46411bf5649e">_hal_backend_drm_funcs::allocate_output_buffer</a>)(void *drm_handle, uint32_t size, bool is_secure, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__buffer__s">hal_drm_buffer_s</a> *buffer)</td>
+          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ad73b25ad93235535791bdf03dc8513cc">_hal_backend_drm_funcs::allocate_output_buffer</a>)(void *drm_handle, uint32_t size, bool is_secure, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__buffer__s">hal_drm_buffer_s</a> **buffer)</td>
         </tr>
       </table>
 </div>
@@ -958,12 +975,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a77f1d83cb24470080df0de467388c997"></a><!-- doxytag: member="_hal_backend_drm_funcs::get_provisioning_request" ref="a77f1d83cb24470080df0de467388c997" args=")(void *drm_handle, hal_drm_data_s *request)" -->
+<a class="anchor" id="a484d79103dc12c9860937fe91b16075e"></a><!-- doxytag: member="_hal_backend_drm_funcs::get_provisioning_request" ref="a484d79103dc12c9860937fe91b16075e" args=")(void *drm_handle, hal_drm_data_s **request)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a77f1d83cb24470080df0de467388c997">_hal_backend_drm_funcs::get_provisioning_request</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *request)</td>
+          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a484d79103dc12c9860937fe91b16075e">_hal_backend_drm_funcs::get_provisioning_request</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **request)</td>
         </tr>
       </table>
 </div>
@@ -972,12 +989,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad6d7ae667a84f55de2775376e4809aba"></a><!-- doxytag: member="_hal_backend_drm_funcs::get_service_certificate_request" ref="ad6d7ae667a84f55de2775376e4809aba" args=")(void *drm_handle, hal_drm_data_s *request)" -->
+<a class="anchor" id="a22aab6b73230893b0c2fb0bedae90b45"></a><!-- doxytag: member="_hal_backend_drm_funcs::get_service_certificate_request" ref="a22aab6b73230893b0c2fb0bedae90b45" args=")(void *drm_handle, hal_drm_data_s **request)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ad6d7ae667a84f55de2775376e4809aba">_hal_backend_drm_funcs::get_service_certificate_request</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *request)</td>
+          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a22aab6b73230893b0c2fb0bedae90b45">_hal_backend_drm_funcs::get_service_certificate_request</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **request)</td>
         </tr>
       </table>
 </div>
@@ -1000,17 +1017,45 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4d7f1a0ecd2b8a4698816293ac8fd2f5"></a><!-- doxytag: member="_hal_backend_drm_funcs::load_service_certificate_response" ref="a4d7f1a0ecd2b8a4698816293ac8fd2f5" args=")(void *drm_handle, hal_drm_data_s *response, hal_drm_data_s *certificate)" -->
+<a class="anchor" id="ab12ea337a2d931bb5cf43cef932d0423"></a><!-- doxytag: member="_hal_backend_drm_funcs::load_service_certificate_response" ref="ab12ea337a2d931bb5cf43cef932d0423" args=")(void *drm_handle, hal_drm_data_s *response, hal_drm_data_s **certificate)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a4d7f1a0ecd2b8a4698816293ac8fd2f5">_hal_backend_drm_funcs::load_service_certificate_response</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *response, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *certificate)</td>
+          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ab12ea337a2d931bb5cf43cef932d0423">_hal_backend_drm_funcs::load_service_certificate_response</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *response, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **certificate)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>Loads the service certificate response </p>
+
+</div>
+</div>
+<a class="anchor" id="a7f7995143d5e3fe9f9d679d7bdec519d"></a><!-- doxytag: member="_hal_backend_drm_funcs::release_data" ref="a7f7995143d5e3fe9f9d679d7bdec519d" args=")(void *drm_handle, hal_drm_data_s *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a7f7995143d5e3fe9f9d679d7bdec519d">_hal_backend_drm_funcs::release_data</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Releases <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s" title="Serialized byte data with specific size.">hal_drm_data_s</a> type data </p>
+
+</div>
+</div>
+<a class="anchor" id="a37e537aeadc3f42eb4b7697768bea3a0"></a><!-- doxytag: member="_hal_backend_drm_funcs::release_key_info_list" ref="a37e537aeadc3f42eb4b7697768bea3a0" args=")(void *drm_handle, hal_drm_key_info_list_s *key_info_list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a37e537aeadc3f42eb4b7697768bea3a0">_hal_backend_drm_funcs::release_key_info_list</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__key__info__list__s">hal_drm_key_info_list_s</a> *key_info_list)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Releases <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__key__info__list__s" title="The set of key status information.">hal_drm_key_info_list_s</a> type data </p>
 
 </div>
 </div>
@@ -1042,12 +1087,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2590868465997da59fa96ce9e1e4632d"></a><!-- doxytag: member="_hal_backend_drm_funcs::session_create" ref="a2590868465997da59fa96ce9e1e4632d" args=")(void *drm_handle, hal_drm_session_type_e type, hal_drm_data_s *session_id)" -->
+<a class="anchor" id="af65810742f77d77db8c9eebce6b0405a"></a><!-- doxytag: member="_hal_backend_drm_funcs::session_create" ref="af65810742f77d77db8c9eebce6b0405a" args=")(void *drm_handle, hal_drm_session_type_e type, hal_drm_data_s **session_id)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a2590868465997da59fa96ce9e1e4632d">_hal_backend_drm_funcs::session_create</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ga23a2c184bfc03d1f29f49a01af8293da">hal_drm_session_type_e</a> type, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id)</td>
+          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#af65810742f77d77db8c9eebce6b0405a">_hal_backend_drm_funcs::session_create</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#ga23a2c184bfc03d1f29f49a01af8293da">hal_drm_session_type_e</a> type, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **session_id)</td>
         </tr>
       </table>
 </div>
@@ -1056,12 +1101,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aac248b92140555b1e1ec254843a91211"></a><!-- doxytag: member="_hal_backend_drm_funcs::session_generate_request" ref="aac248b92140555b1e1ec254843a91211" args=")(void *drm_handle, hal_drm_data_s *session_id, hal_drm_init_data_type_e type, hal_drm_data_s *init_data, hal_drm_data_s *request)" -->
+<a class="anchor" id="aa21d4d44ede27dec5e84164a94b4f90f"></a><!-- doxytag: member="_hal_backend_drm_funcs::session_generate_request" ref="aa21d4d44ede27dec5e84164a94b4f90f" args=")(void *drm_handle, hal_drm_data_s *session_id, hal_drm_init_data_type_e type, hal_drm_data_s *init_data, hal_drm_data_s **request)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#aac248b92140555b1e1ec254843a91211">_hal_backend_drm_funcs::session_generate_request</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#gaaffb8103322c5da83836553f132243c7">hal_drm_init_data_type_e</a> type, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *init_data, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *request)</td>
+          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#aa21d4d44ede27dec5e84164a94b4f90f">_hal_backend_drm_funcs::session_generate_request</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#gaaffb8103322c5da83836553f132243c7">hal_drm_init_data_type_e</a> type, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *init_data, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> **request)</td>
         </tr>
       </table>
 </div>
@@ -1084,12 +1129,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a32287d4f5dedfe978205ce80ee66a3f5"></a><!-- doxytag: member="_hal_backend_drm_funcs::session_get_key_infos" ref="a32287d4f5dedfe978205ce80ee66a3f5" args=")(void *drm_handle, hal_drm_data_s *session_id, hal_drm_key_info_list_s *key_info_list)" -->
+<a class="anchor" id="a88fcfe4b5773c54fae5245ed37cb1d9d"></a><!-- doxytag: member="_hal_backend_drm_funcs::session_get_key_infos" ref="a88fcfe4b5773c54fae5245ed37cb1d9d" args=")(void *drm_handle, hal_drm_data_s *session_id, hal_drm_key_info_list_s **key_info_list)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a32287d4f5dedfe978205ce80ee66a3f5">_hal_backend_drm_funcs::session_get_key_infos</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__key__info__list__s">hal_drm_key_info_list_s</a> *key_info_list)</td>
+          <td class="memname">int(* <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#a88fcfe4b5773c54fae5245ed37cb1d9d">_hal_backend_drm_funcs::session_get_key_infos</a>)(void *drm_handle, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__data__s">hal_drm_data_s</a> *session_id, <a class="el" href="group__HALAPI__HAL__DRM__MODULE.html#structhal__drm__key__info__list__s">hal_drm_key_info_list_s</a> **key_info_list)</td>
         </tr>
       </table>
 </div>

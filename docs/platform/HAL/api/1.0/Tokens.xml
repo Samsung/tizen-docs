@@ -8450,6 +8450,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>secure_handle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>hal_drm_buffer_s</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
+    <Anchor>a09924bb12f02d2e8eb0d61ebb4803c86</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>split_offsets</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -8536,7 +8546,7 @@
       <Scope>_hal_backend_drm_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
-    <Anchor>a2590868465997da59fa96ce9e1e4632d</Anchor>
+    <Anchor>af65810742f77d77db8c9eebce6b0405a</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8556,7 +8566,7 @@
       <Scope>_hal_backend_drm_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
-    <Anchor>aac248b92140555b1e1ec254843a91211</Anchor>
+    <Anchor>aa21d4d44ede27dec5e84164a94b4f90f</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8586,7 +8596,7 @@
       <Scope>_hal_backend_drm_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
-    <Anchor>a32287d4f5dedfe978205ce80ee66a3f5</Anchor>
+    <Anchor>a88fcfe4b5773c54fae5245ed37cb1d9d</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8616,7 +8626,7 @@
       <Scope>_hal_backend_drm_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
-    <Anchor>a77f1d83cb24470080df0de467388c997</Anchor>
+    <Anchor>a484d79103dc12c9860937fe91b16075e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8636,7 +8646,7 @@
       <Scope>_hal_backend_drm_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
-    <Anchor>ad6d7ae667a84f55de2775376e4809aba</Anchor>
+    <Anchor>a22aab6b73230893b0c2fb0bedae90b45</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8646,7 +8656,7 @@
       <Scope>_hal_backend_drm_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
-    <Anchor>a4d7f1a0ecd2b8a4698816293ac8fd2f5</Anchor>
+    <Anchor>ab12ea337a2d931bb5cf43cef932d0423</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8666,7 +8676,7 @@
       <Scope>_hal_backend_drm_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
-    <Anchor>ae3f25570813af750cc9d46411bf5649e</Anchor>
+    <Anchor>ad73b25ad93235535791bdf03dc8513cc</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8677,6 +8687,26 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
     <Anchor>a1fe5cf10ac6d9c7cd7010af0364a833d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>release_data</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_drm_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
+    <Anchor>a7f7995143d5e3fe9f9d679d7bdec519d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>release_key_info_list</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_drm_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__DRM__MODULE.html</Path>
+    <Anchor>a37e537aeadc3f42eb4b7697768bea3a0</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -9447,7 +9477,7 @@
       <Scope>_hal_backend_hdcp_funcs</Scope>
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__HDCP__MODULE.html</Path>
-    <Anchor>a57812f14d1f467728686f481acf78529</Anchor>
+    <Anchor>a19cd10470bc12f9a5fadb5319a31276b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
