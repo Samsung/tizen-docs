@@ -34,16 +34,31 @@
 ## [Development Tips](/platform/developing/tips.md)
 
 # Porting
-## [Overview](/platform/porting/overview.md)
-## [Kernel](/platform/porting/kernel.md)
-## [System](/platform/porting/system.md)
-## [Graphics and UI](/platform/porting/graphics-and-ui.md)
-## [Recovery](/platform/porting/recovery.md)
-## [Multimedia](/platform/porting/multimedia.md)
-## [Connectivity](/platform/porting/connectivity.md)
-## [Location](/platform/porting/location.md)
-## [Telephony](/platform/porting/telephony.md)
-## [Application](/platform/porting/application.md)
+## HAL
+### [Overview](/platform/HAL/overview.md)
+### [System](/platform/HAL/system.md)
+### [Display & Graphics](/platform/HAL/displaygraphics.md)
+### [Security](/platform/HAL/security.md)
+### [Multimedia](/platform/HAL/multimedia.md)
+### [Connectivity](/platform/HAL/connectivity.md)
+### [Machine Learning](/platform/HAL/ml.md)
+### [Location](/platform/HAL/location.md)
+
+
+### API Reference
+#### [1.0](/platform/HAL/api/1.0/index.html){:target="_blank"}
+## Archive
+### [Overview](/platform/porting/overview.md)
+### [Kernel](/platform/porting/kernel.md)
+### [System](/platform/porting/system.md)
+### [Graphics and UI](/platform/porting/graphics-and-ui.md)
+### [Recovery](/platform/porting/recovery.md)
+### [Multimedia](/platform/porting/multimedia.md)
+### [Connectivity](/platform/porting/connectivity.md)
+### [Location](/platform/porting/location.md)
+### [Telephony](/platform/porting/telephony.md)
+### [Application](/platform/porting/application.md)
+### [Legacy Porting](/platform/porting/legacy-porting.md)
 
 # Reference
 ## [Gerrit](/platform/reference/gerrit-usage.md)
