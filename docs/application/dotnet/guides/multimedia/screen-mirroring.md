@@ -92,6 +92,18 @@ void OnErrorOccurred(object sender, ScreenMirroringErrorOccurredEventArgs args)
 screenMirroring.ErrorOccurred += OnErrorOccurred;
 ```
 
+<a name="display"></a>
+## Configure screen mirroring diaplay
+
+You can configure display properties of Mode, ROI(Region Of Interest), Rotation.
+
+```csharp
+screenMirroring.DisplayMode = ScreenMirroringDisplayMode.LetterBox;
+
+screenMirroring.DisplayRoi = new Rectangle(0, 0, 100 100);
+
+screenMirroring.DisplayRotation = Rotation.Rotate90;
+```
 
 ## Related information
 * Dependencies

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>PrivacyPrivilege API</title>
+<meta data-version="10.0" data-profile="wearable">
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::PrivacyPrivilege">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="title"><h1>PrivacyPrivilege API</h1></div>
+<div class="brief">
+ This Privacy Privilege API defines a set of APIs that manage the permissions for using a privacy-related privileges of application.
+        </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 8.0.
+        </p>
+<div class="description">
+        <p>
+A Tizen Web application has privileges defined in <em>config.xml</em> file, but for legal purposes, in case of privacy-related privileges, there could be a need of asking user directly with proper pop-up.
+List of privacy-related privileges is available on <a href="/application/web/tutorials/sec-privileges">Security and API Privileges</a> page.
+Privacy Privilege API allows:
+        </p>
+        <ul>
+          <li>
+Checking if user granted permission for using a privacy-related privilege.          </li>
+          <li>
+Requesting pop-up about giving permission for using privacy-related privilege.          </li>
+        </ul>
+       </div>
+<p><span class="version">Since: </span>
+ 4.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc"></ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+<div class="typedefs" id="typedefs-section"><h2>1. Type Definitions</h2></div>
+<div class="interfaces" id="interfaces-section"><h2>2. Interfaces</h2></div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module PrivacyPrivilege {
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

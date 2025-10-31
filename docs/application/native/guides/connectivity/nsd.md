@@ -290,7 +290,7 @@ Another way to search for services is by first finding the service name and then
 
 1. To start searching, use the `dnssd_browse_service()` function.
     The DNS-SD browser handle is stored in a `dnssd_browser_h` variable. For more information on the service types, see [http://www.dns-sd.org/ServiceTypes.html](http://www.dns-sd.org/ServiceTypes.html){:target="_blank"}:
-   
+
     ```
     dnssd_browser_h browser_handle;
     char *service_type = "_ftp._tcp";
@@ -300,10 +300,10 @@ Another way to search for services is by first finding the service name and then
     if (error_code == DNSSD_ERROR_NONE)
         dlog_print(DLOG_DEBUG, LOG_TAG, "Start browsing");
     ```
-    
+
 2. The callback defined in the `dnssd_browse_service()` function is called when the remote service becomes available or unavailable.
    But at this time, IP address of the found service is not known. To get the IP address, `dnssd_resolve_service()` function is used:
-   
+
     ```
     void
     __found_cb(dnssd_service_h dnssd_remote_service, dnssd_service_state_e state, void *user_data)
@@ -324,9 +324,9 @@ Another way to search for services is by first finding the service name and then
         }
     }
     ```
-    
+
 3. The callback defined in the `dnssd_resolve_service()` function is called when the IP address of the service is successfully resolved:
-   
+
    ```
    void
     __resolved_cb(dnssd_error_e result, dnssd_service_h dnssd_remote_service, void *user_data)
@@ -336,9 +336,9 @@ Another way to search for services is by first finding the service name and then
        }
    }
    ```
-   
+
 4. When the services no longer interest you, stop resolving and browsing using the browser handle:
-   
+
    ```
    dnssd_cancel_resolve_service(browser_handle);
    dnssd_cancel_browse_service(browser_handle);
