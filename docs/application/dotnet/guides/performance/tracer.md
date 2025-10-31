@@ -10,7 +10,7 @@ The main features of the `Tizen.Tracer` class include followings:
 
 **Figure1: T-trace architecture**
 
-![T-trace architecture](../../../native/guides/performance/media/trace.png)
+![T-trace architecture](/application/native/guides/performance/media/trace.png)
 
 ## Prerequisites
 
