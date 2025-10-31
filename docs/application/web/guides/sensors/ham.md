@@ -8,23 +8,23 @@ The main features of the Human Activity Monitor API include the following:
 
 - Retrieving data
 
-  You can [collect monitor data](#retrieving-data).
+  You can [collect monitor data](#retrieve-data).
 
 - Managing data recording
 
-  You can [record human activity data and retrieve the saved data](#managing-data-recording).
+  You can [record human activity data and retrieve the saved data](#manage-data-record).
 
 - Using user-defined intervals
 
-  You can [change intervals for collecting data](#using-user-defined-intervals).
+  You can [change intervals for collecting data](#use-user-defined-intervals).
 
 - Receiving notifications
 
-  You can [detect changes in the monitor data](#receiving-notifications-on-pedometer-data-changes).
+  You can [detect changes in the monitor data](#receive-notifications-on-pedometer-data-changes).
 
 - Recognizing sleep activity
 
-  You can determine whether the [user is sleeping](#detecting-sleep) and monitor [user's sleep](#monitoring-sleep).
+  You can determine whether the [user is sleeping](#detect-sleep) and monitor [user's sleep](#monitor-sleep).
 
 ## Prerequisites
 

@@ -188,7 +188,8 @@ To configure the camera, follow the below steps:
     The [Tizen.Multimedia.CameraPixelFormat](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.CameraPixelFormat.html) enumeration defines the available capture formats.
 
 5.  Register event handlers for managing various events of the `Tizen.Multimedia.Camera` class, related to the camera preview, autofocus, and capturing:
-    -   <a name="callbacks_preview"></a>To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview:
+<a name="callbacks_preview"></a>
+    -   To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview:
 
         ```csharp
         public static void PreviewEventHandler(object sender, PreviewEventArgs e)
@@ -202,8 +203,8 @@ To configure the camera, follow the below steps:
         camera.Settings.PreviewPixelFormat = CameraPixelFormat.Rgba;
         camera.Preview += PreviewEventHandler;
         ```
-
-    -   <a name="callbacks_focus"></a>To receive notifications about autofocus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the autofocus state changes:
+<a name="callbacks_focus"></a>
+    -   To receive notifications about autofocus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the autofocus state changes:
 
         ```csharp
         public static void FocusStateChangedEventHandler(object sender, CameraFocusStateChangedEventArgs e)

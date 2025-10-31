@@ -4,7 +4,7 @@ You can access the information related to the power consumption by applications 
 
 The power consumption of an application is calculated by accumulating the usage of various individual resources used by the application.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The Battery Monitor APIs provide the following provisions to fetch the battery usage:
 

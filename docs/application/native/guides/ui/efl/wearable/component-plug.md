@@ -1,6 +1,6 @@
 # Plug
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The plug component shows an `Evas_Object` created by another process. It can be used anywhere in the same way as any other Elementary UI component.
 

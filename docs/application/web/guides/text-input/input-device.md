@@ -8,15 +8,15 @@ The main features of the Input Device API include the following:
 
 - Gathering a list of supported keys   
 
-  You can [get a list of all supported keys](#getting-a-list-of-all-supported-keys) and perform actions for the list.
+  You can [get a list of all supported keys](#get-a-list-of-all-supported-keys) and perform actions for the list.
 
 - Getting key information by its name   
 
-  You can [gather the key code based on the key name](#gathering-key-information).
+  You can [gather the key code based on the key name](#gather-key-information).
 
 - Registering and deregistering key events   
 
-  You can [register keys](#registering-and-deregistering-keys) to handle DOM events for them.
+  You can [register keys](#register-and-deregister-keys) to handle DOM events for them.
 
 The key names are listed in the [DOM Level 3 KeyboardEvent key Values](https://www.w3.org/TR/uievents-key/){:target="_blank"} specification. The `name` attribute in the Input Device API is equal to the key value specified in the specification (the [Media Controller Keys](https://www.w3.org/TR/uievents-key/#keys-media-controller){:target="_blank"} section is the most relevant to the Input Device API). If the specification does not contain an appropriate entry for the key, the Input Device API provides a device-specific `name`.
 
@@ -81,7 +81,7 @@ When you want to react to input device key presses, register the applicable key 
 
 To manage input device keys, you must learn to change the action of a supported key, follow these steps to manage input device keys:
 
-1. To gather the keys, [get a list of all supported keys](#getting-a-list-of-all-supported-keys).
+1. To gather the keys, [get a list of all supported keys](#get-a-list-of-all-supported-keys).
 
 2. To register all supported keys for handling `keydown` and `keyup` events:
 

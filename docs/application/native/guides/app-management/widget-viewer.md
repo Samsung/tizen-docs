@@ -1,5 +1,8 @@
 # EFL Widget Viewer
 
+> [!NOTE]
+> All widget viewer APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
+
 
 The Widget Viewer API provides functionality that displays and manages widget applications.
 

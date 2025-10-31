@@ -2,7 +2,7 @@
 
 The popup UI component is a small window for notifying the user or requesting user input. For more information, see the [Popup](../../../../api/common/latest/group__Elm__Popup__Group.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 

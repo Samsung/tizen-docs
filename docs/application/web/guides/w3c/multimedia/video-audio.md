@@ -8,31 +8,31 @@ The main features of the audio and video elements with JavaScript include the fo
 
 - Creating a player
 
-  You can [create a simple audio and video player](#creating-an-audio-and-video-player).
+  You can [create a simple audio and video player](#create-an-audio-and-video-player).
 
 - Controlling the playback
 
-  You can use the `Play()` and `Pause()` methods of the `Media` object (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-elements) applications){:target="_blank"} to [control playing and pausing](#playing-media-files) media files. With media events, additional features can be used.
+  You can use the `Play()` and `Pause()` methods of the `Media` object (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#media-elements) applications){:target="_blank"} to [control playing and pausing](#play-media-files) media files. With media events, additional features can be used.
 
 - Retrieving duration and play time
 
-  You can [retrieve the duration and play time](#retrieving-media-information) of the media file, if its metadata (such as playing time, duration, and video's width and height) is loaded.
+  You can [retrieve the duration and play time](#retrieve-media-information) of the media file, if its metadata (such as playing time, duration, and video's width and height) is loaded.
 
 - Playing from a random position
 
-  You can indicate the playback time by [playing the media file from a random position](#moving-the-timeline-position). To do this, you must change the `currentTime` value of the `Media` object to trigger the `timeupdate` event (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#event-media-timeupdate){:target="_blank"} applications).
+  You can indicate the playback time by [playing the media file from a random position](#move-the-timeline-position). To do this, you must change the `currentTime` value of the `Media` object to trigger the `timeupdate` event (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#event-media-timeupdate){:target="_blank"} applications).
 
 - Retrieving progress state
 
-  You can [retrieve and display the download progress state](#displaying-the-progress-state) using the `Progress` media event, which is triggered when information related to the progress of a media object loading media contents is updated.
+  You can [retrieve and display the download progress state](#display-the-progress-state) using the `Progress` media event, which is triggered when information related to the progress of a media object loading media contents is updated.
 
 - Resizing the video screen
 
-  You can [resize the video screen](#resizing-the-video-screen) to offer different viewing options for the user.
+  You can [resize the video screen](#resize-the-video-screen) to offer different viewing options for the user.
 
 - Checking supported media formats
 
-  You can [check whether the media data can be played](#checking-supported-media-formats) using the `canPlayType()` method. Basically, the MIME type must be set in the Web server in a format that is supported in Tizen. If a non-supported MIME type is used, you can [handle exceptions](#handling-errors) in advance.
+  You can [check whether the media data can be played](#check-supported-media-formats) using the `canPlayType()` method. Basically, the MIME type must be set in the Web server in a format that is supported in Tizen. If a non-supported MIME type is used, you can [handle exceptions](#handle-errors) in advance.
 
 ## Create an audio and video player
 

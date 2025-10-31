@@ -8,27 +8,27 @@ The main features of the NFC API include the following:
 
 - NFC device management   
 
-  You can [manage NFC connectivity](#managing-nfc-connectivity) by enabling or disabling the NFC service.
+  You can [manage NFC connectivity](#manage-nfc-connectivity) by enabling or disabling the NFC service.
 
 - NFC tag and peer detection   
 
-  You can [receive notifications when an NFC tag or peer device has been detected](#detecting-nfc-tags-and-peer-devices).
+  You can [receive notifications when an NFC tag or peer device has been detected](#detect-nfc-tags-and-peer-devices).
 
 - NDEF message manipulation   
 
-  You can [handle NDEF messages](#handling-ndef-messages) by first creating NDEF records, and then adding the records to an NDEF message.
+  You can [handle NDEF messages](#handle-ndef-messages) by first creating NDEF records, and then adding the records to an NDEF message.
 
 - NDEF data exchange   
 
-  You can exchange NDEF data between [tags](#exchanging-ndef-data-with-tags) and [peers](#exchanging-ndef-data-with-peers).
+  You can exchange NDEF data between [tags](#exchange-ndef-data-with-tags) and [peers](#exchange-ndef-data-with-peers).
 
 - NFC card emulation   
 
-  You can [enable NFC card emulation and monitor the secure element transaction](#using-nfc-card-emulation) carried out by the device.
+  You can [enable NFC card emulation and monitor the secure element transaction](#use-nfc-card-emulation) carried out by the device.
 
 - NFC host-based card emulation (HCE)   
 
-  You can [handle HCE events and transactions](#using-nfc-host-based-card-emulation).
+  You can [handle HCE events and transactions](#use-nfc-host-based-card-emulation).
 
 NFC provides the following advantages over short-range communication technologies, such as Bluetooth:
 

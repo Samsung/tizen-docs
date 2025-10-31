@@ -1,6 +1,6 @@
 # Circle Scroller
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The circle scroller component changes corresponding to the rotary events. It shows the whole scrollable area with a circular scroll bar.
 

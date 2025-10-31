@@ -8,11 +8,11 @@ The main features of the Player Util API include the following:
 
 - Getting the latency mode
 
-  You can [get the current latency mode of the player](#getting-the-current-latency-mode) with the `getLatencyMode()` method.
+  You can [get the current latency mode of the player](#get-the-current-latency-mode) with the `getLatencyMode()` method.
 
 - Setting the latency mode
 
-  You can [set the latency mode of the player](#setting-the-latency-mode) with the `setLatencyMode()` method.
+  You can [set the latency mode of the player](#set-the-latency-mode) with the `setLatencyMode()` method.
 
 ## Get the current latency mode
 

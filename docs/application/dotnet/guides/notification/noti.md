@@ -298,7 +298,7 @@ To add styles to your notification, follow the steps below:
         noti.AddStyle(style);
         ```
 
-<a name="post"></a>		
+<a name="post"></a>
 ## Post a notification
 
 To post a notification to the database, use the `Post()` method of the [Tizen.Applications.Notifications.NotificationManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Notifications.NotificationManager.html) class:

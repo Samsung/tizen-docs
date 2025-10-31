@@ -8,11 +8,11 @@ The main features of the Web Setting API include the following:
 
 - Setting user agents
 
-  You can [set a custom user agent string](#setting-a-user-agent-for-a-running-application) for the running Web application.
+  You can [set a custom user agent string](#set-a-user-agent-for-a-running-application) for the running Web application.
 
 - Deleting cookies
 
-  You can [delete all cookies](#deleting-web-view-cookies) set for the running Web application.
+  You can [delete all cookies](#delete-web-view-cookies) set for the running Web application.
 
 ## Set a user agent for a running application
 
@@ -28,7 +28,7 @@ var userAgent = 'CUSTOM_USER_AGENT_STRING';
 tizen.websetting.setUserAgentString(userAgent, successCallback);
 ```
 
-## Delet Web view cookies
+## Delete Web view cookies
 
 Use the `removeAllCookies()` method to delete all the Web view cookies:
 

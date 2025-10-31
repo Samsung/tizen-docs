@@ -2,7 +2,7 @@
 
 The map UI component displays a geographic map. The default map data is provided by the [OpenStreetMap project](http://www.openstreetmap.org/). For more information, see the [Map](../../../../api/common/latest/group__Elm__Map__Group.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 

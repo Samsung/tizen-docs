@@ -1,6 +1,6 @@
 # GLView
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The GLView component renders OpenGL&reg; in an Elementary object, which hides Evas GL complexity.
 

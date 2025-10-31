@@ -1,6 +1,6 @@
 # Image
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The image component can load and display an image from a disk file or a memory region.
 

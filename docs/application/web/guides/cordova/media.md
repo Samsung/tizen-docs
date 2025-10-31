@@ -8,27 +8,27 @@ The main features of the Media API include the following:
 
 - Playing audio files
 
-  You can [start audio file playback](#playing-audio-files).
+  You can [start audio file playback](#play-audio-files).
 
 - Seeking position
 
-  You can [change the playing position](#seeking-position).
+  You can [change the playing position](#seek-position).
 
 - Changing the volume
 
-  You can [change the volume during playback](#changing-the-volume).
+  You can [change the volume during playback](#change-the-volume).
 
 - Using playback callbacks
 
-  You can [use callbacks](#using-playback-callbacks) to handle playback success and errors, and various status events.
+  You can [use callbacks](#use-playback-callbacks) to handle playback success and errors, and various status events.
 
 - Getting the duration and position
 
-  You can [get the duration of the audio file, and retrieve the current position](#getting-the-duration-and-position).
+  You can [get the duration of the audio file, and retrieve the current position](#get-the-duration-and-position).
 
 - Recording audio
 
-  You can [start and stop recording](#recording-audio).
+  You can [start and stop recording](#record-audio).
 
 ## Prerequisites
 

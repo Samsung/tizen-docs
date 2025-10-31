@@ -1,5 +1,8 @@
 # Sound Pools
 
+> [!NOTE]
+> Sound Pools APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
+
 You can use sound pools, which are basically collections of sounds. You can load multiple sound sources to a sound pool and manage their playback as a group.
 
 The main features of the Sound Pool API include:
