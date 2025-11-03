@@ -48,6 +48,7 @@
 ##### [Tool : Device Manager](/application/vstools/tools/device-manager.md)
 ##### [Tool : SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 ##### [Tool : TV Web Simulator](/application/tizen-studio/common-tools/smart-development-bridge.md)
+##### [Web Unit Test](/application/vstools/getting-started/web-app-unit-test.md)
 
 #### CLI
 ##### [Tizen CLI](/application/tizen-studio/common-tools/command-line-interface.md)
