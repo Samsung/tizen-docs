@@ -64,6 +64,8 @@ To retrieve all package information for installed packages, follow these steps:
         Log.Debug(LogTag, "system: " + package.IsSystemPackage);
         Log.Debug(LogTag, "removable: " + package.IsRemovable);
         Log.Debug(LogTag, "preload: " + package.IsPreloaded);
+        Log.Debug(LogTag, "first installed time: " + package.FirstInstalledTime);
+        Log.Debug(LogTag, "installed time: " + package.InstalledTime);
     }
     ```
 
@@ -91,6 +93,8 @@ To get specific package information, follow these steps:
     Log.Debug(LogTag, "system: " + package.IsSystemPackage);
     Log.Debug(LogTag, "removable: " + package.IsRemovable);
     Log.Debug(LogTag, "preload: " + package.IsPreloaded);
+    Log.Debug(LogTag, "first installed time: " + package.FirstInstalledTime);
+    Log.Debug(LogTag, "installed time: " + package.InstalledTime);
     ```
 
 <a name="listen"></a>

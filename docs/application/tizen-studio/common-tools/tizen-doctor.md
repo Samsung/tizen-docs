@@ -60,7 +60,7 @@ tizendoctor [command] [options]
 ### 📝Command Output Examples
 * #### tizendoctor --help
   This command displays all available options and commands.
-  ![Tizendoctor help command](./docs/images/tizendoctor-help_new.png)
+  ![Tizendoctor help command](./media/tizendoctor-help_new.png)
 
 * #### tizendoctor verify --help
   To get detailed help for a specific command, use the `--help` option after the command name. For example, here it shows the explanation of what the `verify` command does.

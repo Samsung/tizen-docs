@@ -2,7 +2,7 @@
 
 The datetime UI component displays date and time values. For more information, see the [Datetime](../../../../api/common/latest/group__Elm__Datetime.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 

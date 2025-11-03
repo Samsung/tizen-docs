@@ -1,6 +1,6 @@
 # More Option
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The more option component is a wearable circular UI component. The more option handle can use the `elm_layout` functions, because the more option handle is an `elm_layout` object.
 

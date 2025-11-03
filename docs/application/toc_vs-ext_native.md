@@ -50,7 +50,7 @@
 ###### [Emulator Control Panel](/application/vstools/tools/emulator-control-panel.md)
 ##### [Tool : Device Manager](/application/vstools/tools/device-manager.md)
 ##### [Tool : SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
-##### [Native Unit Test](/application/vstools/getting-started/test-profile-app-unit-test-code-coverage.md)
+##### [Native Unit Test](/application/vstools/getting-started/native-app-unit-test.md)
 
 #### CLI
 ##### [Tizen CLI](/application/tizen-studio/common-tools/command-line-interface.md)

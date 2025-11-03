@@ -176,6 +176,10 @@
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
 #### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
 
+### Performance
+#### [Overview](/application/dotnet/guides/performance/overview.md)
+#### [Tracer](/application/dotnet/guides/performance/tracer.md)
+
 ### Pims
 #### [Overview](/application/dotnet/guides/pims/overview.md)
 #### [Calendar](/application/dotnet/guides/pims/calendar.md)
@@ -847,6 +851,7 @@
 ## API Reference
 ### [Overview](/application/native/api/overview.md)
 
+### [10.0](/application/native/api/common/10.0/index.html){:target="_blank"}
 ### [9.0](/application/native/api/common/9.0/index.html){:target="_blank"}
 ### [8.0](/application/native/api/common/8.0/index.html){:target="_blank"}
 

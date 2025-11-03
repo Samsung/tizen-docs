@@ -1,20 +1,19 @@
 # Download
 
 
-You can create and manage 1 or more download requests at a time. Each download process goes through a [set of states](#state), and you can manage the process though the states with specific functions.
+You can create and manage 1 or more download requests at a time. Each download process goes through a [set of states](#download-states), and you can manage the process though the states with specific functions.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The following figure illustrates the user scenario for the download:
 
-1. When the user wants to download a file, you can [create a new download process](#downloadprocess), configure the download URL or destination, and launch the process.
+1. When the user wants to download a file, you can [create a new download process](#downloading-content-from-a-url), configure the download URL or destination, and launch the process.
 2. During the download, you can pause, resume, or stop the process programmatically, or as a response to user requests. In addition, you can monitor the progress of the download process.
 
 **Figure: User scenario**
 
 ![User scenario](./media/user_scenario.png)
 
-<a name="state"></a>
 ## Download States
 
 The following figure illustrates the various download states (such as READY and DOWNLOADING), and the functions (such as `download_start()`) that cause transitions between the states. The download states are defined in the `download_state_e` [enumerator](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html#gae9d05ac4ab7a2ba2fe6b3c329d273810).
@@ -40,7 +39,6 @@ To use the functions and data types of the [Download API](../../api/common/lates
 
 The downloading library needs no initialization prior to the API usage.
 
-<a name="downloadprocess"></a>
 ## Downloading Content from a URL
 
 To download content:

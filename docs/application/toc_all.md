@@ -38,7 +38,6 @@
 #### [Synchronization Management](/application/dotnet/guides/account/data-sync.md)
 #### Authentication and Authorization
 ##### [Overview](/application/dotnet/guides/account/authentication.md)
-##### [FIDO Universal Authentication Framework](/application/dotnet/guides/account/fido.md)
 ##### [OAuth 2.0](/application/dotnet/guides/account/oauth.md)
 
 #### [Application Usage History Data](/application/dotnet/guides/account/app-history.md)
@@ -117,7 +116,6 @@
 ### Location
 #### [Overview](/application/dotnet/guides/location/overview.md)
 #### [Location Information](/application/dotnet/guides/location/location.md)
-#### [Geofences](/application/dotnet/guides/location/geofences.md)
 
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
@@ -128,7 +126,6 @@
 #### [Machine Learning Train](/application/dotnet/guides/machine-learning/machine-learning-train.md)
 
 ### Maps
-#### [Overview](/application/dotnet/guides/maps/maps.md)
 #### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
 
 ### Multimedia
@@ -160,8 +157,6 @@
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
-#### [Email](/application/dotnet/guides/messaging/email.md)
-#### [Messages](/application/dotnet/guides/messaging/messages.md)
 #### [Push](/application/dotnet/guides/messaging/push.md)
 #### [Push Server](/application/dotnet/guides/messaging/push-server.md)
 
@@ -169,6 +164,10 @@
 #### [Overview](/application/dotnet/guides/notification/overview.md)
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
 #### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
+
+### Performance
+#### [Overview](/application/dotnet/guides/performance/overview.md)
+#### [Tracer](/application/dotnet/guides/performance/tracer.md)
 
 ### Pims
 #### [Overview](/application/dotnet/guides/pims/overview.md)
@@ -763,18 +762,14 @@
 
 ### Messaging
 #### [Overview](/application/native/guides/messaging/overview.md)
-#### [Email](/application/native/guides/messaging/email.md)
-#### [Messages](/application/native/guides/messaging/messages.md)
 #### [Push](/application/native/guides/messaging/push.md)
 #### [Push Server](/application/native/guides/messaging/push-server.md)
 
 ### Location and Sensors
 #### [Overview](/application/native/guides/location-sensors/overview.md)
-#### [Geofences](/application/native/guides/location-sensors/geofences.md)
 #### [Location Information](/application/native/guides/location-sensors/location.md)
 
 #### Maps and Maps Service
-##### [Overview](/application/native/guides/location-sensors/maps.md)
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
 
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
@@ -801,7 +796,6 @@
 #### [Data Synchronization](/application/native/guides/personal/data-sync.md)
 
 #### Authentication and Authorization
-##### [FIDO Universal Authentication Framework](/application/native/guides/personal/fido.md)
 ##### [OAuth 2.0](/application/native/guides/personal/oauth.md)
 
 #### [Calendar](/application/native/guides/personal/calendar.md)
@@ -817,7 +811,6 @@
 ### Device Settings and Systems
 #### [Overview](/application/native/guides/device/overview.md)
 #### [Attached Devices](/application/native/guides/device/attached-devices.md)
-#### [External Output Devices](/application/native/guides/device/ext-output.md)
 #### [Diagnostics](/application/native/guides/device/diagnostics.md)
 #### [Runtime Information](/application/native/guides/device/runtime.md)
 #### [System Information](/application/native/guides/device/system.md)
@@ -849,6 +842,7 @@
 ## API Reference
 ### [Overview](/application/native/api/overview.md)
 
+### [10.0](/application/native/api/common/10.0/index.html){:target="_blank"}
 ### [9.0](/application/native/api/common/9.0/index.html){:target="_blank"}
 ### [8.0](/application/native/api/common/8.0/index.html){:target="_blank"}
 

@@ -198,6 +198,7 @@ The following table lists the available system setting keys.
 | `SYSTEM_SETTINGS_KEY_MOTION_ENABLED`     | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the device user has enabled the motion feature. |
 | `SYSTEM_SETTINGS_KEY_NETWORK_FLIGHT_MODE` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the device is in the flight mode. |
 | `SYSTEM_SETTINGS_KEY_NETWORK_WIFI_NOTIFICATION` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether Wi-Fi-related notifications are enabled on the device. |
+| `SYSTEM_SETTINGS_KEY_OOBE` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether OOBE(Out Of Box Experience) is enabled on the device. |
 | `SYSTEM_SETTINGS_KEY_ROTARY_EVENT_ENABLED` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether rotary event is enabled on the device. |
 | `SYSTEM_SETTINGS_KEY_SCREEN_BACKLIGHT_TIME` | `int`    | `GETTER, NOTIFIER`      | Backlight time (in seconds). The following values can be used: 15, 30, 60, 120, 300, and 600. |
 | `SYSTEM_SETTINGS_KEY_SOUND_LOCK`         | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the screen lock sound is enabled on the device (for example, whether the LCD on/off sound is enabled). |
