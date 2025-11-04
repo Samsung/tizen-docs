@@ -1,6 +1,7 @@
 # What is Tizen?
 ## [Overview](/platform/what-is-tizen/overview.md)
 ## Devices
+### [Products](/platform/what-is-tizen/devices/products.md)
 ### [Custom](/platform/what-is-tizen/profiles/tizen_custom.md)
 ## Versions
 ### [Tizen 9.0](/platform/what-is-tizen/versions/tizen-9-0-m2.md)
