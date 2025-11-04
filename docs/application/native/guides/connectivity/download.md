@@ -1,23 +1,22 @@
 # Download
 
 
-You can create and manage 1 or more download requests at a time. Each download process goes through a [set of states](#state), and you can manage the process though the states with specific functions.
+You can create and manage 1 or more download requests at a time. Each download process goes through a [set of states](#download-states), and you can manage the process though the states with specific functions.
 
 This feature is optional.
 
 The following figure illustrates the user scenario for the download:
 
-1. When the user wants to download a file, you can [create a new download process](#download), configure the download URL or destination, and launch the process.
+1. When the user wants to download a file, you can [create a new download process](#downloading-content-from-a-url), configure the download URL or destination, and launch the process.
 2. During the download, you can pause, resume, or stop the process programmatically, or as a response to user requests. In addition, you can monitor the progress of the download process.
 
 **Figure: User scenario**
 
 ![User scenario](./media/user_scenario.png)
 
-<a name="state"></a>
 ## Download States
 
-The following figure illustrates the various download states (such as READY and DOWNLOADING), and the functions (such as `download_start()`) that cause transitions between the states. The download states are defined in the download_state_e [enumerator](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html#gae9d05ac4ab7a2ba2fe6b3c329d273810).
+The following figure illustrates the various download states (such as READY and DOWNLOADING), and the functions (such as `download_start()`) that cause transitions between the states. The download states are defined in the `download_state_e` [enumerator](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html#gae9d05ac4ab7a2ba2fe6b3c329d273810).
 
 Each function can only be called when the download process is in a specific state. To avoid undefined behavior in the application, make sure that you handle every possible scenario in the code.
 
@@ -40,7 +39,6 @@ To use the functions and data types of the [Download API](../../api/common/lates
 
 The downloading library needs no initialization prior to the API usage.
 
-<a name="download"></a>
 ## Downloading Content from a URL
 
 To download content:
@@ -77,7 +75,7 @@ To download content:
    Before the download can be started, set the URL source path for the download:
 
    ```
-   error = download_set_url(download_id, "http://tizen.org";
+   error = download_set_url(download_id, "http://tizen.org");
    ```
 
    You can also set the destination path and file name. If the values are not given, the default storage and an auto-generated file name are used.
@@ -104,7 +102,7 @@ To download content:
 
    - Network type
 
-     To set the desired network type, use the `download_set_network_type()` function. The download_network_type_e [enumerator](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html#gadf73239ac2efa6d4214a03751c76c9b8) defines the network types available for downloading. If no type is set, the `DOWNLOAD_NETWORK_ALL` default value is used.
+     To set the desired network type, use the `download_set_network_type()` function. The `download_network_type_e` [enumerator](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html#gadf73239ac2efa6d4214a03751c76c9b8) defines the network types available for downloading. If no type is set, the `DOWNLOAD_NETWORK_ALL` default value is used.
 
      ```
      download_network_type_e value = 0;
@@ -115,7 +113,7 @@ To download content:
 
    - Notifications
 
-     To set notifications with a service action, use the `download_set_notification_type()` function. The download_notification_type_e [enumerator](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html#gab2ec29afc07197987eb2b88614fac67f) defines the available download notification types. If no type is set, the `DOWNLOAD_NOTIFICATION_TYPE_NONE` default value is used.
+     To set notifications with a service action, use the `download_set_notification_type()` function. The `download_notification_type_e` [enumerator](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html#gab2ec29afc07197987eb2b88614fac67f) defines the available download notification types. If no type is set, the `DOWNLOAD_NOTIFICATION_TYPE_NONE` default value is used.
 
      To change the title or description of the notification item, use the `download_set_notification_title()` or `download_set_notification_description()` function. To change the action when the notification item is clicked, use the `download_set_notification_service_handle()` function. If the service action is not set, the default operation is the following:
 
@@ -144,7 +142,7 @@ To download content:
 
 5. Control the download process.
 
-   Downloading can be started, paused, or canceled using the `download_start()`, `download_pause()`, and `download_cancel()` functions. The download ID handle is used as a parameter for all these functions.
+   Downloading can be started, paused, or canceled using the `download_start()`, `download_pause()`, and `download_cancel()` functions respectively. The download ID handle is used as a parameter for all these functions.
 
    ```
    error = download_start(download_id);
@@ -202,7 +200,7 @@ To download content:
    error = download_get_error(download_id, &error_val);
    ```
 
-   The download_error_e [enumerator](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html#ga2d9ccc088c02cf1ab70879f1beda1cd1) defines the available error types.
+   The `download_error_e` [enumerator](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html#ga2d9ccc088c02cf1ab70879f1beda1cd1) defines the available error types.
 
 8. Clean up.
 
