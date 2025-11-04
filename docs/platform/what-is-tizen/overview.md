@@ -19,7 +19,6 @@ Tizen is a Linux-based, open source software platform. Anyone can contribute and
 
 Tizen is built to work on the following diverse devices:
 
-- [TV device](profiles/tv.md)
 - [Tizen custom device](profiles/tizen_custom.md)
 
 Tizen devices provide product-optimized functionality and performance.

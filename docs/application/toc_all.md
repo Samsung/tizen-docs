@@ -5,8 +5,6 @@
 ## Tizen Profiles
 ### [Overview](/application/profiles/index.md)
 ### [IoT](/application/profiles/iot.md)
-### [TV](/application/profiles/tv.md)
-
 
 # .NET Application
 
