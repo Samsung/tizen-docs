@@ -629,7 +629,6 @@
 #### UI Applications
 ##### [Overview](/application/native/guides/applications/ui-app.md)
 ##### EFL Applications
-###### [Overview](/application/native/guides/applications/efl-app.md)
 ###### [Basic UI Application](/application/native/guides/applications/efl-ui-app.md)
 ###### [Widget Application](/application/native/guides/applications/widget-app.md)
 
