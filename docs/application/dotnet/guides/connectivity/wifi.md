@@ -92,7 +92,6 @@ To manage device and connection state events, follow these steps:
 
     ```csharp
     WiFiManager.DeviceStateChanged += EventHandlerDeviceStateChanged;
-
     WiFiManager.ConnectionStateChanged += EventHandlerConnectionStateChanged;
     ```
 
@@ -100,7 +99,6 @@ To manage device and connection state events, follow these steps:
 
     ```csharp
     WiFiManager.DeviceStateChanged -= EventHandlerDeviceStateChanged;
-
     WiFiManager.ConnectionStateChanged -= EventHandlerConnectionStateChanged;
     ```
 
@@ -190,6 +188,13 @@ To make a connection using a specific access point, follow the steps below:
          Console.WriteLine("Exception occurred" + e.ToString());
     }
     ```
+    - For hidden APs, use `ScanSpecificAPAsync()` instead of `ScanAsync()` and `GetFoundSpecificAPs()` instead of `GetFoundAPs()`.
+
+        ```csharp
+        await WiFiManager.ScanSpecificAPAsync(ap);
+        var apList = WiFiManager.GetFoundSpecificAPs();
+        ```
+
 
 2. Establish a connection with the selected access point:
 
