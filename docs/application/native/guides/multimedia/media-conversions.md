@@ -83,13 +83,13 @@ To prepare the media codecs:
       ret = mediacodec_set_input_buffer_used_cb(mediacodec, _input_buffer_used_cb, NULL);
       ```
 
-      If a `media_packet` is used, it must be destroyed when the callback is invoked:
+      If a `media_packet` is used, it must be released when the callback is invoked:
 
       ```
       static void
       _input_buffer_used_cb(media_packet_h pkt, void *user_data)
       {
-          media_packet_destroy(pkt);
+          media_packet_unref(pkt);
 
           return;
       }
@@ -114,7 +114,7 @@ To prepare the media codecs:
 
           if (pkt != NULL) {
               mediacodec_get_output(mediacodec, &out_pkt, 0);
-              media_packet_destroy(out_pkt);
+              media_packet_unref(out_pkt);
           }
 
           return;
@@ -142,7 +142,7 @@ After the `media_packet` is allocated with corresponding codec MIME types, fill 
    ret = media_format_set_video_mime(fmt, MEDIA_FORMAT_H264_SP);
    ret = media_format_set_video_width(fmt, 1280);
    ret = media_format_set_video_height(fmt, 544);
-   ret = media_packet_create_alloc(fmt, NULL, NULL, &pkt);
+   ret = media_packet_new_alloc(fmt, NULL, NULL, &pkt);
 
    ret = media_packet_get_buffer_data_ptr(pkt, &data);
    memcpy(data, nal, 48);
