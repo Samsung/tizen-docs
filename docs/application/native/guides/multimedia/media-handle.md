@@ -15,7 +15,7 @@ The main features of the Media Tool API include:
 
 The `media_format_h` handle is created by the caller, who can set and get the video or audio information. The `media_format_h` handle creates the `media_packet_h` handle and allocates the buffer. The caller can set and get the metadata with the `media_packet_h` handle.
 
-The `media_format_h` handle has a specific design for increasing and decreasing its [reference count](#reference).
+The `media_format_h` and `media_packet_h` handles have a specific design for increasing and decreasing its [reference count](#reference).
 
 ## Prerequisites
 
@@ -80,15 +80,13 @@ To manage the media format handle:
 
 To manage the media packet handle:
 
-1. Define a `media_packet_h` variable for the media packet handle, and pass the variable to the appropriate `media_packet_create_XXX()` function (as the last parameter) with an existing media format handle (as the first parameter).
+1. Define a `media_packet_h` variable for the media packet handle, and pass the variable to the appropriate `media_packet_new_XXX()` function (as the last parameter) with an existing media format handle (as the first parameter).
 
-   After creating the media packet handle, call the `media_format_unref()` function for the media format handle. Because all functions that create a media packet handle increase the reference count of the media format handle, you must decrease the count.
-
-   To reuse the media packet handle even after the `media_packet_destroy()` function is called, define a callback (the third last parameter of the `media_packet_create_XXX()` function), which is called when the handle is destroyed. Set the callback to return `MEDIA_PACKET_REUSE`.
+   After creating the media packet handle, call the `media_format_unref()` function for the media format handle. Because all functions that create a media packet handle increase the reference count of the media format handle, you must decrease the reference count.
 
    The following example codes show the different ways you create the media packet handle:
 
-   - To create the handle and allocate a buffer into the heap or TBM surface, use the `media_packet_create_alloc()` function:
+   - To create the handle and allocate a buffer into the heap or TBM surface, use the `media_packet_new_alloc()` function:
 
      ```
      {
@@ -108,20 +106,20 @@ To manage the media packet handle:
             If the data type is MEDIA_FORMAT_RAW,
             the buffer is allocated into the TBM surface
          */
-         media_packet_create_alloc(fmt, _finalize_callback, fcb_data, &packet);
+         media_packet_new_alloc(fmt, _dispose_callback, dcb_data, &packet);
          media_format_unref(fmt);
 
-         media_packet_destroy(packet);
+         media_packet_unref(packet);
      }
 
-     int
-     _finalize_callback(media_packet_h packet, int err, void* userdata)
+     void
+     _dispose_callback(media_packet_h packet, void *user_data)
      {
-         return MEDIA_PACKET_REUSE;
+         /* Do something */
      }
      ```
 
-   - To create only the handle, use the `media_packet_create()` function:
+   - To create only the handle, use the `media_packet_new()` function:
 
      ```
      {
@@ -136,18 +134,18 @@ To manage the media packet handle:
          media_format_set_video_max_bps(format, 15000000);
 
          /* Only create the handle, do not allocate a buffer */
-         media_packet_create(fmt, _finalize_callback, fcb_data, &packet);
+         media_packet_new(fmt, _dispose_callback, dcb_data, &packet);
          media_format_unref(fmt);
      }
 
-     int
-     _finalize_callback(media_packet_h packet, int err, void* userdata)
+     void
+     _dispose_callback(media_packet_h packet, void *userdata)
      {
-         return MEDIA_PACKET_FINALIZE;
+         /* Do something */
      }
      ```
 
-   - To create the handle and store the TBM surface data, use the `media_packet_create_from_tbm_surface()` function:
+   - To create the handle and store the TBM surface data, use the `media_packet_new_from_tbm_surface()` function:
 
      ```
      {
@@ -161,18 +159,18 @@ To manage the media packet handle:
          media_format_set_video_avg_bps(format, 10000000);
          media_format_set_video_avg_bps(format, 15000000);
 
-         media_packet_create_from_tbm_surface(fmt, surface, _finalize_callback, fcb_data, &packet);
+         media_packet_new_from_tbm_surface(fmt, surface, _dispose_callback, dcb_data, &packet);
          media_format_unref(fmt);
      }
 
-     int
-     _finalize_callback(media_packet_h packet, int err, void* userdata)
+     void
+     _dispose_callback(media_packet_h packet, void *userdata)
      {
-         return MEDIA_PACKET_FINALIZE;
+         /* Do something */
      }
      ```
 
-   - To create the handle with an already allocated external buffer, use the `media_packet_create_from_external_memory()` function:
+   - To create the handle with an already allocated external buffer, use the `media_packet_new_from_external_memory()` function:
 
      ```
      {
@@ -186,16 +184,14 @@ To manage the media packet handle:
          media_format_set_video_avg_bps(format, 10000000);
          media_format_set_video_avg_bps(format, 15000000);
 
-         media_packet_create_from_external_memory(fmt, mem_ptr, size, _finalize_callback, fcb_data, &packet);
+         media_packet_new_from_external_memory(fmt, mem_ptr, size, _dispose_callback, fcb_data, &packet);
          media_format_unref(fmt);
      }
 
-     int
-     _finalize_callback(media_packet_h packet, int err, void* userdata)
+     void
+     _dispose_callback(media_packet_h packet, void *userdata)
      {
          /* Do something */
-
-         return MEDIA_PACKET_FINALIZE;
      }
      ```
 
@@ -206,7 +202,7 @@ To manage the media packet handle:
 
    /* format1 already exists */
 
-   media_packet_create_alloc(format1, NULL, NULL, &packet);
+   media_packet_new_alloc(format1, NULL, NULL, &packet);
 
    ret = media_packet_set_duration(packet, duration);
 
@@ -224,30 +220,29 @@ To manage the media packet handle:
       If format2 ref_count is 1, format2 is free
       If format2 ref_count is bigger than 1, it is not free
    */
-   media_packet_destroy(packet);
+   media_packet_unref(packet);
    ```
 <a name="reference"></a>
 ## Reference Count Design
 
-The following table describes the reference count design of the `media_format_h` handle.
+The following table describes the reference count design of the `media_format_h` and `media_packet_h` handle.
 
 **Table: Media format handle reference count design**
 
 | Function                                 | Reference count number                   | Description                              |
 |------------------------------------------|------------------------------------------|------------------------------------------|
 | `media_format_h fmt1, fmt2, tmp;`<br> `media_packet_h pkt1, pkt2;`<br> `media_format_create(&fmt1);` | `fmt1`: 1                                | Define the `media_format_h` and `media_packet_h` handles.<br> Create the `fmt1` handle and set the `media_format_video_mime()` or `media_format_audio_mime()` function. |
-| `media_packet_create(&pkt1, fmt1);`      | `fmt1`: 2                                | After the `media_packet_create()` function, you must use the `media_format_unref()` function, because the `media_packet_create()` function increases the `media_format_h` reference count. |
-| `media_format_unref(fmt1);`              | `fmt1`: 1                                | If the `ref_count` is 1, the `fmt1` is currently owned by the `pkt1` only. |
-| `media_packet_copy(pkt1, &pkt2);`        | `fmt1`: 2                                | Copy the `pkt1` metadata to `pkt2`, except the allocated buffer and buffer size. `pkt2` refers to `fmt1`, and `fmt1` `ref_count` is increased. |
-| `media_packet_get_format(pkt1, &tmp);`   | `fmt1`: 3                                | `fmt1` `ref_count` is increased by the `media_packet_get_format()` function. |
-| `media_format_set_video_mime(tmp, ...);` | `fmt1`: 3                                | If you try to modify the `fmt1` data (call the `media_format_set_video_mime()` function) for `fmt1` (=`tmp`), the `ref_count` is bigger than 1, and `fmt1` cannot be modified.<br> To modify the `fmt1` data, call the `media_format_make_writable()` function. |
-| `media_format_make_writable(tmp, &fmt2);` | `fmt1`: 2<br> `fmt2`: 1                       | If called, the `tmp` (`fmt1`) `ref_count` is decreased. Creates the `fmt2` handle and copies the `fmt1` data to `fmt2`. |
-| `media_format_set_video_mime(fmt2, ...);` | `fmt1`: 2<br> `fmt2`: 1                       | `fmt2` `ref_count` is 1, which means that you can modify the `fmt2` data. |
-| `media_packet_set_format(pkt2, fmt2);`   | `fmt1`: 2<br> `fmt2`: 2                      | Set the modified `fmt2` to the `pkt2` handle. You must call the `media_format_unref(fmt2)` function. |
-| `media_format_unref(tmp);`               | `fmt1`: 1<br> `fmt2`: 2                      | You must call this function because of the `media_packet_get_format(pkt1, &tmp)` function call. |
-| `media_format_unref(fmt2);`              | `fmt1`: 1<br> `fmt2`: 1                       | You must call this function because of the `media_packet_set_format(pkt2, fmt2)` function call. |
-| `media_packet_destroy(pkt1);`            | `fmt1`: 1 > finalize<br> `fmt2`: 1            | If you destroy the `pkt1` handle, the `fmt1` `ref_count` is decreased. If the `ref_count` becomes 0, `fmt1` is freed. |
-| `media_packet_destroy(pkt2);`            | `fmt1`: 1 > finalize<br> `fmt2`: 0 > finalize | If you destroy the `pkt2` handle, the `fmt2` `ref_count` is decreased. If the `ref_count` becomes 0, `fmt2` is freed. |
+| `media_packet_new(&pkt1, fmt1);`      | `fmt1`: 2<br>`pkt1`: 1                   | After the `media_packet_new()` function, you must use the `media_format_unref()` function, because the `media_packet_new()` function increases the `media_format_h` reference count. |
+| `media_format_unref(fmt1);`              | `fmt1`: 1<br>`pkt1`: 1                   | If the `ref_count` is 1, the `fmt1` is currently owned by the `pkt1` only. |
+| `media_packet_copy(pkt1, &pkt2);`        | `fmt1`: 2<br>`pkt1`: 1<br>`pkt2`: 1      | Copy the `pkt1` metadata to `pkt2`, except the allocated buffer and buffer size. `pkt2` refers to `fmt1`, and `fmt1` `ref_count` is increased. |
+| `media_packet_get_format(pkt1, &tmp);`   | `fmt1,tmp`: 3<br>`pkt1`: 1<br>`pkt2`: 1      | `fmt1` `ref_count` is increased by the `media_packet_get_format()` function. |
+| `media_format_set_video_mime(tmp, ...);` | `fmt1,tmp`: 3<br>`pkt1`: 1<br>`pkt2`: 1      | If you try to modify the `fmt1` data (call the `media_format_set_video_mime()` function) for `fmt1`(`tmp`), the `ref_count` is bigger than 1, and `fmt1` cannot be modified.<br> To modify the `fmt1` data, call the `media_format_make_writable()` function. |
+| `media_format_make_writable(tmp, &fmt2);` | `fmt1,tmp`: 2<br>`pkt1`: 1<br>`pkt2`: 1<br>`fmt2`: 1 | If called, the `tmp` (`fmt1`) `ref_count` is decreased.<br>Creates the `fmt2` handle and copies the `fmt1` data to `fmt2`. |
+| `media_format_set_video_mime(fmt2, ...);` | `fmt1,tmp`: 2<br>`pkt1`: 1<br>`pkt2`: 1<br>`fmt2`: 1 | `fmt2` `ref_count` is 1, which means that you can modify the `fmt2` data. |
+| `media_packet_set_format(pkt2, fmt2);`   | `fmt1,tmp`: 1<br>`pkt1`: 1<br>`pkt2`: 1<br>`fmt2`: 2  | Set the modified `fmt2` to the `pkt2` handle.<br> The `fmt1` `ref_count` is decreased by setting new `media_format_h` `fmt_2`.|
+| `media_format_unref(fmt2);`              | `fmt1,tmp`: 1<br>`pkt1`: 1<br>`pkt2`: 1<br>`fmt2`: 1  |  |
+| `media_packet_unref(pkt1);`            | `fmt1,tmp`: 0<br>`pkt1`: 0<br>`pkt2`: 1<br>`fmt2`: 1  | If you unref the `pkt1` handle, the `ref_count` of `fmt1` and `pkt1(tmp)` are decreased and become 0.<br>Finally, they are freed. |
+| `media_packet_unref(pkt2);`            | `fmt1,tmp`: 0<br>`pkt1`: 0<br>`pkt2`: 0<br>`fmt2`: 0  | If you unref the `pkt2` handle, the `ref_count` of `fmt2` and `pkt2` are decreased and become 0.<br>Finally, they are freed. |
 
 ## Related Information
 - Dependencies

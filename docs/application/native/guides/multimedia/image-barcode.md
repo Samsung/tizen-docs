@@ -211,7 +211,7 @@ To detect barcodes:
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error code);
 
        if (pkt) {
-           error_code = media_packet_destroy(pkt);
+           error_code = media_packet_unref(pkt);
            pkt = NULL;
        }
    }

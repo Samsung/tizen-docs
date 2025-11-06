@@ -1,6 +1,7 @@
 # What is Tizen?
 ## [Overview](/platform/what-is-tizen/overview.md)
 ## Devices
+### [Products](/platform/what-is-tizen/devices/products.md)
 ### [Custom](/platform/what-is-tizen/profiles/tizen_custom.md)
 ## Versions
 ### [Tizen 9.0](/platform/what-is-tizen/versions/tizen-9-0-m2.md)
@@ -67,6 +68,8 @@
 ### [GBS Maintenance Models](/platform/reference/gbs/gbs-maintenance-models.md)
 ### [GBS Reference](/platform/reference/gbs/gbs-reference.md)
 ### [FAQ](/platform/reference/gbs/gbs-faq.md)
+
+## [Platform Development Tool](/platform/reference/tp-usage.md)
 
 ## MIC Image Creator
 ### [Overview](/platform/reference/mic/mic-overview.md)
