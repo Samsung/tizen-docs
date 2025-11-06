@@ -69,6 +69,8 @@
 ### [GBS Reference](/platform/reference/gbs/gbs-reference.md)
 ### [FAQ](/platform/reference/gbs/gbs-faq.md)
 
+## [Platform Development Tool](/platform/reference/tp-usage.md)
+
 ## MIC Image Creator
 ### [Overview](/platform/reference/mic/mic-overview.md)
 ### [Customizing Images](/platform/reference/mic/mic-customize-image.md)
