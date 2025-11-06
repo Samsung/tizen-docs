@@ -69,10 +69,6 @@ To enable your application to use the Wi-Fi functionality:
    wifi_manager_deinitialize(wifi);
    ```
 
-> **Note**
->
-> The Wi-Fi feature is not thread-safe and depends on the ecore main loop. Implement Wi-Fi within the ecore main loop, and do not use it in a thread.
-
 <a name="activate"></a>
 ## Activating a Wi-Fi Device
 
@@ -124,6 +120,12 @@ To scan nearby access points and print the scanning result, such as the AP name 
    wifi_manager_scan(wifi, __scan_request_cb, NULL);
    ```
 
+   - For hidden APs, use wifi_manager_scan_specific_ap() instead of ScanAsync().
+       ```
+       const char *essid = "AP_NAME";
+       wifi_manager_scan_specific_ap(wifi, essid, __scan_request_cb, NULL);
+       ```
+
 2. Define a callback, which is invoked when the scan is finished.
 
    In the following example, the callback calls the `wifi_manager_foreach_found_ap()` function for getting information on the found AP. The `wifi_manager_foreach_found_ap()` function gets the result of the scan, and the `__wifi_manager_found_ap_cb()` callback is called for each found access point.
@@ -137,6 +139,17 @@ To scan nearby access points and print the scanning result, such as the AP name 
            dlog_print(DLOG_INFO, LOG_TAG, "Failed to scan");
    }
    ```
+
+   - For hidden APs, use wifi_manager_foreach_found_specific_ap() instead of wifi_manager_foreach_found_ap().
+       ```
+       void
+        __scan_request_cb(wifi_error_e error_code, void *user_data)
+        {
+        error_code = wifi_manager_foreach_found_specific_ap(wifi, __wifi_manager_found_ap_cb, NULL);
+        if (error_code != WIFI_ERROR_NONE)
+            dlog_print(DLOG_INFO, LOG_TAG, "Failed to scan");
+        }
+        ```
 
 3. Show the result of the scan using the `__wifi_manager_found_ap_cb()` callback.
 
