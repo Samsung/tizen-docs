@@ -55,7 +55,7 @@ Tizen enables your application to [play video](#play_video), and it uses its own
 
 1.  Get the UI component to display from the graphics module.
 
-    You can display video on a UI layer of Evas, Xamarin, and NUI.
+    You can display video on a UI layer of NUI.
 
 2. Create the player instance.
 3. Create the display instance with the UI component you got.
@@ -253,17 +253,12 @@ To play a video file, proceed as follows:
     player.Source = new MediaUriSource(videoPath);
     ```
 
-2.  To set the display on which the video is played, use the `Display` property of the `Tizen.Multimedia.Player` class.
-
-    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer such as `VideoView()` based on VisualElementRenderer class. Cast it to an instance of the [Tizen.Multimedia.MediaView](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+2. Set the display for showing video by using the `Display` property of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class with `NUI.Window` class.
 
     ```csharp
-    var mediaView = new VideoView();
-
-    mediaView.NativeViewCreated += (s, e) =>
-    {
-        player.Display = new Display((Tizen.Multimedia.MediaView)(s as VideoView).NativeView);
-    };
+    // Create new NUI window or set NUI window to be rendered
+    // `nuiWindow` of the following code is the instance of `NUI.Window` class.
+    player.Display = new Display(nuiWindow);
     ```
 
 3.  Prepare the player for playback using the `PrepareAsync()` method of the `Tizen.Multimedia.Player` class:
