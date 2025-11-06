@@ -666,7 +666,6 @@
 #### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
 #### OpenGL&reg; ES
 ##### [Overview](/application/native/guides/graphics/opengl.md)
-##### [Creating OpenGL&reg; ES Applications](/application/native/guides/graphics/creating-opengles.md)
 ##### [Polygon Mesh in OpenGL&reg; ES](/application/native/guides/graphics/polygon-mesh.md)
 ##### [Vertex Shader](/application/native/guides/graphics/vertex-shader.md)
 ##### [Primitive Assembly and Rasterization](/application/native/guides/graphics/assembly.md)
