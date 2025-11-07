@@ -85,6 +85,10 @@ You can use the following multimedia features in your native applications:
 
   You can have real-time audio/video communication with a remote peer. You can also send and receive generic data with a remote peer.
 
+- [Media Editor](mediaeditor.md)
+
+  You can edit media clips and create output media files. You can manage timelines composed of layers and clips, add effects and transitions, and preview or render the final output.
+
 ## Related information
 - Dependencies
   - Since Tizen 2.4
