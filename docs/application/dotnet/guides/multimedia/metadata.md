@@ -188,7 +188,7 @@ foreach(string ex in ext)
 ```
 
 <a name="attribute"></a>
-## Editable metadata attributes
+## Editable metadata attributes (Deprecated since API Level 12)
 
 The following table lists the metadata you can edit.
 
@@ -196,19 +196,19 @@ The following table lists the metadata you can edit.
 
 | Attribute     | Description                        | Property or method of the Tizen.Multimedia.MetadataEditor class |
 |-------------|----------------------------------|----------------------------------------|
-| Artist        | Artist of the audio content        | `Artist` (Deprecated since API Level 12) |
-| Title         | Title of the audio content         | `Title` (Deprecated since API Level 12) |
-| Album         | Album of the audio content         | `Album` (Deprecated since API Level 12)  |
-| Genre         | Genre of the audio content         | `Genre` (Deprecated since API Level 12) |
-| Composer        | Composer of the audio content        | `Composer` (Deprecated since API Level 12) |
-| Copyright     | Copyright of the audio content     | `Copyright` (Deprecated since API Level 12) |
-| Date          | Date of the audio content          | `Date` (Deprecated since API Level 12) |
-| Description   | Description of the audio content   | `Description` (Deprecated since API Level 12) |
-| Comment       | Comment of the audio content       | `Comment` (Deprecated since API Level 12) |
-| TrackNumber   | Track number of the audio content  | `TrackNumber` (Deprecated since API Level 12) |
-| Picture       | Picture of the audio content       | `PictureCount` (Deprecated since API Level 12)<br>`GetPicture() (Deprecated since API Level 12)`<br>`AddPicture() (Deprecated since API Level 12)`<br>`RemovePicture()` (Deprecated since API Level 12) |
-| Conductor     | Conductor of the audio content     | `Conductor` (Deprecated since API Level 12) |
-| Unsync lyrics | Unsync lyrics of the audio content | `UnsyncLyrics` (Deprecated since API Level 12) |
+| Artist        | Artist of the audio content        | `Artist` |
+| Title         | Title of the audio content         | `Title` |
+| Album         | Album of the audio content         | `Album` |
+| Genre         | Genre of the audio content         | `Genre` |
+| Author        | Author of the audio content        | `Author` |
+| Copyright     | Copyright of the audio content     | `Copyright` |
+| Date          | Date of the audio content          | `Date` |
+| Description   | Description of the audio content   | `Description` |
+| Comment       | Comment of the audio content       | `Comment` |
+| TrackNumber   | Track number of the audio content  | `TrackNumber` |
+| Picture       | Picture of the audio content       | `PictureCount`<br>`GetPicture()`<br>`AddPicture()`<br>`RemovePicture()`|
+| Conductor     | Conductor of the audio content     | `Conductor` |
+| Unsync lyrics | Unsync lyrics of the audio content | `UnsyncLyrics` |
 
 <a name="attribute2"></a>
 ## Extractable metadata attributes
@@ -238,9 +238,9 @@ The metadata is available with the properties and methods of the [Tizen.Multimed
 | Album                | Album of the content                   | `Metadata.Album`                         |
 | Album artist         | Album artist of the content            | `Metadata.AlbumArtist`                   |
 | Genre                | Genre of the content                   | `Metadata.Genre`                         |
-| Composer               | Composer of the content                  | `Metadata.Composer`                        |
+| Composer             | Composer of the content                | `Metadata.Composer`                      |
 | Copyright            | Copyright of the content               | `Metadata.Copyright`                     |
-| Date                 | Date of the content                    | `Metadata.Date`                          |
+| Release date         | Release date of the content            | `Metadata.DateReleased`                  |
 | Description          | Description of the content             | `Metadata.Description`                   |
 | Comment              | Comment about the content              | `Metadata.Comment`                       |
 | TrackNumber          | Track number of the content            | `Metadata.TrackNumber`                   |
@@ -253,7 +253,9 @@ The metadata is available with the properties and methods of the [Tizen.Multimed
 | Unsync lyrics        | Asynchronous lyrics of the content     | `Metadata.UnsyncLyrics`                  |
 | Sync lyrics          | Synchronous lyrics of the content      | `Metadata.SyncLyricsCount`<br>`MetadataExtractor.GetSyncLyrics()`<br>`SyncLyrics.Lyrics`<br>`SyncLyrics.Timestamp` |
 | Recorded date        | Recorded date of the content           | `Metadata.DateRecorded`                  |
-| Duration             | Orientation of the content             | `Metadata.Rotation`                      |
+| Orientation          | Orientation of the content             | `Metadata.Rotation`                      |
+| 360 Content          | Information for 360 content            | `Metadata.Content360`                    |
+| Stitched 360 Content | Information about 360 video content being stitched or not | `Metadata.StitchedContent360`            |
 
 
 ## Related information
