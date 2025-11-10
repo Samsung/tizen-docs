@@ -152,16 +152,14 @@ To configure the camera, follow the below steps:
 
     The image quality value can range from 1 (lowest quality) to 100 (highest quality).
 
-2.  Set the display for showing preview images by using the `Display` property of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class with 1 of the camera display types (`ElmSharp.Window` overlay or `Tizen.Multimedia.MediaView` EVAS surface).
+2.  Set the display for showing preview by using the `Display` property of the [Tizen.Multimedia.Camera](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class with `NUI.Window` class.
 
-    The following examples set the display according to the display types. The camera state must be in the `Created`:
+    The camera state must be in the `Created`:
 
     ```csharp
-    /// Overlay display type
-    camera.Display = new Display(new Window("CameraWindow"));
-
-    /// EVAS surface display type
-    camera.Display = new Display(new MediaView(new Window("CameraWindow")));
+    // Create new NUI window or set NUI window to be rendered
+    // `nuiWindow` of the following code is the instance of `NUI.Window` class.
+    camera.Display = new Display(nuiWindow);
     ```
 
 3.  Set the camera preview resolution using the `PreviewResolution` property of the `Tizen.Multimedia.CameraSettings` class. You must set this property before previewing.
@@ -371,8 +369,6 @@ To customize the display settings, follow the below steps:
 
 > [!NOTE]
 > For an overlay surface, when the device orientation changes, the displayed camera preview does not rotate automatically. If you want to rotate the display according to the device orientation, use the `Rotation` property of the `Tizen.Multimedia.CameraDisplaySettings` class.
->
-> For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `Rotation` property.
 
 ## Take a photo
 

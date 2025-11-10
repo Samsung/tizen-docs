@@ -52,7 +52,9 @@ To prepare for screen mirroring, proceed as follows:
 2.  Prepare the screen mirroring sink using the `Prepare()` method with an instance of the [Tizen.Multimedia.Display](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Display.html) class as a parameter:
 
     ```csharp
-    screenMirroring.Prepare(new Display(mediaView));
+    // Create new NUI window or set NUI window to be rendered
+    // `nuiWindow` of the following code is the instance of `NUI.Window` class.
+    screenMirroring.Prepare(new Display(nuiWindow));
     ```
 
     The screen mirroring state changes to `Prepared`.
