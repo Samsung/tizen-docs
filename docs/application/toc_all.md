@@ -661,21 +661,6 @@
 #### [i18n](/application/native/guides/internationalization/i18n.md)
 #### [Resource Localization](/application/native/guides/internationalization/resource-localization.md)
 
-### Graphics
-#### [Overview](/application/native/guides/graphics/overview.md)
-#### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
-#### OpenGL&reg; ES
-##### [Overview](/application/native/guides/graphics/opengl.md)
-##### [Polygon Mesh in OpenGL&reg; ES](/application/native/guides/graphics/polygon-mesh.md)
-##### [Vertex Shader](/application/native/guides/graphics/vertex-shader.md)
-##### [Primitive Assembly and Rasterization](/application/native/guides/graphics/assembly.md)
-##### [Texturing](/application/native/guides/graphics/texturing.md)
-##### [Fragment Shader](/application/native/guides/graphics/fragment-shader.md)
-##### [Output Merging](/application/native/guides/graphics/output-merging.md)
-##### [Interactive UI](/application/native/guides/graphics/interactive-ui.md)
-##### [Advanced Rendering](/application/native/guides/graphics/adv-rendering.md)
-##### [Advanced Performance](/application/native/guides/graphics/adv-performance.md)
-
 ### Notifications and Content Sharing
 #### [Overview](/application/native/guides/notification/overview.md)
 #### [Notifications](/application/native/guides/notification/notifications.md)
