@@ -5,13 +5,13 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET, Tizen 
 - Supported host platform
 - VS Code with version 1.92.0 and above
 
-    VS Code Extension for Tizen supports the following operating systems:
+  VS Code Extension for Tizen supports the following operating systems:
 
-    - Windows 10 and above (64 bit)
-    - Ubuntu 20.04 and above (64 bit)
-    - macOS 11.4 (Big Sur) / 12.3 (Monterey)
+  - Windows 10 and above (64 bit)
+  - Ubuntu 20.04 and above (64 bit)
+  - macOS 11.4 (Big Sur) / 12.3 (Monterey)
 
-- Required tools:
+<!-- - Required tools:
 
     To use VS Code Extension for Tizen, you must install the following tools:
 
@@ -22,31 +22,31 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET, Tizen 
     - Python 2.7 (only for macOS)
 
       Download from <https://www.python.org/ftp/python/2.7.18/python-2.7.18-macosx10.9.pkg>.
-    
+
     - Python 3.8 (only for Ubuntu)
 
       You can use below commands to install:
         ```
-        $ sudo add-apt-repository ppa:deadsnakes/ppa       
-        $ sudo apt update        
+        $ sudo add-apt-repository ppa:deadsnakes/ppa
+        $ sudo apt update
         $ sudo apt install python3.8 python3.8-dev
         ```
 
     - isl (only for macOS)
 
       You can use below command to install:
-        ``` 
-        $ brew install isl        
+        ```
+        $ brew install isl
         ```
         <strong>Note</strong><br>
 To install Homebrew, see the <a href="http://brew.sh/">Brew Web site</a>.
-        
+
         For macOS Sequoia, isl default version is 23, you need to create symbolink link to 19 for native build for tizen platform 9 and lower. You can use below command to create symbolic link:
         > $ sudo ln -s  /usr/local/Cellar/isl/0.27/lib/libisl.23.dylib /usr/local/opt/isl/lib/libisl.19.dylib
 
     - Tizen Baseline SDK or Tizen Studio
 
-      If neither of these is found, VS Code Extension for Tizen installs the Baseline SDK.
+      If neither of these is found, VS Code Extension for Tizen installs the Baseline SDK. -->
 
 ## Emulator Requirements
 
@@ -60,6 +60,7 @@ Tizen Emulator for VS Code Extension for Tizen has the same requirements as the 
 > This option will not be applicable to and will not work on AMD processors.
 
 - Make sure **Hyper-V** is disabled (in Windows 10 or higher):
+
   1. Input **Control Panel** on the **Search** box in Windows 10.
 
   2. Click **Control Panel > Programs and Features > Turn Windows features on or off**.
@@ -75,16 +76,17 @@ Tizen Emulator for VS Code Extension for Tizen has the same requirements as the 
 - Microsoft's Hyper-V and the Windows Hypervisor Platform (WHPX). Hyper-V is a virtualization feature of Windows that makes it possible to run virtualized computer systems on a physical host computer.
 
 - Make sure **Hyper-V** is enabled (PowerShell in Windows 10 or higher):
+
   1. Check the configuration
 
      > Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V-All -Online
 
-     FeatureName      : Microsoft-Hyper-V-All\
-     DisplayName      : Hyper-V\
-     Description      : Provides services and management tools for creating and running virtual machines and their resources.\
-                      RestartRequired  : Possible\
-                      State            : Disabled\
-                      CustomProperties :
+     FeatureName : Microsoft-Hyper-V-All\
+     DisplayName : Hyper-V\
+     Description : Provides services and management tools for creating and running virtual machines and their resources.\
+      RestartRequired : Possible\
+      State : Disabled\
+      CustomProperties :
 
   2. Enable Hyper-V & HypervisorPlatform
 
@@ -94,4 +96,3 @@ Tizen Emulator for VS Code Extension for Tizen has the same requirements as the 
      ![Enable Hyper-V](./media/cs_prerequisite-enable-hyperv.png)
 
   3. Reboot the computer.
-
