@@ -37,15 +37,9 @@
 
 ###### [Overview](/application/dotnet/get-started/certificates/index.md)
 
-<!-- ###### [Installing Certificate Extension](/application/dotnet/get-started/certificates/installing-the-extension.md) -->
+###### [Creating Certificates](/application/vscode-ext/cert-create-profile.md)
 
-###### [Creating Certificates](/application/dotnet/get-started/certificates/creating-certificates.md)
-
-###### [Managing Certificate Profile](/application/dotnet/get-started/certificates/managing-certificate-profile.md)
-
-<!--##### [VD Application Signing](/xxxxxxx.md) -->
-
-<!-- ##### Configure App : (we don't have a tool to configure .NET application such like manifest editor) -->
+###### [Managing Certificate Profile](/application/vscode-ext/cert-manage-profile.md)
 
 #### Coding & Building Application
 
