@@ -117,3 +117,11 @@ The Package Manager provides the network option to configure a proxy to connect 
 
 - Dependencies
   - Tizen Studio 1.0 and Higher -->
+
+## Tizen SDK Installation Directory
+
+$HOME/.tizen-extension-platform/server/sdktools/data
+
+## .NET SDK and Tizen Workload Installation Directory
+
+$HOME/.tizen-extension-platform/server/sdktools/dotnet
