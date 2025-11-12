@@ -8,41 +8,43 @@ To select the certificates used to package your application:
 
 1.  In the Visual Studio menu, go to **Tools &gt; Options &gt; Tizen &gt; Certification**.
 2.  Define the certificates in one of the following ways:
-    -   **Using the default certificates**
 
-        If you do not need to upload your application to the store, you can use a default certificate and deploy your application in the Tizen Emulator for testing purposes.
+    - **Using the default certificates**
 
-        To use the default certificates, uncheck the **Sign the .TPK file using the following option.** checkbox.
+      If you do not need to upload your application to the store, you can use a default certificate and deploy your application in the Tizen Emulator for testing purposes.
 
-        ![Use default certificates](/media/vstools_cert_default.png)
+      To use the default certificates, uncheck the **Sign the .TPK file using the following option.** checkbox.
 
-    -   **Using an existing certificate profile**
+      ![Use default certificates](media/vstools_cert_default.png)
 
-        If you have used Tizen Studio before and have already generated a certificate profile using the Tizen Certificate Manager, you can import the profile by selecting **Use profile of Tizen Certificate Manager** from the drop-down list.
+    - **Using an existing certificate profile**
 
-        If you want to create a new certificate profile, see [Creating a Certificate Profile](#creating).
+      If you have used Tizen Studio before and have already generated a certificate profile using the Tizen Certificate Manager, you can import the profile by selecting **Use profile of Tizen Certificate Manager** from the drop-down list.
 
-        ![Use existing certificate profile](media/vstools_cert_profile1.png)
+      If you want to create a new certificate profile, see [Creating a Certificate Profile](#creating).
 
-    -   **Using your own certificates**
+      ![Use existing certificate profile](media/vstools_cert_profile1.png)
 
-        If you already have author and distributor certificates from another application store, you can import them by selecting **Direct registration** from the drop-down list and entering the required information.
+    - **Using your own certificates**
 
-        ![Use own certificates](media/vstools_cert_certificate1.png)
+      If you already have author and distributor certificates from another application store, you can import them by selecting **Direct registration** from the drop-down list and entering the required information.
+
+      ![Use own certificates](media/vstools_cert_certificate1.png)
 
 3.  Click **OK**.
 
 <a name="creating"></a>
+
 ## Creating a Certificate Profile
 
->**Note**
+> **Note**
 >
->It is recommended to keep your certificates and password safe in the local repo to prevent it from being compromised.
+> It is recommended to keep your certificates and password safe in the local repo to prevent it from being compromised.
 
 A certificate profile consists of an author certificate and 1 or 2 distributor certificates:
 
--   An author certificate includes information about the author of the application. It is used to create an author signature, which ensures the integrity of the application from the author since the publication of the application.
--   A distributor certificate includes information about the distributor of the application, such as a store. It is used to create a distributor signature, which ensures the integrity of the application from the distributor since the distribution of the application.
+- An author certificate includes information about the author of the application. It is used to create an author signature, which ensures the integrity of the application from the author since the publication of the application.
+- A distributor certificate includes information about the distributor of the application, such as a store. It is used to create a distributor signature, which ensures the integrity of the application from the distributor since the distribution of the application.
 
 To distribute your application, you must create a certificate profile and sign the application with it. You can create a new certificate profile with the Certificate Manager:
 
@@ -58,6 +60,7 @@ To distribute your application, you must create a certificate profile and sign t
     ![Certificate profile creation wizard](media/cert_reg_creation_wizard.png)
 
 4.  Add the author and distributor certificates:
+
     1.  Select whether to create a new author certificate or use a previously created author certificate, and click **Next**.
 
         ![Author certificate](media/cert_reg_author_cert.png)
@@ -73,6 +76,7 @@ To distribute your application, you must create a certificate profile and sign t
 5.  Click **Finish**.
 
 <a name="managinging"></a>
+
 ## Managing Certificate Profiles
 
 You can view, edit, and remove the certificate profiles you have created in the Certificate Manager.
@@ -83,23 +87,23 @@ You can view, edit, and remove the certificate profiles you have created in the 
 
 To manage a certificate profile:
 
--   To see the details of an individual certificate within the selected certificate profile, click the info button (![Info](media/cert_reg_info.png)).
+- To see the details of an individual certificate within the selected certificate profile, click the info button (![Info](media/cert_reg_info.png)).
 
-    **Figure: Certificate information**
+  **Figure: Certificate information**
 
-    ![Certificate information](media/vstools_cert_result.png)
+  ![Certificate information](media/vstools_cert_result.png)
 
--   To change the author or distributor certificate of the selected certificate profile, click the pencil button (![Pencil](media/cert_reg_pencil.png)).
+- To change the author or distributor certificate of the selected certificate profile, click the pencil button (![Pencil](media/cert_reg_pencil.png)).
 
-    **Figure: Changing the certificate**
+  **Figure: Changing the certificate**
 
-    ![Changing the certificate](media/vstools_changing_cert.png)
+  ![Changing the certificate](media/vstools_changing_cert.png)
 
--   To remove the selected certificate profile, click the trash button (![Trash](media/cert_reg_trash.png)).
--   To set the selected certificate profile as active, click the check button (![Check](media/cert_reg_check.png)).
+- To remove the selected certificate profile, click the trash button (![Trash](media/cert_reg_trash.png)).
+- To set the selected certificate profile as active, click the check button (![Check](media/cert_reg_check.png)).
 
-    The active profile is used when you package your application. The active profile is also automatically set in **Tools &gt; Options &gt; Tizen &gt; Certification**.
+  The active profile is used when you package your application. The active profile is also automatically set in **Tools &gt; Options &gt; Tizen &gt; Certification**.
 
-    **Figure: Removing the certificate profile or setting it active**
+  **Figure: Removing the certificate profile or setting it active**
 
-    ![Trash and check buttons](media/cert_reg_trash_check.png)
+  ![Trash and check buttons](media/cert_reg_trash_check.png)
