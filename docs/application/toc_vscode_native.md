@@ -14,12 +14,7 @@
 
 #### [Install VSCode Extension for Tizen](/application/vscode-ext/Tizen/dotnet.md)
 
-<!-- #### [Install SDK Common Tools & Tizen Platform](/application/vscode-ext/tools/welcome-page.md) -->
-<!-- #### [Install TV Extension & Certificate Extension](/application/vscode-ext/tv-certificate-extension.md) -->
-
 #### Tool: Packages
-
-<!-- ##### [Overview](/application/tizen-studio/common-tools/package-manager.md) -->
 
 ##### [Configure Package Repository](/application/vscode-ext/tools/package-manager.md)
 
@@ -47,11 +42,6 @@
 
 ##### [API & Privilege Checker](/application/vscode-ext/tools/api-privilege-checker.md)
 
-<!-- #### Debugging & Profiling Application  -->
-<!-- ##### [Debug App](/application/vscode-ext/getting-started/debug-app-native.md) -->
-<!-- ##### [Tool: Address Sanitizer](/application/vscode-ext/getting-started/test-profile-app/asan.md) -->
-<!-- ##### [Tool: Leak Sanitizer](/application/vscode-ext/getting-started/test-profile-app/lsan.md) -->
-
 #### Running and Testing Application
 
 ##### Tool: Emulators
@@ -68,13 +58,6 @@
 
 ##### [Tool: SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 
-<!-- ##### [Native Unit Test](/application/vscode-ext/getting-started/test-profile-app/unit-test-code-coverage.md) -->
-<!--###### [TV Real Target Connection](/xxxxxxx.md) -->
-
-<!-- #### CLI -->
-<!-- ##### [Tizen CLI](/application/tizen-studio/common-tools/command-line-interface.md) -->
-<!-- ##### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md) -->
-
 #### SDK Diagnostics
 
 ##### [Tizen Doctor](/application/tizen-studio/common-tools/tizen-doctor.md)
@@ -88,7 +71,5 @@
 ##### [Hybrid Application Development](/application/vscode-ext/Tizen/hybrid.md)
 
 ##### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
-
-<!-- ##### [Tizen VSCode Command](/application/vscode-ext/Tizen/command.md) -->
 
 ## [Tool Index](/application/sdktool_index.md)

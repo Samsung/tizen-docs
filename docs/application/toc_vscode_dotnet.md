@@ -28,7 +28,7 @@
 
 ##### Tizen Certificate Management
 
-###### [Overview](/application/vscode-ext/cert-overview.md)
+###### [Overview](/application/vscode-ext/tools/cert-overview.md)
 
 ###### [Creating Certificates](/application/vscode-ext/tools/cert-create-profile.md)
 
@@ -55,13 +55,6 @@
 ##### [Tool: Devices](/application/vscode-ext/tools/device-manager.md)
 
 ##### [Tool: SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
-
-<!--###### [TV Simulator](/xxxxxxx.md) -->
-<!--###### [TV Real Target Connection](/xxxxxxx.md) -->
-
-<!-- #### CLI -->
-<!-- ##### [Tizen CLI](/application/tizen-studio/common-tools/command-line-interface.md) -->
-<!-- ##### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md) -->
 
 #### SDK Diagnostics
 
