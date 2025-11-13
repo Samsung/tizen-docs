@@ -1,6 +1,5 @@
 # Media Controller
 
-
 You can establish communication between a media control server and a media control client. You can send commands from the client to the server, and the client can request updated metadata and playback information from the server.
 
 The main media controller features include the following:
@@ -126,10 +125,10 @@ To update the playback information on the server side and to retrieve it on the 
 
 To send a command from the client and to process it on the server side, follow these steps:
 
-1.  To send a command on the client side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+1.  To send a command on the client side, use the `RequestCommandAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
-    mediaController.RequestAsync(new PlaybackCommand(MediaControlPlaybackCommand.Play));
+    var result = await mediaController.RequestCommandAsync(new PlaybackCommand(MediaControlPlaybackCommand.Play));
     ```
 
 2. To process the received command on the server side, add an event handler to the `PlaybackActionCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
@@ -144,13 +143,13 @@ To send a command from the client and to process it on the server side, follow t
     ```
 
 To send a search command from the client and to process it on the server side, follow these steps:
-1.  To send a search command on the client side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+1.  To send a search command on the client side, use the `RequestCommandAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
     var searchCondition = new MediaControlSearchCondition(MediaControlContentType.Image,
         MediaControlSearchCategory.Artist, "GD", null);
 
-    mediaController.RequestAsync(new SearchCommand(searchCondition));
+    var result = await mediaController.RequestCommandAsync(new SearchCommand(searchCondition));
     ```
 
 2. To process the received search command on the server side, add an event handler to the `SearchCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
@@ -168,10 +167,10 @@ To send a search command from the client and to process it on the server side, f
     ```
 
 To send a custom command from the server and to process it on the client side, follow these steps:
-1.  To send a search command on the server side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+1.  To send a search command on the server side, use the `RequestCommandAsync()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
-    MediaControlServer.RequestAsync(new CustomCommand("CustomAction"));
+    var result = await MediaControlServer.RequestCommandAsync(new CustomCommand("CustomAction"), "client_id");
     ```
 
 2. To process the received custom command on the client side, add an event handler to the `CustomCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
@@ -181,7 +180,7 @@ To send a custom command from the server and to process it on the client side, f
     {
         Log.Info("MC", $"{ e.Command.Action}");
 
-        mediaController.Response(e.Command, (int)ErrorCode.None);
+        mediaController.Response(e.Command, MediaControlResult.Success);
     };
     ```
 
