@@ -6,18 +6,23 @@ A certificate profile is a combination of the certificates used for signing.
 
 ## General information
 
-In the menu bar, click **Tools** > **Tizen** > **Tizen Certificate Manager** to launch the Certificate Manager.
+In the VSCode activity bar click:
 
-![Tizen Certificate Manager with two profile](media/certification_guide18.png)
 
-- The active profile is indicated by the check mark.
+ **(1) Tizen extension** > **(2) ACTIVE TARGETS > (3) Certificates: *Active certificate profile***.
+
+The **Tizen Panel** will be opened with **CERTIFICATE** tab selected.
+
+![Tizen Certificate Manager with two profile](media/certificate-manager/manage-profile-1.jpg)
+
+- The active profile is indicated by the green indicator bullet.
 - All of the application in this SDK will be signed with this active profile.
 - You can create, delete, and set a profile to active here.
 - Lower window shows the information of each certificate.
 - You can replace the certificate with an existing one.
 - The Tizen platform allows multiple distributor certificates up to two, which supports other device manufacturers or telecommunication companies. However, it is not needed for most of the developers generally.
 
-## Changing only a distributor certificate in a profile
+<!-- ## Changing only a distributor certificate in a profile
 
 There might be an instance where you need to register more devices or change the devices to the distributor certificate.  
 However, author certificates rarely need to be changed.
@@ -45,37 +50,44 @@ Follow the same steps to create a certificate profile as described in [create ne
 
 3. Create new distributor for certificate profile
 
-    Follow the same steps as mentioned in [create new or select existing distributor certificate](creating-certificates.md#create_new_or_select_existing_distributor_certificate).
+    Follow the same steps as mentioned in [create new or select existing distributor certificate](creating-certificates.md#create_new_or_select_existing_distributor_certificate). -->
 
 ## Importing existing certificates
 
-If you already have both the **author.p12** and **distributor.p12** certificates and you do not require a new certificate from Samsung, you can import and use the available certificates to sign your application.
+If you already have:
+- both the **author.p12** and **distributor.p12** certificates 
+
+- only author certificate
+
+- or distributor certificate
+
+And you do not require a new certificate from Tizen or Samsung, you can import and use the available certificates to sign your application.
 In that case, create a new certificate profile and select existing certificates at each step.
 
 Follow the same steps as mentioned in creating certificate before [creating a new profile or selecting an old profile](creating-certificates.md#create_new_or_select_old_profile).
 
-1. Select an existing author certificate
+### Select an existing author certificate
 
-    The author certificate must be the same for the application that is to be upgraded.
-    Select **Select an existing author certificate** and click **Next**.
+  The author certificate must be the same for the application that is to be upgraded.
+  1. Select **Import an existing author key file** and click **Next**.
+  2. Click the **Browse** button and locate your author certificate key file.
+  3. Enter the password of the key file.
+  4. Click **Import file** button
+  5. If the password is verified, the author key import successful notification will pop up.
+  ![Select an existing author certificate](media/certificate-manager/author-import.jpg)
 
-    ![Select an existing author certificate](media/certification_guide22.png)
 
-    Click **Browse** to select your **author.p12** file, enter the password then click **Next**.
+### Select an existing distributor certificate
 
-    ![Select an existing author certificate](media/certification_guide23.png)
+  Click **Import an existing distributor key file**, click **Browse** to select your distributor key file(.p12), enter the password and then click **Import file**.
 
-2. Select an existing distributor certificate
+  ![Select an existing author certificate](media/certificate-manager/distributor-import.jpg)
 
-    Click **Select an existing distributor certificate**, click **Browse** to select your **distributor.p12** file, enter the password and then click **Finish**.
+### Create and find the created profile in the list
 
-    ![Select an existing author certificate](media/certification_guide24.png)
+  After importing and creating, now you can find the created profile in the list.
 
-3. Find the created profile in the list
-
-    Now you can find the created profile in the list.
-
-    ![Select an existing author certificate](media/certification_guide25.png)
+  ![Select an existing author certificate](media/certificate-manager/imported-profile-create.jpg)
 
 ## Troubleshooting
 
