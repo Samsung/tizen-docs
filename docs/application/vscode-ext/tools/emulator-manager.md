@@ -15,23 +15,45 @@ The main features of the Emulator Manager are:
 
 ## Accessing the Emulator Manager
 
-If you do not have the Emulator Manager installed, you can install it using the Tizen Studio Package Manager.
+Emulator manager is a part of Tizen Extension. So, you don't need to install it separately.
 
-There are 2 different ways to access the Emulator Manager:
+Emulator Manager will be available in the panel section of VS Code after installing the Tizen Extension. In the panel select tab **TIZEN > EMULATOR**.
 
-- Click the Emulator Manager icon on the desktop or in the Start menu.
+**Figure: Access the Emulator Manager from panel**
 
-  **Table: Starting the Emulator Manager**
+![Access the Emulator Manager](./media/em_access_emulator_manager.png)
 
-  | Ubuntu                                                                                                              | Windows&reg;                                                                                                                    | macOS                                                                                                                          |
-  | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-  | **Desktop > Applications > Emulator Manager:** <br> ![Shortcut Ubuntu](./media/emulator_manager_linux_shortcut.png) | **Start > All Programs > Tizen Studio > Emulator Manager:** <br> ![Shortcut Windows](./media/emulator_manager_win_shortcut.png) | **Finder > Applications > Tizen Studio > Emulator Manager:** <br> ![Shortcut macOS](./media/emulator_manager_mac_shortcut.png) |
+All the available Emulator instances will be available in the table area. And you can start, edit or delete an emulator from there.
 
-- In Tizen Studio, select **Tools > Emulator Manager** or click the Emulator Manager icon on the toolbar.
+**Figure: Emultor table**
 
-  **Figure: Launch the Emulator Manager in Tizen Studio**
+![Emulator table](./media/em_default_emulators.png)
 
-  ![Launch the Emulator Manager](./media/emulator_manager_launch.png)
+> [!NOTE]
+> At the beginning there is no emulator available in the table. New Emulator instances will be added when you create a new emulator. In addition while installing an emulator platform while creating a project it will provide a default emulator instance for each image architecture available for that platform.
+
+<a name="Download platform"></a>
+
+## Downloading an Emulator Platform
+
+The Emulator Manager can help you to download and install available emulator platforms. At the beginning there is no platform available in the Emulator Manager. You need to download and install a platform before you can create an emulator instance.
+
+To download a new emulator platform:
+
+1. In the panel of EMULATOR tab click **Create a new emulator**. This will open **Emulator Editor** window.
+
+2. In the Emulator Editor window click **Download Image** button. This will show the list of all available Tizen platforms.
+
+3. Select the platforms you want to insall from the available downlaod items. 
+
+4. To cancel the download menu just click **XClose** button.
+
+5. Click **Download Selected** button to start the installation.
+
+6. Progress could be seen from the Activity Bar or from the notification area.
+
+> [!NOTE]
+> You must have a stable internet connection to perform the installation. And you can't cancel or install new platform during an ongoing installation. In addition, based on the platform you installed default emulator instances will be added in the panel table once the installation is successfull.
 
 <a name="create"></a>
 
@@ -39,59 +61,63 @@ There are 2 different ways to access the Emulator Manager:
 
 The Emulator Manager can help you to select the recommended platform and template. When you need another device environment, you can edit an existing emulator instance, or create a new one with a more suitable platform and template. You can also create new platforms and templates to suit your needs.
 
-**Figure: Emulator Manager**
+**Figure: Emulator Manager Create Emulator window**
 
-![Emulator Manager](./media/emulator_manager_common.png)
+![Emulator Manager](./media/em_emulator_editor.png)
 
 To create a new emulator instance:
 
-1. In the Emulator Manager, click **Create**.
+1. In the panel of EMULATOR tab click **Create a new emulator** to open **Emulator Editor** window.
 
-2. Select the platform (system image), and click **Next**.
+2. Select platform profile **Tizen** or **TV**. This will show all available images for the selected profile in a dropdown list.
 
-3. Select the template (device definition), and click **Next**.
+3. Select the platform image you want to use from the dropdown list. It will show all available templates for the selected platform.
 
-4. Modify the properties as needed, and click **Finish**.
+4. Selct the template you want to use from the emulator. After selecting the template it will show the available properties for the selected image and template.
 
-   The emulator instance appears in the Emulator Manager.
+5. Scroll down to see the **Properties** section. Properties section contain different property tabs based on the Platform.
 
-   To view the emulator instance details, right-click the instance and select **Detail**.
+6. Modify the properties as needed. 
+
+7. Click **Create Emulator** button to create and save the emulator instance.
 
 > [!NOTE]
 > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator).
 
-### Creating Platforms
+### Creating Custom Platforms
 
 To create an emulator, you must first select the platform. You can create, modify, and delete a custom platform, and view the generated platforms. Most application developers do not need a custom platform, but it can be useful for a platform developer.
 
-**Figure: Platform list**
+**Figure: Import Custom Image**
 
-![Platform list](./media/emulator_manager_platforms.png)
+![Platform list](./media/em_platform_image.png)
 
 To create a custom platform:
 
-1. In the Emulator Manager, click **Create**.
+1. In the Emulator Editor, select the target Platform type (Tizen or TV) for which you want to create a custom
 
-2. Click **+**.
+2. Click **Import Custom Image** button.
 
-3. In the **Platform Configuration** dialog, select a base platform and platform image file.
+3. In the **Import Custom Image** section, select a Base Platform, Format and Image file.
 
-   You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with Tizen Studio. You can also create a qcow2 image by [exporting an emulator](#export).
+   You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with emulator packages. You can also create a qcow2 image by [exporting an emulator](#export).
 
    A platform image in the development stage is in raw format. If you launch an emulator with a raw image, you can see the current state of the image. This can be useful for platform developers.
 
-4. Click **OK** to save your configuration.
+4. Click **Import Image** button to save your custom platform.
 
-   The new platform is added to the list.
+   The new platform is added to the Image dropdown list.
 
-   **Figure: Platform Configuration dialog**
+   **Figure: Import Custom Image**
 
-   ![Platform Configuration dialog](./media/emulator_manager_platform_config.png)
+   ![Import Custom Image section](./media/em_import_custom_image.png)
 
-To manage the created platforms:
+To manage the created custom platforms:
 
-- To edit a platform, click **Edit** (![Edit platform](./media/emulator_manager_modify.png)), make the desired changes, and click **OK**. You can only edit the custom platforms you have created.
-- To delete a platform, click **Delete** (![Delete](./media/emulator_manager_delete.png)). You can only delete the custom platforms you have created.
+- To edit a platform, click **Edit** button in the Image dropdown section while selecting the custom platform. Make the desired changes and click **Save Image**. You can only edit the custom platforms you have created.
+- To delete a platform, click **Delete** button in the Image dropdown section while selecting the custom platform. You can only delete the custom platforms you have created.
+
+![Edit or delete custom platform](./media/em_edit_custom_platform.png)
 
 ### Creating Templates
 
@@ -99,124 +125,60 @@ The Emulator Manager provides several device template types. A device template d
 
 **Figure: Device templates**
 
-![Device templates](./media/emulator_manager_device_template.png)
+![Device templates](./media/em_templates.png)
 
-You can create a custom template in 2 ways:
+Follow below steps to create a custom Template:
 
-1. In the Emulator Manager, click **Create**.
+1. In the Emulator Editor, select the Platform for which you want to create a custom Template.
 
-2. Select a platform and click **Next**.
+2. Check the **Templates** section for existing templates. Click **Refresh** to check if there are any new templates available if you want to use existing template to create a new one.
 
-3. To create a new template:
+3. You can create a custom template in 2 ways:
 
    - To create a new template from the beginning:
 
-     1. Click **+**.
+     1. Click **New Template**.
      2. Define the features for the template.
-     3. Click **OK**.
+     3. Click **Save**.
 
-        The new template is added to the list with a settings icon.
+        The new template is added to the card list with Edit and Delete buttons.
 
    - To create a new template based on an existing one:
 
      1. Select the template you want to clone.
-     2. Click **clone template** (![Clone icon](./media/emulator_manager_clone.png)).
-     3. Make the desired changes.
-     4. Click **OK**.
+     2. Click **Duplicate Template** (![Duplicate icon](./media/em_duplicate_template.png)) button. This will create a new Template card with Edit and Delete buttons.
+     3. Make the desired changes by clicking on **Edit Template** (![Edit icon](./media/em_edit_template.png)) button
+     4. Click **Save**.
 
-        The new template is added to the list with a settings icon.
+      **Figure: New Template section**
 
-        **Figure: Template Configuration dialog**
-
-        ![Template Configuration dialog](./media/emulator_manager_template_config.png)
+      ![New Template section](./media/em_new_template_tizen.png)
 
 To manage the created templates:
 
-- To edit a template, click **edit template** (![Edit template](./media/emulator_manager_modify.png)), make the desired changes, and click **OK**. You can only edit the custom templates you have created.
-- To delete a template, click **delete** (![Delete](./media/emulator_manager_delete.png)). You can only delete the custom templates you have created.
+- To edit a template, click **Edit Template** (![Edit template](./media/em_edit_template.png)) while selecting the target Template card, make the desired changes, and click **Save**. You can only edit the custom templates you have created.
+- To delete a template, click **Delete Template** (![Delete](./media/em_delete_template.png)). You can only delete the custom templates you have created.
 
 <a name="manage"></a>
 
 ## Managing and Launching Emulator Instances
 
-In the Emulator Manager, you can launch, edit, delete, reset, and export emulator instances:
+In the Emulator Manager, you can launch edit and delete emulator instances:
 
-1. Launch the Emulator Manager.
+1. Open **EMULATOR** in **TIZEN** panel.
 
-2. Select an emulator instance from the list.
+2. Find the target Emulator from the table.
 
 3. Manage the instance:
 
-   - To launch the emulator, click **Launch**.
-   - To edit an emulator, click **Edit**, make the desired changes, and click **Confirm**.
-   - To delete an emulator, click **Delete**.
-   - To reset an emulator, right-click it and select **Reset**.
-     <a name="export"></a>
-   - To export an emulator, right-click it and select **Export as**. Specify the new image file location.
+   - To launch the emulator, click **Start** (![Start](./media/em_start.png)).
+   - To edit an emulator, click **Edit** (![Start](./media/em_edit.png)), make the desired changes in **Emulator Editor** and click **Save Changes**.
+   - To delete an emulator, click **Delete** (![Start](./media/em_delete.png)).
 
-     When you export the emulator instance, the state of the platform image is replicated.
+## Report an issue of Emulator Manager
 
-<a name="control"></a>
+1. Click **Report Issue** button in the main Activity bar. It will redirect you to dedicated github issue page.
 
-## Controlling the Emulator Manager from the Command Line
+2. Copy the logs from OUTPUT panel while **Tizen Log** is selected and attach to the github issue.
 
-You can create, modify, delete, and list your VMs through the command line interface commands. The CLI binary is located in:
-
-- Ubuntu:
-
-  `<TIZEN_STUDIO>/tools/emulator/bin/em-cli`
-
-- Windows&reg;:
-
-  `<TIZEN_STUDIO>\tools\emulator\bin\em-cli.bat`
-
-For more information, see the CLI help messages.
-
-**Figure: Emulator Manager command line**
-
-![Emulator Manager command line](./media/emulator_manager_cli.png)
-
-In the following figure, you can see the details of a specific command using the `-h` command option.
-
-**Figure: Emulator Manager command details**
-
-![Emulator Manager command details](./media/emulator_manager_cli_detail.png)
-
-The following figure shows an example of how to create and launch an emulator using the CLI.
-
-**Figure: Launching the emulator using the command line**
-
-![Launching the emulator using the command line](./media/emulator_manager_cli_create.png)
-
-In the `create` command, the `–p` option is the platform name. You can see the available platforms using the `list -vm` command.
-
-## Report an issue in Emulator Manager
-
-The **Issue Reporter** button can be used to report any issue that may arise while using **Emulator Manager**. This button is placed inside the main window of **Emulator Manager** and makes the process of reporting an issue straightforward. To report an issue, follow these steps:
-
-1. Launch **Emulator Manager** and view the top right region where two buttons appear: **Issue Reporter** (red rectangle), and **About**, as illustrated in the following figure:
-
-   **Figure: Emulator Manager**
-
-   ![Emulator Manager Window](./media/em_manager.PNG)
-
-2. Click on the **Issue Reporter** button to be redirected to a **GitHub** page, that will open in your default browser. Then use your GitHub username or email address, and password to Sign in:
-
-   **Figure: Sign in page**
-
-   ![Sign In Page](./media/sign_in.png)
-
-3. After signing in, a new page will open. It can be used to report two types of bugs/issues:
-
-   a. **Documentation bug report** - Click on the **“Get started”** button (red rectangle), to report any issue associated with the documentation of Emulator Manager.
-
-   b. **Platform bug report** - Click on the **“Get started”** button (blue rectangle), to report any issue that arises while using Emulator Manager.
-
-   **Figure: GitHub page to report issue**
-
-   ![GitHub page to report issue](./media/git_page.PNG)
-
-## Related information
-
-- Dependencies
-  - Tizen Studio 1.0 and Higher
+3. If issue is related to a particular emulator instance then you can attach a zip file containing vm_config.xml, vm_launch.conf and logs folder from **C:\Users\<user_name>\.tizen-extension-platform\server\sdktools\sdk-data\emulator\vms\<emulatro_name>** directory.
