@@ -1,6 +1,6 @@
 # Creating Certificates
 
-This document explains how to create the necessary certificates profile through creating or importing extising certificates files to install the Tizen application on a Samsung Tizen wearable device.
+This document explains how to create the necessary certificate profiles through creating or importing existing certificate files to install the Tizen application on a Samsung Tizen wearable device.
 
 ## Creating certificate profile
 
@@ -44,14 +44,14 @@ It is used to create an author signature, which ensures the integrity of the app
 
    ![Author Certificate](media/certificate-manager/author-create-1.jpg)
 
-   With **Advanced option** menu, you can check **Use an existing author certificate** option to select either the Android keystore, or you can also choose already existing Samsung author certificate. And import the certificate key file(.p12, .jks, .keystore etc).
+   With the **Advanced option** menu, you can check **Use an existing author certificate** to select either the Android keystore or an existing Samsung author certificate, and import the certificate key file (.p12, .jks, .keystore, etc.).
    
-   Then you can browse the intended certficate and import it with the correct password. 
+   Then you can browse the intended certificate and import it with the correct password. 
    ![Author Certificate Advanced options](media/certificate-manager/author-create-adv-option.jpg)
 
    The same signing key helps in maintaining secure peer authentication between the Tizen Watch app and the Android mobile app.
 
-   For more information, see [Accessory SDK](https://developer.samsung.com/galaxy/accessory). In case of selecting a Samsung author certificate, you can just renew the certificate with the same information. This renewed certificate will be the same as your original RSA key so upgrading your application is guaranteed.
+   For more information, see [Accessory SDK](https://developer.samsung.com/galaxy/accessory). If you select a Samsung author certificate, you can renew the certificate with the same information. This renewed certificate will be the same as your original RSA key, so upgrading your application is guaranteed.
 
 2. <a name="information_of_the_author_certificate"></a>Information of the author certificate
 
@@ -91,7 +91,7 @@ It is used to create an author signature, which ensures the integrity of the app
 
 3. Sign in to Samsung account
 
-   After filling all the information of author and distributor details, when the user clicks the **Create** button a pop-up notification appears, indicating a 5-minute timeout for accessing Samsung account sign-in page.
+   After filling all the author and distributor information, when the user clicks the **Create** button, a pop-up notification appears, indicating a 5-minute timeout for accessing the Samsung account sign-in page.
 
    ![samsung account sign-in timeout](media/certificate-manager/browser-popup.jpg)
 
@@ -107,7 +107,7 @@ It is used to create an author signature, which ensures the integrity of the app
   > The DUID and the authentication is only applicable for **Samsung type** profile creation. **Tizen** type certificate profile does not require any authentication or DUIDs. 
 ### Finish creating new profile
 
-   After successful authentication the certificate profile will be created. You will see a confirmation notification in the bottom right corner. 
-   You will also find the created profile and its information in list of profiles in the **TIZEN** panel.
+   After successful authentication, the certificate profile will be created. You will see a confirmation notification in the bottom right corner. 
+   You will also find the created profile and its information in the list of profiles in the **TIZEN** panel.
 
    ![Profile creation complete](media/certificate-manager/create-profile-done.jpg)

@@ -28,7 +28,7 @@ It ensures:
 - Enables secure communication between components signed with the same certificate (via IPC)
 - Maintains update rights across all versions—you must use the same key for every update
 
-**Critical:** Keep this key safe. Lose it, and you can't update your own app.tion identity, the author key must be stored carefully and protected from loss.
+**Critical:** Keep this key safe. Lose it, and you can't update your own app. To maintain application identity, the author key must be stored carefully and protected from loss.
 
 ### 2. Distributor Certificate
 
@@ -42,7 +42,7 @@ Once the application is submitted to the appropriate store, the distributor cert
 
 The Samsung Certificate Profile is an extension of the Tizen security framework specifically required for Samsung’s Tizen-based devices such as smart TVs, older Galaxy Watches, and IoT appliances. It incorporates Samsung’s device-level verification and permission controls on top of the standard Tizen certification model.
 
-### Author Certitficate
+### Author Certificate
 This identifies the developer to Samsung’s ecosystem and is validated through Samsung’s developer portal.
 
 It ensures:
@@ -53,12 +53,12 @@ It ensures:
 Although structurally similar to the generic Tizen author certificate, Samsung’s author certificate is tied to Samsung’s online developer infrastructure and requires account verification.
 
 ### Distributor Certificate
-Generated specifically for Samsung hardware after the user authenticate and validate the DUID (Device Unique ID) of the device.
+Generated specifically for Samsung hardware after the user authenticates and validates the DUID (Device Unique ID) of the device.
 
 It enables:
 - Installation of apps on registered Samsung devices
 - Access to Samsung-specific APIs and privileged capabilities
-- Debugging and sideloading on real devices via DUID-base verification
+- Debugging and sideloading on real devices via DUID-based verification
 
 When the application is later uploaded to the Samsung store (e.g., for Samsung Smart TV or wearable distribution), the temporary distributor certificate is replaced with Samsung’s official store distributor certificate during the signing process.
 

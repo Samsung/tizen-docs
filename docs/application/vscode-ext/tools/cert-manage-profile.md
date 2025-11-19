@@ -15,9 +15,9 @@ The **Tizen Panel** will be opened with **CERTIFICATE** tab selected.
 ![Tizen Certificate Manager with two profile](media/certificate-manager/manage-profile-1.jpg)
 
 - The active profile is indicated by the green indicator bullet.
-- All of the application in this SDK will be signed with this active profile.
+- All applications in this SDK will be signed with this active profile.
 - You can create, delete, and set a profile to active here.
-- Lower window shows the information of each certificate.
+- The lower window shows the information of each certificate.
 - You can replace the certificate with an existing one.
 - The Tizen platform allows multiple distributor certificates up to two, which supports other device manufacturers or telecommunication companies. However, it is not needed for most of the developers generally.
 
@@ -33,7 +33,7 @@ If you already have:
 And you do not require a new certificate from Tizen or Samsung, you can import and use the available certificates to sign your application.
 In that case, create a new certificate profile and select existing certificates at each step.
 
-Follow the same steps as mentioned in creating certificate before [creating a new profile](cert-create-profile.md#create-a-new-author-certificate).
+Follow the same steps as mentioned in [creating a new profile](cert-create-profile.md#create-a-new-author-certificate).
 
 ### Select an existing author certificate
 
@@ -54,7 +54,7 @@ Follow the same steps as mentioned in creating certificate before [creating a ne
 
 ### Create and find the created profile in the list
 
-  After importing and creating, now you can find the created profile in the list.
+  After importing and creating, you can find the created profile in the list.
 
   ![Select an existing author certificate](media/certificate-manager/imported-profile-create.jpg)
 
