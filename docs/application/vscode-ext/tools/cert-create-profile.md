@@ -1,16 +1,15 @@
 # Creating Certificates
 
-This document explains how to create the necessary certificates or import existing ones to install the Tizen application on a Samsung Tizen wearable device.
+This document explains how to create the necessary certificates profile through creating or importing extising certificates files to install the Tizen application on a Samsung Tizen wearable device.
 
 ## Creating certificate profile
 
-In the menu bar, click **Tools** > **Tizen** > **Tizen Certificate Manager** to launch the Certificate Manager.
+In the VSCode activity bar select:
 
-### Import old profile
+**(1) Tizen extension** > **(2) ACTIVE TARGETS > (3) Certificates: *Active certificate profile***.
 
-If you have a profile, which you have created in the past, you can import it. Click the **Cancel** button, if you want to create a new profile.
-
-![Migration for Certificate Profile](media/certification_guide3.png)
+This will open the **TIZEN** panel with **CERTIFICATE** tab selected.
+![Tizen Certificate Manager with two profile](media/certificate-manager/manage-profile-1.jpg)
 
 ### Create a new certificate profile
 
@@ -20,26 +19,16 @@ A Certificate profile contains the author certificate and distributor certificat
 
    Click the **+** button to create a certificate profile.
 
-   ![Tizen Certificate Manager](media/certification_guide4.png)
+   ![Tizen Certificate Manager](media/certificate-manager/create-profile-1.jpg)
 
-2. Type of certificate
+2. Profile name and type of certificate
+    
+    Enter a certificate profile name.
+  
+    Then select **Create Samsung Certificate** as the certificate profile to generate certificates to develop and install an application to Samsung devices. To upload the application to the store, you must select the certificate profile as Samsung.
 
-   Select **Samsung** as the certificate profile to generate certificates to develop and install an application to Samsung devices. To upload the application to the store, you must select the certificate profile as Samsung.
-   However, if you want to use the emulator and do not want to upload the application to the store, select **Tizen** to create certificate locally.
+    However, if you want to use the emulator and do not want to upload the application to the store, select **Create Tizen Certificate** to create certificate locally.
 
-   ![Select the type of certificate profile](media/certification_guide5.png)
-
-3. Type of the device
-
-   Select **Device Type** and click **Next**.
-
-   ![Select a the device type](media/certification_guide6.png)
-
-4. <a name="create_new_or_select_old_profile"></a>Create new or select old profile
-
-   Select **Create a new certificate profile** to create a new profile. If there is an existing profile, then select the second option. For more information on **Select an existing certificate profile**, see [how to manage certificate profile](managing-certificate-profile.md).
-
-   ![Certificate Profile](media/certification_guide7.png)
 
 #### Create a new author certificate
 
@@ -49,13 +38,16 @@ It is used to create an author signature, which ensures the integrity of the app
 
 1. Create new or select existing author certificate
 
-   Select **Create a new author certificate**. If there is an existing author certificate, see [how to manage certificate profile](managing-certificate-profile.md).
+   Select **Create a new author key file** to create a new author certificate. 
+   
+   If there is an existing author certificate and you select **Import an existing author key file** see [how to manage certificate profile](cert-manage-profile.md#importing-existing-certificates).
 
-   ![Author Certificate](media/certification_guide8.png)
+   ![Author Certificate](media/certificate-manager/author-create-1.jpg)
 
-   With **Advanced options** menu, you can check **Use an existing author certificate** option to select either the Android keystore, or you can also choose already existing Samsung author certificate. Click **Next**.
-
-   ![Author Certificate Advanced options](media/certification_guide8-2.png)
+   With **Advanced option** menu, you can check **Use an existing author certificate** option to select either the Android keystore, or you can also choose already existing Samsung author certificate. And import the certificate key file(.p12, .jks, .keystore etc).
+   
+   Then you can browse the intended certficate and import it with the correct password. 
+   ![Author Certificate Advanced options](media/certificate-manager/author-create-adv-option.jpg)
 
    The same signing key helps in maintaining secure peer authentication between the Tizen Watch app and the Android mobile app.
 
@@ -65,25 +57,10 @@ It is used to create an author signature, which ensures the integrity of the app
 
    Enter the author name and password. It is recommended to set a strong password. If you want to use the same password for the distributor certificate in the next step, select the check box as shown in the following figure:
 
-   ![Create a new author certificate](media/certification_guide9.png)
+   ![Create a new author certificate](media/certificate-manager/author-details.jpg)
 
-   **Additional Fields** contains more Certificate Signing Request (CSR) information to add, but is not mandatory.
-   Click **Next**.
-
-3. Sign in to Samsung account
-
-   A pop-up notification appears, indicating a 5-minute timeout for accessing Samsung account sign-in page.
-
-   ![samsung account sign-in timeout](media/certification_guide11-3.png)
-
-   Samsung account sign-in window appears. Click **Sign in** or **Create new account**. (To get a certificate, you must have a Samsung account. If you do not have an account, it is recommended to create a new account.)
-
-   ![samsung account](media/certification_guide11.png)
-
-   Following a successful login, a "Login Successful" window appears in the browser.
-
-   ![samsung login message](media/certification_guide11-2.png)
-
+   **More Details** contains more Certificate Signing Request (CSR) information to add, but is not mandatory.
+<!--
 4. Backup created author certificate
 
    After sign in step, you can get the author certificate.
@@ -94,25 +71,24 @@ It is used to create an author signature, which ensures the integrity of the app
 
    If you lose the author certificate, you cannot upgrade your application signed with the same certificate.
 
-   Click **Next**.
+   Click **Next**. 
 
 The next step is creating distributor certificate.
+-->
 
 #### Create a new distributor certificate
 
 1. <a name="create_new_or_select_existing_distributor_certificate"></a>Create new or select existing distributor certificate
 
-   Select **Create a new distributor certificate** to create a new certificate. If you select **Select an existing distributor certificate**, see [Managing Certificate Profile](managing-certificate-profile.md).
-
-   Click **Next**.
-
-   ![Distributor certificate](media/certification_guide13.png)
+   Select **Create a new distributor key file** to create a new certificate. 
+   
+   If you select **Import an existing distributor key file**, see [Managing Certificate Profile](cert-manage-profile.md#select-an-existing-distributor-certificate).
 
 2. Information of the distributor certificate
 
-   Select the **Privilege** level for the distributor certificate. The application must have a distributor certificate with appropriate privilege level to ensure that the implemented APIs work in the device.
+   Select the **Privilege level** for the distributor certificate. The application must have a distributor certificate with appropriate privilege level to ensure that the implemented APIs work in the device.
 
-   ![Set the Privilege and DUID](media/certification_guide15.png)
+   ![Set the Privilege and DUID](media//certificate-manager/distributor-create.jpg)
 
    > [!NOTE] > **Privileges**
    >
@@ -127,12 +103,26 @@ The next step is creating distributor certificate.
 
    - When you need to register devices that are more than 10, upload a txt file using **Import a DUID list file** menu. One DUID on a line and max 50 DUIDs are available.
 
-3. Finish creating the distributor certificate
 
-   Click **Next**, to get the distributor certificate.
+3. Sign in to Samsung account
 
-   ![Distributor certificate is complete](media/certification_guide16.png)
+   After filling all the information of author and distributor details, when the user clicks the **Create** button a pop-up notification appears, indicating a 5-minute timeout for accessing Samsung account sign-in page.
 
-   Click **Finish**. You can find the created profile and its information.
+   ![samsung account sign-in timeout](media/certificate-manager/browser-popup.jpg)
 
-   ![Tizen Certificate Manager](media/certification_guide17.png)
+   Samsung account sign-in window appears in the default browser. Click **Sign in** or **Create new account**. (To get a certificate, you must have a Samsung account. If you do not have an account, it is recommended to create a new account.)
+
+   ![samsung account](media/certification_guide11.png)
+
+   Following a successful login, a "Login Successful" window appears in the browser.
+
+   ![samsung login message](media/certificate-manager/auth-success.jpg)
+
+  > [!NOTE] 
+  > The DUID and the authentication is only applicable for **Samsung type** profile creation. **Tizen** type certificate profile does not require any authentication or DUIDs. 
+### Finish creating new profile
+
+   After successful authentication the certificate profile will be created. You will see a confirmation notification in the bottom right corner. 
+   You will also find the created profile and its information in list of profiles in the **TIZEN** panel.
+
+   ![Profile creation complete](media/certificate-manager/create-profile-done.jpg)
