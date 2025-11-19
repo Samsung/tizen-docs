@@ -32,7 +32,7 @@ All the available Emulator instances will be available in the table area. And yo
 > [!NOTE]
 > At the beginning there is no emulator available in the table. New Emulator instances will be added when you create a new emulator. In addition while installing an emulator platform while creating a project it will provide a default emulator instance for each image architecture available for that platform.
 
-<a name="Download platform"></a>
+<a name="download_platform"></a>
 
 ## Downloading an Emulator Platform
 
