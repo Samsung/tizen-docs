@@ -1,6 +1,6 @@
-# Configuring the Package Manager
+# Configuring the Packages
 
-The Package Manager configuration allows you to manage the packages of VSCode Extension for Tizen. With the Package Manager configuration, you can change the options for the package repository for the main and extension SDK.
+The Packages configuration allows you to manage the packages of VSCode Extension for Tizen. With the Packages configuration, you can change the options for the package repository for the main and extension SDK.
 
 ## Configuring the Main SDK Repository
 
@@ -10,9 +10,9 @@ You can set the configuration for installing or updating SDK components using on
 
 The Package Repository configuration enables you to define the server locations for downloading and updating SDK components and related packages. You can directly configure the repository URLs for both Tizen and TV development environments within the extension.
 
-**Figure: Package Manager View with Repository Settings**
+**Figure: Packages View with Repository Settings**
 
-![Configuration window with the Package Repository selected](./media/advanced_conf_server.png)
+![Configuration window with the Package Repository selected](../media/package-repository.png)
 
 To set the package repository:
 
