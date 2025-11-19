@@ -33,7 +33,7 @@ If you already have:
 And you do not require a new certificate from Tizen or Samsung, you can import and use the available certificates to sign your application.
 In that case, create a new certificate profile and select existing certificates at each step.
 
-Follow the same steps as mentioned in creating certificate before [creating a new profile or selecting an old profile](creating-certificates.md#create_new_or_select_old_profile).
+Follow the same steps as mentioned in creating certificate before [creating a new profile](cert-create-profile.md#create-a-new-author-certificate).
 
 ### Select an existing author certificate
 

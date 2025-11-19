@@ -60,21 +60,6 @@ It is used to create an author signature, which ensures the integrity of the app
    ![Create a new author certificate](media/certificate-manager/author-details.jpg)
 
    **More Details** contains more Certificate Signing Request (CSR) information to add, but is not mandatory.
-<!--
-4. Backup created author certificate
-
-   After sign in step, you can get the author certificate.
-
-   ![Author certificate is complete](media/certification_guide12.png)
-
-   The author certificate must be secure. Therefore, it is recommended to create a backup. Click **Browse** to specify the backup location.
-
-   If you lose the author certificate, you cannot upgrade your application signed with the same certificate.
-
-   Click **Next**. 
-
-The next step is creating distributor certificate.
--->
 
 #### Create a new distributor certificate
 

@@ -9,9 +9,7 @@ The certification process is necessary not only for testing your apps on the act
 The certification process guarantees that your application will not be distributed by someone else even if your application package is leaked.
 The following pages describe how to generate certificates, how to maintain them, and how to package your application:
 
-- [Installing the Extension](installing-the-extension.md)
 - [Creating Certificate Profile](cert-create-profile.md)
-- [Signing Application with Certificate](signing-application-with-certificate.md)
 - [Managing Certificate Profile](cert-manage-profile.md)
 
 ## Tizen certificate
