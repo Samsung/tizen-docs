@@ -10,7 +10,7 @@ This section explains the Bluetooth architecture on the Tizen platform and how T
 
 **Figure: Tizen Bluetooth architecture**
 
-![Tizen Bluetooth architecture](media/800px-bluetooth.png)
+![Tizen Bluetooth architecture](media/bluetooth.png)
 
 The Bluetooth framework provides a dialogue for the user to control the BlueZ and ObexD daemons. Bluetooth provides a standard interface between the Bluetooth chip and AP, called the HCI (Host Controller Interface). HCI can be implemented on USB, UART, and SDIO, but for the mobile environment, UART is the most common. HCI activation can differ depending on the chip vendor. The vendor provides the HCI configuration and the initial scripts. For example, Broadcom and Spreadtrum provide firmware and a loading tool. Tizen supports Bluetooth version 5.0, and the GATT, FTP, OPP, MAP, PBAP, A2DP, AVRCP, HSP/HFP, RFCOMM, HID, HDP, and PAN profiles.
 
@@ -95,3 +95,99 @@ The reference kernel configuration for Bluetooth:
   CONFIG_INPUT_GP2A=y
   CONFIG_INPUT_KR3DH=y
   ```
+
+## WLAN
+
+This section provides a step-by-step explanation of what is involved in adding a new Wi-Fi driver and making Wi-Fi work.
+
+**Figure: Tizen Wi-FI architecture**
+
+![Tizen Wi-FI architecture](media/wlan.png)
+
+Feature overview:
+
+- WLAN (802.11 b/g/n)
+- WPS PBC
+- EAP (PEAP, TTLS)
+
+Tizen uses `wpa_supplicant` as the platform interface to Wi-Fi devices. Your Wi-Fi driver must be compatible with the standard `wpa_supplicant`.
+
+The Tizen WLAN architecture is centered on the Linux wireless (IEEE-802.11) subsystem. The Linux wireless SW stack defines the WLAN hardware adaptation software interfaces that need to be used in Tizen. In practice, the required interfaces are defined by cfg80211 for FullMAC WLAN devices and by mac80211 for SoftMAC WLAN devices. In addition, a Linux network interface needs to be supported towards the Linux TCP/IP stack.
+
+The Connection Manager (ConnMan) is a daemon for managing Internet connections within embedded devices running the Linux operating system.
+
+The `wpa_supplicant` interface is a WPA Supplicant with support for WPA and WPA2 (IEEE 802.11i / RSN). WPA Supplicant is the IEEE 802.1X/WPA component that is used in the client stations. It implements key negotiation with a WPA Authenticator, and it controls roaming and the IEEE 802.11 authentication/association of the WLAN driver.
+
+### Porting the OAL interface
+
+The WLAN driver plugin is specific to a Wi-Fi chipset. This includes firmware and chipset-specific tools. Wi-Fi chipset firmware and tool files must be copied to the WLAN driver plugin directory, built, and installed before testing the Wi-Fi functionality. Because of Tizen platform requirements, the Wi-Fi driver must create the `/opt/etc/.mac.info` file, which has the device MAC address.
+
+When the Wi-Fi activation function is called, the request is sent to the NET-CONFIG daemon to call the Wi-Fi start function in HAL_API Wi-Fi. Similarly, the Wi-Fi deactivation function calls the Wi-Fi stop function through NET_CONFIG daemon. In case of Wi-Fi Direct&reg;, the Wi-Fi Direct activation and deactivation functions make the Wi-Fi Direct manager load or unload the Wi-Fi driver using the `wpa_supplicant`.
+
+All other Wi-Fi related functionality is handled by the ConnMan daemon.
+
+### References
+
+- Linux wireless (IEEE-802.11) subsystem: [https://wireless.wiki.kernel.org](https://wireless.wiki.kernel.org)
+- Information on Linux WPA/WPA2/IEEE 802.1X Supplicant: [http://hostap.epitest.fi/wpa_supplicant/](http://hostap.epitest.fi/wpa_supplicant/)
+- Latest ConnMan release: [http://git.kernel.org/?p=network/connman/connman.git;a=summary](http://git.kernel.org/?p=network/connman/connman.git;a=summary)
+- WLAN driver plugin Git path: `/adaptation/devices/wlandrv-plugin-tizen-bcm43xx`
+- Reference kernel configurations
+- The following options must be enabled if the driver supports the cfg802.11 configuration API, instead of the wireless extension API. For more information, see [https://wireless.wiki.kernel.org](http://wireless.wiki.kernel.org/):
+  ```
+  CONFIG_CFG80211
+  CONFIG_LIB80211
+  CONFIG_MAC80211 (Enable this flag, if the driver supports the softMAC feature)
+  ```
+- The following configuration options must be enabled in the kernel if the driver supports wireless extension APIs:
+  ```
+  CONFIG_WIRELESS_EXT=y
+  CONFIG_WEXT_CORE=y
+  CONFIG_WEXT_PROC=y
+  CONFIG_WEXT_PRIV=y
+  CONFIG_WEXT_SPY=y
+  CONFIG_WIRELESS_EXT_SYSFS=y
+  ```
+
+## NFC
+
+The NFC application enables the user to:
+- Read and import the content written on an NFC tag.
+- Edit the content written on an NFC tag.
+- Write and save data on an NFC tag.
+- Load and save the NFC data from or in a file.
+
+**Figure: NFC architecture**
+
+![NFC architecture](media/nfc.png)
+
+The NFC implementation has the following main components:
+
+- **Tizen NFC Framework** contains the NFC manager API layer, the NFC common library and the NFC manager daemon. The `nfc-manager` is the main interface, which actually deals with NFC physical tags, creates a connection with tags, and detects it. It is a daemon process to control the NFC chipset (such as NXP pn544). It provides the read and write service and basic P2P communication service, as well as the basic API for the client application.
+- **NFC HAL** contains the NFC HAL API, and the OAL layer. The NFC HAL acts as an interface between the NFC chipset with the NFC framework (`nfc-manager`). It must be implemented according to the interface provided by the `nfc-manager`.
+
+### Porting the OAL interface
+
+The NFC HAL is implemented as a shared library and it interfaces the Tizen NFC Framework and the vendor NFC chip. The NFC manager loads the `libnfc-common.so` library at runtime. Any vendor-specific function is installed within the same path. The library must be written with predefined OAL API interfaces.
+
+During initialization, the `nfc-manager` loads the `/hal/api/nfc` library, searches for the NFC controller onload function, and calls the NFC backend function which creates an interface structure instance for mapping all the OAL interfaces. These OAL/OEM interfaces are implemented according to the underlying NFC chipset. Once the mapping is done, the NFC manager interacts with `/hal/api/nfc`, which implements the vendor-specific OAL interfaces.
+
+The `_hal_backend_nfc_funcs` struct is exported in the `/hal/api/nfc`. Using this interface structure, the `nfc-manager` communicates with the OAL interfaces at runtime. The NFC HAL loads when the `nfc-manager` is started and the NFC start function is called to initialize the NFC module.
+
+Pay attention to the following:
+
+- Sending the notification to the upper layer (NFC service)  
+See the `phdal4nfc_message_glib.c` file. The `g_idle_add_full` is used for handling the message in the NFC service. You can use the callback client asynchronously in the client context. Post a message in queue, and the message is processed by a client thread.
+- Reference implementation of the NFC plugin  
+Sample code snippets cannot be reproduced. Code is proprietary. For reference, see the `nfc-plugin-emul` files.
+
+### References
+
+Enable the following configuration options in the kernel `.config` file:
+
+```
+Using Pn544: CONFIG_PN544_NFC
+Using Pn65n: CONFIG_PN65N_NFC
+```
+
+For more information, see [http://nfc-forum.org/](http://nfc-forum.org/).
