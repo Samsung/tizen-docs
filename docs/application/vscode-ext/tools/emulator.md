@@ -4,7 +4,8 @@ The Tizen Emulator is a tool that reduces the inconvenience of testing the appli
 
 Using the Emulator Manager, you can create a variety of environments (different device types) and you can preview the problems during the development process. The emulator provides the actual hardware similar to real device controls, and you can check the application features, such as data processing and user scenarios.
 
-The emulator is based on the open source QEMU project and consists of a virtual CPU, memory, and various peripherals. Currently, Tizen Studio only supports the x86 machine architecture for guest.
+The emulator is based on the open source QEMU project and consists of a virtual CPU, memory, and various peripherals. Currently,
+Tizen emulators only supports x86 and x64 architecture hosts. 
 
 You can use the [Emulator Manager](emulator-manager.md) to create and launch a Virtual Machine (emulator) instance. You can communicate with the emulator instance using the [Smart Development Bridge (SDB)](smart-development-bridge.md).
 
@@ -18,19 +19,19 @@ For more information, see [Supported Features](#supported).
 
 ## Running an Application in the Emulator
 
-To use the emulator, you need the Emulator Manager. If you do not have the Emulator Manager, install it through the Tizen Studio Package Manager.
+To use the emulator, you need the Tizen Extension. If you do not have the Tizen Extension, install it from Visual Studio Marketplace.
 
 To start the emulator and run an application:
 
-1. Open the [Emulator Manager](emulator-manager.md#access).
+1. Access the [Emulator Manager](emulator-manager.md#access) panel.
 
-   If you do not have an applicable emulator instance, [create one](emulator-manager.md#create).
+   If you do not have an applicable emulator instance, [download platform](emulator-manager.md#download_platform) and [create one](emulator-manager.md#create).
 
-2. Select the emulator instance and click **Launch**.
+2. Click **Start** (![Start](./media/em_start.png)).
 
 3. Test your application in the emulator. You can launch your application in 2 ways:
-   - In Tizen Studio, select the project and click **Run As**.
-   - Drag an application package file (for example, the WGT file) to the emulator to install and launch the application on the emulator.
+   - In VS Code, select the project and run while emulator is running.
+   - Drag an application package file (for example, the .tpk file) to the emulator to install and launch the application on the emulator.
 
 4. To close the emulator, right-click the emulator and select **Close**, or click and hold the **Power** key.
 
@@ -536,8 +537,3 @@ The following tables describe the differences between a real target device and t
 | Category |      | Physical target | Emulator      |
 |----------|------|-----------------|---------------|
 | Decoder  | FLAC | Supported       | Not supported |
-
-
-## Related information
-* Dependencies
-  - Tizen Studio 1.0 and Higher
