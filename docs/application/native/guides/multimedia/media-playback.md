@@ -58,6 +58,8 @@ Tizen enables your application to [play video](#play_video), and it uses its own
 1. Get the overlay region or Evas object from the Graphics module.
 
    You can display video on a UI layer with the Evas object as well as on an overlay layer.
+   > [!NOTE]
+   > Using the Evas object have been deprecated since Tizen 11.0.
 
 2. Create the player instance.
 
@@ -446,8 +448,8 @@ To play a video file:
    ```
    error_code = player_set_uri(ad->player, video_path);
    ```
-<a name="play_video_display"></a>
-2. Set the display on which the video is played.
+
+2. <a name="play_video_display"></a>Set the display on which the video is played.
 
    To retrieve the correct display handle, use the `GET_DISPLAY()` function. To set the display, use the `player_set_display()` function with the player handle, display type [`player_display_type_e`](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab) enumerator, and display handle:
 
@@ -461,9 +463,7 @@ To play a video file:
    >
    > For an overlay surface, when the device orientation changes, the displayed video does not rotate automatically. If you want to change the video orientation according to the device orientation, use the `player_set_display_rotation()` function within the `app_device_orientation_cb()` callback function used by the application. For an Evas surface, the Evas object for the video is rotated by the window manager used by the application, not by the `player_set_display_rotation()` function.
 
-<a name="play_video_prepare"></a>
-
-3. Prepare the player for playback using the `player_prepare()` function:
+3. <a name="play_video_prepare"></a>Prepare the player for playback using the `player_prepare()` function:
 
    ```
    error_code = player_prepare(ad->player);
