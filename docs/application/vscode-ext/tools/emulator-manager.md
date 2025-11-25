@@ -119,6 +119,8 @@ To manage the created custom platforms:
 
 ![Edit or delete custom platform](./media/em_edit_custom_platform.png)
 
+<a name="template"></a>
+
 ### Creating Templates
 
 The Emulator Manager provides several device template types. A device template defines, for example, the screen resolution and size, and the sensors in the device specification. You can make an emulator instance based on the desired template.

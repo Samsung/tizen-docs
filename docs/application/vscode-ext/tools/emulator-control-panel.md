@@ -20,7 +20,10 @@ The control keys are visible on the emulator when you start it. To access the co
 
 **Figure: Emulator control keys**
 
-![Emulator control keys](./media/emulator_control_keys.png)
+<div style="display: flex; gap: 20px; width: 100%;">
+  <img src="./media/em_tizen_control_keys.png" alt="Tizen control keys" style="width: 48%;" />
+  <img src="./media/em_tv_control_keys.png" alt="TV control keys" style="width: 48%;" />
+</div>
 
 The emulator can use a general purpose or profile-specific skin. While the profile-specific skin provides a realistic skin and hardware keys, the general purpose skin shows a consistent frame on every state of resolution, scale, or rotation, and enables you to change the emulator display resolution to custom values. You can also see the key window.
 
@@ -41,22 +44,22 @@ The following figure illustrates the general purpose skin emulator.
 
 **Figure: General purpose skin emulator**
 
-![General purpose skin emulator](./media/emulator_control_general.png)
+<img src="./media/em_control_general.png" alt="General purpose skin emulator" style="max-width: 100%; height: auto;" />
 
 > **Note**  
-> You can create a custom resolution emulator by using the [Emulator Manager CLI](emulator-manager.md#control), and launch it with the general purpose skin. It is not guaranteed that all applications are correctly shown in the custom resolution.
+> You can create a custom resolution emulator by using the [Emulator Manager](emulator-manager.md#template), and launch it with the general purpose skin. It is not guaranteed that all applications are correctly shown in the custom resolution.
 
 ### Control Keys
 
 The following hardware keys are available on the emulator:
 
-- **Menu** (mobile only)
+- **Menu**
 
   When tapped, a list of options available for the current screen opens.
 
-- **Home** (mobile only)
+- **Home**
 
-  When long-pressed, the Task switcher application opens as on a real device.
+  When pressed, the Task switcher application opens as on a real device.
 
 - **Back**
 
@@ -66,7 +69,7 @@ The following hardware keys are available on the emulator:
 
   You can power off the display by tapping the **Power** key in most situations. Sometimes, the display does not power off when you tap the **Power** key. This is to guarantee the operation of a current application, such as the Stopwatch in the Clock application. If you tap the **Power** or **Home** key again, the display is powered on.
 
-- **Volume Up** and **Volume Down** (mobile only)
+- **Volume Up** and **Volume Down**
 
   When tapped, the volume changes accordingly.
 
@@ -166,13 +169,13 @@ The control panel consists of 3 layers:
 
 **Figure: Emulator Control Panel**
 
-![Emulator Control Panel](./media/emulator_control_panel.png)
+![Emulator Control Panel](./media/em_tizen_ecp.png)
 
 To open the control panel:
 
 1. Launch the emulator.
 2. Right-click the emulator and select **Control Panel**.  
-   ![Opening the control panel](./media/emulator_control_panel_open.png)
+   ![Opening the control panel](./media/em_tizen_ecp_open.png)
 
 The following table lists the control panel features and their availability on different profiles. The instructions for using the features are described below the table. You can use various [keyboard shortcuts](keyboard-shortcuts.md#ecp) for control panel tasks.
 
@@ -485,381 +488,3 @@ In the **Memory** card, you can select a specific memory status using the radio 
 - **Hard Warning (40 MB and under)**
 - **Soft Warning (60 MB and under)**
 - **Normal (Sufficient)**
-
-<a name="control"></a>
-
-## Controlling the Control Panel from the Command Line
-
-You can control and monitor the Tizen Emulator by using the Emulator Control Panel CLI instead of the control panel UI tool. The CLI supports all the functionalities of the UI. The CLI binary is located in:
-
-- Ubuntu:
-
-  `<TIZEN_STUDIO>/tools/emulator/bin/ecp-cli`
-
-- Windows&reg;:
-
-  `<TIZEN_STUDIO>\tools\emulator\bin\ecp-cli.bat`
-
-You can use the CLI in a session mode or shell mode:
-
-- Session mode
-
-  You can access this mode by running the binary without any parameters. The mode keeps a session until it is exited. You can exit by entering the `exit` command.
-
-- Shell mode
-
-  This mode is used for one-time message handling.
-
-**Figure: Session and shell modes**
-
-![Session and shell modes](./media/emulator_control_cli_modes.png)
-
-In Ubuntu, the bash-based auto-completion is activated with the **TAB** key.
-
-The following tables list the commands supported by the control panel CLI.
-
-**Table: CLI common commands**
-
-<table>
-	<thead>
-		<tr>
-			<th>Command</th>
-			<th>Syntax</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code>help</code></td>
-			<td><code>help [device]</code></td>
-			<td>To get help, type the command as <code>help</code>. For a more specific device help, use the device parameter.</td>
-		</tr>
-		<tr>
-			<td><code>keycode</code></td>
-			<td><code>keycode &lt;key-code&gt; [period|press|release]</code></td>
-			<td>To enter a key code for a mobile device:
-			<ul>
-				<li><code>114</code>: Volume down</li>
-				<li><code>115</code>: Volume up</li>
-				<li><code>139</code>: Home</li>
-				<li><code>158</code>: Back</li>
-				<li><code>169</code>: Menu</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td><code>hmp</code></td>
-			<td><code>hmp &lt;hmp command&gt;</code></td>
-			<td>Access the QEMU human monitor protocol commands. For a list of provided commands, enter the <code>ecp-cli hmp help</code> command.</td>
-		</tr>
-		<tr>
-			<td><code>qmp</code></td>
-			<td><code>qmp &lt;qmp command&gt;</code></td>
-			<td>Access the QEMU monitoring protocol. The commands are handled in JSON format, and do not require <code>{"execute": "qmp_capabilities"}</code> to be in the control mode.
-			<p>In the shell mode, the shell does not support the double quotation mark (") as an argument. For the JSON arguments, use \" (backslash + double quotation mark) instead.</p>
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3"><code>hds</code></td>
-			<td><code>hds mount &lt;host path&gt; &lt;guest path&gt;</code></td>
-			<td>Enable the host directory sharing feature between the specified <code>&lt;host path&gt;</code> and the emulator's <code>&lt;guest path&gt;</code>. The specified path must be a folder, not a file.</td>
-		</tr>
-		<tr>
-			<td><code>hds unmount &lt;id&gt;</code></td>
-			<td>Unmount the mounted host directory sharing path. The <code>id</code> is the HDS ID and you can get it from the <code>hds status</code> command.</td>
-		</tr>
-		<tr>
-			<td><code>hds status</code></td>
-			<td>Show the current host directory sharing status.</td>
-		</tr>
-	</tbody>
-</table>
-
-**Table: CLI profile commands**
-
-<table>
-	<thead>
-		<tr>
-			<th>Feature command</th>
-			<th>Sub-command</th>
-			<th>Mobile</th>
-			<th>Wearable</th>
-			<th>Syntax</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td rowspan="8"><code>telephony</code></td>
-			<td><code>call dial</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>telephony call dial &lt;number&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>call hidden-dial</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>telephony call hidden-dial &lt;number&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>call connect</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>telephony call connect</code></td>
-		</tr>
-		<tr>
-			<td><code>call disconnect</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>telephony call disconnect &lt;call id&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>sms send</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>telephony sms send &lt;number&gt; &lt;text&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>sms set</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>telephony sms set &lt;available | unavailable&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>sms status</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>telephony sms status</code></td>
-		</tr>
-		<tr>
-			<td><code>sms mms_status</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>telephony sms mms_status</code></td>
-		</tr>
-		<tr>
-			<td rowspan="4"><code>location</code></td>
-			<td><code>set</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>location set &lt;longitude&gt; &lt;latitude&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>status</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>location status</code></td>
-		</tr>
-		<tr>
-			<td><code>stop</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>location stop</code></td>
-		</tr>
-		<tr>
-			<td><code>file</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>location file &lt;file-path&gt;</code></td>
-		</tr>
-		<tr>
-			<td rowspan="3"><code>battery</code></td>
-			<td><code>level</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>battery level &lt;percent&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>charger</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>battery charger &lt;on | off&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>status</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>battery status</code></td>
-		</tr>
-		<tr>
-			<td rowspan="2"><code>earjack</code></td>
-			<td><code>set</code></td>
-			<td>Yes</td>
-			<td>No</td>
-			<td><code>earjack set &lt;3wire | 4wire | off&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>status</code></td>
-			<td>Yes</td>
-			<td>No</td>
-			<td><code>earjack status</code></td>
-		</tr>
-		<tr>
-			<td rowspan="2"><code>usb</code></td>
-			<td><code>set</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>usb set &lt;on | off&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>status</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>usb status</code></td>
-		</tr>
-		<tr>
-			<td rowspan="2"><code>rssi</code></td>
-			<td><code>set</code></td>
-			<td>Yes</td>
-			<td>No</td>
-			<td><code>rssi set &lt;0~4&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>status</code></td>
-			<td>Yes</td>
-			<td>No</td>
-			<td><code>rssi status</code></td>
-		</tr>
-		<tr>
-			<td rowspan="3"><code>sdcard</code></td>
-			<td><code>attach</code></td>
-			<td>Yes</td>
-			<td>No</td>
-			<td><code>sdcard attach &lt;sdcard_[ 4 | 8 | 16 | 32 ]G&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>detach</code></td>
-			<td>Yes</td>
-			<td>No</td>
-			<td><code>sdcard detach &lt;sdcard_[ 4 | 8 | 16 | 32 ]G&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>status</code></td>
-			<td>Yes</td>
-			<td>No</td>
-			<td><code>sdcard status</code></td>
-		</tr>
-		<tr>
-			<td rowspan="6"><code>nfc</code></td>
-			<td><code>tag attach</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>nfc tag attach &lt;tag type&gt; &lt;NDEF message&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>tag detach</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>nfc tag detach</code></td>
-		</tr>
-		<tr>
-			<td><code>p2p attach</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>nfc p2p attach</code></td>
-		</tr>
-		<tr>
-			<td><code>p2p send</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>nfc p2p send &lt;NDEF message&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>p2p detach</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>nfc p2p detach</code></td>
-		</tr>
-		<tr>
-			<td><code>status</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>nfc status</code></td>
-		</tr>
-		<tr>
-			<td rowspan="11"><code>sensor</code></td>
-			<td><code>accelerometer</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor accelerometer &lt;x&gt; &lt;y&gt; &lt;z&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>gyroscope</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor gyroscope &lt;x&gt; &lt;y&gt; &lt;z&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>magnetic</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor magnetic &lt;x&gt; &lt;y&gt; &lt;z&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>proximity</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor proximity &lt;value&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>light</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor light &lt;value&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>pressure</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor pressure &lt;level&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>uv</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor uv &lt;level&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>hrm</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor hrm &lt;level&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>pedometer</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor pedometer &lt;state&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>status</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor status [sensor]</code></td>
-		</tr>
-		<tr>
-			<td><code>file</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>sensor file &lt;sensor&gt; &lt;path&gt;</code></td>
-		</tr>
-		<tr>
-			<td rowspan="2"><code>low_memory</code></td>
-			<td><code>set</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>low_memory set &lt;hard-warning | soft-warning | normal&gt;</code></td>
-		</tr>
-		<tr>
-			<td><code>status</code></td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td><code>low_memory status</code></td>
-		</tr>
-	</tbody>
-</table>
-
-## Related Information
-
-- Dependencies
-  - Tizen Studio 1.0 and Higher
