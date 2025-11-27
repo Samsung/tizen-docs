@@ -1,97 +1,98 @@
 # Running Applications on the Emulator
 
-The Tizen Emulator is a tool that reduces the inconvenience of testing the application on a real device, by providing an environment similar to a real device. In other words, if you do not have the real device, you can test on a virtual device with similar features.
+The Tizen Emulator is a tool that reduces the inconvenience of testing the application on a real device by providing an environment similar to a real device. In other words, if you do not have the real device, you can test on a virtual device with similar features.
 
 Using the Emulator Manager, you can create a variety of environments (different device types) and you can preview the problems during the development process. The emulator provides the actual hardware similar to real device controls, and you can check the application features, such as data processing and user scenarios.
 
-The emulator is based on the open source QEMU project and consists of a virtual CPU, memory, and various peripherals. Currently,
-Tizen emulators only supports x86 and x64 architecture hosts. 
+The emulator is based on the open-source QEMU project and consists of a virtual CPU, memory, and various peripherals. Currently, Tizen emulators only support x86 and x64 architecture hosts.
 
 You can use the [Emulator Manager](emulator-manager.md) to create and launch a Virtual Machine (emulator) instance. You can communicate with the emulator instance using the [Smart Development Bridge (SDB)](smart-development-bridge.md).
 
 The emulator provides the following main features:
 
-- Full system emulation, including CPU, memory, and peripheral devices
-- Event simulation with the [Emulator Control Panel](emulator-control-panel.md)
-- Guest operation acceleration using a host CPU or GPU
+- Full system emulation, including CPU, memory, and peripheral devices.
+- Event simulation with the [Emulator Control Panel](emulator-control-panel.md).
+- Guest operation acceleration using a host CPU or GPU.
 
 For more information, see [Supported Features](#supported).
 
 ## Running an Application in the Emulator
 
-To use the emulator, you need the Tizen Extension. If you do not have the Tizen Extension, install it from Visual Studio Marketplace.
+To use the emulator, you need the Tizen Extension. If you do not have the Tizen Extension, install it from the Visual Studio Marketplace.
 
 To start the emulator and run an application:
 
 1. Access the [Emulator Manager](emulator-manager.md#access) panel.
 
-   If you do not have an applicable emulator instance, [download platform](emulator-manager.md#download_platform) and [create one](emulator-manager.md#create).
+   If you do not have an applicable emulator instance, [download a platform](emulator-manager.md#download_platform) and [create one](emulator-manager.md#create).
 
 2. Click **Start** (![Start](./media/em_start.png)).
 
 3. Test your application in the emulator. You can launch your application in 2 ways:
-   - In VS Code, select the project and run while emulator is running.
-   - Drag an application package file (for example, the .tpk file) to the emulator to install and launch the application on the emulator.
+   - In VS Code, select the project and run it while the emulator is running.
+   - Drag an application package file (for example, the `.tpk` file) to the emulator to install and launch the application on the emulator.
 
 4. To close the emulator, right-click the emulator and select **Close**, or click and hold the **Power** key.
 
-The emulator device stores the installed application so you can run it again, if needed. To remove the application, you must uninstall it. If you run the project again on the same emulator, the emulator replaces the application with the new version.
+The emulator device stores the installed application so you can run it again if needed. To remove the application, you must uninstall it. If you run the project again on the same emulator, the emulator replaces the application with the new version.
 
 In the Emulator Manager, in addition to creating new emulator instances according to the environments you need, you can also [modify and delete emulator instances](emulator-manager.md#manage).
 
 <a name="speed"></a>
+
 ## Increasing the Application Execution Speed
 
 The Tizen x86 Emulator exploits [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel-based Virtual Machine in Linux) or [HAX](../setup/hardware-accelerated-execution-manager.md) (Hardware Accelerated eXecution in Windows&reg; and macOS) with HW virtualization support.
 
 If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator Manager, check the following prerequisites and install KVM or HAX:
 
-1. Prerequisites for using HW virtualization:
+1. **Prerequisites for using HW virtualization:**
 
-   - In Ubuntu:
+   - **In Ubuntu:**
 
      To use KVM, you need a processor that supports HW virtualization. Both Intel and AMD have developed those extensions for their processors (Intel VT-x/AMD-V). Check whether the CPU supports HW virtualization with the following command:
 
-     ```
-     $egrep -c '(vmx|svm)' /proc/cpuinfo
+     ```bash
+     egrep -c '(vmx|svm)' /proc/cpuinfo
      ```
 
      If the output of the command is 0, the CPU does not support HW virtualization. Otherwise, it does.
 
-     The HW virtualization feature can also be disabled on the BIOS setting. Check the setting and enable it if you need the feature.
+     The HW virtualization feature can also be disabled in the BIOS setting. Check the setting and enable it if you need the feature.
 
-   - In Windows&reg;:
+   - **In Windows&reg;:**
 
      To use HAX, you need an Intel VT-x-supported CPU, and you must enable the NX-related setting in the PC BIOS.
 
-   - In macOS:
+   - **In macOS:**
 
      To use HAX, install EFI-related updates on your Intel-based Mac computer.
 
      For more information, see [EFI and SMC firmware updates for Intel-based Mac computers](http://support.apple.com/kb/HT1237).
 
-2. Installing KVM or HAX:
+2. **Installing KVM or HAX:**
 
-   - In Ubuntu:
+   - **In Ubuntu:**
 
      No installation is required for KVM.
 
-   - In Windows&reg; and macOS:
+   - **In Windows&reg; and macOS:**
 
      The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../setup/hardware-accelerated-execution-manager.md).
 
-   > **Note**  
-   > If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable NX (or PAE and DEP) -related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
+   > [!NOTE]
+   > If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable the NX (or PAE and DEP) related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
 
    No configuration is required for KVM or HAX.
 
 ### Working with the HW Virtualization, Settings, and Help
 
-To run the emulator with the HW virtualization support in the Emulator Manager, set the **CPU VT** field to **ON**. The field is disabled if your system cannot support HW virtualization.
+To run the emulator with HW virtualization support in the Emulator Manager, set the **CPU VT** field to **ON**. The field is disabled if your system cannot support HW virtualization.
 
-You can also run the emulator with the HW virtualization support from the command line, by including the `-enable-kvm` (in Ubuntu) or `-enable-hax` (in Windows&reg; and macOS) option in the start-up command.
+You can also run the emulator with HW virtualization support from the command line by including the `-enable-kvm` (in Ubuntu) or `-enable-hax` (in Windows&reg; and macOS) option in the start-up command.
 
 <a name="supported"></a>
+
 ## Supported Features
 
 The emulator provides various virtual HW, media formats, codecs, and [OpenGL&reg; ES acceleration](#opengl). For better performance of the OpenGL&reg; ES support, the Tizen Emulator exploits the latest feature of the graphic driver, so always [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator). The emulator, however, has some limitations and [differences compared to physical target devices](#target).
@@ -132,7 +133,7 @@ The following table lists the basic features supported in the emulator.
 			<td>2 skin layout types are supported:
 			<ul>
 				<li>Profile-specific skin</li>
-				<li>General purpose skin</li>
+				<li>General-purpose skin</li>
 			</ul>
 			</td>
 		</tr>
@@ -244,17 +245,19 @@ The following table lists the basic features supported in the emulator.
 </table>
 
 <a name="opengl"></a>
+
 ### OpenGL&reg; ES Acceleration Support
 
 For the emulator to support OpenGL&reg; ES acceleration, you need:
 
-- Graphics chipset driver that supports OpenGL&reg; 1.4 installed on the host machine
-- All chipset vendors and driver versions available to support the OpenGL&reg; 1.4 standard
+- Graphics chipset driver that supports OpenGL&reg; 1.4 installed on the host machine.
+- All chipset vendors and driver versions available to support the OpenGL&reg; 1.4 standard.
 
-> **Note**  
+> [!NOTE]
 > The emulator supports only ES 1.1, ES 2.0, and EGL&trade; 1.4 versions.
 
 <a name="target"></a>
+
 ### Differences Between the Emulator and Target
 
 The following tables describe the differences between a real target device and the emulator. For more information, see the detailed differences in:
@@ -374,8 +377,8 @@ The following tables describe the differences between a real target device and t
 	</tbody>
 </table>
 
-
 <a name="input"></a>
+
 #### Input System
 
 **Table: Input differences**
@@ -386,6 +389,7 @@ The following tables describe the differences between a real target device and t
 | Host keyboard and hardware key | Real device and driver | Virtual (VirtIO) device and driver |
 
 <a name="graphics"></a>
+
 #### Graphics and Display
 
 **Table: Graphics and display differences**
@@ -396,6 +400,7 @@ The following tables describe the differences between a real target device and t
 | Backlight control  | LDI (LCD Driver IC) command         | Additional virtual device and driver |
 
 <a name="sensor"></a>
+
 #### Virtual Sensor (Emulator Control Panel)
 
 **Table: Virtual sensor differences**
@@ -510,6 +515,7 @@ The following tables describe the differences between a real target device and t
 </table>
 
 <a name="telephony"></a>
+
 #### Telephony
 
 **Table: Telephony differences**
@@ -520,6 +526,7 @@ The following tables describe the differences between a real target device and t
 | SMS       | SMS messaging is supported.          | SMS messaging with the Emulator Control Panel is supported. <br>Sending emulator-to-emulator SMS messages is not supported. |
 
 <a name="power"></a>
+
 #### Power Management
 
 **Table: Power management differences**
@@ -530,6 +537,7 @@ The following tables describe the differences between a real target device and t
 | Power off      | Power management in the processor   | ACPI (Advanced Configuration and Power Interface) |
 
 <a name="codec"></a>
+
 #### Supported Media Formats and Codecs
 
 **Table: Media format and codec differences**
