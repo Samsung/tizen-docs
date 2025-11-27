@@ -1,14 +1,14 @@
 # Using Emulator Control Keys, Menu, and Panel
 
-Before deploying your application, it is important that you test it in an environment similar to a real device.
+Before deploying your application, it is important to test it in an environment similar to a real device.
 
-You can run the application in the emulator, and test a variety of user scenarios, such as network access, audio input and output, and text messages. With a mouse and keyboard, you can control the application in the emulator exactly like on an actual device.
+You can run the application in the emulator and test a variety of user scenarios, such as network access, audio input and output, and text messages. With a mouse and keyboard, you can control the application in the emulator exactly like on an actual device.
 
-While the application is running, you can use the Emulator Control Panel to simulate events for a variety of system options that the actual device provides. For example, by manipulating the virtual battery, you can simulate the application in different charge environments.
+While the application is running, you can use the Emulator Control Panel to simulate events for various system options that the actual device provides. For example, by manipulating the virtual battery, you can simulate the application in different charge environments.
 
 The emulator controls consist of internal and external parts:
 
-- The **HOME**, **Volume control** and **Back** buttons, for example, are external parts controlling the device from the outside.
+- The **Home**, **Volume control**, and **Back** buttons, for example, are external parts controlling the device from the outside.
 
   In the emulator, the external parts are called the **emulator control keys and menu**.
 
@@ -25,29 +25,29 @@ The control keys are visible on the emulator when you start it. To access the co
   <img src="./media/em_tv_control_keys.png" alt="TV control keys" style="width: 48%;" />
 </div>
 
-The emulator can use a general purpose or profile-specific skin. While the profile-specific skin provides a realistic skin and hardware keys, the general purpose skin shows a consistent frame on every state of resolution, scale, or rotation, and enables you to change the emulator display resolution to custom values. You can also see the key window.
+The emulator can use a general-purpose or profile-specific skin. While the profile-specific skin provides a realistic skin and hardware keys, the general-purpose skin shows a consistent frame on every state of resolution, scale, or rotation, and enables you to change the emulator display resolution to custom values. You can also see the key window.
 
-> **Note**  
-> The layout of the general purpose skin is not configurable like the profile-specific skin.
+> [!NOTE]
+> The layout of the general-purpose skin is not configurable like the profile-specific skin.
 
-- Key window
+- **Key window**
 
-  The key window consists of virtual hardware keys, which are embedded in profile-specific skins. You can use it as a remote controller of its main emulator window. You can move it to any position separate from the main window, or dock it to the right side of the main window. If it is docked with the main window, both windows can be moved together on the screen.
+  The key window consists of virtual hardware keys, which are embedded in profile-specific skins. You can use it as a remote controller for its main emulator window. You can move it to any position separate from the main window, or dock it to the right side of the main window. If it is docked with the main window, both windows can be moved together on the screen.
 
   You can make the key window appear or disappear through the context menu or a [shortcut key](keyboard-shortcuts.md#emulator).
 
-- Pair tag
+- **Pair tag**
 
   The color of the pair tag indicates which main window is paired with which key window. The color changes every time the emulator boots.
 
-The following figure illustrates the general purpose skin emulator.
+The following figure illustrates the general-purpose skin emulator.
 
 **Figure: General purpose skin emulator**
 
 <img src="./media/em_control_general.png" alt="General purpose skin emulator" style="max-width: 100%; height: auto;" />
 
-> **Note**  
-> You can create a custom resolution emulator by using the [Emulator Manager](emulator-manager.md#template), and launch it with the general purpose skin. It is not guaranteed that all applications are correctly shown in the custom resolution.
+> [!NOTE]
+> You can create a custom resolution emulator by using the [Emulator Manager](emulator-manager.md#template) and launch it with the general-purpose skin. It is not guaranteed that all applications are correctly shown in the custom resolution.
 
 ### Control Keys
 
@@ -59,7 +59,7 @@ The following hardware keys are available on the emulator:
 
 - **Home**
 
-  When pressed, the Task switcher application opens as on a real device.
+  When pressed, the Task Switcher application opens as on a real device.
 
 - **Back**
 
@@ -77,11 +77,11 @@ The following hardware keys are available on the emulator:
 
 You can access the context menu by right-clicking on the emulator. In the menu, you can select:
 
-- Emulator name (the top row in the menu)
+- **Emulator name** (the top row in the menu)
 
   The **Detailed Info** window is displayed, showing the **Shortcut Info** and **VM Info** tabs. The **Shortcut Info** tab lists the [emulator keyboard shortcuts](keyboard-shortcuts.md#emulator) and the **VM Info** tab defines the virtual machine details.
 
-  In macOS: To use the emulator keyboard shortcuts, open the Keyboard Setting dialog and switch your macOS function keys option to work as standard function keys.
+  In macOS: To use the emulator keyboard shortcuts, open the Keyboard Settings dialog and switch your macOS function keys option to work as standard function keys.
 
   **Table: VM Info**
 
@@ -119,7 +119,7 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
 
   Show or hide the controller window.
 
-  > **Note**  
+  > [!NOTE]
   > The **Controller** menu is not supported in the profile-specific skin.
 
 - **Advanced > Screenshot**
@@ -150,7 +150,7 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
 
   Exit the emulator.
 
-> **Note**  
+> [!NOTE]
 > In Ubuntu, you must change a global GNOME setting to view the menu icons:
 >
 > 1. In the command console, execute the `gconf-editor` command.
@@ -174,7 +174,8 @@ The control panel consists of 3 layers:
 To open the control panel:
 
 1. Launch the emulator.
-2. Right-click the emulator and select **Control Panel**.  
+2. Right-click the emulator and select **Control Panel**.
+
    ![Opening the control panel](./media/em_tizen_ecp_open.png)
 
 The following table lists the control panel features and their availability on different profiles. The instructions for using the features are described below the table. You can use various [keyboard shortcuts](keyboard-shortcuts.md#ecp) for control panel tasks.
@@ -332,7 +333,7 @@ The control panel can be used to simulate various device data:
 - In the **USB** card, you can connect or disconnect a USB device.
 - In the **RSSI** card, you can set the RSSI (remote signal strength indicator) information level.
 - In the **SDCard** card, you can attach or detach an SD card to or from the emulator at runtime. You can attach a **4G**, **8G**, **16G**, or **32G** SD card.
-  > **Note**  
+  > [!NOTE]
   > The same SD card cannot be attached to multiple emulators at the same time.
 
 Device information set using the control panel is reflected on the indicator bar of the emulator screen.
@@ -341,15 +342,15 @@ Device information set using the control panel is reflected on the indicator bar
 
 In the **Location** card, you can provide simulated responses to location data requests:
 
-- Injecting map markers
+- **Injecting map markers**
 
   In the **Map Image** section, right-click the desired map locations and click **Inject Markers** to send the location data to the emulator.
 
-- Manually entering location coordinates
+- **Manually entering location coordinates**
 
   In the **Manual** section, enter the coordinates and click **Inject Location** to send the location data to the emulator. The range of the latitude, longitude, altitude, and horizontal accuracy is from -90 to 90, -180 to 180, -300 to 100000, and 0 to 100000, respectively.
 
-- Loading a GPS log file
+- **Loading a GPS log file**
 
   In the **Log** section, select a pre-logged GPS data file (in NMEA183 format) and click **Inject Log** to send the location data to the emulator.
 
@@ -357,10 +358,10 @@ In the **Location** card, you can provide simulated responses to location data r
 
 In the **NFC** card, you can test near-field communication (NFC) features.
 
-> **Note**  
+> [!NOTE]
 > The control panel only sends NFC-related events to the emulator. There is no actual information exchange between the control panel and emulator. Therefore, for information exchange features, such as writing information to an NFC tag, the emulator simply displays a success message.
 
-- Creating NFC data exchange format (NDEF) messages
+- **Creating NFC data exchange format (NDEF) messages**
 
   An NDEF message contains 1 or more NDEF records. In the **NDEF Message** section:
 
@@ -372,7 +373,7 @@ In the **NFC** card, you can test near-field communication (NFC) features.
 
   Click **Edit** or **Remove** to modify or delete a selected record.
 
-- Attaching and detaching NFC tags
+- **Attaching and detaching NFC tags**
 
   In the **NDEF Tag** section:
 
@@ -382,7 +383,7 @@ In the **NFC** card, you can test near-field communication (NFC) features.
 
      If the NDEF record list is not empty, an NDEF message is created using this list and the attach message is sent to the emulator with the NDEF message.
 
-- Creating a peer-to-peer (P2P) data connection
+- **Creating a peer-to-peer (P2P) data connection**
 
   In the **PEER TO PEER** section:
 
@@ -396,27 +397,27 @@ In the control panel, you can model user actions, such as shaking, throwing, and
 
 - In the **Sensor** card, you can control the 3-axis sensors. The popup consists of 4 tabs, where you can adjust the acceleration, magnetic, and gyro sensors of the emulator instance. In the **GUI** tab, you can intuitively adjust various sensor data by using 3D graphics.
 
-  - GUI
+  - **GUI**
 
     In the **GUI** tab, you can select an active sensor and move the 3D model of the emulator instance with the 3 axis sliders or the direction buttons (**Portrait**, **Landscape**, **Reverse Portrait**, and **Reverse Landscape**). The instance monitor displays the acceleration, magnetic, and gyro values.
 
     To better control the movement, select the **With axis** checkbox to see the axes in the emulator image. You can also fix the Y or Z axis by selecting the **X/Z** or **X/Y** radio button, respectively. To change the emulator accelerator value in the direction of the movement, select the **Move** radio button.
 
-  - Acceleration
+  - **Acceleration**
 
     In the **Acceleration** tab, you can control the acceleration of the instance along the coordinate axes. When the emulated device is stationary and vertical in portrait orientation, the acceleration value of the Y axis is 1 g (gravitational acceleration). You can control the acceleration 3-axis values from -2 g to 2 g, using the sliders.
 
-  - Magnetic
+  - **Magnetic**
 
     In the **Magnetic** tab, you can control the magnetic field values of the instance along the coordinate axes. When the emulated device is stationary and vertical in portrait orientation, the Y axis is at true north and the magnetic field strength values are 1, 0, and -10 µT (microtesla). You can control the magnetic field 3-axis values from -2000 µT to 2000 µT, using the sliders.
 
-  - Gyro
+  - **Gyro**
 
     In the **Gyro** tab, You can control the gyro (rotation angle per second) of the instance along the coordinate axes. You can control the gyro 3-axis values from -573 degrees/s to 573 degrees/s, using the sliders.
 
 You can simulate a single event on the individual sensor, or use sensor data files to simulate sequences of events on the sensor. A sensor data file consists of predefined events. It is written in ASCII. By loading a data file in the **Acceleration**, **Magnetic**, or **Gyro** tab, you can play a sequence of predefined events. You can also add multiple data files to be played in sequence. The format of each line in the event file is:
 
-```
+```text
 timestamp, x, y, z
 ```
 
@@ -441,11 +442,11 @@ When you add the event files and click **Start**, the predefined events are simu
 
 In the **Telephony** card, you can generate incoming calls and messages:
 
-- Generating incoming calls
+- **Generating incoming calls**
 
   Incoming calls are generated in the **Call** tab.
 
-  > **Note**  
+  > [!NOTE]
   > A Mobile Termination (MT) call is made from the Emulator Control Panel to the emulator. A Mobile Origination (MO) call is made from the emulator to the Emulator Control Panel using the emulator's phone application.
 
   To make an MT call:
@@ -458,11 +459,11 @@ In the **Telephony** card, you can generate incoming calls and messages:
 
   To make an MO call:
 
-  1. Call a phone number using the emulator's phone application.  
+  1. Call a phone number using the emulator's phone application.
      In the **MO Call** section, you can see the call ID, number, and call type.
   2. To disconnect the call, click **Disconnect**.
 
-- Generating messages
+- **Generating messages**
 
   SMS messages are generated in the **Messaging** tab. After sending a message, your application waits for the asynchronous send status message. You can generate this status report for SMS messages using the same **Messaging** tab.
 
@@ -473,12 +474,12 @@ In the **Telephony** card, you can generate incoming calls and messages:
 
   To generate status reports, select the sending status value for the SMS message and click **Set**. The available values are:
 
-  - **SMS OK(Success)**
+  - **SMS OK (Success)**
   - **SMS Not Available**
 
   You can also generate MMS message status reports. To generate MMS status reports, select the sending status value for the MMS message and click **Set**. The available values are:
 
-  - **MMS OK(Success)**
+  - **MMS OK (Success)**
   - **MMS Failure**
 
 ### Providing Memory Data
