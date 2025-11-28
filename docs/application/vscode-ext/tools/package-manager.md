@@ -32,3 +32,13 @@ To set the package repository:
 ## .NET SDK and Tizen Workload Installation Directory
 
 `$HOME/.tizen-extension-platform/server/sdktools/dotnet`
+
+## Adavanced Package Installation
+
+If you wish to install the full SDK by platform version, you can use the Advanced feature.
+
+**Figure: Advanced Package Installation**
+
+![Advanced Package Installation](./media/advanced_package_installation.png)
+
+
