@@ -4,25 +4,24 @@ The Packages configuration allows you to manage the packages of the VS Code Exte
 
 ## Configuring the Main SDK Repository
 
-You can set the configuration for installing or updating SDK components using one of the following methods.
+You can configure the installation and update settings for SDK components.
 
 ### Configuring the Package Repository
 
-The Package Repository configuration enables you to define the server locations for downloading and updating SDK components and related packages. You can directly configure the repository URLs for both Tizen and TV development environments within the extension.
+The Package Repository configuration allows you to define server locations for downloading and updating SDK components and related packages. You can configure repository URLs for both Tizen and TV development environments directly within the extension.
 
 **Figure: Packages View with Repository Settings**
 
 ![Configuration window with the Package Repository selected](media/package-repository.png)
 
-To set the package repository:
+To configure the package repository:
 
-1. In the Primary Sidebar, open the **Notice** view.
-2. Click the **Packages** button.
-   - The **Packages** page will open.
-3. On the **Packages** page, click the **Repository Setting** icon <img src="./media/advanced_conf_browse.png" alt="More Options icon" height="25" style="vertical-align: middle;"/> in the upper-right corner.
-4. In the configuration panel, enter the repository URL for either the **Tizen Repository** or the **TV Repository**, as needed.
+1. Open the **Notice** view in the Primary Sidebar.
+2. Click the **Packages** button to open the **Packages** page.
+3. Click the **Repository Setting** icon (<img src="./media/advanced_conf_browse.png" alt="More Options icon" height="25" style="vertical-align: middle;"/>) in the upper-right corner.
+4. In the configuration panel, enter the repository URL for the **Tizen Repository** or **TV Repository** as needed.
 5. Click **Apply** to validate and save the configuration.
-   - Once the settings are applied, the **Update** button becomes active.
+   The **Update** button becomes active once the settings are applied.
 6. Click **Update** to synchronize and install the latest packages from the specified repositories.
 
 ## Tizen SDK Installation Directory
@@ -33,9 +32,9 @@ To set the package repository:
 
 `$HOME/.tizen-extension-platform/server/sdktools/dotnet`
 
-## Adavanced Package Installation
+## Advanced Package Installation
 
-If you wish to install the full SDK by platform version, you can use the Advanced feature.
+To install the full SDK for a specific platform version, use the **Advanced** feature.
 
 **Figure: Advanced Package Installation**
 
