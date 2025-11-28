@@ -17,7 +17,11 @@ The main features of the Emulator Manager are:
 
 The Emulator Manager is part of the Tizen Extension, so you do not need to install it separately.
 
-The Emulator Manager becomes available in the panel section of VS Code after installing the Tizen Extension. In the panel, select the **TIZEN > EMULATOR** tab.
+Emulator Manager will be available in the panel section of VS Code after installing the Tizen Extension.
+
+There are two way to open open Emulator manager in panel:
+1. **Activity Bar > ACTIONS > Create Emulator**
+2. **Penel > TIZEN > EMULATOR**.
 
 **Figure: Access the Emulator Manager from panel**
 
@@ -27,7 +31,7 @@ All available emulator instances are displayed in the table area. You can start,
 
 **Figure: Emulator table**
 
-![Emulator table](./media/em_default_emulators.png)
+![Emulator table](./media/em_emulator_table.png)
 
 > [!NOTE]
 > Initially, there are no emulators available in the table. New emulator instances will be added when you create a new emulator. Additionally, when installing an emulator platform while creating a project, a default emulator instance for each image architecture available for that platform will be provided.
@@ -50,7 +54,9 @@ To download a new emulator platform:
 
 5. Click the **Download Selected** button to start the installation.
 
-6. Progress can be viewed from the Activity Bar or the notification area.
+6. Progress could be seen from the Activity Bar or from the notification area.
+
+![Platform install](./media/em_download_platform.png)
 
 > [!NOTE]
 > You must have a stable internet connection to perform the installation. You cannot cancel or install a new platform during an ongoing installation. Additionally, based on the platform you installed, default emulator instances will be added to the panel table once the installation is successful.
@@ -88,15 +94,17 @@ To create a new emulator instance:
 
 To create an emulator, you must first select the platform. You can create, modify, and delete a custom platform, and view the generated platforms. Most application developers do not need a custom platform, but it can be useful for platform developers.
 
-**Figure: Import Custom Image**
+**Figure: Emulator Platform Images**
 
-![Platform list](./media/em_platform_image.png)
+![Platform list](./media/em_platform_images.png)
 
 To create a custom platform:
 
 1. In the Emulator Editor, select the target Platform type (Tizen or TV) for which you want to create a custom platform.
 
-2. Click the **Import Custom Image** button.
+2. Select the base platform image from the dropdown menu for which you want to create a custom image.
+
+3. Click (![Create Custom Image button](./media/em_add_button.png)) button from the right of selected image.
 
 3. In the **Import Custom Image** section, select a Base Platform, Format, and Image file.
 
@@ -108,16 +116,16 @@ To create a custom platform:
 
    The new platform is added to the Image dropdown list.
 
-   **Figure: Import Custom Image**
+   **Figure: Create Custom Image**
 
-   ![Import Custom Image section](./media/em_import_custom_image.png)
+   ![Create Custom Image](./media/em_create_custom_platform.png)
 
 To manage the created custom platforms:
 
 - To edit a platform, click the **Edit** button in the Image dropdown section while selecting the custom platform. Make the desired changes and click **Save Image**. You can only edit custom platforms you have created.
 - To delete a platform, click the **Delete** button in the Image dropdown section while selecting the custom platform. You can only delete custom platforms you have created.
 
-![Edit or delete custom platform](./media/em_edit_custom_platform.png)
+![Edit or delete custom platform](./media/em_edit_custom_image.png)
 
 <a name="template"></a>
 
