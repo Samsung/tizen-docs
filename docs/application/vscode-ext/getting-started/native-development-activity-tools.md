@@ -7,7 +7,7 @@
   - createing project
   - app sigining (\w certificate manager)
 -->
- You can create new application projects with command palette(`CTRL` + `P`)'s  "`Tizen: Create Tizen Project`" command, and manage the existing applications in the **Project Explorer** view in Visual Studio Code for Tizen. You can also simply manage necessary toolchain and target architecture for your native application project, and register certificates for your applications to allow them to be published in the application stores.
+  You can create a new application project with the "`+ Create Project`" button or the command palette(`CTRL` + `P`)'s  "`Tizen: Create Tizen Project`" command, and manage the existing applications in the **Project Explorer** view in Visual Studio Code for Tizen. You can also simply manage necessary toolchain and target architecture for your native application project, and register certificates for your applications to allow them to be published in the application stores.
 
 ## Editing Code & Building Your Application
 You can use the content assist and API and privilege checker tools to speed up the code writing and verification task.
