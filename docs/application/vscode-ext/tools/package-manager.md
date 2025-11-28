@@ -12,7 +12,7 @@ The Package Repository configuration enables you to define the server locations 
 
 **Figure: Packages View with Repository Settings**
 
-![Configuration window with the Package Repository selected](../media/package-repository.png)
+![Configuration window with the Package Repository selected](media/package-repository.png)
 
 To set the package repository:
 
@@ -39,6 +39,6 @@ If you wish to install the full SDK by platform version, you can use the Advance
 
 **Figure: Advanced Package Installation**
 
-![Advanced Package Installation](./media/advanced_package_installation.png)
+![Advanced Package Installation](media/advanced-package-installation.png)
 
 
