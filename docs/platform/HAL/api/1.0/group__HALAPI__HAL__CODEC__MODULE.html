@@ -712,6 +712,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__CODEC__MODULE.html#gaf5dfc87ebac67edfb8c4e1ee25b4399f">hal_codec_error_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__CODEC__MODULE.html#a85e2d49cff5ef9e4256c7041c32b9ab0">error_code</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__CODEC__MODULE.html#structhal__codec__buffer__s">hal_codec_buffer_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__CODEC__MODULE.html#a35262e8cba975c2bb738a20cfb746ad7">buffer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HALAPI__HAL__CODEC__MODULE.html#structhal__codec__resolution__s">hal_codec_resolution_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__CODEC__MODULE.html#ac32dabb576bd0876592e01511bb512a8">resolution</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HALAPI__HAL__CODEC__MODULE.html#a98d046a521941704b61d2358cb6460db">timestamp</a></td></tr>
 </table>
 <hr/><h4>Field Documentation</h4>
 <a class="anchor" id="a35262e8cba975c2bb738a20cfb746ad7"></a><!-- doxytag: member="hal_codec_message_s::buffer" ref="a35262e8cba975c2bb738a20cfb746ad7" args="" -->
@@ -753,6 +754,20 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>The changed resolution </p>
+
+</div>
+</div>
+<a class="anchor" id="a98d046a521941704b61d2358cb6460db"></a><!-- doxytag: member="hal_codec_message_s::timestamp" ref="a98d046a521941704b61d2358cb6460db" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t <a class="el" href="group__HALAPI__HAL__CODEC__MODULE.html#a98d046a521941704b61d2358cb6460db">hal_codec_message_s::timestamp</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The timestamp of invalid input buffer (Since 1.3) </p>
 
 </div>
 </div>
@@ -1779,6 +1794,9 @@ hal_codec_remove_message_callback() </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaba9af87f26b2e3444559eca629cf5bd6aba5320b84da859a4e770c4388dd53456"></a><!-- doxytag: member="HAL_CODEC_MESSAGE_TYPE_RESOLUTION_CHANGED" ref="ggaba9af87f26b2e3444559eca629cf5bd6aba5320b84da859a4e770c4388dd53456" args="" -->HAL_CODEC_MESSAGE_TYPE_RESOLUTION_CHANGED</em>&nbsp;</td><td>
 <p>Resolution is changed </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaba9af87f26b2e3444559eca629cf5bd6afe8ba8f4e3679dd1bc1993c4c0a2b684"></a><!-- doxytag: member="HAL_CODEC_MESSAGE_TYPE_INVALID_INPUT_BUFFER" ref="ggaba9af87f26b2e3444559eca629cf5bd6afe8ba8f4e3679dd1bc1993c4c0a2b684" args="" -->HAL_CODEC_MESSAGE_TYPE_INVALID_INPUT_BUFFER</em>&nbsp;</td><td>
+<p>Invalid input buffer (Since 1.3) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaba9af87f26b2e3444559eca629cf5bd6a8111c99d7dd19489e179cf49679e6580"></a><!-- doxytag: member="HAL_CODEC_MESSAGE_TYPE_ERROR" ref="ggaba9af87f26b2e3444559eca629cf5bd6a8111c99d7dd19489e179cf49679e6580" args="" -->HAL_CODEC_MESSAGE_TYPE_ERROR</em>&nbsp;</td><td>
 <p>Error is occurred </p>

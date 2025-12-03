@@ -4876,6 +4876,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>timestamp</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>hal_codec_message_s</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__CODEC__MODULE.html</Path>
+    <Anchor>a98d046a521941704b61d2358cb6460db</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>count</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -5645,6 +5655,15 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__CODEC__MODULE.html</Path>
     <Anchor>ggaba9af87f26b2e3444559eca629cf5bd6aba5320b84da859a4e770c4388dd53456</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_CODEC_MESSAGE_TYPE_INVALID_INPUT_BUFFER</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__CODEC__MODULE.html</Path>
+    <Anchor>ggaba9af87f26b2e3444559eca629cf5bd6afe8ba8f4e3679dd1bc1993c4c0a2b684</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
