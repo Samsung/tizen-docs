@@ -1,8 +1,6 @@
-# Tizen Extension Library
-## [Overview](/application/extensions/dotnet/overview.md "tags:['TizenX', 'extension', 'library', 'Tizen.UI', 'TizenX.ZLog'], authors:['jh5.cho@samsung.com']")
-## Guides
-### Tizen.UI
-#### [Overview](/application/extensions/dotnet/guides/tizen-ui/overview.md "tags:['TizenX', 'Tizen.UI']")
-#### [Getting Started](/application/extensions/dotnet/guides/tizen-ui/getting-started.md "tags:['TizenX', 'Tizen.UI'], authors:['jh5.cho@samsung.com']")
-### TizenX.ZLog
-#### [Overview](/application/extensions/dotnet/guides/tizenx-zlog/overview.md "tags:['TizenX', 'TizenX.ZLog'], authors:['jh5.cho@samsung.com']")
+# [Overview](/application/extensions/tizenx/overview.md "source:https://github.com/Samung/tizen-docs/blob/add-tizenx/docs/extensions/tizenx/overview.md tags:['TizenX', 'extension', 'library', 'Tizen.UI', 'TizenX.ZLog'], authors:['jh5.cho@samsung.com']")
+# Tizen.UI
+## [Overview](/application/extensions/tizenx/guides/tizen-ui/overview.md "source:https://github.com/Samsung/tizen-docs/blob/add-tizenx/docs/extensions/tizenx/guides/tizen-ui/overview.md tags:['TizenX', 'Tizen.UI']")
+## [Getting Started](/application/extensions/tizenx/guides/tizen-ui/getting-started.md "source: https://github.com/Samsung/tizen-docs/blob/add-tizenx/docs/extensions/tizenx/guides/tizen-ui/getting-started.md tags:['TizenX', 'Tizen.UI'], authors:['jh5.cho@samsung.com']")
+# TizenX.ZLog
+## [Overview](/application/extensions/tizenx/guides/tizenx-zlog/overview.md "source:https://github.com/JoonghyunCho/tizen-docs/blob/add-tizenx/docs/extensions/tizenx/guides/tizenx-zlog/overview.md tags:['TizenX', 'TizenX.ZLog'], authors:['jh5.cho@samsung.com']")
