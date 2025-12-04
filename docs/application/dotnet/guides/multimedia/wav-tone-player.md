@@ -1,4 +1,4 @@
-# Media Playback
+# WAV and Tone Player
 
 You can play different audio formats.
 
@@ -11,6 +11,8 @@ The main media playback features are described below:
 - Using the tone player
 
     Enables you to play [tones](#tone).
+
+These players support only simple audio playback. If you need more advanced features, please refer to [Media Playback](media-playback.md).
 
 <a name="wav"></a>
 ## WAV player
