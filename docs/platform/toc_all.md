@@ -35,18 +35,17 @@
 
 # Porting
 ## HAL
-### [Overview](/platform/HAL/overview.md)
-### [System](/platform/HAL/system.md)
-### [Display & Graphics](/platform/HAL/displaygraphics.md)
-### [Security](/platform/HAL/security.md)
-### [Multimedia](/platform/HAL/multimedia.md)
-### [Connectivity](/platform/HAL/connectivity.md)
-### [Machine Learning](/platform/HAL/ml.md)
-### [Location](/platform/HAL/location.md)
-
+### [Overview](/platform/HAL/guides/overview.md)
+### [Connectivity](/platform/HAL/guides/connectivity.md)
+### [Display & Graphics](/platform/HAL/guides/displaygraphics.md)
+### [Location](/platform/HAL/guides/location.md)
+### [Machine Learning](/platform/HAL/guides/ml.md)
+### [Multimedia](/platform/HAL/guides/multimedia.md)
+### [Security](/platform/HAL/guides/security.md)
+### [System](/platform/HAL/guides/system.md)
 
 ### API Reference
-#### [1.0](/platform/HAL/api/1.0/index.html){:target="_blank"}
+#### [1.0](/platform/HAL/api/1.0/index.md){:target="_blank"}
 ## Archive
 ### [Overview](/platform/porting/overview.md)
 ### [Kernel](/platform/porting/kernel.md)
