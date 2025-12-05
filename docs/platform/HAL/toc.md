@@ -1,0 +1,8 @@
+# [Overview](overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/platform/HAL/overview.md, tags:['HAL'], authors:['cw00.choi@samsung.com']")
+# [Connectivity](connectivity.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/platform/HAL/connectivity.md, tags:['HAL', 'Connectivity', 'Bluetooth', 'WLAN', 'NFC'], authors:['jiung.yu@samsung.com']")
+# [Display & Graphics](displaygraphics.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/platform/HAL/displaygraphics.md, tags:['HAL', 'TDM', 'TBM'], authors:['jinbong.lee@samsung.com', 'gl77.lee@samsung.com']")
+# [Location](location.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/platform/HAL/location.md, tags:['HAL', 'Location'], authors:['jkjo92@samsung.com']")
+# [Machine Learning](ml.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/platform/HAL/ml.md, tags:['HAL', 'ML', 'Machine Learning'], authors:['jkjo92@samsung.com']")
+# [Multimedia](multimedia.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/platform/HAL/multimedia.md, tags:['HAL', 'Audio', 'Camera', 'Codec', 'DRM', 'HDCP'], authors:['ym80.yang@samsung.com']")
+# [Security](security.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/platform/HAL/security.md, tags:['HAL', 'Auth', 'Certs', 'Keys'], authors:['ds73.lee@samsung.com', 'dongik.lee@samsung.com']")
+# [System](system.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/platform/HAL/system.md, tags:['HAL', 'Battery', 'Bezel', 'Board', 'Display', 'External Connection', 'Haptic', 'Input', 'IR', 'LED', 'Memory', 'Power', 'Thermal', 'Touchscreen', 'Sensor Resource Management'], authors:['cw00.choi@samsung.com']")
