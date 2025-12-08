@@ -17,12 +17,12 @@ TizenX provides you with ready-to-use components, productivity tools, and pre-in
 
  * **Performance and Optimization**
     Benefit from built-in memory and performance optimizations designed for the Tizen platform.
- 
+
  * **Enhanced Productivity**
     Build apps faster with commercial-level UI components, declarative UI helpers, enhanced layouts, and powerful development tools.
- 
+
  * **Flexible and Modular**
     TizenX is divided into independent modules. You can include only the libraries you need, keeping your application lightweight.
- 
+
  * **Rapid Updates**
     Receive the latest features and bug fixes through NuGet without waiting for a new Tizen OS release.
