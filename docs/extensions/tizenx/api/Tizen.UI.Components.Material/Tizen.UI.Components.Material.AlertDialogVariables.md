@@ -9,7 +9,7 @@ public class AlertDialogVariables : Tizen.UI.Components.Variables,
 System.IEquatable&lt;Tizen.UI.Components.Material.AlertDialogVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; AlertDialogVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; AlertDialogVariables
 
 Implements [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[AlertDialogVariables](Tizen.UI.Components.Material.AlertDialogVariables.md 'Tizen.UI.Components.Material.AlertDialogVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
 ### Properties
@@ -25,7 +25,7 @@ public Tizen.UI.Color ActionButtonBackgroundColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.ActionButtonCornerRadius'></a>
 
@@ -38,7 +38,7 @@ public Tizen.UI.CornerRadius ActionButtonCornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.ActionButtonFontFamily'></a>
 
@@ -103,7 +103,7 @@ public Tizen.UI.Thickness ActionButtonPadding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.ActionButtonSpacing'></a>
 
@@ -129,7 +129,7 @@ public Tizen.UI.Color ActionButtonTextColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.BackgroundColor'></a>
 
@@ -142,7 +142,7 @@ public Tizen.UI.Color BackgroundColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.BodyPadding'></a>
 
@@ -155,7 +155,7 @@ public Tizen.UI.Thickness BodyPadding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.CornerRadius'></a>
 
@@ -168,7 +168,7 @@ public Tizen.UI.CornerRadius CornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.Default'></a>
 
@@ -220,7 +220,7 @@ public Tizen.UI.Thickness FooterPadding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.HeaderPadding'></a>
 
@@ -233,7 +233,7 @@ public Tizen.UI.Thickness HeaderPadding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.MessageFontFamily'></a>
 
@@ -272,7 +272,7 @@ public Tizen.UI.Color MessageTextColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.Padding'></a>
 
@@ -285,7 +285,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.Spacing'></a>
 
@@ -337,7 +337,7 @@ public Tizen.UI.Color TitleTextColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.AlertDialogVariables.UnderShadows'></a>
 
@@ -350,7 +350,8 @@ public System.Collections.Generic.IEnumerable&lt;Tizen.UI.Shadow> UnderShadows {
 ```
 
 #### Property Value
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Shadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+
 
 
 

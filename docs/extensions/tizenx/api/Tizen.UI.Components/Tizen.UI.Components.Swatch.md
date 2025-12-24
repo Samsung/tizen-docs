@@ -84,7 +84,7 @@ public Swatch(Tizen.UI.Color color, int population);
 
 <a name='Tizen.UI.Components.Swatch.Swatch(Tizen.UI.Color,int).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 The color of the swatch.
 
@@ -106,7 +106,7 @@ public Tizen.UI.Color BodyTextColor { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Swatch.Color'></a>
 
@@ -119,7 +119,7 @@ public Tizen.UI.Color Color { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Swatch.Population'></a>
 
@@ -145,7 +145,7 @@ public Tizen.UI.Color TitleTextColor { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 
 

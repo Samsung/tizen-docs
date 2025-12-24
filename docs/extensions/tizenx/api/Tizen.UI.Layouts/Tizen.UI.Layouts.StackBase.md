@@ -10,7 +10,7 @@ Tizen.UI.Layouts.IStackLayout,
 Tizen.UI.Layouts.ILayout
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') &#129106; StackBase
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') &#129106; StackBase
 
 Derived  
 &#8627; [HStack](Tizen.UI.Layouts.HStack.md 'Tizen.UI.Layouts.HStack')  
@@ -48,6 +48,7 @@ Implements [Spacing](Tizen.UI.Layouts.IStackLayout.md#Tizen.UI.Layouts.IStackLay
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

@@ -9,7 +9,7 @@ public class DividerVariables : Tizen.UI.Components.Variables,
 System.IEquatable&lt;Tizen.UI.Components.Material.DividerVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; DividerVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; DividerVariables
 
 Implements [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[DividerVariables](Tizen.UI.Components.Material.DividerVariables.md 'Tizen.UI.Components.Material.DividerVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
 ### Properties
@@ -25,7 +25,7 @@ public Tizen.UI.Color Color { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.DividerVariables.Default'></a>
 
@@ -52,6 +52,7 @@ public float Thickness { get; set; }
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

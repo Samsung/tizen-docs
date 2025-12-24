@@ -3,7 +3,7 @@
 ## ISelectable Interface
 
 Represents selectable element.  
-All derived class of [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') that implements this interface can have [Selected](Tizen.UI.Components.UIState.md#Tizen.UI.Components.UIState.Selected 'Tizen.UI.Components.UIState.Selected') state when [IsSelected](Tizen.UI.Components.ISelectable.md#Tizen.UI.Components.ISelectable.IsSelected 'Tizen.UI.Components.ISelectable.IsSelected') is true.
+All derived class of Tizen.UI.View that implements this interface can have [Selected](Tizen.UI.Components.UIState.md#Tizen.UI.Components.UIState.Selected 'Tizen.UI.Components.UIState.Selected') state when [IsSelected](Tizen.UI.Components.ISelectable.md#Tizen.UI.Components.ISelectable.IsSelected 'Tizen.UI.Components.ISelectable.IsSelected') is true.
 
 ```csharp
 public interface ISelectable
@@ -55,7 +55,7 @@ void Toggle(Tizen.UI.KeyDeviceClass device);
 
 <a name='Tizen.UI.Components.ISelectable.Toggle(Tizen.UI.KeyDeviceClass).device'></a>
 
-`device` [Tizen.UI.KeyDeviceClass](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.KeyDeviceClass 'Tizen.UI.KeyDeviceClass')
+`device` Tizen.UI.KeyDeviceClass
 ### Events
 
 <a name='Tizen.UI.Components.ISelectable.SelectedChanged'></a>
@@ -70,6 +70,7 @@ event EventHandler&lt;InputEventArgs> SelectedChanged;
 
 #### Event Type
 [System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[InputEventArgs](Tizen.UI.Components.InputEventArgs.md 'Tizen.UI.Components.InputEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+
 
 
 

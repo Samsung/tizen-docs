@@ -26,12 +26,12 @@ Tizen.UI.Size ArrangeChildren(Tizen.UI.Rect bounds);
 
 <a name='Tizen.UI.Layouts.ILayoutManager.ArrangeChildren(Tizen.UI.Rect).bounds'></a>
 
-`bounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`bounds` Tizen.UI.Rect
 
 The available space for the layout.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The arranged size of the layout.
 
 <a name='Tizen.UI.Layouts.ILayoutManager.Measure(float,float)'></a>
@@ -58,8 +58,9 @@ The available width for the layout.
 The available height for the layout.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The measured size of the layout.
+
 
 
 

@@ -23,7 +23,7 @@ Tizen.UI.Thickness BorderArea { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.WindowBorder.IWindowBorderProvider.BorderView'></a>
 
@@ -36,7 +36,7 @@ Tizen.UI.View BorderView { get; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 ### Methods
 
 <a name='Tizen.UI.WindowBorder.IWindowBorderProvider.SetTargetWindow(Tizen.UI.Window)'></a>
@@ -52,9 +52,10 @@ void SetTargetWindow(Tizen.UI.Window window);
 
 <a name='Tizen.UI.WindowBorder.IWindowBorderProvider.SetTargetWindow(Tizen.UI.Window).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The target window.
+
 
 
 

@@ -61,7 +61,7 @@ public override Tizen.UI.NativeHandle.PropertyValueHandle Value { get; }
 ```
 
 #### Property Value
-[Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')
+Tizen.UI.NativeHandle.PropertyValueHandle
 ### Methods
 
 <a name='Tizen.UI.Scene3D.OrthographicSizePropertyValue_T_.GetTargetProperty(T)'></a>
@@ -82,8 +82,9 @@ public override Tizen.UI.NativeHandle.AnimatablePropertyHandle GetTargetProperty
 The view to which the property value will be applied.
 
 #### Returns
-[Tizen.UI.NativeHandle.AnimatablePropertyHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.AnimatablePropertyHandle 'Tizen.UI.NativeHandle.AnimatablePropertyHandle')  
+Tizen.UI.NativeHandle.AnimatablePropertyHandle  
 The handle of the target property.
+
 
 
 

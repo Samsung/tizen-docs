@@ -8,7 +8,7 @@ Sticky area of RecyclerView.
 public class StickyArea : Tizen.UI.ViewGroup
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; StickyArea
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; StickyArea
 ### Constructors
 
 <a name='Tizen.UI.Components.Recycler.StickyArea.StickyArea(Tizen.UI.Components.Recycler.RecyclerView)'></a>
@@ -105,6 +105,7 @@ Sync the sticky area with the RecyclerView. It updates the sticky items based on
 ```csharp
 public void Sync();
 ```
+
 
 
 

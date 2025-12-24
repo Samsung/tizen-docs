@@ -20,7 +20,7 @@ System.Nullable&lt;Tizen.UI.Outline> Outline { get; set; }
 ```
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.Outline](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Outline 'Tizen.UI.Outline')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.Outline[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.IDecoratableText.Strikethrough'></a>
 
@@ -33,7 +33,7 @@ System.Nullable&lt;Tizen.UI.Strikethrough> Strikethrough { get; set; }
 ```
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.Strikethrough](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Strikethrough 'Tizen.UI.Strikethrough')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.Strikethrough[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.IDecoratableText.TextShadow'></a>
 
@@ -46,7 +46,7 @@ System.Nullable&lt;Tizen.UI.TextShadow> TextShadow { get; set; }
 ```
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.TextShadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextShadow 'Tizen.UI.TextShadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.TextShadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.IDecoratableText.Underline'></a>
 
@@ -59,7 +59,8 @@ System.Nullable&lt;Tizen.UI.Underline> Underline { get; set; }
 ```
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.Underline](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Underline 'Tizen.UI.Underline')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.Underline[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+
 
 
 

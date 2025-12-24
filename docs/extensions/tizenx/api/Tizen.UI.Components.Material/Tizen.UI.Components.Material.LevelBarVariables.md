@@ -9,7 +9,7 @@ public class LevelBarVariables : Tizen.UI.Components.Variables,
 System.IEquatable&lt;Tizen.UI.Components.Material.LevelBarVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; LevelBarVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; LevelBarVariables
 
 Implements [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[LevelBarVariables](Tizen.UI.Components.Material.LevelBarVariables.md 'Tizen.UI.Components.Material.LevelBarVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
 ### Properties
@@ -38,7 +38,7 @@ public Tizen.UI.Color DividerColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.LevelBarVariables.DividerOffset'></a>
 
@@ -77,7 +77,7 @@ public Tizen.UI.Color HandleColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.LevelBarVariables.HandleHeight'></a>
 
@@ -116,7 +116,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.LevelBarVariables.TrackColor'></a>
 
@@ -129,7 +129,7 @@ public Tizen.UI.Color TrackColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.LevelBarVariables.TrackThickness'></a>
 
@@ -155,7 +155,8 @@ public Tizen.UI.Color TrailColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
+
 
 
 

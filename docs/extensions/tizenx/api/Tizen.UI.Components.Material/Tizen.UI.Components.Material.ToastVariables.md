@@ -9,7 +9,7 @@ public class ToastVariables : Tizen.UI.Components.Variables,
 System.IEquatable&lt;Tizen.UI.Components.Material.ToastVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; ToastVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; ToastVariables
 
 Implements [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[ToastVariables](Tizen.UI.Components.Material.ToastVariables.md 'Tizen.UI.Components.Material.ToastVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
 ### Properties
@@ -25,7 +25,7 @@ public Tizen.UI.Color BackgroundColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.ToastVariables.BottomOffset'></a>
 
@@ -51,7 +51,7 @@ public Tizen.UI.CornerRadius CornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.ToastVariables.Default'></a>
 
@@ -103,7 +103,7 @@ public Tizen.UI.CornerRadius IconCornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.ToastVariables.IconHeight'></a>
 
@@ -129,7 +129,7 @@ public Tizen.UI.Color IconMultipliedColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.ToastVariables.IconWidth'></a>
 
@@ -194,7 +194,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.ToastVariables.TextColor'></a>
 
@@ -207,7 +207,7 @@ public Tizen.UI.Color TextColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.ToastVariables.UnderShadows'></a>
 
@@ -220,7 +220,8 @@ public System.Collections.Generic.IEnumerable&lt;Tizen.UI.Shadow> UnderShadows {
 ```
 
 #### Property Value
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Shadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+
 
 
 

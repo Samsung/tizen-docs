@@ -22,7 +22,7 @@ public Tizen.UI.HiddenInputMode PasswordMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.HiddenInputMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.HiddenInputMode 'Tizen.UI.HiddenInputMode')
+Tizen.UI.HiddenInputModeH
 
 <a name='Tizen.UI.Components.InputFieldImpl.ShowPlaceholderOnFocus'></a>
 

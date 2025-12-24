@@ -8,7 +8,7 @@ The Drawable class is an abstract class that provides a base for all drawable ob
 public abstract class Drawable : Tizen.UI.NObject
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; Drawable
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Drawable
 
 Derived  
 &#8627; [DrawableGroup](Tizen.UI.Primitives2D.DrawableGroup.md 'Tizen.UI.Primitives2D.DrawableGroup')  
@@ -27,7 +27,7 @@ public Tizen.UI.Rect BoundingBox { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 ### Methods
 
 <a name='Tizen.UI.Primitives2D.Drawable.ClipPath(Tizen.UI.Primitives2D.Drawable)'></a>
@@ -120,6 +120,7 @@ The amount to translate on the x-axis.
 `y` [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
 
 The amount to translate on the y-axis.
+
 
 
 

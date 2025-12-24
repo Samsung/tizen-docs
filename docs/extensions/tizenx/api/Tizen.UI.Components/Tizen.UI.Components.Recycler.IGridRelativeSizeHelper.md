@@ -27,7 +27,7 @@ float GetAspectRatio(Tizen.UI.View view, int position, Tizen.UI.Components.Recyc
 
 <a name='Tizen.UI.Components.Recycler.IGridRelativeSizeHelper.GetAspectRatio(Tizen.UI.View,int,Tizen.UI.Components.Recycler.RecyclerView).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Components.Recycler.IGridRelativeSizeHelper.GetAspectRatio(Tizen.UI.View,int,Tizen.UI.Components.Recycler.RecyclerView).position'></a>
 

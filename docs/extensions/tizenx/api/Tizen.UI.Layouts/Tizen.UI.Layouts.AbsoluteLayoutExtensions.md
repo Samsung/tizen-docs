@@ -2,7 +2,7 @@
 
 ## AbsoluteLayoutExtensions Class
 
-Provides a series of extension methods that support positioning [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')s in [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout')s.
+Provides a series of extension methods that support positioning Tizen.UI.Views in [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout')s.
 
 ```csharp
 public static class AbsoluteLayoutExtensions
@@ -15,8 +15,8 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 ## AbsoluteLayoutExtensions.LayoutBounds&lt;TView>(this TView, float, float, float, float) Method
 
-Sets the position and size of a [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') in an [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout') and used.
+Sets the position and size of a Tizen.UI.View in an [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout').<br/>  
+This only works if the Tizen.UI.View is included in the  [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout') and used.
 
 ```csharp
 public static TView LayoutBounds&lt;TView>(this TView view, float x, float y, float width, float height)
@@ -70,7 +70,7 @@ The view itself, to allow for method chaining.
 ## AbsoluteLayoutExtensions.LayoutFlags&lt;TView>(this TView, AbsoluteLayoutFlags) Method
 
 Set a flag that indicates that the layout bounds position and size values for a child are proportional to the size of the [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout') and used.
+This only works if the Tizen.UI.View is included in the  [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout') and used.
 
 ```csharp
 public static TView LayoutFlags&lt;TView>(this TView view, Tizen.UI.Layouts.AbsoluteLayoutFlags flag)

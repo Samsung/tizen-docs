@@ -65,14 +65,14 @@ public abstract Tizen.UI.Size ArrangeChildren(Tizen.UI.Rect bounds);
 
 <a name='Tizen.UI.Layouts.LayoutManager.ArrangeChildren(Tizen.UI.Rect).bounds'></a>
 
-`bounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`bounds` Tizen.UI.Rect
 
 The available space for the layout.
 
 Implements [ArrangeChildren(Rect)](Tizen.UI.Layouts.ILayoutManager.md#Tizen.UI.Layouts.ILayoutManager.ArrangeChildren(Tizen.UI.Rect) 'Tizen.UI.Layouts.ILayoutManager.ArrangeChildren(Tizen.UI.Rect)')
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The arranged size of the layout.
 
 <a name='Tizen.UI.Layouts.LayoutManager.Measure(float,float)'></a>
@@ -101,7 +101,7 @@ The available height for the layout.
 Implements [Measure(float, float)](Tizen.UI.Layouts.ILayoutManager.md#Tizen.UI.Layouts.ILayoutManager.Measure(float,float) 'Tizen.UI.Layouts.ILayoutManager.Measure(float, float)')
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The measured size of the layout.
 
 <a name='Tizen.UI.Layouts.LayoutManager.ResolveConstraints(float,float,float,float,float)'></a>
@@ -148,6 +148,7 @@ The maximum length for the layout.
 #### Returns
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')  
 The resolved constraint for the layout.
+
 
 
 

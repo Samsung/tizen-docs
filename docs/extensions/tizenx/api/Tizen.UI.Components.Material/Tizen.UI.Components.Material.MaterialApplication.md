@@ -8,7 +8,7 @@ Represents an material application.
 public class MaterialApplication : Tizen.UI.UIApplication
 ```
 
-Inheritance [Tizen.Applications.CoreApplication](https://docs.microsoft.com/en-us/dotnet/api/Tizen.Applications.CoreApplication 'Tizen.Applications.CoreApplication') &#129106; [Tizen.UI.UIApplication](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.UIApplication 'Tizen.UI.UIApplication') &#129106; MaterialApplication
+Inheritance Tizen.Applications.CoreApplication &#129106; Tizen.UI.UIApplication &#129106; MaterialApplication
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.MaterialApplication.MaterialApplication()'></a>
@@ -51,6 +51,7 @@ public static Tizen.UI.Components.Material.MaterialApplication Current { get; }
 
 #### Property Value
 [MaterialApplication](Tizen.UI.Components.Material.MaterialApplication.md 'Tizen.UI.Components.Material.MaterialApplication')
+
 
 
 

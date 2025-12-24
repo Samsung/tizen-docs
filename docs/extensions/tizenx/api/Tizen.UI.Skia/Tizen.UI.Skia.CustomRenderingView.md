@@ -8,7 +8,7 @@
 public abstract class CustomRenderingView : Tizen.UI.ImageView
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ImageView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageView 'Tizen.UI.ImageView') &#129106; CustomRenderingView
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ImageView &#129106; CustomRenderingView
 
 Derived  
 &#8627; [SKCanvasView](Tizen.UI.Skia.SKCanvasView.md 'Tizen.UI.Skia.SKCanvasView')
@@ -37,6 +37,7 @@ public event EventHandler&lt;SKPaintSurfaceEventArgs> PaintSurface;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

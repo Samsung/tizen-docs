@@ -118,7 +118,7 @@ public Tizen.UI.FittingMode FittingMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FittingMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FittingMode 'Tizen.UI.FittingMode')
+Tizen.UI.FittingMode
 
 <a name='Tizen.UI.Visuals.Internal.ImageVisualMap.ImageLoadWithViewSize'></a>
 
@@ -146,7 +146,7 @@ public Tizen.UI.ImageLoadPolicy LoadPolicy { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageLoadPolicy](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageLoadPolicy 'Tizen.UI.ImageLoadPolicy')
+Tizen.UI.ImageLoadPolicy
 
 <a name='Tizen.UI.Visuals.Internal.ImageVisualMap.MaskContentScale'></a>
 
@@ -172,7 +172,7 @@ public Tizen.UI.ImageMaskingMode MaskingMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageMaskingMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageMaskingMode 'Tizen.UI.ImageMaskingMode')
+Tizen.UI.ImageMaskingMode
 
 <a name='Tizen.UI.Visuals.Internal.ImageVisualMap.OrientationCorrection'></a>
 
@@ -198,7 +198,7 @@ public Tizen.UI.Rect PixelArea { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 
 <a name='Tizen.UI.Visuals.Internal.ImageVisualMap.PreMultipliedAlpha'></a>
 
@@ -225,7 +225,7 @@ public Tizen.UI.ImageReleasePolicy ReleasePolicy { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageReleasePolicy](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageReleasePolicy 'Tizen.UI.ImageReleasePolicy')
+Tizen.UI.ImageReleasePolicy
 
 <a name='Tizen.UI.Visuals.Internal.ImageVisualMap.ResourceUrl'></a>
 
@@ -264,7 +264,7 @@ public Tizen.UI.ImageWrapMode WrapModeU { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageWrapMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageWrapMode 'Tizen.UI.ImageWrapMode')
+Tizen.UI.ImageWrapMode
 
 <a name='Tizen.UI.Visuals.Internal.ImageVisualMap.WrapModeV'></a>
 
@@ -277,7 +277,8 @@ public Tizen.UI.ImageWrapMode WrapModeV { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageWrapMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageWrapMode 'Tizen.UI.ImageWrapMode')
+Tizen.UI.ImageWrapMode
+
 
 
 

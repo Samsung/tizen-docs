@@ -2,7 +2,7 @@
 
 ## LayoutExtensions Class
 
-Provides a series of extension methods that support positioning [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')s in [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout')s.
+Provides a series of extension methods that support positioning Tizen.UI.Views in [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout')s.
 
 ```csharp
 public static class LayoutExtensions
@@ -16,7 +16,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 ## LayoutExtensions.Arrange(this View, Rect, bool) Method
 
 Arranges the view within the specified rectangle.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static void Arrange(this Tizen.UI.View view, Tizen.UI.Rect rect, bool ignoreRTL=false);
@@ -25,13 +25,13 @@ public static void Arrange(this Tizen.UI.View view, Tizen.UI.Rect rect, bool ign
 
 <a name='Tizen.UI.Layouts.LayoutExtensions.Arrange(thisTizen.UI.View,Tizen.UI.Rect,bool).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to arrange.
 
 <a name='Tizen.UI.Layouts.LayoutExtensions.Arrange(thisTizen.UI.View,Tizen.UI.Rect,bool).rect'></a>
 
-`rect` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`rect` Tizen.UI.Rect
 
 The rectangle within which to arrange the view.
 
@@ -46,7 +46,7 @@ A flag indicating whether to ignore right-to-left layout direction.
 ## LayoutExtensions.Center&lt;TView>(this TView) Method
 
 Sets the horizontal and vertical layout alignment of the view to [Center](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Center 'Tizen.UI.Layouts.LayoutAlignment.Center').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView Center&lt;TView>(this TView view)
@@ -76,7 +76,7 @@ The view itself.
 ## LayoutExtensions.CenterHorizontal&lt;TView>(this TView) Method
 
 Sets the horizontal layout alignment of the view to [Center](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Center 'Tizen.UI.Layouts.LayoutAlignment.Center').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView CenterHorizontal&lt;TView>(this TView view)
@@ -106,7 +106,7 @@ The view itself.
 ## LayoutExtensions.CenterVertical&lt;TView>(this TView) Method
 
 Sets the vertical layout alignment of the view to [Center](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Center 'Tizen.UI.Layouts.LayoutAlignment.Center').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView CenterVertical&lt;TView>(this TView view)
@@ -136,7 +136,7 @@ The view itself.
 ## LayoutExtensions.ComputeDesiredSize(this View, float, float) Method
 
 Computes the desired size of the specified view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static Tizen.UI.Size ComputeDesiredSize(this Tizen.UI.View view, float widthConstraint, float heightConstraint);
@@ -145,7 +145,7 @@ public static Tizen.UI.Size ComputeDesiredSize(this Tizen.UI.View view, float wi
 
 <a name='Tizen.UI.Layouts.LayoutExtensions.ComputeDesiredSize(thisTizen.UI.View,float,float).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view whose desired size should be computed.
 
@@ -162,7 +162,7 @@ The width constraint.
 The height constraint.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The desired size of the view.
 
 <a name='Tizen.UI.Layouts.LayoutExtensions.End_TView_(thisTView)'></a>
@@ -170,7 +170,7 @@ The desired size of the view.
 ## LayoutExtensions.End&lt;TView>(this TView) Method
 
 Sets the horizontal and vertical layout alignment of the view to [End](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.End 'Tizen.UI.Layouts.LayoutAlignment.End').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView End&lt;TView>(this TView view)
@@ -200,7 +200,7 @@ The view itself.
 ## LayoutExtensions.EndHorizontal&lt;TView>(this TView) Method
 
 Sets the horizontal layout alignment of the view to [End](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.End 'Tizen.UI.Layouts.LayoutAlignment.End').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView EndHorizontal&lt;TView>(this TView view)
@@ -230,7 +230,7 @@ The view itself.
 ## LayoutExtensions.EndVertical&lt;TView>(this TView) Method
 
 Sets the vertical layout alignment of the view to [End](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.End 'Tizen.UI.Layouts.LayoutAlignment.End').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView EndVertical&lt;TView>(this TView view)
@@ -260,7 +260,7 @@ The view itself.
 ## LayoutExtensions.Expand&lt;TView>(this TView) Method
 
 Expands the given view to fill its parent layout.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView Expand&lt;TView>(this TView view)
@@ -290,7 +290,7 @@ The same view instance with updated expand property.
 ## LayoutExtensions.Expand&lt;TView>(this TView, float) Method
 
 Sets the expand property of the given view, which determines how much space the view should occupy within HStack/VStack.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView Expand&lt;TView>(this TView view, float weight)
@@ -325,8 +325,8 @@ The same view instance with updated expand property.
 
 ## LayoutExtensions.Fill&lt;TView>(this TView) Method
 
-Sets the horizontal and vertical layout alignment of the specified [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') instance to [Fill](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Fill 'Tizen.UI.Layouts.LayoutAlignment.Fill').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+Sets the horizontal and vertical layout alignment of the specified Tizen.UI.View instance to [Fill](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Fill 'Tizen.UI.Layouts.LayoutAlignment.Fill').<br/>  
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView Fill&lt;TView>(this TView view)
@@ -355,8 +355,8 @@ The view itself.
 
 ## LayoutExtensions.FillHorizontal&lt;TView>(this TView) Method
 
-Sets the horizontal layout alignment of the specified [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') instance to [Fill](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Fill 'Tizen.UI.Layouts.LayoutAlignment.Fill').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+Sets the horizontal layout alignment of the specified Tizen.UI.View instance to [Fill](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Fill 'Tizen.UI.Layouts.LayoutAlignment.Fill').<br/>  
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView FillHorizontal&lt;TView>(this TView view)
@@ -385,8 +385,8 @@ The view itself.
 
 ## LayoutExtensions.FillVertical&lt;TView>(this TView) Method
 
-Sets the vertical layout alignment of the specified [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') instance to [Fill](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Fill 'Tizen.UI.Layouts.LayoutAlignment.Fill').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+Sets the vertical layout alignment of the specified Tizen.UI.View instance to [Fill](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Fill 'Tizen.UI.Layouts.LayoutAlignment.Fill').<br/>  
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView FillVertical&lt;TView>(this TView view)
@@ -416,7 +416,7 @@ The view itself.
 ## LayoutExtensions.HorizontalLayoutAlignment&lt;TView>(this TView, LayoutAlignment) Method
 
 Sets the horizontal layout alignment of the view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView HorizontalLayoutAlignment&lt;TView>(this TView view, Tizen.UI.Layouts.LayoutAlignment alignment)
@@ -452,7 +452,7 @@ The view itself.
 ## LayoutExtensions.ItemAlignment&lt;TView>(this TView, LayoutAlignment) Method
 
 Sets the item alignment of the stack base layout.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [StackBase](Tizen.UI.Layouts.StackBase.md 'Tizen.UI.Layouts.StackBase') and used.
+This only works if the Tizen.UI.View is included in the  [StackBase](Tizen.UI.Layouts.StackBase.md 'Tizen.UI.Layouts.StackBase') and used.
 
 ```csharp
 public static TView ItemAlignment&lt;TView>(this TView view, Tizen.UI.Layouts.LayoutAlignment alignment)
@@ -487,8 +487,8 @@ The stack base itself.
 
 ## LayoutExtensions.Margin&lt;TView>(this TView, float) Method
 
-Sets the margin of the specified [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') in the layout.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+Sets the margin of the specified Tizen.UI.View in the layout.<br/>  
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView Margin&lt;TView>(this TView view, float uniformSize)
@@ -523,8 +523,8 @@ The view itself.
 
 ## LayoutExtensions.Margin&lt;TView>(this TView, float, float) Method
 
-Sets the margin of the specified [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') in the layout.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+Sets the margin of the specified Tizen.UI.View in the layout.<br/>  
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView Margin&lt;TView>(this TView view, float horizontalSize, float verticalSize)
@@ -566,7 +566,7 @@ The view itself.
 ## LayoutExtensions.Margin&lt;TView>(this TView, float, float, float, float) Method
 
 Sets the margin of the specified [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') instance.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView Margin&lt;TView>(this TView view, float left, float top, float right, float bottom)
@@ -619,8 +619,8 @@ The layout itself.
 
 ## LayoutExtensions.Margin&lt;TView>(this TView, Thickness) Method
 
-Sets the margin of the specified [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') in the layout.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+Sets the margin of the specified Tizen.UI.View in the layout.<br/>  
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView Margin&lt;TView>(this TView view, Tizen.UI.Thickness margin)
@@ -643,7 +643,7 @@ The view to set the margin for.
 
 <a name='Tizen.UI.Layouts.LayoutExtensions.Margin_TView_(thisTView,Tizen.UI.Thickness).margin'></a>
 
-`margin` [Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+`margin` Tizen.UI.Thickness
 
 The margin to set.
 
@@ -656,7 +656,7 @@ The view itself.
 ## LayoutExtensions.MaximumHeight&lt;TView>(this TView, float) Method
 
 Sets the maximum height of the view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView MaximumHeight&lt;TView>(this TView view, float max)
@@ -692,7 +692,7 @@ The view itself.
 ## LayoutExtensions.MinimumHeight&lt;TView>(this TView, float) Method
 
 Sets the minimum height of the view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView MinimumHeight&lt;TView>(this TView view, float min)
@@ -728,7 +728,7 @@ The view itself.
 ## LayoutExtensions.MinimumWidth&lt;TView>(this TView, float) Method
 
 Sets the minimum width of the view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView MinimumWidth&lt;TView>(this TView view, float min)
@@ -839,7 +839,7 @@ The layout to set the padding for.
 
 <a name='Tizen.UI.Layouts.LayoutExtensions.Padding_TView_(thisTView,Tizen.UI.Thickness).padding'></a>
 
-`padding` [Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+`padding` Tizen.UI.Thickness
 
 The padding to set.
 
@@ -851,8 +851,8 @@ The layout itself.
 
 ## LayoutExtensions.Start&lt;TView>(this TView) Method
 
-Sets the horizontal and vertical layout alignment of the specified [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') instance to [Start](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Start 'Tizen.UI.Layouts.LayoutAlignment.Start').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+Sets the horizontal and vertical layout alignment of the specified Tizen.UI.View instance to [Start](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Start 'Tizen.UI.Layouts.LayoutAlignment.Start').<br/>  
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView Start&lt;TView>(this TView view)
@@ -881,8 +881,8 @@ The view itself.
 
 ## LayoutExtensions.StartHorizontal&lt;TView>(this TView) Method
 
-Sets the horizontal layout alignment of the specified [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') instance to [Start](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Start 'Tizen.UI.Layouts.LayoutAlignment.Start').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+Sets the horizontal layout alignment of the specified Tizen.UI.View instance to [Start](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Start 'Tizen.UI.Layouts.LayoutAlignment.Start').<br/>  
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView StartHorizontal&lt;TView>(this TView view)
@@ -911,8 +911,8 @@ The view itself.
 
 ## LayoutExtensions.StartVertical&lt;TView>(this TView) Method
 
-Sets the vertical layout alignment of the specified [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') instance to [Start](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Start 'Tizen.UI.Layouts.LayoutAlignment.Start').<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+Sets the vertical layout alignment of the specified Tizen.UI.View instance to [Start](Tizen.UI.Layouts.LayoutAlignment.md#Tizen.UI.Layouts.LayoutAlignment.Start 'Tizen.UI.Layouts.LayoutAlignment.Start').<br/>  
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView StartVertical&lt;TView>(this TView view)
@@ -1043,7 +1043,7 @@ The Y-coordinate value by which to translate the view.
 ## LayoutExtensions.VerticalLayoutAlignment&lt;TView>(this TView, LayoutAlignment) Method
 
 Sets the vertical layout alignment of the view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
+This only works if the Tizen.UI.View is included in the  [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used.
 
 ```csharp
 public static TView VerticalLayoutAlignment&lt;TView>(this TView view, Tizen.UI.Layouts.LayoutAlignment alignment)
@@ -1073,6 +1073,7 @@ The vertical layout alignment to set.
 #### Returns
 [TView](Tizen.UI.Layouts.LayoutExtensions.md#Tizen.UI.Layouts.LayoutExtensions.VerticalLayoutAlignment_TView_(thisTView,Tizen.UI.Layouts.LayoutAlignment).TView 'Tizen.UI.Layouts.LayoutExtensions.VerticalLayoutAlignment&lt;TView>(this TView, Tizen.UI.Layouts.LayoutAlignment).TView')  
 The view itself.
+
 
 
 

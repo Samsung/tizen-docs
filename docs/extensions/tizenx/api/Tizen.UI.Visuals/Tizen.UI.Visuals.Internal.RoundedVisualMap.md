@@ -26,7 +26,7 @@ public Tizen.UI.Color BorderlineColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Visuals.Internal.RoundedVisualMap.BorderlineOffset'></a>
 
@@ -71,7 +71,8 @@ public Tizen.UI.CornerRadius CornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
+
 
 
 

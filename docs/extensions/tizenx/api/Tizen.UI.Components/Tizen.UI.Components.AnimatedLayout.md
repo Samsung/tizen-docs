@@ -44,13 +44,14 @@ The duration of the animation in milliseconds.
 
 <a name='Tizen.UI.Components.AnimatedLayout.ApplyAnimation_T_(thisT,int,Tizen.UI.AlphaFunction).alphaFunction'></a>
 
-`alphaFunction` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alphaFunction` Tizen.UI.AlphaFunction
 
 The alpha function applied to the animation. Can be null.
 
 #### Returns
 [T](Tizen.UI.Components.AnimatedLayout.md#Tizen.UI.Components.AnimatedLayout.ApplyAnimation_T_(thisT,int,Tizen.UI.AlphaFunction).T 'Tizen.UI.Components.AnimatedLayout.ApplyAnimation&lt;T>(this T, int, Tizen.UI.AlphaFunction).T')  
 The layout with animation applied.
+
 
 
 

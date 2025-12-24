@@ -78,7 +78,7 @@ public Tizen.UI.CornerRadius CornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.RecoilEffect.InheritCornerRadius'></a>
 
@@ -118,7 +118,7 @@ public Tizen.UI.Color OverlayColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.RecoilEffect.OverlayPadding'></a>
 
@@ -131,7 +131,7 @@ public Tizen.UI.Thickness OverlayPadding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.RecoilEffect.OverlayScaleFactorX'></a>
 
@@ -187,7 +187,7 @@ public override void OnAttached(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.RecoilEffect.OnAttached(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Components.RecoilEffect.OnDetached(Tizen.UI.View)'></a>
 
@@ -202,7 +202,8 @@ public override void OnDetached(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.RecoilEffect.OnDetached(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
+
 
 
 

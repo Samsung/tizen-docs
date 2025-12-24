@@ -2,7 +2,7 @@
 
 ## UIShadowExtensions Class
 
-Extensions methods for [Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')
+Extensions methods for Tizen.UI.Shadow
 
 ```csharp
 public static class UIShadowExtensions
@@ -24,18 +24,18 @@ public static System.Collections.Generic.IEnumerable&lt;Tizen.UI.Visuals.ColorVi
 
 <a name='Tizen.UI.Components.UIShadowExtensions.CornerRadius(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Visuals.ColorVisual_,Tizen.UI.CornerRadius).visuals'></a>
 
-`visuals` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+`visuals` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.ColorVisual[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 
 The target color visuals.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.CornerRadius(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Visuals.ColorVisual_,Tizen.UI.CornerRadius).cornerRadius'></a>
 
-`cornerRadius` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`cornerRadius` Tizen.UI.CornerRadius
 
 The corner radius to use.
 
 #### Returns
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.ColorVisual[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 The target color visuals itself to allow method chaining.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.CornerSquareness(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Visuals.ColorVisual_,Tizen.UI.CornerRadius)'></a>
@@ -51,18 +51,18 @@ public static System.Collections.Generic.IEnumerable&lt;Tizen.UI.Visuals.ColorVi
 
 <a name='Tizen.UI.Components.UIShadowExtensions.CornerSquareness(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Visuals.ColorVisual_,Tizen.UI.CornerRadius).visuals'></a>
 
-`visuals` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+`visuals` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.ColorVisual[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 
 The target color visuals.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.CornerSquareness(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Visuals.ColorVisual_,Tizen.UI.CornerRadius).cornerSquareness'></a>
 
-`cornerSquareness` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`cornerSquareness` Tizen.UI.CornerRadius
 
 The corner squareness to use.
 
 #### Returns
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.ColorVisual[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 The target color visuals itself to allow method chaining.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ExtraSize(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Visuals.ColorVisual_,float,float)'></a>
@@ -78,7 +78,7 @@ public static System.Collections.Generic.IEnumerable&lt;Tizen.UI.Visuals.ColorVi
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ExtraSize(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Visuals.ColorVisual_,float,float).visuals'></a>
 
-`visuals` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+`visuals` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.ColorVisual[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 
 The target color visuals.
 
@@ -95,7 +95,7 @@ The extra width value to use.
 The extra height value to use.
 
 #### Returns
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.ColorVisual[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 The target color visuals itself to allow method chaining.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Shadow_)'></a>
@@ -111,12 +111,12 @@ public static System.Collections.Generic.IEnumerable&lt;Tizen.UI.Visuals.ColorVi
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Shadow_).shadows'></a>
 
-`shadows` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+`shadows` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Shadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 
 The Shadow to convert.
 
 #### Returns
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.ColorVisual[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 A VisualBase representing the Shadow.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Shadow_,Tizen.UI.CornerRadius)'></a>
@@ -132,18 +132,18 @@ public static System.Collections.Generic.IEnumerable&lt;Tizen.UI.Visuals.ColorVi
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Shadow_,Tizen.UI.CornerRadius).shadows'></a>
 
-`shadows` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+`shadows` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Shadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 
 The Shadow to convert.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Shadow_,Tizen.UI.CornerRadius).cornerRadius'></a>
 
-`cornerRadius` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`cornerRadius` Tizen.UI.CornerRadius
 
 The corner radius to use.
 
 #### Returns
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.ColorVisual[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 A VisualBase representing the Shadow.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Shadow_,Tizen.UI.CornerRadius,Tizen.UI.CornerRadius)'></a>
@@ -159,24 +159,24 @@ public static System.Collections.Generic.IEnumerable&lt;Tizen.UI.Visuals.ColorVi
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Shadow_,Tizen.UI.CornerRadius,Tizen.UI.CornerRadius).shadows'></a>
 
-`shadows` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+`shadows` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Shadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 
 The Shadow to convert.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Shadow_,Tizen.UI.CornerRadius,Tizen.UI.CornerRadius).cornerRadius'></a>
 
-`cornerRadius` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`cornerRadius` Tizen.UI.CornerRadius
 
 The corner radius to use.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisSystem.Collections.Generic.IEnumerable_Tizen.UI.Shadow_,Tizen.UI.CornerRadius,Tizen.UI.CornerRadius).cornerSquareness'></a>
 
-`cornerSquareness` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`cornerSquareness` Tizen.UI.CornerRadius
 
 The corner squareness to use.
 
 #### Returns
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.ColorVisual[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 A VisualBase representing the Shadow.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisTizen.UI.Shadow)'></a>
@@ -192,12 +192,12 @@ public static Tizen.UI.Visuals.ColorVisual ToVisual(this Tizen.UI.Shadow shadow)
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisTizen.UI.Shadow).shadow'></a>
 
-`shadow` [Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')
+`shadow` Tizen.UI.Shadow
 
 The Shadow to convert.
 
 #### Returns
-[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')  
+Tizen.UI.Visuals.ColorVisual  
 A VisualBase representing the Shadow.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisTizen.UI.Shadow,Tizen.UI.CornerRadius)'></a>
@@ -213,18 +213,18 @@ public static Tizen.UI.Visuals.ColorVisual ToVisual(this Tizen.UI.Shadow shadow,
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisTizen.UI.Shadow,Tizen.UI.CornerRadius).shadow'></a>
 
-`shadow` [Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')
+`shadow` Tizen.UI.Shadow
 
 The Shadow to convert.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisTizen.UI.Shadow,Tizen.UI.CornerRadius).cornerRadius'></a>
 
-`cornerRadius` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`cornerRadius` Tizen.UI.CornerRadius
 
 The corner radius to use.
 
 #### Returns
-[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')  
+Tizen.UI.Visuals.ColorVisual  
 A VisualBase representing the Shadow.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisTizen.UI.Shadow,Tizen.UI.CornerRadius,Tizen.UI.CornerRadius)'></a>
@@ -240,25 +240,26 @@ public static Tizen.UI.Visuals.ColorVisual ToVisual(this Tizen.UI.Shadow shadow,
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisTizen.UI.Shadow,Tizen.UI.CornerRadius,Tizen.UI.CornerRadius).shadow'></a>
 
-`shadow` [Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')
+`shadow` Tizen.UI.Shadow
 
 The Shadow to convert.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisTizen.UI.Shadow,Tizen.UI.CornerRadius,Tizen.UI.CornerRadius).cornerRadius'></a>
 
-`cornerRadius` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`cornerRadius` Tizen.UI.CornerRadius
 
 The corner radius to use.
 
 <a name='Tizen.UI.Components.UIShadowExtensions.ToVisual(thisTizen.UI.Shadow,Tizen.UI.CornerRadius,Tizen.UI.CornerRadius).cornerSquareness'></a>
 
-`cornerSquareness` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`cornerSquareness` Tizen.UI.CornerRadius
 
 The corner squareness to use.
 
 #### Returns
-[Tizen.UI.Visuals.ColorVisual](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ColorVisual 'Tizen.UI.Visuals.ColorVisual')  
+Tizen.UI.Visuals.ColorVisual  
 A VisualBase representing the Shadow.
+
 
 
 

@@ -16,7 +16,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 ## GridExtensions.Column&lt;TView,TColumn>(this TView, TColumn) Method
 
 Sets the column index of the specified view using an enum value.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView Column&lt;TView,TColumn>(this TView view, TColumn column)
@@ -59,7 +59,7 @@ The view with the specified column index.
 ## GridExtensions.Column&lt;TView,TColumn>(this TView, TColumn, TColumn) Method
 
 Sets the column index and column span of the specified view using enum values.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView Column&lt;TView,TColumn>(this TView view, TColumn column, TColumn last)
@@ -108,7 +108,7 @@ The view with the specified column index and column span.
 ## GridExtensions.Column&lt;TView>(this TView, int) Method
 
 Sets the column index of the specified view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView Column&lt;TView>(this TView view, int column)
@@ -144,7 +144,7 @@ The view with the specified column index.
 ## GridExtensions.Column&lt;TView>(this TView, int, int) Method
 
 Sets the column index and column span of the specified view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView Column&lt;TView>(this TView view, int column, int span)
@@ -186,7 +186,7 @@ The view with the specified column index and column span.
 ## GridExtensions.ColumnSpan&lt;TView>(this TView, int) Method
 
 Sets the column span of the specified view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView ColumnSpan&lt;TView>(this TView view, int span)
@@ -222,7 +222,7 @@ The view with the specified column span.
 ## GridExtensions.Row&lt;TView,TRow>(this TView, TRow) Method
 
 Sets the row index of the specified view using an enum value.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView Row&lt;TView,TRow>(this TView view, TRow row)
@@ -265,7 +265,7 @@ The view with the specified row index.
 ## GridExtensions.Row&lt;TView,TRow>(this TView, TRow, TRow) Method
 
 Sets the row index and row span of the specified view using enum values.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView Row&lt;TView,TRow>(this TView view, TRow row, TRow last)
@@ -314,7 +314,7 @@ The view with the specified row index and row span.
 ## GridExtensions.Row&lt;TView>(this TView, int) Method
 
 Sets the row index of the specified view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView Row&lt;TView>(this TView view, int row)
@@ -350,7 +350,7 @@ The view with the specified row index.
 ## GridExtensions.Row&lt;TView>(this TView, int, int) Method
 
 Sets the row index and row span of the specified view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView Row&lt;TView>(this TView view, int row, int span)
@@ -392,7 +392,7 @@ The view with the specified row index and row span.
 ## GridExtensions.RowSpan&lt;TView>(this TView, int) Method
 
 Sets the row span of the specified view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
+This only works if the Tizen.UI.View is included in the  [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') and used.
 
 ```csharp
 public static TView RowSpan&lt;TView>(this TView view, int span)

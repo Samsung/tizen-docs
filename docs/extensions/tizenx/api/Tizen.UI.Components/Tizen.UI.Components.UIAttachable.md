@@ -28,7 +28,7 @@ public abstract void OnAttached(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.UIAttachable.OnAttached(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Components.UIAttachable.OnDetached(Tizen.UI.View)'></a>
 
@@ -43,7 +43,7 @@ public abstract void OnDetached(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.UIAttachable.OnDetached(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 
 

@@ -2,13 +2,13 @@
 
 ## VectorView Class
 
-The [VectorView](Tizen.UI.Primitives2D.VectorView.md 'Tizen.UI.Primitives2D.VectorView') class is a [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') that displays a list of drawables.
+The [VectorView](Tizen.UI.Primitives2D.VectorView.md 'Tizen.UI.Primitives2D.VectorView') class is a Tizen.UI.View that displays a list of drawables.
 
 ```csharp
 public class VectorView : Tizen.UI.View
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; VectorView
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; VectorView
 ### Constructors
 
 <a name='Tizen.UI.Primitives2D.VectorView.VectorView()'></a>
@@ -100,6 +100,7 @@ public void Remove(Tizen.UI.Primitives2D.Drawable drawable);
 `drawable` [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable')
 
 The drawable to remove.
+
 
 
 

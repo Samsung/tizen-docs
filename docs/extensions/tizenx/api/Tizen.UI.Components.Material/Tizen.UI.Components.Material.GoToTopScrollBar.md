@@ -8,7 +8,7 @@ A class representing a scroll bar with a Got-o-top icon.
 public class GoToTopScrollBar : Tizen.UI.Components.Material.FloatingActionButtonScrollBar
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; [Tizen.UI.Components.ScrollBarBase](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ScrollBarBase 'Tizen.UI.Components.ScrollBarBase') &#129106; [ScrollBar](Tizen.UI.Components.Material.ScrollBar.md 'Tizen.UI.Components.Material.ScrollBar') &#129106; [FloatingActionButtonScrollBar](Tizen.UI.Components.Material.FloatingActionButtonScrollBar.md 'Tizen.UI.Components.Material.FloatingActionButtonScrollBar') &#129106; GoToTopScrollBar
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; Tizen.UI.Components.ScrollBarBase &#129106; [ScrollBar](Tizen.UI.Components.Material.ScrollBar.md 'Tizen.UI.Components.Material.ScrollBar') &#129106; [FloatingActionButtonScrollBar](Tizen.UI.Components.Material.FloatingActionButtonScrollBar.md 'Tizen.UI.Components.Material.FloatingActionButtonScrollBar') &#129106; GoToTopScrollBar
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.GoToTopScrollBar.GoToTopScrollBar()'></a>
@@ -73,11 +73,12 @@ public override void UpdateScrollPosition(Tizen.UI.Point position);
 
 <a name='Tizen.UI.Components.Material.GoToTopScrollBar.UpdateScrollPosition(Tizen.UI.Point).position'></a>
 
-`position` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`position` Tizen.UI.Point
 
 The new scroll position.
 
-Implements [UpdateScrollPosition(Point)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollBar.UpdateScrollPosition#Tizen_UI_IScrollBar_UpdateScrollPosition_Tizen_UI_Point_ 'Tizen.UI.IScrollBar.UpdateScrollPosition(Tizen.UI.Point)')
+Implements UpdateScrollPosition(Point)')
+
 
 
 

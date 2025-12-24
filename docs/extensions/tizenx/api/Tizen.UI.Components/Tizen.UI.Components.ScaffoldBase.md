@@ -10,7 +10,7 @@ with some spefical UI layout and behavior.
 public abstract class ScaffoldBase : Tizen.UI.ContentView
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; ScaffoldBase
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; ScaffoldBase
 ### Constructors
 
 <a name='Tizen.UI.Components.ScaffoldBase.ScaffoldBase()'></a>
@@ -36,7 +36,7 @@ public Tizen.UI.View FloatingActionButton { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 ### Remarks
 There are predefined contents such as [FloatingActionButton](Tizen.UI.Components.ScaffoldBase.md#Tizen.UI.Components.ScaffoldBase.FloatingActionButton 'Tizen.UI.Components.ScaffoldBase.FloatingActionButton').
@@ -52,7 +52,7 @@ public Tizen.UI.Point FloatingOffset { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+Tizen.UI.Point
 
 <a name='Tizen.UI.Components.ScaffoldBase.FloatingOrigin'></a>
 
@@ -110,7 +110,7 @@ public Tizen.UI.Color IndicatorAreaColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.ScaffoldBase.IndicatorAreaColorProvider'></a>
 
@@ -141,6 +141,7 @@ public void SetExtraFloatingOffsetY(float extra);
 <a name='Tizen.UI.Components.ScaffoldBase.SetExtraFloatingOffsetY(float).extra'></a>
 
 `extra` [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

@@ -9,7 +9,7 @@ It can be used to select a value by moving the trail along the track.
 public class LevelBar : Tizen.UI.Components.InteractiveProgress
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Pressable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Pressable 'Tizen.UI.Components.Pressable') &#129106; [Tizen.UI.Components.InteractiveProgress](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.InteractiveProgress 'Tizen.UI.Components.InteractiveProgress') &#129106; LevelBar
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Tizen.UI.Components.Pressable &#129106; Tizen.UI.Components.InteractiveProgress &#129106; LevelBar
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.LevelBar.LevelBar(float,float,int)'></a>
@@ -74,7 +74,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.LevelBar.TrackThickness'></a>
 
@@ -88,6 +88,7 @@ public float TrackThickness { get; set; }
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

@@ -274,7 +274,7 @@ public static Tizen.UI.Components.SelectionGroup Find(Tizen.UI.View parent);
 
 <a name='Tizen.UI.Components.SelectionGroup.Find(Tizen.UI.View).parent'></a>
 
-`parent` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`parent` Tizen.UI.View
 
 The parent view to find.
 

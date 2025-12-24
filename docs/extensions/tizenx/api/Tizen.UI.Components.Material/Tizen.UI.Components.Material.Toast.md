@@ -9,9 +9,9 @@ public class Toast : Tizen.UI.Layouts.Grid,
 Tizen.UI.IText
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; [Tizen.UI.Layouts.Layout](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.Layout 'Tizen.UI.Layouts.Layout') &#129106; [Tizen.UI.Layouts.Grid](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.Grid 'Tizen.UI.Layouts.Grid') &#129106; Toast
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; Tizen.UI.Layouts.Layout &#129106; Tizen.UI.Layouts.Grid &#129106; Toast
 
-Implements [Tizen.UI.IText](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText 'Tizen.UI.IText')
+Implements Tizen.UI.IText
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.Toast.Toast()'></a>
@@ -134,7 +134,7 @@ Gets or sets the font family of the text.
 public string FontFamily { get; set; }
 ```
 
-Implements [FontFamily](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontFamily 'Tizen.UI.IText.FontFamily')
+Implements FontFamily
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -149,7 +149,7 @@ Gets or sets the font size of the text.
 public float FontSize { get; set; }
 ```
 
-Implements [FontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontSize 'Tizen.UI.IText.FontSize')
+Implements FontSize
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
@@ -177,7 +177,7 @@ Gets or sets the text of the toast.
 public string Text { get; set; }
 ```
 
-Implements [Text](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.Text 'Tizen.UI.IText.Text')
+Implements Text
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -192,10 +192,10 @@ Gets or sets the color of the text.
 public Tizen.UI.Color TextColor { get; set; }
 ```
 
-Implements [TextColor](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.TextColor 'Tizen.UI.IText.TextColor')
+Implements TextColor
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 ### Methods
 
 <a name='Tizen.UI.Components.Material.Toast.Dismiss()'></a>
@@ -221,7 +221,7 @@ public void Post(Tizen.UI.Window window=null);
 
 <a name='Tizen.UI.Components.Material.Toast.Post(Tizen.UI.Window).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 ### Events
 
 <a name='Tizen.UI.Components.Material.Toast.Hidden'></a>
@@ -255,6 +255,7 @@ public event EventHandler Shown;
 
 ### Remarks
 This event is raised when the toast is fully shown.
+
 
 
 

@@ -50,7 +50,7 @@ public Tizen.UI.Color InputColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.InputFontFamily'></a>
 
@@ -82,40 +82,40 @@ public float InputFontSize { get; set; }
 
 ## InputTextBaseImpl.InputFontSlant Property
 
-Gets or sets the input font style weight such as [Tizen.UI.FontSlant.Italic](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontSlant.Italic 'Tizen.UI.FontSlant.Italic') for the text will be added to the input area from now on..
+Gets or sets the input font style weight such as Tizen.UI.FontSlant.Italic for the text will be added to the input area from now on..
 
 ```csharp
 public Tizen.UI.FontSlant InputFontSlant { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontSlant](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontSlant 'Tizen.UI.FontSlant')
+Tizen.UI.FontSlant
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.InputFontWeight'></a>
 
 ## InputTextBaseImpl.InputFontWeight Property
 
-Gets or sets the input font style weight such as [Tizen.UI.FontWeight.Bold](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWeight.Bold 'Tizen.UI.FontWeight.Bold') for the text will be added to the input area from now on..
+Gets or sets the input font style weight such as Tizen.UI.FontWeight.Bold for the text will be added to the input area from now on..
 
 ```csharp
 public Tizen.UI.FontWeight InputFontWeight { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontWeight](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWeight 'Tizen.UI.FontWeight')
+Tizen.UI.FontWeight
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.InputFontWidth'></a>
 
 ## InputTextBaseImpl.InputFontWidth Property
 
-Gets or sets the input font style width such as [Tizen.UI.FontWidth.Condensed](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWidth.Condensed 'Tizen.UI.FontWidth.Condensed') for the text will be added to the input area from now on..
+Gets or sets the input font style width such as Tizen.UI.FontWidth.Condensed for the text will be added to the input area from now on..
 
 ```csharp
 public Tizen.UI.FontWidth InputFontWidth { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontWidth](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWidth 'Tizen.UI.FontWidth')
+Tizen.UI.FontWidth
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.InputMethodContext'></a>
 
@@ -128,7 +128,7 @@ public Tizen.UI.InputMethodContext InputMethodContext { get; }
 ```
 
 #### Property Value
-[Tizen.UI.InputMethodContext](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.InputMethodContext 'Tizen.UI.InputMethodContext')
+Tizen.UI.InputMethodContext
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.IsEditable'></a>
 
@@ -180,7 +180,7 @@ public Tizen.UI.Color PlaceholderColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SelectedText'></a>
 
@@ -331,7 +331,7 @@ public void SetCursorColor(Tizen.UI.Color value);
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SetCursorColor(Tizen.UI.Color).value'></a>
 
-`value` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`value` Tizen.UI.Color
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SetCursorWidth(int)'></a>
 
@@ -363,7 +363,7 @@ public void SetInputMethodActionButtonTitle(Tizen.UI.ActionButtonTitle actionBut
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SetInputMethodActionButtonTitle(Tizen.UI.ActionButtonTitle).actionButtonTitle'></a>
 
-`actionButtonTitle` [Tizen.UI.ActionButtonTitle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ActionButtonTitle 'Tizen.UI.ActionButtonTitle')
+`actionButtonTitle` Tizen.UI.ActionButtonTitle
 
 The title of the action button.
 
@@ -380,7 +380,7 @@ public void SetInputMethodCapitalMode(Tizen.UI.AutoCapital capitalMode);
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SetInputMethodCapitalMode(Tizen.UI.AutoCapital).capitalMode'></a>
 
-`capitalMode` [Tizen.UI.AutoCapital](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AutoCapital 'Tizen.UI.AutoCapital')
+`capitalMode` Tizen.UI.AutoCapital
 
 The capital mode of the input method.
 
@@ -397,7 +397,7 @@ public void SetInputMethodPanelType(Tizen.UI.PanelLayout panelLayout);
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SetInputMethodPanelType(Tizen.UI.PanelLayout).panelLayout'></a>
 
-`panelLayout` [Tizen.UI.PanelLayout](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PanelLayout 'Tizen.UI.PanelLayout')
+`panelLayout` Tizen.UI.PanelLayout
 
 The panel layout of the input method.
 
@@ -414,7 +414,7 @@ public void SetSecondaryCursorColor(Tizen.UI.Color value);
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SetSecondaryCursorColor(Tizen.UI.Color).value'></a>
 
-`value` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`value` Tizen.UI.Color
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SetSelectionColor(Tizen.UI.Color)'></a>
 
@@ -429,7 +429,7 @@ public void SetSelectionColor(Tizen.UI.Color color);
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SetSelectionColor(Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 <a name='Tizen.UI.Components.InputTextBaseImpl.SetSelectionHandleImage(string,string)'></a>
 
@@ -565,6 +565,7 @@ public event EventHandler TextChanged;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

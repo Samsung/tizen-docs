@@ -59,7 +59,7 @@ public Tizen.UI.TextAlignment HorizontalAlignment { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.TextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextAlignment 'Tizen.UI.TextAlignment')
+Tizen.UI.TextAlignment
 
 <a name='Tizen.UI.Visuals.Internal.TextVisualMap.IsMarkupEnabled'></a>
 
@@ -111,7 +111,7 @@ public Tizen.UI.Color TextColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Visuals.Internal.TextVisualMap.VerticalAlignment'></a>
 
@@ -124,7 +124,8 @@ public Tizen.UI.TextAlignment VerticalAlignment { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.TextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextAlignment 'Tizen.UI.TextAlignment')
+Tizen.UI.TextAlignment
+
 
 
 

@@ -8,7 +8,7 @@ The material theme loader.
 public class MaterialThemeLoader : Tizen.UI.Components.TizenThemeLoader
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.TizenThemeLoader](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.TizenThemeLoader 'Tizen.UI.Components.TizenThemeLoader') &#129106; MaterialThemeLoader
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.TizenThemeLoader &#129106; MaterialThemeLoader
 ### Methods
 
 <a name='Tizen.UI.Components.Material.MaterialThemeLoader.LoadColorTable()'></a>
@@ -21,10 +21,11 @@ Load color table for current theme.
 public override System.Collections.Generic.IDictionary&lt;string,Tizen.UI.Color> LoadColorTable();
 ```
 
-Implements [LoadColorTable()](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IThemeLoader.LoadColorTable 'Tizen.UI.Components.IThemeLoader.LoadColorTable')
+Implements LoadColorTable()
 
 #### Returns
-[System.Collections.Generic.IDictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')
+[System.Collections.Generic.IDictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')Tizen.UI.Color[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')
+
 
 
 

@@ -37,7 +37,7 @@ public Tizen.UI.LineBreakMode LineBreakMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.LineBreakMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.LineBreakMode 'Tizen.UI.LineBreakMode')
+Tizen.UI.LineBreakMode
 
 <a name='Tizen.UI.Components.InputEditorImpl.LineCount'></a>
 
@@ -68,6 +68,7 @@ public float LineHeight { get; set; }
 ### Remarks
 This property is treated differently by the [LineHeightPolicy](https://docs.microsoft.com/en-us/dotnet/api/LineHeightPolicy 'LineHeightPolicy'). If the value is [LineHeightPolicy.Relative](https://docs.microsoft.com/en-us/dotnet/api/LineHeightPolicy.Relative 'LineHeightPolicy.Relative'), the line height will be calculated as a percentage of the natural line height. Otherwise, it will be calculated as an absolute value.  
 Default value is [LineHeightPolicy.Relative](https://docs.microsoft.com/en-us/dotnet/api/LineHeightPolicy.Relative 'LineHeightPolicy.Relative') with value 1.0f.
+
 
 
 

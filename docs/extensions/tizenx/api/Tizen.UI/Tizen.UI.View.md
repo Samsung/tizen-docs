@@ -21,7 +21,7 @@ Derived
 &#8627; [ViewGroup](Tizen.UI.ViewGroup.md 'Tizen.UI.ViewGroup')  
 &#8627; [WebView](Tizen.UI.WebView.md 'Tizen.UI.WebView')
 
-Implements [Tizen.UI.Internal.IViewSignalHandler](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.IViewSignalHandler 'Tizen.UI.Internal.IViewSignalHandler')
+Implements Tizen.UI.Internal.IViewSignalHandler
 ### Constructors
 
 <a name='Tizen.UI.View.View()'></a>
@@ -1513,6 +1513,7 @@ public event EventHandler&lt;WheelEventArgs> WheelEvent;
 
 #### Event Type
 [System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[WheelEventArgs](Tizen.UI.WheelEventArgs.md 'Tizen.UI.WheelEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+
 
 
 

@@ -19,7 +19,7 @@ The center of an alignment.
 
 `End` 3
 
-Align with the trailing edge of the available space, as determined by [Tizen.UI.View.LayoutDirection](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View.LayoutDirection 'Tizen.UI.View.LayoutDirection').
+Align with the trailing edge of the available space, as determined by Tizen.UI.View.LayoutDirection.
 
 <a name='Tizen.UI.Layouts.LayoutAlignment.Fill'></a>
 
@@ -31,7 +31,8 @@ Fill the entire area if possible.
 
 `Start` 1
 
-Align with the leading edge of the available space, as determined by [Tizen.UI.View.LayoutDirection](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View.LayoutDirection 'Tizen.UI.View.LayoutDirection').
+Align with the leading edge of the available space, as determined by Tizen.UI.View.LayoutDirection.
+
 
 
 

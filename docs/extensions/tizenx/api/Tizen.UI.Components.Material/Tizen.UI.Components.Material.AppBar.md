@@ -10,9 +10,9 @@ Tizen.UI.Components.IColorProvider,
 Tizen.UI.Components.ITitle
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; AppBar
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; AppBar
 
-Implements [Tizen.UI.Components.IColorProvider](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IColorProvider 'Tizen.UI.Components.IColorProvider'), [Tizen.UI.Components.ITitle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ITitle 'Tizen.UI.Components.ITitle')
+Implements Tizen.UI.Components.IColorProvider, Tizen.UI.Components.ITitle
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.AppBar.AppBar()'></a>
@@ -71,7 +71,7 @@ public System.Collections.Generic.IList&lt;Tizen.UI.View> ActionButtons { get; }
 ```
 
 #### Property Value
-[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
+[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
 
 <a name='Tizen.UI.Components.Material.AppBar.DominantColor'></a>
 
@@ -83,10 +83,10 @@ Gets a color of the object.
 public Tizen.UI.Color DominantColor { get; set; }
 ```
 
-Implements [DominantColor](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IColorProvider.DominantColor 'Tizen.UI.Components.IColorProvider.DominantColor')
+Implements DominantColor
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.AppBar.Leading'></a>
 
@@ -99,7 +99,7 @@ public Tizen.UI.View Leading { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 ### Remarks
 There are predefined contents such as [BackButton](Tizen.UI.Components.Material.BackButton.md 'Tizen.UI.Components.Material.BackButton').
@@ -114,7 +114,7 @@ Gets or sets a title text of [TitleContent](Tizen.UI.Components.Material.AppBar.
 public string Title { get; set; }
 ```
 
-Implements [Title](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ITitle.Title 'Tizen.UI.Components.ITitle.Title')
+Implements Title
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -130,7 +130,7 @@ public Tizen.UI.View TitleContent { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 ### Remarks
 There are predefined contents such as [Components.Title](https://docs.microsoft.com/en-us/dotnet/api/Components.Title 'Components.Title') and [DoubleTitle](Tizen.UI.Components.Material.DoubleTitle.md 'Tizen.UI.Components.Material.DoubleTitle').
@@ -146,7 +146,7 @@ public Tizen.UI.View Trailing { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 ### Remarks
 There are predefined contents such as [MoreButton](Tizen.UI.Components.Material.MoreButton.md 'Tizen.UI.Components.Material.MoreButton').
@@ -162,7 +162,7 @@ public Tizen.UI.Color UnifiedContentColor { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 ### Events
 
 <a name='Tizen.UI.Components.Material.AppBar.DominantColorChanged'></a>
@@ -175,10 +175,11 @@ Invoked when the dominant color is changed.
 public event EventHandler DominantColorChanged;
 ```
 
-Implements [DominantColorChanged](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IColorProvider.DominantColorChanged 'Tizen.UI.Components.IColorProvider.DominantColorChanged')
+Implements DominantColorChanged
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

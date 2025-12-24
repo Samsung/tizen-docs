@@ -8,7 +8,7 @@ A progress component that specific GUI that can indicate a time value.
 public class ProgressTimer : Tizen.UI.Components.TimeCounter
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.TimeCounter](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.TimeCounter 'Tizen.UI.Components.TimeCounter') &#129106; ProgressTimer
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Tizen.UI.Components.TimeCounter &#129106; ProgressTimer
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.ProgressTimer.ProgressTimer()'></a>
@@ -90,7 +90,7 @@ public Tizen.UI.Color TrackColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.ProgressTimer.TrackThickness'></a>
 
@@ -119,7 +119,7 @@ public Tizen.UI.Color TrailColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 ### Remarks
 Once this value is set, the predefined color changes for the warning and paused state will be ignored.
@@ -137,6 +137,7 @@ public event EventHandler PausedChanged;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

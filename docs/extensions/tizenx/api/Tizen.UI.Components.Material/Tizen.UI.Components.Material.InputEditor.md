@@ -13,9 +13,9 @@ Tizen.UI.ITextPadding,
 Tizen.UI.Components.IDecoratableText
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; InputEditor
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; InputEditor
 
-Implements [Tizen.UI.IText](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText 'Tizen.UI.IText'), [Tizen.UI.ITextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextAlignment 'Tizen.UI.ITextAlignment'), [Tizen.UI.ITextEditable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextEditable 'Tizen.UI.ITextEditable'), [Tizen.UI.ITextPadding](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextPadding 'Tizen.UI.ITextPadding'), [Tizen.UI.Components.IDecoratableText](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IDecoratableText 'Tizen.UI.Components.IDecoratableText')
+Implements Tizen.UI.IText, Tizen.UI.ITextAlignment, Tizen.UI.ITextEditable, Tizen.UI.ITextPadding, Tizen.UI.Components.IDecoratableText
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.InputEditor.InputEditor()'></a>
@@ -87,7 +87,7 @@ Gets or sets the font family of the text.
 public string FontFamily { get; set; }
 ```
 
-Implements [FontFamily](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontFamily 'Tizen.UI.IText.FontFamily')
+Implements FontFamily
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -102,7 +102,7 @@ Gets or sets the font size of the text.
 public float FontSize { get; set; }
 ```
 
-Implements [FontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontSize 'Tizen.UI.IText.FontSize')
+Implements FontSize
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
@@ -124,40 +124,40 @@ public float FontSizeScale { get; set; }
 
 ## InputEditor.FontSlant Property
 
-Gets or sets the font style weight such as [Tizen.UI.FontSlant.Italic](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontSlant.Italic 'Tizen.UI.FontSlant.Italic').
+Gets or sets the font style weight such as Tizen.UI.FontSlant.Italic.
 
 ```csharp
 public Tizen.UI.FontSlant FontSlant { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontSlant](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontSlant 'Tizen.UI.FontSlant')
+Tizen.UI.FontSlant
 
 <a name='Tizen.UI.Components.Material.InputEditor.FontWeight'></a>
 
 ## InputEditor.FontWeight Property
 
-Gets or sets the font style weight such as [Tizen.UI.FontWeight.Bold](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWeight.Bold 'Tizen.UI.FontWeight.Bold').
+Gets or sets the font style weight such as Tizen.UI.FontWeight.Bold.
 
 ```csharp
 public Tizen.UI.FontWeight FontWeight { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontWeight](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWeight 'Tizen.UI.FontWeight')
+Tizen.UI.FontWeight
 
 <a name='Tizen.UI.Components.Material.InputEditor.FontWidth'></a>
 
 ## InputEditor.FontWidth Property
 
-Gets or sets the font style width such as [Tizen.UI.FontWidth.Condensed](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWidth.Condensed 'Tizen.UI.FontWidth.Condensed').
+Gets or sets the font style width such as Tizen.UI.FontWidth.Condensed.
 
 ```csharp
 public Tizen.UI.FontWidth FontWidth { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontWidth](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWidth 'Tizen.UI.FontWidth')
+Tizen.UI.FontWidth
 
 <a name='Tizen.UI.Components.Material.InputEditor.HorizontalAlignment'></a>
 
@@ -169,10 +169,10 @@ Gets or sets the horizontal alignment of the text.
 public Tizen.UI.TextAlignment HorizontalAlignment { get; set; }
 ```
 
-Implements [HorizontalAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextAlignment.HorizontalAlignment 'Tizen.UI.ITextAlignment.HorizontalAlignment')
+Implements HorizontalAlignment
 
 #### Property Value
-[Tizen.UI.TextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextAlignment 'Tizen.UI.TextAlignment')
+Tizen.UI.TextAlignment
 
 <a name='Tizen.UI.Components.Material.InputEditor.InputColor'></a>
 
@@ -185,7 +185,7 @@ public Tizen.UI.Color InputColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.InputEditor.InputFontFamily'></a>
 
@@ -217,40 +217,40 @@ public float InputFontSize { get; set; }
 
 ## InputEditor.InputFontSlant Property
 
-Gets or sets the input font style weight such as [Tizen.UI.FontSlant.Italic](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontSlant.Italic 'Tizen.UI.FontSlant.Italic') for the text will be added to the input area from now on..
+Gets or sets the input font style weight such as Tizen.UI.FontSlant.Italic for the text will be added to the input area from now on..
 
 ```csharp
 public Tizen.UI.FontSlant InputFontSlant { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontSlant](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontSlant 'Tizen.UI.FontSlant')
+Tizen.UI.FontSlant
 
 <a name='Tizen.UI.Components.Material.InputEditor.InputFontWeight'></a>
 
 ## InputEditor.InputFontWeight Property
 
-Gets or sets the input font style weight such as [Tizen.UI.FontWeight.Bold](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWeight.Bold 'Tizen.UI.FontWeight.Bold') for the text will be added to the input area from now on..
+Gets or sets the input font style weight such as Tizen.UI.FontWeight.Bold for the text will be added to the input area from now on..
 
 ```csharp
 public Tizen.UI.FontWeight InputFontWeight { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontWeight](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWeight 'Tizen.UI.FontWeight')
+Tizen.UI.FontWeight
 
 <a name='Tizen.UI.Components.Material.InputEditor.InputFontWidth'></a>
 
 ## InputEditor.InputFontWidth Property
 
-Gets or sets the input font style width such as [Tizen.UI.FontWidth.Condensed](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWidth.Condensed 'Tizen.UI.FontWidth.Condensed') for the text will be added to the input area from now on..
+Gets or sets the input font style width such as Tizen.UI.FontWidth.Condensed for the text will be added to the input area from now on..
 
 ```csharp
 public Tizen.UI.FontWidth InputFontWidth { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontWidth](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWidth 'Tizen.UI.FontWidth')
+Tizen.UI.FontWidth
 
 <a name='Tizen.UI.Components.Material.InputEditor.InputMethodContext'></a>
 
@@ -262,10 +262,10 @@ Gets the input method context.
 public Tizen.UI.InputMethodContext InputMethodContext { get; }
 ```
 
-Implements [InputMethodContext](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextEditable.InputMethodContext 'Tizen.UI.ITextEditable.InputMethodContext')
+Implements InputMethodContext
 
 #### Property Value
-[Tizen.UI.InputMethodContext](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.InputMethodContext 'Tizen.UI.InputMethodContext')
+Tizen.UI.InputMethodContext
 
 <a name='Tizen.UI.Components.Material.InputEditor.IsAbsoluteLineHeight'></a>
 
@@ -292,7 +292,7 @@ Gets or sets whether the text can be edited.
 public bool IsEditable { get; set; }
 ```
 
-Implements [IsEditable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextEditable.IsEditable 'Tizen.UI.ITextEditable.IsEditable')
+Implements IsEditable
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -338,7 +338,7 @@ public Tizen.UI.LineBreakMode LineWLineBreakModerapMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.LineBreakMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.LineBreakMode 'Tizen.UI.LineBreakMode')
+Tizen.UI.LineBreakMode
 
 <a name='Tizen.UI.Components.Material.InputEditor.MaximumFontSizeScale'></a>
 
@@ -397,10 +397,10 @@ Gets or sets the outline style for the text.
 public System.Nullable&lt;Tizen.UI.Outline> Outline { get; set; }
 ```
 
-Implements [Outline](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IDecoratableText.Outline 'Tizen.UI.Components.IDecoratableText.Outline')
+Implements Outline
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.Outline](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Outline 'Tizen.UI.Outline')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.Outline[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.Material.InputEditor.PlaceholderText'></a>
 
@@ -412,7 +412,7 @@ Gets or sets the placeholder text.
 public string PlaceholderText { get; set; }
 ```
 
-Implements [PlaceholderText](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextEditable.PlaceholderText 'Tizen.UI.ITextEditable.PlaceholderText')
+Implements PlaceholderText
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -428,7 +428,7 @@ public Tizen.UI.Color PlaceholderTextColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.InputEditor.SelectedText'></a>
 
@@ -454,7 +454,7 @@ public Tizen.UI.Components.ClosedRange&lt;int> SelectedTextIndex { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Components.ClosedRange&lt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')
+Tizen.UI.Components.ClosedRange&lt;[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')&gt;
 
 <a name='Tizen.UI.Components.Material.InputEditor.SelectionEnabled'></a>
 
@@ -479,10 +479,10 @@ Gets or sets the strike through style for the text.
 public System.Nullable&lt;Tizen.UI.Strikethrough> Strikethrough { get; set; }
 ```
 
-Implements [Strikethrough](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IDecoratableText.Strikethrough 'Tizen.UI.Components.IDecoratableText.Strikethrough')
+Implements Strikethrough
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.Strikethrough](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Strikethrough 'Tizen.UI.Strikethrough')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.Strikethrough[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.Material.InputEditor.SystemFontFamilyEnabled'></a>
 
@@ -520,7 +520,7 @@ Gets or sets the text to display in the UTF-8 format.
 public string Text { get; set; }
 ```
 
-Implements [Text](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.Text 'Tizen.UI.IText.Text')
+Implements Text
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -535,10 +535,10 @@ Gets or sets the color of the text.
 public Tizen.UI.Color TextColor { get; set; }
 ```
 
-Implements [TextColor](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.TextColor 'Tizen.UI.IText.TextColor')
+Implements TextColor
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.InputEditor.TextOverflow'></a>
 
@@ -551,7 +551,7 @@ public Tizen.UI.TextOverflow TextOverflow { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.TextOverflow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextOverflow 'Tizen.UI.TextOverflow')
+Tizen.UI.TextOverflow
 
 <a name='Tizen.UI.Components.Material.InputEditor.TextShadow'></a>
 
@@ -563,10 +563,10 @@ Gets or sets the drop shadow for the text.
 public System.Nullable&lt;Tizen.UI.TextShadow> TextShadow { get; set; }
 ```
 
-Implements [TextShadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IDecoratableText.TextShadow 'Tizen.UI.Components.IDecoratableText.TextShadow')
+Implements TextShadow
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.TextShadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextShadow 'Tizen.UI.TextShadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.TextShadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.Material.InputEditor.Underline'></a>
 
@@ -578,10 +578,10 @@ Gets or sets the underline style for the text.
 public System.Nullable&lt;Tizen.UI.Underline> Underline { get; set; }
 ```
 
-Implements [Underline](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IDecoratableText.Underline 'Tizen.UI.Components.IDecoratableText.Underline')
+Implements Underline
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.Underline](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Underline 'Tizen.UI.Underline')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.Underline[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.Material.InputEditor.VerticalAlignment'></a>
 
@@ -593,10 +593,10 @@ Gets or sets the vertical alignment of the text.
 public Tizen.UI.TextAlignment VerticalAlignment { get; set; }
 ```
 
-Implements [VerticalAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextAlignment.VerticalAlignment 'Tizen.UI.ITextAlignment.VerticalAlignment')
+Implements VerticalAlignment
 
 #### Property Value
-[Tizen.UI.TextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextAlignment 'Tizen.UI.TextAlignment')
+Tizen.UI.TextAlignment
 ### Methods
 
 <a name='Tizen.UI.Components.Material.InputEditor.ClearSelection()'></a>
@@ -691,7 +691,7 @@ public void SetCursorColor(Tizen.UI.Color color);
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetCursorColor(Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetCursorWidth(int)'></a>
 
@@ -769,7 +769,7 @@ public void SetInputMethodActionButtonTitle(Tizen.UI.ActionButtonTitle actionBut
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetInputMethodActionButtonTitle(Tizen.UI.ActionButtonTitle).actionButtonTitle'></a>
 
-`actionButtonTitle` [Tizen.UI.ActionButtonTitle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ActionButtonTitle 'Tizen.UI.ActionButtonTitle')
+`actionButtonTitle` Tizen.UI.ActionButtonTitle
 
 The title of the action button.
 
@@ -786,7 +786,7 @@ public void SetInputMethodCapitalMode(Tizen.UI.AutoCapital capitalMode);
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetInputMethodCapitalMode(Tizen.UI.AutoCapital).capitalMode'></a>
 
-`capitalMode` [Tizen.UI.AutoCapital](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AutoCapital 'Tizen.UI.AutoCapital')
+`capitalMode` Tizen.UI.AutoCapital
 
 The capital mode of the input method.
 
@@ -803,7 +803,7 @@ public void SetInputMethodPanelType(Tizen.UI.PanelLayout panelLayout);
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetInputMethodPanelType(Tizen.UI.PanelLayout).panelLayout'></a>
 
-`panelLayout` [Tizen.UI.PanelLayout](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PanelLayout 'Tizen.UI.PanelLayout')
+`panelLayout` Tizen.UI.PanelLayout
 
 The panel layout of the input method.
 
@@ -820,7 +820,7 @@ public void SetSecondaryCursorColor(Tizen.UI.Color color);
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetSecondaryCursorColor(Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetSelectionColor(Tizen.UI.Color)'></a>
 
@@ -835,7 +835,7 @@ public void SetSelectionColor(Tizen.UI.Color color);
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetSelectionColor(Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetSelectionHandleImage(string,string)'></a>
 
@@ -896,11 +896,11 @@ public void SetTextPadding(Tizen.UI.Thickness thickness);
 
 <a name='Tizen.UI.Components.Material.InputEditor.SetTextPadding(Tizen.UI.Thickness).thickness'></a>
 
-`thickness` [Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+`thickness` Tizen.UI.Thickness
 
 The padding thickness.
 
-Implements [SetTextPadding(Thickness)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextPadding.SetTextPadding#Tizen_UI_ITextPadding_SetTextPadding_Tizen_UI_Thickness_ 'Tizen.UI.ITextPadding.SetTextPadding(Tizen.UI.Thickness)')
+Implements SetTextPadding(Thickness)')
 
 <a name='Tizen.UI.Components.Material.InputEditor.UnsetCursorBlink()'></a>
 
@@ -924,7 +924,7 @@ public event EventHandler&lt;AnchorClickedEventArgs> AnchorClicked;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.AnchorClickedEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnchorClickedEventArgs 'Tizen.UI.AnchorClickedEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.AnchorClickedEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Material.InputEditor.CursorMoved'></a>
 
@@ -1014,10 +1014,11 @@ Occurs when the text is changed.
 public event EventHandler TextChanged;
 ```
 
-Implements [TextChanged](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextEditable.TextChanged 'Tizen.UI.ITextEditable.TextChanged')
+Implements TextChanged
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

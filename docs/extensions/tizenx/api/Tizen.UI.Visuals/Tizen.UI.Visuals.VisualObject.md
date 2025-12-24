@@ -8,7 +8,7 @@ VisualObject is the base class for all visuals.
 public abstract class VisualObject : Tizen.UI.NObject
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; VisualObject
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; VisualObject
 
 Derived  
 &#8627; [RoundedVisual](Tizen.UI.Visuals.RoundedVisual.md 'Tizen.UI.Visuals.RoundedVisual')  
@@ -26,7 +26,7 @@ public Tizen.UI.Color Color { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Visuals.VisualObject.Height'></a>
 
@@ -177,6 +177,7 @@ public float Y { get; set; }
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

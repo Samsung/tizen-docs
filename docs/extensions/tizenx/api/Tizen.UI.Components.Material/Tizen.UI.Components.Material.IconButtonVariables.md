@@ -10,9 +10,9 @@ Tizen.UI.Components.IClickableVariables,
 System.IEquatable&lt;Tizen.UI.Components.Material.IconButtonVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; IconButtonVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; IconButtonVariables
 
-Implements [Tizen.UI.Components.IClickableVariables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IClickableVariables 'Tizen.UI.Components.IClickableVariables'), [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[IconButtonVariables](Tizen.UI.Components.Material.IconButtonVariables.md 'Tizen.UI.Components.Material.IconButtonVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
+Implements Tizen.UI.Components.IClickableVariables, [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[IconButtonVariables](Tizen.UI.Components.Material.IconButtonVariables.md 'Tizen.UI.Components.Material.IconButtonVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
 ### Properties
 
 <a name='Tizen.UI.Components.Material.IconButtonVariables.ActionButton'></a>
@@ -65,7 +65,7 @@ public Tizen.UI.Color BackgroundColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.IconButtonVariables.CornerRadius'></a>
 
@@ -78,7 +78,7 @@ public Tizen.UI.CornerRadius CornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.IconButtonVariables.Default'></a>
 
@@ -156,7 +156,7 @@ public Tizen.UI.CornerRadius IconCornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.IconButtonVariables.IconHeight'></a>
 
@@ -182,7 +182,7 @@ public Tizen.UI.Color IconMultipliedColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.IconButtonVariables.IconResourceUrl'></a>
 
@@ -234,7 +234,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.IconButtonVariables.TouchEdgeInsets'></a>
 
@@ -247,7 +247,7 @@ public Tizen.UI.Thickness TouchEdgeInsets { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 ### Remarks
 For example, the `Thickness(-5, -20, 10, 15)` will expend touch area to left 5, top 20, right 10, bottom 15. (total 15 horizontally, 35 vertically)
@@ -262,10 +262,10 @@ The visual effect on touch.
 public Tizen.UI.Components.UIAttachable TouchEffect { get; set; }
 ```
 
-Implements [TouchEffect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IClickableVariables.TouchEffect 'Tizen.UI.Components.IClickableVariables.TouchEffect')
+Implements TouchEffect
 
 #### Property Value
-[Tizen.UI.Components.UIAttachable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.UIAttachable 'Tizen.UI.Components.UIAttachable')
+Tizen.UI.Components.UIAttachable
 
 <a name='Tizen.UI.Components.Material.IconButtonVariables.UnderShadows'></a>
 
@@ -278,7 +278,8 @@ public System.Collections.Generic.IEnumerable&lt;Tizen.UI.Shadow> UnderShadows {
 ```
 
 #### Property Value
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Shadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+
 
 
 

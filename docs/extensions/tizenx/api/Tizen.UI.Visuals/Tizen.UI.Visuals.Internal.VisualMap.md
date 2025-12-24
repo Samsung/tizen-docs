@@ -29,7 +29,7 @@ public Tizen.UI.Color Color { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Visuals.Internal.VisualMap.Handle'></a>
 
@@ -42,7 +42,7 @@ public Tizen.UI.NativeHandle.PropertyMapHandle Handle { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.NativeHandle.PropertyMapHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyMapHandle 'Tizen.UI.NativeHandle.PropertyMapHandle')
+Tizen.UI.NativeHandle.PropertyMapHandle
 
 <a name='Tizen.UI.Visuals.Internal.VisualMap.Height'></a>
 
@@ -207,6 +207,7 @@ public event EventHandler UpdateRequired;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

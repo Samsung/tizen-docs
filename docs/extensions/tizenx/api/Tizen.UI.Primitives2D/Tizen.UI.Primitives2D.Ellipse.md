@@ -8,7 +8,7 @@ Draws an ellipse.
 public class Ellipse : Tizen.UI.Primitives2D.Shape
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; [Shape](Tizen.UI.Primitives2D.Shape.md 'Tizen.UI.Primitives2D.Shape') &#129106; Ellipse
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; [Shape](Tizen.UI.Primitives2D.Shape.md 'Tizen.UI.Primitives2D.Shape') &#129106; Ellipse
 ### Constructors
 
 <a name='Tizen.UI.Primitives2D.Ellipse.Ellipse(float,float,float,float)'></a>
@@ -98,6 +98,7 @@ public float RadiusY { get; set; }
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

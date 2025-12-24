@@ -8,7 +8,7 @@ RecyclerView Scroller class. It handles the scrolling behavior of the RecyclerVi
 public class RecycleScroller : Tizen.UI.ViewGroup
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; RecycleScroller
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; RecycleScroller
 ### Constructors
 
 <a name='Tizen.UI.Components.Recycler.RecycleScroller.RecycleScroller(Tizen.UI.Components.Recycler.RecyclerView)'></a>
@@ -38,7 +38,7 @@ public Tizen.UI.Rect CurrentViewPort { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 
 <a name='Tizen.UI.Components.Recycler.RecycleScroller.IsScrollAnimationStarted'></a>
 
@@ -64,7 +64,7 @@ public System.Collections.Generic.IList&lt;Tizen.UI.View> RecycleBody { get; }
 ```
 
 #### Property Value
-[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
+[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
 
 <a name='Tizen.UI.Components.Recycler.RecycleScroller.ScrollX'></a>
 
@@ -103,7 +103,7 @@ public Tizen.UI.Rect ViewPort { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 ### Methods
 
 <a name='Tizen.UI.Components.Recycler.RecycleScroller.AddBody(Tizen.UI.View)'></a>
@@ -119,7 +119,7 @@ public void AddBody(Tizen.UI.View child);
 
 <a name='Tizen.UI.Components.Recycler.RecycleScroller.AddBody(Tizen.UI.View).child'></a>
 
-`child` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`child` Tizen.UI.View
 
 The child body view to add.
 
@@ -148,7 +148,7 @@ The vertical distance to adjust.
 
 <a name='Tizen.UI.Components.Recycler.RecycleScroller.AdjustChildPosition(float,float,System.Func_Tizen.UI.View,bool_).condition'></a>
 
-`condition` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
+`condition` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
 
 The condition to adjust the child view.
 
@@ -221,7 +221,7 @@ public void RemoveBody(Tizen.UI.View child);
 
 <a name='Tizen.UI.Components.Recycler.RecycleScroller.RemoveBody(Tizen.UI.View).child'></a>
 
-`child` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`child` Tizen.UI.View
 
 The child body view to remove.
 
@@ -256,7 +256,7 @@ The duration of the animation.
 
 <a name='Tizen.UI.Components.Recycler.RecycleScroller.ScrollBy(float,float,int,Tizen.UI.AlphaFunction).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function of the animation.
 
@@ -325,7 +325,8 @@ public event EventHandler&lt;ScrollEventArgs> Scrolling;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.ScrollEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollEventArgs 'Tizen.UI.ScrollEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.ScrollEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+
 
 
 

@@ -24,7 +24,7 @@
 | [RoundRectangle](Tizen.UI.Primitives2D.RoundRectangle.md 'Tizen.UI.Primitives2D.RoundRectangle') | Represents a round rectangle shape. |
 | [Shape](Tizen.UI.Primitives2D.Shape.md 'Tizen.UI.Primitives2D.Shape') | Provides a base class for shape elements. |
 | [SolidPaint](Tizen.UI.Primitives2D.SolidPaint.md 'Tizen.UI.Primitives2D.SolidPaint') | Represents a solid paint object used for drawing shapes. |
-| [VectorView](Tizen.UI.Primitives2D.VectorView.md 'Tizen.UI.Primitives2D.VectorView') | The [VectorView](Tizen.UI.Primitives2D.VectorView.md 'Tizen.UI.Primitives2D.VectorView') class is a [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') that displays a list of drawables. |
+| [VectorView](Tizen.UI.Primitives2D.VectorView.md 'Tizen.UI.Primitives2D.VectorView') | The [VectorView](Tizen.UI.Primitives2D.VectorView.md 'Tizen.UI.Primitives2D.VectorView') class is a Tizen.UI.View that displays a list of drawables. |
 
 | Interfaces | |
 | :--- | :--- |

@@ -15,7 +15,7 @@ public class ModalDrawer&lt;T> : Tizen.UI.Components.Material.Drawer&lt;T>
 
 `T`
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Material.Drawer&lt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>')[T](Tizen.UI.Components.Material.ModalDrawer_T_.md#Tizen.UI.Components.Material.ModalDrawer_T_.T 'Tizen.UI.Components.Material.ModalDrawer&lt;T>.T')[&gt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>') &#129106; ModalDrawer&lt;T>
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; [Tizen.UI.Components.Material.Drawer&lt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>')[T](Tizen.UI.Components.Material.ModalDrawer_T_.md#Tizen.UI.Components.Material.ModalDrawer_T_.T 'Tizen.UI.Components.Material.ModalDrawer&lt;T>.T')[&gt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>') &#129106; ModalDrawer&lt;T>
 
 Derived  
 &#8627; [ModalDrawer](Tizen.UI.Components.Material.ModalDrawer.md 'Tizen.UI.Components.Material.ModalDrawer')
@@ -60,7 +60,7 @@ public override Tizen.UI.View Content { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 ### Methods
 
 <a name='Tizen.UI.Components.Material.ModalDrawer_T_.Close()'></a>
@@ -96,7 +96,8 @@ public void Toggle(Tizen.UI.KeyDeviceClass device=Tizen.UI.KeyDeviceClass.None);
 
 <a name='Tizen.UI.Components.Material.ModalDrawer_T_.Toggle(Tizen.UI.KeyDeviceClass).device'></a>
 
-`device` [Tizen.UI.KeyDeviceClass](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.KeyDeviceClass 'Tizen.UI.KeyDeviceClass')
+`device` Tizen.UI.KeyDeviceClass
+
 
 
 

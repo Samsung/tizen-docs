@@ -24,11 +24,11 @@ public static void AttachChild(this Tizen.UI.View parent, Tizen.UI.View child);
 
 <a name='Tizen.UI.Components.ViewExtensions.AttachChild(thisTizen.UI.View,Tizen.UI.View).parent'></a>
 
-`parent` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`parent` Tizen.UI.View
 
 <a name='Tizen.UI.Components.ViewExtensions.AttachChild(thisTizen.UI.View,Tizen.UI.View).child'></a>
 
-`child` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`child` Tizen.UI.View
 
 <a name='Tizen.UI.Components.ViewExtensions.BackgroundColor(thisTizen.UI.View)'></a>
 
@@ -43,12 +43,12 @@ public static Tizen.UI.Color BackgroundColor(this Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.ViewExtensions.BackgroundColor(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The extension target.
 
 #### Returns
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')  
+Tizen.UI.Color  
 The background color value.
 
 <a name='Tizen.UI.Components.ViewExtensions.BackgroundColor(thisTizen.UI.View,Tizen.UI.Color)'></a>
@@ -64,18 +64,18 @@ public static Tizen.UI.View BackgroundColor(this Tizen.UI.View view, Tizen.UI.Co
 
 <a name='Tizen.UI.Components.ViewExtensions.BackgroundColor(thisTizen.UI.View,Tizen.UI.Color).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The extension target.
 
 <a name='Tizen.UI.Components.ViewExtensions.BackgroundColor(thisTizen.UI.View,Tizen.UI.Color).backgroundColor'></a>
 
-`backgroundColor` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`backgroundColor` Tizen.UI.Color
 
 The background color value to be set.
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 The view itself.
 
 <a name='Tizen.UI.Components.ViewExtensions.BorderlineColor(thisTizen.UI.View)'></a>
@@ -91,12 +91,12 @@ public static Tizen.UI.Color BorderlineColor(this Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.ViewExtensions.BorderlineColor(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The extension target.
 
 #### Returns
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')  
+Tizen.UI.Color  
 The borderline color value.
 
 <a name='Tizen.UI.Components.ViewExtensions.BorderlineColor(thisTizen.UI.View,Tizen.UI.Color)'></a>
@@ -112,18 +112,18 @@ public static Tizen.UI.View BorderlineColor(this Tizen.UI.View view, Tizen.UI.Co
 
 <a name='Tizen.UI.Components.ViewExtensions.BorderlineColor(thisTizen.UI.View,Tizen.UI.Color).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The extension target.
 
 <a name='Tizen.UI.Components.ViewExtensions.BorderlineColor(thisTizen.UI.View,Tizen.UI.Color).borderlineColor'></a>
 
-`borderlineColor` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`borderlineColor` Tizen.UI.Color
 
 The borderline color value to be set.
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 The view itself.
 
 <a name='Tizen.UI.Components.ViewExtensions.Color(thisTizen.UI.View)'></a>
@@ -139,12 +139,12 @@ public static Tizen.UI.Color Color(this Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.ViewExtensions.Color(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The extension target.
 
 #### Returns
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')  
+Tizen.UI.Color  
 The color value.
 
 <a name='Tizen.UI.Components.ViewExtensions.Color(thisTizen.UI.View,Tizen.UI.Color)'></a>
@@ -160,18 +160,18 @@ public static Tizen.UI.View Color(this Tizen.UI.View view, Tizen.UI.Color color)
 
 <a name='Tizen.UI.Components.ViewExtensions.Color(thisTizen.UI.View,Tizen.UI.Color).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The extension target.
 
 <a name='Tizen.UI.Components.ViewExtensions.Color(thisTizen.UI.View,Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 The color value to be set.
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 The view itself.
 
 <a name='Tizen.UI.Components.ViewExtensions.DetachChild(thisTizen.UI.View,Tizen.UI.View)'></a>
@@ -187,11 +187,11 @@ public static void DetachChild(this Tizen.UI.View parent, Tizen.UI.View child);
 
 <a name='Tizen.UI.Components.ViewExtensions.DetachChild(thisTizen.UI.View,Tizen.UI.View).parent'></a>
 
-`parent` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`parent` Tizen.UI.View
 
 <a name='Tizen.UI.Components.ViewExtensions.DetachChild(thisTizen.UI.View,Tizen.UI.View).child'></a>
 
-`child` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`child` Tizen.UI.View
 
 <a name='Tizen.UI.Components.ViewExtensions.DetachFromParent(thisTizen.UI.View)'></a>
 
@@ -206,7 +206,7 @@ public static void DetachFromParent(this Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.ViewExtensions.DetachFromParent(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Components.ViewExtensions.DisabledEffect_TView_(thisTView,Tizen.UI.Components.UIAttachable)'></a>
 
@@ -315,7 +315,7 @@ public static Tizen.UI.Rect GetScreenBounds&lt;TView>(this TView view)
 `view` [TView](Tizen.UI.Components.ViewExtensions.md#Tizen.UI.Components.ViewExtensions.GetScreenBounds_TView_(thisTView).TView 'Tizen.UI.Components.ViewExtensions.GetScreenBounds&lt;TView>(this TView).TView')
 
 #### Returns
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 
 <a name='Tizen.UI.Components.ViewExtensions.SoundEffect_TView_(thisTView,Tizen.UI.Components.UIAttachable)'></a>
 
@@ -403,7 +403,7 @@ public static TView UnderShadow&lt;TView>(this TView view, System.Collections.Ge
 
 `TView`
 
-The view inheriting from [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View').
+The view inheriting from Tizen.UI.View.
 #### Parameters
 
 <a name='Tizen.UI.Components.ViewExtensions.UnderShadow_TView_(thisTView,System.Collections.Generic.IEnumerable_Tizen.UI.Visuals.VisualObject_).view'></a>
@@ -414,7 +414,7 @@ The target view.
 
 <a name='Tizen.UI.Components.ViewExtensions.UnderShadow_TView_(thisTView,System.Collections.Generic.IEnumerable_Tizen.UI.Visuals.VisualObject_).visuals'></a>
 
-`visuals` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Visuals.VisualObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.VisualObject 'Tizen.UI.Visuals.VisualObject')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+`visuals` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Visuals.VisualObject[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 
 The visual list.
 
@@ -423,7 +423,7 @@ The visual list.
 The view itself.
 
 ### Remarks
-The composed visuals can be modified by accessing with the [Tizen.UI.Visuals.ViewExtensions.Visuals(Tizen.UI.View)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ViewExtensions.Visuals#Tizen_UI_Visuals_ViewExtensions_Visuals_Tizen_UI_View_ 'Tizen.UI.Visuals.ViewExtensions.Visuals(Tizen.UI.View)') and [Tizen.UI.Visuals.VisualManager.ShadowLayer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.VisualManager.ShadowLayer 'Tizen.UI.Visuals.VisualManager.ShadowLayer').
+The composed visuals can be modified by accessing with the Tizen.UI.Visuals.ViewExtensions.Visuals(Tizen.UI.View)') and Tizen.UI.Visuals.VisualManager.ShadowLayer.
 
 <a name='Tizen.UI.Components.ViewExtensions.UnderShadow_TView_(thisTView,Tizen.UI.Visuals.VisualObject[])'></a>
 
@@ -441,7 +441,7 @@ public static TView UnderShadow&lt;TView>(this TView view, params Tizen.UI.Visua
 
 `TView`
 
-The view inheriting from [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View').
+The view inheriting from Tizen.UI.View.
 #### Parameters
 
 <a name='Tizen.UI.Components.ViewExtensions.UnderShadow_TView_(thisTView,Tizen.UI.Visuals.VisualObject[]).view'></a>
@@ -452,7 +452,7 @@ The target view.
 
 <a name='Tizen.UI.Components.ViewExtensions.UnderShadow_TView_(thisTView,Tizen.UI.Visuals.VisualObject[]).visuals'></a>
 
-`visuals` [Tizen.UI.Visuals.VisualObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.VisualObject 'Tizen.UI.Visuals.VisualObject')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
+`visuals` Tizen.UI.Visuals.VisualObject[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 
 The visual list.
 
@@ -461,7 +461,7 @@ The visual list.
 The view itself.
 
 ### Remarks
-The composed visuals can be modified by accessing with the [Tizen.UI.Visuals.ViewExtensions.Visuals(Tizen.UI.View)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.ViewExtensions.Visuals#Tizen_UI_Visuals_ViewExtensions_Visuals_Tizen_UI_View_ 'Tizen.UI.Visuals.ViewExtensions.Visuals(Tizen.UI.View)') and [Tizen.UI.Visuals.VisualManager.ShadowLayer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Visuals.VisualManager.ShadowLayer 'Tizen.UI.Visuals.VisualManager.ShadowLayer').
+The composed visuals can be modified by accessing with the Tizen.UI.Visuals.ViewExtensions.Visuals(Tizen.UI.View)') and Tizen.UI.Visuals.VisualManager.ShadowLayer.
 
 <a name='Tizen.UI.Components.ViewExtensions.UnsetWhen_TView_(thisTView)'></a>
 
@@ -784,6 +784,7 @@ If true, execute a given handler once in the call of this method regardless of t
 #### Returns
 [TView](Tizen.UI.Components.ViewExtensions.md#Tizen.UI.Components.ViewExtensions.When_TView_(thisTView,Tizen.UI.Components.UIStateConstraint,System.Action_TView,Tizen.UI.Components.UIStateChangedEventArgs_,bool).TView 'Tizen.UI.Components.ViewExtensions.When&lt;TView>(this TView, Tizen.UI.Components.UIStateConstraint, System.Action&lt;TView,Tizen.UI.Components.UIStateChangedEventArgs>, bool).TView')  
 The view itself to allow chaining.
+
 
 
 

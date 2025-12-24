@@ -21,7 +21,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 ## EditableTextBindings&lt;T>.TextProperty Property
 
-The TextProperty is a two-way bindable property that indicates the text displayed in the [Itext](https://docs.microsoft.com/en-us/dotnet/api/Itext 'Itext') control.
+The TextProperty is a two-way bindable property that indicates the text displayed in the Itext control.
 
 ```csharp
 public static Tizen.UI.TwoWayBindingProperty&lt;T,string> TextProperty { get; }

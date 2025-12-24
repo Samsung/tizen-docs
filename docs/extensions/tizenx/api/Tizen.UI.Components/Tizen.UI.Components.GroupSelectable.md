@@ -10,7 +10,7 @@ Tizen.UI.Components.IGroupSelectable,
 Tizen.UI.Components.ISelectable
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Pressable](Tizen.UI.Components.Pressable.md 'Tizen.UI.Components.Pressable') &#129106; [Clickable](Tizen.UI.Components.Clickable.md 'Tizen.UI.Components.Clickable') &#129106; [Selectable](Tizen.UI.Components.Selectable.md 'Tizen.UI.Components.Selectable') &#129106; GroupSelectable
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; [Pressable](Tizen.UI.Components.Pressable.md 'Tizen.UI.Components.Pressable') &#129106; [Clickable](Tizen.UI.Components.Clickable.md 'Tizen.UI.Components.Clickable') &#129106; [Selectable](Tizen.UI.Components.Selectable.md 'Tizen.UI.Components.Selectable') &#129106; GroupSelectable
 
 Derived  
 &#8627; [GroupSelectableBox](Tizen.UI.Components.GroupSelectableBox.md 'Tizen.UI.Components.GroupSelectableBox')
@@ -73,6 +73,7 @@ Implements [IsGrouped](Tizen.UI.Components.IGroupSelectable.md#Tizen.UI.Componen
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
+
 
 
 

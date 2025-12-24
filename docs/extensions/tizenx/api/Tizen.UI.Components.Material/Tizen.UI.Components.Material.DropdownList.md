@@ -8,7 +8,7 @@ A [DropdownList&lt;T&gt;](Tizen.UI.Components.Material.DropdownList_T_.md 'Tizen
 public class DropdownList : Tizen.UI.Components.Material.DropdownList&lt;Tizen.UI.Components.Material.DropdownItem>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Material.DropdownList&lt;](Tizen.UI.Components.Material.DropdownList_T_.md 'Tizen.UI.Components.Material.DropdownList&lt;T>')[DropdownItem](Tizen.UI.Components.Material.DropdownItem.md 'Tizen.UI.Components.Material.DropdownItem')[&gt;](Tizen.UI.Components.Material.DropdownList_T_.md 'Tizen.UI.Components.Material.DropdownList&lt;T>') &#129106; DropdownList
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; [Tizen.UI.Components.Material.DropdownList&lt;](Tizen.UI.Components.Material.DropdownList_T_.md 'Tizen.UI.Components.Material.DropdownList&lt;T>')[DropdownItem](Tizen.UI.Components.Material.DropdownItem.md 'Tizen.UI.Components.Material.DropdownItem')[&gt;](Tizen.UI.Components.Material.DropdownList_T_.md 'Tizen.UI.Components.Material.DropdownList&lt;T>') &#129106; DropdownList
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.DropdownList.DropdownList()'></a>
@@ -37,6 +37,7 @@ public DropdownList(Tizen.UI.Components.Material.DropdownListVariables variables
 `variables` [DropdownListVariables](Tizen.UI.Components.Material.DropdownListVariables.md 'Tizen.UI.Components.Material.DropdownListVariables')
 
 The variables to configure the tab bar.
+
 
 
 

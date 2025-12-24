@@ -11,7 +11,7 @@ Tizen.UI.Components.IPressable,
 Tizen.UI.Components.ITouchEffectTarget
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; Pressable
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Pressable
 
 Derived  
 &#8627; [Clickable](Tizen.UI.Components.Clickable.md 'Tizen.UI.Components.Clickable')  
@@ -74,7 +74,7 @@ public virtual Tizen.UI.View GetTouchEffectSecondaryTarget();
 Implements [GetTouchEffectSecondaryTarget()](Tizen.UI.Components.ITouchEffectTarget.md#Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectSecondaryTarget() 'Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectSecondaryTarget()')
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 <a name='Tizen.UI.Components.Pressable.GetTouchEffectTarget()'></a>
 
@@ -89,7 +89,7 @@ public virtual Tizen.UI.View GetTouchEffectTarget();
 Implements [GetTouchEffectTarget()](Tizen.UI.Components.ITouchEffectTarget.md#Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectTarget() 'Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectTarget()')
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 ### Events
 
 <a name='Tizen.UI.Components.Pressable.PressedChanged'></a>
@@ -106,6 +106,7 @@ Implements [PressedChanged](Tizen.UI.Components.IPressable.md#Tizen.UI.Component
 
 #### Event Type
 [System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[InputEventArgs](Tizen.UI.Components.InputEventArgs.md 'Tizen.UI.Components.InputEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+
 
 
 

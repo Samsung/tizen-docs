@@ -9,7 +9,7 @@ public class SmartTipVariables : Tizen.UI.Components.Material.SmartTipViewVariab
 System.IEquatable&lt;Tizen.UI.Components.Material.SmartTipVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; [SmartTipViewVariables](Tizen.UI.Components.Material.SmartTipViewVariables.md 'Tizen.UI.Components.Material.SmartTipViewVariables') &#129106; SmartTipVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; [SmartTipViewVariables](Tizen.UI.Components.Material.SmartTipViewVariables.md 'Tizen.UI.Components.Material.SmartTipViewVariables') &#129106; SmartTipVariables
 
 Implements [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[SmartTipVariables](Tizen.UI.Components.Material.SmartTipVariables.md 'Tizen.UI.Components.Material.SmartTipVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
 ### Properties
@@ -25,7 +25,7 @@ public Tizen.UI.Thickness ContentPadding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.SmartTipVariables.DarkGray'></a>
 
@@ -103,7 +103,8 @@ public Tizen.UI.Color TextColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
+
 
 
 

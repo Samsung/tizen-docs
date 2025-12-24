@@ -9,9 +9,9 @@ public class AnimatedImage : Tizen.UI.Components.Material.Image,
 Tizen.UI.Components.IAnimatedImage
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ImageView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageView 'Tizen.UI.ImageView') &#129106; [Image](Tizen.UI.Components.Material.Image.md 'Tizen.UI.Components.Material.Image') &#129106; AnimatedImage
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ImageView &#129106; [Image](Tizen.UI.Components.Material.Image.md 'Tizen.UI.Components.Material.Image') &#129106; AnimatedImage
 
-Implements [Tizen.UI.Components.IAnimatedImage](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage 'Tizen.UI.Components.IAnimatedImage')
+Implements Tizen.UI.Components.IAnimatedImage
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.AnimatedImage.AnimatedImage()'></a>
@@ -110,7 +110,7 @@ Gets or sets whether the animation should loop.
 public bool IsLooping { get; set; }
 ```
 
-Implements [IsLooping](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage.IsLooping 'Tizen.UI.Components.IAnimatedImage.IsLooping')
+Implements IsLooping
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -125,7 +125,7 @@ Gets or sets the number of times the animation should repeat.
 public int RepeatCount { get; set; }
 ```
 
-Implements [RepeatCount](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage.RepeatCount 'Tizen.UI.Components.IAnimatedImage.RepeatCount')
+Implements RepeatCount
 
 #### Property Value
 [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
@@ -141,7 +141,7 @@ public Tizen.UI.AnimationRepeatMode RepeatMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.AnimationRepeatMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationRepeatMode 'Tizen.UI.AnimationRepeatMode')
+Tizen.UI.AnimationRepeatMode
 
 <a name='Tizen.UI.Components.Material.AnimatedImage.StopBehavior'></a>
 
@@ -153,10 +153,10 @@ Gets or sets the behavior of the animation when it stops.
 public Tizen.UI.AnimationStopBehavior StopBehavior { get; set; }
 ```
 
-Implements [StopBehavior](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage.StopBehavior 'Tizen.UI.Components.IAnimatedImage.StopBehavior')
+Implements StopBehavior
 
 #### Property Value
-[Tizen.UI.AnimationStopBehavior](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationStopBehavior 'Tizen.UI.AnimationStopBehavior')
+Tizen.UI.AnimationStopBehavior
 
 <a name='Tizen.UI.Components.Material.AnimatedImage.TotalFrame'></a>
 
@@ -203,6 +203,7 @@ The number of images to keep cached ahead during playback.
 
 ### Remarks
 This will ignore the value of [Image.ResourceUrl](https://docs.microsoft.com/en-us/dotnet/api/Image.ResourceUrl 'Image.ResourceUrl').
+
 
 
 

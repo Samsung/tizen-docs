@@ -8,7 +8,7 @@ The configuration of material components.
 public class MaterialConfig : Tizen.UI.Components.UIConfig
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.UIConfig](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.UIConfig 'Tizen.UI.Components.UIConfig') &#129106; MaterialConfig
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.UIConfig &#129106; MaterialConfig
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.MaterialConfig.MaterialConfig()'></a>
@@ -33,7 +33,7 @@ public override System.Collections.Generic.IDictionary&lt;string,Tizen.UI.Color>
 ```
 
 #### Returns
-[System.Collections.Generic.IDictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')  
+[System.Collections.Generic.IDictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')Tizen.UI.Color[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')  
 The color table.
 
 <a name='Tizen.UI.Components.Material.MaterialConfig.CreateThemeLoader()'></a>
@@ -47,7 +47,7 @@ public override Tizen.UI.Components.IThemeLoader CreateThemeLoader();
 ```
 
 #### Returns
-[Tizen.UI.Components.IThemeLoader](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IThemeLoader 'Tizen.UI.Components.IThemeLoader')
+Tizen.UI.Components.IThemeLoader
 
 <a name='Tizen.UI.Components.Material.MaterialConfig.CreateVariables()'></a>
 
@@ -60,7 +60,8 @@ public override Tizen.UI.Components.UIVariables CreateVariables();
 ```
 
 #### Returns
-[Tizen.UI.Components.UIVariables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.UIVariables 'Tizen.UI.Components.UIVariables')
+Tizen.UI.Components.UIVariables
+
 
 
 

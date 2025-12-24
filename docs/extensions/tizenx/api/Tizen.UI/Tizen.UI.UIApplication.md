@@ -8,7 +8,7 @@ Represents a lite application tha has an UI screen.
 public class UIApplication
 ```
 
-Inheritance [Tizen.Applications.CoreApplication](https://docs.microsoft.com/en-us/dotnet/api/Tizen.Applications.CoreApplication 'Tizen.Applications.CoreApplication') &#129106; UIApplication
+Inheritance Tizen.Applications.CoreApplication &#129106; UIApplication
 ### Constructors
 
 <a name='Tizen.UI.UIApplication.UIApplication()'></a>
@@ -74,7 +74,7 @@ The window mode of the application.
 
 <a name='Tizen.UI.UIApplication.UIApplication(Tizen.UI.WindowMode,CoreTask).coreTask'></a>
 
-`coreTask` [Tizen.Applications.CoreTask](https://docs.microsoft.com/en-us/dotnet/api/Tizen.Applications.CoreTask 'Tizen.Applications.CoreTask')
+`coreTask` Tizen.Applications.CoreTask
 
 The core task of the application.
 
@@ -126,7 +126,7 @@ The window bounds of the application.
 
 <a name='Tizen.UI.UIApplication.UIApplication(Tizen.UI.WindowMode,Tizen.UI.Rect,CoreTask).coreTask'></a>
 
-`coreTask` [Tizen.Applications.CoreTask](https://docs.microsoft.com/en-us/dotnet/api/Tizen.Applications.CoreTask 'Tizen.Applications.CoreTask')
+`coreTask` Tizen.Applications.CoreTask
 
 The core task of the application.
 ### Properties
@@ -231,6 +231,7 @@ public event EventHandler Resumed;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

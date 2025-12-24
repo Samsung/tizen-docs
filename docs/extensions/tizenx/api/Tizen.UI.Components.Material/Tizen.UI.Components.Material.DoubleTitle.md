@@ -11,9 +11,9 @@ Tizen.UI.Components.ITitle,
 Tizen.UI.Components.Material.IAppBarContent
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; [Tizen.UI.Layouts.Layout](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.Layout 'Tizen.UI.Layouts.Layout') &#129106; [Tizen.UI.Layouts.StackBase](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.StackBase 'Tizen.UI.Layouts.StackBase') &#129106; [Tizen.UI.Layouts.VStack](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.VStack 'Tizen.UI.Layouts.VStack') &#129106; DoubleTitle
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; Tizen.UI.Layouts.Layout &#129106; Tizen.UI.Layouts.StackBase &#129106; Tizen.UI.Layouts.VStack &#129106; DoubleTitle
 
-Implements [Tizen.UI.Components.IDoubleTitle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IDoubleTitle 'Tizen.UI.Components.IDoubleTitle'), [Tizen.UI.Components.ITitle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ITitle 'Tizen.UI.Components.ITitle'), [IAppBarContent](Tizen.UI.Components.Material.IAppBarContent.md 'Tizen.UI.Components.Material.IAppBarContent')
+Implements Tizen.UI.Components.IDoubleTitle, Tizen.UI.Components.ITitle, [IAppBarContent](Tizen.UI.Components.Material.IAppBarContent.md 'Tizen.UI.Components.Material.IAppBarContent')
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.DoubleTitle.DoubleTitle(string,string)'></a>
@@ -82,7 +82,7 @@ Gets or sets the sub title.
 public string Subtitle { get; set; }
 ```
 
-Implements [Subtitle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IDoubleTitle.Subtitle 'Tizen.UI.Components.IDoubleTitle.Subtitle')
+Implements Subtitle
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -110,7 +110,7 @@ Gets or sets the main title.
 public string Title { get; set; }
 ```
 
-Implements [Title](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ITitle.Title 'Tizen.UI.Components.ITitle.Title')
+Implements Title
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -142,9 +142,10 @@ public void ApplyUnifiedContentColor(Tizen.UI.Color color);
 
 <a name='Tizen.UI.Components.Material.DoubleTitle.ApplyUnifiedContentColor(Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 Implements [ApplyUnifiedContentColor(Color)](Tizen.UI.Components.Material.IAppBarContent.md#Tizen.UI.Components.Material.IAppBarContent.ApplyUnifiedContentColor(Tizen.UI.Color) 'Tizen.UI.Components.Material.IAppBarContent.ApplyUnifiedContentColor(Tizen.UI.Color)')
+
 
 
 

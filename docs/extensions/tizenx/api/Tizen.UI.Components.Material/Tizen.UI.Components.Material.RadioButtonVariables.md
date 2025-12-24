@@ -10,9 +10,9 @@ Tizen.UI.Components.IClickableVariables,
 System.IEquatable&lt;Tizen.UI.Components.Material.RadioButtonVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; RadioButtonVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; RadioButtonVariables
 
-Implements [Tizen.UI.Components.IClickableVariables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IClickableVariables 'Tizen.UI.Components.IClickableVariables'), [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[RadioButtonVariables](Tizen.UI.Components.Material.RadioButtonVariables.md 'Tizen.UI.Components.Material.RadioButtonVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
+Implements Tizen.UI.Components.IClickableVariables, [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[RadioButtonVariables](Tizen.UI.Components.Material.RadioButtonVariables.md 'Tizen.UI.Components.Material.RadioButtonVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
 ### Properties
 
 <a name='Tizen.UI.Components.Material.RadioButtonVariables.Default'></a>
@@ -52,7 +52,7 @@ public Tizen.UI.Color IconColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.RadioButtonVariables.IconGenerator'></a>
 
@@ -104,7 +104,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.RadioButtonVariables.SelectedIconColor'></a>
 
@@ -117,7 +117,7 @@ public Tizen.UI.Color SelectedIconColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.RadioButtonVariables.TouchEffect'></a>
 
@@ -129,10 +129,11 @@ The visual effect on touch.
 public Tizen.UI.Components.UIAttachable TouchEffect { get; set; }
 ```
 
-Implements [TouchEffect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IClickableVariables.TouchEffect 'Tizen.UI.Components.IClickableVariables.TouchEffect')
+Implements TouchEffect
 
 #### Property Value
-[Tizen.UI.Components.UIAttachable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.UIAttachable 'Tizen.UI.Components.UIAttachable')
+Tizen.UI.Components.UIAttachable
+
 
 
 

@@ -10,9 +10,9 @@ Tizen.UI.Components.ITitle,
 Tizen.UI.Components.Material.IAppBarContent
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Label](Tizen.UI.Components.Material.Label.md 'Tizen.UI.Components.Material.Label') &#129106; Title
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; [Label](Tizen.UI.Components.Material.Label.md 'Tizen.UI.Components.Material.Label') &#129106; Title
 
-Implements [Tizen.UI.Components.ITitle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ITitle 'Tizen.UI.Components.ITitle'), [IAppBarContent](Tizen.UI.Components.Material.IAppBarContent.md 'Tizen.UI.Components.Material.IAppBarContent')
+Implements Tizen.UI.Components.ITitle, [IAppBarContent](Tizen.UI.Components.Material.IAppBarContent.md 'Tizen.UI.Components.Material.IAppBarContent')
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.Title.Title()'></a>
@@ -73,9 +73,10 @@ public void ApplyUnifiedContentColor(Tizen.UI.Color color);
 
 <a name='Tizen.UI.Components.Material.Title.ApplyUnifiedContentColor(Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 Implements [ApplyUnifiedContentColor(Color)](Tizen.UI.Components.Material.IAppBarContent.md#Tizen.UI.Components.Material.IAppBarContent.ApplyUnifiedContentColor(Tizen.UI.Color) 'Tizen.UI.Components.Material.IAppBarContent.ApplyUnifiedContentColor(Tizen.UI.Color)')
+
 
 
 

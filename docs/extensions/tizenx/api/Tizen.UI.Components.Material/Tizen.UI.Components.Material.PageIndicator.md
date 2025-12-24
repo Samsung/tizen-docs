@@ -9,7 +9,7 @@ public class PageIndicator : Tizen.UI.ContentView,
 Tizen.UI.Components.Material.IPageIndicator
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; PageIndicator
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; PageIndicator
 
 Implements [IPageIndicator](Tizen.UI.Components.Material.IPageIndicator.md 'Tizen.UI.Components.Material.IPageIndicator')
 ### Constructors
@@ -98,7 +98,7 @@ public Tizen.UI.ViewTemplate PageDotTemplate { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+Tizen.UI.ViewTemplate
 
 <a name='Tizen.UI.Components.Material.PageIndicator.Spacing'></a>
 
@@ -129,7 +129,7 @@ public Tizen.UI.View this[int index] { get; set; }
 `index` [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 ### Methods
 
 <a name='Tizen.UI.Components.Material.PageIndicator.AddPage(int)'></a>
@@ -167,6 +167,7 @@ public void RemovePage(int pageIndex);
 The removing page index.
 
 Implements [RemovePage(int)](Tizen.UI.Components.Material.IPageIndicator.md#Tizen.UI.Components.Material.IPageIndicator.RemovePage(int) 'Tizen.UI.Components.Material.IPageIndicator.RemovePage(int)')
+
 
 
 

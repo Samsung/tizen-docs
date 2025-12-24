@@ -8,7 +8,7 @@
 public class Animation3D : Tizen.UI.Animation
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation') &#129106; Animation3D
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.Animation &#129106; Animation3D
 ### Constructors
 
 <a name='Tizen.UI.Scene3D.Animation3D.Animation3D()'></a>
@@ -90,7 +90,7 @@ The duration of the animation, in milliseconds.
 
 <a name='Tizen.UI.Scene3D.Animation3D.AnimateBy_T_(T,Tizen.UI.Scene3D.Animatable3DPropertyValue_T_,int,int,Tizen.UI.AlphaFunction).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function to apply to the animation.
 
@@ -139,9 +139,10 @@ The duration of the animation, in milliseconds.
 
 <a name='Tizen.UI.Scene3D.Animation3D.AnimateTo_T_(T,Tizen.UI.Scene3D.Animatable3DPropertyValue_T_,int,int,Tizen.UI.AlphaFunction).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function to apply to the animation.
+
 
 
 

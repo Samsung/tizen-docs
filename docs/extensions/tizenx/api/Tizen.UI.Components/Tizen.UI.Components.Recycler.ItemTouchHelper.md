@@ -74,7 +74,7 @@ public Tizen.UI.Thickness GetItemOffsets(Tizen.UI.View view, int position, Tizen
 
 <a name='Tizen.UI.Components.Recycler.ItemTouchHelper.GetItemOffsets(Tizen.UI.View,int,Tizen.UI.Components.Recycler.RecyclerView).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to retrieve the offset from.
 
@@ -93,7 +93,7 @@ The recyclerView
 Implements [GetItemOffsets(View, int, RecyclerView)](Tizen.UI.Components.Recycler.IItemDecoration.md#Tizen.UI.Components.Recycler.IItemDecoration.GetItemOffsets(Tizen.UI.View,int,Tizen.UI.Components.Recycler.RecyclerView) 'Tizen.UI.Components.Recycler.IItemDecoration.GetItemOffsets(Tizen.UI.View, int, Tizen.UI.Components.Recycler.RecyclerView)')
 
 #### Returns
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')  
+Tizen.UI.Thickness  
 The extra drawing space for the item view.
 
 <a name='Tizen.UI.Components.Recycler.ItemTouchHelper.StartDrag(Tizen.UI.Components.Recycler.ViewHolder)'></a>
@@ -112,6 +112,7 @@ public void StartDrag(Tizen.UI.Components.Recycler.ViewHolder viewHolder);
 `viewHolder` [ViewHolder](Tizen.UI.Components.Recycler.ViewHolder.md 'Tizen.UI.Components.Recycler.ViewHolder')
 
 The view holder for drag.
+
 
 
 

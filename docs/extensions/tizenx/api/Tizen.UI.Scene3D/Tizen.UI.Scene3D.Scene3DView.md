@@ -2,13 +2,13 @@
 
 ## Scene3DView Class
 
-[Scene3DView](Tizen.UI.Scene3D.Scene3DView.md 'Tizen.UI.Scene3D.Scene3DView') is a [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') for displaying 3D [SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject').
+[Scene3DView](Tizen.UI.Scene3D.Scene3DView.md 'Tizen.UI.Scene3D.Scene3DView') is a Tizen.UI.View for displaying 3D [SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject').
 
 ```csharp
 public class Scene3DView : Tizen.UI.ViewGroup
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; Scene3DView
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; Scene3DView
 ### Constructors
 
 <a name='Tizen.UI.Scene3D.Scene3DView.Scene3DView()'></a>
@@ -170,7 +170,7 @@ The duration of the transition.
 
 <a name='Tizen.UI.Scene3D.Scene3DView.AnimateCameraTransition(Tizen.UI.Scene3D.Camera,int,Tizen.UI.AlphaFunction).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function to apply during the transition.
 
@@ -292,6 +292,7 @@ public event EventHandler ResourceReady;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

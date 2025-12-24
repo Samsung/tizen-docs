@@ -30,7 +30,7 @@ public VisualManager(Tizen.UI.View owner);
 
 <a name='Tizen.UI.Visuals.VisualManager.VisualManager(Tizen.UI.View).owner'></a>
 
-`owner` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`owner` Tizen.UI.View
 
 The View object that owns this VisualManager.
 ### Properties
@@ -141,7 +141,7 @@ public Tizen.UI.View Owner { get; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 <a name='Tizen.UI.Visuals.VisualManager.ShadowLayer'></a>
 

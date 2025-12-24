@@ -24,7 +24,7 @@ public static bool AbortAnimation(this Tizen.UI.View self, string handle);
 
 <a name='Tizen.UI.Components.Animations.AnimationExtensions.AbortAnimation(thisTizen.UI.View,string).self'></a>
 
-`self` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`self` Tizen.UI.View
 
 The view to abort the animation on.
 
@@ -51,7 +51,7 @@ public static void Animate(this Tizen.UI.View self, string name, System.Action&l
 
 <a name='Tizen.UI.Components.Animations.AnimationExtensions.Animate(thisTizen.UI.View,string,System.Action_float_,float,float,uint,uint,Tizen.UI.Components.Animations.Easing,System.Action_float,bool_,System.Func_bool_).self'></a>
 
-`self` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`self` Tizen.UI.View
 
 The view to animate.
 
@@ -122,7 +122,7 @@ public static void Animate(this Tizen.UI.View self, string name, System.Action&l
 
 <a name='Tizen.UI.Components.Animations.AnimationExtensions.Animate(thisTizen.UI.View,string,System.Action_float_,uint,uint,Tizen.UI.Components.Animations.Easing,System.Action_float,bool_,System.Func_bool_).self'></a>
 
-`self` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`self` Tizen.UI.View
 
 The view to animate.
 
@@ -181,7 +181,7 @@ public static void Animate(this Tizen.UI.View self, string name, Tizen.UI.Compon
 
 <a name='Tizen.UI.Components.Animations.AnimationExtensions.Animate(thisTizen.UI.View,string,Tizen.UI.Components.Animations.UIAnimation,uint,uint,Tizen.UI.Components.Animations.Easing,System.Action_float,bool_,System.Func_bool_).self'></a>
 
-`self` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`self` Tizen.UI.View
 
 The view to animate.
 
@@ -247,7 +247,7 @@ The type of the property to animate.
 
 <a name='Tizen.UI.Components.Animations.AnimationExtensions.Animate_T_(thisTizen.UI.View,string,System.Func_float,T_,System.Action_T_,uint,uint,Tizen.UI.Components.Animations.Easing,System.Action_T,bool_,System.Func_bool_).self'></a>
 
-`self` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`self` Tizen.UI.View
 
 The view to animate.
 
@@ -312,7 +312,7 @@ public static void AnimateKinetic(this Tizen.UI.View self, string name, System.F
 
 <a name='Tizen.UI.Components.Animations.AnimationExtensions.AnimateKinetic(thisTizen.UI.View,string,System.Func_float,float,bool_,float,float,System.Action).self'></a>
 
-`self` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`self` Tizen.UI.View
 
 The view to animate.
 
@@ -359,7 +359,7 @@ public static bool AnimationIsRunning(this Tizen.UI.View self, string handle);
 
 <a name='Tizen.UI.Components.Animations.AnimationExtensions.AnimationIsRunning(thisTizen.UI.View,string).self'></a>
 
-`self` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`self` Tizen.UI.View
 
 The view to check for running animations on.
 

@@ -20,7 +20,7 @@ Tizen.UI.Color DominantColor { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 ### Events
 
 <a name='Tizen.UI.Components.IColorProvider.DominantColorChanged'></a>

@@ -22,7 +22,7 @@ public static readonly CornerRadius Full;
 ```
 
 #### Field Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.MaterialCorner.Lg'></a>
 
@@ -35,7 +35,7 @@ public static readonly CornerRadius Lg;
 ```
 
 #### Field Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.MaterialCorner.Md'></a>
 
@@ -48,7 +48,7 @@ public static readonly CornerRadius Md;
 ```
 
 #### Field Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.MaterialCorner.Sm'></a>
 
@@ -61,7 +61,7 @@ public static readonly CornerRadius Sm;
 ```
 
 #### Field Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.MaterialCorner.Sm2'></a>
 
@@ -74,7 +74,7 @@ public static readonly CornerRadius Sm2;
 ```
 
 #### Field Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.MaterialCorner.Xl'></a>
 
@@ -87,7 +87,7 @@ public static readonly CornerRadius Xl;
 ```
 
 #### Field Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.MaterialCorner.Xs'></a>
 
@@ -100,7 +100,7 @@ public static readonly CornerRadius Xs;
 ```
 
 #### Field Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.MaterialCorner.Xs2'></a>
 
@@ -113,7 +113,7 @@ public static readonly CornerRadius Xs2;
 ```
 
 #### Field Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 ### Methods
 
 <a name='Tizen.UI.Components.Material.MaterialCorner.Get(string)'></a>
@@ -132,7 +132,8 @@ public static Tizen.UI.CornerRadius Get(string tokenName);
 `tokenName` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
 
 #### Returns
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
+
 
 
 

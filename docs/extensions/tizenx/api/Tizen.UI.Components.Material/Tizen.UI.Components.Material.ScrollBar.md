@@ -8,7 +8,7 @@ A class representing a scroll bar that can be used to control the scrolling of a
 public class ScrollBar : Tizen.UI.Components.ScrollBarBase
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; [Tizen.UI.Components.ScrollBarBase](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ScrollBarBase 'Tizen.UI.Components.ScrollBarBase') &#129106; ScrollBar
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; Tizen.UI.Components.ScrollBarBase &#129106; ScrollBar
 
 Derived  
 &#8627; [FloatingActionButtonScrollBar](Tizen.UI.Components.Material.FloatingActionButtonScrollBar.md 'Tizen.UI.Components.Material.FloatingActionButtonScrollBar')
@@ -40,6 +40,7 @@ public ScrollBar(Tizen.UI.Components.Material.ScrollBarVariables variables);
 `variables` [ScrollBarVariables](Tizen.UI.Components.Material.ScrollBarVariables.md 'Tizen.UI.Components.Material.ScrollBarVariables')
 
 The variables for the scroll bar.
+
 
 
 

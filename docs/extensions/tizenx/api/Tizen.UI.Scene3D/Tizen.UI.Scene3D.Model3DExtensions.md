@@ -25,8 +25,9 @@ public static Tizen.UI.Rect GetCalculateCurrentScreenRect(this Tizen.UI.Scene3D.
 `model` [Model3D](Tizen.UI.Scene3D.Model3D.md 'Tizen.UI.Scene3D.Model3D')
 
 #### Returns
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')  
+Tizen.UI.Rect  
 The rectangle with with position and size.
+
 
 
 

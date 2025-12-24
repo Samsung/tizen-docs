@@ -3,7 +3,7 @@
 ## IPressable Interface
 
 Represents pressable element.  
-All derived class of [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') that implements this interface can have [Pressed](Tizen.UI.Components.UIState.md#Tizen.UI.Components.UIState.Pressed 'Tizen.UI.Components.UIState.Pressed') state when [IsPressed](Tizen.UI.Components.IPressable.md#Tizen.UI.Components.IPressable.IsPressed 'Tizen.UI.Components.IPressable.IsPressed') is true.
+All derived class of Tizen.UI.View that implements this interface can have [Pressed](Tizen.UI.Components.UIState.md#Tizen.UI.Components.UIState.Pressed 'Tizen.UI.Components.UIState.Pressed') state when [IsPressed](Tizen.UI.Components.IPressable.md#Tizen.UI.Components.IPressable.IsPressed 'Tizen.UI.Components.IPressable.IsPressed') is true.
 
 ```csharp
 public interface IPressable

@@ -8,7 +8,7 @@ ImageVisual is a class for the image visual.
 public class ImageVisual : Tizen.UI.Visuals.RoundedVisual
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [VisualObject](Tizen.UI.Visuals.VisualObject.md 'Tizen.UI.Visuals.VisualObject') &#129106; [RoundedVisual](Tizen.UI.Visuals.RoundedVisual.md 'Tizen.UI.Visuals.RoundedVisual') &#129106; ImageVisual
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [VisualObject](Tizen.UI.Visuals.VisualObject.md 'Tizen.UI.Visuals.VisualObject') &#129106; [RoundedVisual](Tizen.UI.Visuals.RoundedVisual.md 'Tizen.UI.Visuals.RoundedVisual') &#129106; ImageVisual
 
 Derived  
 &#8627; [NPatchVisual](Tizen.UI.Visuals.NPatchVisual.md 'Tizen.UI.Visuals.NPatchVisual')
@@ -107,7 +107,7 @@ public Tizen.UI.FittingMode FittingMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FittingMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FittingMode 'Tizen.UI.FittingMode')
+Tizen.UI.FittingMode
 
 <a name='Tizen.UI.Visuals.ImageVisual.ImageLoadWithViewSize'></a>
 
@@ -135,7 +135,7 @@ public Tizen.UI.ImageLoadPolicy LoadPolicy { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageLoadPolicy](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageLoadPolicy 'Tizen.UI.ImageLoadPolicy')
+Tizen.UI.ImageLoadPolicy
 
 <a name='Tizen.UI.Visuals.ImageVisual.MaskContentScale'></a>
 
@@ -161,7 +161,7 @@ public Tizen.UI.ImageMaskingMode MaskingMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageMaskingMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageMaskingMode 'Tizen.UI.ImageMaskingMode')
+Tizen.UI.ImageMaskingMode
 
 <a name='Tizen.UI.Visuals.ImageVisual.OrientationCorrection'></a>
 
@@ -187,7 +187,7 @@ public Tizen.UI.Rect PixelArea { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 
 <a name='Tizen.UI.Visuals.ImageVisual.PreMultipliedAlpha'></a>
 
@@ -214,7 +214,7 @@ public Tizen.UI.ImageReleasePolicy ReleasePolicy { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageReleasePolicy](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageReleasePolicy 'Tizen.UI.ImageReleasePolicy')
+Tizen.UI.ImageReleasePolicy
 
 <a name='Tizen.UI.Visuals.ImageVisual.ResourceUrl'></a>
 
@@ -253,7 +253,7 @@ public Tizen.UI.ImageWrapMode WrapModeU { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageWrapMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageWrapMode 'Tizen.UI.ImageWrapMode')
+Tizen.UI.ImageWrapMode
 
 <a name='Tizen.UI.Visuals.ImageVisual.WrapModeV'></a>
 
@@ -266,7 +266,7 @@ public Tizen.UI.ImageWrapMode WrapModeV { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageWrapMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageWrapMode 'Tizen.UI.ImageWrapMode')
+Tizen.UI.ImageWrapMode
 ### Methods
 
 <a name='Tizen.UI.Visuals.ImageVisual.Reload()'></a>
@@ -288,6 +288,7 @@ This method updates the visual properties of the image.
 ```csharp
 public void Update();
 ```
+
 
 
 

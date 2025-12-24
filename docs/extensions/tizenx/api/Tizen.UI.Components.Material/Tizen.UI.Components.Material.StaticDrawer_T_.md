@@ -14,7 +14,7 @@ public class StaticDrawer&lt;T> : Tizen.UI.Components.Material.Drawer&lt;T>
 
 `T`
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Material.Drawer&lt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>')[T](Tizen.UI.Components.Material.StaticDrawer_T_.md#Tizen.UI.Components.Material.StaticDrawer_T_.T 'Tizen.UI.Components.Material.StaticDrawer&lt;T>.T')[&gt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>') &#129106; StaticDrawer&lt;T>
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; [Tizen.UI.Components.Material.Drawer&lt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>')[T](Tizen.UI.Components.Material.StaticDrawer_T_.md#Tizen.UI.Components.Material.StaticDrawer_T_.T 'Tizen.UI.Components.Material.StaticDrawer&lt;T>.T')[&gt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>') &#129106; StaticDrawer&lt;T>
 
 Derived  
 &#8627; [StaticDrawer](Tizen.UI.Components.Material.StaticDrawer.md 'Tizen.UI.Components.Material.StaticDrawer')
@@ -59,7 +59,7 @@ public override Tizen.UI.View Content { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 ### Methods
 
 <a name='Tizen.UI.Components.Material.StaticDrawer_T_.Measure(float,float)'></a>
@@ -86,7 +86,7 @@ The available width for the view.
 The available height for the view.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The measured size requirements of the view.
 
 <a name='Tizen.UI.Components.Material.StaticDrawer_T_.SwapContent(Tizen.UI.View)'></a>
@@ -103,7 +103,7 @@ public System.Threading.Tasks.Task SwapContent(Tizen.UI.View newContent);
 
 <a name='Tizen.UI.Components.Material.StaticDrawer_T_.SwapContent(Tizen.UI.View).newContent'></a>
 
-`newContent` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`newContent` Tizen.UI.View
 
 #### Returns
 [System.Threading.Tasks.Task](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task 'System.Threading.Tasks.Task')
@@ -115,6 +115,7 @@ For example,
 ```csharp  
 staticDrawer.SwapContent(newContent).ContinueWith(finishedCallback, TaskScheduler.FromCurrentSynchronizationContext());  
 ```
+
 
 
 

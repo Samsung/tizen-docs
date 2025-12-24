@@ -19,13 +19,13 @@ System.Collections.IEnumerable
 
 `T`
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; Drawer&lt;T>
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Drawer&lt;T>
 
 Derived  
 &#8627; [ModalDrawer&lt;T&gt;](Tizen.UI.Components.Material.ModalDrawer_T_.md 'Tizen.UI.Components.Material.ModalDrawer&lt;T>')  
 &#8627; [StaticDrawer&lt;T&gt;](Tizen.UI.Components.Material.StaticDrawer_T_.md 'Tizen.UI.Components.Material.StaticDrawer&lt;T>')
 
-Implements [Tizen.UI.Components.ISelectionGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ISelectionGroup 'Tizen.UI.Components.ISelectionGroup'), [System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[T](Tizen.UI.Components.Material.Drawer_T_.md#Tizen.UI.Components.Material.Drawer_T_.T 'Tizen.UI.Components.Material.Drawer&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1'), [System.Collections.Generic.ICollection&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1')[T](Tizen.UI.Components.Material.Drawer_T_.md#Tizen.UI.Components.Material.Drawer_T_.T 'Tizen.UI.Components.Material.Drawer&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1'), [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[T](Tizen.UI.Components.Material.Drawer_T_.md#Tizen.UI.Components.Material.Drawer_T_.T 'Tizen.UI.Components.Material.Drawer&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1'), [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
+Implements Tizen.UI.Components.ISelectionGroup, [System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[T](Tizen.UI.Components.Material.Drawer_T_.md#Tizen.UI.Components.Material.Drawer_T_.T 'Tizen.UI.Components.Material.Drawer&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1'), [System.Collections.Generic.ICollection&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1')[T](Tizen.UI.Components.Material.Drawer_T_.md#Tizen.UI.Components.Material.Drawer_T_.T 'Tizen.UI.Components.Material.Drawer&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1'), [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[T](Tizen.UI.Components.Material.Drawer_T_.md#Tizen.UI.Components.Material.Drawer_T_.T 'Tizen.UI.Components.Material.Drawer&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1'), [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.Drawer_T_.Drawer()'></a>
@@ -67,7 +67,7 @@ public abstract Tizen.UI.View Content { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 <a name='Tizen.UI.Components.Material.Drawer_T_.Count'></a>
 
@@ -162,7 +162,7 @@ public System.Action&lt;object,Tizen.UI.Components.GroupSelectionChangedEventArg
 ```
 
 #### Property Value
-[System.Action&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')[Tizen.UI.Components.GroupSelectionChangedEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.GroupSelectionChangedEventArgs 'Tizen.UI.Components.GroupSelectionChangedEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')
+[System.Action&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')Tizen.UI.Components.GroupSelectionChangedEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')
 
 <a name='Tizen.UI.Components.Material.Drawer_T_.this[int]'></a>
 
@@ -363,10 +363,10 @@ Event that is triggered when the selected item in the drawer changes.
 public event EventHandler&lt;GroupSelectionChangedEventArgs> SelectionChanged;
 ```
 
-Implements [SelectionChanged](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ISelectionGroup.SelectionChanged 'Tizen.UI.Components.ISelectionGroup.SelectionChanged')
+Implements SelectionChanged
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.Components.GroupSelectionChangedEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.GroupSelectionChangedEventArgs 'Tizen.UI.Components.GroupSelectionChangedEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.Components.GroupSelectionChangedEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 ### Explicit Interface Implementations
 
 <a name='Tizen.UI.Components.Material.Drawer_T_.System.Collections.Generic.ICollection_T_.Remove(T)'></a>
@@ -410,7 +410,8 @@ The selected child in the group.
 Tizen.UI.Components.IGroupSelectable Tizen.UI.Components.ISelectionGroup.Selected { get; }
 ```
 
-Implements [Selected](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ISelectionGroup.Selected 'Tizen.UI.Components.ISelectionGroup.Selected')
+Implements Selected
+
 
 
 

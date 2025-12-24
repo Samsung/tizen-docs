@@ -8,7 +8,7 @@ AnimatedImageVisualMap is a class that represents a property map for the animate
 public class AnimatedImageVisualMap : Tizen.UI.Internal.ImageVisualMap
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Internal.ImageVisualMap](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.ImageVisualMap 'Tizen.UI.Internal.ImageVisualMap') &#129106; AnimatedImageVisualMap
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Internal.ImageVisualMap &#129106; AnimatedImageVisualMap
 ### Properties
 
 <a name='Tizen.UI.Components.AnimatedImageVisualMap.CacheSize'></a>
@@ -85,7 +85,7 @@ public Tizen.UI.AnimationRepeatMode RepeatMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.AnimationRepeatMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationRepeatMode 'Tizen.UI.AnimationRepeatMode')
+Tizen.UI.AnimationRepeatMode
 
 <a name='Tizen.UI.Components.AnimatedImageVisualMap.StopBehavior'></a>
 
@@ -98,7 +98,8 @@ public Tizen.UI.AnimationStopBehavior StopBehavior { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.AnimationStopBehavior](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationStopBehavior 'Tizen.UI.AnimationStopBehavior')
+Tizen.UI.AnimationStopBehavior
+
 
 
 

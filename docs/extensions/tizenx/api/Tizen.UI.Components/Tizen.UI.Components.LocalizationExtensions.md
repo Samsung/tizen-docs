@@ -97,7 +97,7 @@ The view itself.
 
 ## LocalizationExtensions.BindLocalizedPlaceholderText&lt;TText>(this TText, string, ResourceManager) Method
 
-Binds the localized placeholder text of the given [Tizen.UI.ITextEditable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextEditable 'Tizen.UI.ITextEditable') to the specified key.
+Binds the localized placeholder text of the given Tizen.UI.ITextEditable to the specified key.
 
 ```csharp
 public static TText BindLocalizedPlaceholderText&lt;TText>(this TText view, string key, System.Resources.ResourceManager resourceManager=null)
@@ -215,6 +215,7 @@ The resource manager to the localized text.
 #### Returns
 [TText](Tizen.UI.Components.LocalizationExtensions.md#Tizen.UI.Components.LocalizationExtensions.BindLocalizedTitle_TText_(thisTText,string,System.Resources.ResourceManager).TText 'Tizen.UI.Components.LocalizationExtensions.BindLocalizedTitle&lt;TText>(this TText, string, System.Resources.ResourceManager).TText')  
 The text view itself.
+
 
 
 

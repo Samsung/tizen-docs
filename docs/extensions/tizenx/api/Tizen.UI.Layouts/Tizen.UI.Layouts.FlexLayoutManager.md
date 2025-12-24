@@ -45,15 +45,16 @@ public Tizen.UI.Size ArrangeChildren(Tizen.UI.Rect bounds);
 
 <a name='Tizen.UI.Layouts.FlexLayoutManager.ArrangeChildren(Tizen.UI.Rect).bounds'></a>
 
-`bounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`bounds` Tizen.UI.Rect
 
 The available space for the layout.
 
 Implements [ArrangeChildren(Rect)](Tizen.UI.Layouts.ILayoutManager.md#Tizen.UI.Layouts.ILayoutManager.ArrangeChildren(Tizen.UI.Rect) 'Tizen.UI.Layouts.ILayoutManager.ArrangeChildren(Tizen.UI.Rect)')
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The final size of the FlexBox after arranging its children.
+
 
 
 

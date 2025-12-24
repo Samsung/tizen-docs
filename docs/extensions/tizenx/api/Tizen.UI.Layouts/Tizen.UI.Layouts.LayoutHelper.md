@@ -28,7 +28,7 @@ public LayoutHelper(Tizen.UI.ViewGroup viewGroup, Tizen.UI.Layouts.ILayoutManage
 
 <a name='Tizen.UI.Layouts.LayoutHelper.LayoutHelper(Tizen.UI.ViewGroup,Tizen.UI.Layouts.ILayoutManager).viewGroup'></a>
 
-`viewGroup` [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup')
+`viewGroup` Tizen.UI.ViewGroup
 
 The ViewGroup instance this helper will provide functionality for.
 
@@ -89,7 +89,7 @@ The available width to measure the layout with.
 The available height to measure the layout with.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The size of the layout after measuring.
 
 <a name='Tizen.UI.Layouts.LayoutHelper.OnChildAdded(Tizen.UI.View)'></a>
@@ -105,7 +105,7 @@ public void OnChildAdded(Tizen.UI.View view);
 
 <a name='Tizen.UI.Layouts.LayoutHelper.OnChildAdded(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view that was added to the layout.
 
@@ -122,7 +122,7 @@ public void OnChildMeasureInvalidatedOverride(Tizen.UI.View child);
 
 <a name='Tizen.UI.Layouts.LayoutHelper.OnChildMeasureInvalidatedOverride(Tizen.UI.View).child'></a>
 
-`child` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`child` Tizen.UI.View
 
 The child that was invalidated.
 
@@ -139,7 +139,7 @@ public void OnChildRemoved(Tizen.UI.View view);
 
 <a name='Tizen.UI.Layouts.LayoutHelper.OnChildRemoved(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view that was removed from the layout.
 
@@ -176,13 +176,14 @@ public Tizen.UI.Size UpdateLayout(Tizen.UI.Rect bounds);
 
 <a name='Tizen.UI.Layouts.LayoutHelper.UpdateLayout(Tizen.UI.Rect).bounds'></a>
 
-`bounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`bounds` Tizen.UI.Rect
 
 The bounds to update the layout with.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The size of the layout after updating.
+
 
 
 

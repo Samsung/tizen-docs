@@ -9,7 +9,7 @@ public class BorderView : Tizen.UI.ContentView,
 Tizen.UI.WindowBorder.IWindowBorderProvider
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; BorderView
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; BorderView
 
 Implements [IWindowBorderProvider](Tizen.UI.WindowBorder.IWindowBorderProvider.md 'Tizen.UI.WindowBorder.IWindowBorderProvider')
 ### Constructors
@@ -37,7 +37,7 @@ public BorderView(Tizen.UI.ViewTemplate header);
 
 <a name='Tizen.UI.WindowBorder.BorderView.BorderView(Tizen.UI.ViewTemplate).header'></a>
 
-`header` [Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+`header` Tizen.UI.ViewTemplate
 
 The header view template of BorderView.
 
@@ -54,13 +54,13 @@ public BorderView(Tizen.UI.ViewTemplate header, Tizen.UI.ViewTemplate footer);
 
 <a name='Tizen.UI.WindowBorder.BorderView.BorderView(Tizen.UI.ViewTemplate,Tizen.UI.ViewTemplate).header'></a>
 
-`header` [Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+`header` Tizen.UI.ViewTemplate
 
 The header view template of BorderView.
 
 <a name='Tizen.UI.WindowBorder.BorderView.BorderView(Tizen.UI.ViewTemplate,Tizen.UI.ViewTemplate).footer'></a>
 
-`footer` [Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+`footer` Tizen.UI.ViewTemplate
 
 The footer view template of BorderView.
 ### Properties
@@ -76,7 +76,7 @@ public Tizen.UI.Color BorderActiveColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.WindowBorder.BorderView.BorderArea'></a>
 
@@ -91,7 +91,7 @@ public Tizen.UI.Thickness BorderArea { get; set; }
 Implements [BorderArea](Tizen.UI.WindowBorder.IWindowBorderProvider.md#Tizen.UI.WindowBorder.IWindowBorderProvider.BorderArea 'Tizen.UI.WindowBorder.IWindowBorderProvider.BorderArea')
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.WindowBorder.BorderView.BorderColor'></a>
 
@@ -104,7 +104,7 @@ public Tizen.UI.Color BorderColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.WindowBorder.BorderView.DefaultBorderWidth'></a>
 
@@ -143,7 +143,7 @@ public Tizen.UI.ViewTemplate FooterTemplate { get; }
 ```
 
 #### Property Value
-[Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+Tizen.UI.ViewTemplate
 
 <a name='Tizen.UI.WindowBorder.BorderView.HeaderTemplate'></a>
 
@@ -156,7 +156,7 @@ public Tizen.UI.ViewTemplate HeaderTemplate { get; }
 ```
 
 #### Property Value
-[Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+Tizen.UI.ViewTemplate
 ### Methods
 
 <a name='Tizen.UI.WindowBorder.BorderView.HideOverlayBorder()'></a>
@@ -178,6 +178,7 @@ Shows the overlay border.
 ```csharp
 public void ShowOverlayBorder();
 ```
+
 
 
 

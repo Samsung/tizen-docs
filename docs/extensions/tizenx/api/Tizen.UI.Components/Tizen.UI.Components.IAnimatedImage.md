@@ -46,7 +46,7 @@ Tizen.UI.AnimationStopBehavior StopBehavior { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.AnimationStopBehavior](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationStopBehavior 'Tizen.UI.AnimationStopBehavior')
+Tizen.UI.AnimationStopBehavior
 ### Methods
 
 <a name='Tizen.UI.Components.IAnimatedImage.Pause()'></a>

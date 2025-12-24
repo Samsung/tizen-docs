@@ -11,7 +11,7 @@ Tizen.UI.Internal.ITextEditorSignalHandler
 
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [NObject](Tizen.UI.NObject.md 'Tizen.UI.NObject') &#129106; [View](Tizen.UI.View.md 'Tizen.UI.View') &#129106; [InputView](Tizen.UI.InputView.md 'Tizen.UI.InputView') &#129106; TextEditor
 
-Implements [Tizen.UI.Internal.ITextEditorSignalHandler](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.ITextEditorSignalHandler 'Tizen.UI.Internal.ITextEditorSignalHandler')
+Implements Tizen.UI.Internal.ITextEditorSignalHandler
 ### Constructors
 
 <a name='Tizen.UI.TextEditor.TextEditor()'></a>
@@ -81,6 +81,7 @@ public override void SetInputMethodSetting(Tizen.UI.InputMethodSetting inputMeth
 `inputMethod` [InputMethodSetting](Tizen.UI.InputMethodSetting.md 'Tizen.UI.InputMethodSetting')
 
 The input method settings.
+
 
 
 

@@ -36,7 +36,7 @@ public Tizen.UI.ViewTemplate GroupBodyTemplate { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+Tizen.UI.ViewTemplate
 
 <a name='Tizen.UI.Components.Recycler.GroupItemTemplateAdapter.GroupCount'></a>
 
@@ -64,7 +64,7 @@ public Tizen.UI.ViewTemplate GroupFooterTemplate { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+Tizen.UI.ViewTemplate
 
 <a name='Tizen.UI.Components.Recycler.GroupItemTemplateAdapter.GroupHeaderTemplate'></a>
 
@@ -77,7 +77,7 @@ public Tizen.UI.ViewTemplate GroupHeaderTemplate { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+Tizen.UI.ViewTemplate
 
 <a name='Tizen.UI.Components.Recycler.GroupItemTemplateAdapter.HasGroupBody'></a>
 
@@ -306,6 +306,7 @@ public override void SetItemsSource(System.Collections.IEnumerable items);
 `items` [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
 
 Enumerable source.
+
 
 
 

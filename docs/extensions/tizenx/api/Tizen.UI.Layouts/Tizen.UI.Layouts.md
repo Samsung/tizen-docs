@@ -3,12 +3,12 @@
 | Classes | |
 | :--- | :--- |
 | [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout') | The AbsoluteLayout class is a layout container that positions its children at fixed coordinates relative to the layout bounds. |
-| [AbsoluteLayoutExtensions](Tizen.UI.Layouts.AbsoluteLayoutExtensions.md 'Tizen.UI.Layouts.AbsoluteLayoutExtensions') | Provides a series of extension methods that support positioning [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')s in [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout')s. |
+| [AbsoluteLayoutExtensions](Tizen.UI.Layouts.AbsoluteLayoutExtensions.md 'Tizen.UI.Layouts.AbsoluteLayoutExtensions') | Provides a series of extension methods that support positioning Tizen.UI.Views in [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout')s. |
 | [AbsoluteLayoutManager](Tizen.UI.Layouts.AbsoluteLayoutManager.md 'Tizen.UI.Layouts.AbsoluteLayoutManager') | The AbsoluteLayoutManager class is responsible for measuring and arranging the children of an AbsoluteLayout. |
 | [AbsoluteParam](Tizen.UI.Layouts.AbsoluteParam.md 'Tizen.UI.Layouts.AbsoluteParam') | The AbsoluteParam class provides layout parameters for the AbsoluteLayout. |
 | [Dimension](Tizen.UI.Layouts.Dimension.md 'Tizen.UI.Layouts.Dimension') | Provides a set of static methods for working with dimensions. |
 | [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') | FlexBox is a Layout that efficiently lays out it's children in a manner similar to that of CSS Flexbox. |
-| [FlexBoxExtensions](Tizen.UI.Layouts.FlexBoxExtensions.md 'Tizen.UI.Layouts.FlexBoxExtensions') | Provides a series of extension methods that support positioning a [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') in a [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox'). |
+| [FlexBoxExtensions](Tizen.UI.Layouts.FlexBoxExtensions.md 'Tizen.UI.Layouts.FlexBoxExtensions') | Provides a series of extension methods that support positioning a Tizen.UI.View in a [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox'). |
 | [FlexLayoutManager](Tizen.UI.Layouts.FlexLayoutManager.md 'Tizen.UI.Layouts.FlexLayoutManager') | Provides a layout manager for FlexBox layout. |
 | [FlexParam](Tizen.UI.Layouts.FlexParam.md 'Tizen.UI.Layouts.FlexParam') | Provides layout parameters for the FlexBox. |
 | [Grid](Tizen.UI.Layouts.Grid.md 'Tizen.UI.Layouts.Grid') | A layout that arranges views in rows and columns. |
@@ -23,7 +23,7 @@
 | [HStack](Tizen.UI.Layouts.HStack.md 'Tizen.UI.Layouts.HStack') | Represents a horizontal stack layout that arranges child elements in a single row. |
 | [HStackLayoutManager](Tizen.UI.Layouts.HStackLayoutManager.md 'Tizen.UI.Layouts.HStackLayoutManager') | HStackLayoutManager is a layout manager that arranges its children horizontally within a given space. |
 | [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') | Layout is an abstract class that defines the base functionality for all layout classes. It provides a mechanism for arranging and positioning child views within its bounds. |
-| [LayoutExtensions](Tizen.UI.Layouts.LayoutExtensions.md 'Tizen.UI.Layouts.LayoutExtensions') | Provides a series of extension methods that support positioning [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')s in [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout')s. |
+| [LayoutExtensions](Tizen.UI.Layouts.LayoutExtensions.md 'Tizen.UI.Layouts.LayoutExtensions') | Provides a series of extension methods that support positioning Tizen.UI.Views in [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout')s. |
 | [LayoutHelper](Tizen.UI.Layouts.LayoutHelper.md 'Tizen.UI.Layouts.LayoutHelper') | Provides common layout logic for ViewGroup instances.<br/>This class uses composition to provide layout functionality, simplifying the implementation of custom layouts. |
 | [LayoutManager](Tizen.UI.Layouts.LayoutManager.md 'Tizen.UI.Layouts.LayoutManager') | Represents a base class for layout managers. |
 | [LayoutParam](Tizen.UI.Layouts.LayoutParam.md 'Tizen.UI.Layouts.LayoutParam') | Provides layout parameters for the view. |
@@ -34,7 +34,7 @@
 | [StackBase](Tizen.UI.Layouts.StackBase.md 'Tizen.UI.Layouts.StackBase') | The StackBase class is an abstract class that represents a layout container. It is used to arrange child elements in a vertical or horizontal stack. |
 | [StackBaseExtensions](Tizen.UI.Layouts.StackBaseExtensions.md 'Tizen.UI.Layouts.StackBaseExtensions') | Provides a series of extension methods that support configuring [StackBase](Tizen.UI.Layouts.StackBase.md 'Tizen.UI.Layouts.StackBase') layouts such as [HStack](Tizen.UI.Layouts.HStack.md 'Tizen.UI.Layouts.HStack') and [VStack](Tizen.UI.Layouts.VStack.md 'Tizen.UI.Layouts.VStack'). |
 | [StackLayoutManager](Tizen.UI.Layouts.StackLayoutManager.md 'Tizen.UI.Layouts.StackLayoutManager') | Provides a base class for layout managers that arrange child elements in a stack. |
-| [ViewExtensions](Tizen.UI.Layouts.ViewExtensions.md 'Tizen.UI.Layouts.ViewExtensions') | Provides extension methods needed when [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')s are included in the [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used. |
+| [ViewExtensions](Tizen.UI.Layouts.ViewExtensions.md 'Tizen.UI.Layouts.ViewExtensions') | Provides extension methods needed when Tizen.UI.Views are included in the [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') and used. |
 | [VStack](Tizen.UI.Layouts.VStack.md 'Tizen.UI.Layouts.VStack') | Represents a vertical stack layout that arranges child elements in a single row. |
 | [VStackLayoutManager](Tizen.UI.Layouts.VStackLayoutManager.md 'Tizen.UI.Layouts.VStackLayoutManager') | VStackLayoutManager is a layout manager that arranges its children vertically within a given space. |
 

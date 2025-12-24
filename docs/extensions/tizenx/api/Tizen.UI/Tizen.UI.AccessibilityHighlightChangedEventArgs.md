@@ -2,7 +2,7 @@
 
 ## AccessibilityHighlightChangedEventArgs Class
 
-Provides the data for the [View.AccessibilityHighlightChanged](https://docs.microsoft.com/en-us/dotnet/api/View.AccessibilityHighlightChanged 'View.AccessibilityHighlightChanged') event.
+Provides the data for the View.AccessibilityHighlightChanged event.
 
 ```csharp
 public class AccessibilityHighlightChangedEventArgs : System.EventArgs

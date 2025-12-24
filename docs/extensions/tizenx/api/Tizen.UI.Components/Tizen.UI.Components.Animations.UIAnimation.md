@@ -79,7 +79,7 @@ public void Abort(Tizen.UI.View owner, string name);
 
 <a name='Tizen.UI.Components.Animations.UIAnimation.Abort(Tizen.UI.View,string).owner'></a>
 
-`owner` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`owner` Tizen.UI.View
 
 The view to abort the animation.
 
@@ -131,7 +131,7 @@ public void Commit(Tizen.UI.View owner, string name, uint rate=16u, uint length=
 
 <a name='Tizen.UI.Components.Animations.UIAnimation.Commit(Tizen.UI.View,string,uint,uint,Tizen.UI.Components.Animations.Easing,System.Action_float,bool_,System.Func_bool_).owner'></a>
 
-`owner` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`owner` Tizen.UI.View
 
 The view to commit the animation to.
 

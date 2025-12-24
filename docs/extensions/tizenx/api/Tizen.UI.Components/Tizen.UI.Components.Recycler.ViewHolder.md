@@ -35,7 +35,7 @@ public Tizen.UI.Thickness BoundsModifier { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Recycler.ViewHolder.Frame'></a>
 
@@ -48,7 +48,7 @@ public Tizen.UI.Rect Frame { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 
 <a name='Tizen.UI.Components.Recycler.ViewHolder.IsDivider'></a>
 
@@ -126,7 +126,7 @@ public Tizen.UI.View ItemView { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 <a name='Tizen.UI.Components.Recycler.ViewHolder.ItemViewType'></a>
 
@@ -166,6 +166,7 @@ public int Position { get; set; }
 
 #### Property Value
 [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
+
 
 
 

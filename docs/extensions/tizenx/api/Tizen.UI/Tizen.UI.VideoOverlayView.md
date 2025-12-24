@@ -11,7 +11,7 @@ Tizen.UI.Internal.IResourceReadySignalHandler
 
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [NObject](Tizen.UI.NObject.md 'Tizen.UI.NObject') &#129106; [View](Tizen.UI.View.md 'Tizen.UI.View') &#129106; VideoOverlayView
 
-Implements [Tizen.UI.Internal.IResourceReadySignalHandler](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.IResourceReadySignalHandler 'Tizen.UI.Internal.IResourceReadySignalHandler')
+Implements Tizen.UI.Internal.IResourceReadySignalHandler
 ### Constructors
 
 <a name='Tizen.UI.VideoOverlayView.VideoOverlayView()'></a>
@@ -52,9 +52,10 @@ public void SetPlayer(Player player);
 
 <a name='Tizen.UI.VideoOverlayView.SetPlayer(Player).player'></a>
 
-`player` [Tizen.Multimedia.Player](https://docs.microsoft.com/en-us/dotnet/api/Tizen.Multimedia.Player 'Tizen.Multimedia.Player')
+`player` Tizen.Multimedia.Player
 
 The player instance to be used.
+
 
 
 

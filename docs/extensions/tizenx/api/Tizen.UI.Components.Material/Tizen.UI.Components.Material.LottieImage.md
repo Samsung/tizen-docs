@@ -9,12 +9,12 @@ public class LottieImage : Tizen.UI.Components.Material.Image,
 Tizen.UI.Components.IAnimatedImage
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ImageView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageView 'Tizen.UI.ImageView') &#129106; [Image](Tizen.UI.Components.Material.Image.md 'Tizen.UI.Components.Material.Image') &#129106; LottieImage
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ImageView &#129106; [Image](Tizen.UI.Components.Material.Image.md 'Tizen.UI.Components.Material.Image') &#129106; LottieImage
 
 Derived  
 &#8627; [SelectableLottieImage](Tizen.UI.Components.Material.SelectableLottieImage.md 'Tizen.UI.Components.Material.SelectableLottieImage')
 
-Implements [Tizen.UI.Components.IAnimatedImage](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage 'Tizen.UI.Components.IAnimatedImage')
+Implements Tizen.UI.Components.IAnimatedImage
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.LottieImage.LottieImage()'></a>
@@ -85,7 +85,7 @@ Gets or sets whether the animation should loop.
 public bool IsLooping { get; set; }
 ```
 
-Implements [IsLooping](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage.IsLooping 'Tizen.UI.Components.IAnimatedImage.IsLooping')
+Implements IsLooping
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -101,7 +101,7 @@ public Tizen.UI.AnimationState PlayState { get; }
 ```
 
 #### Property Value
-[Tizen.UI.AnimationState](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationState 'Tizen.UI.AnimationState')
+Tizen.UI.AnimationState
 
 <a name='Tizen.UI.Components.Material.LottieImage.RedrawInScalingDown'></a>
 
@@ -129,7 +129,7 @@ Gets or sets the number of times the animation should repeat.
 public int RepeatCount { get; set; }
 ```
 
-Implements [RepeatCount](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage.RepeatCount 'Tizen.UI.Components.IAnimatedImage.RepeatCount')
+Implements RepeatCount
 
 #### Property Value
 [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
@@ -145,7 +145,7 @@ public Tizen.UI.AnimationRepeatMode RepeatMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.AnimationRepeatMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationRepeatMode 'Tizen.UI.AnimationRepeatMode')
+Tizen.UI.AnimationRepeatMode
 
 <a name='Tizen.UI.Components.Material.LottieImage.StopBehavior'></a>
 
@@ -157,10 +157,10 @@ Gets or sets the behavior of the animation when it stops.
 public Tizen.UI.AnimationStopBehavior StopBehavior { get; set; }
 ```
 
-Implements [StopBehavior](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage.StopBehavior 'Tizen.UI.Components.IAnimatedImage.StopBehavior')
+Implements StopBehavior
 
 #### Property Value
-[Tizen.UI.AnimationStopBehavior](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationStopBehavior 'Tizen.UI.AnimationStopBehavior')
+Tizen.UI.AnimationStopBehavior
 
 <a name='Tizen.UI.Components.Material.LottieImage.TotalFrame'></a>
 
@@ -224,7 +224,7 @@ Pauses the animation.
 public override void Pause();
 ```
 
-Implements [Pause()](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage.Pause 'Tizen.UI.Components.IAnimatedImage.Pause')
+Implements Pause()
 
 <a name='Tizen.UI.Components.Material.LottieImage.Play()'></a>
 
@@ -236,7 +236,7 @@ Plays the animation.
 public override void Play();
 ```
 
-Implements [Play()](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage.Play 'Tizen.UI.Components.IAnimatedImage.Play')
+Implements Play()
 
 <a name='Tizen.UI.Components.Material.LottieImage.Play(int)'></a>
 
@@ -325,7 +325,7 @@ public void RegisterDynamicBackgroundColor(string path, System.Func&lt;int,Tizen
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicBackgroundColor(string,System.Func_int,Tizen.UI.Color_).valueProvider'></a>
 
-`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
+`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')Tizen.UI.Color[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
 
 ### Remarks
 This can overwrite or overwritten by RegisterDynamicFillOpacity.  
@@ -371,7 +371,7 @@ public void RegisterDynamicStrokeColor(string path, System.Func&lt;int,Tizen.UI.
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicStrokeColor(string,System.Func_int,Tizen.UI.Color_).valueProvider'></a>
 
-`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
+`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')Tizen.UI.Color[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
 
 ### Remarks
 This can overwrite or overwritten by RegisterDynamicStrokeOpacity.  
@@ -436,7 +436,7 @@ public void RegisterDynamicTransformAnchor(string path, System.Func&lt;int,Tizen
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicTransformAnchor(string,System.Func_int,Tizen.UI.Point_).valueProvider'></a>
 
-`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
+`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')Tizen.UI.Point[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicTransformOpacity(string,System.Func_int,float_)'></a>
 
@@ -474,7 +474,7 @@ public void RegisterDynamicTransformPosition(string path, System.Func&lt;int,Tiz
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicTransformPosition(string,System.Func_int,Tizen.UI.Point_).valueProvider'></a>
 
-`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
+`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')Tizen.UI.Point[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicTransformRotation(string,System.Func_int,float_)'></a>
 
@@ -512,7 +512,7 @@ public void RegisterDynamicTransformScale(string path, System.Func&lt;int,Tizen.
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicTransformScale(string,System.Func_int,Tizen.UI.Point_).valueProvider'></a>
 
-`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
+`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')Tizen.UI.Point[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicTrimEnd(string,System.Func_int,Tizen.UI.Point_)'></a>
 
@@ -531,7 +531,7 @@ public void RegisterDynamicTrimEnd(string path, System.Func&lt;int,Tizen.UI.Poin
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicTrimEnd(string,System.Func_int,Tizen.UI.Point_).valueProvider'></a>
 
-`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
+`valueProvider` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')Tizen.UI.Point[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
 
 <a name='Tizen.UI.Components.Material.LottieImage.RegisterDynamicTrimStart(string,System.Func_int,float_)'></a>
 
@@ -562,7 +562,7 @@ Stops the animation.
 public override void Stop();
 ```
 
-Implements [Stop()](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnimatedImage.Stop 'Tizen.UI.Components.IAnimatedImage.Stop')
+Implements Stop()
 ### Events
 
 <a name='Tizen.UI.Components.Material.LottieImage.Finished'></a>
@@ -577,6 +577,7 @@ public event EventHandler Finished;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

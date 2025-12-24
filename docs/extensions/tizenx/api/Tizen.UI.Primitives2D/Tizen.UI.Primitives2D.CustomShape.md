@@ -8,7 +8,7 @@ Represents a custom [Shape](Tizen.UI.Primitives2D.Shape.md 'Tizen.UI.Primitives2
 public class CustomShape : Tizen.UI.Primitives2D.Shape
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; [Shape](Tizen.UI.Primitives2D.Shape.md 'Tizen.UI.Primitives2D.Shape') &#129106; CustomShape
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; [Shape](Tizen.UI.Primitives2D.Shape.md 'Tizen.UI.Primitives2D.Shape') &#129106; CustomShape
 ### Constructors
 
 <a name='Tizen.UI.Primitives2D.CustomShape.CustomShape(System.Collections.Generic.IEnumerable_Tizen.UI.Primitives2D.IPath_)'></a>
@@ -41,6 +41,7 @@ public System.Collections.Generic.IEnumerable&lt;Tizen.UI.Primitives2D.IPath> Pa
 
 #### Property Value
 [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[IPath](Tizen.UI.Primitives2D.IPath.md 'Tizen.UI.Primitives2D.IPath')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+
 
 
 

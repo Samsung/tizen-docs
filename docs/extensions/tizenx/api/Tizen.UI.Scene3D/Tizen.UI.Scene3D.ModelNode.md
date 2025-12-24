@@ -8,7 +8,7 @@ ModelNode is a class for representing the Node of Model3D in Scene3D.
 public class ModelNode : Tizen.UI.Scene3D.SceneObjectGroup&lt;Tizen.UI.Scene3D.ModelNode>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject') &#129106; [Tizen.UI.Scene3D.SceneObjectGroup&lt;](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>')[ModelNode](Tizen.UI.Scene3D.ModelNode.md 'Tizen.UI.Scene3D.ModelNode')[&gt;](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>') &#129106; ModelNode
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject') &#129106; [Tizen.UI.Scene3D.SceneObjectGroup&lt;](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>')[ModelNode](Tizen.UI.Scene3D.ModelNode.md 'Tizen.UI.Scene3D.ModelNode')[&gt;](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>') &#129106; ModelNode
 ### Constructors
 
 <a name='Tizen.UI.Scene3D.ModelNode.ModelNode()'></a>
@@ -46,7 +46,8 @@ public Tizen.UI.Color MultipliedColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
+
 
 
 

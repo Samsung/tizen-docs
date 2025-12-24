@@ -8,7 +8,7 @@ Represents a radial gradient paint object.
 public class RadialGradientPaint : Tizen.UI.Primitives2D.GradientPaint
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [GradientPaint](Tizen.UI.Primitives2D.GradientPaint.md 'Tizen.UI.Primitives2D.GradientPaint') &#129106; RadialGradientPaint
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [GradientPaint](Tizen.UI.Primitives2D.GradientPaint.md 'Tizen.UI.Primitives2D.GradientPaint') &#129106; RadialGradientPaint
 ### Constructors
 
 <a name='Tizen.UI.Primitives2D.RadialGradientPaint.RadialGradientPaint()'></a>
@@ -62,7 +62,7 @@ public Tizen.UI.Point Center { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+Tizen.UI.Point
 
 <a name='Tizen.UI.Primitives2D.RadialGradientPaint.Radius'></a>
 
@@ -76,6 +76,7 @@ public float Radius { get; set; }
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

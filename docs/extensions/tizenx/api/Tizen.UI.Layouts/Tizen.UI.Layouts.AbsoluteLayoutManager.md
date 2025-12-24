@@ -56,14 +56,14 @@ public override Tizen.UI.Size ArrangeChildren(Tizen.UI.Rect bounds);
 
 <a name='Tizen.UI.Layouts.AbsoluteLayoutManager.ArrangeChildren(Tizen.UI.Rect).bounds'></a>
 
-`bounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`bounds` Tizen.UI.Rect
 
 The bounds within which to arrange the children.
 
 Implements [ArrangeChildren(Rect)](Tizen.UI.Layouts.ILayoutManager.md#Tizen.UI.Layouts.ILayoutManager.ArrangeChildren(Tizen.UI.Rect) 'Tizen.UI.Layouts.ILayoutManager.ArrangeChildren(Tizen.UI.Rect)')
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The arranged size of the children.
 
 <a name='Tizen.UI.Layouts.AbsoluteLayoutManager.Measure(float,float)'></a>
@@ -92,8 +92,9 @@ The height constraint to use when measuring the AbsoluteLayout.
 Implements [Measure(float, float)](Tizen.UI.Layouts.ILayoutManager.md#Tizen.UI.Layouts.ILayoutManager.Measure(float,float) 'Tizen.UI.Layouts.ILayoutManager.Measure(float, float)')
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The measured size of the AbsoluteLayout.
+
 
 
 

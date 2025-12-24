@@ -8,7 +8,7 @@ Class for setting Material properties of 3D models.
 public class Material : Tizen.UI.NObject
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; Material
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Material
 ### Constructors
 
 <a name='Tizen.UI.Scene3D.Material.Material()'></a>
@@ -46,7 +46,7 @@ public Tizen.UI.Color BaseColorFactor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Scene3D.Material.BaseColorUrl'></a>
 
@@ -138,6 +138,7 @@ public float RoughnessFactor { get; set; }
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

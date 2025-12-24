@@ -28,7 +28,8 @@ public static Tizen.UI.TwoWayBindingProperty&lt;TView,bool> IsSelectedProperty {
 ```
 
 #### Property Value
-[Tizen.UI.TwoWayBindingProperty&lt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TwoWayBindingProperty-2 'Tizen.UI.TwoWayBindingProperty`2')[TView](Tizen.UI.Components.SelectableBindings_TView_.md#Tizen.UI.Components.SelectableBindings_TView_.TView 'Tizen.UI.Components.SelectableBindings&lt;TView>.TView')[,](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TwoWayBindingProperty-2 'Tizen.UI.TwoWayBindingProperty`2')[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TwoWayBindingProperty-2 'Tizen.UI.TwoWayBindingProperty`2')
+Tizen.UI.TwoWayBindingProperty&lt;[TView](Tizen.UI.Components.SelectableBindings_TView_.md#Tizen.UI.Components.SelectableBindings_TView_.TView 'Tizen.UI.Components.SelectableBindings&lt;TView>.TView'),[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')&gt;
+
 
 
 

@@ -10,7 +10,7 @@ public class BackButton : Tizen.UI.Components.Material.IconButton,
 Tizen.UI.Components.Material.IAppBarContent
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Pressable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Pressable 'Tizen.UI.Components.Pressable') &#129106; [Tizen.UI.Components.Clickable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Clickable 'Tizen.UI.Components.Clickable') &#129106; [IconButton](Tizen.UI.Components.Material.IconButton.md 'Tizen.UI.Components.Material.IconButton') &#129106; BackButton
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Tizen.UI.Components.Pressable &#129106; Tizen.UI.Components.Clickable &#129106; [IconButton](Tizen.UI.Components.Material.IconButton.md 'Tizen.UI.Components.Material.IconButton') &#129106; BackButton
 
 Implements [IAppBarContent](Tizen.UI.Components.Material.IAppBarContent.md 'Tizen.UI.Components.Material.IAppBarContent')
 ### Constructors
@@ -66,7 +66,7 @@ public Tizen.UI.Components.INavigation Navigation { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Components.INavigation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigation 'Tizen.UI.Components.INavigation')
+Tizen.UI.Components.INavigation
 ### Methods
 
 <a name='Tizen.UI.Components.Material.BackButton.ApplyUnifiedContentColor(Tizen.UI.Color)'></a>
@@ -82,7 +82,7 @@ public void ApplyUnifiedContentColor(Tizen.UI.Color color);
 
 <a name='Tizen.UI.Components.Material.BackButton.ApplyUnifiedContentColor(Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 Implements [ApplyUnifiedContentColor(Color)](Tizen.UI.Components.Material.IAppBarContent.md#Tizen.UI.Components.Material.IAppBarContent.ApplyUnifiedContentColor(Tizen.UI.Color) 'Tizen.UI.Components.Material.IAppBarContent.ApplyUnifiedContentColor(Tizen.UI.Color)')
 
@@ -119,6 +119,7 @@ public virtual void OnDetached(Tizen.UI.Components.Material.AppBar appBar);
 `appBar` [AppBar](Tizen.UI.Components.Material.AppBar.md 'Tizen.UI.Components.Material.AppBar')
 
 Implements [OnDetached(AppBar)](Tizen.UI.Components.Material.IAppBarContent.md#Tizen.UI.Components.Material.IAppBarContent.OnDetached(Tizen.UI.Components.Material.AppBar) 'Tizen.UI.Components.Material.IAppBarContent.OnDetached(Tizen.UI.Components.Material.AppBar)')
+
 
 
 

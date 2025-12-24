@@ -20,7 +20,7 @@ System.Collections.IEnumerable
 
 `T`
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; SelectionGroupBox&lt;T>
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; SelectionGroupBox&lt;T>
 
 Implements [ISelectionGroup](Tizen.UI.Components.ISelectionGroup.md 'Tizen.UI.Components.ISelectionGroup'), [ILayoutBox](Tizen.UI.Components.ILayoutBox.md 'Tizen.UI.Components.ILayoutBox'), [System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[T](Tizen.UI.Components.SelectionGroupBox_T_.md#Tizen.UI.Components.SelectionGroupBox_T_.T 'Tizen.UI.Components.SelectionGroupBox&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1'), [System.Collections.Generic.ICollection&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1')[T](Tizen.UI.Components.SelectionGroupBox_T_.md#Tizen.UI.Components.SelectionGroupBox_T_.T 'Tizen.UI.Components.SelectionGroupBox&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1'), [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[T](Tizen.UI.Components.SelectionGroupBox_T_.md#Tizen.UI.Components.SelectionGroupBox_T_.T 'Tizen.UI.Components.SelectionGroupBox&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1'), [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
 ### Constructors
@@ -49,7 +49,7 @@ public System.Collections.Generic.IList&lt;Tizen.UI.View> Children { get; }
 Implements [Children](Tizen.UI.Components.ILayoutBox.md#Tizen.UI.Components.ILayoutBox.Children 'Tizen.UI.Components.ILayoutBox.Children')
 
 #### Property Value
-[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
+[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
 
 <a name='Tizen.UI.Components.SelectionGroupBox_T_.Count'></a>
 
@@ -134,7 +134,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 Implements [Padding](Tizen.UI.Components.ILayoutBox.md#Tizen.UI.Components.ILayoutBox.Padding 'Tizen.UI.Components.ILayoutBox.Padding')
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.SelectionGroupBox_T_.SelectedIndex'></a>
 
@@ -434,6 +434,7 @@ Tizen.UI.Components.IGroupSelectable Tizen.UI.Components.ISelectionGroup.Selecte
 ```
 
 Implements [Selected](Tizen.UI.Components.ISelectionGroup.md#Tizen.UI.Components.ISelectionGroup.Selected 'Tizen.UI.Components.ISelectionGroup.Selected')
+
 
 
 

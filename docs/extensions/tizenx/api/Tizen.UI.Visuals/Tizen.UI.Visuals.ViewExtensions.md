@@ -59,7 +59,7 @@ public static void Remove(this Tizen.UI.View view, Tizen.UI.Visuals.VisualObject
 
 <a name='Tizen.UI.Visuals.ViewExtensions.Remove(thisTizen.UI.View,Tizen.UI.Visuals.VisualObject).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to remove the visual from.
 
@@ -82,7 +82,7 @@ public static Tizen.UI.Visuals.VisualManager Visuals(this Tizen.UI.View view);
 
 <a name='Tizen.UI.Visuals.ViewExtensions.Visuals(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The View object to retrieve the VisualManager from.
 

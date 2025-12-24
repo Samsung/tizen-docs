@@ -10,9 +10,9 @@ Tizen.UI.Components.IClickableVariables,
 System.IEquatable&lt;Tizen.UI.Components.Material.DrawerItemVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; DrawerItemVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; DrawerItemVariables
 
-Implements [Tizen.UI.Components.IClickableVariables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IClickableVariables 'Tizen.UI.Components.IClickableVariables'), [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[DrawerItemVariables](Tizen.UI.Components.Material.DrawerItemVariables.md 'Tizen.UI.Components.Material.DrawerItemVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
+Implements Tizen.UI.Components.IClickableVariables, [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[DrawerItemVariables](Tizen.UI.Components.Material.DrawerItemVariables.md 'Tizen.UI.Components.Material.DrawerItemVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
 ### Properties
 
 <a name='Tizen.UI.Components.Material.DrawerItemVariables.BackgroundColor'></a>
@@ -26,7 +26,7 @@ public Tizen.UI.Color BackgroundColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.DrawerItemVariables.CornerRadius'></a>
 
@@ -39,7 +39,7 @@ public Tizen.UI.CornerRadius CornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.DrawerItemVariables.Default'></a>
 
@@ -91,7 +91,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.DrawerItemVariables.SelectedBackgroundColor'></a>
 
@@ -104,7 +104,7 @@ public Tizen.UI.Color SelectedBackgroundColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.DrawerItemVariables.SelectedFontFamily'></a>
 
@@ -130,7 +130,7 @@ public Tizen.UI.Color TextColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.DrawerItemVariables.TouchEffect'></a>
 
@@ -142,10 +142,11 @@ The visual effect on touch.
 public Tizen.UI.Components.UIAttachable TouchEffect { get; set; }
 ```
 
-Implements [TouchEffect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IClickableVariables.TouchEffect 'Tizen.UI.Components.IClickableVariables.TouchEffect')
+Implements TouchEffect
 
 #### Property Value
-[Tizen.UI.Components.UIAttachable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.UIAttachable 'Tizen.UI.Components.UIAttachable')
+Tizen.UI.Components.UIAttachable
+
 
 
 

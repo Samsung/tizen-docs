@@ -8,7 +8,7 @@ Provides a base class for shape elements.
 public abstract class Shape : Tizen.UI.Primitives2D.Drawable
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; Shape
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; Shape
 
 Derived  
 &#8627; [CustomShape](Tizen.UI.Primitives2D.CustomShape.md 'Tizen.UI.Primitives2D.CustomShape')  
@@ -50,6 +50,7 @@ public void Stroke(Tizen.UI.Primitives2D.IPaint paint);
 `paint` [IPaint](Tizen.UI.Primitives2D.IPaint.md 'Tizen.UI.Primitives2D.IPaint')
 
 The paint object used to stroke the shape.
+
 
 
 

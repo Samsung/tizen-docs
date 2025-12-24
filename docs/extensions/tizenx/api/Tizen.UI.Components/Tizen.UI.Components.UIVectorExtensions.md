@@ -24,7 +24,7 @@ public static bool HasZero(this Tizen.UI.Point vector2);
 
 <a name='Tizen.UI.Components.UIVectorExtensions.HasZero(thisTizen.UI.Point).vector2'></a>
 
-`vector2` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`vector2` Tizen.UI.Point
 
 #### Returns
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -42,7 +42,7 @@ public static bool HasZero(this Tizen.UI.Size vector2);
 
 <a name='Tizen.UI.Components.UIVectorExtensions.HasZero(thisTizen.UI.Size).vector2'></a>
 
-`vector2` [Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')
+`vector2` Tizen.UI.Size
 
 #### Returns
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -60,10 +60,11 @@ public static bool HasZeroSize(this Tizen.UI.Rect rect);
 
 <a name='Tizen.UI.Components.UIVectorExtensions.HasZeroSize(thisTizen.UI.Rect).rect'></a>
 
-`rect` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`rect` Tizen.UI.Rect
 
 #### Returns
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
+
 
 
 

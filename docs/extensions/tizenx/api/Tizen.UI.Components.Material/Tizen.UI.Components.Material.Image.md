@@ -8,7 +8,7 @@ Image is a control for displaying an image resource.
 public class Image : Tizen.UI.ImageView
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ImageView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageView 'Tizen.UI.ImageView') &#129106; Image
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ImageView &#129106; Image
 
 Derived  
 &#8627; [AnimatedImage](Tizen.UI.Components.Material.AnimatedImage.md 'Tizen.UI.Components.Material.AnimatedImage')  
@@ -77,7 +77,7 @@ public void SetMaskingMode(Tizen.UI.ImageMaskingMode mode);
 
 <a name='Tizen.UI.Components.Material.Image.SetMaskingMode(Tizen.UI.ImageMaskingMode).mode'></a>
 
-`mode` [Tizen.UI.ImageMaskingMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageMaskingMode 'Tizen.UI.ImageMaskingMode')
+`mode` Tizen.UI.ImageMaskingMode
 
 The masking mode to use.
 
@@ -98,7 +98,8 @@ public void SetPixelArea(Tizen.UI.Rect area);
 
 <a name='Tizen.UI.Components.Material.Image.SetPixelArea(Tizen.UI.Rect).area'></a>
 
-`area` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`area` Tizen.UI.Rect
+
 
 
 

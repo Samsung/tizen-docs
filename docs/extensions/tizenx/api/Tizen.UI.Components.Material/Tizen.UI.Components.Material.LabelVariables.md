@@ -9,7 +9,7 @@ public class LabelVariables : Tizen.UI.Components.Variables,
 System.IEquatable&lt;Tizen.UI.Components.Material.LabelVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; LabelVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; LabelVariables
 
 Derived  
 &#8627; [TitleVariables](Tizen.UI.Components.Material.TitleVariables.md 'Tizen.UI.Components.Material.TitleVariables')
@@ -67,7 +67,8 @@ public Tizen.UI.Color TextColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
+
 
 
 

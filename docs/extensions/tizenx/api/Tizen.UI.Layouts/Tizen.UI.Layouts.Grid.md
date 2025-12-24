@@ -10,7 +10,7 @@ Tizen.UI.Layouts.IGridLayout,
 Tizen.UI.Layouts.ILayout
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') &#129106; Grid
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; [Layout](Tizen.UI.Layouts.Layout.md 'Tizen.UI.Layouts.Layout') &#129106; Grid
 
 Implements [IGridLayout](Tizen.UI.Layouts.IGridLayout.md 'Tizen.UI.Layouts.IGridLayout'), [ILayout](Tizen.UI.Layouts.ILayout.md 'Tizen.UI.Layouts.ILayout')
 ### Properties
@@ -89,7 +89,7 @@ public void Add(Tizen.UI.View view, int row, int col);
 
 <a name='Tizen.UI.Layouts.Grid.Add(Tizen.UI.View,int,int).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to add.
 
@@ -118,7 +118,7 @@ public void Add(Tizen.UI.View view, int row, int rowSpan, int col, int colSpan);
 
 <a name='Tizen.UI.Layouts.Grid.Add(Tizen.UI.View,int,int,int,int).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to add to the grid.
 
@@ -145,6 +145,7 @@ The column index where the view should be added.
 `colSpan` [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
 
 The number of columns the view should span.
+
 
 
 

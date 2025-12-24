@@ -22,7 +22,7 @@ public Tizen.UI.Rect LayoutBounds { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 
 <a name='Tizen.UI.Layouts.AbsoluteParam.LayoutFlags'></a>
 
@@ -36,6 +36,7 @@ public Tizen.UI.Layouts.AbsoluteLayoutFlags LayoutFlags { get; set; }
 
 #### Property Value
 [AbsoluteLayoutFlags](Tizen.UI.Layouts.AbsoluteLayoutFlags.md 'Tizen.UI.Layouts.AbsoluteLayoutFlags')
+
 
 
 

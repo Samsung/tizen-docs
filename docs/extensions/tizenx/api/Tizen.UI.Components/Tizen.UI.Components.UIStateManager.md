@@ -5,7 +5,7 @@
 Provides methods to get a UIState from a view or to notify UIState change.  
 Note that there is no direct way to set a view UIState to a view.  
 The indirect way is to set connected property.  
-To set [Disabled](Tizen.UI.Components.UIState.md#Tizen.UI.Components.UIState.Disabled 'Tizen.UI.Components.UIState.Disabled'), for example, you need to set [Tizen.UI.View.IsEnabled](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View.IsEnabled 'Tizen.UI.View.IsEnabled') to false.
+To set [Disabled](Tizen.UI.Components.UIState.md#Tizen.UI.Components.UIState.Disabled 'Tizen.UI.Components.UIState.Disabled'), for example, you need to set Tizen.UI.View.IsEnabled to false.
 
 ```csharp
 public static class UIStateManager
@@ -92,7 +92,7 @@ public static void DisconnectUIState(this Tizen.UI.View view, Tizen.UI.Component
 
 <a name='Tizen.UI.Components.UIStateManager.DisconnectUIState(thisTizen.UI.View,Tizen.UI.Components.UIState).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The target view.
 
@@ -115,7 +115,7 @@ public static Tizen.UI.Components.UIState GetState(this Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.UIStateManager.GetState(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view with UIState to get.
 
@@ -154,6 +154,7 @@ The handler to remove.
 
 ### Remarks
 This removes actions that are added by AddStateChangedEventHandler.
+
 
 
 

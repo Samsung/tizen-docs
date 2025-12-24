@@ -88,7 +88,7 @@ public override Tizen.UI.Rect LayoutViewPort { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 ### Methods
 
 <a name='Tizen.UI.Components.Recycler.LinearLayoutManager.ComputeHorizontalScrollExtent(int,int)'></a>
@@ -384,12 +384,12 @@ public override Tizen.UI.Size MeasureUpdate(Tizen.UI.View itemView);
 
 <a name='Tizen.UI.Components.Recycler.LinearLayoutManager.MeasureUpdate(Tizen.UI.View).itemView'></a>
 
-`itemView` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`itemView` Tizen.UI.View
 
 The view item to measure.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The measured size of the view item.
 
 <a name='Tizen.UI.Components.Recycler.LinearLayoutManager.OnChildrenChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)'></a>
@@ -512,6 +512,7 @@ public void SeizeChild(Tizen.UI.Components.Recycler.ViewHolder viewHolder);
 The viewholer to be seized.
 
 Implements [SeizeChild(ViewHolder)](Tizen.UI.Components.Recycler.IChildSeizable.md#Tizen.UI.Components.Recycler.IChildSeizable.SeizeChild(Tizen.UI.Components.Recycler.ViewHolder) 'Tizen.UI.Components.Recycler.IChildSeizable.SeizeChild(Tizen.UI.Components.Recycler.ViewHolder)')
+
 
 
 

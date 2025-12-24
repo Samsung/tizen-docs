@@ -15,7 +15,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 Derived  
 &#8627; [LottieAnimationView](Tizen.UI.LottieAnimationView.md 'Tizen.UI.LottieAnimationView')
 
-Implements [IImage](Tizen.UI.IImage.md 'Tizen.UI.IImage'), [Tizen.UI.Internal.IResourceReadySignalHandler](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.IResourceReadySignalHandler 'Tizen.UI.Internal.IResourceReadySignalHandler')
+Implements [IImage](Tizen.UI.IImage.md 'Tizen.UI.IImage'), Tizen.UI.Internal.IResourceReadySignalHandle
 ### Constructors
 
 <a name='Tizen.UI.ImageView.ImageView()'></a>

@@ -23,7 +23,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 ## CustomPropertyValue(string, PropertyValueHandle) Constructor
 
-Initializes a new instance of the [Tizen.UI.CustomPropertyValue](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CustomPropertyValue 'Tizen.UI.CustomPropertyValue') class.
+Initializes a new instance of the Tizen.UI.CustomPropertyValue class.
 
 ```csharp
 public CustomPropertyValue(string propertyName, Tizen.UI.NativeHandle.PropertyValueHandle value);
@@ -38,7 +38,7 @@ The name of the property.
 
 <a name='Tizen.UI.Scene3D.CustomPropertyValue_T_.CustomPropertyValue(string,Tizen.UI.NativeHandle.PropertyValueHandle).value'></a>
 
-`value` [Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')
+`value` Tizen.UI.NativeHandle.PropertyValueHandle
 
 The value of the property.
 ### Properties
@@ -54,7 +54,7 @@ public override Tizen.UI.NativeHandle.PropertyValueHandle Value { get; }
 ```
 
 #### Property Value
-[Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')
+Tizen.UI.NativeHandle.PropertyValueHandle
 ### Methods
 
 <a name='Tizen.UI.Scene3D.CustomPropertyValue_T_.GetTargetProperty(T)'></a>
@@ -75,8 +75,9 @@ public override Tizen.UI.NativeHandle.AnimatablePropertyHandle GetTargetProperty
 The view.
 
 #### Returns
-[Tizen.UI.NativeHandle.AnimatablePropertyHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.AnimatablePropertyHandle 'Tizen.UI.NativeHandle.AnimatablePropertyHandle')  
+Tizen.UI.NativeHandle.AnimatablePropertyHandle  
 The target property handle.
+
 
 
 

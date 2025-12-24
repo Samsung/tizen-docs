@@ -15,7 +15,7 @@ Tizen.UI.Internal.ILabelSignalHandler
 
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [NObject](Tizen.UI.NObject.md 'Tizen.UI.NObject') &#129106; [View](Tizen.UI.View.md 'Tizen.UI.View') &#129106; TextView
 
-Implements [IText](Tizen.UI.IText.md 'Tizen.UI.IText'), [ITextPadding](Tizen.UI.ITextPadding.md 'Tizen.UI.ITextPadding'), [ITextAlignment](Tizen.UI.ITextAlignment.md 'Tizen.UI.ITextAlignment'), [ITextFormatting](Tizen.UI.ITextFormatting.md 'Tizen.UI.ITextFormatting'), [Tizen.UI.Internal.ILabelSignalHandler](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.ILabelSignalHandler 'Tizen.UI.Internal.ILabelSignalHandler')
+Implements [IText](Tizen.UI.IText.md 'Tizen.UI.IText'), [ITextPadding](Tizen.UI.ITextPadding.md 'Tizen.UI.ITextPadding'), [ITextAlignment](Tizen.UI.ITextAlignment.md 'Tizen.UI.ITextAlignment'), [ITextFormatting](Tizen.UI.ITextFormatting.md 'Tizen.UI.ITextFormatting'), Tizen.UI.Internal.ILabelSignalHandler
 ### Constructors
 
 <a name='Tizen.UI.TextView.TextView()'></a>
@@ -548,6 +548,7 @@ public event EventHandler FontSizeAdjusted;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

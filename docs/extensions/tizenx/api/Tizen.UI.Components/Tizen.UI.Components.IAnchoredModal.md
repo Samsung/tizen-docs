@@ -36,11 +36,11 @@ void Post(Tizen.UI.Window window, Tizen.UI.Rect anchorBounds);
 
 <a name='Tizen.UI.Components.IAnchoredModal.Post(Tizen.UI.Window,Tizen.UI.Rect).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 <a name='Tizen.UI.Components.IAnchoredModal.Post(Tizen.UI.Window,Tizen.UI.Rect).anchorBounds'></a>
 
-`anchorBounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`anchorBounds` Tizen.UI.Rect
 ### Events
 
 <a name='Tizen.UI.Components.IAnchoredModal.Dismissed'></a>
@@ -55,6 +55,7 @@ event EventHandler Dismissed;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

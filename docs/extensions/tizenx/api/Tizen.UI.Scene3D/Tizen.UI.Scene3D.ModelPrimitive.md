@@ -8,7 +8,7 @@ Class for Model Primitives for 3D Geometry and Material.
 public class ModelPrimitive : Tizen.UI.NObject
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; ModelPrimitive
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; ModelPrimitive
 ### Constructors
 
 <a name='Tizen.UI.Scene3D.ModelPrimitive.ModelPrimitive()'></a>
@@ -33,7 +33,7 @@ public Tizen.UI.Internal.Geometry Geometry { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Internal.Geometry](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.Geometry 'Tizen.UI.Internal.Geometry')
+Tizen.UI.Internal.Geometry
 
 <a name='Tizen.UI.Scene3D.ModelPrimitive.Material'></a>
 
@@ -50,6 +50,7 @@ public Tizen.UI.Scene3D.Material Material { get; set; }
 
 ### Remarks
 This Material object is for setting Material properties of 3D models. Also, Material can be shared with multiple ModelPrimitives and if the value is modified, the rendering results of all ModelPrimitives using this Material will be changed.
+
 
 
 

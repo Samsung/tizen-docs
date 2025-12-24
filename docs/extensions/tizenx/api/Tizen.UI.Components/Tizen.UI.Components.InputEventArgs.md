@@ -24,7 +24,7 @@ public InputEventArgs(Tizen.UI.KeyDeviceClass device);
 
 <a name='Tizen.UI.Components.InputEventArgs.InputEventArgs(Tizen.UI.KeyDeviceClass).device'></a>
 
-`device` [Tizen.UI.KeyDeviceClass](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.KeyDeviceClass 'Tizen.UI.KeyDeviceClass')
+`device` Tizen.UI.KeyDeviceClass
 
 The input device.
 ### Properties
@@ -53,7 +53,8 @@ public Tizen.UI.KeyDeviceClass InputDevice { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.KeyDeviceClass](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.KeyDeviceClass 'Tizen.UI.KeyDeviceClass')
+Tizen.UI.KeyDeviceClass
+
 
 
 

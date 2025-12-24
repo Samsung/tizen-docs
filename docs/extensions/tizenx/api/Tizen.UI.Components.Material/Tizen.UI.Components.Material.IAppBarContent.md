@@ -29,7 +29,7 @@ void ApplyUnifiedContentColor(Tizen.UI.Color color);
 
 <a name='Tizen.UI.Components.Material.IAppBarContent.ApplyUnifiedContentColor(Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.IAppBarContent.OnAttached(Tizen.UI.Components.Material.AppBar)'></a>
 

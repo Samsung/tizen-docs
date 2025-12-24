@@ -29,7 +29,7 @@ System.Collections.Generic.IList&lt;Tizen.UI.View> Children { get; }
 ```
 
 #### Property Value
-[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
+[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
 
 <a name='Tizen.UI.Layouts.ILayout.DesiredHeight'></a>
 
@@ -68,7 +68,7 @@ Tizen.UI.LayoutDirection LayoutDirection { get; }
 ```
 
 #### Property Value
-[Tizen.UI.LayoutDirection](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.LayoutDirection 'Tizen.UI.LayoutDirection')
+Tizen.UI.LayoutDirection
 
 <a name='Tizen.UI.Layouts.ILayout.LayoutParam'></a>
 
@@ -94,7 +94,8 @@ Tizen.UI.Thickness Padding { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
+
 
 
 

@@ -9,7 +9,7 @@ Dialog can be set to [ModalContent](Tizen.UI.Components.Material.DialogContainer
 public class Dialog : Tizen.UI.ContentView
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; Dialog
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Dialog
 
 Derived  
 &#8627; [AlertDialog](Tizen.UI.Components.Material.AlertDialog.md 'Tizen.UI.Components.Material.AlertDialog')
@@ -54,7 +54,7 @@ public Tizen.UI.View BodyView { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 A view of body
 
 <a name='Tizen.UI.Components.Material.Dialog.FooterView'></a>
@@ -68,7 +68,7 @@ public Tizen.UI.View FooterView { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 A view of footer
 
 <a name='Tizen.UI.Components.Material.Dialog.HeaderView'></a>
@@ -82,8 +82,9 @@ public Tizen.UI.View HeaderView { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 A view of header
+
 
 
 

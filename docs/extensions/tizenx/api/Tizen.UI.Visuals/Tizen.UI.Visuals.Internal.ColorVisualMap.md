@@ -46,7 +46,8 @@ public Tizen.UI.VisualCutoutPolicy CutoutPolicy { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.VisualCutoutPolicy](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.VisualCutoutPolicy 'Tizen.UI.VisualCutoutPolicy')
+Tizen.UI.VisualCutoutPolicy
+
 
 
 

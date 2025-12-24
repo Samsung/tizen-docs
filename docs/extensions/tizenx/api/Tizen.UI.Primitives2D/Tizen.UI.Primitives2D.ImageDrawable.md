@@ -8,7 +8,7 @@ Represents an image element on the screen.
 public class ImageDrawable : Tizen.UI.Primitives2D.Drawable
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; ImageDrawable
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; ImageDrawable
 ### Constructors
 
 <a name='Tizen.UI.Primitives2D.ImageDrawable.ImageDrawable(string,float,float)'></a>
@@ -79,6 +79,7 @@ public float Width { get; set; }
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

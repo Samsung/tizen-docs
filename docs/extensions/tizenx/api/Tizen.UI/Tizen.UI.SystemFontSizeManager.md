@@ -48,7 +48,7 @@ public static SystemSettingsFontSize SystemFontSize { get; }
 ```
 
 #### Property Value
-[Tizen.System.SystemSettingsFontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.System.SystemSettingsFontSize 'Tizen.System.SystemSettingsFontSize')
+Tizen.System.SystemSettingsFontSize
 ### Methods
 
 <a name='Tizen.UI.SystemFontSizeManager.GetScale(SystemSettingsFontSize)'></a>
@@ -64,7 +64,7 @@ public static float GetScale(SystemSettingsFontSize settingSize);
 
 <a name='Tizen.UI.SystemFontSizeManager.GetScale(SystemSettingsFontSize).settingSize'></a>
 
-`settingSize` [Tizen.System.SystemSettingsFontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.System.SystemSettingsFontSize 'Tizen.System.SystemSettingsFontSize')
+`settingSize` Tizen.System.SystemSettingsFontSize
 
 The system settings font size.
 
@@ -85,7 +85,7 @@ public static void UpdateScaleTable(System.Collections.Generic.IDictionary&lt;Sy
 
 <a name='Tizen.UI.SystemFontSizeManager.UpdateScaleTable(System.Collections.Generic.IDictionary_SystemSettingsFontSize,float_).table'></a>
 
-`table` [System.Collections.Generic.IDictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[Tizen.System.SystemSettingsFontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.System.SystemSettingsFontSize 'Tizen.System.SystemSettingsFontSize')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')
+`table` [System.Collections.Generic.IDictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')Tizen.System.SystemSettingsFontSize[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')
 
 The dictionary containing the new scale values.
 ### Events
@@ -102,6 +102,7 @@ public static event EventHandler FontScaleChanged;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

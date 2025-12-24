@@ -51,7 +51,7 @@ public Tizen.UI.Thickness Margin { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Layouts.LayoutParam.MaximumHeight'></a>
 
@@ -90,7 +90,7 @@ public Tizen.UI.Size MeasuredSize { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')
+Tizen.UI.Size
 
 <a name='Tizen.UI.Layouts.LayoutParam.MinimumHeight'></a>
 
@@ -156,6 +156,7 @@ public Tizen.UI.Layouts.LayoutAlignment VerticalLayoutAlignment { get; set; }
 
 #### Property Value
 [LayoutAlignment](Tizen.UI.Layouts.LayoutAlignment.md 'Tizen.UI.Layouts.LayoutAlignment')
+
 
 
 

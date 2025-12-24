@@ -8,7 +8,7 @@ Provides functionality for arranging and measuring the children of a Scrollable.
 public class ScrollableLayoutManager : Tizen.UI.Layouts.LayoutManager
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Layouts.LayoutManager](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.LayoutManager 'Tizen.UI.Layouts.LayoutManager') &#129106; ScrollableLayoutManager
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Layouts.LayoutManager &#129106; ScrollableLayoutManager
 ### Constructors
 
 <a name='Tizen.UI.Components.ScrollableLayoutManager.ScrollableLayoutManager(Tizen.UI.Components.Scrollable)'></a>
@@ -56,14 +56,14 @@ public override Tizen.UI.Size ArrangeChildren(Tizen.UI.Rect bounds);
 
 <a name='Tizen.UI.Components.ScrollableLayoutManager.ArrangeChildren(Tizen.UI.Rect).bounds'></a>
 
-`bounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`bounds` Tizen.UI.Rect
 
 The available space for the layout.
 
-Implements [ArrangeChildren(Rect)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.ILayoutManager.ArrangeChildren#Tizen_UI_Layouts_ILayoutManager_ArrangeChildren_Tizen_UI_Rect_ 'Tizen.UI.Layouts.ILayoutManager.ArrangeChildren(Tizen.UI.Rect)')
+Implements ArrangeChildren(Rect)')
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The arranged size of the layout.
 
 <a name='Tizen.UI.Components.ScrollableLayoutManager.Measure(float,float)'></a>
@@ -89,11 +89,12 @@ The available width for the layout.
 
 The available height for the layout.
 
-Implements [Measure(float, float)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.ILayoutManager.Measure#Tizen_UI_Layouts_ILayoutManager_Measure_System_Single,System_Single_ 'Tizen.UI.Layouts.ILayoutManager.Measure(System.Single,System.Single)')
+Implements Measure(float, float)')
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The measured size of the layout.
+
 
 
 

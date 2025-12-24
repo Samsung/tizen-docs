@@ -23,7 +23,7 @@ System.Func&lt;Tizen.UI.View,Tizen.UI.View,Tizen.UI.Components.INavigationAnimat
 ```
 
 #### Property Value
-[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[INavigationAnimationController](Tizen.UI.Components.INavigationAnimationController.md 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
+[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[INavigationAnimationController](Tizen.UI.Components.INavigationAnimationController.md 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
 
 ### Remarks
 The first View of Func is the view to be popped. The fist View will be removed from the navigation stack.
@@ -39,7 +39,7 @@ System.Func&lt;Tizen.UI.View,Tizen.UI.View,Tizen.UI.Components.INavigationAnimat
 ```
 
 #### Property Value
-[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[INavigationAnimationController](Tizen.UI.Components.INavigationAnimationController.md 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
+[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[INavigationAnimationController](Tizen.UI.Components.INavigationAnimationController.md 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
 
 ### Remarks
 The first View of Func is the modal view to be popped. The fist View will be removed from the modal stack.
@@ -55,7 +55,7 @@ System.Func&lt;Tizen.UI.View,Tizen.UI.View,Tizen.UI.Components.INavigationAnimat
 ```
 
 #### Property Value
-[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[INavigationAnimationController](Tizen.UI.Components.INavigationAnimationController.md 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
+[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[INavigationAnimationController](Tizen.UI.Components.INavigationAnimationController.md 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
 
 ### Remarks
 The first View of Func is the view to be pushed. The fist View will be the top view.
@@ -71,7 +71,7 @@ System.Func&lt;Tizen.UI.View,Tizen.UI.View,Tizen.UI.Components.INavigationAnimat
 ```
 
 #### Property Value
-[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[INavigationAnimationController](Tizen.UI.Components.INavigationAnimationController.md 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
+[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[INavigationAnimationController](Tizen.UI.Components.INavigationAnimationController.md 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
 
 ### Remarks
 The first View of Func is the modal view to be pushed. The fist View will be the top view.

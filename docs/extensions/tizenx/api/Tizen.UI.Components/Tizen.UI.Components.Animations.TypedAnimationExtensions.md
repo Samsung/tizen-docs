@@ -32,7 +32,7 @@ The type of the target view.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.Animate_T_(thisTizen.UI.Animation,T).animation'></a>
 
-`animation` [Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')
+`animation` Tizen.UI.Animation
 
 The animation.
 
@@ -71,7 +71,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BackgroundColorBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).relativeValue'></a>
 
-`relativeValue` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`relativeValue` Tizen.UI.Color
 
 The relative value.
 
@@ -83,7 +83,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BackgroundColorBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -94,7 +94,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BackgroundColorTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -122,7 +122,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BackgroundColorTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).destinationValue'></a>
 
-`destinationValue` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`destinationValue` Tizen.UI.Color
 
 The destination value.
 
@@ -134,7 +134,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BackgroundColorTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -145,7 +145,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowBlurRadiusBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -185,7 +185,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowBlurRadiusBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -196,7 +196,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowBlurRadiusTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -236,7 +236,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowBlurRadiusTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -247,7 +247,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowOffsetBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -293,7 +293,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowOffsetBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -304,7 +304,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowOffsetTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -350,7 +350,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowOffsetTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -361,7 +361,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowOpacityBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -401,7 +401,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowOpacityBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -412,7 +412,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowOpacityTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -452,7 +452,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.BoxShadowOpacityTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -463,7 +463,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ColorBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -491,7 +491,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ColorBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).relativeValue'></a>
 
-`relativeValue` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`relativeValue` Tizen.UI.Color
 
 The relative value.
 
@@ -503,7 +503,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ColorBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -514,7 +514,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ColorTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -542,7 +542,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ColorTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).destinationValue'></a>
 
-`destinationValue` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`destinationValue` Tizen.UI.Color
 
 The destination value.
 
@@ -554,7 +554,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ColorTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -565,7 +565,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerRadiusBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -593,7 +593,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerRadiusBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int).relativeValue'></a>
 
-`relativeValue` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`relativeValue` Tizen.UI.CornerRadius
 
 The relative value.
 
@@ -605,7 +605,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerRadiusBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -616,7 +616,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerRadiusTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -644,7 +644,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerRadiusTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int).destinationValue'></a>
 
-`destinationValue` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`destinationValue` Tizen.UI.CornerRadius
 
 The destination value.
 
@@ -656,7 +656,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerRadiusTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -667,7 +667,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerSquarenessBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -695,7 +695,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerSquarenessBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int).relativeValue'></a>
 
-`relativeValue` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`relativeValue` Tizen.UI.CornerRadius
 
 The relative value.
 
@@ -707,7 +707,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerSquarenessBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -718,7 +718,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerSquarenessTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -746,7 +746,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerSquarenessTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int).destinationValue'></a>
 
-`destinationValue` [Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+`destinationValue` Tizen.UI.CornerRadius
 
 The destination value.
 
@@ -758,7 +758,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.CornerSquarenessTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.CornerRadius,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -769,7 +769,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.HeightBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -809,7 +809,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.HeightBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -820,7 +820,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.HeightTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -860,7 +860,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.HeightTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -871,7 +871,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.OpacityBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -911,7 +911,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.OpacityBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -922,7 +922,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.OpacityTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -962,7 +962,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.OpacityTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -973,7 +973,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1019,7 +1019,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1030,7 +1030,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Point,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1058,7 +1058,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Point,int,Tizen.UI.AlphaFunction,int).relativeValue'></a>
 
-`relativeValue` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`relativeValue` Tizen.UI.Point
 
 The relative value.
 
@@ -1070,7 +1070,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Point,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1081,7 +1081,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1127,7 +1127,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1138,7 +1138,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Point,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1166,7 +1166,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Point,int,Tizen.UI.AlphaFunction,int).destinationValue'></a>
 
-`destinationValue` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`destinationValue` Tizen.UI.Point
 
 The destination value.
 
@@ -1178,7 +1178,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Point,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1189,7 +1189,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionXBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1229,7 +1229,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionXBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1240,7 +1240,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionXTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1280,7 +1280,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionXTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1291,7 +1291,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionYBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1331,7 +1331,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionYBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1342,7 +1342,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionYTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1382,7 +1382,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.PositionYTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1393,7 +1393,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1421,7 +1421,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int).relativeValue'></a>
 
-`relativeValue` [Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')
+`relativeValue` Tizen.UI.Size
 
 The relative value.
 
@@ -1433,7 +1433,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1444,7 +1444,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1472,7 +1472,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int).destinationValue'></a>
 
-`destinationValue` [Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')
+`destinationValue` Tizen.UI.Size
 
 The destination value.
 
@@ -1484,7 +1484,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1495,7 +1495,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleXBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1535,7 +1535,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleXBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1546,7 +1546,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleXTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1586,7 +1586,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleXTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1597,7 +1597,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleYBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1637,7 +1637,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleYBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1648,7 +1648,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleYTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1688,7 +1688,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.ScaleYTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1699,7 +1699,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1745,7 +1745,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1756,7 +1756,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1784,7 +1784,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int).relativeValue'></a>
 
-`relativeValue` [Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')
+`relativeValue` Tizen.UI.Size
 
 The relative value.
 
@@ -1796,7 +1796,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1807,7 +1807,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1853,7 +1853,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1864,7 +1864,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1892,7 +1892,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int).destinationValue'></a>
 
-`destinationValue` [Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')
+`destinationValue` Tizen.UI.Size
 
 The destination value.
 
@@ -1904,7 +1904,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.SizeTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Size,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1915,7 +1915,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.TextColorBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1943,7 +1943,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.TextColorBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).relativeValue'></a>
 
-`relativeValue` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`relativeValue` Tizen.UI.Color
 
 The relative value.
 
@@ -1955,7 +1955,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.TextColorBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -1966,7 +1966,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.TextColorTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -1994,7 +1994,7 @@ The extension target.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.TextColorTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).destinationValue'></a>
 
-`destinationValue` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`destinationValue` Tizen.UI.Color
 
 The destination value.
 
@@ -2006,7 +2006,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.TextColorTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,Tizen.UI.Color,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -2017,7 +2017,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.WidthBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -2057,7 +2057,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.WidthBy_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -2068,7 +2068,7 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.WidthTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int)'></a>
@@ -2108,7 +2108,7 @@ The animation duration in milliseconds.
 
 <a name='Tizen.UI.Components.Animations.TypedAnimationExtensions.WidthTo_T_(thisTizen.UI.Components.Animations.TypedAnimationTargetBridge_T_,float,int,Tizen.UI.AlphaFunction,int).alpha'></a>
 
-`alpha` [Tizen.UI.AlphaFunction](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AlphaFunction 'Tizen.UI.AlphaFunction')
+`alpha` Tizen.UI.AlphaFunction
 
 The alpha function for the animation.
 
@@ -2119,8 +2119,9 @@ The alpha function for the animation.
 The animation delay in milliseconds.
 
 #### Returns
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')  
+Tizen.UI.Animation  
 The typed animation instance.
+
 
 
 

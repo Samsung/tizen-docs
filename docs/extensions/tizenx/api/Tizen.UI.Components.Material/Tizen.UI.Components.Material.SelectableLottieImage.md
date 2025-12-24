@@ -8,7 +8,7 @@ A selectable lottie image view that can be selected and deselected with animatio
 public class SelectableLottieImage : Tizen.UI.Components.Material.LottieImage
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ImageView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageView 'Tizen.UI.ImageView') &#129106; [Image](Tizen.UI.Components.Material.Image.md 'Tizen.UI.Components.Material.Image') &#129106; [LottieImage](Tizen.UI.Components.Material.LottieImage.md 'Tizen.UI.Components.Material.LottieImage') &#129106; SelectableLottieImage
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ImageView &#129106; [Image](Tizen.UI.Components.Material.Image.md 'Tizen.UI.Components.Material.Image') &#129106; [LottieImage](Tizen.UI.Components.Material.LottieImage.md 'Tizen.UI.Components.Material.LottieImage') &#129106; SelectableLottieImage
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.SelectableLottieImage.SelectableLottieImage(string,Tizen.UI.Components.ClosedRange_int_,Tizen.UI.Components.ClosedRange_int_)'></a>
@@ -28,11 +28,11 @@ public SelectableLottieImage(string resourceUrl, Tizen.UI.Components.ClosedRange
 
 <a name='Tizen.UI.Components.Material.SelectableLottieImage.SelectableLottieImage(string,Tizen.UI.Components.ClosedRange_int_,Tizen.UI.Components.ClosedRange_int_).selectionFrames'></a>
 
-`selectionFrames` [Tizen.UI.Components.ClosedRange&lt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')
+`selectionFrames` Tizen.UI.Components.ClosedRange&lt;[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')&gt;
 
 <a name='Tizen.UI.Components.Material.SelectableLottieImage.SelectableLottieImage(string,Tizen.UI.Components.ClosedRange_int_,Tizen.UI.Components.ClosedRange_int_).deselectionFrames'></a>
 
-`deselectionFrames` [Tizen.UI.Components.ClosedRange&lt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')
+`deselectionFrames` Tizen.UI.Components.ClosedRange&lt;[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')&gt;
 ### Methods
 
 <a name='Tizen.UI.Components.Material.SelectableLottieImage.Refresh()'></a>
@@ -73,6 +73,7 @@ public void SetSelection(bool isSelected, bool animate);
 <a name='Tizen.UI.Components.Material.SelectableLottieImage.SetSelection(bool,bool).animate'></a>
 
 `animate` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
+
 
 
 

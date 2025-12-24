@@ -8,7 +8,7 @@
 public class DrawableGroup : Tizen.UI.Primitives2D.Drawable
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; DrawableGroup
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable') &#129106; DrawableGroup
 ### Constructors
 
 <a name='Tizen.UI.Primitives2D.DrawableGroup.DrawableGroup()'></a>
@@ -100,6 +100,7 @@ public void Remove(Tizen.UI.Primitives2D.Drawable drawable);
 `drawable` [Drawable](Tizen.UI.Primitives2D.Drawable.md 'Tizen.UI.Primitives2D.Drawable')
 
 The drawable to remove.
+
 
 
 

@@ -25,15 +25,15 @@ public static void Bind(this Tizen.UI.View view, Tizen.UI.Components.IPropertySe
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Bind(thisTizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_,Tizen.UI.Color).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Bind(thisTizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_,Tizen.UI.Color).setter'></a>
 
-`setter` [Tizen.UI.Components.IPropertySetter&lt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')[&gt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')
+`setter` [Tizen.UI.Components.IPropertySetter&lt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')Tizen.UI.Color[&gt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Bind(thisTizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_,Tizen.UI.Color).colorToken'></a>
 
-`colorToken` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`colorToken` Tizen.UI.Color
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Unbind(thisTizen.UI.ITokenTable_Tizen.UI.Color_,Tizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_)'></a>
 
@@ -48,15 +48,15 @@ public static void Unbind(this Tizen.UI.ITokenTable&lt;Tizen.UI.Color> colorTabl
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Unbind(thisTizen.UI.ITokenTable_Tizen.UI.Color_,Tizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_).colorTable'></a>
 
-`colorTable` [Tizen.UI.ITokenTable&lt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITokenTable-1 'Tizen.UI.ITokenTable`1')[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITokenTable-1 'Tizen.UI.ITokenTable`1')
+`colorTable` Tizen.UI.ITokenTable&lt;Tizen.UI.Color&gt;
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Unbind(thisTizen.UI.ITokenTable_Tizen.UI.Color_,Tizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_).target'></a>
 
-`target` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`target` Tizen.UI.View
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Unbind(thisTizen.UI.ITokenTable_Tizen.UI.Color_,Tizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_).setter'></a>
 
-`setter` [Tizen.UI.Components.IPropertySetter&lt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')[&gt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')
+`setter` [Tizen.UI.Components.IPropertySetter&lt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')Tizen.UI.Color[&gt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Unbind(thisTizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_)'></a>
 
@@ -71,11 +71,12 @@ public static void Unbind(this Tizen.UI.View view, Tizen.UI.Components.IProperty
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Unbind(thisTizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Unbind(thisTizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_).setter'></a>
 
-`setter` [Tizen.UI.Components.IPropertySetter&lt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')[&gt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')
+`setter` [Tizen.UI.Components.IPropertySetter&lt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')Tizen.UI.Color[&gt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>')
+
 
 
 

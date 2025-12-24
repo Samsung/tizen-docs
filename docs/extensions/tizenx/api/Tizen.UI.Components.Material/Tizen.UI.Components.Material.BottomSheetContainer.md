@@ -11,9 +11,9 @@ Tizen.UI.Components.IModalContainer,
 Tizen.UI.Components.INavigationAnimation
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; BottomSheetContainer
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; BottomSheetContainer
 
-Implements [Tizen.UI.Components.IModalContainer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IModalContainer 'Tizen.UI.Components.IModalContainer'), [Tizen.UI.Components.INavigationAnimation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigationAnimation 'Tizen.UI.Components.INavigationAnimation')
+Implements Tizen.UI.Components.IModalContainer, Tizen.UI.Components.INavigationAnimation
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.BottomSheetContainer.BottomSheetContainer()'></a>
@@ -55,10 +55,10 @@ A bottom sheet is set as modal content.
 public Tizen.UI.View ModalContent { get; set; }
 ```
 
-Implements [ModalContent](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IModalContainer.ModalContent 'Tizen.UI.Components.IModalContainer.ModalContent')
+Implements ModalContent
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 A bottom sheet
 
 <a name='Tizen.UI.Components.Material.BottomSheetContainer.PopAnimation'></a>
@@ -71,10 +71,10 @@ Function called for transition animation of navigation pop.
 public System.Func&lt;Tizen.UI.View,Tizen.UI.View,Tizen.UI.Components.INavigationAnimationController> PopAnimation { get; }
 ```
 
-Implements [PopAnimation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigationAnimation.PopAnimation 'Tizen.UI.Components.INavigationAnimation.PopAnimation')
+Implements PopAnimation
 
 #### Property Value
-[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.Components.INavigationAnimationController](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigationAnimationController 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
+[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.Components.INavigationAnimationController[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
 
 ### Remarks
 The first View of Func is the view to be popped. The fist View will be removed from the navigation stack.
@@ -89,10 +89,10 @@ Function called for transition animation of modal pop.
 public System.Func&lt;Tizen.UI.View,Tizen.UI.View,Tizen.UI.Components.INavigationAnimationController> PopModalAnimation { get; }
 ```
 
-Implements [PopModalAnimation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigationAnimation.PopModalAnimation 'Tizen.UI.Components.INavigationAnimation.PopModalAnimation')
+Implements PopModalAnimation
 
 #### Property Value
-[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.Components.INavigationAnimationController](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigationAnimationController 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
+[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.Components.INavigationAnimationController[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
 
 ### Remarks
 The first View of Func is the modal view to be popped. The fist View will be removed from the modal stack.
@@ -107,10 +107,10 @@ Function called for transition animation of navigation push.
 public System.Func&lt;Tizen.UI.View,Tizen.UI.View,Tizen.UI.Components.INavigationAnimationController> PushAnimation { get; }
 ```
 
-Implements [PushAnimation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigationAnimation.PushAnimation 'Tizen.UI.Components.INavigationAnimation.PushAnimation')
+Implements PushAnimation
 
 #### Property Value
-[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.Components.INavigationAnimationController](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigationAnimationController 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
+[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.Components.INavigationAnimationController[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
 
 ### Remarks
 The first View of Func is the view to be pushed. The fist View will be the top view.
@@ -125,10 +125,10 @@ Function called for transition animation of modal push.
 public System.Func&lt;Tizen.UI.View,Tizen.UI.View,Tizen.UI.Components.INavigationAnimationController> PushModalAnimation { get; }
 ```
 
-Implements [PushModalAnimation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigationAnimation.PushModalAnimation 'Tizen.UI.Components.INavigationAnimation.PushModalAnimation')
+Implements PushModalAnimation
 
 #### Property Value
-[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')[Tizen.UI.Components.INavigationAnimationController](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.INavigationAnimationController 'Tizen.UI.Components.INavigationAnimationController')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
+[System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.View[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')Tizen.UI.Components.INavigationAnimationController[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-3 'System.Func`3')
 
 ### Remarks
 The first View of Func is the modal view to be pushed. The fist View will be the top view.
@@ -143,11 +143,12 @@ A scrim to block the background when the modal content is shown.
 public Tizen.UI.View Scrim { get; set; }
 ```
 
-Implements [Scrim](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IModalContainer.Scrim 'Tizen.UI.Components.IModalContainer.Scrim')
+Implements Scrim
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 UIView with dimmed background color
+
 
 
 

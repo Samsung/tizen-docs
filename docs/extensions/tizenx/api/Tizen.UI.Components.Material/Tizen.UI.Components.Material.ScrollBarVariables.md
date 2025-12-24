@@ -9,7 +9,7 @@ public class ScrollBarVariables : Tizen.UI.Components.Variables,
 System.IEquatable&lt;Tizen.UI.Components.Material.ScrollBarVariables>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.Variables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Variables 'Tizen.UI.Components.Variables') &#129106; ScrollBarVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.Variables &#129106; ScrollBarVariables
 
 Implements [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')[ScrollBarVariables](Tizen.UI.Components.Material.ScrollBarVariables.md 'Tizen.UI.Components.Material.ScrollBarVariables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.IEquatable-1 'System.IEquatable`1')
 ### Properties
@@ -25,7 +25,7 @@ public Tizen.UI.Color BarColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.ScrollBarVariables.BarCornerRadius'></a>
 
@@ -38,7 +38,7 @@ public Tizen.UI.CornerRadius BarCornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.ScrollBarVariables.BarMargin'></a>
 
@@ -51,7 +51,7 @@ public Tizen.UI.Thickness BarMargin { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.ScrollBarVariables.BarMinSize'></a>
 
@@ -91,6 +91,7 @@ public static Tizen.UI.Components.Material.ScrollBarVariables Default { get; }
 
 #### Property Value
 [ScrollBarVariables](Tizen.UI.Components.Material.ScrollBarVariables.md 'Tizen.UI.Components.Material.ScrollBarVariables')
+
 
 
 

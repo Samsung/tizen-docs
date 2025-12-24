@@ -20,7 +20,7 @@ Tizen.UI.AutoFontSize AutoFontSize { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.AutoFontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AutoFontSize 'Tizen.UI.AutoFontSize')
+Tizen.UI.AutoFontSize
 
 <a name='Tizen.UI.Components.IFlexibleText.FontSize'></a>
 
@@ -46,7 +46,8 @@ Tizen.UI.TextOverflow TextOverflow { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.TextOverflow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextOverflow 'Tizen.UI.TextOverflow')
+Tizen.UI.TextOverflow
+
 
 
 

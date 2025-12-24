@@ -8,7 +8,7 @@ Represents a picker component that shows a list of values and allows the user to
 public class Picker : Tizen.UI.Components.Material.PickerBase
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [PickerBase](Tizen.UI.Components.Material.PickerBase.md 'Tizen.UI.Components.Material.PickerBase') &#129106; Picker
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; [PickerBase](Tizen.UI.Components.Material.PickerBase.md 'Tizen.UI.Components.Material.PickerBase') &#129106; Picker
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.Picker.Picker(Tizen.UI.Components.ClosedRange_int_)'></a>
@@ -24,7 +24,7 @@ public Picker(Tizen.UI.Components.ClosedRange&lt;int> range);
 
 <a name='Tizen.UI.Components.Material.Picker.Picker(Tizen.UI.Components.ClosedRange_int_).range'></a>
 
-`range` [Tizen.UI.Components.ClosedRange&lt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')
+`range` Tizen.UI.Components.ClosedRange&lt;[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')&gt;
 
 The range of values that the picker can select.
 
@@ -41,7 +41,7 @@ public Picker(Tizen.UI.Components.ClosedRange&lt;int> range, Tizen.UI.Components
 
 <a name='Tizen.UI.Components.Material.Picker.Picker(Tizen.UI.Components.ClosedRange_int_,Tizen.UI.Components.Material.PickerVariables).range'></a>
 
-`range` [Tizen.UI.Components.ClosedRange&lt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')
+`range` Tizen.UI.Components.ClosedRange&lt;[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')&gt;
 
 The range of values that the picker can select.
 
@@ -50,6 +50,7 @@ The range of values that the picker can select.
 `variables` [PickerVariables](Tizen.UI.Components.Material.PickerVariables.md 'Tizen.UI.Components.Material.PickerVariables')
 
 The variables that define the picker's styling and behavioral properties.
+
 
 
 

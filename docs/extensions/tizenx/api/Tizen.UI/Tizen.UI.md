@@ -3,8 +3,8 @@
 
 | Classes | |
 | :--- | :--- |
-| [AccessibilityActionReceivedEventArgs](Tizen.UI.AccessibilityActionReceivedEventArgs.md 'Tizen.UI.AccessibilityActionReceivedEventArgs') | Provides the data for the [View.AccessibilityActionReceived](https://docs.microsoft.com/en-us/dotnet/api/View.AccessibilityActionReceived 'View.AccessibilityActionReceived') event. |
-| [AccessibilityDescriptionRequestedEventArgs](Tizen.UI.AccessibilityDescriptionRequestedEventArgs.md 'Tizen.UI.AccessibilityDescriptionRequestedEventArgs') | Accessibility description requested event args |
+| [AccessibilityActionReceivedEventArgs](Tizen.UI.AccessibilityActionReceivedEventArgs.md 'Tizen.UI.AccessibilityActionReceivedEventArgs') | Provides the data for the View.AccessibilityActionReceived event. |
+| Tizen.UI.AccessibilityDescriptionRequestedEventArgs | Accessibility description requested event args |
 | [AccessibilityExtensions](Tizen.UI.AccessibilityExtensions.md 'Tizen.UI.AccessibilityExtensions') | Provides extension methods for the [View](Tizen.UI.View.md 'Tizen.UI.View') class. |
 | [AccessibilityHighlightChangedEventArgs](Tizen.UI.AccessibilityHighlightChangedEventArgs.md 'Tizen.UI.AccessibilityHighlightChangedEventArgs') | Provides the data for the [View.AccessibilityHighlightChanged](https://docs.microsoft.com/en-us/dotnet/api/View.AccessibilityHighlightChanged 'View.AccessibilityHighlightChanged') event. |
 | [AccessibilityManager](Tizen.UI.AccessibilityManager.md 'Tizen.UI.AccessibilityManager') | Provides accessibility features for the application. |
@@ -120,7 +120,7 @@
 | [ViewGroup](Tizen.UI.ViewGroup.md 'Tizen.UI.ViewGroup') | ViewGroup is a container class that manages an array of child views and layouts. It provides layout management and event propagation. |
 | [ViewTemplate](Tizen.UI.ViewTemplate.md 'Tizen.UI.ViewTemplate') | This class represents a view template used to create reusable views. |
 | [ViewTemplateSelector](Tizen.UI.ViewTemplateSelector.md 'Tizen.UI.ViewTemplateSelector') | This class represents a view template selector used to create reusable view |
-| [VisibilityChangedEventArgs](Tizen.UI.VisibilityChangedEventArgs.md 'Tizen.UI.VisibilityChangedEventArgs') | Event arguments for [Tizen.UI.View.VisibilityChanged](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View.VisibilityChanged 'Tizen.UI.View.VisibilityChanged') event. |
+| [VisibilityChangedEventArgs](Tizen.UI.VisibilityChangedEventArgs.md 'Tizen.UI.VisibilityChangedEventArgs') | Event arguments for Tizen.UI.View.VisibilityChanged event. |
 | [WeakEventManager](Tizen.UI.WeakEventManager.md 'Tizen.UI.WeakEventManager') | Provides a weak event manager that allows subscribing and unsubscribing from events without causing memory leaks. |
 | [WebNavigationEventArgs](Tizen.UI.WebNavigationEventArgs.md 'Tizen.UI.WebNavigationEventArgs') | Provides data for the [NavigationStarted](Tizen.UI.WebView.md#Tizen.UI.WebView.NavigationStarted 'Tizen.UI.WebView.NavigationStarted') or [NavigationCompleted](Tizen.UI.WebView.md#Tizen.UI.WebView.NavigationCompleted 'Tizen.UI.WebView.NavigationCompleted') event. |
 | [WebView](Tizen.UI.WebView.md 'Tizen.UI.WebView') | |

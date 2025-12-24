@@ -8,7 +8,7 @@ ColorVisual is a class for creating a color visual.
 public class ColorVisual : Tizen.UI.Visuals.RoundedVisual
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [VisualObject](Tizen.UI.Visuals.VisualObject.md 'Tizen.UI.Visuals.VisualObject') &#129106; [RoundedVisual](Tizen.UI.Visuals.RoundedVisual.md 'Tizen.UI.Visuals.RoundedVisual') &#129106; ColorVisual
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [VisualObject](Tizen.UI.Visuals.VisualObject.md 'Tizen.UI.Visuals.VisualObject') &#129106; [RoundedVisual](Tizen.UI.Visuals.RoundedVisual.md 'Tizen.UI.Visuals.RoundedVisual') &#129106; ColorVisual
 ### Properties
 
 <a name='Tizen.UI.Visuals.ColorVisual.BlurRadius'></a>
@@ -35,7 +35,8 @@ public Tizen.UI.VisualCutoutPolicy CutoutPolicy { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.VisualCutoutPolicy](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.VisualCutoutPolicy 'Tizen.UI.VisualCutoutPolicy')
+Tizen.UI.VisualCutoutPolicy
+
 
 
 

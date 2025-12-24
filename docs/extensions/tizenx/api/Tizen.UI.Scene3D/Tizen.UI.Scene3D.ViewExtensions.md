@@ -22,7 +22,7 @@ public static Tizen.UI.Scene3D.Quaternion GetRotation3D(this Tizen.UI.NObject ob
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.GetRotation3D(thisTizen.UI.NObject).obj'></a>
 
-`obj` [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject')
+`obj` Tizen.UI.NObject
 
 The object to get the rotation for.
 
@@ -43,7 +43,7 @@ public static Tizen.UI.Scene3D.Quaternion GetWorldRotation3D(this Tizen.UI.NObje
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.GetWorldRotation3D(thisTizen.UI.NObject).obj'></a>
 
-`obj` [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject')
+`obj` Tizen.UI.NObject
 
 The object to get the world rotation for.
 
@@ -65,7 +65,7 @@ public static void LookAt(this Tizen.UI.View view, Tizen.UI.Scene3D.Vector3D tar
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.LookAt(thisTizen.UI.View,Tizen.UI.Scene3D.Vector3D,Tizen.UI.Scene3D.Vector3D,Tizen.UI.Scene3D.Vector3D,Tizen.UI.Scene3D.Vector3D).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.LookAt(thisTizen.UI.View,Tizen.UI.Scene3D.Vector3D,Tizen.UI.Scene3D.Vector3D,Tizen.UI.Scene3D.Vector3D,Tizen.UI.Scene3D.Vector3D).target'></a>
 
@@ -104,7 +104,7 @@ public static void SetParentOrigin3D(this Tizen.UI.View view, Tizen.UI.Scene3D.P
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetParentOrigin3D(thisTizen.UI.View,Tizen.UI.Scene3D.Point3D).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetParentOrigin3D(thisTizen.UI.View,Tizen.UI.Scene3D.Point3D).point'></a>
 
@@ -125,7 +125,7 @@ public static void SetPivotPoint3D(this Tizen.UI.View view, Tizen.UI.Scene3D.Poi
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetPivotPoint3D(thisTizen.UI.View,Tizen.UI.Scene3D.Point3D).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetPivotPoint3D(thisTizen.UI.View,Tizen.UI.Scene3D.Point3D).point'></a>
 
@@ -146,7 +146,7 @@ public static void SetPosition3D(this Tizen.UI.View view, float x, float y, floa
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetPosition3D(thisTizen.UI.View,float,float,float).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to set the position for.
 
@@ -181,7 +181,7 @@ public static void SetPosition3D(this Tizen.UI.View view, Tizen.UI.Scene3D.Point
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetPosition3D(thisTizen.UI.View,Tizen.UI.Scene3D.Point3D).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to set the position for.
 
@@ -204,7 +204,7 @@ public static void SetPositionZ(this Tizen.UI.View view, float positionZ);
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetPositionZ(thisTizen.UI.View,float).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to set the position for.
 
@@ -227,7 +227,7 @@ public static void SetRotation3D(this Tizen.UI.View view, Tizen.UI.Scene3D.Quate
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetRotation3D(thisTizen.UI.View,Tizen.UI.Scene3D.Quaternion).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to set the rotation for.
 
@@ -250,7 +250,7 @@ public static void SetScale3D(this Tizen.UI.View view, float x, float y, float z
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetScale3D(thisTizen.UI.View,float,float,float).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to set the scale for.
 
@@ -285,7 +285,7 @@ public static void SetScale3D(this Tizen.UI.View view, Tizen.UI.Scene3D.Size3D s
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetScale3D(thisTizen.UI.View,Tizen.UI.Scene3D.Size3D).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to set the scale for.
 
@@ -308,7 +308,7 @@ public static void SetScaleZ(this Tizen.UI.View view, float scaleZ);
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetScaleZ(thisTizen.UI.View,float).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to set the scale for.
 
@@ -331,7 +331,7 @@ public static void SetSize3D(this Tizen.UI.View view, Tizen.UI.Scene3D.Size3D si
 
 <a name='Tizen.UI.Scene3D.ViewExtensions.SetSize3D(thisTizen.UI.View,Tizen.UI.Scene3D.Size3D).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to set the size for.
 
@@ -340,6 +340,7 @@ The view to set the size for.
 `size` [Size3D](Tizen.UI.Scene3D.Size3D.md 'Tizen.UI.Scene3D.Size3D')
 
 The size of the view.
+
 
 
 

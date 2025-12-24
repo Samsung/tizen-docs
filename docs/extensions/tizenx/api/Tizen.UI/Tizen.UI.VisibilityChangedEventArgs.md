@@ -2,7 +2,7 @@
 
 ## VisibilityChangedEventArgs Class
 
-Event arguments for [Tizen.UI.View.VisibilityChanged](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View.VisibilityChanged 'Tizen.UI.View.VisibilityChanged') event.
+Event arguments for Tizen.UI.View.VisibilityChanged event.
 
 ```csharp
 public class VisibilityChangedEventArgs

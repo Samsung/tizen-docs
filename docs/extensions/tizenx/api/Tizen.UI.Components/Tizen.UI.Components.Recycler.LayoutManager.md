@@ -52,7 +52,7 @@ public virtual Tizen.UI.Rect LayoutViewPort { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 
 <a name='Tizen.UI.Components.Recycler.LayoutManager.RecyclerView'></a>
 
@@ -271,12 +271,12 @@ public abstract Tizen.UI.Size MeasureUpdate(Tizen.UI.View itemView);
 
 <a name='Tizen.UI.Components.Recycler.LayoutManager.MeasureUpdate(Tizen.UI.View).itemView'></a>
 
-`itemView` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`itemView` Tizen.UI.View
 
 The view item to measure.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The measured size of the view item.
 
 <a name='Tizen.UI.Components.Recycler.LayoutManager.OnChildrenChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)'></a>
@@ -359,6 +359,7 @@ The amount of pixels to scroll by.
 #### Returns
 [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')  
 layouted size
+
 
 
 

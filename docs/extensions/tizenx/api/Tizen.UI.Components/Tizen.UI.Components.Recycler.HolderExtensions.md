@@ -24,7 +24,7 @@ public static Tizen.UI.Components.Recycler.GroupInfo GroupInfo(this Tizen.UI.Vie
 
 <a name='Tizen.UI.Components.Recycler.HolderExtensions.GroupInfo(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 #### Returns
 [GroupInfo](Tizen.UI.Components.Recycler.GroupInfo.md 'Tizen.UI.Components.Recycler.GroupInfo')
@@ -42,7 +42,7 @@ public static Tizen.UI.Components.Recycler.ViewHolder Holder(this Tizen.UI.View 
 
 <a name='Tizen.UI.Components.Recycler.HolderExtensions.Holder(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 #### Returns
 [ViewHolder](Tizen.UI.Components.Recycler.ViewHolder.md 'Tizen.UI.Components.Recycler.ViewHolder')
@@ -60,7 +60,7 @@ public static void Holder(this Tizen.UI.View view, Tizen.UI.Components.Recycler.
 
 <a name='Tizen.UI.Components.Recycler.HolderExtensions.Holder(thisTizen.UI.View,Tizen.UI.Components.Recycler.ViewHolder).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Components.Recycler.HolderExtensions.Holder(thisTizen.UI.View,Tizen.UI.Components.Recycler.ViewHolder).holder'></a>
 
@@ -79,7 +79,7 @@ public static Tizen.UI.Components.Recycler.HolderInfo HolderInfo(this Tizen.UI.V
 
 <a name='Tizen.UI.Components.Recycler.HolderExtensions.HolderInfo(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 #### Returns
 [HolderInfo](Tizen.UI.Components.Recycler.HolderInfo.md 'Tizen.UI.Components.Recycler.HolderInfo')
@@ -97,7 +97,7 @@ public static int HolderPosition(this Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.Recycler.HolderExtensions.HolderPosition(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 #### Returns
 [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')

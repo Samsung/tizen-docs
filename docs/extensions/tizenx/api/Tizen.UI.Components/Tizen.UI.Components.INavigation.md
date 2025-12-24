@@ -23,7 +23,7 @@ System.Collections.Generic.IReadOnlyList&lt;Tizen.UI.View> ModalStack { get; }
 ```
 
 #### Property Value
-[System.Collections.Generic.IReadOnlyList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyList-1 'System.Collections.Generic.IReadOnlyList`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyList-1 'System.Collections.Generic.IReadOnlyList`1')
+[System.Collections.Generic.IReadOnlyList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyList-1 'System.Collections.Generic.IReadOnlyList`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyList-1 'System.Collections.Generic.IReadOnlyList`1')
 
 <a name='Tizen.UI.Components.INavigation.NavigationStack'></a>
 
@@ -36,7 +36,7 @@ System.Collections.Generic.IReadOnlyList&lt;Tizen.UI.View> NavigationStack { get
 ```
 
 #### Property Value
-[System.Collections.Generic.IReadOnlyList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyList-1 'System.Collections.Generic.IReadOnlyList`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyList-1 'System.Collections.Generic.IReadOnlyList`1')
+[System.Collections.Generic.IReadOnlyList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyList-1 'System.Collections.Generic.IReadOnlyList`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyList-1 'System.Collections.Generic.IReadOnlyList`1')
 ### Methods
 
 <a name='Tizen.UI.Components.INavigation.InsertBefore(Tizen.UI.View,Tizen.UI.View)'></a>
@@ -52,13 +52,13 @@ void InsertBefore(Tizen.UI.View view, Tizen.UI.View before);
 
 <a name='Tizen.UI.Components.INavigation.InsertBefore(Tizen.UI.View,Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to be inserted to the navigation stack right before the given view `before`.
 
 <a name='Tizen.UI.Components.INavigation.InsertBefore(Tizen.UI.View,Tizen.UI.View).before'></a>
 
-`before` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`before` Tizen.UI.View
 
 The view existing in the navigation stack and will be the next view of the inserted view.
 
@@ -87,7 +87,7 @@ System.Threading.Tasks.Task&lt;Tizen.UI.View> PopAsync();
 ```
 
 #### Returns
-[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
+[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
 The view popped off the navigation stack.
 
 <a name='Tizen.UI.Components.INavigation.PopAsync(bool)'></a>
@@ -108,7 +108,7 @@ System.Threading.Tasks.Task&lt;Tizen.UI.View> PopAsync(bool animated);
 True to play the transition animation during navigation.
 
 #### Returns
-[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
+[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
 The view popped off the navigation stack.
 
 <a name='Tizen.UI.Components.INavigation.PopModalAsync()'></a>
@@ -122,7 +122,7 @@ System.Threading.Tasks.Task&lt;Tizen.UI.View> PopModalAsync();
 ```
 
 #### Returns
-[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
+[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
 The modal view popped off the modal stack.
 
 <a name='Tizen.UI.Components.INavigation.PopModalAsync(bool)'></a>
@@ -143,7 +143,7 @@ System.Threading.Tasks.Task&lt;Tizen.UI.View> PopModalAsync(bool animated);
 True to play the transition animation during navigation.
 
 #### Returns
-[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
+[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
 The modal view popped off the modal stack.
 
 <a name='Tizen.UI.Components.INavigation.PushAsync(Tizen.UI.View)'></a>
@@ -159,7 +159,7 @@ System.Threading.Tasks.Task PushAsync(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.INavigation.PushAsync(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to be pushed onto the navigation stack.
 
@@ -179,7 +179,7 @@ System.Threading.Tasks.Task PushAsync(Tizen.UI.View view, bool animated);
 
 <a name='Tizen.UI.Components.INavigation.PushAsync(Tizen.UI.View,bool).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to be pushed onto the navigation stack.
 
@@ -205,7 +205,7 @@ System.Threading.Tasks.Task PushModalAsync(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.INavigation.PushModalAsync(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to be pushed onto the modal stack.
 
@@ -225,7 +225,7 @@ System.Threading.Tasks.Task PushModalAsync(Tizen.UI.View view, bool animated);
 
 <a name='Tizen.UI.Components.INavigation.PushModalAsync(Tizen.UI.View,bool).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to be pushed onto the modal stack.
 
@@ -251,7 +251,7 @@ void Remove(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.INavigation.Remove(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to be removed from the navigation stack or modal stack.
 

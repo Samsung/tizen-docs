@@ -112,7 +112,7 @@ The list of ViewHolder that are under the dragged View and candidate as a drop.
 
 <a name='Tizen.UI.Components.Recycler.ItemTouchHelperCallback.ChooseDropTarget(Tizen.UI.Components.Recycler.ViewHolder,System.Collections.Generic.List_Tizen.UI.Components.Recycler.ViewHolder_,Tizen.UI.Point).currentPosition'></a>
 
-`currentPosition` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`currentPosition` Tizen.UI.Point
 
 The updated position value of the dragged View
 
@@ -343,7 +343,7 @@ The new adapter position of the dragged item.
 
 <a name='Tizen.UI.Components.Recycler.ItemTouchHelperCallback.OnMoved(Tizen.UI.Components.Recycler.RecyclerView,Tizen.UI.Components.Recycler.ViewHolder,int,Tizen.UI.Components.Recycler.ViewHolder,int,Tizen.UI.Point).currentPosition'></a>
 
-`currentPosition` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`currentPosition` Tizen.UI.Point
 
 The updated point value of the dragged View after drag translations are applied.
 
@@ -367,6 +367,7 @@ The new ViewHolder that is being selected. Might be null if it is cleared.
 `actionState` [TouchActionState](Tizen.UI.Components.Recycler.TouchActionState.md 'Tizen.UI.Components.Recycler.TouchActionState')
 
 The touch action state on view holder.
+
 
 
 

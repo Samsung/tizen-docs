@@ -144,7 +144,7 @@ public virtual int GetViewPosition(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.Recycler.Adapter.GetViewPosition(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to get the position.
 

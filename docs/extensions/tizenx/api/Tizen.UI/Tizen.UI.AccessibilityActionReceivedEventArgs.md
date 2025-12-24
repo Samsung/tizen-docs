@@ -2,7 +2,7 @@
 
 ## AccessibilityActionReceivedEventArgs Class
 
-Provides the data for the [View.AccessibilityActionReceived](https://docs.microsoft.com/en-us/dotnet/api/View.AccessibilityActionReceived 'View.AccessibilityActionReceived') event.
+Provides the data for the View.AccessibilityActionReceived event.
 
 ```csharp
 public class AccessibilityActionReceivedEventArgs : System.EventArgs

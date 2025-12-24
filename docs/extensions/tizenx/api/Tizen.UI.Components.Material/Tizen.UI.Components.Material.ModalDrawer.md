@@ -8,7 +8,7 @@ A [ModalDrawer&lt;T&gt;](Tizen.UI.Components.Material.ModalDrawer_T_.md 'Tizen.U
 public class ModalDrawer : Tizen.UI.Components.Material.ModalDrawer&lt;Tizen.UI.Components.Material.DrawerItem>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Material.Drawer&lt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>')[DrawerItem](Tizen.UI.Components.Material.DrawerItem.md 'Tizen.UI.Components.Material.DrawerItem')[&gt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>') &#129106; [Tizen.UI.Components.Material.ModalDrawer&lt;](Tizen.UI.Components.Material.ModalDrawer_T_.md 'Tizen.UI.Components.Material.ModalDrawer&lt;T>')[DrawerItem](Tizen.UI.Components.Material.DrawerItem.md 'Tizen.UI.Components.Material.DrawerItem')[&gt;](Tizen.UI.Components.Material.ModalDrawer_T_.md 'Tizen.UI.Components.Material.ModalDrawer&lt;T>') &#129106; ModalDrawer
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; [Tizen.UI.Components.Material.Drawer&lt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>')[DrawerItem](Tizen.UI.Components.Material.DrawerItem.md 'Tizen.UI.Components.Material.DrawerItem')[&gt;](Tizen.UI.Components.Material.Drawer_T_.md 'Tizen.UI.Components.Material.Drawer&lt;T>') &#129106; [Tizen.UI.Components.Material.ModalDrawer&lt;](Tizen.UI.Components.Material.ModalDrawer_T_.md 'Tizen.UI.Components.Material.ModalDrawer&lt;T>')[DrawerItem](Tizen.UI.Components.Material.DrawerItem.md 'Tizen.UI.Components.Material.DrawerItem')[&gt;](Tizen.UI.Components.Material.ModalDrawer_T_.md 'Tizen.UI.Components.Material.ModalDrawer&lt;T>') &#129106; ModalDrawer
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.ModalDrawer.ModalDrawer()'></a>
@@ -37,6 +37,7 @@ public ModalDrawer(Tizen.UI.Components.Material.ModalDrawerVariables variables);
 `variables` [ModalDrawerVariables](Tizen.UI.Components.Material.ModalDrawerVariables.md 'Tizen.UI.Components.Material.ModalDrawerVariables')
 
 The variables to configure the tab bar.
+
 
 
 

@@ -29,7 +29,7 @@ public static Tizen.UI.NativeHandle.PropertyValueHandle ToValue(this object valu
 The object to convert.
 
 #### Returns
-[Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')  
+Tizen.UI.NativeHandle.PropertyValueHandle  
 A new PropertyValueHandle containing the converted value.
 
 <a name='Tizen.UI.Scene3D.NativeHandle.PropertyValueHandleExtensions.ToValue(thisTizen.UI.Scene3D.Point3D)'></a>
@@ -50,7 +50,7 @@ public static Tizen.UI.NativeHandle.PropertyValueHandle ToValue(this Tizen.UI.Sc
 The Point3D object to be converted.
 
 #### Returns
-[Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')  
+Tizen.UI.NativeHandle.PropertyValueHandle  
 A new PropertyValueHandle object representing the given Point3D.
 
 <a name='Tizen.UI.Scene3D.NativeHandle.PropertyValueHandleExtensions.ToValue(thisTizen.UI.Scene3D.Quaternion)'></a>
@@ -71,7 +71,7 @@ public static Tizen.UI.NativeHandle.PropertyValueHandle ToValue(this Tizen.UI.Sc
 The Quaternion object to be converted.
 
 #### Returns
-[Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')  
+Tizen.UI.NativeHandle.PropertyValueHandle  
 A new PropertyValueHandle object representing the given Quaternion.
 
 <a name='Tizen.UI.Scene3D.NativeHandle.PropertyValueHandleExtensions.ToValue(thisTizen.UI.Scene3D.Size3D)'></a>
@@ -92,8 +92,9 @@ public static Tizen.UI.NativeHandle.PropertyValueHandle ToValue(this Tizen.UI.Sc
 The Size3D object to be converted.
 
 #### Returns
-[Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')  
+Tizen.UI.NativeHandle.PropertyValueHandle  
 A new PropertyValueHandle object representing the given Size3D.
+
 
 
 

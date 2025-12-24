@@ -8,9 +8,9 @@ Tizen.UI.Components.IFlexibleText,
 Tizen.UI.IText
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Pressable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Pressable 'Tizen.UI.Components.Pressable') &#129106; [Tizen.UI.Components.Clickable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Clickable 'Tizen.UI.Components.Clickable') &#129106; SpinnerButton
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Tizen.UI.Components.Pressable &#129106; Tizen.UI.Components.Clickable &#129106; SpinnerButton
 
-Implements [Tizen.UI.Components.IFlexibleText](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IFlexibleText 'Tizen.UI.Components.IFlexibleText'), [Tizen.UI.IText](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText 'Tizen.UI.IText')
+Implements Tizen.UI.Components.IFlexibleText, Tizen.UI.IText
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.SpinnerButton.SpinnerButton()'></a>
@@ -49,10 +49,10 @@ Gets or sets the auto font size.
 public Tizen.UI.AutoFontSize AutoFontSize { get; set; }
 ```
 
-Implements [AutoFontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IFlexibleText.AutoFontSize 'Tizen.UI.Components.IFlexibleText.AutoFontSize')
+Implements AutoFontSize
 
 #### Property Value
-[Tizen.UI.AutoFontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AutoFontSize 'Tizen.UI.AutoFontSize')
+Tizen.UI.AutoFontSize
 
 <a name='Tizen.UI.Components.Material.SpinnerButton.FontFamily'></a>
 
@@ -64,7 +64,7 @@ Gets or sets the font family of the text.
 public string FontFamily { get; set; }
 ```
 
-Implements [FontFamily](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontFamily 'Tizen.UI.IText.FontFamily')
+Implements FontFamily
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -79,7 +79,7 @@ Gets or sets the font size of the text.
 public float FontSize { get; set; }
 ```
 
-Implements [FontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontSize 'Tizen.UI.IText.FontSize'), [FontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IFlexibleText.FontSize 'Tizen.UI.Components.IFlexibleText.FontSize')
+Implements FontSize, FontSize
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
@@ -95,7 +95,7 @@ public Tizen.UI.Color IconMixColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.SpinnerButton.ItemSpacing'></a>
 
@@ -121,7 +121,7 @@ public Tizen.UI.Components.IAnchoredModal ModalContent { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Components.IAnchoredModal](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnchoredModal 'Tizen.UI.Components.IAnchoredModal')
+Tizen.UI.Components.IAnchoredModal
 
 <a name='Tizen.UI.Components.Material.SpinnerButton.SystemFontSizeScaleEnabled'></a>
 
@@ -146,7 +146,7 @@ Gets or sets the text of the tab item.
 public string Text { get; set; }
 ```
 
-Implements [Text](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.Text 'Tizen.UI.IText.Text')
+Implements Text
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -161,10 +161,10 @@ Gets or sets the text color of the label.
 public Tizen.UI.Color TextColor { get; set; }
 ```
 
-Implements [TextColor](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.TextColor 'Tizen.UI.IText.TextColor')
+Implements TextColor
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.SpinnerButton.TextOverflow'></a>
 
@@ -176,10 +176,11 @@ Gets or sets the text ellipsize mode to be applied when the text overflows.
 public Tizen.UI.TextOverflow TextOverflow { get; set; }
 ```
 
-Implements [TextOverflow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IFlexibleText.TextOverflow 'Tizen.UI.Components.IFlexibleText.TextOverflow')
+Implements TextOverflow
 
 #### Property Value
-[Tizen.UI.TextOverflow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextOverflow 'Tizen.UI.TextOverflow')
+Tizen.UI.TextOverflow
+
 
 
 

@@ -67,7 +67,7 @@ Tizen.UI.View this[int index] { get; }
 `index` [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 ### Methods
 
 <a name='Tizen.UI.Components.Material.IPager.ShowPage(int,bool)'></a>

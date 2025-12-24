@@ -10,9 +10,9 @@ public class DialogContainer : Tizen.UI.ContentView,
 Tizen.UI.Components.IModalContainer
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; DialogContainer
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; DialogContainer
 
-Implements [Tizen.UI.Components.IModalContainer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IModalContainer 'Tizen.UI.Components.IModalContainer')
+Implements Tizen.UI.Components.IModalContainer
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.DialogContainer.DialogContainer()'></a>
@@ -54,10 +54,10 @@ A dialog is set as modal content.
 public Tizen.UI.View ModalContent { get; set; }
 ```
 
-Implements [ModalContent](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IModalContainer.ModalContent 'Tizen.UI.Components.IModalContainer.ModalContent')
+Implements ModalContent
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 A dialog
 
 <a name='Tizen.UI.Components.Material.DialogContainer.Scrim'></a>
@@ -70,10 +70,10 @@ A scrim to block the background when the modal content is shown.
 public Tizen.UI.View Scrim { get; set; }
 ```
 
-Implements [Scrim](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IModalContainer.Scrim 'Tizen.UI.Components.IModalContainer.Scrim')
+Implements Scrim
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 UIView with dimmed background color
 ### Methods
 
@@ -92,7 +92,7 @@ public System.Threading.Tasks.Task SwapModalContent(Tizen.UI.View newModalConten
 
 <a name='Tizen.UI.Components.Material.DialogContainer.SwapModalContent(Tizen.UI.View).newModalContent'></a>
 
-`newModalContent` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`newModalContent` Tizen.UI.View
 
 New modal content.
 
@@ -107,6 +107,7 @@ For example,
 ```csharp  
 dialogContainer.SwapModalContent(newModalContent).ContinueWith(finishedCallback, TaskScheduler.FromCurrentSynchronizationContext());  
 ```
+
 
 
 

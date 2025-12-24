@@ -8,7 +8,7 @@ Defines the variables for material components.
 public class MaterialComponentVariables : Tizen.UI.Components.UIVariables
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.Components.UIVariables](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.UIVariables 'Tizen.UI.Components.UIVariables') &#129106; MaterialComponentVariables
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.Components.UIVariables &#129106; MaterialComponentVariables
 ### Properties
 
 <a name='Tizen.UI.Components.Material.MaterialComponentVariables.Current'></a>
@@ -714,6 +714,7 @@ public virtual Tizen.UI.Components.Material.ToastVariables CreateToastDefault();
 
 #### Returns
 [ToastVariables](Tizen.UI.Components.Material.ToastVariables.md 'Tizen.UI.Components.Material.ToastVariables')
+
 
 
 

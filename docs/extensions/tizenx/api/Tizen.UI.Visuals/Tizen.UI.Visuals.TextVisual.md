@@ -9,9 +9,9 @@ public class TextVisual : Tizen.UI.Visuals.VisualObject,
 Tizen.UI.IText
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [VisualObject](Tizen.UI.Visuals.VisualObject.md 'Tizen.UI.Visuals.VisualObject') &#129106; TextVisual
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [VisualObject](Tizen.UI.Visuals.VisualObject.md 'Tizen.UI.Visuals.VisualObject') &#129106; TextVisual
 
-Implements [Tizen.UI.IText](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText 'Tizen.UI.IText')
+Implements Tizen.UI.IText
 ### Properties
 
 <a name='Tizen.UI.Visuals.TextVisual.EnableMarkup'></a>
@@ -37,7 +37,7 @@ Sets or gets the font family of the text visual.
 public string FontFamily { get; set; }
 ```
 
-Implements [FontFamily](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontFamily 'Tizen.UI.IText.FontFamily')
+Implements FontFamily
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -52,7 +52,7 @@ Sets or gets the font size of the text visual.
 public float FontSize { get; set; }
 ```
 
-Implements [FontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontSize 'Tizen.UI.IText.FontSize')
+Implements FontSize
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
@@ -68,7 +68,7 @@ public Tizen.UI.TextAlignment HorizontalAlignment { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.TextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextAlignment 'Tizen.UI.TextAlignment')
+Tizen.UI.TextAlignment
 
 <a name='Tizen.UI.Visuals.TextVisual.MultiLine'></a>
 
@@ -93,7 +93,7 @@ Sets or gets the text of the TextVisual.
 public string Text { get; set; }
 ```
 
-Implements [Text](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.Text 'Tizen.UI.IText.Text')
+Implements Text
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -108,10 +108,10 @@ Gets or sets the color of the text visual.
 public Tizen.UI.Color TextColor { get; set; }
 ```
 
-Implements [TextColor](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.TextColor 'Tizen.UI.IText.TextColor')
+Implements TextColor
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Visuals.TextVisual.VerticalAlignment'></a>
 
@@ -124,7 +124,8 @@ public Tizen.UI.TextAlignment VerticalAlignment { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.TextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextAlignment 'Tizen.UI.TextAlignment')
+Tizen.UI.TextAlignment
+
 
 
 

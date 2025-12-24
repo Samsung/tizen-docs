@@ -46,7 +46,7 @@ Tizen.UI.ImageLoaderFittingMode FittingMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageLoaderFittingMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageLoaderFittingMode 'Tizen.UI.ImageLoaderFittingMode')
+Tizen.UI.ImageLoaderFittingMode
 
 <a name='Tizen.UI.Components.IImage.LoadingStatus'></a>
 
@@ -59,7 +59,7 @@ Tizen.UI.ImageLoadingStatus LoadingStatus { get; }
 ```
 
 #### Property Value
-[Tizen.UI.ImageLoadingStatus](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageLoadingStatus 'Tizen.UI.ImageLoadingStatus')
+Tizen.UI.ImageLoadingStatus
 
 <a name='Tizen.UI.Components.IImage.MultipliedColor'></a>
 
@@ -72,7 +72,7 @@ Tizen.UI.Color MultipliedColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.IImage.ResourceUrl'></a>
 
@@ -126,6 +126,7 @@ event EventHandler ResourceReady;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

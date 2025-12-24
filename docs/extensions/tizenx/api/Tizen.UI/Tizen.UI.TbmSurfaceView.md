@@ -71,12 +71,13 @@ public void SetSource(Tizen.UI.Internal.Texture texture);
 
 <a name='Tizen.UI.TbmSurfaceView.SetSource(Tizen.UI.Internal.Texture).texture'></a>
 
-`texture` [Tizen.UI.Internal.Texture](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.Texture 'Tizen.UI.Internal.Texture')
+`texture` Tizen.UI.Internal.Texture
 
 The new texture to set as the source.
 
 ### Remarks
 It must be called on the UI thread.
+
 
 
 

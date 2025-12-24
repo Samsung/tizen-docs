@@ -23,7 +23,7 @@ Tizen.UI.View GetTouchEffectSecondaryTarget();
 ```
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 <a name='Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectTarget()'></a>
 
@@ -36,7 +36,7 @@ Tizen.UI.View GetTouchEffectTarget();
 ```
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 
 

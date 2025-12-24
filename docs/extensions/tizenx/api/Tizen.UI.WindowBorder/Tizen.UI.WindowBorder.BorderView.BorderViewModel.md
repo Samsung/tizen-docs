@@ -77,7 +77,7 @@ public System.Action&lt;Tizen.UI.WindowResizeDirection> ResizeAction { get; set;
 ```
 
 #### Property Value
-[System.Action&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-1 'System.Action`1')[Tizen.UI.WindowResizeDirection](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.WindowResizeDirection 'Tizen.UI.WindowResizeDirection')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-1 'System.Action`1')
+[System.Action&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-1 'System.Action`1')Tizen.UI.WindowResizeDirection[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-1 'System.Action`1')
 
 <a name='Tizen.UI.WindowBorder.BorderView.BorderViewModel.TargetWindow'></a>
 
@@ -90,7 +90,7 @@ public Tizen.UI.Window TargetWindow { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+Tizen.UI.Window
 ### Events
 
 <a name='Tizen.UI.WindowBorder.BorderView.BorderViewModel.PropertyChanged'></a>
@@ -107,6 +107,7 @@ Implements [PropertyChanged](https://docs.microsoft.com/en-us/dotnet/api/System.
 
 #### Event Type
 [System.ComponentModel.PropertyChangedEventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.PropertyChangedEventHandler 'System.ComponentModel.PropertyChangedEventHandler')
+
 
 
 

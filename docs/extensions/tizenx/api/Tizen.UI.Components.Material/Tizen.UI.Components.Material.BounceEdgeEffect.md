@@ -11,7 +11,7 @@ Tizen.UI.Components.IEdgeEffect
 
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; BounceEdgeEffect
 
-Implements [Tizen.UI.Components.IEdgeEffect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IEdgeEffect 'Tizen.UI.Components.IEdgeEffect')
+Implements Tizen.UI.Components.IEdgeEffect
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.BounceEdgeEffect.BounceEdgeEffect(Tizen.UI.View)'></a>
@@ -27,7 +27,7 @@ public BounceEdgeEffect(Tizen.UI.View parent);
 
 <a name='Tizen.UI.Components.Material.BounceEdgeEffect.BounceEdgeEffect(Tizen.UI.View).parent'></a>
 
-`parent` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`parent` Tizen.UI.View
 
 the parent view of edge effect.
 
@@ -44,7 +44,7 @@ public BounceEdgeEffect(Tizen.UI.View parent, float maxDistance);
 
 <a name='Tizen.UI.Components.Material.BounceEdgeEffect.BounceEdgeEffect(Tizen.UI.View,float).parent'></a>
 
-`parent` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`parent` Tizen.UI.View
 
 The parent view of edge effect.
 
@@ -65,10 +65,10 @@ The direction of edge. [EdgeDirection](Tizen.UI.Components.Material.BounceEdgeEf
 public Tizen.UI.Components.EdgeDirection EdgeDirection { get; set; }
 ```
 
-Implements [EdgeDirection](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IEdgeEffect.EdgeDirection 'Tizen.UI.Components.IEdgeEffect.EdgeDirection')
+Implements EdgeDirection
 
 #### Property Value
-[Tizen.UI.Components.EdgeDirection](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.EdgeDirection 'Tizen.UI.Components.EdgeDirection')
+Tizen.UI.Components.EdgeDirection
 
 <a name='Tizen.UI.Components.Material.BounceEdgeEffect.MaxDistance'></a>
 
@@ -80,7 +80,7 @@ The Maximum distance of touch pull over the parent view.
 public float MaxDistance { get; set; }
 ```
 
-Implements [MaxDistance](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IEdgeEffect.MaxDistance 'Tizen.UI.Components.IEdgeEffect.MaxDistance')
+Implements MaxDistance
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
@@ -95,25 +95,25 @@ The source view who will reflect the edge effect.
 public Tizen.UI.View SourceView { get; set; }
 ```
 
-Implements [SourceView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IEdgeEffect.SourceView 'Tizen.UI.Components.IEdgeEffect.SourceView')
+Implements SourceView
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 <a name='Tizen.UI.Components.Material.BounceEdgeEffect.State'></a>
 
 ## BounceEdgeEffect.State Property
 
-The state of edge effect. [Tizen.UI.Components.EdgeState](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.EdgeState 'Tizen.UI.Components.EdgeState').
+The state of edge effect. Tizen.UI.Components.EdgeState.
 
 ```csharp
 public Tizen.UI.Components.EdgeState State { get; set; }
 ```
 
-Implements [State](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IEdgeEffect.State 'Tizen.UI.Components.IEdgeEffect.State')
+Implements State
 
 #### Property Value
-[Tizen.UI.Components.EdgeState](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.EdgeState 'Tizen.UI.Components.EdgeState')
+Tizen.UI.Components.EdgeState
 ### Methods
 
 <a name='Tizen.UI.Components.Material.BounceEdgeEffect.Finish()'></a>
@@ -126,7 +126,7 @@ Finish edge effect immediately.
 public virtual void Finish();
 ```
 
-Implements [Finish()](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IEdgeEffect.Finish 'Tizen.UI.Components.IEdgeEffect.Finish')
+Implements Finish()
 
 <a name='Tizen.UI.Components.Material.BounceEdgeEffect.OnAbsorb(float)'></a>
 
@@ -145,7 +145,7 @@ public virtual void OnAbsorb(float velocity);
 
 The velocity to absorb.
 
-Implements [OnAbsorb(float)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IEdgeEffect.OnAbsorb#Tizen_UI_Components_IEdgeEffect_OnAbsorb_System_Single_ 'Tizen.UI.Components.IEdgeEffect.OnAbsorb(System.Single)')
+Implements OnAbsorb(float)')
 
 <a name='Tizen.UI.Components.Material.BounceEdgeEffect.OnPull(float,float)'></a>
 
@@ -170,7 +170,7 @@ Change in distance since the last call. Values may be 0 to 1.f or negative value
 
 The displacement from the side of the point initiating the pull. value may be from 0 to 1.
 
-Implements [OnPull(float, float)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IEdgeEffect.OnPull#Tizen_UI_Components_IEdgeEffect_OnPull_System_Single,System_Single_ 'Tizen.UI.Components.IEdgeEffect.OnPull(System.Single,System.Single)')
+Implements OnPull(float, float)')
 
 #### Returns
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')  
@@ -186,7 +186,8 @@ Call when the object is released after being pulled.
 public virtual void OnRelease();
 ```
 
-Implements [OnRelease()](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IEdgeEffect.OnRelease 'Tizen.UI.Components.IEdgeEffect.OnRelease')
+Implements OnRelease()
+
 
 
 

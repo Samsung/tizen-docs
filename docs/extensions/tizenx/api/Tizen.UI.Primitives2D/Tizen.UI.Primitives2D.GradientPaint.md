@@ -9,7 +9,7 @@ public abstract class GradientPaint : Tizen.UI.NObject,
 Tizen.UI.Primitives2D.IPaint
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; GradientPaint
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; GradientPaint
 
 Derived  
 &#8627; [LinearGradientPaint](Tizen.UI.Primitives2D.LinearGradientPaint.md 'Tizen.UI.Primitives2D.LinearGradientPaint')  
@@ -44,7 +44,7 @@ public Tizen.UI.GradientStop[] GradientStops { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.GradientStop](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.GradientStop 'Tizen.UI.GradientStop')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
+Tizen.UI.GradientStop[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 
 <a name='Tizen.UI.Primitives2D.GradientPaint.Spread'></a>
 
@@ -157,6 +157,7 @@ public void Stroke(Tizen.UI.Primitives2D.Shape shape);
 The shape to stroke.
 
 Implements [Stroke(Shape)](Tizen.UI.Primitives2D.IPaint.md#Tizen.UI.Primitives2D.IPaint.Stroke(Tizen.UI.Primitives2D.Shape) 'Tizen.UI.Primitives2D.IPaint.Stroke(Tizen.UI.Primitives2D.Shape)')
+
 
 
 

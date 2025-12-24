@@ -26,7 +26,7 @@ public static int AddRenderer(this Tizen.UI.Scene3D.SceneObject sceneObject, Tiz
 
 <a name='Tizen.UI.Scene3D.SceneObjectExtensions.AddRenderer(thisTizen.UI.Scene3D.SceneObject,Tizen.UI.Internal.Renderer).renderer'></a>
 
-`renderer` [Tizen.UI.Internal.Renderer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.Renderer 'Tizen.UI.Internal.Renderer')
+`renderer` Tizen.UI.Internal.Renderer
 
 The renderer to add.
 
@@ -56,7 +56,7 @@ public static Tizen.UI.Internal.Renderer GetRendererAt(this Tizen.UI.Scene3D.Sce
 The index of the renderer to retrieve.
 
 #### Returns
-[Tizen.UI.Internal.Renderer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.Renderer 'Tizen.UI.Internal.Renderer')  
+Tizen.UI.Internal.Renderer  
 A Renderer object at the specified index.
 
 <a name='Tizen.UI.Scene3D.SceneObjectExtensions.GetRendererCount(thisTizen.UI.Scene3D.SceneObject)'></a>
@@ -95,9 +95,10 @@ public static void RemoveRenderer(this Tizen.UI.Scene3D.SceneObject sceneObject,
 
 <a name='Tizen.UI.Scene3D.SceneObjectExtensions.RemoveRenderer(thisTizen.UI.Scene3D.SceneObject,Tizen.UI.Internal.Renderer).renderer'></a>
 
-`renderer` [Tizen.UI.Internal.Renderer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Internal.Renderer 'Tizen.UI.Internal.Renderer')
+`renderer` Tizen.UI.Internal.Renderer
 
 The renderer to remove.
+
 
 
 

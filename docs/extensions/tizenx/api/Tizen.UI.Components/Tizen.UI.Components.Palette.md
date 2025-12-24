@@ -4,7 +4,7 @@
 
 A class that extracts prominent colors from an image.  
   
-This is a helper class to extract colors from a [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer')  
+This is a helper class to extract colors from a Tizen.UI.PixelBuffer  
 It can generate a number of selected color swatches based on the image.
 
 ```csharp
@@ -123,7 +123,7 @@ public Tizen.UI.Components.Swatch Vibrant { get; }
 
 ## Palette.Generate(PixelBuffer) Method
 
-Synchronously generates a [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette') from the given [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer').
+Synchronously generates a [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette') from the given Tizen.UI.PixelBuffer.
 
 ```csharp
 public static Tizen.UI.Components.Palette Generate(Tizen.UI.PixelBuffer buffer);
@@ -132,9 +132,9 @@ public static Tizen.UI.Components.Palette Generate(Tizen.UI.PixelBuffer buffer);
 
 <a name='Tizen.UI.Components.Palette.Generate(Tizen.UI.PixelBuffer).buffer'></a>
 
-`buffer` [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer')
+`buffer` Tizen.UI.PixelBuffer
 
-The [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer') to generate the palette from.
+The Tizen.UI.PixelBuffer to generate the palette from.
 
 #### Returns
 [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette')  
@@ -144,7 +144,7 @@ The generated [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Pale
 
 ## Palette.Generate(PixelBuffer, float, float, float, float) Method
 
-Synchronously generates a [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette') from a specific region of the given [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer').
+Synchronously generates a [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette') from a specific region of the given Tizen.UI.PixelBuffer.
 
 ```csharp
 public static Tizen.UI.Components.Palette Generate(Tizen.UI.PixelBuffer buffer, float regionX, float regionY, float regionWidth, float regionHeight);
@@ -153,9 +153,9 @@ public static Tizen.UI.Components.Palette Generate(Tizen.UI.PixelBuffer buffer, 
 
 <a name='Tizen.UI.Components.Palette.Generate(Tizen.UI.PixelBuffer,float,float,float,float).buffer'></a>
 
-`buffer` [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer')
+`buffer` Tizen.UI.PixelBuffer
 
-The [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer') to generate the palette from.
+The Tizen.UI.PixelBuffer to generate the palette from.
 
 <a name='Tizen.UI.Components.Palette.Generate(Tizen.UI.PixelBuffer,float,float,float,float).regionX'></a>
 
@@ -189,7 +189,7 @@ The generated [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Pale
 
 ## Palette.GenerateAsync(PixelBuffer) Method
 
-Asynchronously generates a [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette') from the given [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer').
+Asynchronously generates a [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette') from the given Tizen.UI.PixelBuffer.
 
 ```csharp
 public static System.Threading.Tasks.Task&lt;Tizen.UI.Components.Palette> GenerateAsync(Tizen.UI.PixelBuffer buffer);
@@ -198,9 +198,9 @@ public static System.Threading.Tasks.Task&lt;Tizen.UI.Components.Palette> Genera
 
 <a name='Tizen.UI.Components.Palette.GenerateAsync(Tizen.UI.PixelBuffer).buffer'></a>
 
-`buffer` [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer')
+`buffer` Tizen.UI.PixelBuffer
 
-The [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer') to generate the palette from.
+The Tizen.UI.PixelBuffer to generate the palette from.
 
 #### Returns
 [System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')[Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
@@ -210,7 +210,7 @@ A task that represents the asynchronous generation operation. The task result co
 
 ## Palette.GenerateAsync(PixelBuffer, float, float, float, float) Method
 
-Asynchronously generates a [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette') from the given [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer').
+Asynchronously generates a [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette') from the given Tizen.UI.PixelBuffer.
 
 ```csharp
 public static System.Threading.Tasks.Task&lt;Tizen.UI.Components.Palette> GenerateAsync(Tizen.UI.PixelBuffer buffer, float regionX, float regionY, float regionWidth, float regionHeight);
@@ -219,9 +219,9 @@ public static System.Threading.Tasks.Task&lt;Tizen.UI.Components.Palette> Genera
 
 <a name='Tizen.UI.Components.Palette.GenerateAsync(Tizen.UI.PixelBuffer,float,float,float,float).buffer'></a>
 
-`buffer` [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer')
+`buffer` Tizen.UI.PixelBuffer
 
-The [Tizen.UI.PixelBuffer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.PixelBuffer 'Tizen.UI.PixelBuffer') to generate the palette from.
+The Tizen.UI.PixelBuffer to generate the palette from.
 
 <a name='Tizen.UI.Components.Palette.GenerateAsync(Tizen.UI.PixelBuffer,float,float,float,float).regionX'></a>
 
@@ -250,6 +250,7 @@ The height of the region.
 #### Returns
 [System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')[Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')  
 A task that represents the asynchronous generation operation. The task result contains the generated [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette').
+
 
 
 

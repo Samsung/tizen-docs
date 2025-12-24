@@ -13,9 +13,9 @@ System.Collections.Generic.IEnumerable&lt;Tizen.UI.View>,
 System.Collections.IEnumerable
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; PageScroller
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; PageScroller
 
-Implements [IPager](Tizen.UI.Components.Material.IPager.md 'Tizen.UI.Components.Material.IPager'), [System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1'), [System.Collections.Generic.ICollection&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1'), [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1'), [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
+Implements [IPager](Tizen.UI.Components.Material.IPager.md 'Tizen.UI.Components.Material.IPager'), [System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1'), [System.Collections.Generic.ICollection&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1'), [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1'), [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.PageScroller.PageScroller()'></a>
@@ -40,7 +40,7 @@ public System.Collections.Generic.IList&lt;Tizen.UI.View> Children { get; }
 ```
 
 #### Property Value
-[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
+[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
 
 <a name='Tizen.UI.Components.Material.PageScroller.CurrentPage'></a>
 
@@ -94,7 +94,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.PageScroller.PageAdapter'></a>
 
@@ -138,7 +138,7 @@ public Tizen.UI.Layouts.SnapPointsAlignment SnapPointsAlignment { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Layouts.SnapPointsAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.SnapPointsAlignment 'Tizen.UI.Layouts.SnapPointsAlignment')
+Tizen.UI.Layouts.SnapPointsAlignment
 
 <a name='Tizen.UI.Components.Material.PageScroller.SnapPointType'></a>
 
@@ -152,7 +152,7 @@ public Tizen.UI.Layouts.SnapPointsType SnapPointType { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Layouts.SnapPointsType](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.SnapPointsType 'Tizen.UI.Layouts.SnapPointsType')
+Tizen.UI.Layouts.SnapPointsType
 
 <a name='Tizen.UI.Components.Material.PageScroller.Spacing'></a>
 
@@ -185,7 +185,7 @@ public Tizen.UI.View this[int index] { get; set; }
 Implements [this[int]](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1.Item#System_Collections_Generic_IList_1_Item_System_Int32_ 'System.Collections.Generic.IList`1.Item(System.Int32)'), [this[int]](Tizen.UI.Components.Material.IPager.md#Tizen.UI.Components.Material.IPager.this[int] 'Tizen.UI.Components.Material.IPager.this[int]')
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 ### Methods
 
 <a name='Tizen.UI.Components.Material.PageScroller.Clear()'></a>
@@ -213,7 +213,7 @@ public bool Contains(Tizen.UI.View item);
 
 <a name='Tizen.UI.Components.Material.PageScroller.Contains(Tizen.UI.View).item'></a>
 
-`item` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`item` Tizen.UI.View
 
 #### Returns
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -231,7 +231,7 @@ public void CopyTo(Tizen.UI.View[] array, int arrayIndex);
 
 <a name='Tizen.UI.Components.Material.PageScroller.CopyTo(Tizen.UI.View[],int).array'></a>
 
-`array` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
+`array` Tizen.UI.View[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 
 <a name='Tizen.UI.Components.Material.PageScroller.CopyTo(Tizen.UI.View[],int).arrayIndex'></a>
 
@@ -250,7 +250,7 @@ public System.Collections.Generic.IEnumerator&lt;Tizen.UI.View> GetEnumerator();
 Implements [GetEnumerator()](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1.GetEnumerator 'System.Collections.Generic.IEnumerable`1.GetEnumerator'), [GetEnumerator()](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable.GetEnumerator 'System.Collections.IEnumerable.GetEnumerator')
 
 #### Returns
-[System.Collections.Generic.IEnumerator&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerator-1 'System.Collections.Generic.IEnumerator`1')[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerator-1 'System.Collections.Generic.IEnumerator`1')  
+[System.Collections.Generic.IEnumerator&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerator-1 'System.Collections.Generic.IEnumerator`1')Tizen.UI.View[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerator-1 'System.Collections.Generic.IEnumerator`1')  
 An enumerator that can be used to iterate through the collection.
 
 <a name='Tizen.UI.Components.Material.PageScroller.IndexOf(Tizen.UI.View)'></a>
@@ -266,7 +266,7 @@ public int IndexOf(Tizen.UI.View item);
 
 <a name='Tizen.UI.Components.Material.PageScroller.IndexOf(Tizen.UI.View).item'></a>
 
-`item` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`item` Tizen.UI.View
 
 #### Returns
 [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
@@ -288,7 +288,7 @@ public void Insert(int index, Tizen.UI.View item);
 
 <a name='Tizen.UI.Components.Material.PageScroller.Insert(int,Tizen.UI.View).item'></a>
 
-`item` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`item` Tizen.UI.View
 
 <a name='Tizen.UI.Components.Material.PageScroller.Remove(Tizen.UI.View)'></a>
 
@@ -303,9 +303,9 @@ public void Remove(Tizen.UI.View child);
 
 <a name='Tizen.UI.Components.Material.PageScroller.Remove(Tizen.UI.View).child'></a>
 
-`child` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`child` Tizen.UI.View
 
-Implements [Remove(View)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IParentObject.Remove#Tizen_UI_IParentObject_Remove_Tizen_UI_View_ 'Tizen.UI.IParentObject.Remove(Tizen.UI.View)')
+Implements Remove(View)')
 
 <a name='Tizen.UI.Components.Material.PageScroller.RemoveAt(int)'></a>
 
@@ -378,7 +378,7 @@ public event EventHandler&lt;DragEventArgs> Dragging;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.DragEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.DragEventArgs 'Tizen.UI.DragEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.DragEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Material.PageScroller.DragStarted'></a>
 
@@ -446,7 +446,7 @@ void System.Collections.Generic.ICollection&lt;Tizen.UI.View>.Add(Tizen.UI.View 
 
 <a name='Tizen.UI.Components.Material.PageScroller.System.Collections.Generic.ICollection_Tizen.UI.View_.Add(Tizen.UI.View).item'></a>
 
-`item` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`item` Tizen.UI.View
 
 Implements [Add(View)](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1.Add#System_Collections_Generic_ICollection_1_Add__0_ 'System.Collections.Generic.ICollection`1.Add(`0)')
 
@@ -463,7 +463,7 @@ bool System.Collections.Generic.ICollection&lt;Tizen.UI.View>.Remove(Tizen.UI.Vi
 
 <a name='Tizen.UI.Components.Material.PageScroller.System.Collections.Generic.ICollection_Tizen.UI.View_.Remove(Tizen.UI.View).item'></a>
 
-`item` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`item` Tizen.UI.View
 
 Implements [Remove(View)](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1.Remove#System_Collections_Generic_ICollection_1_Remove__0_ 'System.Collections.Generic.ICollection`1.Remove(`0)')
 
@@ -478,6 +478,7 @@ System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator();
 ```
 
 Implements [GetEnumerator()](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable.GetEnumerator 'System.Collections.IEnumerable.GetEnumerator')
+
 
 
 

@@ -113,7 +113,7 @@ public Tizen.UI.Color RecoilColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.UIVariables.RecoilOffset'></a>
 
@@ -178,7 +178,7 @@ public Tizen.UI.Point ScaffoldFloatingOffset { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+Tizen.UI.Point
 
 <a name='Tizen.UI.Components.UIVariables.SystemFontSizeScaleEnabled'></a>
 
@@ -230,7 +230,7 @@ public Tizen.UI.Color TextAnchorClickedColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.UIVariables.TextAnchorColor'></a>
 
@@ -243,7 +243,7 @@ public Tizen.UI.Color TextAnchorColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.UIVariables.TextCursorColor'></a>
 
@@ -256,7 +256,7 @@ public Tizen.UI.Color TextCursorColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.UIVariables.TextCursorWidth'></a>
 
@@ -321,7 +321,7 @@ public Tizen.UI.Color TextSelectionColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.UIVariables.TextSelectionHandleLeftImage'></a>
 
@@ -366,6 +366,7 @@ public System.Func&lt;Tizen.UI.Components.Variables> this[string name] { get; se
 
 #### Property Value
 [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-1 'System.Func`1')[Variables](Tizen.UI.Components.Variables.md 'Tizen.UI.Components.Variables')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-1 'System.Func`1')
+
 
 
 

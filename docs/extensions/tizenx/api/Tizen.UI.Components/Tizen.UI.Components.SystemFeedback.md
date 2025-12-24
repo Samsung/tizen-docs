@@ -48,7 +48,7 @@ public override void OnAttached(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.SystemFeedback.OnAttached(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 <a name='Tizen.UI.Components.SystemFeedback.OnDetached(Tizen.UI.View)'></a>
 
@@ -63,7 +63,7 @@ public override void OnDetached(Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.SystemFeedback.OnDetached(Tizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 
 

@@ -110,7 +110,7 @@ The tag name of the log message.
 
 <a name='TizenX.ZLog.Log.Debug(string,TizenX.ZLog.LogInterpolatedStringHandler,string,string,int).message'></a>
 
-`message` [TizenX.ZLog.LogInterpolatedStringHandler](https://docs.microsoft.com/en-us/dotnet/api/TizenX.ZLog.LogInterpolatedStringHandler 'TizenX.ZLog.LogInterpolatedStringHandler')
+`message` TizenX.ZLog.LogInterpolatedStringHandler
 
 The log message to print.
 
@@ -233,7 +233,7 @@ The tag name of the log message.
 
 <a name='TizenX.ZLog.Log.Error(string,TizenX.ZLog.LogInterpolatedStringHandler,string,string,int).message'></a>
 
-`message` [TizenX.ZLog.LogInterpolatedStringHandler](https://docs.microsoft.com/en-us/dotnet/api/TizenX.ZLog.LogInterpolatedStringHandler 'TizenX.ZLog.LogInterpolatedStringHandler')
+`message` TizenX.ZLog.LogInterpolatedStringHandler
 
 The log message to print.
 
@@ -356,7 +356,7 @@ The tag name of the log message.
 
 <a name='TizenX.ZLog.Log.Fatal(string,TizenX.ZLog.LogInterpolatedStringHandler,string,string,int).message'></a>
 
-`message` [TizenX.ZLog.LogInterpolatedStringHandler](https://docs.microsoft.com/en-us/dotnet/api/TizenX.ZLog.LogInterpolatedStringHandler 'TizenX.ZLog.LogInterpolatedStringHandler')
+`message` TizenX.ZLog.LogInterpolatedStringHandler
 
 The log message to print.
 
@@ -479,7 +479,7 @@ The tag name of the log message.
 
 <a name='TizenX.ZLog.Log.Info(string,TizenX.ZLog.LogInterpolatedStringHandler,string,string,int).message'></a>
 
-`message` [TizenX.ZLog.LogInterpolatedStringHandler](https://docs.microsoft.com/en-us/dotnet/api/TizenX.ZLog.LogInterpolatedStringHandler 'TizenX.ZLog.LogInterpolatedStringHandler')
+`message` TizenX.ZLog.LogInterpolatedStringHandler
 
 The log message to print.
 
@@ -602,7 +602,7 @@ The tag name of the log message.
 
 <a name='TizenX.ZLog.Log.Verbose(string,TizenX.ZLog.LogInterpolatedStringHandler,string,string,int).message'></a>
 
-`message` [TizenX.ZLog.LogInterpolatedStringHandler](https://docs.microsoft.com/en-us/dotnet/api/TizenX.ZLog.LogInterpolatedStringHandler 'TizenX.ZLog.LogInterpolatedStringHandler')
+`message` TizenX.ZLog.LogInterpolatedStringHandler
 
 The log message to print.
 
@@ -725,7 +725,7 @@ The tag name of the log message.
 
 <a name='TizenX.ZLog.Log.Warn(string,TizenX.ZLog.LogInterpolatedStringHandler,string,string,int).message'></a>
 
-`message` [TizenX.ZLog.LogInterpolatedStringHandler](https://docs.microsoft.com/en-us/dotnet/api/TizenX.ZLog.LogInterpolatedStringHandler 'TizenX.ZLog.LogInterpolatedStringHandler')
+`message` TizenX.ZLog.LogInterpolatedStringHandler
 
 The log message to print.
 
@@ -746,3 +746,4 @@ The function name of the caller function. This argument will be set automaticall
 `line` [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
 
 The line number of the calling position. This argument will be set automatically by the compiler.
+

@@ -13,9 +13,9 @@ Tizen.UI.IDescendantFocusObserver,
 Tizen.UI.IScrollable
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; RecyclerView
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; RecyclerView
 
-Implements [Tizen.UI.IDescendantFocusObserver](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IDescendantFocusObserver 'Tizen.UI.IDescendantFocusObserver'), [Tizen.UI.IScrollable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable 'Tizen.UI.IScrollable')
+Implements Tizen.UI.IDescendantFocusObserver, Tizen.UI.IScrollable
 ### Constructors
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.RecyclerView()'></a>
@@ -105,7 +105,7 @@ Gets a value indicating whether the scrollable content has reached the end posit
 public bool IsScrolledToEnd { get; }
 ```
 
-Implements [IsScrolledToEnd](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.IsScrolledToEnd 'Tizen.UI.IScrollable.IsScrolledToEnd')
+Implements IsScrolledToEnd
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -120,7 +120,7 @@ Gets a value indicating whether the scrollable content has been scrolled to the 
 public bool IsScrolledToStart { get; }
 ```
 
-Implements [IsScrolledToStart](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.IsScrolledToStart 'Tizen.UI.IScrollable.IsScrolledToStart')
+Implements IsScrolledToStart
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -135,7 +135,7 @@ Gets a value indicating whether the scroll is currently in progress.
 public bool IsScrolling { get; set; }
 ```
 
-Implements [IsScrolling](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.IsScrolling 'Tizen.UI.IScrollable.IsScrolling')
+Implements IsScrolling
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -164,7 +164,7 @@ public Tizen.UI.Rect LastViewPort { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.LayoutManager'></a>
 
@@ -231,7 +231,7 @@ public Tizen.UI.ScrollDirection ScrollDirection { get; }
 ```
 
 #### Property Value
-[Tizen.UI.ScrollDirection](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollDirection 'Tizen.UI.ScrollDirection')
+Tizen.UI.ScrollDirection
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.ScrollPosition'></a>
 
@@ -244,7 +244,7 @@ public Tizen.UI.Point ScrollPosition { get; }
 ```
 
 #### Property Value
-[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+Tizen.UI.Point
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.StickyCandidateVisible'></a>
 
@@ -283,10 +283,10 @@ The view port of RecyclerView. It represents the scroll area of the RecyclerView
 public Tizen.UI.Rect ViewPort { get; }
 ```
 
-Implements [ViewPort](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.ViewPort 'Tizen.UI.IScrollable.ViewPort')
+Implements ViewPort
 
 #### Property Value
-[Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+Tizen.UI.Rect
 ### Methods
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.ClearRecycledViewPool()'></a>
@@ -400,7 +400,7 @@ public Tizen.UI.View GetRealized(int position);
 The position of the item to get the view.
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 The realized view of the specified position.
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.GetViewHolderForPosition(int)'></a>
@@ -490,7 +490,7 @@ The available width for the view.
 The available height for the view.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The measured size of the view.
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.RecycleViewHolder(Tizen.UI.Components.Recycler.ViewHolder)'></a>
@@ -540,7 +540,7 @@ The x distance to scroll.
 
 Indicates whether the scrolling should be animated or not.
 
-Implements [ScrollBy(float, float, bool)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.ScrollBy#Tizen_UI_IScrollable_ScrollBy_System_Single,System_Single,System_Boolean_ 'Tizen.UI.IScrollable.ScrollBy(System.Single,System.Single,System.Boolean)')
+Implements ScrollBy(float, float, bool)')
 
 #### Returns
 [System.Threading.Tasks.Task](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task 'System.Threading.Tasks.Task')  
@@ -565,7 +565,7 @@ The position of the item to be shown.
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.ScrollTo(int,Tizen.UI.ScrollToPosition,bool).scrollToPosition'></a>
 
-`scrollToPosition` [Tizen.UI.ScrollToPosition](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollToPosition 'Tizen.UI.ScrollToPosition')
+`scrollToPosition` Tizen.UI.ScrollToPosition
 
 The position to scroll to. It can be Start, Center, or End.
 
@@ -590,10 +590,10 @@ Event for drag ended. Invoked when dragging ends.
 public event EventHandler&lt;DragEventArgs> DragFinished;
 ```
 
-Implements [DragFinished](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.DragFinished 'Tizen.UI.IScrollable.DragFinished')
+Implements DragFinished
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.DragEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.DragEventArgs 'Tizen.UI.DragEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.DragEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.Dragging'></a>
 
@@ -605,10 +605,10 @@ Event for dragging. Invoked when dragging happens.
 public event EventHandler&lt;DragEventArgs> Dragging;
 ```
 
-Implements [Dragging](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.Dragging 'Tizen.UI.IScrollable.Dragging')
+Implements Dragging
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.DragEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.DragEventArgs 'Tizen.UI.DragEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.DragEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.DragStarted'></a>
 
@@ -620,10 +620,10 @@ Event for drag started. Invoked when dragging starts.
 public event EventHandler&lt;DragEventArgs> DragStarted;
 ```
 
-Implements [DragStarted](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.DragStarted 'Tizen.UI.IScrollable.DragStarted')
+Implements DragStarted
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.DragEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.DragEventArgs 'Tizen.UI.DragEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.DragEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.ScrollCanceled'></a>
 
@@ -636,7 +636,7 @@ public event EventHandler&lt;ScrollEventArgs> ScrollCanceled;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.ScrollEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollEventArgs 'Tizen.UI.ScrollEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.ScrollEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.ScrollFinished'></a>
 
@@ -648,10 +648,10 @@ Event for scroll finished. Invoked when scrolling finishs.
 public event EventHandler&lt;ScrollEventArgs> ScrollFinished;
 ```
 
-Implements [ScrollFinished](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.ScrollFinished 'Tizen.UI.IScrollable.ScrollFinished')
+Implements ScrollFinished
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.ScrollEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollEventArgs 'Tizen.UI.ScrollEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.ScrollEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.Scrolling'></a>
 
@@ -663,10 +663,10 @@ Event for scrolling. Invoked when scrolling happens.
 public event EventHandler&lt;ScrollEventArgs> Scrolling;
 ```
 
-Implements [Scrolling](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.Scrolling 'Tizen.UI.IScrollable.Scrolling')
+Implements Scrolling
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.ScrollEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollEventArgs 'Tizen.UI.ScrollEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.ScrollEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Recycler.RecyclerView.ScrollStarted'></a>
 
@@ -678,10 +678,11 @@ Event for scroll started. Invoked when scrolling starts.
 public event EventHandler&lt;ScrollEventArgs> ScrollStarted;
 ```
 
-Implements [ScrollStarted](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollable.ScrollStarted 'Tizen.UI.IScrollable.ScrollStarted')
+Implements ScrollStarted
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.ScrollEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollEventArgs 'Tizen.UI.ScrollEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.ScrollEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+
 
 
 

@@ -18,7 +18,7 @@ Derived
 &#8627; [InputTextBaseImpl](Tizen.UI.Components.InputTextBaseImpl.md 'Tizen.UI.Components.InputTextBaseImpl')  
 &#8627; [LabelImpl](Tizen.UI.Components.LabelImpl.md 'Tizen.UI.Components.LabelImpl')
 
-Implements [System.IDisposable](https://docs.microsoft.com/en-us/dotnet/api/System.IDisposable 'System.IDisposable'), [Tizen.UI.IText](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText 'Tizen.UI.IText'), [Tizen.UI.ITextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextAlignment 'Tizen.UI.ITextAlignment'), [Tizen.UI.ITextPadding](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextPadding 'Tizen.UI.ITextPadding')
+Implements [System.IDisposable](https://docs.microsoft.com/en-us/dotnet/api/System.IDisposable 'System.IDisposable'), Tizen.UI.IText, Tizen.UI.ITextAlignment, Tizen.UI.ITextPadding
 ### Constructors
 
 <a name='Tizen.UI.Components.TextBaseImpl.TextBaseImpl()'></a>
@@ -62,7 +62,7 @@ Gets or sets the font family of the text.
 public string FontFamily { get; set; }
 ```
 
-Implements [FontFamily](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontFamily 'Tizen.UI.IText.FontFamily')
+Implements FontFamily
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -77,7 +77,7 @@ Gets or sets the font size of the text.
 public float FontSize { get; set; }
 ```
 
-Implements [FontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.FontSize 'Tizen.UI.IText.FontSize')
+Implements FontSize
 
 #### Property Value
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
@@ -99,27 +99,27 @@ public float FontSizeScale { get; set; }
 
 ## TextBaseImpl.FontSlant Property
 
-Gets or sets the font style weight such as [Tizen.UI.FontSlant.Italic](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontSlant.Italic 'Tizen.UI.FontSlant.Italic').
+Gets or sets the font style weight such as Tizen.UI.FontSlant.Italic.
 
 ```csharp
 public Tizen.UI.FontSlant FontSlant { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontSlant](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontSlant 'Tizen.UI.FontSlant')
+Tizen.UI.FontSlant
 
 <a name='Tizen.UI.Components.TextBaseImpl.FontWeight'></a>
 
 ## TextBaseImpl.FontWeight Property
 
-Gets or sets the font style weight such as [Tizen.UI.FontWeight.Bold](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWeight.Bold 'Tizen.UI.FontWeight.Bold').
+Gets or sets the font style weight such as Tizen.UI.FontWeight.Bold.
 
 ```csharp
 public Tizen.UI.FontWeight FontWeight { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontWeight](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWeight 'Tizen.UI.FontWeight')
+Tizen.UI.FontWeight
 
 <a name='Tizen.UI.Components.TextBaseImpl.FontWidth'></a>
 
@@ -132,7 +132,7 @@ public Tizen.UI.FontWidth FontWidth { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.FontWidth](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.FontWidth 'Tizen.UI.FontWidth')
+Tizen.UI.FontWidth
 
 <a name='Tizen.UI.Components.TextBaseImpl.Handle'></a>
 
@@ -157,10 +157,10 @@ Gets or sets the horizontal alignment of the text.
 public Tizen.UI.TextAlignment HorizontalAlignment { get; set; }
 ```
 
-Implements [HorizontalAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextAlignment.HorizontalAlignment 'Tizen.UI.ITextAlignment.HorizontalAlignment')
+Implements HorizontalAlignment
 
 #### Property Value
-[Tizen.UI.TextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextAlignment 'Tizen.UI.TextAlignment')
+Tizen.UI.TextAlignment
 
 <a name='Tizen.UI.Components.TextBaseImpl.IsDisposed'></a>
 
@@ -234,7 +234,7 @@ public System.Nullable&lt;Tizen.UI.Outline> Outline { get; set; }
 ```
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.Outline](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Outline 'Tizen.UI.Outline')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.Outline[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.TextBaseImpl.Owner'></a>
 
@@ -247,7 +247,7 @@ public Tizen.UI.View Owner { get; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 <a name='Tizen.UI.Components.TextBaseImpl.Strikethrough'></a>
 
@@ -260,7 +260,7 @@ public System.Nullable&lt;Tizen.UI.Strikethrough> Strikethrough { get; set; }
 ```
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.Strikethrough](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Strikethrough 'Tizen.UI.Strikethrough')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.Strikethrough[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.TextBaseImpl.SystemFontFamilyEnabled'></a>
 
@@ -298,7 +298,7 @@ Gets or sets the text to display in the UTF-8 format.
 public string Text { get; set; }
 ```
 
-Implements [Text](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.Text 'Tizen.UI.IText.Text')
+Implements Text
 
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
@@ -313,10 +313,10 @@ Gets or sets the color of the text.
 public Tizen.UI.Color TextColor { get; set; }
 ```
 
-Implements [TextColor](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IText.TextColor 'Tizen.UI.IText.TextColor')
+Implements TextColor
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.TextBaseImpl.TextOverflow'></a>
 
@@ -329,7 +329,7 @@ public Tizen.UI.TextOverflow TextOverflow { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.TextOverflow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextOverflow 'Tizen.UI.TextOverflow')
+Tizen.UI.TextOverflow
 
 <a name='Tizen.UI.Components.TextBaseImpl.TextShadow'></a>
 
@@ -342,7 +342,7 @@ public System.Nullable&lt;Tizen.UI.TextShadow> TextShadow { get; set; }
 ```
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.TextShadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextShadow 'Tizen.UI.TextShadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.TextShadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.TextBaseImpl.Underline'></a>
 
@@ -355,7 +355,7 @@ public System.Nullable&lt;Tizen.UI.Underline> Underline { get; set; }
 ```
 
 #### Property Value
-[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[Tizen.UI.Underline](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Underline 'Tizen.UI.Underline')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
+[System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')Tizen.UI.Underline[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')
 
 <a name='Tizen.UI.Components.TextBaseImpl.VerticalAlignment'></a>
 
@@ -367,10 +367,10 @@ Gets or sets the vertical alignment of the text.
 public Tizen.UI.TextAlignment VerticalAlignment { get; set; }
 ```
 
-Implements [VerticalAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextAlignment.VerticalAlignment 'Tizen.UI.ITextAlignment.VerticalAlignment')
+Implements VerticalAlignment
 
 #### Property Value
-[Tizen.UI.TextAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TextAlignment 'Tizen.UI.TextAlignment')
+Tizen.UI.TextAlignment
 ### Methods
 
 <a name='Tizen.UI.Components.TextBaseImpl.Dispose()'></a>
@@ -432,7 +432,7 @@ public void Initialize(Tizen.UI.View owner, System.Action resizeHandler);
 
 <a name='Tizen.UI.Components.TextBaseImpl.Initialize(Tizen.UI.View,System.Action).owner'></a>
 
-`owner` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`owner` Tizen.UI.View
 
 <a name='Tizen.UI.Components.TextBaseImpl.Initialize(Tizen.UI.View,System.Action).resizeHandler'></a>
 
@@ -474,11 +474,11 @@ public void SetTextPadding(Tizen.UI.Thickness thickness);
 
 <a name='Tizen.UI.Components.TextBaseImpl.SetTextPadding(Tizen.UI.Thickness).thickness'></a>
 
-`thickness` [Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+`thickness` Tizen.UI.Thickness
 
 The padding thickness.
 
-Implements [SetTextPadding(Thickness)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextPadding.SetTextPadding#Tizen_UI_ITextPadding_SetTextPadding_Tizen_UI_Thickness_ 'Tizen.UI.ITextPadding.SetTextPadding(Tizen.UI.Thickness)')
+Implements SetTextPadding(Thickness)')
 ### Events
 
 <a name='Tizen.UI.Components.TextBaseImpl.AnchorClicked'></a>
@@ -492,7 +492,8 @@ public event EventHandler&lt;AnchorClickedEventArgs> AnchorClicked;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.AnchorClickedEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnchorClickedEventArgs 'Tizen.UI.AnchorClickedEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.AnchorClickedEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+
 
 
 

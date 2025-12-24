@@ -48,7 +48,7 @@ Tizen.UI.View SourceView { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 <a name='Tizen.UI.Components.IEdgeEffect.State'></a>
 

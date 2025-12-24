@@ -64,7 +64,7 @@ public static void Attach(this Tizen.UI.View view, string key, Tizen.UI.Componen
 
 <a name='Tizen.UI.Components.UIAttachableManager.Attach(thisTizen.UI.View,string,Tizen.UI.Components.UIAttachable).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to attach data to.
 
@@ -101,7 +101,7 @@ public static void ClearAttachables(this Tizen.UI.View view);
 
 <a name='Tizen.UI.Components.UIAttachableManager.ClearAttachables(thisTizen.UI.View).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to clear data from.
 
@@ -118,7 +118,7 @@ public static void Detach(this Tizen.UI.View view, string key);
 
 <a name='Tizen.UI.Components.UIAttachableManager.Detach(thisTizen.UI.View,string).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to detach data from.
 
@@ -149,7 +149,7 @@ public static Tizen.UI.Components.UIAttachable GetAttachable(this Tizen.UI.View 
 
 <a name='Tizen.UI.Components.UIAttachableManager.GetAttachable(thisTizen.UI.View,string).view'></a>
 
-`view` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`view` Tizen.UI.View
 
 The view to get data from.
 

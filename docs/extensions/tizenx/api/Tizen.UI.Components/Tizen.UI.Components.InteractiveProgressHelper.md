@@ -36,7 +36,7 @@ public static float HorizontalLengthToRatio(float currentRatio, float deltaX, fl
 
 <a name='Tizen.UI.Components.InteractiveProgressHelper.HorizontalLengthToRatio(float,float,float,Tizen.UI.Rect).targetBounds'></a>
 
-`targetBounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`targetBounds` Tizen.UI.Rect
 
 #### Returns
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
@@ -62,7 +62,7 @@ public static float HorizontalPointToRatio(float x, float width, Tizen.UI.Rect t
 
 <a name='Tizen.UI.Components.InteractiveProgressHelper.HorizontalPointToRatio(float,float,Tizen.UI.Rect).targetBounds'></a>
 
-`targetBounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`targetBounds` Tizen.UI.Rect
 
 #### Returns
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
@@ -92,7 +92,7 @@ public static float VerticalLengthToRatio(float currentRatio, float deltaY, floa
 
 <a name='Tizen.UI.Components.InteractiveProgressHelper.VerticalLengthToRatio(float,float,float,Tizen.UI.Rect).targetBounds'></a>
 
-`targetBounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`targetBounds` Tizen.UI.Rect
 
 #### Returns
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
@@ -118,10 +118,11 @@ public static float VerticalPointToRatio(float y, float height, Tizen.UI.Rect ta
 
 <a name='Tizen.UI.Components.InteractiveProgressHelper.VerticalPointToRatio(float,float,Tizen.UI.Rect).targetBounds'></a>
 
-`targetBounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`targetBounds` Tizen.UI.Rect
 
 #### Returns
 [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
+
 
 
 

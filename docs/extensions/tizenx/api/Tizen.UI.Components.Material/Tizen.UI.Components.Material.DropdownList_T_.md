@@ -20,12 +20,12 @@ System.Collections.IEnumerable
 
 `T`
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; DropdownList&lt;T>
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; DropdownList&lt;T>
 
 Derived  
 &#8627; [DropdownList](Tizen.UI.Components.Material.DropdownList.md 'Tizen.UI.Components.Material.DropdownList')
 
-Implements [Tizen.UI.Components.IAnchoredModal](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnchoredModal 'Tizen.UI.Components.IAnchoredModal'), [Tizen.UI.Components.ISelectionGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ISelectionGroup 'Tizen.UI.Components.ISelectionGroup'), [System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[T](Tizen.UI.Components.Material.DropdownList_T_.md#Tizen.UI.Components.Material.DropdownList_T_.T 'Tizen.UI.Components.Material.DropdownList&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1'), [System.Collections.Generic.ICollection&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1')[T](Tizen.UI.Components.Material.DropdownList_T_.md#Tizen.UI.Components.Material.DropdownList_T_.T 'Tizen.UI.Components.Material.DropdownList&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1'), [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[T](Tizen.UI.Components.Material.DropdownList_T_.md#Tizen.UI.Components.Material.DropdownList_T_.T 'Tizen.UI.Components.Material.DropdownList&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1'), [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
+Implements Tizen.UI.Components.IAnchoredModal, Tizen.UI.Components.ISelectionGroup, [System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[T](Tizen.UI.Components.Material.DropdownList_T_.md#Tizen.UI.Components.Material.DropdownList_T_.T 'Tizen.UI.Components.Material.DropdownList&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1'), [System.Collections.Generic.ICollection&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1')[T](Tizen.UI.Components.Material.DropdownList_T_.md#Tizen.UI.Components.Material.DropdownList_T_.T 'Tizen.UI.Components.Material.DropdownList&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1'), [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[T](Tizen.UI.Components.Material.DropdownList_T_.md#Tizen.UI.Components.Material.DropdownList_T_.T 'Tizen.UI.Components.Material.DropdownList&lt;T>.T')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1'), [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.DropdownList()'></a>
@@ -135,7 +135,7 @@ public System.Action&lt;object,Tizen.UI.Components.SelectionGroupItemClickedEven
 ```
 
 #### Property Value
-[System.Action&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')[Tizen.UI.Components.SelectionGroupItemClickedEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.SelectionGroupItemClickedEventArgs 'Tizen.UI.Components.SelectionGroupItemClickedEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')
+[System.Action&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')Tizen.UI.Components.SelectionGroupItemClickedEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.Items'></a>
 
@@ -160,10 +160,10 @@ Gets or sets the modal pivot. It is used to calculate the position when it is po
 public Tizen.UI.Components.ModalPivot ModalPivot { get; set; }
 ```
 
-Implements [ModalPivot](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnchoredModal.ModalPivot 'Tizen.UI.Components.IAnchoredModal.ModalPivot')
+Implements ModalPivot
 
 #### Property Value
-[Tizen.UI.Components.ModalPivot](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ModalPivot 'Tizen.UI.Components.ModalPivot')
+Tizen.UI.Components.ModalPivot
 
 ### Remarks
 Changing this property after the dropdown list is added to the scene graph will have no effect.
@@ -205,7 +205,7 @@ public System.Action&lt;object,Tizen.UI.Components.GroupSelectionChangedEventArg
 ```
 
 #### Property Value
-[System.Action&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')[Tizen.UI.Components.GroupSelectionChangedEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.GroupSelectionChangedEventArgs 'Tizen.UI.Components.GroupSelectionChangedEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')
+[System.Action&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')Tizen.UI.Components.GroupSelectionChangedEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Action-2 'System.Action`2')
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.this[int]'></a>
 
@@ -409,7 +409,7 @@ public void Post(Tizen.UI.Rect anchorBounds);
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.Post(Tizen.UI.Rect).anchorBounds'></a>
 
-`anchorBounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`anchorBounds` Tizen.UI.Rect
 
 The bounds of the anchor object. It should be relative to the window's coordinate system.
 
@@ -426,7 +426,7 @@ public void Post(Tizen.UI.Window window);
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.Post(Tizen.UI.Window).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The window to post the modal to.
 
@@ -443,17 +443,17 @@ public void Post(Tizen.UI.Window window, Tizen.UI.Rect anchorBounds);
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.Post(Tizen.UI.Window,Tizen.UI.Rect).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The window to post the modal to.
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.Post(Tizen.UI.Window,Tizen.UI.Rect).anchorBounds'></a>
 
-`anchorBounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`anchorBounds` Tizen.UI.Rect
 
 The bounds of the anchor object. It should be relative to the window's coordinate system.
 
-Implements [Post(Window, Rect)](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnchoredModal.Post#Tizen_UI_Components_IAnchoredModal_Post_Tizen_UI_Window,Tizen_UI_Rect_ 'Tizen.UI.Components.IAnchoredModal.Post(Tizen.UI.Window,Tizen.UI.Rect)')
+Implements Post(Window, Rect)')
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.Post(Tizen.UI.Window,Tizen.UI.Rect,Tizen.UI.Rect)'></a>
 
@@ -468,19 +468,19 @@ public void Post(Tizen.UI.Window window, Tizen.UI.Rect anchorBounds, Tizen.UI.Re
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.Post(Tizen.UI.Window,Tizen.UI.Rect,Tizen.UI.Rect).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The window to post the modal to.
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.Post(Tizen.UI.Window,Tizen.UI.Rect,Tizen.UI.Rect).anchorBounds'></a>
 
-`anchorBounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`anchorBounds` Tizen.UI.Rect
 
 The bounds of the anchor object. It should be relative to the window's coordinate system.
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.Post(Tizen.UI.Window,Tizen.UI.Rect,Tizen.UI.Rect).restrictBounds'></a>
 
-`restrictBounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`restrictBounds` Tizen.UI.Rect
 
 The bounds to restrict the modal to. It should be relative to the window's coordinate system.
 
@@ -514,7 +514,7 @@ Occurred when the dismiss requested.
 public event EventHandler Dismissed;
 ```
 
-Implements [Dismissed](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.IAnchoredModal.Dismissed 'Tizen.UI.Components.IAnchoredModal.Dismissed')
+Implements Dismissed
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
@@ -543,7 +543,7 @@ public event EventHandler&lt;SelectionGroupItemClickedEventArgs> ItemClicked;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.Components.SelectionGroupItemClickedEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.SelectionGroupItemClickedEventArgs 'Tizen.UI.Components.SelectionGroupItemClickedEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.Components.SelectionGroupItemClickedEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.SelectionChanged'></a>
 
@@ -555,10 +555,10 @@ Occurs when the selected item is changed. [SelectedItem](Tizen.UI.Components.Mat
 public event EventHandler&lt;GroupSelectionChangedEventArgs> SelectionChanged;
 ```
 
-Implements [SelectionChanged](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ISelectionGroup.SelectionChanged 'Tizen.UI.Components.ISelectionGroup.SelectionChanged')
+Implements SelectionChanged
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.Components.GroupSelectionChangedEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.GroupSelectionChangedEventArgs 'Tizen.UI.Components.GroupSelectionChangedEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.Components.GroupSelectionChangedEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 ### Explicit Interface Implementations
 
 <a name='Tizen.UI.Components.Material.DropdownList_T_.System.Collections.Generic.ICollection_T_.Remove(T)'></a>
@@ -602,7 +602,8 @@ The selected child in the group.
 Tizen.UI.Components.IGroupSelectable Tizen.UI.Components.ISelectionGroup.Selected { get; }
 ```
 
-Implements [Selected](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ISelectionGroup.Selected 'Tizen.UI.Components.ISelectionGroup.Selected')
+Implements Selected
+
 
 
 

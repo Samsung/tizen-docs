@@ -56,7 +56,7 @@ public override Tizen.UI.NativeHandle.PropertyValueHandle Value { get; }
 ```
 
 #### Property Value
-[Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')
+Tizen.UI.NativeHandle.PropertyValueHandle
 
 <a name='Tizen.UI.Scene3D.Position3DPropertyValue_T_.X'></a>
 
@@ -116,8 +116,9 @@ public override Tizen.UI.NativeHandle.AnimatablePropertyHandle GetTargetProperty
 The view.
 
 #### Returns
-[Tizen.UI.NativeHandle.AnimatablePropertyHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.AnimatablePropertyHandle 'Tizen.UI.NativeHandle.AnimatablePropertyHandle')  
+Tizen.UI.NativeHandle.AnimatablePropertyHandle  
 The target property handle.
+
 
 
 

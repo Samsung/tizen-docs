@@ -8,7 +8,7 @@ Switch is a component that toggle on and off by click event.
 public class Switch : Tizen.UI.Components.Selectable
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Pressable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Pressable 'Tizen.UI.Components.Pressable') &#129106; [Tizen.UI.Components.Clickable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Clickable 'Tizen.UI.Components.Clickable') &#129106; [Tizen.UI.Components.Selectable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Selectable 'Tizen.UI.Components.Selectable') &#129106; Switch
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Tizen.UI.Components.Pressable &#129106; Tizen.UI.Components.Clickable &#129106; Tizen.UI.Components.Selectable &#129106; Switch
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.Switch.Switch()'></a>
@@ -49,10 +49,10 @@ Get the secondary target view to apply feedback.
 public override Tizen.UI.View GetTouchEffectSecondaryTarget();
 ```
 
-Implements [GetTouchEffectSecondaryTarget()](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectSecondaryTarget 'Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectSecondaryTarget')
+Implements GetTouchEffectSecondaryTarget()
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
 
 <a name='Tizen.UI.Components.Material.Switch.GetTouchEffectTarget()'></a>
 
@@ -64,10 +64,11 @@ Get the target view to apply feedback.
 public override Tizen.UI.View GetTouchEffectTarget();
 ```
 
-Implements [GetTouchEffectTarget()](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectTarget 'Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectTarget')
+Implements GetTouchEffectTarget()
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
+
 
 
 

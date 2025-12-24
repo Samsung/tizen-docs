@@ -37,7 +37,7 @@ public SolidPaint(Tizen.UI.Color color);
 
 <a name='Tizen.UI.Primitives2D.SolidPaint.SolidPaint(Tizen.UI.Color).color'></a>
 
-`color` [Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+`color` Tizen.UI.Color
 
 The color of the paint.
 ### Properties
@@ -53,7 +53,7 @@ public Tizen.UI.Color Color { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Primitives2D.SolidPaint.FillRule'></a>
 

@@ -24,7 +24,7 @@ public static void ClearBorderView(this Tizen.UI.Window window);
 
 <a name='Tizen.UI.WindowBorder.WindowExtensions.ClearBorderView(thisTizen.UI.Window).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The window to clear the border view.
 
@@ -41,12 +41,12 @@ public static Tizen.UI.Layer GetBorderLayer(this Tizen.UI.Window window);
 
 <a name='Tizen.UI.WindowBorder.WindowExtensions.GetBorderLayer(thisTizen.UI.Window).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The window to get the border layer.
 
 #### Returns
-[Tizen.UI.Layer](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layer 'Tizen.UI.Layer')  
+Tizen.UI.Layer  
 The border layer of the window.
 
 <a name='Tizen.UI.WindowBorder.WindowExtensions.SetBorderView(thisTizen.UI.Window,Tizen.UI.WindowBorder.IWindowBorderProvider)'></a>
@@ -62,7 +62,7 @@ public static void SetBorderView(this Tizen.UI.Window window, Tizen.UI.WindowBor
 
 <a name='Tizen.UI.WindowBorder.WindowExtensions.SetBorderView(thisTizen.UI.Window,Tizen.UI.WindowBorder.IWindowBorderProvider).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The window to set the border view.
 
@@ -71,6 +71,7 @@ The window to set the border view.
 `provider` [IWindowBorderProvider](Tizen.UI.WindowBorder.IWindowBorderProvider.md 'Tizen.UI.WindowBorder.IWindowBorderProvider')
 
 The [IWindowBorderProvider](Tizen.UI.WindowBorder.IWindowBorderProvider.md 'Tizen.UI.WindowBorder.IWindowBorderProvider') used to create and manage the border view.
+
 
 
 

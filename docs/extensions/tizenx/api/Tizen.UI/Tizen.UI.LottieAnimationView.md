@@ -85,7 +85,7 @@ public Tizen.UI.AnimationRepeatMode RepeatMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.AnimationRepeatMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationRepeatMode 'Tizen.UI.AnimationRepeatMode')
+Tizen.UI.AnimationRepeatMode
 
 <a name='Tizen.UI.LottieAnimationView.StopBehavior'></a>
 
@@ -98,7 +98,7 @@ public Tizen.UI.AnimationStopBehavior StopBehavior { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.AnimationStopBehavior](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimationStopBehavior 'Tizen.UI.AnimationStopBehavior')
+Tizen.UI.AnimationStopBehavior
 
 <a name='Tizen.UI.LottieAnimationView.TotalFrame'></a>
 
@@ -194,6 +194,7 @@ public event EventHandler Finished;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

@@ -38,19 +38,20 @@ The Scrollable to apply the snap settings to.
 
 <a name='Tizen.UI.Components.SnapControlExtensions.SetSnap_T_(thisT,Tizen.UI.Layouts.SnapPointsType,Tizen.UI.Layouts.SnapPointsAlignment).snapType'></a>
 
-`snapType` [Tizen.UI.Layouts.SnapPointsType](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.SnapPointsType 'Tizen.UI.Layouts.SnapPointsType')
+`snapType` Tizen.UI.Layouts.SnapPointsType
 
 The type of snap points to use
 
 <a name='Tizen.UI.Components.SnapControlExtensions.SetSnap_T_(thisT,Tizen.UI.Layouts.SnapPointsType,Tizen.UI.Layouts.SnapPointsAlignment).align'></a>
 
-`align` [Tizen.UI.Layouts.SnapPointsAlignment](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Layouts.SnapPointsAlignment 'Tizen.UI.Layouts.SnapPointsAlignment')
+`align` Tizen.UI.Layouts.SnapPointsAlignment
 
 The alignment of the snap points (e.g., Center, Start, End).
 
 #### Returns
 [T](Tizen.UI.Components.SnapControlExtensions.md#Tizen.UI.Components.SnapControlExtensions.SetSnap_T_(thisT,Tizen.UI.Layouts.SnapPointsType,Tizen.UI.Layouts.SnapPointsAlignment).T 'Tizen.UI.Components.SnapControlExtensions.SetSnap&lt;T>(this T, Tizen.UI.Layouts.SnapPointsType, Tizen.UI.Layouts.SnapPointsAlignment).T')  
 The modified Scrollable instance.
+
 
 
 

@@ -2,7 +2,7 @@
 
 ## FlexBoxExtensions Class
 
-Provides a series of extension methods that support positioning a [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') in a [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox').
+Provides a series of extension methods that support positioning a Tizen.UI.View in a [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox').
 
 ```csharp
 public static class FlexBoxExtensions
@@ -16,7 +16,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 ## FlexBoxExtensions.AlignItems&lt;TView>(this TView, FlexAlignItems) Method
 
 Sets the align-items property of the FlexBox.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView AlignItems&lt;TView>(this TView view, Tizen.UI.Layouts.FlexAlignItems alignItems)
@@ -52,7 +52,7 @@ The FlexBox.
 ## FlexBoxExtensions.AlignSelf&lt;TView>(this TView, FlexAlignSelf) Method
 
 Sets the align-self property of the view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView AlignSelf&lt;TView>(this TView view, Tizen.UI.Layouts.FlexAlignSelf alignSelf)
@@ -88,7 +88,7 @@ The view itself.
 ## FlexBoxExtensions.AutoAlign&lt;TView>(this TView) Method
 
 Sets the align-self property of the view to auto.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView AutoAlign&lt;TView>(this TView view)
@@ -118,7 +118,7 @@ The view itself.
 ## FlexBoxExtensions.AutoBasis&lt;TView>(this TView) Method
 
 Sets the flex basis property of the view to auto.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView AutoBasis&lt;TView>(this TView view)
@@ -148,7 +148,7 @@ The view itself.
 ## FlexBoxExtensions.Basis&lt;TView>(this TView, float) Method
 
 Sets the flex basis property of the view to an absolute value.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView Basis&lt;TView>(this TView view, float length)
@@ -184,7 +184,7 @@ The view itself.
 ## FlexBoxExtensions.CenterAlign&lt;TView>(this TView) Method
 
 Sets the align-self property of the view to center.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView CenterAlign&lt;TView>(this TView view)
@@ -214,7 +214,7 @@ The view itself.
 ## FlexBoxExtensions.CenterItems&lt;TView>(this TView) Method
 
 Sets the align-items property of the FlexBox to center.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView CenterItems&lt;TView>(this TView view)
@@ -244,7 +244,7 @@ The FlexBox.
 ## FlexBoxExtensions.CenterJustify&lt;TView>(this TView) Method
 
 Sets the justify-content property of the FlexBox to center.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView CenterJustify&lt;TView>(this TView view)
@@ -274,7 +274,7 @@ The FlexBox.
 ## FlexBoxExtensions.Column&lt;TView>(this TView) Method
 
 Sets the direction of the FlexBox to column.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView Column&lt;TView>(this TView view)
@@ -304,7 +304,7 @@ The FlexBox.
 ## FlexBoxExtensions.ColumnReverse&lt;TView>(this TView) Method
 
 Sets the direction of the FlexBox to column-reverse.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView ColumnReverse&lt;TView>(this TView view)
@@ -334,7 +334,7 @@ The FlexBox.
 ## FlexBoxExtensions.Direction&lt;TView>(this TView, FlexDirection) Method
 
 Sets the direction of the FlexBox.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView Direction&lt;TView>(this TView view, Tizen.UI.Layouts.FlexDirection direction)
@@ -370,7 +370,7 @@ The FlexBox.
 ## FlexBoxExtensions.EndAlign&lt;TView>(this TView) Method
 
 Sets the align-self property of the view to end.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView EndAlign&lt;TView>(this TView view)
@@ -400,7 +400,7 @@ The view itself.
 ## FlexBoxExtensions.EndItems&lt;TView>(this TView) Method
 
 Sets the align-items property of the FlexBox to end.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView EndItems&lt;TView>(this TView view)
@@ -430,7 +430,7 @@ The FlexBox.
 ## FlexBoxExtensions.EndJustify&lt;TView>(this TView) Method
 
 Sets the justify-content property of the FlexBox to end.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView EndJustify&lt;TView>(this TView view)
@@ -460,7 +460,7 @@ The FlexBox.
 ## FlexBoxExtensions.Grow&lt;TView>(this TView, float) Method
 
 Sets the flex grow property of the view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView Grow&lt;TView>(this TView view, float grow)
@@ -496,7 +496,7 @@ The view itself.
 ## FlexBoxExtensions.JustifyContent&lt;TView>(this TView, FlexJustify) Method
 
 Sets the justify-content property of the FlexBox.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView JustifyContent&lt;TView>(this TView view, Tizen.UI.Layouts.FlexJustify justifyContent)
@@ -532,7 +532,7 @@ The FlexBox.
 ## FlexBoxExtensions.Order&lt;TView>(this TView, int) Method
 
 Sets the order property of the view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView Order&lt;TView>(this TView view, int order)
@@ -568,7 +568,7 @@ The view itself.
 ## FlexBoxExtensions.RelativeBasis&lt;TView>(this TView, float) Method
 
 Sets the flex basis property of the view to a relative value.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView RelativeBasis&lt;TView>(this TView view, float length)
@@ -604,7 +604,7 @@ The view itself.
 ## FlexBoxExtensions.Row&lt;TView>(this TView) Method
 
 Sets the direction of the FlexBox to row.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView Row&lt;TView>(this TView view)
@@ -634,7 +634,7 @@ The FlexBox.
 ## FlexBoxExtensions.RowReverse&lt;TView>(this TView) Method
 
 Sets the direction of the FlexBox to row-reverse.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView RowReverse&lt;TView>(this TView view)
@@ -664,7 +664,7 @@ The FlexBox.
 ## FlexBoxExtensions.Shrink&lt;TView>(this TView, float) Method
 
 Sets the flex shrink property of the view.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView Shrink&lt;TView>(this TView view, float shrink)
@@ -700,7 +700,7 @@ The view itself.
 ## FlexBoxExtensions.SpaceAroundJustify&lt;TView>(this TView) Method
 
 Sets the justify-content property of the FlexBox to space-around.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView SpaceAroundJustify&lt;TView>(this TView view)
@@ -730,7 +730,7 @@ The FlexBox.
 ## FlexBoxExtensions.SpaceBetweenJustify&lt;TView>(this TView) Method
 
 Sets the justify-content property of the FlexBox to space-between.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView SpaceBetweenJustify&lt;TView>(this TView view)
@@ -760,7 +760,7 @@ The FlexBox.
 ## FlexBoxExtensions.SpaceEvenlyJustify&lt;TView>(this TView) Method
 
 Sets the justify-content property of the FlexBox to space-evenly.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView SpaceEvenlyJustify&lt;TView>(this TView view)
@@ -790,7 +790,7 @@ The FlexBox.
 ## FlexBoxExtensions.StartAlign&lt;TView>(this TView) Method
 
 Sets the align-self property of the view to start.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView StartAlign&lt;TView>(this TView view)
@@ -820,7 +820,7 @@ The view itself.
 ## FlexBoxExtensions.StartItems&lt;TView>(this TView) Method
 
 Sets the align-items property of the FlexBox to start.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView StartItems&lt;TView>(this TView view)
@@ -850,7 +850,7 @@ The FlexBox.
 ## FlexBoxExtensions.StartJustify&lt;TView>(this TView) Method
 
 Sets the justify-content property of the FlexBox to start.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView StartJustify&lt;TView>(this TView view)
@@ -880,7 +880,7 @@ The FlexBox.
 ## FlexBoxExtensions.StretchAlign&lt;TView>(this TView) Method
 
 Sets the align-self property of the view to stretch.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView StretchAlign&lt;TView>(this TView view)
@@ -910,7 +910,7 @@ The view itself.
 ## FlexBoxExtensions.StretchItems&lt;TView>(this TView) Method
 
 Sets the align-items property of the FlexBox to stretch.<br/>  
-This only works if the [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
+This only works if the Tizen.UI.View is included in the  [FlexBox](Tizen.UI.Layouts.FlexBox.md 'Tizen.UI.Layouts.FlexBox') and used.
 
 ```csharp
 public static TView StretchItems&lt;TView>(this TView view)

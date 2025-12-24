@@ -8,7 +8,7 @@ A time counter component using LottieImage.
 public class LottieImageTimeCounter : Tizen.UI.Components.TimeCounter
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.TimeCounter](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.TimeCounter 'Tizen.UI.Components.TimeCounter') &#129106; LottieImageTimeCounter
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Tizen.UI.Components.TimeCounter &#129106; LottieImageTimeCounter
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.LottieImageTimeCounter.LottieImageTimeCounter(int,string)'></a>
@@ -71,6 +71,7 @@ public bool UseReverseFrameIndex { get; set; }
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
+
 
 
 

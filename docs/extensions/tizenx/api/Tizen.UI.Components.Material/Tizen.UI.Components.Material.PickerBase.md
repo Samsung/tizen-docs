@@ -9,7 +9,7 @@ Contains common properties and logic for picker components.
 public abstract class PickerBase : Tizen.UI.ContentView
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; PickerBase
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; PickerBase
 
 Derived  
 &#8627; [InputPicker](Tizen.UI.Components.Material.InputPicker.md 'Tizen.UI.Components.Material.InputPicker')  
@@ -40,7 +40,7 @@ public Tizen.UI.Components.ClosedRange&lt;int> Range { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Components.ClosedRange&lt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ClosedRange-1 'Tizen.UI.Components.ClosedRange`1')
+Tizen.UI.Components.ClosedRange&lt;[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')&gt;
 
 <a name='Tizen.UI.Components.Material.PickerBase.Value'></a>
 
@@ -94,6 +94,7 @@ public event EventHandler ValueChanged;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

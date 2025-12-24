@@ -8,7 +8,7 @@ A loopable scroll view that displays recycling items in specific layouts with ad
 public abstract class AdapterView : Tizen.UI.ContentView
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; AdapterView
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; AdapterView
 
 Derived  
 &#8627; [LoopedAdapterView](Tizen.UI.Components.Material.LoopedAdapterView.md 'Tizen.UI.Components.Material.LoopedAdapterView')
@@ -37,7 +37,7 @@ public Tizen.UI.Thickness InnerMargin { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.AdapterView.ItemDecorations'></a>
 
@@ -50,7 +50,7 @@ public System.Collections.Generic.IList&lt;Tizen.UI.Components.Recycler.IItemDec
 ```
 
 #### Property Value
-[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')[Tizen.UI.Components.Recycler.IItemDecoration](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Recycler.IItemDecoration 'Tizen.UI.Components.Recycler.IItemDecoration')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
+[System.Collections.Generic.IList&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')Tizen.UI.Components.Recycler.IItemDecoration[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1 'System.Collections.Generic.IList`1')
 
 <a name='Tizen.UI.Components.Material.AdapterView.ItemsSource'></a>
 
@@ -77,7 +77,7 @@ public Tizen.UI.ViewTemplate ItemTemplate { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+Tizen.UI.ViewTemplate
 
 <a name='Tizen.UI.Components.Material.AdapterView.Padding'></a>
 
@@ -91,7 +91,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 
 <a name='Tizen.UI.Components.Material.AdapterView.PrefetchBaseSize'></a>
 
@@ -117,7 +117,7 @@ public Tizen.UI.ScrollBarVisibility ScrollBarVisibility { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ScrollBarVisibility](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollBarVisibility 'Tizen.UI.ScrollBarVisibility')
+Tizen.UI.ScrollBarVisibility
 ### Methods
 
 <a name='Tizen.UI.Components.Material.AdapterView.SetScrollBar(Tizen.UI.IScrollBar)'></a>
@@ -133,7 +133,7 @@ public void SetScrollBar(Tizen.UI.IScrollBar scrollBar);
 
 <a name='Tizen.UI.Components.Material.AdapterView.SetScrollBar(Tizen.UI.IScrollBar).scrollBar'></a>
 
-`scrollBar` [Tizen.UI.IScrollBar](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.IScrollBar 'Tizen.UI.IScrollBar')
+`scrollBar` Tizen.UI.IScrollBar
 
 The scroll bar to set.
 ### Events
@@ -149,7 +149,7 @@ public event EventHandler&lt;DragEventArgs> DragFinished;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.DragEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.DragEventArgs 'Tizen.UI.DragEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.DragEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Material.AdapterView.Dragging'></a>
 
@@ -162,7 +162,7 @@ public event EventHandler&lt;DragEventArgs> Dragging;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.DragEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.DragEventArgs 'Tizen.UI.DragEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.DragEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Material.AdapterView.DragStarted'></a>
 
@@ -175,7 +175,7 @@ public event EventHandler&lt;DragEventArgs> DragStarted;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.DragEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.DragEventArgs 'Tizen.UI.DragEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.DragEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Material.AdapterView.ScrollFinished'></a>
 
@@ -188,7 +188,7 @@ public event EventHandler&lt;ScrollEventArgs> ScrollFinished;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.ScrollEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollEventArgs 'Tizen.UI.ScrollEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.ScrollEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Material.AdapterView.Scrolling'></a>
 
@@ -201,7 +201,7 @@ public event EventHandler&lt;ScrollEventArgs> Scrolling;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.ScrollEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollEventArgs 'Tizen.UI.ScrollEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.ScrollEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Components.Material.AdapterView.ScrollStarted'></a>
 
@@ -214,7 +214,8 @@ public event EventHandler&lt;ScrollEventArgs> ScrollStarted;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.ScrollEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ScrollEventArgs 'Tizen.UI.ScrollEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.ScrollEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+
 
 
 

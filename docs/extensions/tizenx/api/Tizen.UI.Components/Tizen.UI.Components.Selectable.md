@@ -10,7 +10,7 @@ public class Selectable : Tizen.UI.Components.Clickable,
 Tizen.UI.Components.ISelectable
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Pressable](Tizen.UI.Components.Pressable.md 'Tizen.UI.Components.Pressable') &#129106; [Clickable](Tizen.UI.Components.Clickable.md 'Tizen.UI.Components.Clickable') &#129106; Selectable
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; [Pressable](Tizen.UI.Components.Pressable.md 'Tizen.UI.Components.Pressable') &#129106; [Clickable](Tizen.UI.Components.Clickable.md 'Tizen.UI.Components.Clickable') &#129106; Selectable
 
 Derived  
 &#8627; [GroupSelectable](Tizen.UI.Components.GroupSelectable.md 'Tizen.UI.Components.GroupSelectable')  
@@ -87,7 +87,7 @@ public virtual void Toggle(Tizen.UI.KeyDeviceClass device=Tizen.UI.KeyDeviceClas
 
 <a name='Tizen.UI.Components.Selectable.Toggle(Tizen.UI.KeyDeviceClass).device'></a>
 
-`device` [Tizen.UI.KeyDeviceClass](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.KeyDeviceClass 'Tizen.UI.KeyDeviceClass')
+`device` Tizen.UI.KeyDeviceClass
 
 Implements [Toggle(KeyDeviceClass)](Tizen.UI.Components.ISelectable.md#Tizen.UI.Components.ISelectable.Toggle(Tizen.UI.KeyDeviceClass) 'Tizen.UI.Components.ISelectable.Toggle(Tizen.UI.KeyDeviceClass)')
 ### Events
@@ -106,6 +106,7 @@ Implements [SelectedChanged](Tizen.UI.Components.ISelectable.md#Tizen.UI.Compone
 
 #### Event Type
 [System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[InputEventArgs](Tizen.UI.Components.InputEventArgs.md 'Tizen.UI.Components.InputEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+
 
 
 

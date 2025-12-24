@@ -9,7 +9,7 @@ BottomSheet can be set to [ModalContent](Tizen.UI.Components.Material.BottomShee
 public class BottomSheet : Tizen.UI.ContentView
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; BottomSheet
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; BottomSheet
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.BottomSheet.BottomSheet()'></a>
@@ -66,7 +66,7 @@ public Tizen.UI.View Content { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')  
+Tizen.UI.View  
 Content view
 
 <a name='Tizen.UI.Components.Material.BottomSheet.DefaultAnchorIndex'></a>
@@ -82,6 +82,7 @@ public int DefaultAnchorIndex { get; }
 #### Property Value
 [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')  
 The default anchor index
+
 
 
 

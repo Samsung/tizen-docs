@@ -22,10 +22,11 @@ public static Tizen.UI.Scene3D.SceneObject GetHitSceneObject(this Tizen.UI.Touch
 
 <a name='Tizen.UI.Scene3D.TouchExtensions.GetHitSceneObject(thisTizen.UI.Touch).touch'></a>
 
-`touch` [Tizen.UI.Touch](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Touch 'Tizen.UI.Touch')
+`touch` Tizen.UI.Touch
 
 #### Returns
 [SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject')
+
 
 
 

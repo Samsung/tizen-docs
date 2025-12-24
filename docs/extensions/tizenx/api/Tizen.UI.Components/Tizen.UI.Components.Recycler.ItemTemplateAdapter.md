@@ -39,7 +39,7 @@ public Tizen.UI.ViewTemplate DividerTemplate { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+Tizen.UI.ViewTemplate
 
 <a name='Tizen.UI.Components.Recycler.ItemTemplateAdapter.HasDivider'></a>
 
@@ -92,7 +92,7 @@ public Tizen.UI.ViewTemplate ItemTemplate { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.ViewTemplate](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewTemplate 'Tizen.UI.ViewTemplate')
+Tizen.UI.ViewTemplate
 ### Methods
 
 <a name='Tizen.UI.Components.Recycler.ItemTemplateAdapter.GetItemOnPosition(int)'></a>
@@ -241,6 +241,7 @@ public virtual void SetItemsSource(System.Collections.IEnumerable items);
 `items` [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
 
 Enumerable source.
+
 
 
 

@@ -18,7 +18,7 @@ System.Collections.IEnumerable
 
 `T`
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject') &#129106; SceneObjectGroup&lt;T>
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject') &#129106; SceneObjectGroup&lt;T>
 
 Derived  
 &#8627; [Model3D](Tizen.UI.Scene3D.Model3D.md 'Tizen.UI.Scene3D.Model3D')  
@@ -288,6 +288,7 @@ System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator();
 ```
 
 Implements [GetEnumerator()](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable.GetEnumerator 'System.Collections.IEnumerable.GetEnumerator')
+
 
 
 

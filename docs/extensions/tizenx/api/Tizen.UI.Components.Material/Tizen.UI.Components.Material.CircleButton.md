@@ -2,14 +2,14 @@
 
 ## CircleButton Class
 
-A [Tizen.UI.Components.Clickable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Clickable 'Tizen.UI.Components.Clickable') component containing single icon.  
-The main difference from an [IconButton](Tizen.UI.Components.Material.IconButton.md 'Tizen.UI.Components.Material.IconButton') is that it can have a [Tizen.UI.Components.UIState.Progressing](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.UIState.Progressing 'Tizen.UI.Components.UIState.Progressing') like [Button](Tizen.UI.Components.Material.Button.md 'Tizen.UI.Components.Material.Button').
+A Tizen.UI.Components.Clickable component containing single icon.  
+The main difference from an [IconButton](Tizen.UI.Components.Material.IconButton.md 'Tizen.UI.Components.Material.IconButton') is that it can have a Tizen.UI.Components.UIState.Progressing like [Button](Tizen.UI.Components.Material.Button.md 'Tizen.UI.Components.Material.Button').
 
 ```csharp
 public class CircleButton : Tizen.UI.Components.Clickable
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Pressable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Pressable 'Tizen.UI.Components.Pressable') &#129106; [Tizen.UI.Components.Clickable](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Clickable 'Tizen.UI.Components.Clickable') &#129106; CircleButton
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Tizen.UI.Components.Pressable &#129106; Tizen.UI.Components.Clickable &#129106; CircleButton
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.CircleButton.CircleButton()'></a>
@@ -96,7 +96,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 ### Methods
 
 <a name='Tizen.UI.Components.Material.CircleButton.GetTouchEffectTarget()'></a>
@@ -109,10 +109,11 @@ Get the target view to apply feedback.
 public override Tizen.UI.View GetTouchEffectTarget();
 ```
 
-Implements [GetTouchEffectTarget()](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectTarget 'Tizen.UI.Components.ITouchEffectTarget.GetTouchEffectTarget')
+Implements GetTouchEffectTarget()
 
 #### Returns
-[Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+Tizen.UI.View
+
 
 
 

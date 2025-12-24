@@ -8,7 +8,7 @@ Represents an application that have UI screen. The WidgetApplication class has a
 public class WidgetApplication
 ```
 
-Inheritance [Tizen.Applications.CoreApplication](https://docs.microsoft.com/en-us/dotnet/api/Tizen.Applications.CoreApplication 'Tizen.Applications.CoreApplication') &#129106; WidgetApplication
+Inheritance Tizen.Applications.CoreApplication &#129106; WidgetApplication
 ### Constructors
 
 <a name='Tizen.UI.Widget.WidgetApplication.WidgetApplication(System.Collections.Generic.Dictionary_System.Type,string_)'></a>
@@ -43,6 +43,7 @@ public override void Run(string[] args);
 <a name='Tizen.UI.Widget.WidgetApplication.Run(string[]).args'></a>
 
 `args` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
+
 
 
 

@@ -8,7 +8,7 @@
 public class SKCanvasView : Tizen.UI.Skia.CustomRenderingView
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ImageView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ImageView 'Tizen.UI.ImageView') &#129106; [CustomRenderingView](Tizen.UI.Skia.CustomRenderingView.md 'Tizen.UI.Skia.CustomRenderingView') &#129106; SKCanvasView
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ImageView &#129106; [CustomRenderingView](Tizen.UI.Skia.CustomRenderingView.md 'Tizen.UI.Skia.CustomRenderingView') &#129106; SKCanvasView
 ### Constructors
 
 <a name='Tizen.UI.Skia.SKCanvasView.SKCanvasView()'></a>
@@ -34,6 +34,7 @@ public bool IgnorePixelScaling { get; set; }
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
+
 
 
 

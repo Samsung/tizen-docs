@@ -36,21 +36,21 @@ Implements [System.IDisposable](https://docs.microsoft.com/en-us/dotnet/api/Syst
 
 ## Animatable3DPropertyValue&lt;T>.Value Property
 
-Gets the [Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle') of the property.
+Gets the Tizen.UI.NativeHandle.PropertyValueHandle of the property.
 
 ```csharp
 public abstract Tizen.UI.NativeHandle.PropertyValueHandle Value { get; }
 ```
 
 #### Property Value
-[Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')
+Tizen.UI.NativeHandle.PropertyValueHandle
 ### Methods
 
 <a name='Tizen.UI.Scene3D.Animatable3DPropertyValue_T_.CreateCustomValue(string,object,bool)'></a>
 
 ## Animatable3DPropertyValue&lt;T>.CreateCustomValue(string, object, bool) Method
 
-Creates a new [Tizen.UI.CustomPropertyValue](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CustomPropertyValue 'Tizen.UI.CustomPropertyValue') object with the given property name and value.
+Creates a new Tizen.UI.CustomPropertyValue object with the given property name and value.
 
 ```csharp
 public static Tizen.UI.AnimatablePropertyValue CreateCustomValue(string propertyName, object value, bool useVector3=false);
@@ -74,14 +74,14 @@ The value of the custom property.
 `useVector3` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 
 #### Returns
-[Tizen.UI.AnimatablePropertyValue](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AnimatablePropertyValue 'Tizen.UI.AnimatablePropertyValue')  
+Tizen.UI.AnimatablePropertyValue  
 The new CustomPropertyValue object.
 
 <a name='Tizen.UI.Scene3D.Animatable3DPropertyValue_T_.CreateCustomValue(string,Tizen.UI.NativeHandle.PropertyValueHandle)'></a>
 
 ## Animatable3DPropertyValue&lt;T>.CreateCustomValue(string, PropertyValueHandle) Method
 
-Creates a new [Tizen.UI.CustomPropertyValue](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CustomPropertyValue 'Tizen.UI.CustomPropertyValue') object with the given property name and value.
+Creates a new Tizen.UI.CustomPropertyValue object with the given property name and value.
 
 ```csharp
 public static Tizen.UI.Scene3D.Animatable3DPropertyValue&lt;T> CreateCustomValue(string propertyName, Tizen.UI.NativeHandle.PropertyValueHandle value);
@@ -96,7 +96,7 @@ The name of the custom property.
 
 <a name='Tizen.UI.Scene3D.Animatable3DPropertyValue_T_.CreateCustomValue(string,Tizen.UI.NativeHandle.PropertyValueHandle).value'></a>
 
-`value` [Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')
+`value` Tizen.UI.NativeHandle.PropertyValueHandle
 
 The value of the custom property.
 
@@ -108,7 +108,7 @@ The new CustomPropertyValue object.
 
 ## Animatable3DPropertyValue&lt;T>.CreateOpacityValue(float) Method
 
-Creates a new [Tizen.UI.OpacityPropertyValue](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.OpacityPropertyValue 'Tizen.UI.OpacityPropertyValue') object with the given value.
+Creates a new Tizen.UI.OpacityPropertyValue object with the given value.
 
 ```csharp
 public static Tizen.UI.Scene3D.Animatable3DPropertyValue&lt;T> CreateOpacityValue(float opacity);
@@ -270,7 +270,7 @@ Implements [Dispose()](https://docs.microsoft.com/en-us/dotnet/api/System.IDispo
 
 ## Animatable3DPropertyValue&lt;T>.GetTargetProperty(T) Method
 
-Gets the [Tizen.UI.NativeHandle.AnimatablePropertyHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.AnimatablePropertyHandle 'Tizen.UI.NativeHandle.AnimatablePropertyHandle') for the animation.
+Gets the Tizen.UI.NativeHandle.AnimatablePropertyHandle for the animation.
 
 ```csharp
 public abstract Tizen.UI.NativeHandle.AnimatablePropertyHandle GetTargetProperty(T view);
@@ -284,8 +284,9 @@ public abstract Tizen.UI.NativeHandle.AnimatablePropertyHandle GetTargetProperty
 The view to which the property belongs.
 
 #### Returns
-[Tizen.UI.NativeHandle.AnimatablePropertyHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.AnimatablePropertyHandle 'Tizen.UI.NativeHandle.AnimatablePropertyHandle')  
+Tizen.UI.NativeHandle.AnimatablePropertyHandle  
 The target property handle.
+
 
 
 

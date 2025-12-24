@@ -8,7 +8,7 @@ Provides functionality for 3-D models.
 public class Model3D : Tizen.UI.Scene3D.SceneObjectGroup&lt;Tizen.UI.Scene3D.SceneObject>
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject') &#129106; [Tizen.UI.Scene3D.SceneObjectGroup&lt;](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>')[SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject')[&gt;](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>') &#129106; Model3D
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; [SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject') &#129106; [Tizen.UI.Scene3D.SceneObjectGroup&lt;](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>')[SceneObject](Tizen.UI.Scene3D.SceneObject.md 'Tizen.UI.Scene3D.SceneObject')[&gt;](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>') &#129106; Model3D
 ### Constructors
 
 <a name='Tizen.UI.Scene3D.Model3D.Model3D()'></a>
@@ -69,7 +69,7 @@ public Tizen.UI.Color MultipliedColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Scene3D.Model3D.RootNode'></a>
 
@@ -215,7 +215,7 @@ public event EventHandler&lt;KeyEventArgs> KeyEvent;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.KeyEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.KeyEventArgs 'Tizen.UI.KeyEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.KeyEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
 
 <a name='Tizen.UI.Scene3D.Model3D.ResourceReady'></a>
 
@@ -241,7 +241,8 @@ public event EventHandler&lt;TouchEventArgs> TouchEvent;
 ```
 
 #### Event Type
-[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')[Tizen.UI.TouchEventArgs](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.TouchEventArgs 'Tizen.UI.TouchEventArgs')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+[System.EventHandler&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')Tizen.UI.TouchEventArgs[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler-1 'System.EventHandler`1')
+
 
 
 

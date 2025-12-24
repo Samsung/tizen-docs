@@ -24,13 +24,13 @@ public Bezier(Tizen.UI.Point p1, Tizen.UI.Point p2);
 
 <a name='Tizen.UI.Components.Animations.Bezier.Bezier(Tizen.UI.Point,Tizen.UI.Point).p1'></a>
 
-`p1` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`p1` Tizen.UI.View.VisibilityChanged
 
 The first control point.
 
 <a name='Tizen.UI.Components.Animations.Bezier.Bezier(Tizen.UI.Point,Tizen.UI.Point).p2'></a>
 
-`p2` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`p2` Tizen.UI.Point
 
 The second control point.
 

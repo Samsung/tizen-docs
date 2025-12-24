@@ -43,7 +43,7 @@ public override Tizen.UI.NativeHandle.PropertyValueHandle Value { get; }
 ```
 
 #### Property Value
-[Tizen.UI.NativeHandle.PropertyValueHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.PropertyValueHandle 'Tizen.UI.NativeHandle.PropertyValueHandle')
+Tizen.UI.NativeHandle.PropertyValueHandle
 ### Methods
 
 <a name='Tizen.UI.Scene3D.OpacityPropertyValue_T_.GetTargetProperty(T)'></a>
@@ -64,8 +64,9 @@ public override Tizen.UI.NativeHandle.AnimatablePropertyHandle GetTargetProperty
 The view to animate.
 
 #### Returns
-[Tizen.UI.NativeHandle.AnimatablePropertyHandle](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NativeHandle.AnimatablePropertyHandle 'Tizen.UI.NativeHandle.AnimatablePropertyHandle')  
+Tizen.UI.NativeHandle.AnimatablePropertyHandle  
 The AnimatablePropertyHandle for the target property.
+
 
 
 

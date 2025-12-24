@@ -12,7 +12,7 @@ Tizen.UI.ITextFormatting
 
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [TextBaseImpl](Tizen.UI.Components.TextBaseImpl.md 'Tizen.UI.Components.TextBaseImpl') &#129106; LabelImpl
 
-Implements [Tizen.UI.ITextFormatting](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextFormatting 'Tizen.UI.ITextFormatting')
+Implements Tizen.UI.ITextFormatting
 ### Constructors
 
 <a name='Tizen.UI.Components.LabelImpl.LabelImpl()'></a>
@@ -50,7 +50,7 @@ public Tizen.UI.Color AnchorClickedColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.LabelImpl.AnchorColor'></a>
 
@@ -63,7 +63,7 @@ public Tizen.UI.Color AnchorColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.LabelImpl.AutoFontSize'></a>
 
@@ -76,7 +76,7 @@ public Tizen.UI.AutoFontSize AutoFontSize { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.AutoFontSize](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.AutoFontSize 'Tizen.UI.AutoFontSize')
+Tizen.UI.AutoFontSize
 
 ### Remarks
 The [FontSize](Tizen.UI.Components.TextBaseImpl.md#Tizen.UI.Components.TextBaseImpl.FontSize 'Tizen.UI.Components.TextBaseImpl.FontSize') value will be ignored if this is not [AutoFontSize.None](https://docs.microsoft.com/en-us/dotnet/api/AutoFontSize.None 'AutoFontSize.None').
@@ -106,7 +106,7 @@ Gets or sets whether the text should be multi-line.
 public bool IsMultiline { get; set; }
 ```
 
-Implements [IsMultiline](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ITextFormatting.IsMultiline 'Tizen.UI.ITextFormatting.IsMultiline')
+Implements IsMultiline
 
 #### Property Value
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
@@ -135,7 +135,7 @@ public Tizen.UI.LineBreakMode LineBreakMode { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.LineBreakMode](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.LineBreakMode 'Tizen.UI.LineBreakMode')
+Tizen.UI.LineBreakMode
 
 <a name='Tizen.UI.Components.LabelImpl.LineHeight'></a>
 
@@ -252,6 +252,7 @@ public event EventHandler FontSizeAdjusted;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 

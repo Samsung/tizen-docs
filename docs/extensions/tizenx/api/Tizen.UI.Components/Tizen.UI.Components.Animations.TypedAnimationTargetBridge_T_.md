@@ -69,7 +69,8 @@ public Tizen.UI.Animation TypedAnimation { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Animation](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Animation 'Tizen.UI.Animation')
+Tizen.UI.Animation
+
 
 
 

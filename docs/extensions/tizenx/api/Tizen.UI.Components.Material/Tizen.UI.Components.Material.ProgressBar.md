@@ -8,7 +8,7 @@ A progress component that indicates a specific value from a continuous or discre
 public class ProgressBar : Tizen.UI.Components.Progress
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; [Tizen.UI.Components.Progress](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Components.Progress 'Tizen.UI.Components.Progress') &#129106; ProgressBar
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Tizen.UI.Components.Progress &#129106; ProgressBar
 ### Constructors
 
 <a name='Tizen.UI.Components.Material.ProgressBar.ProgressBar()'></a>
@@ -120,7 +120,7 @@ public Tizen.UI.Color TrackColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.ProgressBar.TrackThickness'></a>
 
@@ -146,7 +146,8 @@ public Tizen.UI.Color TrailColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
+
 
 
 

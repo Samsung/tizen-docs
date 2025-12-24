@@ -9,7 +9,7 @@ public abstract class Layout : Tizen.UI.ViewGroup,
 Tizen.UI.Layouts.ILayout
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ViewGroup](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ViewGroup 'Tizen.UI.ViewGroup') &#129106; Layout
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ViewGroup &#129106; Layout
 
 Derived  
 &#8627; [AbsoluteLayout](Tizen.UI.Layouts.AbsoluteLayout.md 'Tizen.UI.Layouts.AbsoluteLayout')  
@@ -71,7 +71,7 @@ public Tizen.UI.Thickness Padding { get; set; }
 Implements [Padding](Tizen.UI.Layouts.ILayout.md#Tizen.UI.Layouts.ILayout.Padding 'Tizen.UI.Layouts.ILayout.Padding')
 
 #### Property Value
-[Tizen.UI.Thickness](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Thickness 'Tizen.UI.Thickness')
+Tizen.UI.Thickness
 ### Methods
 
 <a name='Tizen.UI.Layouts.Layout.Measure(float,float)'></a>
@@ -98,7 +98,7 @@ The available width to measure the layout with.
 The available height to measure the layout with.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The size of the layout after measuring.
 
 <a name='Tizen.UI.Layouts.Layout.UpdateLayout()'></a>
@@ -124,13 +124,14 @@ public virtual Tizen.UI.Size UpdateLayout(Tizen.UI.Rect bounds);
 
 <a name='Tizen.UI.Layouts.Layout.UpdateLayout(Tizen.UI.Rect).bounds'></a>
 
-`bounds` [Tizen.UI.Rect](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Rect 'Tizen.UI.Rect')
+`bounds` Tizen.UI.Rect
 
 The bounds to update the layout with.
 
 #### Returns
-[Tizen.UI.Size](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Size 'Tizen.UI.Size')  
+Tizen.UI.Size  
 The size of the layout after updating.
+
 
 
 

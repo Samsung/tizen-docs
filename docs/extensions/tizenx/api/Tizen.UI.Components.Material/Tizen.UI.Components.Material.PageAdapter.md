@@ -51,7 +51,7 @@ public void AddPage(Tizen.UI.View page, int index);
 
 <a name='Tizen.UI.Components.Material.PageAdapter.AddPage(Tizen.UI.View,int).page'></a>
 
-`page` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`page` Tizen.UI.View
 
 <a name='Tizen.UI.Components.Material.PageAdapter.AddPage(Tizen.UI.View,int).index'></a>
 
@@ -87,7 +87,7 @@ public void RemovePage(Tizen.UI.View page);
 
 <a name='Tizen.UI.Components.Material.PageAdapter.RemovePage(Tizen.UI.View).page'></a>
 
-`page` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`page` Tizen.UI.View
 
 The added page.
 

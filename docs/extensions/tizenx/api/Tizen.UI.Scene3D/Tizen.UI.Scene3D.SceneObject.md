@@ -8,7 +8,7 @@
 public abstract class SceneObject : Tizen.UI.NObject
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; SceneObject
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; SceneObject
 
 Derived  
 &#8627; [Camera](Tizen.UI.Scene3D.Camera.md 'Tizen.UI.Scene3D.Camera')  
@@ -80,7 +80,7 @@ public Tizen.UI.NObject ParentObject { get; }
 ```
 
 #### Property Value
-[Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject')
+Tizen.UI.NObject
 
 <a name='Tizen.UI.Scene3D.SceneObject.ParentOrigin'></a>
 
@@ -213,6 +213,7 @@ The forward vector of scene object when it's orientation is not applied. If it i
 `localUp` [Vector3D](Tizen.UI.Scene3D.Vector3D.md 'Tizen.UI.Scene3D.Vector3D')
 
 The up vector of SceneObject when it's orientation is not applied. If it is null, localUp vector become +Y axis
+
 
 
 

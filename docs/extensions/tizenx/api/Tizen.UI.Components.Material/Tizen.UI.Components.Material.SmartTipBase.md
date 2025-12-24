@@ -8,7 +8,7 @@ Provide base structure for SmartTips.
 public class SmartTipBase : Tizen.UI.ContentView
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [Tizen.UI.NObject](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.NObject 'Tizen.UI.NObject') &#129106; [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View') &#129106; [Tizen.UI.ContentView](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.ContentView 'Tizen.UI.ContentView') &#129106; SmartTipBase
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; SmartTipBase
 
 Derived  
 &#8627; [SmartTip](Tizen.UI.Components.Material.SmartTip.md 'Tizen.UI.Components.Material.SmartTip')  
@@ -118,7 +118,7 @@ public Tizen.UI.CornerRadius ShapeCornerRadius { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.CornerRadius](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.CornerRadius 'Tizen.UI.CornerRadius')
+Tizen.UI.CornerRadius
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.ShapeFillColor'></a>
 
@@ -131,7 +131,7 @@ public Tizen.UI.Color ShapeFillColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.ShapeShadows'></a>
 
@@ -144,7 +144,7 @@ public System.Collections.Generic.IEnumerable&lt;Tizen.UI.Shadow> ShapeShadows {
 ```
 
 #### Property Value
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Tizen.UI.Shadow](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Shadow 'Tizen.UI.Shadow')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')Tizen.UI.Shadow[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 
 ### Remarks
 The shadows will finally sets the under shadow visuals so they can get cleared by SetUnderShadowVisuals or ClearUnderShadowVisuals.
@@ -160,7 +160,7 @@ public Tizen.UI.Color ShapeStrokeColor { get; set; }
 ```
 
 #### Property Value
-[Tizen.UI.Color](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Color 'Tizen.UI.Color')
+Tizen.UI.Color
 ### Methods
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.Dismiss()'></a>
@@ -184,7 +184,7 @@ public Tizen.UI.Point GetArrowPosition();
 ```
 
 #### Returns
-[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+Tizen.UI.Point
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.GetArrowPosition(float,float)'></a>
 
@@ -206,7 +206,7 @@ public Tizen.UI.Point GetArrowPosition(float width, float height);
 `height` [System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')
 
 #### Returns
-[Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+Tizen.UI.Point
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.Post()'></a>
 
@@ -231,7 +231,7 @@ public void Post(Tizen.UI.Point anchorPoint);
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.Post(Tizen.UI.Point).anchorPoint'></a>
 
-`anchorPoint` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`anchorPoint` Tizen.UI.Point
 
 The anchor point. It should be relative to the window's coordinate system.
 
@@ -248,7 +248,7 @@ public void Post(Tizen.UI.View anchorObject);
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.Post(Tizen.UI.View).anchorObject'></a>
 
-`anchorObject` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`anchorObject` Tizen.UI.View
 
 The anchor object.
 
@@ -265,7 +265,7 @@ public void Post(Tizen.UI.Window window);
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.Post(Tizen.UI.Window).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The window to post the modal to.
 
@@ -282,13 +282,13 @@ public void Post(Tizen.UI.Window window, Tizen.UI.Point anchorPoint);
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.Post(Tizen.UI.Window,Tizen.UI.Point).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The window to post the modal to.
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.Post(Tizen.UI.Window,Tizen.UI.Point).anchorPoint'></a>
 
-`anchorPoint` [Tizen.UI.Point](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Point 'Tizen.UI.Point')
+`anchorPoint` Tizen.UI.Point
 
 The anchor point. It should be relative to the window's coordinate system.
 
@@ -305,13 +305,13 @@ public void Post(Tizen.UI.Window window, Tizen.UI.View anchorObject);
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.Post(Tizen.UI.Window,Tizen.UI.View).window'></a>
 
-`window` [Tizen.UI.Window](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.Window 'Tizen.UI.Window')
+`window` Tizen.UI.Window
 
 The window to post the modal to.
 
 <a name='Tizen.UI.Components.Material.SmartTipBase.Post(Tizen.UI.Window,Tizen.UI.View).anchorObject'></a>
 
-`anchorObject` [Tizen.UI.View](https://docs.microsoft.com/en-us/dotnet/api/Tizen.UI.View 'Tizen.UI.View')
+`anchorObject` Tizen.UI.View
 
 The anchor object.
 ### Events
@@ -341,6 +341,7 @@ public event EventHandler Hidden;
 
 #### Event Type
 [System.EventHandler](https://docs.microsoft.com/en-us/dotnet/api/System.EventHandler 'System.EventHandler')
+
 
 
 
