@@ -8,7 +8,7 @@
 
 This repo contains Tizen documents for platform and application developers. 
 
-All files under ./docs/ are hosted on the [Tizen Docs site](https://docs.tizen.org). 
+All files under ./docs/ are hosted on the [Tizen Docs site](https://samsungtizenos.com/docs/bridge/). 
 
 
 ## NOTE
