@@ -3,7 +3,7 @@
 The Visual Studio Code Extension for Tizen enables you to easily develop Tizen .NET, Tizen Web, and Tizen Native applications using Visual Studio Code. To use the VS Code Extension for Tizen, your computer must meet the following prerequisites:
 
 - Supported host platform
-- VS Code version 1.92.0 or higher
+- VS Code version 1.100.0 or higher
 
   The extension supports the following operating systems:
 
@@ -66,3 +66,4 @@ The Tizen Emulator for the VS Code Extension has the same requirements as the Ti
      ![Enable Hyper-V](./media/cs_prerequisite-enable-hyperv.png)
 
   3. Reboot the computer.
+
