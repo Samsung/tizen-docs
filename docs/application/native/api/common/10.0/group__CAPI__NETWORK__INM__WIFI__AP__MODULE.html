@@ -100,7 +100,7 @@ Required Header</h2>
 <p>#include &lt;inm.h&gt;</p>
 <h2><a class="anchor" id="CAPI_NETWORK_INM_WIFI_AP_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>This set of functions is used to get Wi-Fi AP related information. It enables detailed access point monitoring including signal quality, security settings, and connection parameters. To use this kind of APIs, you should create an INM handle using <a class="el" href="group__CAPI__NETWORK__INM__MODULE.html#gadfe7e673c15b8de43f2120afe21d673c" title="Initializes INM.">inm_initialize()</a>. You should destroy the created ap handle and INM handle if you do not need it anymore.</p>
+<p>This set of functions is used to get Wi-Fi AP related information. To use This kind of APIs, You should create a inm handle using <a class="el" href="group__CAPI__NETWORK__INM__MODULE.html#gadfe7e673c15b8de43f2120afe21d673c" title="Initializes INM.">inm_initialize()</a>. After that, you need to get connection handle using <a class="el" href="group__CAPI__NETWORK__INM__WIFI__MODULE.html#ga1162ba952a34a122f18a4ccdfbc01b86" title="Gets the handle of the connected access point.">inm_wifi_get_connected_ap()</a>, <a class="el" href="group__CAPI__NETWORK__INM__WIFI__MODULE.html#ga1685914345fab61f9d265791b4c31278" title="Gets the result of the scan.">inm_wifi_foreach_found_ap()</a>. You should destroy the created ap handle if you do not need it anymore. You should destroy the created inm handle if you do not need it anymore.</p>
 <h2><a class="anchor" id="CAPI_NETWORK_INM_WIFI_AP_MODULE_FEATURE"></a>
 Related Features</h2>
 <p>This API is related with the following features:<br/>

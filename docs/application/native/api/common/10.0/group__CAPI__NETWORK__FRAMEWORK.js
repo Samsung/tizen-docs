@@ -16,7 +16,7 @@ var group__CAPI__NETWORK__FRAMEWORK =
     [ "SoftAP", "group__CAPI__NETWORK__SOFTAP__MODULE.html", "group__CAPI__NETWORK__SOFTAP__MODULE" ],
     [ "User Awareness", "group__CAPI__NETWORK__UA__MODULE.html", null ],
     [ "VPN Service", "group__CAPI__NETWORK__VPN__SERVICE__MODULE.html", null ],
-    [ "Wi-Fi", "group__CAPI__NETWORK__WIFI__PACKAGE.html", "group__CAPI__NETWORK__WIFI__PACKAGE" ],
     [ "Wi-Fi Aware", "group__CAPI__NETWORK__WIFI__AWARE__MODULE.html", "group__CAPI__NETWORK__WIFI__AWARE__MODULE" ],
-    [ "Wi-Fi Direct", "group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html", null ]
+    [ "Wi-Fi Direct", "group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html", null ],
+    [ "Wi-Fi Manager", "group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html", "group__CAPI__NETWORK__WIFI__MANAGER__MODULE" ]
 ];
