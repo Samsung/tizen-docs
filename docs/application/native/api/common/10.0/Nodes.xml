@@ -1872,66 +1872,6 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>Wi-Fi</Name>
-            <Path>group__CAPI__NETWORK__WIFI__PACKAGE.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>Wi-Fi Manager</Name>
-              <Path>group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>Wi-Fi Configuration</Name>
-                <Path>group__CAPI__NETWORK__WIFI__MANAGER__CONFIG__MODULE.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Wi-Fi Management</Name>
-                <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>AP</Name>
-                  <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>Network Information</Name>
-                    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html</Path>
-                    <Subnodes>
-                    </Subnodes>
-                   </Node>
-                   <Node>
-                    <Name>Security Information</Name>
-                    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>EAP</Name>
-                      <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
-                      <Subnodes>
-                      </Subnodes>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Wi-Fi Monitor</Name>
-                <Path>group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>Wi-Fi TDLS</Name>
-                <Path>group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-              </Subnodes>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
             <Name>Wi-Fi Aware</Name>
             <Path>group__CAPI__NETWORK__WIFI__AWARE__MODULE.html</Path>
             <Subnodes>
@@ -1953,6 +1893,60 @@
             <Name>Wi-Fi Direct</Name>
             <Path>group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html</Path>
             <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>Wi-Fi Manager</Name>
+            <Path>group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>Wi-Fi Configuration</Name>
+              <Path>group__CAPI__NETWORK__WIFI__MANAGER__CONFIG__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Wi-Fi Management</Name>
+              <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>AP</Name>
+                <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>Network Information</Name>
+                  <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Security Information</Name>
+                  <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>EAP</Name>
+                    <Path>group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html</Path>
+                    <Subnodes>
+                    </Subnodes>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                </Subnodes>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Wi-Fi Monitor</Name>
+              <Path>group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Wi-Fi TDLS</Name>
+              <Path>group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
             </Subnodes>
            </Node>
           </Subnodes>

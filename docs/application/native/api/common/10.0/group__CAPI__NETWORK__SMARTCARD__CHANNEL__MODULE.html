@@ -154,7 +154,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Closes the given channel to the Secure Element. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001897">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001905">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <p>Closes the given channel to the Secure Element. This function releases any resources associated with the channel. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -216,7 +216,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the response to the select command. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001900">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001908">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <p>Retrieves the response to the SELECT command for the given channel. The response is stored in the byte array pointed to by the select_resp parameter, and its length is stored in the location pointed to by the length parameter. Note that the select_resp buffer must be released using free() after use. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>select_resp must be released using free().</dd></dl>
@@ -271,7 +271,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the session that has opened the given channel. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001901">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001909">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <p>Retrieves the session handle that has opened the given channel. The session handle is stored in the location pointed to by the session parameter. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -324,7 +324,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Checks if the given channel is the basic channel. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001898">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001906">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <p>Determines whether the given channel is a basic channel. The result is stored in the location pointed to by the is_basic_channel parameter. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -377,7 +377,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Checks if the given channel is closed. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001899">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001907">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <p>Checks whether the given channel is closed. The result is stored in the location pointed to by the is_closed parameter. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -430,7 +430,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Performs a selection of the next Applet on the given channel that matches to the partial Application ID (AID). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001904">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001912">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <p>Selects the next Applet on the given channel that matches the partial Application ID (AID). The result is stored in the location pointed to by the is_success parameter. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -507,7 +507,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Transmits an APDU command (as per ISO/IEC 7816-4) to the Secure Element. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001902">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001910">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <p>Transmits an APDU command to the Secure Element associated with the given channel. The response to the command is stored in the byte array pointed to by the resp parameter, and its length is stored in the location pointed to by the length parameter. Note that the resp buffer must be released using free() after use. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -581,7 +581,7 @@ bytes with channel numbers are de-masked.</dd></dl>
 <div class="memdoc">
 
 <p>Retrieves the response APDU of the previous transmit() call (helper function). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001903">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001911">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <p>Retrieves the response APDU from the previous transmit() call for the given channel. The response is stored in the byte array pointed to by the resp parameter, and its length is stored in the location pointed to by the length parameter. Note that the resp buffer must be released using free() after use. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>resp must be released using free().</dd></dl>
