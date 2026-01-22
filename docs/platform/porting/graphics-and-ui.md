@@ -195,6 +195,7 @@ The following table lists the TBM buffer manager capability, `tbm_bufmgr_capabil
 | `TBM_BUFMGR_CAPABILITY_SHARE_FD`     | Supports sharing buffer by `tbm_fd`.       |
 | `TBM_BUFMGR_CAPABILITY_TBM_SYNC`     | Supports timeline sync.                  |
 | `TBM_BUFMGR_CAPABILITY_TILED_MEMORY` | Supports tiled memory.                   |
+| `TBM_BUFMGR_CAPABILITY_SHARE_SURFACE` | Supports sharing surface by buffer data. |
 
 The following table lists the TBM buffer memory types, `tbm_bo_memory_type`:
 
@@ -204,6 +205,8 @@ The following table lists the TBM buffer memory types, `tbm_bo_memory_type`:
 | `TBM_BO_SCANOUT`     | Scanout memory                                  |
 | `TBM_BO_NONCACHABLE` | Non-cacheable memory                             |
 | `TBM_BO_WC`          | Write-combined memory                            |
+| `TBM_BO_TILED`       | Tiled memory                                    |
+| `TBM_BO_PROTECTED`   | Protected memory                                 |
 | `TBM_BO_VENDOR`      | Vendor specific memory: It depends on the backend. |
 
 The following table lists the TBM buffer device types, `tbm_bo_device_type`:
@@ -223,6 +226,34 @@ The following table lists the TBM buffer access options, `tbm_bo_access_option`:
 | `TBM_OPTION_READ`   | Access option to read                              |
 | `TBM_OPTION_WRITE`  | Access option to write                             |
 | `TBM_OPTION_VENDOR` | Vendor-specific option that depends on the backend |
+
+#### Surface Buffer Data Structure
+
+TBM provides a surface buffer data structure for sharing surface information between processes. This structure is used for surface import and export operations.
+
+```cpp
+typedef struct _tbm_surface_buffer_data {
+    int *fds;                       /**< an array of dmabuf fds */
+    unsigned int num_fds;           /**< the number of dmabuf fds */
+    int *meta_data;                 /**< an array of meta data */
+    unsigned int num_meta_data;     /**< the number of meta data */
+    void *reserved1;                /**< reserved data1 */
+    void *reserved2;                /**< reserved data2 */
+} tbm_surface_buffer_data;
+```
+
+**Table: Surface Buffer Data fields**
+
+| Field | Description |
+| ----- | ----------- |
+| `fds` | An array of dmabuf file descriptors for the surface planes |
+| `num_fds` | The number of dmabuf file descriptors in the array |
+| `meta_data` | An array of metadata associated with the surface |
+| `num_meta_data` | The number of metadata items in the array |
+| `reserved1` | Reserved for future use |
+| `reserved2` | Reserved for future use |
+
+This structure enables efficient surface sharing between processes by providing all necessary buffer information in a standardized format.
 
 #### TBM DRM helper functions
 
@@ -745,3 +776,166 @@ The following commit explains how to port the driver with `libtpl-egl` from the 
 
 The Khronos OpenGL ES CTS supports `wayland-egl`. `libtpl-egl` has a test case for the `libtpl-egl`. `tpl-novice` of `ws-testcase` has the sample code for `libtpl-egl`.
 
+## Surface Queue Management
+
+TBM provides enhanced surface queue management functionality for efficient buffer handling between producers and consumers. The surface queue supports various modes and advanced features for optimal performance.
+
+### Surface Queue Modes
+
+The surface queue supports different operational modes to control buffer lifecycle management:
+
+**Table: Surface Queue Modes**
+
+| Mode | Description |
+| ---- | ----------- |
+| `TBM_SURFACE_QUEUE_MODE_NONE` | Default mode with no special constraints |
+| `TBM_SURFACE_QUEUE_MODE_GUARANTEE_CYCLE` | Guarantees that dequeued surfaces must be properly enqueued or canceled before queue reset |
+
+### Enhanced Surface Queue Functions
+
+#### Sequence Queue Creation
+
+Creates a sequence surface queue with ordered buffer management:
+
+```cpp
+tbm_surface_queue_h tbm_surface_queue_sequence_create(int queue_size, int width,
+                                                     int height, int format, int flags);
+```
+
+**Parameters:**
+- `queue_size`: Number of buffers in the queue
+- `width`: Surface width
+- `height`: Surface height
+- `format`: Surface format
+- `flags`: Memory allocation flags
+
+#### Enhanced Allocation Callback
+
+Provides enhanced allocation callback with additional control:
+
+```cpp
+typedef tbm_surface_h (*tbm_surface_alloc_cb2)(tbm_surface_queue_h surface_queue,
+                                                int width, int height, int format, int flags, void *data);
+typedef void (*tbm_surface_free_cb)(tbm_surface_queue_h surface_queue,
+                                  void *data, tbm_surface_h surface);
+
+tbm_surface_queue_error_e tbm_surface_queue_set_alloc_cb2(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_alloc_cb2 alloc_cb2,
+    tbm_surface_free_cb free_cb,
+    void *data);
+```
+
+**Note:** You must use either `tbm_surface_queue_set_alloc_cb` or `tbm_surface_queue_set_alloc_cb2`, not both.
+
+#### Queue Mode Management
+
+Controls the operational mode of the surface queue:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_set_modes(
+    tbm_surface_queue_h surface_queue, int modes);
+```
+
+#### Next Dequeue Query
+
+Queries the next surface that will be dequeued without actually dequeuing it:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_get_next_dequeue(
+    tbm_surface_queue_h surface_queue, tbm_surface_h *surface);
+```
+
+### Surface Queue Trace Support
+
+TBM provides comprehensive tracing capabilities for surface queue operations:
+
+**Table: Surface Queue Trace Types**
+
+| Trace Type | Description |
+| ---------- | ----------- |
+| `TBM_SURFACE_QUEUE_TRACE_NONE` | No tracing |
+| `TBM_SURFACE_QUEUE_TRACE_DEQUEUE` | Trace dequeue operations |
+| `TBM_SURFACE_QUEUE_TRACE_ENQUEUE` | Trace enqueue operations |
+| `TBM_SURFACE_QUEUE_TRACE_ACQUIRE` | Trace acquire operations |
+| `TBM_SURFACE_QUEUE_TRACE_RELEASE` | Trace release operations |
+| `TBM_SURFACE_QUEUE_TRACE_CANCEL_DEQUEUE` | Trace cancel dequeue operations |
+| `TBM_SURFACE_QUEUE_TRACE_CANCEL_ACQUIRE` | Trace cancel acquire operations |
+
+#### Trace Callback Registration
+
+```cpp
+typedef void (*tbm_surface_queue_trace_cb)(tbm_surface_queue_h surface_queue,
+                                          tbm_surface_h surface,
+                                          tbm_surface_queue_trace trace,
+                                          void *data);
+
+tbm_surface_queue_error_e tbm_surface_queue_add_trace_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_trace_cb trace_cb,
+    void *data);
+```
+
+### Surface Internal Management
+
+TBM provides internal surface management functions for advanced use cases:
+
+#### Surface Import/Export
+
+```cpp
+// Export surface to buffer data
+tbm_surface_buffer_data *tbm_surface_internal_export(tbm_surface_h surface, tbm_error_e *error);
+
+// Import surface from buffer data
+tbm_surface_h tbm_surface_internal_import(tbm_surface_info_s *surface_info,
+                                          tbm_surface_buffer_data *buffer_data,
+                                          tbm_error_e *error);
+```
+
+#### Damage Handling
+
+```cpp
+// Set damage region
+int tbm_surface_internal_set_damage(tbm_surface_h surface, int x, int y, int width, int height);
+
+// Get damage region
+int tbm_surface_internal_get_damage(tbm_surface_h surface, int *x, int *y, int *width, int *height);
+```
+
+#### Destroy Callback Management
+
+```cpp
+typedef void (*tbm_surface_internal_destroy_handler)(tbm_surface_h surface, void *user_data);
+
+// Add destroy callback
+int tbm_surface_internal_add_destroy_handler(tbm_surface_h surface,
+                                           tbm_surface_internal_destroy_handler func,
+                                           void *user_data);
+
+// Remove destroy callback
+void tbm_surface_internal_remove_destroy_handler(tbm_surface_h surface,
+                                              tbm_surface_internal_destroy_handler func,
+                                              void *user_data);
+```
+
+### HAL-TBM Integration
+
+TBM supports HAL-TBM integration for unified hardware abstraction:
+
+#### HAL-TBM Backend Support
+
+The TBM module can operate in HAL-TBM mode, providing direct integration with hardware abstraction layer:
+
+- **Module Type**: `TBM_MODULE_TYPE_HAL_TBM`
+- **Initialization**: Automatic detection and loading of HAL-TBM backend
+- **DRM Integration**: Seamless integration with DRM master fd management
+- **Authentication**: Built-in Wayland authentication server support
+
+#### HAL-TBM Features
+
+- Direct hardware buffer management
+- Optimized memory allocation
+- Hardware-specific format support
+- Enhanced performance through hardware acceleration
+
+The HAL-TBM integration provides a unified interface for buffer management while maintaining compatibility with existing TBM backend implementations.
