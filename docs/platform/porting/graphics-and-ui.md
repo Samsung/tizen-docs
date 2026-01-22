@@ -327,10 +327,21 @@ The TDM backend module must define the global data symbol with the name `tdm_bac
 
 ```cpp
 typedef struct _tdm_backend_module {
-    const char *name; /* The module name of the backend module */
-    const char *vendor; /* The vendor name of the backend module */
-    unsigned long abi_version; /* The ABI version of the backend module */
+    char *name;           /**< The module name of a backend module */
+    char *vendor;         /**< The vendor name of a backend module */
+    unsigned long abi_version;  /**< The ABI version of a backend module */
+    /**
+     * @brief The init function of a backend module
+     * @param[in] dpy A display object
+     * @param[out] error #TDM_ERROR_NONE if success. Otherwise, error value.
+     * @return The backend module data
+     * @see tdm_backend_data
+     */
     tdm_backend_data *(*init)(tdm_display *dpy, tdm_error *error);
+    /**
+     * @brief The deinit function of a backend module
+     * @param[in] bdata The backend module data
+     */
     void (*deinit)(tdm_backend_data *bdata);
 } tdm_backend_module;
 ```
@@ -361,7 +372,7 @@ tdm_backend_module tdm_backend_module_data = {
 };
 ```
 
-The TDM backend must register the `tdm_func_display()`, `tdm_func_output()`, and `tdm_func_layer()` functions with the `tdm_backend_register_func_display()`, `tdm_backend_register_func_output()`, and `tdm_backend_register_func_layer()` functions in the `tdm_backend_module_data` `init()` function:
+The TDM backend must register the `tdm_func_display()`, `tdm_func_output()`, `tdm_func_hwc()`, and `tdm_func_hwc_window()` functions with the `tdm_backend_register_func_display()`, `tdm_backend_register_func_output()`, `tdm_backend_register_func_hwc()`, and `tdm_backend_register_func_hwc_window()` functions in the `tdm_backend_module_data` `init()` function:
 
 ```cpp
 #include <tdm_backend.h>
@@ -381,15 +392,45 @@ tdm_drm_init(tdm_display *dpy, tdm_error *error) {
 
     memset(&drm_func_output, 0, sizeof(drm_func_output));
     drm_func_output.output_get_capability = drm_output_get_capability;
+    drm_func_output.output_wait_vblank = drm_output_wait_vblank;
+    drm_func_output.output_set_vblank_handler = drm_output_set_vblank_handler;
+    drm_func_output.output_set_mode = drm_output_set_mode;
+    drm_func_output.output_get_mode = drm_output_get_mode;
+    drm_func_output.output_get_hwc = drm_output_get_hwc;
 
     ret = tdm_backend_register_func_output(dpy, &drm_func_output);
     if (ret != TDM_ERROR_NONE)
         goto failed;
 
-    memset(&drm_func_layer, 0, sizeof(drm_func_layer));
-    drm_func_layer.layer_get_capability = drm_layer_get_capability;
+    memset(&drm_func_hwc, 0, sizeof(drm_func_hwc));
+    drm_func_hwc.hwc_create_window = drm_hwc_create_window;
+    drm_func_hwc.hwc_get_video_supported_formats = drm_hwc_get_video_supported_formats;
+    drm_func_hwc.hwc_get_capabilities = drm_hwc_get_capabilities;
+    drm_func_hwc.hwc_get_available_properties = drm_hwc_get_available_properties;
+    drm_func_hwc.hwc_get_client_target_buffer_queue = drm_hwc_get_client_target_buffer_queue;
+    drm_func_hwc.hwc_set_client_target_buffer = drm_hwc_set_client_target_buffer;
+    drm_func_hwc.hwc_validate = drm_hwc_validate;
+    drm_func_hwc.hwc_get_changed_composition_types = drm_hwc_get_changed_composition_types;
+    drm_func_hwc.hwc_accept_validation = drm_hwc_accept_validation;
+    drm_func_hwc.hwc_commit = drm_hwc_commit;
+    drm_func_hwc.hwc_set_commit_handler = drm_hwc_set_commit_handler;
 
-    ret = tdm_backend_register_func_layer(dpy, &drm_func_layer);
+    ret = tdm_backend_register_func_hwc(dpy, &drm_func_hwc);
+    if (ret != TDM_ERROR_NONE)
+        goto failed;
+
+    memset(&drm_func_hwc_window, 0, sizeof(drm_func_hwc_window));
+    drm_func_hwc_window.hwc_window_destroy = drm_hwc_window_destroy;
+    drm_func_hwc_window.hwc_window_set_composition_type = drm_hwc_window_set_composition_type;
+    drm_func_hwc_window.hwc_window_set_buffer_damage = drm_hwc_window_set_buffer_damage;
+    drm_func_hwc_window.hwc_window_set_info = drm_hwc_window_set_info;
+    drm_func_hwc_window.hwc_window_set_buffer = drm_hwc_window_set_buffer;
+    drm_func_hwc_window.hwc_window_set_property = drm_hwc_window_set_property;
+    drm_func_hwc_window.hwc_window_get_property = drm_hwc_window_get_property;
+    drm_func_hwc_window.hwc_window_get_constraints = drm_hwc_window_get_constraints;
+    drm_func_hwc_window.hwc_window_set_name = drm_hwc_window_set_name;
+
+    ret = tdm_backend_register_func_hwc_window(dpy, &drm_func_hwc_window);
     if (ret != TDM_ERROR_NONE)
         goto failed;
 
@@ -434,13 +475,13 @@ The output backend interface is mandatory. For more information, see [tdm_backen
 | Function                      | Description                              | Mandatory          |
 | ----------------------------- | ---------------------------------------- | --------- |
 | `output_get_capability()`     | Gets the capabilities of an output object. TDM calls this function not only at initialization, but also when a new output is connected. The `tdm_caps_output` contains connection status, modes, available properties, and size restriction information. | Yes |
-| `output_get_layers()`         | Gets the layer array of an output object. TDM calls this function not only at initialization, but also when a new output is connected. The backend module must return the newly-allocated array which contains `tdm_layer*` data. It is freed in the frontend. | Yes |
+| `output_get_layers()`         | Gets the layer array of an output object. TDM calls this function not only at initialization, but also when a new output is connected. The backend module must return the newly-allocated array which contains `tdm_layer*` data. It is freed in the frontend. | Yes (Deprecated) |
 | `output_set_property()`       | Sets the property with a given ID.       | No  |
 | `output_get_property()`       | Gets the property with a given ID.       | No  |
 | `output_wait_vblank()`        | Waits for `VBLANK`. If this function returns `TDM_ERROR_NONE`, the backend module must call a user `vblank` handler with the user data of this function after `vblanks` interval. | Yes |
 | `output_set_vblank_handler()` | Sets the user `vblank` handler.          | Yes |
-| `output_commit()`             | Commits the changes for an output object. When this function is called, the backend module must apply all changes of the given output object to the screen as well as the layer changes of this output. If this function returns `TDM_ERROR_NONE`, the backend module must call a user commit handler with the user data of this function after all changes of the given output object are applied. | Yes |
-| `output_set_commit_handler()` | Sets a user commit handler.              | Yes |
+| `output_commit()`             | Commits the changes for an output object. When this function is called, the backend module must apply all changes of the given output object to the screen as well as the layer changes of this output. If this function returns `TDM_ERROR_NONE`, the backend module must call a user commit handler with the user data of this function after all changes of the given output object are applied. | Yes (Deprecated) |
+| `output_set_commit_handler()` | Sets a user commit handler.              | Yes (Deprecated) |
 | `output_set_dpms()`           | Sets the DPMS of an output object.       | No  |
 | `output_get_dpms()`           | Gets the DPMS of an output object.       | No  |
 | `output_set_mode()`           | Sets 1 of the available modes of an output object. | Yes |
@@ -491,7 +532,9 @@ The hwc window backend interface is mandatory. For more information, see [tdm_ba
 
 The layer backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
-**Table: Layer backend interface functions**
+**Note:** The entire layer interface is deprecated since TDM 2.0. All layer-related functions, types, and structures are marked as deprecated in `tdm_deprecated.h`. New implementations should use the HWC (Hardware Compositing) interface instead.
+
+**Table: Layer backend interface functions (Deprecated)**
 
 | Function                   | Description                              | Mandatory          |
 | -------------------------- | ---------------------------------------- | --------- |
@@ -633,7 +676,21 @@ TPL-EGL is an abstraction layer for surface and buffer management on the Tizen p
 
 The background for the Tizen EGL Porting Layer for EGL uses various Tizen window system protocols. Therefore, there is a need to separate the common layer and backend.
 
-Tizen uses the Tizen Porting Layer for EGL, as the TPL-EGL API prevents burdens of the EGL porting on various window system protocols. The GPU GL Driver's Window System Porting Layer can be implemented by TPL-EGL APIs, which are the corresponding window system APIs. The TBM, Wayland, and GBM backends are supported.
+Tizen uses the Tizen Porting Layer for EGL, as the TPL-EGL API prevents burdens of the EGL porting on various window system protocols. The GPU GL Driver's Window System Porting Layer can be implemented by TPL-EGL APIs, which are the corresponding window system APIs. The TBM, Wayland, Wayland Thread, GBM, and Vulkan WSI backends are supported.
+
+**Table: TPL-EGL Backend Types**
+
+| Backend Type | Description |
+| ------------ | ----------- |
+| `TPL_BACKEND_WAYLAND` | Wayland EGL backend for standard Wayland protocol |
+| `TPL_BACKEND_WAYLAND_THREAD` | Wayland EGL backend with thread support for improved performance |
+| `TPL_BACKEND_GBM` | Generic Buffer Manager backend for DRM-based systems |
+| `TPL_BACKEND_TBM` | Tizen Buffer Manager backend for TBM protocol |
+| `TPL_BACKEND_WAYLAND_VULKAN_WSI` | Wayland Vulkan WSI backend for Vulkan support |
+| `TPL_BACKEND_WAYLAND_VULKAN_WSI_THREAD` | Wayland Vulkan WSI backend with thread support |
+| `TPL_BACKEND_TBM_VULKAN_WSI` | TBM Vulkan WSI backend for Vulkan with TBM protocol |
+| `TPL_BACKEND_X11_DRI2` | X11 DRI2 backend (deprecated) |
+| `TPL_BACKEND_X11_DRI3` | X11 DRI3 backend (deprecated) |
 
 ### Tizen Porting Layer for EGL object model
 
@@ -669,6 +726,47 @@ The following figure illustrates the OpenGL ES drawing API flow.
 
 #### TPL-EGL frontend API
 
+**Table: TPL-EGL Data Types**
+
+| Type | Description |
+| ---- | ----------- |
+| `tpl_bool_t` | Boolean type (TPL_TRUE or TPL_FALSE) |
+| `tpl_handle_t` | Handle to native objects (represents a handle to a native object like pixmap, window, wl_display, etc.) |
+| `tpl_object_t` | Generic base class type for various TPL objects |
+| `tpl_display_t` | TPL display object representing a display system |
+| `tpl_surface_t` | TPL surface object representing an image which can be displayed |
+| `tpl_free_func_t` | Function type used for freeing some data |
+| `tpl_surface_cb_func_t` | Function type used for registering callback function |
+
+**Table: TPL-EGL Object Types**
+
+| Type | Description |
+| ---- | ----------- |
+| `TPL_OBJECT_ERROR` | Error type (-1) |
+| `TPL_OBJECT_DISPLAY` | Display object type |
+| `TPL_OBJECT_SURFACE` | Surface object type |
+| `TPL_OBJECT_MAX` | Maximum object type |
+
+**Table: TPL-EGL Surface Types**
+
+| Type | Description |
+| ---- | ----------- |
+| `TPL_SURFACE_ERROR` | Error type (-1) |
+| `TPL_SURFACE_TYPE_WINDOW` | Surface gets displayed by the display server |
+| `TPL_SURFACE_TYPE_PIXMAP` | Surface is an offscreen pixmap |
+| `TPL_SURFACE_MAX` | Maximum surface type |
+
+**Table: TPL-EGL Result Types**
+
+| Type | Description |
+| ---- | ----------- |
+| `TPL_ERROR_NONE` | Successful operation (0) |
+| `TPL_ERROR_INVALID_PARAMETER` | Invalid parameter |
+| `TPL_ERROR_INVALID_OPERATION` | Invalid operation |
+| `TPL_ERROR_OUT_OF_MEMORY` | Out of memory |
+| `TPL_ERROR_TIME_OUT` | Time out error |
+| `TPL_ERROR_INVALID_CONNECTION` | Invalid display connection |
+
 **TPL-EGL Object** is a base class for all TPL-EGL objects. It provides common functionalities to all TPL-EGL objects.
 
 **Table: TPL-EGL Object functions**
@@ -688,14 +786,18 @@ The following figure illustrates the OpenGL ES drawing API flow.
 
 | Function                                 | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| `tpl_display_create()`                   | Creates the TPL-EGL display object for the given native display if there is no existing TPL-EGL display for that native display. If given `NULL` for `native_dpy`, this function returns the default display. |
+| `tpl_display_create()`                   | Creates the TPL-EGL display object for the given native display with specified backend type if there is no existing TPL-EGL display for that native display. The backend type parameter allows explicit selection of backend (Wayland, TBM, GBM, etc.). |
 | `tpl_display_get()`                      | Gets the TPL-EGL display object for the given native display if one exists for it. |
+| `tpl_display_get_with_backend_type()`    | Gets the TPL-EGL display object for the given native display and backend type. |
 | `tpl_display_get_native_handle()`        | Gets the native display handle which the given TPL-EGL display is created for. |
-| `tpl_display_query_config()`             | Queries the supported pixel formats for the given TPL-EGL display. If any pixel format values are acceptable, use the `TPL_DONT_CARE` value for the size values . |
+| `tpl_display_query_config()`             | Queries the supported pixel formats for the given TPL-EGL display. If any pixel format values are acceptable, use the `TPL_DONT_CARE` value for the size values. |
 | `tpl_display_filter_config()`            | Filters the configuration according to a given TPL-EGL display. This function modifies current config specific to the current given TPL-EGL display. |
+| `tpl_display_get_backend_type()`         | Gets the backend type for the given native display. |
 | `tpl_display_get_native_window_info()`   | Queries information on the given native window. |
 | `tpl_display_get_native_pixmap_info()`   | Queries information on the given native pixmap. |
 | `tpl_display_get_buffer_from_native_pixmap()` | Gets the native buffer from the given native pixmap. |
+| `tpl_display_query_supported_buffer_count_from_native_window()` | Queries supported buffer count range for the given native window. |
+| `tpl_display_query_supported_present_modes_from_native_window()` | Queries supported present modes for the given native window. |
 
 **TPL-EGL Surface** encapsulates the native drawable object (`Window`, `Pixmap`, `wl_surface`). The main features of the class are retrieving the buffer for a frame and posting the surface to a screen.
 
@@ -704,16 +806,39 @@ The following figure illustrates the OpenGL ES drawing API flow.
 | Function                                 | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
 | `tpl_surface_create()`                   | Creates a TPL-EGL surface for the given native surface. |
+| `tpl_surface_create_with_num_buffers()`  | Creates a TPL-EGL surface for the given native surface with specified number of buffers. |
+| `tpl_surface_get()`                      | Gets the TPL-EGL surface object for the given native surface if one exists for it. |
 | `tpl_surface_get_display()`              | Gets the TPL-EGL display where the given TPL-EGL surface was created from. |
 | `tpl_surface_get_native_handle()`        | Gets the native surface handle of the given TPL-EGL surface. |
 | `tpl_surface_get_type()`                 | Gets the type of the given TPL surface.  |
 | `tpl_surface_get_size()`                 | Gets the current size of the given TPL-EGL surface. The size of a surface can change when a user or the server resizes the window. TPL-EGL updates the size information every time when a buffer is queried using the `tpl_surface_dequeue_buffer()` function. Note that there can still be mismatch between actual surface size and the cached one. |
+| `tpl_surface_get_rotation()`             | Gets the current rotation angle of the given TPL-EGL surface. |
 | `tpl_surface_validate()`                 | Validates the current frame of the given TPL-EGL surface. Call this function before getting the final render target buffer, as calling the `tpl_surface_dequeue_buffer()` function after calling this function can give output values different to earlier ones. A buffer returned after calling this function is guaranteed not to change further. |
 | `tpl_surface_dequeue_buffer()`           | Gets the buffer of the current frame for the given TPL-EGL surface. Depending on the backend, communication with the server can be required. Returned buffers are used for rendering the target to draw the current frame. Returned buffers are valid until the next `tpl_surface_dequeue_buffer()` function call. If the `tpl_surface_validate()` function returns `TPL_FALSE`, the previously returned buffers must no longer be used. Instead, this function must called again before drawing, returning a valid buffer. |
+| `tpl_surface_dequeue_buffer_with_sync()` | Gets the buffer of the current frame with sync fence support for the given TPL-EGL surface. |
+| `tpl_surface_dequeue_buffer_with_sync_and_frontbuffer_info()` | Gets the buffer of the current frame with sync fence and frontbuffer information for the given TPL-EGL surface. |
 | `tpl_surface_enqueue_buffer()`           | Posts a given `tbm_surface`. This function requests the display server to post a frame. This is the function which can enqueue a buffer to the `tbm_surface_queue`. Make sure this function is called exactly once for a frame. Scheduling post calls on a separate thread is recommended. |
 | `tpl_surface_enqueue_buffer_with_damage()` | Posts a given `tbm_surface` with region of damage. Damage information is used for reducing number of pixels composited in the compositor. Setting the `num_rects` to 0 or `rects` to `NULL` means entire area is damaged. This function requests a server to post a frame. This function is identical with the `tpl_surface_enqueue_buffer()` function except for delivering the damage information for updating. Make sure this function is called exactly once for a frame. Scheduling post calls on a separate thread is recommended. |
+| `tpl_surface_enqueue_buffer_with_damage_and_sync()` | Posts a given `tbm_surface` with region of damage and sync fence. |
 | `tpl_surface_set_post_interval()`        | Sets the frame interval of the given TPL-EGL surface, which ensures that only a single frame is posted within the specified vsync intervals. When a frame ends, the frame interval is set to the surface's current interval. |
 | `tpl_surface_get_post_interval()`        | Gets the frame interval of the given TPL-EGL surface. |
+| `tpl_surface_create_swapchain()`         | Creates a swapchain for the given TPL-EGL surface. |
+| `tpl_surface_destroy_swapchain()`        | Destroys a swapchain for the given TPL-EGL surface. |
+| `tpl_surface_get_swapchain_buffers()`    | Gets the swapchain buffer list of the given TPL-EGL surface. |
+| `tpl_surface_set_frontbuffer_mode()`     | Sets frontbuffer mode to render to only frontbuffer. |
+| `tpl_surface_set_reset_cb()`             | Sets callback function to tpl_surface for receiving reset information. |
+| `tpl_surface_set_rotation_capability()`  | Sets rotation capability to the given tpl_surface. |
+| `tpl_surface_cancel_dequeued_buffer()`   | Cancels dequeued buffer before use. |
+| `tpl_surface_fence_sync_is_available()`  | Checks the surface can support fence sync mechanism. |
+
+**Table: TPL-EGL Present Mode Types**
+
+| Present Mode | Description |
+| ------------ | ----------- |
+| `TPL_DISPLAY_PRESENT_MODE_MAILBOX` | The presentation engine waits for the next vertical blanking period to update the current image. Tearing cannot be observed. An internal single-entry queue is used to hold pending presentation requests. |
+| `TPL_DISPLAY_PRESENT_MODE_FIFO` | The presentation engine waits for the next vertical blanking period to update the current image. Tearing cannot be observed. An internal queue is used to hold pending presentation requests. |
+| `TPL_DISPLAY_PRESENT_MODE_IMMEDIATE` | The presentation engine does not wait for a vertical blanking period to update the current image, meaning this mode may result in visible tearing. |
+| `TPL_DISPLAY_PRESENT_MODE_FIFO_RELAXED` | The presentation engine generally waits for the next vertical blanking period to update the current image. If a vertical blanking period has already passed since the last update of the current image then the presentation engine does not wait for another vertical blanking period for the update, meaning this mode may result in visible tearing in this case. |
 
 The following code snippet shows a simple example of the Tizen Porting Layer:
 
@@ -883,14 +1008,16 @@ TBM provides internal surface management functions for advanced use cases:
 #### Surface Import/Export
 
 ```cpp
-// Export surface to buffer data
-tbm_surface_buffer_data *tbm_surface_internal_export(tbm_surface_h surface, tbm_error_e *error);
-
-// Import surface from buffer data
-tbm_surface_h tbm_surface_internal_import(tbm_surface_info_s *surface_info,
-                                          tbm_surface_buffer_data *buffer_data,
-                                          tbm_error_e *error);
+tdm_backend_module tdm_backend_module_data = {
+    "drm",
+    "Samsung",
+    TDM_BACKEND_SET_ABI_VERSION(2,0),
+    tdm_drm_init,
+    tdm_drm_deinit
+};
 ```
+
+**Note:** The `TDM_BACKEND_ABI_VERSION` macro is deprecated since version 1.2.0. Use `TDM_BACKEND_SET_ABI_VERSION` instead.
 
 #### Damage Handling
 
