@@ -263,7 +263,7 @@ If the target uses the `drm` interface, the client needs to get the authenticate
 
 | Function                                 | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| `tbm_drm_helper_wl_auth_server_init()`   | If the TBM backend module need to use the authentication server, the backend module must call this function in the display server. |
+| `tbm_drm_helper_wl_auth_server_init()`   | If the TBM backend module needs to use the authentication server, the backend module must call this function in the display server. |
 | `tbm_drm_helper_wl_auth_server_deinit()` | Deinitializes the `drm` authentication in the display server. |
 | `tbm_drm_helper_get_master_fd()`         | If the TDM backend module already has a `drm` master `fd`, the TBM backend module can get the master `fd` from this function. |
 | `tbm_drm_helper_set_tbm_master_fd()`     | If the TBM backend module opens the `drm` master `fd`, this function has to be called for sharing the `drm` master `fd` with TDM. |
@@ -288,7 +288,7 @@ The following table lists the TBM backends.
 
 TBM offers `tbm-haltests` that allows you to test and verify the porting result. The `tbm-haltests` tool is included in the `libtbm-haltests` package that can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on the `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
 
-### Checking TDM log messages
+### Checking TBM log messages
 
 TBM uses `dlog` to print the debug messages. To show the TBM run time log, use the following message:
 
@@ -519,7 +519,7 @@ The hwc window backend interface is mandatory. For more information, see [tdm_ba
 | -------------------------- | ---------------------------------------- | --------- |
 | `hwc_window_destroy()`              | Destroys `tdm_hwc_window`. The backend module must implement this function. The backend destroys the private window, `tdm_hwc_window`. | Yes |
 | `hwc_window_acquire_buffer_queue()` | Acquires a buffer queue associated with `tdm_hwc_window`. This function can be used when the backend has `TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE`. | No  |
-| `hwc_window_release_buffer_queue()` | Releases a buffer queue assoicated with `tdm_hwc_window`. This function can be used when the backend has `TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE`. | No  |
+| `hwc_window_release_buffer_queue()` | Releases a buffer queue associated with `tdm_hwc_window`. This function can be used when the backend has `TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE`. | No  |
 | `hwc_window_set_composition_type()` | Sets the composition type of `tdm_hwc_window`. The backend sets `tdm_hwc_window_composition`.| Yes |
 | `hwc_window_set_buffer_damage()`    | Sets the buffer damage. The backend sets the buffer damage. | Yes |
 | `hwc_window_set_info()`             | Sets the information to `tdm_hwc_window`. The information will be applied when the hwc object is committed. | Yes |
@@ -814,6 +814,15 @@ The following figure illustrates the OpenGL ES drawing API flow.
 | `tpl_surface_get_size()`                 | Gets the current size of the given TPL-EGL surface. The size of a surface can change when a user or the server resizes the window. TPL-EGL updates the size information every time when a buffer is queried using the `tpl_surface_dequeue_buffer()` function. Note that there can still be mismatch between actual surface size and the cached one. |
 | `tpl_surface_get_rotation()`             | Gets the current rotation angle of the given TPL-EGL surface. |
 | `tpl_surface_validate()`                 | Validates the current frame of the given TPL-EGL surface. Call this function before getting the final render target buffer, as calling the `tpl_surface_dequeue_buffer()` function after calling this function can give output values different to earlier ones. A buffer returned after calling this function is guaranteed not to change further. |
+| `tpl_surface_dequeue_buffer()`           | Gets the buffer of the current frame for the given TPL-EGL surface. Depending on the backend, communication with the server can be required. Returned buffers are used for rendering the target to draw the current frame. Returned buffers are valid until the next `tpl_surface_dequeue_buffer()` function call. If the `tpl_surface_validate()` function returns `TPL_FALSE`, the previously returned buffers must no longer be used. Instead, this function must be called again before drawing, returning a valid buffer. |
+| `tpl_surface_dequeue_buffer_with_sync()` | Gets the buffer of the current frame with sync fence support for the given TPL-EGL surface. Depending on the backend, communication with the server can be required. Returned buffers are used for rendering the target to draw the current frame. Returned buffers are valid until the next `tpl_surface_dequeue_buffer()` function call. If the `tpl_surface_validate()` function returns `TPL_FALSE`, the previously returned buffers must no longer be used. Instead, this function must be called again before drawing, returning a valid buffer. This function provides synchronization through a fence that signals when the buffer is ready for use. |
+| `tpl_surface_dequeue_buffer_with_sync_and_frontbuffer_info()` | Gets the buffer of the current frame with sync fence and frontbuffer information for the given TPL-EGL surface. This function provides synchronization through a fence that signals when the buffer is ready for use, and also provides frontbuffer information to optimize rendering performance. |
+| `tpl_surface_enqueue_buffer()`           | Posts a given `tbm_surface`. This function requests the display server to post a frame. This is the function which can enqueue a buffer to the `tbm_surface_queue`. Make sure this function is called exactly once for a frame. Scheduling post calls on a separate thread is recommended. |
+| `tpl_surface_enqueue_buffer_with_damage()` | Posts a given `tbm_surface` with region of damage. Damage information is used for reducing number of pixels composited in the compositor. Setting the `num_rects` to 0 or `rects` to `NULL` means entire area is damaged. This function requests a server to post a frame. This function is identical with the `tpl_surface_enqueue_buffer()` function except for delivering the damage information for updating. Make sure this function is called exactly once for a frame. Scheduling post calls on a separate thread is recommended. |
+| `tpl_surface_enqueue_buffer_with_damage_and_sync()` | Posts a given `tbm_surface` with region of damage and sync fence. Damage information is used for reducing number of pixels composited in the compositor. Setting the `num_rects` to 0 or `rects` to `NULL` means entire area is damaged. This function requests a server to post a frame. This function is identical with the `tpl_surface_enqueue_buffer()` function except for delivering the damage information for updating. The sync fence provides synchronization between GPU and display operations. Make sure this function is called exactly once for a frame. Scheduling post calls on a separate thread is recommended. |
+| `tpl_surface_set_post_interval()`        | Sets the frame interval of the given TPL-EGL surface, which ensures that only a single frame is posted within the specified vsync intervals. When a frame ends, the frame interval is set to the surface's current interval. |
+| `tpl_surface_get_post_interval()`        | Gets the frame interval of the given TPL-EGL surface. |
+| `tpl_surface_create_swapchain()`         | Creates a swapchain for the given TPL-EGL surface. This function creates buffers for swapchain which is binded to the given tpl surface. The swapchain provides Vulkan-style buffer management with multiple buffers for efficient rendering and presentation. |
 | `tpl_surface_dequeue_buffer()`           | Gets the buffer of the current frame for the given TPL-EGL surface. Depending on the backend, communication with the server can be required. Returned buffers are used for rendering the target to draw the current frame. Returned buffers are valid until the next `tpl_surface_dequeue_buffer()` function call. If the `tpl_surface_validate()` function returns `TPL_FALSE`, the previously returned buffers must no longer be used. Instead, this function must called again before drawing, returning a valid buffer. |
 | `tpl_surface_dequeue_buffer_with_sync()` | Gets the buffer of the current frame with sync fence support for the given TPL-EGL surface. |
 | `tpl_surface_dequeue_buffer_with_sync_and_frontbuffer_info()` | Gets the buffer of the current frame with sync fence and frontbuffer information for the given TPL-EGL surface. |
@@ -829,6 +838,7 @@ The following figure illustrates the OpenGL ES drawing API flow.
 | `tpl_surface_set_reset_cb()`             | Sets callback function to tpl_surface for receiving reset information. |
 | `tpl_surface_set_rotation_capability()`  | Sets rotation capability to the given tpl_surface. |
 | `tpl_surface_cancel_dequeued_buffer()`   | Cancels dequeued buffer before use. |
+| `tpl_surface_fence_sync_is_available()`  | Checks if the surface can support fence sync mechanism. This function is used to determine whether the surface supports synchronization through fences, which is important for coordinating GPU and display operations. It is recommended to check fence sync availability for every frame because the results may change depending on whether frontbuffer rendering is activated or not. |
 | `tpl_surface_fence_sync_is_available()`  | Checks the surface can support fence sync mechanism. |
 
 **Table: TPL-EGL Present Mode Types**
