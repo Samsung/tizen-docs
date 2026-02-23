@@ -1,5 +1,7 @@
 # Expandable Notifications
 
+> [!NOTE]
+> All notification-ex APIs have been deprecated since Tizen 11.0 and will be removed after two releases without any alternatives.
 
 An application can use expandable notifications to inform users about important information. The expandable notifications are large and combined notifications containing text, image, and chat messages, which can be created by Notification EX API.
 
