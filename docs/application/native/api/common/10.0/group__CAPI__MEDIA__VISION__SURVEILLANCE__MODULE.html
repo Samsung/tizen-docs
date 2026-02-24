@@ -201,7 +201,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_SURVEILLANCE_FACE_RECOGNITION_MODEL_FILE_PATH to set face recognition model file path. It is an attribute of the engine configuration. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001517">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001519">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This value HAS TO BE set in engine configuration before subscription on MV_SURVEILLANCE_EVENT_TYPE_PERSON_RECOGNIZED event trigger</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga10eed4b94aa94304f767760d37ed2142" title="Sets the string attribute to the configuration.">mv_engine_config_set_string_attribute()</a> </dd>
@@ -222,7 +222,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_SURVEILLANCE_MOVEMENT_DETECTION_THRESHOLD to set movement detection threshold. It is an attribute of the engine configuration. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001518">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001520">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This value might be set in engine configuration before subscription on <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga2df8dc4f082cc48e5cac261a3d669d0c" title="Name of the movement detection event type.">MV_SURVEILLANCE_EVENT_TYPE_MOVEMENT_DETECTED</a> event trigger to specify sensitivity of the movement detector. This value has to be integer in 0..255 range where 255 means that no movements will be detected, and 0 means that all frame changes will be interpreted as movements. Default value is 10.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gac6e5f51937e5c33ee69f06dcb76ed1d8" title="Sets the integer attribute to the configuration.">mv_engine_config_set_int_attribute()</a> </dd>
@@ -243,7 +243,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_SURVEILLANCE_SKIP_FRAMES_COUNT to set how many frames will be skipped during push source. It is an attribute of the engine configuration. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001519">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001521">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This integer value might be set in engine configuration to specify number of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga040d51875e368db9ad1734ea45eba9f7" title="Pushes source to the surveillance system to detect events.">mv_surveillance_push_source()</a> function calls will be ignored by subscription of the event trigger. Default value is 0. It means that no frames will be skipped and all <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga040d51875e368db9ad1734ea45eba9f7" title="Pushes source to the surveillance system to detect events.">mv_surveillance_push_source()</a> function calls will be processed.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gac6e5f51937e5c33ee69f06dcb76ed1d8" title="Sets the integer attribute to the configuration.">mv_engine_config_set_int_attribute()</a> </dd>
@@ -265,7 +265,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when event trigger activation has been detected. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001522">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001524">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Handle <em>event_result</em> is valid only inside callback </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -297,7 +297,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Called to get the result name from the triggered event. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001524">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001526">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>name</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -326,7 +326,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>The handle to event trigger. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001520">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001522">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>See supported event types and their descriptions in <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html">Media Vision Surveillance Event Types (Deprecated)</a> documentation section. Also the list of supported events can be obtained using <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gacdb1246d1ef8a37ab5c22e0b212bddc8" title="Starts traversing through list of supported event types.">mv_surveillance_foreach_supported_event_type()</a> function </dd></dl>
 
@@ -344,7 +344,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Called to get the information once for each supported event type. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001523">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001525">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Don't release memory of <em>event_type</em> </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -373,7 +373,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>The handle to event trigger activation result. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001521">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001523">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>Result is a handle to the output values which are specific for each event. See the output values names in the event types descriptions located in <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html">Media Vision Surveillance Event Types (Deprecated)</a> documentation section. Result values can be gotten by <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga28e460b0ef8b2e2d22166b1773d4aefa" title="Gets result value.">mv_surveillance_get_result_value()</a> function one by one in order specified in the event description ( the same order of event value names is supported by <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gafb50e61988a984b6d32c4eb0f67e869c" title="Starts traversing through list of supported event result value names.">mv_surveillance_foreach_event_result_name()</a> function). This pointer will be destroyed when <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gabed7da1d532b7df2b9f5a077e112d5de" title="Called when event trigger activation has been detected.">mv_surveillance_event_occurred_cb()</a> passed.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
@@ -406,7 +406,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates surveillance event trigger handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001525">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001527">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>List of supported event types can be obtained by <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gacdb1246d1ef8a37ab5c22e0b212bddc8" title="Starts traversing through list of supported event types.">mv_surveillance_foreach_supported_event_type()</a> function </dd>
 <dd>
@@ -450,7 +450,7 @@ You must release <em>trigger</em> by using <a class="el" href="group__CAPI__MEDI
 <div class="memdoc">
 
 <p>Destroys the surveillance event trigger handle and releases all its resources. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001526">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001528">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -503,7 +503,7 @@ You must release <em>trigger</em> by using <a class="el" href="group__CAPI__MEDI
 <div class="memdoc">
 
 <p>Starts traversing through list of supported event result value names. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001534">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001536">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Supported event types, event result value names and their descriptions can be found in <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html">Media Vision Surveillance Event Types (Deprecated)</a> documentation section </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -557,7 +557,7 @@ You must release <em>trigger</em> by using <a class="el" href="group__CAPI__MEDI
 <div class="memdoc">
 
 <p>Starts traversing through list of supported event types. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001533">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001535">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Supported event types and their descriptions can be found in <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html">Media Vision Surveillance Event Types (Deprecated)</a> documentation section </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -614,7 +614,7 @@ You must release <em>trigger</em> by using <a class="el" href="group__CAPI__MEDI
 <div class="memdoc">
 
 <p>Gets ROI (Region Of Interest) from the event trigger. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001529">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001531">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga09e1d2854684062e0847b23b9263edc3" title="Sets ROI (Region Of Interest) to the event trigger.">mv_surveillance_set_event_trigger_roi()</a> has been never called for <em>trigger</em>, then <em>number_of_points</em> output value will be zero and <em>roi</em> pointer will be not changed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -668,7 +668,7 @@ You must release <em>trigger</em> by using <a class="el" href="group__CAPI__MEDI
 <div class="memdoc">
 
 <p>Gets the surveillance event trigger type as character string. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001527">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001529">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>event_type</em> should be freed using free() </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -723,7 +723,7 @@ You must release <em>trigger</em> by using <a class="el" href="group__CAPI__MEDI
 <div class="memdoc">
 
 <p>Gets result value. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001535">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001537">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>See the output values names in the event types descriptions located in <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html">Media Vision Surveillance Event Types (Deprecated)</a> documentation section.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The name can be obtained by <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gafb50e61988a984b6d32c4eb0f67e869c" title="Starts traversing through list of supported event result value names.">mv_surveillance_foreach_event_result_name()</a> function </dd></dl>
@@ -785,7 +785,7 @@ You must release <em>trigger</em> by using <a class="el" href="group__CAPI__MEDI
 <div class="memdoc">
 
 <p>Pushes source to the surveillance system to detect events. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001532">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001534">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p><a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gabed7da1d532b7df2b9f5a077e112d5de" title="Called when event trigger activation has been detected.">mv_surveillance_event_occurred_cb()</a> will be called when any subscribing event detected.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga09e1d2854684062e0847b23b9263edc3" title="Sets ROI (Region Of Interest) to the event trigger.">mv_surveillance_set_event_trigger_roi()</a> function can be used to specify the polygon region where event can be detected only </dd></dl>
@@ -850,7 +850,7 @@ Before calling of this method <em>source</em> has to be correctly filled. <a cla
 <div class="memdoc">
 
 <p>Sets ROI (Region Of Interest) to the event trigger. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001528">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001530">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>When ROI is set for the event trigger, then event check for this <em>trigger</em> will be performed only inside the polygonal region determined by <em>roi</em> parameter. If this method has been never called for the <em>trigger</em>, then event will be checked for the whole input frame (event check is performed for each <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga040d51875e368db9ad1734ea45eba9f7" title="Pushes source to the surveillance system to detect events.">mv_surveillance_push_source()</a> function call). It is possible to change the ROI between <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga040d51875e368db9ad1734ea45eba9f7" title="Pushes source to the surveillance system to detect events.">mv_surveillance_push_source()</a> calls.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -921,7 +921,7 @@ Before calling of this method <em>source</em> has to be correctly filled. <a cla
 <div class="memdoc">
 
 <p>Subscribes <em>trigger</em> to process sources pushed from video identified by <em>video_stream_id</em>. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001530">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001532">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>When <em>trigger</em> is subscribed, then each time when function <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga040d51875e368db9ad1734ea45eba9f7" title="Pushes source to the surveillance system to detect events.">mv_surveillance_push_source()</a> is called for <em>video_stream_id</em>, event occurrence is checked. If this check is successful, <em>callback</em> is invoked. Details on occurred event can be obtained using <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gae085981e4977308f490f33130cf8198d" title="The handle to event trigger activation result.">mv_surveillance_result_h</a> handle from <em>callback</em>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Use <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga302d74c753693fcee28daaee1dafa4c9" title="Unsubscribes trigger from the event and stop calling video_stream_id.">mv_surveillance_unsubscribe_event_trigger()</a> function for the same <em>trigger</em> and <em>video_stream_id</em> parameters to stop subscription. </dd></dl>
@@ -979,7 +979,7 @@ Before calling of this method <em>source</em> has to be correctly filled. <a cla
 <div class="memdoc">
 
 <p>Unsubscribes <em>trigger</em> from the event and stop calling <em>video_stream_id</em>. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001531">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001533">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>To start handling trigger activation use <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga9023feee7b3cd851fd46fb568d74d0d9" title="Subscribes trigger to process sources pushed from video identified by video_stream_id.">mv_surveillance_subscribe_event_trigger()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

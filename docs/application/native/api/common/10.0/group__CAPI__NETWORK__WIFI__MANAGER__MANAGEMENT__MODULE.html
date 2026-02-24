@@ -194,6 +194,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Wi-Fi Vendor Specific Information Elements (VSIE) from a specific frame.  <a href="#gaf11ef0d680de2290f90c15cf5850e583"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga6254b98483d5d733c91588c2ca936f8a">wifi_manager_remove_vsie</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gafd664a0b67c818565f91eb3661907770">wifi_manager_vsie_frames_e</a> frame_id, const char *vsie_str)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the Wi-Fi Vendor Specific Information Element (VSIE) from specific frame.  <a href="#ga6254b98483d5d733c91588c2ca936f8a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac375183239c58e58c1cf4cf515ef67a1">wifi_manager_is_5ghz_band_supported</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, bool *supported)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether 5Ghz Wi-Fi band is supported.  <a href="#gac375183239c58e58c1cf4cf515ef67a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga6a0df9af5f00c284df6a5503e3be3cd5">wifi_manager_is_6ghz_band_supported</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, bool *supported)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether 6Ghz Wi-Fi band is supported.  <a href="#ga6a0df9af5f00c284df6a5503e3be3cd5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga7e915f143ee3c36c0af28bfbe65ead70">wifi_manager_specific_scan_h</a></td></tr>
@@ -2117,6 +2121,110 @@ Typedefs</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">wps_pin</td><td>The WPS PIN </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gac375183239c58e58c1cf4cf515ef67a1"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_is_5ghz_band_supported" ref="gac375183239c58e58c1cf4cf515ef67a1" args="(wifi_manager_h wifi, bool *supported)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac375183239c58e58c1cf4cf515ef67a1">wifi_manager_is_5ghz_band_supported</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
+          <td class="paramname"><em>wifi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>supported</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets whether 5Ghz Wi-Fi band is supported. </p>
+<p>This function checks if the device supports the 5Ghz Wi-Fi band. If the device supports it, the function sets the <em>supported</em> parameter to <code>true</code>; otherwise, it sets it to <code>false</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.get </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">supported</td><td><code>true</code> if 5Ghz Wi-Fi band is supported, otherwise <code>false</code> if 5Ghz Wi-Fi band is not supported. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6a0df9af5f00c284df6a5503e3be3cd5"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_is_6ghz_band_supported" ref="ga6a0df9af5f00c284df6a5503e3be3cd5" args="(wifi_manager_h wifi, bool *supported)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga6a0df9af5f00c284df6a5503e3be3cd5">wifi_manager_is_6ghz_band_supported</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
+          <td class="paramname"><em>wifi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>supported</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets whether 6Ghz Wi-Fi band is supported. </p>
+<p>This function checks if the device supports the 6Ghz Wi-Fi band. If the device supports it, the function sets the <em>supported</em> parameter to <code>true</code>; otherwise, it sets it to <code>false</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>8.0 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.get </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">supported</td><td><code>true</code> if 6Ghz Wi-Fi band is supported, otherwise <code>false</code> if 6Ghz Wi-Fi band is not supported. </td></tr>
   </table>
   </dd>
 </dl>

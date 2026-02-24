@@ -141,7 +141,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the movement detection event type. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001502">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001504">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This is common event for a movement detection. When this event occurs <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gae085981e4977308f490f33130cf8198d" title="The handle to event trigger activation result.">mv_surveillance_result_h</a> allowed from callback can be used to get number of regions where movement has been detected and their positions. Out parameters (can be accessed in the <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gabed7da1d532b7df2b9f5a077e112d5de" title="Called when event trigger activation has been detected.">mv_surveillance_event_occurred_cb()</a> callback using <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga28e460b0ef8b2e2d22166b1773d4aefa" title="Gets result value.">mv_surveillance_get_result_value()</a> function): * <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#gad9eb630fd8da453e213a79d41e3faa8b" title="Name of the event result value that contains number of regions where movement was detected...">MV_SURVEILLANCE_MOVEMENT_NUMBER_OF_REGIONS</a> - the number of regions where movement has been detected;<br/>
  * <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga6148a6c9cc6103774d4b3117a772ae53" title="Name of the event result value that contains rectangular regions where movement was detected...">MV_SURVEILLANCE_MOVEMENT_REGIONS</a> - the set of rectangular regions where movement has been detected.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
@@ -160,7 +160,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the person appearance/disappearance event type. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001505">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001507">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This is common event for a person appearing (disappearing). The result will be: * a number of persons, which were appeared and their positions;<br/>
  * a number of persons, which were tracked and their positions;<br/>
  * a number of persons, which were disappeared and their last positions.<br/>
@@ -186,7 +186,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the person recognition event type. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001512">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001514">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This is common event for a person recognizing. The result will be a number of persons, which were recognized, their positions (face locations), labels and confidences of the recognition models (see documentation for <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga1e4f7b32e70e917a7cc94e2439ef4908" title="Performs face recognition on the source image.">mv_face_recognize()</a> in <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html">Media Vision Face (Deprecated)</a>). When one subscribes to this event, the engine configuration must be filled by path to the saved face recognition model. These path should be set using <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga10eed4b94aa94304f767760d37ed2142" title="Sets the string attribute to the configuration.">mv_engine_config_set_string_attribute()</a> as attribute named <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gae5b487dda0658ec09d4df304b4008b2e" title="Defines MV_SURVEILLANCE_FACE_RECOGNITION_MODEL_FILE_PATH to set face recognition model file path...">MV_SURVEILLANCE_FACE_RECOGNITION_MODEL_FILE_PATH</a>. See documentation for face recognition in <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html">Media Vision Face (Deprecated)</a> and for engine configuration in <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html">Media Vision Common</a> for details. Out parameters (can be accessed in the <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#gabed7da1d532b7df2b9f5a077e112d5de" title="Called when event trigger activation has been detected.">mv_surveillance_event_occurred_cb()</a> callback using <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga28e460b0ef8b2e2d22166b1773d4aefa" title="Gets result value.">mv_surveillance_get_result_value()</a> function): * <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#gaeafeeffcd4c74fae1937b4f601cd08c5" title="Name of the event result value that contains number of locations where faces were recognized...">MV_SURVEILLANCE_PERSONS_RECOGNIZED_NUMBER</a> - the number of persons which were recognized;<br/>
  * <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga6f59ba3f0d9598fd7cce0a972322fe51" title="Name of the event result value that contains a set of rectangular locations where person faces were r...">MV_SURVEILLANCE_PERSONS_RECOGNIZED_LOCATIONS</a> - the locations of persons which were recognized;<br/>
  * <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga7fef582b86c83783198034ace6b37ea3" title="Name of the event result value that contains a set of labels that correspond to the recognized person...">MV_SURVEILLANCE_PERSONS_RECOGNIZED_LABELS</a> - the labels of persons which were recognized;<br/>
@@ -207,7 +207,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains number of regions where movement was detected. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001503">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001505">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga2df8dc4f082cc48e5cac261a3d669d0c" title="Name of the movement detection event type.">MV_SURVEILLANCE_EVENT_TYPE_MOVEMENT_DETECTED</a> type activation. Result value is of <code>size_t</code> type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -253,7 +253,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains rectangular regions where movement was detected. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001504">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001506">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga2df8dc4f082cc48e5cac261a3d669d0c" title="Name of the movement detection event type.">MV_SURVEILLANCE_EVENT_TYPE_MOVEMENT_DETECTED</a> type activation. Result value is of <em><a class="el" href="structmv__rectangle__s.html" title="Location of the object bounded by rectangle defined by coordinates of top left corner, width and height.">mv_rectangle_s</a></em> array type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -309,7 +309,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains a set of rectangular locations where appearances of the persons were detected. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001509">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001511">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga853da9c7104c73ebd9b71c15a0f2c971" title="Name of the person appearance/disappearance event type.">MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</a> type activation. Result value is of <em><a class="el" href="structmv__rectangle__s.html" title="Location of the object bounded by rectangle defined by coordinates of top left corner, width and height.">mv_rectangle_s</a></em> array type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -366,7 +366,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains number of persons that have been appeared. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001506">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001508">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga853da9c7104c73ebd9b71c15a0f2c971" title="Name of the person appearance/disappearance event type.">MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</a> type activation. Result value is of <code>size_t</code> type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -411,7 +411,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains a set of rectangular locations where disappearances of the persons were detected. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001510">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001512">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga853da9c7104c73ebd9b71c15a0f2c971" title="Name of the person appearance/disappearance event type.">MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</a> type activation. Result value is of <em><a class="el" href="structmv__rectangle__s.html" title="Location of the object bounded by rectangle defined by coordinates of top left corner, width and height.">mv_rectangle_s</a></em> array type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -468,7 +468,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains number of persons that have been disappeared. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001507">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001509">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga853da9c7104c73ebd9b71c15a0f2c971" title="Name of the person appearance/disappearance event type.">MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</a> type activation. Result value is of <code>size_t</code> type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -513,7 +513,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains a set of confidence values that correspond to the recognized persons. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001516">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001518">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga8475bb37e1545530e953a7e9e0e926a5" title="Name of the person recognition event type.">MV_SURVEILLANCE_EVENT_TYPE_PERSON_RECOGNIZED</a> type activation. Result value is of doubles array type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -567,7 +567,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains a set of labels that correspond to the recognized persons. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001515">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001517">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga8475bb37e1545530e953a7e9e0e926a5" title="Name of the person recognition event type.">MV_SURVEILLANCE_EVENT_TYPE_PERSON_RECOGNIZED</a> type activation. Result value is of integers array type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -621,7 +621,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains a set of rectangular locations where person faces were recognized. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001514">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001516">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of MV_SURVEILLANCE_EVENT_TYPE_PERSON_RECOGNIZED type activation. Result value is of <em><a class="el" href="structmv__rectangle__s.html" title="Location of the object bounded by rectangle defined by coordinates of top left corner, width and height.">mv_rectangle_s</a></em> array type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -676,7 +676,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains number of locations where faces were recognized. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001513">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001515">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga8475bb37e1545530e953a7e9e0e926a5" title="Name of the person recognition event type.">MV_SURVEILLANCE_EVENT_TYPE_PERSON_RECOGNIZED</a> type activation. Result value is of <code>size_t</code> type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -721,7 +721,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains a set of rectangular locations where persons were tracked. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001511">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001513">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga853da9c7104c73ebd9b71c15a0f2c971" title="Name of the person appearance/disappearance event type.">MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</a> type activation. Result value is of <em><a class="el" href="structmv__rectangle__s.html" title="Location of the object bounded by rectangle defined by coordinates of top left corner, width and height.">mv_rectangle_s</a></em> array type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,
@@ -777,7 +777,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Name of the event result value that contains number of persons that have been tracked. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001508">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001510">Deprecated:</a></b></dt><dd>Deprecated since 9.0 </dd></dl>
 <p>This event result value can be accessed after event triggers of <a class="el" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__EVENT__TYPES.html#ga853da9c7104c73ebd9b71c15a0f2c971" title="Name of the person appearance/disappearance event type.">MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</a> type activation. Result value is of <code>size_t</code> type, so has to be casted as in the following example: </p>
 <div class="fragment"><pre class="fragment"> {.c}
           <span class="keywordtype">void</span> event_occurred_cb(<a class="code" href="group__CAPI__MEDIA__VISION__SURVEILLANCE__MODULE.html#ga24268d76f132febf3c22d776145d6d4c" title="The handle to event trigger.">mv_surveillance_event_trigger_h</a> trigger,

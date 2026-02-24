@@ -181,7 +181,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called for every playlist in the obtained list of playlists. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001598">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001600">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
 <p>Iterates over a playlist list.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>To use the <em>playlist</em> outside this function, copy the handle with the <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#ga254ca731e4a66382960da3a4f686fcc4" title="Clones a playlist handle.">media_playlist_clone()</a> function. <br/>
@@ -213,7 +213,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>The structure type for the Media playlist handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001594">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001596">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -230,7 +230,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called for every media info with playlist member ID in the obtained list of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001599">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001601">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
 <p>Iterates over playlist members.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>To use the <em>media</em> outside this function, copy the handle with the <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab4b091a495ed384eb93386c97528af07" title="Clones the media info handle.">media_info_clone()</a> function. <br/>
@@ -278,7 +278,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Adds a new media info to the playlist. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001670">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001672">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -330,7 +330,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Clones a playlist handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001663">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001665">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function copies the media playlist handle from a source to destination. There is no media_playlist_create() function. The media_playlist_h is created internally and available through media playlist foreach function such as <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#gab2047c3f679c5212ec51ee97d54e747c" title="Iterates through the media playlists with an optional filter from the media database.">media_playlist_foreach_playlist_from_db()</a>. To use this handle outside of these foreach functions, use this function.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dst</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#gaf6db9cff3ceddaf90d74bb3eff52bc59" title="Destroys a playlist handle.">media_playlist_destroy()</a>.</dd></dl>
@@ -372,7 +372,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Deletes the given playlist from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001660">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001662">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/content.write</dd></dl>
@@ -418,7 +418,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Destroys a playlist handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001662">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001664">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function frees all resources related to the playlist handle. This handle no longer can be used to perform any operations. A new handle has to be created before next usage.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -466,7 +466,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Exports the playlist to m3u playlist file. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001675">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001677">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/mediastorage is needed if input or output path are relevant to media storage. <br/>
  http://tizen.org/privilege/externalstorage is needed if input or output path are relevant to external storage.</dd></dl>
@@ -532,7 +532,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Iterates through the media files with an optional <em>filter</em> in the given audio playlist from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001658">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001660">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function gets all media files associated with the given media playlist and meeting desired filter option and calls <em>callback</em> for every retrieved media info. If <code>NULL</code> is passed to the <em>filter</em>, no filtering is applied.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -597,7 +597,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Iterates through the media playlists with an optional <em>filter</em> from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001656">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001658">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function gets all media playlists meeting the given filter. The callback function will be invoked for every retrieved media playlist. If <code>NULL</code> is passed to the filter, no filtering is applied.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -661,7 +661,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the number of the media info for the given playlist present in the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001657">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001659">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -712,7 +712,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets a name of the playlist. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001665">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001667">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>playlist_name</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -766,7 +766,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the played order of the playlist. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001672">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001674">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -813,7 +813,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the number of playlists for the passed <em>filter</em> from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001655">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001657">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -863,7 +863,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the media playlist from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001661">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001663">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function creates a new media playlist handle from the media database by the given <em>playlist_id</em>. The media playlist will be created and will be filled with the playlist information.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>playlist</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#gaf6db9cff3ceddaf90d74bb3eff52bc59" title="Destroys a playlist handle.">media_playlist_destroy()</a>.</dd></dl>
@@ -918,7 +918,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the media playlist ID. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001664">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001666">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -964,7 +964,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets a thumbnail path of the playlist. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001667">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001669">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>path</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1018,7 +1018,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Imports the playlist from m3u playlist file. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001674">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001676">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function reads a playlist from the m3u playlist file and insert into the db. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -1079,7 +1079,7 @@ http://tizen.org/privilege/mediastorage is needed if input or output path are re
 <div class="memdoc">
 
 <p>Inserts a new playlist with the given name into the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001659">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001661">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/content.write</dd></dl>
@@ -1138,7 +1138,7 @@ http://tizen.org/privilege/mediastorage is needed if input or output path are re
 <div class="memdoc">
 
 <p>Removes the playlist members related with the media from the given playlist. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001671">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001673">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1190,7 +1190,7 @@ http://tizen.org/privilege/mediastorage is needed if input or output path are re
 <div class="memdoc">
 
 <p>Sets the name of the playlist. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001666">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001668">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1244,7 +1244,7 @@ http://tizen.org/privilege/mediastorage is needed if input or output path are re
 <div class="memdoc">
 
 <p>Sets the playing order in the playlist. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001669">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001671">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1293,7 +1293,7 @@ http://tizen.org/privilege/mediastorage is needed if input or output path are re
 <div class="memdoc">
 
 <p>Sets the thumbnail path of the playlist. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001668">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001670">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1331,7 +1331,7 @@ http://tizen.org/privilege/mediastorage is needed if input or output path are re
 <div class="memdoc">
 
 <p>Updates the media playlist to the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001673">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001675">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>The function updates the given media playlist in the media database. The function should be called after any change in the playlist, to be updated to the media database. For example, after using <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#ga230530dc3cb9b4bba9b95ba5f20b2ec0" title="Sets the name of the playlist.">media_playlist_set_name()</a> for setting the name of the playlist, the <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html#ga405c91c029b3241c282cd9205ec42ce8" title="Updates the media playlist to the media database.">media_playlist_update_to_db()</a> function should be called so as to update the given playlist attributes in the media database.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
