@@ -4,9 +4,13 @@ The Tizen Compliance Specification is the definitive set of requirements for sof
 
 - TV profile
 
+  [Tizen 10.0 Compliance Specification for TV Profile](media/tizen-10.0-compliance-specification-for-tv-1.0.pdf) ![PDF icon](media/application-pdf.png)
+
   [Tizen 9.0 Compliance Specification for TV Profile](media/tizen-9.0-compliance-specification-for-tv-1.0.pdf) ![PDF icon](media/application-pdf.png)
 
 - IoT profile
+
+  [Tizen 10.0 Compliance Specification for IoT Profile](media/tizen-10.0-compliance-specification-for-iot-1.0.pdf) ![PDF icon](media/application-pdf.png)
 
   [Tizen 9.0 Compliance Specification for IoT Profile](media/tizen-9.0-compliance-specification-for-iot-v1.0.pdf) ![PDF icon](media/application-pdf.png)
 
