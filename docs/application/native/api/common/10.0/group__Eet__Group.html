@@ -216,7 +216,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Clears eet cache. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000893">Deprecated:</a></b></dt><dd>Deprecated since 10.0.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000895">Deprecated:</a></b></dt><dd>Deprecated since 10.0.</dd></dl>
 <p>For a faster access to previously accessed data, Eet keeps an internal cache of files. These files will be freed automatically only when they are unused and the cache gets full, in order based on the last time they were used. On systems with little memory this may present an unnecessary constraint, so <a class="el" href="group__Eet__Group.html#ga728195468333682ff0b10a6bb6f1837b" title="Clears eet cache.">eet_clearcache()</a> is available for users to reclaim the memory used by files that are no longer needed. Those that were open using <a class="el" href="group__Eet__File__Group.html#ggaa8e1a7af50fefaf15eb2f69543d24998a8f395f56fba48be007c65be51d799ee9">EET_FILE_MODE_WRITE</a> or <a class="el" href="group__Eet__File__Group.html#ggaa8e1a7af50fefaf15eb2f69543d24998a763d29c19960a4e0d4eb7bc7bb512481">EET_FILE_MODE_READ_WRITE</a> and have modifications, will be written down to disk before flushing them from memory.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
@@ -239,7 +239,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Initializes the EET library. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000891">Deprecated:</a></b></dt><dd>Deprecated since 10.0.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000893">Deprecated:</a></b></dt><dd>Deprecated since 10.0.</dd></dl>
 <p>The first time this function is called, it will perform all the internal initialization required for the library to function properly and increment the initialization counter. Any subsequent call only increment this counter and return its new value, so it's safe to call this function more than once.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new init count. Will be <code>0</code> if initialization failed.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
@@ -263,7 +263,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Shuts down the EET library. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000892">Deprecated:</a></b></dt><dd>Deprecated since 10.0.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000894">Deprecated:</a></b></dt><dd>Deprecated since 10.0.</dd></dl>
 <p>If <a class="el" href="group__Eet__Group.html#gab802df0fd9c53dafbc486242be5bfb69" title="Initializes the EET library.">eet_init()</a> was called more than once for the running application, <a class="el" href="group__Eet__Group.html#ga11de4314e79e759cef42383a55f8339f" title="Shuts down the EET library.">eet_shutdown()</a> will decrement the initialization counter and return its new value, without doing anything else. When the counter reaches 0, all of the internal elements will be shutdown and any memory used freed.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new init count.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>

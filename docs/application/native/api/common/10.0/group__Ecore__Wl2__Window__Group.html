@@ -178,6 +178,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the behind blur radius of a given window.  <a href="#ga135dc80e8cfd5ea302eddbf32c5a3fb3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Wl2__Window__Group.html#ga19d4fb61c7726c58ee1ab6744369cdcc">ecore_wl2_window_behind_blur_get</a> (<a class="el" href="group__Ecore__Wl2__Group.html#ga3014a9055b29736710a84eb8c6395532">Ecore_Wl2_Window</a> *window)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the behind blur radius of a given window.  <a href="#ga19d4fb61c7726c58ee1ab6744369cdcc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Wl2__Window__Group.html#ga3226d8801654420baec81409da6313c0">ecore_wl2_window_behind_dim_set</a> (<a class="el" href="group__Ecore__Wl2__Group.html#ga3014a9055b29736710a84eb8c6395532">Ecore_Wl2_Window</a> *window, int enable, int r, int g, int b, int a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the behind dim color of a given window.  <a href="#ga3226d8801654420baec81409da6313c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Wl2__Window__Group.html#ga14da187faf86917f98a7e7b93a313b6b">ecore_wl2_window_behind_dim_get</a> (<a class="el" href="group__Ecore__Wl2__Group.html#ga3014a9055b29736710a84eb8c6395532">Ecore_Wl2_Window</a> *window, int *enable, int *r, int *g, int *b, int *a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the behind dim color of a given window.  <a href="#ga14da187faf86917f98a7e7b93a313b6b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Wl2__Window__Group.html#gaa66a6f9781b34713408372e890702bb2">ecore_wl2_window_pointer_constraints_lock_pointer</a> (<a class="el" href="group__Ecore__Wl2__Group.html#ga3014a9055b29736710a84eb8c6395532">Ecore_Wl2_Window</a> *win)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock pointer to a window with constraints.  <a href="#gaa66a6f9781b34713408372e890702bb2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Wl2__Window__Group.html#ga2297a4b3ea8dfda690456146a3931c55">ecore_wl2_window_pointer_constraints_unlock_pointer</a> (<a class="el" href="group__Ecore__Wl2__Group.html#ga3014a9055b29736710a84eb8c6395532">Ecore_Wl2_Window</a> *win)</td></tr>
@@ -649,6 +653,138 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>9.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga14da187faf86917f98a7e7b93a313b6b"></a><!-- doxytag: member="Ecore_Wayland2.h::ecore_wl2_window_behind_dim_get" ref="ga14da187faf86917f98a7e7b93a313b6b" args="(Ecore_Wl2_Window *window, int *enable, int *r, int *g, int *b, int *a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Wl2__Window__Group.html#ga14da187faf86917f98a7e7b93a313b6b">ecore_wl2_window_behind_dim_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Wl2__Group.html#ga3014a9055b29736710a84eb8c6395532">Ecore_Wl2_Window</a> *&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the behind dim color of a given window. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000802">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The window to get the behind dim color</td></tr>
+    <tr><td class="paramname">enable</td><td>True to enable the behind dim color </td></tr>
+    <tr><td class="paramname">r</td><td>The red channel of the behind dim effect </td></tr>
+    <tr><td class="paramname">g</td><td>The green channel of the behind dim effect </td></tr>
+    <tr><td class="paramname">b</td><td>The blue channel of the behind dim effect </td></tr>
+    <tr><td class="paramname">a</td><td>The alpha channel of the behind dim effect</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>10.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3226d8801654420baec81409da6313c0"></a><!-- doxytag: member="Ecore_Wayland2.h::ecore_wl2_window_behind_dim_set" ref="ga3226d8801654420baec81409da6313c0" args="(Ecore_Wl2_Window *window, int enable, int r, int g, int b, int a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Wl2__Window__Group.html#ga3226d8801654420baec81409da6313c0">ecore_wl2_window_behind_dim_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Wl2__Group.html#ga3014a9055b29736710a84eb8c6395532">Ecore_Wl2_Window</a> *&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the behind dim color of a given window. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000801">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The window to set the behind dim color </td></tr>
+    <tr><td class="paramname">enable</td><td>True to enable the behind dim color </td></tr>
+    <tr><td class="paramname">r</td><td>The red channel of the behind dim effect </td></tr>
+    <tr><td class="paramname">g</td><td>The green channel of the behind dim effect </td></tr>
+    <tr><td class="paramname">b</td><td>The blue channel of the behind dim effect </td></tr>
+    <tr><td class="paramname">a</td><td>The alpha channel of the behind dim effect</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>10.0 </dd></dl>
 
 </div>
 </div>

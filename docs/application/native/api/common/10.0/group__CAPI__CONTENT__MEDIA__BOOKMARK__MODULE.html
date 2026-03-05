@@ -163,7 +163,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called for every bookmark in the obtained list of bookmarks. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001601">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001603">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
 <p>Iterates over a bookmark list.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>To use the <em>bookmark</em> outside this function, copy the handle with the <a class="el" href="group__CAPI__CONTENT__MEDIA__BOOKMARK__MODULE.html#gaf33c97f1ad19addeb0abc2cbb05834a2" title="Clones a media bookmark.">media_bookmark_clone()</a> function. <br/>
@@ -193,7 +193,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>The structure type for the Media bookmark handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001596">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001598">Deprecated:</a></b></dt><dd>Deprecated since 9.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -225,7 +225,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Clones a media bookmark. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001586">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001588">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function copies the media bookmark handle from a source to destination. There is no media_bookmark_create() function. The media_bookmark_h is created internally and available through media bookmark foreach function such as <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga19aab138795b5444db39144a007a1e2f" title="Iterates through the media bookmark in the given media info from the media database.">media_info_foreach_bookmark_from_db()</a>. To use this handle outside of these foreach functions, use this function.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dst</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__BOOKMARK__MODULE.html#ga27001e69e51c7d3fe804ad4be6d061f3" title="Destroys a media bookmark.">media_bookmark_destroy()</a>.</dd></dl>
@@ -267,7 +267,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Removes a media bookmark from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001583">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001585">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/content.write</dd></dl>
@@ -313,7 +313,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Destroys a media bookmark. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001587">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001589">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function frees all the resources related to the bookmark handle. This handle no longer can be used to perform any operations. A new handle has to be created before the next use.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -367,7 +367,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Iterates through the bookmarks with an optional filter from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001585">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001587">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function gets all bookmarks associated with the given filter and calls <em>callback</em> for every retrieved media bookmark. If <code>NULL</code> is passed to the <em>filter</em>, then no filtering is applied. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -425,7 +425,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the number of bookmarks with an optional filter from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001584">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001586">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -475,7 +475,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the bookmark ID. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001588">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001590">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -521,7 +521,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the bookmark time marked parameter. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001589">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001591">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>This function returns time offset in seconds from beginning of the movie on which bookmark was placed.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -568,7 +568,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the media bookmark name which user set. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001591">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001593">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>name</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -616,7 +616,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the media bookmark thumbnail. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001590">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001592">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>path</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -670,7 +670,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Inserts a new bookmark in media on the specified time offset to the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001582">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001584">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/content.write</dd></dl>
@@ -728,7 +728,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the media bookmark name. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001592">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001594">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -766,7 +766,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Updates bookmark information to the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001593">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001595">Deprecated:</a></b></dt><dd>Deprecated since 9.0. </dd></dl>
 <p>The function updates the given bookmark meta in the media database. <br/>
  The function should be called after any change in bookmark attributes, to be updated to the media database. <br/>
  For example, after using <a class="el" href="group__CAPI__CONTENT__MEDIA__BOOKMARK__MODULE.html#ga588340d377a78ef1f9973daa3383f929" title="Sets the media bookmark name.">media_bookmark_set_name()</a> for setting the name of the bookmark, <br/>

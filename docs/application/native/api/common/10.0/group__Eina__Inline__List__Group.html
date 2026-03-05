@@ -582,7 +582,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Adds a new node to end of a list. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001000">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001002">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This code is meant to be fast: appends are O(1) and do not walk <em>in_list</em>.</dd>
 <dd>
 <em>in_item</em> is considered to be in no list. If it was in another list before, <a class="el" href="group__Eina__Inline__List__Group.html#gacb43e626d6c2da5270bc19f713676fe1" title="Removes node from list.">eina_inlist_remove()</a> it before adding. No check of <em>new_l</em> prev and next pointers is done, so it's safe to have them uninitialized.</dd></dl>
@@ -706,7 +706,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Moves existing node to end of list. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001002">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001004">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This code is meant to be fast: appends are O(1) and do not walk <em>list</em>.</dd>
 <dd>
 <em>item</em> is considered to be inside <em>list</em>. No checks are done to confirm this, and giving nodes from different lists will lead to problems.</dd></dl>
@@ -925,7 +925,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Adds a new node before the given relative item in list. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001001">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated001003">Deprecated:</a></b></dt><dd>Deprecated since 10.0. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This code is meant to be fast: appends are O(1) and do not walk <em>in_list</em>.</dd>
 <dd>
 <em>in_item</em> is considered to be in no list. If it was in another list before, <a class="el" href="group__Eina__Inline__List__Group.html#gacb43e626d6c2da5270bc19f713676fe1" title="Removes node from list.">eina_inlist_remove()</a> it before adding. No check of <em>in_item</em> prev and next pointers is done, so it's safe to have them uninitialized.</dd>
