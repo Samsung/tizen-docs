@@ -867,6 +867,224 @@ while (1) {
 
 In the GPU vendor driver, the GPU frame builder handles the drawing. TPL-EGL exposes the native platform buffer identifiers and managers so that the buffer can be used in other modules. Currently, `dma_buf/DRM` is supported for these purposes. The EGL porting layer calls TPL-EGL functions to execute commands requested of it, and returns the results to the GPU vendor driver. TPL-EGL performs all protocol-dependent actions. Such protocol-dependent parts can be separated into TPL-EGL backends. TPL-EGL backend can also be configured at runtime, and you can specify which type of backend to use when initializing a display object.
 
+### Sync_fd Transfer in Dequeue/Enqueue Flow
+
+The Tizen graphics subsystem uses sync_fd (synchronization file descriptor) as a synchronization primitive provided by the Linux kernel to represent synchronization events through a file descriptor. It serves as a bridge between the GPU rendering pipeline and the display subsystem, ensuring proper coordination between the rendering and display threads.
+
+#### Why sync_fd is Required
+
+In modern graphics rendering systems, multiple components work in parallel: the application renders frames, the GPU processes them, and the display controller presents them on screen. Without proper synchronization, this can lead to:
+
+- Screen Tearing: When parts of two different frames are visible simultaneously
+- Flickering: When frames are displayed out of sync with the display refresh rate
+- Resource Contention: When buffers are reused while still being displayed
+
+sync_fd enables precise coordination between three key synchronization points:
+
+- Render Completion: Signals when the GPU finishes rendering a frame
+- Display Release: Signals when the compositor finishes displaying and releases a buffer
+- Buffer Reuse: Signals when an application can safely reuse a buffer
+
+By using sync_fd, the system ensures that:
+
+- Buffers are never reused while being displayed
+- Frames are presented in sync with the display refresh rate
+- GPU and display operations can work efficiently in parallel
+- Power consumption is optimized by avoiding unnecessary waiting
+
+#### Dequeue Flow - Receiving sync_fd
+
+![Dequeue-Flow-Complete-Flow-Diagram](media/Dequeue-Flow-Complete-Flow-Diagram.png)
+
+**Key Steps**
+
+1. **EGL Calls dequeue**: EGL layer calls the dequeue function to request an available buffer
+2. **Wait for Available Buffer**: Call `tbm_surface_queue_can_dequeue_wait_timeout()` to wait for an available buffer in the queue
+3. **Dequeue Buffer from Queue**: Dequeue a buffer from the free queue and increment the reference count
+4. **Get or Create wl_egl_buffer**: Each tbm_surface corresponds to a wl_egl_buffer object. Update buffer status to DEQUEUED
+5. **Pass release_fence_fd** ⭐ *Key Point*: This is the most critical step in the Dequeue flow. The system checks if the buffer has a release_fence_fd:
+   - If `wl_egl_buffer->release_fence_fd == -1`: buffer is immediately available
+   - If not -1: display server has not finished displaying this buffer yet, user (EGL) must wait for this fence signal
+
+   *Fence Source*: Received from display server's `fenced_release` event
+
+   *Ownership Transfer*: After passing fd to EGL layer, libtpl-egl clears its own copy
+
+6. **release_fence_fd Setting**: When Display server completes buffer display, it triggers `fenced_release` event, saves release fence, updates status to RELEASED, and releases buffer back to queue
+
+#### Enqueue Flow - Passing sync_fd
+
+![Enqueue Flow Complete Flow Diagram](media/Enqueue-Flow-Complete-Flow-Diagram.png)
+
+**Key Steps**
+
+1. **EGL Calls enqueue**: EGL layer calls enqueue function, passing the completed acquire_fence_fd
+2. **Validate Input**: Validate buffer validity and retrieve associated wl_egl_buffer object
+3. **Save Damage Rectangles (Optional)**: Damage rectangles identify modified regions in the buffer. Compositor only needs to update these regions, improving efficiency
+4. **Save acquire_fence_fd** ⭐ *Key Point*: Save acquire_fence_fd, representing when GPU completes rendering. Fence is created by EGL application (usually via EGL sync object), ownership transfers from EGL to libtpl-egl
+5. **Enqueue to dirty queue**: Put buffer into dirty queue, update status to ENQUEUED, decrement reference count
+6. **Acquire Flow (Background Thread Processing)**: After enqueue returns, background thread processes acquire operation. Two synchronization modes are available:
+   - *Explicit Sync Mode*: Directly pass fence to compositor, no waiting. Fence will be passed via `set_acquire_fence()` during commit
+   - *Legacy Sync Mode*: Wait for fence signal locally. Create gsource to listen to fence fd, when fence triggers, call callback function
+7. **Legacy Mode - Fence Wait Callback**: When fence triggers, gsource schedules callback function, clears `acquire_fence_fd`, checks vblank status, then decides whether to commit
+8. **Commit to Display Server**: Create wl_buffer, set acquire fence via Explicit Sync, get release listener, execute Wayland submission flow (attach, damage, commit)
+
+
+#### Release Fence Lifecycle
+
+![Release-Fence-Lifecycle](media/Release-Fence-Lifecycle.png)
+
+**Key Steps**
+
+1. **Display Server Creates Release Fence**: When the display server completes displaying a buffer on screen, it creates a release fence to signal that the buffer is no longer in use
+2. **Fence Transfer**: The display server sends the release fence fd to libtpl-egl via `fenced_release` event
+3. **Save Fence in Buffer**: libtpl-egl saves the release fence fd to the corresponding buffer object (`buffer->release_fence_fd`)
+4. **Release Buffer to Free Queue**: The buffer is moved back to the free queue and marked as available for reuse
+5. **Return Fence to EGL**: When EGL calls `dequeue()`, the release fence fd is returned to the EGL application
+6. **EGL Waits for Fence Signal**: The EGL application must wait for the release fence to be signaled before rendering new content into the buffer
+7. **Enqueue New Buffer**: After rendering completes and EGL creates an acquire fence, it calls `enqueue()` with the new acquire_fence_fd
+8. **Close Release Fence**: The release fence fd is typically closed by EGL after it has been waited on
+
+#### Acquire Fence Lifecycle
+
+![Acquire-Fence-Lifecycle](media/Acquire-Fence-Lifecycle.png)
+
+**Key Steps**
+
+1. **EGL Creates Acquire Fence**: After GPU completes rendering a frame, EGL creates an acquire fence to signal when rendering is finished
+2. **EGL Calls enqueue**: EGL application calls `enqueue(acquire_fence_fd)` to submit the buffer with the acquire fence fd
+3. **Validate Input**: Validate buffer validity and retrieve associated wl_egl_buffer object
+4. **Save acquire_fence_fd** ⭐ *Key Point*: This is the most critical step in the Acquire Fence lifecycle. libtpl-egl saves the acquire_fence_fd to the buffer object (`buffer->acquire_fence_fd`) and enqueues buffer to dirty queue:
+   - If explicit sync mode: fence will be passed directly to compositor without waiting
+   - If legacy sync mode: fence will be waited for locally in libtpl-egl thread
+
+   *Fence Creation*: Usually created by EGL via EGL sync fence object
+
+   *Fence Source*: GPU rendering completion signal
+
+   *Ownership Transfer*: After EGL calls enqueue, ownership transfers from EGL to libtpl-egl
+5. **Enqueue to dirty queue**: Put buffer into dirty queue, update status to ENQUEUED, decrement reference count
+6. **Background Thread Acquire Processing**: After enqueue returns, libtpl-egl's background thread processes the acquire operation. Two synchronization modes are available:
+   - *Explicit Sync Mode*: Directly pass fence fd to compositor via `set_acquire_fence()` during Wayland commit
+   - *Legacy Sync Mode*: Create gsource to monitor fence fd, wait for fence signal locally
+7. **Legacy Mode - Fence Wait**: In legacy sync mode, when the acquire fence signals, gsource triggers a callback function that clears `acquire_fence_fd`, checks vblank status, then proceeds to commit
+8. **Commit to Display Server**: Create wl_buffer, set acquire fence via Explicit Sync, get release listener, execute Wayland submission flow (attach, damage, commit)
+
+#### Key Synchronization Points
+
+**Synchronization Point 1: Dequeue - Buffer Availability Check**
+
+*Purpose*: Ensure the obtained buffer is no longer used by display server
+
+*Mechanism*:
+1. Check if available buffer exists in queue
+2. If available buffer exists, dequeue
+3. Check if buffer has release fence
+4. If yes, return fence to EGL
+
+*Fence Source*: Display server's `fenced_release` event
+
+*EGL's Responsibility*: Must wait for `release_fence_fd` signal before reusing buffer
+
+**Synchronization Point 2: Enqueue - Render Completion Notification**
+
+*Purpose*: Notify compositor when rendering completes
+
+*Mechanism*:
+1. EGL calls enqueue after rendering completes
+2. Save acquire fence
+3. Enqueue to dirty queue
+
+*Fence Creation*: Usually created by EGL (EGL sync fence)
+
+*libtpl-egl's Responsibility*: Pass fence to compositor (Explicit Sync) or wait for fence locally (Legacy Sync)
+
+**Synchronization Point 3: Acquire - Compositor Ready to Display**
+
+*Purpose*: Ensure compositor uses buffer only after rendering completes
+
+*Two Modes*:
+
+*Mode 1: Explicit Sync*
+- Directly pass to compositor
+- Compositor manages fence directly
+- Avoids extra polling
+- More efficient pipeline
+
+*Mode 2: Legacy Sync*
+- Wait for fence locally
+- Requires waiting in libtpl-egl thread
+- Increases CPU overhead
+- Less efficient than explicit sync
+
+**Synchronization Point 4: Commit - Submit to Compositor**
+
+*Purpose*: Submit buffer to compositor for display
+
+*Flow*:
+1. Attach buffer
+2. Damage (mark update regions)
+3. Commit
+4. Set release listener (for next cycle)
+
+*Key Point*: If using explicit sync, call `set_acquire_fence()` before commit
+
+**Synchronization Point 5: Vblank - Vertical Synchronization**
+
+*Purpose*: Synchronize frame rate with display refresh rate
+
+*Description*:
+- Prevent tearing
+- Stable frame rate (e.g., 60fps)
+- Can be disabled via `TPL_WAIT_VBLANK` environment variable
+
+#### Protocol Support
+
+**Wayland Explicit Sync Protocol**
+
+*Protocol Name*: `zwp_linux_explicit_synchronization_v1`
+
+*Purpose*: Provides explicit fence synchronization mechanism, replacing implicit buffer management
+
+*Core Interfaces*:
+1. **Main Protocol Object**: Obtained via wl_registry bind
+2. **Surface Sync Object**: Create sync object for surface
+3. **Set Acquire Fence**: Tell compositor to wait for render completion
+4. **Get Release Event**: Set listener to receive release fence
+
+**Key Functions**:
+
+```cpp
+// Set acquire fence
+zwp_linux_surface_synchronization_v1_set_acquire_fence(
+    surface_sync,
+    acquire_fence_fd
+);
+
+// Get release event
+struct zwp_linux_buffer_release_v1 *buffer_release =
+    zwp_linux_surface_synchronization_v1_get_release(surface_sync);
+
+zwp_linux_buffer_release_v1_add_listener(
+    buffer_release,
+    &listener,
+    wl_egl_buffer
+);
+```
+
+**Tizen Surface SHM Protocol**
+
+*Protocol Name*: `tizen_surface_shm`
+
+*Purpose*: Tizen-specific buffer flush functionality
+
+**Presentation Time Protocol**
+
+*Protocol Name*: `wp_presentation`
+
+*Purpose*: Provide precise feedback on buffer display timing
+
+
 #### TPL-EGL and Wayland server and client
 
 Tizen uses the `wl_tbm` protocol instead of `wl_drm`. The `wl_tbm` protocol is designed for sharing the buffer (`tbm_surface`) between `wayland_client` and `wayland_server`. Although the `wayland_tbm_server_init` and `wayland_tbm_client_init` pair is a role for `eglBindWaylandDisplayWL`, the EGL driver is required to implement the entry points for `eglBindWaylandDisplayWL` and `eglUnbindWaylandDisplayWL` as dummy. For more information, see [https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec](https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec).
