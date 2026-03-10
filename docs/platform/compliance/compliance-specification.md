@@ -6,18 +6,16 @@ The Tizen Compliance Specification is the definitive set of requirements for sof
 
   [Tizen 10.0 Compliance Specification for TV Profile](media/tizen-10.0-compliance-specification-for-tv-1.0.pdf) ![PDF icon](media/application-pdf.png)
 
-  [Tizen 9.0 Compliance Specification for TV Profile](media/tizen-9.0-compliance-specification-for-tv-1.0.pdf) ![PDF icon](media/application-pdf.png)
-
 - IoT profile
 
   [Tizen 10.0 Compliance Specification for IoT Profile](media/tizen-10.0-compliance-specification-for-iot-1.0.pdf) ![PDF icon](media/application-pdf.png)
-
-  [Tizen 9.0 Compliance Specification for IoT Profile](media/tizen-9.0-compliance-specification-for-iot-v1.0.pdf) ![PDF icon](media/application-pdf.png)
 
 <details>
 <summary>Archive</summary>
 
 - TV profile
+
+  [Tizen 9.0 Compliance Specification for TV Profile](media/tizen-9.0-compliance-specification-for-tv-1.0.pdf) ![PDF icon](media/application-pdf.png)
 
   [Tizen 8.0 Compliance Specification for TV Profile](media/tizen-8.0-compliance-specification-for-tv-profile-v1.0.pdf) ![PDF icon](media/application-pdf.png)
 
@@ -32,6 +30,8 @@ The Tizen Compliance Specification is the definitive set of requirements for sof
   [Tizen 2.4 Compliance Specification for TV Profile](media/tizen-2.4-compliance-specification-for-tv-profile-v1.0.pdf) ![PDF icon](media/application-pdf.png)
 
 - IoT profile
+
+  [Tizen 9.0 Compliance Specification for IoT Profile](media/tizen-9.0-compliance-specification-for-iot-v1.0.pdf) ![PDF icon](media/application-pdf.png)
 
   [Tizen 6.0 Compliance Specification for IoT Profile](media/tizen-6.0-compliance-specification-for-iot-profile-v0.98-beta.pdf) ![PDF icon](media/application-pdf.png)
 
