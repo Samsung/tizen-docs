@@ -867,6 +867,541 @@ while (1) {
 
 In the GPU vendor driver, the GPU frame builder handles the drawing. TPL-EGL exposes the native platform buffer identifiers and managers so that the buffer can be used in other modules. Currently, `dma_buf/DRM` is supported for these purposes. The EGL porting layer calls TPL-EGL functions to execute commands requested of it, and returns the results to the GPU vendor driver. TPL-EGL performs all protocol-dependent actions. Such protocol-dependent parts can be separated into TPL-EGL backends. TPL-EGL backend can also be configured at runtime, and you can specify which type of backend to use when initializing a display object.
 
+**EGL to TPL API Mapping Table**
+
+#### I. Display Management Related APIs
+
+#### 1.1 eglGetDisplay
+
+**Function**: Get EGL display connection
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglGetDisplay(native_display)` | 1. `tpl_display_get_backend_type(native_display)` - Determine backend type<br>2. `tpl_display_create(backend_type, native_display)` - Create TPL display object |
+
+**Call Example**:
+```c
+// EGL side
+EGLDisplay eglDpy = eglGetDisplay(native_display);
+
+// Corresponding TPL calls
+tpl_backend_type_t backend_type = tpl_display_get_backend_type(native_display);
+tpl_display_t *tpl_dpy = tpl_display_create(backend_type, native_display);
+```
+
+#### 1.2 eglInitialize
+
+**Function**: Initialize EGL display
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglInitialize(display, major, minor)` | 1. `tpl_display_query_config(...)` - Query supported configurations<br>2. `tpl_display_filter_config(...)` - Filter configurations |
+
+**Call Example**:
+```c
+// EGL side
+EGLBoolean result = eglInitialize(display, &major, &minor);
+
+// Corresponding TPL calls
+tpl_display_query_config(tpl_dpy, TPL_SURFACE_TYPE_WINDOW,
+                         red_size, green_size, blue_size,
+                         alpha_size, depth_size, &visual_id, &is_slow);
+```
+
+#### 1.3 eglTerminate
+
+**Function**: Terminate EGL display
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglTerminate(display)` | 1. `tpl_object_unreference(tpl_display)` - Decrease display object reference count |
+
+**Call Example**:
+```c
+// EGL side
+EGLBoolean result = eglTerminate(display);
+
+// Corresponding TPL calls
+tpl_object_unreference((tpl_object_t *)tpl_dpy);
+```
+
+---
+
+#### II. Config Selection Related APIs
+
+#### 2.1 eglChooseConfig
+
+**Function**: Choose EGL configuration
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglChooseConfig(display, attrib_list, configs, config_size, num_config)` | 1. `tpl_display_query_config()` - Query if each configuration is supported<br>2. `tpl_display_filter_config()` - Filter configurations<br>3. `tpl_display_get_native_window_info()` - Get window information |
+
+**Call Example**:
+```c
+// EGL side
+EGLBoolean result = eglChooseConfig(display, attrib_list, configs, config_size, &num_config);
+
+// Corresponding TPL calls
+int red_size = attrib_list_get(attrib_list, EGL_RED_SIZE);
+int green_size = attrib_list_get(attrib_list, EGL_GREEN_SIZE);
+int blue_size = attrib_list_get(attrib_list, EGL_BLUE_SIZE);
+int alpha_size = attrib_list_get(attrib_list, EGL_ALPHA_SIZE);
+int depth_size = attrib_list_get(attrib_list, EGL_DEPTH_SIZE);
+
+tpl_display_query_config(tpl_dpy, TPL_SURFACE_TYPE_WINDOW,
+                         red_size, green_size, blue_size,
+                         alpha_size, depth_size, &native_visual_id, &is_slow);
+```
+
+#### 2.2 eglGetConfigAttrib
+
+**Function**: Get configuration attribute
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglGetConfigAttrib(display, config, attribute, value)` | Usually no TPL API calls needed, use cached configuration information |
+
+---
+
+#### III. Surface Creation Related APIs
+
+#### 3.1 eglCreateWindowSurface
+
+**Function**: Create window surface
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglCreateWindowSurface(display, config, native_window, attrib_list)` | 1. `tpl_display_get_native_window_info()` - Get window information<br>2. `tpl_surface_create()` - Create TPL surface<br>3. `tpl_surface_set_reset_cb()` - Set reset callback (optional) |
+
+**Call Example**:
+```c
+// EGL side
+EGLSurface eglSurface = eglCreateWindowSurface(display, config, native_window, attrib_list);
+
+// Corresponding TPL calls
+int width, height;
+tbm_format format;
+tpl_display_get_native_window_info(tpl_dpy, native_window, &width, &height, &format, depth, a_size);
+
+tpl_surface_t *tpl_sfc = tpl_surface_create(tpl_dpy, native_window,
+                                            TPL_SURFACE_TYPE_WINDOW, format);
+
+// Optional: set reset callback
+tpl_surface_set_reset_cb(tpl_sfc, user_data, reset_callback);
+```
+
+#### 3.2 eglCreateWindowSurface with num_buffers
+
+**Function**: Create window surface with specified buffer count
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglCreateWindowSurface(...)` (using EGL_BUFFER_COUNT attribute) | 1. `tpl_display_get_native_window_info()` - Get window information<br>2. `tpl_surface_create_with_num_buffers()` - Create TPL surface with specified buffer count |
+
+**Call Example**:
+```c
+// Corresponding TPL calls (specify buffer count)
+int num_buffers = get_buffer_count_from_attrib_list(attrib_list);
+tpl_surface_t *tpl_sfc = tpl_surface_create_with_num_buffers(
+    tpl_dpy, native_window, TPL_SURFACE_TYPE_WINDOW, format, num_buffers);
+```
+
+#### 3.3 eglCreatePixmapSurface
+
+**Function**: Create pixmap surface
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglCreatePixmapSurface(display, config, native_pixmap, attrib_list)` | 1. `tpl_display_get_native_pixmap_info()` - Get pixmap information<br>2. `tpl_surface_create()` - Create TPL surface<br>3. `tpl_display_get_buffer_from_native_pixmap()` - Get buffer |
+
+**Call Example**:
+```c
+// EGL side
+EGLSurface eglSurface = eglCreatePixmapSurface(display, config, native_pixmap, attrib_list);
+
+// Corresponding TPL calls
+int width, height;
+tbm_format format;
+tpl_display_get_native_pixmap_info(tpl_dpy, native_pixmap, &width, &height, &format);
+
+tpl_surface_t *tpl_sfc = tpl_surface_create(tpl_dpy, native_pixmap,
+                                            TPL_SURFACE_TYPE_PIXMAP, format);
+
+tbm_surface_h buffer = tpl_display_get_buffer_from_native_pixmap(tpl_dpy, native_pixmap);
+```
+
+#### 3.4 eglDestroySurface
+
+**Function**: Destroy surface
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglDestroySurface(display, surface)` | 1. `tpl_object_unreference(tpl_surface)` - Decrease surface object reference count |
+
+**Call Example**:
+```c
+// EGL side
+EGLBoolean result = eglDestroySurface(display, surface);
+
+// Corresponding TPL calls
+tpl_object_unreference((tpl_object_t *)tpl_sfc);
+```
+
+---
+
+#### IV. Buffer Operation Related APIs
+
+#### 4.1 eglSwapBuffers (Core API)
+
+**Function**: Swap buffers
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglSwapBuffers(display, surface)` | 1. `tpl_surface_dequeue_buffer()` - Get rendering buffer<br>2. GPU renders to buffer<br>3. `tpl_surface_enqueue_buffer()` - Submit rendered buffer |
+
+**Call Example**:
+```c
+// EGL side
+EGLBoolean result = eglSwapBuffers(display, surface);
+
+// Corresponding TPL call flow
+// Step 1: Get buffer
+tbm_surface_h buffer = tpl_surface_dequeue_buffer(tpl_sfc);
+
+// Step 2: GPU renders to buffer (done by GPU driver)
+render_to_buffer(buffer);
+
+// Step 3: Submit buffer
+tpl_surface_enqueue_buffer(tpl_sfc, buffer);
+```
+
+#### 4.2 eglSwapBuffers with Damage
+
+**Function**: Swap buffers with damage region
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglSwapBuffersWithDamageKHR(display, surface, rects, n_rects)` | 1. `tpl_surface_dequeue_buffer()` - Get rendering buffer<br>2. GPU renders to buffer<br>3. `tpl_surface_enqueue_buffer_with_damage()` - Submit buffer with damage region |
+
+**Call Example**:
+```c
+// EGL side
+EGLBoolean result = eglSwapBuffersWithDamageKHR(display, surface, rects, n_rects);
+
+// Corresponding TPL call flow
+tbm_surface_h buffer = tpl_surface_dequeue_buffer(tpl_sfc);
+render_to_buffer(buffer);
+tpl_surface_enqueue_buffer_with_damage(tpl_sfc, buffer, n_rects, rects);
+```
+
+#### 4.3 eglSwapBuffers with Fence Sync
+
+**Function**: Swap buffers with synchronization
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglSwapBuffers(display, surface)` (using EGLSync) | 1. `tpl_surface_dequeue_buffer_with_sync()` - Get buffer with sync<br>2. GPU renders to buffer<br>3. `tpl_surface_enqueue_buffer_with_damage_and_sync()` - Submit buffer with sync |
+
+**Call Example**:
+```c
+// Corresponding TPL call flow
+tbm_fd sync_fence;
+tbm_surface_h buffer = tpl_surface_dequeue_buffer_with_sync(tpl_sfc, timeout_ns, &sync_fence);
+render_to_buffer(buffer);
+tpl_surface_enqueue_buffer_with_damage_and_sync(tpl_sfc, buffer, 0, NULL, acquire_fence);
+```
+
+---
+
+#### V. Surface Query Related APIs
+
+#### 5.1 eglQuerySurface
+
+**Function**: Query surface attributes
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglQuerySurface(display, surface, attribute, value)` | Call different TPL APIs based on attribute |
+
+**Detailed Mapping**:
+
+| EGL Attribute | Corresponding TPL API |
+|---------------|----------------------|
+| `EGL_WIDTH` | `tpl_surface_get_size(surface, &width, &height)` |
+| `EGL_HEIGHT` | `tpl_surface_get_size(surface, &width, &height)` |
+| `EGL_SWAP_INTERVAL` | `tpl_surface_get_post_interval(surface)` |
+| `EGL_RENDER_BUFFER` | Usually no TPL API calls, use internal state |
+| `EGL_HORIZONTAL_RESOLUTION` | `tpl_display_get_native_window_info()` |
+| `EGL_VERTICAL_RESOLUTION` | `tpl_display_get_native_window_info()` |
+| `EGL_PIXEL_ASPECT_RATIO` | `tpl_display_get_native_window_info()` |
+
+**Call Example**:
+```c
+// EGL side
+EGLBoolean result = eglQuerySurface(display, surface, EGL_WIDTH, &width);
+
+// Corresponding TPL calls
+tpl_surface_get_size(tpl_sfc, &width, &height);
+```
+
+#### 5.2 eglSurfaceAttrib
+
+**Function**: Set surface attribute
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglSurfaceAttrib(display, surface, attribute, value)` | Call different TPL APIs based on attribute |
+
+**Detailed Mapping**:
+
+| EGL Attribute | Corresponding TPL API |
+|---------------|----------------------|
+| `EGL_SWAP_INTERVAL` | `tpl_surface_set_post_interval(surface, interval)` |
+| `EGL_RENDER_BUFFER` | Usually no TPL API calls |
+| `EGL_MIPMAP_LEVEL` | Usually no TPL API calls |
+
+**Call Example**:
+```c
+// EGL side
+EGLBoolean result = eglSurfaceAttrib(display, surface, EGL_SWAP_INTERVAL, 1);
+
+// Corresponding TPL calls
+tpl_surface_set_post_interval(tpl_sfc, 1);
+```
+
+---
+
+#### VI. Vulkan WSI Related APIs
+
+#### 6.1 Create Swapchain
+
+**Function**: Create Vulkan Swapchain
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `vkCreateSwapchainKHR` (Vulkan) | 1. `tpl_surface_create_swapchain()` - Create swapchain<br>2. `tpl_surface_get_swapchain_buffers()` - Get buffer list |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+tpl_result_t result = tpl_surface_create_swapchain(tpl_sfc, format,
+                                                    width, height,
+                                                    buffer_count, present_mode);
+
+tbm_surface_h *buffers;
+int buffer_count;
+tpl_surface_get_swapchain_buffers(tpl_sfc, &buffers, &buffer_count);
+```
+
+#### 6.2 Destroy Swapchain
+
+**Function**: Destroy Vulkan Swapchain
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `vkDestroySwapchainKHR` (Vulkan) | 1. `tpl_surface_destroy_swapchain()` - Destroy swapchain |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+tpl_surface_destroy_swapchain(tpl_sfc);
+```
+
+---
+
+#### VII. Frontbuffer Related APIs
+
+#### 7.1 Set Frontbuffer Mode
+
+**Function**: Set frontbuffer mode
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglSurfaceAttrib(display, surface, EGL_FRONTBUFFER_MODE_TIZEN, value)` | 1. `tpl_surface_set_frontbuffer_mode(surface, value)` |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+tpl_surface_set_frontbuffer_mode(tpl_sfc, TPL_TRUE);
+```
+
+#### 7.2 Get Frontbuffer Information
+
+**Function**: Get if buffer is frontbuffer
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| Get during dequeue | 1. `tpl_surface_dequeue_buffer_with_sync_and_frontbuffer_info()` |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+tpl_bool_t is_frontbuffer;
+tbm_fd sync_fence;
+tbm_surface_h buffer = tpl_surface_dequeue_buffer_with_sync_and_frontbuffer_info(
+    tpl_sfc, timeout_ns, &sync_fence, &is_frontbuffer);
+```
+
+---
+
+### VIII. Present Mode Related APIs
+
+#### 8.1 Query Supported Present Modes
+
+**Function**: Query supported presentation modes
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglQuerySurface(display, surface, EGL_PRESENT_MODE_TIZEN, value)` | 1. `tpl_display_query_supported_present_modes_from_native_window()` |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+int modes;
+tpl_display_query_supported_present_modes_from_native_window(tpl_dpy, window, &modes);
+
+// Return value may be combination of:
+// TPL_DISPLAY_PRESENT_MODE_MAILBOX
+// TPL_DISPLAY_PRESENT_MODE_FIFO
+// TPL_DISPLAY_PRESENT_MODE_IMMEDIATE
+// TPL_DISPLAY_PRESENT_MODE_FIFO_RELAXED
+```
+
+---
+
+#### IX. Rotation Related APIs
+
+#### 9.1 Query Rotation Angle
+
+**Function**: Query surface rotation angle
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglQuerySurface(display, surface, EGL_ROTATION_TIZEN, value)` | 1. `tpl_surface_get_rotation(surface, &rotation)` |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+int rotation;
+tpl_surface_get_rotation(tpl_sfc, &rotation);
+
+// Return value: 0, 90, 180, 270
+```
+
+#### 9.2 Set Rotation Capability
+
+**Function**: Enable/Disable rotation capability
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglSurfaceAttrib(display, surface, EGL_ROTATION_CAPABILITY_TIZEN, value)` | 1. `tpl_surface_set_rotation_capability(surface, value)` |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+tpl_surface_set_rotation_capability(tpl_sfc, TPL_TRUE);
+```
+
+---
+
+#### X. Buffer Count Related APIs
+
+#### 10.1 Query Supported Buffer Count
+
+**Function**: Query supported buffer count range
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| `eglQuerySurface(display, surface, EGL_BUFFER_COUNT_RANGE_TIZEN, value)` | 1. `tpl_display_query_supported_buffer_count_from_native_window()` |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+int min_buffers, max_buffers;
+tpl_display_query_supported_buffer_count_from_native_window(tpl_dpy, window,
+                                                            &min_buffers, &max_buffers);
+```
+
+---
+
+#### XI. Sync Fence Related APIs
+
+#### 11.1 Check Fence Sync Support
+
+**Function**: Check if surface supports fence synchronization
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| Check before using EGLSync | 1. `tpl_surface_fence_sync_is_available(surface)` |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+tpl_bool_t is_available = tpl_surface_fence_sync_is_available(tpl_sfc);
+```
+
+---
+
+#### XII. Buffer Cancellation Related APIs
+
+#### 12.1 Cancel Dequeued Buffer
+
+**Function**: Cancel dequeued buffer before use
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| In certain error conditions | 1. `tpl_surface_cancel_dequeued_buffer(surface, buffer)` |
+
+**Call Example**:
+```c
+// Corresponding TPL calls
+tpl_surface_cancel_dequeued_buffer(tpl_sfc, buffer);
+```
+
+---
+
+#### XIII. Object Management Related APIs
+
+#### 13.1 Reference Count Management
+
+**Function**: Manage TPL object reference counts
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| When creating/destroying objects | 1. `tpl_object_reference()` - Increase reference count<br>2. `tpl_object_unreference()` - Decrease reference count<br>3. `tpl_object_get_reference()` - Get reference count |
+
+**Call Example**:
+```c
+// Increase reference
+tpl_object_reference((tpl_object_t *)tpl_sfc);
+
+// Decrease reference
+tpl_object_unreference((tpl_object_t *)tpl_sfc);
+
+// Get reference count
+int ref_count = tpl_object_get_reference((tpl_object_t *)tpl_sfc);
+```
+
+##### 13.2 User Data Management
+
+**Function**: Associate user data with TPL objects
+
+| EGL API | Corresponding TPL API Call Flow |
+|---------|------------------------------|
+| When storing additional information | 1. `tpl_object_set_user_data()` - Set user data<br>2. `tpl_object_get_user_data()` - Get user data |
+
+**Call Example**:
+```c
+// Set user data
+tpl_object_set_user_data((tpl_object_t *)tpl_sfc, key, data, free_func);
+
+// Get user data
+void *data = tpl_object_get_user_data((tpl_object_t *)tpl_sfc, key);
+```
+
+---
+
 ### Sync_fd Transfer in Dequeue/Enqueue Flow
 
 The Tizen graphics subsystem uses sync_fd (synchronization file descriptor) as a synchronization primitive provided by the Linux kernel to represent synchronization events through a file descriptor. It serves as a bridge between the GPU rendering pipeline and the display subsystem, ensuring proper coordination between the rendering and display threads.
