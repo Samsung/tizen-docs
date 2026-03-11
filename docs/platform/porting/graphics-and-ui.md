@@ -1677,17 +1677,17 @@ The surface queue supports different operational modes to control buffer lifecyc
 | Mode | Description |
 | ---- | ----------- |
 | `TBM_SURFACE_QUEUE_MODE_NONE` | Default mode with no special constraints |
-| `TBM_SURFACE_QUEUE_MODE_GUARANTEE_CYCLE` | Guarantees that dequeued surfaces must be properly enqueued or canceled before queue reset |
+| `TBM_SURFACE_QUEUE_MODE_GUARANTEE_CYCLE` | Guarantees that dequeued surfaces must be properly enqueued, acquired, or released before queue reset |
 
-### Enhanced Surface Queue Functions
+### Surface Queue Basic Operations
 
-#### Sequence Queue Creation
+#### Creating a Queue
 
-Creates a sequence surface queue with ordered buffer management:
+Create a normal surface queue:
 
 ```cpp
-tbm_surface_queue_h tbm_surface_queue_sequence_create(int queue_size, int width,
-                                                     int height, int format, int flags);
+tbm_surface_queue_h tbm_surface_queue_create(int queue_size, int width,
+                                             int height, int format, int flags);
 ```
 
 **Parameters:**
@@ -1697,15 +1697,189 @@ tbm_surface_queue_h tbm_surface_queue_sequence_create(int queue_size, int width,
 - `format`: Surface format
 - `flags`: Memory allocation flags
 
+**Returns:** `tbm_surface_queue_h` on success, `NULL` on failure
+
+#### Creating a Sequence Queue
+
+Create a sequence surface queue with ordered buffer management:
+
+```cpp
+tbm_surface_queue_h tbm_surface_queue_sequence_create(int queue_size, int width,
+                                                     int height, int format, int flags);
+```
+
+**Note:** Sequence queues ensure buffers are processed in strict order, suitable for scenarios requiring frame order preservation.
+
+#### Destroying a Queue
+
+Destroy the surface queue:
+
+```cpp
+void tbm_surface_queue_destroy(tbm_surface_queue_h surface_queue);
+```
+
+### Surface Queue Property Queries
+
+Get various queue properties:
+
+```cpp
+// Get width
+int tbm_surface_queue_get_width(tbm_surface_queue_h surface_queue);
+
+// Get height
+int tbm_surface_queue_get_height(tbm_surface_queue_h surface_queue);
+
+// Get format
+int tbm_surface_queue_get_format(tbm_surface_queue_h surface_queue);
+
+// Get queue size
+int tbm_surface_queue_get_size(tbm_surface_queue_h surface_queue);
+```
+
+### Surface Queue Buffer Operations
+
+#### Dequeue Operation (Producer)
+
+Get a surface from the queue:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_dequeue(
+    tbm_surface_queue_h surface_queue, tbm_surface_h *surface);
+```
+
+**Returns:**
+- `TBM_SURFACE_QUEUE_ERROR_NONE`: Success
+- `TBM_SURFACE_QUEUE_ERROR_EMPTY`: Queue is empty
+- `TBM_SURFACE_QUEUE_ERROR_INVALID_QUEUE`: Invalid queue
+
+#### Check if Dequeue is Possible
+
+```cpp
+int tbm_surface_queue_can_dequeue(tbm_surface_queue_h surface_queue, int wait);
+```
+
+**Parameters:**
+- `wait`: If 1, the function will block until a surface is available
+- `Returns`: 1 if dequeue is possible, 0 otherwise
+
+#### Check if Dequeue is Possible with Timeout
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_can_dequeue_wait_timeout(
+    tbm_surface_queue_h surface_queue, int ms_timeout);
+```
+
+**Parameters:**
+- `ms_timeout`: Wait timeout in milliseconds
+
+#### Enqueue Operation (Producer)
+
+Put a surface back into the queue:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_enqueue(
+    tbm_surface_queue_h surface_queue, tbm_surface_h surface);
+```
+
+#### Acquire Operation (Consumer)
+
+Get an enqueued surface from the queue:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_acquire(
+    tbm_surface_queue_h surface_queue, tbm_surface_h *surface);
+```
+
+#### Check if Acquire is Possible
+
+```cpp
+int tbm_surface_queue_can_acquire(tbm_surface_queue_h surface_queue, int wait);
+```
+
+**Parameters:**
+- `wait`: If 1, the function will block until a surface is available for acquire
+
+#### Release Operation (Consumer)
+
+Release a surface back to the queue:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_release(
+    tbm_surface_queue_h surface_queue, tbm_surface_h surface);
+```
+
+**Important:** Only release a surface when it can be dequeued and rendering is complete. Releasing while the consumer is still using it will cause issues.
+
+#### Cancel Dequeue
+
+Cancel a previously dequeued surface:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_cancel_dequeue(
+    tbm_surface_queue_h surface_queue, tbm_surface_h surface);
+```
+
+#### Cancel Acquire
+
+Cancel a previously acquired surface:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_cancel_acquire(
+    tbm_surface_queue_h surface_queue, tbm_surface_h surface);
+```
+
+### Surface Queue Management
+
+#### Reset Queue
+
+Reset queue parameters (width, height, format):
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_reset(
+    tbm_surface_queue_h surface_queue, int width, int height, int format);
+```
+
+#### Flush Queue
+
+Flush all surfaces in the queue:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_flush(tbm_surface_queue_h surface_queue);
+```
+
+#### Free Flush Queue
+
+Flush only released surfaces:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_free_flush(tbm_surface_queue_h surface_queue);
+```
+
+#### Set Queue Size
+
+Dynamically adjust queue size:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_set_size(
+    tbm_surface_queue_h surface_queue, int queue_size, int flush);
+```
+
+**Parameters:**
+- `flush`: If 1, flush the queue before resizing
+
+### Surface Queue Advanced Features
+
 #### Enhanced Allocation Callback
 
 Provides enhanced allocation callback with additional control:
 
 ```cpp
 typedef tbm_surface_h (*tbm_surface_alloc_cb2)(tbm_surface_queue_h surface_queue,
-                                                int width, int height, int format, int flags, void *data);
+                                                int width, int height, int format,
+                                                int flags, void *data);
+
 typedef void (*tbm_surface_free_cb)(tbm_surface_queue_h surface_queue,
-                                  void *data, tbm_surface_h surface);
+                                     void *data, tbm_surface_h surface);
 
 tbm_surface_queue_error_e tbm_surface_queue_set_alloc_cb2(
     tbm_surface_queue_h surface_queue,
@@ -1718,20 +1892,42 @@ tbm_surface_queue_error_e tbm_surface_queue_set_alloc_cb2(
 
 #### Queue Mode Management
 
-Controls the operational mode of the surface queue:
+Control the operational mode of the surface queue:
 
 ```cpp
 tbm_surface_queue_error_e tbm_surface_queue_set_modes(
     tbm_surface_queue_h surface_queue, int modes);
 ```
 
-#### Next Dequeue Query
+#### Query Next Dequeue Surface
 
-Queries the next surface that will be dequeued without actually dequeuing it:
+Query the next surface that will be dequeued without actually dequeuing it:
 
 ```cpp
 tbm_surface_queue_error_e tbm_surface_queue_get_next_dequeue(
     tbm_surface_queue_h surface_queue, tbm_surface_h *surface);
+```
+
+#### Get Surfaces in Queue
+
+Get all surfaces currently used by the queue:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_get_surfaces(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_h *surfaces, int *num);
+```
+
+**Note:** You must use `free()` to release the returned surfaces array.
+
+#### Get Acquirable Surfaces
+
+Get surfaces available for acquire in the dirty queue:
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_get_acquirable_surfaces(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_h *surfaces, int *num);
 ```
 
 ### Surface Queue Trace Support
@@ -1762,66 +1958,360 @@ tbm_surface_queue_error_e tbm_surface_queue_add_trace_cb(
     tbm_surface_queue_h surface_queue,
     tbm_surface_queue_trace_cb trace_cb,
     void *data);
+
+tbm_surface_queue_error_e tbm_surface_queue_remove_trace_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_trace_cb trace_cb,
+    void *data);
 ```
 
-### Surface Internal Management
+### Surface Queue Callback Management
 
-TBM provides internal surface management functions for advanced use cases:
-
-#### Surface Import/Export
+#### Destroy Callback
 
 ```cpp
-tdm_backend_module tdm_backend_module_data = {
-    "drm",
-    "Samsung",
-    TDM_BACKEND_SET_ABI_VERSION(2,0),
-    tdm_drm_init,
-    tdm_drm_deinit
-};
+typedef void (*tbm_surface_queue_notify_cb)(tbm_surface_queue_h surface_queue, void *data);
+
+tbm_surface_queue_error_e tbm_surface_queue_add_destroy_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb destroy_cb,
+    void *data);
+
+tbm_surface_queue_error_e tbm_surface_queue_remove_destroy_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb destroy_cb,
+    void *data);
 ```
 
-**Note:** The `TDM_BACKEND_ABI_VERSION` macro is deprecated since version 1.2.0. Use `TDM_BACKEND_SET_ABI_VERSION` instead.
+#### Reset Callback
 
-#### Damage Handling
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_add_reset_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb reset_cb,
+    void *data);
+
+tbm_surface_queue_error_e tbm_surface_queue_remove_reset_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb reset_cb,
+    void *data);
+```
+
+#### Dequeuable Callback
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_add_dequeuable_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb dequeuable_cb,
+    void *data);
+
+tbm_surface_queue_error_e tbm_surface_queue_remove_dequeuable_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb dequeuable_cb,
+    void *data);
+```
+
+#### Acquirable Callback
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_add_acquirable_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb acquirable_cb,
+    void *data);
+
+tbm_surface_queue_error_e tbm_surface_queue_remove_acquirable_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb acquirable_cb,
+    void *data);
+```
+
+#### Dequeue Callback
+
+```cpp
+tbm_surface_queue_error_e tbm_surface_queue_add_dequeue_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb dequeue_cb,
+    void *data);
+
+tbm_surface_queue_error_e tbm_surface_queue_remove_dequeue_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_queue_notify_cb dequeue_cb,
+    void *data);
+```
+
+## Surface Internal Management
+
+TBM provides internal surface management functions for advanced use cases.
+
+### Surface Creation and Destruction
+
+#### Create Surface with Flags
+
+```cpp
+tbm_surface_h tbm_surface_internal_create_with_flags(int width, int height,
+                                                     int format, int flags);
+```
+
+**Parameters:**
+- `flags`:
+  - `TBM_BO_DEFAULT`: Default memory (depends on backend)
+  - `TBM_BO_SCANOUT`: Scanout memory
+  - `TBM_BO_NONCACHABLE`: Non-cachable memory
+  - `TBM_BO_WC`: Write-combine memory
+  - `TBM_BO_VENDOR`: Vendor-specific memory
+
+#### Create Surface with Buffer Objects
+
+```cpp
+tbm_surface_h tbm_surface_internal_create_with_bos(tbm_surface_info_s *info,
+                                                   tbm_bo *bos, int num);
+```
+
+#### Destroy Surface
+
+```cpp
+void tbm_surface_internal_destroy(tbm_surface_h surface);
+```
+
+#### Reference Counting
+
+```cpp
+void tbm_surface_internal_ref(tbm_surface_h surface);
+void tbm_surface_internal_unref(tbm_surface_h surface);
+```
+
+### Surface Import/Export
+
+#### Export Surface
+
+Export surface buffer data:
+
+```cpp
+tbm_surface_buffer_data *tbm_surface_internal_export(tbm_surface_h surface,
+                                                     tbm_error_e *error);
+```
+
+**Returns:** Buffer data structure containing dmabuf file descriptor array
+
+#### Import Surface
+
+Import surface from buffer data:
+
+```cpp
+tbm_surface_h tbm_surface_internal_import(tbm_surface_info_s *surface_info,
+                                         tbm_surface_buffer_data *buffer_data,
+                                         tbm_error_e *error);
+```
+
+**Note:** These functions are used for cross-process surface buffer sharing.
+
+### Surface Property Queries
+
+#### Get Number of Buffer Objects
+
+```cpp
+int tbm_surface_internal_get_num_bos(tbm_surface_h surface);
+```
+
+#### Get Buffer Object
+
+```cpp
+tbm_bo tbm_surface_internal_get_bo(tbm_surface_h surface, int bo_idx);
+```
+
+#### Get Surface Size
+
+```cpp
+unsigned int tbm_surface_internal_get_size(tbm_surface_h surface);
+```
+
+#### Get Plane Data
+
+Get size, offset, and stride data for a specified plane:
+
+```cpp
+int tbm_surface_internal_get_plane_data(tbm_surface_h surface, int plane_idx,
+                                        uint32_t *size, uint32_t *offset,
+                                        uint32_t *pitch);
+```
+
+#### Get Plane BO Index
+
+```cpp
+int tbm_surface_internal_get_plane_bo_idx(tbm_surface_h surface, int plane_idx);
+```
+
+#### Format Related Queries
+
+```cpp
+// Get number of planes by format
+int tbm_surface_internal_get_num_planes(tbm_format format);
+
+// Get bpp by format
+int tbm_surface_internal_get_bpp(tbm_format format);
+
+// Query supported formats
+int tbm_surface_internal_query_supported_formats(uint32_t **formats, uint32_t *num);
+```
+
+**Note:** The returned format array must be released using `free()`.
+
+### Surface Damage Handling
+
+Damage handling is used for partial update optimization:
 
 ```cpp
 // Set damage region
-int tbm_surface_internal_set_damage(tbm_surface_h surface, int x, int y, int width, int height);
+int tbm_surface_internal_set_damage(tbm_surface_h surface, int x, int y,
+                                   int width, int height);
 
 // Get damage region
-int tbm_surface_internal_get_damage(tbm_surface_h surface, int *x, int *y, int *width, int *height);
+int tbm_surface_internal_get_damage(tbm_surface_h surface, int *x, int *y,
+                                   int *width, int *height);
 ```
 
-#### Destroy Callback Management
+**Parameters:**
+- `x, y`: Damage rectangle coordinates
+- `width, height`: Damage rectangle dimensions
+
+### Surface Debug Features
+
+#### Set Debug PID
 
 ```cpp
-typedef void (*tbm_surface_internal_destroy_handler)(tbm_surface_h surface, void *user_data);
+void tbm_surface_internal_set_debug_pid(tbm_surface_h surface, unsigned int pid);
+```
+
+#### Set Debug Data
+
+```cpp
+int tbm_surface_internal_set_debug_data(tbm_surface_h surface,
+                                        char *key, char *value);
+```
+
+#### Validate Surface
+
+```cpp
+int tbm_surface_internal_is_valid(tbm_surface_h surface);
+```
+
+**Returns:** 1 if surface is valid, 0 otherwise
+
+#### Capture Buffer
+
+Capture buffer to file:
+
+```cpp
+int tbm_surface_internal_capture_buffer(tbm_surface_h surface, const char *path,
+                                       const char *name, const char *type);
+```
+
+**Supported formats:**
+- ARGB/XRGB8888: type should be "png"
+- YUV420, YVU420, NV12, NV21, YUYV, UYVY: type should be "yuv"
+
+### Surface User Data Management
+
+Add and get user data for surfaces:
+
+```cpp
+typedef void (*tbm_data_free)(void *data);
+
+// Add user data
+int tbm_surface_internal_add_user_data(tbm_surface_h surface, unsigned long key,
+                                       tbm_data_free data_free_func);
+
+// Set user data
+int tbm_surface_internal_set_user_data(tbm_surface_h surface, unsigned long key,
+                                       void *data);
+
+// Get user data
+int tbm_surface_internal_get_user_data(tbm_surface_h surface, unsigned long key,
+                                       void **data);
+
+// Delete user data
+int tbm_surface_internal_delete_user_data(tbm_surface_h surface,
+                                         unsigned long key);
+```
+
+### Surface Destroy Callback Management
+
+Manage callbacks for surface destruction:
+
+```cpp
+typedef void (*tbm_surface_internal_destroy_handler)(tbm_surface_h surface,
+                                                     void *user_data);
 
 // Add destroy callback
 int tbm_surface_internal_add_destroy_handler(tbm_surface_h surface,
-                                           tbm_surface_internal_destroy_handler func,
-                                           void *user_data);
+                                            tbm_surface_internal_destroy_handler func,
+                                            void *user_data);
 
 // Remove destroy callback
 void tbm_surface_internal_remove_destroy_handler(tbm_surface_h surface,
-                                              tbm_surface_internal_destroy_handler func,
-                                              void *user_data);
+                                               tbm_surface_internal_destroy_handler func,
+                                               void *user_data);
 ```
 
-### HAL-TBM Integration
+## Surface Basic API
 
-TBM supports HAL-TBM integration for unified hardware abstraction:
+### Surface Creation and Destruction
 
-#### HAL-TBM Backend Support
+```cpp
+// Create surface
+tbm_surface_h tbm_surface_create(int width, int height, tbm_format format);
 
-The TBM module can operate in HAL-TBM mode, providing direct integration with hardware abstraction layer:
+// Destroy surface
+int tbm_surface_destroy(tbm_surface_h surface);
+```
+
+### Surface Mapping and Unmapping
+
+```cpp
+// Map surface
+int tbm_surface_map(tbm_surface_h surface, int opt, tbm_surface_info_s *info);
+
+// Unmap surface
+int tbm_surface_unmap(tbm_surface_h surface);
+```
+
+**Map options:**
+- `TBM_SURF_OPTION_READ`: Read access
+- `TBM_SURF_OPTION_WRITE`: Write access
+
+### Surface Information Queries
+
+```cpp
+// Get surface information
+int tbm_surface_get_info(tbm_surface_h surface, tbm_surface_info_s *info);
+
+// Get width
+int tbm_surface_get_width(tbm_surface_h surface);
+
+// Get height
+int tbm_surface_get_height(tbm_surface_h surface);
+
+// Get format
+tbm_format tbm_surface_get_format(tbm_surface_h surface);
+
+// Query supported formats
+int tbm_surface_query_formats(uint32_t **formats, uint32_t *num);
+```
+
+## HAL-TBM Integration
+
+TBM supports HAL-TBM integration for unified hardware abstraction.
+
+### HAL-TBM Backend Support
+
+The TBM module can operate in HAL-TBM mode, providing direct integration with the hardware abstraction layer:
 
 - **Module Type**: `TBM_MODULE_TYPE_HAL_TBM`
 - **Initialization**: Automatic detection and loading of HAL-TBM backend
 - **DRM Integration**: Seamless integration with DRM master fd management
 - **Authentication**: Built-in Wayland authentication server support
 
-#### HAL-TBM Features
+### HAL-TBM Features
 
 - Direct hardware buffer management
 - Optimized memory allocation
@@ -1829,3 +2319,126 @@ The TBM module can operate in HAL-TBM mode, providing direct integration with ha
 - Enhanced performance through hardware acceleration
 
 The HAL-TBM integration provides a unified interface for buffer management while maintaining compatibility with existing TBM backend implementations.
+
+## Usage Examples
+
+### Basic Surface Queue Usage
+
+```cpp
+#include <tbm_surface_queue.h>
+
+// Create queue
+tbm_surface_queue_h queue = tbm_surface_queue_create(3, 1280, 720,
+                                                     TBM_FORMAT_ARGB8888,
+                                                     TBM_BO_DEFAULT);
+
+// Producer thread
+tbm_surface_h surface;
+tbm_surface_queue_error_e err;
+
+// Check if dequeue is possible
+if (tbm_surface_queue_can_dequeue(queue, 0)) {
+    err = tbm_surface_queue_dequeue(queue, &surface);
+    if (err == TBM_SURFACE_QUEUE_ERROR_NONE) {
+        // Process surface (fill data)
+        // ...
+
+        // Enqueue
+        err = tbm_surface_queue_enqueue(queue, surface);
+    }
+}
+
+// Consumer thread
+tbm_surface_h acquired_surface;
+
+// Check if acquire is possible
+if (tbm_surface_queue_can_acquire(queue, 0)) {
+    err = tbm_surface_queue_acquire(queue, &acquired_surface);
+    if (err == TBM_SURFACE_QUEUE_ERROR_NONE) {
+        // Use surface (display)
+        // ...
+
+        // Release
+        err = tbm_surface_queue_release(queue, acquired_surface);
+    }
+}
+
+// Destroy queue
+tbm_surface_queue_destroy(queue);
+```
+
+### Using Trace Callback
+
+```cpp
+void trace_callback(tbm_surface_queue_h queue, tbm_surface_h surface,
+                   tbm_surface_queue_trace trace, void *data)
+{
+    switch (trace) {
+        case TBM_SURFACE_QUEUE_TRACE_DEQUEUE:
+            printf("Surface dequeued\n");
+            break;
+        case TBM_SURFACE_QUEUE_TRACE_ENQUEUE:
+            printf("Surface enqueued\n");
+            break;
+        case TBM_SURFACE_QUEUE_TRACE_ACQUIRE:
+            printf("Surface acquired\n");
+            break;
+        case TBM_SURFACE_QUEUE_TRACE_RELEASE:
+            printf("Surface released\n");
+            break;
+        default:
+            break;
+    }
+}
+
+// Add trace callback
+tbm_surface_queue_add_trace_cb(queue, trace_callback, NULL);
+```
+
+### Surface Import/Export Example
+
+```cpp
+// Export surface
+tbm_error_e error;
+tbm_surface_buffer_data *buffer_data = tbm_surface_internal_export(surface, &error);
+if (buffer_data) {
+    // Send buffer_data to another process
+    // ...
+
+    // Free after use
+    free(buffer_data->fds);
+    free(buffer_data);
+}
+
+// Import in another process
+tbm_surface_info_s info;
+tbm_surface_h imported_surface = tbm_surface_internal_import(&info, buffer_data, &error);
+```
+
+## Error Handling
+
+### Surface Queue Error Codes
+
+```cpp
+typedef enum {
+    TBM_SURFACE_QUEUE_ERROR_NONE = 0,
+    TBM_SURFACE_QUEUE_ERROR_INVALID_QUEUE,
+    TBM_SURFACE_QUEUE_ERROR_INVALID_SURFACE,
+    TBM_SURFACE_QUEUE_ERROR_ALREADY_EXIST,
+    TBM_SURFACE_QUEUE_ERROR_UNKNOWN_SURFACE,
+    TBM_SURFACE_QUEUE_ERROR_EMPTY,
+    TBM_SURFACE_QUEUE_ERROR_INVALID_SEQUENCE,
+    TBM_SURFACE_QUEUE_ERROR_TIMEOUT
+} tbm_surface_queue_error_e;
+```
+
+### Surface Error Codes
+
+```cpp
+typedef enum {
+    TBM_SURFACE_ERROR_NONE = TIZEN_ERROR_NONE,
+    TBM_SURFACE_ERROR_INVALID_PARAMETER = TIZEN_ERROR_INVALID_PARAMETER,
+    TBM_SURFACE_ERROR_INVALID_OPERATION = TIZEN_ERROR_INVALID_OPERATION,
+} tbm_surface_error_e;
+```
+
