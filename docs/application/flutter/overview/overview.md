@@ -126,19 +126,19 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
     switch (state) {
       case AppLifecycleState.resumed:
-        print('앱이 다시 활성화되었습니다.[resumed]');
+        print('The app has been [resumed].');
         break;
       case AppLifecycleState.inactive:
-        print('앱이 비활성화되었습니다.[inactive]');
+        print('The app has been [inactive].');
         break;
       case AppLifecycleState.paused:
-        print('앱이 일시 중지되었습니다.[paused]');
+        print('The app has been [paused].');
         break;
       case AppLifecycleState.detached:
-        print('앱이 종료되었습니다.[detached]');
+        print('The app has been [detached].');
         break;
       case AppLifecycleState.hidden:
-        print('앱이 백그라운드에 완전히 숨겨졌습니다.[hidden]');
+        print('The app has been [hidden].');
         break;
     }
   }
