@@ -1,4 +1,4 @@
-# Flutter Application
+# Flutter Tizen Application Guides
 
 The flutter-tizen project aims to offer productive tooling and extensive support for running cross-platform [Flutter](https://flutter.dev) applications on Tizen devices.
 
@@ -19,21 +19,21 @@ The project is an official product by Samsung and maintained by engineers at [Sa
 
 #### Installation
 
-- [Linux (x64)](./guides/flutter-tizen/doc/linux-install.md)
-- [Windows (x64)](./guides/flutter-tizen/doc/windows-install.md)
-- [macOS (x64)](./guides/flutter-tizen/doc/macos-install.md)
+- [Linux (x64)](./linux-install.md)
+- [Windows (x64)](./windows-install.md)
+- [macOS (x64)](./macos-install.md)
 
 #### Tizen basics
 
-- [Setting up Tizen SDK](./guides/flutter-tizen/doc/install-tizen-sdk.md)
-- [Configuring Tizen devices for development](./guides/flutter-tizen/doc/configure-device.md)
+- [Setting up Tizen SDK](./install-tizen-sdk.md)
+- [Configuring Tizen devices for development](./configure-device.md)
 
 #### App development
 
-- [Getting started](./guides/flutter-tizen/doc/get-started.md)
-- [Debugging apps](./guides/flutter-tizen/doc/debug-app.md)
-- [Developing plugins with C++](./guides/flutter-tizen/doc/develop-plugin.md)
-- [Developing plugins with C#](./guides/flutter-tizen/doc/develop-plugin-csharp.md)
+- [Getting started](./get-started.md)
+- [Debugging apps](./debug-app.md)
+- [Developing plugins with C++](./develop-plugin.md)
+- [Developing plugins with C#](./develop-plugin-csharp.md)
 
 #### Additional Resources
 

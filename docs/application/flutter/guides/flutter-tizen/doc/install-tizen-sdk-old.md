@@ -9,7 +9,7 @@ Download and install the latest release of Tizen Studio from the below link. It 
 
 After installing Tizen Studio, the _Package Manager_ window will automatically pop up (otherwise launch it manually). Install the following packages required by flutter-tizen.
 
-![Tizen Package Manager](images/package-manager.png)
+![Tizen Package Manager](media/package-manager.png)
 
 - [Tizen SDK tools] - [Native CLI]
 - [Tizen SDK tools] - [Baseline SDK] - [Certificate Manager]
@@ -26,13 +26,13 @@ Note: The packages can also be installed using the command line interface by fol
 
 If you cannot see extension packages in the _Extension SDK_ tab, click the configuration button (⚙️) and make sure you are using the latest official distribution.
 
-![Configuration](images/package-manager-configuration.png)
+![Configuration](media/package-manager-configuration.png)
 
 ## Set up Tizen emulators
 
 If you installed emulator packages in the previous step, you can use _Emulator Manager_ to manage and launch emulator instances. If you can't see any emulator instance in the device list, open _Package Manager_ and install emulator packages of your target platform.
 
-![Tizen Emulator Manager](images/emulator-manager.png)
+![Tizen Emulator Manager](media/emulator-manager.png)
 
 To launch an emulator, select a device and press _Launch_. You can also use the [`flutter-tizen emulators`](commands.md#emulators) command to launch an emulator without _Emulator Manager_.
 
@@ -44,10 +44,10 @@ To install your app on a Tizen device or publish it to the TV App Store, you nee
 
 Choose _Samsung_ instead of _Tizen_ as the profile type if you're not sure.
 
-![Certificate types](images/certificate-types.png)
+![Certificate types](media/certificate-types.png)
 
 You should specify the DUID of your device (including emulator) when creating a distributor certificate. The DUID will automatically appear in the list if the device is connected to the PC.
 
-![Specify DUIDs](images/certificate-enter-duid.png)
+![Specify DUIDs](media/certificate-enter-duid.png)
 
 For detailed instructions, see [Samsung Developers: Creating Certificates](https://developer.samsung.com/smarttv/develop/getting-started/setting-up-sdk/creating-certificates.html).
