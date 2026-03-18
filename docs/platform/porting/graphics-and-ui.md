@@ -164,8 +164,8 @@ The following table lists the `bufmgr` backend interface functions of `tbm_backe
 | `bufmgr_get_supported_formats()`      | Gets the format list and the number to be supported by the backend. | Yes |
 | `bufmgr_get_plane_data()`             | Gets the plane data of `plane_idx` according to the color format. | Yes |
 | `bufmgr_alloc_bo()`                   | Allocates `tbm_backend_bo_data` of `tbm_backend_module`. `tbm_backend_bo_data` is a pointer. | Yes |
-| `bufmgr_alloc_bo_with_format()`       | Allocates `tbm_backend_bo_data` of the `bo` index according to the color format. `tbm_backend_bo_data` is a pointer. | Yes |
-| `bufmgr_alloc_bo_with_tiled_format()` | Allocates `tbm_backend_bo_data` for GPU that supports the tiled format. `tbm_backend_bo_data` is a pointer. | Yes |
+| `bufmgr_alloc_bo_with_format()`       | Allocates `tbm_backend_bo_data` of the `bo` index according to the color format. `tbm_backend_bo_data` is a pointer. Implement this function if your backend needs to allocate buffers with specific format and bo index information. | No |
+| `bufmgr_alloc_bo_with_tiled_format()` | Allocates `tbm_backend_bo_data` for GPU that supports the tiled format. `tbm_backend_bo_data` is a pointer. Implement this function if your backend supports tiled memory allocation for GPU optimization. | No |
 | `bufmgr_import_fd()`                  | Imports `tbm_backend_bo_data` associated with the prime `fd`. `tbm_fd` must be freed by you. If the backend does not support buffer sharing by `tbm_fd`, the function pointer must be set to `NULL`. | Yes (Must support buffer sharing by `tbm_fd`.)  |
 | `bufmgr_import_key()`                 | Imports `tbm_backend_bo_data` associated with the key. If the backend does not support buffer sharing by `tbm_fd`, the function pointer must be set to `NULL`. | Yes |
 
@@ -1706,8 +1706,8 @@ The surface queue supports different operational modes to control buffer lifecyc
 
 | Mode | Description |
 | ---- | ----------- |
-| `TBM_SURFACE_QUEUE_MODE_NONE` | Default mode with no special constraints |
-| `TBM_SURFACE_QUEUE_MODE_GUARANTEE_CYCLE` | Guarantees that dequeued surfaces must be properly enqueued, acquired, or released before queue reset |
+| `TBM_SURFACE_QUEUE_MODE_NONE` | Default mode with no special constraints. In this mode, when the queue is reset, all surfaces in both free and dirty queues are immediately destroyed, and surfaces that have been dequeued but not yet returned are considered lost. |
+| `TBM_SURFACE_QUEUE_MODE_GUARANTEE_CYCLE` | Guarantees that dequeued surfaces must be properly enqueued, acquired, or released before queue reset. In this mode:<br><br>**When queue is reset with different width/height/format:**<br>- Surfaces in the free queue are destroyed<br>- Surfaces in the dirty queue are moved to the free queue<br>- Surfaces that have been dequeued but not yet returned are marked as "delete pending" and will be destroyed when they are eventually returned (via enqueue, acquire, release, or cancel operations)<br><br>**When surfaces are released or dequeue is cancelled in GUARANTEE_CYCLE mode:**<br>- If `num_attached > queue_size`, the surface is detached (removed from queue)<br>- Otherwise, the surface is returned to the free queue<br><br>This mode ensures proper buffer lifecycle management and prevents buffer leaks during resize or format change operations. |
 
 ### Surface Queue Basic Operations
 
@@ -1901,7 +1901,7 @@ tbm_surface_queue_error_e tbm_surface_queue_set_size(
 
 #### Enhanced Allocation Callback
 
-Provides enhanced allocation callback with additional control:
+Provides enhanced allocation callback with additional control for custom surface allocation:
 
 ```cpp
 typedef tbm_surface_h (*tbm_surface_alloc_cb2)(tbm_surface_queue_h surface_queue,
@@ -1918,7 +1918,28 @@ tbm_surface_queue_error_e tbm_surface_queue_set_alloc_cb2(
     void *data);
 ```
 
-**Note:** You must use either `tbm_surface_queue_set_alloc_cb` or `tbm_surface_queue_set_alloc_cb2`, not both.
+#### Standard Allocation Callback
+
+Provides standard allocation callback for simpler surface allocation:
+
+```cpp
+typedef tbm_surface_h (*tbm_surface_alloc_cb)(tbm_surface_queue_h surface_queue,
+                                               void *data);
+
+tbm_surface_queue_error_e tbm_surface_queue_set_alloc_cb(
+    tbm_surface_queue_h surface_queue,
+    tbm_surface_alloc_cb alloc_cb,
+    tbm_surface_free_cb free_cb,
+    void *data);
+```
+
+**Important:** You must use either `tbm_surface_queue_set_alloc_cb` or `tbm_surface_queue_queue_set_alloc_cb2`, not both. Attempting to use both will result in an error.
+
+**Callback Differences:**
+
+- `tbm_surface_queue_set_alloc_cb`: Standard callback that receives only the queue handle and user data. Suitable for simple allocation scenarios where width, height, format, and flags are not needed for the allocation logic.
+
+- `tbm_surface_queue_set_alloc_cb2`: Enhanced callback that receives queue handle along with width, height, format, and flags. Suitable for advanced allocation scenarios where the allocation logic needs access to surface properties.
 
 #### Queue Mode Management
 
@@ -1937,6 +1958,13 @@ Query the next surface that will be dequeued without actually dequeuing it:
 tbm_surface_queue_error_e tbm_surface_queue_get_next_dequeue(
     tbm_surface_queue_h surface_queue, tbm_surface_h *surface);
 ```
+
+**Returns:**
+- `TBM_SURFACE_QUEUE_ERROR_NONE`: Success
+- `TBM_SURFACE_QUEUE_ERROR_EMPTY`: No surface available in the free queue
+- `TBM_SURFACE_QUEUE_ERROR_INVALID_QUEUE`: Invalid queue
+
+**Note:** This function allows you to peek at the next surface that will be dequeued without actually removing it from the free queue. Useful for pre-checking buffer properties before dequeue.
 
 #### Get Surfaces in Queue
 
@@ -2083,12 +2111,17 @@ tbm_surface_h tbm_surface_internal_create_with_flags(int width, int height,
 ```
 
 **Parameters:**
-- `flags`:
+- `width`: Surface width
+- `height`: Surface height
+- `format`: Surface format (e.g., `TBM_FORMAT_ARGB8888`, `TBM_FORMAT_YUV420`)
+- `flags`: Memory allocation flags
   - `TBM_BO_DEFAULT`: Default memory (depends on backend)
   - `TBM_BO_SCANOUT`: Scanout memory
   - `TBM_BO_NONCACHABLE`: Non-cachable memory
   - `TBM_BO_WC`: Write-combine memory
   - `TBM_BO_VENDOR`: Vendor-specific memory
+
+**Returns:** Surface handle on success, `NULL` on failure
 
 #### Create Surface with Buffer Objects
 
@@ -2096,6 +2129,13 @@ tbm_surface_h tbm_surface_internal_create_with_flags(int width, int height,
 tbm_surface_h tbm_surface_internal_create_with_bos(tbm_surface_info_s *info,
                                                    tbm_bo *bos, int num);
 ```
+
+**Parameters:**
+- `info`: Surface information structure containing width, height, format, bpp, size, and plane data
+- `bos`: Array of buffer objects to be used by the surface
+- `num`: Number of buffer objects in the array
+
+**Returns:** Surface handle on success, `NULL` on failure
 
 #### Destroy Surface
 
@@ -2451,16 +2491,31 @@ tbm_surface_h imported_surface = tbm_surface_internal_import(&info, buffer_data,
 
 ```cpp
 typedef enum {
-    TBM_SURFACE_QUEUE_ERROR_NONE = 0,
-    TBM_SURFACE_QUEUE_ERROR_INVALID_QUEUE,
-    TBM_SURFACE_QUEUE_ERROR_INVALID_SURFACE,
-    TBM_SURFACE_QUEUE_ERROR_ALREADY_EXIST,
-    TBM_SURFACE_QUEUE_ERROR_UNKNOWN_SURFACE,
-    TBM_SURFACE_QUEUE_ERROR_EMPTY,
-    TBM_SURFACE_QUEUE_ERROR_INVALID_SEQUENCE,
-    TBM_SURFACE_QUEUE_ERROR_TIMEOUT
+    TBM_SURFACE_QUEUE_ERROR_NONE = 0,                                     /**< Operation completed successfully */
+    TBM_SURFACE_QUEUE_ERROR_INVALID_QUEUE,                                  /**< Invalid queue handle passed */
+    TBM_SURFACE_QUEUE_ERROR_INVALID_SURFACE,                                /**< Invalid surface handle passed */
+    TBM_SURFACE_QUEUE_ERROR_ALREADY_EXIST,                                   /**< Surface already exists in the queue (e.g., trying to enqueue a surface that's already in the queue) */
+    TBM_SURFACE_QUEUE_ERROR_UNKNOWN_SURFACE,                                  /**< Unknown surface (surface not found in the queue) */
+    TBM_SURFACE_QUEUE_ERROR_EMPTY,                                         /**< Queue is empty (no available surfaces) */
+    TBM_SURFACE_QUEUE_ERROR_INVALID_SEQUENCE,                                  /**< Invalid sequence (e.g., trying to enqueue a surface that's already been processed) */
+    TBM_SURFACE_QUEUE_ERROR_SURFACE_ALLOC_FAILED,                            /**< Failed to allocate surface memory */
+    TBM_SURFACE_QUEUE_ERROR_TIMEOUT                                        /**< Operation timed out (e.g., waiting for available surface exceeded timeout) */
 } tbm_surface_queue_error_e;
 ```
+
+**Error Code Descriptions:**
+
+| Error Code | Description | When Triggered |
+| ---------- | ----------- | -------------- |
+| `TBM_SURFACE_QUEUE_ERROR_NONE` | Operation completed successfully | Default return value for successful operations |
+| `TBM_SURFACE_QUEUE_ERROR_INVALID_QUEUE` | Invalid queue handle | NULL queue handle passed or invalid queue pointer |
+| `TBM_SURFACE_QUEUE_ERROR_INVALID_SURFACE` | Invalid surface handle | NULL surface handle or surface not belonging to the queue |
+| `TBM_SURFACE_QUEUE_ERROR_ALREADY_EXIST` | Surface already exists | Attempting to enqueue a surface that's already in the queue (in free or dirty queue) |
+| `TBM_SURFACE_QUEUE_ERROR_UNKNOWN_SURFACE` | Unknown surface | Surface not found in the queue (not allocated by the queue) |
+| `TBM_SURFACE_QUEUE_ERROR_EMPTY` | Queue is empty | Trying to dequeue or acquire from an empty queue without waiting |
+| `TBM_SURFACE_QUEUE_ERROR_INVALID_SEQUENCE` | Invalid sequence | Invalid operation sequence (e.g., enqueue after cancel_dequeue, or surface already processed) |
+| `TBM_SURFACE_QUEUE_ERROR_SURFACE_ALLOC_FAILED` | Surface allocation failed | Backend failed to allocate surface memory |
+| `TBM_SURFACE_QUEUE_ERROR_TIMEOUT` | Operation timed out | Waiting for available surface exceeded the specified timeout period |
 
 ### Surface Error Codes
 
