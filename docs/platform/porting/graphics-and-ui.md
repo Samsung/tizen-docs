@@ -183,8 +183,8 @@ The following table lists the `bo` backend interface functions of `tbm_backend_m
 | `bo_unmap()`            | Unmaps `tbm_backend_bo_data`. | Yes |
 | `bo_lock()`             | Locks `tbm_backend_bo_data` with a device and an option. | No |
 | `bo_unlock()`           | Unlocks `tbm_backend_bo_data`. | No |
-| `bo_export_fd()`        | Exports `tbm_backend_bo_data` to `tdm_fd` (prime fd). `tbm_fd` must be freed by the user. If the backend does not support a buffer sharing by `tdm_fd`, the function pointer must be set to `NULL`. | Yes |
-| `bo_export_key()`       | Exports `tbm_backend_bo_data` to `tdm_key`. If the backend does not support a buffer sharing by `tdm_key`, the function pointer must be set to `NULL`. | Yes |
+| `bo_export_fd()`        | Exports `tbm_backend_bo_data` to `tbm_fd` (prime fd). `tbm_fd` must be freed by the user. If the backend does not support a buffer sharing by `tbm_fd`, the function pointer must be set to `NULL`. | Yes |
+| `bo_export_key()`       | Exports `tbm_backend_bo_data` to `tbm_key`. If the backend does not support a buffer sharing by `tbm_key`, the function pointer must be set to `NULL`. | Yes |
 
 The following table lists the TBM buffer manager capability, `tbm_bufmgr_capability`:
 
@@ -660,7 +660,7 @@ The following figure illustrates the Tizen OpenGL ES and EGL architecture.
     - EGL 1.4
     - OpenGL ES 1.1, 2.0, 3.0, 3.1
 
-  CoreGL loads the manufacturer's OpenGL ES driver from the `/usr/lib/driver` directory. CoreGL provides `libEGL.so`, `libGLESv1_CM.so`, and `libGLESvs.so` driver files in the `/usr/lib` directory.
+  CoreGL loads the manufacturer's OpenGL ES driver from the `/usr/lib/driver` directory. CoreGL provides `libEGL.so`, `libGLESv1_CM.so`, and `libGLESv2.so` driver files in the `/usr/lib` directory.
 - GPU vendor GL/EGL driver
 
   The Tizen platform demands that the GPU vendor implements the GL and EGL driver using `libtpl-egl`. The GPU vendor GL/EGL driver (`libEGL.so`, `libGLESv1_CM.so`, `libGLESv2.so`) must be installed in the `/usr/lib/driver` path.
@@ -823,7 +823,7 @@ The following figure illustrates the OpenGL ES drawing API flow.
 | `tpl_surface_set_post_interval()`        | Sets the frame interval of the given TPL-EGL surface, which ensures that only a single frame is posted within the specified vsync intervals. When a frame ends, the frame interval is set to the surface's current interval. |
 | `tpl_surface_get_post_interval()`        | Gets the frame interval of the given TPL-EGL surface. |
 | `tpl_surface_create_swapchain()`         | Creates a swapchain for the given TPL-EGL surface. This function creates buffers for swapchain which is binded to the given tpl surface. The swapchain provides Vulkan-style buffer management with multiple buffers for efficient rendering and presentation. |
-| `tpl_surface_dequeue_buffer()`           | Gets the buffer of the current frame for the given TPL-EGL surface. Depending on the backend, communication with the server can be required. Returned buffers are used for rendering the target to draw the current frame. Returned buffers are valid until the next `tpl_surface_dequeue_buffer()` function call. If the `tpl_surface_validate()` function returns `TPL_FALSE`, the previously returned buffers must no longer be used. Instead, this function must called again before drawing, returning a valid buffer. |
+| `tpl_surface_dequeue_buffer()`           | Gets the buffer of the current frame for the given TPL-EGL surface. Depending on the backend, communication with the server can be required. Returned buffers are used for rendering the target to draw the current frame. Returned buffers are valid until the next `tpl_surface_dequeue_buffer()` function call. If the `tpl_surface_validate()` function returns `TPL_FALSE`, the previously returned buffers must no longer be used. Instead, this function must be called again before drawing, returning a valid buffer. |
 | `tpl_surface_dequeue_buffer_with_sync()` | Gets the buffer of the current frame with sync fence support for the given TPL-EGL surface. |
 | `tpl_surface_dequeue_buffer_with_sync_and_frontbuffer_info()` | Gets the buffer of the current frame with sync fence and frontbuffer information for the given TPL-EGL surface. |
 | `tpl_surface_enqueue_buffer()`           | Posts a given `tbm_surface`. This function requests the display server to post a frame. This is the function which can enqueue a buffer to the `tbm_surface_queue`. Make sure this function is called exactly once for a frame. Scheduling post calls on a separate thread is recommended. |
@@ -839,7 +839,6 @@ The following figure illustrates the OpenGL ES drawing API flow.
 | `tpl_surface_set_rotation_capability()`  | Sets rotation capability to the given tpl_surface. |
 | `tpl_surface_cancel_dequeued_buffer()`   | Cancels dequeued buffer before use. |
 | `tpl_surface_fence_sync_is_available()`  | Checks if the surface can support fence sync mechanism. This function is used to determine whether the surface supports synchronization through fences, which is important for coordinating GPU and display operations. It is recommended to check fence sync availability for every frame because the results may change depending on whether frontbuffer rendering is activated or not. |
-| `tpl_surface_fence_sync_is_available()`  | Checks the surface can support fence sync mechanism. |
 
 **Table: TPL-EGL Present Mode Types**
 
@@ -1933,7 +1932,7 @@ tbm_surface_queue_error_e tbm_surface_queue_set_alloc_cb(
     void *data);
 ```
 
-**Important:** You must use either `tbm_surface_queue_set_alloc_cb` or `tbm_surface_queue_queue_set_alloc_cb2`, not both. Attempting to use both will result in an error.
+**Important:** You must use either `tbm_surface_queue_set_alloc_cb` or `tbm_surface_queue_set_alloc_cb2`, not both. Attempting to use both will result in an error.
 
 **Callback Differences:**
 
