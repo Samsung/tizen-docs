@@ -1256,7 +1256,7 @@ tpl_surface_set_rotation_capability(tpl_sfc, TPL_TRUE);
 
 ---
 
-#### XIII. Buffer Count Related APIs
+#### VIII. Buffer Count Related APIs
 
 #### 8.1 Query Supported Buffer Count
 
