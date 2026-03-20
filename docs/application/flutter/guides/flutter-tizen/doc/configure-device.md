@@ -8,21 +8,21 @@
 
    1. Go to **Apps** and click the  **App Settings** icon.
 
-      ![Apps](images/tv-developer-option-1.png)
+      ![Apps](media/tv-developer-option-1.png)
 
-      ![App Settings](images/tv-developer-option-2.png)
+      ![App Settings](media/tv-developer-option-2.png)
 
    1. Enter the number **12345** using the remote control or on-screen number pad.
 
-      ![Enter 12345](images/tv-developer-option-3.png)
+      ![Enter 12345](media/tv-developer-option-3.png)
 
    1. Set **Developer mode** to **On**, enter the IP address of the host PC, and press **OK**.
 
-      ![Enter IP address](images/tv-developer-option-4.png)
+      ![Enter IP address](media/tv-developer-option-4.png)
 
    1. Restart the TV. You will see **Develop Mode** enabled after the TV restarts.
 
-      ![Develop mode enabled](images/tv-developer-option-5.png)
+      ![Develop mode enabled](media/tv-developer-option-5.png)
 
 1. Find the path to `sdb` and add it to your PATH.
 
