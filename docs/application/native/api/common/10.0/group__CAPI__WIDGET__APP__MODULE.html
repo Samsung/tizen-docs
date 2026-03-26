@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Tizen Native API: Widget Application</title>
+<title>Tizen Native API: Widget Application (Deprecated)</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen_html_stylesheet.css" rel="stylesheet" type="text/css" />
@@ -166,31 +166,31 @@ Related Features</h2>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga41a1a02332ae25e6e578e5976ad7905e">widget_app_main</a> (int argc, char **argv, <a class="el" href="structwidget__app__lifecycle__callback__s.html">widget_app_lifecycle_callback_s</a> *callback, void *user_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga41a1a02332ae25e6e578e5976ad7905e">widget_app_main</a> (int argc, char **argv, <a class="el" href="structwidget__app__lifecycle__callback__s.html">widget_app_lifecycle_callback_s</a> *callback, void *user_data) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the main loop of the application until <a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga0656215abccedaaa41b501a639336f9a" title="Exits the main loop of the application.">widget_app_exit()</a> is called.  <a href="#ga41a1a02332ae25e6e578e5976ad7905e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga0656215abccedaaa41b501a639336f9a">widget_app_exit</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga0656215abccedaaa41b501a639336f9a">widget_app_exit</a> (void) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the main loop of the application.  <a href="#ga0656215abccedaaa41b501a639336f9a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gad7783cc50551710672dd448213a40d0a">widget_app_terminate_context</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gad7783cc50551710672dd448213a40d0a">widget_app_terminate_context</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finishes context for the widget instance.  <a href="#gad7783cc50551710672dd448213a40d0a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga4fb27f2f76c6b57406906603a8c89a3f">widget_app_foreach_context</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gaab1e1477a33ce480585f89ffbf02f605">widget_context_cb</a> callback, void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga4fb27f2f76c6b57406906603a8c89a3f">widget_app_foreach_context</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gaab1e1477a33ce480585f89ffbf02f605">widget_context_cb</a> callback, void *data) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all widget contexts in this application.  <a href="#ga4fb27f2f76c6b57406906603a8c89a3f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gaf2118663a87a83cee6e4b413455ee217">widget_app_add_event_handler</a> (<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga307bb4c75e0fc2ca10a1bceae9094af6">app_event_handler_h</a> *event_handler, <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga56894cd26c4032f0be798fe0dd8339c7">app_event_type_e</a> event_type, <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga613fbb196d51865b98d5601db4b6b6c9">app_event_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gaf2118663a87a83cee6e4b413455ee217">widget_app_add_event_handler</a> (<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga307bb4c75e0fc2ca10a1bceae9094af6">app_event_handler_h</a> *event_handler, <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga56894cd26c4032f0be798fe0dd8339c7">app_event_type_e</a> event_type, <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga613fbb196d51865b98d5601db4b6b6c9">app_event_cb</a> callback, void *user_data) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the system event handler.  <a href="#gaf2118663a87a83cee6e4b413455ee217"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gabf02a29742971bbb78937d134d05a6f6">widget_app_remove_event_handler</a> (<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga307bb4c75e0fc2ca10a1bceae9094af6">app_event_handler_h</a> event_handler)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gabf02a29742971bbb78937d134d05a6f6">widget_app_remove_event_handler</a> (<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga307bb4c75e0fc2ca10a1bceae9094af6">app_event_handler_h</a> event_handler) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes registered event handler.  <a href="#gabf02a29742971bbb78937d134d05a6f6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gab694663d99b1f9b29c27353821adc60c">widget_app_get_id</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gab694663d99b1f9b29c27353821adc60c">widget_app_get_id</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a widget instance id.  <a href="#gab694663d99b1f9b29c27353821adc60c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga8bd2e91ee382df1635d4482418149506">widget_class_h</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga19c2390eba37e6e9e5ae16dffe7fdf87">widget_app_class_create</a> (<a class="el" href="structwidget__instance__lifecycle__callback__s.html">widget_instance_lifecycle_callback_s</a> callback, void *user_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga8bd2e91ee382df1635d4482418149506">widget_class_h</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga19c2390eba37e6e9e5ae16dffe7fdf87">widget_app_class_create</a> (<a class="el" href="structwidget__instance__lifecycle__callback__s.html">widget_instance_lifecycle_callback_s</a> callback, void *user_data) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a class for widget instances.  <a href="#ga19c2390eba37e6e9e5ae16dffe7fdf87"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga98b90bcf391f089861e63ebd966ed378">widget_app_context_set_tag</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context, void *tag)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga98b90bcf391f089861e63ebd966ed378">widget_app_context_set_tag</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context, void *tag) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tag in the context.  <a href="#ga98b90bcf391f089861e63ebd966ed378"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga8529d1507269a8b4d74235b19254064c">widget_app_context_get_tag</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context, void **tag)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga8529d1507269a8b4d74235b19254064c">widget_app_context_get_tag</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context, void **tag) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the tag in the context.  <a href="#ga8529d1507269a8b4d74235b19254064c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5069305b444bf66f3f3bf53cca6166c1">widget_app_context_set_content_info</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *content_info)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5069305b444bf66f3f3bf53cca6166c1">widget_app_context_set_content_info</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *content_info) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the content info to the widget.  <a href="#ga5069305b444bf66f3f3bf53cca6166c1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gab1a808086388fa289fa4f70eaa5f5cf5">widget_app_context_set_title</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context, const char *title)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gab1a808086388fa289fa4f70eaa5f5cf5">widget_app_context_set_title</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context, const char *title) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the title to the widget.  <a href="#gab1a808086388fa289fa4f70eaa5f5cf5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga8bd2e91ee382df1635d4482418149506">widget_class_h</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga3818a7180812769c24b602c1b199dc50">widget_app_class_add</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga8bd2e91ee382df1635d4482418149506">widget_class_h</a> widget_class, const char *class_id, <a class="el" href="structwidget__instance__lifecycle__callback__s.html">widget_instance_lifecycle_callback_s</a> callback, void *user_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga8bd2e91ee382df1635d4482418149506">widget_class_h</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga3818a7180812769c24b602c1b199dc50">widget_app_class_add</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga8bd2e91ee382df1635d4482418149506">widget_class_h</a> widget_class, const char *class_id, <a class="el" href="structwidget__instance__lifecycle__callback__s.html">widget_instance_lifecycle_callback_s</a> callback, void *user_data) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional widget class for multi-class of widget instantiation.  <a href="#ga3818a7180812769c24b602c1b199dc50"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga6e9167bed3af1491cae6ff56c6de4b38">widget_app_get_elm_win</a> (<a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5d2a6d975d57fcb415e1f9eb67b0d0c0">widget_context_h</a> context, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> **win) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an Evas object for the widget.  <a href="#ga6e9167bed3af1491cae6ff56c6de4b38"></a><br/></td></tr>
@@ -235,6 +235,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the application starts. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The callback function is called before the main loop of the application starts. In this callback, you can initialize resources which can be shared among widget instances. This function should return the handle for widget class so that it will be used for making instances of widget. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -282,6 +283,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the application's main loop exits. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>This callback function is called once after the main loop of the application exits. You should release the application's resources in this function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -305,6 +307,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The widget class handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
@@ -322,6 +325,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called for each widget context. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>This function will be called in the function of <a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga4fb27f2f76c6b57406906603a8c89a3f" title="Retrieves all widget contexts in this application.">widget_app_foreach_context()</a> repeatedly. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -347,6 +351,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The widget context handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
@@ -364,6 +369,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the widget instance starts. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The callback function is called after widget instance is created. In this callback, you can initialize resources for this instance. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -392,6 +398,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called before the widget instance is destroyed. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The callback function is called before widget instance is destroyed. In this callback, you can finalize resources for this instance. If reason is not <a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gga50c912e59019e4e719851bae110baa02a2933b263e07d596537b7448ace9d0bf8">WIDGET_APP_DESTROY_TYPE_TEMPORARY</a>, it should store the current status by using incoming bundle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Note that the parameter 'content' is used to save the status of the widget instance. As a input parameter, content contains the saved status of the widget instance. You can fill the content parameter with the current status in this callback, then the framework will save the content by receiving it as a output parameter. Consequently, you should not use <a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga5069305b444bf66f3f3bf53cca6166c1" title="Sets the content info to the widget.">widget_app_context_set_content_info()</a> function in this callback. The content will be overwritten after this callback returns with the 'content' parameter. </dd></dl>
@@ -420,6 +427,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the widget is invisible. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The callback function is called when the widget is invisible. The paused instance may be destroyed by framework. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -445,6 +453,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called before the widget size is changed. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The callback function is called before the widget size is changed. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -472,6 +481,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the widget is visible. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The callback function is called when the widget is visible. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -497,6 +507,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the event for updating widget is received. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The callback function is called when the event for updating widget is received. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -525,6 +536,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>Enumeration for destroy type of widget instance. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
@@ -579,6 +591,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Adds the system event handler. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>event_handler</em> should be released using <a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gabf02a29742971bbb78937d134d05a6f6" title="Removes registered event handler.">widget_app_remove_event_handler()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -666,6 +679,7 @@ int main()
 <div class="memdoc">
 
 <p>Adds an additional widget class for multi-class of widget instantiation. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exception section. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -717,6 +731,7 @@ int main()
 <div class="memdoc">
 
 <p>Makes a class for widget instances. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exception section. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -766,6 +781,7 @@ int main()
 <div class="memdoc">
 
 <p>Gets the tag in the context. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Releasing the <em>tag</em> value depends on the value that set by <a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga98b90bcf391f089861e63ebd966ed378" title="Sets a tag in the context.">widget_app_context_set_tag()</a> function. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -815,6 +831,7 @@ int main()
 <div class="memdoc">
 
 <p>Sets the content info to the widget. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -863,6 +880,7 @@ int main()
 <div class="memdoc">
 
 <p>Sets a tag in the context. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -910,6 +928,7 @@ int main()
 <div class="memdoc">
 
 <p>Sends the title to the widget. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -948,6 +967,7 @@ int main()
 <div class="memdoc">
 
 <p>Exits the main loop of the application. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <p>The main loop of the application stops and <a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#gad16962f975f9dd1ce9b76d0598d74f46" title="Called when the application&#39;s main loop exits.">widget_app_terminate_cb()</a> is invoked. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__WIDGET__SERVICE__MODULE.html#gga89681bdd16c7a4f4e53d7c039937393ea55bb15748393acc29e5b8892d263a187">WIDGET_ERROR_NONE</a> on success, otherwise an error code (see WIDGET_ERROR_XXX) on failure </dd></dl>
@@ -991,6 +1011,7 @@ int main()
 <div class="memdoc">
 
 <p>Retrieves all widget contexts in this application. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1094,6 +1115,7 @@ int main()
 <div class="memdoc">
 
 <p>Gets a widget instance id. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exception section. </dd>
 <dd>
@@ -1168,6 +1190,7 @@ The returned widget instance id is volatile. If the device reboots or the widget
 <div class="memdoc">
 
 <p>Runs the main loop of the application until <a class="el" href="group__CAPI__WIDGET__APP__MODULE.html#ga0656215abccedaaa41b501a639336f9a" title="Exits the main loop of the application.">widget_app_exit()</a> is called. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1208,6 +1231,7 @@ The returned widget instance id is volatile. If the device reboots or the widget
 <div class="memdoc">
 
 <p>Removes registered event handler. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1245,6 +1269,7 @@ The returned widget instance id is volatile. If the device reboots or the widget
 <div class="memdoc">
 
 <p>Finishes context for the widget instance. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 11.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
