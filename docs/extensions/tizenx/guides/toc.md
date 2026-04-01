@@ -16,5 +16,12 @@
 ### [Grid](tizen-ui/layouts/grid.md "source: https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizen-ui/layouts/grid.md tags:['Tizen.UI', 'Layout', 'Grid'], authors:['jh5.cho@samsung.com']")
 ### [HStack&VStack](tizen-ui/layouts/stack.md "source: https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizen-ui/layouts/stack.md tags:['Tizen.UI', 'Layout', 'Stack', 'HStack', 'VStack'], authors:['jh5.cho@samsung.com']")
 ## [C# Markup](tizen-ui/csharp_markup.md "source: https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizen-ui/csharp_markup.md tags:['Tizen.UI', 'Markup'], authors:['jh5.cho@samsung.com']")
+
 # [TizenX.ZLog]()
-## [Overview](tizenx-zlog/overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-zlog/overview.md tags:['TizenX', 'TizenX.ZLog'], authors:['jh5.cho@samsung.com']")
+## [Overview](tizenx-zlog/overview.md "source: https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-zlog/overview.md tags:['TizenX', 'TizenX.ZLog'], authors:['jh5.cho@samsung.com']")
+
+# [TizenX.Aurum]()
+## [Overview](tizenx-aurum/overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-aurum/overview.md tags:['TizenX', 'Aurum']")
+
+# [TizenX.RPCPort]()
+## [Overview](tizenx-rpcport/overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-rpcport/overview.md tags:['TizenX', 'RPCPort']")
