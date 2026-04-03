@@ -23,5 +23,8 @@
 # [TizenX.Aurum]()
 ## [Overview](tizenx-aurum/overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-aurum/overview.md tags:['TizenX', 'Aurum']")
 
+# [TizenX.GenUI]()
+## [Getting Started](tizenx-genui/getting-started.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-genui/getting-started.md tags:['TizenX', 'GenUI'], authors:['jh5.cho@samsung.com']")
+
 # [TizenX.RPCPort]()
 ## [Overview](tizenx-rpcport/overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-rpcport/overview.md tags:['TizenX', 'RPCPort']")
