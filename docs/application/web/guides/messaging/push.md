@@ -73,8 +73,8 @@ To enable your application to use the push functionality, follow these steps:
 
       To use the push messaging service, the application needs permission to access the Tizen push server. Request permission from the Tizen push service team using one of the following online request forms:
 
-      - [Request permission for a new application](https://developer.tizen.org/webform/request-permission-tizen-push-service){:target="_blank"}.
-      - [Extend the expiration date or change the quota](https://developer.tizen.org/webform/request-extend-expiration-date-or-change-quota){:target="_blank"} for an application that already has permission to use the push messaging service
+      - [Request the permission for a new application](https://developer.tizen.org/webform/request-permission-tizen-push-service)
+      - [Extend the expiration date or change the quota](https://developer.tizen.org/webform/request-extend-expiration-date-or-change-quota) for an application that already has the permission to use the push messaging service
 
       When the team approves the request, you receive a push app ID corresponding to your package ID.
 
