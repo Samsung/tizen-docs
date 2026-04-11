@@ -22494,6 +22494,33 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>SENSOR_DEVICE_TOF_SENSOR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__SENSOR__MODULE.html</Path>
+    <Anchor>ggad23fa61d91d76c451d58f386375a67b4a23abf9a98f0f92cdd0b0338670a744d6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SENSOR_DEVICE_PITCH_ROTATION</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__SENSOR__MODULE.html</Path>
+    <Anchor>ggad23fa61d91d76c451d58f386375a67b4abb5aec04a15ed56f50bd429158d2eb8a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SENSOR_DEVICE_ROTATOR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__SENSOR__MODULE.html</Path>
+    <Anchor>ggad23fa61d91d76c451d58f386375a67b4adc7e978b31249284d0be78a483a43d9d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>SENSOR_DEVICE_FUSION</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>

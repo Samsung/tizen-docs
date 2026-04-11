@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen HAL API
-   &#160;<span id="projectnumber">1.0</span>
+   
    </div>
    
   </td>
