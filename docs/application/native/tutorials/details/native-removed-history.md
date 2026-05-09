@@ -401,6 +401,7 @@ The following table provides detailed information regarding removed functions an
 | Security - Content Screening & Reputation | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
 | UI - External Output Manager | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
 | Security - Trusted Execution Framework | All functions of this module | Since 6.5 | 11.0 | No longer available | - |
+| Security - Device Policy Manager | All functions of this module | Since 8.0 | 11.0 | No longer available | - |
 
 ## Related information
 
