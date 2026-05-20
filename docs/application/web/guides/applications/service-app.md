@@ -19,7 +19,7 @@ The main features of the Web service include:
 The device main menu does not contain any icons for Web services, because the applications run in the background. The task switcher does not show them either. Web services can run simultaneously with other service and Web applications.
 
 > [!NOTE]
-> The TV Web service requires [partner-level certification](../../tutorials/sign-certificate.md) in Tizen 3.0.
+> The TV Web service requires [partner-level certification](../../guides/essentials/signing-certificates.md) in Tizen 3.0.
 
 ## Prerequisites
 

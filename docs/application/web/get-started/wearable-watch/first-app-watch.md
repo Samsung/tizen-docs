@@ -164,7 +164,7 @@ Pay attention to the following main issues in the application source code, to un
 
 -   On a low-powered wearable device, an ambient mode is available. In this mode, the watch application shows a limited UI and receives only the ambient tick event every minute to reduce power consumption.
 
-    If the application contains a custom UI for the [ambient mode](../../tutorials/event-handling.md#ambient), the ambient mode support is also shown in the `config.xml` file. However, this sample application does not support a custom ambient UI.
+    If the application contains a custom UI for the [ambient mode](../../guides/essentials/event-handling.md#ambient), the ambient mode support is also shown in the `config.xml` file. However, this sample application does not support a custom ambient UI.
 
 <a name="build"></a>
 ## Build your application
