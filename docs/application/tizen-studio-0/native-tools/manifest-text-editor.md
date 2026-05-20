@@ -843,7 +843,7 @@ This element contains the account provider capability. The capabilities are defi
 
 This element contains the set of required privileges for a Tizen application.
 
-Applications that use sensitive APIs must declare the required privileges in the `tizen-manifest.xml` file. Since the privilege categories differ for each API type, make sure you define the [correct privilege related to the API you need](../../native/tutorials/details/sec-privileges.md).
+Applications that use sensitive APIs must declare the required privileges in the `tizen-manifest.xml` file. Since the privilege categories differ for each API type, make sure you define the [correct privilege related to the API you need](../../native/reference/security-privileges.md).
 
 Click **+** to open the **Add Privilege** dialog.
 
@@ -889,7 +889,7 @@ For example:
 - `http://tizen.org/privilege/appmanager.launch`
 - `http://tizen.org/privilege/account.read`
 
-For more information on the expected values, see [Security and API Privileges](../../native/tutorials/details/sec-privileges.md).
+For more information on the expected values, see [Security and API Privileges](../../native/reference/security-privileges.md).
 
 **For example:**
 
@@ -921,7 +921,7 @@ For more information on the relationship between the elements, see the [element 
 
   Item name used in feature-based filtering in the Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`
 
-  For more information on the expected values and the application filtering mechanism, see [Application Filtering](../../native/tutorials/details/app-filtering.md).
+  For more information on the expected values and the application filtering mechanism, see [Application Filtering](../../native/reference/app-filtering.md).
 
 **Expected value:**
 

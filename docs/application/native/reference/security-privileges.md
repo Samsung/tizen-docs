@@ -47,7 +47,7 @@ applications).
 Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
 Privileges](../../../tizen-studio/native-tools/api-checker.md).
 
-The API version restriction of privileges are deprecated since platform version 5.0. So, if you are develeoping an app with an earlier API version and need information about supported version, see [this page](./old-versioned-sec-privileges.md). The page does not include privileges issued after 4.0.
+The API version restriction of privileges are deprecated since platform version 5.0. So, if you are develeoping an app with an earlier API version and need information about supported version, see [this page](./security-privileges-legacy.md). The page does not include privileges issued after 4.0.
 
 <a name="API"></a>
 ## Native API Privileges

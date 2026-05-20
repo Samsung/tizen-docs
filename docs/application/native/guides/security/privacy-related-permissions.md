@@ -18,7 +18,7 @@ The main features of the Privacy Privilege Manager API include:
 
   If a required permission is missing, you can [request the user to grant it](#req) to be able to use privileged features.
 
-For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/details/sec-privileges.md).
+For a list of privacy-related privileges, see [Security and API Privileges](../../reference/security-privileges.md).
 
 > [!NOTE]
 > Since Tizen 5.5, if the caller application component type is UI application, then the pop-ups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as `group mode` with the caller application.

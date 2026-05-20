@@ -334,13 +334,13 @@
 #### [Coding Applications](/application/web/tutorials/process/coding-app.md)
 #### [Running and Debugging Applications](/application/web/tutorials/process/run-debug-app.md)
 
-### [Application Filtering](/application/web/tutorials/app-filtering.md)
-### [Security and API Privileges](/application/web/tutorials/sec-privileges.md)
-### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/tutorials/old-versioned-sec-privileges.md)
+### [Application Filtering](/application/web/reference/app-filtering.md)
+### [Security and API Privileges](/application/web/reference/security-privileges.md)
+### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
 ### [Web Runtime](/application/web/tutorials/web-runtime.md)
 ### [Event Handling](/application/web/tutorials/event-handling.md)
 ### [Application Signing and Certificates](/application/web/tutorials/sign-certificate.md)
-### [API Versioning and Deprecation Policy](/application/web/tutorials/deprecation-policy.md)
+### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
 
 ## Guides
 ### [Overview](/application/web/guides/index.md)
@@ -581,15 +581,15 @@
 
 ### Understanding Tizen Programming
 #### [Overview](/application/native/tutorials/details/details.md)
-#### [Application Filtering](/application/native/tutorials/details/app-filtering.md)
-#### [Security and API Privileges](/application/native/tutorials/details/sec-privileges.md)
-#### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/tutorials/details/old-versioned-sec-privileges.md)
+#### [Application Filtering](/application/native/reference/app-filtering.md)
+#### [Security and API Privileges](/application/native/reference/security-privileges.md)
+#### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/reference/security-privileges-legacy.md)
 #### [Event Handling](/application/native/tutorials/details/event-handling.md)
 #### [Error Handling](/application/native/tutorials/details/error-handling.md)
 #### [File System Directory Hierarchy](/application/native/tutorials/details/io-overview.md)
 #### [Application Signing and Certificates](/application/native/tutorials/details/sign-certificate.md)
-#### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/tutorials/details/deprecation-policy.md)
-#### [Removed functions and enumerations of Tizen Native API](/application/native/tutorials/details/native-removed-history.md)
+#### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/reference/deprecation-policy.md)
+#### [Removed functions and enumerations of Tizen Native API](/application/native/reference/removed-history.md)
 
 ### Creating Applications with Connectivity and Network
 #### [Overview](/application/native/tutorials/feature/app-connectivity.md)

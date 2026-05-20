@@ -808,7 +808,7 @@ For example:
 - `http://tizen.org/privilege/appmanager.launch`
 - `http://tizen.org/privilege/account.read`
 
-For more information on the expected values, see [Security and API Privileges](../../native/tutorials/details/sec-privileges.md).
+For more information on the expected values, see [Security and API Privileges](../../native/reference/security-privileges.md).
 
 **For example:**
 
