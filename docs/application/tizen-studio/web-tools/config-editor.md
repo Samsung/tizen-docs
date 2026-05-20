@@ -933,7 +933,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>name</code>
-				<p>Mandatory; <a href="../../web/tutorials/process/setting-properties.md#feature">feature key</a> URI</p>
+				<p>Mandatory; <a href="../../web/guides/development/setting-properties.md#feature">feature key</a> URI</p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
@@ -1782,7 +1782,7 @@ The following sections show additional configuration elements used in the `confi
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>name</code>
-				<p>Mandatory; <a href="../../web/tutorials/process/setting-properties.md#feature">feature key</a> URI</p>
+				<p>Mandatory; <a href="../../web/guides/development/setting-properties.md#feature">feature key</a> URI</p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>

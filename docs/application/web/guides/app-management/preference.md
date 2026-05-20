@@ -5,7 +5,7 @@ Preference management allows you to store and retrieve the application preferenc
 This feature is optional.
 
 > [!NOTE]
-> The Preference API is a different feature than the [`preferences` attribute of the `config.xml` file](../../tutorials/process/setting-properties.md#preferences), which is used to set and retrieve name-value pairs using the Widget Interface API.
+> The Preference API is a different feature than the [`preferences` attribute of the `config.xml` file](../../guides/development/setting-properties.md#preferences), which is used to set and retrieve name-value pairs using the Widget Interface API.
 
 The main preference features are:
 

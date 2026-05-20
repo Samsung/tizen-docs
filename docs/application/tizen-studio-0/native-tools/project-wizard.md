@@ -60,7 +60,7 @@ To move to the next step, select the profile and version, and click **Next**.
 
 ## Application Type
 
-You can select the native or Web application type for your project. For more information, see [Native Application](../../native/tutorials/process/app-dev-process.md) and [Web Application](../../web/tutorials/process/app-dev-process.md).
+You can select the native or Web application type for your project. For more information, see [Native Application](../../native/guides/development/index.md) and [Web Application](../../web/guides/development/index.md).
 
 Based on the selected application type, a list of templates is shown in the template selection step.
 

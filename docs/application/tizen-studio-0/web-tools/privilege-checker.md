@@ -5,7 +5,7 @@ The Tizen Studio provides a checker to identify potential [privilege](../../web/
 <a name="use"></a>
 ## Using the Privilege Checker
 
-The Privilege Checker is enabled by default. It is automatically performed during the [build process](../../web/tutorials/process/app-dev-process.md#build) or code editing.
+The Privilege Checker is enabled by default. It is automatically performed during the [build process](../../web/guides/development/index.md#build) or code editing.
 
 To perform the check manually:
 

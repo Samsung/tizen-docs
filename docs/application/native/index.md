@@ -80,7 +80,7 @@ When developing a Tizen application, you must define a package and application I
 
     The application ID (`appid`) is the application identifier. Multiple applications are allowed in a package and the application ID is used to identify the different applications.
 
-    The application ID must be the same as the package ID if the package contains a single application. If [the package contains multiple applications](tutorials/process/app-dev-process.md#develop), the application ID must be assigned with the package ID as a prefix. For example, if the `org.tizen.message` package contains 2 applications, the main application is named as `org.tizen.message`, and the second application is named as `org.tizen.message.app2`.
+    The application ID must be the same as the package ID if the package contains a single application. If [the package contains multiple applications](guides/development/index.md#develop), the application ID must be assigned with the package ID as a prefix. For example, if the `org.tizen.message` package contains 2 applications, the main application is named as `org.tizen.message`, and the second application is named as `org.tizen.message.app2`.
 
     The application ID functions as a unit for launching and terminating applications, and for App Control.
 

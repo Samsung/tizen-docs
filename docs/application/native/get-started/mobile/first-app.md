@@ -4,7 +4,7 @@
 
 A mobile native application is created using the C language, and can be run on Tizen mobile devices. The application uses the native API, which provides various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
-Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic mobile native application, which displays some text on the screen with no user interaction:
+Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../guides/development/index.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic mobile native application, which displays some text on the screen with no user interaction:
 
 1.  Before you get started with developing Tizen applications, download and install [Tizen Studio](../../../tizen-studio/index.md).
 
@@ -130,7 +130,7 @@ To view and modify the application configuration:
 
 3. To save any changes, in the Tizen Studio menu, select **File > Save All**.
 
-For more information on configuring the application, see [Setting the Application Manifest](../../tutorials/process/setting-properties.md#manifest).
+For more information on configuring the application, see [Setting the Application Manifest](../../guides/development/setting-properties.md#manifest).
 
 ### Understanding the Source Code
 
@@ -217,7 +217,7 @@ You can build the application in the following ways:
     -   In the Tizen Studio menu, select **Project \> Build Project**.
     -   Press the **F10** key.
 
-You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations \> Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
+You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations \> Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../guides/development/building-app.md).
 
 After you have built the application, run it.
 

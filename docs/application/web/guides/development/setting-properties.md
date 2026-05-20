@@ -9,7 +9,7 @@ Before you implement the actual application functionality, define all the necess
   > Only modify the Web application configuration by using the
     configuration editor in Tizen Studio. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
 
-After you have finished setting the project properties, you are ready to [design the UI](app-dev-process.md#design).
+After you have finished setting the project properties, you are ready to [design the UI](index.md#design).
 
 <a name="set"></a>
 ## Set build properties

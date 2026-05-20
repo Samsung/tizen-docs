@@ -9,7 +9,7 @@ Before you implement the actual application functionality, define all the necess
 >
 > Only modify the manifest file by using the manifest editor in Tizen Studio. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
 
-After you have finished setting the project properties, you are ready to [design the UI and implement the application code](app-dev-process.md#designing).
+After you have finished setting the project properties, you are ready to [design the UI and implement the application code](index.md#designing).
 
 <a name="api"></a>
 ## Checking API and Privilege Usage
@@ -21,7 +21,7 @@ You can [check the source code in your project for any violation of API and priv
 
 To perform the usage checks automatically during specific tasks, select the required option in the **Launching** panel:
 
-- During the [build process](app-dev-process.md#build), select the **Run API and privilege checks with build** option.
+- During the [build process](index.md#build), select the **Run API and privilege checks with build** option.
 - During code editing, select the **Run API and privilege checks while editing** option.
 
 You can also perform the usage checks manually after building the application, by right-clicking the project in the **Project Explorer** view and selecting **Check API and Privilege Violations With Build**. The results are displayed in the **Problems** view.

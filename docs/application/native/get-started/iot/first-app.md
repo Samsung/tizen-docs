@@ -8,7 +8,7 @@
 
 An IoT native service application can be created using the C language and run on Raspberry Pi. The application uses the native APIs, which provide various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
-Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and deploying the created application on Raspberry Pi. With the instructions, you can create and run a basic IoT native service application, which displays some text on the log with no user interaction:
+Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../guides/development/index.md) as well as using Tizen Studio and deploying the created application on Raspberry Pi. With the instructions, you can create and run a basic IoT native service application, which displays some text on the log with no user interaction:
 
 1. Before you get started with developing Tizen applications on Raspberry Pi, you must set up your development environment with the board.
 
@@ -136,7 +136,7 @@ To view and modify the application configuration:
 
 3. To save any changes, select **File > Save All** in the Tizen Studio menu.
 
-For more information on configuring the application, see [Setting the Application Manifest](../../tutorials/process/setting-properties.md#manifest).
+For more information on configuring the application, see [Setting the Application Manifest](../../guides/development/setting-properties.md#manifest).
 
 ### Understand source code
 
@@ -239,7 +239,7 @@ You can build the application automatically or manually:
     -   In the Tizen Studio menu, select **Project \> Build Project**.
     -   Press the **F10** key.
 
-There are more than one build configurations. To see the currently active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations \> Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
+There are more than one build configurations. To see the currently active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations \> Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../guides/development/building-app.md).
 
 After you have built the application, run it.
 

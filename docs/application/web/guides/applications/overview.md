@@ -1,6 +1,6 @@
 # Web Applications
 
-The [Tizen Studio](../../../tizen-studio/index.md) enables you to create Web applications for TV and IoT devices. A Web application consists of HTML, JavaScript, and CSS combined in a package, which can be installed on the Tizen device. A [Web application package](../../tutorials/process/app-dev-process.md#package) includes all the support files that are needed by the Web application. Therefore, a Web application can run without any additional external resources or network connectivity after installation.
+The [Tizen Studio](../../../tizen-studio/index.md) enables you to create Web applications for TV and IoT devices. A Web application consists of HTML, JavaScript, and CSS combined in a package, which can be installed on the Tizen device. A [Web application package](../../guides/development/index.md#package) includes all the support files that are needed by the Web application. Therefore, a Web application can run without any additional external resources or network connectivity after installation.
 
 The Application API is mandatory for Tizen TV and IoT profiles, which means that it is supported on all TV and IoT devices. All mandatory APIs are supported on the Tizen emulators.
 

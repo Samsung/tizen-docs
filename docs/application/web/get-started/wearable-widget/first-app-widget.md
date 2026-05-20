@@ -13,7 +13,7 @@ A widget application is one of the Tizen application types. It can be shown by s
 
 ![Widget application on a wearable device](media/widget_app_wearable_widget.png)
 
-Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web widget application (a Web widget), which displays some text on the screen with no user interaction:
+Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../guides/development/index.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web widget application (a Web widget), which displays some text on the screen with no user interaction:
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
@@ -45,7 +45,7 @@ The following example shows you how to create and configure a basic wearable Web
 > [!NOTE]
 > Standalone widget application packages are not allowed in the official site for Tizen applications.
 >
-> For user convenience, you can use a standalone widget application for testing purposes in Tizen Studio. If you want to publish the application in the store, combine it with at least 1 UI application in the same package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#multi).
+> For user convenience, you can use a standalone widget application for testing purposes in Tizen Studio. If you want to publish the application in the store, combine it with at least 1 UI application in the same package. For more information, see [Developing Multiple Projects as a Combined Package](../../guides/development/index.md#multi).
 
 The following figure illustrates the application to be created. The application screen displays the **Hello Widget** text and no user interaction is provided.
 
@@ -171,7 +171,7 @@ To view and modify the application configuration, follow the steps below:
 
 3.  To save any changes, in the Tizen Studio menu, select **File \> Save All**.
 
-For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
+For more information on configuring the application, see [Setting the Web Application Configuration](../../guides/development/setting-properties.md#set_widget).
 
 ### Understand the source code
 
@@ -280,7 +280,7 @@ After you have built the application, run it.
 <a name="run"></a>
 ## Run your application
 
-You can run the Web widget application on the [emulator](../../tutorials/process/run-debug-app.md#emulator) or a [real target device](../../tutorials/process/run-debug-app.md#target).
+You can run the Web widget application on the [emulator](../../guides/development/run-debug-app.md#emulator) or a [real target device](../../guides/development/run-debug-app.md#target).
 
 > [!NOTE]
 > Since the Web Simulator does not support a circular UI, this topic does not cover the instructions for running the application on the Web Simulator.

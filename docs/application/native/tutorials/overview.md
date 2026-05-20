@@ -2,7 +2,7 @@
 
 The introduction to native applications documentation provides overall information you need to become familiar with native-specific Tizen programming and the Tizen application model:
 
-- [Application Development Process](process/app-dev-process.md)
+- [Application Development Process](../guides/development/index.md)
 
   Teaches you how to create a Tizen application from the initial application planning stage to the end stages where you are ready to run and package your application.
 

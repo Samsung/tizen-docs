@@ -274,7 +274,7 @@ An application with a background running capability must declare the background 
 >
 > The `<metadata key="http://tizen.org/metadata/bacgkround-category/<value>"/>` element has no effect on Tizen 2.3 devices, but on Tizen 2.4 and higher devices, it has the same effect as the `<background-category>` element.
 
-The background category of your application can be specified in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in Tizen Studio.
+The background category of your application can be specified in the [application project settings](../../guides/development/setting-properties.md#manifest) in Tizen Studio.
 
 ## Related Information
 - Dependencies

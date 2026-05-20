@@ -4,7 +4,7 @@
 
 An addon is a JavaScript snippet with a manifest file that allows additional common functionalities such as pop-up to Web applications.
 
-Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. The addon is not a Web application, but it is very similar to the Web application in the developing process. With the following instructions, you can create and run a basic addon, which gets timings of various application life-cycle:
+Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../guides/development/index.md) as well as using Tizen Studio and installing the created application on the emulator or target device. The addon is not a Web application, but it is very similar to the Web application in the developing process. With the following instructions, you can create and run a basic addon, which gets timings of various application life-cycle:
 
 1.  Before you get started with developing Tizen addons, download and install [Tizen Studio](../../../tizen-studio/index.md).
 
@@ -124,7 +124,7 @@ To view and modify the addon configuration, follow these steps:
 
 3.  To save any changes, in the Tizen Studio menu, select **File \> Save All**.
 
-For more information on configuring the addon, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
+For more information on configuring the addon, see [Setting the Web Application Configuration](../../guides/development/setting-properties.md#set_widget).
 
 <a name="build"></a>
 ## Build your addon package
@@ -144,7 +144,7 @@ After you have built the addon, run it.
 <a name="run"></a>
 ## Run your addon
 
-You can run the addon on the [emulator](../../tutorials/process/run-debug-app.md#emulator) or a [real target device](../../tutorials/process/run-debug-app.md#target).
+You can run the addon on the [emulator](../../guides/development/run-debug-app.md#emulator) or a [real target device](../../guides/development/run-debug-app.md#target).
 
 <a name="emulator"></a>
 ### Run on emulator

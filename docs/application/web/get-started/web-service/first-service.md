@@ -4,7 +4,7 @@
 
 A Web service consists of a JavaScript file with its business logic running on the Node.js runtime and a config.xml file specifying a Tizen package. This means that you can also use Tizen Web service life-cycle and Node.js built-in modules.
 
-Study the following instructions to help familiarize yourself with Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. The Web service is a kind of Web application and its development is similar to Web application development.
+Study the following instructions to help familiarize yourself with Tizen [Web application development process](../../guides/development/index.md) as well as using Tizen Studio and installing the created application on the emulator or target device. The Web service is a kind of Web application and its development is similar to Web application development.
 
 The following instructions help you to create and run a basic Web service, which enables Web service life-cycle and ensures communication between the Web service and the Web application:
 
@@ -99,7 +99,7 @@ After you have built the Web service, run it.
 <a name="run"></a>
 ## Run your Web service
 
-You can run the Web service on the [emulator](../../tutorials/process/run-debug-app.md#emulator) or a [real target device](../../tutorials/process/run-debug-app.md#target).
+You can run the Web service on the [emulator](../../guides/development/run-debug-app.md#emulator) or a [real target device](../../guides/development/run-debug-app.md#target).
 
 <a name="emulator"></a>
 ### Run on emulator

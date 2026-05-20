@@ -34,7 +34,7 @@ To activate the content assist for user-defined and third-party APIs:
 
 2. Add the definition file in the `config.xml` file.
 
-   For more information, see [Specifying Privileges in the Privilege Tab](../../web/tutorials/process/setting-properties.md#privilege).
+   For more information, see [Specifying Privileges in the Privilege Tab](../../web/guides/development/setting-properties.md#privilege).
 
 ## Related information
 * Dependencies

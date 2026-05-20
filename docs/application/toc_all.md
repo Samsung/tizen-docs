@@ -319,11 +319,11 @@
 ## Tutorials
 ### [Overview](/application/web/tutorials/overview.md)
 ### Application Development Process
-#### [Overview](/application/web/tutorials/process/app-dev-process.md)
-#### [Creating the Application Project](/application/web/tutorials/process/creating-app-project.md)
-#### [Setting Project Properties](/application/web/tutorials/process/setting-properties.md)
-#### [Coding Applications](/application/web/tutorials/process/coding-app.md)
-#### [Running and Debugging Applications](/application/web/tutorials/process/run-debug-app.md)
+#### [Overview](/application/web/guides/development/index.md)
+#### [Creating the Application Project](/application/web/guides/development/creating-app-project.md)
+#### [Setting Project Properties](/application/web/guides/development/setting-properties.md)
+#### [Coding Applications](/application/web/guides/development/coding-app.md)
+#### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
 
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
@@ -562,13 +562,13 @@
 ## Tutorials
 ### [Overview](/application/native/tutorials/overview.md)
 ### Application Development Process
-#### [Overview](/application/native/tutorials/process/app-dev-process.md)
-#### [Creating the Application Project](/application/native/tutorials/process/creating-app-project.md)
-#### [Setting Project Properties](/application/native/tutorials/process/setting-properties.md)
-#### [Building Applications](/application/native/tutorials/process/building-app.md)
-#### [Running Applications](/application/native/tutorials/process/running-app.md)
-#### [Debugging Applications](/application/native/tutorials/process/debugging-app.md)
-#### [Optimizing Application Performance](/application/native/tutorials/process/performance.md)
+#### [Overview](/application/native/guides/development/index.md)
+#### [Creating the Application Project](/application/native/guides/development/creating-app-project.md)
+#### [Setting Project Properties](/application/native/guides/development/setting-properties.md)
+#### [Building Applications](/application/native/guides/development/building-app.md)
+#### [Running Applications](/application/native/guides/development/running-app.md)
+#### [Debugging Applications](/application/native/guides/development/debugging-app.md)
+#### [Optimizing Application Performance](/application/native/guides/development/performance.md)
 
 ### Understanding Tizen Programming
 #### [Application Filtering](/application/native/reference/app-filtering.md)
