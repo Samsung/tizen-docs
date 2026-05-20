@@ -571,7 +571,6 @@
 #### [Optimizing Application Performance](/application/native/tutorials/process/performance.md)
 
 ### Understanding Tizen Programming
-#### [Overview](/application/native/tutorials/details/details.md)
 #### [Application Filtering](/application/native/reference/app-filtering.md)
 #### [Security and API Privileges](/application/native/reference/security-privileges.md)
 #### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/reference/security-privileges-legacy.md)
