@@ -16,6 +16,7 @@ The following API references provide descriptions of all the APIs that can be us
 
 ## Versions
 <ul>
+  <li><a href="10.0/device_api/mobile/index.html" target="_blank">10.0</a></li>
   <li><a href="9.0/device_api/mobile/index.html" target="_blank">9.0</a></li>
   <li><a href="8.0/device_api/mobile/index.html" target="_blank">8.0</a></li>
   <li><a href="7.0/device_api/mobile/index.html" target="_blank">7.0</a></li>

@@ -1,5 +1,8 @@
 # Create Your First Tizen Wearable Native Widget Application
 
+> [!NOTE]
+> EFL module, on which widget applications depend for designing the UI, has been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
+
 **Welcome to Tizen Wearable Native widget application development!**
 
 A wearable native widget application is created using the C language, and can be run on Tizen wearable devices. The application uses the native API, which provides various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.

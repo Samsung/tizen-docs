@@ -1,9 +1,11 @@
 # STC
 
+> [!NOTE]
+> All attach STC APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 STC means Smart Traffic Control. It provides extensible packet-level control services, including per-app data usage, total data quota, and background app's data saving. STC Library provides APIs fulfilling below mentioned features for application development.
 
-This feature is supported in mobile, tv and wearable profile.
+This feature is optional.
 
 The main features of the STC API include:
 
@@ -16,7 +18,7 @@ The main features of the STC API include:
   You can [retrieve network data consumed by applications](#retrieve-data-usage-for-applications).
 
 
-> **Note**  
+> **Note**
 > You can test the STC functionality on a target device only. The [emulator](../../../tizen-studio/common-tools/emulator.md) does not support this feature.
 
 ## Prerequisites
@@ -69,7 +71,7 @@ To retrieve statistics about total network data consumed by system:
 
       return STC_CALLBACK_CONTINUE;
    }
-   
+
    void __stats_finished_cb(stc_error_e result,
                  stc_all_stats_info_h info, void *user_data)
    {
@@ -77,16 +79,16 @@ To retrieve statistics about total network data consumed by system:
                  printf("Error[%d] Response get stats finished error\n", result);
                  return;
          }
- 
+
          int ret = STC_ERROR_NONE;
- 
+
          ret = stc_foreach_all_stats(info, __process_info_stats_cb, NULL);
          if (ret == STC_ERROR_NONE)
                  printf("Success to get all stats info\n");
          else
                  printf("Error[%d] Fail to Success to get all stats info\n", ret );
- 
-   } 
+
+   }
    ```
 
 2. Create rule for retrieveing data usage:
@@ -177,7 +179,7 @@ To retrieve statistics about total network data consumed by applications:
 
      return STC_CALLBACK_CONTINUE;
    }
-   
+
    void __stats_finished_cb(stc_error_e result,
                  stc_all_stats_info_h info, void *user_data)
    {
@@ -185,16 +187,16 @@ To retrieve statistics about total network data consumed by applications:
                  printf("Error[%d] Response get stats finished error\n", result);
                  return;
          }
- 
+
          int ret = STC_ERROR_NONE;
- 
+
          ret = stc_foreach_all_stats(info, __process_info_stats_cb, NULL);
          if (ret == STC_ERROR_NONE)
                  printf("Success to get all stats info\n");
          else
                  printf("Error[%d] Fail to Success to get all stats info\n", ret );
- 
-   } 
+
+   }
    ```
 
 2. Create rule for retrieveing data usage for applications:

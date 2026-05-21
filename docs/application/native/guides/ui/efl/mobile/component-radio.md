@@ -2,7 +2,7 @@
 
 The radio UI component displays 1 or more options and allows users to select 1 of them. For more information, see the [Radio](../../../../api/common/latest/group__Elm__Radio__Group.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 

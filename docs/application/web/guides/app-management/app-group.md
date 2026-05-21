@@ -12,7 +12,7 @@ The main application group features include:
 
 - Controlling the launch mode
 
-  The launch mode determines how a newly launched application is grouped. You can [control the launch mode](#controll-the-launch-mode) by:
+  The launch mode determines how a newly launched application is grouped. You can [control the launch mode](#control-the-launch-mode) by:
 
   - Setting it in the application `config.xml` file.
   - Defining it in an application control that is used to launch the application.

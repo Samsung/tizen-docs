@@ -1,6 +1,6 @@
 # Photocam
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The photocam component displays high resolution photos taken from digital cameras. It provides a way to zoom the photo, load it quickly, and fit it nicely on the screen. It is optimized for the `.jpeg` image format and has a low memory footprint.
 

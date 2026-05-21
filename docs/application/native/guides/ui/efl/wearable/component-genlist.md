@@ -1,6 +1,6 @@
 # Genlist
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 Genlist is a UI component that displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only the visible items are allocated in the memory.
 

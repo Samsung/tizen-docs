@@ -6,17 +6,17 @@ The main features of the Indexed Database API include the following:
 
 - Creating a database
 
-  Use the `IndexedDB.open()` method to [create a database](#creating-a-database). In a database (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept){:target="_blank"} applications), at least 1 object store (in [TV](https://www.w3.org/TR/IndexedDB/#object-store-construct){:target="_blank"} applications) must be present.
+  Use the `IndexedDB.open()` method to [create a database](#create-a-database). In a database (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept){:target="_blank"} applications), at least 1 object store (in [TV](https://www.w3.org/TR/IndexedDB/#object-store-construct){:target="_blank"} applications) must be present.
 
 - Creating an object store
 
   Object store is the basic storage mechanism of indexed database storage data.
 
-  You can [create an object store](#creating-an-object-store) using the `createObjectStore()` method. The object store contains a list of records for storing data, and a key-value list sorted according to the key in an ascending order.
+  You can [create an object store](#create-an-object-store) using the `createObjectStore()` method. The object store contains a list of records for storing data, and a key-value list sorted according to the key in an ascending order.
 
 - Managing data
 
-  You can [save and access data](#managing-data) in the object store.
+  You can [save and access data](#manage-data) in the object store.
 
   The stored data creates a key, assigned to a `keypath`, which in turn creates a value as a JSON object.
 
@@ -25,7 +25,7 @@ The main features of the Indexed Database API include the following:
 
 - Creating an index
 
-  In the object store, you can use the `createIndex()` method to [generate an index](#index). You can search for and retrieve records stored in the index (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept){:target="_blank"} applications) using other properties than the key, as the key is not always unique. You can also retrieve records containing arrays as keys.
+  In the object store, you can use the `createIndex()` method to [generate an index](#create-an-index). You can search for and retrieve records stored in the index (in [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept){:target="_blank"} applications) using other properties than the key, as the key is not always unique. You can also retrieve records containing arrays as keys.
 
 ## Create a database
 

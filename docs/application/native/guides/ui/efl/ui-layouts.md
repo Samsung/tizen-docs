@@ -18,7 +18,7 @@ Container UI components do not have their own visual identity. They only have lo
 | [Layout](./container-layout.md) | Take a standard Edje design file and wrap it very thinly in a UI component. |
 | [Mapbuf](./container-mapbuf.md) | Improve the moving and resizing performance of a complex UI component by treating it as a single Evas map image. |
 | [Naviframe](./container-naviframe.md) | Manage many views by stacking them and displaying the topmost one. |
-| [Panes](./container-panes.md) **in mobile applications only** | Resize 2 sections of content by adding a draggable bar between them. |
+| [Panes](./container-panes.md) **(Optional feature)** | Resize 2 sections of content by adding a draggable bar between them. |
 | [Scroller](./container-scroller.md) | Hold and clip a single object and allow users to scroll across it. |
 | [Table](./container-table.md) | Arrange multiple objects like for a box, but with 2 dimensions. |
 

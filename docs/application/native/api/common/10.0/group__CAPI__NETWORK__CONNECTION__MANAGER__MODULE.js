@@ -1,0 +1,4 @@
+var group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE =
+[
+    [ "Connection Profile", "group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html", "group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE" ]
+];

@@ -2,7 +2,7 @@
 
 EFL Elementary is a set of fast, finger-friendly, scalable, and themeable UI component libraries. A number of UI components, including both [containers](../ui-layouts.md) and non-containers (listed in this topic), are supported. Originally, Elementary was developed as part of the Window Manager development on desktop devices. In the wearable profile, Tizen created new UI styles for circular wearable devices with existing UI components, and optimized all of them for Tizen native applications.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The UI components are wearable-friendly: for example, the circle datetime component extends the basic datetime component (`elm_datetime`) by visualizing the selected field, the circle genlist component provides a scrollbar with circular movement, and the circle progressbar, circle scroller, and circle slider components are all adjusted to the circular design.
 

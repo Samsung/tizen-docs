@@ -4,7 +4,7 @@ The genlist UI component displays a scrollable list of items. It allows you to m
 
 To save memory and speed up processing when many items exist, the genlist uses the concept of "realization" when managing items. It means that a genlist item creates its text and content (realizes) when the user scrolls the list and the item shows up on the screen, and frees them (unrealizes) when the item is scrolled out of the screen. Since item realization is dynamic, you cannot set content in advance. You need to fill the item in the form of a callback function. That is the key point of using a genlist component.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 

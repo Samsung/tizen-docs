@@ -2,7 +2,7 @@
 
 EFL Elementary is a set of fast, finger-friendly, scalable, and themeable UI component libraries. The number of supported UI components is around 80, including both [containers](../ui-layouts.md) and non-containers (listed in this topic). Originally, Elementary was developed as part of the Window Manager development on desktop devices. For the mobile profile, Tizen reused the proper UI components and created new ones, and then enhanced and adjusted all of them for Tizen native applications.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The UI components are mobile-friendly: for example, the naviframe container component supports multiple view management, the entry component supports various modes (such as password, single-line or multi-line, edit or no-edit), the index component supports quick access to another group of UI items, and the toolbar component shows a menu when an item is selected.
 

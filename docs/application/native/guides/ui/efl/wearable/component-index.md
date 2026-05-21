@@ -1,6 +1,6 @@
 # Index
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The index component gives you an index for quick access to a group of other UI items. The index component is hidden by default, but it appears when the user clicks over its reserved area on the canvas.
 

@@ -48,37 +48,16 @@ To enable your application to use the event functionality:
 
 To publish an event to all listeners:
 
-1. Create the callback for handling the event:
-
-   ```
-   static void
-   user_event_cb(const char *event_name, bundle *event_data, void *user_data)
-   {
-       dlog_print(DLOG_INFO, LOG_TAG, "user_event_cb: %s \n", event_name);
-
-       return;
-   }
-   ```
-
-2. Register the event handler and create the bundle for handling the event data:
+1. Create bundle event_data for publishing:
 
    ```
    int ret = EVENT_ERROR_NONE;
-   event_handler_h event_handler;
-   bundle *event_data = NULL;
-
-   ret = event_add_event_handler("event.org.tizen.senderapp.user_event",
-                                 user_event_cb, "CUSTOM_EVENT_KEY", &event_handler);
-
-   if (ret != EVENT_ERROR_NONE)
-       dlog_print(DLOG_ERROR, LOG_TAG, "err: [%d]", ret);
-
-   event_data = bundle_create();
+   bundle *event_data = bundle_create();
 
    ret = bundle_add_str(event_data, user_data_key, user_data);
    ```
 
-3. Use the `event_publish_app_event()` function to publish the event:
+2. Use the `event_publish_app_event()` function to publish the event:
 
    ```
    ret = event_publish_app_event("event.org.tizen.senderapp.user_event", event_data);
@@ -87,7 +66,7 @@ To publish an event to all listeners:
        dlog_print(DLOG_ERROR, LOG_TAG, "err: [%d]", ret);
    ```
 
-4. When no longer needed, free the bundle:
+3. When no longer needed, free the bundle:
 
    ```
    ret = bundle_free(event_data);

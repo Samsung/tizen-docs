@@ -1,5 +1,7 @@
 # Component Based Applications
 
+> [!NOTE]
+> All attach panel APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 The component based application is one of the Tizen application models. This application model enables you to create an application that provides multiple components in one process.
 In the component based application model, there are two types of components. Each component type has its own lifecycle:

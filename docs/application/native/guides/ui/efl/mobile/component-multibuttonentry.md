@@ -2,7 +2,7 @@
 
 The multi-button entry UI component allows the user to enter text so that the text is divided into chunks and managed as a set of buttons. For more information, see the [Multibuttonentry](../../../../api/common/latest/group__Multibuttonentry.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Styles
 

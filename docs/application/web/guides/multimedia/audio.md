@@ -8,19 +8,19 @@ The main features of the Sound API include the following:
 
 - Managing the volume level and sound mode
 
-  You can [set the volume level of a specific sound type](#managing-volume-and-sound-mode) with the `setVolume()` method. You can also [retrieve the current sound mode](#managing-volume-and-sound-mode) with the `getSoundMode()` method.
+  You can [set the volume level of a specific sound type](#manage-volume-and-sound-mode) with the `setVolume()` method. You can also [retrieve the current sound mode](#manage-volume-and-sound-mode) with the `getSoundMode()` method.
 
 - Getting a list of the current sound devices in a specified state
 
-  You can [retrieve a list of the current sound devices which are in a specified state](#managing-sound-devices) by using the `getConnectedDeviceList()` method.
+  You can [retrieve a list of the current sound devices which are in a specified state](#manage-sound-devices) by using the `getConnectedDeviceList()` method.
 
 - Monitoring changes in the volume level and sound mode
 
-  You can [monitor changes in the volume level and sound mode](#monitoring-volume-and-sound-mode-changes) by registering appropriate listeners.
+  You can [monitor changes in the volume level and sound mode](#monitor-volume-and-sound-mode-changes) by registering appropriate listeners.
 
 - Monitoring changes in the sound device state
 
-  You can [monitor changes in the state of sound devices](#monitoring-the-sound-device-state) with the `addDeviceStateChangeListener()` method.
+  You can [monitor changes in the state of sound devices](#monitor-the-sound-device-state) with the `addDeviceStateChangeListener()` method.
 
 ## Prerequisites
 

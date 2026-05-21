@@ -1,16 +1,19 @@
 # Hardware Input Handling
 
+>[!NOTE]
+>All EFL HW Input APIs have been deprecated since Tizen 10.0 and will be removed after two releases without alternative.
+>
 EFL does not depend on any specific hardware input methods, such as hardware keys, to generate back and home events, or rotary component parts to generate rotary events. Instead, these hardware input events are tightly related to the Tizen UX. As a result, EFL has created the EFL Extension library to support these common UX behaviors between the applications and hardware events.
 
 EFL provides the following hardware event management features:
 
-- [Managing Menu and Back Key Events](./key-events.md) **in mobile applications only**
+- [Managing Menu and Back Key Events](./key-events.md) **(Optional feature)**
 
   The Tizen platform offers the **Menu**, **Back**, and **Home** keys as physical hardware keys for mobile devices.  
 
   When the user presses the **Menu** or **Back** key, the key generates a signal with its key property. The Ecore library receives the signal and propagates it to the application layers as an event. The EFL Extension library consumes the events and handles the views of the application according to key properties.
 
-- [Managing Rotary Events](./rotary-events.md) **in wearable applications only**
+- [Managing Rotary Events](./rotary-events.md) **(Optional feature)**
 
   The Tizen platform supports rotary events for user interaction on a wearable rotary device or sensor. The rotary device can rotate clockwise or counter-clockwise, and dispatch an event for each movement. EFL Extension manages the rotary events, which are generated from rotary components on wearable devices and delivered to application layers by defining an event callback or a handler function, and registering it.
 

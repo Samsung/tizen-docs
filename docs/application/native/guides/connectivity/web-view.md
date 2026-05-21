@@ -95,7 +95,7 @@ To enable your application to use the Web view functionality:
     window = window_create(NULL, 0, 0, EINA_FALSE);
     ```
 
-<a name="window"></a>    
+<a name="window"></a>
 ## Creating a Window Object
 
 To create a window object:

@@ -1,5 +1,7 @@
 # Network Service Discovery
 
+> [!NOTE]
+> Tizen.Network.Nsd.SsdpService and Tizen.Network.Nsd.SsdpBrowser class are deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 You can use 2 different protocols to perform network service discoveries to announce local services and search for remote services on a network: DNS-SD (DNS Service Discovery) and SSDP (Simple Service Discovery Protocol).
 

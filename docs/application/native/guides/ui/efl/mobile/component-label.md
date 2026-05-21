@@ -2,7 +2,7 @@
 
 The label UI component displays texts with a simple HTML-like markup. For more information, see the [Label](../../../../api/common/latest/group__Elm__Label__Group.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 

@@ -1,6 +1,6 @@
 # Circle Object
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The circle object component extends Elementary components in a form of the circular design. Sometimes, the circle object merely provides additional UI features to an Elementary component, and sometimes it works as an independent component with its own UI and functionalities.
 

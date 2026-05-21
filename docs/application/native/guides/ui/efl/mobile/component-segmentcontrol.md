@@ -1,6 +1,6 @@
 # Segmentcontrol
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The segmentcontrol component consists of several segment items. A segment item is similar to a discrete 2-state button. Any time, only one segment item can be selected. A segment item is composed of a label (text) and an icon.
 

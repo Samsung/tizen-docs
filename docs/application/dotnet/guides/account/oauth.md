@@ -165,7 +165,8 @@ To make a request with the OAuth 2.0 manager, follow these steps:
 
 To obtain the required authorization code or access token, follow these steps:
 
--   <a name="req_code"></a>Request the authorization code.
+<a name="req_code"></a>
+-   Request the authorization code.
 
     The authorization code grant type is used to obtain both access tokens and refresh tokens. It is a redirection-based flow that requires the client to interact with the server and receive the incoming requests (through redirection) from the authorization server.
 
@@ -241,8 +242,8 @@ To obtain the required authorization code or access token, follow these steps:
                 authorizer.Dispose();
             }
             ```
-
-    -   <a name="direct_token"></a>Request the access token directly.
+<a name="direct_token"></a>
+    -   Request the access token directly.
 
         You can request an access token in a single step without obtaining the authorization code explicitly. For the authorization code grant type, the code is obtained after the authentication, and passed to the server to obtain the access token internally. For the implicit, resource owner password credentials, and client credentials grant types, you can obtain the access token directly.
 

@@ -16,7 +16,7 @@ The Web Storage API provides the following 2 storage types:
 
     If a new window is opened using a link, the session storage data is copied to the new window. However, if the data in the new window is edited, it is stored as a separate data item.
 
-You can [save and read data in the local and session storages](#managing-data-in-local-and-session-storage). You can also [use the local storage](#using-a-local-storage) to delete the data.
+You can [save and read data in the local and session storages](#manage-data-in-local-and-session-storage). You can also [use the local storage](#use-a-local-storage) to delete the data.
 
 ## Use a local storage
 

@@ -2,7 +2,7 @@
 
 Wi-Fi Direct&reg; is a technology that allows you to find nearby Wi-Fi Direct devices and form a Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode. Wi-Fi Direct is a synonym for Wi-Fi P2P (Peer-to-Peer).
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 In a Wi-Fi Direct group, the group owner works as an access point in the Wi-Fi infrastructure mode and the other devices join the group as clients. A group can be created either by negotiation between 2 devices or in an autonomous mode by a single group owner device. In a negotiation-based group creation, 2 devices compete based on the group owner intent value and the higher intent device becomes a group owner, while the other device becomes a group client. In an autonomous group creation, a device becomes a group owner by itself without any group client.
 

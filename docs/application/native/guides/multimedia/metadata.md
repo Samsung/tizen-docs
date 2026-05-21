@@ -249,7 +249,7 @@ To edit the metadata and artwork in the file:
    >
    > The artwork is added to the file or removed from the file only after you [call the `metadata_editor_update_metadata()` function](#apply).
 
-   <a name="apply"></a>
+<a name="apply"></a>
 5. Apply the metadata and artwork edits to the file using the `metadata_editor_update_metadata()` function:
 
    ```

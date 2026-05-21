@@ -1,7 +1,7 @@
 # What is Tizen?
 ## [Overview](/platform/what-is-tizen/overview.md)
 ## Devices
-### [TV](/platform/what-is-tizen/profiles/tv.md)
+### [Products](/platform/what-is-tizen/devices/products.md)
 ### [Custom](/platform/what-is-tizen/profiles/tizen_custom.md)
 ## Versions
 ### [Tizen 9.0](/platform/what-is-tizen/versions/tizen-9-0-m2.md)
@@ -34,16 +34,30 @@
 ## [Development Tips](/platform/developing/tips.md)
 
 # Porting
-## [Overview](/platform/porting/overview.md)
-## [Kernel](/platform/porting/kernel.md)
-## [System](/platform/porting/system.md)
-## [Graphics and UI](/platform/porting/graphics-and-ui.md)
-## [Recovery](/platform/porting/recovery.md)
-## [Multimedia](/platform/porting/multimedia.md)
-## [Connectivity](/platform/porting/connectivity.md)
-## [Location](/platform/porting/location.md)
-## [Telephony](/platform/porting/telephony.md)
-## [Application](/platform/porting/application.md)
+## HAL
+### [Overview](/platform/HAL/guides/overview.md)
+### [Connectivity](/platform/HAL/guides/connectivity.md)
+### [Display & Graphics](/platform/HAL/guides/displaygraphics.md)
+### [Location](/platform/HAL/guides/location.md)
+### [Machine Learning](/platform/HAL/guides/ml.md)
+### [Multimedia](/platform/HAL/guides/multimedia.md)
+### [Security](/platform/HAL/guides/security.md)
+### [System](/platform/HAL/guides/system.md)
+
+### API Reference
+#### [1.0](/platform/HAL/api/1.0/index.md){:target="_blank"}
+## Archive
+### [Overview](/platform/porting/overview.md)
+### [Kernel](/platform/porting/kernel.md)
+### [System](/platform/porting/system.md)
+### [Graphics and UI](/platform/porting/graphics-and-ui.md)
+### [Recovery](/platform/porting/recovery.md)
+### [Multimedia](/platform/porting/multimedia.md)
+### [Connectivity](/platform/porting/connectivity.md)
+### [Location](/platform/porting/location.md)
+### [Telephony](/platform/porting/telephony.md)
+### [Application](/platform/porting/application.md)
+### [Legacy Porting](/platform/porting/legacy-porting.md)
 
 # Reference
 ## [Gerrit](/platform/reference/gerrit-usage.md)
@@ -53,6 +67,8 @@
 ### [GBS Maintenance Models](/platform/reference/gbs/gbs-maintenance-models.md)
 ### [GBS Reference](/platform/reference/gbs/gbs-reference.md)
 ### [FAQ](/platform/reference/gbs/gbs-faq.md)
+
+## [Platform Development Tool](/platform/reference/tp-usage.md)
 
 ## MIC Image Creator
 ### [Overview](/platform/reference/mic/mic-overview.md)
@@ -77,6 +93,7 @@
 ## [Tizen Image Creator FAQ](/platform/reference/tic-faq.md)
 ## [Set up docker](/platform/reference/set-up-docker.md)
 # Release Notes
+## [Tizen 10.0 Public](/platform/release-notes/tizen-10-0.md)
 ## [Tizen 9.0 Public M2](/platform/release-notes/tizen-9-0-m2.md)
 ## [Tizen 9.0 Public M1](/platform/release-notes/tizen-9-0-m1.md)
 ## [Tizen 8.0 Public M2](/platform/release-notes/tizen-8-0-m2.md)

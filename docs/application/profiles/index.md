@@ -6,14 +6,6 @@ The TV profile is supported in web and .NET application types, whereas the IoT p
 
 <div class="row cards-container-infra">
     <div class="col col-md-3">
-        <a href="./tv.md" class="card card-infra h-100">
-            <div class="card-body">
-                <p class="h3 card-title">TV</p>
-                <p class="card-text">Designed for smart TV's.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-md-3">
         <a href="./iot.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">IoT</p>

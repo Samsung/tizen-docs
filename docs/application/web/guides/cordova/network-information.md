@@ -8,11 +8,11 @@ The main features of the Network Information API include the following:
 
 - Getting the connection status        
 
-  You can compare the `navigator.connection.type` value with one of the values in the `Connection` global dictionary to [check the current connection status](#checking-the-connection-status).
+  You can compare the `navigator.connection.type` value with one of the values in the `Connection` global dictionary to [check the current connection status](#check-the-connection-status).
 
 - Monitoring network status changes        
 
-  To [monitor the changes in the network status](#handling-network-related-events), you can use the `document.addEventListener()` method to register the required callbacks.
+  To [monitor the changes in the network status](#handle-network-related-events), you can use the `document.addEventListener()` method to register the required callbacks.
 
 ## Prerequisites
 

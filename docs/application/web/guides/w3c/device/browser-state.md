@@ -1,6 +1,6 @@
 # HTML5 Browser state
 
-You can [access information about the network connection state of the browser](#retrieving-the-browser-state).
+You can [access information about the network connection state of the browser](#retrieve-the-browser-state).
 
 This feature is optional feature.
 
