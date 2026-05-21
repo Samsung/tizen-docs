@@ -1,6 +1,6 @@
 # Circle Spinner
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The circle spinner component extends the spinner component (`elm_spinner`) by visualizing its value. The circle spinner increases or decreases the value of the `elm_spinner` through a clockwise or counter-clockwise rotary event.
 

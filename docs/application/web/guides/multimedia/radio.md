@@ -8,15 +8,15 @@ The main features of the FM Radio API include the following:
 
 - Managing the radio
 
-  You can [control the radio playback and change frequency](#managing-the-fm-radio).
+  You can [control the radio playback and change frequency](#manage-the-fm-radio).
 
 - Scanning available radio channels
 
-  You can [scan the available frequencies to find a channel](#scanning-the-fm-radio-frequency).
+  You can [scan the available frequencies to find a channel](#scan-the-fm-radio-frequency).
 
 - Getting information about interruptions
 
-  The Tizen system has a feature to prevent interference between the radio and other sound sources. The radio sound is interrupted in reaction to various events, such as an incoming call or notification. You can use the `oninterrupted` event handler to [detect the reason for the interruption](#getting-information-about-interruptions).
+  The Tizen system has a feature to prevent interference between the radio and other sound sources. The radio sound is interrupted in reaction to various events, such as an incoming call or notification. You can use the `oninterrupted` event handler to [detect the reason for the interruption](#get-information-about-interruptions).
 
 The available operations depend on the current radio state. To get information about the current radio state, read the `state` attribute of the FMRadioManager interface (the RadioState) enumeration specifies the possible state values). The following figure illustrates the radio states and transitions between them.
 

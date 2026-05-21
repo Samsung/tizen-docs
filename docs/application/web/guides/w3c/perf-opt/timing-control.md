@@ -2,7 +2,7 @@
 
 Timing control is used mainly in animations for cyclic script execution synchronized with screen changes.
 
-Making script-based animations requires updating the properties of the animated objects in each frame. In computerized animations, the frame rate is normally 30 or 60 fps (frames per second), because the human eye perceives a sequence of images as an animation when they change at least 12-15 times per second. The `requestAnimationFrame()` (or `webkitRequestAnimationFrame()`) method enables [scheduling the animation frame update requests](#creating-an-application-with-a-controllable-animation). The frame update rate depends on implementation. In Tizen 2.2, it is about 60 fps.
+Making script-based animations requires updating the properties of the animated objects in each frame. In computerized animations, the frame rate is normally 30 or 60 fps (frames per second), because the human eye perceives a sequence of images as an animation when they change at least 12-15 times per second. The `requestAnimationFrame()` (or `webkitRequestAnimationFrame()`) method enables [scheduling the animation frame update requests](#create-an-application-with-a-controllable-animation). The frame update rate depends on implementation. In Tizen 2.2, it is about 60 fps.
 
 > [!NOTE]
 > In specific applications, when using the emulator, you must include the  `webkit` prefix in method names, such as `window.performance.webkitNow()`. However, when using a device, the prefix must not be used. In addition, when using the emulator, methods assigned to variables must be formatted as follows:

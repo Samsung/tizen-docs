@@ -8,19 +8,19 @@ The main features of the Contact API include the following:
 
 - Address book management
 
-  You can [create a new address book](#creating-an-address-book), or [access the device address books](#getting-address-books) to access existing contacts.
+  You can [create a new address book](#create-an-address-book), or [access the device address books](#get-address-books) to access existing contacts.
 
 - Contact management
 
-  You can [add](#adding-a-contact) and [manage](#managing-a-contact) a single contact at a time using synchronous operations.
+  You can [add](#add-a-contact) and [manage](#manage-a-contact) a single contact at a time using synchronous operations.
 
-  You can also keep the address book in your application synchronized with an external contact manager by [receiving notifications](#receiving-notifications-on-contact-changes) in your application when contact information changes. Every change made to the address book triggers an event for which you can define a notification.
+  You can also keep the address book in your application synchronized with an external contact manager by [receiving notifications](#receive-notifications-on-contact-changes) in your application when contact information changes. Every change made to the address book triggers an event for which you can define a notification.
 
 - Group and multiple contact management
 
-  You can [manage contact groups](#managing-contact-groups), including getting, updating, and deleting them, using the applicable methods of the `AddressBook` interface.
+  You can [manage contact groups](#manage-contact-groups), including getting, updating, and deleting them, using the applicable methods of the `AddressBook` interface.
 
-  You can also [create](#adding-multiple-contacts-in-the-batch-mode) and [manage](#managing-multiple-contacts-in-the-batch-mode) multiple contacts simultaneously using the batch mode. The batch mode provides faster, optimized processing of multiple contacts.
+  You can also [create](#add-multiple-contacts-in-the-batch-mode) and [manage](#manage-multiple-contacts-in-the-batch-mode) multiple contacts simultaneously using the batch mode. The batch mode provides faster, optimized processing of multiple contacts.
 
    > [!NOTE]
    > The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Additionally, breaking down a batch operation helps you avoid blocking other database operations, such as add or remove.
@@ -29,13 +29,13 @@ The main features of the Contact API include the following:
 
 - Person management
 
-  You can [manage persons](#managing-persons) using the applicable methods of the `ContactManager` interface.
+  You can [manage persons](#manage-persons) using the applicable methods of the `ContactManager` interface.
 
   Persons are automatically added or modified when contacts are added to or unlinked from existing persons. You cannot add persons directly.
 
 - vCard format conversions
 
-  You can convert the contacts to [vCard format](https://tools.ietf.org/html/rfc2426){:target="_blank"} or back to [import](#importing-contacts) and [export](#exporting-contacts) contacts.
+  You can convert the contacts to [vCard format](https://tools.ietf.org/html/rfc2426){:target="_blank"} or back to [import](#import-contacts) and [export](#export-contacts) contacts.
 
   The vCard (RFC 2426) file format (`.vcf` or `.vcard`) is a standard for electronic business cards, which contain contact information, such as name, address, phone numbers, email addresses, URLs, logos, photographs, and audio clips.
 

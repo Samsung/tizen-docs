@@ -6,21 +6,21 @@ The main features of the Canvas Element API include the following:
 
 - Creating a canvas
 
-  To draw and manage shapes, you must [insert a &lt;canvas&gt; element](#using-a-canvas) in the HTML page.
+  To draw and manage shapes, you must [insert a &lt;canvas&gt; element](#use-a-canvas) in the HTML page.
 
 - Using images
 
-  You can [use images on the canvas](#using-images-on-the-canvas) by using the applicable method of the HTML Canvas 2D Context API.
+  You can [use images on the canvas](#use-images-on-the-canvas) by using the applicable method of the HTML Canvas 2D Context API.
 
 - Drawing shapes
 
-  With the HTML Canvas 2D Context API, you can [draw various shapes](#drawing-shapes-to-the-canvas), such as rectangles, circles, and lines to a canvas.
+  With the HTML Canvas 2D Context API, you can [draw various shapes](#draw-shapes-to-the-canvas), such as rectangles, circles, and lines to a canvas.
 
-  You can also [draw and mask objects](#drawing-masks-to-the-canvas) on the canvas.
+  You can also [draw and mask objects](#draw-masks-to-the-canvas) on the canvas.
 
 - Using styles and transformations
 
-  You can use a canvas to [create text or lines](#creating-text-and-lines-on-the-canvas) other than images and shapes.
+  You can use a canvas to [create text or lines](#create-text-and-lines-on-the-canvas) other than images and shapes.
 
 For all canvas objects (images, shapes, text, and lines), you can define colors (the `fillStyle` and `strokeStyle` attributes), shadows (the `shadowColor` and `shadowBlur` attributes), and gradation (the `createLinearGradient()` method). You can also use the transformation methods, such as `scale()`, `translate()`, `transform()`, and `rotate()`, to implement, for example, transparency or shape gradient transformations.
 
@@ -376,7 +376,7 @@ For the complete source code related to this use case, see the following file:
 
 - [renamed_index.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context/scratchcard){:target="_blank"}
 
-## Creat text and lines on the canvas
+## Create text and lines on the canvas
 
 To create text and lines on a canvas, follow these steps:
 

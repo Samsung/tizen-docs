@@ -9,10 +9,6 @@ You can use the following device settings and systems features in your native ap
 
   You can control any external devices attached to the actual user device, and monitor changes in their state. For example, you can access information about the device battery, display, camera flash LED, and power state.
 
-- [External Output Devices](ext-output.md)
-
-  You can control external output devices, allowing you to display the application screen on a separate device. You can manage the presentation mode, receive information and notifications from the device, and set the attributes for the external output.
-
 - [Diagnostics](diagnostics.md)
 
   You can access the diagnostic data of the applications. For example, you can retrieve the crash report or the custom diagnostic data that cannot be placed in logs due to their format or size.

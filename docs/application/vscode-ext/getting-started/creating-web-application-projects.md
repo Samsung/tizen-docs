@@ -2,7 +2,26 @@
 
 The following sections explain how to use Visual Studio Code Extension for Tizen to create your web applications.
 
-## Create Tizen Web project
+
+
+## Create Tizen Web project using GUI
+
+To create a Tizen Native project, follow the steps below:
+
+1. Click **+ Create Project** button on the sidebar.
+
+2. Select the **application type** as **web**.
+
+3. Select **version**, **device**, and **template** for the project.
+
+4. Enter the **project name** and select the location of the project directory.
+
+5. Click **Create Project** button.
+
+   ![Create dotnet project](media/create_project_web.png)
+
+
+## Create Tizen Web project using Command Palette
 
 To create a Tizen Web project, follow the steps below:
 

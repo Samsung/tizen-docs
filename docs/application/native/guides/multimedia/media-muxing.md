@@ -1,5 +1,7 @@
 # Media Muxing
 
+> [!NOTE]
+> Media Muxer / Media Demuxer APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 You can mux encoded media into a multiplexed stream and parse multiplexed media streams.
 
@@ -222,7 +224,7 @@ To manage the media muxer, the `mediamuxer_write_sample()` function is called in
             user_func_get_media_packet(&vid_pkt, &is_eos);
             if (!is_eos) {
                 mediamuxer_write_sample(myMuxer, track_index_vid, vid_pkt);
-                media_packet_destroy(vid_pkt);
+                media_packet_unref(vid_pkt);
             } else {
                 g_print("\nVideo while done in the test suite");
                 mediamuxer_close_track(myMuxer, track_index_vid);
@@ -371,13 +373,13 @@ To manage the media demuxer process:
            /* Check that EOS has been reached. */
            media_packet_is_end_of_stream(vidbuf, &is_eos);
            if (is_eos) {
-               media_packet_destroy(vidbuf);
+               media_packet_unref(vidbuf);
                pthread_exit(NULL);
            }
            count++;
            g_print("Read::[%d] video sample\n", count);
            /* Use the media packet and release the packet here */
-           media_packet_destroy(vidbuf);
+           media_packet_unref(vidbuf);
        }
        *status = 0;
 

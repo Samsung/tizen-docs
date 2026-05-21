@@ -184,7 +184,7 @@ You must put the addon related files in the following directory:
 > [!CAUTION]
 > If you put the addon related files in some other location then the addons will not be recognized.
 
-<a name="management"></a>  
+<a name="management"></a>
 ## Manage addons
 
 Web App Addon Setting is pre-installed in the Tizen platform binary. It provides the following functionalities:

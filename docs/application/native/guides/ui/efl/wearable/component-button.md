@@ -1,6 +1,6 @@
 # Button
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The button component is a simple push button, which is composed of a label icon and an icon object. The button supports the autorepeat feature.
 

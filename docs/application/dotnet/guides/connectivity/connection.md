@@ -41,7 +41,6 @@ To get information about a network connection, use the [Tizen.Network.Connection
 
     ```csharp
     CellularState state = ConnectionManager.CellularState;
-
     Log.Info(Globals.LogTag, "State = " + state);
     ```
 
@@ -49,7 +48,6 @@ To get information about a network connection, use the [Tizen.Network.Connection
 
     ```csharp
     System.Net.IPAddress ipAddress = ConnectionManager.GetIPAddress(AddressFamily.IPv4);
-
     Log.Info(Globals.LogTag, "IpAddress = " + ipAddress.ToString());
     ```
 
@@ -57,14 +55,12 @@ To get information about a network connection, use the [Tizen.Network.Connection
 ## Monitor connection changes
 
 You can monitor changes in the IP address, proxy address, Ethernet cable state, and connection type.  
-
 To monitor for changes in connection information, such as IP address and connection type, follow the steps below:
 
 1.  To receive notifications on specific connection changes, register event handlers using the related `XXXChanged` events of the [Tizen.Network.Connection.ConnectionManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Network.Connection.ConnectionManager.html) class:
 
     ```csharp
     ConnectionManager.IPAddressChanged += EventHandlerIpAddressChanged;
-
     ConnectionManager.ConnectionTypeChanged += EventHandlerConnectionTypeChanged;
     ```
 
@@ -85,7 +81,6 @@ To monitor for changes in connection information, such as IP address and connect
 
     ```csharp
     ConnectionManager.IPAddressChanged -= EventHandlerIpAddressChanged;
-
     ConnectionManager.ConnectionTypeChanged -= EventHandlerConnectionTypeChanged;
     ```
 
@@ -133,7 +128,6 @@ To change the active connection profile and access connection details, follow th
 
     ```csharp
     string name = currCP.InterfaceName;
-
     Log.Info(Globals.LogTag, "InterfaceName = " + Name);
     ```
 

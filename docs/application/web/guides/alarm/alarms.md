@@ -8,15 +8,15 @@ The main features of the Alarm API include the following:
 
 - Alarm management   
 
-  You can [manage alarms](#managing-alarms) by creating and deleting them. You can also obtain a list of all existing alarms on the device.
+  You can [manage alarms](#manage-alarms) by creating and deleting them. You can also obtain a list of all existing alarms on the device.
 
 - Application launches with alarms   
 
-  You can set an alarm to [launch an application when triggered](#launching-applications-with-alarms).
+  You can set an alarm to [launch an application when triggered](#launch-applications-with-alarms).
 
 - Alarm events   
 
-  You can [retrieve information about the next alarm event](#checking-for-alarm-events).
+  You can [retrieve information about the next alarm event](#check-for-alarm-events).
 
 - Alarm notification management **(Optional Feature)**   
 

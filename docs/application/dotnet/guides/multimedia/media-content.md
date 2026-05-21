@@ -27,27 +27,23 @@ The main features of the `Tizen.Content.MediaContent` namespace include the foll
 
     You can also retrieve a list of media folders, retrieve a list of media items, and [monitor changes](#receive-update-notifications) in the media database. You can [search for specific media folders](#find-folders) and [retrieve media folder content](#retrieve-folder-content).
 
+-   Media scanning
+
+    You can [scan media files](#scan-a-media-folder) to update the database with new or modified files. The scanning can be performed asynchronously with cancellation support.
+
+-   Thumbnail creation
+
+    You can [create thumbnails](#create-thumbnails) for media files to generate preview images.
+
 -   Media information
 
     You can update the media database due to file creation, deletion, or update on the device. You can [retrieve media information](#retrieve-media-information), add [media files and folders](#insert-media-in-the-database) to the database, and [scan for media folders](#scan-a-media-folder).
 
     You can also retrieve [general information about the media and more specific information about the media type](#media-information).
 
--   Media bookmarks
-
-    You can [insert](#insert-bookmarks), [search for](#find-bookmarks), and [remove](#remove-bookmarks) bookmarks for video and audio files.
-
 -   Media filtering
 
     You can [create a filter](#set-up-a-filter) to find specific media items.
-
--   Media playlists
-
-    You can [add](#create-playlists) or [delete](#delete-playlists) a playlist of video and audio files, and add media files to a created playlist. In addition, you can also [search for playlists](#find-playlists).
-
--   Media tags (Deprecated since API Level 12)
-
-    You can access the tag information for the media files in the database. You can, for example, [add media tags](#add-tags), [retrieve tag information](#retrieve-tag-information), and [delete tags](#delete-tags).
 
 -   Media albums
 
@@ -57,6 +53,21 @@ The main features of the `Tizen.Content.MediaContent` namespace include the foll
 
     You can manage a collection of media items as a group when different items have the same value of a given property. You can, for example, [search for groups](#find-media-item-groups).
 
+-   Media bookmarks (Deprecated since API Level 12)
+
+    You can [insert](#insert-bookmarks), [search for](#find-bookmarks), and [remove](#remove-bookmarks) bookmarks for video and audio files.
+
+-   Media playlists (Deprecated since API Level 12)
+
+    You can [add](#create-playlists) or [delete](#delete-playlists) a playlist of video and audio files, and add media files to a created playlist. In addition, you can also [search for playlists](#find-playlists).
+
+-   Media tags (Deprecated since API Level 12)
+
+    You can access the tag information for the media files in the database. You can, for example, [add media tags](#add-tags), [retrieve tag information](#retrieve-tag-information), and [delete tags](#delete-tags).
+
+-   Face information (Deprecated since API Level 11)
+
+    You can manage face information detected from or added to media files.
 
 
 ## Prerequisites
@@ -172,7 +183,7 @@ using (var mediaDataReader = albumCmd.SelectMember(album.Id))
 ```
 
 
-## Insert bookmarks
+## Insert bookmarks (Deprecated since API Level 12)
 
 To set a bookmark for a video file at a given timestamp, use the `Insert()` method of the [Tizen.Content.MediaContent.BookmarkCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.BookmarkCommand.html) class:
 
@@ -187,8 +198,7 @@ bookmarkCmd.Insert(mediaInfo.Id, offset, bookmarkName, thumbnailPath);
 
 The parameters are the media ID of the video file, the moment (time in milliseconds from the beginning) in the video to bookmark, and the image used as a thumbnail for the bookmark.
 
-
-## Find bookmarks
+## Find bookmarks (Deprecated since API Level 12)
 
 To retrieve bookmarks, follow the steps below:
 
@@ -212,15 +222,13 @@ To retrieve bookmarks, follow the steps below:
     var mediaDataReader = mediaInfoCmd.SelectBookmark(mediaId);
     ```
 
-
-## Remove bookmarks
+## Remove bookmarks (Deprecated since API Level 12)
 
 To remove a bookmark, use the `Delete()` method of the [Tizen.Content.MediaContent.BookmarkCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.BookmarkCommand.html) class as shown below:
 
 ```csharp
 bookmarkCmd.Delete(bookmark.Id);
 ```
-
 
 ## Set up a filter
 
@@ -398,6 +406,24 @@ To access media item information, follow the steps below:
     ```
 
 
+## Find ebook paths
+
+To retrieve ebook paths that match a specific keyword, use the `SelectEbookPath()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
+
+```csharp
+using (var mediaDataReader = mediaInfoCmd.SelectEbookPath("keyword"))
+{
+    while (mediaDataReader.Read())
+    {
+        string ebookPath = mediaDataReader.Current;
+        Tizen.Log.Info(LogTag, $"Ebook path: {ebookPath}");
+    }
+}
+```
+
+This method searches for ebook files in the media database that contain the specified keyword in their metadata.
+
+
 ## Insert media in the database
 
 To use newly created media files, insert them into the database. To add information to the database, use one of the following options:
@@ -408,13 +434,22 @@ To use newly created media files, insert them into the database. To add informat
     mediaInfoCmd.Add(imagePath);
     ```
 
-2.  The `MediaDatabase.ScanFile()` method of the [Tizen.Content.MediaContent.MediaDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaDatabase.html) class:
+2.  The `AddAsync()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class:
+
+    ```csharp
+    await mediaInfoCmd.AddAsync(new string[] { imagePath1, imagePath2, imagePath3 });
+    ```
+
+3.  The `MediaDatabase.ScanFile()` method of the [Tizen.Content.MediaContent.MediaDatabase](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaDatabase.html) class:
 
     ```csharp
     mediaDatabase.ScanFile(imagePath);
     ```
 
-The difference between the 2 options is that the `Add()` method returns the [Tizen.Content.MediaContent.MediaInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfo.html) instance of the media file after inserting the file in the database, whereas the `ScanFile()` method only inserts the file.
+The difference between the options is:
+- The `Add()` method returns the [Tizen.Content.MediaContent.MediaInfo](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfo.html) instance of the media file after inserting the file in the database.
+- The `AddAsync()` method allows you to add multiple media files asynchronously. At most 300 items can be added at once.
+- The `ScanFile()` method only inserts the file without returning information about it.
 
 
 ## Scan a media folder
@@ -427,8 +462,50 @@ If the second parameter is set to `true`, all subfolders are scanned too:
 await mediaDatabase.ScanFolderAsync(folderPath, true);
 ```
 
+The `ScanFolderAsync()` method has several overloads that allow you to specify additional options:
 
-## Create playlists
+- `ScanFolderAsync(string folderPath)` - Scans a folder recursively with default options
+- `ScanFolderAsync(string folderPath, bool recursive)` - Scans a folder with the option to specify whether to scan subfolders
+- `ScanFolderAsync(string folderPath, CancellationToken cancellationToken)` - Scans a folder recursively with cancellation support
+- `ScanFolderAsync(string folderPath, bool recursive, CancellationToken cancellationToken)` - Scans a folder with the option to specify whether to scan subfolders and with cancellation support
+
+The cancellation token allows you to cancel the scanning operation if needed:
+
+```csharp
+var cancellationTokenSource = new CancellationTokenSource();
+// Cancel the operation after 10 seconds
+cancellationTokenSource.CancelAfter(TimeSpan.FromSeconds(10));
+
+try
+{
+    await mediaDatabase.ScanFolderAsync(folderPath, true, cancellationTokenSource.Token);
+}
+catch (TaskCanceledException)
+{
+    Tizen.Log.Info(LogTag, "Folder scanning was canceled.");
+}
+```
+
+
+## Create thumbnails
+
+To create a thumbnail image for a media file, use the `CreateThumbnail()` method of the [Tizen.Content.MediaContent.MediaInfoCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.MediaInfoCommand.html) class.
+
+If a thumbnail already exists for the given media, the existing path will be returned. Otherwise, a new thumbnail will be generated.
+
+```csharp
+// Using MediaInfoCommand
+string thumbnailPath = mediaInfoCmd.CreateThumbnail(mediaId);
+
+Tizen.Log.Info(LogTag, $"Thumbnail created at: {thumbnailPath}");
+```
+
+The thumbnail creation methods support various media types, but are primarily intended for image and video files. If the media is in external USB storage, an `UnsupportedContentException` will be thrown.
+
+For the `MediaInfoCommand.CreateThumbnail()` method, you need to ensure that the media file exists in the file system, otherwise a `FileNotFoundException` will be thrown.
+
+
+## Create playlists (Deprecated since API Level 12)
 
 To create and insert a playlist into the database, follow the steps below:
 
@@ -456,7 +533,7 @@ To create and insert a playlist into the database, follow the steps below:
     ```
 
 
-## Find playlists
+## Find playlists (Deprecated since API Level 12)
 
 To find playlists and their contents, follow the steps below:
 
@@ -493,7 +570,7 @@ To find playlists and their contents, follow the steps below:
     ```
 
 
-## Delete playlists
+## Delete playlists (Deprecated since API Level 12)
 
 When you no longer need it, delete a playlist from the database with the `Delete()` method of the [Tizen.Content.MediaContent.PlaylistCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.PlaylistCommand.html) class to avoid creating useless records:
 
@@ -502,7 +579,7 @@ playlistCmd.Delete(playlist.Id);
 ```
 
 
-## Add tags
+## Add tags (Deprecated since API Level 12)
 
 To add a tag to the database, and a file to the tag, follow the steps below:
 
@@ -523,7 +600,7 @@ To add a tag to the database, and a file to the tag, follow the steps below:
     ```
 
 
-## Retrieve tag information
+## Retrieve tag information (Deprecated since API Level 12)
 
 To retrieve tag information, follow the steps below:
 
@@ -560,7 +637,7 @@ To retrieve tag information, follow the steps below:
     ```
 
 
-## Delete tags
+## Delete tags (Deprecated since API Level 12)
 
 To delete a tag, use the `Delete()` method of the [Tizen.Content.MediaContent.TagCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.TagCommand.html) class as shown below:
 

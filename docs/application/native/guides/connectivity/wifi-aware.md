@@ -11,10 +11,10 @@ The main features of the Wi-Fi Aware API include the following:
   You can initialize Wi-Fi Aware functionalities using the `wifi_aware_initialize()` API, and deinitialize them using the `wifi_aware_deinitialize()` API. These APIs allow you to initialize and deinitialize the Wi-Fi Aware module in your application.
 
 - Enabling and disabling Wi-Fi Aware functionalities.
-  You can [enable](#enabling-wi-fi-aware) or [disable](#disabling-wi-fi-aware) Wi-Fi Aware functionalities.
+  You can [enable](#to-enable-wi-fi-aware) or [disable](#to-disable-wi-fi-aware) Wi-Fi Aware functionalities.
 
 - Creating and destroying Wi-Fi Aware sessions.
-  You can [create a new Wi-Fi Aware session](#session-creation) and [destroy an existing session](#disabling-wi-fi-aware).
+  You can [create a new Wi-Fi Aware session](#session-creation) and [destroy an existing session](#to-disable-wi-fi-aware).
 
 - Starting and Stopping Wi-Fi Aware sessions.
   Based on session type you can [start publish session](#publish-service) or [subscribe session](#subscribe-service).

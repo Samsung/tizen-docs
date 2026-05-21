@@ -1,6 +1,6 @@
 # List
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The list is a very simple UI component used to manage a limited number of items. For lists with a lot of items, use the [Genlist](component-genlist.md).
 

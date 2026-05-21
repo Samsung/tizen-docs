@@ -1,17 +1,16 @@
 # Media Controller
 
-
 You can establish communication between a media control server and a media control client. You can send commands from the client to the server, and the client can request updated metadata and playback information from the server.
 
 The main media controller features include the following:
 
 - Updating and retrieving the playlist
 
-    You can [create a playlist](#creating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
+    You can [create a playlist](#create-and-retrieve-the-playlist) on the server side, and then retrieve that information on the client side.
 
 -   Updating and retrieving information
 
-    You can [update the playback information](#updating-and-retrieving-information) on the server side, and then retrieve that information on the client side.
+    You can [update the playback information](#update-and-retrieve-information) on the server side, and then retrieve that information on the client side.
 
     The media control server provides current information about the registered application that you can send to the client.
 
@@ -19,15 +18,15 @@ The main media controller features include the following:
 
 - Sending and processing commands
 
-    You can [send a command](#sending-and-processing-commands) on the client side, and then process the command on the server side.
+    You can [send a command](#send-and-process-commands) on the client side, and then process the command on the server side.
 
 - Setting and getting playback capability
 
-    You can [set the playback capability](#setting-and-getting-playback-capability) on the server side, and then get that capability on the client side.
+    You can [set the playback capability](#set-and-get-playback-capability) on the server side, and then get that capability on the client side.
 
  - Media control metadata properties
 
-     You can [set the metadata](#setting-and-getting-media-control-metadata) on the server side, and then get that metadata on the client side.
+     You can [set the metadata](#set-and-get-media-control-metadata) on the server side, and then get that metadata on the client side.
 
 ## Prerequisites
 
@@ -96,7 +95,7 @@ To create a playlist from the server side and retrieve it on the client side, fo
     );
     ```
 
-2. To retrieve the playlist and [metadata](#setting-and-getting-media-control-metadata) information on the client side, use the following code:
+2. To retrieve the playlist and [metadata](#set-and-get-media-control-metadata) information on the client side, use the following code:
 
     ```csharp
     mediaController.PlaylistUpdated += (s, e) =>
@@ -126,10 +125,10 @@ To update the playback information on the server side and to retrieve it on the 
 
 To send a command from the client and to process it on the server side, follow these steps:
 
-1.  To send a command on the client side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+1.  To send a command on the client side, use the `RequestCommandAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
-    mediaController.RequestAsync(new PlaybackCommand(MediaControlPlaybackCommand.Play));
+    var result = await mediaController.RequestCommandAsync(new PlaybackCommand(MediaControlPlaybackCommand.Play));
     ```
 
 2. To process the received command on the server side, add an event handler to the `PlaybackActionCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
@@ -144,13 +143,13 @@ To send a command from the client and to process it on the server side, follow t
     ```
 
 To send a search command from the client and to process it on the server side, follow these steps:
-1.  To send a search command on the client side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+1.  To send a search command on the client side, use the `RequestCommandAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
     var searchCondition = new MediaControlSearchCondition(MediaControlContentType.Image,
         MediaControlSearchCategory.Artist, "GD", null);
 
-    mediaController.RequestAsync(new SearchCommand(searchCondition));
+    var result = await mediaController.RequestCommandAsync(new SearchCommand(searchCondition));
     ```
 
 2. To process the received search command on the server side, add an event handler to the `SearchCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
@@ -168,10 +167,10 @@ To send a search command from the client and to process it on the server side, f
     ```
 
 To send a custom command from the server and to process it on the client side, follow these steps:
-1.  To send a search command on the server side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+1.  To send a search command on the server side, use the `RequestCommandAsync()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
-    MediaControlServer.RequestAsync(new CustomCommand("CustomAction"));
+    var result = await MediaControlServer.RequestCommandAsync(new CustomCommand("CustomAction"), "client_id");
     ```
 
 2. To process the received custom command on the client side, add an event handler to the `CustomCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaController](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
@@ -181,7 +180,7 @@ To send a custom command from the server and to process it on the client side, f
     {
         Log.Info("MC", $"{ e.Command.Action}");
 
-        mediaController.Response(e.Command, (int)ErrorCode.None);
+        mediaController.Response(e.Command, MediaControlResult.Success);
     };
     ```
 

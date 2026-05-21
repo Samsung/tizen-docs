@@ -11,19 +11,19 @@ The main features of the Media Controller API include the following:
 
 - Setting up the client and server pair
 
-  You can [set up the client and server pair](#getting-client-and-server) by creating a new server using the `createServer()` method. On the client side, you can get a client and find active servers using the `getClient()` and `findServers()` methods.
+  You can [set up the client and server pair](#get-client-and-server) by creating a new server using the `createServer()` method. On the client side, you can get a client and find active servers using the `getClient()` and `findServers()` methods.
 
 - Managing requests
 
-  You can [send a request](#managing-requests) from the client to the server to modify various playback attributes. In the server, you can set up a listener to react to the client request and perform the requested task.
+  You can [send a request](#manage-requests) from the client to the server to modify various playback attributes. In the server, you can set up a listener to react to the client request and perform the requested task.
 
 - Setting and getting the server icon URI
 
-  You can [set the server icon URI](#setting-and-getting-server-icon-uri) and read it from the client.
+  You can [set the server icon URI](#set-and-get-server-icon-uri) and read it from the client.
 
 - Receiving notifications from the server
 
-  You can [receive notifications on changes made by the server](#receiving-notifications-from-server) by registering a listener with the `addPlaybackInfoChangeListener()` method.
+  You can [receive notifications on changes made by the server](#receive-notifications-from-server) by registering a listener with the `addPlaybackInfoChangeListener()` method.
 
 - Sending custom commands
 
@@ -39,29 +39,29 @@ The main features of the Media Controller API include the following:
 
 - Sending and receiving search requests
 
-  You can use the media controller client to [send the search requests](#sending-search-request) with the `sendSearchRequest()` method.
+  You can use the media controller client to [send the search requests](#send-search-request) with the `sendSearchRequest()` method.
 
-  You can use the media controller server to [receive the search requests](#receiving-search-request) using the `setSearchRequestListener()` method, and return the `RequestReply` object to the client who sent the request.
+  You can use the media controller server to [receive the search requests](#receive-search-request) using the `setSearchRequestListener()` method, and return the `RequestReply` object to the client who sent the request.
 
 - Setting content type
 
-    You can [set the content type](#setting-content-type-for-currently-playing-media) for the currently playing media.
+    You can [set the content type](#set-content-type-for-currently-playing-media) for the currently playing media.
 
 - Setting age rating
 
-    You can [set the age rating](#setting-content-age-rating-for-currently-playing-media) for the currently playing media.
+    You can [set the age rating](#set-content-age-rating-for-currently-playing-media) for the currently playing media.
 
 - Managing playlists on server side
 
-  You can [manage playlists](#managing-playlists-on-server-side) on server side by creating, saving, deleting, and getting information about playlists. You can also update the playback item from the playlists item list.
+  You can [manage playlists](#manage-playlists-on-server-side) on server side by creating, saving, deleting, and getting information about playlists. You can also update the playback item from the playlists item list.
 
 - Managing playlists on client side
 
-  You can [manage playlists](#managing-playlists-on-client-side) on client side by sending request about the new playback item to the server. You can then add listeners to be invoked when the playlist is updated on the server.
+  You can [manage playlists](#manage-playlists-on-client-side) on client side by sending request about the new playback item to the server. You can then add listeners to be invoked when the playlist is updated on the server.
 
 - Managing abilities of the media controller server
 
-  You can [set the abilities](#setting-media-controller-server-abilities) of the media controller server by using the `MediaControllerAbilities` interface (in [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerAbilities) applications).
+  You can [set the abilities](#set-media-controller-server-abilities) of the media controller server by using the `MediaControllerAbilities` interface (in [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerAbilities) applications).
 
   You can use the `MediaControllerAbilitiesInfo` interface (in [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerAbilitiesInfo) applications) to check which features are supported by the server. Information about current status of the media controller server abilities can be gathered by `getLatestServerInfo()` method.
 
@@ -469,7 +469,7 @@ different types of media items.
     ```
 
 
-## setting content age rating for currently playing media
+## Set content age rating for currently playing media
 
 Server can set age rating for current playback. Client can access this rating (read-only) and perform some actions such as displaying a warning for underage users.
 

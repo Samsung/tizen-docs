@@ -1,6 +1,6 @@
 # Hoversel
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The hoversel component is a button that pops up a list of items (automatically choosing the direction to display).
 

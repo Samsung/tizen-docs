@@ -1,6 +1,6 @@
 # Circle Datetime
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The circle datetime component extends the [datetime](component-datetime.md) component (`elm_datetime`) by visualizing the selected field. If a rotary event is activated by the `eext_rotary_object_event_activated_set()`function, the circle datetime increases or decreases the value of the selected field in the `elm_datetime` component through the clockwise or counter-clockwise rotary event.
 

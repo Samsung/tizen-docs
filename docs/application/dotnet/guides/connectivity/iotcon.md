@@ -1,5 +1,7 @@
 # IoT Connectivity
 
+> [!NOTE]
+> All  IoT Connectivity APIs have been deprecated since Tizen 10 and will be removed after two releases without any alternatives.
 
 [IoTivity](https://www.iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OCF (Open Connectivity Foundation) standard specifications. The Tizen.Network.IoTConnectivity namespace provides the means of using IoTivity in Tizen.
 

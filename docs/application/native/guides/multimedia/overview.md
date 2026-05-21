@@ -29,6 +29,10 @@ You can use the following multimedia features in your native applications:
 
   You can manage the playback of different media file types. You can play audio and video files, and tones. You can also manage the state of the media player.
 
+- [WAV and Tone Player](wav-tone-player.md)
+
+  You can manage the playback of different media file types. You can play audio and video files, and tones. You can also manage the state of the media player.
+
 - [Media Recording](media-recording.md)
 
   You can manage the recording of different media file types. You can record audio data to a file and generate compressed video files using video data from a camera and audio data from an audio input device.
@@ -84,6 +88,10 @@ You can use the following multimedia features in your native applications:
 - [WebRTC](webrtc.md)
 
   You can have real-time audio/video communication with a remote peer. You can also send and receive generic data with a remote peer.
+
+- [Media Editor](mediaeditor.md)
+
+  You can edit media clips and create output media files. You can manage timelines composed of layers and clips, add effects and transitions, and preview or render the final output.
 
 ## Related information
 - Dependencies

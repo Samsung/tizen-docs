@@ -1,6 +1,6 @@
 # Circle Surface
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The circle surface component manages and renders [circle objects](component-circle-object.md). Multiple circle objects can be connected to 1 circle surface as candidates of an object to be rendered. When 1 circle object is set as visible, the surface renders the circle object and hides the others.
 

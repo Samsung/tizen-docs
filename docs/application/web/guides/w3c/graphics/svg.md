@@ -5,23 +5,23 @@ The main SVG API features include the following:
 
 - Creating text and images
 
-  You can [add text and images](#creating-text-and-images) to your application as SVG elements.
+  You can [add text and images](#create-text-and-images) to your application as SVG elements.
 
 - Making shapes
 
-  You can [create various shapes](#making-shapes) as graphic elements, such as lines, rectangles, and circles.
+  You can [create various shapes](#make-shapes) as graphic elements, such as lines, rectangles, and circles.
 
 - Grouping SVG elements
 
-  You can [group various SVG elements](#grouping-svg-elements) together for easier management.
+  You can [group various SVG elements](#group-svg-elements) together for easier management.
 
 - Animating SVG elements
 
-  You can [animate SVG elements](#animating-svg-elements) to create motions or change element properties, such as color.
+  You can [animate SVG elements](#animate-svg-elements) to create motions or change element properties, such as color.
 
 - Controlling SVG elements through scripting
 
-  You can [control events related to SVG elements using scripts](#controlling-svg-elements-through-scripting).
+  You can [control events related to SVG elements using scripts](#control-svg-elements-through-scripts).
 
 For more information on using SVG, see [Scalable Vector Graphics (SVG) Tiny 1.2 Specification](http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/){:target="_blank"}.
 
@@ -164,7 +164,7 @@ For the complete source code related to this use case, see the following file:
 
 - [svg_group.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_svg){:target="_blank"}
 
-## Animating SVG Elements
+## Animate SVG Elements
 
 To animate inline SVG elements, follow these steps:
 

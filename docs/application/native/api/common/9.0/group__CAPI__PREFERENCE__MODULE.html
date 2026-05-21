@@ -101,6 +101,138 @@ Required Header</h2>
 <h2><a class="anchor" id="CAPI_PREFERENCE_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p>The Preference API provides a mechanism that saves data items in the form of key/value pairs for this application, and later retrieves them. A typical usecase would be for an application preference screen where the user can pick some values for some options. The Preference API has pairs of functions, one to set such a pair, another to retrieve the stored value given in the key. Keys are always text strings, but there are functions for each of the possible value types: integer, double, string, and boolean. There is also a function to clear all of the preferences. The <a class="el" href="group__CAPI__PREFERENCE__MODULE.html">Preference</a> API provides a way to register a callback to get notified when a value for a particular key changes. It is useful to know when the display should be updated or some behavior is altered as a result. There is an iterator function which steps through all the data pairs, invoking a callback for each one. </p>
+<h3><a class="anchor" id="CAPI_PREFERENCE_MODULE_USAGE_SIMPLE_TYPES"></a>
+Storing and Retrieving Simple Type Variables</h3>
+<p>To store a variable, you must create a key-value pair. Before storing or retrieving a variable, check whether it exists using the <a class="el" href="group__CAPI__PREFERENCE__MODULE.html#ga57290e964b5fa01ed1b42609e4eb7425">preference_is_existing()</a> function.</p>
+<div class="fragment"><pre class="fragment"> <span class="preprocessor">#include &lt;app_preference.h&gt;</span>
+ <span class="preprocessor">#include &lt;dlog.h&gt;</span>
+
+ <span class="keywordtype">void</span>
+ manage_integer_preference(<span class="keywordtype">void</span>)
+ {
+     <span class="keyword">const</span> <span class="keywordtype">char</span> *integer_key = <span class="stringliteral">&quot;integer_key&quot;</span>;
+     <span class="keywordtype">int</span> integer_value = 1;
+     <span class="keywordtype">int</span> integer_output;
+     <span class="keywordtype">bool</span> existing;
+     
+     <span class="comment">// Set integer value</span>
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#ga288ed7d6905abc7db286ae0f0fcb0693" title="Sets an integer value in the preference.">preference_set_int</a>(integer_key, integer_value);
+     
+     <span class="comment">// Check if key exists</span>
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#ga57290e964b5fa01ed1b42609e4eb7425" title="Checks whether the given key exists in the preference.">preference_is_existing</a>(integer_key, &amp;existing);
+     
+     <span class="comment">// Get integer value</span>
+     <span class="keywordflow">if</span> (existing) {
+         <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#gafdc1694f176c96bd1065bb437a773d13" title="Gets an integer value from the preference.">preference_get_int</a>(integer_key, &amp;integer_output);
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;PREFERENCE&quot;</span>, <span class="stringliteral">&quot;Integer value: %d&quot;</span>, integer_output);
+     }
+ }
+
+ <span class="keywordtype">void</span>
+ manage_double_preference(<span class="keywordtype">void</span>)
+ {
+     <span class="keyword">const</span> <span class="keywordtype">char</span> *double_key = <span class="stringliteral">&quot;double_key&quot;</span>;
+     <span class="keywordtype">double</span> double_value = 3.14;
+     <span class="keywordtype">double</span> double_output;
+     
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#gaaa2d80f78b5939f7c76cdbfeb468f4c8" title="Sets a double value in the preference.">preference_set_double</a>(double_key, double_value);
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#ga265b6f65a65922df0fcb68d4972299eb" title="Gets a double value from the preference.">preference_get_double</a>(double_key, &amp;double_output);
+ }
+
+ <span class="keywordtype">void</span>
+ manage_boolean_preference(<span class="keywordtype">void</span>)
+ {
+     <span class="keyword">const</span> <span class="keywordtype">char</span> *boolean_key = <span class="stringliteral">&quot;boolean_key&quot;</span>;
+     <span class="keywordtype">bool</span> boolean_value = <span class="keyword">true</span>;
+     <span class="keywordtype">bool</span> boolean_output;
+     
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#gac020b5713b7576b9908ef00ae92a3d9f" title="Sets a boolean value in the preference.">preference_set_boolean</a>(boolean_key, boolean_value);
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#ga35cede4ecb0e383ed04a33f3987d28b7" title="Gets a boolean value from the preference.">preference_get_boolean</a>(boolean_key, &amp;boolean_output);
+ }
+</pre></div><h3><a class="anchor" id="CAPI_PREFERENCE_MODULE_USAGE_STRING"></a>
+Storing and Retrieving String Variables</h3>
+<p>Release the value returned by the get function using the <code>free()</code> function.</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span>
+ manage_string_preference(<span class="keywordtype">void</span>)
+ {
+     <span class="keyword">const</span> <span class="keywordtype">char</span> *string_key = <span class="stringliteral">&quot;string_key&quot;</span>;
+     <span class="keyword">const</span> <span class="keywordtype">char</span> *string_value = <span class="stringliteral">&quot;Sample content&quot;</span>;
+     <span class="keywordtype">char</span> *string_output;
+     <span class="keywordtype">bool</span> existing;
+     
+     <span class="comment">// Set string value</span>
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#gaed285434345d919f107f631337245abf" title="Sets a string value in the preference.">preference_set_string</a>(string_key, string_value);
+     
+     <span class="comment">// Check if key exists</span>
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#ga57290e964b5fa01ed1b42609e4eb7425" title="Checks whether the given key exists in the preference.">preference_is_existing</a>(string_key, &amp;existing);
+     
+     <span class="comment">// Get string value</span>
+     <span class="keywordflow">if</span> (existing) {
+         <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#ga65cd1e15b59b39f40a0cf98e6ac88b1a" title="Gets a string value from the preference.">preference_get_string</a>(string_key, &amp;string_output);
+         dlog_print(DLOG_INFO, <span class="stringliteral">&quot;PREFERENCE&quot;</span>, <span class="stringliteral">&quot;String value: %s&quot;</span>, string_output);
+         free(string_output);
+     }
+ }
+</pre></div><h3><a class="anchor" id="CAPI_PREFERENCE_MODULE_USAGE_TRACKING"></a>
+Tracking Variable Changes</h3>
+<p>You can set a different callback function to each variable. The callback function is invoked each time the variable is changed.</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span>
+ preference_changed_cb_impl(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">void</span> *user_data)
+ {
+     <span class="keywordtype">int</span> ret = 0;
+     <span class="keywordtype">int</span> integer_output = 0;
+     
+     dlog_print(DLOG_DEBUG, <span class="stringliteral">&quot;PREFERENCE&quot;</span>, <span class="stringliteral">&quot;[preference_changed_cb_impl]&quot;</span>);
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#gafdc1694f176c96bd1065bb437a773d13" title="Gets an integer value from the preference.">preference_get_int</a>(key, &amp;integer_output);
+     
+     dlog_print(DLOG_DEBUG, <span class="stringliteral">&quot;PREFERENCE&quot;</span>, <span class="stringliteral">&quot;Key: %s has changed its value to %d&quot;</span>,
+                key, integer_output);
+ }
+
+ <span class="keywordtype">void</span>
+ register_preference_callback(<span class="keywordtype">void</span>)
+ {
+     <span class="keyword">const</span> <span class="keywordtype">char</span> *integer_key = <span class="stringliteral">&quot;integer_key&quot;</span>;
+     <span class="keywordtype">void</span> *user_data = NULL;
+     
+     <span class="comment">// Register callback</span>
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#ga9897ae737b7a97b06502afff09550557" title="Registers a callback function to be invoked when value of the given key in the preference changes.">preference_set_changed_cb</a>(integer_key, preference_changed_cb_impl, user_data);
+     
+     <span class="comment">// When no longer needed, unset the callback</span>
+     <span class="comment">// preference_unset_changed_cb(integer_key);</span>
+ }
+</pre></div><h3><a class="anchor" id="CAPI_PREFERENCE_MODULE_USAGE_FOREACH"></a>
+Listing All Records</h3>
+<p>Use the foreach function to list all records. The function calls a specific callback function for each key-value pair in the database. If the callback function returns <code>false</code>, or if all the records have been opened, the foreach function ends.</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">bool</span>
+ preference_foreach_item_cb(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">void</span> *user_data)
+ {
+     dlog_print(DLOG_DEBUG, <span class="stringliteral">&quot;PREFERENCE&quot;</span>, <span class="stringliteral">&quot;[preference_foreach_item_cb]&quot;</span>);
+     dlog_print(DLOG_DEBUG, <span class="stringliteral">&quot;PREFERENCE&quot;</span>, <span class="stringliteral">&quot;Key found: %s&quot;</span>, key);
+     
+     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+ }
+
+ <span class="keywordtype">void</span>
+ list_all_preferences(<span class="keywordtype">void</span>)
+ {
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#ga32d9c053b2355c15139d0cf527655084" title="Retrieves all key-value pairs in the preference by invoking the callback function.">preference_foreach_item</a>(preference_foreach_item_cb, NULL);
+ }
+</pre></div><h3><a class="anchor" id="CAPI_PREFERENCE_MODULE_USAGE_DELETE"></a>
+Deleting Records</h3>
+<p>To delete records one by one, use a unique key. You can also delete all records for an application using the <a class="el" href="group__CAPI__PREFERENCE__MODULE.html#gacdc8504fe71eead69115c93908f065fd">preference_remove_all()</a> function.</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span>
+ delete_preferences(<span class="keywordtype">void</span>)
+ {
+     <span class="keyword">const</span> <span class="keywordtype">char</span> *key = <span class="stringliteral">&quot;integer_key&quot;</span>;
+     
+     <span class="comment">// Remove a single key-value pair</span>
+     <a class="code" href="group__CAPI__PREFERENCE__MODULE.html#gaba8d22eac715c194dcbe62314e648e67" title="Removes any value with the given key from the preference.">preference_remove</a>(key);
+     
+     <span class="comment">// Remove all preferences (use with caution)</span>
+     <span class="comment">// preference_remove_all();</span>
+ }
+</pre></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>

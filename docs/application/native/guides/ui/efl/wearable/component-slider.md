@@ -2,7 +2,7 @@
 
 The slider UI component is a draggable item used to select a value within a certain range. For more information, see the [Slider](../../../../api/wearable/latest/group__Elm__Slider.html) API.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 ## Basic Usage
 

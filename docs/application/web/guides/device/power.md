@@ -8,15 +8,15 @@ The main features of the Power API include the following:
 
 - Managing power resources
 
-  You can [request and release a specific power state](#managing-power-resources).
+  You can [request and release a specific power state](#manage-power-resources).
 
 - Managing the screen brightness
 
-  You can [get and set the screen brightness](#managing-the-screen-brightness).
+  You can [get and set the screen brightness](#manage-the-screen-brightness).
 
 - Managing the screen state
 
-  You can [switch the screen on and off](#managing-the-screen-state), and check whether the screen is on.
+  You can [switch the screen on and off](#manage-the-screen-state), and check whether the screen is on.
 
 ## Prerequisites
 

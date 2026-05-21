@@ -2,12 +2,13 @@
   href: "/platform/what-is-tizen/overview"
 
 - name: "Application"
-  href: "/application"
-
-- name: "Partners"
-  href: "/partners/specialist"
-
-- name: "Download"
-  href: "https://developer.tizen.org/development/tizen-studio/download"
+  href: "https://samsungtizenos.com/docs/library/?sid=PcTNnHMREAqHh0b"
   external: true
+
+# - name: "Partners"
+#   href: "/partners/specialist"
+
+# - name: "Download"
+#   href: "https://developer.tizen.org/development/tizen-studio/download"
+#   external: true
   

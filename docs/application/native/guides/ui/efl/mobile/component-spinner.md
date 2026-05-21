@@ -1,6 +1,6 @@
 # Spinner
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 The spinner component increases or decreases a numeric value with the arrow buttons.
 

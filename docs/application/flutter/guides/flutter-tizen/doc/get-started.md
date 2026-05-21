@@ -2,7 +2,7 @@
 
 ## Set up the environment
 
-1. Make sure your Tizen device meets the minimum version [requirement](../../../index.md#supported-devices).
+1. Make sure your Tizen device meets the minimum version [requirement](./index.md#supported-devices).
 
    Note: To see which version of Tizen your device is running, [connect the device](configure-device.md) to your PC, run `sdb capability`, and find the `platform_version` value.
 
@@ -14,7 +14,7 @@
    ...
    ```
 
-1. Install [**flutter-tizen**](../../../index.md#installation) and any required tooling. After installation, run `flutter-tizen doctor` to check if there's any issue. (You can ignore any Android-related warnings. Only `Flutter` and `Tizen toolchain` are required.)
+1. Install [**flutter-tizen**](./index.md#installation) and any required tooling. After installation, run `flutter-tizen doctor` to check if there's any issue. (You can ignore any Android-related warnings. Only `Flutter` and `Tizen toolchain` are required.)
 
    ```
    $ flutter-tizen doctor
@@ -29,7 +29,7 @@
 
 1. Open Visual Studio Code and click the **Extensions** icon in the left menu bar. Search **Dart** in the search field and install.
 
-   ![Dart extension](images/vs-code-dart.png)
+   ![Dart extension](media/vs-code-dart.png)
 
    Note: flutter-tizen only supports the command line interface. The [**Flutter**](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) extension is not fully compatible with Tizen devices.
 
@@ -71,7 +71,7 @@ $ flutter-tizen run
 
 After the app build completes, you'll see the starter app on your device.
 
-![Starter app](images/starter-app.png)
+![Starter app](media/starter-app.png)
 
 Note: If the app installation fails with an error, make sure you have created a valid certificate profile in _Certificate Manager_. For more information, refer to [TPK installation troubleshooting](https://github.com/flutter-tizen/flutter-tizen/wiki/TPK-installation-troubleshooting).
 
