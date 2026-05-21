@@ -12,15 +12,15 @@ The main features of the File API include the following:
 
     You can select a local file to upload using the `FileList` interface (in [TV](https://www.w3.org/TR/FileAPI/#filelist-section){:target="_blank"} applications), which creates and returns a `File` object (in [TV](https://www.w3.org/TR/FileAPI/#file-section){:target="_blank"} applications).
 
-    The `File` object is used to [read basic file information](#reading-local-file-information).
+    The `File` object is used to [read basic file information](#read-local-file-information).
 
   - Reading local file content
 
-    You can use the reading methods of the `FileReader` interface (in [TV](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"} applications) to [read file content](#reading-local-file-content) in text, binary, or `dataURL` format. If the data is loaded, the `onload` event occurs. This event uses the data reading methods according to file format.
+    You can use the reading methods of the `FileReader` interface (in [TV](https://www.w3.org/TR/FileAPI/#APIASynch){:target="_blank"} applications) to [read file content](#read-local-file-content) in text, binary, or `dataURL` format. If the data is loaded, the `onload` event occurs. This event uses the data reading methods according to file format.
 
   - Slicing local files
 
-    You can use the `slice()` method with a local file or the `Blob` interface (in [TV](https://www.w3.org/TR/FileAPI/#blob-section){:target="_blank"} applications) to [slice data objects](#slicing-blob). You can use the created blob to read data as a binary string using the `FileReader` interface.
+    You can use the `slice()` method with a local file or the `Blob` interface (in [TV](https://www.w3.org/TR/FileAPI/#blob-section){:target="_blank"} applications) to [slice data objects](#slice-blob). You can use the created blob to read data as a binary string using the `FileReader` interface.
 
 - Sandboxed file system management **(Optional feature)**
 

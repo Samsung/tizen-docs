@@ -8,19 +8,19 @@ The main features of the Dialogs API include the following:
 
 - Alerts        
 
-  You can [create an alert dialog box](#creating-alerts), which shows an alert text and a dismiss button with custom text.
+  You can [create an alert dialog box](#create-alerts), which shows an alert text and a dismiss button with custom text.
 
 - Confirmations        
 
-  You can [create a confirmation dialog box](#creating-confirmations), which shows a confirmation text with a set of buttons.
+  You can [create a confirmation dialog box](#create-confirmations), which shows a confirmation text with a set of buttons.
 
 - Prompts        
 
-  You can [create a prompt dialog box](#creating-prompts), which shows a prompt where the user can put some text, and a set of buttons.
+  You can [create a prompt dialog box](#create-prompts), which shows a prompt where the user can put some text, and a set of buttons.
 
 - Beeps        
 
-  You can [make a beep sound](#making-beep-sounds).
+  You can [make a beep sound](#make-beep-sounds).
 
 ## Prerequisites
 

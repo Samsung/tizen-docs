@@ -1,6 +1,6 @@
 # Media Key Events
 
-You can manage media key events in your application. The media keys are used to [control multimedia playback](#managing-media-key-state-changes). The user can click keys, such as **PLAY** and **FAST FORWARD**, and you can detect the key clicks in your application and change the playback accordingly.
+You can manage media key events in your application. The media keys are used to [control multimedia playback](#manage-media-key-state-changes). The user can click keys, such as **PLAY** and **FAST FORWARD**, and you can detect the key clicks in your application and change the playback accordingly.
 
 This feature is optional.
 

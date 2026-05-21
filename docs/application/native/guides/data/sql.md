@@ -460,7 +460,8 @@ To store encrypted data:
    sqlite3_shutdown();
    ```
 
-<a name="base64"></a>The following code snippets illustrate the functions related to the Base64 encoding and decoding operations, and the main function that performs the entire process of encrypting, storing, listing, and decrypting:
+<a name="base64"></a>
+The following code snippets illustrate the functions related to the Base64 encoding and decoding operations, and the main function that performs the entire process of encrypting, storing, listing, and decrypting:
 
 - Base64 functions:
 

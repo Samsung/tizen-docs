@@ -79,7 +79,7 @@ To retrieve application usage statistics for a given time period, and to check d
         }
         ```
 
-<a name="retrieve_battery_stats"></a>		
+<a name="retrieve_battery_stats"></a>
 ## Retrieve battery usage statistics
 
 To retrieve battery usage statistics for a given time period, and check detailed statistics information, such as the battery consumption of the used applications, follow these steps:

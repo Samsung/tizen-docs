@@ -200,15 +200,10 @@ To initialize the video recorder for use, follow the steps below:
 
 2. To set the display on which the video is recorded, use the `Display` property of the `Tizen.Multimedia.Camera` class.
 
-    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer (For example, `VideoView()`) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
-
     ```csharp
-    var mediaView = new VideoView();
-
-    mediaView.NativeViewCreated += (s, e) =>
-    {
-        camera.Display = new Display((Tizen.Multimedia.MediaView)(s as VideoView).NativeView);
-    };
+    // Create new NUI window or set NUI window to be rendered
+    // `nuiWindow` of the following code is the instance of `NUI.Window` class.
+    camera.Display = new Display(nuiWindow);
     ```
 
 3.  Check which video codecs and file formats the device supports:

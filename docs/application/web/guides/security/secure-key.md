@@ -8,15 +8,15 @@ The main features of the Key Manager API include the following:
 
 - Saving data		
 
-  You can [save data](#saving-data) to a repository, and define which applications are allowed to access and remove it.
+  You can [save data](#save-data) to a repository, and define which applications are allowed to access and remove it.
 
 - Getting data		
 
-  You can [retrieve data](#getting-data) from a repository. You can access both data that you have added yourself, and data that another application has added and granted you permissions to access.
+  You can [retrieve data](#get-data) from a repository. You can access both data that you have added yourself, and data that another application has added and granted you permissions to access.
 
 - Removing data		
 
-  You can [remove data](#removing-data) from a repository. You can remove both data that you have added yourself, and data that another application has added and granted you permissions to remove.
+  You can [remove data](#remove-data) from a repository. You can remove both data that you have added yourself, and data that another application has added and granted you permissions to remove.
 
 ## Data access control
 

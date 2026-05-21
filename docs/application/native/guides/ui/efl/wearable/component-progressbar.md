@@ -2,7 +2,7 @@
 
 The progressbar UI component displays the progress status of a given job. For more information, see the [Progressbar](../../../../api/wearable/latest/group__Elm__Progressbar.html) API.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 ## Basic Usage
 

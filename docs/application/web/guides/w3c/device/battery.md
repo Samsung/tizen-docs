@@ -8,11 +8,11 @@ The main features of the Battery Status API include the following:
 
 - Retrieving the battery status   
 
-  You can use the attributes of the `BatteryManager` interface to [check the battery status information](#retrieving-battery-status-information), such as battery charging status and battery charge level.
+  You can use the attributes of the `BatteryManager` interface to [check the battery status information](#retrieve-battery-status-information), such as battery charging status and battery charge level.
 
 - Detecting battery status changes
 
-  You can set event listeners with the `BatteryManager` interface attributes to [detect changes in the battery status](#detecting-battery-status-changes).
+  You can set event listeners with the `BatteryManager` interface attributes to [detect changes in the battery status](#detect-battery-status-changes).
 
 Knowing the battery status of the device helps you to defer or scale back work when the device is not charging or is low on battery. For example:
 

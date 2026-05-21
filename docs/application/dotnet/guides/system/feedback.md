@@ -48,7 +48,7 @@ To play a specific feedback pattern with a specific feedback type, follow these 
     feedback.Play(FeedbackType.Sound, "Tap");
     ```
 
-3.  To stop the feedback, use the `Stop()` method:
+3.  To stop the feedback, use the `Stop()` method(This stops vibration, not sound):
 
     ```csharp
     feedback.Stop();

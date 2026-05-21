@@ -5,8 +5,6 @@
 ## Tizen Profiles
 ### [Overview](/application/profiles/index.md)
 ### [IoT](/application/profiles/iot.md)
-### [TV](/application/profiles/tv.md)
-
 
 # .NET Application
 
@@ -18,7 +16,6 @@
 ### [Overview](/application/dotnet/get-started/index.md)
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
 ### [API Privileges](/application/dotnet/get-started/api-privileges.md)
-### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ### [Install Samsung Smart TV Extension](/application/dotnet/get-started/install-samsung-tv-extension.md)
 ### Certificates
 #### [Overview](/application/dotnet/get-started/certificates/index.md)
@@ -175,6 +172,10 @@
 #### [Overview](/application/dotnet/guides/notification/overview.md)
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
 #### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
+
+### Performance
+#### [Overview](/application/dotnet/guides/performance/overview.md)
+#### [Tracer](/application/dotnet/guides/performance/tracer.md)
 
 ### Pims
 #### [Overview](/application/dotnet/guides/pims/overview.md)
@@ -847,6 +848,7 @@
 ## API Reference
 ### [Overview](/application/native/api/overview.md)
 
+### [10.0](/application/native/api/common/10.0/index.html){:target="_blank"}
 ### [9.0](/application/native/api/common/9.0/index.html){:target="_blank"}
 ### [8.0](/application/native/api/common/8.0/index.html){:target="_blank"}
 

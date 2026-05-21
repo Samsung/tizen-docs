@@ -10,11 +10,11 @@ The main features of the Server-Sent Events API include the following:
 
 - Creating an [EventSource](https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface){:target="_blank"} instance
 
-  The `EventSource` interface is the core object of server-sent event implementation. [Creating a new EventSource instance](#triggering-server-push-requests) triggers repeated server request automatically, and allows you to use the receiving data event. When creating the `EventSource` instance, you must use the URL of the server page sending the event stream as a parameter.
+  The `EventSource` interface is the core object of server-sent event implementation. [Creating a new EventSource instance](#trigger-server-push-requests) triggers repeated server request automatically, and allows you to use the receiving data event. When creating the `EventSource` instance, you must use the URL of the server page sending the event stream as a parameter.
 
 - Receiving server push data
 
-  After triggering the server requests, you can [receive push data from the server](#receiving-server-push-data) by implementing the [message](https://html.spec.whatwg.org/multipage/images.html#images-processing-model){:target="_blank"} event.
+  After triggering the server requests, you can [receive push data from the server](#receive-server-push-data) by implementing the [message](https://html.spec.whatwg.org/multipage/images.html#images-processing-model){:target="_blank"} event.
 
   The received event stream data is parsed as a [MessageEvent](https://html.spec.whatwg.org/multipage/comms.html#the-messageevent-interface){:target="_blank"} object, to make the target data easily accessible.
 

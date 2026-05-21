@@ -1,5 +1,7 @@
 # EFL Widget Application
 
+> [!NOTE]
+> EFL module, on which widget applications depend for designing the UI, has been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 You can create widget applications, which are Tizen native applications shown on the home screen. They are launched by the home screen when the user selects them in the **Add Widget** menu.
 

@@ -6,14 +6,14 @@ The main features of the Page Visibility API include  the following:
 
 - Retrieving the page visibility status   
 
-  You can use 2 properties to [detect the visibility status of the page](#retrieving-the-page-visibility-status):
+  You can use 2 properties to [detect the visibility status of the page](#retrieve-the-page-visibility-status):
 
   - The `hidden` property returns a boolean value indicating whether the page is visible.
   - The `visibilityState` property returns a DOMString type indicating whether the page is visible.
 
 - Tracking changes in page visibility   
 
-  You can use the `visibilitychange` event to be able to [respond to changes in the page visibility status](#receiving-notifications-on-visibility-status-changes).
+  You can use the `visibilitychange` event to be able to [respond to changes in the page visibility status](#receive-notifications-on-visibility-status-changes).
 
   For example, in a video player application, you can change the play status of the application based on the event: pause the playback when the page becomes hidden, and continue playing when the page becomes visible again.
 

@@ -21,14 +21,6 @@ The main media playback features are described below:
 
     Enables you to set specific URLs for [streaming media playback](#stream).
 
-- Using the WAV player
-
-    Enables you to play audio in the [WAVE format](#wav).
-
-- Using the tone player
-
-    Enables you to play [tones](#tone).
-
 Before you start, [set up the player](#prepare).
 
 <a name="audio"></a>
@@ -55,7 +47,7 @@ Tizen enables your application to [play video](#play_video), and it uses its own
 
 1.  Get the UI component to display from the graphics module.
 
-    You can display video on a UI layer of Evas, Xamarin, and NUI.
+    You can display video on a UI layer of NUI.
 
 2. Create the player instance.
 3. Create the display instance with the UI component you got.
@@ -146,21 +138,6 @@ The following table lists the streaming protocol features supported by the playe
 | Hypertext Transfer Protocol (HTTP)  | HTTP progressive download play |
 | Real Time Streaming Protocol (RTSP) | RTSP streaming                 |
 
-<a name="wav"></a>
-## WAV player
-
-The [Tizen.Multimedia.WavPlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.WavPlayer.html) class allows you to play audio resources (media files stored on the device). Use it to [play audio and control playback](#start_wav). You can use the WAV and OGG audio formats.
-
-Multiple instances of the WAV player can be used to play several audio data streams concurrently. This means that your application can play multiple uncompressed audio files, such as WAV, at the same time.
-
-<a name="tone"></a>
-## Tone player
-
-You can play a tone or a list of tones using the [Tizen.Multimedia.TonePlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html) class.
-
-To play tones, use a DTMF (Dual Tone Multi Frequency) preset frequency. The possible values are defined in the [Tizen.Multimedia.ToneType](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.ToneType.html) enumeration.
-
-You can [start and stop playing a tone](#play_tone), and [play a tone for a specified duration](#duration).
 
 ## Prerequisites
 
@@ -253,17 +230,12 @@ To play a video file, proceed as follows:
     player.Source = new MediaUriSource(videoPath);
     ```
 
-2.  To set the display on which the video is played, use the `Display` property of the `Tizen.Multimedia.Player` class.
-
-    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer such as `VideoView()` based on VisualElementRenderer class. Cast it to an instance of the [Tizen.Multimedia.MediaView](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+2. Set the display for showing video by using the `Display` property of the [Tizen.Multimedia.Player](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.Player.html) class with `NUI.Window` class.
 
     ```csharp
-    var mediaView = new VideoView();
-
-    mediaView.NativeViewCreated += (s, e) =>
-    {
-        player.Display = new Display((Tizen.Multimedia.MediaView)(s as VideoView).NativeView);
-    };
+    // Create new NUI window or set NUI window to be rendered
+    // `nuiWindow` of the following code is the instance of `NUI.Window` class.
+    player.Display = new Display(nuiWindow);
     ```
 
 3.  Prepare the player for playback using the `PrepareAsync()` method of the `Tizen.Multimedia.Player` class:
@@ -414,60 +386,6 @@ To insert subtitles to a video file, set the subtitle path using the `SetSubtitl
 player.SetSubtitle(subtitlePath);
 ```
 
-<a name="start_wav"></a>
-## Start and stop the WAV player
-
-To start and stop the WAV player, proceed as follows:
-
-1.  To play a WAV file, use the `StartAsync()` method of the [Tizen.Multimedia.WavPlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.WavPlayer.html) class:
-
-    ```csharp
-    await WavPlayer.StartAsync(wavPath, new AudioStreamPolicy(AudioStreamType.Media));
-    ```
-
-    To set the path of your WAV file, you potentially need to retrieve the default path for audio files.
-
-2.  To stop the WAV player, use the `StartAsync()` method with the `cancellationToken` parameter:
-
-    ```csharp
-    var cancellationTokenSource = new CancellationTokenSource();
-
-    WavPlayer.StartAsync(wavPath, new AudioStreamPolicy(AudioStreamType.Media), cancellationTokenSource);
-
-    cancellationTokenSource.Cancel();
-    ```
-
-<a name="play_tone"></a>
-## Playing a tone
-
-To start and stop playing a tone, proceed as follows:
-
-1.  To start playback, use the `StartAsync()` method of the [Tizen.Multimedia.TonePlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html) class.
-
-    The first parameter defines the tone type as a value of the [Tizen.Multimedia.ToneType](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.ToneType.html) enumeration:
-
-    ```csharp
-    await TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), -1);
-    ```
-
-2.  To stop playback, use the `StartAsync()` method with the `cancellationToken` parameter:
-
-    ```csharp
-    var cancellationTokenSource = new CancellationTokenSource();
-
-    TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), -1, cancellationTokenSource);
-
-    cancellationTokenSource.Cancel();
-    ```
-
-<a name="duration"></a>
-## Playing a tone for a specified duration
-
-To play a tone for a specified duration, use the `StartAsync()` method of the [Tizen.Multimedia.TonePlayer](/application/dotnet/api/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html) class with the duration parameter (the number of milliseconds you want playback to last). When you set the duration to a specified time, playback stops automatically after that time:
-
-```csharp
-await TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), duration);
-```
 
 
 ## Related information

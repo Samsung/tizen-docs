@@ -1,6 +1,6 @@
 # Label
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The label component displays text with a simple HTML-like markup.
 

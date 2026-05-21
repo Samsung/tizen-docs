@@ -1,6 +1,6 @@
 # FullScreen API - Mozilla
 
-You can [display an element in the fullscreen mode](#using-the-fullscreen-mode). If the element uses the  [:full-screen](https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI#full-screen_pseudo-class){:target="_blank"} CSS pseudo-class to switch to the fullscreen mode, a style can be assigned for the fullscreen mode.
+You can [display an element in the fullscreen mode](#use-fullscreen-mode). If the element uses the  [:full-screen](https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI#full-screen_pseudo-class){:target="_blank"} CSS pseudo-class to switch to the fullscreen mode, a style can be assigned for the fullscreen mode.
 
 This feature is optional.
 

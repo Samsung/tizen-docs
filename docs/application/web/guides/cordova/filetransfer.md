@@ -8,19 +8,19 @@ The main features of the File Transfer API include the following:
 
 - Download
 
-  You can [download a file](#downloading-files) from a remote server.
+  You can [download a file](#download-files) from a remote server.
 
 - Upload
 
-  You can [upload a file](#uploading-files) to a remote server.
+  You can [upload a file](#upload-files) to a remote server.
 
 - Abort
 
-  You can [terminate an on-going transfer](#aborting-transfers).
+  You can [terminate an on-going transfer](#abort-transfers).
 
 - Progress tracking
 
-  You can [track the progress](#tracking-transfer-progress) of a file transfer.
+  You can [track the progress](#track-transfer-progress) of a file transfer.
 
 All file operations are accessible by the `FileTransfer` object (in [TV](../../api/latest/device_api/tv/tizen/cordova/filetransfer.html#FileTransfer) applications).
 

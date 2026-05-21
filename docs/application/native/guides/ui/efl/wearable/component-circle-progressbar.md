@@ -2,7 +2,7 @@
 
 The circle progressbar UI component shows the progress status of a given task with the circular design. It visualizes the progress status within a range. For more information, see the [Circle Progressbar](../../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__CIRCLE__PROGRESSBAR__MODULE.html) API.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 ## Basic Usage
 

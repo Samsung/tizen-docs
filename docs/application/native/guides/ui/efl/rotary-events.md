@@ -2,7 +2,7 @@
 
 Rotary events are fired from a rotary device and delivered to a suitable target when the device is rotated clockwise or counter-clockwise.
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 There are 2 ways to receive the rotary events:
 

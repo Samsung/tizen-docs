@@ -1,6 +1,6 @@
 # Vibration
 
-To provide tactile feedback to the user or to interact with the user even when the device volume is low, you can [make a Tizen device vibrate](#managing-vibrations). The vibration can provide a better user experience and improve the perception of your application.
+To provide tactile feedback to the user or to interact with the user even when the device volume is low, you can [make a Tizen device vibrate](#manage-vibrations). The vibration can provide a better user experience and improve the perception of your application.
 
 This feature is optional.
 

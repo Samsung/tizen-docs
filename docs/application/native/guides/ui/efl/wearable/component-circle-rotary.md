@@ -1,6 +1,6 @@
 # Rotary Selector
 
-This feature is supported in wearable applications only.
+This feature is optional.
 
 The rotary selector component is optimized for wearable circular devices. It is composed of a selector and multiple items surrounding the selector. The rotary selector can be used to select an item or to move to the next or previous page through a rotary event.
 

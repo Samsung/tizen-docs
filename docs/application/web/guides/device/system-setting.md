@@ -8,11 +8,11 @@ The main features of the System Setting API include the following:
 
 - Device wallpaper management
 
-  You can [set the wallpaper](#managing-the-device-wallpapers) of the home and lock screen.
+  You can [set the wallpaper](#manage-the-device-wallpapers) of the home and lock screen.
 
 - Device ringtone and notification tone management
 
-  You can [set the ringtone](#managing-ringtones-and-notification-tones) for incoming calls and [the tone for email notifications](#managing-ringtones-and-notification-tones).
+  You can [set the ringtone](#manage-ringtones-and-notification-tones) for incoming calls and [the tone for email notifications](#manage-ringtones-and-notification-tones).
 
 ## Prerequisites
 

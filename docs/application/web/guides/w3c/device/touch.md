@@ -8,7 +8,7 @@ The main touch event features include the following:
 
 - Touch event types
 
-  You can [define event handlers](#handling-touch-events) for different types of touch events:
+  You can [define event handlers](#handle-touch-events) for different types of touch events:
 
   - [touchstart](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchstart-event){:target="_blank"} handles an event which occurs when a finger comes in contact with the device screen.
   - [touchmove](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchmove-event){:target="_blank"} handles an event which occurs when a finger moves while it is in contact with the screen.
@@ -19,15 +19,15 @@ The main touch event features include the following:
 
 - Touch point coordinate
 
-  When a touch event occurs, you can [retrieve the coordinate of the event point occurrence](#retrieving-the-event-point-occurrence). Because the finger, and consequently the contact area of the screen, is quite large, the retrieved coordinate is the average value of the contact area.
+  When a touch event occurs, you can [retrieve the coordinate of the event point occurrence](#retrieve-the-event-point-occurrence). Because the finger, and consequently the contact area of the screen, is quite large, the retrieved coordinate is the average value of the contact area.
 
   Since a mobile device has no sub-devices to provide event inputs, you can use gesture events, such as the page turning effect or image drawing, based on the finger movement coordinates of the `touchmove` event.
 
 - Multi-point touch control
 
-  Unlike with mouse events, multiple concurrent touch events (represented by the [Touch](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-Touch){:target="_blank"} interface) can occur. To [control multi-point touch events](#controlling-multi-point-touches), the [TouchList](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-TouchList){:target="_blank"} interface is used to save the respective event status (based on the `touches`, `targetTouches`, and `changedTouches` attributes). The status stored in the `TouchList` instance is renewed every time a new touch event occurs.
+  Unlike with mouse events, multiple concurrent touch events (represented by the [Touch](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-Touch){:target="_blank"} interface) can occur. To [control multi-point touch events](#control-multi-point-touches), the [TouchList](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-TouchList){:target="_blank"} interface is used to save the respective event status (based on the `touches`, `targetTouches`, and `changedTouches` attributes). The status stored in the `TouchList` instance is renewed every time a new touch event occurs.
 
-A touch-based mobile operating system uses tap and double-tap gestures. The tap is used to generate a click event, and double-tap used for zooming. To recognize the touch gestures, the OS sets a timer which starts at the first tap and checks for a second before the event is fired. This causes a delay in the single tap event, making the touch responsiveness of the application suffer.  To avoid the delay, you can [enhance the touch event responsiveness](#enhancing-touch-responsiveness) by making the page unscalable, or modifying touch responses.
+A touch-based mobile operating system uses tap and double-tap gestures. The tap is used to generate a click event, and double-tap used for zooming. To recognize the touch gestures, the OS sets a timer which starts at the first tap and checks for a second before the event is fired. This causes a delay in the single tap event, making the touch responsiveness of the application suffer.  To avoid the delay, you can [enhance the touch event responsiveness](#enhance-touch-responsiveness) by making the page unscalable, or modifying touch responses.
 
 ## Handle touch events
 

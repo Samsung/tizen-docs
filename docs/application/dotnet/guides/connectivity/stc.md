@@ -1,5 +1,7 @@
 # Smart Traffic Control
 
+> [!NOTE]
+> All STC APIs have been deprecated since Tizen 10.0 and will be removed after two releases without any alternatives.
 
 Smart Traffic Control (STC) provides extensible packet-level control services, including per-app data usage, total data quota, and background app data saving.
 

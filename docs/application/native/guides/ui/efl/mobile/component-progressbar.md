@@ -2,7 +2,7 @@
 
 The progressbar UI component displays the progress status of a given job. For more information, see the [Progressbar](../../../../api/common/latest/group__Elm__Progressbar.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 ## Basic Usage
 

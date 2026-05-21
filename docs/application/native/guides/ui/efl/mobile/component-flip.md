@@ -2,7 +2,7 @@
 
 The flip UI component is used for a transition effect, which can hold 2 `Evas_Objects` and flip between them using several predefined animations. For more information, see the [Flip](../../../../api/common/latest/group__Elm__Flip.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 **Figure: Flip hierarchy**
 

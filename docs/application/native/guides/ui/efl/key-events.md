@@ -1,5 +1,8 @@
 # Managing Menu and Back Key Events
 
+>[!NOTE]
+>All EFL menu and back APIs have been deprecated since Tizen 10.0 and will be removed after two releases without alternative.
+>
 The menu and back functions are common UX behaviors in applications. Generally, the user taps the **Back** hardware key to return to the previous screen. The applications also provide option menus to manipulate their functions through the **Menu** hardware key.
 
 This API is supported on specifc Tizen devices that support the **Menu** and **Back** keys.

@@ -4,7 +4,7 @@ The image component can load and display an image from a disk file or a memory r
 
 For more information, see the [Image](../../../../api/common/latest/group__Elm__Image.html) API.
 
-This feature is supported in mobile applications only.
+This feature is optional.
 
 **Figure: Image component**
 
