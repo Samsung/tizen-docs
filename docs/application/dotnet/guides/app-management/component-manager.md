@@ -1,5 +1,8 @@
 # Component Manager
 
+> [!NOTE]
+> All  ComponentManager APIs have been deprecated since Tizen 11.0 and will be removed after two releases without any alternatives.
+
 The component manager provides information about installed and running components.
 
 The main features of the `Tizen.Applications.ComponentBased.ComponentManager` class includes the following:
