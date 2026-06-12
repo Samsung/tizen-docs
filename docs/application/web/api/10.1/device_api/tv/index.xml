@@ -43,6 +43,7 @@
 					</topic>
 					<topic href="10.1/device_api/tv/index.html#Security" label="Security">
 						<topic href="10.1/device_api/tv/tizen/keymanager.html" label="Keymanager"/>
+						<topic href="10.1/device_api/tv/tizen/ppm.html" label="PrivacyPrivilege"/>
 					</topic>
 					<topic href="10.1/device_api/tv/index.html#System" label="System">
 						<topic href="10.1/device_api/tv/tizen/systeminfo.html" label="System Information"/>
