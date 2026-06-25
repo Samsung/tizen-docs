@@ -106,7 +106,7 @@ Requesting pop-up about giving permission for using privacy-related privilege.  
 <div class="brief">
  Specifies the type of given permission.
           </div>
-<pre class="webidl prettyprint">  enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };</pre>
+<pre class="webidl prettyprint">  enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK", "PPM_ALLOW_SESSION", "PPM_DENY_SESSION", "PPM_ALLOW_IN_USE" };</pre>
 <p><span class="version">Since: </span>
  10.1
           </p>
@@ -121,6 +121,12 @@ PPM_ALLOW - The application has been granted permission to use a privacy-related
 PPM_DENY - The application has not been granted permission to use a privacy-related privilege.            </li>
             <li>
 PPM_ASK - The user has to be asked whether to grant permission to use a privacy-related privilege.            </li>
+            <li>
+PPM_ALLOW_SESSION - The application has permission to use a privilege for current session only.            </li>
+            <li>
+PPM_DENY_SESSION - The application doesn't have permission to use a privilege for current session only.            </li>
+            <li>
+PPM_ALLOW_IN_USE - The application has permission to use a privilege, only while it's in foreground.            </li>
           </ul>
          </div>
 </div>
@@ -129,7 +135,8 @@ PPM_ASK - The user has to be asked whether to grant permission to use a privacy-
 <div class="brief">
  Specifies the result of a permission request.
           </div>
-<pre class="webidl prettyprint">  enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };</pre>
+<pre class="webidl prettyprint">  enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE", "PPM_ALLOW_SESSION", "PPM_DENY_SESSION",
+    "PPM_ALLOW_IN_USE" };</pre>
 <p><span class="version">Since: </span>
  10.1
           </p>
@@ -144,6 +151,12 @@ PPM_ALLOW_FOREVER - The user granted permission to use a privacy-related privile
 PPM_DENY_FOREVER - The user denied granting permission to use a privacy-related privilege for an indefinite period of time.            </li>
             <li>
 PPM_DENY_ONCE - The user denied granting permission to use a privacy-related privilege once.            </li>
+            <li>
+PPM_ALLOW_SESSION - The user granted permission to use a privilege for current application session.            </li>
+            <li>
+PPM_DENY_SESSION - The user denied granting permission to use a privilege for current application session.            </li>
+            <li>
+PPM_ALLOW_IN_USE - The user granted permission to use a privilege only when application is used (on top).            </li>
           </ul>
          </div>
 </div>
@@ -686,8 +699,9 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module PrivacyPrivilege {
-  enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };
-  enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };
+  enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK", "PPM_ALLOW_SESSION", "PPM_DENY_SESSION", "PPM_ALLOW_IN_USE" };
+  enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE", "PPM_ALLOW_SESSION", "PPM_DENY_SESSION",
+    "PPM_ALLOW_IN_USE" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;
   [NoInterfaceObject] interface PrivacyPrivilegeManagerObject {
     readonly attribute <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a> ppm;
