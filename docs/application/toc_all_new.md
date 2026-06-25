@@ -328,19 +328,19 @@
 ## Tutorials
 ### [Overview](/application/web/tutorials/overview.md)
 ### Application Development Process
-#### [Overview](/application/web/tutorials/process/app-dev-process.md)
-#### [Creating the Application Project](/application/web/tutorials/process/creating-app-project.md)
-#### [Setting Project Properties](/application/web/tutorials/process/setting-properties.md)
-#### [Coding Applications](/application/web/tutorials/process/coding-app.md)
-#### [Running and Debugging Applications](/application/web/tutorials/process/run-debug-app.md)
+#### [Overview](/application/web/guides/development/index.md)
+#### [Creating the Application Project](/application/web/guides/development/creating-app-project.md)
+#### [Setting Project Properties](/application/web/guides/development/setting-properties.md)
+#### [Coding Applications](/application/web/guides/development/coding-app.md)
+#### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
 
-### [Application Filtering](/application/web/tutorials/app-filtering.md)
-### [Security and API Privileges](/application/web/tutorials/sec-privileges.md)
-### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/tutorials/old-versioned-sec-privileges.md)
-### [Web Runtime](/application/web/tutorials/web-runtime.md)
-### [Event Handling](/application/web/tutorials/event-handling.md)
-### [Application Signing and Certificates](/application/web/tutorials/sign-certificate.md)
-### [API Versioning and Deprecation Policy](/application/web/tutorials/deprecation-policy.md)
+### [Application Filtering](/application/web/reference/app-filtering.md)
+### [Security and API Privileges](/application/web/reference/security-privileges.md)
+### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
+### [Web Runtime](/application/web/guides/essentials/web-runtime.md)
+### [Event Handling](/application/web/guides/essentials/event-handling.md)
+### [Application Signing and Certificates](/application/web/guides/essentials/signing-certificates.md)
+### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
 
 ## Guides
 ### [Overview](/application/web/guides/index.md)
@@ -455,7 +455,7 @@
 #### [TEE Communication](/application/web/guides/security/tee-client.md)
 #### [Privacy-related Permissions](/application/web/guides/security/privacy-related-permissions.md)
 
-### [Error Handling](/application/web/guides/error/error.md)
+### [Error Handling](/application/web/guides/essentials/error-handling.md)
 ### W3C/HTML5/Supplementary Features
 #### [Overview](/application/web/guides/w3c/w3c-overview.md)
 
@@ -571,25 +571,24 @@
 ## Tutorials
 ### [Overview](/application/native/tutorials/overview.md)
 ### Application Development Process
-#### [Overview](/application/native/tutorials/process/app-dev-process.md)
-#### [Creating the Application Project](/application/native/tutorials/process/creating-app-project.md)
-#### [Setting Project Properties](/application/native/tutorials/process/setting-properties.md)
-#### [Building Applications](/application/native/tutorials/process/building-app.md)
-#### [Running Applications](/application/native/tutorials/process/running-app.md)
-#### [Debugging Applications](/application/native/tutorials/process/debugging-app.md)
-#### [Optimizing Application Performance](/application/native/tutorials/process/performance.md)
+#### [Overview](/application/native/guides/development/index.md)
+#### [Creating the Application Project](/application/native/guides/development/creating-app-project.md)
+#### [Setting Project Properties](/application/native/guides/development/setting-properties.md)
+#### [Building Applications](/application/native/guides/development/building-app.md)
+#### [Running Applications](/application/native/guides/development/running-app.md)
+#### [Debugging Applications](/application/native/guides/development/debugging-app.md)
+#### [Optimizing Application Performance](/application/native/guides/development/performance.md)
 
 ### Understanding Tizen Programming
-#### [Overview](/application/native/tutorials/details/details.md)
-#### [Application Filtering](/application/native/tutorials/details/app-filtering.md)
-#### [Security and API Privileges](/application/native/tutorials/details/sec-privileges.md)
-#### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/tutorials/details/old-versioned-sec-privileges.md)
-#### [Event Handling](/application/native/tutorials/details/event-handling.md)
-#### [Error Handling](/application/native/tutorials/details/error-handling.md)
-#### [File System Directory Hierarchy](/application/native/tutorials/details/io-overview.md)
-#### [Application Signing and Certificates](/application/native/tutorials/details/sign-certificate.md)
-#### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/tutorials/details/deprecation-policy.md)
-#### [Removed functions and enumerations of Tizen Native API](/application/native/tutorials/details/native-removed-history.md)
+#### [Application Filtering](/application/native/reference/app-filtering.md)
+#### [Security and API Privileges](/application/native/reference/security-privileges.md)
+#### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/reference/security-privileges-legacy.md)
+#### [Event Handling](/application/native/guides/essentials/event-handling.md)
+#### [Error Handling](/application/native/guides/essentials/error-handling.md)
+#### [File System Directory Hierarchy](/application/native/guides/essentials/file-system.md)
+#### [Application Signing and Certificates](/application/native/guides/essentials/signing-certificates.md)
+#### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/reference/deprecation-policy.md)
+#### [Removed functions and enumerations of Tizen Native API](/application/native/reference/removed-history.md)
 
 ### Creating Applications with Connectivity and Network
 #### [Overview](/application/native/tutorials/feature/app-connectivity.md)

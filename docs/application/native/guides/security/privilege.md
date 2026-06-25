@@ -1,7 +1,7 @@
 # Privilege Information
 
 
-Tizen provides [privilege](../../tutorials/details/sec-privileges.md) information for user notification.
+Tizen provides [privilege](../../reference/security-privileges.md) information for user notification.
 
 With the Privilege Info API, you can [retrieve the following privilege information](#get):
 

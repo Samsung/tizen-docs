@@ -7,7 +7,7 @@
 
 A wearable Web application is basically a Web site stored on a wearable device. You can create it using Web-native languages, such as HTML5, CSS, and JavaScript, and run it on Tizen wearable devices to display a customized watch face to the user.
 
-Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web watch application, which displays an analog watch face with the current time on the screen:
+Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../guides/development/index.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web watch application, which displays an analog watch face with the current time on the screen:
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
@@ -135,7 +135,7 @@ To view and modify the application configuration, follow the steps below:
 
 3.  To save any changes, in the Tizen Studio menu, select **File \> Save All**.
 
-For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
+For more information on configuring the application, see [Setting the Web Application Configuration](../../guides/development/setting-properties.md#set_widget).
 
 ### Understand the source code
 
@@ -164,7 +164,7 @@ Pay attention to the following main issues in the application source code, to un
 
 -   On a low-powered wearable device, an ambient mode is available. In this mode, the watch application shows a limited UI and receives only the ambient tick event every minute to reduce power consumption.
 
-    If the application contains a custom UI for the [ambient mode](../../tutorials/event-handling.md#ambient), the ambient mode support is also shown in the `config.xml` file. However, this sample application does not support a custom ambient UI.
+    If the application contains a custom UI for the [ambient mode](../../guides/essentials/event-handling.md#ambient), the ambient mode support is also shown in the `config.xml` file. However, this sample application does not support a custom ambient UI.
 
 <a name="build"></a>
 ## Build your application
@@ -210,7 +210,7 @@ After you have built the application, run it.
 <a name="run"></a>
 ## Run your application
 
-You can run the Web watch application on the [emulator](../../tutorials/process/run-debug-app.md#emulator) or a [real target device](../../tutorials/process/run-debug-app.md#target).
+You can run the Web watch application on the [emulator](../../guides/development/run-debug-app.md#emulator) or a [real target device](../../guides/development/run-debug-app.md#target).
 
 > [!NOTE]
 > Since the Web Simulator does not support a circular UI, this topic does not cover the instructions for running the application on the Web Simulator.

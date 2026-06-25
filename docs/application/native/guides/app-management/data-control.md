@@ -992,7 +992,7 @@ To monitor data changes, and send and receive notifications, follow the steps be
 <a name="export"></a>
 ## Data control export
 
-You can export the provider functionalities of your Tizen native service application in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in Tizen Studio. The provider ID, type, and accessibility must be specified for the available data control.
+You can export the provider functionalities of your Tizen native service application in the [application project settings](../../guides/development/setting-properties.md#manifest) in Tizen Studio. The provider ID, type, and accessibility must be specified for the available data control.
 
 **Figure: Exporting data control**
 

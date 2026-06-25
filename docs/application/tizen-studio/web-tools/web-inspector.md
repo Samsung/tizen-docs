@@ -1,6 +1,6 @@
 # Debugging with Web Inspector
 
-You can [debug Web applications](../../web/tutorials/process/run-debug-app.md) using the JavaScript Debugger tool. The JavaScript Debugger is based on Webkit Web Inspector, and has been modified to support remote debugging.
+You can [debug Web applications](../../web/guides/development/run-debug-app.md) using the JavaScript Debugger tool. The JavaScript Debugger is based on Webkit Web Inspector, and has been modified to support remote debugging.
 
 The JavaScript Debugger supports the following panels:
 

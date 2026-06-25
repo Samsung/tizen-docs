@@ -13,7 +13,7 @@ A widget application is one of the Tizen application types. It can be shown by s
 
 ![Widget application on a wearable device](media/widget_app_wearable.png)
 
-Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native widget application, which displays some text on the screen with no user interaction:
+Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../guides/development/index.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native widget application, which displays some text on the screen with no user interaction:
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
@@ -46,7 +46,7 @@ The following example shows you how to create and configure a basic wearable nat
 > Standalone widget application packages are not allowed in the official site for Tizen applications.
 >
 > For user convenience, you can use a standalone widget application for testing purposes in Tizen Studio. If you want to publish the application in the store, combine it with at least 1 UI application in the same package.
-> For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#develop).
+> For more information, see [Developing Multiple Projects as a Combined Package](../../guides/development/index.md#develop).
 
 The following figure illustrates the application to be created. The application screen displays the **Hello widget** text and no user interaction is provided.
 
@@ -145,7 +145,7 @@ To view and modify the application configuration:
 
 3.  To save any changes, in the Tizen Studio menu, select **File \> Save All**.
 
-For more information on configuring the application, see [Setting the Application Manifest](../../tutorials/process/setting-properties.md#manifest).
+For more information on configuring the application, see [Setting the Application Manifest](../../guides/development/setting-properties.md#manifest).
 
 ### Understanding the Source Code
 
@@ -391,7 +391,7 @@ You can build the application in the following ways:
     -   In the Tizen Studio menu, select **Project \> Build Project**.
     -   Press the **F10** key.
 
-You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations \> Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
+You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations \> Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../guides/development/building-app.md).
 
 After you have built the application, run it.
 

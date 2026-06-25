@@ -4,7 +4,7 @@
 
 A TV Web application is basically a Web site stored on a TV. You can create it using Web-native languages, such as HTML5, CSS, and JavaScript.
 
-Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic TV Web application, which displays some text on the screen and changes the text when the user clicks it:
+Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../guides/development/index.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic TV Web application, which displays some text on the screen and changes the text when the user clicks it:
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
@@ -136,7 +136,7 @@ To view and modify the application configuration, follow these steps:
 
 3. To save any changes, in the Tizen Studio menu, select **File \> Save All**.
 
-For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
+For more information on configuring the application, see [Setting the Web Application Configuration](../../guides/development/setting-properties.md#set_widget).
 
 <a name="build"></a>
 ## Build your application
@@ -182,7 +182,7 @@ After you have built the application, run it.
 <a name="run"></a>
 ## Run your application
 
-You can run the Web application on the [emulator](../../tutorials/process/run-debug-app.md#emulator), [Samsung TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator){:target="_blank"}, or a [real target device](../../tutorials/process/run-debug-app.md#target).
+You can run the Web application on the [emulator](../../guides/development/run-debug-app.md#emulator), [Samsung TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator){:target="_blank"}, or a [real target device](../../guides/development/run-debug-app.md#target).
 
 <a name="emulator"></a>
 ### Run on emulator
