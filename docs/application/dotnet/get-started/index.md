@@ -42,7 +42,7 @@ You can also use command line tools to create .NET project on any platform.
         </a>
     </div>
     <div class="col col-6">
-        <a href="certificates/index.md" class="card card-infra card-neutral h-100">
+        <a href="../guides/concepts/signing-certificates/index.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Certificates</p>
                 <p class="card-text">Add certificates to run the app on a device.</p>
@@ -55,7 +55,7 @@ You can also use command line tools to create .NET project on any platform.
 
 <div class="row cards-container-infra">
     <div class="col col-6">
-        <a href="api-privileges.md" class="card card-infra card-neutral h-100">
+        <a href="../reference/api-privileges.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">API Privileges</p>
                 <p class="card-text">Protect the system by mandatory access control.</p>
@@ -63,7 +63,7 @@ You can also use command line tools to create .NET project on any platform.
         </a>
     </div>
     <div class="col col-6">
-        <a href="application-filtering.md" class="card card-infra card-neutral h-100">
+        <a href="../reference/app-filtering.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Application Filtering</p>
                 <p class="card-text">Add features for app filtering and create assets thumbnails.</p>

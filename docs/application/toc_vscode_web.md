@@ -30,12 +30,12 @@
 
 ##### Tizen Certificate Management
 
-###### [Overview](/application/dotnet/get-started/certificates/index.md)
+###### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
 
 
-###### [Creating Certificates](/application/dotnet/get-started/certificates/creating-certificates.md)
+###### [Creating Certificates](/application/dotnet/guides/concepts/signing-certificates/creating-certificates.md)
 
-###### [Managing Certificate Profile](/application/dotnet/get-started/certificates/managing-certificate-profile.md)
+###### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
 
 #### Coding & Building Application
 

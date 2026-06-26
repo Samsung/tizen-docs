@@ -18,7 +18,7 @@ The main features of the `Tizen.Security.PrivacyPrivilegeManager` class include 
 
     If a required permission is missing, you can [request the user to grant it](#requesting) to be able to use privileged features.
 
-For a list of privacy-related privileges, see [Security and API Privileges](../../get-started/api-privileges/).
+For a list of privacy-related privileges, see [Security and API Privileges](../../reference/api-privileges/).
 
 > [!NOTE]
 > Since Tizen 5.5, if the caller application component type is UI application, then the pop-ups by `RequestPermission()` and `RequestPermissions()` are launched as `group mode` with the caller application.
