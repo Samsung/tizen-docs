@@ -30,7 +30,7 @@
 
 ##### Tizen Certificate Management
 
-###### [Overview](/application/dotnet/get-started/certificates/index.md)
+###### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
 
 ###### [Creating Certificates](/application/vscode-ext/cert-create-profile.md)
 

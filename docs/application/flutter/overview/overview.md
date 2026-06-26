@@ -178,7 +178,7 @@ The `tizen-manifest.xml` file and signature files are located in the application
 
 - To install an application on a Tizen device, you must sign it with a valid certificate
 - The signing process is the same as for Tizen native applications, using author and distributor signatures
-- For more information, please refer to the [Create a certificate profile](../guides/flutter-tizen/doc/install-tizen-sdk.md#create-a-certificate-profile) section.
+- For more information, please refer to the [Create a certificate profile](../guides/flutter-tizen/install-tizen-sdk.md#create-a-certificate-profile) section.
 
 * * *
 
@@ -211,9 +211,9 @@ Flutter Tizen applications leverage the Flutter framework APIs along with platfo
 To start developing a Flutter Tizen application, follow these steps:
 
 1. **Installation**:
-   - [Linux (x64)](./guides/flutter-tizen/doc/linux-install.md)
-   - [Windows (x64)](./guides/flutter-tizen/doc/windows-install.md)
-   - [macOS (x64)](./guides/flutter-tizen/doc/macos-install.md)
+   - [Linux (x64)](./guides/flutter-tizen/linux-install.md)
+   - [Windows (x64)](./guides/flutter-tizen/windows-install.md)
+   - [macOS (x64)](./guides/flutter-tizen/macos-install.md)
 
 2. **Create a new project**:
    ```bash

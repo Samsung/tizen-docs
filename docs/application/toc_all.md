@@ -15,18 +15,18 @@
 ## Get Started
 ### [Overview](/application/dotnet/get-started/index.md)
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
-### [API Privileges](/application/dotnet/get-started/api-privileges.md)
+### [API Privileges](/application/dotnet/reference/api-privileges.md)
 ### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ### [Install Samsung Smart TV Extension](/application/dotnet/get-started/install-samsung-tv-extension.md)
 ### Certificates
-#### [Overview](/application/dotnet/get-started/certificates/index.md)
-#### [Installing the Extension](/application/dotnet/get-started/certificates/installing-the-extension.md)
-#### [Creating Certificates](/application/dotnet/get-started/certificates/creating-certificates.md)
-#### [Signing Application with Certificate](/application/dotnet/get-started/certificates/signing-application-with-certificate.md)
-#### [Managing Certificate Profile](/application/dotnet/get-started/certificates/managing-certificate-profile.md)
+#### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
+#### [Installing the Extension](/application/dotnet/guides/concepts/signing-certificates/installing-the-extension.md)
+#### [Creating Certificates](/application/dotnet/guides/concepts/signing-certificates/creating-certificates.md)
+#### [Signing Application with Certificate](/application/dotnet/guides/concepts/signing-certificates/signing-application-with-certificate.md)
+#### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
 
 ### [IoT](/application/dotnet/get-started/IoT/index.md)
-### [Application Filtering](/application/dotnet/get-started/application-filtering.md)
+### [Application Filtering](/application/dotnet/reference/app-filtering.md)
 
 ## Guides
 ### [Overview](/application/dotnet/guides/index.md)
