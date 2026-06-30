@@ -1,5 +1,8 @@
 # Component Port
 
+> [!NOTE]
+> All ComponentPort APIs have been deprecated since Tizen 11.0 and will be removed after two releases without any alternatives.
+
 Tizen components of the component-based applications can communicate with each other using component ports. Components can send and receive serializable objects through component port communication.
 
 The main feature of the `Tizen.Applications.ComponentBased.ComponentPort` class includes the following:
