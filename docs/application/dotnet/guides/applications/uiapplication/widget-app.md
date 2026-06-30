@@ -3,10 +3,10 @@
 > [!NOTE]
 > WidgetApplication class is deprecated since API Level 10 and will be removed in API Level 12. 
 
-The widget applications are commonly used in applications like home screen or lock screen. The .NET Tizen API provides the following two classes that allows you to implement widget applications:
+The widget applications are commonly used in applications like home screen or lock screen. The .NET Tizen API provides the following class that allows you to implement widget applications:
 
 1. [NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html)
-2. [WidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html)
+
 
 An instance of the widget is managed by a [Widget Viewer](../../app-management/widget-viewer.md) application. Widget process is created when a widget application is added to the widget viewer.
 
@@ -51,18 +51,6 @@ The main features of the widget application includes the following:
             </tbody>
         </table>
     </div>
-    <div id="note-base-content" class="tabcontent">
-        <table>
-            <tbody>
-                <tr>
-                    <blockquote class="note">
-                        <p><strong>Note</strong></p>
-                        <p>To draw the UI, use a single window as a protected property of the <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetBase.html">Tizen.Applications.WidgetBase</a> class. Do not create additional windows. A stack of widget application windows gets corrupted, because the platform handles the widget application window in a special way.</p>
-                    </blockquote>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 </div>
 
 <a name="widget-instances"></a>
@@ -84,16 +72,6 @@ The main features of the widget application includes the following:
                     </blockquote>
                     <p><a href="/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.WidgetView.html"><code>WidgetView</code></a> shows the contents drawn by <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.Widget.html"><code>Widget</code></a> on the screen.</p>
                     <p>To summarize, you create a NUI WidgetApplication, create a NUI WidgetView, and use Widget to view layout on the screen.</p>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div id="viewer-base-content" class="tabcontent">
-        <table>
-            <tbody>
-                <tr>
-                    <p>The <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html">WidgetApplication</a> class provides the <code>WidgetApplication(IDictionary&lt; Type, string &gt; typeInfo)</code> constructor, that allows a widget application to have multiple widget classes. The widget applications with multiple classes can make diverse class instances whenever widget viewer applications, such as the home screen and the lock screen, request for a widget instance.</p>
-                    <p>The widget instance has its own life cycle similar to the widget application. However, the widget instance is only an object shown by the widget viewer applications. Many widget instances can be running on the same widget application process.</p>
                 </tr>
             </tbody>
         </table>
@@ -166,32 +144,6 @@ class MyWidget : Tizen.NUI.Widget
                 <tr>
 <span style="display:block">
 
-The following table lists the callbacks you can use as the instance state changes.
-
-**Table: Instance state change callbacks**
-
-| Callback      | Description                              |
-|---------------|------------------------------------------|
-| `OnCreate()`  | Called after the widget instance is created. |
-| `OnDestroy()` | Called before the widget instance is destroyed. |
-| `OnPause()`   | Called when the widget is invisible.     |
-| `OnResume()`  | Called when the widget is visible.       |
-| `OnResize()`  | Called before the widget size is changed. |
-| `OnUpdate()`  | Called when an event for updating the widget is received. |
-
-You can declare a widget class by inheriting the <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetBase.html">Tizen.Applications.WidgetBase</a> class. For example:
-
-```csharp
-class MyWidget : WidgetBase
-{
-    public override void OnCreate(Bundle content, int w, int h) {}
-    public override void OnPause() {}
-    public override void OnResume() {}
-    public override void OnResize(int w, int h) {}
-    public override void OnUpdate(Bundle content, bool isForce) {}
-    public override void OnDestroy(WidgetBase.WidgetDestroyType reason, Bundle content) {}
-}
-```
 
 </span>
                 </tr>
@@ -325,145 +277,6 @@ To enable your application to use the widget functionality, you have to modify a
                 <tr>
 <span style="display:block">
 
-The widget application starts with the `Main()` function, which creates and initializes the application. The `Run()` method of the [Tizen.Applications.WidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html) class is used to start the application event loop. The `Tizen.Applications.WidgetApplication` class provides 2 kinds of constructors:
-
-- If you create the widget application with the `WidgetApplication(Type type)` constructor, that widget application's ID is the same as the application ID.
-- Using the `WidgetApplication(IDictionary<Type, string> typeInfo)` constructor, you can make widget applications with multiple widget classes.
-
-1. To use the methods and properties of the [Tizen.Applications](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.html) namespace, include it in your application:
-
-   ```csharp
-   using Tizen.Applications;
-    ```
-
-2. Define your widget class, which is inherited from the [Tizen.Applications.WidgetBase](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetBase.html) class:
-
-   ```csharp
-   class MyWidget : WidgetBase {}
-   ```
-
-3. Override the event callback methods of your new class:
-   - The `OnCreate()` callback is triggered when the widget instance is created.
-
-     Initialize resources for this widget instance and [draw the UI](#draw_window). If bundle content is not `NULL`, restore the previous status:
-
-     ```csharp
-     public override void OnCreate(Bundle content, int w, int h)
-     {
-	     try
-	     {
-		     base.OnCreate(content, w, h);
-		     /// Recover the previous status with the bundle object
-		     /// Create the UI
-	     }
-	     catch (Exception e)
-	     {
-		     Log.Warn(_logTag, "exception " + e);
-	     }
-     }
-     ```
-
-   - The `OnDestroy()` callback is triggered when the widget instance is destroyed.
-
-     Release all widget resources. If the `reason` for the termination is not `WidgetBase.WidgetDestroyType.Permanent`, store the current status with the incoming bundle.
-
-     ```csharp
-     public override void OnDestroy(WidgetBase.WidgetDestroyType reason, Bundle content)
-     {
-	     if (reason != WidgetBase.WidgetDestroyType.Permanent)
-		     /// Save the current status at the bundle object
-     }
-     ```
-
-   - The `OnPause()` callback is triggered when the widget instance is paused.
-
-     Take the necessary actions when the widget instance becomes invisible. The framework can destroy a paused widget instance.
-
-     ```csharp
-     public override void OnPause() {}
-     ```
-
-   - The `OnResume()` callback is triggered when the widget instance is resumed.
-
-      Take the necessary actions when the widget instance becomes visible.
-
-      ```csharp
-      public override void OnResume() {}
-      ```
-
-   - The `OnResize()` callback is triggered before the widget instance is resized.
-
-      Take the necessary actions to accommodate the new size.
-
-      ```csharp
-      public override void OnResize(int w, int h) {}
-      ```
-
-   - The `OnUpdate()` callback is triggered when a widget update event is received.
-
-      Take the necessary actions for the widget update. If the `isForce` parameter is `true`, the widget can be updated even in the pause state.
-
-      ```csharp
-      public override void OnUpdate(Bundle content, bool isForce) {}
-      ```
-<a name="draw_window"></a>
-4.  The widget UI is drawn in the `OnCreate()` callback of your widget class:
-
-    ```csharp
-    public override void OnCreate(Bundle content, int w, int h)
-    {
-        try
-        {
-            base.OnCreate(content, w, h);
-            Conformant conformant = new Conformant(Window);
-            conformant.Show();
-            Scroller scroller = new Scroller(Window)
-            {
-                AlignmentX = -1,
-                AlignmentY = -1,
-                WeightX = 1,
-                WeightY = 1,
-                ScrollBlock = ScrollBlock.None,
-            };
-            scroller.Show();
-
-            Box box = new Box(Window)
-            {
-                AlignmentX = -1,
-                AlignmentY = -1,
-                WeightX = 1,
-                WeightY = 1,
-            };
-            box.Show();
-            scroller.SetContent(box);
-            conformant.SetContent(scroller);
-
-            Button exitButton = new Button(Window)
-            {
-                Text = "Exit Test",
-                AlignmentX = -1,
-                AlignmentY = -1,
-                WeightX = 1,
-                WeightY = 1
-            };
-            box.PackEnd(exitButton);
-            exitButton.Show();
-        }
-        catch (Exception e)
-        {
-            Log.Warn(_logTag, "exception " + e);
-        }
-    }
-    ```
-
-    </span>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-<a name="share"></a>
 ## Data sharing between the widget application and other applications
 
 You can share data between widget applications and UI (or service) applications. However, you must understand that this kind of data sharing is dependent on the file system. The reason is that the system (home screen) controls the widget application life cycle, while the UI application life cycle is mostly explicitly controlled by the user.
@@ -497,36 +310,4 @@ For example, a music-player-service service application is needed to control the
   - Tizen 4.0 and Higher
 - API References
   - [Tizen.NUI.NUIWidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.NUIWidgetApplication.html) class
-  - [Tizen.Applications.WidgetApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html) class
   - [Tizen.Applications.CoreApplication](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class
-
-<script>
-    function openTabSection(evt, profileName, sectionId) {
-        var i, tabcontent, tablinks, section;
-        let selected = 0;
-
-        section = document.getElementById(sectionId);
-        tabcontent = section.getElementsByClassName("tabcontent");
-
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-            if (tabcontent[i].id == profileName) {
-                selected = i;
-            }
-        }
-
-        tablinks = section.getElementsByClassName("tablinks");
-
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        tabcontent[selected].style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-
-    document.getElementById("note-nui").click();
-    document.getElementById("viewer-nui").click();
-    document.getElementById("class-nui").click();
-    document.getElementById("code-nui").click();
-</script>
