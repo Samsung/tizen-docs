@@ -654,7 +654,6 @@
 #### [TIDL](/application/native/guides/app-management/tidl.md)
 #### [Sticker](/application/native/guides/app-management/sticker.md)
 #### [Widget Service](/application/native/guides/app-management/widget-service.md)
-#### [Widget Viewer](/application/native/guides/app-management/widget-viewer.md)
 
 ### Localization
 #### [Overview](/application/native/guides/internationalization/overview.md)
