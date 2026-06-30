@@ -18,10 +18,6 @@ You can use the following notifications and content sharing features in your nat
 
   The attach panel is a method that allows the user to attach various content into an application. You can attach images, take pictures, record voice, and select files on the attach panel. You can also select new applications to be launched.
 
-- [Minicontrol Window](minicontrol.md)
-
-  A minicontrol is a small application view that can be shown in other applications, or the quick panel or lock screen. You can create a minicontrol and display it in the quick panel or lock screen. You can also host minicontrols in your application.
-
 ## Related Information
 - Dependencies
   - Since Tizen 2.4
@@ -29,5 +25,3 @@ You can use the following notifications and content sharing features in your nat
   - [Notification](../../api/common/latest/group__NOTIFICATION__MODULE.html)
   - [Notification Ex](../../api/common/latest/group__NOTIFICATION__EX__MODULE.html)
   - [Attach Panel](../../api/common/latest/group__CAPI__PANEL__ATTACH__MODULE.html)
-  - [Minicontrol](../../api/common/latest/group__MINICONTROL__LIBRARY.html)
-  - [Minicontrol Provider](../../api/common/latest/group__CAPI__MINICONTROL__PROVIDER__MODULE.html)
