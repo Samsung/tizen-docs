@@ -685,7 +685,6 @@
 #### [Notifications](/application/native/guides/notification/notifications.md)
 #### [Expandable Notifications](/application/native/guides/notification/notification-ex.md)
 #### [Attach Panel](/application/native/guides/notification/attach-panel.md)
-#### [Minicontrol Window](/application/native/guides/notification/minicontrol.md)
 
 ### Alarms and Scheduling
 #### [Overview](/application/native/guides/alarm/overview.md)

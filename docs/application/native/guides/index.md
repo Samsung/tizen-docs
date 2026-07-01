@@ -220,7 +220,6 @@ The following list defines Tizen Native API. The list describes the API modules 
   | External Output Manager   | Provides functions for external outputs.     | [Latest](../api/common/latest/group__CAPI__UI__EOM__MODULE.html) |  |
   | Fontconfig and Freetype   | Provides a text rendering library and font-handling library to let applications find a font or closely matching font. | [Latest](../api/common/latest/group__OPENSRC__FONTCONFIG__FRAMEWORK.html) |   |
   | HarfBuzz                  | Provides functions for text shaping. | [Latest](../api/common/latest/group__OPENSRC__HARFBUZZ__FRAMEWORK.html) |  |
-  | Minicontrol               | Provides functions for creating and displaying an EFL socket window. | [Latest](../api/common/latest/group__MINICONTROL__LIBRARY.html) | [Minicontrol Window](notification/minicontrol.md) |
   | OpenGL ES                 | Provides a library for rendering 3D and 2D graphics in embedded systems. | [Latest](../api/common/latest/group__OPENSRC__OPENGLES__FRAMEWORK.html) | [OpenGL ES](graphics/opengl.md) |
   | TBM Surface               | Provides functions for the graphics buffer.  | [Latest](../api/common/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html) | [Graphic Buffer and Surface](graphics/graphic-buffer.md) |
   | Tizen Window System Shell            | Allows you to communicate with the window manager.   | [Latest](../api/common/latest/group__TIZEN__WS__SHELL__MODULE.html) | [Tizen Window System Shell](ui/tizen-ws-shell/index.md) |
