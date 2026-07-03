@@ -29,7 +29,7 @@ To configure the package repository:
 
 ## SDK Installation Directories
 
-After the initial SDK path setup, the extension creates a `.tizen-extension-platform` directory at the selected location. Within this directory, SDK resources are organized as follows:
+After the initial SDK path setup, the extension creates a `.tizen-extension-platform` directory for default directory selection at home directory. Within this directory, SDK resources are organized as follows:
 
 | Component | Directory |
 |-----------|-----------|
@@ -49,7 +49,6 @@ To install the full SDK for a specific platform version, use the **Advanced** fe
 
 1. Open the **Packages** page from the **Notice** view in the Primary Sidebar.
 2. Click the **Advanced** button to open the advanced package installation view.
-3. Select the platform profile (for example, **Mobile**, **Wearable**, or **TV**) and the desired version.
-4. Click **Install** to download and install the full SDK for the selected platform version.
-5. Monitor the installation progress in the **Output** panel.
+3. Click **Install** to download and install the full SDK for the selected platform version.
+4. Monitor the installation progress in the **Output** panel and the sidebar progress indicator.
 
