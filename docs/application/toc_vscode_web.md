@@ -2,7 +2,7 @@
 
 ## [Overview](/application/tizen-studio/common-tools/overview.md)
 
-## [Release Notes](/application/tizen-studio/release-notes/6-0-release-notes.md)
+## [Release Notes](/application/vscode-ext/release-notes/release-notes.md)
 
 ## Visual Studio Code Extension
 
@@ -30,12 +30,11 @@
 
 ##### Tizen Certificate Management
 
-###### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
+###### [Overview](/application/vscode-ext/tools/cert-overview.md)
 
+###### [Creating Certificates](/application/vscode-ext/tools/cert-create-profile.md)
 
-###### [Creating Certificates](/application/dotnet/guides/concepts/signing-certificates/creating-certificates.md)
-
-###### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
+###### [Managing Certificate Profile](/application/vscode-ext/tools/cert-manage-profile.md)
 
 #### Coding & Building Application
 
@@ -53,15 +52,15 @@
 
 ##### Tool: Emulators
 
-###### [Overview](/application/tizen-studio/common-tools/emulator.md)
+###### [Overview](/application/vscode-ext/tools/emulator.md)
 
-###### [Emulator Management](/application/tizen-studio/common-tools/emulator-manager.md)
+###### [Emulator Management](/application/vscode-ext/tools/emulator-manager.md)
 
-###### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
+###### [Emulator Control Panel](/application/vscode-ext/tools/emulator-control-panel.md)
 
 ###### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
 
-##### [Tool: Devices](/application/tizen-studio/common-tools/device-manager.md)
+##### [Tool: Devices](/application/vscode-ext/tools/device-manager.md)
 
 ##### [Tool: SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 

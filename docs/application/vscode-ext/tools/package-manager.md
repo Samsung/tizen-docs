@@ -2,6 +2,9 @@
 
 The Packages configuration allows you to manage the packages of the VS Code Extension for Tizen. With the Packages configuration, you can change the options for the package repository for the main and extension SDK.
 
+> [!NOTE]
+> The SDK resources are downloaded to the Tizen SDK path that you configure during the [initial setup after installation](../Tizen/dotnet.md#after-installation-setting-the-tizen-sdk-path). The package directories described below are created relative to that path.
+
 ## Configuring the Main SDK Repository
 
 You can configure the installation and update settings for SDK components.
@@ -24,20 +27,29 @@ To configure the package repository:
    The **Update** button becomes active once the settings are applied.
 6. Click **Update** to synchronize and install the latest packages from the specified repositories.
 
-## Tizen SDK Installation Directory
+## SDK Installation Directories
 
-`$HOME/.tizen-extension-platform/server/sdktools/data`
+After the initial SDK path setup, the extension creates a `.tizen-extension-platform` directory at the selected location. Within this directory, SDK resources are organized as follows:
 
-## .NET SDK and Tizen Workload Installation Directory
+| Component | Directory |
+|-----------|-----------|
+| Tizen SDK tools and data | `$HOME/.tizen-extension-platform/server/sdktools/data` |
+| .NET SDK and Tizen workload | `$HOME/.tizen-extension-platform/server/sdktools/dotnet` |
 
-`$HOME/.tizen-extension-platform/server/sdktools/dotnet`
+> [!NOTE]
+> If you selected a custom SDK path during installation, replace `$HOME/.tizen-extension-platform` with your chosen path.
 
 ## Advanced Package Installation
 
-To install the full SDK for a specific platform version, use the **Advanced** feature.
+To install the full SDK for a specific platform version, use the **Advanced** feature:
 
 **Figure: Advanced Package Installation**
 
 ![Advanced Package Installation](media/advanced-package-installation.png)
 
+1. Open the **Packages** page from the **Notice** view in the Primary Sidebar.
+2. Click the **Advanced** button to open the advanced package installation view.
+3. Select the platform profile (for example, **Mobile**, **Wearable**, or **TV**) and the desired version.
+4. Click **Install** to download and install the full SDK for the selected platform version.
+5. Monitor the installation progress in the **Output** panel.
 
