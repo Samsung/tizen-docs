@@ -2,7 +2,7 @@
 
 ## [Overview](/application/tizen-studio/common-tools/overview.md)
 
-## [Release Notes](/application/tizen-studio/release-notes/6-0-release-notes.md)
+## [Release Notes](/application/vscode-ext/release-notes/release-notes.md)
 
 ## Visual Studio Code Extension
 
@@ -32,7 +32,7 @@
 
 ###### [Creating Certificates](/application/vscode-ext/tools/cert-create-profile.md)
 
-###### [Managing Certificate Profile](/application/vscode-ext/cert-manage-profile.md)
+###### [Managing Certificate Profile](/application/vscode-ext/tools/cert-manage-profile.md)
 
 #### Coding & Building Application
 
