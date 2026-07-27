@@ -51,7 +51,7 @@ To configure the Tizen SDK path:
 
 2. In the **Tizen SDK Path Setup** dialog that appears, choose one of the following options:
 
-    <img src="media/After Extension Installation SDK_PATH sidebar.png" alt="Tizen SDK Path Setup" width="800">
+    <img src="media/after_extension_installation sdk_path_sidebar.png" alt="Tizen SDK Path Setup" width="800">
 
    - **Use default path**: Automatically detects and uses the standard Tizen SDK installation location for your operating system. This is the recommended option for most users.
 
