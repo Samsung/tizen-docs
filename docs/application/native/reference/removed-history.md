@@ -402,7 +402,11 @@ The following table provides detailed information regarding removed functions an
 | UI - External Output Manager | All functions of this module | Since 8.0 | 10.0 | No longer available | - |
 | Security - Trusted Execution Framework | All functions of this module | Since 6.5 | 11.0 | No longer available | - |
 | Security - Device Policy Manager | All functions of this module | Since 8.0 | 11.0 | No longer available | - |
+| Application Framework - Attach panel | All functions of this module | Since 9.0 | 10.1 | No longer available | - |
+| Application Framework - Widget - Widget Viewer | All functions of this module | Since 10.0 | 11.0 | No longer available | - |
+| UI - Minicontrol | All functions of this module | Since 10.0 | 11.0 | No longer available | - |
+| Multimedia - Mediaeditor | All functions of this module | Since 7.0 | 11.0 | No longer available | - |
 
 ## Related information
 
-- [Tizen Native API Reference](../../api/overview.md)
+- [Tizen Native API Reference](../overview/overview.md)
