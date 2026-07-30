@@ -1,7 +1,4 @@
 # Install the extension
-
-To use Tizen SDK tools, you must install Visual Studio Tools for Tizen extension and Baseline SDK.
-
 Visual Studio Tools for Tizen extension is registered in the Visual Studio Marketplace. You can install extensions from the Visual Studio Marketplace in the Visual Studio IDE:
 
 1. In the Visual Studio IDE menu, go to **Tools &gt; Extensions and Updates**.
