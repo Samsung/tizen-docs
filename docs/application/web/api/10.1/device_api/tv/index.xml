@@ -19,6 +19,7 @@
 						<topic href="10.1/device_api/tv/tizen/datacontrol.html" label="Data Control"/>
 						<topic href="10.1/device_api/tv/tizen/messageport.html" label="Message Port"/>
 						<topic href="10.1/device_api/tv/tizen/package.html" label="Package"/>
+						<topic href="10.1/device_api/tv/tizen/rpcport.html" label="RPC Port"/>
 					</topic>
 					<topic href="10.1/device_api/tv/index.html#Content" label="Content">
 						<topic href="10.1/device_api/tv/tizen/content.html" label="Content"/>
