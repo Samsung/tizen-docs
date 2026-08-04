@@ -7,7 +7,10 @@ This feature is optional.
 Before Tizen 4.0, the pop-up requesting the user's consent to use privacy-related privileges was triggered by first access to protected resources or functionality. Since Tizen 4.0, you can decide the moment in the application life-cycle when permissions are granted. It can be at the application startup, or at the moment when some additional functionality is to be used. For example, a notepad application where the user can enter both text notes and photographs does not automatically require camera access in order to be used (maybe the user only wants to add text notes). Optimally, the application requests the user to grant camera access permission only when the user needs the camera.
 
 > [!NOTE]
-> Since Tizen 8.0, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternative.
+> Since Tizen 8.0, all Privacy Privilege Manager APIs are deprecated for mobile and wearable profiles and will be removed without any alternative.
+
+> [!NOTE]
+> Since Tizen 10.1, the Privacy Privilege Manager API is available for TV profile. New permission types are also available for more granular control: session-based permissions and in-use permissions. These provide additional flexibility for managing user privacy.
 
 The main features of the Privacy Privilege API include the following:
 
@@ -69,6 +72,30 @@ To verify whether an application has permission to use a privilege, and to reque
       }
       ```
 
+    - If the result value is `PPM_ALLOW_SESSION`, the application has permission to use the privilege for the current application session only. The permission will be reset when the application terminates:
+
+      ```
+      case "PPM_ALLOW_SESSION":
+          /* Access protected functionality for current session only */
+          break;
+      ```
+
+    - If the result value is `PPM_DENY_SESSION`, the application doesn't have permission to use the privilege for the current session. This is a temporary denial that resets when the application restarts:
+
+      ```
+      case "PPM_DENY_SESSION":
+          /* Show a message - permission denied for this session */
+          break;
+      ```
+
+    - If the result value is `PPM_ALLOW_IN_USE`, the application has permission to use the privilege only while it is in the foreground (being actively used by the user). When the application goes to the background, access to the protected functionality is restricted:
+
+      ```
+      case "PPM_ALLOW_IN_USE":
+          /* Access protected functionality only while app is in foreground */
+          break;
+      ```
+
 3. If you need to request user permission, handle the user decision within the `PermissionSuccessCallback` callback used in the `requestPermission()` method.
 
     The user decision is returned in the first parameter of the callback as a value of the `PermissionRequestResult` enumeration. The second parameter contains the permission that is being requested:
@@ -92,8 +119,40 @@ To verify whether an application has permission to use a privilege, and to reque
 
     - If the user decision is `PPM_ALLOW_FOREVER` or `PPM_DENY_FOREVER`, the decision is definitive and the application can react appropriately. It can finish its execution (if denied permission) or start to use protected APIs (if granted permission).
     - If the user decision is `PPM_DENY_ONCE`, the decision is not definitive. In this case, access to protected functionality is still prohibited. This decision can be interpreted as a cancel action on behalf of the user, indicating that the user is not sure what the purpose of the request is. Therefore, consider providing some additional information to explain why the permission is required.
+    - If the user decision is `PPM_ALLOW_SESSION`, the user granted permission for the current application session only. The permission will be reset when the application terminates.
+    - If the user decision is `PPM_DENY_SESSION`, the user denied permission for the current application session. This denial is temporary and resets when the application restarts.
+    - If the user decision is `PPM_ALLOW_IN_USE`, the user granted permission only when the application is being actively used (on top). When the application goes to the background, access to the protected functionality is restricted.
 
-    If the decision is definitive, any subsequent `requestPermission()` calls result in an immediate response with an appropriate result: `PPM_ALLOW_FOREVER` or `PPM_DENY_FOREVER`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
+    If the decision is definitive (`PPM_ALLOW_FOREVER` or `PPM_DENY_FOREVER`), any subsequent `requestPermission()` calls result in an immediate response with an appropriate result. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
+
+    The following example shows how to handle all possible permission request results:
+
+    ```
+    /* Define PermissionSuccessCallback */
+    function permissionSuccess(result, privilege)
+    {
+        switch (result) {
+            case "PPM_ALLOW_FOREVER":
+                console.log("Permission granted permanently for " + privilege);
+                break;
+            case "PPM_DENY_FOREVER":
+                console.log("Permission denied permanently for " + privilege);
+                break;
+            case "PPM_DENY_ONCE":
+                console.log("Permission denied once for " + privilege);
+                break;
+            case "PPM_ALLOW_SESSION":
+                console.log("Permission granted for session only for " + privilege);
+                break;
+            case "PPM_DENY_SESSION":
+                console.log("Permission denied for session only for " + privilege);
+                break;
+            case "PPM_ALLOW_IN_USE":
+                console.log("Permission granted in-use only for " + privilege);
+                break;
+        }
+    }
+    ```
 
 4. Since Tizen 5.0 you can check and request multiple privacy privileges at once. To do that please use `checkPermissions` and `requestPermissions`.
 
@@ -103,3 +162,5 @@ To verify whether an application has permission to use a privilege, and to reque
 ## Related information
 - Dependencies
   - Tizen 4.0 and Higher
+  - Tizen 5.0 and Higher (for `checkPermissions()` and `requestPermissions()` methods)
+  - Tizen 10.1 and Higher (for TV profile and session-based/in-use permission types: `PPM_ALLOW_SESSION`, `PPM_DENY_SESSION`, `PPM_ALLOW_IN_USE`)
