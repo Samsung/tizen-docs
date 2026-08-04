@@ -36,6 +36,10 @@ The application data exchange features cover the various methods you have to com
 
 You can use the following application data exchange features in your Web applications:
 
+- [RPC Port](rpc-port.md)
+
+  Applications communicate using RPC-based inter-process communication with parcel serialization for structured data exchange.
+
 - [Message Port](message-port.md)
 
   Applications communicate with each other using message port communication. You can send and receive messages using the map data format and trusted or untrusted message port instances.
