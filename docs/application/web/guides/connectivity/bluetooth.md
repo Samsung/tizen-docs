@@ -26,6 +26,10 @@ The main features of the Bluetooth API include:
 
   You can [connect to and exchange data with a remote Bluetooth device](#connect-to-and-exchange-data-with-a-bluetooth-device).
 
+- Connect to a Bluetooth audio device
+
+  You can [connect to and disconnect from a Bluetooth audio device](#connect-to-a-bluetooth-audio-device) using specific audio profiles (Tizen 10.1+).
+
 The main Bluetooth (4.0) Low Energy features include:
 
 - Manage the local Bluetooth adapter
@@ -424,6 +428,66 @@ To connect to services provided by a server device to the client devices, follow
 
    When an incoming message is received from the peer device, the `onmessage` event handler in the `BluetoothSocket` interface is triggered.
 
+
+### Connect to a Bluetooth audio device
+
+> [!NOTE]
+> This feature is supported since Tizen 10.1.
+
+You can connect to and disconnect from remote Bluetooth audio devices using specific audio profiles. The audio connection requires the remote device to be bonded beforehand.
+
+The following audio profile types are available:
+
+- `HSP_HFP` - Headset Profile/Hands-Free Profile (local device AG and remote device HF Client)
+- `A2DP` - Advanced Audio Distribution Profile Source Connection (remote device is A2DP Sink)
+- `AG` - Audio Gateway (local device HF Client and remote device AG)
+- `A2DP_SINK` - Advanced Audio Distribution Profile Sink Connection (remote device is A2DP Source)
+- `ALL` - All supported profiles related with audio (Both Host and Device role)
+
+To connect to a Bluetooth audio device, follow these steps:
+
+1. Retrieve a `BluetoothAdapter` object:
+   ```javascript
+   var adapter = tizen.bluetooth.getDefaultAdapter();
+   ```
+
+2. Define success and error callbacks for audio operations:
+   ```javascript
+   function onAudioConnectSuccess(address, profileType, connected) {
+       console.log('Connected to: ' + address + ', profile: ' + profileType + ', connected: ' + connected);
+   }
+
+   function onError(e) {
+       console.log('Audio operation failed: ' + e.message);
+   }
+   ```
+
+3. Connect to the audio device using `audioConnect()` with the desired profile type:
+   ```javascript
+   function onDeviceReady(device) {
+       device.audioConnect('A2DP', onAudioConnectSuccess, onError);
+   }
+
+   adapter.getDevice('35:F4:59:D1:7A:03', onDeviceReady, onError);
+   ```
+
+4. To disconnect from the audio device, use `audioDisconnect()`:
+   ```javascript
+   function onAudioDisconnectSuccess(address, profileType, connected) {
+       console.log('Disconnected from: ' + address + ', profile: ' + profileType + ', connected: ' + connected);
+   }
+
+   device.audioDisconnect('A2DP', onAudioDisconnectSuccess, onError);
+   ```
+
+5. To check if a specific profile is connected, use `isProfileConnected()`:
+   ```javascript
+   var isConnected = device.isProfileConnected('A2DP');
+   console.log('A2DP profile connected: ' + isConnected);
+   ```
+
+> [!NOTE]
+> When connecting with `ALL` as the profile type, the success callback is invoked twice (once for `HSP_HFP` and once for `A2DP`).
 
 ### Discover Bluetooth Low Energy devices
 
@@ -1317,5 +1381,6 @@ To set a callback for read or write value request on a characteristic or a descr
 ## Related information
 - Dependencies
    - Tizen 6.0 and Higher for TV
+   - Tizen 10.1 and Higher for audio connection features
 * API References
   - [TV](../../api/latest/device_api/tv/tizen/bluetooth.html)
