@@ -1,0 +1,2443 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>RPCPort API</title>
+<meta data-version="10.1" data-profile="wearable">
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::RPCPort">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="title"><h1>RPCPort API</h1></div>
+<div class="brief">
+ The RPC Port API provides functions for inter-process communication (IPC) between Tizen applications.
+        </div>
+<div class="description">
+        <p>
+It allows applications to establish communication channels, serialize and deserialize data,
+and exchange messages using a protocol-based messaging system.
+        </p>
+        <p>
+The RPC Port API is based on the native rpc-port library and provides:
+        </p>
+        <ul>
+          <li>
+<b>Parcel</b> - A serialization container for marshalling data across process boundaries          </li>
+          <li>
+<b>Proxy/Stub</b> - Client-server communication pattern for RPC calls          </li>
+          <li>
+<b>Port</b> - Communication channels (MAIN and CALLBACK)          </li>
+        </ul>
+        <p>
+For more information on the RPC Port features, see <a href="https://samsungtizenos.com/docs/application/web/guides/app-management/rpc-port">RPC Port Guide</a>.
+        </p>
+       </div>
+<p><span class="version">Since: </span>
+ 10.1
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+                    1.1. <a href="#PortType">PortType</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#RPCPortObject">RPCPortObject</a>
+</li>
+<li>2.2. <a href="#RPCPortEventCallback">RPCPortEventCallback</a>
+</li>
+<li>2.3. <a href="#RPCPortManager">RPCPortManager</a>
+</li>
+<li>2.4. <a href="#Parcel">Parcel</a>
+</li>
+<li>2.5. <a href="#Port">Port</a>
+</li>
+<li>2.6. <a href="#ProxyBase">ProxyBase</a>
+</li>
+<li>2.7. <a href="#StubBase">StubBase</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#RPCPortObject">RPCPortObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#RPCPortEventCallback">RPCPortEventCallback</a></td>
+<td><div>void <a href="#RPCPortEventCallback::onreceived">onreceived</a> (octet[] data)</div></td>
+</tr>
+<tr>
+<td><a href="#RPCPortManager">RPCPortManager</a></td>
+<td>
+<div>
+<a href="#Parcel">Parcel</a> <a href="#RPCPortManager::createEmptyParcel">createEmptyParcel</a> ()</div>
+<div>
+<a href="#Parcel">Parcel</a> <a href="#RPCPortManager::createParcelFromPort">createParcelFromPort</a> (<a href="#Port">Port</a> port)</div>
+<div>
+<a href="#Parcel">Parcel</a> <a href="#RPCPortManager::createParcelFromBytes">createParcelFromBytes</a> (octet[] bytes)</div>
+<div>void <a href="#RPCPortManager::publishEvent">publishEvent</a> (DOMString eventName, octet[] bytes)</div>
+<div>long <a href="#RPCPortManager::addEventReceiver">addEventReceiver</a> (DOMString eventName, <a href="#RPCPortEventCallback">RPCPortEventCallback</a> listener)</div>
+<div>void <a href="#RPCPortManager::removeEventReceiver">removeEventReceiver</a> (long watchId)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#Parcel">Parcel</a></td>
+<td>
+<div>octet[] <a href="#Parcel::toBytes">toBytes</a> ()</div>
+<div>void <a href="#Parcel::send">send</a> (<a href="#Port">Port</a> port)</div>
+<div>void <a href="#Parcel::setTagEx">setTagEx</a> (octet major, octet minor, octet patch, octet proto, octet flags)</div>
+<div>long <a href="#Parcel::getSeqNum">getSeqNum</a> ()</div>
+<div>void <a href="#Parcel::dispose">dispose</a> ()</div>
+<div>void <a href="#Parcel::writeByte">writeByte</a> (byte value)</div>
+<div>void <a href="#Parcel::writeInt16">writeInt16</a> (short value)</div>
+<div>void <a href="#Parcel::writeInt32">writeInt32</a> (long value)</div>
+<div>void <a href="#Parcel::writeInt64">writeInt64</a> (long long value)</div>
+<div>void <a href="#Parcel::writeDouble">writeDouble</a> (double value)</div>
+<div>void <a href="#Parcel::writeBool">writeBool</a> (boolean value)</div>
+<div>void <a href="#Parcel::writeString">writeString</a> (DOMString value)</div>
+<div>void <a href="#Parcel::writeArrayCount">writeArrayCount</a> (unsigned long count)</div>
+<div>void <a href="#Parcel::writeBundle">writeBundle</a> (<a href="tizen.html#Bundle">Bundle</a> bundle)</div>
+<div>byte <a href="#Parcel::readByte">readByte</a> ()</div>
+<div>short <a href="#Parcel::readInt16">readInt16</a> ()</div>
+<div>long <a href="#Parcel::readInt32">readInt32</a> ()</div>
+<div>long long <a href="#Parcel::readInt64">readInt64</a> ()</div>
+<div>double <a href="#Parcel::readDouble">readDouble</a> ()</div>
+<div>boolean <a href="#Parcel::readBool">readBool</a> ()</div>
+<div>DOMString <a href="#Parcel::readString">readString</a> ()</div>
+<div>unsigned long <a href="#Parcel::readArrayCount">readArrayCount</a> ()</div>
+<div>
+<a href="tizen.html#Bundle">Bundle</a> <a href="#Parcel::readBundle">readBundle</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#Port">Port</a></td>
+<td>
+<div>void <a href="#Port::disconnect">disconnect</a> ()</div>
+<div>void <a href="#Port::shareFile">shareFile</a> (DOMString path)</div>
+<div>void <a href="#Port::shareFiles">shareFiles</a> (DOMString[] paths)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#ProxyBase">ProxyBase</a></td>
+<td>
+<div>void <a href="#ProxyBase::connect">connect</a> ()</div>
+<div>void <a href="#ProxyBase::connectAsync">connectAsync</a> (<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>
+<a href="#Port">Port</a> <a href="#ProxyBase::getPort">getPort</a> (<a href="#PortType">PortType</a> portType)</div>
+<div>void <a href="#ProxyBase::onReceived">onReceived</a> (<a href="#Parcel">Parcel</a> parcel)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#StubBase">StubBase</a></td>
+<td>
+<div>void <a href="#StubBase::listen">listen</a> ()</div>
+<div>void <a href="#StubBase::addPrivilege">addPrivilege</a> (DOMString privilege)</div>
+<div>void <a href="#StubBase::setTrusted">setTrusted</a> (boolean trusted)</div>
+<div>
+<a href="#Port">Port</a> <a href="#StubBase::getPort">getPort</a> (DOMString instance, <a href="#PortType">PortType</a> portType)</div>
+<div>void <a href="#StubBase::onConnected">onConnected</a> (DOMString sender, DOMString instance)</div>
+<div>void <a href="#StubBase::onDisconnected">onDisconnected</a> (DOMString sender, DOMString instance)</div>
+<div>void <a href="#StubBase::onReceived">onReceived</a> (DOMString sender, DOMString instance, <a href="#Parcel">Parcel</a> parcel)</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="PortType">
+<a class="backward-compatibility-anchor" name="::RPCPort::PortType"></a><h3>1.1. PortType</h3>
+<div class="brief">
+ Enumeration for port types.
+          </div>
+<pre class="webidl prettyprint">  enum PortType { "MAIN", "CALLBACK" };</pre>
+<p><span class="version">Since: </span>
+ 10.1
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+MAIN - The main communication channel            </li>
+            <li>
+CALLBACK - The channel for callbacks            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="RPCPortObject">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortObject"></a><h3>2.1. RPCPortObject</h3>
+<div class="brief">
+ The RPCPortObject interface defines what is instantiated by the <em>Tizen</em> object from the Tizen platform.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface RPCPortObject {
+    readonly attribute <a href="#RPCPortManager">RPCPortManager</a> rpcport;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#RPCPortObject">RPCPortObject</a>;</pre>
+<p><span class="version">Since: </span>
+ 10.1
+          </p>
+<div class="description">
+          <p>
+There is a <em>tizen.rpcport</em> object that allows access to the RPC Port API.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="RPCPortObject::rpcport">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">RPCPortManager </span><span class="name">rpcport</span></span><div class="brief">
+ Object representing the RPC Port manager.
+            </div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="RPCPortEventCallback">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortEventCallback"></a><h3>2.2. RPCPortEventCallback</h3>
+<div class="brief">
+ The RPCPortEventCallback interface specifies a callback to be invoked when an event is received.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface RPCPortEventCallback {
+    void onreceived(octet[] data);
+  };</pre>
+<p><span class="version">Since: </span>
+ 10.1
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="RPCPortEventCallback::onreceived">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortEventCallback::onreceived"></a><code><b><span class="methodName">onreceived</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an event is received.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onreceived(octet[] data);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ Event data as a byte array.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
+{
+  var onSuccessCB = function(data)
+  {
+    console.log("RPCPortEventCallback called successfully with data: " + data);
+  };
+
+  var watchId = tizen.rpcport.addEventReceiver("com.example.myevent", onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="RPCPortManager">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortManager"></a><h3>2.3. RPCPortManager</h3>
+<div class="brief">
+ The RPCPortManager interface is the main entry point for the RPC Port API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface RPCPortManager {
+    <a href="#Parcel">Parcel</a> createEmptyParcel() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Parcel">Parcel</a> createParcelFromPort(<a href="#Port">Port</a> port) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Parcel">Parcel</a> createParcelFromBytes(octet[] bytes) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void publishEvent(DOMString eventName, octet[] bytes) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addEventReceiver(DOMString eventName, <a href="#RPCPortEventCallback">RPCPortEventCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeEventReceiver(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 10.1
+          </p>
+<div class="description">
+          <p>
+There is a tizen.rpcport object that allows accessing the RPC Port functionality.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="RPCPortManager::createEmptyParcel">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortManager::createEmptyParcel"></a><code><b><span class="methodName">createEmptyParcel</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates an empty parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Parcel">Parcel</a> createEmptyParcel();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Parcel:</span>
+ The new Parcel instance.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+</pre>
+</div>
+</dd>
+<dt class="method" id="RPCPortManager::createParcelFromPort">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortManager::createParcelFromPort"></a><code><b><span class="methodName">createParcelFromPort</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates a parcel by reading data from a port.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Parcel">Parcel</a> createParcelFromPort(<a href="#Port">Port</a> port);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This method reads available data from the specified port and creates a parcel containing that data.
+The port is used as the data source for the parcel content.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">port</span>:
+ The port to read the parcel data from.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Parcel:</span>
+ The new Parcel instance containing data read from the port.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the port handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if an I/O error occurs during parcel creation.
+                </p></li>
+<li class="list"><p>
+ with error type TimeoutError, if the operation times out waiting for data.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var port = proxy.getPort(tizen.rpcport.PortType.MAIN);
+var parcel = tizen.rpcport.createParcelFromPort(port);
+</pre>
+</div>
+</dd>
+<dt class="method" id="RPCPortManager::createParcelFromBytes">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortManager::createParcelFromBytes"></a><code><b><span class="methodName">createParcelFromBytes</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates a parcel from a byte array.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Parcel">Parcel</a> createParcelFromBytes(octet[] bytes);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">bytes</span>:
+ The byte array to create the parcel from.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Parcel:</span>
+ The new Parcel instance.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if bytes is not an array.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the bytes array is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bytes = [1, 2, 3, 4, 5];
+var parcel = tizen.rpcport.createParcelFromBytes(bytes);
+</pre>
+</div>
+</dd>
+<dt class="method" id="RPCPortManager::publishEvent">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortManager::publishEvent"></a><code><b><span class="methodName">publishEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Publishes an event with the specified name and data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void publishEvent(DOMString eventName, octet[] bytes);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This method publishes an event that can be received by other applications that have registered event receivers.
+The event data is transmitted as a byte array, allowing arbitrary data to be sent to event listeners.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">eventName</span>:
+ The name of the event to publish.
+                </li>
+          <li class="param">
+<span class="name">bytes</span>:
+ The byte array containing the event data.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any parameter is not of the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the event name is invalid or empty.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var data = new Uint8Array([1, 2, 3, 4, 5]);
+tizen.rpcport.publishEvent("com.example.myevent", data);
+</pre>
+</div>
+</dd>
+<dt class="method" id="RPCPortManager::addEventReceiver">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortManager::addEventReceiver"></a><code><b><span class="methodName">addEventReceiver</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds an event receiver to listen for events with the specified name.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addEventReceiver(DOMString eventName, <a href="#RPCPortEventCallback">RPCPortEventCallback</a> listener);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This method registers a callback function that will be invoked when an event with the specified name is published.
+The callback receives the event data as a byte array.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">eventName</span>:
+ The name of the event to listen for.
+                </li>
+          <li class="param">
+<span class="name">listener</span>:
+ The callback to invoke when the event is received.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:</span>
+ The watch ID that can be used to remove the event receiver.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any parameter is not of the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the event name is invalid or empty.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watchId = tizen.rpcport.addEventReceiver("com.example.myevent", function(data)
+{
+  console.log("Event received with data: " + data);
+});
+</pre>
+</div>
+</dd>
+<dt class="method" id="RPCPortManager::removeEventReceiver">
+<a class="backward-compatibility-anchor" name="::RPCPort::RPCPortManager::removeEventReceiver"></a><code><b><span class="methodName">removeEventReceiver</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes an event receiver.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeEventReceiver(long watchId);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This method unregisters the event receiver identified by the watch ID, stopping further event notifications.
+After removal, the callback function will no longer be invoked for events.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ The watch ID returned by addEventReceiver().
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watchId = tizen.rpcport.addEventReceiver("com.example.myevent", callback);
+/* ... later ... */
+tizen.rpcport.removeEventReceiver(watchId);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Parcel">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel"></a><h3>2.4. Parcel</h3>
+<div class="brief">
+ The Parcel interface provides serialization and deserialization capabilities.
+          </div>
+<pre class="webidl prettyprint">  interface Parcel {
+    octet[] toBytes();
+    void send(<a href="#Port">Port</a> port) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTagEx(octet major, octet minor, octet patch, octet proto, octet flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long getSeqNum() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void dispose() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeByte(byte value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeInt16(short value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeInt32(long value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeInt64(long long value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeDouble(double value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeBool(boolean value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeString(DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeArrayCount(unsigned long count) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeBundle(<a href="tizen.html#Bundle">Bundle</a> bundle) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    byte readByte() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    short readInt16() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long readInt32() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long long readInt64() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    double readDouble() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean readBool() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString readString() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long readArrayCount() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="tizen.html#Bundle">Bundle</a> readBundle() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 10.1
+          </p>
+<div class="description">
+          <p>
+A Parcel is a container for marshalling data across process boundaries.
+It supports writing and reading various primitive types, strings, arrays, and bundles.
+Writing operations append data to the parcel, while reading operations consume data sequentially.
+It is the application's responsibility to write and read the same types of data in the same order to avoid data corruption.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Example: Creating a parcel, setting metadata, writing data, and sending */
+var parcel = tizen.rpcport.createEmptyParcel();
+parcel.setTagEx(1, 0, 0, 1, 0);  /* Set version and protocol info */
+parcel.writeInt32(42);           /* Write an integer */
+parcel.writeString("Hello");     /* Write a string */
+var port = proxy.getPort(tizen.rpcport.PortType.MAIN);
+parcel.send(port);  /* Send the parcel */
+</pre>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Parcel::toBytes">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::toBytes"></a><code><b><span class="methodName">toBytes</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts the parcel to a byte array.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">octet[] toBytes();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">octet[]:</span>
+ The byte array representation of the parcel.
+              </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeInt32(42);
+var bytes = parcel.toBytes();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::send">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::send"></a><code><b><span class="methodName">send</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sends the parcel through the specified port.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void send(<a href="#Port">Port</a> port);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">port</span>:
+ The port to send the parcel through.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel or port handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if an I/O error occurs during sending.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeString("Hello");
+var port = proxy.getPort(tizen.rpcport.PortType.MAIN);
+parcel.send(port);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::setTagEx">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::setTagEx"></a><code><b><span class="methodName">setTagEx</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the extended tag of the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setTagEx(octet major, octet minor, octet patch, octet proto, octet flags);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">major</span>:
+ Major version number (0-255).
+                </li>
+          <li class="param">
+<span class="name">minor</span>:
+ Minor version number (0-255).
+                </li>
+          <li class="param">
+<span class="name">patch</span>:
+ Patch version number (0-255).
+                </li>
+          <li class="param">
+<span class="name">proto</span>:
+ Protocol version number (0-255).
+                </li>
+          <li class="param">
+<span class="name">flags</span>:
+ Additional flags (0-255).
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any parameter is not of the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.setTagEx(1, 0, 0, 1, 0);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::getSeqNum">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::getSeqNum"></a><code><b><span class="methodName">getSeqNum</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the sequence number of the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getSeqNum();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:</span>
+ The sequence number.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var seqNum = parcel.getSeqNum();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::dispose">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::dispose"></a><code><b><span class="methodName">dispose</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Disposes the parcel and releases associated resources.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void dispose();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.dispose();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::writeByte">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::writeByte"></a><code><b><span class="methodName">writeByte</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes a byte value to the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeByte(byte value);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">value</span>:
+ The byte value to write.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the value is not a number.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeByte(0x12);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::writeInt16">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::writeInt16"></a><code><b><span class="methodName">writeInt16</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes a 16-bit integer value to the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeInt16(short value);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">value</span>:
+ The short value to write.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the value is not a number.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeInt16(12345);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::writeInt32">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::writeInt32"></a><code><b><span class="methodName">writeInt32</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes a 32-bit integer value to the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeInt32(long value);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">value</span>:
+ The int value to write.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the value is not a number.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeInt32(123456789);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::writeInt64">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::writeInt64"></a><code><b><span class="methodName">writeInt64</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes a 64-bit integer value to the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeInt64(long long value);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">value</span>:
+ The long long value to write.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the value is not a number.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeInt64(9223372036854775807);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::writeDouble">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::writeDouble"></a><code><b><span class="methodName">writeDouble</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes a double precision floating point value to the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeDouble(double value);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">value</span>:
+ The double value to write.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the value is not a number.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeDouble(3.14159);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::writeBool">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::writeBool"></a><code><b><span class="methodName">writeBool</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes a boolean value to the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeBool(boolean value);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">value</span>:
+ The boolean value to write.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the value is not a boolean.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeBool(true);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::writeString">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::writeString"></a><code><b><span class="methodName">writeString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes a string value to the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeString(DOMString value);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">value</span>:
+ The string value to write.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the value is not a string.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeString("Hello, World!");
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::writeArrayCount">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::writeArrayCount"></a><code><b><span class="methodName">writeArrayCount</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes an array count to the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeArrayCount(unsigned long count);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">count</span>:
+ The array count to write.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the value is not a number.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+parcel.writeArrayCount(5);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::writeBundle">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::writeBundle"></a><code><b><span class="methodName">writeBundle</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes a bundle to the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeBundle(<a href="tizen.html#Bundle">Bundle</a> bundle);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">bundle</span>:
+ The bundle to write.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var bundle = new tizen.Bundle();
+bundle.add("key", "value");
+parcel.writeBundle(bundle);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::readByte">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::readByte"></a><code><b><span class="methodName">readByte</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads a byte value from the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">byte readByte();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">byte:</span>
+ The byte value.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+/* ... parcel contains data */
+var value = parcel.readByte();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::readInt16">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::readInt16"></a><code><b><span class="methodName">readInt16</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads a 16-bit integer value from the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">short readInt16();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">short:</span>
+ The short value.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var value = parcel.readInt16();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::readInt32">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::readInt32"></a><code><b><span class="methodName">readInt32</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads a 32-bit integer value from the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long readInt32();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:</span>
+ The int value.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var value = parcel.readInt32();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::readInt64">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::readInt64"></a><code><b><span class="methodName">readInt64</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads a 64-bit integer value from the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long long readInt64();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long long:</span>
+ The long long value.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var value = parcel.readInt64();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::readDouble">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::readDouble"></a><code><b><span class="methodName">readDouble</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads a double precision floating point value from the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">double readDouble();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">double:</span>
+ The double value.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var value = parcel.readDouble();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::readBool">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::readBool"></a><code><b><span class="methodName">readBool</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads a boolean value from the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean readBool();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">boolean:</span>
+ The boolean value.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var value = parcel.readBool();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::readString">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::readString"></a><code><b><span class="methodName">readString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads a string value from the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString readString();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString:</span>
+ The string value.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var value = parcel.readString();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::readArrayCount">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::readArrayCount"></a><code><b><span class="methodName">readArrayCount</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads an array count from the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long readArrayCount();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">unsigned long:</span>
+ The array count.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var count = parcel.readArrayCount();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Parcel::readBundle">
+<a class="backward-compatibility-anchor" name="::RPCPort::Parcel::readBundle"></a><code><b><span class="methodName">readBundle</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads a bundle from the parcel.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="tizen.html#Bundle">Bundle</a> readBundle();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Bundle:</span>
+ The bundle.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the parcel handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var parcel = tizen.rpcport.createEmptyParcel();
+var bundle = parcel.readBundle();
+var value = bundle.get("key");
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Port">
+<a class="backward-compatibility-anchor" name="::RPCPort::Port"></a><h3>2.5. Port</h3>
+<div class="brief">
+ The Port interface represents a communication channel.
+          </div>
+<pre class="webidl prettyprint">  interface Port {
+    void disconnect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void shareFile(DOMString path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void shareFiles(DOMString[] paths) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 10.1
+          </p>
+<div class="description">
+          <p>
+Applications obtain Port objects by calling the getPort() method of ProxyBase or StubBase implementations.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Port::disconnect">
+<a class="backward-compatibility-anchor" name="::RPCPort::Port::disconnect"></a><code><b><span class="methodName">disconnect</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Disconnects the port.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void disconnect();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the port handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var port = proxy.getPort(tizen.rpcport.PortType.MAIN);
+port.disconnect();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Port::shareFile">
+<a class="backward-compatibility-anchor" name="::RPCPort::Port::shareFile"></a><code><b><span class="methodName">shareFile</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Shares a private file through the port.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void shareFile(DOMString path);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+The file path must be under the caller application's data path.
+The target application will be granted temporary permission to access the file.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">path</span>:
+ The path of the file to share.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if path is not a string.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the port handle is invalid or path is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if an I/O error occurs during file sharing.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var port = proxy.getPort(tizen.rpcport.PortType.MAIN);
+var path = tizen.application.getAppSharedPath() + "data.txt";
+port.shareFile(path);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Port::shareFiles">
+<a class="backward-compatibility-anchor" name="::RPCPort::Port::shareFiles"></a><code><b><span class="methodName">shareFiles</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Shares multiple private files through the port.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void shareFiles(DOMString[] paths);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+The file paths must be under the caller application's data path.
+The target application will be granted temporary permission to access the files.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">paths</span>:
+ The array of file paths to share.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if paths is not an array of strings.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the port handle is invalid or paths are invalid.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if an I/O error occurs during file sharing.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var port = proxy.getPort(tizen.rpcport.PortType.MAIN);
+var paths = [
+  tizen.application.getAppSharedPath() + "data1.txt",
+  tizen.application.getAppSharedPath() + "data2.txt"
+];
+port.shareFiles(paths);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ProxyBase">
+<a class="backward-compatibility-anchor" name="::RPCPort::ProxyBase"></a><h3>2.6. ProxyBase</h3>
+<div class="brief">
+ The ProxyBase interface provides client-side proxy functionality.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString appid, DOMString portName)]
+  interface ProxyBase {
+    [TreatNonCallableAsNull] attribute <a href="http://www.w3.org/TR/html5/webappapis.html#function">Function</a>? onConnected;
+    [TreatNonCallableAsNull] attribute <a href="http://www.w3.org/TR/html5/webappapis.html#function">Function</a>? onDisconnected;
+    [TreatNonCallableAsNull] attribute <a href="http://www.w3.org/TR/html5/webappapis.html#function">Function</a>? onRejected;
+    void connect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void connectAsync(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Port">Port</a> getPort(<a href="#PortType">PortType</a> portType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void onReceived(<a href="#Parcel">Parcel</a> parcel);
+  };</pre>
+<p><span class="version">Since: </span>
+ 10.1
+          </p>
+<div class="description">
+          <p>
+ProxyBase is used to connect to a remote stub and communicate with it.
+It manages the connection lifecycle and message reception.
+          </p>
+         </div>
+<div class="constructors">
+<h4 id="ProxyBase::constructor">Constructors</h4>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ProxyBase(DOMString appid, DOMString portName);</pre>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ProxyBase::onConnected">
+<span class="attrName"><span class="type">Function </span><span class="name">onConnected</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Called when the proxy connects to a stub.
+            </div>
+<div class="description">
+            <p>
+This is an empty placeholder method that should be overridden by derived classes or application.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var proxy = new tizen.rpcport.ProxyBase("com.example.targetapp", "myport");
+proxy.onConnected = function(receiver)
+{
+  console.log("Connected to: " + receiver);
+};
+</pre>
+</div>
+</li>
+<li class="attribute" id="ProxyBase::onDisconnected">
+<span class="attrName"><span class="type">Function </span><span class="name">onDisconnected</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Called when the proxy disconnects from a stub.
+            </div>
+<div class="description">
+            <p>
+This is an empty placeholder method that should be overridden by derived classes or application.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var proxy = new tizen.rpcport.ProxyBase("com.example.targetapp", "myport");
+proxy.onDisconnected = function(receiver)
+{
+  console.log("Disconnected from: " + receiver);
+};
+</pre>
+</div>
+</li>
+<li class="attribute" id="ProxyBase::onRejected">
+<span class="attrName"><span class="type">Function </span><span class="name">onRejected</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Called when the proxy connection is rejected by the stub.
+            </div>
+<div class="description">
+            <p>
+This is an empty placeholder method that should be overridden by derived classes or application.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var proxy = new tizen.rpcport.ProxyBase("com.example.targetapp", "myport");
+proxy.onRejected = function(receiver)
+{
+  console.log("Rejected by: " + receiver);
+};
+</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ProxyBase::connect">
+<a class="backward-compatibility-anchor" name="::RPCPort::ProxyBase::connect"></a><code><b><span class="methodName">connect</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Connects to the remote stub synchronously.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void connect();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/appmanager.launch
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/datasharing
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the proxy handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the required privileges are not granted.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if an I/O error occurs during connection.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var proxy = new tizen.rpcport.ProxyBase("com.example.targetapp", "myport");
+proxy.onConnected = function(receiver)
+{
+  console.log("Connected to: " + receiver);
+};
+proxy.connect();
+</pre>
+</div>
+</dd>
+<dt class="method" id="ProxyBase::connectAsync">
+<a class="backward-compatibility-anchor" name="::RPCPort::ProxyBase::connectAsync"></a><code><b><span class="methodName">connectAsync</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Connects to the remote stub asynchronously.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void connectAsync(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - If the proxy handle is invalid.              </li>
+              <li>
+IOError - If an I/O error occurs during connection.              </li>
+              <li>
+AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/appmanager.launch
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/datasharing
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to invoke on successful connection.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke on error.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the required privileges are not granted.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var proxy = new tizen.rpcport.ProxyBase("com.example.targetapp", "myport");
+proxy.connectAsync(
+    function()
+    {
+      console.log("Connected successfully");
+    },
+    function(err)
+    {
+      console.log("Error: " + err.message);
+    });
+</pre>
+</div>
+</dd>
+<dt class="method" id="ProxyBase::getPort">
+<a class="backward-compatibility-anchor" name="::RPCPort::ProxyBase::getPort"></a><code><b><span class="methodName">getPort</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a port of the specified type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Port">Port</a> getPort(<a href="#PortType">PortType</a> portType);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">portType</span>:
+ The type of port to get.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Port:</span>
+ The Port instance.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if portType is not a string.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the proxy handle is invalid or portType is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if no available ports exist.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var proxy = new tizen.rpcport.ProxyBase("com.example.targetapp", "myport");
+var port = proxy.getPort(tizen.rpcport.PortType.MAIN);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ProxyBase::onReceived">
+<a class="backward-compatibility-anchor" name="::RPCPort::ProxyBase::onReceived"></a><code><b><span class="methodName">onReceived</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the proxy receives a parcel from the stub.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onReceived(<a href="#Parcel">Parcel</a> parcel);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This is an empty placeholder method that should be overridden by derived classes or application.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">parcel</span>:
+ The received parcel.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var proxy = new tizen.rpcport.ProxyBase("com.example.targetapp", "myport");
+proxy.onReceived = function(parcel)
+{
+  var data = parcel.readString();
+  console.log("Received: " + data);
+};
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="StubBase">
+<a class="backward-compatibility-anchor" name="::RPCPort::StubBase"></a><h3>2.7. StubBase</h3>
+<div class="brief">
+ The StubBase interface provides server-side stub functionality.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString portName)]
+  interface StubBase {
+    void listen() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void addPrivilege(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTrusted(boolean trusted) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Port">Port</a> getPort(DOMString instance, <a href="#PortType">PortType</a> portType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void onConnected(DOMString sender, DOMString instance);
+    void onDisconnected(DOMString sender, DOMString instance);
+    void onReceived(DOMString sender, DOMString instance, <a href="#Parcel">Parcel</a> parcel);
+  };</pre>
+<p><span class="version">Since: </span>
+ 10.1
+          </p>
+<div class="description">
+          <p>
+StubBase listens for incoming proxy connections and handles communication.
+It can require privileges and certificates for connection authorization.
+          </p>
+         </div>
+<div class="constructors">
+<h4 id="StubBase::constructor">Constructors</h4>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">StubBase(DOMString portName);</pre>
+</dl>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="StubBase::listen">
+<a class="backward-compatibility-anchor" name="::RPCPort::StubBase::listen"></a><code><b><span class="methodName">listen</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts listening for incoming proxy connections.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void listen();</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the stub handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if an I/O error occurs during listening.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var stub = new tizen.rpcport.StubBase("myport");
+stub.listen();
+</pre>
+</div>
+</dd>
+<dt class="method" id="StubBase::addPrivilege">
+<a class="backward-compatibility-anchor" name="::RPCPort::StubBase::addPrivilege"></a><code><b><span class="methodName">addPrivilege</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a required privilege for proxy connections.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void addPrivilege(DOMString privilege);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+Proxies must have the specified privilege to connect to this stub.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">privilege</span>:
+ The privilege URI.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if privilege is not a string.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the stub handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var stub = new tizen.rpcport.StubBase("myport");
+stub.addPrivilege("http://tizen.org/privilege/appmanager.launch");
+stub.listen();
+</pre>
+</div>
+</dd>
+<dt class="method" id="StubBase::setTrusted">
+<a class="backward-compatibility-anchor" name="::RPCPort::StubBase::setTrusted"></a><code><b><span class="methodName">setTrusted</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets whether the stub requires a trusted certificate.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setTrusted(boolean trusted);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+When enabled, only proxies signed with the same certificate can connect.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">trusted</span>:
+ True to require trusted certificates, false otherwise.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if trusted is not a boolean.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the stub handle is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var stub = new tizen.rpcport.StubBase("myport");
+stub.setTrusted(true);
+stub.listen();
+</pre>
+</div>
+</dd>
+<dt class="method" id="StubBase::getPort">
+<a class="backward-compatibility-anchor" name="::RPCPort::StubBase::getPort"></a><code><b><span class="methodName">getPort</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a port for the specified instance and type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Port">Port</a> getPort(DOMString instance, <a href="#PortType">PortType</a> portType);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+The instance identifier is provided by the platform and should be obtained from the onConnected callback parameter.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">instance</span>:
+ The instance identifier provided by the platform via onConnected callback.
+                </li>
+          <li class="param">
+<span class="name">portType</span>:
+ The type of port to get.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Port:</span>
+ The Port instance.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any parameter is not of the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the stub handle is invalid or parameters are invalid.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if no available ports exist.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var stub = new tizen.rpcport.StubBase("myport");
+stub.onConnected = function(sender, instance)
+{
+  var port = stub.getPort(instance, tizen.rpcport.PortType.CALLBACK);
+};
+stub.listen();
+</pre>
+</div>
+</dd>
+<dt class="method" id="StubBase::onConnected">
+<a class="backward-compatibility-anchor" name="::RPCPort::StubBase::onConnected"></a><code><b><span class="methodName">onConnected</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a proxy connects to the stub.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onConnected(DOMString sender, DOMString instance);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This is an empty placeholder method that should be overridden by derived classes or application.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">sender</span>:
+ The sender application ID.
+                </li>
+          <li class="param">
+<span class="name">instance</span>:
+ The instance identifier.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var stub = new tizen.rpcport.StubBase("myport");
+stub.onConnected = function(sender, instance)
+{
+  console.log("Connected from: " + sender + " instance: " + instance);
+};
+stub.listen();
+</pre>
+</div>
+</dd>
+<dt class="method" id="StubBase::onDisconnected">
+<a class="backward-compatibility-anchor" name="::RPCPort::StubBase::onDisconnected"></a><code><b><span class="methodName">onDisconnected</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a proxy disconnects from the stub.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onDisconnected(DOMString sender, DOMString instance);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This is an empty placeholder method that should be overridden by derived classes or application.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">sender</span>:
+ The sender application ID.
+                </li>
+          <li class="param">
+<span class="name">instance</span>:
+ The instance identifier.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var stub = new tizen.rpcport.StubBase("myport");
+stub.onDisconnected = function(sender, instance)
+{
+  console.log("Disconnected from: " + sender + " instance: " + instance);
+};
+stub.listen();
+</pre>
+</div>
+</dd>
+<dt class="method" id="StubBase::onReceived">
+<a class="backward-compatibility-anchor" name="::RPCPort::StubBase::onReceived"></a><code><b><span class="methodName">onReceived</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the stub receives a parcel from a proxy.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onReceived(DOMString sender, DOMString instance, <a href="#Parcel">Parcel</a> parcel);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This is an empty placeholder method that should be overridden by derived classes or application.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">sender</span>:
+ The sender application ID.
+                </li>
+          <li class="param">
+<span class="name">instance</span>:
+ The instance identifier.
+                </li>
+          <li class="param">
+<span class="name">parcel</span>:
+ The received parcel containing serialized method call data.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var stub = new tizen.rpcport.StubBase("myport");
+stub.onReceived = function(sender, instance, parcel)
+{
+  var data = parcel.readString();
+  console.log("Received from " + sender + ": " + data);
+};
+stub.listen();
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module RPCPort {
+  enum PortType { "MAIN", "CALLBACK" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#RPCPortObject">RPCPortObject</a>;
+  [NoInterfaceObject] interface RPCPortObject {
+    readonly attribute <a href="#RPCPortManager">RPCPortManager</a> rpcport;
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface RPCPortEventCallback {
+    void onreceived(octet[] data);
+  };
+  [NoInterfaceObject] interface RPCPortManager {
+    <a href="#Parcel">Parcel</a> createEmptyParcel() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Parcel">Parcel</a> createParcelFromPort(<a href="#Port">Port</a> port) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Parcel">Parcel</a> createParcelFromBytes(octet[] bytes) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void publishEvent(DOMString eventName, octet[] bytes) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addEventReceiver(DOMString eventName, <a href="#RPCPortEventCallback">RPCPortEventCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeEventReceiver(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  interface Parcel {
+    octet[] toBytes();
+    void send(<a href="#Port">Port</a> port) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTagEx(octet major, octet minor, octet patch, octet proto, octet flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long getSeqNum() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void dispose() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeByte(byte value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeInt16(short value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeInt32(long value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeInt64(long long value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeDouble(double value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeBool(boolean value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeString(DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeArrayCount(unsigned long count) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void writeBundle(<a href="tizen.html#Bundle">Bundle</a> bundle) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    byte readByte() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    short readInt16() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long readInt32() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long long readInt64() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    double readDouble() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean readBool() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString readString() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long readArrayCount() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="tizen.html#Bundle">Bundle</a> readBundle() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  interface Port {
+    void disconnect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void shareFile(DOMString path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void shareFiles(DOMString[] paths) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Constructor(DOMString appid, DOMString portName)]
+  interface ProxyBase {
+    [TreatNonCallableAsNull] attribute <a href="http://www.w3.org/TR/html5/webappapis.html#function">Function</a>? onConnected;
+    [TreatNonCallableAsNull] attribute <a href="http://www.w3.org/TR/html5/webappapis.html#function">Function</a>? onDisconnected;
+    [TreatNonCallableAsNull] attribute <a href="http://www.w3.org/TR/html5/webappapis.html#function">Function</a>? onRejected;
+    void connect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void connectAsync(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Port">Port</a> getPort(<a href="#PortType">PortType</a> portType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void onReceived(<a href="#Parcel">Parcel</a> parcel);
+  };
+  [Constructor(DOMString portName)]
+  interface StubBase {
+    void listen() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void addPrivilege(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTrusted(boolean trusted) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Port">Port</a> getPort(DOMString instance, <a href="#PortType">PortType</a> portType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void onConnected(DOMString sender, DOMString instance);
+    void onDisconnected(DOMString sender, DOMString instance);
+    void onReceived(DOMString sender, DOMString instance, <a href="#Parcel">Parcel</a> parcel);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>
