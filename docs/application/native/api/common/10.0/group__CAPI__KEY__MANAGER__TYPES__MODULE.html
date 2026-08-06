@@ -2929,6 +2929,7 @@ Caller is responsible for creating and freeing the <em>buffer</em>.</dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>When using CTR, GCM or CFB mode algorithms (CKMC_ALGO_AES_CTR, CKMC_ALGO_AES_GCM, CKMC_ALGO_AES_CFB), the IV (Initialization Vector, CKMC_PARAM_ED_IV) must not be reused with the same key. IV reuse in CTR, GCM or CFB mode can expose plaintext. Each encryption operation must use a random IV generated for that specific operation. Failing to follow this requirement can result in critical security vulnerabilities.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#gac1127516e6761a1999ae67065da0c272" title="Creates new param list.">ckmc_param_list_new()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__KEY__MANAGER__TYPES__MODULE.html#ga037b1e7a1c0b41f457807b6b82799397" title="Sets integer parameter to the list.">ckmc_param_list_set_integer()</a> </dd>
