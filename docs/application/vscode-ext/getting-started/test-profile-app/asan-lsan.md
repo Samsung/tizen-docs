@@ -1,6 +1,6 @@
 # Test Profile App (ASAN/LSAN)
 
-# To Detect Runtime Memory Errors with Leak Sanitizer
+## To Detect Runtime Memory Errors with Leak Sanitizer
 - In the **File Explorer view**, click on view and select **Command Palette > Tizen: Profile with Leak Sanitizer**.
   
   The profiling instruments the code and compiles the project for the Leak Sanitizer. Finally, it launches the application on the connected target or Emulator, as illustrated in the following figure:
@@ -24,7 +24,7 @@
     ![Failure occured](media/failure_line_lsan.png)
 
 
-# To Detect Runtime Memory Errors with Address Sanitizer
+## To Detect Runtime Memory Errors with Address Sanitizer
 - In the **Menu**, click on view and select **Command Palette > Tizen: Profile with Memory Errors**.
   
   The profiling instruments the code and compiles the project for the Address Sanitizer. Finally, it launches the application on the connected target or Emulator, as illustrated in the following figure:

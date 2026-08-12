@@ -42,7 +42,12 @@ def slug(value):
 
 
 def anchors(path):
-    return {slug(match.group(2)) for match in HEADING.finditer(without_code(read(path)))}
+    text = without_code(read(path))
+    found = {slug(match.group(2)) for match in HEADING.finditer(text)}
+    found.update(match.group(1).lower() for match in re.finditer(
+        r'<a\s+(?:name|id)="([^"]+)"', text, re.I))
+    found.update(match.group(1).lower() for match in re.finditer(r"\{#([^}]+)\}", text))
+    return found
 
 
 def report(level, rule, path, message):

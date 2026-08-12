@@ -1,5 +1,4 @@
-Network Bearer Selection
-========================
+# Network Bearer Selection
 
 You can set a cellular network as a preferred route for Internet connections with specified domains.
 

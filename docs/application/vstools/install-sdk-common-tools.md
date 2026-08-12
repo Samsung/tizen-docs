@@ -99,7 +99,7 @@ To download emulator images, you can use Tizen Package Manager or Tizen Emulator
      ![Emulator Manager](media/howtoinstall-emulatormanager.png)
 
 
-# Troubleshoot
+## Troubleshoot
 
 If you encounter problems with the installation, refer to the following steps:
 
@@ -114,4 +114,3 @@ If you encounter problems with the installation, refer to the following steps:
 - To check whether Tizen Project properties have been copied correctly, make sure that the `Tizen.NET.ProjectType.props` and `Tizen.NET.ProjectType.targets` files are located in the `C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Tizen\VisualStudio` folder.
 
   ![Project Property](media/cps-project-property.png)
-

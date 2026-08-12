@@ -1,6 +1,5 @@
 
-Monitoring Devices with the Device Manager
-==========================================
+# Monitoring Devices with the Device Manager
 
 Device Manager is a standalone tool that manages devices and allows you to access their internal file systems and logs. A device can be either a virtual device, such as an emulator, or a physical device connected with a USB cable or a wireless connection.
 
