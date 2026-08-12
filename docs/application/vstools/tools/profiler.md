@@ -1,4 +1,4 @@
-﻿# Core Profiler
+# Core Profiler
 
 The profiler allows you to analyze the performance of your tizen application. You can record, manage and view profiling sessions. Currently, profiilng is supported only for .NET applications.
 

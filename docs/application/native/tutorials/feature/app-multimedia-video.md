@@ -367,7 +367,7 @@ if (error_code != PLAYER_ERROR_NONE)
 ```
 
 
-# Recording Video
+## Recording Video
 
 To record video, use the Recorder API (in
 [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)

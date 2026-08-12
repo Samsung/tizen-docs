@@ -19,7 +19,7 @@ xmlns:base="clr-namespace:Tizen.NUI.BaseComponents;assembly=Tizen.NUI"
 xmlns:comp="clr-namespace:Tizen.NUI.Components;assembly=Tizen.NUI.Components"
 ```
 
-# TabView
+## TabView
 
 TabView is a class which contains a TabBar and TabContent.
 TabView adds TabButtons and Views to TabBar and TabContent in TabView.

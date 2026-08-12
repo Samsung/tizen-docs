@@ -1,6 +1,5 @@
 
-Configurable SDK
-================
+# Configurable SDK
 
 One of the main goals of Tizen 4.0 is configurability. The platform is not limited to a specific device type or profile, so vendors and platform developers can customize Tizen to support the functionalities they need.
 

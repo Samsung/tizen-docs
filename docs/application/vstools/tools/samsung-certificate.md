@@ -1,4 +1,4 @@
-﻿# Samsung Certificates
+# Samsung Certificates
 Before installing your application on a device, it must be signed with a certificate profile. The signature verifies the source of the application and makes sure it has not been tampered with since its publication.
 
 ## Installing the Samsung Certificate Extension
