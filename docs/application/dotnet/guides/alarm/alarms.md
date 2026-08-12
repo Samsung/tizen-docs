@@ -62,7 +62,7 @@ You can set an alarm which, when it expires, either launches an application or s
 > Improperly designed alarms can cause battery drain and put a significant load on the server. For this reason, any repeating alarm that uses a (#PERIOD) is considered an inexact alarm.
 
 > [!NOTE]
-> Since Tizen 6.0, the time period value of an alarm can be one of the values of `Tizen.Applications.AlarmStandardPeriod`. For the `CreateAlarm()` method of the `Tizen.Applications.AlarmManager` class, if you use `Tizen.Applications.AlarmStandardPeriod`, the time period value of the alarm is guaranteed. If `Tizen.Applications.AlarmStandardPeriod` is not used, the time period value will be phase-aligned with another time period value of the alarm.
+> Since Tizen 6.0, the time period value of an alarm can be one of the values of the [Tizen.Applications.AlarmManager.AlarmStandardPeriod](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.AlarmStandardPeriod.html) enumeration. For the `CreateAlarm()` method of the `Tizen.Applications.AlarmManager` class, if you use `AlarmStandardPeriod`, the time period value of the alarm is guaranteed. If `AlarmStandardPeriod` is not used, the minimum period value is 600 seconds, and the actual repeat interval is not strictly guaranteed by the system.
 
 -   To set an alarm to launch an application, follow these steps:
 
@@ -142,17 +142,23 @@ myAlarm = AlarmManager.CreateAlarm(dt.AddSeconds(20), appControl);
 
 You can set a recurring alarm that goes off at a specific moment, and thereafter at regular intervals.
 
-To schedule a recurring alarm to go off on specific days of the week, use the `CreateAlarm()` method of the [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.html) class, with values of the [Tizen.Applications.AlarmWeekFlag](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmWeekFlag.html) enumeration as the second parameter. You can join multiple values together to set the alarm to trigger on multiple days of the week.
+To schedule a recurring alarm to go off on specific days of the week, use the `CreateAlarm()` method of the [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.html) class, with values of the [Tizen.Applications.AlarmManager.AlarmWeekFlag](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.AlarmWeekFlag.html) enumeration as the second parameter. You can join multiple values together to set the alarm to trigger on multiple days of the week.
 
 The following example schedules an application control to be invoked at a set time every Tuesday and Friday:
 
 ```csharp
 Tizen.Applications.AppControl appControl = new Tizen.Applications.AppControl();
 appControl.Operation = AppControlOperations.Default;
-appControl.ApplicationId = "org.tizen.alarmslave"
+appControl.ApplicationId = "org.tizen.alarmslave";
 
-Alarm myAlarm = AlarmManager.CreateAlarm(DateTime.New.AddSecond(10),
-                                         AlarmWeekFlag.Tuesday | AlarmWeekFlag.Friday, appControl);
+Alarm myAlarm = AlarmManager.CreateAlarm(DateTime.Now.AddSeconds(10),
+                                         AlarmManager.AlarmWeekFlag.Tuesday | AlarmManager.AlarmWeekFlag.Friday, appControl);
+```
+
+You can also change the repeat days of an existing alarm afterwards using its `WeekFlag` property. Setting `WeekFlag` to `0` cancels the day-of-week repetition and turns the alarm back into a one-time alarm. Setting `WeekFlag` while a `Period` is already configured on the alarm has no effect, since the two repetition modes are mutually exclusive:
+
+```csharp
+myAlarm.WeekFlag = AlarmManager.AlarmWeekFlag.WeekDays;
 ```
 
 <a name="scenario_4"></a>
@@ -200,3 +206,5 @@ You can list all scheduled alarms, and cancel alarms either one by one or all at
 - API References
     - [Tizen.Applications.AlarmManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager) class
     - [Tizen.Applications.Alarm](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Alarm) class
+    - [Tizen.Applications.AlarmManager.AlarmWeekFlag](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.AlarmWeekFlag) enum
+    - [Tizen.Applications.AlarmManager.AlarmStandardPeriod](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.AlarmManager.AlarmStandardPeriod) enum
