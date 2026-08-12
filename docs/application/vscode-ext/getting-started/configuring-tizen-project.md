@@ -87,4 +87,4 @@ Configure the certificate profile for signing the application. If you don't have
    * If the `signing_profile` value is set to `"."`, the `default` signing profile will be applied.
 
 > [!NOTE]
-> You can create author and distributor certificates and register them to your own profiles using [certificate manager](../tools/certificate-manager.md) tool.
+> You can create author and distributor certificates and register them to your own profiles using [certificate manager](../tools/cert-create-profile.md) tool.

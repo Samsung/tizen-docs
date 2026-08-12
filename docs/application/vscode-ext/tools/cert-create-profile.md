@@ -86,7 +86,7 @@ It is used to create an author signature, which ensures the integrity of the app
 
    - If you have selected an option to apply the same password to the author certificate and to the distributor certificate [while entering author certificate information](#information_of_the_author_certificate), the password is already saved. If you want to change the password, type the new password for the distributor certificate.
 
-   - After the device is connected to the host PC, the DUID is automatically added to the list. If you want to add more devices, connect your device to your host PC via USB or Wi-Fi. The previous DUIDs in the list are not deleted even if you disconnect the device. To delete the DUIDs, click the trash icon. For more information, see [How to connect the device to PC via Wi-Fi](../wearable-connection/index.md).
+   - After the device is connected to the host PC, the DUID is automatically added to the list. If you want to add more devices, connect your device to your host PC via USB or Wi-Fi. The previous DUIDs in the list are not deleted even if you disconnect the device. To delete the DUIDs, click the trash icon. For more information, see How to connect the device to PC via Wi-Fi.
 
    - When you need to register more than 10 devices, upload a txt file using the **Import a DUID list file** menu. One DUID on a line and max 50 DUIDs are available.
 

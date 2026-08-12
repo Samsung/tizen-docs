@@ -30,12 +30,12 @@ Implementing your application consists of:
 
 - **Designing and creating the application UI (User Interface)**
 
-  You can [design and create the application UI (user interface) with UI Builder](../ui-builder/ui-builder-app-design.md).
+  You can design and create the application UI (user interface) with UI Builder.
 
   UI Builder is included in Tizen Studio, and functions as a WYSIWYG (What You See Is What You Get) design environment for creating UIs for native applications.
 
   > **Note**  
-  > You can also design the application UI using the controls defined in the [User Interface](../../guides/ui/overview.md) guides.
+  > You can also design the application UI using the controls defined in the User Interface guides.
 
 
 - **Coding applications**

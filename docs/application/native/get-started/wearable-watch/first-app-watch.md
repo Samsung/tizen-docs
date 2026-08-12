@@ -430,7 +430,7 @@ To run the application on the target device:
 <a name="build_ui"></a>
 ## Designing a Simple UI
 
-The wearable watch application created with the **Watch** template has a simple user interface with a label component showing the **Hello Watch** text and the current time (hour, minute, and second). The UI is created using [EFL](../../guides/ui/efl/index.md).
+The wearable watch application created with the **Watch** template has a simple user interface with a label component showing the **Hello Watch** text and the current time (hour, minute, and second). The UI is created using EFL.
 
 In the ambient mode, the **Watch** template UI is identical to the normal UI, except that is shows the current time without the seconds.
 

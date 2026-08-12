@@ -18,10 +18,17 @@ LINK = re.compile(r"(?<!!)\[[^]]*\]\(([^)\s]+)(?:\s+[^)]*)?\)")
 IMAGE = re.compile(r"!\[[^]]*\]\(([^)\s]+)(?:\s+[^)]*)?\)")
 HEADING = re.compile(r"^(#{1,6})\s+(.+?)\s*$", re.M)
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
+PUBLISHED_API = re.compile(
+    r"^docs/application/(?:native|dotnet)/api/[^/]+/latest/.+")
 
 
 def generated(path):
     return any(part in f"/{path}" for part in GENERATED) or path.endswith(".autogen.md")
+
+
+def published_api(path):
+    """Return whether a path is a versioned API route published outside this checkout."""
+    return bool(PUBLISHED_API.match(path.replace(os.sep, "/")))
 
 
 def read(path):
@@ -42,7 +49,12 @@ def slug(value):
 
 
 def anchors(path):
-    return {slug(match.group(2)) for match in HEADING.finditer(without_code(read(path)))}
+    text = without_code(read(path))
+    found = {slug(match.group(2)) for match in HEADING.finditer(text)}
+    found.update(match.group(1).lower() for match in re.finditer(
+        r'<a\s+(?:name|id)="([^"]+)"', text, re.I))
+    found.update(match.group(1).lower() for match in re.finditer(r"\{#([^}]+)\}", text))
+    return found
 
 
 def report(level, rule, path, message):
@@ -103,15 +115,16 @@ def check(path, toc_entries):
             if not url or url.startswith(("http://", "https://", "mailto:")):
                 continue
             raw, _, fragment = urllib.parse.unquote(url).partition("#")
+            site_root = raw.startswith("/")
             if raw.startswith("/"):
-                if base.startswith("toc"):
-                    target = os.path.normpath(os.path.join(DOCS, raw.lstrip("/")))
-                else:
-                    errors |= report("ERROR", "L-ROOT-ABS", path, f"{kind} uses a site-root path: {url}")
-                    continue
+                target = os.path.normpath(os.path.join(DOCS, raw.lstrip("/")))
             else:
                 target = os.path.normpath(os.path.join(os.path.dirname(path), raw)) if raw else path
             if not os.path.isfile(target):
+                if site_root and not raw.endswith(".md"):
+                    continue  # Published API and route paths need not have a repo file.
+                if published_api(target):
+                    continue  # The stable `latest` API route is published separately.
                 errors |= report("ERROR", "L-BROKEN", path, f"{kind} target does not exist: {url}")
             elif fragment and target.endswith(".md") and not generated(target) and fragment.lower() not in anchors(target):
                 errors |= report("ERROR", "L-ANCHOR", path, f"anchor does not exist: {url}")

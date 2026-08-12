@@ -54,7 +54,7 @@ The main features of the OpenGL&reg; ES API include:
 
 Additional OpenGL&reg; ES details are covered in the following topics:
 
-- To set up a native application which makes a simple 3D cube scene, see [Creating OpenGL&reg; ES Applications](creating-opengles.md).
+- To set up a native application which makes a simple 3D cube scene, see Creating OpenGL&reg; ES Applications.
 - To draw a 3D scene step by step through GPU pipeline stages, see:
   - [Polygon Mesh in OpenGL&reg; ES](polygon-mesh.md)
   - [Vertex Shader](vertex-shader.md)

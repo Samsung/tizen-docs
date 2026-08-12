@@ -9,7 +9,7 @@ Before you implement the actual application functionality, define all the necess
   > Only modify the Web application configuration by using the
     configuration editor in Tizen Studio. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
 
-After you have finished setting the project properties, you are ready to [design the UI](index.md#design).
+After you have finished setting the project properties, you are ready to [design the UI](index.md#plan-and-design-the-application).
 
 <a name="set"></a>
 ## Set build properties
@@ -96,7 +96,7 @@ You can declare any device software or hardware features that your application r
 To enable filtering for your Web application, follow these steps:
 
 1.  In the **Features** tab, click **+**.
-2.  Select the needed features from the [predefined list of features available for filtering](../app-filtering.md).
+2.  Select the needed features from the [predefined list of features available for filtering](../../reference/app-filtering.md).
 3.  Click **Finish**.
 4.  Upload and publish the application package on the store.
 
@@ -116,7 +116,7 @@ To add a privilege, follow these steps:
 
 1.  In the **Privileges** tab, click **+**.
 2.  In the **Add privilege** window, select an option:
-    -   **Internal**: Select the needed privileges from the [predefined list of API privileges](../sec-privileges.md).
+    -   **Internal**: Select the needed privileges from the [predefined list of API privileges](../../reference/security-privileges.md).
     -   **Privilege name**: Manually enter the URL containing a privilege definition.
     -   **File**: Click **Browse** and select a privilege file (with the `.xml` or `.widlprocxml` extension).
 

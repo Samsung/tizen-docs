@@ -20,6 +20,7 @@ To use the methods of [Tizen.Tracer](/application/dotnet/api/TizenFX/master/api/
 using Tizen;
 ```
 
+<a name="insert"></a>
 <a name="tracer"></a>
 ## Put traces in the common trace buffer
 
@@ -79,4 +80,3 @@ Here are examples:
 ## Related information
 * Dependencies
   -    Since Tizen 6.5
-

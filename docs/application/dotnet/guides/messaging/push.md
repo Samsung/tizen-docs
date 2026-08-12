@@ -60,6 +60,7 @@ The following steps illustrate a typical scenario for using the push messaging s
 5. When the Tizen push server receives the message and the registration ID, it checks which device has the application with the particular registration ID and then routes the message to that device.
 6. When the push service receives the message and the registration ID, it sends the message to the destination application, which receives the push message.
 
+<a name="permission"></a>
 ## Prerequisites
 
 

@@ -37,5 +37,3 @@ The following sections explain how to use Visual Studio Code Extension for Tizen
 4. To run the application on the emulator, enter run in the **Command Palette** and select **Tizen: Run Tizen application**.
 
    ![Run application](media/run-application-1.png)
-
-   ![application](media/run-application-2.PNG)

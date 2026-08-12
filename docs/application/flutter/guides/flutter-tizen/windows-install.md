@@ -5,7 +5,7 @@
 - Operating system: Windows 10 or later (x64)
 - Tools:
   - [VS Code Extension for Tizen](install-tizen-sdk.md) (10.1.0 or later)
-    - Optional: [Tizen Studio](install-tizen-sdk-old.md) (6.1 or later, To be deprecated)
+    - Optional: [Tizen Studio](install-tizen-sdk.md) (6.1 or later, To be deprecated)
   - [.NET SDK](https://learn.microsoft.com/en-us/dotnet/core/install/windows) (6.0 or later)
   - [Git for Windows](https://git-scm.com/download/win) 2.x (enable the **Use Git from the Windows Command Prompt** option)
 

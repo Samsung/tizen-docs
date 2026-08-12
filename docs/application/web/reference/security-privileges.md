@@ -3,7 +3,7 @@
 
 To effectively protect the device system and user private data, the Tizen security architecture is based on privileges and application signing of the Linux basic security model, which includes process isolation and mandatory access control. Since Tizen, as an open platform, provides a wide range of features and experiences for users with a variety of applications, the users must be able to grant privileges for security-sensitive operations.
 
-Tizen provides API-level access control for security-sensitive operations which, if not used properly, can harm user privacy and system stability. Therefore, applications that use such sensitive APIs must declare the required privileges in the [config.xml](process/setting-properties.md#privilege) file.  Privileges are categorized into public, partner, and platform levels according to their hierarchy:
+Tizen provides API-level access control for security-sensitive operations which, if not used properly, can harm user privacy and system stability. Therefore, applications that use such sensitive APIs must declare the required privileges in the [config.xml](../guides/development/setting-properties.md#privilege) file.  Privileges are categorized into public, partner, and platform levels according to their hierarchy:
 
 -   The public level is the minimum privilege level, which means that any application developed using Tizen Studio can use these privileges.
 -   The partner level privileges require at least a partner-signed certificate which is granted to developers who have a business relationship with the vendor.

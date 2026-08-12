@@ -4,7 +4,7 @@ HAL (Hardware Abstraction Layer) modules for the Machine Learning framework prov
 
 ## ML Hardware Acceleration
 
-At the Hardware Abstraction Layer, the ML acceleration feature handles inference requests from Tizen's [Machine Learning API](../../application/native/guides/machine-learning/overview.md) and delegates them to various hardware acceleration devices.
+At the Hardware Abstraction Layer, the ML acceleration feature handles inference requests from Tizen's [Machine Learning API](../../../application/native/guides/machine-learning/overview.md) and delegates them to various hardware acceleration devices.
 This HAL is not used directly by application developers; instead, it serves as a backend for NNStreamer.
 
 The process is as follows:

@@ -4,18 +4,12 @@
 ## [Tizen IoT](/iot/get-started/overview.md)
 ## Setting up Board
 ### [Overview](/iot/get-started/setting-up-board.md)
-### [Raspberry Pi3](/iot/get-started/rpi3-5.0.md)
 ## Developing Applications
-### [Developing Applications with Things SDK API](/iot/get-started/things-app-development-5.0.md)
 ### [Setting up Smartthings Cloud](/iot/get-started/things-cloud-setup.md)
 ### [Testing with Smartthings App](/iot/get-started/cloud-app-test.md)
 
 # API Guides
 ## [Overview](/iot/guides/iot-api.md)
-## Things SDK API
-### [Overview](/iot/guides/things-api-5.0.md)
-### [Device Definition](/iot/guides/things-api-device-5.0.md)
-### [API Usage](/iot/guides/things-api-guide-5.0.md)
 ## Tizen Peripheral I/O Native API
 ### [Overview](/iot/guides/peripheral-io-api.md)
 ### [GPIO](/iot/guides/peripheral-io-api-gpio.md)

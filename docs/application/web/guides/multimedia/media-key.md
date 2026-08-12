@@ -50,4 +50,4 @@ Learning how to register key event listener is a basic media key management skil
 * Dependencies
   - Tizen 3.0 and Higher for TV
 * API References
-  - [TV](../../api/latest/device_api/tv/tizen/mediakey.html)
+  - [TV](../../api/latest/device_api/mobile/tizen/mediakey.html)

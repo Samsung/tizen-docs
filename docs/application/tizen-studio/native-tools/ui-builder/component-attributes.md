@@ -89,7 +89,7 @@ The `<variation>` element is placed as a child of the `<UI component>` element. 
 
 ## Palette of the Native UI Builder
 
-By using various UI containers and components in the **Palette** of the native UI Builder, you can create your application UI layout. Each component can be set in various styles. For a detailed list of component styles, see the [related guides](../../../native/guides/ui/efl/ui-components.md).
+By using various UI containers and components in the **Palette** of the native UI Builder, you can create your application UI layout. Each component can be set in various styles. For a detailed list of component styles, see the related guides.
 
 **Figure: Native UI Builder Palette**
 
@@ -146,7 +146,7 @@ The following attributes are used for all `<event>` elements.
 
 ## Component Attributes - UI Container
 
-The [`<UI container>`](../../../native/guides/ui/efl/ui-layouts.md#ui-containers) is an element that has the `<UI component>` elements as children. In the `layout.xml` file, containers, such as View, Box, Grid, Panel, Panes, Scroller, and Table, are supported.
+The `<UI container>` is an element that has the `<UI component>` elements as children. In the `layout.xml` file, containers, such as View, Box, Grid, Panel, Panes, Scroller, and Table, are supported.
 
 ### View
 
@@ -167,7 +167,7 @@ The following attributes are used for `<view>` element.
 
 ### Box (![Box](./media/component_attributes_box_icon.png))
 
-A [box](../../../native/guides/ui/efl/container-box.md) is a basic and simple EFL container.
+A box is a basic and simple EFL container.
 
 ```
 <box homogeneous="false" align_h="fill" align_v="fill" visible="true" weight_v="1" padding_v="0"
@@ -189,7 +189,7 @@ The following attributes are used for the box container.
 
 ### Grid (![Grid](./media/component_attributes_grid_icon.png))
 
-In a [grid](../../../native/guides/ui/efl/container-grid.md) container, objects are placed at specific positions along a fixed grid.
+In a grid container, objects are placed at specific positions along a fixed grid.
 
 ```
 <grid align_h="fill" vsize_w="1000" align_v="fill" visible="true" weight_v="1"
@@ -213,7 +213,7 @@ The child element of the grid container has the `pack_w`, `pack_h`, `pack_x`, an
 
 ### Panel (![Panel](./media/component_attributes_panel_icon.png)) in Mobile Applications
 
-A [panel](../../../native/guides/ui/efl/mobile/component-panel.md) container is an animated object that contains child objects. It can be expanded or collapsed by clicking the button on its edge.
+A panel container is an animated object that contains child objects. It can be expanded or collapsed by clicking the button on its edge.
 
 ```
 <panel align_h="fill" align_v="fill" visible="true" orient="top" hidden="false" weight_v="1"
@@ -234,7 +234,7 @@ The following attributes are used for the panel container.
 
 ### Panes (![Panes](./media/component_attributes_panes_icon.png)) in Mobile Applications
 
-A [panes](../../../native/guides/ui/efl/container-panes.md) container adds a draggable bar between 2 sections of content. The sections are resized when the bar is dragged.
+A panes container adds a draggable bar between 2 sections of content. The sections are resized when the bar is dragged.
 
 ```
 <panes align_h="fill" align_v="fill" visible="true" weight_v="1" fixed="false" id="panes1"
@@ -262,7 +262,7 @@ The child element of the panes container has the `pack` attribute to indicate th
 
 ### Scroller (![Scroller](./media/component_attributes_scroller_icon.png))
 
-A [scroller](../../../native/guides/ui/efl/container-scroller.md) container holds (and clips) a single object and allows you to scroll across it.
+A scroller container holds (and clips) a single object and allows you to scroll across it.
 
 ```
 <scroller scrollbar_v="auto" align_v="fill" visible="true" weight_v="1" pack_h="123"
@@ -287,7 +287,7 @@ The following attributes are used for the scroller container.
 
 ### Table (![Table](./media/component_attributes_table_icon.png))
 
-A [table](../../../native/guides/ui/efl/container-table.md) container is like the box but with 2 dimensions.
+A table container is like the box but with 2 dimensions.
 
 ```
 <table align_v="fill" visible="true" weight_v="1" pack_h="244" padding_h="0" weight_h="1" rows="2"
@@ -314,7 +314,7 @@ The child element of the table container has the `pack_col`, `pack_row`, `row_sp
 
 ### Background (![Background](./media/component_attributes_background_icon.png))
 
-A background component (in [mobile](../../../native/guides/ui/efl/mobile/component-background.md) and [wearable](../../../native/guides/ui/efl/wearable/component-background.md) applications) is used to set a solid background decoration to a window or a container object. It works like an image, but has some background-specific properties, such as setting it to a tiled, centered, scaled, or stretched mode.
+A background component (in mobile and wearable applications) is used to set a solid background decoration to a window or a container object. It works like an image, but has some background-specific properties, such as setting it to a tiled, centered, scaled, or stretched mode.
 
 ```
 <bg align_v="fill" visible="true" color="" src="" weight_v="1" pack_h="162" weight_h="1" align_h="fill"
@@ -336,7 +336,7 @@ The following attributes are used for the background component.
 
 ### Button (![Button](./media/component_attributes_button_icon.png))
 
-A button component (in [mobile](../../../native/guides/ui/efl/mobile/component-button.md) and [wearable](../../../native/guides/ui/efl/wearable/component-button.md) applications) is a simple push button. It is composed of a label icon and an icon object, and has an auto-repeat feature.
+A button component (in mobile and wearable applications) is a simple push button. It is composed of a label icon and an icon object, and has an auto-repeat feature.
 
 ```
 <button align_v="fill" visible="true" weight_v="1" pack_h="49" weight_h="1" align_h="fill" pack_w="210"
@@ -359,7 +359,7 @@ The following attributes are used for the button component.
 
 ### Calendar (![Calendar](./media/component_attributes_calendar_icon.png))
 
-A [calendar](../../../native/guides/ui/efl/mobile/component-calendar.md) component displays and manipulates month views. **(Since 2.4, this component is supported in mobile applications only.)**
+A calendar component displays and manipulates month views. **(Since 2.4, this component is supported in mobile applications only.)**
 
 ```
 <calendar align_v="fill" visible="true" weight_v="1" pack_h="365" weight_h="1" max_year="-1"
@@ -383,7 +383,7 @@ The following attributes are used for the calendar component.
 
 ### Check (![Check](./media/component_attributes_check_icon.png))
 
-A check component (in [mobile](../../../native/guides/ui/efl/mobile/component-check.md) and [wearable](../../../native/guides/ui/efl/wearable/component-check.md) applications) toggles the Boolean value between `true` and `false`.
+A check component (in mobile and wearable applications) toggles the Boolean value between `true` and `false`.
 
 ```
 <check align_v="fill" visible="true" weight_v="1" pack_h="48" weight_h="1" align_h="fill" pack_w="208"
@@ -406,7 +406,7 @@ The following attributes are used for the check component.
 
 ### Colorselector (![Colorselector](./media/component_attributes_colorselector_icon.png)) in Mobile Applications
 
-A [colorselector](../../../native/guides/ui/efl/mobile/component-colorselector.md) component provides a color selection solution to the user. It has different modes, each of them showing a different configuration of selectable colors.
+A colorselector component provides a color selection solution to the user. It has different modes, each of them showing a different configuration of selectable colors.
 
 ```
 <colorselector align_h="fill" align_v="fill" visible="true" weight_v="1" pack_w="667" pack_x="386"
@@ -425,7 +425,7 @@ The following attributes are used for the colorselector component.
 
 ### Ctxpopup
 
-A ctxpopup component (in [mobile](../../../native/guides/ui/efl/mobile/component-ctxpopup.md) and [wearable](../../../native/guides/ui/efl/wearable/component-ctxpopup.md) applications) is a contextual popup that shows a small list of items.
+A ctxpopup component (in mobile and wearable applications) is a contextual popup that shows a small list of items.
 
 ```
 <view indicator="true" screen_orientation="full_sensor" id="view2" type="popup">
@@ -462,7 +462,7 @@ A ctxpopup item component can be placed as a child of the ctxpopup component. Ea
 
 ### Datetime (![Datetime](./media/component_attributes_datetime_icon.png))
 
-A datetime component (in [mobile](../../../native/guides/ui/efl/mobile/component-datetime.md) and [wearable](../../../native/guides/ui/efl/wearable/component-datetime.md) applications) can display and accept input for date and time values.
+A datetime component (in mobile and wearable applications) can display and accept input for date and time values.
 
 ```
 <datetime align_h="fill" align_v="fill" visible="true" weight_v="1" pack_w="528" disable="false" pack_x="232"
@@ -484,7 +484,7 @@ The following attributes are used for the datetime component.
 
 ### Entry (![Entry](./media/component_attributes_entry_icon.png))
 
-An entry component (in [mobile](../../../native/guides/ui/efl/mobile/component-entry.md) and [wearable](../../../native/guides/ui/efl/wearable/component-entry.md) applications) is a box to which the user can enter text.
+An entry component (in mobile and wearable applications) is a box to which the user can enter text.
 
 ```
 <entry context_menu="true" align_v="fill" visible="true" src="" weight_v="1" editable="true" pack_h="82"
@@ -514,7 +514,7 @@ The following attributes are used for the entry component.
 
 ### Flipselector (![Flipselector](./media/component_attributes_flipselector_icon.png))
 
-A [flipselector](../../../native/guides/ui/efl/mobile/component-flipselector.md) component shows a set of text items one at a time. The user can flip the selector up or down to change the text on it. It can contain a small number of items. **(Since 2.4, this component is supported in mobile applications only.)**
+A flipselector component shows a set of text items one at a time. The user can flip the selector up or down to change the text on it. It can contain a small number of items. **(Since 2.4, this component is supported in mobile applications only.)**
 
 ```
 <flipselector align_h="fill" align_v="fill" visible="true" weight_v="1" pack_w="196" disable="false" pack_x="210"
@@ -546,7 +546,7 @@ A flipselector item component can be placed as a child of the flipselector conta
 
 ### Gengrid (![Gengrid](./media/component_attributes_gengrid_icon.png)) in Mobile Applications
 
-A [gengrid](../../../native/guides/ui/efl/mobile/component-gengrid.md) component displays objects on a grid layout and renders only the visible objects. The gengrid can contain a small number of items.
+A gengrid component displays objects on a grid layout and renders only the visible objects. The gengrid can contain a small number of items.
 
 ```
 <gengrid scrollbar_v="auto" align_v="fill" visible="true" weight_v="1" pack_h="324" item_size_w="200"
@@ -594,7 +594,7 @@ A gengrid item component can be placed as a child of the gengrid component. Each
 
 ### Genlist (![Genlist](./media/component_attributes_genlist_icon.png))
 
-A genlist component (in [mobile](../../../native/guides/ui/efl/mobile/component-genlist.md) and [wearable](../../../native/guides/ui/efl/wearable/component-genlist.md) applications) displays a scrollable list of items.
+A genlist component (in mobile and wearable applications) displays a scrollable list of items.
 
 ```
 <genlist scrollbar_v="auto" align_v="fill" visible="true" weight_v="1" pack_h="244" weight_h="1"
@@ -644,7 +644,7 @@ A genlist item component can be placed as a child of the genlist component. Each
 
 ### Hoversel (![Image](./media/component_attributes_hoversel_icon.png)) in Mobile Applications
 
-A [hoversel](../../../native/guides/ui/efl/mobile/component-hoversel.md) component is a button that pops up a list of items.
+A hoversel component is a button that pops up a list of items.
 
 ```
 <hoversel align_h="fill" align_v="fill" visible="true" disable="false" weight_v="1"
@@ -679,7 +679,7 @@ A hoversel item component can be placed as a child of the hoversel component. Ea
 
 ### Image (![Image](./media/component_attributes_image_icon.png))
 
-An image component (in [mobile](../../../native/guides/ui/efl/mobile/component-image.md) and [wearable](../../../native/guides/ui/efl/wearable/component-image.md) applications) loads and displays an image from a file or memory.
+An image component (in mobile and wearable applications) loads and displays an image from a file or memory.
 
 ```
 <image resizable_up="true" resizable_down="true" align_v="fill" visible="true" src="" weight_v="1"
@@ -704,7 +704,7 @@ The following attributes are used for the image component.
 
 ### Index (![Index](./media/component_attributes_index_icon.png))
 
-An index component (in [mobile](../../../native/guides/ui/efl/mobile/component-index.md) and [wearable](../../../native/guides/ui/efl/wearable/component-index.md) applications) provides an index for quick access to another group of UI items. The index can contain a small number of items.
+An index component (in mobile and wearable applications) provides an index for quick access to another group of UI items. The index can contain a small number of items.
 
 ```
 <index indicator="true" align_v="fill" visible="true" weight_v="1" pack_h="122" weight_h="1" align_h="fill"
@@ -738,7 +738,7 @@ An index item component can be placed as a child of the index component. Each it
 
 ### Label (![Label](./media/component_attributes_label_icon.png))
 
-A label component (in [mobile](../../../native/guides/ui/efl/mobile/component-label.md) and [wearable](../../../native/guides/ui/efl/wearable/component-label.md) applications) displays text with a simple HTML-like markup.
+A label component (in mobile and wearable applications) displays text with a simple HTML-like markup.
 
 ```
 <label align_v="fill" visible="true" weight_v="1" line_wrap="none" pack_h="24" weight_h="1"
@@ -762,7 +762,7 @@ The following attributes are used for the label component.
 
 ### Layout (![Layout](./media/component_attributes_layout_icon.png))
 
-A [layout](../../../native/guides/ui/efl/container-layout.md) is a container component that takes a standard Edje design file and wraps it very thinly in a UI component.
+A layout is a container component that takes a standard Edje design file and wraps it very thinly in a UI component.
 
 ```
 <layout align_v="fill" visible="true" src="edc.edj" weight_v="1" pack_h="122" weight_h="1" align_h="fill"
@@ -783,7 +783,7 @@ The following attributes are used for the layout component.
 
 ### List (![List](./media/component_attributes_list_icon.png))
 
-A list component (in [mobile](../../../native/guides/ui/efl/mobile/component-list.md) and [wearable](../../../native/guides/ui/efl/wearable/component-list.md) applications) is a very simple list for managing a small number of items. If you need to manage a lot of items, use the genlist component instead.
+A list component (in mobile and wearable applications) is a very simple list for managing a small number of items. If you need to manage a lot of items, use the genlist component instead.
 
 ```
 <list scrollbar_v="auto" align_v="fill" visible="true" weight_v="1" pack_h="244" weight_h="1" mode="scroll"
@@ -880,7 +880,7 @@ A multibutton entry item component can be placed as a child of the multibutton e
 
 ### Popup
 
-A popup component (in [mobile](../../../native/guides/ui/efl/mobile/component-popup.md) and [wearable](../../../native/guides/ui/efl/wearable/component-popup.md) applications) shows a pop-up area that contains a title, content, and action area. The following attributes are used for the popup component.
+A popup component (in mobile and wearable applications) shows a pop-up area that contains a title, content, and action area. The following attributes are used for the popup component.
 
 **Table: Popup attributes**
 
@@ -897,7 +897,7 @@ A popup component (in [mobile](../../../native/guides/ui/efl/mobile/component-po
 
 ### Progressbar (![Progressbar](./media/component_attributes_progressbar_icon.png))
 
-A progressbar component (in [mobile](../../../native/guides/ui/efl/mobile/component-progressbar.md) and [wearable](../../../native/guides/ui/efl/wearable/component-progressbar.md) applications) is used to display the progress status of a given job.
+A progressbar component (in mobile and wearable applications) is used to display the progress status of a given job.
 
 ```
 <progressbar align_v="fill" visible="true" weight_v="1" pack_h="24" weight_h="1" align_h="fill" span_size="0"
@@ -924,7 +924,7 @@ The following attributes are used for the progressbar component.
 
 ### Radio (![Radio](./media/component_attributes_radio_icon.png))
 
-A radio component (in [mobile](../../../native/guides/ui/efl/mobile/component-radio.md) and [wearable](../../../native/guides/ui/efl/wearable/component-radio.md) applications) can display 1 or more options, while the user can only select one of them. The UI component is composed of an indicator (selected or unselected), an optional icon, and an optional label. Even though it is usually grouped with 2 or more other radio components, it can also be used alone.
+A radio component (in mobile and wearable applications) can display 1 or more options, while the user can only select one of them. The UI component is composed of an indicator (selected or unselected), an optional icon, and an optional label. Even though it is usually grouped with 2 or more other radio components, it can also be used alone.
 
 ```
 <radio align_v="fill" visible="true" weight_v="1" pack_h="49" weight_h="1" align_h="fill" pack_w="208"
@@ -947,7 +947,7 @@ The following attributes are used for the radio component.
 
 ### Slider (![Slider](./media/component_attributes_slider_icon.png))
 
-A slider component (in [mobile](../../../native/guides/ui/efl/mobile/component-slider.md) and [wearable](../../../native/guides/ui/efl/wearable/component-slider.md) applications) is a draggable bar that is used to select a value from a range of values.
+A slider component (in mobile and wearable applications) is a draggable bar that is used to select a value from a range of values.
 
 ```
 <slider indicator="false" align_v="fill" visible="true" max="1.0" weight_v="1" pack_h="25" indicator_format=""
@@ -978,7 +978,7 @@ The following attributes are used for slider component.
 
 ### Spinner (![Spinner](./media/component_attributes_spinner_icon.png))
 
-A [spinner](../../../native/guides/ui/efl/mobile/component-spinner.md) component enables the user to increase or decrease a numeric value by using arrow buttons. **(This component is not supported in wearable circle applications.)**
+A spinner component enables the user to increase or decrease a numeric value by using arrow buttons. **(This component is not supported in wearable circle applications.)**
 
 ```
 <spinner align_v="fill" visible="true" max="100" weight_v="1" editable="true" pack_h="123" weight_h="1"
@@ -1005,7 +1005,7 @@ The following attributes are used for the spinner component.
 
 ### Toolbar (![Toolbar](./media/component_attributes_toolbar_icon.png)) in Mobile Applications
 
-A [toolbar](../../../native/guides/ui/efl/mobile/component-toolbar.md) component is a small scrollable list of items. It can also show a menu when an item is selected. Only one item can be selected at a time.
+A toolbar component is a small scrollable list of items. It can also show a menu when an item is selected. Only one item can be selected at a time.
 
 ```
 <toolbar shrink_mode="none" align_v="fill" visible="true" weight_v="0"

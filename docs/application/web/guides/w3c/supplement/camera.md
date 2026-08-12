@@ -115,4 +115,4 @@ To take advantage of the camera features, you must learn to deallocate the camer
 * Dependencies   
    - Tizen 2.3.1 and Higher
 * API References
-   - [getUserMedia](../../multimedia/getusermedia)
+   - [getUserMedia](../multimedia/getusermedia.md)

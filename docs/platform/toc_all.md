@@ -2,7 +2,7 @@
 ## [Overview](/platform/what-is-tizen/overview.md)
 ## Devices
 ### [Products](/platform/what-is-tizen/devices/products.md)
-### [Custom](/platform/what-is-tizen/profiles/tizen_custom.md)
+### [Custom](/platform/what-is-tizen/profiles/tizen-custom.md)
 ## Versions
 ### [Tizen 9.0](/platform/what-is-tizen/versions/tizen-9-0-m2.md)
 ### [Tizen 8.0](/platform/what-is-tizen/versions/tizen-8-0-m2.md)
@@ -16,6 +16,7 @@
 ### [Tizen 3.0](/platform/what-is-tizen/versions/tizen-3-0.md)
 
 # Get Started
+## [Overview](/get-started.md)
 ## [Tizen Open Source Project](/platform/get-started/open-source-project.md)
 ## [Development Workflow](/platform/get-started/work-flow.md)
 ## [Git Repository Structure](/platform/get-started/git-repo-structure.md)
@@ -45,7 +46,7 @@
 ### [System](/platform/HAL/guides/system.md)
 
 ### API Reference
-#### [1.0](/platform/HAL/api/1.0/index.md){:target="_blank"}
+#### [1.0](/platform/HAL/api/1.0/index.html){:target="_blank"}
 ## Archive
 ### [Overview](/platform/porting/overview.md)
 ### [Kernel](/platform/porting/kernel.md)
@@ -57,15 +58,24 @@
 ### [Location](/platform/porting/location.md)
 ### [Telephony](/platform/porting/telephony.md)
 ### [Application](/platform/porting/application.md)
-### [Legacy Porting](/platform/porting/legacy-porting.md)
 
 # Reference
 ## [Gerrit](/platform/reference/gerrit-usage.md)
 ## Git Build System (GBS)
 ### [Overview](/platform/reference/gbs/gbs-overview.md)
-### [GBS Configuration](/platform/reference/gbs/gbs.conf.md)
+### [GBS Configuration](/platform/reference/gbs/gbs-conf.md)
 ### [GBS Maintenance Models](/platform/reference/gbs/gbs-maintenance-models.md)
 ### [GBS Reference](/platform/reference/gbs/gbs-reference.md)
+#### [gbs build](/platform/reference/gbs/gbs-build.md)
+#### [gbs changelog](/platform/reference/gbs/gbs-changelog.md)
+#### [gbs chroot](/platform/reference/gbs/gbs-chroot.md)
+#### [gbs clone](/platform/reference/gbs/gbs-clone.md)
+#### [gbs devel](/platform/reference/gbs/gbs-devel.md)
+#### [gbs export](/platform/reference/gbs/gbs-export.md)
+#### [gbs import](/platform/reference/gbs/gbs-import.md)
+#### [gbs pull](/platform/reference/gbs/gbs-pull.md)
+#### [gbs remotebuild](/platform/reference/gbs/gbs-remotebuild.md)
+#### [gbs submit](/platform/reference/gbs/gbs-submit.md)
 ### [FAQ](/platform/reference/gbs/gbs-faq.md)
 
 ## [Platform Development Tool](/platform/reference/tp-usage.md)
@@ -93,6 +103,7 @@
 ## [Tizen Image Creator FAQ](/platform/reference/tic-faq.md)
 ## [Set up docker](/platform/reference/set-up-docker.md)
 # Release Notes
+## [Latest Release Notes](/platform/release-notes/latest-note.md)
 ## [Tizen 10.0 Public](/platform/release-notes/tizen-10-0.md)
 ## [Tizen 9.0 Public M2](/platform/release-notes/tizen-9-0-m2.md)
 ## [Tizen 9.0 Public M1](/platform/release-notes/tizen-9-0-m1.md)

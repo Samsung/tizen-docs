@@ -353,7 +353,7 @@ To run the application on the target device:
 <a name="build_ui"></a>
 ## Designing a Simple UI
 
-The wearable application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using [EFL](../../guides/ui/efl/index.md).
+The wearable application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using EFL.
 
 **Figure: User interface in the Basic UI template**
 

@@ -1,6 +1,6 @@
 # UI Application
 
-Before reading this document, we recommend you get familiarized with the [application life cycle documentation](./application_lifecycle.md).
+Before reading this document, we recommend you get familiarized with the [application life cycle documentation](./application-lifecycle.md).
 
 To create a basic UI application, you must do the following:
 
@@ -13,7 +13,7 @@ To create a basic UI application, you must do the following:
     change events. You can override the [methods triggered for these
     events](#callback) to react to them.
 
-- Manage [application states and transitions](./application_lifecycle.md) during the
+- Manage [application states and transitions](./application-lifecycle.md) during the
     application life cycle.
 
 - Define a [background category](#allow_bg) for your application, if

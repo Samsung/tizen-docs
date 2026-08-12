@@ -108,7 +108,6 @@ The final output is as follows:
 
  | Original VisualView                                         | After `RemoveVisual()` is called                        | After `RemoveAll()` is called                                 |
  |-------------------------------------------------------------|:-------------------------------------------------------:|---------------------------------------------------------------|
- | ![VisualViewOriginal](media/visuals/VisualViewOriginal.png) | ![VisualViewRemove](media/visuals/VisualViewRemove.png) | ![VisualViewRemoveAll](media/visuals/VisualViewRemoveAll.png) |
 
 ## VisualMap properties
 
@@ -146,7 +145,6 @@ The `Origin` and `AnchorPoint` properties allow determining the position of a vi
 
 The following figure illustrates the possible reference point positions for both the visual and the control:
 
-![VisualAlignTypes](media/visuals/VisualAlignTypes.png)
 
 The position of the visual is defined as the `AnchorPoint` offset relative to the `Origin` in the reference frame, which is hooked to the upper left corner. The x and the y-axis are directed to the right and the bottom, respectively. Examples of the various arrangements of the visuals within the control are as follows:
 
@@ -157,7 +155,6 @@ Case 1:
    _visualView.RelativePosition = new RelativeVector2(0.0f, 0.0f);
    ```
 
-![VisualAlignType_Case1](media/visuals/VisualAlignType_Case1.png)
 
 Case 2:
    ```csharp
@@ -166,7 +163,6 @@ Case 2:
    _visualView.RelativePosition = new RelativeVector2(0.5f, -0.25f);
    ```
 
-![VisualAlignType_Case2](media/visuals/VisualAlignType_Case2.png)
 
 ## Visual types provided by NUI
 
@@ -228,7 +224,6 @@ The following example illustrates how to use a `BorderVisual`:
 
 The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
-![BorderVisual](media/visuals/BorderVisualExample.png)
 
 ### ColorVisual
 
@@ -279,7 +274,6 @@ The final output after implementing the preceding code, and setting the `_visual
 
  | DepthIndex default values                            | DepthIndex changed values                                            |
  |------------------------------------------------------|----------------------------------------------------------------------|
- | ![ColorVisual](media/visuals/ColorVisualExample.png) | ![ColorVisualDepth](media/visuals/ColorVisualExample_DephtIndex.png) |
 
 ### GradientVisual
 
@@ -401,7 +395,6 @@ The final output after implementing the preceding code is as follows:
 
  | Radial gradient - Case 1                                    | Radial gradient - Case 2                                    | Linear gradient                                    |
  |:-----------------------------------------------------------:|:-----------------------------------------------------------:|:--------------------------------------------------:|
- | ![](media/visuals/RadialGradientVisualExample_Relative.png) | ![](media/visuals/RadialGradientVisualExample_Absolute.png) | ![](media/visuals/LinearGradientVisualExample.png) |
 
 ### ImageVisual
 
@@ -487,7 +480,6 @@ The following code illustrates how to use the `NPatchVisual`. The absolute path 
 
 The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
-![NPatchVisual](media/visuals/NPatchVisualExample.png)
 
 ### SVGVisual
 
@@ -527,7 +519,6 @@ The following example illustrates how to use the `SVGVisual`:
 
 The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
-![SVGVisual](media/visuals/SVGVisualExample.png)
 
 ### AnimatedImageVisual
 
@@ -607,7 +598,6 @@ The following example illustrates how to use the `MeshVisual`. The OBJ, MTL file
 
 The final output after implementing the preceding code is as follows:
 
-![Mesh visual](media/visuals/MeshVisualExample.png)
 
 ### PrimitiveVisual
 
@@ -698,7 +688,6 @@ The following example illustrates how to draw a `BevelledCube`:
 
 The final output after implementing the preceding code is as follows:
 
-![Primitive visual](media/visuals/PrimitiveVisualExample_BevelledCube.png)
 
 ### TextVisual
 
@@ -766,7 +755,6 @@ The following example illustrates how to set the `TextVisual`:
 
 The final output after implementing the preceding code, and setting the `_visualView` background color to gray is as follows:
 
-![Text visual](media/visuals/TextVisualExample.png)
 
 ## Related information
 - Dependencies

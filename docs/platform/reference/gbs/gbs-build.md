@@ -20,7 +20,7 @@ The `gbs build` command requires the following input:
   - Standard repository with existing repodata
   - Normal directory containing RPM packages. GBS finds all RPM packages within the directory.
 
-  To configure a repository, see [GBS Configuration](gbs.conf.md).
+  To configure a repository, see [GBS Configuration](gbs-conf.md).
 
 - Project build configurations (such as macros and flags)
 

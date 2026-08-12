@@ -25,6 +25,7 @@ The main data handling features of the Tizen API include the following:
 
   You can [sort the results of queried data](#use-sorting-modes) using the `SortMode` interface (in [TV](../../api/latest/device_api/tv/tizen/tizen.html#SortMode) applications).
 
+<a name="creating-attribute-filters"></a>
 ## Create attribute filters
 
  Learning how to create attribute filters allows you effectively incorporate query methods in your application:
@@ -44,6 +45,7 @@ The main data handling features of the Tizen API include the following:
    tizen.contact.getDefaultAddressBook().find(successCB, errorCB, firstNameFilter);
    ```
 
+<a name="creating-attribute-range-filters"></a>
 ## Create attribute range filters
 
  Learning how to use attribute range filters allows you effectively incorporate query methods in your application:
@@ -67,6 +69,7 @@ The main data handling features of the Tizen API include the following:
     tizen.calendar.getDefaultCalendar('EVENT').find(successCB, errorCB, dateRangeFilter);
     ```
 
+<a name="creating-composite-filters"></a>
 ## Create composite filters
 
  Learning how to use composite filters allows you effectively incorporate query methods in your application:
@@ -96,6 +99,7 @@ The main data handling features of the Tizen API include the following:
     tizen.contact.getDefaultAddressBook().find(successCB, errorCB, nameCompositeFilter);
     ```
 
+<a name="using-sorting-modes"></a>
 ## Use sorting modes
 
 The following sorting modes are supported:
@@ -327,6 +331,7 @@ The following table lists the filter types you can use with specific content att
 | `orientation`           | No                         | No                               |
 
 
+<a name="messaging-filter-attributes"></a>
 ## Message filter attributes
 
 The following tables list the filter types you can use with specific message attributes in the methods of the MessageStorage interface (Optional feature).

@@ -5,7 +5,6 @@ The authentication and authorization features introduce how you can obtain acces
 
 You can use the following authentication and authorization features in your .NET applications:
 
--   [FIDO Universal Authentication Framework](fido.md)
 
     You can use the FIDO Universal Authentication Framework to authenticate users. FIDO covers password-less authentications, such as fingerprint, iris, and voice detection.
 

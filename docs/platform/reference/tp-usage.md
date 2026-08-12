@@ -353,4 +353,4 @@ tp project image --create <image_type> --dest ~/Tizen-Unified
 
 | Package  | URL                                                                        | License                                |
 | -------- | -------------------------------------------------------------------------- | -------------------------------------- |
-| git-repo | https://gerrit.googlesource.com/git-repo -b stable --single-branch `v2.53` | [Apache-2.0 license](external/LICENSE) |
+| git-repo | https://gerrit.googlesource.com/git-repo -b stable --single-branch `v2.53` | [Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0) |

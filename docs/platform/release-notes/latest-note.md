@@ -1,1 +1,3 @@
-<meta http-equiv="refresh" content="0; url=../tizen-9-0-m2">
+# Latest release notes
+
+<meta http-equiv="refresh" content="0; url=tizen-10-0.md">

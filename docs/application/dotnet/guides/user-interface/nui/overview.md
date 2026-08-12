@@ -33,7 +33,7 @@ NUI offers the following main features:
 
   Provides a system to organize screens and navigate between them.
 
-- [Vector Graphics](vectorgraphics/Overview.md)
+- [Vector Graphics](vectorgraphics/overview.md)
 
   Provides APIs for drawing vector primitives.
 
@@ -75,4 +75,3 @@ To get started with NUI development, see [NUI Quick Start](../../../get-started/
 
 - API References
   - [Natural User Interface API](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.html)
-  

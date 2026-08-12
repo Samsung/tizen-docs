@@ -117,6 +117,7 @@ The following commands from the [Flutter CLI](https://flutter.dev/docs/reference
   flutter-tizen doctor -v
   ```
 
+<a name="drive"></a>
 - ### `drive`
 
   Run integration tests for the project on a connected device. For detailed usage, see [`integration_test`](https://github.com/flutter/flutter/tree/master/packages/integration_test).

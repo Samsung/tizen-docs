@@ -1,7 +1,7 @@
 # File System
 
 > [!NOTE]  
-> With the introduction of Tizen version 5.0, the Filesystem API has undergone a major overhaul. Many of the existing methods are deprecated and new methods are introduced. For information on the previous versions of API, see [Deprecated Filesystem Guide](./file-system-old.md). This guide explains about the APIs for Tizen 5.0 and its newly introduced methods.
+> With the introduction of Tizen version 5.0, the Filesystem API underwent a major overhaul. This guide explains the APIs introduced in Tizen 5.0.
 
 
 You can [access the files and directories](#file-and-directory-access) in the device file system.
