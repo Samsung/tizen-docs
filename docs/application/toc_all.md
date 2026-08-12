@@ -5,9 +5,7 @@
 ## Tizen Profiles
 ### [Overview](/application/profiles/index.md)
 ### [IoT](/application/profiles/iot.md)
-### [Mobile](/application/profiles/mobile.md)
 ### [TV](/application/profiles/tv.md)
-### [Wearable](/application/profiles/wearable.md)
 
 # .NET Application
 
@@ -922,6 +920,8 @@
 ##### [Install Tizen Studio](/application/tizen-studio/setup/install-sdk.md)
 ##### [Update Tizen Studio](/application/tizen-studio/setup/update-sdk.md)
 ##### [Hardware Accelerated Execution Manager](/application/tizen-studio/setup/hardware-accelerated-execution-manager.md)
+##### [CLI Installer](/application/tizen-studio/setup/cli-installer.md)
+##### [OpenJDK Installation](/application/tizen-studio/setup/openjdk.md)
 
 #### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
 #### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
@@ -935,6 +935,7 @@
 ##### [Project Explorer View](/application/tizen-studio/native-tools/project-explorer-view.md)
 ##### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
 ##### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
+##### [Connection Explorer View](/application/tizen-studio/common-tools/connection-explorer-view.md)
 
 #### Write and Edit Code
 ##### [Overview](/application/tizen-studio/native-tools/coding.md)
@@ -952,6 +953,7 @@
 ###### [Combine Screens from Multiple Applications](/application/tizen-studio/native-tools/ui-builder/combine-screens.md)
 
 ##### [EDC Editor](/application/tizen-studio/native-tools/edc-editor.md)
+##### [Component Designer](/application/tizen-studio/native-tools/component-designer.md)
 
 #### Configure Your App
 ##### [Overview](/application/tizen-studio/native-tools/configuring.md)
@@ -990,6 +992,7 @@
 ##### [Unit Test](/application/tizen-studio/native-tools/unit-test.md)
 
 #### CLI
+##### [Overview](/application/tizen-studio/native-tools/cli-overview.md)
 ##### [Convert Projects for CLI](/application/tizen-studio/native-tools/project-conversion.md)
 ##### [RPK Package](/application/tizen-studio/native-tools/rpk-package.md)
 
@@ -1044,9 +1047,6 @@
 
 ### [Configurable SDK](/application/tizen-studio/configurable-sdk/configurable-sdk.md)
 
-### Tizen RT
-#### [Overview](/application/tizen-studio/rt-ide/overview.md)
-
 ### Release Notes
 #### [10.0 (Nov 4, 2025)](/application/tizen-studio/release-notes/10-0-release-notes.md)
 #### [6.1 (Apr 16, 2025)](/application/tizen-studio/release-notes/6-1-release-notes.md)
@@ -1097,3 +1097,12 @@
 ### [Device Manager](/application/vstools/tools/device-manager.md)
 
 ## [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
+
+# Reference
+## [Glossary](/glossary.md)
+## [Trademarks](/trademarks.md)
+## [Feature Keys](/application/features/feature.md)
+## [Privilege Keys](/application/features/privilege.md)
+## [Runtime Feature Keys](/application/features/runtime.md)
+## [System Setting Feature Keys](/application/features/setting.md)
+## [System Information Keys](/application/features/system.md)

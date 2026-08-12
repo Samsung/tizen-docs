@@ -64,7 +64,7 @@
 
 ##### [Tool: SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 
-##### [Tool: TV Web Simulator](/application/tizen-studio/common-tools/smart-development-bridge.md)
+##### [Tool: TV Web Simulator](/application/vscode-ext/tools/tv-web-simulator.md)
 
 #### SDK Diagnostics
 
@@ -81,5 +81,11 @@
 ##### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
 
 ##### [Tizen VSCode Command](/application/vscode-ext/Tizen/command.md)
+
+#### Web Unit Testing
+
+##### [Add Web Unit Test](/application/vscode-ext/tools/add-web-unit-test.md)
+
+##### [Run Unit Test and Coverage](/application/vscode-ext/tools/web-unit-test-result.md)
 
 ## [Tool Index](/application/sdktool-index.md)

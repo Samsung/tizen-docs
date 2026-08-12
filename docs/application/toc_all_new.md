@@ -1484,10 +1484,6 @@
 
 #### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
 
-[//]: # (Removed soon, 2025.01)
-### Tizen RT
-#### [Overview](/application/tizen-studio/rt-ide/overview.md)
-
 ### Release Notes
 #### [6.0 (Nov 4, 2024)](/application/tizen-studio/release-notes/6-0-release-notes.md)
 #### [5.6 (Mar 29, 2024)](/application/tizen-studio/release-notes/5-6-release-notes.md)

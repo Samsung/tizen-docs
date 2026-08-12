@@ -42,6 +42,14 @@
 
 ##### [API & Privilege Checker](/application/vscode-ext/tools/api-privilege-checker.md)
 
+#### Debugging & Profiling Application
+
+##### [Debugger Setting (Native)](/application/vscode-ext/getting-started/debug-app-native.md)
+
+##### [Address Sanitizer](/application/vscode-ext/getting-started/test-profile-app/asan.md)
+
+##### [Leak Sanitizer](/application/vscode-ext/getting-started/test-profile-app/lsan.md)
+
 #### Running and Testing Application
 
 ##### Tool: Emulators

@@ -40,6 +40,10 @@
 
 ##### [API & Privilege Checker](/application/vscode-ext/tools/api-privilege-checker.md)
 
+#### Debugging & Profiling Application
+
+##### [Debugger Setting (.NET)](/application/vscode-ext/getting-started/debug-app-dotnet.md)
+
 #### Running and Testing Application
 
 ##### Tool: Emulators

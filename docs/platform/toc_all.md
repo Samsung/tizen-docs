@@ -16,6 +16,7 @@
 ### [Tizen 3.0](/platform/what-is-tizen/versions/tizen-3-0.md)
 
 # Get Started
+## [Overview](/get-started.md)
 ## [Tizen Open Source Project](/platform/get-started/open-source-project.md)
 ## [Development Workflow](/platform/get-started/work-flow.md)
 ## [Git Repository Structure](/platform/get-started/git-repo-structure.md)
@@ -102,6 +103,7 @@
 ## [Tizen Image Creator FAQ](/platform/reference/tic-faq.md)
 ## [Set up docker](/platform/reference/set-up-docker.md)
 # Release Notes
+## [Latest Release Notes](/platform/release-notes/latest-note.md)
 ## [Tizen 10.0 Public](/platform/release-notes/tizen-10-0.md)
 ## [Tizen 9.0 Public M2](/platform/release-notes/tizen-9-0-m2.md)
 ## [Tizen 9.0 Public M1](/platform/release-notes/tizen-9-0-m1.md)
