@@ -31,10 +31,6 @@ You can use the following W3C, HTML5, and supplementary features in your Web app
 
   You can use Web workers to run scripts in the background. To manage application performance further, you can control the animation rate and page visibility.
 
-- [Location](./location/location-guide.md) **(Optional feature)**
-
-  You can determine the geographical position of the device using various positioning methods, such as the Global Positioning System (GPS) and network positioning system. You can retrieve the user position only once, or continue to receive updates to see how the position changes.
-
 - [Supplementary Features](./supplement/supplement-guide.md)
 
   You can take advantage of supplementary features in creating Tizen Web applications. You can access binary data in JavaScript with typed arrays, create 3D visual elements with the WebGL&trade; graphics library, display elements on full screen views, and control the device camera.

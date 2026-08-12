@@ -90,7 +90,6 @@ You can use security functionalities, such as storing and recalling private data
 </td>
 <td>
 
-- Guides: [Security](security/security.md)
 - API Reference: [Security](../api/latest/device_api/tv/index.html#Security)
 </td>
 </tr>
