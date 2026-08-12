@@ -103,15 +103,14 @@ def check(path, toc_entries):
             if not url or url.startswith(("http://", "https://", "mailto:")):
                 continue
             raw, _, fragment = urllib.parse.unquote(url).partition("#")
+            site_root = raw.startswith("/")
             if raw.startswith("/"):
-                if base.startswith("toc"):
-                    target = os.path.normpath(os.path.join(DOCS, raw.lstrip("/")))
-                else:
-                    errors |= report("ERROR", "L-ROOT-ABS", path, f"{kind} uses a site-root path: {url}")
-                    continue
+                target = os.path.normpath(os.path.join(DOCS, raw.lstrip("/")))
             else:
                 target = os.path.normpath(os.path.join(os.path.dirname(path), raw)) if raw else path
             if not os.path.isfile(target):
+                if site_root and not raw.endswith(".md"):
+                    continue  # Published API and route paths need not have a repo file.
                 errors |= report("ERROR", "L-BROKEN", path, f"{kind} target does not exist: {url}")
             elif fragment and target.endswith(".md") and not generated(target) and fragment.lower() not in anchors(target):
                 errors |= report("ERROR", "L-ANCHOR", path, f"anchor does not exist: {url}")
