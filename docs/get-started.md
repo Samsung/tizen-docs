@@ -16,7 +16,7 @@
 
 ## Tizen .NET
 - [What is Tizen .NET Application?](application/dotnet/index.md)
-- [Creating Tizen .NET Applications](application/dotnet/get-started/overview.md)
+- [Creating Tizen .NET Applications](application/dotnet/get-started/index.md)
 
     ![Download](images/ic_docs_download.png) [**Download Visual Studio Tools for Tizen**](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen)
 

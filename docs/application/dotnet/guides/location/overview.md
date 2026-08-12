@@ -5,7 +5,6 @@ The location and sensor features introduce how you can manage information about 
 
 You can use the following location and sensor features in your .NET applications:
 
--   [Geofences](geofences.md)
 
     You can create geofences, which are virtual perimeters for a real-world geographic area. When a geofence is active, you can monitor the user's location and receive alerts when the user enters or leaves the geofence area.
 
