@@ -4,6 +4,9 @@ Thank you for your interest in contributing to the Tizen documentation!
 
 The document covers the process for contributing to the articles and code samples that are hosted on the [Tizen documentation site](https://docs.tizen.org/). Contributions may be as simple as typo corrections or as complex as new articles.
 
+Only contribute information suitable for public release. Do not add credentials, private
+contact information, unreleased product details, or other non-public material.
+
 1.  [Process for contributing](#process-for-contributing)
     1. [Repository structure](#repository-structure)
     1. [File Name](#file-name)

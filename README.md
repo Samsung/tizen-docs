@@ -10,6 +10,24 @@ This repo contains Tizen documents for platform and application developers.
 
 All files under ./docs/ are hosted on the [Tizen Docs site](https://samsungtizenos.com/docs/bridge/). 
 
+Only add information that is suitable for public release. Do not include credentials,
+private contact information, unreleased product details, or other non-public material.
+
+## Working with an AI coding agent
+
+Repository-specific instructions for AI coding agents are in
+[AGENTS.md](AGENTS.md) and
+[`.claude/skills/tizen-docs/SKILL.md`](.claude/skills/tizen-docs/SKILL.md).
+They explain the public-content boundary, where documents belong, how to update the
+published navigation, and which generated areas must be fixed upstream.
+
+Validate changed documentation before opening a pull request:
+
+```bash
+python3 tools/check_docs.py --changed-only --base origin/master
+git diff --check
+```
+
 
 ## NOTE
 
