@@ -39,7 +39,7 @@ The application manifest consists of application information, such as package, v
 
 ![Setting the application manifest](media/tizen_project_explorer.png)
 
-You can [edit the application properties using the form tabs of the manifest editor](../../../tizen-studio/native-tools/manifest-text-editor.md#editing-the-manifest-file).
+You can [edit the application properties using the form tabs of the manifest editor](../../../tizen-studio/native-tools/manifest-text-editor.md#edit-the-manifest-file).
 
 ### Defining and Editing General Information in the Overview Tab
 

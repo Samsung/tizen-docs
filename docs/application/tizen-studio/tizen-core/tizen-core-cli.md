@@ -658,7 +658,7 @@ tz new -T web -t BasicUI -p basicweb -w ~/workspace
 
 Once the different types of projects are created in the workspace, dependencies can be added between the projects as mentioned in the section [adding dependency between projects](#add-dependency-between-the-projects).
 
-The rest of the functionalities: [build](#build-the-project), [pack](#package-a-tizen-application-with-signing), [install](#install-the-application-on-a-target), [run](#run-the-application-on-a-target), [setting working_folder](#set-the-working-folder), [adding dependency](#add-dependency-between-the-projects) have the same behaviour in the hybrid workspace.
+The rest of the functionalities—[build](#build-the-project), [pack](#package-a-tizen-application-with-sign), [install](#install-the-application-on-a-target), [run](#run-the-application-on-a-target), setting `working_folder`, and [adding dependency](#add-dependency-between-the-projects)—have the same behavior in the hybrid workspace.
 
 ## Details to create, package, and install resource project
 

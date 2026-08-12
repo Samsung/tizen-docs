@@ -6,7 +6,7 @@ This guide will help you configure .NET workload for Tizen .NET development usin
 
 Before you begin, ensure you have the following:
 - Visual Studio installed on your machine. You can download it from [here](https://visualstudio.microsoft.com/downloads/).
-- Visual Studio workloads installed. You can find the detail steps [here](../install.md#prerequisites).
+- Visual Studio workloads installed. You can find the detail steps [here](../install.md).
 
 ## Configuring .NET Workload
 

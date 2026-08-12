@@ -18,6 +18,7 @@ A `View` can be assigned to any layout and then can be re-assigned to a differen
 
 New layouts can be implemented by deriving them from the layout base class and positioning the children according to the requirement. To create a custom layout, see [Creating Custom Layouts](./custom-layout.md).
 
+<a name="commonLayout"></a>
 ## Common layouts
 
 | Type | Description | Look |

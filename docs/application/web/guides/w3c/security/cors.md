@@ -57,6 +57,7 @@ When [using preflight requests](#use-preflight-requests), the response is set in
 
 ![Preflight request workflow](./media/cors_preflight.png)
 
+<a name="using-simple-requests"></a>
 ## Use simple requests
 
 Learning how to handle a simple request based on an XML HTTP Request enhances the security features of your application:

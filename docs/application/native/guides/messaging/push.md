@@ -65,6 +65,7 @@ The following steps illustrate a typical scenario for using the push messaging s
 6. When the push service receives the message and the registration ID, it sends the message to the destination application, which receives the push message.
 
 <a name="prerequisites"></a>
+<a name="permission"></a>
 ## Prerequisites
 
 To enable your application to use the push functionality:

@@ -19,6 +19,7 @@ You can clone all Tizen projects over SSH or HTTPS.
 > [!NOTE]
 > Procedures to clone all projects over SSH and HTTPS are almost identical, the only difference being the Git cloning protocol. However, you can only contribute code to Tizen using the SSH method.
 
+<a name="cloning-all-projects-over-ssh"></a>
 ### Clone all projects over SSH
 You can clone the source of all projects over SSH, including the latest source and the snapshot source.
 

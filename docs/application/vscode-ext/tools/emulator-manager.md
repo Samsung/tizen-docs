@@ -108,7 +108,7 @@ To create a custom platform:
 
 4. In the **Import Custom Image** section, select a **Base Platform**, **Format**, and **Image** file.
 
-   You can create a custom platform using a `qcow2` or `raw` format image. `qcow2` is a platform image format released with emulator packages. You can also create a `qcow2` image by [exporting an emulator](#export).
+   You can create a custom platform using a `qcow2` or `raw` format image. `qcow2` is a platform image format released with emulator packages. You can also create a `qcow2` image by exporting an emulator.
 
    A platform image in the development stage is in `raw` format. If you launch an emulator with a `raw` image, you can see the current state of the image. This can be useful for platform developers.
 

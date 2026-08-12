@@ -37,6 +37,7 @@ The build tips for local builds include:
 - How to [speed up a local build](#speeding-up-a-local-build).
 - How to [perform another build](#performing-another-build).
 
+<a name="excluding-specific-packages"></a>
 ### Exclude specific packages
 
 To exclude specific packages when building locally with GBS, you can either list them in the `--exclude` argument of the `gbs build` command, or list them in the `.gbs.conf` file:
@@ -53,6 +54,7 @@ To exclude specific packages when building locally with GBS, you can either list
   exclude_packages=aaa,bbb,ccc,ddd,eee,fff
   ```
 
+<a name="speeding-up-a-local-build"></a>
 ### Speed up a local build
 
 If the size of your RAM and swap file are both larger than 8 GB, you can speed up building by creating a GBS `BUILD-ROOTS` directory and mounting it as a RAM disk:
@@ -62,6 +64,7 @@ $ mkdir -p ~/GBS-ROOT/local/BUILD-ROOTS
 $ sudo mount -t tmpfs -o size=16G tmpfs ~/GBS-ROOT/local/BUILD-ROOTS
 ```
 
+<a name="performing-another-build"></a>
 ### Perform another build
 
 When the result of the first build is unsatisfactory, perform another build by executing 1 of the following commands, as appropriate:
