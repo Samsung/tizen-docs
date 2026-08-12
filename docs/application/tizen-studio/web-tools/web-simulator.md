@@ -173,7 +173,7 @@ The following APIs are implemented by the simulator in JavaScript:
 - Alarm (in [mobile](../../web/api/latest/device_api/mobile/tizen/alarm.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/alarm.html) applications)
 - Application (in [mobile](../../web/api/latest/device_api/mobile/tizen/application.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/application.html) applications)
 - Bluetooth (in [mobile](../../web/api/latest/device_api/mobile/tizen/bluetooth.html) applications)
-- Bookmark (in [mobile](../../web/api/latest/device_api/mobile/tizen/bookmark.html) applications)
+- Bookmark (in mobile applications)
 - Calendar (in [mobile](../../web/api/latest/device_api/mobile/tizen/calendar.html) applications)
 - Call History (in [mobile](../../web/api/latest/device_api/mobile/tizen/callhistory.html) applications)
 - Contact (in [mobile](../../web/api/latest/device_api/mobile/tizen/contact.html) applications)

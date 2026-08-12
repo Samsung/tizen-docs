@@ -46,7 +46,7 @@ Tizen .NET consists of the following main components:
 
 - **TizenFX API**
 
-  [TizenFX API](api/TizenFX/) supports C# APIs, which expose Tizen-specific features such as Tizen application framework, account management, location services, media services, and connectivity.
+  [TizenFX API](/application/dotnet/api/TizenFX/) supports C# APIs, which expose Tizen-specific features such as Tizen application framework, account management, location services, media services, and connectivity.
 
 ### Visual Studio Tools for Tizen
 

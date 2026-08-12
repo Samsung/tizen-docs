@@ -5,11 +5,11 @@ The messaging features introduce how you can use email, SMS, and MMS messaging i
 
 You can use the following messaging features in your native applications:
 
-- [Email](email.md)
+- Email
 
   You can enable the user to create and send email messages, as long as the user's email account has been correctly configured on the device. You can use attachments in the messages, and monitor the sending status of the messages.
 
-- [Messages](messages.md)
+- Messages
 
   You can create, send, and read text and multimedia messages. You can also search for messages, and track when new messages arrive, or outgoing messages have been successfully sent.
 

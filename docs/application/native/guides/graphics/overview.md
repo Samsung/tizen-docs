@@ -9,7 +9,7 @@ You can use the following graphics features in your native applications:
 
   The Tizen Buffer Manager (TBM) surface is used to handle the graphic buffer in Tizen. TBM provides the abstraction interface for the graphic buffer and the user interface for the TBM surface. It supports the RGB and YUV graphic formats, as well as multiple plane graphic buffers.
 
-- [Hardware Acceleration](hw-acceleration.md)
+- Hardware Acceleration
 
   You can enable hardware acceleration for the application. When the hardware acceleration is active, it increases rendering performance and allows you to use OpenGL&reg; ES smoothly.
 

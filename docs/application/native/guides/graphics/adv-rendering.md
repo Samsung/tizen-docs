@@ -11,7 +11,7 @@ In order to increase reusability, this section presents a simple OpenGL&reg; ES-
 
 ![Class diagram for sample views and renderer](./media/adv_render_class.png)
 
-The callback functions for GLView are registered as presented in [Creating OpenGL&reg; ES Applications](creating-opengles.md). At the initialization stage, the sample view uses the FileLoader class to read the resource files, such as shaders, 3D objects, and texture images, from the Tizen application resource file path. These data are passed to BasicRenderer. At the initialization stage when the `init_glview()` callback is invoked, BasicRenderer uses the shader code and BasicShader to create, compile, and link the program object.
+The callback functions for GLView are registered as presented in Creating OpenGL&reg; ES Applications. At the initialization stage, the sample view uses the FileLoader class to read the resource files, such as shaders, 3D objects, and texture images, from the Tizen application resource file path. These data are passed to BasicRenderer. At the initialization stage when the `init_glview()` callback is invoked, BasicRenderer uses the shader code and BasicShader to create, compile, and link the program object.
 
 In addition to BasicShader, BasicRenderer uses, for example, BasicCamera, vertex array, and texture object ID, for rendering a scene. When rendering is requested by the sample view, BasicRenderer initializes color and depth buffers through the `glClear()` function, and then computes many data needed for rendering, such as world, view, and projection matrices. These are transferred to BasicShader, which invokes the `glUniformXXX()` function to pass them to the current program object. Finally, the `glDrawElements()` function is invoked.
 

@@ -57,7 +57,6 @@
 ### [Location](/platform/porting/location.md)
 ### [Telephony](/platform/porting/telephony.md)
 ### [Application](/platform/porting/application.md)
-### [Legacy Porting](/platform/porting/legacy-porting.md)
 
 # Reference
 ## [Gerrit](/platform/reference/gerrit-usage.md)

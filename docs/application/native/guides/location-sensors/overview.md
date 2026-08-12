@@ -4,7 +4,7 @@ The location and sensor features introduce how you can manage information about 
 
 You can use the following location and sensor features in your native applications:
 
-- [Geofences](geofences.md)
+- Geofences
 
   You can create geofences, which are virtual perimeters for a real-world geographic area. When a geofence is active, you can monitor the user location and receive alerts when the user enters or leaves the geofence area.
 
@@ -12,7 +12,7 @@ You can use the following location and sensor features in your native applicatio
 
   The Location Manager provides the geographical location of the device for your application. You can access the user location, monitor location updates, and track the user movements within specific bounds or along a route. You can also manage the location settings, allowing the user to determine whether your application has access to location data.
 
-- [Maps and Maps Service](maps.md)
+- Maps and Maps Service
 
   You can use the map services, such as geocoder, place searching, and routing. The map service requires a map provider, form which you can retrieve the required map details. Tizen currently supports the [HERE Maps provider](https://developer.here.com/).
 

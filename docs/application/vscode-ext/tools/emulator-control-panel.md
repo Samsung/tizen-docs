@@ -34,7 +34,7 @@ The emulator can use a general-purpose or profile-specific skin. While the profi
 
   The key window consists of virtual hardware keys, which are embedded in profile-specific skins. You can use it as a remote controller for its main emulator window. You can move it to any position separate from the main window, or dock it to the right side of the main window. If it is docked with the main window, both windows can be moved together on the screen.
 
-  You can make the key window appear or disappear through the context menu or a [shortcut key](keyboard-shortcuts.md#emulator).
+  You can make the key window appear or disappear through the context menu or a [shortcut key](../../tizen-studio/common-tools/keyboard-shortcuts.md#emulator).
 
 - **Pair tag**
 
@@ -79,7 +79,7 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
 
 - **Emulator name** (the top row in the menu)
 
-  The **Detailed Info** window is displayed, showing the **Shortcut Info** and **VM Info** tabs. The **Shortcut Info** tab lists the [emulator keyboard shortcuts](keyboard-shortcuts.md#emulator) and the **VM Info** tab defines the virtual machine details.
+  The **Detailed Info** window is displayed, showing the **Shortcut Info** and **VM Info** tabs. The **Shortcut Info** tab lists the [emulator keyboard shortcuts](../../tizen-studio/common-tools/keyboard-shortcuts.md#emulator) and the **VM Info** tab defines the virtual machine details.
 
   In macOS: To use the emulator keyboard shortcuts, open the Keyboard Settings dialog and switch your macOS function keys option to work as standard function keys.
 
@@ -178,7 +178,7 @@ To open the control panel:
 
    ![Opening the control panel](./media/em_tizen_ecp_open.png)
 
-The following table lists the control panel features and their availability on different profiles. The instructions for using the features are described below the table. You can use various [keyboard shortcuts](keyboard-shortcuts.md#ecp) for control panel tasks.
+The following table lists the control panel features and their availability on different profiles. The instructions for using the features are described below the table. You can use various [keyboard shortcuts](../../tizen-studio/common-tools/keyboard-shortcuts.md#ecp) for control panel tasks.
 
 **Table: Control panel features**
 

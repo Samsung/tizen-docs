@@ -65,7 +65,7 @@ The following figure illustrates the application state transitions.
 
 ## Prerequisites
 
-To use the functions and data types of the [Application API](../../common/latest/group__CAPI__APPLICATION__MODULE.html), include the `<app.h>` header file in your application:
+To use the functions and data types of the [Application API](../../api/common/latest/group__CAPI__APPLICATION__MODULE.html), include the `<app.h>` header file in your application:
 
 ```
 #include <app.h>
@@ -218,9 +218,9 @@ Since Tizen 2.4, an application is not allowed to run in the background except w
 
 | Background category            | Description                              | Related APIs                             | Manifest file \<background-category\> element value |
 |--------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
-| Media                          | Playing audio, recording, and outputting streaming video in the background | [Multimedia API](../../common/latest/group__CAPI__MEDIA__FRAMEWORK.html) | `media`                                  |
-| Download                       | Downloading data with the Tizen Download-manager API | [Download API](../../common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html) | `download`                               |
-| Background network             | Processing general network operations in the background (such as sync-manager, IM, and VOIP) | [Sync Manager API](../../common/latest/group__CAPI__SYNC__MANAGER__MODULE.html), Socket, and [Curl API](../../api/common/latest/group__OPENSRC__CURL__FRAMEWORK.html) | `background-network`                     |
+| Media                          | Playing audio, recording, and outputting streaming video in the background | [Multimedia API](../../api/common/latest/group__CAPI__MEDIA__FRAMEWORK.html) | `media`                                  |
+| Download                       | Downloading data with the Tizen Download-manager API | [Download API](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html) | `download`                               |
+| Background network             | Processing general network operations in the background (such as sync-manager, IM, and VOIP) | [Sync Manager API](../../api/common/latest/group__CAPI__SYNC__MANAGER__MODULE.html), Socket, and [Curl API](../../api/common/latest/group__OPENSRC__CURL__FRAMEWORK.html) | `background-network`                     |
 | Location                       | Processing location data in the background | [Location API](../../api/common/latest/group__CAPI__LOCATION__FRAMEWORK.html) | `location`                               |
 | Sensor (context)               | Processing context data from the sensors, such as gesture | [Sensor API](../../api/common/latest/group__CAPI__SYSTEM__SENSOR__MODULE.html) | `sensor`                                 |
 | IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Wi-Fi](../../api/common/latest/group__CAPI__NETWORK__WIFI__PACKAGE.html) and [Bluetooth API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) | `iot-communication`                      |
@@ -281,4 +281,4 @@ The background category of your application can be specified in the [application
   - Since Tizen 2.4
 - API References
   - [UI Applications](../../api/common/latest/group__CAPI__APPLICATION__MODULE.html)
-  - [App Control](../../common/latest/group__CAPI__APP__CONTROL__MODULE.html)
+  - [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html)

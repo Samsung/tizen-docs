@@ -113,7 +113,7 @@ The above example rule only contains 1 condition, and both the event and the con
 <a name="options"></a>
 ### Options
 
-Certain events or conditions require the specification of some option values to clarify their monitoring or computation objective. For example, if an event is defined using `CONTEXT_TRIGGER_EVENT_PLACE`, the target place must be specified by its ID that can be retrieved using the [Geofence Manager](../location-sensors/geofences.md#manager), as in the following example:
+Certain events or conditions require the specification of some option values to clarify their monitoring or computation objective. For example, if an event is defined using `CONTEXT_TRIGGER_EVENT_PLACE`, the target place must be specified by its ID that can be retrieved using the Geofence Manager, as in the following example:
 
 ```
 int place_id;
@@ -152,7 +152,7 @@ The following table lists the available options keys and the corresponding value
 
 | Event or  condition                      | Option key                  | Type    | Valid value                              |
 |------------------------------------------|-----------------------------|---------|------------------------------------------|
-| `CONTEXT_TRIGGER_EVENT_PLACE`              | `CONTEXT_TRIGGER_PLACE_ID`    | Integer | Place ID. For more information, see the [Geofences](../location-sensors/geofences.md) guide. |
+| `CONTEXT_TRIGGER_EVENT_PLACE`              | `CONTEXT_TRIGGER_PLACE_ID`    | Integer | Place ID. For more information, see the Geofences guide. |
 | `CONTEXT_TRIGGER_CONDITION_APP_USE_FREQUENCY` | `CONTEXT_TRIGGER_APP_ID`      | String  | Application  ID                          |
 | `CONTEXT_TRIGGER_CONDITION_COMMUNICATION_FREQUENCY` | `CONTEXT_TRIGGER_ADDRESS`     | String  | Phone  number                            |
 | `CONTEXT_TRIGGER_CONDITION_APP_USE_FREQUENCY`<br>   ` CONTEXT_TRIGGER_CONDITION_COMMUNICATION_FREQUENCY`<br>        `CONTEXT_TRIGGER_CONDITION_MUSIC_PLAYBACK_FREQUENCY`<br>        `CONTEXT_TRIGGER_CONDITION_VIDEO_PLAYBACK_FREQUENCY` | `CONTEXT_TRIGGER_TIME_OF_DAY` | String  | Time  interval of the day. For example, "13-15" denotes "from 1 PM  to 3 PM". |

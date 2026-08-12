@@ -88,7 +88,7 @@ To create a new emulator instance:
 7. Click the **Create Emulator** button to create and save the emulator instance.
 
 > [!NOTE]
-> To run the application faster, enable CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator).
+> To run the application faster, enable CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../../tizen-studio/setup/prerequisites.md#emulator).
 
 ### Creating Custom Platforms
 

@@ -19,7 +19,7 @@ The following list defines Tizen Native API. The list describes the API modules 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
   | AccountManager | Provides CRUD (Create, Read, Update, Delete) account management functionality. | [Latest](../api/common/latest/group__CAPI__ACCOUNT__MANAGER__MODULE.html) | [Account Management](personal/account.md) | 
-  | FIDO Client    | Allows you to utilize the device's available authenticators for online service integration. | [Latest](../api/common/latest/group__CAPI__FIDO__MODULE.html) | [FIDO Universal Authentication Framework](personal/fido.md) |
+  | FIDO Client    | Allows you to utilize the device's available authenticators for online service integration. | [Latest](../api/common/latest/group__CAPI__FIDO__MODULE.html) | FIDO Universal Authentication Framework |
   | OAuth 2.0      | Provides an easy way to gain an access token between a server and client. | [Latest](../api/common/latest/group__CAPI__OAUTH2__MODULE.html) | [OAuth 2.0](personal/oauth.md)               |
   | Sync Manager   | Helps applications in scheduling their data sync operations. | [Latest](../api/common/latest/group__CAPI__SYNC__MANAGER__MODULE.html) | [Synchronization Management](personal/data-sync.md) |
   | libOAuth       | Provides a library for using an open standard for secure authorization. This library enables users to securely log into an account on an application by using their logon credentials from another secondary account that they can have with another account provider or application. | [Latest](../api/common/latest/group__OPENSRC__LIB__OAUTH__FRAMEK.html) |        |
@@ -87,9 +87,9 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | GeofenceManager | Provides a service related to geofence (geo-fence). | [Latest](../api/common/latest/group__CAPI__GEOFENCE__MANAGER__MODULE.html) | [Geofences](location-sensors/geofences.md) |
+  | GeofenceManager | Provides a service related to geofence (geo-fence). | [Latest](../api/common/latest/group__CAPI__GEOFENCE__MANAGER__MODULE.html) | Geofences |
   | LocationManager | Acquires information about the geographical location of the device. It also allows the receiving of notifications about position changes, velocity changes, and when a given geographical area is left. | [Latest](../api/common/latest/group__CAPI__LOCATION__MANAGER__MODULE.html) | [Location Information](location-sensors/location.md) |
-  | Maps Service    | Provides a set of functions, helping to create map-aware applications. | [Latest](../api/common/latest/group__CAPI__MAPS__SERVICE__MODULE.html) | [Maps and Maps Service](location-sensors/maps.md) |
+  | Maps Service    | Provides a set of functions, helping to create map-aware applications. | [Latest](../api/common/latest/group__CAPI__MAPS__SERVICE__MODULE.html) | Maps and Maps Service |
 
 - **Messaging**
 
@@ -97,8 +97,8 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | Email | Allows composing, sending, and receiving of email messages.  | [Latest](../api/common/latest/group__CAPI__MESSAGING__EMAIL__MODULE.html) | [Email](messaging/email.md) |
-  | Messages | Allows composing, sending, and receiving of SMS, MMS, and WAP push messages. | [Latest](../api/common/latest/group__CAPI__MESSAGING__MESSAGES__MODULE.html) | [Messages](messaging/messages.md) |
+  | Email | Allows composing, sending, and receiving of email messages.  | [Latest](../api/common/latest/group__CAPI__MESSAGING__EMAIL__MODULE.html) | Email |
+  | Messages | Allows composing, sending, and receiving of SMS, MMS, and WAP push messages. | [Latest](../api/common/latest/group__CAPI__MESSAGING__MESSAGES__MODULE.html) | Messages |
   | Push | Allows receiving of push notifications from a push server.| [Latest](../api/common/latest/group__CAPI__MESSAGING__PUSH__PUBLIC__MODULE.html) | [Push](messaging/push.md), [Push Server](messaging/push-server.md) |
 
 - **Multimedia**
@@ -224,7 +224,7 @@ The following list defines Tizen Native API. The list describes the API modules 
   | OpenGL ES                 | Provides a library for rendering 3D and 2D graphics in embedded systems. | [Latest](../api/common/latest/group__OPENSRC__OPENGLES__FRAMEWORK.html) | [OpenGL ES](graphics/opengl.md) |
   | TBM Surface               | Provides functions for the graphics buffer.  | [Latest](../api/common/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html) | [Graphic Buffer and Surface](graphics/graphic-buffer.md) |
   | Tizen Window System Shell            | Allows you to communicate with the window manager.   | [Latest](../api/common/latest/group__TIZEN__WS__SHELL__MODULE.html) | [Tizen Window System Shell](ui/tizen-ws-shell/index.md) |
-  | Vulkan                    | Provides functions for rendering 3D and 2D graphics in embedded systems. | [Latest](../api/common/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) | [Vulkan](graphics/vulkan.md) |
+  | Vulkan                    | Provides functions for rendering 3D and 2D graphics in embedded systems. | [Latest](../api/common/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) | Vulkan |
 
 - **UIX**
 
