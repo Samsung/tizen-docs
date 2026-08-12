@@ -35,7 +35,6 @@
 #### [Synchronization Management](/application/dotnet/guides/account/data-sync.md)
 #### Authentication and Authorization
 ##### [Overview](/application/dotnet/guides/account/authentication.md)
-##### [FIDO Universal Authentication Framework](/application/dotnet/guides/account/fido.md)
 ##### [OAuth 2.0](/application/dotnet/guides/account/oauth.md)
 
 #### [Application Usage History Data](/application/dotnet/guides/account/app-history.md)
@@ -116,7 +115,6 @@
 ### Location
 #### [Overview](/application/dotnet/guides/location/overview.md)
 #### [Location Information](/application/dotnet/guides/location/location.md)
-#### [Geofences](/application/dotnet/guides/location/geofences.md)
 
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
@@ -127,7 +125,6 @@
 #### [Machine Learning Train](/application/dotnet/guides/machine-learning/machine-learning-train.md)
 
 ### Maps
-#### [Overview](/application/dotnet/guides/maps/maps.md)
 #### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
 
 ### Multimedia
@@ -159,14 +156,9 @@
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
-#### [Email](/application/dotnet/guides/messaging/email.md)
-#### [Messages](/application/dotnet/guides/messaging/messages.md)
 #### [Push](/application/dotnet/guides/messaging/push.md)
 #### [Push Server](/application/dotnet/guides/messaging/push-server.md)
 
-### Natural Language Processing
-#### [Overview](/application/dotnet/guides/nlp/overview.md)
-#### [Natural Language Processing (NLP)](/application/dotnet/guides/nlp/nlp.md)
 
 ### Notifications and Content Sharing
 #### [Overview](/application/dotnet/guides/notification/overview.md)
@@ -337,9 +329,6 @@
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
 ### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
-### [Web Runtime](/application/web/guides/essentials/web-runtime.md)
-### [Event Handling](/application/web/guides/essentials/event-handling.md)
-### [Application Signing and Certificates](/application/web/guides/essentials/signing-certificates.md)
 ### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
 
 ## Guides
@@ -455,7 +444,6 @@
 #### [TEE Communication](/application/web/guides/security/tee-client.md)
 #### [Privacy-related Permissions](/application/web/guides/security/privacy-related-permissions.md)
 
-### [Error Handling](/application/web/guides/essentials/error-handling.md)
 ### W3C/HTML5/Supplementary Features
 #### [Overview](/application/web/guides/w3c/w3c-overview.md)
 
@@ -583,10 +571,6 @@
 #### [Application Filtering](/application/native/reference/app-filtering.md)
 #### [Security and API Privileges](/application/native/reference/security-privileges.md)
 #### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/reference/security-privileges-legacy.md)
-#### [Event Handling](/application/native/guides/essentials/event-handling.md)
-#### [Error Handling](/application/native/guides/essentials/error-handling.md)
-#### [File System Directory Hierarchy](/application/native/guides/essentials/file-system.md)
-#### [Application Signing and Certificates](/application/native/guides/essentials/signing-certificates.md)
 #### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/reference/deprecation-policy.md)
 #### [Removed functions and enumerations of Tizen Native API](/application/native/reference/removed-history.md)
 
@@ -669,7 +653,6 @@
 #### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
 #### OpenGL&reg; ES
 ##### [Overview](/application/native/guides/graphics/opengl.md)
-##### [Creating OpenGL&reg; ES Applications](/application/native/guides/graphics/creating-opengles.md)
 ##### [Polygon Mesh in OpenGL&reg; ES](/application/native/guides/graphics/polygon-mesh.md)
 ##### [Vertex Shader](/application/native/guides/graphics/vertex-shader.md)
 ##### [Primitive Assembly and Rasterization](/application/native/guides/graphics/assembly.md)
@@ -761,18 +744,14 @@
 
 ### Messaging
 #### [Overview](/application/native/guides/messaging/overview.md)
-#### [Email](/application/native/guides/messaging/email.md)
-#### [Messages](/application/native/guides/messaging/messages.md)
 #### [Push](/application/native/guides/messaging/push.md)
 #### [Push Server](/application/native/guides/messaging/push-server.md)
 
 ### Location and Sensors
 #### [Overview](/application/native/guides/location-sensors/overview.md)
-#### [Geofences](/application/native/guides/location-sensors/geofences.md)
 #### [Location Information](/application/native/guides/location-sensors/location.md)
 
 #### Maps and Maps Service
-##### [Overview](/application/native/guides/location-sensors/maps.md)
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
 
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
@@ -799,7 +778,6 @@
 #### [Data Synchronization](/application/native/guides/personal/data-sync.md)
 
 #### Authentication and Authorization
-##### [FIDO Universal Authentication Framework](/application/native/guides/personal/fido.md)
 ##### [OAuth 2.0](/application/native/guides/personal/oauth.md)
 
 #### [Calendar](/application/native/guides/personal/calendar.md)
@@ -815,7 +793,6 @@
 ### Device Settings and Systems
 #### [Overview](/application/native/guides/device/overview.md)
 #### [Attached Devices](/application/native/guides/device/attached-devices.md)
-#### [External Output Devices](/application/native/guides/device/ext-output.md)
 #### [Diagnostics](/application/native/guides/device/diagnostics.md)
 #### [Runtime Information](/application/native/guides/device/runtime.md)
 #### [System Information](/application/native/guides/device/system.md)

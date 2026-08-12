@@ -211,9 +211,9 @@ Flutter Tizen applications leverage the Flutter framework APIs along with platfo
 To start developing a Flutter Tizen application, follow these steps:
 
 1. **Installation**:
-   - [Linux (x64)](./guides/flutter-tizen/linux-install.md)
-   - [Windows (x64)](./guides/flutter-tizen/windows-install.md)
-   - [macOS (x64)](./guides/flutter-tizen/macos-install.md)
+   - [Linux (x64)](../guides/flutter-tizen/linux-install.md)
+   - [Windows (x64)](../guides/flutter-tizen/windows-install.md)
+   - [macOS (x64)](../guides/flutter-tizen/macos-install.md)
 
 2. **Create a new project**:
    ```bash

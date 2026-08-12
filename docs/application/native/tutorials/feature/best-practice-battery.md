@@ -136,7 +136,7 @@ When using location services with your application, you can reduce power consump
 
 #### Required Privileges
 
-To use the location service, the application must declare the required privileges in the `tizen-manifest.xml` file. For more information on the Tizen privileges, see [Security and API Privileges](../details/sec-privileges.md).
+To use the location service, the application must declare the required privileges in the `tizen-manifest.xml` file. For more information on the Tizen privileges, see [Security and API Privileges](../../reference/security-privileges.md).
 
 For this example, the application manifest must include the following privileges:
 

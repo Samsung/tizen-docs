@@ -18,10 +18,17 @@ LINK = re.compile(r"(?<!!)\[[^]]*\]\(([^)\s]+)(?:\s+[^)]*)?\)")
 IMAGE = re.compile(r"!\[[^]]*\]\(([^)\s]+)(?:\s+[^)]*)?\)")
 HEADING = re.compile(r"^(#{1,6})\s+(.+?)\s*$", re.M)
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
+PUBLISHED_API = re.compile(
+    r"^docs/application/(?:native|dotnet)/api/[^/]+/latest/.+")
 
 
 def generated(path):
     return any(part in f"/{path}" for part in GENERATED) or path.endswith(".autogen.md")
+
+
+def published_api(path):
+    """Return whether a path is a versioned API route published outside this checkout."""
+    return bool(PUBLISHED_API.match(path.replace(os.sep, "/")))
 
 
 def read(path):
@@ -116,6 +123,8 @@ def check(path, toc_entries):
             if not os.path.isfile(target):
                 if site_root and not raw.endswith(".md"):
                     continue  # Published API and route paths need not have a repo file.
+                if published_api(target):
+                    continue  # The stable `latest` API route is published separately.
                 errors |= report("ERROR", "L-BROKEN", path, f"{kind} target does not exist: {url}")
             elif fragment and target.endswith(".md") and not generated(target) and fragment.lower() not in anchors(target):
                 errors |= report("ERROR", "L-ANCHOR", path, f"anchor does not exist: {url}")

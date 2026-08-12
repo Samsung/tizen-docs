@@ -14,7 +14,7 @@ To install VS Code Extension for Tizen Web from the Visual Studio Code Marketpla
 
 1. In the Activity Bar of VS Code, click **Extensions** ![extension icon](media/extensions.png).
 
-   ![Visual Studio Code Marketplace](media/vscode_marketplace.png)
+   ![Visual Studio Code Marketplace](Tizen/media/vscode_marketplace.png)
 
 2. In the **EXTENSIONS** view that appears, click the search box at the top and type **Tizen Web**.
 3. In the **Tizen Web** search result that appears, click **Install**.
@@ -27,7 +27,7 @@ To install VS Code Extension for Tizen Web from the Visual Studio Code Marketpla
 To install VS Code extension for Tizen Web from a VSIX file, follow these steps:
 
 1. In the Activity Bar of VS Code, click **Extensions** ![extension icon](media/extensions.png).
-2. In the **EXTENSIONS** view that appears, click **More** ![More icon](media/vscode_more_icon.png) > **Install from VSIX**.
+2. In the **EXTENSIONS** view that appears, click **More** ![More icon](Tizen/media/vscode_more_icon.png) > **Install from VSIX**.
 
    ![Install from VSIX](media/tizen_web2.png)
 
@@ -45,7 +45,7 @@ If you do not have a real device, you can run your application in a virtual envi
   2. In the input field of the **Command Palette** that appears, type **Tizen Web: Run Package-Manager** and press **Enter**.
   3. Select the profiles and versions for your project, and click **install**.
 
-     ![Package Manager](media/tizen_package_manager.png)
+     ![Package Manager](Tizen/media/tizen_package_manager.png)
 
 - To use Tizen Emulator Manager, follow these steps:
 
@@ -56,7 +56,7 @@ If you do not have a real device, you can run your application in a virtual envi
   2. In the input field of the **Command Palette** that appears, type **Tizen Web: Run Emulator-Manager** and press **Enter**.
   3. Select the profiles and versions for your project, and click **Ok**.
 
-     ![Emulator Manager](media/howtoinstall-emulatormanager.png)
+     ![Emulator Manager](Tizen/media/howtoinstall-emulatormanager.png)
 
 ## Develop applications
 

@@ -201,18 +201,18 @@ tz set [options]
 |  `-s`, `--signing-profile="-"`                                     | Signing profile used for Tizen packaging (Project). |
 |  `-b`, `--build-type=STRING`                                       | Specifies the build type (debug/release/test)(Project). |
 |  `-r`, `--rootstrap=STRING`                                        | Rootstrap used for compiling native app (Project). |
-|  `-c`, `--compiler=STRING    `                                     | Compiler for native app compilation [gcc/llvm](project). |
+|  `-c`, `--compiler=STRING    `                                     | Compiler for native app compilation [gcc/llvm] (project). |
 |  `-d`, `--dotnet-cli-path=STRING`                                  | Path of dotnet-cli (Global). |
 |  `-m`, `--msbuild-path=STRING`                                     | Path of msbuild (Global). |
-|  `-D`, `--dotnet-build-tool=STRING          `                      | Tool for dotnet project build [msbuild/dotnet](Global). |
-|  `-A`, `--arch=STRING           `                                  | Specifies the architecture for build [arm/aarch64/x86/x86_64](Project). |
+|  `-D`, `--dotnet-build-tool=STRING          `                      | Tool for dotnet project build [msbuild/dotnet] (Global). |
+|  `-A`, `--arch=STRING           `                                  | Specifies the architecture for build [arm/aarch64/x86/x86_64] (Project). |
 |  `-S`, `--src-file-patterns=SRC-FILE-PATTERNS,...`                 | Source file patterns excluded from build, format: pattern1, pattern2 (Project). |
 |  `-T`, `--test-file-patterns=TEST-FILE-PATTERNS,...`               | Source file patterns included for test mode, format: pattern1, pattern2 (Project). |
 |  `-C`, `--chrome-path=STRING`                                      | Path of the Chrome executable (Global). |
 |  `-V`, `--tv-simulator-path=STRING`                                | Path of tv-simulator (Global). |
 |  `-L`, `--chrome-inspector-options=CHROME-INSPECTOR-OPTIONS,...`   | List of options for Chrome inspector, format: arg1, arg2 (Global). |
 |  `-e`, `--chrome-inspector-data-path=STRING`                       | Path of Chrome inspector data (Global). |
-|  `-O`, `--optimize=STRING`                                         | Size optimization of `wgt` for web projects [true/false](project). |
+|  `-O`, `--optimize=STRING`                                         | Size optimization of `wgt` for web projects [true/false] (project). |
 |  `-o`, `--output-path=STRING`                                      | Output Path for project. |
 
 

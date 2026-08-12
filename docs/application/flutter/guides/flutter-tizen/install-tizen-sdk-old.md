@@ -34,7 +34,7 @@ If you installed emulator packages in the previous step, you can use _Emulator M
 
 ![Tizen Emulator Manager](media/emulator-manager.png)
 
-To launch an emulator, select a device and press _Launch_. You can also use the [`flutter-tizen emulators`](commands.md#emulators) command to launch an emulator without _Emulator Manager_.
+To launch an emulator, select a device and press _Launch_. You can also use the [`flutter-tizen emulators`](../../reference/commands.md) command to launch an emulator without _Emulator Manager_.
 
 Note: Launching a Tizen emulator requires HW virtualization (Intel VT-x/AMD-V) support. For more information, see [Tizen Docs: Increasing the Application Execution Speed](https://docs.tizen.org/application/tizen-studio/common-tools/emulator/#increasing-the-application-execution-speed).
 

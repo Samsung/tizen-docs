@@ -99,7 +99,7 @@ Like a typical .NET library, the plugin package can use .NET APIs and external N
 
 ### Channel types
 
-Besides the above mentioned [MethodChannel](../embedding/csharp/Tizen.Flutter.Embedding/Channels/MethodChannel.cs), you can also use other types of platform channels to transfer data between Dart and C# code:
+Besides the above mentioned `MethodChannel`, you can also use other types of platform channels to transfer data between Dart and C# code:
 
-- [BasicMessageChannel](../embedding/csharp/Tizen.Flutter.Embedding/Channels/BasicMessageChannel.cs): For basic asynchronous message passing.
-- [EventChannel](../embedding/csharp/Tizen.Flutter.Embedding/Channels/EventChannel.cs): For asynchronous event streaming. 
+- `BasicMessageChannel`: For basic asynchronous message passing.
+- `EventChannel`: For asynchronous event streaming.

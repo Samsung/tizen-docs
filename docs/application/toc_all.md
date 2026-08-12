@@ -328,9 +328,6 @@
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
 ### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
-### [Web Runtime](/application/web/guides/essentials/web-runtime.md)
-### [Event Handling](/application/web/guides/essentials/event-handling.md)
-### [Application Signing and Certificates](/application/web/guides/essentials/signing-certificates.md)
 ### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
 
 ## Guides
@@ -446,7 +443,6 @@
 #### [TEE Communication](/application/web/guides/security/tee-client.md)
 #### [Privacy-related Permissions](/application/web/guides/security/privacy-related-permissions.md)
 
-### [Error Handling](/application/web/guides/essentials/error-handling.md)
 ### W3C/HTML5/Supplementary Features
 #### [Overview](/application/web/guides/w3c/w3c-overview.md)
 
@@ -574,10 +570,6 @@
 #### [Application Filtering](/application/native/reference/app-filtering.md)
 #### [Security and API Privileges](/application/native/reference/security-privileges.md)
 #### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/reference/security-privileges-legacy.md)
-#### [Event Handling](/application/native/guides/essentials/event-handling.md)
-#### [Error Handling](/application/native/guides/essentials/error-handling.md)
-#### [File System Directory Hierarchy](/application/native/guides/essentials/file-system.md)
-#### [Application Signing and Certificates](/application/native/guides/essentials/signing-certificates.md)
 #### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/reference/deprecation-policy.md)
 #### [Removed functions and enumerations of Tizen Native API](/application/native/reference/removed-history.md)
 
@@ -626,7 +618,6 @@
 ##### [Tizen Core Channel](/application/native/guides/applications/tizen-core/tizen-core-channel.md)
 ##### [Tizen Core Event](/application/native/guides/applications/tizen-core/tizen-core-event.md)
 #### UI Applications
-##### [Overview](/application/native/guides/applications/ui-app.md)
 ##### EFL Applications
 ###### [Basic UI Application](/application/native/guides/applications/efl-ui-app.md)
 ###### [Widget Application](/application/native/guides/applications/widget-app.md)

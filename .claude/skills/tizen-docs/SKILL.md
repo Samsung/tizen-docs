@@ -61,6 +61,10 @@ git diff --check
   `/application/native/guides/...` maps to `docs/application/native/guides/...`.
   Use the same style as nearby entries; do not convert an entire legacy document or TOC
   merely to change link style.
+- The stable API routes under `/application/native/api/<profile>/latest/` and
+  `/application/dotnet/api/<profile>/latest/` are published separately from this
+  checkout. Preserve their established relative-link form; do not add generated API
+  files just to make a local Markdown path exist.
 - When renaming a file or heading, update all incoming links and its TOC entry.
 
 See [TOC formats](references/toc-formats.md) before creating a new TOC or editing an
