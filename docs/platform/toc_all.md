@@ -2,7 +2,7 @@
 ## [Overview](/platform/what-is-tizen/overview.md)
 ## Devices
 ### [Products](/platform/what-is-tizen/devices/products.md)
-### [Custom](/platform/what-is-tizen/profiles/tizen_custom.md)
+### [Custom](/platform/what-is-tizen/profiles/tizen-custom.md)
 ## Versions
 ### [Tizen 9.0](/platform/what-is-tizen/versions/tizen-9-0-m2.md)
 ### [Tizen 8.0](/platform/what-is-tizen/versions/tizen-8-0-m2.md)
@@ -63,7 +63,7 @@
 ## [Gerrit](/platform/reference/gerrit-usage.md)
 ## Git Build System (GBS)
 ### [Overview](/platform/reference/gbs/gbs-overview.md)
-### [GBS Configuration](/platform/reference/gbs/gbs.conf.md)
+### [GBS Configuration](/platform/reference/gbs/gbs-conf.md)
 ### [GBS Maintenance Models](/platform/reference/gbs/gbs-maintenance-models.md)
 ### [GBS Reference](/platform/reference/gbs/gbs-reference.md)
 ### [FAQ](/platform/reference/gbs/gbs-faq.md)

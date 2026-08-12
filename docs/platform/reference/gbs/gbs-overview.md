@@ -6,7 +6,7 @@ Before going into further GBS details, make sure you have [set up the developmen
 
 Afterwards, become familiar with GBS by reading the following instructions:
 
-- [GBS Configuration](gbs.conf.md) describes how to modify the GBS configuration.
+- [GBS Configuration](gbs-conf.md) describes how to modify the GBS configuration.
 - [GBS Reference](gbs-reference.md) describes, in more detail, how to use GBS.
 - [GBS Frequently Asked Questions](gbs-faq.md) describes frequently asked questions.
 

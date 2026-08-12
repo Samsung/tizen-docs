@@ -20,7 +20,7 @@ To build a package for a specific project, follow the steps below:
 
    If a `<Specific_Project>/.gbs.conf` file exists, the configuration in that file is used when building the project with GBS. If not, the default GBS configuration in the `~/.gbs.conf` file is used.
 
-   For more information about the `.gbs.conf` file and the customization of remote repositories, see [GBS Configuration](../reference/gbs/gbs.conf.md) and [Setting up the Development Environment](setting-up.md), respectively.
+   For more information about the `.gbs.conf` file and the customization of remote repositories, see [GBS Configuration](../reference/gbs/gbs-conf.md) and [Setting up the Development Environment](setting-up.md), respectively.
 
 4. Build a package for the project:
 

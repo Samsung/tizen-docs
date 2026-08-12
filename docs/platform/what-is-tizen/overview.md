@@ -19,7 +19,7 @@ Tizen is a Linux-based, open source software platform. Anyone can contribute and
 
 Tizen is built to work on the following diverse devices:
 
-- [Tizen custom device](profiles/tizen_custom.md)
+- [Tizen custom device](profiles/tizen-custom.md)
 
 Tizen devices provide product-optimized functionality and performance.
 
@@ -28,7 +28,7 @@ Tizen provides a building block pool of components mainly based on the Tizen API
 
 Tizen custom devices can be created by combining API building blocks in various ways as per the requirements. Required packages are installed based on the dependencies related to the specified building blocks.
 
-For more information, please reference [Tizen custom device](profiles/tizen_custom.md).
+For more information, please reference [Tizen custom device](profiles/tizen-custom.md).
 
 Devices and features under new categories or devices can be easily added for emerging technologies. Therefore, Tizen is adaptable and customizable for new products. In the foreseeable future, for example, IoT devices and services are expected to be prevalent and Tizen is taking proactive steps toward the opportunities in these new markets.
 

@@ -46,12 +46,12 @@
 
 ### Applications
 #### [Overview](/application/dotnet/guides/applications/overview.md)
-#### [Service Application](/application/dotnet/guides/applications/service_application.md)
+#### [Service Application](/application/dotnet/guides/applications/service-application.md)
 #### UI Application
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
-##### [Tizen .NET Application Life Cycle](/application/dotnet/guides/applications/uiapplication/application_lifecycle.md)
+##### [Tizen .NET Application Life Cycle](/application/dotnet/guides/applications/uiapplication/application-lifecycle.md)
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
 
 #### Tizen Core
@@ -219,7 +219,7 @@
 ###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
 ###### [Visuals](/application/dotnet/guides/user-interface/nui/visuals.md)
 ###### [View](/application/dotnet/guides/user-interface/nui/view.md)
-###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/CanvasView.md)
+###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/canvas-view.md)
 ###### [CustomView](/application/dotnet/guides/user-interface/nui/customview.md)
 ###### [GLView](/application/dotnet/guides/user-interface/nui/glview.md)
 ###### [ImageView](/application/dotnet/guides/user-interface/nui/imageview.md)
@@ -227,25 +227,25 @@
 ###### [Text](/application/dotnet/guides/user-interface/nui/text.md)
 ###### [VideoView](/application/dotnet/guides/user-interface/nui/videoview.md)
 ###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
-###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/AlertDialog.md)
-###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
-###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/CameraView.md)
-###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
-###### [CollectionView](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView.md)
-###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
-###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
-###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/Notification.md)
-###### [Menu](/application/dotnet/guides/user-interface/nui/nui-components/Menu.md)
-###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/Pagination.md)
-###### [Picker](/application/dotnet/guides/user-interface/nui/nui-components/Picker.md)
-###### [Popup](/application/dotnet/guides/user-interface/nui/nui-components/Popup.md)
-###### [Progress](/application/dotnet/guides/user-interface/nui/nui-components/Progress.md)
-###### [RadioButton](/application/dotnet/guides/user-interface/nui/nui-components/RadioButton.md)
-###### [ScrollableBase](/application/dotnet/guides/user-interface/nui/nui-components/ScrollableBase.md)
-###### [Slider](/application/dotnet/guides/user-interface/nui/nui-components/Slider.md)
-###### [Switch](/application/dotnet/guides/user-interface/nui/nui-components/Switch.md)
-###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
-###### [TimePicker](/application/dotnet/guides/user-interface/nui/nui-components/TimePicker.md)
+###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/alert-dialog.md)
+###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/button.md)
+###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/camera-view.md)
+###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/check-box.md)
+###### [CollectionView](/application/dotnet/guides/user-interface/nui/nui-components/collection-view.md)
+###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/date-picker.md)
+###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/loading.md)
+###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/notification.md)
+###### [Menu](/application/dotnet/guides/user-interface/nui/nui-components/menu.md)
+###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/pagination.md)
+###### [Picker](/application/dotnet/guides/user-interface/nui/nui-components/picker.md)
+###### [Popup](/application/dotnet/guides/user-interface/nui/nui-components/popup.md)
+###### [Progress](/application/dotnet/guides/user-interface/nui/nui-components/progress.md)
+###### [RadioButton](/application/dotnet/guides/user-interface/nui/nui-components/radio-button.md)
+###### [ScrollableBase](/application/dotnet/guides/user-interface/nui/nui-components/scrollable-base.md)
+###### [Slider](/application/dotnet/guides/user-interface/nui/nui-components/slider.md)
+###### [Switch](/application/dotnet/guides/user-interface/nui/nui-components/switch.md)
+###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/tab.md)
+###### [TimePicker](/application/dotnet/guides/user-interface/nui/nui-components/time-picker.md)
 
 ##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
 
@@ -260,15 +260,15 @@
 
 ##### Page Navigation
 ###### [Overview](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/page-navigation.md)
-###### [ContentPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/ContentPage.md)
-###### [DialogPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/DialogPage.md)
+###### [ContentPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/content-page.md)
+###### [DialogPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/dialog-page.md)
 
 ##### Vector Graphics
-###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
-###### [Shape and Stroke](/application/dotnet/guides/user-interface/nui/vectorgraphics/ShapeAndStroke.md)
-###### [Grouping](/application/dotnet/guides/user-interface/nui/vectorgraphics/Grouping.md)
-###### [Transformation and Composition](/application/dotnet/guides/user-interface/nui/vectorgraphics/TransformationAndComposition.md)
-###### [Picture](/application/dotnet/guides/user-interface/nui/vectorgraphics/Picture.md)
+###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/overview.md)
+###### [Shape and Stroke](/application/dotnet/guides/user-interface/nui/vectorgraphics/shape-and-stroke.md)
+###### [Grouping](/application/dotnet/guides/user-interface/nui/vectorgraphics/grouping.md)
+###### [Transformation and Composition](/application/dotnet/guides/user-interface/nui/vectorgraphics/transformation-and-composition.md)
+###### [Picture](/application/dotnet/guides/user-interface/nui/vectorgraphics/picture.md)
 
 ##### [Palette](/application/dotnet/guides/user-interface/nui/palette.md)
 ##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
@@ -300,7 +300,7 @@
 ## [Overview](/application/web/index.md)
 
 ## Get Started with Visual Studio Code Extension
-### [Web application development](/application/vscode-ext/Tizen/web_app.md)
+### [Web application development](/application/vscode-ext/Tizen/web-app.md)
 
 ## Get Started with Visual Studio
 ### [Web application development](/application/vstools/Tizen/web.md)

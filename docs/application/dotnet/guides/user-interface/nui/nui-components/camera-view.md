@@ -13,7 +13,7 @@ The following basic example shows how to create a `CameraView` object:
 
 **Figure: Basic CameraView**
 
-![Basic CameraView](../media/camera_images.png)
+![Basic CameraView](media/camera_images.png)
 
 1. To use the `CameraView` class, add the following namespaces:
 

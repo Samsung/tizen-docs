@@ -72,4 +72,4 @@
 
 <!-- ##### [Tizen VSCode Command](/application/vscode-ext/Tizen/command.md) -->
 
-## [Tool Index](/application/sdktool_index.md)
+## [Tool Index](/application/sdktool-index.md)

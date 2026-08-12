@@ -28,7 +28,5 @@ Tizen IoT Extension SDK version 1.0 is released from Tizen Studio 3.0 for Tizen 
     To get started with developing your own Tizen IoT applications:
 
     1.  [Setup the board](setting-up-board.md).
-    2.  [Develop an application](things-app-development-5.0.md).
     3.  [Set up the SmartThings Cloud](things-cloud-setup.md).
     4.  [Test the application with SmartThings app](cloud-app-test.md).
-
