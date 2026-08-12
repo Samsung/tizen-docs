@@ -45,7 +45,7 @@
 ### [System](/platform/HAL/guides/system.md)
 
 ### API Reference
-#### [1.0](/platform/HAL/api/1.0/index.md){:target="_blank"}
+#### [1.0](/platform/HAL/api/1.0/index.html){:target="_blank"}
 ## Archive
 ### [Overview](/platform/porting/overview.md)
 ### [Kernel](/platform/porting/kernel.md)
