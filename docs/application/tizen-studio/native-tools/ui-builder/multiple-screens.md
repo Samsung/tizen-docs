@@ -88,7 +88,7 @@ The following table shows the components for multiple screens.
 | Tizen platform | Application module                 | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../native/guides/applications/overview.md) guide. |
 |                | Resource Management module         | Displays the appropriate resource file on the screen by using a resource key. |
 |                | Internationalization module (i18n) | Provides the localized string at runtime. |
-|                | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the [automatic scaling](../../../native/guides/ui/efl/multiple-screens.md) function to express the natural screen without distortion on a variety of devices. |
+|                | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the automatic scaling function to express the natural screen without distortion on a variety of devices. |
 
 ## Designing Applications with Multiple Screens
 

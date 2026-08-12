@@ -11,7 +11,7 @@ To solve the problem, GLView provides the `elm_glview_changed_set()` function to
 <a name="touch"></a>
 ## Touch Event Handling
 
-To handle touch events in Tizen, you must connect the event callback functions with `Evas_object`. The functions are registered by the `evas_object_event_callback_add()` function for a set of specific events which are already defined in EFL. To learn more about EFL event handling, see the [Event Handling](../ui/efl/event-handling.md).
+To handle touch events in Tizen, you must connect the event callback functions with `Evas_object`. The functions are registered by the `evas_object_event_callback_add()` function for a set of specific events which are already defined in EFL. To learn more about EFL event handling, see the Event Handling.
 
 The following examples show how to register callback functions for handling touch information and rotating a cube object:
 

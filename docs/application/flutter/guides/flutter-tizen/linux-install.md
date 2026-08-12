@@ -5,7 +5,7 @@
 - Operating system: Linux (x64)
 - Tools:
   - [VS Code Extension for Tizen](install-tizen-sdk.md) (10.1.0 or later)
-    - Optional: [Tizen Studio](install-tizen-sdk-old.md) (6.1 or later, To be deprecated)
+    - Optional: [Tizen Studio](install-tizen-sdk.md) (6.1 or later, To be deprecated)
   - [.NET SDK](https://learn.microsoft.com/en-us/dotnet/core/install/linux) (6.0 or later)
   - `bash` `curl` `file` `git` `make` `mkdir` `rm` `unzip` `which` `xz-utils` `zip`
 

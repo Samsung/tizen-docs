@@ -5,7 +5,7 @@
 
 The EDC Editor is an EDC (Edje Data Collections) script editor tool that supports text editing and previewing functions for the EDC source code.
 
-When your application requires real-time changeable layouts, for example, animations, you can write the layout designs using an EDC script, compile it into an EDJ format file, and import it into your application using a UI layout component. You can also write simple and complex design layouts using the EDC script with the EDC Editor. The EDC Editor makes it easier to write the EDC script code and faster to finish your work. If you are not familiar with EDC programming and need more information, see [Layouting with EDC](../../native/guides/ui/efl/learn-edc-intro.md).
+When your application requires real-time changeable layouts, for example, animations, you can write the layout designs using an EDC script, compile it into an EDJ format file, and import it into your application using a UI layout component. You can also write simple and complex design layouts using the EDC script with the EDC Editor. The EDC Editor makes it easier to write the EDC script code and faster to finish your work. If you are not familiar with EDC programming and need more information, see Layouting with EDC.
 
 **Figure: EDC Editor**
 
@@ -234,7 +234,7 @@ To use the live edit mode:
 
   Each part in a layout can be constructed with a relative or fixed size:
 
-  - If a part is constructed with a fixed size, its size does not scale with the other parts or the layout size. When the live edit mode is activated, you can find a fixed size tool at the bottom of the preview. Check the fixed size options for width and height to fix them. For more information on the scalability concept in EDC, see [Scalability Using the EDC File](../../native/guides/ui/efl/scalability.md#edje).
+  - If a part is constructed with a fixed size, its size does not scale with the other parts or the layout size. When the live edit mode is activated, you can find a fixed size tool at the bottom of the preview. Check the fixed size options for width and height to fix them. For more information on the scalability concept in EDC, see Scalability Using the EDC File.
   - A part with a relative size expands or contracts its size to keep up with other parts' position and size or a layout size. In contrast to the fixed size, you can set a new part's position and size relative to other parts. Drag a control point to the edge of other existing parts. Once you release the mouse button, a contextual pop-up opens and displays a list of candidate parts that you can select as a relative to the X and Y coordinates of the new part.
 
 - Auto-align the part object
@@ -334,7 +334,7 @@ There are 3 ways to start the EDC editor:
 
 ## Importing an EDJ File in the Source Code
 
-The Tizen Studio Package Manager compiles the EDC files you have written into EDJ files. The name of the generated EDJ file is the same as the original EDC file. After you have edited the EDC file and built the application project, you can normally import the EDJ file in the application source code using the [layout](../../native/guides/ui/efl/container-layout.md) UI component.
+The Tizen Studio Package Manager compiles the EDC files you have written into EDJ files. The name of the generated EDJ file is the same as the original EDC file. After you have edited the EDC file and built the application project, you can normally import the EDJ file in the application source code using the layout UI component.
 
 In most cases, an EDC file contains multiple groups, so you need to specify the name of the group you want to import to the layout:
 

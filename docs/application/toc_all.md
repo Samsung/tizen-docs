@@ -5,6 +5,9 @@
 ## Tizen Profiles
 ### [Overview](/application/profiles/index.md)
 ### [IoT](/application/profiles/iot.md)
+### [Mobile](/application/profiles/mobile.md)
+### [TV](/application/profiles/tv.md)
+### [Wearable](/application/profiles/wearable.md)
 
 # .NET Application
 
@@ -1045,6 +1048,7 @@
 #### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ### Release Notes
+#### [10.0 (Nov 4, 2025)](/application/tizen-studio/release-notes/10-0-release-notes.md)
 #### [6.1 (Apr 16, 2025)](/application/tizen-studio/release-notes/6-1-release-notes.md)
 #### [6.0 (Nov 4, 2024)](/application/tizen-studio/release-notes/6-0-release-notes.md)
 #### [5.6 (Mar 29, 2024)](/application/tizen-studio/release-notes/5-6-release-notes.md)
