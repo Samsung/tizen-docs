@@ -127,7 +127,11 @@ def main():
     paths = args.paths or (changed_files(args.base) if args.changed_only else [])
     if not paths:
         parser.error("supply paths or use --changed-only")
-    return 1 if any(check(path, toc_targets()) for path in paths) else 0
+    entries = toc_targets()
+    errors = False
+    for path in paths:
+        errors = check(path, entries) or errors
+    return 1 if errors else 0
 
 
 if __name__ == "__main__":
