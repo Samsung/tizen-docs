@@ -23,6 +23,10 @@ The main features of the Alarm API include:
 
   You can [list all scheduled alarms, and update or cancel them](#scenario_4).
 
+- Setting an alarm that sends a notification
+
+  You can [set an alarm that posts a notification](#scenario_5) when it expires, without launching an application.
+
 ## Prerequisites
 
 To enable your application to use the alarm functionality:
@@ -226,6 +230,30 @@ ret = alarm_foreach_registered_alarm(on_foreach_registered_alarm, NULL);
 if (ret != ALARM_ERROR_NONE)
     dlog_print(DLOG_ERROR, TAG, "Listing Error: %d ", ret);
 ```
+
+<a name="scenario_5"></a>
+## Setting an Alarm that Sends a Notification
+
+Instead of launching an application, an alarm can post a notification directly when it expires. To do this, use one of the `alarm_schedule_noti_*()` functions with an instance of the `notification_h` handle instead of an `app_control_h` handle:
+
+```
+notification_h noti = notification_create(NOTIFICATION_TYPE_NOTI);
+notification_set_text(noti, NOTIFICATION_TEXT_TYPE_TITLE, "Alarm", NULL, NOTIFICATION_VARIABLE_TYPE_NONE);
+notification_set_text(noti, NOTIFICATION_TEXT_TYPE_CONTENT, "The alarm has expired", NULL, NOTIFICATION_VARIABLE_TYPE_NONE);
+
+int alarm_id;
+int ret = alarm_schedule_noti_after_delay(noti, DELAY, PERIOD, &alarm_id);
+if (ret != ALARM_ERROR_NONE)
+    dlog_print(DLOG_ERROR, TAG, "Schedule Error: %d ", ret);
+```
+
+The following functions are also available, mirroring the `app_control_h`-based scheduling functions:
+
+- `alarm_schedule_noti_once_after_delay()` for a one-time alarm after a delay
+- `alarm_schedule_noti_once_at_date()` for a one-time alarm at a specific date
+- `alarm_schedule_noti_with_recurrence_week_flag()` for an alarm repeated on specific days of the week
+
+Use `alarm_get_notification()` to retrieve the notification associated with a scheduled alarm.
 
 ## Related Information
 - Dependencies
