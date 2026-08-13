@@ -37,17 +37,19 @@ This section explains how to install the OpenJDK version 12 for Windows:
     > [!NOTE]
     > If your `JAVA_HOME` variable is already created, select it and click **Edit...**.
 
-5. Enter `JAVA_HOME` in the variable name field and the JDK directory path, for example, `C:\Users\user\Desktop\jdk-12.0.2\bin` in the Variable value field.
+5. Enter `JAVA_HOME` in the variable name field and the JDK directory path, for example, `C:\Users\user\Desktop\jdk-12.0.2` in the Variable value field. Do **not** include the `bin` subdirectory in `JAVA_HOME`.
 
-6. Click **OK**. The Environment Variables window appears.
+6. Add `%JAVA_HOME%\bin` to the **Path** variable so that the `java` and `javac` executables are available from the command line.
 
-7. If you cannot find `JAVA_HOME` in **System variables** section, add the variable by repeating the 4, 5, and 6 steps.
+7. Click **OK**. The Environment Variables window appears.
 
-8. Save and close the **Environment Variables** window.
+8. If you cannot find `JAVA_HOME` in **System variables** section, add the variable by repeating the steps 4 through 7.
 
-9. Launch **Command Prompt**.
+9. Save and close the **Environment Variables** window.
 
-10. Run the following command to verify whether the OpenJDK version 12 is installed:
+10. Launch **Command Prompt**.
+
+11. Run the following command to verify whether the OpenJDK version 12 is installed:
     ```
     java -version
     ```
@@ -109,7 +111,7 @@ This section explains how to install the OpenJDK version 12 for macOS:
     ```
 
     > [!NOTE]
-    > If the OpenJDK version 12 is not installed, add the `export JAVA_HOME = /Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home` command in the `.profile` or `.bash_profile` file.
+    > If the OpenJDK version 12 is not installed, add the `export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home` command in the `.profile` or `.bash_profile` file.
 
 
 ## Install OpenJFX
