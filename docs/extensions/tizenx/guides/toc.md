@@ -1,6 +1,6 @@
 # [Overview](../overview/overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/overview/overview.md tags:['TizenX', 'extension', 'library'], authors:['jh5.cho@samsung.com']")
 # [Guides](overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/overview.md tags:['TizenX', 'extension', 'library', 'Tizen.UI', 'TizenX.ZLog'], authors:['jh5.cho@samsung.com']")
-# [Tizen.UI]()
+# [Tizen.UI](tizen-ui/overview.md)
 ## [Overview](tizen-ui/overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizen-ui/overview.md tags:['TizenX', 'Tizen.UI']")
 ## [Getting Started](tizen-ui/getting-started.md "source: https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizen-ui/getting-started.md tags:['TizenX', 'Tizen.UI'], authors:['jh5.cho@samsung.com']")
 
@@ -18,14 +18,14 @@
 ### [HStack&VStack](tizen-ui/layouts/stack.md "source: https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizen-ui/layouts/stack.md tags:['Tizen.UI', 'Layout', 'Stack', 'HStack', 'VStack'], authors:['jh5.cho@samsung.com']")
 ## [C# Markup](tizen-ui/csharp-markup.md "source: https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizen-ui/csharp-markup.md tags:['Tizen.UI', 'Markup'], authors:['jh5.cho@samsung.com']")
 
-# [TizenX.ZLog]()
+# [TizenX.ZLog](tizenx-zlog/overview.md)
 ## [Overview](tizenx-zlog/overview.md "source: https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-zlog/overview.md tags:['TizenX', 'TizenX.ZLog'], authors:['jh5.cho@samsung.com']")
 
-# [TizenX.Aurum]()
+# [TizenX.Aurum](tizenx-aurum/overview.md)
 ## [Overview](tizenx-aurum/overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-aurum/overview.md tags:['TizenX', 'Aurum']")
 
-# [TizenX.GenUI]()
+# [TizenX.GenUI](tizenx-genui/getting-started.md)
 ## [Getting Started](tizenx-genui/getting-started.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-genui/getting-started.md tags:['TizenX', 'GenUI'], authors:['jh5.cho@samsung.com']")
 
-# [TizenX.RPCPort]()
+# [TizenX.RPCPort](tizenx-rpcport/overview.md)
 ## [Overview](tizenx-rpcport/overview.md "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/guides/tizenx-rpcport/overview.md tags:['TizenX', 'RPCPort']")

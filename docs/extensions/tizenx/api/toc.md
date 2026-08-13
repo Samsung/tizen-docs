@@ -1,4 +1,4 @@
-# [Tizen.UI]()
+# [Tizen.UI](Tizen.UI/Tizen.UI.md)
 ## [AccessibilityAction](Tizen.UI/Tizen.UI.AccessibilityAction.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI/Tizen.UI.AccessibilityAction.md tags:['AccessibilityAction'], author:['jh5.cho@samsung.com']"
 ## [AccessibilityActionReceivedEventArgs](Tizen.UI/Tizen.UI.AccessibilityActionReceivedEventArgs.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI/Tizen.UI.AccessibilityActionReceivedEventArgs.md tags:['AccessibilityActionReceivedEventArgs'], author:['jh5.cho@samsung.com']"
 ## [AccessibilityDescriptionRequestedEventArgs](Tizen.UI/Tizen.UI.AccessibilityDescriptionRequestedEventArgs.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI/Tizen.UI.AccessibilityDescriptionRequestedEventArgs.md tags:['AccessibilityDescriptionRequestedEventArgs'], author:['jh5.cho@samsung.com']"
@@ -276,7 +276,7 @@
 ## [WindowResizeDirection](Tizen.UI/Tizen.UI.WindowResizeDirection.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI/Tizen.UI.WindowResizeDirection.md tags:['WindowResizeDirection'], author:['jh5.cho@samsung.com']"
 ## [WindowResizePolicy](Tizen.UI/Tizen.UI.WindowResizePolicy.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI/Tizen.UI.WindowResizePolicy.md tags:['WindowResizePolicy'], author:['jh5.cho@samsung.com']"
 ## [WindowType](Tizen.UI/Tizen.UI.WindowType.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI/Tizen.UI.WindowType.md tags:['WindowType'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.Components]()
+# [Tizen.UI.Components](Tizen.UI.Components/Tizen.UI.Components.md)
 ## [AnimatedImageVisualMap](Tizen.UI.Components/Tizen.UI.Components.AnimatedImageVisualMap.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components/Tizen.UI.Components.AnimatedImageVisualMap.md tags:['AnimatedImageVisualMap'], author:['jh5.cho@samsung.com']"
 ## [AnimatedLayout](Tizen.UI.Components/Tizen.UI.Components.AnimatedLayout.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components/Tizen.UI.Components.AnimatedLayout.md tags:['AnimatedLayout'], author:['jh5.cho@samsung.com']"
 ## [Animations.AnimationExtensions](Tizen.UI.Components/Tizen.UI.Components.Animations.AnimationExtensions.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components/Tizen.UI.Components.Animations.AnimationExtensions.md tags:['Animations.AnimationExtensions'], author:['jh5.cho@samsung.com']"
@@ -430,7 +430,7 @@
 ## [UIVectorExtensions](Tizen.UI.Components/Tizen.UI.Components.UIVectorExtensions.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components/Tizen.UI.Components.UIVectorExtensions.md tags:['UIVectorExtensions'], author:['jh5.cho@samsung.com']"
 ## [Variables](Tizen.UI.Components/Tizen.UI.Components.Variables.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components/Tizen.UI.Components.Variables.md tags:['Variables'], author:['jh5.cho@samsung.com']"
 ## [ViewExtensions](Tizen.UI.Components/Tizen.UI.Components.ViewExtensions.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components/Tizen.UI.Components.ViewExtensions.md tags:['ViewExtensions'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.Components.Material]()
+# [Tizen.UI.Components.Material](Tizen.UI.Components.Material/Tizen.UI.Components.Material.md)
 ## [ActionButton](Tizen.UI.Components.Material/Tizen.UI.Components.Material.ActionButton.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components.Material/Tizen.UI.Components.Material.ActionButton.md tags:['ActionButton'], author:['jh5.cho@samsung.com']"
 ## [AdapterView](Tizen.UI.Components.Material/Tizen.UI.Components.Material.AdapterView.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components.Material/Tizen.UI.Components.Material.AdapterView.md tags:['AdapterView'], author:['jh5.cho@samsung.com']"
 ## [AlertDialog](Tizen.UI.Components.Material/Tizen.UI.Components.Material.AlertDialog.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components.Material/Tizen.UI.Components.Material.AlertDialog.md tags:['AlertDialog'], author:['jh5.cho@samsung.com']"
@@ -569,7 +569,7 @@
 ## [TitleVariables](Tizen.UI.Components.Material/Tizen.UI.Components.Material.TitleVariables.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components.Material/Tizen.UI.Components.Material.TitleVariables.md tags:['TitleVariables'], author:['jh5.cho@samsung.com']"
 ## [Toast](Tizen.UI.Components.Material/Tizen.UI.Components.Material.Toast.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components.Material/Tizen.UI.Components.Material.Toast.md tags:['Toast'], author:['jh5.cho@samsung.com']"
 ## [ToastVariables](Tizen.UI.Components.Material/Tizen.UI.Components.Material.ToastVariables.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Components.Material/Tizen.UI.Components.Material.ToastVariables.md tags:['ToastVariables'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.Layouts]()
+# [Tizen.UI.Layouts](Tizen.UI.Layouts/Tizen.UI.Layouts.md)
 ## [AbsoluteLayout](Tizen.UI.Layouts/Tizen.UI.Layouts.AbsoluteLayout.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Layouts/Tizen.UI.Layouts.AbsoluteLayout.md tags:['AbsoluteLayout'], author:['jh5.cho@samsung.com']"
 ## [AbsoluteLayoutExtensions](Tizen.UI.Layouts/Tizen.UI.Layouts.AbsoluteLayoutExtensions.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Layouts/Tizen.UI.Layouts.AbsoluteLayoutExtensions.md tags:['AbsoluteLayoutExtensions'], author:['jh5.cho@samsung.com']"
 ## [AbsoluteLayoutFlags](Tizen.UI.Layouts/Tizen.UI.Layouts.AbsoluteLayoutFlags.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Layouts/Tizen.UI.Layouts.AbsoluteLayoutFlags.md tags:['AbsoluteLayoutFlags'], author:['jh5.cho@samsung.com']"
@@ -625,7 +625,7 @@
 ## [ViewExtensions](Tizen.UI.Layouts/Tizen.UI.Layouts.ViewExtensions.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Layouts/Tizen.UI.Layouts.ViewExtensions.md tags:['ViewExtensions'], author:['jh5.cho@samsung.com']"
 ## [VStack](Tizen.UI.Layouts/Tizen.UI.Layouts.VStack.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Layouts/Tizen.UI.Layouts.VStack.md tags:['VStack'], author:['jh5.cho@samsung.com']"
 ## [VStackLayoutManager](Tizen.UI.Layouts/Tizen.UI.Layouts.VStackLayoutManager.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Layouts/Tizen.UI.Layouts.VStackLayoutManager.md tags:['VStackLayoutManager'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.Markdown]()
+# [Tizen.UI.Markdown](Tizen.UI.Markdown/Tizen.UI.Markdown.md)
 ## [CodeStyle](Tizen.UI.Markdown/Tizen.UI.Markdown.CodeStyle.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Markdown/Tizen.UI.Markdown.CodeStyle.md tags:['CodeStyle'], author:['jh5.cho@samsung.com']"
 ## [CommonStyle](Tizen.UI.Markdown/Tizen.UI.Markdown.CommonStyle.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Markdown/Tizen.UI.Markdown.CommonStyle.md tags:['CommonStyle'], author:['jh5.cho@samsung.com']"
 ## [HeadingStyle](Tizen.UI.Markdown/Tizen.UI.Markdown.HeadingStyle.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Markdown/Tizen.UI.Markdown.HeadingStyle.md tags:['HeadingStyle'], author:['jh5.cho@samsung.com']"
@@ -639,7 +639,7 @@
 ## [StyleDefaults](Tizen.UI.Markdown/Tizen.UI.Markdown.StyleDefaults.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Markdown/Tizen.UI.Markdown.StyleDefaults.md tags:['StyleDefaults'], author:['jh5.cho@samsung.com']"
 ## [TableStyle](Tizen.UI.Markdown/Tizen.UI.Markdown.TableStyle.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Markdown/Tizen.UI.Markdown.TableStyle.md tags:['TableStyle'], author:['jh5.cho@samsung.com']"
 ## [ThematicBreakStyle](Tizen.UI.Markdown/Tizen.UI.Markdown.ThematicBreakStyle.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Markdown/Tizen.UI.Markdown.ThematicBreakStyle.md tags:['ThematicBreakStyle'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.Primitives2D]()
+# [Tizen.UI.Primitives2D](Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.md)
 ## [ArcTo](Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.ArcTo.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.ArcTo.md tags:['ArcTo'], author:['jh5.cho@samsung.com']"
 ## [BezierTo](Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.BezierTo.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.BezierTo.md tags:['BezierTo'], author:['jh5.cho@samsung.com']"
 ## [Close](Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.Close.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.Close.md tags:['Close'], author:['jh5.cho@samsung.com']"
@@ -670,7 +670,7 @@
 ## [StrokeCap](Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.StrokeCap.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.StrokeCap.md tags:['StrokeCap'], author:['jh5.cho@samsung.com']"
 ## [StrokeJoin](Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.StrokeJoin.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.StrokeJoin.md tags:['StrokeJoin'], author:['jh5.cho@samsung.com']"
 ## [VectorView](Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.VectorView.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Primitives2D/Tizen.UI.Primitives2D.VectorView.md tags:['VectorView'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.Scene3D]()
+# [Tizen.UI.Scene3D](Tizen.UI.Scene3D/Tizen.UI.Scene3D.md)
 ## [Animatable3DPropertyValue_T_](Tizen.UI.Scene3D/Tizen.UI.Scene3D.Animatable3DPropertyValue_T_.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Scene3D/Tizen.UI.Scene3D.Animatable3DPropertyValue_T_.md tags:['Animatable3DPropertyValue_T_'], author:['jh5.cho@samsung.com']"
 ## [Animation3D](Tizen.UI.Scene3D/Tizen.UI.Scene3D.Animation3D.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Scene3D/Tizen.UI.Scene3D.Animation3D.md tags:['Animation3D'], author:['jh5.cho@samsung.com']"
 ## [Camera](Tizen.UI.Scene3D/Tizen.UI.Scene3D.Camera.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Scene3D/Tizen.UI.Scene3D.Camera.md tags:['Camera'], author:['jh5.cho@samsung.com']"
@@ -720,12 +720,12 @@
 ## [TransformTypes](Tizen.UI.Scene3D/Tizen.UI.Scene3D.TransformTypes.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Scene3D/Tizen.UI.Scene3D.TransformTypes.md tags:['TransformTypes'], author:['jh5.cho@samsung.com']"
 ## [Vector3D](Tizen.UI.Scene3D/Tizen.UI.Scene3D.Vector3D.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Scene3D/Tizen.UI.Scene3D.Vector3D.md tags:['Vector3D'], author:['jh5.cho@samsung.com']"
 ## [ViewExtensions](Tizen.UI.Scene3D/Tizen.UI.Scene3D.ViewExtensions.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Scene3D/Tizen.UI.Scene3D.ViewExtensions.md tags:['ViewExtensions'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.Skia]()
+# [Tizen.UI.Skia](Tizen.UI.Skia/Tizen.UI.Skia.md)
 ## [CustomRenderingView](Tizen.UI.Skia/Tizen.UI.Skia.CustomRenderingView.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Skia/Tizen.UI.Skia.CustomRenderingView.md tags:['CustomRenderingView'], author:['jh5.cho@samsung.com']"
 ## [Tizen.UI.Skia](Tizen.UI.Skia/Tizen.UI.Skia.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Skia/Tizen.UI.Skia.md tags:['Tizen.UI.Skia'], author:['jh5.cho@samsung.com']"
 ## [SKCanvasView](Tizen.UI.Skia/Tizen.UI.Skia.SKCanvasView.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Skia/Tizen.UI.Skia.SKCanvasView.md tags:['SKCanvasView'], author:['jh5.cho@samsung.com']"
 ## [SKPaintSurfaceEventArgs](Tizen.UI.Skia/Tizen.UI.Skia.SKPaintSurfaceEventArgs.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Skia/Tizen.UI.Skia.SKPaintSurfaceEventArgs.md tags:['SKPaintSurfaceEventArgs'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.Visuals]()
+# [Tizen.UI.Visuals](Tizen.UI.Visuals/Tizen.UI.Visuals.md)
 ## [ColorVisual](Tizen.UI.Visuals/Tizen.UI.Visuals.ColorVisual.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Visuals/Tizen.UI.Visuals.ColorVisual.md tags:['ColorVisual'], author:['jh5.cho@samsung.com']"
 ## [ImageVisual](Tizen.UI.Visuals/Tizen.UI.Visuals.ImageVisual.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Visuals/Tizen.UI.Visuals.ImageVisual.md tags:['ImageVisual'], author:['jh5.cho@samsung.com']"
 ## [Internal.ColorVisualMap](Tizen.UI.Visuals/Tizen.UI.Visuals.Internal.ColorVisualMap.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Visuals/Tizen.UI.Visuals.Internal.ColorVisualMap.md tags:['Internal.ColorVisualMap'], author:['jh5.cho@samsung.com']"
@@ -745,20 +745,20 @@
 ## [VisualAlign](Tizen.UI.Visuals/Tizen.UI.Visuals.VisualAlign.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Visuals/Tizen.UI.Visuals.VisualAlign.md tags:['VisualAlign'], author:['jh5.cho@samsung.com']"
 ## [VisualManager](Tizen.UI.Visuals/Tizen.UI.Visuals.VisualManager.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Visuals/Tizen.UI.Visuals.VisualManager.md tags:['VisualManager'], author:['jh5.cho@samsung.com']"
 ## [VisualObject](Tizen.UI.Visuals/Tizen.UI.Visuals.VisualObject.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Visuals/Tizen.UI.Visuals.VisualObject.md tags:['VisualObject'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.Widget]()
+# [Tizen.UI.Widget](Tizen.UI.Widget/Tizen.UI.Widget.md)
 ## [Tizen.UI.Widget](Tizen.UI.Widget/Tizen.UI.Widget.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Widget/Tizen.UI.Widget.md tags:['Tizen.UI.Widget'], author:['jh5.cho@samsung.com']"
 ## [Widget](Tizen.UI.Widget/Tizen.UI.Widget.Widget.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Widget/Tizen.UI.Widget.Widget.md tags:['Widget'], author:['jh5.cho@samsung.com']"
 ## [WidgetApplication](Tizen.UI.Widget/Tizen.UI.Widget.WidgetApplication.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.Widget/Tizen.UI.Widget.WidgetApplication.md tags:['WidgetApplication'], author:['jh5.cho@samsung.com']"
-# [Tizen.UI.WindowBorder]()
+# [Tizen.UI.WindowBorder](Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.md)
 ## [BorderView.BorderViewModel](Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.BorderView.BorderViewModel.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.BorderView.BorderViewModel.md tags:['BorderView.BorderViewModel'], author:['jh5.cho@samsung.com']"
 ## [BorderView](Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.BorderView.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.BorderView.md tags:['BorderView'], author:['jh5.cho@samsung.com']"
 ## [IWindowBorderProvider](Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.IWindowBorderProvider.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.IWindowBorderProvider.md tags:['IWindowBorderProvider'], author:['jh5.cho@samsung.com']"
 ## [Tizen.UI.WindowBorder](Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.md tags:['Tizen.UI.WindowBorder'], author:['jh5.cho@samsung.com']"
 ## [WindowExtensions](Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.WindowExtensions.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/Tizen.UI.WindowBorder/Tizen.UI.WindowBorder.WindowExtensions.md tags:['WindowExtensions'], author:['jh5.cho@samsung.com']"
-# [TizenX.ZLog]()
+# [TizenX.ZLog](TizenX.ZLog/TizenX.ZLog.md)
 ## [Log](TizenX.ZLog/TizenX.ZLog.Log.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.ZLog/TizenX.ZLog.Log.md tags:['Log'], author:['jh5.cho@samsung.com']"
 ## [TizenX.ZLog](TizenX.ZLog/TizenX.ZLog.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.ZLog/TizenX.ZLog.md tags:['TizenX.ZLog'], author:['jh5.cho@samsung.com']"
-# [TizenX.Aurum]()
+# [TizenX.Aurum](TizenX.Aurum/TizenX.Aurum.md)
 ## [A11yEventType](TizenX.Aurum/TizenX.Aurum.A11yEventType.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.Aurum/TizenX.Aurum.A11yEventType.md tags:['A11yEventType'], author:['jh5.cho@samsung.com']"
 ## [AccessibleWatcher](TizenX.Aurum/TizenX.Aurum.AccessibleWatcher.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.Aurum/TizenX.Aurum.AccessibleWatcher.md tags:['AccessibleWatcher'], author:['jh5.cho@samsung.com']"
 ## [CheckableFunction](TizenX.Aurum/TizenX.Aurum.CheckableFunction.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.Aurum/TizenX.Aurum.CheckableFunction.md tags:['CheckableFunction'], author:['jh5.cho@samsung.com']"
@@ -785,7 +785,7 @@
 ## [UISelectorVector](TizenX.Aurum/TizenX.Aurum.UISelectorVector.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.Aurum/TizenX.Aurum.UISelectorVector.md tags:['UISelectorVector'], author:['jh5.cho@samsung.com']"
 ## [Until](TizenX.Aurum/TizenX.Aurum.Until.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.Aurum/TizenX.Aurum.Until.md tags:['Until'], author:['jh5.cho@samsung.com']"
 ## [Waiter](TizenX.Aurum/TizenX.Aurum.Waiter.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.Aurum/TizenX.Aurum.Waiter.md tags:['Waiter'], author:['jh5.cho@samsung.com']"
-# [TizenX.GenUI]()
+# [TizenX.GenUI](TizenX.GenUI/TizenX.GenUI.md)
 ## [A2UIMessage](TizenX.GenUI/TizenX.GenUI.A2UIMessage.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.GenUI/TizenX.GenUI.A2UIMessage.md tags:['A2UIMessage'], author:['jh5.cho@samsung.com']"
 ## [A2UIRenderer](TizenX.GenUI/TizenX.GenUI.A2UIRenderer.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.GenUI/TizenX.GenUI.A2UIRenderer.md tags:['A2UIRenderer'], author:['jh5.cho@samsung.com']"
 ## [BeginRenderingMessage](TizenX.GenUI/TizenX.GenUI.BeginRenderingMessage.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.GenUI/TizenX.GenUI.BeginRenderingMessage.md tags:['BeginRenderingMessage'], author:['jh5.cho@samsung.com']"
@@ -806,7 +806,7 @@
 ## [TizenX.GenUI](TizenX.GenUI/TizenX.GenUI.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.GenUI/TizenX.GenUI.md tags:['TizenX.GenUI'], author:['jh5.cho@samsung.com']"
 ## [UIDefinition](TizenX.GenUI/TizenX.GenUI.UIDefinition.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.GenUI/TizenX.GenUI.UIDefinition.md tags:['UIDefinition'], author:['jh5.cho@samsung.com']"
 ## [UserActionEventArgs](TizenX.GenUI/TizenX.GenUI.UserActionEventArgs.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.GenUI/TizenX.GenUI.UserActionEventArgs.md tags:['UserActionEventArgs'], author:['jh5.cho@samsung.com']"
-# [TizenX.RPCPort]()
+# [TizenX.RPCPort](TizenX.RPCPort/TizenX.RPCPort.md)
 ## [IParcelable](TizenX.RPCPort/TizenX.RPCPort.IParcelable.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.RPCPort/TizenX.RPCPort.IParcelable.md tags:['IParcelable'], author:['jh5.cho@samsung.com']"
 ## [Parcel](TizenX.RPCPort/TizenX.RPCPort.Parcel.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.RPCPort/TizenX.RPCPort.Parcel.md tags:['Parcel'], author:['jh5.cho@samsung.com']"
 ## [ParcelBuilder](TizenX.RPCPort/TizenX.RPCPort.ParcelBuilder.md) "source:https://github.com/Samsung/tizen-docs/blob/master/docs/extensions/tizenx/api/TizenX.RPCPort/TizenX.RPCPort.ParcelBuilder.md tags:['ParcelBuilder'], author:['jh5.cho@samsung.com']"
