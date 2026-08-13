@@ -50,8 +50,8 @@ In Emulator Manager plugins:
 - Each platform has separate files for its UI items and emulator options.
 - Each profile has a separate plugin.  
   For example:
-  - `em-plugin-mobile.jar`
-  - `em-plugin-wearable.jar`
+  - `em-plugin-tv.jar`
+  - `em-plugin-common.jar`
 - The `template` directory contains `.xml` files that define platform-specific UI and property values.  
   For example:
   - `X86-standard.xml` (default property)
@@ -93,7 +93,7 @@ To build an extension:
    - In the case of `lib`, `ui`, and `cli` libraries, to build them all at once, enter the `ant` shell command at the top level of your project.
    - In the case of devices:
      - When building is complete, copy the built `libecp`, `emulator-control-panel.jar`, and `emulator-control-panel-cli.jar` files to `libs` in the devices project directory.
-     - To build the `mobile`, `wearable`, and `tv` profiles all at once, enter the `ant` shell command at the top level of your project. To build a specific profile only, you can specify, for example, `ant -f ECP-DEVICE/build_mobile.xml`.
+     - To build the `tv` and `common` profiles all at once, enter the `ant` shell command at the top level of your project. To build a specific profile only, you can specify, for example, `ant -f ECP-DEVICE/build_tv.xml`.
 4. If you configure devices separately, you only need to push changes to the `emulator-control-panel-devices` repository.
 5. When building is complete, move the following files:
     - `libecp.jar`, `emulator-control-panel.jar`, and `emulator-control-panel-cli.jar` to `sdk/tools/emulator/bin`
@@ -114,7 +114,7 @@ To execute the extension in Eclipse, follow these steps:
    - profile: see below example
    For example:
    ```
-   vm_name=w-0906-1 base_port=26100 platform_version=tizen-2.3.2 profile=wearable
+   vm_name=t-0906-1 base_port=26100 platform_version=tizen-2.3.2 profile=tv
    ```
    The platform version and profile are used in the directory names:
    ```

@@ -24,7 +24,6 @@
 #### [Signing Application with Certificate](/application/dotnet/guides/concepts/signing-certificates/signing-application-with-certificate.md)
 #### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
 
-### [IoT](/application/dotnet/get-started/IoT/index.md)
 ### [Application Filtering](/application/dotnet/reference/app-filtering.md)
 
 ## Guides
@@ -163,7 +162,6 @@
 ### Notifications and Content Sharing
 #### [Overview](/application/dotnet/guides/notification/overview.md)
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
-#### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
 
 ### Performance
 #### [Overview](/application/dotnet/guides/performance/overview.md)
@@ -308,12 +306,8 @@
 
 ## Get Started with Tizen Studio
 ### [Overview](/application/web/get-started/overview.md)
-### [Create Wearable Web Application](/application/web/get-started/wearable/first-app.md)
-### [Create Wearable Web Watch Application](/application/web/get-started/wearable-watch/first-app-watch.md)
-### [Create Wearable Web Widget Application](/application/web/get-started/wearable-widget/first-app-widget.md)
 ### [Create TV Web Application](/application/web/get-started/tv/first-app.md)
 ### [Create Samsung Smart TV Web Application](/application/web/get-started/tv/first-samsung-tv-app.md)
-### [Create Mobile Web Application](/application/web/get-started/mobile/first-app.md)
 ### [Create Web Service Application](/application/web/get-started/web-service/first-service.md)
 ### [Create Web Application Addon](/application/web/get-started/addon/first-addon.md)
 
@@ -328,16 +322,12 @@
 
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
-### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
 ### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
 
 ## Guides
 ### [Overview](/application/web/guides/index.md)
 ### Applications
 #### [Overview](/application/web/guides/applications/overview.md)
-
-#### UI Application
-##### [Widget Application](/application/web/guides/applications/web-widget.md)
 
 #### [Service Application](/application/web/guides/applications/service-app.md)
 #### [Web Application Addon](/application/web/guides/applications/addon.md)
@@ -388,7 +378,6 @@
 #### [Media Controller](/application/web/guides/multimedia/media-controller.md)
 #### [Media Key Events](/application/web/guides/multimedia/media-key.md)
 #### [Radio](/application/web/guides/multimedia/radio.md)
-#### [Camera](/application/web/guides/multimedia/camera.md)
 
 ### Connectivity and Wireless
 #### [Overview](/application/web/guides/connectivity/connectivity.md)
@@ -550,10 +539,6 @@
 
 ## Get Started with Tizen Studio
 ### [Overview](/application/native/get-started/overview.md)
-### [Create Wearable Native Application](/application/native/get-started/wearable/first-app.md)
-### [Create Wearable Native Watch Application](/application/native/get-started/wearable-watch/first-app-watch.md)
-### [Create Wearable Native Widget Application](/application/native/get-started/wearable-widget/first-app-widget.md)
-### [Create Mobile Native Application](/application/native/get-started/mobile/first-app.md)
 ### [Create IoT Native Service Application](/application/native/get-started/iot/first-app.md)
 
 ## Tutorials
@@ -570,7 +555,6 @@
 ### Understanding Tizen Programming
 #### [Application Filtering](/application/native/reference/app-filtering.md)
 #### [Security and API Privileges](/application/native/reference/security-privileges.md)
-#### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/reference/security-privileges-legacy.md)
 #### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/reference/deprecation-policy.md)
 #### [Removed functions and enumerations of Tizen Native API](/application/native/reference/removed-history.md)
 
@@ -578,7 +562,6 @@
 #### [Overview](/application/native/tutorials/feature/app-connectivity.md)
 #### [Network Operations](/application/native/tutorials/feature/app-connectivity-operation.md)
 #### [Network Usage](/application/native/tutorials/feature/app-connectivity-usage.md)
-#### [P2P Connections with Wi-Fi Direct&reg;](/application/native/tutorials/feature/app-connectivity-p2p.md)
 
 ### Creating Applications with Contacts
 #### [Overview](/application/native/tutorials/feature/app-contacts.md)
@@ -763,7 +746,6 @@
 #### [Autofill](/application/native/guides/text-input/autofill.md)
 #### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
 #### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
-#### [Gesture](/application/native/guides/text-input/capi-ui-gesture.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Text-to-speech Engine](/application/native/guides/text-input/tts-engine.md)

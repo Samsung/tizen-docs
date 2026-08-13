@@ -32,7 +32,7 @@ To create a Tizen RPK project, follow these steps:
 
    ![Select profile](media/rpk_project_profile.png)
 
-7. Select the profile version(mobile-7.0/mobile-6.5) for your application.
+7. Select the profile version for your application.
 
    ![Select version](media/rpk_project_version.png)
 

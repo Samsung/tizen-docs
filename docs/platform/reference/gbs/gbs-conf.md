@@ -54,7 +54,7 @@ The basic structure of a configuration file is composed of properties and sectio
 
     Set common authentication information on the profile level, instead of repeating identical configurations in various sections. These settings can be automatically passed to OBS and repository sections.
 
-    Add authentication information to a specific repository or OBS section only when it is unique to the corresponding OBS or repository. In addition, multiple profile sections can exist in 1 configuration file, enabling the manipulation of GBS behaviors aimed at different devices (for example, mobile phone and TV) in a central configuration file. For more information, see [Configuring Multiple Profiles](#configuring-multiple-profiles).
+    Add authentication information to a specific repository or OBS section only when it is unique to the corresponding OBS or repository. In addition, multiple profile sections can exist in 1 configuration file, enabling the manipulation of GBS behaviors aimed at different devices (for example, TV and IoT) in a central configuration file. For more information, see [Configuring Multiple Profiles](#configuring-multiple-profiles).
 
     The supported properties include:
     - `user`
@@ -83,7 +83,7 @@ The basic structure of a configuration file is composed of properties and sectio
 The section names must follow these naming conventions:
 
 - Name the general section exactly as [general].
-- Start the profile section name with "profile.". For example, [profile.tizen] or [profile.mobile].
+- Start the profile section name with "profile.". For example, [profile.tizen] or [profile.tv].
 - Start the OBS section name with "obs.". For example, [obs.tizen].
 - Start the repository section name with "repo.".
 
@@ -156,7 +156,7 @@ To configure multiple profiles:
 [general]
 profile = profile.tizen
 
-[profile.mobile]
+[profile.tv]
 ...
 [profile.tizen]
 ...
@@ -165,8 +165,8 @@ profile = profile.tizen
 When you specify the profile section with the `-P (--profile)` option in a GBS command, the specified profile configuration is applied:
 
 ```
-$ gbs build --profile=profile.mobile -A i586
-$ gbs remotebuild --profile=mobile
+$ gbs build --profile=profile.tv -A i586
+$ gbs remotebuild --profile=tv
 ```
 
 ### Configure a repository

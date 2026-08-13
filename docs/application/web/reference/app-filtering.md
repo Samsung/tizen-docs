@@ -77,35 +77,6 @@ application list.
 If you do not specify a proper screen size in the `config.xml` file,
 your application can be rejected from the store.
 
-The following tables list the available screen size features.
-
-**Table: Available screen size features for mobile applications**
-
-| Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/screen.size.normal` | Specify this key, if the application supports all possible current and future resolutions on the normal screen size.<br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.normal` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-| `http://tizen.org/feature/screen.size.normal.240.400` | Specify this key, if the application supports the 240 x 400 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-| `http://tizen.org/feature/screen.size.normal.320.320` | Specify this key, if the application supports the 320 x 320 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.3   |
-| `http://tizen.org/feature/screen.size.normal.320.480` | Specify this key, if the application supports the 320 x 480 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-| `http://tizen.org/feature/screen.size.normal.360.360` | Specify this key, if the application supports the 360 x 360 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.3.2 |
-| `http://tizen.org/feature/screen.size.normal.360.480` | Specify this key, if the application supports the 360 x 480 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.3   |
-| `http://tizen.org/feature/screen.size.normal.480.800` | Specify this key, if the application supports the 480 x 800 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-| `http://tizen.org/feature/screen.size.normal.540.960` | Specify this key, if the application supports the 540 x 960 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-| `http://tizen.org/feature/screen.size.normal.600.1024` | Specify this key, if the application supports the 600 x 1024 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-| `http://tizen.org/feature/screen.size.normal.720.1280` | Specify this key, if the application supports the 720 x 1280 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-| `http://tizen.org/feature/screen.size.normal.1080.1920` | Specify this key, if the application supports the 1080 x 1920 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-| `http://tizen.org/feature/screen.size.all` | Specify this key, if the application supports all possible current and future screen sizes and all possible current and future resolutions per screen size.<br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.all` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-
-**Table: Available screen size features for wearable applications**
-
-| Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/screen.size.normal` | Specify this key, if the application supports all possible current and future resolutions on the normal screen size.<br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.normal` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-| `http://tizen.org/feature/screen.size.normal.320.320` | Specify this key, if the application supports the 320 x 320 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.3   |
-| `http://tizen.org/feature/screen.size.normal.360.360` | Specify this key, if the application supports the 360 x 360 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.3.2 |
-| `http://tizen.org/feature/screen.size.normal.360.480` | Specify this key, if the application supports the 360 x 480 resolution on the normal screen size.<br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.3   |
-| `http://tizen.org/feature/screen.size.all` | Specify this key, if the application supports all possible current and future screen sizes and all possible current and future resolutions per screen size.<br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.all` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
-
 <a name="hierarchy"></a>
 ### Feature hierarchy
 
@@ -157,178 +128,6 @@ The following example shows the setting in the `config.xml` file code:
 The following tables show the available requirements for Tizen Web
 application package.
 
-**Table: Available requirements for mobile Web Device APIs**
-
-| Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/account`       | Specify this key, if the application requires the account feature. | 4.0   |
-| `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
-| `http://tizen.org/feature/badge`         | Specify this key, if the application requires the badge feature. | 4.0   |
-| `http://tizen.org/feature/battery`       | Specify this key, if the application requires information on the device battery. | 2.3*  |
-| `http://tizen.org/feature/calendar`      | Specify this key, if the application requires the calendar feature. | 4.0   |
-| `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact feature. | 4.0   |
-| `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
-| `http://tizen.org/feature/datasync`      | Specify this key, if the application requires the DataSync feature. | 2.3   |
-| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
-| `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
-| `http://tizen.org/feature/fmradio`       | Specify this key, if the application requires an FM radio. | 2.2.1 |
-| `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires any of the Human Activity Monitor features. | 2.3   |
-| `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
-| `http://tizen.org/feature/led`           | Specify this key, if the application requires the LED feature. | 2.4   |
-| `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature for using the [HumanActivityMonitor](../api/latest/device_api/mobile/tizen/humanactivitymonitor.html) (GPS Type) API. | 2.3   |
-| `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
-| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [MediaKey](../api/latest/device_api/mobile/tizen/mediakey.html) API. | 2.3   |
-| `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
-| `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth Low Energy feature (BLE). | 2.3   |
-| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Low Energy GATT Client feature. | 4.0   |
-| `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
-| `http://tizen.org/feature/network.nfc`   | Specify this key, if the application requires the use of any API that, in turn, requires the Near Field Communication (NFC) feature. | 2.2.1 |
-| `http://tizen.org/feature/network.nfc.card_emulation` | Specify this key, if the application requires the NFC card emulation feature. | 2.3   |
-| `http://tizen.org/feature/network.nfc.card_emulation.hce` | Specify this key, if the application requires the NFC host-based card emulation feature. | 2.3.1 |
-| `http://tizen.org/feature/network.nfc.p2p` | Specify this key, if the application requires the NFC P2P feature. | 2.3.1 |
-| `http://tizen.org/feature/network.nfc.tag` | Specify this key, if the application requires the NFC tag feature. | 2.3.1 |
-| `http://tizen.org/feature/network.push`  | Specify this key, if the application requires the network-based push service. | 2.2.1 |
-| `http://tizen.org/feature/network.secure_element` | Specify this key, if the application requires the secure element feature. | 2.2.1 |
-| `http://tizen.org/feature/network.telephony` | Specify this key, if the application requires the use of any API that, in turn, requires the telephony feature. | 2.2.1 |
-| `http://tizen.org/feature/network.telephony.mms` | Specify this key, if the application requires the MMS feature. | 2.2.1 |
-| `http://tizen.org/feature/network.telephony.sms` | Specify this key, if the application requires the SMS feature. | 2.4   |
-| `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature. | 2.2.1 |
-| `http://tizen.org/feature/security.tee`  | Specify this key, if the application requires the Trusted Execution Environment feature. | 4.0   |
-| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor. | 4.0   |
-| `http://tizen.org/feature/sensor.barometer` | Specify this key, if the application requires a pressure sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.gravity` | Specify this key, if the application requires a gravity sensor. | 3.0   |
-| `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyroscope sensor. | 3.0   |
-| `http://tizen.org/feature/sensor.gyroscope_rotation_vector` | Specify this key, if the application requires a gyroscope rotation vector sensor. | 3.0   |
-| `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 4.0   |
-| `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires a green LED heart rate monitor sensor. | 2.3.1 |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires an infrared LED heart rate monitor sensor. | 2.3.1 |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | Specify this key, if the application requires a red LED heart rate monitor sensor. | 2.3.1 |
-| `http://tizen.org/feature/sensor.linear_acceleration` | Specify this key, if the application requires a linear acceleration sensor. | 3.0   |
-| `http://tizen.org/feature/sensor.magnetometer` | Specify this key, if the application requires a magnetic sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.magnetometer.uncalibrated` | Specify this key, if the application requires an uncalibrated magnetic sensor. | 3.0   |
-| `http://tizen.org/feature/sensor.pedometer` | Specify this key, if the application requires a pedometer sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.photometer` | Specify this key, if the application requires a light sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.proximity` | Specify this key, if the application requires a proximity sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.significant_motion` | Specify this key, if the application requires a significant motion sensor which detects any significant movements caused by changes in the user location. | 4.0   |
-| `http://tizen.org/feature/sensor.sleep_monitor` | Specify this key, if the application requires a sleep monitor sensor which tracks the human sleep state or a sleep detector sensor which detects whether the human falls asleep or wakes up. | 3.0   |
-| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires a ultraviolet sensor. | 2.3   |
-| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
-
-
-\* This key has been available for checking device capabilities since
-Tizen 2.3. It is recommended for application filtering purposes since
-Tizen 4.0.
-
-**Table: Available requirements for mobile Web W3C/HTML5 APIs**
-
-| Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/camera`        | Specify this key, if the application requires any kind of a camera for using the [getUserMedia](../api/latest/w3c_api/w3c_api_m.html#getusermedia) or [HTML Media Capture](../api/latest/w3c_api/w3c_api_m.html#mediacapture) API. | 2.2.1 |
-| `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature for using the [GeoLocation](../api/latest/w3c_api/w3c_api_m.html#geo) API. | 2.2.1 |
-| `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone for using the getUserMedia or HTML Media Capture API. | 2.2.1 |
-| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor for using the [DeviceOrientation Event Specification](../api/latest/w3c_api/w3c_api_m.html#orientation) API. | 2.2.1 |
-| `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyro sensor for using the DeviceOrientation Event API. | 2.2.1 |
-| `http://tizen.org/feature/sensor.magnetometer` | Specify this key, if the application requires a magnetic sensor for using the DeviceOrientation Event Specification or [Screen Orientation](../api/latest/w3c_api/w3c_api_m.html#sceenori) API. | 2.2.1 |
-| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature for using the [Web Speech](../api/latest/w3c_api/w3c_api_m.html#webspeech) API. | 2.2.1 |
-
-**Table: Available requirements for mobile Web Runtime**
-
-| Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the Widget feature. Since 2.3.1, this key indicates only the native Widget. | 2.2.1 |
-
-**Table: Available requirements for wearable Web Device APIs**
-
-| Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/account`       | Specify this key, if the application requires the account feature. | 4.0   |
-| `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
-| `http://tizen.org/feature/badge`         | Specify this key, if the application requires the badge feature. | 4.0   |
-| `http://tizen.org/feature/battery`       | Specify this key, if the application requires information on the device battery. | 2.3*  |
-| `http://tizen.org/feature/calendar`      | Specify this key, if the application requires the calendar feature. | 4.0   |
-| `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact feature. | 4.0   |
-| `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
-| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
-| `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
-| `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 2.3   |
-| `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires the [HumanActivityMonitor](../api/latest/device_api/wearable/tizen/humanactivitymonitor.html) API.<br>If the key is declared in the `config.xml` file, the application can be installed on the device with any of the Human Activity Monitor features:<br><br> - HRM: `http://tizen.org/feature/sensor.heart_rate_monitor`<br> - PEDOMETER: `http://tizen.org/feature/sensor.pedometer`<br> - GPS: `http://tizen.org/feature/location.batch` | 2.3   |
-| `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
-| `http://tizen.org/feature/led`           | Specify this key, if the application requires the LED feature. | 2.4   |
-| `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature. | 2.3   |
-| `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
-| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [MediaKey](../api/latest/device_api/wearable/tizen/mediakey.html) API. | 2.3   |
-| `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
-| `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth Low Energy feature (BLE). | 2.3   |
-| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Low Energy GATT Client feature. | 4.0   |
-| `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
-| `http://tizen.org/feature/network.nfc`   | Specify this key, if the application requires the use of any API that, in turn, requires the Near Field Communication (NFC) feature. | 2.2.1 |
-| `http://tizen.org/feature/network.nfc.card_emulation` | Specify this key, if the application requires the NFC card emulation feature. | 2.3   |
-| `http://tizen.org/feature/network.nfc.card_emulation.hce` | Specify this key, if the application requires the NFC host-based card emulation feature. | 2.3.1 |
-| `http://tizen.org/feature/network.nfc.p2p` | Specify this key, if the application requires the NFC P2P feature. | 2.3.1 |
-| `http://tizen.org/feature/network.nfc.tag` | Specify this key, if the application requires the NFC tag feature. | 2.3.1 |
-| `http://tizen.org/feature/network.push`  | Specify this key, if the application requires the network-based push service. | 2.2.1 |
-| `http://tizen.org/feature/network.secure_element` | Specify this key, if the application requires the secure element feature. | 2.2.1 |
-| `http://tizen.org/feature/network.telephony` | Specify this key, if the application requires the use of any API that, in turn, requires the telephony feature. | 2.2.1 |
-| `http://tizen.org/feature/network.telephony.sms` | Specify this key, if the application requires the SMS feature. | 2.4   |
-| `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature (for example, the Download API). | 2.2.1 |
-| `http://tizen.org/feature/security.tee`  | Specify this key, if the application requires the Trusted Execution Environment feature. | 4.0   |
-| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor. | 4.0   |
-| `http://tizen.org/feature/sensor.barometer` | Specify this key, if the application requires a pressure sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.gravity` | Specify this key, if the application requires a gravity sensor. | 2.3.2 |
-| `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyroscope sensor. | 2.3.2 |
-| `http://tizen.org/feature/sensor.gyroscope_rotation_vector` | Specify this key, if the application requires a gyroscope rotation vector sensor. | 2.3.2 |
-| `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 4.0   |
-| `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires a green LED heart rate monitor sensor. | 2.3.1 |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires an infrared LED heart rate monitor sensor. | 2.3.1 |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | Specify this key, if the application requires a red LED heart rate monitor sensor. | 2.3.1 |
-| `http://tizen.org/feature/sensor.linear_acceleration` | Specify this key, if the application requires a linear acceleration sensor. | 3.0   |
-| `http://tizen.org/feature/sensor.magnetometer` | Specify this key, if the application requires a magnetic sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.magnetometer.uncalibrated` | Specify this key, if the application requires an uncalibrated magnetic sensor. | 4.0   |
-| `http://tizen.org/feature/sensor.pedometer` | Specify this key, if the application requires a pedometer sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.photometer` | Specify this key, if the application requires a light sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.proximity` | Specify this key, if the application requires a proximity sensor. | 2.3   |
-| `http://tizen.org/feature/sensor.sleep_monitor` | Specify this key, if the application requires a sleep monitor sensor which tracks the human sleep state or a sleep detector sensor which detects whether the human falls asleep or wakes up. | 3.0   |
-| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires an ultraviolet sensor. | 2.3   |
-| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
-| `http://tizen.org/feature/watch_app`     | Specify this key, if the application requires the watch application feature. | 4.0   |
-
-\* This key has been available for checking device capabilities since
-Tizen 2.3. It is recommended for application filtering purposes since
-Tizen 4.0.
-
-**Table: Available requirements for wearable Web W3C/HTML5 APIs**
-
-| Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/camera`        | Specify this key, if the application requires any kind of a camera for using the [getUserMedia](../api/latest/w3c_api/w3c_api_w.html#getusermedia) API. | 2.2.1 |
-| `http://tizen.org/feature/input.rotating_bezel` | Specify this key, if the application requires rotating bezel input. | 2.3.1 |
-| `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature for using the [GeoLocation](../api/latest/w3c_api/w3c_api_w.html#geo) API. | 2.2.1 |
-| `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone for using the getUserMedia API. | 2.2.1 |
-| `http://tizen.org/feature/network.internet` | Specify this key, if the application requires Internet access for using the [WebSocket API](../api/latest/w3c_api/w3c_api_w.html#websocket), [XMLHttpRequest](../api/latest/w3c_api/w3c_api_w.html#httpreq), or [Cross-Origin Resource Sharing](../api/latest/w3c_api/w3c_api_w.html#cross) API. | 2.3.1 |
-| `http://tizen.org/feature/screen.shape.circle` | Specify this key, if the application requires a circle-shaped screen. | 2.3.1 |
-| `http://tizen.org/feature/screen.shape.rectangle` | Specify this key, if the application requires a rectangle-shaped screen. | 2.3.1 |
-| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor for using the [DeviceOrientation Event Specification](../api/latest/w3c_api/w3c_api_w.html#orientation) API. | 2.2.1 |
-| `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyro sensor for using the DeviceOrientation Event API. | 2.2.1 |
-| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature for using the [Web Speech](../api/latest/w3c_api/w3c_api_w.html#webspeech) API. | 2.2.1 |
-
-**Table: Available requirements for wearable Web Supplementary APIs**
-
-| Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/media.audio_recording` | Specify this key, if the application requires the audio recording functionality of the device for using the [Camera API (Tizen Extension)](../api/latest/w3c_api/w3c_api_w.html#camera) (Audio Recording) API. | 2.3   |
-| `http://tizen.org/feature/media.image_capture` | Specify this key, if the application requires the image capture functionality of the device for using the [Camera API (Tizen Extension)](../api/latest/w3c_api/w3c_api_w.html#camera) (Image Recording) API. | 2.3   |
-| `http://tizen.org/feature/media.video_recording` | Specify this key, if the application requires the video recording functionality of the device for using the [Camera API (Tizen Extension)](../api/latest/w3c_api/w3c_api_w.html#camera) (Video Recording) API. | 2.3   |
-
-
-**Table: Available requirements for wearable Web Runtime**
-
-| Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the Widget feature. Since 2.3.1, this key indicates only the native Widget. | 2.2.1 |
-| `http://tizen.org/feature/web.service`   | Specify this key, if the application requires the Web service application feature. | 2.3   |
-
 **Table: Available requirements for TV Web Device APIs**
 
 | Feature key                              | Description                              | Since |
@@ -360,7 +159,7 @@ Tizen 4.0.
 A Tizen profile describes the requirements for a category of Tizen
 devices that have a common application execution environment.
 Applications are created for a single specific target profile, such as
-mobile, wearable, or TV, and can run on devices compliant with that
+TV, and can run on devices compliant with that
 profile.
 
 Use profile-based filtering to ensure that your application is only
@@ -375,8 +174,6 @@ attributes.
 
 | Tizen profile | Profile name attribute |
 | ------------- | ---------------------- |
-| Mobile        | `mobile`               |
-| Wearable      | `wearable`             |
 | TV            | `TV`                   |
 
 In a Web application, the profile name element can be added to the
@@ -384,7 +181,7 @@ In a Web application, the profile name element can be added to the
 
 ```xml
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" ... >
-   <tizen:profile name="mobile"/>
+   <tizen:profile name="TV"/>
 ```
 
 The official site for Tizen applications compares the device profile and the `profile name`

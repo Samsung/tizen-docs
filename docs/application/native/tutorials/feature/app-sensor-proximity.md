@@ -15,9 +15,8 @@ To determine whether the proximity sensor is supported on the device:
 1.  Create a new project in Tizen Studio with the **Basic UI**
     template, and specify the project name as **SensorProximity**.
 
-    For more information on how to create a project, see Creating a
-    Project (in [mobile](../../get-started/mobile/first-app.md#create) and
-    [wearable](../../get-started/wearable/first-app.md#creating-a-project) applications).
+    For more information on how to create a project, see
+    [Creating the Application Project](../../guides/development/creating-app-project.md).
 
 2. In the new project, open the `sensorproximity.c` source file in the
     `src` folder and add the required library header file and variables:
@@ -128,10 +127,8 @@ To determine whether the proximity sensor is supported on the device:
     show_is_supported(ad);
     ```
 
-5. Build (in [mobile](../../get-started/mobile/first-app.md#build) and
-    [wearable](../../get-started/wearable/first-app.md#building-your-application) applications) and run
-    (in [mobile](../../get-started/mobile/first-app.md#run) and
-    [wearable](../../get-started/wearable/first-app.md#running-your-application) applications)
+5. [Build](../../guides/development/building-app.md) and
+    [run](../../guides/development/running-app.md)
     the application. If the proximity sensor is supported, the
     **Proximity Sensor is support** message is shown on the
     device screen.

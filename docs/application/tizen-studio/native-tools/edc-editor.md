@@ -253,7 +253,7 @@ The EDC Editor displays non-visual parts with symbols so that you can understand
 
 When a new group view is shown in the live view area, it has a default view size, 300x300. You can change the view size by clicking the resize button in the status view and using a slider to manipulate the view size. You can control the slider using mouse dragging or the mouse wheel. Each group stores its individual view size, so when you switch views, they can have a different view size. To change the default view size, go to **Settings > Preferences > View Size**.
 
-You can swap the width and height of the live view instantly by pressing the swap button in the status view. The swap functionality can be used for simulating some scenarios, such as mobile device portrait and landscape modes.
+You can swap the width and height of the live view instantly by pressing the swap button in the status view. The swap functionality can be used for simulating some scenarios, such as portrait and landscape modes.
 
 **Figure: View size change**
 

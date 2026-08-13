@@ -296,7 +296,7 @@ To create your own skin layout:
 
 You can simulate events on the emulator using the Emulator Control Panel (ECP). However, simulating sensor events with the ECP is not very intuitive or convenient. While you are simulating events, it is impossible to touch the emulator screen simultaneously. EventCast enables you to simulate sensor and touch events more intuitively using a real target device.
 
-The following figure illustrates how the EventCast application on the target device gathers events and passes them to the emulator controller, which converts and hands them over to the Tizen platform. This is convenient if you do not have a Tizen mobile device.
+The following figure illustrates how the EventCast application on the target device gathers events and passes them to the emulator controller, which converts and hands them over to the Tizen platform. This is convenient if you do not have a Tizen device.
 
 **Figure: EventCast architecture**
 
@@ -428,12 +428,12 @@ The following example shows the configuration file:
 
 ```
 [[VARIABLES]]
-vm_name=mobile-vm
+vm_name=common-vm
 vms_path="/home/user/tizen-studio-data/emulator/vms"
 image_arch=i386
 drive="file=${vms_path}/${vm_name}/emulimg-${vm_name}.${image_arch},if=none,index=0,cache.no-flush=on"
 swap="file=${vms_path}/${vm_name}/swap-${vm_name}.img,if=none,index=1"
-skin_path="/home/user/tizen-studio/platforms/tizen-2.4/mobile/emulator-resources/skins/mobile-general-3btn"
+skin_path="/home/user/tizen-studio/platforms/tizen-2.4/common/emulator-resources/skins/common-general-3btn"
 display_resolution=480x800
 display_pixel_density=233
 process_num=4
@@ -449,7 +449,7 @@ virt_cam_img_path0="/home/user/tizen-studio/tools/emulator/images/default-image2
 wsi=vigs_wsi
 host_ip=10.0.2.2
 image_ver=1.0.4
-profile=mobile
+profile=common
 platform_version=tizen-2.4
 append="vm_name=${vm_name} video=LVDS-1:${display_resolution}-32@60 dpi=${display_pixel_density} ${network_proxy} host_ip=${host_ip} console=ttyS0"
 

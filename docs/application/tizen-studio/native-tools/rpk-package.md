@@ -157,7 +157,7 @@ To access resources of an RPK, declare a `<res-control>` tag in the tizen-manife
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="6.5" package="org.example.allowed_basic" version="1.0.0">
-    <profile name="mobile" />
+    <profile name="common" />
     <ui-application appid="org.example.allowed_basic" exec="allowed_basic" type="capp" multiple="false" taskmanage="true" nodisplay="false" launch_mode="single">
         <icon>allowed_basic.png</icon>
         <label>allowed_basic</label>

@@ -1,5 +1,5 @@
 ---
-keyword: Tizen, Mobile, Wearable, TV, Sample, Application, UIX
+keyword: Tizen, TV, Sample, Application, UIX
 ---
 
 # UIX
@@ -19,34 +19,10 @@ for TD:
 -->
 
 <div class="sampletab">
-<button class="tablinks" onclick="openProfile(event, 'Mobile')" id="defaultOpen">Mobile</button> <button class="tablinks" onclick="openProfile(event, 'Wearable')">Wearable</button> <button class="tablinks" onclick="openProfile(event, 'TV')">TV</button>
+<button class="tablinks" onclick="openProfile(event, 'TV')" id="defaultOpen">TV</button>
 </div>
 
 <!-- Tab content -->
-<div class="tabcontent" id="Mobile">
-<table>
-	<tbody>
-		<tr>
-			<td><img alt="" height="267" src="media/m76imesample.png" width="150"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI/IMESample" target="_blank"><strong>(M) IMESample</strong></a></p>
-			<p>This sample application demonstrates how to create an Input Method Editor (IME) for NUI using <a href="/application/dotnet/api/TizenFX/latest/api/Tizen.Uix.InputMethod.html" target="_blank">Tizen.Uix.InputMethod</a>.</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
-</div>
-
-<div class="tabcontent" id="Wearable">
-<table>
-	<tbody>
-		<tr>
-			<td>There is no sample.</td>
-		</tr>
-	</tbody>
-</table>
-</div>
-
 <div class="tabcontent" id="TV">
 <table>
 	<tbody>

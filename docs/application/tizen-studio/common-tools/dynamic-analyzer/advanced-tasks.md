@@ -50,7 +50,7 @@ You can set some search parameters:
 
 You can check the connected target information in the target dialog:
 
-- **Device:** Device type of the connected target (Mobile/Wearable/TV)
+- **Device:** Device type of the connected target (TV)
 - **Application:** List of applications that can be analyzed in the connected target
 - **Description:** Detail information about the connected target:
   - **Platform Version**

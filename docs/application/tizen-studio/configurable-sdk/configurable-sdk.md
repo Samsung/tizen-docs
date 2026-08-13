@@ -3,13 +3,13 @@
 
 One of the main goals of Tizen 4.0 is configurability. The platform is not limited to a specific device type or profile, so vendors and platform developers can customize Tizen to support the functionalities they need.
 
-The main features of the Tizen Mobile, Wearable, and TV application life-cycles are extended to support configurable SDK platforms.
+The main features of the Tizen TV application life-cycle are extended to support configurable SDK platforms.
 
 **Figure: Configurable Tizen platform**
 
 ![Configurable Tizen platform](./media/configurable-structure.png)
 
-Tizen Studio allows you to develop applications in a customizable Tizen platform environment. You can use the application development features of Tizen Studio with configurable SDKs in the same way as with the existing mobile, wearable, and TV profiles. You can create new projects, validate `config.xml` and `manifest.xml` files, and take advantage of the API code assist features. You can also build, package, run, and debug your projects.
+Tizen Studio allows you to develop applications in a customizable Tizen platform environment. You can use the application development features of Tizen Studio with configurable SDKs in the same way as with the existing TV profile. You can create new projects, validate `config.xml` and `manifest.xml` files, and take advantage of the API code assist features. You can also build, package, run, and debug your projects.
 
 In the following instructions, the IoT Headed 4.0 platform is used as an example of a configurable SDK.
 

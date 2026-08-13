@@ -18,7 +18,7 @@ source code. To create a new project:
     ![Open the Project Wizard](./media/graphics_project.png)
 
 2. In the Project Wizard, select **Template** as the project type,
-    **MOBILE** profile and applicable version, **Native Application**
+    the profile and applicable version, **Native Application**
     type, and **Basic UI** template.
 3. Enter **DrawRect** in the **Project name** field.
 

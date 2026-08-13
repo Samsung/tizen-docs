@@ -194,7 +194,7 @@ To calculate and set the required buffer size, use one of the following options:
 
         If no exception is thrown, the method returns the preferred size in bytes, based on the specified audio parameters.
 
-        The recommended buffer size depends on the device. The size can be different for mobile, wearable, and TV devices.
+        The recommended buffer size depends on the device. The size can be different for each TV device.
 
     -   Set the buffer size to correspond to the desired recording duration.
 

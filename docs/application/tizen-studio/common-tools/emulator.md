@@ -111,19 +111,7 @@ The following table lists the basic features supported in the emulator.
 	<tbody>
 		<tr>
 			<td>Skin</td>
-			<td>Skins are fitted to the screen resolution:
-			<p>Mobile:</p>
-			<ul>
-				<li>WVGA (480 x 800, default)</li>
-				<li>qHD (540 x 960)</li>
-				<li>HD (720 x 1280)</li>
-			</ul>
-			<p>Wearable:</p>
-			<ul>
-				<li>320 x 320</li>
-				<li>360 x 360 (default)</li>
-				<li>360 x 480</li>
-			</ul>
+			<td>Skins are fitted to the screen resolution.
 			<p>4 orientation modes are supported:</p>
 			<p>Portrait (default), landscape, reverse portrait, and reverse landscape</p>
 			</td>
@@ -145,7 +133,7 @@ The following table lists the basic features supported in the emulator.
 			<td>Key</td>
 			<td>HW keys, host keyboard, and SW keypad</td>
 			<td>Supported</td>
-			<td>The host keyboard is not supported for the wearable emulator.</td>
+			<td>-</td>
 		</tr>
 		<tr>
 			<td>Rotary</td>
@@ -190,19 +178,7 @@ The following table lists the basic features supported in the emulator.
 		</tr>
 		<tr>
 			<td>Emulator Control Panel</td>
-			<td>The Emulator Control Panel (ECP) supports different features depending on the device profile:
-			<p>Mobile:</p>
-			<ul>
-				<li>Device Manager: Device Tree, Network, Host Directory Sharing</li>
-				<li>Event Injector: Battery, RSSI, 3-Axis Sensor, Light, Proximity, Pressure, Ultraviolet, Heart Rate Monitor, Motion, Ear Jack, USB, SDCard, Location, Telephony</li>
-			</ul>
-			<p>Wearable:</p>
-			<ul>
-				<li>Device Manager: Network, Host Directory Sharing</li>
-				<li>App Manager: Uninstaller</li>
-				<li>Event Injector: Battery, 3-Axis Sensor, Light, Proximity, Pedometer, Pressure, Ultraviolet, Heart Rate Monitor, Gesture, USB</li>
-			</ul>
-			</td>
+			<td>The Emulator Control Panel (ECP) supports various features for controlling and monitoring the emulator, such as the device manager, app manager, and event injector.</td>
 			<td>Supported</td>
 			<td>The ECP is a standalone tool, which replaces the Event Injector. It helps to control and monitor the emulator features, and can be launched from the emulator context menu.</td>
 		</tr>

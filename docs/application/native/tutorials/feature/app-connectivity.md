@@ -37,8 +37,3 @@ following features:
         active or inactive.
     -   You can retrieve statistical information about the network
         usage, such as the amount of sent or received data.
--   [P2P connections with Wi-Fi Direct&reg;](app-connectivity-p2p.md)
-    -   You can find nearby Wi-Fi Direct devices and form a Wi-Fi Direct
-        group to communicate with them.
-    -   Tizen also supports TDLS, which operates in the background of a
-        Wi-Fi network to optimize performance.

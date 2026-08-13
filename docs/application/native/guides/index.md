@@ -232,7 +232,6 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | Gesture               | Provides functions for recognizing hand gestures from input sensor data. | [Latest](../api/common/latest/group__CAPI__UIX__GESTURE__MODULE.html) | [Gesture](text-input/capi-ui-gesture.md) |
   | Input Method          | Provides functions for starting the IME application life-cycle, for interacting with the current UI state of the IME, and getting attributes and events. | [Latest](../api/common/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html) | [Input Method](text-input/input-method.md) |
   | Input Method Manager  | Provides functions for launching the input method editor (IME) list and selector settings. | [Latest](../api/common/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) | [Input Method](text-input/input-method.md) |
   | Multi assistance      | Provides functions for supporting users to use several assistants. | [Latest](../api/common/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html) | [Input Method](text-input/input-method.md) |

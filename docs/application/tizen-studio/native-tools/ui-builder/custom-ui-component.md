@@ -111,11 +111,11 @@ To use custom icon files, the following conditions must be observed:
 <a name="using_customcomponent"></a>
 ## Using Custom UI Components
 
-The following example shows how you can create a custom UI component in the UI Builder, using the **Mobile 4.0** project template. The following sections show how to add or remove a custom component within a project.
+The following example shows how you can create a custom UI component in the UI Builder, using a UI Builder project template. The following sections show how to add or remove a custom component within a project.
 
 To create a custom UI component:
 
-1. In Tizen Studio, create a new UI Builder project using the **Mobile v4.0** project template.
+1. In Tizen Studio, create a new UI Builder project using a UI Builder project template.
 
 2. Add a preset **Switch** UI component:
 

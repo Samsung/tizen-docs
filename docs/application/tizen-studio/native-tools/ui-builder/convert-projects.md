@@ -92,7 +92,7 @@ If there is no native EFL UI project in the **Project Explorer** view, create a 
 
 2. Select **Sample** and click **Next**.
 
-3. Select the **Mobile v2.4** application, **Native Application** type, and **UI > SettingsUI** application sample.
+3. Select the profile and version, **Native Application** type, and **UI > SettingsUI** application sample.
 
    ![Select the sample](./media/uib_convert_sample.png)
 
@@ -115,11 +115,6 @@ To convert the project:
 2. Confirm the conversion by clicking **Next**.
 
    ![Confirm the conversion](./media/uib_convert_confirm.png)
-
-   > **Note**  
-   > When a wearable project is converted, the shape type selection appears after the opening step. The UI Builder provides different shape designs according to the shape type. Select the appropriate one for the converted project.
-   >
-   > ![Select the shape type](./media/uib_convert_shape.png)
 
 3. Select the application entry point:
 

@@ -59,9 +59,9 @@ For more information, see [CSSLint](https://github.com/CSSLint/csslint/wiki/Rule
 <a name="editing"></a>
 ## Editing HTML
 
-When editing HTML documents for mobile applications, you can take advantage of the advanced content assist and content hover features, as well as advanced file refactoring.
+When editing HTML documents, you can take advantage of the advanced content assist and content hover features, as well as advanced file refactoring.
 
-### Advanced Content Assist in Mobile Applications
+### Advanced Content Assist
 
 The advanced content assist supports code completion of the attribute values for some elements in the HTML Editor.
 
@@ -96,7 +96,7 @@ To use content assist in the HTML editor:
 
 3. Click the selected line or press **Enter** to insert the selection in the editor.
 
-### Advanced Content Hover in Mobile Applications
+### Advanced Content Hover
 
 The advanced content hover displays additional information on the attribute values of some elements in the HTML editor.
 
@@ -117,7 +117,7 @@ The advanced content hover has the following features:
 
 To use the hover feature in the HTML editor, hover the mouse cursor at the above attributes.
 
-### Advanced File Refactoring in Mobile Applications
+### Advanced File Refactoring
 
 Tizen Studio supports file refactoring in the **Project Explorer** view. When file refactoring occurs, other files to which the refactored file belongs are changed.
 

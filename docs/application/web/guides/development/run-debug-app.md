@@ -1,7 +1,7 @@
 
 # Run and Debug Applications
 
-You can run your application on the [emulator](#emulator) or the [target device](#target). You can also run mobile applications on the [simulator](#simulator). Use the [Rapid Development Support](#rds) feature to speed up the development tasks. If your application does not run without problems, you can [debug](#debug) it.
+You can run your application on the [emulator](#emulator) or the [target device](#target). You can also run your application on the [simulator](#simulator). Use the [Rapid Development Support](#rds) feature to speed up the development tasks. If your application does not run without problems, you can [debug](#debug) it.
 
 <a name="emulator"></a>
 ## Run Web applications on emulator
@@ -63,7 +63,7 @@ To run your application on the target device, follow these steps:
 If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../tizen-studio/web-tools/web-editor.md#js_log) is automatically launched in Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
 
 <a name="simulator"></a>
-## Run mobile Web applications on simulator
+## Run Web applications on simulator
 
 You can run Tizen Web applications on the [Web Simulator](../../../tizen-studio/web-tools/web-simulator.md) using the **Project Explorer** view or the Tizen Studio menu.
 
