@@ -19,10 +19,12 @@ the checks that can be automated and the judgement required around them.
 
 When a decision is ambiguous, use evidence in this order:
 
-1. [`CONTRIBUTING.md`](../../../CONTRIBUTING.md) and the
-   [`styleguide/`](../../../styleguide/) documents
+1. [`CONTRIBUTING.md`](../../../CONTRIBUTING.md), the
+   [`styleguide/`](../../../styleguide/) documents, and the
+   [`reviewguide/`](../../../reviewguide/) documents
 2. Sibling documents and the TOC that publishes them
-3. This skill and its [TOC reference](references/toc-formats.md)
+3. This skill and its [directory map](references/directory-map.md) and
+   [TOC reference](references/toc-formats.md)
 
 The existing repository contains legacy variations. Do not normalize unrelated files in a
 focused change. Match the convention already used by the area you touch, and record a
@@ -32,7 +34,9 @@ separate cleanup issue when appropriate.
 
 1. **Choose the destination.** Browse the relevant section under `docs/` and locate its
    governing `toc*.md`. The main sections are `application/`, `platform/`, `iot/`,
-   `partners/`, `extensions/`, and `blog/`.
+   `partners/`, `extensions/`, and `blog/`. See the [directory map](references/directory-map.md)
+   for what each section and subdirectory contains, including which sibling files are
+   generated content that should not be edited by hand.
 2. **Check for imported content.** Do not hand-edit Markdown under `*/api/**`,
    `*/wiki/**`, or files ending in `.autogen.md`. Correct the upstream source and import
    the regenerated result instead.
@@ -87,3 +91,21 @@ Review both correctness and publication safety:
 
 Run the validator for the pull request's changed files. Fix every `ERROR`; explain or fix
 every `WARN` before approval.
+
+For area-specific review points, consult the matching guide under
+[`reviewguide/`](../../../reviewguide/) before approving:
+
+- [`review_points_guide.md`](../../../reviewguide/review_points_guide.md) — general guide
+  pages: branches, headings, adding/renaming/moving/deleting a page, tags
+- [`review_points_web_api.md`](../../../reviewguide/review_points_web_api.md) — required
+  for any change under `application/web/api/`: those files are HTML, not Markdown, and
+  must use HTML markup (`<strong>`, `<li>`), not Markdown syntax
+- [`review_points_release_note.md`](../../../reviewguide/review_points_release_note.md) —
+  release-note conventions (release date, tone, TOC registration) for Tizen Studio and
+  Tizen Platform notes
+- [`stg_build.md`](../../../reviewguide/stg_build.md) — use the Jenkins-built staging URL
+  attached to the PR to check rendered output before approving
+- [`update_docs_tizen_org.md`](../../../reviewguide/update_docs_tizen_org.md) — how an
+  approved `master` change is promoted to the live site via a separate `master` → `live`
+  pull request; not needed for routine content review, but relevant when a reviewer is
+  also asked to publish

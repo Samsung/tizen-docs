@@ -13,6 +13,38 @@ All files under ./docs/ are hosted on the [Tizen Docs site](https://samsungtizen
 Only add information that is suitable for public release. Do not include credentials,
 private contact information, unreleased product details, or other non-public material.
 
+## Repository structure
+
+```
+tizen-docs/
+├── docs/                       # Published site source (docs.tizen.org)
+│   ├── application/            # App developer guides — native, web, dotnet, flutter,
+│   │   │                       #   plus tizen-studio/vscode-ext/vstools tooling docs
+│   │   └── */api/               # Generated API reference (HTML). Do not hand-edit.
+│   ├── platform/                # Platform/OS docs — HAL, compliance, porting,
+│   │                            #   developing, reference, release-notes, what-is-tizen
+│   ├── extensions/tizenx/       # TizenX extension SDK guides + generated API reference
+│   ├── iot/                     # IoT profile guides + generated API reference
+│   ├── partners/                # Partner program docs
+│   ├── blog/                    # Blog posts
+│   ├── images/                  # Shared site images
+│   └── menu.yaml, get-started.md, glossary.md, trademarks.md
+├── styleguide/                  # Writing style and naming-rule references
+├── reviewguide/                 # PR reviewer walkthroughs (per content type, stg build)
+├── tools/check_docs.py          # Link/TOC validator, run before every PR
+├── .github/                     # CODEOWNERS, pull request template
+└── .claude/skills/tizen-docs/   # Claude Code skill for authoring and review
+```
+
+`docs/` mixes hand-written Markdown with generated, versioned API-reference dumps
+(HTML/JS/CSS under `*/api/**`). Of the roughly 80,000 tracked files under `docs/`, only
+about 1,900 are hand-authored `.md` pages; the rest is generated API reference that must
+be fixed upstream, never edited by hand — see
+[AGENTS.md](AGENTS.md) for the full rule.
+
+For a directory-by-directory breakdown with file counts, see the skill's
+[directory map](.claude/skills/tizen-docs/references/directory-map.md).
+
 ## Working with an AI coding agent
 
 Repository-specific instructions for AI coding agents are in
