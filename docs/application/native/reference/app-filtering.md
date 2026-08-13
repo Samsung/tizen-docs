@@ -559,8 +559,8 @@ Reference](../api/overview.md).
 
 A Tizen profile describes the requirements for a category of Tizen
 devices that have a common application execution environment.
-Applications are created for a single specific target profile, such as
-mobile or wearable, and can run on devices compliant with that profile.
+Applications are created for a single specific target profile, and
+can run on devices compliant with that profile.
 
 Use profile-based filtering to ensure that your application is only
 downloaded on the appropriate device profile. To ensure this, declare
@@ -574,15 +574,14 @@ attributes.
 
 | Tizen profile | Profile name attribute |
 |-------------|----------------------|
-| Mobile        | `mobile`               |
-| Wearable      | `wearable`             |
+| Common        | `common`               |
 
 In a native application, the profile name element can be added to the
 `tizen-manifest.xml` file as follows:
 
 ```xml
 <manifest xmlns="http://tizen.org/ns/packages" api-version="2.3.1" ... >
-   <profile name="mobile"/>
+   <profile name="common"/>
 ```
 
 The official site for Tizen applications compares the device profile and the `profile name`

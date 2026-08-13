@@ -147,7 +147,7 @@ The following table lists the policy properties you can edit in the **Policy** t
   **content-security-policy** </td>
   <td>
 
-  Used to define an additional content security policy for a packaged or hosted application. The policy string is defined according to [Content Security Policy Level 2](https://www.w3.org/TR/CSP2/){:target="_blank"} (in mobile and TV applications) and [Content Security Policy 1.0](https://www.w3.org/TR/CSP1/){:target="_blank"} (in wearable applications).</td>
+  Used to define an additional content security policy for a packaged or hosted application. The policy string is defined according to [Content Security Policy Level 2](https://www.w3.org/TR/CSP2/){:target="_blank"}.</td>
 </tr>
 <tr>
   <td>
@@ -218,7 +218,7 @@ You can localize a Web application to adapt to various languages and cultural en
 <a name="preferences"></a>
 ### Declare name-value pairs in the Preferences tab
 
-You can declare name-value pairs which can be set and retrieved using the Widget Interface API (in [mobile](../../api/latest/w3c_api/w3c_api_m.html#widget), [wearable](../../api/latest/w3c_api/w3c_api_w.html#widget), and [TV](../../api/latest/w3c_api/w3c_api_tv.html#widget) applications) in the **Preferences** tab of the Web application configuration editor. These name-value pairs, or preferences, are used by the Web application during execution.
+You can declare name-value pairs which can be set and retrieved using the [Widget Interface API](../../api/latest/w3c_api/w3c_api_tv.html#widget) in the **Preferences** tab of the Web application configuration editor. These name-value pairs, or preferences, are used by the Web application during execution.
 
 
 To add preferences, click **+**. A new row appears in the table. Enter values in the **Name** and **Value** columns. You can set a preference as read-only by setting the **Read-only** column value as **true**.
@@ -269,16 +269,6 @@ The following table describes the schema extension properties that you can edit.
   Indicates whether the application is launched as a main (single) or sub application, or whether a caller application defines the launch mode when the application is launched by an application control request.<br>
   This attribute is optional. The default value is **single**.</td>
 </tr>
-<tr>
-  <td>
-
-  **Ambient Support** </td>
-  <td>
-
-  Indicates whether the Web application supports the ambient mode.<br>
-  This attribute is optional and used **in wearable applications only**. The default value is **disable**.</td>
-</tr>
-
 <tr>
 
   <td>
@@ -426,7 +416,7 @@ The following table describes the schema extension properties that you can edit.
   <td>
 
   Used to define the path of the icon representing the account provider. The icon image is used by account settings and must be placed in a shared directory. The size is 72 x 72.<br>
-  This attribute is mandatory and used **in mobile applications only**.
+  This attribute is mandatory.
  </td>
 </tr>
 <tr>
@@ -437,7 +427,7 @@ The following table describes the schema extension properties that you can edit.
   <td>
 
   Used to define the path of the small icon representing the account provider. The icon image is used by account settings and must be placed in a shared directory. The size is 45 x 45.<br>
-  This attribute is mandatory and used **in mobile applications only**.
+  This attribute is mandatory.
  </td>
 </tr><tr>
 
@@ -482,7 +472,7 @@ The following table describes the schema extension properties that you can edit.
   **Meta Data**</td>
   <td>
 
-  Defines key-value pairs that can be accessed (read-only) through the Application API (in [mobile](../../api/latest/device_api/mobile/tizen/application.html) and [wearable](../../api/latest/device_api/wearable/tizen/application.html) applications).<br>
+  Defines key-value pairs that can be accessed (read-only) through the [Application API](../../api/latest/device_api/tv/tizen/application.html).<br>
   To add a key-value pair, click **+** in the **Meta Data** section, define a key (unique string) and value (string), and click **OK**. This attribute is optional.
 
   The following example shows the setting in the `config.xml` file code:
@@ -491,17 +481,6 @@ The following table describes the schema extension properties that you can edit.
 <tizen:metadata key="key1"/>
 <tizen:metadata key="key2" value="value"/>
 ```
-  </td>
-</tr>
-<tr>
-
-  <td colspan="2">
-
-  **Category**</td>
-  <td>
-
-  Defines the categories to which a service application belongs.<br>
-  To add a category, click **+** in the **Category** section, select the category, and click **OK**. This attribute is optional and used **in  wearable applications only**.
   </td>
 </tr>
 <tr>

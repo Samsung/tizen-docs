@@ -164,7 +164,6 @@ Following is an example of the config.xml file:
    <widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://yourdomain/AddonSampleAd" version="1.0.0" viewmodes="maximized">
        <tizen:addon package="TFh8kl6ztm" required_version="5.5"/>
        <name>AddonSampleAd</name>
-       <tizen:profile name="mobile"/>
    </widget>
    ```
 

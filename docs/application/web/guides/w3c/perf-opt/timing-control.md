@@ -12,13 +12,6 @@ window.performance.windowNow = window.performance.now || window.performance.webk
 window.performance.windowNow();
 ```
 
-In wearable applications, when you are using the emulator and want to support backward compatibility, methods assigned to variables must be formatted as follows:
-
-```
-window.performance.windowNow = window.performance.now || window.performance.webkitNow || Date.now;
-window.performance.windowNow();
-```
-
 ## Create an application with a controllable animation
 
 To optimize the performance of your application, you must learn to create a simple controllable DOM animation.

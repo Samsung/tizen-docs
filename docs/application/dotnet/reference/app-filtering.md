@@ -246,7 +246,7 @@ The following table shows the available requirements for an application package.
 
 ## Profile-based filtering
 
-A Tizen profile describes the requirements for a category of Tizen devices that have a common application execution environment. Applications are created for a single specific target profile, such as mobile, wearable, or TV, and can run on devices compliant with that profile.
+A Tizen profile describes the requirements for a category of Tizen devices that have a common application execution environment. Applications are created for a single specific target profile, such as TV, and can run on devices compliant with that profile.
 
 Use profile-based filtering to ensure that your application is only downloaded on the appropriate device profile. To ensure this, declare the intended profile by adding the `profile name` element in the `tizen-manifest.xml` file.
 
@@ -256,15 +256,13 @@ The following table lists the Tizen profiles and related profile name attributes
 
 | Tizen profile | Profile name attribute |
 |---------------|------------------------|
-| Mobile        | `mobile`               |
-| Wearable      | `wearable`             |
 | TV            | `tv`                   |
 
 In a Tizen .NET application, the profile name element can be added to the `tizen-manifest.xml` file as follows:
 
 ```xml
 <manifest xmlns="http://tizen.org/ns/packages" api-version="5" ... >
-   <profile name="wearable" />
+   <profile name="tv" />
 ```
 
 The official site for Tizen applications compares the device profile and the `profile name` element in an application. The store only shows the applications with a profile name matching the device profile to prevent unsupported applications from being installed.

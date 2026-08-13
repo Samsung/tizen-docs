@@ -1,6 +1,6 @@
 # Creating Certificates
 
-This document explains how to create the necessary certificate profiles by creating or importing existing certificate files to install the Tizen application on a Samsung Tizen wearable device.
+This document explains how to create the necessary certificate profiles by creating or importing existing certificate files to install the Tizen application on a Samsung Tizen device.
 
 ## Creating a Certificate Profile
 
@@ -50,9 +50,7 @@ It is used to create an author signature, which ensures the integrity of the app
 
    ![Author Certificate Advanced options](media/certificate-manager/author-create-adv-option.jpg)
 
-   The same signing key helps in maintaining secure peer authentication between the Tizen Watch app and the Android mobile app.
-
-   For more information, see [Accessory SDK](https://developer.samsung.com/galaxy/accessory). If you select a Samsung author certificate, you can renew the certificate with the same information. This renewed certificate will be the same as your original RSA key, so upgrading your application is guaranteed.
+   If you select a Samsung author certificate, you can renew the certificate with the same information. This renewed certificate will be the same as your original RSA key, so upgrading your application is guaranteed.
 
 2. <a name="information_of_the_author_certificate"></a>**Information of the author certificate**
 

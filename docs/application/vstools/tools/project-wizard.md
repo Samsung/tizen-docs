@@ -8,7 +8,7 @@ The Project Wizard provides 4 project templates with which you can start a .NET 
 
 -   **Blank App (Xamarin.Forms)**
 
-    Use this template for creating a Tizen Xamarin application (Common, Mobile, TV, and Wearable). You can also use this template for a cross-platform project to add a Tizen project into a Xamarin.Forms solution.
+    Use this template for creating a Tizen Xamarin application (Common and TV). You can also use this template for a cross-platform project to add a Tizen project into a Xamarin.Forms solution.
 
 -   **Blank App (ElmSharp-Beta)**
 
@@ -46,8 +46,8 @@ To create a Tizen .NET application project:
 
     ![Select profiles](media/projectwizard-profile.png)
 
-The following figure shows a new .NET application project solution that contains both mobile and TV profiles.
+The following figure shows a new .NET application project solution that contains multiple profiles.
 
-**Figure: Solution with mobile and TV profiles**
+**Figure: Solution with multiple profiles**
 
-![Solution with mobile and TV profiles](media/projectwizard-solution.png)
+![Solution with multiple profiles](media/projectwizard-solution.png)

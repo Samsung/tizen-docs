@@ -111,10 +111,6 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
 
   Select either **Portrait**, **Landscape**, **Reverse Portrait**, or **Reverse Landscape** as the orientation of the emulator.
 
-- **Scale** (mobile only)
-
-  Scale the size of the emulator between 1x, 1/2x (default), 3/4x, and 1/4x.
-
 - **Advanced > Controller**
 
   Show or hide the controller window.

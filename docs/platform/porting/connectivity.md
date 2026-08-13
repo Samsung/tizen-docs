@@ -83,7 +83,7 @@ There are a few configuration changes that need to be made to enable the specifi
   - Bring the device up, set up the device name, and enable the SSP mode:
     ```
     hciconfig hci0 up
-    hciconfig hci0 name "Tizen-Mobile"
+    hciconfig hci0 name "Tizen-Device"
     hciconfig hci0 sspmode 1
     ```
   - Switch on the Bluetooth radio:
@@ -119,7 +119,7 @@ There are a few configuration changes that need to be made to enable the specifi
   - Bring the device up, set up the device name, and enable the SSP mode:
     ```
     hciconfig hci0 up
-    hciconfig hci0 name "Tizen-Mobile"
+    hciconfig hci0 name "Tizen-Device"
     hciconfig hci0 sspmode 1
     ```
 

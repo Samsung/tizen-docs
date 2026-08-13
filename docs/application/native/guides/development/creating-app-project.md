@@ -17,7 +17,7 @@ To create a native application project:
 
       ![Selecting the project type](media/create_project_wizard_type.png)
 
-   b. Select the profile (**Mobile** or **Wearable**) and version from a drop-down list and click **Next**.
+   b. Select the profile and version from a drop-down list and click **Next**.
 
       ![Selecting the profile and version](media/create_project_wizard_version_wearable.png)
 

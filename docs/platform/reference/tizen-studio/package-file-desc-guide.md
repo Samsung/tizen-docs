@@ -117,7 +117,7 @@ Your package must comply with the extension package name creation rules:
 
   - Native: `NativeAppDevelopment`
 
-    For example, `mobile-2.4-product-NativeAppDevelopment`
+    For example, `tv-2.4-product-NativeAppDevelopment`
 
   - Emulator: `Emulator`
 
@@ -125,7 +125,7 @@ Your package must comply with the extension package name creation rules:
 
 The list of supported environments in Tizen Studio are:
 
-  - Profile: Mobile, Wearable, or TV
+  - Profile: TV
 
   - Platform version: 2.4 or 3.0
 

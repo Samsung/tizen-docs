@@ -226,7 +226,7 @@ In a Tizen .NET application, the `<profile>` element must be set to `common`. Th
 
 -   `name`
 
-    Profile name (available values: `common`, `mobile`, `tv`, `wearable`)
+    Profile name (available values: `common`, `tv`)
 
 **For example:**
 

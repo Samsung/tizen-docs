@@ -57,7 +57,7 @@ The **Visual Studio Extension for Tizen** allows you to easily and efficiently c
         <p></p>
         <p>Then the <b>Tizen Project Wizard</b> pop-up window appears.</p>
         <li><b>Select Profile, Platform Version, and Template</b><br>
-        Choose the appropriate <b>Profile</b> (e.g., Mobile, Wearable, TV). Select the <b>Platform Version</b> compatible with your target device. Pick a <b>Project Template</b> based on your application requirements. Click <b>OK</b> to finalize the project creation.</li>
+        Choose the appropriate <b>Profile</b> (e.g., TV). Select the <b>Platform Version</b> compatible with your target device. Pick a <b>Project Template</b> based on your application requirements. Click <b>OK</b> to finalize the project creation.</li>
         <img src="/docs/application/vstools/media/vs2022_project_create_4_dotnet.png" />
         <p></p>
         <p>The following figure illustrates the solution explorer for newly created <b>TizenDotNet</b> project:</p><img src="/docs/application/vstools/media/vs2022_project_create_5_dotnet.png"/>
@@ -84,7 +84,7 @@ The **Visual Studio Extension for Tizen** allows you to easily and efficiently c
         <p></p>
         <p>Then the <b>Tizen Project Wizard</b> pop-up window appears.</p>
         <li><b>Select Profile, Platform Version, and Template</b><br>
-        Choose the appropriate <b>Profile</b> (e.g., Mobile, Wearable, TV). Select the <b>Platform Version</b> compatible with your target device. Pick a <b>Project Template</b> based on your application requirements. Click <b>OK</b> to finalize the project creation.</li>
+        Choose the appropriate <b>Profile</b> (e.g., TV). Select the <b>Platform Version</b> compatible with your target device. Pick a <b>Project Template</b> based on your application requirements. Click <b>OK</b> to finalize the project creation.</li>
         <img alt="Tizen Profile Select" src="/docs/application/vstools/media/vs2022_project_create_4_web.png" />
         <p></p>
         <p>The following figure illustrates the solution explorer for newly created <b>TizenWeb</b> project:</p>
@@ -111,7 +111,7 @@ The **Visual Studio Extension for Tizen** allows you to easily and efficiently c
         <p></p>
         <p>Then the <b>Tizen Project Wizard</b> pop-up window appears.</p>
         <li><b>Select Profile, Platform Version, and Template</b><br>
-        Choose the appropriate <b>Profile</b> (e.g., Mobile, Wearable, TV). Select the <b>Platform Version</b> compatible with your target device. Pick a <b>Project Template</b> based on your application requirements. Click <b>OK</b> to finalize the project creation.</li>
+        Choose the appropriate <b>Profile</b> (e.g., TV). Select the <b>Platform Version</b> compatible with your target device. Pick a <b>Project Template</b> based on your application requirements. Click <b>OK</b> to finalize the project creation.</li>
         <img alt="Tizen Profile Select" src="/docs/application/vstools/media/vs2022_project_create_4_native.png" />
         <p></p>
         <p>The following figure illustrates the solution explorer for newly created <b>TizenNative</b> project:</p>

@@ -360,7 +360,7 @@ Tizen 4.0.
 A Tizen profile describes the requirements for a category of Tizen
 devices that have a common application execution environment.
 Applications are created for a single specific target profile, such as
-mobile, wearable, or TV, and can run on devices compliant with that
+TV, and can run on devices compliant with that
 profile.
 
 Use profile-based filtering to ensure that your application is only
@@ -375,8 +375,6 @@ attributes.
 
 | Tizen profile | Profile name attribute |
 | ------------- | ---------------------- |
-| Mobile        | `mobile`               |
-| Wearable      | `wearable`             |
 | TV            | `TV`                   |
 
 In a Web application, the profile name element can be added to the
@@ -384,7 +382,7 @@ In a Web application, the profile name element can be added to the
 
 ```xml
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" ... >
-   <tizen:profile name="mobile"/>
+   <tizen:profile name="TV"/>
 ```
 
 The official site for Tizen applications compares the device profile and the `profile name`

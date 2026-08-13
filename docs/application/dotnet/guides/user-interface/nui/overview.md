@@ -2,14 +2,13 @@
 
 Natural User Interface (NUI) is a C\# toolkit on top of the DALi (Dynamic Animation Library) graphics library, which is written in C++.
 
-NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications. These applications are run on a range of Tizen devices, such as mobile devices, TVs, and wearables. NUI is built on a multi-threaded architecture, enabling realistic smooth animations. In addition, a range of optimization techniques are utilized to obtain low CPU and GPU usage, further increasing graphics performance.
+NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications. These applications are run on a range of Tizen devices, such as TVs. NUI is built on a multi-threaded architecture, enabling realistic smooth animations. In addition, a range of optimization techniques are utilized to obtain low CPU and GPU usage, further increasing graphics performance.
 
 After you have set up the NUI development environment, you can quickly create rich UI applications with realistic effects and animations, such as:  
 
 -   Image and video galleries
 -   Music players
 -   Home screens and launch pads
--   Advanced watch faces for wearable devices
 
 NUI offers the following main features:
 

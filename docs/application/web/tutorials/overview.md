@@ -14,8 +14,6 @@ The introduction to Web applications documentation provides overall information 
 
 - Web Runtime
 
-- Event Handling (in **wearable applications only**)
-
 - Application Signing and Certificates
 
 - [API Versioning and Deprecation Policy of the Tizen Platform](../reference/deprecation-policy.md)

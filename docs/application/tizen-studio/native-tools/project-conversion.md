@@ -53,7 +53,7 @@ The `project_def.prop` file describes the project properties, such as project ty
 |----------------------|----------------------------------------|
 | `APPNAME`              | Application name, which must be given in lowercase letters.</br>For example: `APPNAME = test` |
 | `type`                 | Application type, which can be app, sharedLib, or staticLib.</br>For example: `type = app`</br>This is a **readonly** property; do not edit it. |
-| `profile`              | Profile with a version.</br>For example: `profile = mobile-2.3` |
+| `profile`              | Profile with a version.</br>For example: `profile = common-5.0` |
 | `USER_SRCS`            | List of `.c` and `.cpp` source files in the current project.</br>The list can be used with wildcard characters: *.</br>If there are more than 2 files, a white-space character separator is used.</br>For example: `USER_SRCS = src/*.c` |
 | `USER_DEFS`            | List of user-defined C files added to the compilation process.</br>The list must be used without the `-D` characters for the C compiler.</br>For example: `USER_DEFS = ABC DEF` |
 | `USER_UNDEFS`          | List of user-defined C files excluded from the compilation process.</br>The list must be used without the `-U` characters for the C compiler. |

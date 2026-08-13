@@ -24,7 +24,7 @@ To create a Web application project, follow the steps below:
 
         ![Selecting the project type](./media/create_project_wizard_type.png)
 
-    2.  Select the profile (**Mobile**, **Wearable**, or **TV**) and
+    2.  Select the profile (**TV**) and
       version from a drop-down list and click **Next**.  
         > [!NOTE]
         > If you cannot see the TV profile option, open the Package Manager and make sure that you have installed the TV extension packages in the **Extension SDK** tab.

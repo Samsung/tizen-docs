@@ -243,11 +243,7 @@ namespace SampelOpenTKApp
 
 4.  If the deployment is successful, then the application is launched on the target emulator.
 
-    The following are snapshots of launching this OpenTK app on mobile and TV emulators:
-
-    **Figure: OpenTK app on TV emulator**
-
-    ![OpenTKAppOnMobile](media/OpenTKAppOnMobile.png)
+    The following is a snapshot of launching this OpenTK app on a TV emulator:
 
     **Figure: OpenTK app on TV emulator**
 

@@ -622,7 +622,7 @@ The following table lists the profile feature keys:
 
 | Key                                | Type     | Description                              |
 |------------------------------------|----------|------------------------------------------|
-| `http://tizen.org/feature/profile` | `String` | The platform returns a compliant device profile (such as `"mobile"` or `"wearable"`) for this key. |
+| `http://tizen.org/feature/profile` | `String` | The platform returns a compliant device profile (such as `"common"` or `"iot-headed"`) for this key. |
 
 The following table lists the screen feature keys:
 

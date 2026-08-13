@@ -31,7 +31,7 @@ When you are developing a more complex addon, you can take advantage of the [Web
 <a name="create"></a>
 ## Create project
 
-The following example shows you how to create and configure a basic addon project in Tizen Studio. An addon project contains all the files that are required to create an addon. Addon has a characteristic of dependent invocation unlike the Web applications. This implies that you can create an addon but you cannot run it solely. You must have Web applications to run the addons. In this section, we select **Tizen Basic UI Web Application**. For more information on Web application, see [Create Your First Tizen Mobile Web Application](../mobile/first-app.md).
+The following example shows you how to create and configure a basic addon project in Tizen Studio. An addon project contains all the files that are required to create an addon. Addon has a characteristic of dependent invocation unlike the Web applications. This implies that you can create an addon but you cannot run it solely. You must have Web applications to run the addons. In this section, we select **Tizen Basic UI Web Application**. For more information on Web application, see [Get Started with Web Applications](../overview.md).
 
 **Figure: Basic UI Web Application**
 
@@ -55,7 +55,7 @@ To create the addon project, follow these steps:
 
         ![Selecting the project type](media/create_project_wizard_type.png)
 
-    2.  Select the profile (**Mobile**) and version from a drop-down list and click **Next**.
+    2.  Select the profile and version from a drop-down list and click **Next**.
 
         The version depends on the platform version you have installed and with which you are developing the addon.
 
@@ -156,7 +156,7 @@ To run the addon on the emulator, follow these steps:
 
         ![Emulator Manager](media/emulator_icon.png)
 
-    2.  In Emulator Manager, select a mobile emulator from the list and click **Launch**.
+    2.  In Emulator Manager, select an emulator from the list and click **Launch**.
 
         If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
@@ -199,7 +199,7 @@ To run the addon on the emulator, follow these steps:
 
         ![Addon settings main](media/addon_settings_main.png)
 
-    3.  Now, you can run Basic UI Web application by following the [instructions](../mobile/first-app.md#emulator).
+    3.  Now, you can run Basic UI Web application by following the [instructions](../../guides/development/run-debug-app.md#emulator).
         
         > [!NOTE]
         > You will find nothing different from running the Web application without the addon because there is no visible change in UI. You can make a change on UI later.
@@ -209,7 +209,7 @@ For more information on using the emulator features, see [Using Emulator Control
 <a name="target"></a>
 ### Run on target device
 
-To run the application on a target device, you can follow the steps similar for the emulator. For more information, see [running Basic UI Web application in a target device](../mobile/first-app.md#target).
+To run the application on a target device, you can follow the steps similar for the emulator. For more information, see [running Web applications on a target device](../../guides/development/run-debug-app.md#target).
 
 In the target device, Basic UI will appear as expected.
 

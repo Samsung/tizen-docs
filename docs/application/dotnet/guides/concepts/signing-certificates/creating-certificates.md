@@ -1,6 +1,6 @@
 # Creating Certificates
 
-This document explains how to create the necessary certificates or import existing ones to install the Tizen application on a Samsung Tizen wearable device.
+This document explains how to create the necessary certificates or import existing ones to install the Tizen application on a Samsung Tizen device.
 
 ## Creating certificate profile
 

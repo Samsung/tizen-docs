@@ -166,7 +166,7 @@ For more information on the relationship between the elements, see the [element 
 <manifest xmlns="http://tizen.org/ns/packages" api-version="2.3.1" package="org.tizen.uiapp" version="1.0.0">
    <author>.....</author>
    <description>.....</description>
-   <profile name="mobile"/>
+   <profile name="common"/>
    <ui-application>.....</ui-application>
    <shortcut-list>.....</shortcut-list>
    <account>.....</account>
@@ -245,12 +245,12 @@ The `<profile>` element determines on which kind of device the Tizen package ope
 
 - `name`
 
-  Profile name (available values: `mobile`, `wearable`)
+  Profile name (available values: `common`, `tv`)
 
 **For example:**
 
 ```xml
-<profile name="mobile"/>
+<profile name="common"/>
 ```
 
 ### \<ui-application\> element

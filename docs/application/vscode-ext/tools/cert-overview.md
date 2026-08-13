@@ -65,7 +65,7 @@ It enables:
 - Access to Samsung-specific APIs and privileged capabilities.
 - Debugging and sideloading on real devices via DUID-based verification.
 
-When the application is later uploaded to the Samsung store (e.g., for Samsung Smart TV or wearable distribution), the temporary distributor certificate is replaced with Samsung’s official store distributor certificate during the signing process.
+When the application is later uploaded to the Samsung store (e.g., for Samsung Smart TV distribution), the temporary distributor certificate is replaced with Samsung’s official store distributor certificate during the signing process.
 
 ## Security
 

@@ -1,6 +1,6 @@
 # Learn About .NET
 
-Tizen .NET is an exciting new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile phones, and many other IoT devices around the world.
+Tizen .NET is an exciting new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs and many other IoT devices around the world.
 
 The existing Tizen frameworks are either C-based with no advantages of a managed runtime or HTML5-based with fewer features and lower performance than the C-based solution. With Tizen .NET, you can use the C# programming language and the Common Language Infrastructure standards, and have benefits from a managed runtime for faster application development and code execution that is efficient and secure.
 
@@ -30,7 +30,7 @@ Managed runtime offers the following advantages to your application development:
 ## Tizen .NET features and components
 
 Tizen .NET enables you to build .NET applications with NUI and Tizen .NET framework. NUI allows you to easily create a user interface, and TizenFX API provides numerous interfaces 
-to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices. NUI (Natural User Interface) is a hardware accelerated C# toolkit which a set of predefined components and layouts for implementing GUI in both 2D and 3D modes. NUI is optimized for speed and low resource usage.
+to much of the hardware that is found in modern TV and IoT devices. NUI (Natural User Interface) is a hardware accelerated C# toolkit which a set of predefined components and layouts for implementing GUI in both 2D and 3D modes. NUI is optimized for speed and low resource usage.
 
 **Figure: Tizen .NET architecture**
 
