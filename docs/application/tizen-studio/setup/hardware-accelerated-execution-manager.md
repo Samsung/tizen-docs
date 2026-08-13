@@ -15,7 +15,7 @@ Hardware requirements:
 <a name="on_Windows"></a>
 ## Installing Intel&reg; HAXM on Windows
 
-Supported Windows versions: 10/8.1/8/7 (32/64-bit)
+Supported Windows versions: 10 (64-bit)
 
 **HAXM is automatically installed as part of Tizen Studio**. If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
 
@@ -86,7 +86,7 @@ If you meet an installation failure because of hardware requirements, check the 
 <a name="on_MacOS"></a>
 ## Installing Intel&reg; HAXM on macOS
 
-Supported macOS versions: 10.12 Sierra (64-bit), 10.11 OS X El Capitan(64-bit), 10.10 Yosemite (64-bit), 10.9 Mavericks (64-bit), 10.8 Mountain Lion (64-bit)
+Supported macOS versions: 11.4 (Big Sur), 12.3 (Monterey)
 
 **HAXM is automatically installed as part of the Tizen Studio.** If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/mac/](http://download.tizen.org/sdk/haxm/7.0.0/mac/IntelHAXM_7.0.0.dmg) and download the macOS installer package.In case the version 7.0.0 installation fails then the latest version of HAXM can be tried which is available at https://github.com/intel/haxm/releases/tag/v7.7.0
 
