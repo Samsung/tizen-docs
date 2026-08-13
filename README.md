@@ -35,6 +35,8 @@ To contribute, see the [Contributing Guide](CONTRIBUTING.md) and the [issues lis
 
 Please take a look at the following instructions before starting.
 
+Write issues and pull requests in English.
+
 ### Workflow
 
 We are going to review <span class="labels lh-default d-block d-md-inline">

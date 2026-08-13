@@ -9,6 +9,9 @@ This repository publishes documentation for the public Tizen Docs site. Work onl
 content suitable for public release. Do not add credentials, private contact information,
 unreleased product information, or other non-public material.
 
+Write issue and pull request titles, descriptions, and comments in English, regardless of
+the language used in the conversation that produced them.
+
 Use this skill when authoring, restructuring, or reviewing documentation here. It covers
 the checks that can be automated and the judgement required around them.
 
@@ -75,6 +78,7 @@ unfamiliar one.
 Review both correctness and publication safety:
 
 - Is all added content suitable for public release?
+- Are the issue/PR title, description, and comments written in English?
 - Does the path match the surrounding information architecture?
 - Is each new or moved document linked by its governing TOC?
 - Do links, images, and anchors still resolve after the change?

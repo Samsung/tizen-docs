@@ -24,6 +24,8 @@ authoring and review instructions, read
 - Give each new hand-written document one H1 as its first content heading.
 - Treat `*/api/**`, `*/wiki/**`, and `*.autogen.md` as imported content. Fix their source
   upstream instead of hand-editing generated output.
+- Write issue and pull request titles, descriptions, and comments in English, even if the
+  conversation that produced them was in another language.
 
 Before submitting a pull request, run:
 
