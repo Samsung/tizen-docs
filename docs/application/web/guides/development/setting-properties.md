@@ -494,17 +494,6 @@ The following table describes the schema extension properties that you can edit.
   To define the setting values, click **+** in the **Service** section, and define the values. For more information on the values, see [Tizen Service](../../../tizen-studio/web-tools/config-editor.md#ww_service).
   </td>
 </tr>
-<tr>
-
-  <td colspan="2">
-
-  **Web Widget**</td>
-  <td>
-
-  Defines widget application-specific settings.<br>
-  To edit the setting values, select the row in the **Web Widget** section table, click the **Edit** icon (shaped like a pen), and define the values. For more information on the values, see [Tizen Web Widget](../../../tizen-studio/web-tools/config-editor.md#ww_webwidget).
-  </td>
-</tr>
 </table>
 
 <a name="source"></a>

@@ -16,7 +16,7 @@ To port a GLView11Cube project screen to the SettingsUIwithUIB project:
 
    1. In Tizen Studio, go to **File > New > Tizen Project**.
 
-   2. Select the **Sample** project type, **Mobile v2.4** profile and version, and the **Native Application** application type.
+   2. Select the **Sample** project type, the profile and version, and the **Native Application** application type.
 
    3. In the list of samples, select **Graphics > GLView11Cube**.
 

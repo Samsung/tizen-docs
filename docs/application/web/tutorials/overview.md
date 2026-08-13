@@ -10,8 +10,6 @@ The introduction to Web applications documentation provides overall information 
 
 - [Security and API Privileges](../reference/security-privileges.md)
 
-- [Security and API Privileges for Apps with API Version 4.0 or Earlier](../reference/security-privileges-legacy.md)
-
 - Web Runtime
 
 - Application Signing and Certificates

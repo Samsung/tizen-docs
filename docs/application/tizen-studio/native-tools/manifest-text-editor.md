@@ -615,11 +615,11 @@ This element contains the size supported by the widget application.
 
 **Expected value:**
 
-- `2x2` (in mobile and wearable)
-- `4x1` (in mobile only)
-- `4x2` (in mobile only)
-- `4x3` (in mobile only)
-- `4x4` (in mobile only)
+- `2x2`
+- `4x1`
+- `4x2`
+- `4x3`
+- `4x4`
 
 **For example:**
 
