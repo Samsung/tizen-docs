@@ -325,9 +325,9 @@
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
 ### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
-### [Web Runtime](/application/web/guides/essentials/web-runtime.md)
-### [Event Handling](/application/web/guides/essentials/event-handling.md)
-### [Application Signing and Certificates](/application/web/guides/essentials/signing-certificates.md)
+### [Web Runtime](/application/web/tutorials/web-runtime.md)
+### [Event Handling](/application/web/tutorials/event-handling.md)
+### [Application Signing and Certificates](/application/web/tutorials/sign-certificate.md)
 ### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
 
 ## Guides
