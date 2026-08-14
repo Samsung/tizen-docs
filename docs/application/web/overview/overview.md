@@ -172,5 +172,8 @@ In-depth guides for major features:
 - [Connectivity](../guides/connectivity/connectivity.md)
 - [Data Storage](../guides/data/data.md)
 - [Device Settings](../guides/device/device.md)
-- [Security](../guides/security/security.md)
+- Security
+  - [Secure Key Management](../guides/security/secure-key.md)
+  - [TEE Communication](../guides/security/tee-client.md)
+  - [Privacy-related Permissions](../guides/security/privacy-related-permissions.md)
 - [Multimedia](../guides/multimedia/overview.md)

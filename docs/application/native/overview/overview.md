@@ -234,5 +234,4 @@ Many APIs require specific privileges to access sensitive system resources or us
 
 ## Related Documentation
 
-- [API Reference](../api/overview.md) - Detailed API documentation
 - [Guides](../guides/index.md) - Implementation guides for each API module
