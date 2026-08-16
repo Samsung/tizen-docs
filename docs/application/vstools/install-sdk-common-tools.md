@@ -1,117 +1,81 @@
-# Install SDK Common Tools(Tizen Baseline SDK)
+# Set up Tizen SDK packages
 
-You need the following components on top of Visual Studio to make Visual Studio Tools for Tizen work:
+The Visual Studio Extension for Tizen installs the core applications during its first-run setup. Use the **Tizen Package Manager** to install, update, and remove the platform packages, SDK components, extensions, and emulator images required by your projects.
 
-- Extension(VSIX)
+Open it from **Tools > Tizen > Tizen Package Manager**.
 
-  Visual Studio extension for Tizen packaging.
+## Install or Update Packages
 
-- SDK Common Tools(Tizen Baseline SDK)
+The **Installed Packages** tab lists installed packages by category and shows their versions. Expand a category to review its packages. When updates are available, select **Update** in the summary bar to install them.
 
-  The SDK is shared with Tizen Studio, and it supports tools (such as Certificate Manager, Device Manager, Emulator, SDB, and on-demand rpm) for developing Tizen .NET applications.
+![Installed Packages tab with an expanded category](media/package-manager-installed-packages.png)
 
-To use Tizen SDK tools, you must install Visual Studio Tools for Tizen extension and Baseline SDK.
+## Install a Platform Version
 
-> [!NOTE] 
-> If Tizen Studio is already installed on your computer, simply [set Tizen Baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
+Use **Advanced SDK Installation** to add or remove an entire Tizen platform version:
 
+1. Open **Tools > Tizen > Tizen Package Manager**.
+2. Select **Advanced SDK Installation**.
 
-After installing Visual Studio Tools for Tizen extension, you must set up Tizen Baseline SDK in the following ways:
+   ![Advanced SDK Installation](media/package-manager-advanced-sdk.png)
 
-1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Package Manager**.
-2. Select **Install new Tizen SDK**.
+3. Select **Install** next to the platform version that you need.
+4. To remove an installed version, select **Uninstall**.
 
-   ![Select new installation](media/howtoinstall-installwizard1.png)
+   The video below shows how to install a Tizen SDK platform version:
 
-3. Read the license document and click **I Agree**.
+   <video controls height="400">
+     <source src="../media/sdk-installation.mp4" type="video/mp4">
+   </video>
 
-   ![Agree to license details](media/howtoinstall-installwizard2.png)
+The available versions include Tizen 10.0, 9.0, 8.0, 7.0, 6.5, 6.0, and TV extensions. Install the platform version and profile required by the application and target device.
 
-4. Enter the root directory path where you want to install and click **Next**.
+## Configure Package Repositories
 
-   ![Set the installation path](media/howtoinstall-installwizard3.png)
+1. Select the **Repository** (gear) button in Package Manager.
 
-5. Tizen SDK installer is downloaded and the baseline SDK is installed automatically.
+   ![Repository configuration](media/package-manager-repository.png)
 
-   ![Installer download](media/howtoinstall-installwizard4.png)
+2. Configure the Tizen repository for official SDK packages and the TV repository for TV extension packages or local ZIP files.
+3. Select **Apply** after changing a repository URL.
 
-   ![Baseline SDK installation](media/howtoinstall-installwizard5.png)
+## Report Issue for Package Manager
 
-6. Finally, Tizen Package Manager installs Tizen SDK tools.
+Select **Issue Report** in the upper-right corner of Package Manager to open the GitHub issues page and report an issue.
 
-   ![Tool installation](media/howtoinstall-installwizard6.png)
-
-<a name="set-tizen-baseline-sdk"></a>
-## Set Tizen Baseline SDK path 
-
-> [!NOTE]
-> If you downloaded Visual Studio Tools for Tizen extension from the Visual Studio Marketplace and installed it on your computer, skip this step.
+![Issue Report button](media/package_manager_issue_report_highlighted.png)
 
 
-You can use Tizen Package Manager to set up Tizen Baseline SDK path or each tool path directly:
+## Install emulator images
 
-- To set up Tizen Baseline SDK path, refer to the following steps:
-  1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Package Manager**.
-  2. Select **Use installed Tizen SDK**.
+Install a platform image before creating an emulator:
 
-     ![Baseline SDK Install](media/howtoinstall-baselineinstall5.png)
+1. Open **Tools > Tizen > Tizen Emulator Manager**.
+2. Select **Create a new Emulator**.
 
-  3. Enter the root directory of your existing Tizen Studio installation.
-     
-     ![Baseline SDK Install](media/howtoinstall-baselineinstall6.png)
+   ![Emulator Manager with Create a new Emulator highlighted](media/emulator-manager.png)
 
-  > [!NOTE] 
-  > If the installer gives a warning about your Tizen Studio version being too low, update Tizen Studio by using Tizen Package Manager after setting the tool path.
+3. In **Select a Platform Image**, select **Download** if the required image is not listed.
 
-- To set up each tool path directly, follow the steps below: 
-  1. In the Visual Studio IDE menu, go to **Tools &gt; Options &gt; Tizen &gt; Tools**.
-  2. Enter the root directory of your existing Tizen Studio installation in the **Tool Path** field.
-     ![Check the SDK tool path](media/howtoinstall-checktoolpath.png)
+   ![Select a Platform Image with Download and Import actions](media/emulator-platform-image.png)
 
-     The other tools paths are automatically set up.
+4. Download the image, then continue creating the emulator.
 
-The video below shows how to set the Baseline SDK path from Local PC on Visual Studio in windows:
+For a custom system image, select **Import** in the **Select a Platform Image** dialog and provide its platform name, base platform, image format, and `.qcow2` or raw image file.
 
-<video controls height="400">
-  <source src="../media/vs-baselineskdpath.mp4" type=video/mp4>
-</video>
+## Troubleshoot setup
 
-## Install Emulator images
+- Verify the extension in **Extensions > Manage Extensions** by searching for **Tizen**.
 
-If you do not have a real device, you can run applications in Tizen Emulator.
+![Check VSIX](media/cps-extensions-and-updates.png)
 
-To download emulator images, you can use Tizen Package Manager or Tizen Emulator Manager:
+- Confirm the first-run setup has completed and that the SDK resource path is writable. By default, it is `C:\Users\<username>\.tizen-extension-platform`.
 
-- To use Tizen Package Manager, follow the steps below:
-  1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Package Manager**.
-  2. Select the profiles and versions you want to install and click **Install**.
-
-     ![Package Manager](media/howtoinstall-packagemanager.png)
-
-- To use Tizen Emulator Manager, follow the steps below:
-
-  > [!NOTE] 
-  > Tizen Emulator Manager shows the emulator images installation window only when no images are installed on your computer.
-
-  1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Emulator Manager**.
-  2. Select the profiles and versions you want to install and click **OK**.
-
-     ![Emulator Manager](media/howtoinstall-emulatormanager.png)
-
-
-# Troubleshoot
-
-If you encounter problems with the installation, refer to the following steps:
-
-- To check whether VSIX is installed correctly, check Visual Studio Tools for Tizen properties by selecting **Tools &gt; Extensions and Updates** and searching for "Tizen".
-
-  ![Check VSIX](media/cps-extensions-and-updates.png)
-
-- To make sure Baseline Tizen SDK is installed correctly, check the tool path by selecting **Tools &gt; Options &gt; Tizen &gt; Tools**.
+- If package downloads are blocked by a corporate firewall, allow access to the configured package repository over ports 80 and 443.
+- To make sure the Tizen SDK tools are installed correctly, check the tool path in **Tools > Options > Tizen > Tools**.
 
   ![Check the SDK tool path](media/howtoinstall-checktoolpath.png)
 
-- To check whether Tizen Project properties have been copied correctly, make sure that the `Tizen.NET.ProjectType.props` and `Tizen.NET.ProjectType.targets` files are located in the `C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Tizen\VisualStudio` folder.
+- To verify that the Tizen project properties were copied correctly, make sure that `Tizen.NET.ProjectType.props` and `Tizen.NET.ProjectType.targets` are located in the `MSBuild\Tizen\VisualStudio` directory of your Visual Studio installation.
 
   ![Project Property](media/cps-project-property.png)
-

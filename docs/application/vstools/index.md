@@ -2,18 +2,11 @@
 
 Visual Studio Extension for Tizen supports Tizen native, web and .NET App development.
 
-Visual Studio Extension share Baseline SDK, which is a common tool required for Tizen application development.
+On first launch, the extension installs its server and core apps in the selected SDK resource path. Its integrated tools are available from **Tools > Tizen**.
 
-Baseline SDK includes the following standalone tools.
+Key tools include Package Manager, Certificate Manager, Emulator Manager, Device Manager, SDB Command Prompt, API & Privilege Checker, Memory Profiler, Profiler, Resource Manager, .NET Core Diagnostics, and WGT project import.
 
-* Tizen-Core : Consistent Tizen SDK interface to use baseline tools and CLI from IDE and external tools.
-* Package Manager : A comprehensive package management tool for installing, updating, and removing Tizen platform and sdk components
-* Certificate Manager : Tizen certificate management tools to store developer's certificates for signing Tizen application.
-* Emulator Manager : Tool to create and manage emulator instances.
-* Device Manager : Standalone tool that manages device and allows you to access your internal file systems and logs.
-* Command-line Interface : CLI provides functionalities for entire Tizen application development process by using the terminal.
-* Profilers : Core and memory profiling tools allows developers to analyze the performance of Tizen .NET application. Developers can record, manage, and view profiling sessions.
-* SDB (Smart Device Bridge) : Command line tool that communicates with a connected target device (It can be an emulator instance or a real Tizen devce like TV)
+![Tools > Tizen menu](media/tools-tizen-menu.png)
 
 **Figure : Overview Visual Studio Extension and Baseline SDK Components**
 

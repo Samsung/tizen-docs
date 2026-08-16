@@ -1,142 +1,67 @@
 # Device Manager
 
-Tizen Device Manager is a standalone tool that provides information about connected Tizen devices or emulators for application debugging purposes.
-
-With this tool, you can manage the connected devices or emulators and push or pull files from the host computer to devices. In addition, the Device Manager **Log View** allows you to check logs from connected devices.
-
+Tizen Device Manager provides a unified view of connected devices and emulators, remote-device connections, and real-time platform and application logs.
 
 ## Launching the Device Manager
 
-You can launch the Tizen Device Manager in the following ways:
+You can launch the Tizen Device Manager from the Visual Studio menu:
 
--   In the Visual Studio menu, select **Tools &gt; Tizen &gt; Tizen Device Manager**.
+- Select **Tools > Tizen > Tizen Device Manager**.
 
-    ![Launch from Visual Studio](media/dm-menu.png)
+  ![Launch from Visual Studio](media/dm-menu.png)
 
--   In the Windows&reg; **Start** menu, select **Device Manager**.
+The upper **Connection Explorer** shows devices and emulators; the lower **Log View** shows their logs.
 
-    ![Launch from Start menu](media/dm-windows-start.png)
+![Device Manager](../media/device-manager-new.png)
 
-Both methods open the Device Manager main screen, where you can see the **Connection Explorer** view at the top and the **Log View** at the bottom.
+## Connection Explorer
 
-**Figure: Device Manager**
+Each connected target shows a selection control, device name, platform version, and serial number. Select a target to make it active for operations and deployment.
 
-![Device Manager](media/dm-first-screen.png)
+## Connect a Remote Device
 
+1. In Device Manager, select **Connect a Remote Device** to open **Remote Device Manager**.
 
-## Connection Explorer View
+   ![Remote Device Manager](../media/remote-device-add.png)
 
-The **Connection Explorer** view shows the devices and emulators connected to the system. A list of connected devices is available in tree view after connecting a device or launching a Tizen emulator. The **Connection Explorer** view provides the following actions for the connected devices:
+2. Select **Add Devices**.
+3. Enter a device name, IP address, and port. The default SDB port is `26101`.
 
--   Show a list of connected devices and connect devices for running and debugging the application.
--   Provide file operations (such as push and pull) on connected devices.
--   Send or receive files between the **Solution Explorer** and **Connection Explorer** views by dragging and dropping.
-    -   The view shows the folder and file list of the connected device, and file information (date/size).
-    -   You can create, delete, and rename files.
-    -   You can upload and download files.
--   Explore the file system on the connected devices.
--   Launch the Emulator Manager to handle multiple emulator instances.
+   ![Add a remote device](../media/device-manager-log-view.png)
 
-**Figure: Connection Explorer view**
+4. Select **Add**, then select **Connect**.
 
-![Connection Explorer view](media/dm-connection-explorer-view.png)
+   The video below shows how to connect a remote device:
 
+   <video controls height="400">
+     <source src="../media/remote_devices_feature.mp4" type="video/mp4">
+   </video>
 
-<a name="logview"></a>
+Use **Scan Device** to discover devices available on the local network. The Remote Device Manager also lets you connect, disconnect, edit, and delete saved devices.
+
 ## Log View
 
-The **Log View** helps you debug your application by capturing all the events logged by the platform and your application. The **Log View** shows the logs through the Tizen logging system.
+The Log View displays the time, level, PID, TID, tag, and message for each log event. It supports:
 
-To create log messages, reference the Tizen library in your project and call the functions of the [Tizen.Log](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Log.html) class:
+- filtering by log level;
+- keyword searches across messages, PIDs, TIDs, and tags;
+- scroll lock to pause automatic scrolling;
+- clearing the current buffer.
 
-```csharp
-using System;
-using Tizen;
+To emit logs from a .NET application, use the methods in the [Tizen.Log](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Log.html) class.
 
-namespace XamarinApplication1.Tizen
-{
-    class Program : global::Xamarin.Forms.Platform.Tizen.FormsApplication
-    {
-        protected override void OnCreate()
-        {
-            /// Using Tizen.Log directly
-            global::Tizen.Log.Debug("TEST", "Test Debug Message!");
-            global::Tizen.Log.Error("TEST", "Test Error Message!");
-            global::Tizen.Log.Fatal("TEST", "Test Fatal Message!");
-            global::Tizen.Log.Info("TEST", "Test Info Message!");
-            global::Tizen.Log.Verbose("TEST", "Test Verbose Message!");
-            global::Tizen.Log.Warn("TEST", "Test Warn Message!");
+The following image highlights the Device Logs panel and its filtering controls.
 
-            base.OnCreate();
-            LoadApplication(new App());
-        }
+![Device Logs controls](../media/device_manager_log_view_highlighted.png)
 
-        static void Main(string[] args)
-        {
-            var app = new Program();
-            global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
-            app.Run(args);
-        }
-    }
-}
-```
+The video below shows the Device Manager workflow:
 
-The **Log View** displays a log table consisting of the following fields:
+<video controls height="400">
+  <source src="../media/device_manager.mp4" type="video/mp4">
+</video>
 
--   **Time**: log time
--   **Level**: priority level indicates the urgency of the log message
--   **Pid**: process ID
--   **Tid**: thread ID
--   **Tag**: identification of the log message source
--   **Message**: log message
+## Issue Report
 
-### Adding and Removing Log Tabs
+Select **Issue Report** in the upper-right corner of Device Manager to open the GitHub issues page and report an issue.
 
-To add a log tab:
-
-1.  Add a new tab by clicking **+** next to the existing tabs.
-2.  Type the tab name in the **Tab Name** field, select a device in the **Device** list, and click **OK**.
-
-    ![Added log tab](media/dm-log-add-tab.png)
-
-**Figure: Added log tab**
-
-![Added log tab](media/dm-log-added-tab.png)
-
-To remove a log tab:
-
-1.  Click the log tab to be removed.
-2.  Click **X** next to the tab name.
-
-### Understanding and Filtering Logs
-
-In the log table, you have the following options and functions:
-
--   Log level filtering option
-
-    In the **Log View**, you can filter the log messages. Click the arrow in the **Level** field, select the messages types you want to see, and click **OK**.
-
-    ![Log level filtering option](media/dm-log-level-filter.png)
-
--   Keyword filtering option
-
-    You can filter the log messages by clicking the arrow in the **Pid** and **Tag** fields, selecting the wanted values, and clicking **OK**. To filter based on the **Message** field content, enter keywords at the search box at the top of the **Log View**. The keywords must be separated by a space or a comma.
-
-    ![Keyword filtering option](media/dm-log-filter-option.png)
-
--   Scroll lock
-
-    The log table shows the latest logs by default. While the application is running, the log table scrolls as new logs are added to the table. To stop the table from scrolling while you are checking a specific log, click the **Scroll Lock** button (![Scroll lock button](media/dm-scroll-lock.png)).
-
--   Clearing the table
-
-    You can remove all log messages from the log tab by clicking the **Clear the Log** button (![Clear the log button](media/dm-clear-log.png)).
-
--   Exporting logs to a file
-
-    You can export the current log messages in the log tab and save them as a log file by clicking the **Export the Log** button (![Export the log button](media/dm-export.png)).
-
-    **Figure: Exporting a log file**
-
-    ![Exporting a log file](media/cs_device_manager_log_export.png)
-
+![Issue Report button](../media/device_manager_issue_report_highlighted.png)

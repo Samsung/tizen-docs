@@ -14,139 +14,63 @@ The main features of the Emulator Manager are:
 
 ## Accessing the Emulator Manager
 
-If you do not have the Emulator Manager installed, you can install it using the Visual Studio Tools for Tizen installer.
+If you do not have the Emulator Manager installed, install it using the Visual Studio Tools for Tizen installer.
 
-There are 2 different ways to access the Emulator Manager from Visual Studio:
+You can access the Emulator Manager from Visual Studio in two ways:
 
-- In the Visual Studio menu, go to **Tools &gt; Tizen &gt; Tizen Emulator Manager**.
+- In the Visual Studio menu, go to **Tools > Tizen > Tizen Emulator Manager**.
 
-    **Figure: Launch the Emulator Manager in the Tools menu**
+  ![Launch the Emulator Manager in the Tools menu](media/em-vstoolbar1.png)
 
-    ![Launch the Emulator Manager in the Tools menu](media/em-vstoolbar1.png)
+- On the Visual Studio toolbar, select **Launch Tizen Emulator**.
 
--   On the Visual Studio toolbar, click **Launch Tizen Emulator**.
+  ![Launch the Emulator Manager from the Visual Studio toolbar](media/em-vstoolbar2.png)
 
-    **Figure: Launch the Emulator Manager in Visual Studio**
+The emulator list shows each emulator's name, device type, platform version, resolution, and actions to edit, delete, launch, export, or factory-reset it.
 
-    ![Launch from the Visual Studio toolbar](media/em-vstoolbar2.png)
+![Emulator Manager](../media/emulator-manager.png)
 
+## Create an Emulator
 
-<a name="create"></a>
-## Creating Emulator Instances
+1. Select **Create a new Emulator**.
+2. Select a platform image. If the required image is unavailable, select **Download**; to use a custom image, select **Import** and provide a `.qcow2` or raw image.
 
-The Emulator Manager can help you to select the recommended platform and template. When you need another device environment, you can edit an existing emulator instance, or create a new one with a more suitable platform and template. You can also create new platforms and templates to suit your needs.
+   ![Select a platform image](../media/emulator-platform-image.png)
 
-**Figure: Emulator Manager**
+3. Select a device template, such as HD1080 (1920x1080) or HD720 (1280x720).
 
-![Emulator Manager](media/em-vs1.png)
+   ![Select a device template](../media/emulator-template.png)
 
-To create a new emulator instance:
+4. Review the emulator properties, including its name, RAM, and CPU cores, and select **Finish**.
 
-1.  In the Emulator Manager, click **Create**.
-2.  Select the platform (system image), and click **Next**.
-3.  Select the template (device definition), and click **Next**.
-4.  Modify the properties as needed, and click **Finish**.
+   ![Configure emulator properties](../media/emulator-properties.png)
 
-The emulator instance appears in the Emulator Manager.
+   The video below shows how to create a new emulator:
 
-To view the emulator instance details, right-click the instance and select **Detail**.
+   <video controls height="400">
+     <source src="../media/create_new_emulator.mp4" type="video/mp4">
+   </video>
 
-> [!NOTE]  
-> To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, see [Increasing the Application Execution Speed](../../tizen-studio/common-tools/emulator.md#speed) for more information. If GPU is disabled, install the latest vendor-provided graphic driver.
->
-> The mobile emulator supports HD (720x1280) and WVGA (480x800) resolutions.
+To create a custom template, select **Add Template**. Define its name, display resolution, screen size, skin file, and supported hardware features, then select **Save**.
 
+## Launch and Manage Emulators
 
-## Creating Platforms
+Select an emulator and choose **Launch**. A green status indicator identifies a running emulator. Wait for the emulator home screen to appear before deploying or debugging an application.
 
-To create an emulator, you must first select the platform. You can create, modify, and delete a custom platform, and view the generated platforms. Most application developers do not need a custom platform, but it can be useful for a platform developer.
+The following image highlights the **Launch** control for the selected emulator.
 
-**Figure: Platform list**
+![Launch an emulator](media/emulator_manager_launch_highlighted.png)
 
-![Platform list](media/em-vs3.png)
+Use the pencil icon to edit an emulator and the trash icon to delete it. Right-click an emulator to **Reset** it or **Export As** a platform image. Only custom platforms and templates can be modified or deleted.
 
-To create a custom platform:
+The following image highlights the **Edit**, **Delete**, and **More actions** controls.
 
-1. In the Emulator Manager, click **Create**.
-2. Click **+**.
-3. In the **Platform Configuration** dialog, select a base platform and platform image file.
+![Manage emulator actions](media/emulator_manager_actions_highlighted.png)
 
-    You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with Tizen Studio. You can also create a qcow2 image by [exporting an emulator](#export).
+For hardware and virtualization requirements, see [Emulator requirements](../prequisite.md#emulator-requirements).
 
-    A platform image in the development stage is in raw format. If you launch an emulator with a raw image, you can see the current state of the image. This can be useful for platform developers.
+## Issue Report
 
-4. Click **OK** to save your configuration.
+Select **Issue Report** in the upper-right corner of Emulator Manager to open the GitHub issues page and report an issue.
 
-   The new platform is added to the list.
-
-**Figure: Platform Configuration dialog**
-
-![Platform Configuration dialog](media/em-vs4.png)
-
-To manage the created platforms:
-
-- To edit a platform, click **Edit** (![Edit icon](media/em-modify.png)), make the desired changes, and click **OK**. You can only edit the custom platforms you have created.
-- To delete a platform, click **Delete** (![Delete icon](media/em-delete.png)). You can only delete the custom platforms you have created.
-
-## Creating Templates
-
-The Emulator Manager provides several device template types. A device template defines, for example, the screen resolution and size, and the sensors in the device specification. You can make an emulator instance based on the desired template.
-
-**Figure: Device templates**
-
-![Device templates](media/em-device-template.png)
-
-You can create a custom template in 2 ways:
-
-1. In the Emulator Manager, click **Create**.
-2. Select a platform and click **Next**.
-3. To create a new template:
-   - To create a new template from the beginning:
-     1. Click **+**.
-     2. Define the features for the template.
-     3. Click **OK**.
-
-        The new template is added to the list with a settings icon.
-
-   - To create a new template based on an existing one:
-     1. Select the template you want to clone.
-     2. Click **clone template** (![Clone icon](media/em-clone-icon.png)).
-     3. Make the desired changes.
-     4. Click **OK**.
-
-        The new template is added to the list with a settings icon.
-
-**Figure: Template Configuration dialog**
-
-![Template Configuration dialog](media/em-template-config.png)
-
-To manage the created templates:
-
-- To edit a template, click **edit template** (![Modify icon](media/em-modify.png)), make the desired changes, and click **OK**. You can only edit the custom templates you have created.
-- To delete a template, click **delete** (![Delete icon](media/em-delete.png)). You can only delete the custom templates you have created.
-
-## Managing and Launching Emulator Instances
-
-In the Emulator Manager, you can launch, edit, delete, reset, and export emulator instances:
-
-1. Launch the Emulator Manager.
-2. Select an emulator instance from the list.
-3. Manage the instance:
-   - To launch the emulator, click **Launch**.
-
-     The debug and launch options are activated after the emulator has booted. The name of the emulator instance is displayed on the Visual Studio toolbar.
-
-	 ![Launched emulator instance](media/em-launched.png)
-
-     ![Activated debug option](media/em-activated-debug.png)
-
-   - To edit an emulator, click **Edit**, make the desired changes, and click **Confirm**.
-
-   - To delete an emulator, click **Delete**.
-
-   - To reset an emulator, right-click it and select **Reset**.
-
-     <a name="export"></a>
-   - To export an emulator, right-click it and select **Export as**. Specify the new image file location.
-
-     When you export the emulator instance, the state of the platform image is replicated.
+![Issue Report button](media/emulator_manager_issue_report_highlighted.png)

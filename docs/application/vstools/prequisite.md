@@ -6,10 +6,11 @@ To work with Visual Studio Tools for Tizen, your computer must have the followin
 - Visual Studio 2017 to use Tizen 4.0 and 5.0.
 - Visual Studio 2019 to use Tizen 4.0 and 6.5.
 - Visual Studio 2022 to use Tizen 4.0 and higher.
-- The latest Tizen Tools updates support Tizen Native and Web app creation and are provided with Tizen Studio version 4.5 and above. Make sure the same is installed or [updated](../tizen-studio/setup/update-sdk.md) through Tizen package manager.
-- Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with installed Tizen Studio path. Also, ensure to set the Google Chrome Path for Tizen Web App Debugging support.
+- Visual Studio 2026 to use Tizen 4.0 and higher.
+- On first launch, select an SDK resource path and wait for the extension to install its server and core apps. The default path is `C:\Users\<username>\.tizen-extension-platform`. Install required platform packages through **Tools > Tizen > Tizen Package Manager**.
+- For Tizen Web App debugging, set the Google Chrome path in **Tools > Options > Tizen > Tools**.
   
-  Visual Studio Tools for Tizen works with all Visual Studio variations, including Community. Installing or re-installing Visual Studio with .NET desktop development, .NET Core cross-platform development, and desktop development with C++ toolsets is recommended.
+  Visual Studio Tools for Tizen works with all Visual Studio variations, including Community. Installing or re-installing Visual Studio with .NET desktop development, .NET Core cross-platform development(if available), and desktop development with C++ toolsets is recommended.
 
   ![Visual Studio prerequisites](media/prerequisite-vs.png)
   ![Visual Studio prerequisites](media/prerequisite-vs-native.png)
@@ -25,7 +26,59 @@ Tizen Baseline SDK. Make sure you download and install the exact version.
 
 ## Emulator requirements
 
-Tizen Emulator for Visual Studio has the same requirements as the emulator in Tizen Studio. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
+The following table lists the CPU, screen resolution, graphic card, driver, and webcam requirements for using the Tizen Emulator.
+
+**Table: Emulator requirements**
+
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>OS (Microsoft Windows&reg;, macOS, and Ubuntu)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>Recommended: Support for Intel&reg; VTx (Virtualization Technology)</td>
+</tr>
+<tr>
+<td>Screen resolution</td>
+<td>Recommended: 1280 x 1024</td>
+</tr>
+<tr>
+<td>Graphic card</td>
+<td><p>Recommended: The following requirements have passed tests with the emulator.</p>
+<p>
+<strong>Supported graphic cards</strong>: NVIDIA&reg; GeForce&reg; 8300 GS, GeForce&reg; 8500 GT, GeForce&reg; GT 220, GeForce&reg; GT 430, GeForce&reg; GT 530, GeForce&reg; GT 330M, GeForce&reg; GTX 550Ti, NVIDIA&reg; Quadro&reg; NVS 290</p>
+<p> <strong>Note</strong><br/>
+If the host machine is using the NVIDIA&reg; Optimus&reg; technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus&reg; technology, or set the emulator to run with the external NVIDIA graphics card.</p>
+</td>
+</tr>
+<tr>
+<td>Driver</td>
+<td><p>You must upgrade to the latest vendor-provided version of the graphic card driver for OpenGL&reg; ES acceleration.</p>
+<p>In <strong>Microsoft Windows&reg;</strong>, check and install the necessary drivers in the <strong>Control Panel &gt; System and Security &gt; Windows Update</strong>.</p>
+<p>In <strong>Ubuntu</strong>, for more information on driver upgrades, see the <a href="https://help.ubuntu.com/community/BinaryDriverHowto/" target="_blank">Ubuntu Web site</a>. Check and install the necessary drivers in the <strong>System Settings &gt; Software &amp; Updates &gt; Additional Drivers</strong>.<br/>
+The Intel driver version must be 8.0.1 or higher.
+</p>
+</td>
+</tr>
+<tr>
+<td>Webcam</td>
+<td><p>To use the emulator with your computer's webcam, the webcam must support the USB Video Class (UVC) driver.</p>
+<p>The following image format requirements apply to each OS:
+<ul>
+<li><strong>Microsoft Windows&reg;</strong>: YUYV or MJPEG</li>
+<li><strong>macOS</strong>: RGB24 or YUY2</li>
+<li><strong>Ubuntu</strong>: UYYY, YYU420, YUY420, or YUYY</li>
+</ul></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+Use one of the two options from below to enable emulator usage:
 
 ## Option 1
 

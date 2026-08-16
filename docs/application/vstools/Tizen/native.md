@@ -26,6 +26,10 @@ To create a Tizen Native project:
 
    ![Visual Studio screen](media/native_vs_screen.PNG)
 
+6. Before doing anything, please wait while the required development packages are installed.
+
+   ![Required development package installation](media/native_dev_pkg_install.png)
+
 
 ### Build your project
 

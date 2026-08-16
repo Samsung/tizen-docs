@@ -28,6 +28,10 @@ To create a Tizen web project, follow the steps below:
 
    ![Visual Studio screen](media/web_vs_screen.PNG)
 
+6. Before doing anything, please wait while the required development packages are installed.
+
+   ![Required development package installation](media/web_dev_pkg_install.png)
+
 
 ### Build your project
 
@@ -55,12 +59,3 @@ To create a Tizen web project, follow the steps below:
 2. Open .js file in the chrome and add a break point in your source code.
 
    ![Add break point](media/web_debug_application.PNG)
-
-
-### Debug your application in web simulator
-
-1. Open .js file in chrome and select **Run as Tizen Web Simulator Application** in the **Solution Explorer** window.
-
-   ![Debug in simulator](media/web_debug_simulator1.PNG)
-
-   ![Debug in simulator](media/web_debug_simulator2.PNG)
