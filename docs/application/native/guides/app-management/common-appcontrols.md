@@ -2087,6 +2087,7 @@ location_setting(void)
 }
 ```
 
+<a name="settings-for-nfc"></a>
 ## Settings for NFC <a name="settings_nfc"></a>
 
 The NFC settings application control is available depending on whether the installed application supports it or not.

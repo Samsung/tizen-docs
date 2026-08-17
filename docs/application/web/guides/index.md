@@ -26,9 +26,7 @@ You can manage common files and ZIP archive files, and define filters and sortin
 </td>
 <td>
 
-- Guides:<br>
-  [Data Storage and Management](data/data.md)<br>
-  [Error Handling](error/error.md)
+- Guides: [Data Storage and Management](data/data.md)
 - API Reference: [Base](../api/latest/device_api/tv/index.html#Base)
 </td>
 </tr>
@@ -90,7 +88,6 @@ You can use security functionalities, such as storing and recalling private data
 </td>
 <td>
 
-- Guides: [Security](security/security.md)
 - API Reference: [Security](../api/latest/device_api/tv/index.html#Security)
 </td>
 </tr>

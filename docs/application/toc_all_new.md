@@ -24,7 +24,6 @@
 #### [Signing Application with Certificate](/application/dotnet/guides/concepts/signing-certificates/signing-application-with-certificate.md)
 #### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
 
-### [IoT](/application/dotnet/get-started/IoT/index.md)
 ### [Application Filtering](/application/dotnet/reference/app-filtering.md)
 
 ## Guides
@@ -35,7 +34,6 @@
 #### [Synchronization Management](/application/dotnet/guides/account/data-sync.md)
 #### Authentication and Authorization
 ##### [Overview](/application/dotnet/guides/account/authentication.md)
-##### [FIDO Universal Authentication Framework](/application/dotnet/guides/account/fido.md)
 ##### [OAuth 2.0](/application/dotnet/guides/account/oauth.md)
 
 #### [Application Usage History Data](/application/dotnet/guides/account/app-history.md)
@@ -46,12 +44,12 @@
 
 ### Applications
 #### [Overview](/application/dotnet/guides/applications/overview.md)
-#### [Service Application](/application/dotnet/guides/applications/service_application.md)
+#### [Service Application](/application/dotnet/guides/applications/service-application.md)
 #### UI Application
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
-##### [Tizen .NET Application Life Cycle](/application/dotnet/guides/applications/uiapplication/application_lifecycle.md)
+##### [Tizen .NET Application Life Cycle](/application/dotnet/guides/applications/uiapplication/application-lifecycle.md)
 
 ##### [Widget Application](/application/dotnet/guides/applications/uiapplication/widget-app.md)
 
@@ -116,7 +114,6 @@
 ### Location
 #### [Overview](/application/dotnet/guides/location/overview.md)
 #### [Location Information](/application/dotnet/guides/location/location.md)
-#### [Geofences](/application/dotnet/guides/location/geofences.md)
 
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
@@ -127,7 +124,6 @@
 #### [Machine Learning Train](/application/dotnet/guides/machine-learning/machine-learning-train.md)
 
 ### Maps
-#### [Overview](/application/dotnet/guides/maps/maps.md)
 #### [Getting HERE Maps Credentials](/application/dotnet/guides/maps/here-credentials.md)
 
 ### Multimedia
@@ -159,19 +155,13 @@
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
-#### [Email](/application/dotnet/guides/messaging/email.md)
-#### [Messages](/application/dotnet/guides/messaging/messages.md)
 #### [Push](/application/dotnet/guides/messaging/push.md)
 #### [Push Server](/application/dotnet/guides/messaging/push-server.md)
 
-### Natural Language Processing
-#### [Overview](/application/dotnet/guides/nlp/overview.md)
-#### [Natural Language Processing (NLP)](/application/dotnet/guides/nlp/nlp.md)
 
 ### Notifications and Content Sharing
 #### [Overview](/application/dotnet/guides/notification/overview.md)
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
-#### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
 
 ### Performance
 #### [Overview](/application/dotnet/guides/performance/overview.md)
@@ -229,7 +219,7 @@
 ###### [Styling UI Components](/application/dotnet/guides/user-interface/nui/styling-controls-with-xaml.md)
 ###### [Visuals](/application/dotnet/guides/user-interface/nui/visuals.md)
 ###### [View](/application/dotnet/guides/user-interface/nui/view.md)
-###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/CanvasView.md)
+###### [CanvasView](/application/dotnet/guides/user-interface/nui/vectorgraphics/canvas-view.md)
 ###### [CustomView](/application/dotnet/guides/user-interface/nui/customview.md)
 ###### [GLView](/application/dotnet/guides/user-interface/nui/glview.md)
 ###### [ImageView](/application/dotnet/guides/user-interface/nui/imageview.md)
@@ -237,25 +227,25 @@
 ###### [Text](/application/dotnet/guides/user-interface/nui/text.md)
 ###### [VideoView](/application/dotnet/guides/user-interface/nui/videoview.md)
 ###### [WebView](/application/dotnet/guides/user-interface/nui/webview.md)
-###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/AlertDialog.md)
-###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/Button.md)
-###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/CameraView.md)
-###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/CheckBox.md)
-###### [CollectionView](/application/dotnet/guides/user-interface/nui/nui-components/CollectionView.md)
-###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/DatePicker.md)
-###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/Loading.md)
-###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/Notification.md)
-###### [Menu](/application/dotnet/guides/user-interface/nui/nui-components/Menu.md)
-###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/Pagination.md)
-###### [Picker](/application/dotnet/guides/user-interface/nui/nui-components/Picker.md)
-###### [Popup](/application/dotnet/guides/user-interface/nui/nui-components/Popup.md)
-###### [Progress](/application/dotnet/guides/user-interface/nui/nui-components/Progress.md)
-###### [RadioButton](/application/dotnet/guides/user-interface/nui/nui-components/RadioButton.md)
-###### [ScrollableBase](/application/dotnet/guides/user-interface/nui/nui-components/ScrollableBase.md)
-###### [Slider](/application/dotnet/guides/user-interface/nui/nui-components/Slider.md)
-###### [Switch](/application/dotnet/guides/user-interface/nui/nui-components/Switch.md)
-###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/Tab.md)
-###### [TimePicker](/application/dotnet/guides/user-interface/nui/nui-components/TimePicker.md)
+###### [AlertDialog](/application/dotnet/guides/user-interface/nui/nui-components/alert-dialog.md)
+###### [Button](/application/dotnet/guides/user-interface/nui/nui-components/button.md)
+###### [CameraView](/application/dotnet/guides/user-interface/nui/nui-components/camera-view.md)
+###### [CheckBox](/application/dotnet/guides/user-interface/nui/nui-components/check-box.md)
+###### [CollectionView](/application/dotnet/guides/user-interface/nui/nui-components/collection-view.md)
+###### [DatePicker](/application/dotnet/guides/user-interface/nui/nui-components/date-picker.md)
+###### [Loading](/application/dotnet/guides/user-interface/nui/nui-components/loading.md)
+###### [Notification](/application/dotnet/guides/user-interface/nui/nui-components/notification.md)
+###### [Menu](/application/dotnet/guides/user-interface/nui/nui-components/menu.md)
+###### [Pagination](/application/dotnet/guides/user-interface/nui/nui-components/pagination.md)
+###### [Picker](/application/dotnet/guides/user-interface/nui/nui-components/picker.md)
+###### [Popup](/application/dotnet/guides/user-interface/nui/nui-components/popup.md)
+###### [Progress](/application/dotnet/guides/user-interface/nui/nui-components/progress.md)
+###### [RadioButton](/application/dotnet/guides/user-interface/nui/nui-components/radio-button.md)
+###### [ScrollableBase](/application/dotnet/guides/user-interface/nui/nui-components/scrollable-base.md)
+###### [Slider](/application/dotnet/guides/user-interface/nui/nui-components/slider.md)
+###### [Switch](/application/dotnet/guides/user-interface/nui/nui-components/switch.md)
+###### [Tab](/application/dotnet/guides/user-interface/nui/nui-components/tab.md)
+###### [TimePicker](/application/dotnet/guides/user-interface/nui/nui-components/time-picker.md)
 
 ##### [Layer](/application/dotnet/guides/user-interface/nui/layer.md)
 
@@ -270,15 +260,15 @@
 
 ##### Page Navigation
 ###### [Overview](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/page-navigation.md)
-###### [ContentPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/ContentPage.md)
-###### [DialogPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/DialogPage.md)
+###### [ContentPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/content-page.md)
+###### [DialogPage](/application/dotnet/guides/user-interface/nui/nui-components/page-navigation/dialog-page.md)
 
 ##### Vector Graphics
-###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview.md)
-###### [Shape and Stroke](/application/dotnet/guides/user-interface/nui/vectorgraphics/ShapeAndStroke.md)
-###### [Grouping](/application/dotnet/guides/user-interface/nui/vectorgraphics/Grouping.md)
-###### [Transformation and Composition](/application/dotnet/guides/user-interface/nui/vectorgraphics/TransformationAndComposition.md)
-###### [Picture](/application/dotnet/guides/user-interface/nui/vectorgraphics/Picture.md)
+###### [Overview](/application/dotnet/guides/user-interface/nui/vectorgraphics/overview.md)
+###### [Shape and Stroke](/application/dotnet/guides/user-interface/nui/vectorgraphics/shape-and-stroke.md)
+###### [Grouping](/application/dotnet/guides/user-interface/nui/vectorgraphics/grouping.md)
+###### [Transformation and Composition](/application/dotnet/guides/user-interface/nui/vectorgraphics/transformation-and-composition.md)
+###### [Picture](/application/dotnet/guides/user-interface/nui/vectorgraphics/picture.md)
 
 ##### [Palette](/application/dotnet/guides/user-interface/nui/palette.md)
 ##### [Resources](/application/dotnet/guides/user-interface/nui/resources.md)
@@ -309,19 +299,15 @@
 ## [Overview](/application/web/index.md)
 
 ## Get Started with Visual Studio Code Extension
-### [Web application development](/application/vscode-ext/Tizen/web_app.md)
+### [Web application development](/application/vscode-ext/Tizen/web-app.md)
 
 ## Get Started with Visual Studio
 ### [Web application development](/application/vstools/Tizen/web.md)
 
 ## Get Started with Tizen Studio
 ### [Overview](/application/web/get-started/overview.md)
-### [Create Wearable Web Application](/application/web/get-started/wearable/first-app.md)
-### [Create Wearable Web Watch Application](/application/web/get-started/wearable-watch/first-app-watch.md)
-### [Create Wearable Web Widget Application](/application/web/get-started/wearable-widget/first-app-widget.md)
 ### [Create TV Web Application](/application/web/get-started/tv/first-app.md)
 ### [Create Samsung Smart TV Web Application](/application/web/get-started/tv/first-samsung-tv-app.md)
-### [Create Mobile Web Application](/application/web/get-started/mobile/first-app.md)
 ### [Create Web Service Application](/application/web/get-started/web-service/first-service.md)
 ### [Create Web Application Addon](/application/web/get-started/addon/first-addon.md)
 
@@ -336,19 +322,12 @@
 
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
-### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
-### [Web Runtime](/application/web/guides/essentials/web-runtime.md)
-### [Event Handling](/application/web/guides/essentials/event-handling.md)
-### [Application Signing and Certificates](/application/web/guides/essentials/signing-certificates.md)
 ### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
 
 ## Guides
 ### [Overview](/application/web/guides/index.md)
 ### Applications
 #### [Overview](/application/web/guides/applications/overview.md)
-
-#### UI Application
-##### [Widget Application](/application/web/guides/applications/web-widget.md)
 
 #### [Service Application](/application/web/guides/applications/service-app.md)
 #### [Web Application Addon](/application/web/guides/applications/addon.md)
@@ -399,7 +378,6 @@
 #### [Media Controller](/application/web/guides/multimedia/media-controller.md)
 #### [Media Key Events](/application/web/guides/multimedia/media-key.md)
 #### [Radio](/application/web/guides/multimedia/radio.md)
-#### [Camera](/application/web/guides/multimedia/camera.md)
 
 ### Connectivity and Wireless
 #### [Overview](/application/web/guides/connectivity/connectivity.md)
@@ -455,7 +433,6 @@
 #### [TEE Communication](/application/web/guides/security/tee-client.md)
 #### [Privacy-related Permissions](/application/web/guides/security/privacy-related-permissions.md)
 
-### [Error Handling](/application/web/guides/essentials/error-handling.md)
 ### W3C/HTML5/Supplementary Features
 #### [Overview](/application/web/guides/w3c/w3c-overview.md)
 
@@ -562,10 +539,6 @@
 
 ## Get Started with Tizen Studio
 ### [Overview](/application/native/get-started/overview.md)
-### [Create Wearable Native Application](/application/native/get-started/wearable/first-app.md)
-### [Create Wearable Native Watch Application](/application/native/get-started/wearable-watch/first-app-watch.md)
-### [Create Wearable Native Widget Application](/application/native/get-started/wearable-widget/first-app-widget.md)
-### [Create Mobile Native Application](/application/native/get-started/mobile/first-app.md)
 ### [Create IoT Native Service Application](/application/native/get-started/iot/first-app.md)
 
 ## Tutorials
@@ -582,11 +555,6 @@
 ### Understanding Tizen Programming
 #### [Application Filtering](/application/native/reference/app-filtering.md)
 #### [Security and API Privileges](/application/native/reference/security-privileges.md)
-#### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/reference/security-privileges-legacy.md)
-#### [Event Handling](/application/native/guides/essentials/event-handling.md)
-#### [Error Handling](/application/native/guides/essentials/error-handling.md)
-#### [File System Directory Hierarchy](/application/native/guides/essentials/file-system.md)
-#### [Application Signing and Certificates](/application/native/guides/essentials/signing-certificates.md)
 #### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/reference/deprecation-policy.md)
 #### [Removed functions and enumerations of Tizen Native API](/application/native/reference/removed-history.md)
 
@@ -594,7 +562,6 @@
 #### [Overview](/application/native/tutorials/feature/app-connectivity.md)
 #### [Network Operations](/application/native/tutorials/feature/app-connectivity-operation.md)
 #### [Network Usage](/application/native/tutorials/feature/app-connectivity-usage.md)
-#### [P2P Connections with Wi-Fi Direct&reg;](/application/native/tutorials/feature/app-connectivity-p2p.md)
 
 ### Creating Applications with Contacts
 #### [Overview](/application/native/tutorials/feature/app-contacts.md)
@@ -669,7 +636,6 @@
 #### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
 #### OpenGL&reg; ES
 ##### [Overview](/application/native/guides/graphics/opengl.md)
-##### [Creating OpenGL&reg; ES Applications](/application/native/guides/graphics/creating-opengles.md)
 ##### [Polygon Mesh in OpenGL&reg; ES](/application/native/guides/graphics/polygon-mesh.md)
 ##### [Vertex Shader](/application/native/guides/graphics/vertex-shader.md)
 ##### [Primitive Assembly and Rasterization](/application/native/guides/graphics/assembly.md)
@@ -761,18 +727,14 @@
 
 ### Messaging
 #### [Overview](/application/native/guides/messaging/overview.md)
-#### [Email](/application/native/guides/messaging/email.md)
-#### [Messages](/application/native/guides/messaging/messages.md)
 #### [Push](/application/native/guides/messaging/push.md)
 #### [Push Server](/application/native/guides/messaging/push-server.md)
 
 ### Location and Sensors
 #### [Overview](/application/native/guides/location-sensors/overview.md)
-#### [Geofences](/application/native/guides/location-sensors/geofences.md)
 #### [Location Information](/application/native/guides/location-sensors/location.md)
 
 #### Maps and Maps Service
-##### [Overview](/application/native/guides/location-sensors/maps.md)
 ##### [Getting HERE Maps Credentials](/application/native/guides/location-sensors/here-credentials.md)
 
 #### [Device Sensors](/application/native/guides/location-sensors/device-sensors.md)
@@ -784,7 +746,6 @@
 #### [Autofill](/application/native/guides/text-input/autofill.md)
 #### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
 #### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
-#### [Gesture](/application/native/guides/text-input/capi-ui-gesture.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Text-to-speech Engine](/application/native/guides/text-input/tts-engine.md)
@@ -799,7 +760,6 @@
 #### [Data Synchronization](/application/native/guides/personal/data-sync.md)
 
 #### Authentication and Authorization
-##### [FIDO Universal Authentication Framework](/application/native/guides/personal/fido.md)
 ##### [OAuth 2.0](/application/native/guides/personal/oauth.md)
 
 #### [Calendar](/application/native/guides/personal/calendar.md)
@@ -815,7 +775,6 @@
 ### Device Settings and Systems
 #### [Overview](/application/native/guides/device/overview.md)
 #### [Attached Devices](/application/native/guides/device/attached-devices.md)
-#### [External Output Devices](/application/native/guides/device/ext-output.md)
 #### [Diagnostics](/application/native/guides/device/diagnostics.md)
 #### [Runtime Information](/application/native/guides/device/runtime.md)
 #### [System Information](/application/native/guides/device/system.md)
@@ -948,7 +907,7 @@
 #### Advanced
 ##### [Hybrid Application Development](/application/vscode-ext/Tizen/hybrid.md)
 ##### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
-### [Tool Index](/application/sdktool_index.md)
+### [Tool Index](/application/sdktool-index.md)
 
 [//]: # (web/vscode-ext/TOC: New Web App Model VSCode TOC based on developer behaviors------------------------------------------)
 [//]: # (work day: 2025.07.03, from Tizen SDK Team)
@@ -1004,7 +963,7 @@
 #### Advanced
 ##### [Hybrid Application Development](/application/vscode-ext/Tizen/hybrid.md)
 ##### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
-### [Tool Index](/application/sdktool_index.md)
+### [Tool Index](/application/sdktool-index.md)
 
 [//]: # (native/vscode-ext/TOC: New Native App Model VSCode TOC based on developer behaviors------------------------------------------)
 [//]: # (work day: 2025.07.03, from Tizen SDK Team)
@@ -1063,7 +1022,7 @@
 #### Advanced
 ##### [Hybrid Application Development](/application/vscode-ext/Tizen/hybrid.md)
 ##### [RPK Application Development](/application/vscode-ext/Tizen/rpk.md)
-### [Tool Index](/application/sdktool_index.md)
+### [Tool Index](/application/sdktool-index.md)
 
 [//]: # (dotnet/vs-ext/TOC: New Dotnet App Model VS TOC based on developer behaviors------------------------------------------)
 [//]: # (work day: 2025.07.03, from Tizen SDK Team)
@@ -1128,7 +1087,7 @@
 #### Advanced
 ##### [Hybrid Application Development](/application/vstools/Tizen/hybrid.md)
 ##### [TizenNUIGadget RPK Development](/application/vstools/Tizen/nuigadget-rpk.md)
-### [Tool Index](/application/sdktool_index.md)
+### [Tool Index](/application/sdktool-index.md)
 
 [//]: # (web/vs-ext/TOC: New Web App Model VS TOC based on developer behaviors------------------------------------------)
 [//]: # (work day: 2025.07.03, from Tizen SDK Team)
@@ -1187,7 +1146,7 @@
 #### Advanced
 ##### [Hybrid Application Development](/application/vstools/Tizen/hybrid.md)
 ##### [TizenNUIGadget RPK Development](/application/vstools/Tizen/nuigadget-rpk.md)
-### [Tool Index](/application/sdktool_index.md)
+### [Tool Index](/application/sdktool-index.md)
 
 [//]: # (native/vs-ext/TOC: New Native App Model VS TOC based on developer behaviors------------------------------------------)
 [//]: # (work day: 2025.07.03, from Tizen SDK Team)
@@ -1251,7 +1210,7 @@
 #### Advanced
 ##### [Hybrid Application Development](/application/vstools/Tizen/hybrid.md)
 ##### [TizenNUIGadget RPK Development](/application/vstools/Tizen/nuigadget-rpk.md)
-### [Tool Index](/application/sdktool_index.md)
+### [Tool Index](/application/sdktool-index.md)
 
 
 [//]: # (This is NEW TOC for Tizen SDK------------------------------------------)
@@ -1506,10 +1465,6 @@
 ##### [Web Unit Test Tool](/application/tizen-studio/web-tools/web-unit-test-tool.md)
 
 #### [Keyboard Shortcuts](/application/tizen-studio/common-tools/keyboard-shortcuts.md)
-
-[//]: # (Removed soon, 2025.01)
-### Tizen RT
-#### [Overview](/application/tizen-studio/rt-ide/overview.md)
 
 ### Release Notes
 #### [6.0 (Nov 4, 2024)](/application/tizen-studio/release-notes/6-0-release-notes.md)

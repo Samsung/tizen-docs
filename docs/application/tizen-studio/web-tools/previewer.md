@@ -24,9 +24,9 @@ To use the HTML and CSS previewer:
 1. In the **Project Explorer** view, right-click an HTML or CSS file.
 2. In the context menu, select **Preview** (or use the hotkey **Ctrl + 4**).
 
-**Figure: HTML previewer (calendar application in mobile Web) and CSS previewer**
+**Figure: HTML previewer (calendar application) and CSS previewer**
 
-![HTML previewer (calendar application in mobile Web) and CSS previewer](./media/previewer_html_previewer.png) ![HTML previewer (calendar application in mobile Web) and CSS previewer](./media/previewer_css_previewer.png)
+![HTML previewer (calendar application) and CSS previewer](./media/previewer_html_previewer.png) ![HTML previewer (calendar application) and CSS previewer](./media/previewer_css_previewer.png)
 
 You can configure the previewer to suit your own preferences.
 

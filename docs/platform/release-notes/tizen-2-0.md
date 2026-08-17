@@ -19,7 +19,7 @@ The Tizen Platform consists of the web framework (APIs), native framework (APIs)
 
 The Tizen Software Development Kit (SDK) is a comprehensive set of tools for developing Web applications, native applications, and the platform component for Tizen. The SDK contains an install manager, IDE, tools, documents, samples, and a platform image.
 
-# Tizen platform
+## Tizen platform
 
 ## Web framework
 
@@ -603,7 +603,7 @@ The Tizen native framework is newly supported in this version.
 - Emulator
   - The core applications that are not preloaded have not been fully tested in the Emulator.
 
-# IDE and tools
+## IDE and tools
 
 ### New features
 
@@ -952,6 +952,6 @@ The Tizen native framework is newly supported in this version.
   - A shortcut is not provided in Mac OS X.
   - If a dialog displays that the Install Manager is damaged on Mac OS, please see [http://support.apple.com/kb/HT5290](http://support.apple.com/kb/HT5290).
 
-# Next release
+## Next release
 
 The next version, Tizen 2.1, will be released in the 2nd quarter of 2013. As a minor release, it will only contain several new features and performance enhancement without API modifications or removal. The main features of Tizen 2.1 include account management, application installing service, livebox support, performance optimization, and a security enhancement.

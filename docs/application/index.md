@@ -1,5 +1,6 @@
 # Tizen Frameworks
 
+<a name="tizen-application-types"></a>
 The Tizen platform supports three primary application types
 
 <div class="row cards-container-infra">

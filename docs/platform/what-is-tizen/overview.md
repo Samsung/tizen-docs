@@ -1,6 +1,6 @@
 # Introduction to Tizen
 
-Tizen is an open source operating system based on Linux, hosted by the Linux Foundation, and open to all developers.  Tizen has evolved to connect everything, from smart TVs, smartphones, and wearable devices to IoT (Internet of Things) devices. Devices powered by Tizen can provide seamless connectivity to Tizen developers and device users among various device types.
+Tizen is an open source operating system based on Linux, hosted by the Linux Foundation, and open to all developers.  Tizen has evolved to connect everything, from smart TVs to IoT (Internet of Things) devices. Devices powered by Tizen can provide seamless connectivity to Tizen developers and device users among various device types.
 
 
 ## Connect everything
@@ -19,7 +19,7 @@ Tizen is a Linux-based, open source software platform. Anyone can contribute and
 
 Tizen is built to work on the following diverse devices:
 
-- [Tizen custom device](profiles/tizen_custom.md)
+- [Tizen custom device](profiles/tizen-custom.md)
 
 Tizen devices provide product-optimized functionality and performance.
 
@@ -28,7 +28,7 @@ Tizen provides a building block pool of components mainly based on the Tizen API
 
 Tizen custom devices can be created by combining API building blocks in various ways as per the requirements. Required packages are installed based on the dependencies related to the specified building blocks.
 
-For more information, please reference [Tizen custom device](profiles/tizen_custom.md).
+For more information, please reference [Tizen custom device](profiles/tizen-custom.md).
 
 Devices and features under new categories or devices can be easily added for emerging technologies. Therefore, Tizen is adaptable and customizable for new products. In the foreseeable future, for example, IoT devices and services are expected to be prevalent and Tizen is taking proactive steps toward the opportunities in these new markets.
 
@@ -44,8 +44,6 @@ Since 2012, Tizen has been expanding as smart gadgets have become generalized an
 - TV & Audio: Samsung Smart TVs, Samsung Lifestyle TV, Samsung Smart monitor, Samsung sound Bar
 - Display: Samsung Smart Signage, Samsung Flip, Samsung Kiosk
 - Smart appliances: Samsung family hub fridge, Samsung air conditioner, Samsung washing machine
-- Wearables: Samsung Galaxy Watch series (Galaxy Watch, Galaxy Watch Active, Galaxy Watch Active2, Galaxy Watch3), Gear series (Gear 2, Gear 2 Neo, Gear S, Gear S2, Gear S3)
-- Mobile phones: Samsung Z series (Z1(3G), Z3(3G/LTE), Z2(LTE), Z4)
 - Tablets: Digma Plane 8501 3G
 - Cameras: Samsung NX series (NX300, NX30, NX2000, NX1, NX500), Gear 360
 - OBD: Samsung Connect Auto

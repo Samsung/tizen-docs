@@ -183,6 +183,7 @@ using (var mediaDataReader = albumCmd.SelectMember(album.Id))
 ```
 
 
+<a name="insert-bookmarks"></a>
 ## Insert bookmarks (Deprecated since API Level 12)
 
 To set a bookmark for a video file at a given timestamp, use the `Insert()` method of the [Tizen.Content.MediaContent.BookmarkCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.BookmarkCommand.html) class:
@@ -198,6 +199,7 @@ bookmarkCmd.Insert(mediaInfo.Id, offset, bookmarkName, thumbnailPath);
 
 The parameters are the media ID of the video file, the moment (time in milliseconds from the beginning) in the video to bookmark, and the image used as a thumbnail for the bookmark.
 
+<a name="find-bookmarks"></a>
 ## Find bookmarks (Deprecated since API Level 12)
 
 To retrieve bookmarks, follow the steps below:
@@ -222,6 +224,7 @@ To retrieve bookmarks, follow the steps below:
     var mediaDataReader = mediaInfoCmd.SelectBookmark(mediaId);
     ```
 
+<a name="remove-bookmarks"></a>
 ## Remove bookmarks (Deprecated since API Level 12)
 
 To remove a bookmark, use the `Delete()` method of the [Tizen.Content.MediaContent.BookmarkCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.BookmarkCommand.html) class as shown below:
@@ -505,6 +508,7 @@ The thumbnail creation methods support various media types, but are primarily in
 For the `MediaInfoCommand.CreateThumbnail()` method, you need to ensure that the media file exists in the file system, otherwise a `FileNotFoundException` will be thrown.
 
 
+<a name="create-playlists"></a>
 ## Create playlists (Deprecated since API Level 12)
 
 To create and insert a playlist into the database, follow the steps below:
@@ -533,6 +537,7 @@ To create and insert a playlist into the database, follow the steps below:
     ```
 
 
+<a name="find-playlists"></a>
 ## Find playlists (Deprecated since API Level 12)
 
 To find playlists and their contents, follow the steps below:
@@ -570,6 +575,7 @@ To find playlists and their contents, follow the steps below:
     ```
 
 
+<a name="delete-playlists"></a>
 ## Delete playlists (Deprecated since API Level 12)
 
 When you no longer need it, delete a playlist from the database with the `Delete()` method of the [Tizen.Content.MediaContent.PlaylistCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.PlaylistCommand.html) class to avoid creating useless records:
@@ -579,6 +585,7 @@ playlistCmd.Delete(playlist.Id);
 ```
 
 
+<a name="add-tags"></a>
 ## Add tags (Deprecated since API Level 12)
 
 To add a tag to the database, and a file to the tag, follow the steps below:
@@ -600,6 +607,7 @@ To add a tag to the database, and a file to the tag, follow the steps below:
     ```
 
 
+<a name="retrieve-tag-information"></a>
 ## Retrieve tag information (Deprecated since API Level 12)
 
 To retrieve tag information, follow the steps below:
@@ -637,6 +645,7 @@ To retrieve tag information, follow the steps below:
     ```
 
 
+<a name="delete-tags"></a>
 ## Delete tags (Deprecated since API Level 12)
 
 To delete a tag, use the `Delete()` method of the [Tizen.Content.MediaContent.TagCommand](/application/dotnet/api/TizenFX/latest/api/Tizen.Content.MediaContent.TagCommand.html) class as shown below:

@@ -16,10 +16,6 @@ Tizen provides various application models to allow you to create applications ta
 
   The UI application is the most common Tizen application model.
 
-  - [Widget Application](web-widget.md) **(Optional feature)**
-
-    The widget application (or widget) is a specialized application that provides the user with a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
-
 - [Web Service](service-app.md)
 
   Web service is a Tizen Web application without a graphical user interface that runs in the background. Web services are useful in performing periodical or continuous activities that doesn't need user intervention, such as crawling data in the background.

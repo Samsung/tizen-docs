@@ -1,6 +1,6 @@
 # Supporting a UI for Multiple Screens
 
-Tizen runs on a variety of mobile, wearable, and TV devices that offer different screen sizes and densities. On the screen of the various devices, the application user interface (UI) must be adjusted to different screen configurations. For scaling and resizing, Tizen Studio provides several features that help you to control your application UI:
+Tizen runs on a variety of TV and IoT devices that offer different screen sizes and densities. On the screen of the various devices, the application user interface (UI) must be adjusted to different screen configurations. For scaling and resizing, Tizen Studio provides several features that help you to control your application UI:
 
 - Auto-scaling the UI layout based on the screen density
 - Auto-resizing the UI layout based on the screen size
@@ -52,17 +52,6 @@ You must prepare screen configurations for your application. By default, the com
 
 ![Configuration relationships](./media/multiple_screen_relations.png)
 
-You can also make a specific configuration for various Tizen devices.
-
-**Table: Device-specific configurations**
-
-| Screen resolution                  | Orientation         |
-|----------------------------------|-------------------|
-| Mobile HD (720x1280)               | Portrait, Landscape |
-| Mobile WVGA (480x800)              | Portrait, Landscape |
-| Wearable Square (320x320, 360x480) | N/A                 |
-| Wearable Circle (360x360)          | N/A                 |
-
 Many devices need different screens for portrait and landscape orientations. In that case, the orientations are considered alternatives of each other. Since each screen consists of its own resources and UI layouts, you must configure which resources and UI layouts are alternatives of each other.
 
 The screen configuration consists of resources and UI layouts. The resources consist of the screen density and locale, while the UI layout consists of the screen resolution and screen orientation.
@@ -88,7 +77,7 @@ The following table shows the components for multiple screens.
 | Tizen platform | Application module                 | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../native/guides/applications/overview.md) guide. |
 |                | Resource Management module         | Displays the appropriate resource file on the screen by using a resource key. |
 |                | Internationalization module (i18n) | Provides the localized string at runtime. |
-|                | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the [automatic scaling](../../../native/guides/ui/efl/multiple-screens.md) function to express the natural screen without distortion on a variety of devices. |
+|                | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the automatic scaling function to express the natural screen without distortion on a variety of devices. |
 
 ## Designing Applications with Multiple Screens
 

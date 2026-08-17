@@ -15,6 +15,7 @@ This guide provides a step-by-step process for setting up the debugger for .NET,
 
 ## Debugger Setup for .NET Applications
 
+<a name="steps"></a>
 ### Steps
 
 1. **Open Your Project**
@@ -44,6 +45,7 @@ This guide provides a step-by-step process for setting up the debugger for .NET,
 
 ## Debugger Setup for Native Applications
 
+<a name="steps-1"></a>
 ### Steps
 
 1. **Open Your Project**
@@ -74,6 +76,7 @@ This guide provides a step-by-step process for setting up the debugger for .NET,
 
 ## Debugger Setup for Web Applications
 
+<a name="steps-2"></a>
 ### Steps
 
 1. **Open Your Project**

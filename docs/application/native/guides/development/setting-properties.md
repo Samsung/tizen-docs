@@ -39,7 +39,7 @@ The application manifest consists of application information, such as package, v
 
 ![Setting the application manifest](media/tizen_project_explorer.png)
 
-You can [edit the application properties using the form tabs of the manifest editor](../../../tizen-studio/native-tools/manifest-text-editor.md#editing-the-manifest-file).
+You can [edit the application properties using the form tabs of the manifest editor](../../../tizen-studio/native-tools/manifest-text-editor.md#edit-the-manifest-file).
 
 ### Defining and Editing General Information in the Overview Tab
 
@@ -98,7 +98,7 @@ To enable filtering for your native application:
 
 1. In the **Features** tab, click **+**.
 
-2. Select a feature from the [predefined list of features available for filtering](../details/app-filtering.md).
+2. Select a feature from the [predefined list of features available for filtering](../../reference/app-filtering.md).
 
    To check which features are necessary for using a specific API, see the related feature in the native [API Reference](../../api/mobile/latest/index.html).
 
@@ -121,7 +121,7 @@ You can use features and services provided by privileged APIs, which handle plat
 To add a privilege:
 
 1. In the **Privileges** tab, click **+**.
-2. Select a privilege from the [predefined list of available API privileges](../details/sec-privileges.md).
+2. Select a privilege from the [predefined list of available API privileges](../../reference/security-privileges.md).
 3. Click **OK**.
 
 After setting the privilege information with the manifest editor, you can see the added code in the **Source** tab:

@@ -31,7 +31,7 @@ In the **Orientation and Zooming** panel, you can switch the orientation between
 
 You can also set the zoom level of your application to view specific areas of the application. Zooming is a visual aid and does not trigger application notifications.
 
-**Figure: Orientation and Zooming panel (mobile app on the left, wearable on the right)**
+**Figure: Orientation and Zooming panel**
 
 ![Orientation and Zooming panel](./media/simulator_panel_resolution_orientation.png)
 
@@ -40,7 +40,7 @@ You can also set the zoom level of your application to view specific areas of th
 
 The **System Summary** panel displays generic information and settings about the application, system, device, and platform.
 
-**Figure: System Summary panel (mobile app on the left, wearable on the right)**
+**Figure: System Summary panel**
 
 ![System Summary panel](./media/simulator_panel_system_summary.png)
 
@@ -86,7 +86,7 @@ The following buttons can be used to simulate the accelerometer sensor:
 - **Shake** simulates shaking the device along the X axis.
 - **ResetAll** simulates returning the device to its default position.
 
-**Figure: Accelerometer sensor (mobile app on the left, wearable on the right)**
+**Figure: Accelerometer sensor**
 
 ![Accelerometer sensor](./media/simulator_panel_accelerometer.png)
 
@@ -118,7 +118,7 @@ You can use the **Packages and Applications** panel to verify created operations
 
 ![Packages and Applications panel](./media/simulator_panel_package.png)
 
-You can receive notifications of changes in the list of installed packages. The `setPackageInfoEventListener()` method of the `PackageManager` interface (in [mobile](../../web/api/latest/device_api/mobile/tizen/package.html#PackageManager), [wearable](../../web/api/latest/device_api/wearable/tizen/package.html#PackageManager), and [TV](../../web/api/latest/device_api/tv/tizen/package.html#PackageManager) applications) registers an event listener for changes in the installed packages list. To unsubscribe the listener, use the `unsetPackageInfoEventListener()` method. You can use the `PackageInformationEventCallback` interface (in [mobile](../../web/api/latest/device_api/mobile/tizen/package.html#PackageInformationEventCallback), [wearable](../../web/api/latest/device_api/wearable/tizen/package.html#PackageInformationEventCallback), and [TV](../../web/api/latest/device_api/tv/tizen/package.html#PackageInformationEventCallback) applications) to define listeners for receiving notifications.
+You can receive notifications of changes in the list of installed packages. The `setPackageInfoEventListener()` method of the `PackageManager` interface (in [TV](../../web/api/latest/device_api/tv/tizen/package.html#PackageManager) applications) registers an event listener for changes in the installed packages list. To unsubscribe the listener, use the `unsetPackageInfoEventListener()` method. You can use the `PackageInformationEventCallback` interface (in [TV](../../web/api/latest/device_api/tv/tizen/package.html#PackageInformationEventCallback) applications) to define listeners for receiving notifications.
 
 Learning to receive notifications when the list of installed packages changes allows you to manage device packages from your application:
 
@@ -149,182 +149,6 @@ Learning to receive notifications when the list of installed packages changes al
     ```
     tizen.package.unsetPackageInfoEventListener();
     ```
-
-#### Preinstalled Packages and Applications In Mobile Applications
-
-A **Sample Package** is preinstalled in the simulator and contains 2 sample applications: Tizen dialer for making phone calls, and Tizen sender for sending SMS messages. Many sample applications, such as CallLog, use the Tizen [Application](../../web/api/latest/device_api/mobile/tizen/application.html) API to invoke these service applications. Since the simulator allows you to run only 1 application at a time, the **Application Module Message** window is available, which can provide return data for success callback and simulate application launch failure.
-
-The following sample code demonstrates how to define an application control and invoke the `http://tizen.org/appcontrol/operation/send_text` service provided by the Tizen sender application. You can use the **Application Module Message** window to simulate the success value for the success callback or an error message for the error callback.
-
-```
-var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/send_text',
-                                               'sms:' + phoneNumber);
-
-tizen.application.launchAppControl(appControl, null, function() {
-    console.log('launch app service ...');
-}, function(e) {/* Error handling */},
-{
-    onsuccess: function() {
-        console.log('Message service launch success');
-    },
-    onfailure: function(er) {/* Error handling */}
-});
-```
-
-**Figure: Providing application callback data**
-
-![Providing application callback data](./media/simulator_panel_package_callback.png)
-
-The Web Simulator does not have a home screen. Therefore, when the `application.exit()` method is called, you cannot navigate to another application or to the home screen. In this situation, a message is displayed stating that the application tried to exit and can be launched again.
-
-**Figure: Launch an application again**
-
-![Launch an application again](./media/app_exit.png)
-
-<a name="communication"></a>
-### Communications in Mobile Applications
-
-In the **Communications** panel, you can handle calls, messages, and the push service.
-
-**Calls**
-
-The **Calls** tab provides controls for simulating incoming calls made to the application. The calls can be tracked by call history-related methods using the Tizen [Call History](../../web/api/latest/device_api/mobile/tizen/callhistory.html) API.
-
-**Figure: Calls tab**
-
-![Calls tab](./media/simulator_panel_call.png)
-
-Click **Call** to display the calling screen. Click **Answer** to simulate a received call, and **Ignore** to simulate a rejected call.
-
-**Figure: Calling screen**
-
-![Calling screen](./media/simulator_panel_callscreen.png)
-
-**Messages**
-
-The **Messages** tab provides controls for simulating SMS, MMS, and email message exchange between the panel and a target application. To send a message from the panel to the application:
-
-1. Enter the sender name and message body.
-2. Select the message type.
-3. Click **Send**.
-
-The application receives messages using the Tizen [Messaging](../../web/api/latest/device_api/mobile/tizen/messaging.html) API.
-
-The **Message Thread** section shows the message history of the current session.
-
-**Figure: Messages tab**
-
-![Messages tab](./media/simulator_panel_messaging.png)
-
-**Push Service**
-
-The **Push** tab provides controls for delivering push notifications to your application. The applications table (on the **Packages and Applications** panel) lists registered applications for receiving push notifications and connectivity status. If an application is connected, the push service sends the push notification data directly to the application. If an application is not connected, the push service posts a UI notification on the Notification panel.
-
-For the application to receive push messages, it has to register itself with the `tizen.push.registerService()` method. If the registration is successful, a red pause button is shown at the **Application** section under **Status**. During this status, notification messages pushed by the service server are posted on the Notification panel.
-
-**Figure: Registered for the push service**
-
-![Registered for the push service](./media/simulator_panel_push_register.png)
-
-After the registration, the application must connect to the push service with the `tizen.push.connectService()` method. When the application is connected, a callback provided by the application is called whenever a notification message arrives.
-
-**Figure: Connected to the push service**
-
-![Connected to the push service](./media/simulator_panel_push_connect.png)
-
-To push a message from the panel to the application:
-
-1. Select the target application on the **Packages and Applications** panel.
-2. Enter the alert message and application data.
-3. Click **Push**.
-
-The application receives push notifications using the Tizen [Push](../../web/api/latest/device_api/mobile/tizen/push.html) API.
-
-**Figure: Push tab**
-
-![Push tab](./media/simulator_panel_push.png)
-
-<a name="network"></a>
-### Network Management in Mobile Applications
-
-The **Network Management** panel is used to manage network capabilities, such as Wi-Fi, cellular network (2G, 3G, and 4G), NFC, Bluetooth, and bearer selection.
-
-**Figure: Network Management panel**
-
-![Network Management panel](./media/simulator_panel_network.png)
-
-You can also set additional parameters for the NFC and Bluetooth functionalities, such as NFC tag and target type, Bluetooth adapter information, and the simulated devices.
-
-**Figure: NFC parameters**
-
-![NFC parameters](./media/simulator_panel_nfc.png)
-
-**Figure: Bluetooth parameters**
-
-![Bluetooth parameters](./media/simulator_panel_bluetooth.png)
-
-The **Bearer Selection** section provides network bearer selection management by listing supported network devices and their current availability status. You can request and release specific network connections from this section.
-
-**Figure: Network bearer selection**
-
-![Network bearer selection](./media/simulator_panel_bearer.png)
-
-Your application can manage network devices and network status using the Tizen [NFC](../../web/api/latest/device_api/mobile/tizen/nfc.html), [Bluetooth](../../web/api/latest/device_api/mobile/tizen/bluetooth.html), and [Network Bearer Selection](../../web/api/latest/device_api/mobile/tizen/networkbearerselection.html) APIs.
-
-<a name="power"></a>
-### Power Manager in Mobile Applications
-
-The **Power Manager** panel provides controls for managing the state of the battery and power resources.
-
-**Figure: Power Manager panel**
-
-![Power Manager panel](./media/power_manager_simulator.png)
-
-The **BATTERY** section simulates the device battery level. Your application can retrieve the current battery status using the Tizen [System Information](../../web/api/latest/device_api/mobile/tizen/systeminfo.html) API.
-
-<a name="download"></a>
-### Download in Mobile Applications
-
-The **Download** panel allows you to create a simulated download object with custom size, MIME type, and download speed. All simulated download objects support start, cancel, pause, and resume operations, and provide status feedback mechanism. You can use the simulated download object created by the panel to test various conditions for your application.
-
-The panel contains 2 predefined simulated download objects: `http://tizen.org/small_file.zip` and `http://tizen.org/big_file.zip`. When an object is selected from the drop-down list, its details are displayed at the bottom half of the panel. The panel also allows you to add, remove, and update download objects. Details, such as URL, MIME type, file size, and speed, are configurable.
-
-The following sample code demonstrates how to start the download process and set a listener callback to monitor the status of the download. By adjusting the parameter of the download object, you can verify that you application behaves correctly in different scenarios.
-
-```
-request = tizen.DownloadRequest('http://tizen.org/small_file.zip');
-downloadId = tizen.download.start(request);
-tizen.download.setListener(downloadId, listener);
-```
-
-**Figure: Download panel**
-
-![Download panel](./media/simulator_panel_download.png)
-
-<a name="noti"></a>
-### Notification in Mobile Applications
-
-The **Notification** panel provides a notification center administrating system notifications. As the Simulator has no real desktop UI components, such as status bar or notification tray, the panel serves as the final rendering place of all the notifications. You can easily verify that the notification details you created with the Tizen [Notification](../../web/api/latest/device_api/mobile/tizen/notification.html) API are correct.
-
-**Figure: Notification panel with empty notification**
-
-![Notification panel with empty notification](./media/simulator_panel_notification_none.png)
-
-The following sample code demonstrates how to create a status notification. When it is posted with the `post()` method, the details of the notification are displayed on the panel, as shown in the figure below.
-
-```
-notification = new tizen.StatusNotification('PROGRESS', 'Notification Sample', {
-    content: 'sample content',
-    iconPath: file:///images/icons/icon.png,
-    soundPath: file:///sounds/alert.wav,
-    vibration: true,
-    progressValue: 67
-});
-```
-
-**Figure: Notification panel with a notification**
-
-![Notification panel with a notification](./media/simulator_panel_notification.png)
 
 ## Related Information
 * Dependencies

@@ -100,7 +100,7 @@ The `<body>` element defines the area displaying content on the browser screen:
 
 The basic rule of HTML, CSS, and JavaScript is that the code is applied from the top to the bottom of the document. Sometimes the lack of understanding of the CSS rule priorities can cause a result you do not expect.
 
-The following figure illustrates this problem in mobile applications by applying a font color to a black background.
+The following figure illustrates this problem in Web applications by applying a font color to a black background.
 
 **Figure: Expected and actual result of applying a font color (Optional feature)**
 

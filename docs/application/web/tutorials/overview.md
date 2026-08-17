@@ -10,12 +10,8 @@ The introduction to Web applications documentation provides overall information 
 
 - [Security and API Privileges](../reference/security-privileges.md)
 
-- [Security and API Privileges for Apps with API Version 4.0 or Earlier](../reference/security-privileges-legacy.md)
+- Web Runtime
 
-- [Web Runtime](../guides/essentials/web-runtime.md)
-
-- [Event Handling](../guides/essentials/event-handling.md) (in **wearable applications only**)
-
-- [Application Signing and Certificates](../guides/essentials/signing-certificates.md)
+- Application Signing and Certificates
 
 - [API Versioning and Deprecation Policy of the Tizen Platform](../reference/deprecation-policy.md)

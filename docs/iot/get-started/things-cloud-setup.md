@@ -14,7 +14,6 @@ To register the function of your device:
 
 2.  After the cloud-connected device is created, add a device profile by following the instructions on the [SmartThings Developers site](https://smartthings.developer.samsung.com/docs/workspace/tutorials/add-a-device-profile.html)
 
-    For more information, see [Developing Applications with Things SDK API](things-app-development-5.0.md).
 
 ## Generating Cloud Certificates
 

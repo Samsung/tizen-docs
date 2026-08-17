@@ -9,6 +9,9 @@ This repository publishes documentation for the public Tizen Docs site. Work onl
 content suitable for public release. Do not add credentials, private contact information,
 unreleased product information, or other non-public material.
 
+Write issue and pull request titles, descriptions, and comments in English, regardless of
+the language used in the conversation that produced them.
+
 Use this skill when authoring, restructuring, or reviewing documentation here. It covers
 the checks that can be automated and the judgement required around them.
 
@@ -53,12 +56,18 @@ git diff --check
 
 ## Link and TOC rules
 
-- Document-body links and image paths must be relative and resolve to real files.
+- Document-body links and image paths can be relative or site-root paths such as
+  `/application/...`; both must resolve to real published content. Match the convention
+  used by sibling documents.
 - Anchor links must point to headings that exist in the target document.
-- Do not use a root-absolute link such as `/docs/...` in a document body.
-- Existing TOC files intentionally use **site-root** paths such as
-  `/application/native/guides/...`. Keep that convention in TOCs; do not convert an
-  entire legacy TOC just to add one entry.
+- Site-root paths are relative to the published `docs/` root. For example,
+  `/application/native/guides/...` maps to `docs/application/native/guides/...`.
+  Use the same style as nearby entries; do not convert an entire legacy document or TOC
+  merely to change link style.
+- The stable API routes under `/application/native/api/<profile>/latest/` and
+  `/application/dotnet/api/<profile>/latest/` are published separately from this
+  checkout. Preserve their established relative-link form; do not add generated API
+  files just to make a local Markdown path exist.
 - When renaming a file or heading, update all incoming links and its TOC entry.
 
 See [TOC formats](references/toc-formats.md) before creating a new TOC or editing an
@@ -69,6 +78,7 @@ unfamiliar one.
 Review both correctness and publication safety:
 
 - Is all added content suitable for public release?
+- Are the issue/PR title, description, and comments written in English?
 - Does the path match the surrounding information architecture?
 - Is each new or moved document linked by its governing TOC?
 - Do links, images, and anchors still resolve after the change?

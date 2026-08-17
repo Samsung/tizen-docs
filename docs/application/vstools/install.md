@@ -16,7 +16,7 @@ The video below shows how Visual Studio Tools for Tizen is installed in windows:
   <source src="../media/vstools-installation.mp4" type=video/mp4>
 </video>
 
-# Initial Setup
+## Initial Setup
 ## Setting the SDK Resource Path
 On first launch after installing the extension, you are prompted to set the SDK resource path, the directory where Tizen SDK packages and tools are stored.
 ![Set Up SDK Path](media/vs2022_set_path.jpg)

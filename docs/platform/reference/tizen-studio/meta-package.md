@@ -2,7 +2,7 @@
 
 A metapackage is a package that creates an installation tree in the Package Manager, or in other words, a package that supports the grouping and installation of multiple packages.
 
-The Tizen Studio is based on metapackages to determine whether extensions are installed and to support integration between related tools, for example, `Tools, MOBILE-2.4`, `TV-2.4-samsung-public-Emulator`. Metapackages are distinguished from regular packages by the `pkginfo.manifest` property.
+The Tizen Studio is based on metapackages to determine whether extensions are installed and to support integration between related tools, for example, `Tools, TV-2.4`, `TV-2.4-samsung-public-Emulator`. Metapackages are distinguished from regular packages by the `pkginfo.manifest` property.
 
 **Figure: Metapackage dependency tree**
 
@@ -21,7 +21,7 @@ There are 2 types of metapackages:
   - Metapackages targeting platform-specific packages
   - Managed as several branches in 1 Git repository: `sdb/build/meta-platform-components` (`tizen_2.4`, `tizen_3.0`, ...)
   - In a platform metapackage, the tool metapackage often has a dependency in the `C-SelectedGroup`.
-  - For example, `MOBILE-2.4` and `MOBILE-2.4-WebAppDevelopment`
+  - For example, `TV-2.4` and `TV-2.4-WebAppDevelopment`
 
 > [!NOTE]
 > A metapackage cannot be dependent on both regular and meta packages.
@@ -52,7 +52,7 @@ Write the following additional information for extension meta packages:
       - `C-Platform` (required): Platform version name
            - For example, `2.4` or `3.0`
       - `C-Profile` (required): Profile name 
-           - For example, `Mobile`, `Wearable`, or `TV`
+           - For example, `TV` or `Common`
       - `C-ExtProfile` (required): Profile name of the subprofile (product) (specify the name of the profile)
            - For example, `tv-samsung`
       - `C-DevelopEnv`

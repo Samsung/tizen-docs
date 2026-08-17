@@ -32,7 +32,7 @@ To create a UI layout:
 
    - With the **Palette**:
 
-     You can add a view from the **Palette**. The **Ctxpopup** view and **Popup** view are available for mobile applications only.
+     You can add a view from the **Palette**.
 
      To add a new view from the **Palette**, drag and drop the view from the **Palette** to the canvas.
 

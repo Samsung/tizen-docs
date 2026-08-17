@@ -22,25 +22,13 @@ When the Tizen Project Wizard opens, you must first select the project type.
 
 ![Selecting the project type](./media/create_project_wizard_type.png)
 
-Tizen Studio provides various project templates and samples for mobile and wearable devices according to the installed platform. The Tizen Project Wizard helps you select a template or sample for your project.
+Tizen Studio provides various project templates and samples according to the installed platform. The Tizen Project Wizard helps you select a template or sample for your project.
 
 The **Template** option provides a list of templates with a basic structure where you can start the Web application project:
 
 - **Common**
 
   - **Basic UI**: Empty template project for developing basic UI applications.
-
-- **Mobile**
-
-  - **TAU MasterDetail**: Empty template project for developing UI applications using TAU (Tizen Web UI Framework).
-  - **TAU MultiPage/SinglePage**: Empty template projects for developing multiple page and single page applications using TAU.
-
-- **Wearable**
-
-  - **TAU Basic**: Empty template project for developing basic circular UI applications using TAU.
-  - **TAU List**: Empty template project for developing UI applications using a TAU list.
-  - **Web Input Method Editor**: Empty template project for developing Web-based IME (Input Method Editor) applications using HTML, CSS, and JavaScript code.
-  - **Widget**: Empty template project for developing widget applications.
 
 The **Sample** option provides a list of sample applications demonstrating various API usage and UI design.
 
@@ -49,7 +37,7 @@ To move to the next step, select the project type and click **Next**.
 <a name="version"></a>
 ## Profile and Version
 
-You can select the profile and version supported by your project, such as a mobile or wearable device. In addition, Tizen Studio shows you which platforms among the supported platforms have been installed.
+You can select the profile and version supported by your project. In addition, Tizen Studio shows you which platforms among the supported platforms have been installed.
 
 Based on the selected profile and version, a list of templates is shown in the template selection step.
 

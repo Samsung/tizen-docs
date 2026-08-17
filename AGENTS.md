@@ -14,12 +14,18 @@ authoring and review instructions, read
 - Preserve the existing directory and TOC conventions. Follow sibling documents when a
   rule is unclear.
 - Register every new document in its governing `toc*.md` file.
-- Use relative links in document bodies. Existing TOC files use site-root paths such as
-  `/application/...`; preserve that format when editing them.
+- Use either relative links or site-root paths such as `/application/...`. Both are
+  supported by the publishing pipeline; match the convention used by sibling documents
+  and the TOC you are editing.
+- Versioned API links ending in `/api/<profile>/latest/...` are published separately
+  from this checkout. Keep those links relative when that is the local convention; do
+  not add generated API files solely to satisfy a documentation-link check.
 - Use lowercase kebab-case names for new files and directories.
 - Give each new hand-written document one H1 as its first content heading.
 - Treat `*/api/**`, `*/wiki/**`, and `*.autogen.md` as imported content. Fix their source
   upstream instead of hand-editing generated output.
+- Write issue and pull request titles, descriptions, and comments in English, even if the
+  conversation that produced them was in another language.
 
 Before submitting a pull request, run:
 

@@ -59,7 +59,7 @@ To create the Web service project, follow these steps:
 
         ![Selecting the project type](media/create_project_wizard_type.png)
 
-	  2.  Select the profile (**Mobile**) and version from a drop-down list and click **Next**.
+	  2.  Select the profile and version from a drop-down list and click **Next**.
 
         The version depends on the platform version you have installed and with which you are developing the Web service.
 
@@ -111,7 +111,7 @@ To run the Web service on the emulator, follow these steps:
 
         ![Emulator Manager](media/emulator_icon.png)
 
-    2.  In the Emulator Manager, select a mobile emulator from the list and click **Launch**.
+    2.  In the Emulator Manager, select an emulator from the list and click **Launch**.
 
         If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 

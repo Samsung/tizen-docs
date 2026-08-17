@@ -19,7 +19,7 @@ information, gateway information, and connection statistics.
 
 Applications that use the Network and Telephony APIs must declare the required privileges in the
 `tizen-manifest.xml` file. For more information on the Tizen privileges,
-see [Security and API Privileges](../details/sec-privileges.md).
+see [Security and API Privileges](../../reference/security-privileges.md).
 
 To perform the network operations, the application manifest must include
 the following privileges:
@@ -31,7 +31,7 @@ the following privileges:
 ```
 
 To perform the network operations, the device must support the following
-[features](../details/app-filtering.md):
+[features](../../reference/app-filtering.md):
 
 -   `http://tizen.org/feature/network.wifi`
 -   `http://tizen.org/feature/network.telephony`
@@ -148,7 +148,7 @@ application downloads from the Internet are stored in the device
 storage. The privileges are required to access the resources for
 downloading content and to save them to the media storage. For more
 information on the Tizen privileges, see [Security and API
-Privileges](../details/sec-privileges.md).
+Privileges](../../reference/security-privileges.md).
 
 To perform the HTTP download operations, the application manifest must
 include the following privileges:
@@ -495,7 +495,7 @@ for parsing JSON and [libxml2](http://www.xmlsoft.org/) for parsing XML.
 Applications that read and write to a device file system must declare
 the required privileges in the `tizen-manifest.xml` file. For more
 information on the Tizen privileges, see [Security and API
-Privileges](../details/sec-privileges.md).
+Privileges](../../reference/security-privileges.md).
 
 To perform the download operations and read and write to a file system,
 the application manifest must include the following privileges:

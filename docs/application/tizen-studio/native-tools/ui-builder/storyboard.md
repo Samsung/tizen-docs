@@ -44,8 +44,6 @@ The **Layout** editor offers 3 ways to add a new view:
 
 - Drag and drop a view from the **Palette** to the canvas.
 
-    The **Ctxpopup** view and **Popup** view are available in mobile applications only.
-
     ![Empty view](media/ui_builder_view_drag_and_drop.png)
 
 If you select a title bar area containing the view name and drag the view to a new location, you can see that direct manipulation changes the view position on the canvas in real time. In addition, you can use the real-time Pan and Scan function by dragging the empty space of the **Design** editor by holding down with the mouse wheel button.

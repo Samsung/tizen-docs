@@ -21,7 +21,7 @@ When the Tizen Project Wizard opens, you must first select the project type.
 
 ![Selecting the project type](./media/create_project_wizard_type.png)
 
-Tizen Studio provides various project templates and samples for mobile and wearable devices according to the installed platform. The Tizen Project Wizard helps you select a template or sample for your project.
+Tizen Studio provides various project templates and samples according to the installed platform. The Tizen Project Wizard helps you select a template or sample for your project.
 
 The **Template** option provides a list of templates with a basic structure where you can start the native application project:
 
@@ -33,22 +33,13 @@ The **Template** option provides a list of templates with a basic structure wher
   - **Shared Library/Static Library**: Empty template projects for developing libraries.
   - **Widget**: Empty template project for developing widget applications.
 
-- **Mobile**
-  - **Basic UI with Viewmgr**: Empty template project for developing UI applications with multiple views.
-  - **Downloadable Font**: Empty template project for developing a downloadable font. You can create your own font resources in Tizen Studio to be distributed as a downloadable font package.
-  - **UI Builder - Navigation View/Single View**: Empty template projects for developing UI applications supported by the UI Builder, such as navigation or single view applications.
-
-- **Wearable**
-  - **UI Builder - Navigation View (Circle)/Single View (Circle)/Widget (Circle)**: Empty template projects for developing UI applications supported by the UI Builder, such as circular navigation view, circular single view, and circular widget applications.
-  - **Watch/Watch Application with DALi**: Empty template projects for developing circular watch applications.
-
 The **Sample** option provides a list of sample applications demonstrating various API usage and UI design.
 
 To move to the next step, select the project type and click **Next**.
 
 ## Profile and Version
 
-You can select the profile and version supported by your project, such as a mobile or wearable device. In addition, Tizen Studio shows you which platforms among the supported platforms have been installed.
+You can select the profile and version supported by your project. In addition, Tizen Studio shows you which platforms among the supported platforms have been installed.
 
 Based on the selected profile and version, a list of templates is shown in the template selection step.
 

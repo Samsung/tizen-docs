@@ -718,7 +718,7 @@ To create a card emulation application:
          <?xml version="1.0" encoding="utf-8"?>
          <manifest xmlns="http://tizen.org/ns/packages" api-version="2.3.1"
                    package="org.tizen.basicuiapplication" version="1.0.0">
-            <profile name="wearable"/>
+            <profile name="common"/>
             <ui-application appid="org.tizen.basicuiapplication" exec="basicuiapplication"
                             type="capp" multiple="false" taskmanage="true" nodisplay="false">
                <icon>basicuiapplication.png</icon>
@@ -1142,7 +1142,7 @@ To use the NFC application controls:
    <?xml version="1.0" encoding="utf-8"?>
    <manifest xmlns="http://tizen.org/ns/packages" api-version="2.3.1"
              package="org.tizen.basicuiapplication" version="1.0.0">
-      <profile name="wearable"/>
+      <profile name="common"/>
       <ui-application appid="org.tizen.basicuiapplication" exec="basicuiapplication"
                       type="capp" multiple="false" taskmanage="true" nodisplay="false">
          <icon>basicuiapplication.png</icon>

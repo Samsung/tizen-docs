@@ -21,7 +21,7 @@ A custom component requires an EDJ resource file (`[ComponentName].edj`) and an 
 
     Each custom UI component has an EDJ resource file. The custom UI component makes this EDJ file available to the **Design** editor by placing it on the **Palette** and enables visual editing in the **Properties** view.
 
-    The EDJ file is created by compiling EDC code with the [EDC Editor](../edc-editor.md). For more information about EDC, see [Layouting with EDC]( ../../../native/guides/ui/efl/learn-edc-intro.md).
+    The EDJ file is created by compiling EDC code with the [EDC Editor](../edc-editor.md). For more information about EDC, see Layouting with EDC.
 
 - **XML**
 
@@ -43,7 +43,7 @@ A custom component requires an EDJ resource file (`[ComponentName].edj`) and an 
     |-------------|-------------|---------------|------------------------------------------|---------|----------|--------------------------------------|
     | -         | \<component\> | `name`         | Component identifier, shown on the **Palette**, **Outline** view, and **Properties** view. <br>This attribute must be identical to the XML file  name. | String  | Yes      | -                                  |
     | -         | \<component\> | `description`   | Description  shown when you mouse over the custom UI component on the **Palette** | String  | No       | `null`                                 |
-    | -         | \<component\> | `group`         | `group` block defined in the EDC file for the component. <br>For more information see [Group Block]( ../../../native/guides/ui/efl/learn-edc-group.md ). | String  | Yes      | -                                  |
+    | -         | \<component\> | `group`         | `group` block defined in the EDC file for the component. <br>For more information see Group Block. | String  | Yes      | -                                  |
     | -         | \<component\> | `resize_mode`   | Which  directions the component can be resized in. The possible values are `both`, `horizontal`, `vertical`, and `none`. | String  | No       | `both`                                 |
     | -         | \<component\> | `min_width`     | Minimum component width in the **Design** editor | Integer | No       | 1                                    |
     | -         | \<component\> | `min_height`    | Minimum component height in the **Design** editor | Integer | No       | 1                                    |
@@ -53,17 +53,17 @@ A custom component requires an EDJ resource file (`[ComponentName].edj`) and an 
     | \<component\> | \<state\>     | `default_value` | State property default value. The default value must be a `name` attribute defined in the \<value\> element attributes. | String  | Yes      | -                                  |
     | \<state\>     | \<value\>     | `name`          | Value  property identifier               | String  | Yes      | -                                  |
     | \<state\>     | \<value\>     | `display_name`  | Name shown on the value property label in the **Properties** view | String  | No       | `name` attribute in the `<value>` element |
-    | \<state\>     | \<value\>     | `signal`        | EDC signal used to change the UI state at runtime. <br>For information on using signals, see [Program Block](../../../native/guides/ui/efl/learn-edc-program.md). | String  | Yes      | -                                  |
+    | \<state\>     | \<value\>     | `signal`        | EDC signal used to change the UI state at runtime. <br>For information on using signals, see Program Block. | String  | Yes      | -                                  |
     | \<state\>     | \<value\>     | `source`        | User-defined parameter sent when the EDC signal is triggered | String  | No       | `null`                                 |
     | \<component\> | \<text\>      | `name`          | Text property identifier                | String  | Yes      | -                                  |
     | \<component\> | \<text\>      | `display_name`  | Name shown on the text property label in the **Properties** view | String  | No       | `name` attribute in the `<text>` element  |
     | \<component\> | \<text\>      | `description`   | Text property description               | String  | No       | `null`                                 |
-    | \<component\> | \<text\>      | `part_name`     | `part block` to change when the text property is modified. <br>For more information, see [Part Block](../../../native/guides/ui/efl/learn-edc-part.md). | String  | Yes      | -                                  |
+    | \<component\> | \<text\>      | `part_name`     | `part block` to change when the text property is modified. <br>For more information, see Part Block. | String  | Yes      | -                                  |
     | \<component\> | \<text\>      | `default_value` | Text property  default value             | String  | No       | `null`                                 |
     | \<component\> | \<color\>     | `name`          | Color property identifier               | String  | Yes      | -                                  |
     | \<component\> | \<color\>     | `display_name`  | Name shown on the color property label in the **Properties** view | String  | No       | `name` attribute in the `<color>` element |
     | \<component\> | \<color\>     | `description`   | Color property description              | String  | No       | `null`                                 |
-    | \<component\> | \<color\>     | `class_name`    | EDC color class name. For more information, see [Color Classes Block](../../../native/guides/ui/efl/learn-edc-color-classes.md). | String  | Yes      | -                                  |
+    | \<component\> | \<color\>     | `class_name`    | EDC color class name. For more information, see Color Classes Block. | String  | Yes      | -                                  |
     | \<component\> | \<color\>     | `default_value` | Color property  default value            | String  | No       | `null`                                 |
     | \<component\> | \<event\>     | `name`          | Event  property identifier               | String  | Yes      | -                                  |
     | \<component\> | \<event\>     | `display_name`  | Name  shown on the event property label in the **Properties** view | String  | No       | `name` attribute in the `<event>` element |
@@ -111,11 +111,11 @@ To use custom icon files, the following conditions must be observed:
 <a name="using_customcomponent"></a>
 ## Using Custom UI Components
 
-The following example shows how you can create a custom UI component in the UI Builder, using the **Mobile 4.0** project template. The following sections show how to add or remove a custom component within a project.
+The following example shows how you can create a custom UI component in the UI Builder, using a UI Builder project template. The following sections show how to add or remove a custom component within a project.
 
 To create a custom UI component:
 
-1. In Tizen Studio, create a new UI Builder project using the **Mobile v4.0** project template.
+1. In Tizen Studio, create a new UI Builder project using a UI Builder project template.
 
 2. Add a preset **Switch** UI component:
 

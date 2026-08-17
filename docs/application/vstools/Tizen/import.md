@@ -13,7 +13,7 @@ The following sections explain how to use Visual Studio Extension for Tizen to i
 
 3. Browse and select the path where the new workspace will be created.
 
-4. Select the platform type (Mobile/Wearable/TV) and version of the project to be imported, then click **OK**.
+4. Select the platform type (TV) and version of the project to be imported, then click **OK**.
 
 5. The Visual Studio window with newly imported project appears on the Solution Explorer.
 

@@ -7,6 +7,9 @@ The document covers the process for contributing to the articles and code sample
 Only contribute information suitable for public release. Do not add credentials, private
 contact information, unreleased product details, or other non-public material.
 
+Write all issues and pull requests (titles, descriptions, and comments) in English so that
+the whole community can read and participate in the discussion.
+
 1.  [Process for contributing](#process-for-contributing)
     1. [Repository structure](#repository-structure)
     1. [File Name](#file-name)
@@ -130,6 +133,7 @@ On a certain cadence, we push all commits from master branch into the live branc
 The following list shows some guiding rules that you should keep in mind when you're contributing to the Tizen documentation:
 
 - **DON'T** surprise us with large pull requests. Instead, file an issue and start a discussion so we can agree on a direction before you invest a large amount of time.
+- **DO** write issues and pull requests in English.
 - **DO** read the [style guide](styleguide/style.md) guideline.
 - **DO** use the [template](styleguide/template-guide.md) file as the starting point of your work.
 - **DO** create a separate branch on your fork before working on the articles.

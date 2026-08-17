@@ -284,7 +284,7 @@ Learning how to add a listener allows you to receive notifications about DataCon
 
 > [!NOTE]
 > To monitor DataControl provider data changes, it is not enough to implement a listener in the DataControl consumer. You also need to implement the data change sending functionality in the DataControl provider.  
-> The data sending implementation determines the actual change data returned to the DataControl consumer. For more information on the DataControl provider implementation, see [Monitoring Data Changes](../../../native/guides/app-management/data-control.md#monitoring-data-changes).
+> The data sending implementation determines the actual change data returned to the DataControl consumer. For more information on the DataControl provider implementation, see [Monitoring Data Changes](../../../native/guides/app-management/data-control.md#monitor-data-changes).
 
 ## Related information
 * Dependencies

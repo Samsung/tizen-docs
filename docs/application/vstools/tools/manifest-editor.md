@@ -48,9 +48,6 @@ The Tizen .NET application manifest file consists of XML elements organized in a
 |              |                                   | `<background-category>`  |                  |
 |              |                                   | `<splash-screens>`       |                  |
 |              |                                   |                          | `<splash-screen>`|
-|              | `<watch-application>`             |                          |                  |
-|              |                                   |  `<label>`               |                  |
-|              |                                   |  `<icon>`                |                  |
 |              | `<widget-application>`            |                          |                  |
 |              |                                   |  `<icon>`                |                  |
 |              |                                   |  `<label>`               |                  |
@@ -100,7 +97,6 @@ For more information on the relationship between the elements, see the [element 
 | `<description>`         | 1 or more (optional) |
 | `<profile>`             | 1 or more (optional) |
 | `<ui-application>`      | 1 (optional)         |
-| `<watch-application>`   | 1 (optional)         |
 | `<widget-application>`  | 1 (optional)         |
 | `<shortcut-list>`       | 1 (optional)         |
 | `<account>`             | 1 (optional)         |
@@ -226,7 +222,7 @@ In a Tizen .NET application, the `<profile>` element must be set to `common`. Th
 
 -   `name`
 
-    Profile name (available values: `common`, `mobile`, `tv`, `wearable`)
+    Profile name (available values: `common`, `tv`)
 
 **For example:**
 
@@ -326,93 +322,6 @@ For more information on the relationship between the elements, see the [element 
 </ui-application>
 ```
 
-
-<a name="watch_app"></a>
-### &lt;watch-application&gt; Element
-
-This element contains the settings for a watch application.
-
-For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
-
-**Occurrences:**
-
-- 1 (optional)
-
-**Expected children:**
-
-| Child element | Occurrences |
-|---------------| ------------|
-| `<label>`     | 1 or more   |
-| `<icon>`      | 1 or more   |
-
-**Attributes:**
-
--   `ambient-support`
-
-    Indicates whether the application draws the ambient mode UI itself (available values: `true`, `false`)
-
-    If the value is `false`, the system default ambient mode UI is shown when the device enters the ambient mode.
-
--   `appid`
-
-    Watch application unique ID (string)
-
--   `exec`
-
-    Watch application executable file path (string)
-
--   `type`
-
-    Tizen application type (available value: `dotnet`)
-
--   `setup-appid`
-
-    Watch application setup application ID (string)
-
-    If the value is `watchface-editor`, the system default editor is shown when the device enters the editing mode.
-
-```
-<watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample.dll" type="dotnet" setup-appid="watchface-editor">
-   <label>.....</label>
-   <icon>.....</icon>
-</watch-application>
-```
-
-<a name="watch_label"></a>
-#### &lt;label&gt; Element
-
-This element contains the watch application text.
-
-**Occurrences:**
-
--   1
-
-**Expected value:**
-
--   Label value in string
-
-**For example:**
-
-```
-<label>watchsample</label>
-```
-
-<a name="watch_icon"></a>
-#### &lt;icon&gt; Element
-
-This element contains the watch application icon image.
-
-**Occurrences:**
-
--   1
-
-**Expected value:**
-
--   Icon file name
-
-```
-<icon>watchsample.png</icon>
-```
 
 <a name="widget_app"></a>
 ### \<widget-application\> Element
@@ -530,11 +439,11 @@ This element contains the size supported by the widget application.
 
 **Expected value:**
 
--   `2x2` (in mobile and wearable)
--   `4x1` (in mobile)
--   `4x2` (in mobile)
--   `4x3` (in mobile)
--   `4x4` (in mobile)
+-   `2x2`
+-   `4x1`
+-   `4x2`
+-   `4x3`
+-   `4x4`
 
 **For example:**
 

@@ -1,6 +1,6 @@
 # Creating Certificates
 
-This document explains how to create the necessary certificate profiles by creating or importing existing certificate files to install the Tizen application on a Samsung Tizen wearable device.
+This document explains how to create the necessary certificate profiles by creating or importing existing certificate files to install the Tizen application on a Samsung Tizen device.
 
 ## Creating a Certificate Profile
 
@@ -50,9 +50,7 @@ It is used to create an author signature, which ensures the integrity of the app
 
    ![Author Certificate Advanced options](media/certificate-manager/author-create-adv-option.jpg)
 
-   The same signing key helps in maintaining secure peer authentication between the Tizen Watch app and the Android mobile app.
-
-   For more information, see [Accessory SDK](https://developer.samsung.com/galaxy/accessory). If you select a Samsung author certificate, you can renew the certificate with the same information. This renewed certificate will be the same as your original RSA key, so upgrading your application is guaranteed.
+   If you select a Samsung author certificate, you can renew the certificate with the same information. This renewed certificate will be the same as your original RSA key, so upgrading your application is guaranteed.
 
 2. <a name="information_of_the_author_certificate"></a>**Information of the author certificate**
 
@@ -86,7 +84,7 @@ It is used to create an author signature, which ensures the integrity of the app
 
    - If you have selected an option to apply the same password to the author certificate and to the distributor certificate [while entering author certificate information](#information_of_the_author_certificate), the password is already saved. If you want to change the password, type the new password for the distributor certificate.
 
-   - After the device is connected to the host PC, the DUID is automatically added to the list. If you want to add more devices, connect your device to your host PC via USB or Wi-Fi. The previous DUIDs in the list are not deleted even if you disconnect the device. To delete the DUIDs, click the trash icon. For more information, see [How to connect the device to PC via Wi-Fi](../wearable-connection/index.md).
+   - After the device is connected to the host PC, the DUID is automatically added to the list. If you want to add more devices, connect your device to your host PC via USB or Wi-Fi. The previous DUIDs in the list are not deleted even if you disconnect the device. To delete the DUIDs, click the trash icon. For more information, see How to connect the device to PC via Wi-Fi.
 
    - When you need to register more than 10 devices, upload a txt file using the **Import a DUID list file** menu. One DUID on a line and max 50 DUIDs are available.
 

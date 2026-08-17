@@ -6,7 +6,7 @@ the navigation depth.
 
 ## Existing site-root links
 
-Most top-level TOCs use paths rooted at the published site:
+Top-level TOCs and many document bodies use paths rooted at the published site:
 
 ```markdown
 # Guides
@@ -14,8 +14,8 @@ Most top-level TOCs use paths rooted at the published site:
 ### [Application lifecycle](/application/native/guides/applications/app-lifecycle.md)
 ```
 
-Use this form when adding an entry to a TOC that already uses it. The leading `/` means a
-path below `docs/`, not a filesystem path.
+Use this form when adding an entry to a document or TOC that already uses it. The leading
+`/` means a path below `docs/`, not a filesystem path.
 
 ## Local TOCs
 

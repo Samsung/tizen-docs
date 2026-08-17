@@ -6,7 +6,7 @@ Using the Emulator Manager, you can create a variety of environments (different 
 
 The emulator is based on the open-source QEMU project and consists of a virtual CPU, memory, and various peripherals. Currently, Tizen emulators only support x86 and x64 architecture hosts.
 
-You can use the [Emulator Manager](emulator-manager.md) to create and launch a Virtual Machine (emulator) instance. You can communicate with the emulator instance using the [Smart Development Bridge (SDB)](smart-development-bridge.md).
+You can use the [Emulator Manager](emulator-manager.md) to create and launch a Virtual Machine (emulator) instance. You can communicate with the emulator instance using the [Smart Development Bridge (SDB)](../../tizen-studio/common-tools/smart-development-bridge.md).
 
 The emulator provides the following main features:
 
@@ -42,7 +42,7 @@ In the Emulator Manager, in addition to creating new emulator instances accordin
 
 ## Increasing the Application Execution Speed
 
-The Tizen x86 Emulator exploits [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel-based Virtual Machine in Linux) or [HAX](../setup/hardware-accelerated-execution-manager.md) (Hardware Accelerated eXecution in Windows&reg; and macOS) with HW virtualization support.
+The Tizen x86 Emulator exploits [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel-based Virtual Machine in Linux) or [HAX](../../tizen-studio/setup/hardware-accelerated-execution-manager.md) (Hardware Accelerated eXecution in Windows&reg; and macOS) with HW virtualization support.
 
 If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator Manager, check the following prerequisites and install KVM or HAX:
 
@@ -78,7 +78,7 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
    - **In Windows&reg; and macOS:**
 
-     The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../setup/hardware-accelerated-execution-manager.md).
+     The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../../tizen-studio/setup/hardware-accelerated-execution-manager.md).
 
    > [!NOTE]
    > If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable the NX (or PAE and DEP) related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
@@ -95,7 +95,7 @@ You can also run the emulator with HW virtualization support from the command li
 
 ## Supported Features
 
-The emulator provides various virtual HW, media formats, codecs, and [OpenGL&reg; ES acceleration](#opengl). For better performance of the OpenGL&reg; ES support, the Tizen Emulator exploits the latest feature of the graphic driver, so always [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator). The emulator, however, has some limitations and [differences compared to physical target devices](#target).
+The emulator provides various virtual HW, media formats, codecs, and [OpenGL&reg; ES acceleration](#opengl). For better performance of the OpenGL&reg; ES support, the Tizen Emulator exploits the latest feature of the graphic driver, so always [install the latest vendor-provided graphic driver](../../tizen-studio/setup/prerequisites.md#emulator). The emulator, however, has some limitations and [differences compared to physical target devices](#target).
 
 The following table lists the basic features supported in the emulator.
 
@@ -113,19 +113,7 @@ The following table lists the basic features supported in the emulator.
 	<tbody>
 		<tr>
 			<td>Skin</td>
-			<td>Skins are fitted to the screen resolution:
-			<p>Mobile:</p>
-			<ul>
-				<li>WVGA (480 x 800, default)</li>
-				<li>qHD (540 x 960)</li>
-				<li>HD (720 x 1280)</li>
-			</ul>
-			<p>Wearable:</p>
-			<ul>
-				<li>320 x 320</li>
-				<li>360 x 360 (default)</li>
-				<li>360 x 480</li>
-			</ul>
+			<td>Skins are fitted to the screen resolution.
 			<p>4 orientation modes are supported:</p>
 			<p>Portrait (default), landscape, reverse portrait, and reverse landscape</p>
 			</td>
@@ -147,7 +135,7 @@ The following table lists the basic features supported in the emulator.
 			<td>Key</td>
 			<td>HW keys, host keyboard, and SW keypad</td>
 			<td>Supported</td>
-			<td>The host keyboard is not supported for the wearable emulator.</td>
+			<td>-</td>
 		</tr>
 		<tr>
 			<td>Rotary</td>
@@ -192,19 +180,7 @@ The following table lists the basic features supported in the emulator.
 		</tr>
 		<tr>
 			<td>Emulator Control Panel</td>
-			<td>The Emulator Control Panel (ECP) supports different features depending on the device profile:
-			<p>Mobile:</p>
-			<ul>
-				<li>Device Manager: Device Tree, Network, Host Directory Sharing</li>
-				<li>Event Injector: Battery, RSSI, 3-Axis Sensor, Light, Proximity, Pressure, Ultraviolet, Heart Rate Monitor, Motion, Ear Jack, USB, SDCard, Location, Telephony</li>
-			</ul>
-			<p>Wearable:</p>
-			<ul>
-				<li>Device Manager: Network, Host Directory Sharing</li>
-				<li>App Manager: Uninstaller</li>
-				<li>Event Injector: Battery, 3-Axis Sensor, Light, Proximity, Pedometer, Pressure, Ultraviolet, Heart Rate Monitor, Gesture, USB</li>
-			</ul>
-			</td>
+			<td>The Emulator Control Panel (ECP) supports various features for controlling and monitoring the emulator, such as the device manager, app manager, and event injector.</td>
 			<td>Supported</td>
 			<td>The ECP is a standalone tool, which replaces the Event Injector. It helps to control and monitor the emulator features, and can be launched from the emulator context menu.</td>
 		</tr>

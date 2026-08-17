@@ -358,7 +358,6 @@ To detect NFC HCE events and manage AID (Application ID), follow these steps:
       <?xml version="1.0" encoding="utf-8"?>
       <widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets"
               id="http://yourdomain/NFCtest" version="1.0.0" viewmodes="maximized">
-         <profile name="wearable"/>
          <tizen:application id="ZmAk4fxZWY.NFCtest" package="ZmAk4fxZWY" required_version="2.3.1"/>
          <icon src="icon.png"/>
          <name>NFCtest</name>

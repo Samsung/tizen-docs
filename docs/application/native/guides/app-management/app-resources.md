@@ -140,19 +140,19 @@ To check how the resources are shown on different device configurations, create 
 
    ![Emulator Manager](./media/resource_manager_conn_explorer.png)
 
-2. In the **Emulator Manager** window, the HD Mobile emulator has already been created.
+2. In the **Emulator Manager** window, the HD emulator has already been created.
 
    Next, create an emulator instance with a WVGA resolution by clicking **Create**.
 
    ![Create a new emulator](./media/resource_manager_emulator_new.png)
 
-   Select mobile, and the **WVGA Mobile** template. Click **Finish**. If the HD Mobile emulator has not been created, create it as well. For more information on creating an emulator instance, see [Creating Emulator Instances](../../../tizen-studio/common-tools/emulator-manager.md#create).
+   Select the **WVGA** template. Click **Finish**. If the HD emulator has not been created, create it as well. For more information on creating an emulator instance, see [Creating Emulator Instances](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
-3. Run the application on the WVGA Mobile device emulator:
+3. Run the application on the WVGA device emulator:
 
-   1. In the **Emulator Manager** window, select the **WVGA Mobile** emulator and click **Launch**.
+   1. In the **Emulator Manager** window, select the **WVGA** emulator and click **Launch**.
 
-      The WVGA Mobile device emulator starts.
+      The WVGA device emulator starts.
 
       ![Start the emulator](./media/resource_manager_emulator_run.png)
 
@@ -166,11 +166,11 @@ To check how the resources are shown on different device configurations, create 
 
    3. To close the emulator, right-click it and select **Close**.
 
-4. Run the application on the HD Mobile device emulator:
+4. Run the application on the HD device emulator:
 
-   1. In the **Emulator Manager** window, select the **HD Mobile** emulator and click **Launch**.
+   1. In the **Emulator Manager** window, select the **HD** emulator and click **Launch**.
 
-      The HD Mobile device emulator starts.
+      The HD device emulator starts.
 
       ![Start the emulator](./media/resource_manager_emulator_run_hd.png)
 

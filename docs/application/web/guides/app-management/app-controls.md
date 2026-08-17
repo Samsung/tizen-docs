@@ -433,7 +433,7 @@ Web applications can provide a service which can be identified by an operation n
 
 1. To enable an application to receive application control requests, open the [Web application configuration editor](../../guides/development/setting-properties.md#set_widget) in Tizen Studio and add an operation in the `app-control` section of the **Tizen** tab.
 
-   In this example, the name of the operation is `http://example.tizen.org/operation/get_time`. The `config.xml` file contains a [&lt;tizen:app-control&gt;](../../../tizen-studio/web-tools/config-editor.md#mw_appcontrol) element:
+   In this example, the name of the operation is `http://example.tizen.org/operation/get_time`. The `config.xml` file contains a [&lt;tizen:app-control&gt;](../../../tizen-studio/web-tools/config-editor.md#appcontrol) element:
 
    ```
    <tizen:app-control>
@@ -467,7 +467,7 @@ Web applications can provide a service which can be identified by an operation n
    }
    ```
 
-If the provider application is not already running when the application control request is made, it is automatically launched. If the application control [request arrives from the push service](../messaging/push.md#handling-a-launch-by-the-push-service), you can use the `appControl` object of the `RequestedApplicationControl` interface in the launched application to recognize the launch reason:
+If the provider application is not already running when the application control request is made, it is automatically launched. If the application control [request arrives from the push service](../messaging/push.md#handle-a-launch-by-the-push-service), you can use the `appControl` object of the `RequestedApplicationControl` interface in the launched application to recognize the launch reason:
 
 - If the application is launched because a push notification with the `LAUNCH` option has arrived, the `http://tizen.org/appcontrol/data/push/launch_type` data key of the `appControl` object is set to `notification`.
 - If the push registration state has changed, the data key is set to `registration_change`.

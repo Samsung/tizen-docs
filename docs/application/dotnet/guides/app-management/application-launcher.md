@@ -176,7 +176,7 @@ The following steps illustrate how to implement the simple application launcher 
     }
     ```
 
-7. The `Program` class derived from NUIApplication handles all necessary system events ([Application Lifecycle](../applications/uiapplication/application_lifecycle.md)). The `AppLauncher` is created in `Initialize()` method and used in an icon touch handler:
+7. The `Program` class derived from NUIApplication handles all necessary system events ([Application Lifecycle](../applications/uiapplication/application-lifecycle.md)). The `AppLauncher` is created in `Initialize()` method and used in an icon touch handler:
 
     ```csharp
     class Program : NUIApplication

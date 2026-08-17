@@ -615,18 +615,15 @@ The JSA displays the following message:
 
 Invoking an API which is not defined in the current API version is noticed, although the analysis proceeds without stopping. If the Web API was defined in another API version or platform, the version name is provided in the error message.
 
-In the following example, the Web App is developed for the Tizen 2.3 Wearable platform, but the `tizen.archive.open()` function is defined in the Tizen 2.3 Mobile platform, so the JSA detects it and raises an alarm.
+In the following example, the Web App is developed for the Tizen 5.0 TV platform, but the `tizen.bluetooth.getDefaultAdapter()` function requires `http://tizen.org/feature/network.bluetooth`, which is available since Tizen 6.0, so the JSA detects it and raises an alarm.
 
 ```
-function onsuccess() { /* ... */ }
-function onerror() { /* ... */ }
-
 try {
     /*
-       Source code in Web App for Tizen 2.3 wearable platform,
-       but 'open()' is defined in mobile-2.3
+       Source code in Web App for Tizen 5.0 TV platform,
+       but 'getDefaultAdapter()' requires TV-6.0 or later
     */
-    tizen.archive.open('downloads/some_archive.zip', 'r', onsuccess, onerror);
+    var adapter = tizen.bluetooth.getDefaultAdapter();
 } catch (e) {
     /* ... */
 }
@@ -635,7 +632,7 @@ try {
 The JSA displays the following message:
 
 ```
-[Web API Rule] Tizen Wearable-2.3 API not support "open" API. It is defined in Tizen mobile-2.3.
+[Web API Rule] Tizen TV-5.0 API does not support the "getDefaultAdapter" API. It is defined in Tizen TV-6.0.
 ```
 
 #### Rule 8. API Privilege Missing

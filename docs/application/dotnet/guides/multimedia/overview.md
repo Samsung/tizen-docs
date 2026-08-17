@@ -33,10 +33,6 @@ You can use the following multimedia features in your .NET applications:
 
     You can manage the playback of different media file types. You can play audio and video files. You can also manage the state of the media player.
 
--   [WAV and Tone Player](wav-tone-player.md)
-
-    You can play wav files and tones. This section provides detailed information on how to use the wav player and tone player.
-
 -   [Media Recording](media-recording.md)
 
     You can manage the recording of different media file types. You can record audio data to a file and generate compressed video files using video data from a camera and audio data from an audio input device.

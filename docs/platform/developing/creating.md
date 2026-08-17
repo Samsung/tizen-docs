@@ -100,4 +100,4 @@ Info: Finished.
 
 `mobile-wayland-armv7l-tm1-202106161915.tar.gz` is the image file and `mobile-wayland-armv7l-tm1-202106161915.packages` contains package info integrated in the image, including package name, version, and VCS information.
 
-Once the Tizen image is created, the final step is to flash the image to a target device for verification. For more information, see [Flashing an Image to Device](flashing.md).
+Once the Tizen image is created, the final step is to flash the image to a target device for verification. For more information, see Flashing an Image to Device.

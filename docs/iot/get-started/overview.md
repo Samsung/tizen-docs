@@ -1,6 +1,6 @@
 # Tizen IoT
 
-Tizen is commercialized for smart TVs, smartphones, smartwatches, and smart home appliances with three profiles: TV, Mobile, and Wearable. Tizen IoT Headed and Headless binaries support any type of special-purpose IoT devices based on the Linux kernel. Tizen IoT Extension SDK supports for the developers to develop an application running on the Tizen IoT Headed and Headless binaries. Also, using Tizen IoT extension SDK, the developers can develop the IoT devices which are connected easily and securely with legacy IoT ecosystems such as SmartThings&trade;. 
+Tizen is commercialized for smart TVs and smart home appliances with the TV profile. Tizen IoT Headed and Headless binaries support any type of special-purpose IoT devices based on the Linux kernel. Tizen IoT Extension SDK supports for the developers to develop an application running on the Tizen IoT Headed and Headless binaries. Also, using Tizen IoT extension SDK, the developers can develop the IoT devices which are connected easily and securely with legacy IoT ecosystems such as SmartThings&trade;.
 
 Tizen IoT Extension SDK version 1.0 is released from Tizen Studio 3.0 for Tizen 5.0. The following features are supported:
 
@@ -28,7 +28,5 @@ Tizen IoT Extension SDK version 1.0 is released from Tizen Studio 3.0 for Tizen 
     To get started with developing your own Tizen IoT applications:
 
     1.  [Setup the board](setting-up-board.md).
-    2.  [Develop an application](things-app-development-5.0.md).
     3.  [Set up the SmartThings Cloud](things-cloud-setup.md).
     4.  [Test the application with SmartThings app](cloud-app-test.md).
-

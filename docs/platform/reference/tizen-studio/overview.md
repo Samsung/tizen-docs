@@ -37,5 +37,5 @@ If you have found a bug, have any questions, or want to contribute, feel free to
 - [Tool Guide](../../../application/tizen-studio/native-tools/index.md)
 - [Get Started for Native Application](../../../application/native/get-started/overview.md)
 - [Get Started for Web Application](../../../application/web/get-started/overview.md)
-- [Release Notes](../../../application/tizen-studio/release-notes/release-notes.md)
+- [Release Notes](../../../application/tizen-studio/release-notes/6-0-release-notes.md)
 

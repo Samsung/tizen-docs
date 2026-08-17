@@ -3,7 +3,7 @@
 
 To effectively protect the device system and user private data, the Tizen security architecture is based on privileges and application signing of the Linux basic security model, which includes process isolation and mandatory access control. Since Tizen, as an open platform, provides a wide range of features and experiences for users with a variety of applications, the users must be able to grant privileges for security-sensitive operations.
 
-Tizen provides API-level access control for security-sensitive operations which, if not used properly, can harm user privacy and system stability. Therefore, applications that use such sensitive APIs must declare the required privileges in the [config.xml](process/setting-properties.md#privilege) file.  Privileges are categorized into public, partner, and platform levels according to their hierarchy:
+Tizen provides API-level access control for security-sensitive operations which, if not used properly, can harm user privacy and system stability. Therefore, applications that use such sensitive APIs must declare the required privileges in the [config.xml](../guides/development/setting-properties.md#privilege) file.  Privileges are categorized into public, partner, and platform levels according to their hierarchy:
 
 -   The public level is the minimum privilege level, which means that any application developed using Tizen Studio can use these privileges.
 -   The partner level privileges require at least a partner-signed certificate which is granted to developers who have a business relationship with the vendor.
@@ -15,14 +15,12 @@ Since Tizen platform 3.0, some privileges are categorized as privacy-related and
 > [!NOTE]
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
-> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the PrivacyPrivilege API (in [mobile](../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../api/latest/device_api/wearable/tizen/ppm.html) applications).
+> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the PrivacyPrivilege API.
 >
 > Since Tizen 8.0, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternatives, and [privacy feature](http://tizen.org/feature/security.privacy_privilege){:target="_blank"} will be disabled in all profiles.
 
 
 Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
-
-The API version restriction of privileges are deprecated since platform version 5.0. So, if you are developing an app with an earlier API version and need information about supported version, see [this page](./security-privileges-legacy.md). The page does not include privileges issued after 4.0.
 
 <a name="API"></a>
 ## Web API privileges

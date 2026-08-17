@@ -54,4 +54,4 @@ To clone a specific project over HTTPS, follow the steps below:
    $ git clone https://git.tizen.org/cgit/platform/core/multimedia/avsystem
    ```
 
-To clone all Tizen projects over HTTPS, see [Cloning All Projects over HTTPS](building-all.md#cloning-all-projects-over-https).
+To clone all Tizen projects over HTTPS, see [Cloning All Projects over HTTPS](building-all.md#clone-all-projects-over-https).

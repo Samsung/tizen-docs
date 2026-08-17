@@ -231,7 +231,7 @@ function colorFilter(binaryData, pixels) {
 }
 ```
 
-You can test the application performance using the [Web Inspector](../../../../tizen-studio/web-tools/web-inspector.md). In the [Timeline panel](../../../../tizen-studio/web-tools/web-inspector.md#timeline-panel), the event of performing all the calculations in a single UI thread creates a delay of 16218 milliseconds.
+You can test the application performance using the [Web Inspector](../../../../tizen-studio/web-tools/web-inspector.md). In the Timeline panel, the event of performing all the calculations in a single UI thread creates a delay of 16218 milliseconds.
 
 **Figure: UI thread application event performance**
 

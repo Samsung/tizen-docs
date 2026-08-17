@@ -32,7 +32,7 @@ Then, click the `Download Image` button in _Emulator Editor_ to download and ins
 
 Note: To use the TV Emulator, you need to download and install the TV 9.0 image via _Emulator Editor_.
 
-To launch an emulator, select it in the list and click the _Start_ button (![start](media/em_start.png)) in the Actions column. You can also use the [`flutter-tizen emulators`](commands.md#emulators) command to launch an emulator without _Emulator Manager_.
+To launch an emulator, select it in the list and click the _Start_ button (![start](media/em_start.png)) in the Actions column. You can also use the [`flutter-tizen emulators`](../../reference/commands.md) command to launch an emulator without _Emulator Manager_.
 
 ![Tizen Emulator Table](media/em_emulator_table.png)
 

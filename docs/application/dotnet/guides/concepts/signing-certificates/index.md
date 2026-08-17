@@ -1,6 +1,6 @@
 # Certificates
 
-In order to install Tizen applications on Samsung Tizen wearable devices, you must first register certificates containing the Device Unique Identifier (DUID) of a device.
+In order to install Tizen applications on Samsung Tizen devices, you must first register certificates containing the Device Unique Identifier (DUID) of a device.
 There are two types of certificates, author certificate and distributor certificate. These certificates are used for signing and verifying the application.
 
 These certificates ensure that your signed application runs only on those devices that are registered by you. 
