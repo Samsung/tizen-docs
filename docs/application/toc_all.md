@@ -19,16 +19,16 @@
 ### [API Privileges](/application/dotnet/reference/api-privileges.md)
 ### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ### [Install Samsung Smart TV Extension](/application/dotnet/get-started/install-samsung-tv-extension.md)
+
+### [Application Filtering](/application/dotnet/reference/app-filtering.md)
+
+## Guides
 ### Certificates
 #### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
 #### [Installing the Extension](/application/dotnet/guides/concepts/signing-certificates/installing-the-extension.md)
 #### [Creating Certificates](/application/dotnet/guides/concepts/signing-certificates/creating-certificates.md)
 #### [Signing Application with Certificate](/application/dotnet/guides/concepts/signing-certificates/signing-application-with-certificate.md)
 #### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
-
-### [Application Filtering](/application/dotnet/reference/app-filtering.md)
-
-## Guides
 ### [Overview](/application/dotnet/guides/index.md)
 ### Account
 #### [Overview](/application/dotnet/guides/account/overview.md)
