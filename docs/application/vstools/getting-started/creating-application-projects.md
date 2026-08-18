@@ -53,7 +53,7 @@ You can build the application in either of the following ways:
 
 2. Select an emulator whose Tizen platform version matches or exceeds the application platform version, then select **Launch**.
 
-   ![Select and launch an emulator](/docs/application/vstools/media/vs2022_run_3_emulator.png)
+   ![Select and launch an emulator](/docs/application/vstools/media/emulator_manager_launch_highlighted.png)
 
 3. Wait for the emulator to boot, then select it in the Visual Studio run/debug target list.
 

@@ -3,63 +3,77 @@
 
 ## Develop application
 
-The following sections explain how to use Visual Studio for Tizen to develop your applications.
+The following sections explain how to use Visual Studio Tools for Tizen to create, build, run, and debug a Native application.
 
+### Create a Tizen Native project
 
-### Create Tizen Native project
+1. Open Visual Studio. Select **File > New > Project**.
 
-To create a Tizen Native project:
+   ![Create a new project](media/vs2022_project_create_1.png)
 
-1. In the Visual Studio menu, select **File &gt; New &gt; Project**.
+2. In **Create a new project**, select **C++** and **Tizen**, choose **Tizen Native Project**, and select **Next**.
 
-2. For creating Native application, select **C++** and **Tizen** options in the dropdown list. Then, select **Tizen Native project** and click **Next**.
+   ![Select the Tizen Native project template](media/vs2022_project_create_2_native.png)
 
-   ![Create Tizen project](media/native_create_project.PNG)
+3. Enter the project name, location, and solution name, then select **Create**.
 
-3. In the configure window, type the name for your project and click **Create**.
+   ![Configure the Native project](media/vs2022_project_create_3_native.png)
 
-   ![Configure project](media/native_configure_project.PNG)
+4. In the **Tizen Project Wizard**, select the required profile, platform version, and template, then select **OK**.
 
-4. In the **Tizen Profile Select** window, select the required profile, platform version, and template for your project, then click **OK**.
+   ![Select the Native project profile, platform version, and template](media/vs2022_project_create_4_native.png)
 
-5. The visual studio window with newly created project appears on the screen.
+5. Verify that the new project appears in Solution Explorer.
 
-   ![Visual Studio screen](media/native_vs_screen.PNG)
+   ![New Native project in Solution Explorer](media/vs2022_project_create_5_native.png)
 
-6. Before doing anything, please wait while the required development packages are installed.
+6. Wait for the required development packages to finish installing before continuing.
 
    ![Required development package installation](media/native_dev_pkg_install.png)
 
-
 ### Build your project
 
-1. To build your project, select **Build Solution** in the **Solution Explorer** window.
+Build the project in either of the following ways:
 
-   ![Build project](media/native_build_project.PNG)
+1. Select **Build > Build Solution**.
 
-2. To deploy and run your application, select **Debug &gt; Start without Debugging**.
+   ![Build the solution from the Visual Studio menu](media/vs2022_build_1_native.png)
 
-   > [!NOTE]   
-   > Ensure the emulator is running in your system.
+2. Or, in Solution Explorer, right-click the solution and select **Build**.
 
-   ![Run application](media/native_run_application1.PNG)
+   ![Build the solution from Solution Explorer](media/vs2022_build_2_native.png)
 
-   ![Application](media/native_run_application2.PNG)
+### Deploy and run your application
 
+1. Open Emulator Manager from the **Launch Tizen Emulator** button on the Visual Studio toolbar. Alternatively, select **Tools > Tizen > Tizen Emulator Manager**.
 
-### Debug your application in emulator
+   ![Launch Emulator Manager from the toolbar](media/vs2022_run_1_native.png)
 
-1. Open .c file in your visual studio application.
+   ![Launch Emulator Manager from the Tools menu](media/vs2022_run_2_native.png)
 
-2. Add a break point in your source code.
+2. Select an emulator whose platform version matches or is later than the application platform version, then select **Launch**.
 
-   ![Add break point](media/native_debug_application.PNG)
+   ![Select and launch an emulator](media/emulator_manager_launch_highlighted.png)
 
-3. Start the debugging session by selecting **Debug &gt; Start Debugging** in the menu bar, or pressing **F5**, or by clicking the **Debug** button in the menu bar.    
+3. Wait for the emulator to boot, then select it as the run target in Visual Studio. Select the green **Start** button to debug, or select **Debug > Start Without Debugging** to run without debugging.
 
-   > [!NOTE]    
-   > If you are facing errors when trying to clean the solution, then follow the steps below:
-   > - Locate the Tizen Native project on the Solution Explorer of Visual Studio and right click on it. Then go to **Properties -> Configuration Properties -> Advanced -> Build Log File**.
-   > - Next, clear the text on the box for **Build Log File**. Now, the **clean solution** function should work properly.
-   
-   ![clear build log file](./media/properties_window.png)
+   ![Running emulator](media/vs2022_run_4_emulator.png)
+
+   ![Deploy and run the Native application](media/vs2022_run_5_native.png)
+
+4. Verify that the application is running in the normal Tizen emulator.
+
+   ![Native application running in the emulator](media/vs2022_run_6_native.png)
+
+### Debug your application in the emulator
+
+1. Open a `.c` source file and set a breakpoint.
+
+   ![Add a breakpoint](media/native_debug_application.PNG)
+
+2. Start debugging by selecting **Debug > Start Debugging**, selecting the **Debug** button, or pressing **F5**.
+
+   > [!NOTE]
+   > If **Clean Solution** fails, right-click the Native project in Solution Explorer and select **Properties > Configuration Properties > Advanced > Build Log File**. Clear the **Build Log File** field.
+
+   ![Clear the build log file](media/properties_window.png)
