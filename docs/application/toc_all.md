@@ -19,16 +19,16 @@
 ### [API Privileges](/application/dotnet/reference/api-privileges.md)
 ### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ### [Install Samsung Smart TV Extension](/application/dotnet/get-started/install-samsung-tv-extension.md)
+
+### [Application Filtering](/application/dotnet/reference/app-filtering.md)
+
+## Guides
 ### Certificates
 #### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
 #### [Installing the Extension](/application/dotnet/guides/concepts/signing-certificates/installing-the-extension.md)
 #### [Creating Certificates](/application/dotnet/guides/concepts/signing-certificates/creating-certificates.md)
 #### [Signing Application with Certificate](/application/dotnet/guides/concepts/signing-certificates/signing-application-with-certificate.md)
 #### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
-
-### [Application Filtering](/application/dotnet/reference/app-filtering.md)
-
-## Guides
 ### [Overview](/application/dotnet/guides/index.md)
 ### Account
 #### [Overview](/application/dotnet/guides/account/overview.md)
@@ -48,7 +48,6 @@
 #### [Overview](/application/dotnet/guides/applications/overview.md)
 #### [Service Application](/application/dotnet/guides/applications/service-application.md)
 #### UI Application
-##### [Widget Application](/application/web/guides/applications/web-widget.md)
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
@@ -315,12 +314,6 @@
 
 ## Tutorials
 ### [Overview](/application/web/tutorials/overview.md)
-### Application Development Process
-#### [Overview](/application/web/guides/development/index.md)
-#### [Creating the Application Project](/application/web/guides/development/creating-app-project.md)
-#### [Setting Project Properties](/application/web/guides/development/setting-properties.md)
-#### [Coding Applications](/application/web/guides/development/coding-app.md)
-#### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
 
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
@@ -332,11 +325,18 @@
 
 ## Guides
 ### [Overview](/application/web/guides/index.md)
+### Application Development Process
+#### [Overview](/application/web/guides/development/index.md)
+#### [Creating the Application Project](/application/web/guides/development/creating-app-project.md)
+#### [Setting Project Properties](/application/web/guides/development/setting-properties.md)
+#### [Coding Applications](/application/web/guides/development/coding-app.md)
+#### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
 ### Applications
 #### [Overview](/application/web/guides/applications/overview.md)
 
 #### [Service Application](/application/web/guides/applications/service-app.md)
 #### [Web Application Addon](/application/web/guides/applications/addon.md)
+#### [Widget Application](/application/web/guides/applications/web-widget.md)
 
 ### Application Management
 #### [Overview](/application/web/guides/app-management/overview.md)
@@ -551,14 +551,6 @@
 
 ## Tutorials
 ### [Overview](/application/native/tutorials/overview.md)
-### Application Development Process
-#### [Overview](/application/native/guides/development/index.md)
-#### [Creating the Application Project](/application/native/guides/development/creating-app-project.md)
-#### [Setting Project Properties](/application/native/guides/development/setting-properties.md)
-#### [Building Applications](/application/native/guides/development/building-app.md)
-#### [Running Applications](/application/native/guides/development/running-app.md)
-#### [Debugging Applications](/application/native/guides/development/debugging-app.md)
-#### [Optimizing Application Performance](/application/native/guides/development/performance.md)
 
 ### Understanding Tizen Programming
 #### [Application Filtering](/application/native/reference/app-filtering.md)
@@ -603,6 +595,14 @@
 ### [Best Practices for Location](/application/native/tutorials/feature/best-practice-battery.md)
 
 ## Guides
+### Application Development Process
+#### [Overview](/application/native/guides/development/index.md)
+#### [Creating the Application Project](/application/native/guides/development/creating-app-project.md)
+#### [Setting Project Properties](/application/native/guides/development/setting-properties.md)
+#### [Building Applications](/application/native/guides/development/building-app.md)
+#### [Running Applications](/application/native/guides/development/running-app.md)
+#### [Debugging Applications](/application/native/guides/development/debugging-app.md)
+#### [Optimizing Application Performance](/application/native/guides/development/performance.md)
 ### [Overview](/application/native/guides/index.md)
 ### Applications
 #### [Overview](/application/native/guides/applications/overview.md)

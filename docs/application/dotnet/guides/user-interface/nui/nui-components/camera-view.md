@@ -4,7 +4,7 @@ keyword: camera, CameraView, NUI, CameraView.DisplayType
 
 # CameraView
 
-The [CameraView](/application/dotnet/api/TizenFX/API9/api/Tizen.NUI.BaseComponents.CameraView.html) class is the NUI view that displays [camera](/application/dotnet/guides/multimedia/camera.md).
+The [CameraView](/application/dotnet/api/15.0.0/common/Tizen.NUI.BaseComponents.CameraView.md) class is the NUI view that displays [camera](/application/dotnet/guides/multimedia/camera.md).
 
 
 ## Create a CameraView
