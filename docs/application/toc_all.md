@@ -48,6 +48,7 @@
 #### [Overview](/application/dotnet/guides/applications/overview.md)
 #### [Service Application](/application/dotnet/guides/applications/service-application.md)
 #### UI Application
+##### [Widget Application](/application/web/guides/applications/web-widget.md)
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
@@ -161,6 +162,7 @@
 ### Notifications and Content Sharing
 #### [Overview](/application/dotnet/guides/notification/overview.md)
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
+#### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
 
 ### Performance
 #### [Overview](/application/dotnet/guides/performance/overview.md)
@@ -322,6 +324,10 @@
 
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
+### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
+### [Web Runtime](/application/web/tutorials/web-runtime.md)
+### [Event Handling](/application/web/tutorials/event-handling.md)
+### [Application Signing and Certificates](/application/web/tutorials/sign-certificate.md)
 ### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
 
 ## Guides
@@ -378,6 +384,7 @@
 #### [Media Controller](/application/web/guides/multimedia/media-controller.md)
 #### [Media Key Events](/application/web/guides/multimedia/media-key.md)
 #### [Radio](/application/web/guides/multimedia/radio.md)
+#### [Camera](/application/web/guides/multimedia/camera.md)
 
 ### Connectivity and Wireless
 #### [Overview](/application/web/guides/connectivity/connectivity.md)
@@ -432,6 +439,7 @@
 #### [Secure Key Management](/application/web/guides/security/secure-key.md)
 #### [TEE Communication](/application/web/guides/security/tee-client.md)
 #### [Privacy-related Permissions](/application/web/guides/security/privacy-related-permissions.md)
+### [Error Handling](/application/web/guides/essentials/error-handling.md)
 
 ### W3C/HTML5/Supplementary Features
 #### [Overview](/application/web/guides/w3c/w3c-overview.md)
@@ -555,6 +563,7 @@
 ### Understanding Tizen Programming
 #### [Application Filtering](/application/native/reference/app-filtering.md)
 #### [Security and API Privileges](/application/native/reference/security-privileges.md)
+#### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/reference/security-privileges-legacy.md)
 #### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/reference/deprecation-policy.md)
 #### [Removed functions and enumerations of Tizen Native API](/application/native/reference/removed-history.md)
 
@@ -736,6 +745,7 @@
 #### [Autofill](/application/native/guides/text-input/autofill.md)
 #### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
 #### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
+#### [Gesture](/application/native/guides/text-input/capi-ui-gesture.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Text-to-speech Engine](/application/native/guides/text-input/tts-engine.md)
