@@ -45,6 +45,19 @@ You can build the application in either of the following ways:
 
    ![Build from Solution Explorer](/docs/application/vstools/media/vs2022_build_2_dotnet.png)
 
+### Troubleshoot build problems
+
+1. **Tizen is not found during the build**
+
+   If the build reports that Tizen cannot be found, complete these steps:
+
+   ![Tizen not found build error](/docs/application/vstools/media/build_tizen_not_found.png)
+
+   1. Verify that the required visual studio workloads are installed. See [Prerequisites](../prequisite.md).
+   2. In Visual Studio, select **Tools > Options > Tizen > Tools**, then select **Update Tizen Workload** which will update the tizen workload.
+
+      ![Update Tizen Workload](/docs/application/vstools/media/build_tizen_not_found_solve.png)
+
 ## Deploy and run the application
 
 1. Launch Emulator Manager from the **Launch Tizen Emulator** button on the Visual Studio toolbar, or select **Tools > Tizen > Tizen Emulator Manager**.

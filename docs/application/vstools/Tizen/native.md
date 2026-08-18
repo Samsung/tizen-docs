@@ -43,6 +43,25 @@ Build the project in either of the following ways:
 
    ![Build the solution from Solution Explorer](media/vs2022_build_2_native.png)
 
+#### Troubleshoot build problems
+
+1. **Tizen is not found during the build**
+
+   If the build reports that Tizen cannot be found, complete these steps:
+
+   ![Tizen not found build error](media/build_tizen_not_found.png)
+
+   1. Verify that the required visual studio workloads are installed. See [Prerequisites](../prequisite.md).
+   2. In Visual Studio, select **Tools > Options > Tizen > Tools**, then select **Update Tizen Workload** which will update the tizen workload.
+
+      ![Update Tizen Workload](media/build_tizen_not_found_solve.png)
+
+2. **Clean Solution fails**
+
+   Right-click the Native project in Solution Explorer and select **Properties > Configuration Properties > Advanced > Build Log File**. Clear the **Build Log File** field.
+
+   ![Clear the build log file](media/properties_window.png)
+
 ### Deploy and run your application
 
 1. Open Emulator Manager from the **Launch Tizen Emulator** button on the Visual Studio toolbar. Alternatively, select **Tools > Tizen > Tizen Emulator Manager**.
@@ -72,8 +91,3 @@ Build the project in either of the following ways:
    ![Add a breakpoint](media/native_debug_application.PNG)
 
 2. Start debugging by selecting **Debug > Start Debugging**, selecting the **Debug** button, or pressing **F5**.
-
-   > [!NOTE]
-   > If **Clean Solution** fails, right-click the Native project in Solution Explorer and select **Properties > Configuration Properties > Advanced > Build Log File**. Clear the **Build Log File** field.
-
-   ![Clear the build log file](media/properties_window.png)
