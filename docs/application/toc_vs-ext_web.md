@@ -9,10 +9,7 @@
 #### [Prerequisite](/application/vstools/prequisite.md)
 #### [Install VS Extension for Tizen](/application/vstools/install.md)
 #### [Install SDK Common Tools & Tizen Platform](/application/vstools/install-sdk-common-tools.md)
-#### [Install TV Extension & Certificate Extension](/application/vstools/tv-certificate-extension.md)
-#### Package Manager
-##### [Overview](/application/tizen-studio/common-tools/package-manager.md)
-##### [Configure the Package Manager](/application/tizen-studio/common-tools/pkgmgr-advanced-configuration.md)
+#### [Install TV Extension](/application/vstools/tv-certificate-extension.md)
 
 ### Web Application Development
 <!-- #### [Overview](/application/vstools/getting-started/creating-application-projects.md) -->
@@ -20,8 +17,6 @@
 
 #### Managing Project
 ##### [Create App](/application/vstools/Tizen/web.md)
-##### [Import Exsting Tizen Project](/application/vstools/Tizen/import.md)
-##### [Tool : Project Wizard](/application/vstools/tools/project-wizard.md)
 #### Configure App
 ##### [Tool : Certificate Manager](/application/vstools/tools/certificate-manager.md)
 ##### Tool : Manifest Editor
@@ -40,7 +35,6 @@
 #### Running and Testing Application
 ##### [Normal Run](/application/vstools/getting-started/edit-code.md)
 ##### [Install Tizen App](/application/vstools/tools/install-tizen-app.md)
-##### [Log Viewer](/application/vstools/tools/log-viewer.md)
 ##### Tool : Emulator
 ###### [Overview](/application/tizen-studio/common-tools/emulator.md)
 ###### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
@@ -49,10 +43,6 @@
 ##### [Tool : SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 ##### [Tool : TV Web Simulator](/application/tizen-studio/common-tools/smart-development-bridge.md)
 ##### [Web Unit Test](/application/vstools/getting-started/web-app-unit-test.md)
-
-#### CLI
-##### [Tizen CLI](/application/tizen-studio/common-tools/command-line-interface.md)
-##### [Tizen-Core CLI](/application/tizen-studio/tizen-core/tizen-core-cli.md)
 
 #### SDK Diagnostics
 ##### [Tizen Doctor](/application/tizen-studio/common-tools/tizen-doctor.md)
