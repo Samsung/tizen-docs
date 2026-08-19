@@ -33,7 +33,7 @@ The Solution Explorer displays the newly created Tizen .NET project.
 
 ## Build the application
 
-Before building, register a signing certificate if required. See [Certificate Manager](../../tools/certificate-manager.md).
+Before building, register a signing certificate if required. See [Certificate Manager](../tools/certificate-manager.md).
 
 You can build the application in either of the following ways:
 

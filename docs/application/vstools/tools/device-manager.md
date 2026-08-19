@@ -39,6 +39,7 @@ Each connected target shows a selection control, device name, platform version, 
 
 Use **Scan Device** to discover devices available on the local network. The Remote Device Manager also lets you connect, disconnect, edit, and delete saved devices.
 
+<a name="logview"></a>
 ## Log View
 
 The Log View displays the time, level, PID, TID, tag, and message for each log event. It supports:
