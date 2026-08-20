@@ -315,12 +315,6 @@
 
 ## Tutorials
 ### [Overview](/application/web/tutorials/overview.md)
-### Application Development Process
-#### [Overview](/application/web/guides/development/index.md)
-#### [Creating the Application Project](/application/web/guides/development/creating-app-project.md)
-#### [Setting Project Properties](/application/web/guides/development/setting-properties.md)
-#### [Coding Applications](/application/web/guides/development/coding-app.md)
-#### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
 
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
@@ -332,6 +326,13 @@
 
 ## Guides
 ### [Overview](/application/web/guides/index.md)
+### Application Development Process
+#### [Overview](/application/web/guides/development/index.md)
+#### [Creating the Application Project](/application/web/guides/development/creating-app-project.md)
+#### [Setting Project Properties](/application/web/guides/development/setting-properties.md)
+#### [Coding Applications](/application/web/guides/development/coding-app.md)
+#### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
+
 ### Applications
 #### [Overview](/application/web/guides/applications/overview.md)
 
@@ -798,6 +799,11 @@
 #### [Overview](/application/native/guides/error/overview.md)
 #### [Error Handling](/application/native/guides/error/error-handling.md)
 #### [System Logs](/application/native/guides/error/system-logs.md)
+
+### Concepts
+#### [Event Handling](/application/native/guides/concepts/event-handling.md)
+#### [File System Directory Hierarchy](/application/native/guides/concepts/file-system.md)
+#### [Application Signing and Certificates](/application/native/guides/concepts/signing-certificates.md)
 
 ### Performance
 #### [Overview](/application/native/guides/performance/overview.md)
