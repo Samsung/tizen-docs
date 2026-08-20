@@ -319,9 +319,6 @@
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
 ### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
-### [Web Runtime](/application/web/tutorials/web-runtime.md)
-### [Event Handling](/application/web/tutorials/event-handling.md)
-### [Application Signing and Certificates](/application/web/tutorials/sign-certificate.md)
 ### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
 
 ## Guides
@@ -332,6 +329,12 @@
 #### [Setting Project Properties](/application/web/guides/development/setting-properties.md)
 #### [Coding Applications](/application/web/guides/development/coding-app.md)
 #### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
+
+### Concepts
+#### [Event Handling](/application/web/guides/concepts/event-handling.md)
+#### [Web Runtime](/application/web/guides/concepts/web-runtime.md)
+#### [Application Signing and Certificates](/application/web/guides/concepts/signing-certificates.md)
+#### [Error Handling](/application/web/guides/concepts/error-handling.md)
 
 ### Applications
 #### [Overview](/application/web/guides/applications/overview.md)
@@ -440,7 +443,6 @@
 #### [Secure Key Management](/application/web/guides/security/secure-key.md)
 #### [TEE Communication](/application/web/guides/security/tee-client.md)
 #### [Privacy-related Permissions](/application/web/guides/security/privacy-related-permissions.md)
-### [Error Handling](/application/web/guides/essentials/error-handling.md)
 
 ### W3C/HTML5/Supplementary Features
 #### [Overview](/application/web/guides/w3c/w3c-overview.md)
