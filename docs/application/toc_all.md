@@ -315,6 +315,14 @@
 
 ## Tutorials
 ### [Overview](/application/web/tutorials/overview.md)
+
+### [Application Filtering](/application/web/reference/app-filtering.md)
+### [Security and API Privileges](/application/web/reference/security-privileges.md)
+### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
+### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
+
+## Guides
+### [Overview](/application/web/guides/index.md)
 ### Application Development Process
 #### [Overview](/application/web/guides/development/index.md)
 #### [Creating the Application Project](/application/web/guides/development/creating-app-project.md)
@@ -322,16 +330,12 @@
 #### [Coding Applications](/application/web/guides/development/coding-app.md)
 #### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
 
-### [Application Filtering](/application/web/reference/app-filtering.md)
-### [Security and API Privileges](/application/web/reference/security-privileges.md)
-### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)
-### [Web Runtime](/application/web/tutorials/web-runtime.md)
-### [Event Handling](/application/web/tutorials/event-handling.md)
-### [Application Signing and Certificates](/application/web/tutorials/sign-certificate.md)
-### [API Versioning and Deprecation Policy](/application/web/reference/deprecation-policy.md)
+### Concepts
+#### [Event Handling](/application/web/guides/concepts/event-handling.md)
+#### [Web Runtime](/application/web/guides/concepts/web-runtime.md)
+#### [Application Signing and Certificates](/application/web/guides/concepts/signing-certificates.md)
+#### [Error Handling](/application/web/guides/concepts/error-handling.md)
 
-## Guides
-### [Overview](/application/web/guides/index.md)
 ### Applications
 #### [Overview](/application/web/guides/applications/overview.md)
 
@@ -439,7 +443,6 @@
 #### [Secure Key Management](/application/web/guides/security/secure-key.md)
 #### [TEE Communication](/application/web/guides/security/tee-client.md)
 #### [Privacy-related Permissions](/application/web/guides/security/privacy-related-permissions.md)
-### [Error Handling](/application/web/guides/essentials/error-handling.md)
 
 ### W3C/HTML5/Supplementary Features
 #### [Overview](/application/web/guides/w3c/w3c-overview.md)
@@ -551,14 +554,6 @@
 
 ## Tutorials
 ### [Overview](/application/native/tutorials/overview.md)
-### Application Development Process
-#### [Overview](/application/native/guides/development/index.md)
-#### [Creating the Application Project](/application/native/guides/development/creating-app-project.md)
-#### [Setting Project Properties](/application/native/guides/development/setting-properties.md)
-#### [Building Applications](/application/native/guides/development/building-app.md)
-#### [Running Applications](/application/native/guides/development/running-app.md)
-#### [Debugging Applications](/application/native/guides/development/debugging-app.md)
-#### [Optimizing Application Performance](/application/native/guides/development/performance.md)
 
 ### Understanding Tizen Programming
 #### [Application Filtering](/application/native/reference/app-filtering.md)
@@ -604,6 +599,15 @@
 
 ## Guides
 ### [Overview](/application/native/guides/index.md)
+### Application Development Process
+#### [Overview](/application/native/guides/development/index.md)
+#### [Creating the Application Project](/application/native/guides/development/creating-app-project.md)
+#### [Setting Project Properties](/application/native/guides/development/setting-properties.md)
+#### [Building Applications](/application/native/guides/development/building-app.md)
+#### [Running Applications](/application/native/guides/development/running-app.md)
+#### [Debugging Applications](/application/native/guides/development/debugging-app.md)
+#### [Optimizing Application Performance](/application/native/guides/development/performance.md)
+
 ### Applications
 #### [Overview](/application/native/guides/applications/overview.md)
 #### Tizen Core
@@ -798,6 +802,11 @@
 #### [Overview](/application/native/guides/error/overview.md)
 #### [Error Handling](/application/native/guides/error/error-handling.md)
 #### [System Logs](/application/native/guides/error/system-logs.md)
+
+### Concepts
+#### [Event Handling](/application/native/guides/concepts/event-handling.md)
+#### [File System Directory Hierarchy](/application/native/guides/concepts/file-system.md)
+#### [Application Signing and Certificates](/application/native/guides/concepts/signing-certificates.md)
 
 ### Performance
 #### [Overview](/application/native/guides/performance/overview.md)
