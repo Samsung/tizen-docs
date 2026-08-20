@@ -22,11 +22,11 @@ Use **Advanced SDK Installation** to add or remove an entire Tizen platform vers
 3. Select **Install** next to the platform version that you need.
 4. To remove an installed version, select **Uninstall**.
 
-   The video below shows how to install a Tizen SDK platform version:
+The video below shows how to install a Tizen SDK platform version:
 
-   <video controls height="400">
-     <source src="../media/sdk-installation.mp4" type="video/mp4">
-   </video>
+<video controls height="400">
+  <source src="../media/sdk-installation.mp4" type="video/mp4">
+</video>
 
 The available versions include Tizen 10.0, 9.0, 8.0, 7.0, 6.5, 6.0, and TV extensions. Install the platform version and profile required by the application and target device.
 
