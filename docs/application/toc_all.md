@@ -554,14 +554,6 @@
 
 ## Tutorials
 ### [Overview](/application/native/tutorials/overview.md)
-### Application Development Process
-#### [Overview](/application/native/guides/development/index.md)
-#### [Creating the Application Project](/application/native/guides/development/creating-app-project.md)
-#### [Setting Project Properties](/application/native/guides/development/setting-properties.md)
-#### [Building Applications](/application/native/guides/development/building-app.md)
-#### [Running Applications](/application/native/guides/development/running-app.md)
-#### [Debugging Applications](/application/native/guides/development/debugging-app.md)
-#### [Optimizing Application Performance](/application/native/guides/development/performance.md)
 
 ### Understanding Tizen Programming
 #### [Application Filtering](/application/native/reference/app-filtering.md)
@@ -607,6 +599,15 @@
 
 ## Guides
 ### [Overview](/application/native/guides/index.md)
+### Application Development Process
+#### [Overview](/application/native/guides/development/index.md)
+#### [Creating the Application Project](/application/native/guides/development/creating-app-project.md)
+#### [Setting Project Properties](/application/native/guides/development/setting-properties.md)
+#### [Building Applications](/application/native/guides/development/building-app.md)
+#### [Running Applications](/application/native/guides/development/running-app.md)
+#### [Debugging Applications](/application/native/guides/development/debugging-app.md)
+#### [Optimizing Application Performance](/application/native/guides/development/performance.md)
+
 ### Applications
 #### [Overview](/application/native/guides/applications/overview.md)
 #### Tizen Core
