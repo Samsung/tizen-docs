@@ -409,4 +409,4 @@ The following table provides detailed information regarding removed functions an
 
 ## Related information
 
-- [Tizen Native API Reference](../api/overview.md)
+- Tizen Native API Reference
