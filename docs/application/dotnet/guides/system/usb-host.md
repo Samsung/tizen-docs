@@ -138,4 +138,4 @@ Programs which are dedicated for one specific device often hardcode the interfac
 - Dependencies
   - Since Tizen 3.0
 - API References
-  - [USB](/application/dotnet/api/TizenFX/llatest/api/Tizen.System.Usb.html)
+  - [USB](/application/dotnet/api/15.0.0/common/Tizen.System.Usb.md)
