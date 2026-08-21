@@ -4,15 +4,9 @@ Pose detection is a new feature of Media Vision Inference API since Tizen 6.5 (C
 
 ## Background
 
-In Tizen, human body pose landmarks and body parts are defined as follows:
-
-**Figure: Definition of human body pose landmarks and body parts**
-
-![Body pose](/application/native/guides/multimedia/media/mediavision_pose_tizen_def.png)
+In Tizen, human body pose landmarks and body parts are defined as follows.
 
 The pose landmark detection models are available in Open Model Zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models){:target="_blank"} or public GitHub site such as [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile){:target="_blank"}. The public pose models provide landmark information, such as the number of landmarks and locations. To use them correctly, you must map the information to landmarks based on the definition. For example, you can use the [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile){:target="_blank"}, which provides 14 landmarks as follows:
-
-![Body pose](/application/native/guides/multimedia/media/mediavision_pose_public_model_def.png),
 
 In this model, `-1` denotes that there are no landmarks. Using this landmark information, you can create a mapping file. Suppose you create a mapping file with the name `pose_mapping.txt`, then you can populate the `pose_mapping.txt` file as follows:
 
@@ -60,8 +54,6 @@ In this model, `-1` denotes that there are no landmarks. Using this landmark inf
 
 
 The MoCap file includes the movements of objects or a person. There are various MoCap formats, but a well known BioVision Hierarchy (BVH) file is supported in Media Vision. BVH file has a hierarchy structure to provide landmark information with landmarks' names, and the structure can be changed. It means that landmark information is different from the definition. To use the BVH file correctly, you have to map the information to the landmarks based on the definitions. For example, the [BVH file](/application/native/guides/multimedia/media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
-
-![Body pose](/application/native/guides/multimedia/media/mediavision_pose_bvh_sample.png)
 
 The example starts with hips and ends with the left foot with 15 landmarks. You can create a mapping file named `mocap_mapping.txt` as follows:
 
