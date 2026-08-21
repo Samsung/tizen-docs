@@ -48,7 +48,6 @@
 #### [Overview](/application/dotnet/guides/applications/overview.md)
 #### [Service Application](/application/dotnet/guides/applications/service-application.md)
 #### UI Application
-##### [Widget Application](/application/web/guides/applications/web-widget.md)
 ##### [Overview](/application/dotnet/guides/applications/uiapplication/overview.md)
 ##### [Basic UI Application](/application/dotnet/guides/applications/uiapplication/ui-app.md)
 ##### [Component Based Application](/application/dotnet/guides/applications/uiapplication/component-based-app.md)
@@ -340,6 +339,7 @@
 #### [Overview](/application/web/guides/applications/overview.md)
 
 #### [Service Application](/application/web/guides/applications/service-app.md)
+#### [Widget Application](/application/web/guides/applications/web-widget.md)
 #### [Web Application Addon](/application/web/guides/applications/addon.md)
 
 ### Application Management
