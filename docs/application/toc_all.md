@@ -339,6 +339,7 @@
 #### [Overview](/application/web/guides/applications/overview.md)
 
 #### [Service Application](/application/web/guides/applications/service-app.md)
+#### [Widget Application](/application/web/guides/applications/web-widget.md)
 #### [Web Application Addon](/application/web/guides/applications/addon.md)
 
 ### Application Management
