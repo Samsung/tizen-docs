@@ -100,7 +100,7 @@ To enable filtering for your native application:
 
 2. Select a feature from the [predefined list of features available for filtering](../../reference/app-filtering.md).
 
-   To check which features are necessary for using a specific API, see the related feature in the native API reference.
+   To check which features are necessary for using a specific API, see the related feature in the [Native API reference](https://samsungtizenos.com/docs/application/native/overview).
 
 3. Click **OK**.
 

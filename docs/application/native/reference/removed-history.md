@@ -406,7 +406,3 @@ The following table provides detailed information regarding removed functions an
 | Application Framework - Widget - Widget Viewer | All functions of this module | Since 10.0 | 11.0 | No longer available | - |
 | UI - Minicontrol | All functions of this module | Since 10.0 | 11.0 | No longer available | - |
 | Multimedia - Mediaeditor | All functions of this module | Since 7.0 | 11.0 | No longer available | - |
-
-## Related information
-
-- Tizen Native API Reference
