@@ -300,4 +300,4 @@ Element Properties:
   - Tizen 6.0 and Higher
 
 - API References
-  - [Tizen.MachineLearning.Inference.Pipeline](/application/dotnet/api/TizenFX/latest/api/Tizen.MachineLearning.Inference.pipeline.html) class
+  - [Tizen.MachineLearning.Inference.Pipeline](/application/dotnet/api/15.0.0/common/Tizen.MachineLearning.Inference.Pipeline.md) class

@@ -14,7 +14,7 @@ The main features of the `Tizen.Tracer` class include followings:
 
 ## Prerequisites
 
-To use the methods of [Tizen.Tracer](/application/dotnet/api/TizenFX/master/api/Tizen.Tracer.html), you should include the [Tizen](/application/dotnet/api/TizenFX/master/api/Tizen.html) namespace in your application:
+To use the methods of [Tizen.Tracer](/application/dotnet/api/15.0.0/common/Tizen.Tracer.md), you should include the [Tizen](/application/dotnet/api/15.0.0/common/Tizen.md) namespace in your application:
 
 ```csharp
 using Tizen;
@@ -24,7 +24,7 @@ using Tizen;
 <a name="tracer"></a>
 ## Put traces in the common trace buffer
 
-A trace is defined by two API calls: [Begin](/application/dotnet/api/TizenFX/master/api/Tizen.Tracer.html#Tizen_Tracer_Begin_System_String_) and [End](/application/dotnet/api/TizenFX/master/api/Tizen.Tracer.html#Tizen_Tracer_End), or [AsyncBegin](/application/dotnet/api/TizenFX/master/api/Tizen.Tracer.html#Tizen_Tracer_AsyncBegin_System_Int32_System_String_) and [AsyncEnd](/application/dotnet/api/TizenFX/master/api/Tizen.Tracer.html#Tizen_Tracer_AsyncEnd_System_Int32_System_String_).
+A trace is defined by two API calls: [Begin](/application/dotnet/api/15.0.0/common/Tizen.Tracer.md#Tizen_Tracer_Begin_System_String_) and [End](/application/dotnet/api/15.0.0/common/Tizen.Tracer.md#Tizen_Tracer_End), or [AsyncBegin](/application/dotnet/api/15.0.0/common/Tizen.Tracer.md#Tizen_Tracer_AsyncBegin_System_Int32_System_String_) and [AsyncEnd](/application/dotnet/api/15.0.0/common/Tizen.Tracer.md#Tizen_Tracer_AsyncEnd_System_Int32_System_String_).
 
 Here are examples:
   * Use synchronous tracing.
@@ -63,7 +63,7 @@ Here are examples:
 
   * Track changes of an integer counter.
 
-   If you want to track changes of an integer counter of your program in the trace, use [TraceValue](/application/dotnet/api/TizenFX/master/api/Tizen.Tracer.html#Tizen_Tracer_TraceValue_System_Int32_System_String_).
+   If you want to track changes of an integer counter of your program in the trace, use [TraceValue](/application/dotnet/api/15.0.0/common/Tizen.Tracer.md#Tizen_Tracer_TraceValue_System_Int32_System_String_).
 
    ```csharp
    void
