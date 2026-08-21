@@ -31,11 +31,11 @@ Each connected target shows a selection control, device name, platform version, 
 
 4. Select **Add**, then select **Connect**.
 
-   The video below shows how to connect a remote device:
+The video below shows how to connect a remote device:
 
-   <video controls height="400">
-     <source src="../media/remote_devices_feature.mp4" type="video/mp4">
-   </video>
+<video controls height="400">
+  <source src="../media/remote_devices_feature.mp4" type="video/mp4">
+</video>
 
 Use **Scan Device** to discover devices available on the local network. The Remote Device Manager also lets you connect, disconnect, edit, and delete saved devices.
 

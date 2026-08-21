@@ -58,17 +58,17 @@ To select the certificates used to package your application:
 
    ![Certificate profile created successfully](media/certificate_profile_created.png)
 
-   The video below shows how to create a Tizen certificate profile:
+The video below shows how to create a Tizen certificate profile:
 
-   <video controls height="400">
-     <source src="../media/create_tizen_certificate.mp4" type="video/mp4">
-   </video>
+<video controls height="400">
+  <source src="../media/create_tizen_certificate.mp4" type="video/mp4">
+</video>
 
-   The video below shows how to create a Samsung certificate profile:
+The video below shows how to create a Samsung certificate profile:
 
-   <video controls height="400">
-     <source src="../media/create_samsung_certificate.mp4" type="video/mp4">
-   </video>
+<video controls height="400">
+  <source src="../media/create_samsung_certificate.mp4" type="video/mp4">
+</video>
 
 Use a default certificate only for quick emulator testing. It is not valid for Store submission. You can also use an existing Certificate Manager profile or import custom author and distributor certificates.
 
