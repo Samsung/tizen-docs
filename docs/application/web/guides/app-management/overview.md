@@ -24,6 +24,10 @@ The application controls allow you to share an application's functionality. Usin
 
   The common application introduces the required parameters, such as a specific operation, URI, MIME type, and extra data when the application launches other applications with App Control API.
 
+- [Tizen Action 2.0](tizen-action-2-0.md)
+
+  You can expose your Web application's current screen context to an Agent as structured View Entities by implementing the platform View Actions with JavaScript callbacks.
+
 - [Widget Information](widget-info.md) **(Optional feature)**
 
   You can manage installed widgets and widget instances in various ways, such as retrieving information about widgets, or getting the widget instances and receiving notifications when the state of the widget changes.
