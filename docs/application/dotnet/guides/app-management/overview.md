@@ -24,6 +24,10 @@ You can use the following application management features in your .NET applicati
 
   You can communicate with applications in other devices.
 
+- [Tizen Action 2.0](tizen-action-2-0.md)
+
+  You can expose your application's capabilities to an Agent as structured Actions and Entities and implement them through a TIDL-based service.
+
 - [Component Manager](component-manager.md)
 
   You can retrieve information about the components installed on the device. You can also get information about the currently running components.
