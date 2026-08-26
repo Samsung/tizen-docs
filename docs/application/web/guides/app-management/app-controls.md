@@ -433,7 +433,7 @@ Web applications can provide a service which can be identified by an operation n
 
 1. To enable an application to receive application control requests, open the [Web application configuration editor](../../guides/development/setting-properties.md#set_widget) in Tizen Studio and add an operation in the `app-control` section of the **Tizen** tab.
 
-   In this example, the name of the operation is `http://example.tizen.org/operation/get_time`. The `config.xml` file contains a [&lt;tizen:app-control&gt;](../../../tizen-studio/web-tools/config-editor.md#appcontrol) element:
+   In this example, the name of the operation is `http://example.tizen.org/operation/get_time`. The `config.xml` file contains a [&lt;tizen:app-control&gt;](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#appcontrol) element:
 
    ```
    <tizen:app-control>

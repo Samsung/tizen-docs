@@ -248,7 +248,7 @@ main(void)
 
 To check the content of the output log, execute dlogutil in the device sdb shell. The following code snippet shows examples of the various available commands and their output.
 
-For information on connecting to the target and using it with SDB, see [Connecting Devices over Smart Development Bridge](../../../tizen-studio/common-tools/smart-development-bridge.md).
+For information on connecting to the target and using it with SDB, see [Connecting Devices over Smart Development Bridge](../../../../sdk-tools/tizen-studio/common-tools/smart-development-bridge.md).
 
 ```
 Desktop:~$ sdb shell

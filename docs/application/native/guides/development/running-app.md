@@ -1,6 +1,6 @@
 # Running Applications
 
-You can run Tizen native applications on the [emulator](../../../tizen-studio/common-tools/emulator.md) using the **Project Explorer** view or the Tizen Studio menu.
+You can run Tizen native applications on the [emulator](../../../../sdk-tools/tizen-studio/common-tools/emulator.md) using the **Project Explorer** view or the Tizen Studio menu.
 
 To run your application on the emulator:
 

@@ -18,9 +18,10 @@ private contact information, unreleased product details, or other non-public mat
 ```
 tizen-docs/
 ├── docs/                       # Published site source (docs.tizen.org)
-│   ├── application/            # App developer guides — native, web, dotnet, flutter,
-│   │   │                       #   plus tizen-studio/vscode-ext/vstools tooling docs
+│   ├── application/            # App developer guides — native, web, dotnet, flutter
 │   │   └── */api/               # Generated API reference (HTML). Do not hand-edit.
+│   ├── sdk-tools/              # SDK and IDE tooling docs — tizen-studio, vscode-ext,
+│   │                            #   vstools, vstools-mac, plus the sdktool-index
 │   ├── platform/                # Platform/OS docs — HAL, compliance, porting,
 │   │                            #   developing, reference, release-notes, what-is-tizen
 │   ├── extensions/tizenx/       # TizenX extension SDK guides + generated API reference

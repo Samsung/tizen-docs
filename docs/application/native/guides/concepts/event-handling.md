@@ -17,11 +17,6 @@ and
 applications) to handle the **Menu** key, **Back** key, and rotary
 events.
 
-> **Note**
->
-> For more information on using Efl Extension for **Menu** key,
-**Back** key, and rotary events, see [Hardware Input Handling](../../guides/ui/efl/hw-input.md).
-
 Follow the guidelines below to ensure predictable and reliable
 navigation in your application.
 

@@ -21,7 +21,7 @@ The INM API is designed for applications that need to:
 - Implement network-aware features and services
 
 > [!NOTE]
-> You can test the INM functionality on a target device only. The [Tizen emulator](../../../tizen-studio/common-tools/emulator.md) does not support this feature.
+> You can test the INM functionality on a target device only. The [Tizen emulator](../../../../sdk-tools/tizen-studio/common-tools/emulator.md) does not support this feature.
 > The INM API is available since Tizen 5.0.
 
 ## Prerequisites

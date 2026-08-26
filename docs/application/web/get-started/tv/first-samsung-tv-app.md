@@ -8,9 +8,9 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
 **Set up Tizen Studio and TV Extension**
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../../sdk-tools/tizen-studio/index.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../../sdk-tools/tizen-studio/setup/install-sdk.md).
 
 2.  Update Extension SDK with the Package Manager to install the TV Extension, which provides TV emulator.
 
@@ -20,7 +20,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
        ![install TV Extension](./media/install_tv_extension.png)
 
-For more information on updating packages, see [Updating Tizen Studio](../../../tizen-studio/setup/update-sdk.md).
+For more information on updating packages, see [Updating Tizen Studio](../../../../sdk-tools/tizen-studio/setup/update-sdk.md).
 
 
 **Build your first application**
@@ -41,7 +41,7 @@ For more information on updating packages, see [Updating Tizen Studio](../../../
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [Web tools included in Tizen Studio](../../../../sdk-tools/tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Create a project
@@ -86,7 +86,7 @@ To create the application project, follow these steps:
 
         ![Defining properties](media/create_project_wizard_properties_samsung_tv.png)
 
-        The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Create Tizen Projects with Tizen Project Wizard](../../../tizen-studio/web-tools/project-wizard.md).
+        The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Create Tizen Projects with Tizen Project Wizard](../../../../sdk-tools/tizen-studio/web-tools/project-wizard.md).
 
 You can see the created project in the **Project Explorer** view. The most important files and folders include:
 
@@ -190,7 +190,7 @@ You can run the Web application on the [emulator](../../guides/development/run-d
 
 To run the application on the emulator:
 
-1. Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
+1. Launch an emulator instance in the [Emulator Manager](../../../../sdk-tools/tizen-studio/common-tools/emulator-manager.md):
 
     1. In the Tizen Studio menu, select **Tools \> Emulator Manager**.
 
@@ -198,13 +198,13 @@ To run the application on the emulator:
 
     2. In the Emulator Manager, select a TV emulator from the list and click **Launch**.
 
-        If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
+        If no applicable emulator instance exists, [create a new one](../../../../sdk-tools/tizen-studio/common-tools/emulator-manager.md#create).
 
         ![Launching the emulator](media/emulator_instance_launch_samsung_tv.png)
 
 2. Generate a security profile.
 
-    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
+    Before you run the application, you must [sign your application package with a certificate profile](../../../../sdk-tools/tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 3. Run the application:
     1. In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Web Application**.
@@ -226,7 +226,7 @@ To run the application on the emulator:
 
         While the application is running, the **Log** view in Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window \> Show View \> Log**.
 
-For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
+For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../../sdk-tools/tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../../sdk-tools/tizen-studio/common-tools/emulator-features.md).
 
 <a name="simulator"></a>
 ### Run on the Samsung TV Simulator
@@ -283,7 +283,7 @@ To run the application on a target device, follow these steps:
 
 2. Generate an author certificate.
 
-    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
+    Before you run the application, you must [sign your application package with a certificate profile](../../../../sdk-tools/tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 3. Run the application:
     1.  In the **Device Manager**, select the device.

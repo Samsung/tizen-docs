@@ -99,7 +99,7 @@ The following table lists the events that you can implement in your handler obje
 
 ## Web IME configuration
 
-The Web IME configuration follows the Tizen packaging policy with certain extensions. Tizen applications are packaged according to the [Widget packaging guidelines](https://www.w3.org/TR/widgets/){:target="_blank"}. For more information on Tizen extensions to configuration elements, see [Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#elements) and [Extending Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#ww_extend).
+The Web IME configuration follows the Tizen packaging policy with certain extensions. Tizen applications are packaged according to the [Widget packaging guidelines](https://www.w3.org/TR/widgets/){:target="_blank"}. For more information on Tizen extensions to configuration elements, see [Configuration Elements](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#elements) and [Extending Configuration Elements](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#ww_extend).
 
 Internally, the application package manager is responsible for installing, uninstalling, and updating packages and storing their information.
 

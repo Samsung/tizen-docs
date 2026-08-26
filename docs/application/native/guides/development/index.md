@@ -16,7 +16,7 @@ Once you have finished the application plan and design, you are ready to [create
 <a name="creating"></a>
 ## Creating the Application Project
 
-Tizen Studio provides various project templates that make it easier for you to start coding your application. When you create a new project, you can select a specific template or sample. Based on the selection, The Tizen Native [Project Wizard](../../../tizen-studio/native-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
+Tizen Studio provides various project templates that make it easier for you to start coding your application. When you create a new project, you can select a specific template or sample. Based on the selection, The Tizen Native [Project Wizard](../../../../sdk-tools/tizen-studio/native-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
 
 <a name="setting"></a>
 ## Setting Project Properties
@@ -82,7 +82,7 @@ To debug your application with the emulator or the target device, you must first
 <a name="packaging"></a>
 ## Packaging the Application
 
-You can package your application using Tizen Studio. If you want to register your application in the official site for Tizen applications, [register the author certificate](../../../tizen-studio/common-tools/certificate-registration.md) before packaging your application.
+You can package your application using Tizen Studio. If you want to register your application in the official site for Tizen applications, [register the author certificate](../../../../sdk-tools/tizen-studio/common-tools/certificate-registration.md) before packaging your application.
 
 1. If you have made changes to the application after testing it, [rebuild the application](building-app.md).
 

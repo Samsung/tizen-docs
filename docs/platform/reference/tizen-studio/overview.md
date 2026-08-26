@@ -10,8 +10,8 @@ The development of Tizen Studio takes place in the [Tizen Studio repository](htt
 
 ## Try Tizen Studio
 
-- [About Tizen Studio](../../../application/tizen-studio/index.md)
-- [Prerequisites](../../../application/tizen-studio/setup/prerequisites.md)
+- [About Tizen Studio](../../../sdk-tools/tizen-studio/index.md)
+- [Prerequisites](../../../sdk-tools/tizen-studio/setup/prerequisites.md)
 - [Download Tizen Studio](https://developer.tizen.org/development/tizen-studio/download)
 
 ## Developer guides
@@ -34,8 +34,8 @@ If you have found a bug, have any questions, or want to contribute, feel free to
 
 - [Tizen Studio Download](https://developer.tizen.org/development/tizen-studio/download)
 - [OpenSource Repository](https://review.tizen.org/gerrit/#/)
-- [Tool Guide](../../../application/tizen-studio/native-tools/index.md)
+- [Tool Guide](../../../sdk-tools/tizen-studio/native-tools/index.md)
 - [Get Started for Native Application](../../../application/native/get-started/overview.md)
 - [Get Started for Web Application](../../../application/web/get-started/overview.md)
-- [Release Notes](../../../application/tizen-studio/release-notes/6-0-release-notes.md)
+- [Release Notes](../../../sdk-tools/tizen-studio/release-notes/6-0-release-notes.md)
 

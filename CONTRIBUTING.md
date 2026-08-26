@@ -27,7 +27,9 @@ You need a basic understanding of [Git and GitHub.com](https://guides.github.com
 **Step 1:** Skip this step for small changes. Open an [issue](https://github.com/Samsung/tizen-docs/issues) describing what you want to do, such as change an existing article or create a new one.
 The content inside the **docs** folder is organized into sections that are reflected in the Table of Contents (toc_all.md). Define where the topic will be located in the toc_all.md. Get feedback on your proposal.
 
-You must use heading tags(#, ##, ###, ####...) for items of TOC. There are two categories: Open Source Project and Application. They are items of GNB(Global Navigation Bar) and they have own TOC files(toc_all.md) in their own directories.
+You must use heading tags(#, ##, ###, ####...) for items of TOC. Each top-level directory under `docs/` is its own section with its own `toc_all.md`: `application/` (app developer guides), `sdk-tools/` (SDK and IDE tooling), `platform/` (Open Source Project) and `extensions/`.
+
+Be aware that not every TOC is read by the publishing pipeline, and not every block of a TOC that is read gets consumed. Under `sdk-tools/`, the six per-IDE TOCs (`toc_vscode_*.md`, `toc_vs-ext_*.md`) are what actually publish, while `sdk-tools/toc_all.md` documents the structure only. If a new page must appear on the site, confirm which TOC governs it rather than assuming `toc_all.md` is enough.
 
 You can also look at our [open issues](https://github.com/Samsung/tizen-docs/issues) list and volunteer to work on the ones you're interested in.
 
