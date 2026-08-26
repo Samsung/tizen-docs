@@ -111,7 +111,7 @@ A Tizen .NET application is packaged as a `tpk` file, the standard Tizen package
 
 ## Development Tools
 
-Visual Studio Tools for Tizen provides the project templates, build integration, and device tooling for .NET application development. See [Visual Studio Tools for Tizen](../../vstools/index.md), or go straight to [installing the extension](../../vstools/install.md).
+Visual Studio Tools for Tizen provides the project templates, build integration, and device tooling for .NET application development. See [Visual Studio Tools for Tizen](../../../sdk-tools/vstools/index.md), or go straight to [installing the extension](../../../sdk-tools/vstools/install.md).
 
 ## Related Documentation
 
