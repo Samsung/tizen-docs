@@ -34,14 +34,6 @@ You can also use command line tools to create .NET project on any platform.
 
 <div class="row cards-container-infra">
     <div class="col col-6">
-        <a href="IoT/index.md" class="card card-infra card-neutral h-100">
-            <div class="card-body">
-                <p class="h3 card-title">IoT</p>
-                <p class="card-text">Test the connection with your device.</p>
-            </div>
-        </a>
-    </div>
-    <div class="col col-6">
         <a href="../guides/concepts/signing-certificates/index.md" class="card card-infra card-neutral h-100">
             <div class="card-body">
                 <p class="h3 card-title">Certificates</p>

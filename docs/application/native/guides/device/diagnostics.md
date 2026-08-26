@@ -261,5 +261,5 @@ Additionally, stability monitor sends diagnostic event `AbnormalityDetected` in 
 - Dependencies
   - Since Tizen 6.0
 - API References
-  - [Diagnostics API](../../api/common/latest/group__CAPI__SYSTEM__DIAGNOSTICS_MODULE.html)
+  - [Diagnostics API](../../api/common/latest/group__CAPI__SYSTEM__DIAGNOSTICS__MODULE.html)
 
