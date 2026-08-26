@@ -1,6 +1,6 @@
 # Tizen Update Control Native API
 
-Update Control API allows to control the system software version of the IoT device.
+Update Control API allows to control the system software version of the device.
 System software version control includes:
 - Checking for the latest version
 - Downloading and updating to the latest version in a synchronous or an asynchronous manner
@@ -123,7 +123,7 @@ In other cases, a code provided by the callback will indicate a failure.
 
 ## Making an Update Reservation
 
-The availability of the IoT device might be critical for its operation. Because updating procedure might include
+The availability of the device might be critical for its operation. Because updating procedure might include
 unavailable time (for example, rebooting), it needs to schedule software update at a specific time.
 In this case, the application can use the `update_control_make_reservation()` function:
 ```cpp
