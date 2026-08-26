@@ -1,13 +1,11 @@
 {
-  "commit": "f7b18f5e0",
+  "commit": "59f179c5a",
   "counts": {
-    "L-HTML": 12,
-    "M-ALT": 2,
-    "M-JUNK": 3,
-    "M-ORPHAN": 400,
-    "T-DUP": 28,
+    "L-HTML": 2,
+    "M-JUNK": 2,
+    "M-ORPHAN": 399,
+    "T-DUP": 14,
     "T-META": 1,
-    "T-META-SRC": 1,
     "T-ORPHAN": 4
   }
 }
