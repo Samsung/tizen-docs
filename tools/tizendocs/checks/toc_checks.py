@@ -10,7 +10,7 @@ ORPHAN = "T-ORPHAN"
 ORPHAN_EXEMPT = ("README.md", "index.md")
 
 
-def check_orphan(index, path, text):
+def check_orphan(index, path, source):
     base = os.path.basename(path)
     if base.startswith("toc") or base in ORPHAN_EXEMPT:
         return

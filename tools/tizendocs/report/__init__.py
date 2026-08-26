@@ -1,4 +1,9 @@
-"""Report formatters. Each is a pure ``list[Finding] -> str``."""
-from . import text
+"""Report formatters. Each is a pure ``(findings, summary) -> str``."""
+from . import github, jsonl, sarif, text
 
-FORMATS = {"text": text.render}
+FORMATS = {
+    "text": text.render,
+    "jsonl": jsonl.render,
+    "sarif": sarif.render,
+    "github": github.render,
+}

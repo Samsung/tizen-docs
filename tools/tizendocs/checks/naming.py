@@ -13,7 +13,7 @@ def exempt(base):
     return base.startswith("toc") or base == "README.md"
 
 
-def check_kebab(index, path, text):
+def check_kebab(index, path, source):
     base = os.path.basename(path)
     if not exempt(base) and not KEBAB.match(base):
         yield Finding(ERROR, RULE, path, "new document names use lowercase kebab-case")

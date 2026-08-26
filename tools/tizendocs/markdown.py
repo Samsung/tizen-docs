@@ -1,4 +1,9 @@
-"""Markdown text extraction: links, images, headings, anchors."""
+"""Markdown text extraction: links, images, headings, anchors.
+
+Code is *masked* rather than deleted. Deleting it was simpler, but it shifted
+every subsequent offset, which made accurate line numbers impossible - and a
+finding without a line number cannot become an inline review comment.
+"""
 import re
 import urllib.parse
 
@@ -8,6 +13,12 @@ IMAGE = re.compile(r"!\[[^]]*\]\(([^)\s]+)(?:\s+[^)]*)?\)")
 NAMED_ANCHOR = re.compile(r'<a\s+(?:name|id)="([^"]+)"', re.I)
 CURLY_ANCHOR = re.compile(r"\{#([^}]+)\}")
 
+# Pattern kept byte-for-byte from the original implementation: loosening the
+# closing fence to allow trailing text made an opening fence with a language
+# tag pair as a closer, which silently masked live content.
+FENCE = re.compile(r"^\s*(```|~~~).*?^\s*\1\s*$", re.M | re.S)
+INLINE_CODE = re.compile(r"`[^`]*`")
+
 EXTERNAL = ("http://", "https://", "mailto:")
 
 
@@ -16,25 +27,68 @@ def read(path):
         return file.read()
 
 
+def _blank(match):
+    """Replace a span with spaces, keeping its length and its newlines."""
+    span = match.group(0)
+    if "\n" not in span:  # the common case: inline code
+        return " " * len(span)
+    return "\n".join(" " * len(line) for line in span.split("\n"))
+
+
 def without_code(text):
-    """Strip fenced and inline code so their contents are never linkified."""
-    text = re.sub(r"^\s*(```|~~~).*?^\s*\1\s*$", "", text, flags=re.M | re.S)
-    return re.sub(r"`[^`]*`", "", text)
+    """Mask fenced and inline code, preserving offsets and line breaks."""
+    text = FENCE.sub(_blank, text)
+    return INLINE_CODE.sub(_blank, text)
 
 
-def headings(text):
-    return list(HEADING.finditer(text))
+class Source:
+    """A masked document plus the offset-to-line mapping findings need."""
 
+    def __init__(self, raw):
+        self.raw = raw
+        self.text = without_code(raw)
+        self._starts = None
 
-def references(text):
-    """Yield ``(kind, url)`` for every Markdown link and image target.
+    def position(self, offset):
+        """Return the 1-based ``(line, column)`` for a character *offset*.
 
-    Links are yielded before images, matching the order findings were
-    historically reported in.
-    """
-    for pattern, kind in ((LINK, "link"), (IMAGE, "image")):
-        for match in pattern.finditer(text):
-            yield kind, match.group(1).strip("<> ")
+        The line table is built on first use. Most documents produce no
+        findings at all, so computing it up front would be pure overhead.
+        """
+        if self._starts is None:
+            starts, index = [0], self.text.find("\n")
+            while index != -1:
+                starts.append(index + 1)
+                index = self.text.find("\n", index + 1)
+            self._starts = starts
+        low, high = 0, len(self._starts) - 1
+        while low < high:
+            middle = (low + high + 1) // 2
+            if self._starts[middle] <= offset:
+                low = middle
+            else:
+                high = middle - 1
+        return low + 1, offset - self._starts[low] + 1
+
+    def headings(self):
+        return list(HEADING.finditer(self.text))
+
+    def references(self):
+        """Yield ``(syntax, url, offset)`` for every Markdown link and image.
+
+        The offset is resolved to a line only when a finding is emitted; most
+        references are fine and never need one.
+
+        Links precede images, keeping the historical report order.
+        """
+        for pattern, syntax in ((LINK, "md-link"), (IMAGE, "md-image")):
+            for match in pattern.finditer(self.text):
+                yield syntax, match.group(1).strip("<> "), match.start()
+
+    def anchors(self):
+        found = {match.group(1).lower() for match in NAMED_ANCHOR.finditer(self.text)}
+        found.update(m.group(1).lower() for m in CURLY_ANCHOR.finditer(self.text))
+        return found
 
 
 def split_fragment(url):

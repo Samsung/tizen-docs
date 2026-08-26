@@ -21,13 +21,32 @@ def test_no_arguments_is_an_error():
     assert "supply paths or use --changed-only" in result.stderr
 
 
+def findings_only(stdout):
+    """Drop the summary line, whose elapsed time is not reproducible."""
+    return [line for line in stdout.splitlines() if not line.startswith("check_docs:")]
+
+
 def test_all_reports_the_same_from_any_directory():
     """The old code hardcoded a relative docs/ path, so running it from inside
     docs/ silently checked nothing and exited 0."""
     from_root = run("--all")
     from_docs = run("--all", cwd=REPO / "docs")
-    assert from_root.stdout == from_docs.stdout
-    assert from_docs.stdout != ""
+    assert findings_only(from_root.stdout) == findings_only(from_docs.stdout)
+    assert findings_only(from_docs.stdout) != []
+
+
+def test_a_summary_is_always_printed():
+    """Silence used to be ambiguous: an unresolvable --base produced no output
+    and exit 0, so a reader could not tell "passed" from "did not run"."""
+    result = run("--changed-only", "--base", "HEAD")
+    assert result.stdout.splitlines()[-1].startswith("check_docs: ")
+
+
+def test_every_format_produces_output():
+    for name in ("text", "jsonl", "sarif", "github"):
+        result = run("--all", "--format", name)
+        assert result.stdout.strip(), name
+        assert result.returncode == 1, name
 
 
 def test_relative_path_from_a_subdirectory_resolves():

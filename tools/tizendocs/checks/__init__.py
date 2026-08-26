@@ -1,6 +1,6 @@
 """The rule registry.
 
-Every rule is a generator ``(index, path, text) -> Iterable[Finding]`` with no
+Every rule is a generator ``(index, path, source) -> Iterable[Finding]`` with no
 side effects: no printing, no exit codes. That purity is what lets the same
 rules feed a text report, a machine-readable report, and later a CI gate.
 
@@ -24,9 +24,9 @@ def run(index, path):
     """Yield every finding for one document, in registry order."""
     if not path.startswith("docs/") or not path.endswith(".md") or not index.exists(path):
         return
-    text = index.text(path)
+    source = index.source(path)
     generated = index.generated(path)
     for _, function, skip_when_generated in REGISTRY:
         if generated and skip_when_generated:
             continue
-        yield from function(index, path, text)
+        yield from function(index, path, source)

@@ -52,20 +52,25 @@ class DocsIndex:
 
     # ---- documents ------------------------------------------------------
 
-    def text(self, path):
-        return markdown.without_code(markdown.read(self.absolute(path)))
+    @functools.lru_cache(maxsize=None)
+    def source(self, path):
+        """The masked document plus its offset-to-line mapping.
+
+        Memoized because a document with many links to one target would
+        otherwise re-read and re-parse that target once per link.
+        """
+        return markdown.Source(markdown.read(self.absolute(path)))
 
     @functools.lru_cache(maxsize=None)
     def anchors(self, path):
         """The anchor ids *path* defines: heading slugs and explicit anchors.
 
-        Memoized because a document with many links to one target would
-        otherwise re-parse that target once per link.
+        Memoized separately from source(): a document linked from many places
+        would otherwise re-slug every heading once per inbound link.
         """
-        text = self.text(path)
-        found = {slug(match.group(2)) for match in markdown.headings(text)}
-        found.update(m.group(1).lower() for m in markdown.NAMED_ANCHOR.finditer(text))
-        found.update(m.group(1).lower() for m in markdown.CURLY_ANCHOR.finditer(text))
+        source = self.source(path)
+        found = {slug(match.group(2)) for match in source.headings()}
+        found.update(source.anchors())
         return frozenset(found)
 
     # ---- tables of contents ---------------------------------------------
@@ -84,8 +89,7 @@ class DocsIndex:
         if self._toc_targets is None:
             targets = set()
             for toc in self.toc_files:
-                text = self.text(toc)
-                for match in markdown.LINK.finditer(text):
+                for match in markdown.LINK.finditer(self.source(toc).text):
                     raw, _ = markdown.split_fragment(match.group(1).strip("<> "))
                     if not raw or markdown.is_external(raw):
                         continue
