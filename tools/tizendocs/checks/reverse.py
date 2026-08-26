@@ -12,10 +12,12 @@ screenshot of someone doing it by hand.
 """
 import os
 
-from ..findings import ERROR, Finding
+from ..findings import ERROR, WARN, Finding
 
 INBOUND = "R-INBOUND"
 TOC = "R-TOC"
+MEDIA = "R-MEDIA"
+ANCHOR = "R-ANCHOR"
 
 
 def _is_toc(path):
@@ -78,3 +80,80 @@ def check_toc(index, change):
     considers the finding closed.
     """
     yield from _findings(index, change, TOC, want_toc=True)
+
+
+def check_media(index, change):
+    """Assets that became unreferenced because their only documents are gone.
+
+    reviewguide: "if a file is deleted, check the images used it the file. If
+    there are images that are not used any more, remove the images also."
+
+    The removed documents' references have to be read from the base revision:
+    the reverse graph is built from the working tree, where they no longer
+    exist.
+
+    WARN because the intent is unobservable: the author may be moving content
+    across two changes, or keeping an asset for a page not yet written.
+    """
+    from .. import markdown, paths
+
+    candidates = set()
+    for removed in change.removed:
+        before = change.previous(removed)
+        if before is None:
+            continue
+        for _, url, _ in markdown.Source(before).all_references():
+            raw, _ = markdown.split_fragment(url)
+            if not raw or markdown.is_external(raw):
+                continue
+            target = paths.resolve(removed, raw)
+            if target.endswith(".md") or not target.startswith("docs/"):
+                continue
+            if os.path.basename(os.path.dirname(target)) != "media":
+                continue
+            if index.exists(target):
+                candidates.add(target)
+
+    orphaned = sorted(target for target in candidates
+                      if not index.references_to(target))
+    if not orphaned:
+        return
+    total = sum(os.path.getsize(index.absolute(path)) for path in orphaned)
+    yield Finding(
+        WARN, MEDIA, sorted(orphaned)[0],
+        f"{len(orphaned)} media file(s) totalling {total / 1024:.0f} KB became "
+        "unreferenced when this change removed the only documents using them; "
+        "delete them or say why they are kept",
+        related=tuple(sorted(orphaned)[:10]))
+
+
+def check_anchor(index, change):
+    """Headings a change removes that other documents still link to.
+
+    SKILL.md already promises that renaming a heading means updating incoming
+    links; this is the only mechanism that could keep that promise. WARN
+    because the slug rule is an approximation of the renderer's.
+    """
+    from .. import slug as slug_module
+    for path, state in sorted(change.status.items()):
+        if state != "M" or not path.endswith(".md") or not index.exists(path):
+            continue
+        before = change.previous(path)
+        if before is None:
+            continue
+        gone = _heading_slugs(before) - _heading_slugs(index.source(path).raw)
+        for fragment in sorted(gone):
+            for reference in index.references_to(path):
+                if reference.raw.partition("#")[2].lower() != fragment:
+                    continue
+                yield Finding(
+                    WARN, ANCHOR, reference.source,
+                    f"links to #{fragment} in {path}, a heading this change "
+                    "removes", line=reference.line, col=reference.col,
+                    syntax=reference.syntax, cause=path)
+
+
+def _heading_slugs(text):
+    from .. import markdown, slug as slug_module
+    source = markdown.Source(text)
+    return {slug_module.slug(match.group(2)) for match in source.headings()}

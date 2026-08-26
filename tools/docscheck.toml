@@ -77,6 +77,7 @@ re-import; editing the output here is lost on the next import."""
 "T-ORPHAN" = "error"
 "L-BROKEN" = "error"
 "L-ANCHOR" = "error"
+"L-ANCHOR-AMBIG" = "warn"
 
 # Sub-diagnoses of a broken reference. Separate ids because each names a
 # different mistake and three of them can name the correction too, which is
@@ -111,6 +112,13 @@ re-import; editing the output here is lost on the next import."""
 "D-FM" = "warn"
 "N-KEBAB-DIR" = "error"
 
+# Content advisories from reviewguide/review_points_guide.md. Both are narrow
+# in scope on purpose; see [scope] below.
+"D-OVERVIEW" = "warn"
+"L-FEATPRIV" = "warn"
+"R-MEDIA" = "warn"
+"R-ANCHOR" = "warn"
+
 # ---------------------------------------------------------------------------
 # Rule scope. "added-only" means the rule is applied to files a change adds,
 # and stays silent otherwise. It is for requirements that are right for new
@@ -122,3 +130,14 @@ re-import; editing the output here is lost on the next import."""
 # nui/NUIsetup/ and so on. Renaming them would break dozens of links for a
 # cosmetic gain, so only new directories are held to the rule.
 "N-KEBAB-DIR" = "added-only"
+
+# Two thirds of existing pages are not linked from their section landing page,
+# and reaching a page through the TOC alone is legitimate. The value of this
+# rule is the reminder while a page is being written, not a corpus audit.
+"D-OVERVIEW" = "added-only"
+
+# 219 keys in the corpus are hyperlinked, but 143 of those are in
+# platform/release-notes/tizen-2-*.md - historical records that should not be
+# rewritten - and 65 more are in the features/ reference tables. Scoped to
+# changed files, the rule fixes a line when someone is already editing it.
+"L-FEATPRIV" = "changed-only"

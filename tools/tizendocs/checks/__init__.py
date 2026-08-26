@@ -9,7 +9,8 @@ output diffs stay reviewable.
 """
 from dataclasses import replace
 
-from . import document, links, media, naming, reverse, toc_checks, xml_toc
+from . import (content, document, links, media, naming, reverse, toc_checks,
+               xml_toc)
 
 #: ``(rule id, function)`` in report order.
 REGISTRY = (
@@ -21,6 +22,8 @@ REGISTRY = (
     (media.ALT, media.check_alt_text),
     (document.FRONT_MATTER, document.check_front_matter),
     (naming.DIR_RULE, naming.check_directory),
+    (content.OVERVIEW, content.check_overview),
+    (content.FEATPRIV, content.check_feature_privilege),
 )
 
 #: Rules that read the whole corpus once rather than one document at a time.
@@ -49,13 +52,16 @@ MEDIA_REGISTRY = (
 CHANGE_REGISTRY = (
     (reverse.INBOUND, reverse.check_inbound),
     (reverse.TOC, reverse.check_toc),
+    (reverse.MEDIA, reverse.check_media),
+    (reverse.ANCHOR, reverse.check_anchor),
 )
 
 RULE_IDS = tuple(dict.fromkeys(
     [rule for rule, _ in REGISTRY]
     + [rule for rule, _ in CORPUS_REGISTRY]
     + [rule for rule, _ in MEDIA_REGISTRY]
-    + [links.ANCHOR, links.HTML, links.DEPTH, links.CASE, links.DOCSPREFIX]
+    + [links.ANCHOR, links.ANCHOR_AMBIG, links.HTML, links.DEPTH,
+       links.CASE, links.DOCSPREFIX]
     + [rule for rule, _ in CHANGE_REGISTRY]))
 
 
@@ -84,6 +90,7 @@ def run_change(index, change):
 
 
 ADDED_ONLY = "added-only"
+CHANGED_ONLY = "changed-only"
 
 
 def applies(index, path, rule, change):
@@ -95,6 +102,8 @@ def applies(index, path, rule, change):
         # Without a change set there is no way to know what is new, so the
         # rule stays silent rather than reporting the whole legacy corpus.
         return bool(change) and change.status.get(path) == "A"
+    if scope == CHANGED_ONLY:
+        return bool(change) and path in change.status
     return True
 
 

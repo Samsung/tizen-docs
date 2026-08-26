@@ -11,7 +11,7 @@ from dataclasses import dataclass
 
 from . import config as config_module
 from . import markdown, paths
-from .slug import slug
+from . import slug as slug_module
 
 
 @dataclass(frozen=True)
@@ -110,15 +110,40 @@ class DocsIndex:
 
     @functools.lru_cache(maxsize=None)
     def anchors(self, path):
-        """The anchor ids *path* defines: heading slugs and explicit anchors.
+        """The anchor ids *path* defines, under every enabled slugger.
 
         Memoized separately from source(): a document linked from many places
         would otherwise re-slug every heading once per inbound link.
         """
         source = self.source(path)
-        found = {slug(match.group(2)) for match in source.headings()}
-        found.update(source.anchors())
+        found = set(source.anchors())
+        for match in source.headings():
+            found.update(slug_module.variants(match.group(2)).values())
         return frozenset(found)
+
+    @functools.lru_cache(maxsize=None)
+    def primary_anchors(self, path):
+        """Anchor ids under the primary slugger and explicit markup only."""
+        source = self.source(path)
+        found = set(source.anchors())
+        for match in source.headings():
+            found.add(slug_module.slug(match.group(2)))
+        return frozenset(found)
+
+    @functools.lru_cache(maxsize=None)
+    def duplicate_headings(self, path):
+        """Heading slugs that occur more than once.
+
+        Renderers disambiguate repeats differently (-1, -2, or not at all), so
+        a fragment aimed at a repeated heading is never reported as missing.
+        """
+        seen, repeated = set(), set()
+        for match in self.source(path).headings():
+            value = slug_module.slug(match.group(2))
+            if value in seen:
+                repeated.add(value)
+            seen.add(value)
+        return frozenset(repeated)
 
     # ---- tables of contents ---------------------------------------------
 

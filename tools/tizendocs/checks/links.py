@@ -7,12 +7,14 @@ name the correction.
 """
 import os
 import posixpath
+import re
 
-from .. import markdown, paths
-from ..findings import ERROR, Finding
+from .. import markdown, paths, slug as slug_module
+from ..findings import ERROR, WARN, Finding
 
 BROKEN = "L-BROKEN"
 ANCHOR = "L-ANCHOR"
+ANCHOR_AMBIG = "L-ANCHOR-AMBIG"
 HTML = "L-HTML"
 DEPTH = "L-DEPTH"
 CASE = "L-CASE"
@@ -107,8 +109,35 @@ def check_links(index, path, source):
             yield Finding(ERROR, rule, path,
                           f"{_describe(syntax)} target does not exist: {url}",
                           line=line, col=col, syntax=syntax, fix=fix)
-        elif (fragment and target.endswith(".md") and not index.generated(target)
-                and fragment.lower() not in index.anchors(target)):
-            line, col = source.position(offset)
-            yield Finding(ERROR, ANCHOR, path, f"anchor does not exist: {url}",
-                          line=line, col=col, syntax=syntax)
+        elif fragment and target.endswith(".md") and not index.generated(target):
+            yield from _check_fragment(index, path, source, offset, url,
+                                       target, fragment, syntax)
+
+
+def _check_fragment(index, path, source, offset, url, target, fragment, syntax):
+    """Report a fragment as missing only when no slugger can produce it."""
+    wanted = fragment.lower()
+    # Renderers disambiguate a repeated heading differently: some append -1,
+    # some -2, some nothing at all. Accept the whole family rather than pick a
+    # convention and report the others as missing.
+    base = re.sub(r"-\d+$", "", wanted)
+    if wanted in index.duplicate_headings(target) or \
+            base in index.duplicate_headings(target):
+        return
+    if wanted in index.primary_anchors(target):
+        return
+    line, col = source.position(offset)
+    if wanted in index.anchors(target):
+        producers = sorted(
+            name for name, function in slug_module.SLUGGERS
+            if any(function(m.group(2)) == wanted
+                   for m in index.source(target).headings()))
+        yield Finding(
+            WARN, ANCHOR_AMBIG, path,
+            f"anchor is renderer-dependent - produced by {', '.join(producers)} "
+            f"but not by {slug_module.PRIMARY}; prefer an explicit "
+            f"<a name=\"{fragment}\"></a>: {url}",
+            line=line, col=col, syntax=syntax)
+        return
+    yield Finding(ERROR, ANCHOR, path, f"anchor does not exist: {url}",
+                  line=line, col=col, syntax=syntax)

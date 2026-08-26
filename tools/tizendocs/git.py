@@ -14,6 +14,7 @@ class Change:
 
     status: dict = field(default_factory=dict)   # path -> A / M / D / R
     renames: dict = field(default_factory=dict)  # old path -> new path
+    before: dict = field(default_factory=dict)   # path -> content at base
 
     @property
     def paths(self):
@@ -30,6 +31,10 @@ class Change:
 
     def replacement(self, path):
         return self.renames.get(path, "")
+
+    def previous(self, path):
+        """The file's content at the base revision, or ``None``."""
+        return self.before.get(path)
 
 
 def describe(base, root):
@@ -56,6 +61,15 @@ def describe(base, root):
                 change.renames[old] = new
             else:
                 change.status.setdefault(fields[1], state)
+
+    # Deleted and renamed files are captured too: a rule that asks what a
+    # removal orphaned has to read the references the removed file used to
+    # make, and those are not in the working tree any more.
+    for path, state in change.status.items():
+        if state in "MDR" and path.endswith(".md"):
+            shown = _run(root, "show", f"{base}:{path}")
+            if shown.returncode == 0:
+                change.before[path] = shown.stdout
     return change
 
 

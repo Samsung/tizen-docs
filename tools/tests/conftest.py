@@ -2,6 +2,7 @@
 
 Production code is standard-library only; pytest is a development dependency.
 """
+import itertools
 import os
 import pathlib
 import subprocess
@@ -27,13 +28,36 @@ def real_config():
     """
     return config.load(root=str(TOOLS.parent))
 
-#: A corpus where two documents and a TOC all point at doomed.md.
+#: A corpus where two documents and a TOC all point at doomed.md, doomed.md is
+#: the only user of an image, and kept.md carries a heading others link to.
 REVERSE_SEED = {
     "docs/toc_all.md": "# Guides\n## [Kept](/kept.md)\n## [Doomed](/doomed.md)\n",
-    "docs/kept.md": '# Kept\n\nA link to [doomed](doomed.md).\n',
-    "docs/also.md": '# Also\n\n<a href="doomed.md">doomed</a>\n',
-    "docs/doomed.md": "# Doomed\n",
+    "docs/kept.md": ("# Kept\n\nA link to [doomed](doomed.md).\n\n"
+                     "## Removable heading\n\nBody.\n"),
+    "docs/also.md": ('# Also\n\n<a href="doomed.md">doomed</a>\n\n'
+                     "See [the heading](kept.md#removable-heading).\n"),
+    "docs/doomed.md": '# Doomed\n\n![A diagram](media/only-here.png)\n',
+    "docs/media/only-here.png": "x",
 }
+
+
+def reverse_scenarios(git_tree):
+    """Findings from each kind of removal, for the registry coverage test."""
+    findings = []
+
+    root, run = git_tree(REVERSE_SEED)
+    run("rm", "-q", "docs/doomed.md")
+    run("commit", "-q", "-m", "delete a page")
+    findings.extend(run_change(root, "HEAD~1"))
+
+    root, run = git_tree(REVERSE_SEED)
+    (root / "docs" / "kept.md").write_text(
+        "# Kept\n\nA link to [doomed](doomed.md).\n", encoding="utf-8")
+    run("add", "-A")
+    run("commit", "-q", "-m", "remove a heading")
+    findings.extend(run_change(root, "HEAD~1"))
+
+    return findings
 
 
 def run_change(root, base):
@@ -104,8 +128,12 @@ def git_tree(tmp_path):
     commit.gpgsign or core.hooksPath would otherwise make this suite fail or
     hang on their machine only.
     """
+    counter = itertools.count()
+
     def build(files):
-        root = tmp_path / "repo"
+        # A unique directory per call, so one test can build several
+        # repositories - the registry coverage test needs one per scenario.
+        root = tmp_path / f"repo{next(counter)}"
         (root / "docs").mkdir(parents=True)
         (root / "tools").mkdir()
         for name, body in files.items():
