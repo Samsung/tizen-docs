@@ -162,7 +162,6 @@
 ### Notifications and Content Sharing
 #### [Overview](/application/dotnet/guides/notification/overview.md)
 #### [Notifications](/application/dotnet/guides/notification/noti.md)
-#### [Attach Panel](/application/dotnet/guides/notification/attach-panel.md)
 
 ### Performance
 #### [Overview](/application/dotnet/guides/performance/overview.md)
@@ -616,11 +615,6 @@
 ##### [Overview](/application/native/guides/applications/tizen-core/tizen-core.md)
 ##### [Tizen Core Channel](/application/native/guides/applications/tizen-core/tizen-core-channel.md)
 ##### [Tizen Core Event](/application/native/guides/applications/tizen-core/tizen-core-event.md)
-#### UI Applications
-##### EFL Applications
-###### [Basic UI Application](/application/native/guides/applications/efl-ui-app.md)
-###### [Widget Application](/application/native/guides/applications/widget-app.md)
-
 #### [Service Applications](/application/native/guides/applications/service-app.md)
 #### [Component Based Applications](/application/native/guides/applications/component-based-app.md)
 
@@ -650,6 +644,10 @@
 #### [Overview](/application/native/guides/internationalization/overview.md)
 #### [i18n](/application/native/guides/internationalization/i18n.md)
 #### [Resource Localization](/application/native/guides/internationalization/resource-localization.md)
+
+### Graphics
+#### [Overview](/application/native/guides/graphics/overview.md)
+#### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
 
 ### Notifications and Content Sharing
 #### [Overview](/application/native/guides/notification/overview.md)

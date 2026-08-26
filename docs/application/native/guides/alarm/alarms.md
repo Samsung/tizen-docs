@@ -49,7 +49,7 @@ To enable your application to use the alarm functionality:
    ```
 
 > **Note**  
-> To set alarm for service application, the alarm registered with [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html) needs to have a [background category](../../guides/applications/efl-ui-app.md#describing-the-background-category).
+> To set alarm for service application, the alarm registered with [App Control](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html) needs to have a [background category](../../guides/applications/overview.md#describing-the-background-category).
 > The alarm for service application can only be registered using the 'alarm_schedule_after_delay()' API.
 
 

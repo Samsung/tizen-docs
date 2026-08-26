@@ -43,7 +43,6 @@ The following list defines Tizen Native API. The list describes the API modules 
   | Service Application | Handles Tizen service application (non-UI application) state changes and system events. It is also used to start and exit the main event loop of service applications. | [Latest](../api/common/latest/group__CAPI__SERVICE__APP__MODULE.html) | [Service Application](applications/service-app.md) |
   | Shortcut            | Adds application shortcuts to the device home screen, the main landing screen of the device. | [Latest](../api/common/latest/group__SHORTCUT__MODULE.html) | [Application Icons](app-management/app-icons.md) |
   | Tizen Core          | Tizen Core is a new main loop that improves the existing main loop model. It supports creating and running the main loop in multiple threads. Tizen Core provides an API that supports secure communication between threads. | [Latest](../api/common/latest/group__CAPI__TIZEN__CORE__MODULE.html) | [Tizen Core](applications/tizen-core/tizen-core.md) |
-  | Widget              | Handles Tizen widget application state changes and system events. It is also used to start and exit the main event loop of widget applications. | [Latest](../api/common/latest/group__CAPI__WIDGET__FRAMEWORK.html) | [EFL Widget Application](applications/widget-app.md) |
 
 - **Base**
 
@@ -221,7 +220,6 @@ The following list defines Tizen Native API. The list describes the API modules 
   | Fontconfig and Freetype   | Provides a text rendering library and font-handling library to let applications find a font or closely matching font. | [Latest](../api/common/latest/group__OPENSRC__FONTCONFIG__FRAMEWORK.html) |   |
   | HarfBuzz                  | Provides functions for text shaping. | [Latest](../api/common/latest/group__OPENSRC__HARFBUZZ__FRAMEWORK.html) |  |
   | Minicontrol               | Provides functions for creating and displaying an EFL socket window. | [Latest](../api/common/latest/group__MINICONTROL__LIBRARY.html) | [Minicontrol Window](notification/minicontrol.md) |
-  | OpenGL ES                 | Provides a library for rendering 3D and 2D graphics in embedded systems. | [Latest](../api/common/latest/group__OPENSRC__OPENGLES__FRAMEWORK.html) | [OpenGL ES](graphics/opengl.md) |
   | TBM Surface               | Provides functions for the graphics buffer.  | [Latest](../api/common/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html) | [Graphic Buffer and Surface](graphics/graphic-buffer.md) |
   | Tizen Window System Shell            | Allows you to communicate with the window manager.   | [Latest](../api/common/latest/group__TIZEN__WS__SHELL__MODULE.html) | [Tizen Window System Shell](ui/tizen-ws-shell/index.md) |
   | Vulkan                    | Provides functions for rendering 3D and 2D graphics in embedded systems. | [Latest](../api/common/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) | Vulkan |
