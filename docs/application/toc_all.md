@@ -27,6 +27,7 @@
 #### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
 
 ### [Application Filtering](/application/dotnet/reference/app-filtering.md)
+### [Limitations of .NET Standard API](/application/dotnet/reference/dotnet-standard-limitations.md)
 
 ## Guides
 ### [Overview](/application/dotnet/guides/index.md)
@@ -285,8 +286,6 @@
 ###### [Define UI Components in XAML](/application/dotnet/guides/user-interface/nui/xaml/ui-component-in-xaml.md)
 ###### [Layout Define Example](/application/dotnet/guides/user-interface/nui/xaml/layout-define-example.md)
 
-
-## [API Reference](/application/dotnet/api/overview.md)
 
 ## Samples
 ### [Overview](/application/dotnet/samples/overview.md)

@@ -33,7 +33,7 @@ The foundation of TizenFX is [.NET Core](https://docs.microsoft.com/en-us/dotnet
 - **High performance**: Optimized for efficient code execution and memory management
 
 > [!NOTE]
-> Some .NET Standard APIs have limitations on Tizen.
+> Some .NET Standard APIs have limitations on Tizen. For more information, see [Limitations of .NET Standard API](../reference/dotnet-standard-limitations.md).
 
 ### TizenFX API
 

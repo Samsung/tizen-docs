@@ -16,7 +16,7 @@ Ensure that you have installed the latest version of [Visual Studio Tools for Ti
 
 Explore more about the Tizen TV .NET application development:
 -   [Guides](../dotnet/guides/index.md)
--   [API reference ](../dotnet/api/overview.md)
+-   [API reference](/application/dotnet/api/TizenFX/index.html)
 
 ## Web applications
 You can create rich web applications that consist of HTML, JavaScript, and CSS that are combined in a package.
