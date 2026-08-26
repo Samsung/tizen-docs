@@ -13,9 +13,19 @@ TOOLS = pathlib.Path(__file__).resolve().parent.parent
 FIXTURES = pathlib.Path(__file__).resolve().parent / "fixtures"
 sys.path.insert(0, str(TOOLS))
 
-from tizendocs import checks, git  # noqa: E402
+from tizendocs import checks, config, git  # noqa: E402
 from tizendocs.index import DocsIndex  # noqa: E402
 from tizendocs.report import text  # noqa: E402
+
+
+def real_config():
+    """The repository's own docscheck.toml.
+
+    Fixture trees carry no configuration of their own, so without this they
+    would run with severities and scopes that do not exist in production - and
+    a rule scoped to added files only would appear to fire on everything.
+    """
+    return config.load(root=str(TOOLS.parent))
 
 #: A corpus where two documents and a TOC all point at doomed.md.
 REVERSE_SEED = {
@@ -28,22 +38,44 @@ REVERSE_SEED = {
 
 def run_change(root, base):
     """Findings the change-scoped rules produce for *root* against *base*."""
-    index = DocsIndex(root=str(root))
+    index = DocsIndex(root=str(root), config=real_config())
     change = git.describe(base, str(root))
     return list(checks.run_change(index, change))
 
 
 def checks_for(root, paths):
     """Per-document findings for an explicit path list, as --changed-only does."""
-    index = DocsIndex(root=str(root))
+    index = DocsIndex(root=str(root), config=real_config())
     return [finding for path in paths for finding in checks.run(index, path)]
 
 
-def run_tree(root):
-    """Run every rule over every Markdown file in *root* and return findings."""
-    index = DocsIndex(root=str(root))
+def declared_change(root):
+    """A synthetic change set from a fixture's optional added.txt.
+
+    Rules scoped to added files only need to know what is new, and a fixture
+    should be able to say so without building a git repository for it.
+    """
+    listing = pathlib.Path(root) / "added.txt"
+    if not listing.exists():
+        return None
+    added = [line.strip() for line in
+             listing.read_text(encoding="utf-8").split("\n") if line.strip()]
+    return git.Change(status={path: "A" for path in added})
+
+
+def run_tree(root, change=None):
+    """Run every applicable rule over *root* and return the findings.
+
+    Covers the per-document, corpus and media registries, so a fixture proves a
+    rule fires regardless of which registry it belongs to.
+    """
+    index = DocsIndex(root=str(root), config=real_config())
+    change = change or declared_change(root)
     documents = sorted(path for path in index.files if path.endswith(".md"))
-    return [finding for path in documents for finding in checks.run(index, path)]
+    findings = [f for path in documents for f in checks.run(index, path, change)]
+    findings.extend(checks.run_corpus(index))
+    findings.extend(checks.run_media(index))
+    return findings
 
 
 def ids(findings):

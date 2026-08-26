@@ -60,6 +60,9 @@ match = [
   "?docs/**/*.autogen.md",
 ]
 skip_rules = ["N-*", "D-*", "T-ORPHAN"]
+# One defect in a generator becomes hundreds of findings in its output, and
+# hundreds of findings are only ever a reason to stop reading the report.
+aggregate_rules = ["T-META"]
 reason = """Imported from another pipeline. Correct the upstream source and
 re-import; editing the output here is lost on the next import."""
 
@@ -88,3 +91,34 @@ re-import; editing the output here is lost on the next import."""
 # reports nothing.
 "R-INBOUND" = "error"
 "R-TOC" = "error"
+
+# Navigation. Heading depth in a toc*.md *is* navigation depth, so a skipped
+# level loses a node; both of these read zero today and are gated to keep it.
+"T-DANGLING" = "error"
+"T-DEPTH" = "error"
+"T-META-SRC" = "error"
+
+# A page may legitimately appear under more than one section of the same
+# navigation, so a repeated target is worth a look rather than a block.
+"T-DUP" = "warn"
+"T-META" = "warn"
+
+"T-XML" = "error"
+"T-XMLVER" = "error"
+"M-ALT" = "error"
+"M-JUNK" = "warn"
+"M-ORPHAN" = "warn"
+"D-FM" = "warn"
+"N-KEBAB-DIR" = "error"
+
+# ---------------------------------------------------------------------------
+# Rule scope. "added-only" means the rule is applied to files a change adds,
+# and stays silent otherwise. It is for requirements that are right for new
+# content but whose legacy violation count can never reach zero.
+# ---------------------------------------------------------------------------
+
+[scope]
+# 22 existing directories do not conform - platform/HAL/, vstools/Tizen/,
+# nui/NUIsetup/ and so on. Renaming them would break dozens of links for a
+# cosmetic gain, so only new directories are held to the rule.
+"N-KEBAB-DIR" = "added-only"

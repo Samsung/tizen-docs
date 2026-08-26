@@ -82,6 +82,11 @@ def classify(index, source_path, raw, syntax):
 
 
 def check_links(index, path, source):
+    if os.path.basename(path).startswith("toc"):
+        # A TOC is pure navigation, and T-DANGLING reports the same defect with
+        # the framing a reviewer needs: a missing entry drops a node out of the
+        # published menu, it is not just a 404 in prose.
+        return
     for syntax, url, offset in source.all_references():
         if not url or markdown.is_external(url) or url.startswith("#"):
             continue

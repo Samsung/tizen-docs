@@ -1,7 +1,13 @@
 {
-  "commit": "88106be33",
+  "commit": "16f7e2be2",
   "counts": {
     "L-HTML": 12,
+    "M-ALT": 2,
+    "M-JUNK": 3,
+    "M-ORPHAN": 400,
+    "T-DUP": 28,
+    "T-META": 1,
+    "T-META-SRC": 1,
     "T-ORPHAN": 4
   }
 }

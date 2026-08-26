@@ -5,7 +5,15 @@ from conftest import FIXTURES, run_tree
 
 
 def findings(name):
-    return {(f.rule, f.fix) for f in run_tree(FIXTURES / name)}
+    """Link findings only.
+
+    The media rules also fire on these fixtures, and correctly: a reference
+    that points at the wrong path makes its own target look unreferenced. That
+    interaction is asserted in the fixtures' expected findings and is why the
+    media subcommand refuses to run while a link error is open.
+    """
+    return {(f.rule, f.fix) for f in run_tree(FIXTURES / name)
+            if f.rule.startswith("L-")}
 
 
 def test_html_references_are_checked():

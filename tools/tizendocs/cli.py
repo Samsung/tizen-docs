@@ -9,7 +9,7 @@ import argparse
 import sys
 import time
 
-from . import checks, doctor, git, paths, report
+from . import checks, doctor, git, mediacmd, paths, report
 from .findings import ERROR, LEVELS, WARN, rank
 from .index import DocsIndex
 
@@ -58,8 +58,11 @@ def change_for(args, index):
 
 def select_paths(args, index):
     if args.all:
+        # Every TOC is included even when generated: navigation is published
+        # whoever wrote it, and docscheck.toml decides which rules apply.
         return sorted(path for path in index.files
-                      if path.endswith(".md") and index.handwritten(path))
+                      if path.endswith(".md")
+                      and (index.handwritten(path) or path in set(index.toc_files)))
     if args.paths:
         return [paths.normalize(path, index.root) for path in args.paths]
     if args.changed_only:
@@ -100,13 +103,13 @@ def summarize(findings, documents, elapsed):
             f"({documents} files, {elapsed:.2f}s)")
 
 
-SUBCOMMANDS = ("doctor",)
+SUBCOMMANDS = {"doctor": doctor.run, "media": mediacmd.run}
 
 
 def main(argv=None):
     argv = list(sys.argv[1:] if argv is None else argv)
     if argv and argv[0] in SUBCOMMANDS:
-        return doctor.run(DocsIndex())
+        return SUBCOMMANDS[argv[0]](DocsIndex())
     parser = build_parser()
     args = parser.parse_args(argv)
     started = time.monotonic()
@@ -115,8 +118,19 @@ def main(argv=None):
     if selected is None:
         parser.error("supply paths or use --changed-only")
 
-    collected = [f for path in selected for f in checks.run(index, path)]
     change = change_for(args, index)
+    collected = [f for path in selected for f in checks.run(index, path, change)]
+
+    # Corpus rules read all fourteen TOC files once. In a change-scoped run
+    # their findings are attributed the same way everything else is, so a
+    # contributor is not shown navigation problems they did not create.
+    corpus = list(checks.run_corpus(index))
+    if args.all or args.paths:
+        collected.extend(corpus)
+    else:
+        touched = set(selected)
+        collected.extend(f for f in corpus if f.path in touched)
+
     if change is not None and change.removed:
         collected.extend(checks.run_change(index, change))
     findings = filter_findings(collected, args)

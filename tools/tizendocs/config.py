@@ -97,6 +97,8 @@ class Config:
         self.schema = data.get("schema", 1)
         self.classes = [PathClass(entry) for entry in data.get("classes", ())]
         self.rules = dict(data.get("rules", {}))
+        #: rule id -> scope name. See Config.scope().
+        self.scopes = dict(data.get("scope", {}))
 
     # ---- path classification (first match wins) --------------------------
 
@@ -140,6 +142,19 @@ class Config:
                    for entry in self.classes if entry.link_policy == EXEMPT_EXISTENCE)
 
     # ---- severities ------------------------------------------------------
+
+    def scope(self, rule):
+        """When a rule applies. ``""`` means every selected document.
+
+        ``added-only`` exists for rules whose legacy violation count can never
+        reach zero but whose requirement is right for new content - directory
+        naming, for one, where renaming platform/HAL/ would break dozens of
+        links for a cosmetic gain.
+        """
+        for pattern, name in self.scopes.items():
+            if fnmatch.fnmatchcase(rule, pattern):
+                return name
+        return ""
 
     def severity(self, rule, default):
         for pattern, level in self.rules.items():
