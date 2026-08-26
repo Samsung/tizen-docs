@@ -287,13 +287,6 @@
 ###### [Layout Define Example](/application/dotnet/guides/user-interface/nui/xaml/layout-define-example.md)
 
 
-## Samples
-### [Overview](/application/dotnet/samples/overview.md)
-### NUI
-#### [UI](/application/dotnet/samples/nui/ui/overview.md)
-#### [UIX](/application/dotnet/samples/nui/uix/overview.md)
-
-
 # Web Application
 
 ## [Overview](/application/web/index.md)
