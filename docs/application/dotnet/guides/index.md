@@ -52,7 +52,6 @@ For working code, see the [Tizen .NET sample applications](https://github.com/Sa
                         <li><a href="account/app-history.md">Application Usage History Data</a></li>
                         <li><a href="account/account.md">Account Management</a></li>
                         <li><a href="account/data-sync.md">Synchronization Management</a></li>
-                        <li><a href="account/fido.md">FIDO Universal Authentication Framework</a></li>
                     </ul>
                 </div>
             </div>
@@ -202,7 +201,6 @@ For working code, see the [Tizen .NET sample applications](https://github.com/Sa
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="location/location.md">Location</a></li>
-                        <li><a href="location/geofences.md">Geofences</a></li>
                     </ul>
                 </div>
             </div>
@@ -265,8 +263,6 @@ For working code, see the [Tizen .NET sample applications](https://github.com/Sa
                 <p class="h3 card-title">Messaging</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="messaging/email.md">Email</a></li>
-                        <li><a href="messaging/messages.md">Messages</a></li>
                         <li><a href="messaging/push-server.md">Push Server</a></li>
                         <li><a href="messaging/push.md">Push</a></li>
                     </ul>

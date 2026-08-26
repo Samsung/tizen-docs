@@ -6,7 +6,7 @@ Layers can also clip their contents, to exclude any content outside a user defin
 
 Layers can be two-dimensional or three-dimensional, defined by their _behavior_ property.
 
- ![ ](./media/layers.png)
+ ![Three overlapping rectangles labelled Root Layer, Layer 1 and Layer 2, stacked front to back](./media/layers.png)
 
 When a layer is added to the Window, it assigns a unique depth value. By default, the stage has a root layer with a depth value of 0.
 
@@ -101,7 +101,7 @@ When you set the behavior of the layer to `Layer3D`, the opaque renderers are dr
 
 Transparent renderers are drawn in order of distance from the camera ( painter's algorithm ).
 
- ![ ](./media/transSort.png)
+ ![A camera viewing three objects at increasing distance, the nearest labelled drawn last and the farthest drawn first](./media/transSort.png)
 
 ## Related Information
 - Dependencies
