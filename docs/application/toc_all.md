@@ -19,12 +19,6 @@
 ### [API Privileges](/application/dotnet/reference/api-privileges.md)
 ### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ### [Install Samsung Smart TV Extension](/application/dotnet/get-started/install-samsung-tv-extension.md)
-### Certificates
-#### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
-#### [Installing the Extension](/application/dotnet/guides/concepts/signing-certificates/installing-the-extension.md)
-#### [Creating Certificates](/application/dotnet/guides/concepts/signing-certificates/creating-certificates.md)
-#### [Signing Application with Certificate](/application/dotnet/guides/concepts/signing-certificates/signing-application-with-certificate.md)
-#### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
 
 ### [Application Filtering](/application/dotnet/reference/app-filtering.md)
 ### [Limitations of .NET Standard API](/application/dotnet/reference/dotnet-standard-limitations.md)
@@ -172,6 +166,13 @@
 #### [Overview](/application/dotnet/guides/pims/overview.md)
 #### [Calendar](/application/dotnet/guides/pims/calendar.md)
 #### [Contacts](/application/dotnet/guides/pims/contacts.md)
+
+### Certificates
+#### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
+#### [Installing the Extension](/application/dotnet/guides/concepts/signing-certificates/installing-the-extension.md)
+#### [Creating Certificates](/application/dotnet/guides/concepts/signing-certificates/creating-certificates.md)
+#### [Signing Application with Certificate](/application/dotnet/guides/concepts/signing-certificates/signing-application-with-certificate.md)
+#### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
 
 ### Security
 #### [Overview](/application/dotnet/guides/security/overview.md)
