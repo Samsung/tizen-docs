@@ -76,3 +76,23 @@ def describe(base, root):
 def changed_files(base, root):
     """The paths a change touches, for the default per-document rules."""
     return describe(base, root).paths
+
+
+def changed_lines(base, root):
+    """Map each changed file to the set of line numbers the change adds.
+
+    Style notes are filtered through this. Reporting a pre-existing hard tab
+    because someone edited the paragraph below it is how a rule earns a
+    reputation for noise.
+    """
+    result = _run(root, "diff", "--unified=0", "--no-color", base)
+    lines, path = {}, None
+    for line in result.stdout.splitlines():
+        if line.startswith("+++ b/"):
+            path = line[6:]
+        elif line.startswith("@@") and path:
+            span = line.split("+", 1)[1].split(" ", 1)[0]
+            start, _, count = span.partition(",")
+            start, count = int(start), int(count or 1)
+            lines.setdefault(path, set()).update(range(start, start + count))
+    return lines

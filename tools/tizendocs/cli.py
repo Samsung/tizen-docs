@@ -9,7 +9,7 @@ import argparse
 import sys
 import time
 
-from . import checks, doctor, git, mediacmd, paths, report
+from . import checks, doctor, export, git, mediacmd, paths, report, style
 from .findings import ERROR, LEVELS, WARN, rank
 from .index import DocsIndex
 
@@ -39,6 +39,9 @@ def build_parser():
                              "renames break elsewhere in the corpus")
     parser.add_argument("--no-removals", action="store_true",
                         help="skip the reverse-direction rules")
+    parser.add_argument("--style", action="store_true",
+                        help="also emit markdownlint notes for changed lines "
+                             "(needs markdownlint-cli2; never affects the exit code)")
     return parser
 
 
@@ -106,8 +109,20 @@ def summarize(findings, documents, elapsed):
 SUBCOMMANDS = {"doctor": doctor.run, "media": mediacmd.run}
 
 
+def run_export(argv):
+    tool, check = "", False
+    for index, value in enumerate(argv):
+        if value == "--tool" and index + 1 < len(argv):
+            tool = argv[index + 1]
+        elif value == "--check":
+            check = True
+    return export.run(DocsIndex(), tool, check)
+
+
 def main(argv=None):
     argv = list(sys.argv[1:] if argv is None else argv)
+    if argv and argv[0] == "export-ignores":
+        return run_export(argv[1:])
     if argv and argv[0] in SUBCOMMANDS:
         return SUBCOMMANDS[argv[0]](DocsIndex())
     parser = build_parser()

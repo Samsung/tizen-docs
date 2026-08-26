@@ -1,0 +1,21 @@
+// GENERATED from tools/docscheck.toml by
+//     python3 tools/check_docs.py export-ignores --tool markdownlint
+// Do not edit. Change docscheck.toml and regenerate.
+{
+  "config": {
+    "default": false,
+    "MD003": true,
+    "MD004": true,
+    "MD009": true,
+    "MD010": true,
+    "MD040": true,
+    "MD047": true
+  },
+  "globs": [
+    "docs/**/*.md"
+  ],
+  "ignores": [
+    "docs/**/api/**",
+    "docs/**/wiki/**"
+  ]
+}
