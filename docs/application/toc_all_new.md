@@ -637,17 +637,6 @@
 ### Graphics
 #### [Overview](/application/native/guides/graphics/overview.md)
 #### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
-#### OpenGL&reg; ES
-##### [Overview](/application/native/guides/graphics/opengl.md)
-##### [Polygon Mesh in OpenGL&reg; ES](/application/native/guides/graphics/polygon-mesh.md)
-##### [Vertex Shader](/application/native/guides/graphics/vertex-shader.md)
-##### [Primitive Assembly and Rasterization](/application/native/guides/graphics/assembly.md)
-##### [Texturing](/application/native/guides/graphics/texturing.md)
-##### [Fragment Shader](/application/native/guides/graphics/fragment-shader.md)
-##### [Output Merging](/application/native/guides/graphics/output-merging.md)
-##### [Interactive UI](/application/native/guides/graphics/interactive-ui.md)
-##### [Advanced Rendering](/application/native/guides/graphics/adv-rendering.md)
-##### [Advanced Performance](/application/native/guides/graphics/adv-performance.md)
 
 ### Notifications and Content Sharing
 #### [Overview](/application/native/guides/notification/overview.md)
@@ -863,10 +852,8 @@
 #### [Install SDK Common Tools](/application/vscode-ext/tools/welcome-page.md)
 #### [Install TV Extension & Certificate Extension](/application/vscode-ext/tv-certificate-extension.md)
 [//]: # (TBD)
-<!-- #### [Summary of installation and updates](/application/vscode-ext/summary-installation-updates.md) -->
 ### Develop Your App
 [//]: # (Cover below contents on the first overview page of VSCode extentions)
-<!-- #### [Overview of View Compositon, Supporting tool & menu](/application/vscode-ext/getting-started/view-composition-supporting-tools-menu.md) -->
 #### Prepare & Create
 ##### Tool: Package Manager
 ###### [Overview](/application/tizen-studio/common-tools/package-manager.md)
@@ -875,7 +862,6 @@
 ##### [Create App](/application/vscode-ext/getting-started/creating-application-projects.md)
 ##### Configure App
 [//]: # (Below content can be covered at the advanced topic)
-<!-- ##### [How to Hybrid & MultiApp Packaging](/application/vscode-ext/getting-started/configuring-hybrid-multi-app-packaging.md) -->
 ###### [App Signing Configure](/application/vscode-ext/getting-started/configuring-app-signing.md)
 ###### [Workload & Nuget Configure](/application/vscode-ext/getting-started/configuring-app-workload-nuget.md)
 #### Code & Build
@@ -925,10 +911,8 @@
 #### [Install SDK Common Tools](/application/vscode-ext/tools/welcome-page.md)
 #### [Install TV Extension & Certificate Extension](/application/vscode-ext/tv-certificate-extension.md)
 [//]: # (TBD)
-<!-- #### [Summary of installation and updates](/application/vscode-ext/summary-installation-updates.md) -->
 ### Develop Your App
 [//]: # (Cover below contents on the first overview page of VSCode extentions)
-<!-- #### [Overview of View Compositon, Supporting tool & menu](/application/vscode-ext/getting-started/view-composition-supporting-tools-menu.md) -->
 #### Prepare & Create
 ##### Tool: Package Manager
 ###### [Overview](/application/tizen-studio/common-tools/package-manager.md)
@@ -937,7 +921,6 @@
 ##### [Create App](/application/vscode-ext/getting-started/creating-application-projects.md)
 ##### Configure App
 [//]: # (Below content can be covered at the advanced topic)
-<!-- ##### [How to Hybrid & MultiApp Packaging](/application/vscode-ext/getting-started/configuring-hybrid-multi-app-packaging.md) -->
 ###### [App Signing Configure](/application/vscode-ext/getting-started/configuring-app-signing.md)
 #### Code & Build
 ##### [Edit Code(Build / Install)](/application/vscode-ext/getting-started/edit-code.md)
@@ -981,10 +964,8 @@
 #### [Install SDK Common Tools](/application/vscode-ext/tools/welcome-page.md)
 #### [Install TV Extension & Certificate Extension](/application/vscode-ext/tv-certificate-extension.md)
 [//]: # (TBD)
-<!-- #### [Summary of installation and updates](/application/vscode-ext/summary-installation-updates.md) -->
 ### Develop Your App
 [//]: # (Cover below contents on the first overview page of VSCode extentions)
-<!-- #### [Overview of View Compositon, Supporting tool & menu](/application/vscode-ext/getting-started/view-composition-supporting-tools-menu.md) -->
 #### Prepare & Create
 ##### Tool: Package Manager
 ###### [Overview](/application/tizen-studio/common-tools/package-manager.md)
@@ -993,7 +974,6 @@
 ##### [Create App](/application/vscode-ext/getting-started/creating-application-projects.md)
 ##### Configure App
 [//]: # (Below content can be covered at the advanced topic)
-<!-- ##### [How to Hybrid & MultiApp Packaging](/application/vscode-ext/getting-started/configuring-hybrid-multi-app-packaging.md) -->
 ###### [App Signing Configure](/application/vscode-ext/getting-started/configuring-app-signing.md)
 ###### [Workload & Nuget Configure](/application/vscode-ext/getting-started/configuring-app-workload-nuget.md)
 #### Code & Build
@@ -1040,10 +1020,8 @@
 #### [Install SDK Common Tools](/application/vstools/install-sdk-common-tools.md)
 #### [Install TV Extension & Certificate Extension](/application/vstools/tv-certificate-extension.md)
 [//]: # (TBD)
-<!-- #### [Summary of installation and updates](/application/vstools/summary-installation-updates.md) -->
 ### Develop Your App
 [//]: # (Cover below contents on the first overview page of VS extentions)
-<!-- #### [Overview of View Compositon, Supporting tool & menu](/application/vstools/getting-started/view-composition-supporting-tools-menu.md) -->
 #### Prepare & Create
 ##### Tool: Package Manager
 ###### [Overview](/application/tizen-studio/common-tools/package-manager.md)
@@ -1105,10 +1083,8 @@
 #### [Install SDK Common Tools](/application/vstools/install-sdk-common-tools.md)
 #### [Install TV Extension & Certificate Extension](/application/vstools/tv-certificate-extension.md)
 [//]: # (TBD)
-<!-- #### [Summary of installation and updates](/application/vstools/summary-installation-updates.md) -->
 ### Develop Your App
 [//]: # (Cover below contents on the first overview page of VS extentions)
-<!-- #### [Overview of View Compositon, Supporting tool & menu](/application/vstools/getting-started/view-composition-supporting-tools-menu.md) -->
 #### Prepare & Create
 ##### Tool: Package Manager
 ###### [Overview](/application/tizen-studio/common-tools/package-manager.md)
@@ -1164,10 +1140,8 @@
 #### [Install SDK Common Tools](/application/vstools/install-sdk-common-tools.md)
 #### [Install TV Extension & Certificate Extension](/application/vstools/tv-certificate-extension.md)
 [//]: # (TBD)
-<!-- #### [Summary of installation and updates](/application/vstools/summary-installation-updates.md) -->
 ### Develop Your App
 [//]: # (Cover below contents on the first overview page of VS extentions)
-<!-- #### [Overview of View Compositon, Supporting tool & menu](/application/vstools/getting-started/view-composition-supporting-tools-menu.md) -->
 #### Prepare & Create
 ##### Tool: Package Manager
 ###### [Overview](/application/tizen-studio/common-tools/package-manager.md)
@@ -1231,14 +1205,11 @@
 #### [Install SDK Common Tools](/application/vscode-ext/tools/welcome-page.md)
 #### [Install TV extension & certificate extension](/application/vscode-ext/tv-certificate-extension.md)
 [//]: # (TBD)
-<!-- #### [Summary of installation and updates](/application/vscode-ext/summary-installation-updates.md) -->
 ### Getting Started
 [//]: # (Cover below contents on the first overview page of VSCode extentions)
-<!-- #### [Overview of View Compositon, Supporting tool & menu](/application/vscode-ext/getting-started/view-composition-supporting-tools-menu.md) -->
 #### [Create App)](/application/vscode-ext/getting-started/creating-application-projects.md)
 #### Configure App
 [//]: # (Below content can be covered at the advanced topic)
-<!-- ##### [How to Hybrid & MultiApp Packaging](/application/vscode-ext/getting-started/configuring-hybrid-multi-app-packaging.md) -->
 ##### [App Signing Configure](/application/vscode-ext/getting-started/configuring-app-signing.md)
 ##### [Workload & Nuget Configure](/application/vscode-ext/getting-started/configuring-app-workload-nuget.md)
 #### [Build & Run App](/application/vscode-ext/getting-started/edit-code.md)
@@ -1272,10 +1243,8 @@
 #### [Install SDK Common Tools](/application/vstools/install-sdk-common-tools.md)
 #### [Install TV extension & certificate extension](/application/vstools/tv-certificate-extension.md)
 [//]: # (TBD)
-<!-- #### [Summary of installation and updates](/application/vstools/summary-installation-updates.md) -->
 ### Getting Started
 [//]: # (Cover below contents on the first overview page of VS extentions)
-<!-- #### [Overview of View Compositon, Supporting tool & menu](/application/vstools/getting-started/view-composition-supporting-tools-menu.md) -->
 #### [Create App](/application/vstools/getting-started/creating-application-projects.md)
 #### Configure App
 ##### [Manifest & Config Editor](/application/vstools/getting-started/configuring-app-manifest-config-editor.md)

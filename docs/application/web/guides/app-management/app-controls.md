@@ -541,7 +541,7 @@ Learning how to broadcast and listen for events allows you to create Web applica
 
 When a Web application becomes invisible (moves to the background), it is suspended. Before Tizen 2.4, to continue to execute the application in the background, you had to set the `background-support` attribute of the `<tizen:setting>` element to `enable` in the `config.xml` file.
 
-Since Tizen 2.4, the background process management policy has been changed. The system does not allow applications to run in the background except when they are explicitly declared to do so by having a specific background category. For more information on the available background categories, see the [Allowed background application policy](../../../native/guides/applications/efl-ui-app.md#allow_bg_table) table.
+Since Tizen 2.4, the background process management policy has been changed. The system does not allow applications to run in the background except when they are explicitly declared to do so by having a specific background category. For more information on the available background categories, see the [Allowed background application policy](../../../native/guides/applications/overview.md#allow_bg_table) table.
 
 > [!NOTE]
 > To guarantee that a Web application runs in the background, at least 1 `background-category` element must be declared in the `config.xml` file, and the `background-support` attribute of the `<tizen:setting>` element must be set to `enable`.

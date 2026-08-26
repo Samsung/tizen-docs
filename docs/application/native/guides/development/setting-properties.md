@@ -218,7 +218,7 @@ You can perform the following tasks using the **Advanced** tab:
 
 - Add the background category type (since Tizen 2.4).
 
-  You can [describe the background category](../../guides/applications/efl-ui-app.md#describing-the-background-category) of your Tizen native application.
+  You can [describe the background category](../../guides/applications/overview.md#describing-the-background-category) of your Tizen native application.
 
   To add background category types to allow running in the background, click **+** in the **Background Category** panel, select the category type, and click **OK**.
 
