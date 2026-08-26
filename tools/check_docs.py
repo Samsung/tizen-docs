@@ -6,6 +6,7 @@ Run from the repository root:
   python3 tools/check_docs.py path/to/document.md [path/to/toc_all.md]
 """
 import argparse
+import functools
 import os
 import re
 import subprocess
@@ -48,7 +49,13 @@ def slug(value):
     return re.sub(r"\s+", "-", value).strip("-")
 
 
+@functools.lru_cache(maxsize=None)
 def anchors(path):
+    """Return the anchor ids a document defines.
+
+    Memoized: a document with many links to the same target would otherwise
+    re-read and re-parse that target once per link.
+    """
     text = without_code(read(path))
     found = {slug(match.group(2)) for match in HEADING.finditer(text)}
     found.update(match.group(1).lower() for match in re.finditer(
