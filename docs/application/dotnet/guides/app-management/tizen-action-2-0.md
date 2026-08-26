@@ -26,6 +26,12 @@ The main Tizen Action 2.0 features are:
 | `actionc` | Converts Actions and Entities into a TIDL interface and generates the service stub in the requested language. |
 | Agent | Discovers Actions and Entities and executes an Action through the Action API or the `action-tool` CLI. |
 
+The following figure shows how a single user utterance flows through the framework to your application and back:
+
+**Figure: Action execution flow from a user utterance**
+
+![Action execution flow from a user utterance](./media/tizen_action_2_0_flow_dotnet.png)
+
 ## Action and Entity schemas
 
 A TIDL Action schema declares its name, category, contracts, and provider. The platform `Tv_Tizen.Action.Browser_Go` Action is defined as follows:
