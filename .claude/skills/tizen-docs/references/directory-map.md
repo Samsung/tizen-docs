@@ -33,9 +33,10 @@ versioned API-reference files (mostly static HTML with supporting JS/CSS) under
 hand-edit them (see AGENTS.md). The counts below are Markdown-file counts unless a row
 says otherwise.
 
-### `docs/application/` (~880 hand-written `.md`, plus ~53,000 generated API files)
+### `docs/application/` (~630 hand-written `.md`, plus ~53,000 generated API files)
 
-Application-developer guides, organized by SDK/language profile and by tool:
+Application-developer guides, organized by language profile. Tooling documentation
+lives in [`docs/sdk-tools/`](#docssdk-tools-252-md) instead:
 
 | Subdirectory | Content |
 | --- | --- |
@@ -43,17 +44,35 @@ Application-developer guides, organized by SDK/language profile and by tool:
 | `web/` (164 md) | Web/W3C API guides. `web/api/` holds the largest generated HTML block in the repo (device_api, ui_fw_api, w3c_api, versioned by release). See `reviewguide/review_points_web_api.md` before touching anything under here — Web is unusual in that the API reference itself lives in this repo as HTML, not Markdown, and must follow HTML markup conventions, not Markdown syntax. |
 | `dotnet/` (201 md) | .NET/Xamarin guides; small generated `api/` stub. |
 | `flutter/` (13 md) | Flutter guides — the newest, smallest profile. |
-| `tizen-studio/` (138 md) | Tizen Studio IDE guide. |
-| `vscode-ext/` (66 md) | VS Code extension guide. |
-| `vstools/` (51 md) | Visual Studio Tools for Tizen (Windows). |
-| `vstools-mac/` (1 md) | Visual Studio Tools for Tizen (Mac). |
 | `features/` (5 md), `profiles/` (3 md) | Small cross-cutting overview pages. |
 
-`application/` also carries several parallel top-level TOCs — `toc_all.md`,
-`toc_all_new.md`, `toc_vscode_native.md`, `toc_vscode_web.md`, `toc_vscode_dotnet.md`,
-`toc_vs-ext_native.md`, `toc_vs-ext_web.md`, `toc_vs-ext_dotnet.md` — one per IDE/profile
-combination. Confirm which TOC(s) govern a page before editing navigation; a page can be
-linked from more than one.
+`application/toc_all.md` is the section's only TOC. Be aware that the publishing
+pipeline reads just its `# .NET Application`, `# Web Application` and
+`# Native Application` blocks; `# Get Started` and `# Reference` are not consumed
+today, so adding a page there alone will not make it appear on the site.
+
+### `docs/sdk-tools/` (252 md)
+
+SDK and IDE tooling documentation, organized by tool:
+
+| Subdirectory | Content |
+| --- | --- |
+| `tizen-studio/` (138 md) | Tizen Studio IDE guide: setup, common/native/web/platform tools, tizen-core, release notes. |
+| `vscode-ext/` (63 md) | VS Code extension guide. |
+| `vstools/` (49 md) | Visual Studio Tools for Tizen (Windows). |
+| `vstools-mac/` (1 md) | Visual Studio Tools for Tizen (Mac). |
+| `sdktool-index.md` | Flat A–Z index of every SDK tool, linking into the three trees above. |
+
+Navigation here is unusual and worth understanding before you edit it. The six
+per-IDE TOCs — `toc_vscode_{native,web,dotnet}.md` and
+`toc_vs-ext_{native,web,dotnet}.md` — are what the pipeline actually publishes, one
+per app-model × IDE permutation, and all six draw from the same three tool trees.
+A page reachable in one permutation may be missing from another, so check every
+TOC that should list a page, not just one.
+
+`sdk-tools/toc_all.md` is *not* read by the pipeline. It documents the section's
+information architecture and keeps `tools/check_docs.py` able to distinguish a
+genuine orphan from a known one; adding a page there does not publish it.
 
 ### `docs/platform/` (121 md, no generated bulk)
 
