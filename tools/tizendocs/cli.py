@@ -6,11 +6,12 @@ The canonical invocation is referenced verbatim in README.md, AGENTS.md and
     python3 tools/check_docs.py --changed-only --base origin/master
 """
 import argparse
+import os
 import sys
 import time
 
-from . import checks, doctor, export, git, mediacmd, paths, report, style
-from .findings import ERROR, LEVELS, WARN, rank
+from . import baseline, checks, doctor, export, git, mediacmd, paths, report, style
+from .findings import ERROR, LEVELS, WARN, Finding, rank
 from .index import DocsIndex
 
 
@@ -39,6 +40,13 @@ def build_parser():
                              "renames break elsewhere in the corpus")
     parser.add_argument("--no-removals", action="store_true",
                         help="skip the reverse-direction rules")
+    parser.add_argument("--baseline", default=baseline.DEFAULT,
+                        help="file of accepted findings (default: "
+                             f"{baseline.DEFAULT})")
+    parser.add_argument("--no-baseline", action="store_true",
+                        help="report baselined findings as errors again")
+    parser.add_argument("--write-baseline", action="store_true",
+                        help="rewrite the baseline from this run's findings")
     parser.add_argument("--style", action="store_true",
                         help="also emit markdownlint notes for changed lines "
                              "(needs markdownlint-cli2; never affects the exit code)")
@@ -151,7 +159,21 @@ def main(argv=None):
 
     if change is not None and change.removed:
         collected.extend(checks.run_change(index, change))
+    stale = []
+    if not args.no_baseline:
+        entries, _ = baseline.load(os.path.join(index.root, args.baseline))
+        collected, stale = baseline.apply(collected, entries)
     findings = filter_findings(collected, args)
+    # Only a whole-corpus run can conclude that a baseline entry is stale. In
+    # a scoped run the file simply was not examined, and absence proves nothing.
+    if args.all:
+        for entry in stale:
+            rule, path, message = entry.split("\t", 2)
+            findings.append(Finding(
+                ERROR, "B-STALE", path,
+                f"baseline lists a {rule} finding that no longer occurs; remove "
+                f"the line from {args.baseline}: {message}"))
+
     elapsed = time.monotonic() - started
     summary = summarize(findings, len(selected), elapsed) if args.format == "text" else None
     sys.stdout.write(report.FORMATS[args.format](findings, summary))

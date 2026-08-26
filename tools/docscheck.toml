@@ -32,22 +32,22 @@ imported output. They get the full set of checks."""
 [[classes]]
 id = "published-elsewhere"
 match = [
-  "docs/application/native/api/*/latest/**",
   # docs/application/dotnet/api/ is not in this checkout at all - the .NET API
-  # reference is published from the TizenFX repository - yet 1231 links point
+  # reference is published from the TizenFX repository - yet ~1230 links point
   # into it. Marked "?" for that reason, not because it is stale.
-  "?docs/application/dotnet/api/*/latest/**",
+  "?docs/application/dotnet/api/**",
+  # The tizen.dev URL shape. No link uses it today; kept so that reintroducing
+  # one does not produce a wave of false positives.
+  "?docs/**/api/[0-9]*.[0-9]*/**",
 ]
 link_policy = "exempt-existence"
-reason = """Versioned API routes served by a separate pipeline, so no file
-exists in this checkout and a link to one cannot be verified here.
+reason = """API routes served by a separate pipeline, so no file exists in this
+checkout and a link to one cannot be verified here.
 
-This list is deliberately wider than the evidence supports and is scheduled to
-be narrowed. `latest` is a committed symlink, so most paths beneath it *do*
-resolve, which means exempting the whole `*/latest/**` shape currently hides
-real defects under docs/application/native/api/ - including a misspelt
-directory. Narrowing it is a separate change, because it makes those findings
-visible and they need fixing in the same breath."""
+Deliberately narrow. `latest` is a committed symlink, so paths beneath
+docs/application/native/api/*/latest/ do resolve and are checked - exempting
+that shape as well used to hide thirteen real defects, one of them a directory
+misspelt with three m's."""
 
 [[classes]]
 id = "generated"
@@ -62,7 +62,7 @@ match = [
 skip_rules = ["N-*", "D-*", "T-ORPHAN"]
 # One defect in a generator becomes hundreds of findings in its output, and
 # hundreds of findings are only ever a reason to stop reading the report.
-aggregate_rules = ["T-META", "T-DUP"]
+aggregate_rules = ["T-META"]
 reason = """Imported from another pipeline. Correct the upstream source and
 re-import; editing the output here is lost on the next import."""
 
@@ -99,18 +99,17 @@ re-import; editing the output here is lost on the next import."""
 "T-DEPTH" = "error"
 "T-META-SRC" = "error"
 
-# A page may legitimately appear under more than one section of the same
-# navigation, so a repeated target is worth a look rather than a block.
-"T-DUP" = "warn"
 "T-META" = "warn"
 
 "T-XML" = "error"
 "T-XMLVER" = "error"
 "M-ALT" = "error"
-"M-JUNK" = "warn"
 "M-ORPHAN" = "warn"
 "D-FM" = "warn"
 "N-KEBAB-DIR" = "error"
+
+# A baseline entry that no longer reproduces, which is how a regression hides.
+"B-STALE" = "error"
 
 # Content advisories from reviewguide/review_points_guide.md. Both are narrow
 # in scope on purpose; see [scope] below.

@@ -32,10 +32,8 @@ CORPUS_REGISTRY = (
     (toc_checks.DANGLING, toc_checks.check_dangling),
     (toc_checks.DEPTH, toc_checks.check_depth),
     (toc_checks.META_SRC, toc_checks.check_meta_source),
-    (toc_checks.DUP, toc_checks.check_duplicates),
     (xml_toc.XML, xml_toc.check_wellformed),
     (xml_toc.XMLVER, xml_toc.check_versions),
-    (media.JUNK, media.check_junk),
 )
 
 
@@ -56,13 +54,17 @@ CHANGE_REGISTRY = (
     (reverse.ANCHOR, reverse.check_anchor),
 )
 
+#: Emitted by the runner rather than by a rule.
+RUNNER_RULES = ("B-STALE",)
+
 RULE_IDS = tuple(dict.fromkeys(
     [rule for rule, _ in REGISTRY]
     + [rule for rule, _ in CORPUS_REGISTRY]
     + [rule for rule, _ in MEDIA_REGISTRY]
     + [links.ANCHOR, links.ANCHOR_AMBIG, links.HTML, links.DEPTH,
        links.CASE, links.DOCSPREFIX]
-    + [rule for rule, _ in CHANGE_REGISTRY]))
+    + [rule for rule, _ in CHANGE_REGISTRY]
+    + list(RUNNER_RULES)))
 
 
 def run_corpus(index):

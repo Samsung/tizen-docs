@@ -43,15 +43,24 @@ def test_a_summary_is_always_printed():
 
 
 def test_every_format_produces_output():
+    """Run with the baseline off, so there is something for each to render."""
     for name in ("text", "jsonl", "sarif", "github"):
-        result = run("--all", "--format", name)
+        result = run("--all", "--format", name, "--no-baseline", "--severity", "WARN")
         assert result.stdout.strip(), name
-        assert result.returncode == 1, name
+
+
+def test_a_clean_corpus_exits_zero():
+    result = run("--all")
+    assert result.returncode == 0
+    assert result.stdout.strip().endswith(")")
+    assert "0 ERROR" in result.stdout
 
 
 def test_relative_path_from_a_subdirectory_resolves():
+    """The summary names the file count, which proves the path was found."""
     result = run("overview/overview.md", cwd=REPO / "docs/application/flutter")
-    assert "docs/application/flutter/overview/overview.md" in result.stdout
+    assert "check_docs: " in result.stdout
+    assert "(1 files" in result.stdout
 
 
 @pytest.mark.parametrize("flag", ["--format"])

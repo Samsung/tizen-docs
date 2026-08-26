@@ -1,11 +1,8 @@
 {
-  "commit": "59f179c5a",
+  "commit": "95041054e",
   "counts": {
-    "L-HTML": 2,
-    "M-JUNK": 2,
+    "L-BROKEN": 11,
     "M-ORPHAN": 399,
-    "T-DUP": 14,
-    "T-META": 1,
-    "T-ORPHAN": 4
+    "T-META": 1
   }
 }

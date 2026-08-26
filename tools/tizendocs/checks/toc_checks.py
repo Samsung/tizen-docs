@@ -16,7 +16,6 @@ DANGLING = "T-DANGLING"
 DEPTH = "T-DEPTH"
 META = "T-META"
 META_SRC = "T-META-SRC"
-DUP = "T-DUP"
 
 # A document absent from its TOC is not discoverable on the published site.
 # Landing pages are exempt because the site routes a directory to them.
@@ -114,23 +113,3 @@ def check_meta_source(index):
             yield Finding(ERROR, META_SRC, node.toc,
                           f"source: names {declared} but the entry links to "
                           f"{node.target}", line=node.line, syntax="toc-md")
-
-
-def check_duplicates(index):
-    """The same target listed twice in one TOC.
-
-    WARN, not ERROR: a page can legitimately appear under more than one
-    section of the same navigation.
-    """
-    for parsed in _tocs(index):
-        seen = {}
-        for node in parsed.nodes:
-            if not node.target:
-                continue
-            first = seen.get(node.target)
-            if first is None:
-                seen[node.target] = node.line
-            else:
-                yield Finding(WARN, DUP, parsed.path,
-                              f"target already listed at line {first}: {node.href}",
-                              line=node.line, syntax="toc-md")

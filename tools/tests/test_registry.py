@@ -33,7 +33,9 @@ def test_every_rule_has_a_fixture_that_fires(fixtures, git_tree):
 
     fired.update(finding.rule for finding in reverse_scenarios(git_tree))
 
-    missing = sorted(set(checks.RULE_IDS) - fired)
+    # B-STALE is emitted by the runner, not a rule, and is covered by
+    # test_baseline.py and test_cli.py instead.
+    missing = sorted(set(checks.RULE_IDS) - fired - set(checks.RUNNER_RULES))
     assert not missing, f"rules with no fixture that triggers them: {missing}"
 
 

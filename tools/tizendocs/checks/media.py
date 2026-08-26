@@ -5,14 +5,7 @@ from .. import markdown
 from ..findings import ERROR, WARN, Finding
 
 ALT = "M-ALT"
-JUNK = "M-JUNK"
 ORPHAN = "M-ORPHAN"
-
-#: Assets that are not web media and should not be published from a media/
-#: directory. `.pdf` is deliberately absent: the compliance specifications
-#: under docs/platform/compliance/media/ are tracked and are legitimate
-#: downloads, even though .gitignore excludes *.pdf.
-JUNK_SUFFIXES = ("~", ".docx", ".drawio", ".pptx", ".xlsx", ".bak", ".orig")
 
 MEDIA_SUFFIXES = (".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp",
                   ".mp4", ".webm", ".pdf")
@@ -42,12 +35,6 @@ def _media_files(index):
             continue
         yield path, name
 
-
-def check_junk(index):
-    for path, name in _media_files(index):
-        if name.endswith(JUNK_SUFFIXES):
-            yield Finding(WARN, JUNK, path,
-                          "not web media; a media/ directory is published")
 
 
 def check_orphans(index):

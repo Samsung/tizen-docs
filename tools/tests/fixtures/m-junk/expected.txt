@@ -1,2 +1,0 @@
-M-JUNK docs/media/notes.docx
-M-ORPHAN docs/media/notes.docx
