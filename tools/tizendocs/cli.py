@@ -9,7 +9,7 @@ import argparse
 import sys
 import time
 
-from . import checks, git, paths, report
+from . import checks, doctor, git, paths, report
 from .findings import ERROR, LEVELS, WARN, rank
 from .index import DocsIndex
 
@@ -40,7 +40,7 @@ def build_parser():
 def select_paths(args, index):
     if args.all:
         return sorted(path for path in index.files
-                      if path.endswith(".md") and not index.generated(path))
+                      if path.endswith(".md") and index.handwritten(path))
     if args.paths:
         return [paths.normalize(path, index.root) for path in args.paths]
     if args.changed_only:
@@ -81,7 +81,13 @@ def summarize(findings, documents, elapsed):
             f"({documents} files, {elapsed:.2f}s)")
 
 
+SUBCOMMANDS = ("doctor",)
+
+
 def main(argv=None):
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if argv and argv[0] in SUBCOMMANDS:
+        return doctor.run(DocsIndex())
     parser = build_parser()
     args = parser.parse_args(argv)
     started = time.monotonic()

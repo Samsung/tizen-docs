@@ -6,17 +6,17 @@ so a cache would buy nothing and could only ever go stale.
 import functools
 import os
 
+from . import config as config_module
 from . import markdown, paths
 from .slug import slug
-
-GENERATED = ("/api/", "/wiki/")
 
 
 class DocsIndex:
     """An immutable-by-convention view of ``docs/`` at one point in time."""
 
-    def __init__(self, root=None):
+    def __init__(self, root=None, config=None):
         self.root = root or paths.repo_root()
+        self.config = config if config is not None else config_module.load(root=self.root)
         self.docs = os.path.join(self.root, paths.DOCS)
         self._files = None
         self._toc_files = None
@@ -46,9 +46,26 @@ class DocsIndex:
 
     # ---- classification -------------------------------------------------
 
-    @staticmethod
-    def generated(path):
-        return any(part in f"/{path}" for part in GENERATED) or path.endswith(".autogen.md")
+    def generated(self, path):
+        """Whether *path* is imported output rather than hand-written."""
+        return self.config.in_class(path, "generated")
+
+    def exempt_existence(self, target):
+        """Whether a link to *target* may point outside this checkout."""
+        return self.config.exempt_existence(target)
+
+    def skips(self, path, rule):
+        return self.config.skips(path, rule)
+
+    def handwritten(self, path):
+        """Whether *path* is a document a person is expected to edit.
+
+        Uses the first matching class rather than plain `generated` membership,
+        so a hand-written page that happens to sit under an api/ directory is
+        still selected by --all.
+        """
+        entry = self.config.classify(path)
+        return entry is None or entry.id != "generated"
 
     # ---- documents ------------------------------------------------------
 
