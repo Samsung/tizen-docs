@@ -84,10 +84,6 @@ IoT profile guides and overview (`get-started/`, `guides/`, `index.md`). `iot/ap
 holds generated, versioned HTML API reference at the same scale as
 `application/web/api/` — do not hand-edit.
 
-### `docs/partners/` (7 md)
-
-Partner program docs: `iot-partners/`, `specialist/`.
-
 ### `docs/images/`, `docs/menu.yaml`, and root docs
 
 - `images/` — image assets shared across sections (not tied to one document's `media/`)
