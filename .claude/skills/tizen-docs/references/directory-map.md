@@ -78,12 +78,6 @@ TizenX extension SDK documentation:
   `Tizen.UI.Widget`, `TizenX.GenUI`, `TizenX.RPCPort`, `TizenX.ZLog`, `TizenX.Aurum`).
   Generated from source; treat as imported content per AGENTS.md.
 
-### `docs/iot/` (16 hand-written md, plus ~8,100 generated API files)
-
-IoT profile guides and overview (`get-started/`, `guides/`, `index.md`). `iot/api/`
-holds generated, versioned HTML API reference at the same scale as
-`application/web/api/` — do not hand-edit.
-
 ### `docs/images/`, `docs/menu.yaml`, and root docs
 
 - `images/` — image assets shared across sections (not tied to one document's `media/`)
@@ -115,7 +109,7 @@ when reviewing a PR in the matching area:
 ## Cross-cutting: generated vs. hand-written content
 
 Every `*/api/**` directory in this repository (`application/native/api`,
-`application/web/api`, `application/dotnet/api`, `extensions/tizenx/api`, `iot/api`) is
+`application/web/api`, `application/dotnet/api`, `extensions/tizenx/api`) is
 generated and/or versioned content imported from elsewhere. Together they account for
 the large majority of files tracked in this repository. `AGENTS.md` states the rule;
 this map exists so you know, before you open an editor, which of the roughly 80,000
