@@ -505,11 +505,6 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
   - Tizen.Security.Privilege.GetPrivacyPrivilegeStatus() is deprecated.
   - Added 360 videos support in Tizen.Multimedia.Player.
 
-#### Known issues
-
-- Xamarin.Forms
-  - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
-
 
 ### Experimental
 

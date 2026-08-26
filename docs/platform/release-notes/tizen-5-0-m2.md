@@ -472,11 +472,6 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
   - Added new NUI API set for KeyboardRepeatInfo and TextPredition.
   - Added the change of NUI API set for ChildAdded, ChildRemoved, PropertySet events and properties of TableView.CellPosition.
 
-#### Known issues
-
-- Xamarin.Forms
-  - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
-
 
 ### Experimental
 
