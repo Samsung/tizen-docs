@@ -26,7 +26,6 @@ tizen-docs/
 │   ├── extensions/tizenx/       # TizenX extension SDK guides + generated API reference
 │   ├── iot/                     # IoT profile guides + generated API reference
 │   ├── partners/                # Partner program docs
-│   ├── blog/                    # Blog posts
 │   ├── images/                  # Shared site images
 │   └── menu.yaml, get-started.md, glossary.md, trademarks.md
 ├── styleguide/                  # Writing style and naming-rule references

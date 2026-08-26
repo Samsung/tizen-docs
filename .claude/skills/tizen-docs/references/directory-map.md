@@ -88,10 +88,6 @@ holds generated, versioned HTML API reference at the same scale as
 
 Partner program docs: `iot-partners/`, `specialist/`.
 
-### `docs/blog/` (3 md)
-
-Blog posts, including a `dotnet/` subfolder and `index.md`.
-
 ### `docs/images/`, `docs/menu.yaml`, and root docs
 
 - `images/` — image assets shared across sections (not tied to one document's `media/`)

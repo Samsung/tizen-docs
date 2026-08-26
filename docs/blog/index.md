@@ -1,4 +1,0 @@
-# Tizen Blogs
-
-## .NET Application
-
