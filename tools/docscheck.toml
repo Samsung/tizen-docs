@@ -62,7 +62,7 @@ match = [
 skip_rules = ["N-*", "D-*", "T-ORPHAN"]
 # One defect in a generator becomes hundreds of findings in its output, and
 # hundreds of findings are only ever a reason to stop reading the report.
-aggregate_rules = ["T-META"]
+aggregate_rules = ["T-META", "T-DUP"]
 reason = """Imported from another pipeline. Correct the upstream source and
 re-import; editing the output here is lost on the next import."""
 

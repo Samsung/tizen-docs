@@ -68,9 +68,14 @@ RULE_IDS = tuple(dict.fromkeys(
 def run_corpus(index):
     """Yield findings from rules that inspect the corpus as a whole."""
     for rule, function in CORPUS_REGISTRY:
+        produced = {}
         for finding in function(index):
             level = index.config.severity(finding.rule, finding.level)
-            yield finding if level == finding.level else replace(finding, level=level)
+            if level != finding.level:
+                finding = replace(finding, level=level)
+            produced.setdefault(finding.path, []).append(finding)
+        for path, findings in produced.items():
+            yield from _aggregate(index, path, rule, findings)
 
 
 def run_media(index):
