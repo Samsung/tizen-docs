@@ -68,6 +68,8 @@ To check whether an application has permission to use a privilege and to request
                 switch (result)
                 {
                     case CheckResult.Allow:
+                    case CheckResult.AllowSession:
+                    case CheckResult.AllowInUse:
                         /// Update UI and start accessing protected functionality
                         break;
         ```
@@ -76,6 +78,7 @@ To check whether an application has permission to use a privilege and to request
 
         ```csharp
                     case CheckResult.Deny:
+                    case CheckResult.DenySession:
                         /// Show a message and terminate the application
                         break;
         ```
@@ -133,12 +136,15 @@ To check whether an application has permission to use a privilege and to request
         switch (e.result)
         {
             case RequestResult.AllowForever:
+            case RequestResult.AllowSession:
+            case RequestResult.AllowInUse:
                 /// Update UI and start accessing protected functionality
                 break;
             case RequestResult.DenyForever:
                 /// Show a message and terminate the application
                 break;
             case RequestResult.DenyOnce:
+            case RequestResult.DenySession:
                 /// Show a message with explanation
                 break;
         }
@@ -147,6 +153,7 @@ To check whether an application has permission to use a privilege and to request
 
     -   If the user decision is `AllowForever` or `DenyForever`, the decision is definitive and the application can react appropriately. It can finish its execution (if denied permission) or start to use protected methods (if granted permission).
     -   If the user decision is `DenyOnce`, the decision is not definitive. In this case, access to protected functionality is still prohibited. This decision can be interpreted as a cancel action on behalf of the user, indicating that the user is not sure what the purpose of the request is. Therefore, consider providing some additional information to explain why the permission is required.
+    -   API level 14 introduced additional non definitive decisions: AllowSession and DenySession are retained during the session and reset when the application is restarted, AllowInUse - means that the permission is granted for the time the user actively uses the application (background operations are not permitted).
 
     If the decision is definitive, any subsequent `RequestPermission()` calls result in an immediate response with an appropriate result: `AllowForever` or `DenyForever`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
 
