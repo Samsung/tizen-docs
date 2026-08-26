@@ -1,7 +1,7 @@
 # Layer
 
 A layer is a transparent sheet upon which shapes are placed. It supports sub layers within layers to any desired depth.
-Layers provide a mechanism for overlaying groups of views on top of each other.
+Reach for a layer when a whole group of views must sit above or below another group — a heads-up overlay over the page content, for example — instead of being ordered one view at a time.
 Layers can also clip their contents, to exclude any content outside a user defined area.
 
 Layers can be two-dimensional or three-dimensional, defined by their _behavior_ property.
@@ -10,7 +10,7 @@ Layers can be two-dimensional or three-dimensional, defined by their _behavior_ 
 
 When a layer is added to the Window, it assigns a unique depth value. By default, the stage has a root layer with a depth value of 0.
 
-Layers provide a mechanism for overlaying groups of actors on top of each other. Layers are drawn in order to determined the **depth** value of the layer.
+Layers are drawn in the order determined by the **depth** value of the layer.
 
 
 ```csharp

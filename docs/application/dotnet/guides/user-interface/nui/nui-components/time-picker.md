@@ -1,6 +1,6 @@
 # TimePicker
 
-TimePicker is a class that provides a function that allows the user to select a time through a scrolling motion by expressing the specified value as a list. TimePicker expresses the current time using the `locale` information of the system.
+Use a TimePicker to let the user set a time by scrolling the hour and minute fields instead of typing them. The picker reads the system `locale`, so it presents the time the way the device is configured to show it.
 
 ![TimePicker](./media/TimePicker.png)
 

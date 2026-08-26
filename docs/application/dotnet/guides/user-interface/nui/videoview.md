@@ -4,7 +4,7 @@ keyword: video, VideoView, playback, play, NUI, ResourceUrl, volume,
 
 # VideoView
 
-The [VideoView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VideoView.html) class is a control for video playback and display. It provides minimum functions for playback (play, pause, stop, forward, and backward). Some options, such as volume, can be controlled through the control properties. NUI supports many kinds of video format, such as `.avi`, `.3gp` and `mp4`.
+Use a [VideoView](/application/dotnet/api/TizenFX/latest/api/Tizen.NUI.BaseComponents.VideoView.html) to play video inside a NUI scene instead of handing playback to a separate application. It covers the basic transport actions — play, pause, stop, forward, and backward — and exposes options such as volume as properties. NUI supports many video formats, including `.avi`, `.3gp`, and `mp4`.
 
  > [!NOTE] 
  > The `VideoView` control does not use any privileges APIs on its own. However, if you use video files in a specific device storage, the application requires privileges to access the storage.
