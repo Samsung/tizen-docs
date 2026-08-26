@@ -1,1 +1,0 @@
-# Configuring Hybrid Multi-App Packaging
