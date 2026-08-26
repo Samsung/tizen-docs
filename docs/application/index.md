@@ -5,7 +5,7 @@ The Tizen platform supports three primary application types
 
 <div class="row cards-container-infra">
     <div class="col col-6 col-md-3">
-        <a href="dotnet/index.md" class="card card-infra h-100">
+        <a href="dotnet/overview/overview.md" class="card card-infra h-100">
             <div class="card-body">
                 <p class="h3 card-title">.NET</p>
                 <p class="card-text">Benefit from a managed runtime and C# programming language.</p>

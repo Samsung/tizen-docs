@@ -605,11 +605,6 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
   - New InputMethod API set to update the input panel event has been added.
   - New Application API set to add CurrentDeviceOrientation property for CoreUIApplication has been added.
 
-#### Known issues
-
-- Xamarin.Forms
-  - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
-
 
 ### Toolchain
 

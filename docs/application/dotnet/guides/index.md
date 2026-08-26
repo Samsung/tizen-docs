@@ -3,6 +3,8 @@
 Tizen .NET provides a rich set of interfaces allowing you to build compelling TV applications which achieves native performance.
 TizenFX API supports Tizen platform-specific functionalities.
 
+For working code, see the [Tizen .NET sample applications](https://github.com/Samsung/Tizen-CSharp-Samples/){:target="_blank"}.
+
 ## Libraries
 
 <div class="row cards-container-infra">

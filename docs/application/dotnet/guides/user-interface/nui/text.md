@@ -659,7 +659,7 @@ For text decorations, the following `TextField` class properties are available. 
 | `Placeholder`                      | PropertyMap | Specifies the attributes of the `Placeholder` property. The attributes of this property are text, color, font family, font style, point size, and pixel size. |
 | `Ellipsis`                         | Boolean     | Specifies whether to enable or disable ellipsis, if required.  |
 | `TranslatablePlaceholderText`      | String      | Specifies the `TranslatablePlaceholderText` property that sets the SID value.  |
-| `TranslatableText`                 | String      | Specifies the `TranslatableText` property that sets the SID value. |
+| `TranslatableText`                 | String      | Specifies the resource name (SID) looked up in the multilingual resource manager. See [Localization](../../internationalization/localization.md). |
 
 
 
@@ -753,7 +753,7 @@ The following table lists the available `TextEditor` properties:
 | `Placeholder`                      | PropertyMap | Specifies the attributes of the `Placeholder` property. The attributes of this property are text, color, font family, font style, point size, and pixel size. |
 | `LineWrapMode`                     | LineWrapMode | Specifies the line wrap mode when text lines are greater than the layout width. |
 | `TranslatablePlaceholderText`      | String      | Specifies the `TranslatablePlaceholderText` property that sets the SID value. |
-| `TranslatableText`                 | String      | Specifies the `TranslatableText` property that sets the SID value. |
+| `TranslatableText`                 | String      | Specifies the resource name (SID) looked up in the multilingual resource manager. See [Localization](../../internationalization/localization.md). |
 
 
 ## Use clipboard and SelectText APIs

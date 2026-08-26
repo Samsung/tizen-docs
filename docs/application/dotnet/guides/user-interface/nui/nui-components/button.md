@@ -1,7 +1,7 @@
 # Button
 
-Button is a common component and describes what action occurs when you select it.  
-A Button can either contain a text or an icon, and can be created using property.
+Use a Button as the primary way for the user to trigger an action; its label should name the action that follows.  
+A button can carry text or an icon, and can be created using property.
 
 ![Button](./media/Button.png)
 

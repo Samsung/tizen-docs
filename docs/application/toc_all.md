@@ -9,9 +9,7 @@
 
 # .NET Application
 
-## [Overview](/application/dotnet/index.md)
-
-## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
+## [Overview](/application/dotnet/overview/overview.md)
 
 ## Get Started
 ### [Overview](/application/dotnet/get-started/index.md)
@@ -19,14 +17,9 @@
 ### [API Privileges](/application/dotnet/reference/api-privileges.md)
 ### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ### [Install Samsung Smart TV Extension](/application/dotnet/get-started/install-samsung-tv-extension.md)
-### Certificates
-#### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
-#### [Installing the Extension](/application/dotnet/guides/concepts/signing-certificates/installing-the-extension.md)
-#### [Creating Certificates](/application/dotnet/guides/concepts/signing-certificates/creating-certificates.md)
-#### [Signing Application with Certificate](/application/dotnet/guides/concepts/signing-certificates/signing-application-with-certificate.md)
-#### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
 
 ### [Application Filtering](/application/dotnet/reference/app-filtering.md)
+### [Limitations of .NET Standard API](/application/dotnet/reference/dotnet-standard-limitations.md)
 
 ## Guides
 ### [Overview](/application/dotnet/guides/index.md)
@@ -172,6 +165,13 @@
 #### [Calendar](/application/dotnet/guides/pims/calendar.md)
 #### [Contacts](/application/dotnet/guides/pims/contacts.md)
 
+### Certificates
+#### [Overview](/application/dotnet/guides/concepts/signing-certificates/index.md)
+#### [Installing the Extension](/application/dotnet/guides/concepts/signing-certificates/installing-the-extension.md)
+#### [Creating Certificates](/application/dotnet/guides/concepts/signing-certificates/creating-certificates.md)
+#### [Signing Application with Certificate](/application/dotnet/guides/concepts/signing-certificates/signing-application-with-certificate.md)
+#### [Managing Certificate Profile](/application/dotnet/guides/concepts/signing-certificates/managing-certificate-profile.md)
+
 ### Security
 #### [Overview](/application/dotnet/guides/security/overview.md)
 #### [Secure Key Management](/application/dotnet/guides/security/secure-repository.md)
@@ -286,13 +286,7 @@
 ###### [Layout Define Example](/application/dotnet/guides/user-interface/nui/xaml/layout-define-example.md)
 
 
-## [API Reference](/application/dotnet/api/overview.md)
-
-## Samples
-### [Overview](/application/dotnet/samples/overview.md)
-### NUI
-#### [UI](/application/dotnet/samples/nui/ui/overview.md)
-#### [UIX](/application/dotnet/samples/nui/uix/overview.md)
+## [API Reference](/application/dotnet/api/TizenFX/index.html)
 
 
 # Web Application

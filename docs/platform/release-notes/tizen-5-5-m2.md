@@ -605,11 +605,6 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
   - New SystemSettings API set to get rotary event enabled has been added.
   - New VoiceControlManager API set has been added.
 
-#### Known issues
-
-- Xamarin.Forms
-  - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
-
 
 ### Toolchain
 

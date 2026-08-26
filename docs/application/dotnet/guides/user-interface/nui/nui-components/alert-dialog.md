@@ -1,6 +1,6 @@
 # AlertDialog
 
-AlertDialog class shows a dialog with title, message, and action buttons.
+Use an AlertDialog when the user must acknowledge something, or choose between a small number of actions, before continuing. It arranges the title, the message, and the action buttons for you.
 
 ![AlertDialog](./media/AlertDialog.png)
 

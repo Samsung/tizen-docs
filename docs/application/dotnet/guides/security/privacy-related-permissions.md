@@ -37,7 +37,7 @@ To enable your application to use the privacy-related permissions functionality,
 
 2.  Call the `Tizen.Security.PrivacyPrivilegeManager` methods from the context of the application's main event loop.
 
-    It means that the methods can be employed in any UI event handler (such as button click, timer event, system event, and application state change event). If you want to resolve privileges during application startup, call these methods from the Xamarin.Forms resume and start life-cycle methods (`Xamarin.Forms.Application.OnResume()` and `Xamarin.Forms.Application.OnStart()`).
+    It means that the methods can be employed in any UI event handler (such as button click, timer event, system event, and application state change event). If you want to resolve privileges during application startup, call these methods from the NUI create and resume life-cycle methods (`NUIApplication.OnCreate()` and `NUIApplication.OnResume()`).
 
     > [!NOTE]
     > The `Tizen.Security.PrivacyPrivilegeManager` class is not thread-safe.
@@ -108,7 +108,7 @@ To check whether an application has permission to use a privilege and to request
 
     The user decision is returned in the event handler as the `result` property of the [Tizen.Security.RequestResponseEventArgs](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.RequestResponseEventArgs.html) class.
 
-    Make sure the event handler is registered before calling the `RequestPermission()` method of the `Tizen.Security.PrivacyPrivilegeManager` class. For a Xamarin.Forms application, the best place to register the event handler is the `Xamarin.Forms.Application.OnStart()` life-cycle method. This is shown in the following code block:
+    Make sure the event handler is registered before calling the `RequestPermission()` method of the `Tizen.Security.PrivacyPrivilegeManager` class. The best place to register the event handler is the `NUIApplication.OnCreate()` life-cycle method. This is shown in the following code block:
 
     ```csharp
     private void SetupPPMHandler(string privilege)
@@ -120,8 +120,9 @@ To check whether an application has permission to use a privilege and to request
         }
     }
 
-    protected override void OnStart()
+    protected override void OnCreate()
     {
+        base.OnCreate();
         SetupPPMHandler(cameraPrivilege);
     }
 

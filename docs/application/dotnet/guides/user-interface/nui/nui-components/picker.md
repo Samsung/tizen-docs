@@ -1,6 +1,6 @@
 # Picker
 
-Picker is a class which provides a function that allows the user to select scrolling motion by expressing the specified value as a list.
+Use a Picker to let the user choose one value from an ordered range by scrolling, which suits a bounded run of values better than a list of unrelated options.
 
 ![Picker](./media/Picker.png)
 

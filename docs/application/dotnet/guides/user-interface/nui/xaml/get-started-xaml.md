@@ -4,7 +4,7 @@ XAML is a declarative markup language that is used to create UI elements, and th
 
 ## Create solution using Tizen version 5.5
 
-You can create a new Tizen.NUI solution using Visual Studio and then you can edit your first XAML file. For more information, see [Part 1. Getting Started with XAML](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/xaml-basics/get-started-with-xaml?tabs=windows) in the XAML guide.
+You can create a new Tizen.NUI solution using Visual Studio and then you can edit your first XAML file.
 
 To create a new project, follow these steps:
 

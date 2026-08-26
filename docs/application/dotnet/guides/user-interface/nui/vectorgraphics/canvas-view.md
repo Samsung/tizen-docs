@@ -1,6 +1,6 @@
 # CanvasView
 
-A CanvasView is an NUI control that displays vector primitives.
+Use a CanvasView to draw vector primitives — paths, shapes, strokes, and fills — that stay sharp at any size, instead of shipping a raster image for every resolution.
 
 ## Create a CanvasView
 

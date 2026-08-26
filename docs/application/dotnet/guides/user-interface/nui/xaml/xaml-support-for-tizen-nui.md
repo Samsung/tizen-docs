@@ -46,9 +46,6 @@ The following table outlines the `x` namespace attributes supported by Tizen.NUI
 | x:Name | Specifies a runtime object name for the XAML element. Setting **x:Name** is similar to declaring a variable in code.|
 
 
-For more information, see https://docs.microsoft.com/en-US/xamarin/xamarin-forms/xaml/namespaces.
-
-
 ## Data Binding
 
 Data bindings allow the properties of two objects to be linked together. Therefore, a change in one property causes the corresponding change in the other property that is linked.
@@ -96,8 +93,6 @@ Following are the two ways to specify the link between the source object with th
 - Use the `Source` property of the `Binding` markup extension.
 
 If you specify both, the `Source` property takes precedence over the `BindingContext`.
-
-For more information, see https://docs.microsoft.com/en-US/xamarin/xamarin-forms/xaml/xaml-basics/data-binding-basics.
 
 
 ## How to Handle Object Created by XAML
@@ -175,8 +170,6 @@ When you change the value of `"positionKey"`, `DynamicResource` will detect that
 Tizen.NUI.Binding.ResourceDictionary dict = Tizen.NUI.GetResourcesProvider.Get().XamlResources;
 Tizen.NUI.GetResourcesProvider.Get().XamlResources["positionKey"] = positionX.ToString() + "," + positionY.ToString();
 ```
-
-For more information, see https://docs.microsoft.com/en-US/xamarin/xamarin-forms/xaml/resource-dictionaries.
 
 
 ## TypeConverters
@@ -302,8 +295,6 @@ The following example shows two triggers that changes `PositionX` of the `ImageV
 
 > [!NOTE]
 > The Property for Trigger and Setter must not be same.
-
-For more information, see [Xamarin.Forms Triggers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers#targetText=Triggers%20allow%20you%20to%20express,on%20events%20or%20property%20changes.&targetText=Property%20Trigger%20%2D%20occurs%20when%20a,the%20properties%20of%20another%20control).
 
 
 ## How to Use Transition

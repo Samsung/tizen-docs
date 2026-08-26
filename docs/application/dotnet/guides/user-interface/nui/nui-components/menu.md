@@ -1,6 +1,6 @@
 # Menu
 
-Menu is a class which contains a set of MenuItems and has one of them selected.
+Use a Menu to offer a short list of choices anchored to the control that opened it. The menu holds MenuItem children and keeps one of them selected.
 
 ![Menu](./media/Menu.png)
 

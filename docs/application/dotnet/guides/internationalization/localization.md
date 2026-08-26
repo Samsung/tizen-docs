@@ -1,6 +1,6 @@
 # Localization
 
-This document describes how to localize your Tizen Xamarin.Forms applications with the following types of localization:
+This document describes how to localize your Tizen .NET applications with the following types of localization:
 
 - [String localization](#string-localization)
 - [Display the correct language](#display-the-correct-language)
@@ -9,9 +9,7 @@ This document describes how to localize your Tizen Xamarin.Forms applications wi
 
 ## String localization
 
-You can begin by reading the following how-to article on Xamarin.Forms Localization.
-
-For more information on string localization, see [Xamarin.Forms Localization](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/#string-and-image-localization){:target="_blank"}.
+NUI resolves translatable strings through a standard [System.Resources.ResourceManager](https://learn.microsoft.com/dotnet/api/system.resources.resourcemanager){:target="_blank"}, which you assign to the `NUIApplication.MultilingualResourceManager` property. Text views then take a resource name instead of a literal string, and NUI looks that name up in the culture matching the current system language.
 
 ### Create a resource file
 
@@ -33,162 +31,79 @@ For more information on string localization, see [Xamarin.Forms Localization](ht
 
 ### Use a resource file
 
-1. Use name of texts with string type in the `resx` files in your user interface code:
+1. Register the generated resource manager when your application is created:
 
     ```csharp
-    var speedLabel = new Label ();
-    var maximumLabel = new Label ();
+    protected override void OnCreate()
+    {
+        base.OnCreate();
 
-    speedLabel.Text = AppResources.Speed;
-    maximumLabel.Text = AppResources.Maximum;
+        NUIApplication.MultilingualResourceManager = AppResources.ResourceManager;
+    }
     ```
 
-2. Use name of texts with string type in the `resx` files in the your `xaml` code:
+2. Set the `TranslatableText` property instead of `Text`, and give it the name of the string in the `resx` files:
 
-    ```xml
-    <Application
-        x:Class="Speedmeter.App"
-        xmlns="http://xamarin.com/schemas/2014/forms"
-        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-        xmlns:local="clr-namespace:Speedmeter"
-        xmlns:resx="clr-namespace:Speedmeter.Resx;"
-        xmlns:w="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms">
-        <Application.MainPage>
-            <w:CirclePage>
-                <CirclePage.Content>
-                    <AbsoluteLayout>
-                        <Label
-                            x:Name="SpeedLabel"
-                            AbsoluteLayout.LayoutBounds="0.5, 0.3"
-                            AbsoluteLayout.LayoutFlags="PositionProportional"
-                            Style="{StaticResource LabelStyle-Base}"
-                            Text="{x:Static resx:AppResources.Speed}" />
-                        <Label
-                            x:Name="AverageLabel"
-                            AbsoluteLayout.LayoutBounds="0.2, 0.7"
-                            AbsoluteLayout.LayoutFlags="PositionProportional"
-                            Style="{StaticResource LabelStyle-Base}"
-                            Text="{x:Static resx:AppResources.Average}" />
+    ```csharp
+    var speedLabel = new TextLabel();
+    var maximumLabel = new TextLabel();
+
+    speedLabel.TranslatableText = "Speed";
+    maximumLabel.TranslatableText = "Maximum";
+    ```
+
+    > [!NOTE]
+    > `TranslatableText` throws `ArgumentNullException` if `NUIApplication.MultilingualResourceManager` has not been set.
+
+    `TextField` and `TextEditor` provide the same property, and also `TranslatablePlaceholderText` for their placeholder strings.
+
+3. You can set the same property in XAML:
+
+    ```XML
+    <View x:Class="Speedmeter.MainPage"
+      xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+      <TextLabel x:Name="SpeedLabel" TranslatableText="Speed" Position2D="100,300" />
+      <TextLabel x:Name="AverageLabel" TranslatableText="Average" Position2D="100,400" />
+
+    </View>
     ```
 
 ## Display the correct language
 
-To display the correct language, you must implement additional code in your project to determine which language the user has selected.
+Text that you set through `TranslatableText` needs no extra code. `TextLabel`, `TextField`, and `TextEditor` follow the system language setting themselves: when it changes, they look the resource name up again in the new culture and update what they display.
 
-Please refer to the following Xamarin.Forms article.
-For more information, see [Display the correct Language](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/text?tabs=vswin#displaying-the-correct-language){:target="_blank"}.
+Handle the change yourself only when you have something else to update, such as text you set through `Text`, formatted numbers and dates, or localized images. Override the `OnLocaleChanged` method of your `NUIApplication`:
 
-1. Define an interface to use your `DependencyService`:
+```csharp
+protected override void OnLocaleChanged(LocaleChangedEventArgs e)
+{
+    base.OnLocaleChanged(e);
 
-    ```csharp
-    public interface ILocalize
+    CultureInfo culture;
+    try
     {
-        CultureInfo CurrentCultureInfo { get; }
-        void SetLocale(CultureInfo ci);
+        culture = new CultureInfo(e.Locale.Replace("_", "-"));
     }
-    ```
-
-2. Implement the `DependencyService` in the Tizen platform project for getting the current system language setting (`SystemSettings` API is included in Tizen.Net NuGet package):
-
-    ```csharp
-    [assembly: Dependency(typeof(LocaleService))]
-
-    namespace Speedmeter.Tizen.Wearable.DependencyService
+    catch (CultureNotFoundException)
     {
-        class LocaleService : ILocalize
-        {
-            CultureInfo _currentCultureInfo;
-
-            public LocaleService()
-            {
-                _currentCultureInfo = GetCurrentCultureInfo();
-                // To get notified when system locale settings has been changed
-                SystemSettings.LocaleLanguageChanged += LanguageChanged;
-            }
-
-            public CultureInfo CurrentCultureInfo
-            {
-                get
-                {
-                    return _currentCultureInfo;
-                }
-            }
-
-            public void SetLocale(CultureInfo info)
-            {
-
-                Thread.CurrentThread.CurrentCulture = info;
-                Thread.CurrentThread.CurrentUICulture = info;
-            }
-
-            CultureInfo GetCurrentCultureInfo()
-            {
-                var netLanguage = "en";
-                var TizenLocale = SystemSettings.LocaleLanguage;
-                netLanguage = TizenToDotnetLanguage(TizenLocale.ToString().Replace("_", "-"));
-                CultureInfo info = null;
-                try
-                {
-                    info = new CultureInfo(netLanguage);
-                }
-                catch (CultureNotFoundException e1)
-                {
-                    Console.WriteLine("cannot find the current cultureInfo. so use 'en'. (" + e1.Message + ")");
-                    info = new CultureInfo("en");
-                }
-
-                return info;
-            }
-
-            private void LanguageChanged(object sender, LocaleLanguageChangedEventArgs e)
-            {
-                CultureInfo info = GetCurrentCultureInfo();
-                _currentCultureInfo = info;
-                // Notify the change of locale information
-                MessagingCenter.Send<ILocalize, CultureInfo>(this, "LanguageChanged", info);
-            }
-
-            string TizenToDotnetLanguage(string tizenLanguage)
-            {
-                var netLanguage = tizenLanguage;
-                //certain languages need to be converted to CultureInfo equivalent
-                switch (tizenLanguage)
-                {
-                    case "zh-CN":   // Chinese Simplified (People's Republic of China)
-                        netLanguage = "zh-Hans"; // correct code for .NET
-                        break;
-                    case "zh-HK":  // Chinese Traditional (Hong Kong)
-                    case "zh-hk":
-                    case "zh-tw":  // Chinese Traditional (Taiwan)
-                    case "zh-TW":
-                        netLanguage = "zh-Hant"; // correct code for .NET
-                        break;
-                }
-
-                Console.WriteLine("[Speedmeter] .NET Language/Locale:" + netLanguage);
-                return netLanguage;
-            }
-        }
+        culture = new CultureInfo("en");
     }
 
-    ```
+    Thread.CurrentThread.CurrentCulture = culture;
+    Thread.CurrentThread.CurrentUICulture = culture;
 
-3. Use the `DependencyService` in the Xamarin.Forms application to call the interface and set your `resx` resource culture to the correct value.
-You can receive the culture information using `MessagingCenter`. You can also update your application UI when your application is running and the system language has been changed:
+    // Update anything that is not bound to TranslatableText
+}
+```
 
-    ```csharp
-    var ci = DependencyService.Get<ILocalize>().CurrentCultureInfo;
-    Resx.AppResources.Culture = ci; // set the RESX for resource localization
-    DependencyService.Get<ILocalize>().SetLocale(ci);
+> [!NOTE]
+> Call `base.OnLocaleChanged()`. If you do not, the `LocaleChanged` event is not raised.
 
-    // Whenever language has been changed, CurrentCulture will be updated.
-    MessagingCenter.Subscribe<ILocalize, CultureInfo>(this, "LanguageChanged", (obj, culture) =>
-    {
-        Resx.AppResources.Culture = culture;
-        DependencyService.Get<ILocalize>().SetLocale(culture);
-        //update your App UI
-    });
-    ```
+Tizen reports a locale in the `<LANGUAGE>_<REGION>` syntax, such as `ko_KR`, while `CultureInfo` expects `ko-KR`. Replace the separator before constructing the `CultureInfo`, as in the preceding example. A few Tizen language codes have no direct `CultureInfo` equivalent and need mapping of their own: `zh-CN` corresponds to `zh-Hans`, and `zh-HK` and `zh-TW` correspond to `zh-Hant`.
+
+Take the new locale from the `Locale` property of the event argument rather than reading `SystemSettings.LocaleLanguage`, which is documented as requiring the `http://tizen.org/privilege/systemsettings.admin` privilege at the platform privilege level and throws `UnauthorizedAccessException` without it.
 
 ## Image localization
 
@@ -219,30 +134,26 @@ The res.xml file is automatically generated when you build your application.
     ![res.xml code](media/local_res_xml_code.png)
 
     > [!NOTE]
-    > Your application can sometimes run in a locale, for which you have not provided images. In that case, Tizen loads the default image from the resource content directory (yourApp.Tizen/res/content/). If there is no default image within the resource content directory and the device sets the locale, for which you have not provided images, an error occurs.
+    > Your application can sometimes run in a locale, for which you have not provided images. In that case, Tizen loads the default image from the resource content directory (res/content/). If there is no default image within the resource content directory and the device sets the locale, for which you have not provided images, an error occurs.
 
     ![default_image](media/local_res_default_image.png)
 
-    When you detect locale changes, you must update the resource culture. Then you must update the texts and images, which you want to localize.
-    As for localized images, you can make custom image renderer to load the proper locale-specific images.
+Unlike translatable text, images are not updated for you. Ask `Tizen.Applications.ResourceManager` for the path that matches the current locale and assign it to the `ResourceUrl` property of your `ImageView`:
 
-    Tizen provides the path of locale-specific images via `ResourceManager.TryGetPath` and `ResourceManager.GetPath` methods. With this, you can change the class **LocalizedImageRenderer :ImageRenderer**:
+```csharp
+using TizenResourceManager = Tizen.Applications.ResourceManager;
 
-    ```csharp
-    using TizenResourceManager = Tizen.Applications.ResourceManager;
+protected override void OnLocaleChanged(LocaleChangedEventArgs e)
+{
+    base.OnLocaleChanged(e);
 
-    public LocalizedImageRenderer() : base()
-    {
-        SystemSettings.LocaleLanguageChanged += SystemSettings_LocaleLanguageChanged;
-    }
+    // Get the path of a proper image based on locale and update the source of an image
+    icon.ResourceUrl = TizenResourceManager.TryGetPath(TizenResourceManager.Category.Image, fileName);
+}
+```
 
-    // Invoked every time the language setting has been changed
-    private void SystemSettings_LocaleLanguageChanged(object sender, LocaleLanguageChangedEventArgs e)
-    {
-        // Get the path of a proper image based on locale and update the source of an image
-        Element.Source = TizenResourceManager.TryGetPath(TizenResourceManager.Category.Image, fileName);
-    }
-    ```
+> [!NOTE]
+> `TryGetPath()` returns `null` when the resource does not exist. `GetPath()` throws `InvalidOperationException` in the same situation.
 
 ## Application name localization
 
@@ -253,6 +164,18 @@ You can add localized application names and icons using **tizen-manifest.xml** i
 - Add application names for languages you want to support.
 
 ![app_name](media/local_application_name.png)
+
+Each name you add becomes a `<label>` element with an `xml:lang` attribute, so you can also edit them directly:
+
+```XML
+<ui-application appid="org.tizen.example.Speedmeter" exec="Speedmeter.dll" type="dotnet">
+    <label>Speedmeter</label>
+    <label xml:lang="en-us">Speedmeter</label>
+    <label xml:lang="ko-kr">속도계</label>
+</ui-application>
+```
+
+The `<label>` element without `xml:lang` is the fallback used when the device locale matches none of the others. Icons are localized the same way, with an `xml:lang` attribute on the `<icon>` element.
 
 ## Related information
 

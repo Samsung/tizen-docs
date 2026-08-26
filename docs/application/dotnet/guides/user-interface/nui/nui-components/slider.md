@@ -1,6 +1,6 @@
 # Slider
 
-A Slider enables you to select a value from a continuous or discrete range of values by moving the Slider thumb.
+Use a Slider for a value the user adjusts by feel rather than by exact entry, such as volume or brightness. Dragging the thumb moves through the range, which can be continuous or stepped.
 
 Sliders are classified into a horizontal type and a vertical type, depending on their orientation, and the number of sliders that are adjusted simultaneously.
 

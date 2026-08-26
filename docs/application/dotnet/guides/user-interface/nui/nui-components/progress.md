@@ -1,6 +1,6 @@
 # Progress
 
-Progress is a common component that is used to show the ongoing status using a long narrow bar.
+Use Progress when an operation runs long enough that the user needs to see it advancing. It draws the current status as a long narrow bar.
 
 The following are the instances where Progress is used:
 

@@ -2,7 +2,7 @@
 
 XAML stands for **Extensible Application Markup Language**. It is a simple declarative language based on XML. XAML uses tags to define objects. Tags can be nested within other tags to define objects within objects.
 
-NUI adopts and integrates Xamarin.Forms XAML as NUI XAML. NUI XAML supports almost all the features of Xamarin.Forms XAML along with some additional features that are briefly explained in the subsequent sections. However, to get more information about XAML, see the [Extensible Application Markup Language (XAML)](https://docs.microsoft.com/en-US/xamarin/xamarin-forms/xaml/) guide.
+NUI XAML is the XAML dialect used by Tizen.NUI. The following sections explain its benefits and anatomy; for the namespaces, data binding, resources, and type converters it supports, see [XAML Support for Tizen.NUI](xaml-support-for-tizen-nui.md).
 
 ## Benefits of XAML
 

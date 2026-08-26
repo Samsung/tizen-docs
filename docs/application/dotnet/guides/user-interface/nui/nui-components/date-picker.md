@@ -1,6 +1,6 @@
 # DatePicker
 
-DatePicker is a class which provides a function that allows the user to select a date through a scrolling motion by expressing the specified value as a list. DatePicker expresses the current date using the locale information of the system. Year range is 1970~2038 (glibc time_t struct min, max value)
+Use a DatePicker to let the user set a date by scrolling the year, month, and day fields. The picker reads the system locale for field order and month names, and covers the years 1970 to 2038 — the range the underlying `time_t` value can represent.
 
 ![DatePicker](./media/DatePicker.png)
 

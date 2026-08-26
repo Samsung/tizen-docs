@@ -1,5 +1,5 @@
 # Notification
-Notification is a common component that helps to pop-up a notification window with a content view.
+Use a Notification to raise a separate window over the current screen for a set duration, carrying a content view that you compose yourself.
 
 A Notification can contain text and can be created using property.
 
