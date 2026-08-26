@@ -14,5 +14,5 @@ To install the Samsung Smart TV Extension, follow these steps:
 The video below shows how to install the Samsung Smart TV Extension:
 
 <video controls height="400">
-  <source src="../media/samsung-certificate-tv-extension.mp4" type=video/mp4>
+  <source src="media/samsung-certificate-tv-extension.mp4" type=video/mp4>
 </video>

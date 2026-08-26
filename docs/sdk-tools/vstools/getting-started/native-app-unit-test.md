@@ -119,13 +119,13 @@ After the test cases are executed, the results are displayed on the **Native Uni
  * ### HTML Code Coverage report
     * The **index.html** page is opened in the browser to view the Code Coverage Report, as illustrated in the following figure:
       
-      <img src="./media/coverage_report_1.PNG" alt="HTML Code Coverage Report" width="880"/>
+      <img src="./media/coverage_report_1.png" alt="HTML Code Coverage Report" width="880"/>
 
       <!-- ![Test results](./media/coverage_report_1.png) -->
 
     * Click on any of the projects to get the coverage at the file level, as illustrated in the following figure:
 
-      <img src="./media/coverage_report_2.PNG" alt="HTML Code Coverage Report navigation" width="880"/>
+      <img src="./media/coverage_report_2.png" alt="HTML Code Coverage Report navigation" width="880"/>
 
       <!-- ![Test results](./media/coverage_report_2.png) -->
       

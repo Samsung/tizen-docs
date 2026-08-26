@@ -43,13 +43,13 @@ To install Tizen SDK using the CLI installer:
 The video below shows how Tizen SDK is installed in Windows using the CLI installer:
 
 <video controls height="400">
-  <source src="../media/tizenstudio-cliinstaller.mp4" type=video/mp4>
+  <source src="media/tizenstudio-cliinstaller.mp4" type=video/mp4>
 </video>
 
 The video below shows how Tizen SDK is installed in Linux using the CLI installer:
 
 <video controls height="400">
-  <source src="../media/tizenstudio-cliinstaller-linux.mp4" type=video/mp4>
+  <source src="media/tizenstudio-cliinstaller-linux.mp4" type=video/mp4>
 </video>
 
 ## Display packages with CLI

@@ -48,7 +48,7 @@ The emulator list shows each emulator's name, device type, platform version, res
 The video below shows how to create a new emulator:
 
 <video controls height="400">
-  <source src="../media/create_new_emulator.mp4" type="video/mp4">
+  <source src="media/create_new_emulator.mp4" type="video/mp4">
 </video>
 
 To create a custom template, select **Add Template**. Define its name, display resolution, screen size, skin file, and supported hardware features, then select **Save**.

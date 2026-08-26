@@ -41,13 +41,13 @@ To install Tizen Studio:
 The video below shows how Tizen Studio is installed in Windows using the IDE installer:
 
 <video controls height="400">
-  <source src="../media/tizenstudio-ideinstaller.mp4" type=video/mp4>
+  <source src="media/tizenstudio-ideinstaller.mp4" type=video/mp4>
 </video>
 
 The video below shows how Tizen Studio is installed in Linux using the IDE installer:
 
 <video controls height="400">
-  <source src="../media/tizenstudio-ideinstaller-linux.mp4" type=video/mp4>
+  <source src="media/tizenstudio-ideinstaller-linux.mp4" type=video/mp4>
 </video>
 
 
@@ -95,13 +95,13 @@ To install Tizen Studio using the CLI installer:
 The video below shows how Tizen Studio is installed in Windows using the CLI installer:
 
 <video controls height="400">
-  <source src="../media/tizenstudio-cliinstaller.mp4" type=video/mp4>
+  <source src="media/tizenstudio-cliinstaller.mp4" type=video/mp4>
 </video>
 
 The video below shows how Tizen Studio is installed in Linux using the CLI installer:
 
 <video controls height="400">
-  <source src="../media/tizenstudio-cliinstaller-linux.mp4" type=video/mp4>
+  <source src="media/tizenstudio-cliinstaller-linux.mp4" type=video/mp4>
 </video>
 
 ## Display packages with CLI
