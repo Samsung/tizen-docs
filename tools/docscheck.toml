@@ -75,6 +75,14 @@ re-import; editing the output here is lost on the next import."""
 "L-BROKEN" = "error"
 "L-ANCHOR" = "error"
 
+# Sub-diagnoses of a broken reference. Separate ids because each names a
+# different mistake and three of them can name the correction too, which is
+# what turns a finding into a one-click fix.
+"L-HTML" = "error"
+"L-DEPTH" = "error"
+"L-CASE" = "error"
+"L-DOCSPREFIX" = "error"
+
 # Reverse-direction rules. ERROR from the start and they add no backlog: they
 # are scoped to the paths a change removes, so a change that removes nothing
 # reports nothing.

@@ -1,29 +1,107 @@
-"""L-* rules: link and image target resolution."""
+"""L-* rules: link, image and media target resolution.
+
+A broken reference is reported under the most specific diagnosis that fits.
+"Target does not exist" is true of all of them but actionable in none: the
+useful report names the mistake, and for three of these classes it can also
+name the correction.
+"""
+import os
+import posixpath
+
 from .. import markdown, paths
 from ..findings import ERROR, Finding
 
 BROKEN = "L-BROKEN"
 ANCHOR = "L-ANCHOR"
+HTML = "L-HTML"
+DEPTH = "L-DEPTH"
+CASE = "L-CASE"
+DOCSPREFIX = "L-DOCSPREFIX"
 
-
+#: How a Markdown reference is described in a message.
 KIND = {"md-link": "link", "md-image": "image"}
+
+SITE_PREFIX = f"/{paths.DOCS}/"
+
+
+def _describe(syntax):
+    if syntax in KIND:
+        return KIND[syntax]
+    return f"<{syntax.removeprefix('html-')}> reference"
+
+
+def _docs_prefixed(index, raw):
+    """A site-root reference that redundantly repeats the docs/ directory.
+
+    Site-root already means the docs/ directory, so "/docs/a/b.png" resolves to
+    "docs/docs/a/b.png". Written by hand it looks right, which is why this
+    needs its own diagnosis rather than a generic "does not exist".
+    """
+    if not raw.startswith(SITE_PREFIX):
+        return ""
+    candidate = paths.resolve("", raw[len(paths.DOCS) + 1:])
+    return candidate if index.exists(candidate) else ""
+
+
+def _depth_shifted(index, source_path, raw):
+    """A relative reference that resolves with one ../ added or removed.
+
+    Almost always a file that moved without its links being recomputed, which
+    reviewguide/review_points_guide.md illustrates with a screenshot.
+    """
+    if raw.startswith("/"):
+        return ""
+    directory = posixpath.dirname(source_path)
+    for candidate_raw in (raw[3:] if raw.startswith("../") else None, f"../{raw}"):
+        if not candidate_raw:
+            continue
+        candidate = paths.to_posix(
+            posixpath.normpath(posixpath.join(directory, candidate_raw)))
+        if index.exists(candidate):
+            return candidate_raw
+    return ""
+
+
+def classify(index, source_path, raw, syntax):
+    """Return ``(rule, fix)`` for a reference whose target does not exist."""
+    prefixed = _docs_prefixed(index, raw)
+    if prefixed:
+        return DOCSPREFIX, raw[len(paths.DOCS) + 1:]
+
+    target = paths.resolve(source_path, raw)
+    real = index.real_name_of(target)
+    if real:
+        return CASE, os.path.basename(real) if "/" not in raw else \
+            raw.rsplit("/", 1)[0] + "/" + os.path.basename(real)
+
+    shifted = _depth_shifted(index, source_path, raw)
+    if shifted:
+        return DEPTH, shifted
+
+    return (BROKEN if syntax in KIND else HTML), ""
 
 
 def check_links(index, path, source):
-    for syntax, url, offset in source.references():
-        if not url or markdown.is_external(url):
+    for syntax, url, offset in source.all_references():
+        if not url or markdown.is_external(url) or url.startswith("#"):
             continue
         raw, fragment = markdown.split_fragment(url)
+        if not raw:
+            continue
         target = paths.resolve(path, raw)
-        kind = KIND[syntax]
         if not index.exists(target):
             if raw.startswith("/") and not raw.endswith(".md"):
-                continue  # Published API and route paths need not have a repo file.
+                # A site-root route need not have a file here, but a redundant
+                # docs/ prefix is a mistake whatever the extension.
+                if not _docs_prefixed(index, raw):
+                    continue
             if index.exempt_existence(target):
                 continue  # Published by a separate pipeline; see docscheck.toml.
+            rule, fix = classify(index, path, raw, syntax)
             line, col = source.position(offset)
-            yield Finding(ERROR, BROKEN, path, f"{kind} target does not exist: {url}",
-                          line=line, col=col, syntax=syntax)
+            yield Finding(ERROR, rule, path,
+                          f"{_describe(syntax)} target does not exist: {url}",
+                          line=line, col=col, syntax=syntax, fix=fix)
         elif (fragment and target.endswith(".md") and not index.generated(target)
                 and fragment.lower() not in index.anchors(target)):
             line, col = source.position(offset)

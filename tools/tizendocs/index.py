@@ -57,6 +57,23 @@ class DocsIndex:
     def exists(self, path):
         return os.path.isfile(self.absolute(path))
 
+    def real_name_of(self, path):
+        """The on-disk path differing from *path* only in case, if any.
+
+        There are no case-only collisions anywhere under docs/, so when this
+        finds something the correction is unambiguous.
+        """
+        directory, name = os.path.split(path)
+        try:
+            entries = os.listdir(self.absolute(directory) if directory else self.root)
+        except OSError:
+            return ""
+        lowered = name.lower()
+        for entry in entries:
+            if entry != name and entry.lower() == lowered:
+                return f"{directory}/{entry}" if directory else entry
+        return ""
+
     # ---- classification -------------------------------------------------
 
     def generated(self, path):

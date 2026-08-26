@@ -28,7 +28,7 @@ CHANGE_REGISTRY = (
 
 RULE_IDS = tuple(dict.fromkeys(
     [rule for rule, _ in REGISTRY]
-    + [links.ANCHOR]
+    + [links.ANCHOR, links.HTML, links.DEPTH, links.CASE, links.DOCSPREFIX]
     + [rule for rule, _ in CHANGE_REGISTRY]))
 
 
