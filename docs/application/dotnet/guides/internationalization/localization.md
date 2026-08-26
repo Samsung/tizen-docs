@@ -84,7 +84,7 @@ protected override void OnLocaleChanged(LocaleChangedEventArgs e)
     CultureInfo culture;
     try
     {
-        culture = new CultureInfo(e.Value.Replace("_", "-"));
+        culture = new CultureInfo(e.Locale.Replace("_", "-"));
     }
     catch (CultureNotFoundException)
     {
@@ -103,7 +103,7 @@ protected override void OnLocaleChanged(LocaleChangedEventArgs e)
 
 Tizen reports a locale in the `<LANGUAGE>_<REGION>` syntax, such as `ko_KR`, while `CultureInfo` expects `ko-KR`. Replace the separator before constructing the `CultureInfo`, as in the preceding example. A few Tizen language codes have no direct `CultureInfo` equivalent and need mapping of their own: `zh-CN` corresponds to `zh-Hans`, and `zh-HK` and `zh-TW` correspond to `zh-Hant`.
 
-Take the new locale from the `Value` property of the event argument rather than reading `SystemSettings.LocaleLanguage`, which is documented as requiring the `http://tizen.org/privilege/systemsettings.admin` privilege at the platform privilege level and throws `UnauthorizedAccessException` without it.
+Take the new locale from the `Locale` property of the event argument rather than reading `SystemSettings.LocaleLanguage`, which is documented as requiring the `http://tizen.org/privilege/systemsettings.admin` privilege at the platform privilege level and throws `UnauthorizedAccessException` without it.
 
 ## Image localization
 
