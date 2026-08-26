@@ -56,7 +56,7 @@ The TizenFX API exposes Tizen-specific platform features through C# interfaces, 
 - **Tizen.Uix**: Text-to-speech, speech-to-text, and input methods
 - **Tizen.Webview**: Embedded web browsing functionality
 
-For the complete API reference, see the [TizenFX API documentation](../api/TizenFX/index.html).
+For the complete API reference, see the [TizenFX API documentation](/application/dotnet/api/TizenFX/index.html).
 
 ### Natural User Interface (NUI)
 
@@ -98,5 +98,5 @@ Service applications run in the background without a user interface. They are id
 
 ## Related Documentation
 
-- **[API Reference](../api/TizenFX/index.html)**: Complete API documentation
+- **[API Reference](/application/dotnet/api/TizenFX/index.html)**: Complete API documentation
 - **[Guides](../guides/index.md)**: Detailed feature tutorials and examples
