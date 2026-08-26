@@ -292,6 +292,7 @@
 # Web Application
 
 ## [Overview](/application/web/index.md)
+## [API Overview](/application/web/overview/overview.md)
 
 ## Get Started with Visual Studio Code Extension
 ### [Web application development](/sdk-tools/vscode-ext/Tizen/web-app.md)
@@ -536,6 +537,7 @@
 # Native Application
 
 ## [Overview](/application/native/index.md)
+## [API Overview](/application/native/overview/overview.md)
 
 ## Get Started with Visual Studio Code Extension
 ### [Native application development](/sdk-tools/vscode-ext/Tizen/native.md)

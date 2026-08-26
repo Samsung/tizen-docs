@@ -227,21 +227,6 @@ For working code, see the [Tizen .NET sample applications](https://github.com/Sa
     <div class="col col-md-3">
         <div class="card card-infra card-list h-100">
             <div class="card-body">
-                <p class="h3 card-title">Maps</p>
-                <div class="card-text">
-                    <ul class="list-infra list-infra-arrow">
-                        <li><a href="maps/here-credentials.md">Getting HERE Maps Credentials</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-footer">
-                <a class="link-standalone" href="maps/maps.md">Learn more</a>
-            </div>
-        </div>
-    </div>
-    <div class="col col-md-3">
-        <div class="card card-infra card-list h-100">
-            <div class="card-body">
                 <p class="h3 card-title">Multimedia</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
