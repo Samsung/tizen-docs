@@ -36,6 +36,12 @@ The `Tizen.Entity.View` fields are `Id`, `Type`, `Description`, `ScreenBounds`, 
 > [!NOTE]
 > Your application does not register the platform View Actions or View Entity schema files again. The schemas are owned by the platform default-actions package; if an application declares an Action or Entity name already owned by the platform, the package installation is rejected.
 
+The following figure shows how a user utterance about on-screen content flows through the framework to your application's callbacks and back:
+
+**Figure: View Annotation flow from a user utterance**
+
+![View Annotation flow from a user utterance](./media/tizen_action_2_0_flow_web.png)
+
 ## Configure the application
 
 Register each of the four View Actions individually as provider metadata in `config.xml`. Registering only the category is silently ignored:
