@@ -1102,7 +1102,6 @@
 ## [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
 
 # Reference
-## [Glossary](/glossary.md)
 ## [Trademarks](/trademarks.md)
 ## [Feature Keys](/application/features/feature.md)
 ## [Privilege Keys](/application/features/privilege.md)

@@ -16,7 +16,6 @@
 ### [Tizen 3.0](/platform/what-is-tizen/versions/tizen-3-0.md)
 
 # Get Started
-## [Overview](/get-started.md)
 ## [Tizen Open Source Project](/platform/get-started/open-source-project.md)
 ## [Development Workflow](/platform/get-started/work-flow.md)
 ## [Git Repository Structure](/platform/get-started/git-repo-structure.md)

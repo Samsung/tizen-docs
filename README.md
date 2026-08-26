@@ -24,8 +24,7 @@ tizen-docs/
 │   ├── platform/                # Platform/OS docs — HAL, compliance, porting,
 │   │                            #   developing, reference, release-notes, what-is-tizen
 │   ├── extensions/tizenx/       # TizenX extension SDK guides + generated API reference
-│   ├── images/                  # Shared site images
-│   └── menu.yaml, get-started.md, glossary.md, trademarks.md
+│   └── trademarks.md            # Third-party trademark attribution page
 ├── styleguide/                  # Writing style and naming-rule references
 ├── reviewguide/                 # PR reviewer walkthroughs (per content type, stg build)
 ├── tools/check_docs.py          # Link/TOC validator, run before every PR
