@@ -42,7 +42,7 @@ lives in [`docs/sdk-tools/`](#docssdk-tools-252-md) instead:
 | --- | --- |
 | `native/` (228 md) | C API guides, tutorials, overview. `native/api/` holds versioned, generated HTML API reference (e.g. `5.0/`, `6.5/`) — do not hand-edit. |
 | `web/` (164 md) | Web/W3C API guides. `web/api/` holds the largest generated HTML block in the repo (device_api, ui_fw_api, w3c_api, versioned by release). See `reviewguide/review_points_web_api.md` before touching anything under here — Web is unusual in that the API reference itself lives in this repo as HTML, not Markdown, and must follow HTML markup conventions, not Markdown syntax. |
-| `dotnet/` (201 md) | .NET/Xamarin guides; small generated `api/` stub. |
+| `dotnet/` (197 md) | .NET guides for NUI. No `api/` directory: `/application/dotnet/api/**` is published from the TizenFX repository, not from here. |
 | `flutter/` (13 md) | Flutter guides — the newest, smallest profile. |
 | `features/` (5 md), `profiles/` (3 md) | Small cross-cutting overview pages. |
 
@@ -126,7 +126,7 @@ when reviewing a PR in the matching area:
 ## Cross-cutting: generated vs. hand-written content
 
 Every `*/api/**` directory in this repository (`application/native/api`,
-`application/web/api`, `application/dotnet/api`, `extensions/tizenx/api`) is
+`application/web/api`, `extensions/tizenx/api`) is
 generated and/or versioned content imported from elsewhere. Together they account for
 the large majority of files tracked in this repository. `AGENTS.md` states the rule;
 this map exists so you know, before you open an editor, which of the roughly 80,000

@@ -67,9 +67,7 @@ In some cases, particular property takes a collection type, such as the `ImageVi
 </ImageView>
 ```
 
-If the type of the property is an array, you can use the `x:Array` markup extension to implement it.
-
-For more information, see https://docs.microsoft.com/en-US/xamarin/xamarin-forms/xaml/markup-extensions/consuming.
+If the type of the property is an array, you can use the `x:Array` markup extension to implement it. `x:Array` requires a `Type` argument naming the element type, and takes the array elements as its content.
 
 ## Events and Callback
 
@@ -122,5 +120,3 @@ The following code example demonstrates using the `x:Arguments` attribute with `
   </x:Arguments>
 </ImageView>
 ```
-
-For more information, see [Passing Arguments in XAML](https://docs.microsoft.com/en-US/xamarin/xamarin-forms/xaml/passing-arguments).
