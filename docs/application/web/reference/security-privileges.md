@@ -20,7 +20,7 @@ Since Tizen platform 3.0, some privileges are categorized as privacy-related and
 > Since Tizen 8.0, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternatives, and [privacy feature](http://tizen.org/feature/security.privacy_privilege){:target="_blank"} will be disabled in all profiles.
 
 
-Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
+Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../../sdk-tools/tizen-studio/web-tools/privilege-checker.md).
 
 <a name="API"></a>
 ## Web API privileges

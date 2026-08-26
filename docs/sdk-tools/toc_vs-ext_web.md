@@ -1,57 +1,57 @@
 # Tizen SDK & Development Tools
-## [Overview](/application/tizen-studio/common-tools/overview.md)
-## [Release Notes](/application/tizen-studio/release-notes/6-0-release-notes.md)
+## [Overview](/sdk-tools/tizen-studio/common-tools/overview.md)
+## [Release Notes](/sdk-tools/tizen-studio/release-notes/6-0-release-notes.md)
 
 ## Visual Studio Tools for Tizen
-### [Overview](/application/vstools/index.md)
+### [Overview](/sdk-tools/vstools/index.md)
 
 ### Setup Environment
-#### [Prerequisite](/application/vstools/prequisite.md)
-#### [Install VS Extension for Tizen](/application/vstools/install.md)
-#### [Install SDK Common Tools & Tizen Platform](/application/vstools/install-sdk-common-tools.md)
-#### [Install TV Extension](/application/vstools/tv-certificate-extension.md)
+#### [Prerequisite](/sdk-tools/vstools/prequisite.md)
+#### [Install VS Extension for Tizen](/sdk-tools/vstools/install.md)
+#### [Install SDK Common Tools & Tizen Platform](/sdk-tools/vstools/install-sdk-common-tools.md)
+#### [Install TV Extension](/sdk-tools/vstools/tv-certificate-extension.md)
 
 ### Web Application Development
-<!-- #### [Overview](/application/vstools/getting-started/creating-application-projects.md) -->
-#### [Overview](/application/vstools/getting-started/vs-web-development-activity-tools.md)
+<!-- #### [Overview](/sdk-tools/vstools/getting-started/creating-application-projects.md) -->
+#### [Overview](/sdk-tools/vstools/getting-started/vs-web-development-activity-tools.md)
 
 #### Managing Project
-##### [Create App](/application/vstools/Tizen/web.md)
+##### [Create App](/sdk-tools/vstools/Tizen/web.md)
 #### Configure App
-##### [Tool : Certificate Manager](/application/vstools/tools/certificate-manager.md)
+##### [Tool : Certificate Manager](/sdk-tools/vstools/tools/certificate-manager.md)
 ##### Tool : Manifest Editor
-###### [Overview](/application/vstools/tools/manifest-editor.md)
-###### [Metadata Element](/application/vstools/tools/metadata-element.md)
-###### [Additional Manifest Elements](/application/vstools/tools/manifest-elements.md)
+###### [Overview](/sdk-tools/vstools/tools/manifest-editor.md)
+###### [Metadata Element](/sdk-tools/vstools/tools/metadata-element.md)
+###### [Additional Manifest Elements](/sdk-tools/vstools/tools/manifest-elements.md)
 
 #### Coding & Building Application
-##### [Edit Code](/application/vstools/getting-started/edit-code.md)
-##### [API and Privilege Checker](/application/vstools/tools/api-privilege-checker.md)
+##### [Edit Code](/sdk-tools/vstools/getting-started/edit-code.md)
+##### [API and Privilege Checker](/sdk-tools/vstools/tools/api-privilege-checker.md)
 
 #### Debugging & Profiling Application
-##### [Debug App](/application/vstools/getting-started/debug-app-web.md)
-##### [Tool: Web Inspector](/application/tizen-studio/web-tools/web-inspector.md)
+##### [Debug App](/sdk-tools/vstools/getting-started/debug-app-web.md)
+##### [Tool: Web Inspector](/sdk-tools/tizen-studio/web-tools/web-inspector.md)
 
 #### Running and Testing Application
-##### [Normal Run](/application/vstools/getting-started/edit-code.md)
-##### [Install Tizen App](/application/vstools/tools/install-tizen-app.md)
+##### [Normal Run](/sdk-tools/vstools/getting-started/edit-code.md)
+##### [Install Tizen App](/sdk-tools/vstools/tools/install-tizen-app.md)
 ##### Tool : Emulator
-###### [Overview](/application/tizen-studio/common-tools/emulator.md)
-###### [Emulator Manager](/application/vstools/tools/emulator-manager.md)
-###### [Emulator Control Panel](/application/vstools/tools/emulator-control-panel.md)
-##### [Tool : Device Manager](/application/vstools/tools/device-manager.md)
-##### [Tool : SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
-##### [Tool : TV Web Simulator](/application/tizen-studio/common-tools/smart-development-bridge.md)
-##### [Web Unit Test](/application/vstools/getting-started/web-app-unit-test.md)
+###### [Overview](/sdk-tools/tizen-studio/common-tools/emulator.md)
+###### [Emulator Manager](/sdk-tools/vstools/tools/emulator-manager.md)
+###### [Emulator Control Panel](/sdk-tools/vstools/tools/emulator-control-panel.md)
+##### [Tool : Device Manager](/sdk-tools/vstools/tools/device-manager.md)
+##### [Tool : SDB](/sdk-tools/tizen-studio/common-tools/smart-development-bridge.md)
+##### [Tool : TV Web Simulator](/sdk-tools/tizen-studio/common-tools/smart-development-bridge.md)
+##### [Web Unit Test](/sdk-tools/vstools/getting-started/web-app-unit-test.md)
 
 #### SDK Diagnostics
-##### [Tizen Doctor](/application/tizen-studio/common-tools/tizen-doctor.md)
+##### [Tizen Doctor](/sdk-tools/tizen-studio/common-tools/tizen-doctor.md)
 
 #### Report Issues
-##### [Issue Reporter](/application/vstools/tools/issue-reporter-vs-tools.md)
+##### [Issue Reporter](/sdk-tools/vstools/tools/issue-reporter-vs-tools.md)
 
 #### Advanced
-##### [Hybrid Application Development](/application/vstools/Tizen/hybrid.md)
-##### [TizenNUIGadget RPK Development](/application/vstools/Tizen/nuigadget-rpk.md)
+##### [Hybrid Application Development](/sdk-tools/vstools/Tizen/hybrid.md)
+##### [TizenNUIGadget RPK Development](/sdk-tools/vstools/Tizen/nuigadget-rpk.md)
 
-## [Tool Index](/application/sdktool-index.md)
+## [Tool Index](/sdk-tools/sdktool-index.md)

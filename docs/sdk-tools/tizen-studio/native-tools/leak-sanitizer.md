@@ -7,7 +7,7 @@ The Leak Sanitizer is a profiling tool used to detect runtime memory leaks in Ti
 > [!NOTE]
 > Before you run the Leak Sanitizer:
 > - Make sure that you have an emulator or a connected target device running.
-> - If you want to try out the tool and do not have an applicable project to test, create a test project with the Project Wizard using a template or sample. For more information on creating a project, see [Creating the Application Project](../../native/guides/development/creating-app-project.md).
+> - If you want to try out the tool and do not have an applicable project to test, create a test project with the Project Wizard using a template or sample. For more information on creating a project, see [Creating the Application Project](../../../application/native/guides/development/creating-app-project.md).
 
 To use the Leak Sanitizer:
 

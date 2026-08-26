@@ -8,9 +8,9 @@ Study the following instructions to help familiarize yourself with Tizen [Web ap
 
 The following instructions help you to create and run a basic Web service, which enables Web service life-cycle and ensures communication between the Web service and the Web application:
 
-1.  Before you get started with developing Web service application, download and install [Tizen Studio](../../../tizen-studio/index.md)
+1.  Before you get started with developing Web service application, download and install [Tizen Studio](../../../../sdk-tools/tizen-studio/index.md)
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../../sdk-tools/tizen-studio/setup/install-sdk.md).
 
 2.  [Create a Web Service Project](#create) using Tizen Studio
 
@@ -32,7 +32,7 @@ The following instructions help you to create and run a basic Web service, which
 
     This step shows how you can use Web service life-cycle callbacks.
 
-When you are developing a more complex Web service, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing Web applications that use the Web service.
+When you are developing a more complex Web service, you can take advantage of the [Web tools included in Tizen Studio](../../../../sdk-tools/tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing Web applications that use the Web service.
 
 <a name="create"></a>
 ## Create a project
@@ -79,7 +79,7 @@ To create the Web service project, follow these steps:
 
         ![Defining properties](media/create_project_wizard_properties_ma.png)
 
-        The Project Wizard sets up configurations and creates the Web service files using the template. For more information on the Project Wizard and the available templates, see [Create Tizen Projects with Tizen Project Wizard](../../../tizen-studio/web-tools/project-wizard.md).
+        The Project Wizard sets up configurations and creates the Web service files using the template. For more information on the Project Wizard and the available templates, see [Create Tizen Projects with Tizen Project Wizard](../../../../sdk-tools/tizen-studio/web-tools/project-wizard.md).
 
 <a name="build"></a>
 ## Build Web service package
@@ -106,14 +106,14 @@ You can run the Web service on the [emulator](../../guides/development/run-debug
 
 To run the Web service on the emulator, follow these steps:
 
-1. Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
+1. Launch an emulator instance in the [Emulator Manager](../../../../sdk-tools/tizen-studio/common-tools/emulator-manager.md):
     1. In Tizen Studio menu, select **Tools \> Emulator Manager**.
 
         ![Emulator Manager](media/emulator_icon.png)
 
     2.  In the Emulator Manager, select an emulator from the list and click **Launch**.
 
-        If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
+        If no applicable emulator instance exists, [create a new one](../../../../sdk-tools/tizen-studio/common-tools/emulator-manager.md#create).
 
         ![Launching the emulator](media/emulator_launch_m.png)
 
@@ -123,7 +123,7 @@ To run the Web service on the emulator, follow these steps:
 
 2. Generate a security profile.
 
-    Before you run the Web service, you must [sign your Web service package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
+    Before you run the Web service, you must [sign your Web service package with a certificate profile](../../../../sdk-tools/tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 3. Run Web service:
 
@@ -149,7 +149,7 @@ To run the Web service on the real target device:
 
 1. Generate a security profile.
 
-    Before you run the Web service, you must [sign your Web service package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
+    Before you run the Web service, you must [sign your Web service package with a certificate profile](../../../../sdk-tools/tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 2. Run Web service:
 

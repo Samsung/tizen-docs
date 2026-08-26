@@ -23,7 +23,7 @@ The main features of the [Tizen.Applications.Messages.MessagePort](/application/
 To enable your application to use the message port functionality, follow these steps:
 
 1.  You need 2 applications to communicate with each other through the message port.
-2.  To use trusted message port communication, both applications must have the same certificate. To create and register an author certificate, go to the Visual Studio menu and select **Tools &gt; Tizen &gt; Certificate Manager**. For more information, see [Certificate Manager](../../../vstools/tools/certificate-manager.md).
+2.  To use trusted message port communication, both applications must have the same certificate. To create and register an author certificate, go to the Visual Studio menu and select **Tools &gt; Tizen &gt; Certificate Manager**. For more information, see [Certificate Manager](../../../../sdk-tools/vstools/tools/certificate-manager.md).
 3.  To use the methods and properties of the [Tizen.Applications.Messages.MessagePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html) and [Tizen.Applications.Messages.RemotePort](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.RemotePort.html) classes, include the [Tizen.Applications.Messages](/application/dotnet/api/TizenFX/latest/api/Tizen.Applications.Messages.html) namespace in your application:
 
     ```csharp

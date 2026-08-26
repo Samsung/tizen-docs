@@ -1,11 +1,11 @@
 # Verifying Privilege Usage
 
-Tizen Studio provides a checker to identify potential [privilege](../../web/reference/security-privileges.md) violation problems in the application code. This check is performed automatically, and you can easily verify the source code in your project.
+Tizen Studio provides a checker to identify potential [privilege](../../../application/web/reference/security-privileges.md) violation problems in the application code. This check is performed automatically, and you can easily verify the source code in your project.
 
 <a name="use"></a>
 ## Using the Privilege Checker
 
-The Privilege Checker is enabled by default. It is automatically performed during the [build process](../../web/guides/development/index.md#build) or code editing.
+The Privilege Checker is enabled by default. It is automatically performed during the [build process](../../../application/web/guides/development/index.md#build) or code editing.
 
 To perform the check manually:
 

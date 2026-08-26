@@ -6,9 +6,9 @@ An addon is a JavaScript snippet with a manifest file that allows additional com
 
 Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../guides/development/index.md) as well as using Tizen Studio and installing the created application on the emulator or target device. The addon is not a Web application, but it is very similar to the Web application in the developing process. With the following instructions, you can create and run a basic addon, which gets timings of various application life-cycle:
 
-1.  Before you get started with developing Tizen addons, download and install [Tizen Studio](../../../tizen-studio/index.md).
+1.  Before you get started with developing Tizen addons, download and install [Tizen Studio](../../../../sdk-tools/tizen-studio/index.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../../sdk-tools/tizen-studio/setup/install-sdk.md).
 
 2.  [Create an addon project](#create) using Tizen Studio.
 
@@ -26,7 +26,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
     This step shows how you can create the addon UI and make small alterations to it to improve the usability of your addon.
 
-When you are developing a more complex addon, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the addon UI.
+When you are developing a more complex addon, you can take advantage of the [Web tools included in Tizen Studio](../../../../sdk-tools/tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the addon UI.
 
 <a name="create"></a>
 ## Create project
@@ -75,7 +75,7 @@ To create the addon project, follow these steps:
 
         ![Defining properties](media/create_project_wizard_properties_ma.png)
 
-        The Project Wizard sets up the project, creates the addon files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/web-tools/project-wizard.md).
+        The Project Wizard sets up the project, creates the addon files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../../sdk-tools/tizen-studio/web-tools/project-wizard.md).
 
 You can see the created project in the **Project Explorer** view. The most important files and folders include:
 
@@ -151,14 +151,14 @@ You can run the addon on the [emulator](../../guides/development/run-debug-app.m
 
 To run the addon on the emulator, follow these steps:
 
-1.  Launch an emulator instance in [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
+1.  Launch an emulator instance in [Emulator Manager](../../../../sdk-tools/tizen-studio/common-tools/emulator-manager.md):
     1. In the Tizen Studio menu, select **Tools \> Emulator Manager**.
 
         ![Emulator Manager](media/emulator_icon.png)
 
     2.  In Emulator Manager, select an emulator from the list and click **Launch**.
 
-        If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
+        If no applicable emulator instance exists, [create a new one](../../../../sdk-tools/tizen-studio/common-tools/emulator-manager.md#create).
 
         ![Launching the emulator](media/emulator_launch_m.png)
 
@@ -168,7 +168,7 @@ To run the addon on the emulator, follow these steps:
 
 2.  Generate a security profile.
 
-    Before you run the addon, you must [sign your addon package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
+    Before you run the addon, you must [sign your addon package with a certificate profile](../../../../sdk-tools/tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
    
 3.  Run the addon: <a name="run-addon"></a>
     
@@ -204,7 +204,7 @@ To run the addon on the emulator, follow these steps:
         > [!NOTE]
         > You will find nothing different from running the Web application without the addon because there is no visible change in UI. You can make a change on UI later.
 
-For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
+For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../../sdk-tools/tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../../sdk-tools/tizen-studio/common-tools/emulator-features.md).
 
 <a name="target"></a>
 ### Run on target device

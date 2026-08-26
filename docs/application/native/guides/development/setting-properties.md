@@ -14,7 +14,7 @@ After you have finished setting the project properties, you are ready to [design
 <a name="api"></a>
 ## Checking API and Privilege Usage
 
-You can [check the source code in your project for any violation of API and privilege usage](../../../tizen-studio/native-tools/api-checker.md). To enable the non-default checks (the default checks are always performed):
+You can [check the source code in your project for any violation of API and privilege usage](../../../../sdk-tools/tizen-studio/native-tools/api-checker.md). To enable the non-default checks (the default checks are always performed):
 
 1. In the **Properties** window, select **C/C++ Build > Tizen Settings > API and Privilege Checker Properties**.
 2. Select the required checks in the **Privilege Check** panel.
@@ -39,7 +39,7 @@ The application manifest consists of application information, such as package, v
 
 ![Setting the application manifest](media/tizen_project_explorer.png)
 
-You can [edit the application properties using the form tabs of the manifest editor](../../../tizen-studio/native-tools/manifest-text-editor.md#edit-the-manifest-file).
+You can [edit the application properties using the form tabs of the manifest editor](../../../../sdk-tools/tizen-studio/native-tools/manifest-text-editor.md#edit-the-manifest-file).
 
 ### Defining and Editing General Information in the Overview Tab
 
@@ -152,7 +152,7 @@ To add a localized name or description:
 <description xml:lang="en-us">This is a sample</description>
 ```
 
-You can localize a native application to adapt to various languages and cultural environments by creating different native application versions for different languages. For more information, see [Localizing Application Resources](../../../tizen-studio/native-tools/po-file-editor.md).
+You can localize a native application to adapt to various languages and cultural environments by creating different native application versions for different languages. For more information, see [Localizing Application Resources](../../../../sdk-tools/tizen-studio/native-tools/po-file-editor.md).
 
 ### Defining Advanced Features in the Advanced Tab
 
@@ -239,7 +239,7 @@ You can perform the following tasks using the **Advanced** tab:
 
 ### Editing the tizen-manifest.xml File in the Source Tab
 
-  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../tizen-studio/native-tools/manifest-text-editor.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
+  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../../sdk-tools/tizen-studio/native-tools/manifest-text-editor.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
 
 > **Note**
 >

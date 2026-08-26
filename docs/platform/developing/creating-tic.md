@@ -85,6 +85,6 @@ TIC is an image creator tool used to create images for Tizen. The main features 
 
 To flash the generated image by TIC to a target device for verification, see [Flashing an Image to RPI](flashing-rpi.md).
 
-To use the generated SDK to develope applications with Tizen Studio, see [Configuring the Package Manager](../../application/tizen-studio/setup/advanced-configuration.md) and [Configurable SDK](../../application/tizen-studio/configurable-sdk/configurable-sdk.md).
+To use the generated SDK to develope applications with Tizen Studio, see [Configuring the Package Manager](../../sdk-tools/tizen-studio/setup/advanced-configuration.md) and [Configurable SDK](../../sdk-tools/tizen-studio/configurable-sdk/configurable-sdk.md).
 
 [TIC Frequently Asked Questions](../reference/tic-faq.md) describes frequently asked questions and known issues.

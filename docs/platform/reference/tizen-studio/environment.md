@@ -4,7 +4,7 @@ To build and test Tizen Studio, you must install both Tizen Studio and TS-CLI.
 
 ## Install Tizen Studio
 To install Tizen Studio, follow the steps below:
-1. Make sure your computer fulfills the [system requirements](../../../application/tizen-studio/setup/prerequisites.md).
+1. Make sure your computer fulfills the [system requirements](../../../sdk-tools/tizen-studio/setup/prerequisites.md).
 2. [Download](https://developer.tizen.org/development/tizen-studio/download) and install Tizen Studio.
 
 ## Set up the local build environment

@@ -19,7 +19,7 @@ The main features of the STC API include:
 
 
 > **Note**
-> You can test the STC functionality on a target device only. The [emulator](../../../tizen-studio/common-tools/emulator.md) does not support this feature.
+> You can test the STC functionality on a target device only. The [emulator](../../../../sdk-tools/tizen-studio/common-tools/emulator.md) does not support this feature.
 
 ## Prerequisites
 

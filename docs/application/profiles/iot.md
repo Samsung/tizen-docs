@@ -18,7 +18,7 @@ The following guide demonstrates how to create and run a basic Tizen .NET applic
 
 	An IoT application is targeted to run on an IoT device. The applications can take advantage of a wide variety of functionalities available on IoT devices.
 
-Ensure that you have installed the latest version of [Visual Studio Tools for Tizen](../vstools/install.md).
+Ensure that you have installed the latest version of [Visual Studio Tools for Tizen](../../sdk-tools/vstools/install.md).
 
 ## Native service application
 
@@ -30,4 +30,4 @@ To begin your Tizen Native service application development journey, use the foll
 
     An IoT native service application can be created using the C language and is targeted to run on Raspberry Pi. The application uses the Native APIs, which provide various interfaces to the device hardware, allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
-Ensure that you have installed the latest version of [Tizen Studio](../tizen-studio/index.md).
+Ensure that you have installed the latest version of [Tizen Studio](../../sdk-tools/tizen-studio/index.md).

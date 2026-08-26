@@ -47,7 +47,7 @@ To enable your application to use the Web service functionality:
 
    The `<tizen:service>` element is a child of the `<widget>` element in the `config.xml` file. With the `<tizen:service>` element attributes, you can set the traits of a Web service, such as application ID, auto restart, and boot launching capability. With the `<tizen:service>` child elements, you can set the starting script, and name for the Web service.
 
-   The definition of all service elements is listed and explained in the [Extending Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#ww_extend).
+   The definition of all service elements is listed and explained in the [Extending Configuration Elements](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#ww_extend).
 
 > [!NOTE]
 > No privileges need to be separately defined for Web services, since the Web service is always packaged with a Web application, and a privilege defined for the Web application covers the entire application package.

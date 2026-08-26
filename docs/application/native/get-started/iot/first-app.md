@@ -16,9 +16,9 @@ Study the following instructions to help familiarize yourself with the Tizen [Na
     - [Flashing Tizen Image - page 6](https://samsung.github.io/TizenSchool/tutorials/191)
     - [Setting up Raspberry Pi - page 8](https://samsung.github.io/TizenSchool/tutorials/191)
 
-2. Download and install [Tizen Studio](../../../tizen-studio/index.md).
+2. Download and install [Tizen Studio](../../../../sdk-tools/tizen-studio/index.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../../sdk-tools/tizen-studio/setup/install-sdk.md).
 
 3. [Create an IoT native service project](#create) using Tizen Studio.
 
@@ -32,7 +32,7 @@ Study the following instructions to help familiarize yourself with the Tizen [Na
 
     This step shows how to run your application on Raspberry Pi.
 
-When you are developing a more complex application, you can take advantage of the [native tools included in Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [native tools included in Tizen Studio](../../../../sdk-tools/tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Create project
@@ -83,7 +83,7 @@ To create the application project:
 
         ![Defining properties](media/create_project_wizard_properties.png)
 
-        The Project Wizard sets up the project and creates application files using the default content from the template. For more information on the Project Wizard and available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/native-tools/project-wizard.md).
+        The Project Wizard sets up the project and creates application files using the default content from the template. For more information on the Project Wizard and available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../../sdk-tools/tizen-studio/native-tools/project-wizard.md).
 
 You can see the created project in the **Project Explorer** view. The most important files and folders include:
 
@@ -260,7 +260,7 @@ To run the application on a Raspberry Pi:
 
 1. Generate an author certificate.
 
-    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
+    Before you run the application, you must [sign your application package with a certificate profile](../../../../sdk-tools/tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 2. Run the application:
     1. In the **Tools \> Device Manager**, select Raspberry Pi and change the connection status to **ON**.
@@ -282,7 +282,7 @@ To run the application on a Raspberry Pi:
 
         ![Log of the IoT native service application](media/hellotizen_log.png)
 
-	For more information on the Log View, see the [checking Logs with Log View](../../../tizen-studio/common-tools/log-view.md).
+	For more information on the Log View, see the [checking Logs with Log View](../../../../sdk-tools/tizen-studio/common-tools/log-view.md).
 
     > [!NOTE]
     > The application is launched using the default debug run configuration. To create and use another configuration:

@@ -50,7 +50,7 @@ To move to the next step, select the profile and version, and click **Next**.
 <a name="app_type"></a>
 ## Application Type
 
-You can select the Web or native application type for your project. For more information, see [Web Application](../../web/index.md) and [Native Application](../../native/index.md).
+You can select the Web or native application type for your project. For more information, see [Web Application](../../../application/web/index.md) and [Native Application](../../../application/native/index.md).
 
 Based on the selected application type, a list of templates is shown in the template selection step.
 

@@ -534,7 +534,7 @@ The main application group features include the following:
         application that is causing the application to be launched.
 
     You can set the application launch mode [in the manifest
-    file](../../../vstools/tools/manifest-editor.md#launch_mode)
+    file](../../../../sdk-tools/vstools/tools/manifest-editor.md#launch_mode)
     using the `launch_mode` attribute of the `<ui-application>` element.
     If the launch mode is set to `caller`, the application that calls
     the application control can define the launch mode for the called

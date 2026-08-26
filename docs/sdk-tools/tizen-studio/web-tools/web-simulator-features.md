@@ -118,7 +118,7 @@ You can use the **Packages and Applications** panel to verify created operations
 
 ![Packages and Applications panel](./media/simulator_panel_package.png)
 
-You can receive notifications of changes in the list of installed packages. The `setPackageInfoEventListener()` method of the `PackageManager` interface (in [TV](../../web/api/10.0.0/tv/device_api/tv/tizen/package.md#PackageManager) applications) registers an event listener for changes in the installed packages list. To unsubscribe the listener, use the `unsetPackageInfoEventListener()` method. You can use the `PackageInformationEventCallback` interface (in [TV](../../web/api/10.0.0/tv/device_api/tv/tizen/package.md#PackageInformationEventCallback) applications) to define listeners for receiving notifications.
+You can receive notifications of changes in the list of installed packages. The `setPackageInfoEventListener()` method of the `PackageManager` interface (in [TV](/application/web/api/latest/device_api/tv/tizen/package.html#PackageManager) applications) registers an event listener for changes in the installed packages list. To unsubscribe the listener, use the `unsetPackageInfoEventListener()` method. You can use the `PackageInformationEventCallback` interface (in [TV](/application/web/api/latest/device_api/tv/tizen/package.html#PackageInformationEventCallback) applications) to define listeners for receiving notifications.
 
 Learning to receive notifications when the list of installed packages changes allows you to manage device packages from your application:
 

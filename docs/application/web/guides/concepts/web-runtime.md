@@ -31,9 +31,7 @@ The Web Runtime supports the following Web application types:
 -   Hosted Web applications
 
 All Web applications must be packaged according to the [Widget Packaging and XML Configuration
-guidelines](https://www.w3.org/TR/widgets/){:target="_blank"}. However, unlike packaged Web applications, the hosted Web applications have an externally hosted document as their starting page. For more information, see Extending Configuration Elements (in
-[mobile](../../tizen-studio/web-tools/config-editor.md#mw_extend)
-and [wearable](../../tizen-studio/web-tools/config-editor.md#ww_extend) applications).
+guidelines](https://www.w3.org/TR/widgets/){:target="_blank"}. However, unlike packaged Web applications, the hosted Web applications have an externally hosted document as their starting page. For more information, see [Extending Configuration Elements](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#ww_extend).
 
 You can manage Web applications by:
 
@@ -125,10 +123,10 @@ The main functionality of the Web Runtime is to provide the following
 Tizen Web APIs to Web applications:
 
 -   [W3C/HTML5
-    APIs](../api/latest/w3c_api/w3c_api_cover.html)
+    APIs](../../api/latest/w3c_api/w3c_api_cover.html)
 
 -   [Tizen Device
-    API](../api/latest/device_api/device_api_cover.html)
+    API](../../api/latest/device_api/tv/index.html)
 
 It also supports multiple browsing context creation within a single Web
 application using, for example, the `window.open()` method, or hyperlink
@@ -189,12 +187,9 @@ process:
 <a name="protect"></a>
 ### Web application protection
 
-For Web applications that explicitly turn on encryption (in
-[mobile](../../tizen-studio/web-tools/config-editor.md#mw_setting)
-and
-[wearable](../../tizen-studio/web-tools/config-editor.md#ww_setting)
-applications) using the `<tizen:setting/>` element in the configuration
-file, the Web Runtime provides the following protection features:
+For Web applications that explicitly turn on encryption using the
+[`<tizen:setting/>`](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#ww_setting)
+element in the configuration file, the Web Runtime provides the following protection features:
 -   HTML, JavaScript, and CSS files of the Web application stored by the    device are encrypted.
 -   When the Web application is launched, the WRT decrypts all of its   resources in a manner which is transparent to the Web    application itself.
 
@@ -327,7 +322,7 @@ individual user cannot elevate the permissions set by the
 platform-defined security policy. The mapping between each Tizen Device
 API and the corresponding privilege is defined in the API definitions in
 the [Tizen Device API
-Reference](../api/latest/device_api/device_api_cover.html).
+Reference](../../api/latest/device_api/tv/index.html).
 
 The following table summarizes distributor signature type to API
 privilege level behavior mapping:

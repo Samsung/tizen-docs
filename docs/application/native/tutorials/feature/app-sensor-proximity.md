@@ -239,7 +239,7 @@ the screen:
     bring the device close to your face.
 
     To test on the emulator, use the [control
-    panel](../../../tizen-studio/common-tools/emulator-control-panel.md):
+    panel](../../../../sdk-tools/tizen-studio/common-tools/emulator-control-panel.md):
 
     a.  Right-click the emulator and select **Control Panel**.  
     b. Click **Next** in the lower-right corner until you see the        **Proximity** box.  

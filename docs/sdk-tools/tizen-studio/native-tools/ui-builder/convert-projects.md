@@ -75,10 +75,10 @@ To display visually-edited views (created in the UI Builder) and code-based user
 
 | Name       | Type                                     | Description                              |
 |------------|------------------------------------------|------------------------------------------|
-| window     | [Elementary window](/application/native/api/10.0.0/common/group__Elm__Win__Group.md) | Forms the first window of the application. |
-| bg         | [Background](/application/native/api/10.0.0/common/group__Elm__Bg.md) | Sets a background for a window or any container object. |
-| conformant | [Conformant](/application/native/api/10.0.0/common/group__Elm__Conformant.md) | Provides space for indicators, virtual keypads, and softkey windows. |
-| naviframe  | [Naviframe](/application/native/api/10.0.0/common/group__Elm__Naviframe__Group.md) | Manages UI Builder views.                |
+| window     | [Elementary window](/application/native/api/common/latest/group__Elm__Win__Group.html) | Forms the first window of the application. |
+| bg         | [Background](/application/native/api/common/latest/group__Elm__Bg.html) | Sets a background for a window or any container object. |
+| conformant | [Conformant](/application/native/api/common/latest/group__Elm__Conformant.html) | Provides space for indicators, virtual keypads, and softkey windows. |
+| naviframe  | [Naviframe](/application/native/api/common/latest/group__Elm__Naviframe__Group.html) | Manages UI Builder views.                |
 
 ## Converting to a UI Builder Project
 

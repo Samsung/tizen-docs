@@ -491,7 +491,7 @@ The main application group features include:
   - The single launch mode means that the application is launched as a main application (in a new group).
   - The caller launch mode means that the application is launched as a sub application belonging to the same group as the caller application who is causing the application to be launched.
 
-  You can set the application launch mode [in the manifest file](../../../tizen-studio/native-tools/manifest-text-editor.md#launch_mode) using the `launch_mode` attribute of the `<ui-application>` element. If the launch mode is set to `caller`, the application that calls the app control can define the launch mode for the called application using the `app_control_set_launch_mode()` function. However, if the called application has set its launch mode in its manifest file to `single`, that setting overrides the caller application's launch mode request.
+  You can set the application launch mode [in the manifest file](../../../../sdk-tools/tizen-studio/native-tools/manifest-text-editor.md#launch_mode) using the `launch_mode` attribute of the `<ui-application>` element. If the launch mode is set to `caller`, the application that calls the app control can define the launch mode for the called application using the `app_control_set_launch_mode()` function. However, if the called application has set its launch mode in its manifest file to `single`, that setting overrides the caller application's launch mode request.
 
 - Managing the application group
 

@@ -297,7 +297,7 @@ For more information on the relationship between the elements, see the [element 
 
 - `launch_mode`<a name="launch_mode"></a>
 
-  Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with the `app_control_set_launch_mode()` function))
+  Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../../application/native/guides/app-management/app-controls.md#mode) with the `app_control_set_launch_mode()` function))
 
   By default, this value is set to `single`.
 
@@ -801,7 +801,7 @@ This element contains the settings for the frame component. After adding this el
 
 - `launch_mode`
 
-  Component launch mode (available values: `single` (launched as a main component), `group` (launched as a sub component), `caller` (caller component [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with `app_control_set_launch_mode()`))
+  Component launch mode (available values: `single` (launched as a main component), `group` (launched as a sub component), `caller` (caller component [defines the launch mode](../../../application/native/guides/app-management/app-controls.md#mode) with `app_control_set_launch_mode()`))
 
   By default, this value is set to `single`.
 
@@ -1098,7 +1098,7 @@ This element contains the account provider capability. The capabilities are defi
 
 This element contains the set of required privileges for a Tizen application.
 
-Applications that use sensitive APIs must declare the required privileges in the `tizen-manifest.xml` file. Since the privilege categories differ for each API type, make sure you define the [correct privilege related to the API you need](../../native/reference/security-privileges.md).
+Applications that use sensitive APIs must declare the required privileges in the `tizen-manifest.xml` file. Since the privilege categories differ for each API type, make sure you define the [correct privilege related to the API you need](../../../application/native/reference/security-privileges.md).
 
 Click **+** to open the **Add Privilege** dialog.
 
@@ -1144,7 +1144,7 @@ For example:
 - `http://tizen.org/privilege/appmanager.launch`
 - `http://tizen.org/privilege/account.read`
 
-For more information on the expected values, see [Security and API Privileges](../../native/reference/security-privileges.md).
+For more information on the expected values, see [Security and API Privileges](../../../application/native/reference/security-privileges.md).
 
 **For example:**
 
@@ -1176,7 +1176,7 @@ For more information on the relationship between the elements, see the [element 
 
   Item name used in feature-based filtering in the store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`
 
-  For more information on the expected values and the application filtering mechanism, see [Application Filtering](../../native/reference/app-filtering.md).
+  For more information on the expected values and the application filtering mechanism, see [Application Filtering](../../../application/native/reference/app-filtering.md).
 
 **Expected value:**
 
