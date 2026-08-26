@@ -70,14 +70,48 @@ git diff --check
   `/application/native/guides/...` maps to `docs/application/native/guides/...`.
   Use the same style as nearby entries; do not convert an entire legacy document or TOC
   merely to change link style.
-- The stable API routes under `/application/native/api/<profile>/latest/` and
-  `/application/dotnet/api/<profile>/latest/` are published separately from this
-  checkout. Preserve their established relative-link form; do not add generated API
-  files just to make a local Markdown path exist.
-- When renaming a file or heading, update all incoming links and its TOC entry.
+- Versioned API routes under `/application/native/api/<profile>/latest/` and
+  `/application/dotnet/api/...` are published by a separate pipeline, so no file exists
+  here and the validator does not check them. Preserve their established link form; do
+  not add generated API files just to make a local path exist.
+- Everything else under an `api/` directory *is* in this repository and *is* checked:
+  `application/web/api/`, `platform/HAL/api/`, and `extensions/tizenx/api/`. The
+  `latest` symlinks are committed, so most paths beneath them resolve.
+- When renaming a file or heading, update all incoming links and its TOC entry. Run the
+  validator with `--changed-only`; it lists them for you.
 
 See [TOC formats](references/toc-formats.md) before creating a new TOC or editing an
 unfamiliar one.
+
+## Deleting, renaming, or moving a document
+
+This is where breakage comes from, because the damage lands in files the change never
+opened. Run the validator and work through what it reports:
+
+```bash
+python3 tools/check_docs.py --changed-only --base origin/master
+```
+
+1. **`R-INBOUND`** — every surviving reference to the old path. Remove or repoint each
+   one. **This includes references written as HTML** (`<a href>`, `<img src>`,
+   `<source src>`), which searching for the filename in Markdown syntax will not find.
+   When the change is a rename, the finding carries the replacement path.
+2. **`R-TOC`** — TOC entries for the old path. There are fourteen `toc*.md` files; a
+   page can be listed in more than one.
+3. **`R-MEDIA`** — images and videos that lost their last reference. Delete them, or say
+   in the pull request why they are kept.
+4. **`R-ANCHOR`** — inbound links to a heading the change removes.
+5. **`overview.md`** — remove the entry from the section landing page as well.
+
+There is no redirect mechanism in this repository. If a page likely has external inbound
+links, prefer reducing it to a short stub pointing at its successor over deleting it.
+
+Keep these changes small. A single 672-file cleanup (`26c727a41`) introduced a broken
+link of its own.
+
+If a change adds, renames or removes a **top-level** directory under `docs/`, the
+downstream `tizen.org.v2.docs` pipeline hardcodes that list in
+`scripts/pages/check-md-links.js`, and it has to be updated there too.
 
 ## Review workflow
 
@@ -91,8 +125,36 @@ Review both correctness and publication safety:
 - Does the change avoid hand-editing imported API or generated content?
 - Does the prose follow the existing style guide and use clear, supported claims?
 
-Run the validator for the pull request's changed files. Fix every `ERROR`; explain or fix
-every `WARN` before approval.
+Run the validator for the pull request's changed files. Fix every `ERROR`; fix or
+explain every `WARN` before approval.
+
+`WARN` rules you will actually see: `T-DUP` (a target listed twice in one TOC), `T-META`
+(link metadata outside the parentheses, where it renders as literal text), `M-JUNK`
+(a non-web asset in a `media/` directory), `M-ORPHAN`, `D-FM` (an unknown front-matter
+key), `D-OVERVIEW` (a new page not linked from its section landing page), `L-FEATPRIV`
+(a feature or privilege key rendered as a link instead of a code span),
+`L-ANCHOR-AMBIG` (an anchor that resolves under one renderer's slug rule but not
+another's), and the `R-MEDIA` / `R-ANCHOR` removal advisories.
+
+### The validator cannot check these — its silence is not approval
+
+1. **Personal information in an image.** A user name in a project path, a login screen,
+   a local filesystem in a screenshot. Not detectable from text, and the highest
+   consequence item in the whole review guide, because this repository is public. Look
+   at every image a pull request adds.
+2. **Whether a code block matches the prose describing it.** The review guide's own
+   example is `Prefrence.Keys` in text against `Preference.Keys` in code.
+3. **Code block indentation**, which is a rendering question — use the staging build.
+4. **Heading sentence case and gerund use.** Not automated on purpose: the style guide
+   and the template guide contradict each other, and distinguishing a proper noun from
+   title case needs a curated term list this repository does not have.
+5. **Release-note tone, dates, and the Release Details section**, which waits on
+   platform approval.
+6. **Which branch the pull request targets** (`master`, `live`, or
+   `tizen_<VERSION>_prepare`).
+7. **Whether the Dependencies section is right**, which needs platform knowledge.
+8. **API links through the `latest` symlink**, which do not resolve in GitHub's preview.
+   The staging build attached to the pull request is the only authority.
 
 For area-specific review points, consult the matching guide under
 [`reviewguide/`](../../../reviewguide/) before approving:

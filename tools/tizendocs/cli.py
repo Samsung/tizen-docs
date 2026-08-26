@@ -140,9 +140,12 @@ def main(argv=None):
     # their findings are attributed the same way everything else is, so a
     # contributor is not shown navigation problems they did not create.
     corpus = list(checks.run_corpus(index))
-    if args.all or args.paths:
+    if args.all:
         collected.extend(corpus)
     else:
+        # Attribute them the same way per-document findings are attributed, so
+        # asking about three files does not return every navigation problem in
+        # the repository.
         touched = set(selected)
         collected.extend(f for f in corpus if f.path in touched)
 

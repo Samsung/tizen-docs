@@ -27,8 +27,29 @@ authoring and review instructions, read
 - Write issue and pull request titles, descriptions, and comments in English, even if the
   conversation that produced them was in another language.
 
-Before submitting a pull request, run:
+## Validating a change
 
 ```bash
+# Authoring, and before opening a pull request
 python3 tools/check_docs.py --changed-only --base origin/master
+
+# Reviewing someone else's pull request
+python3 tools/check_docs.py --changed-only --base origin/master --format jsonl
 ```
+
+The same command covers deletions, renames and moves: it reports every
+surviving reference to a path the change removes, including references written
+as HTML, which a search for the filename in Markdown syntax will miss.
+
+`ERROR` blocks the pull request. Fix every one. `WARN` does not block, but each
+one must be fixed, or explained in the pull request description or a review
+comment, before approval.
+
+A run always prints a summary line, for example
+`check_docs: 0 ERROR, 0 WARN (12 files, 0.20s)`. **If nothing is printed at
+all, the validator did not run** - check the `--base` revision.
+
+The validator cannot judge whether an image leaks a user name, whether a code
+block matches the prose describing it, or whether a heading follows the style
+guide. Its silence is not approval; see the review checklist in
+`.claude/skills/tizen-docs/SKILL.md`.
