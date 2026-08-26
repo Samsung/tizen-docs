@@ -28,6 +28,12 @@ The main Tizen Action 2.0 features are:
 
 Within one Agent request, the result Entity of one Action can become the input Entity of the following Action. Because Action names and input and output types are specified, this composition is structural and does not require an LLM to reinterpret the intermediate data.
 
+The following figure shows how a single user utterance flows through the framework to your service application and back:
+
+**Figure: Action execution flow from a user utterance**
+
+![Action execution flow from a user utterance](./media/tizen_action_2_0_flow_native.png)
+
 ## Action and Entity schemas
 
 A TIDL Action schema declares its name, category, contracts, and provider:
