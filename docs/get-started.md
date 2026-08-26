@@ -8,12 +8,6 @@
 
     \> [More](platform/developing/installing.md)
 
-## IOT world on Craftroom
-- [What is Tizen IoT?](iot/index.md)
-- [How to make IoT devices](iot/get-started/overview.md)
-
-    \> [Go to Craftroom](https://craftroom.tizen.org/)
-
 ## Tizen .NET
 - [What is Tizen .NET Application?](application/dotnet/index.md)
 - [Creating Tizen .NET Applications](application/dotnet/get-started/index.md)

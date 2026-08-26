@@ -174,7 +174,7 @@ main(int argc, char *argv[])
 ### Add log
 
 You can print logs using the Dlog API in the Tizen native application.
-For more information on **Dlog**, see [Dlog](../../../../iot/api/5.5/tizen-iot-headless/group__CAPI__SYSTEM__DLOG.html) API.
+For more information on **Dlog**, see [Dlog](../../api/iot-headless/latest/group__CAPI__SYSTEM__DLOG.html) API.
 
 In this example, to confirm that the IoT native service application has been launched successfully, add the **Hello Tizen** as a debug log.
 
