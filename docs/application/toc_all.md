@@ -287,6 +287,9 @@
 ###### [Layout Define Example](/application/dotnet/guides/user-interface/nui/xaml/layout-define-example.md)
 
 
+## [API Reference](/application/dotnet/api/TizenFX/index.html)
+
+
 # Web Application
 
 ## [Overview](/application/web/index.md)
