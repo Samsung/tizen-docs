@@ -9,9 +9,7 @@
 
 # .NET Application
 
-## [Overview](/application/dotnet/index.md)
-
-## [Learn about .NET](/application/dotnet/learn-about-dotnet.md)
+## [Overview](/application/dotnet/overview/overview.md)
 
 ## Get Started
 ### [Overview](/application/dotnet/get-started/index.md)

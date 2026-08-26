@@ -24,6 +24,10 @@ TizenFX's managed runtime environment offers several advantages for application 
 
 TizenFX consists of several key components that work together to provide a complete development platform:
 
+**Figure: Tizen .NET architecture**
+
+![Tizen .NET architecture](media/cs_overview.png)
+
 ### .NET Core Foundation
 
 The foundation of TizenFX is [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/about), a general-purpose development platform that provides:
@@ -95,6 +99,19 @@ Service applications run in the background without a user interface. They are id
 - System monitoring
 - Background processing
 - Long-running operations without user interaction
+
+## Application Packaging
+
+A Tizen .NET application is packaged as a `tpk` file, the standard Tizen package format. The packaging policy is the same as for a Tizen native application, with a few additions specific to .NET:
+
+- **Package ID and application ID**: Unique identifiers for the application, following the same naming conventions as a native application.
+- **Application directory**: The `bin` directory holds the published output of the .NET build, such as the assemblies and `app.deps.json`. The remaining directories are the same as in a native application.
+- **Manifest**: `tizen-manifest.xml` declares the metadata, privileges, and features of the application. It has the same structure as a native manifest, and additionally records the platform version and API version the application targets.
+- **Signature**: The package must be signed with a valid certificate before it can be installed on a device. The procedure is the same as for a native application; see [Certificates](../guides/concepts/signing-certificates/index.md).
+
+## Development Tools
+
+Visual Studio Tools for Tizen provides the project templates, build integration, and device tooling for .NET application development. See [Visual Studio Tools for Tizen](../../vstools/index.md), or go straight to [installing the extension](../../vstools/install.md).
 
 ## Related Documentation
 
