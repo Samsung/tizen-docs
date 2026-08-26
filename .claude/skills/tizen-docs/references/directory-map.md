@@ -78,11 +78,9 @@ TizenX extension SDK documentation:
   `Tizen.UI.Widget`, `TizenX.GenUI`, `TizenX.RPCPort`, `TizenX.ZLog`, `TizenX.Aurum`).
   Generated from source; treat as imported content per AGENTS.md.
 
-### `docs/images/`, `docs/menu.yaml`, and root docs
+### Root docs
 
-- `images/` — image assets shared across sections (not tied to one document's `media/`)
-- `menu.yaml` — top navigation config (top-level sections shown/hidden on the site)
-- `get-started.md`, `glossary.md`, `trademarks.md` — standalone pages with no owning section
+- `trademarks.md` — third-party trademark attribution page, with no owning section
 
 ## `styleguide/`
 

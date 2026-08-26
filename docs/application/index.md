@@ -40,8 +40,6 @@ The following figure illustrates the Tizen architecture model supporting the 3 a
 
 The Tizen platform also allows you to develop a hybrid application package where native and web applications are packaged together to make more powerful applications. The Tizen platform ensures that all Tizen applications have consistent look and feel, regardless of whether you use the native or web framework to create them.
 
-To become familiar with some terms that you encounter throughout this site, see [Glossary](../glossary.md).
-
 To see the trademark notice list, see [Trademarks](../trademarks.md).
 
 **See the following links for more information:**
