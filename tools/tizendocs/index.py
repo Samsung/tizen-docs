@@ -6,9 +6,23 @@ so a cache would buy nothing and could only ever go stale.
 import functools
 import os
 
+import collections
+from dataclasses import dataclass
+
 from . import config as config_module
 from . import markdown, paths
 from .slug import slug
+
+
+@dataclass(frozen=True)
+class Reference:
+    """One edge of the link graph, with enough detail to report it."""
+
+    source: str
+    line: int
+    col: int
+    syntax: str
+    raw: str
 
 
 class DocsIndex:
@@ -21,7 +35,6 @@ class DocsIndex:
         self._files = None
         self._toc_files = None
         self._toc_targets = None
-        self._edges = None
         self._in_edges = None
 
     # ---- filesystem -----------------------------------------------------
@@ -91,6 +104,51 @@ class DocsIndex:
         return frozenset(found)
 
     # ---- tables of contents ---------------------------------------------
+
+    # ---- reverse link graph ---------------------------------------------
+
+    @property
+    def in_edges(self):
+        """Map every referenced path to the references pointing at it.
+
+        Keys deliberately include paths that do not exist. That is the whole
+        point: after a page is deleted the working tree has no file, but this
+        map still lists every document and TOC that links to it, which is what
+        --changed-only can never see by looking only at changed files.
+
+        Built on demand, because only the reverse-direction rules need it.
+        """
+        if self._in_edges is None:
+            graph = collections.defaultdict(list)
+            for path in sorted(self.files):
+                if not path.endswith(".md"):
+                    continue
+                source = self.source(path)
+                for syntax, url, offset in source.all_references():
+                    if not url or markdown.is_external(url):
+                        continue
+                    raw, _ = markdown.split_fragment(url)
+                    if not raw:
+                        continue
+                    line, col = source.position(offset)
+                    graph[paths.resolve(path, raw)].append(
+                        Reference(path, line, col, syntax, url))
+            self._in_edges = graph
+        return self._in_edges
+
+    def references_to(self, target):
+        """References to *target*, matched case-insensitively.
+
+        Authors on Windows write .PNG where the file is .png; the published
+        site is case-sensitive, so both spellings must be found.
+        """
+        graph = self.in_edges
+        found = list(graph.get(target, ()))
+        lowered = target.lower()
+        for key, edges in graph.items():
+            if key != target and key.lower() == lowered:
+                found.extend(edges)
+        return sorted(found, key=lambda edge: (edge.source, edge.line, edge.col))
 
     @property
     def toc_files(self):

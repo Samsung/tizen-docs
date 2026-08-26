@@ -34,7 +34,26 @@ def build_parser():
                         help="comma-separated rule ids or prefixes to include")
     parser.add_argument("--exclude-rules", default="",
                         help="comma-separated rule ids or prefixes to exclude")
+    parser.add_argument("--removals", action="store_true",
+                        help="also report what this change's deletions and "
+                             "renames break elsewhere in the corpus")
+    parser.add_argument("--no-removals", action="store_true",
+                        help="skip the reverse-direction rules")
     return parser
+
+
+def change_for(args, index):
+    """The change set, when one is available and wanted.
+
+    Reverse-direction rules run by default whenever a base revision is known:
+    a removal that breaks other documents is exactly what a contributor most
+    needs told, and it costs nothing on a change that removes nothing.
+    """
+    if args.no_removals or args.all or (args.paths and not args.changed_only):
+        return None
+    if not (args.changed_only or args.removals):
+        return None
+    return git.describe(args.base, index.root)
 
 
 def select_paths(args, index):
@@ -96,8 +115,11 @@ def main(argv=None):
     if selected is None:
         parser.error("supply paths or use --changed-only")
 
-    findings = filter_findings(
-        [f for path in selected for f in checks.run(index, path)], args)
+    collected = [f for path in selected for f in checks.run(index, path)]
+    change = change_for(args, index)
+    if change is not None and change.removed:
+        collected.extend(checks.run_change(index, change))
+    findings = filter_findings(collected, args)
     elapsed = time.monotonic() - started
     summary = summarize(findings, len(selected), elapsed) if args.format == "text" else None
     sys.stdout.write(report.FORMATS[args.format](findings, summary))

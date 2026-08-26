@@ -13,9 +13,30 @@ TOOLS = pathlib.Path(__file__).resolve().parent.parent
 FIXTURES = pathlib.Path(__file__).resolve().parent / "fixtures"
 sys.path.insert(0, str(TOOLS))
 
-from tizendocs import checks  # noqa: E402
+from tizendocs import checks, git  # noqa: E402
 from tizendocs.index import DocsIndex  # noqa: E402
 from tizendocs.report import text  # noqa: E402
+
+#: A corpus where two documents and a TOC all point at doomed.md.
+REVERSE_SEED = {
+    "docs/toc_all.md": "# Guides\n## [Kept](/kept.md)\n## [Doomed](/doomed.md)\n",
+    "docs/kept.md": '# Kept\n\nA link to [doomed](doomed.md).\n',
+    "docs/also.md": '# Also\n\n<a href="doomed.md">doomed</a>\n',
+    "docs/doomed.md": "# Doomed\n",
+}
+
+
+def run_change(root, base):
+    """Findings the change-scoped rules produce for *root* against *base*."""
+    index = DocsIndex(root=str(root))
+    change = git.describe(base, str(root))
+    return list(checks.run_change(index, change))
+
+
+def checks_for(root, paths):
+    """Per-document findings for an explicit path list, as --changed-only does."""
+    index = DocsIndex(root=str(root))
+    return [finding for path in paths for finding in checks.run(index, path)]
 
 
 def run_tree(root):

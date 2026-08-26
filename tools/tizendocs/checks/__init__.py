@@ -9,7 +9,7 @@ output diffs stay reviewable.
 """
 from dataclasses import replace
 
-from . import document, links, naming, toc_checks
+from . import document, links, naming, reverse, toc_checks
 
 #: ``(rule id, function)`` in report order.
 REGISTRY = (
@@ -19,7 +19,25 @@ REGISTRY = (
     (links.BROKEN, links.check_links),
 )
 
-RULE_IDS = tuple(dict.fromkeys([rule for rule, _ in REGISTRY] + [links.ANCHOR]))
+#: Rules driven by the change set rather than by a document.
+#: ``(rule id, function)`` where the function takes ``(index, change)``.
+CHANGE_REGISTRY = (
+    (reverse.INBOUND, reverse.check_inbound),
+    (reverse.TOC, reverse.check_toc),
+)
+
+RULE_IDS = tuple(dict.fromkeys(
+    [rule for rule, _ in REGISTRY]
+    + [links.ANCHOR]
+    + [rule for rule, _ in CHANGE_REGISTRY]))
+
+
+def run_change(index, change):
+    """Yield findings attributable to a change rather than to one document."""
+    for rule, function in CHANGE_REGISTRY:
+        for finding in function(index, change):
+            level = index.config.severity(finding.rule, finding.level)
+            yield finding if level == finding.level else replace(finding, level=level)
 
 
 def run(index, path):

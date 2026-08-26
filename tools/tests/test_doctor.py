@@ -5,7 +5,7 @@ silence: the pattern matches nothing, and the exemption it documented is now
 misleading text. This was not hypothetical - three paths listed while writing
 this toolkit had already been deleted upstream.
 """
-from tizendocs import doctor
+from tizendocs import checks, doctor
 from tizendocs.config import Config
 from tizendocs.index import DocsIndex
 
@@ -17,8 +17,8 @@ def index_for(tmp_path, **config):
     return DocsIndex(root=str(tmp_path), config=Config(config, source="test"))
 
 
-ALL_SEVERITIES = {"N-KEBAB": "error", "D-H1": "error", "T-ORPHAN": "error",
-                  "L-BROKEN": "error", "L-ANCHOR": "error"}
+#: Derived from the registry so adding a rule cannot silently stale this list.
+ALL_SEVERITIES = {rule: "error" for rule in checks.RULE_IDS}
 
 
 def test_reports_a_pattern_that_matches_nothing(tmp_path):

@@ -8,7 +8,7 @@ not fire on clean content.
 """
 import pytest
 
-from conftest import fixture_names, ids, run_tree
+from conftest import REVERSE_SEED, fixture_names, ids, run_change, run_tree
 from tizendocs import checks
 
 
@@ -21,12 +21,21 @@ def expected_ids(root):
         for line in path.read_text(encoding="utf-8").split("\n") if line.strip())
 
 
-def test_every_rule_has_a_fixture_that_fires(fixtures):
-    """A new rule with no failing fixture must fail this suite."""
+def test_every_rule_has_a_fixture_that_fires(fixtures, git_tree):
+    """A new rule with no failing fixture must fail this suite.
+
+    Covers both registries: per-document rules come from the fixture trees,
+    change-scoped rules from a real repository with a deletion in it.
+    """
     fired = set()
     for name in fixture_names():
-        for rule, _ in ids(run_tree(fixtures / name)):
-            fired.add(rule)
+        fired.update(rule for rule, _ in ids(run_tree(fixtures / name)))
+
+    root, run = git_tree(REVERSE_SEED)
+    run("rm", "-q", "docs/doomed.md")
+    run("commit", "-q", "-m", "delete")
+    fired.update(finding.rule for finding in run_change(root, "HEAD~1"))
+
     missing = sorted(set(checks.RULE_IDS) - fired)
     assert not missing, f"rules with no fixture that triggers them: {missing}"
 

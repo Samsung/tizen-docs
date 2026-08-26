@@ -4,8 +4,6 @@ Covers all four diff states. The deletion case is the one the toolkit exists
 to fix: a removed page breaks links in files the change never touched, and
 --changed-only cannot see that until the reverse-direction rules land.
 """
-import pytest
-
 from tizendocs import git
 
 SEED = {
@@ -43,15 +41,37 @@ def test_deleted_path_appears_in_the_change_set(git_tree):
     assert "docs/doomed.md" in git.changed_files("main~1", str(root))
 
 
-@pytest.mark.xfail(reason="closed by R-INBOUND/R-TOC; see the toolkit plan", strict=True)
 def test_deleting_a_page_reports_the_links_it_breaks(git_tree):
-    """docs/kept.md and docs/toc_all.md still point at the deleted page.
+    """docs/kept.md and docs/toc_all.md still point at the deleted page, and
+    neither is in the change set.
 
-    Neither file is in the change set, so no current rule can see them.
+    This is the case the per-document rules are structurally unable to see:
+    they inspect the links going *out* of changed files. It is covered by the
+    change-scoped rules instead, and it is why they exist.
     """
-    from conftest import ids, run_tree
+    from conftest import run_change
     root, run = git_tree(SEED)
     run("rm", "-q", "docs/doomed.md")
     run("commit", "-q", "-m", "delete")
-    rules = {rule for rule, _ in ids(run_tree(root))}
-    assert rules & {"R-INBOUND", "R-TOC"}
+    findings = run_change(root, "HEAD~1")
+    assert {(f.rule, f.path) for f in findings} == {
+        ("R-INBOUND", "docs/kept.md"),
+        ("R-TOC", "docs/toc_all.md"),
+    }
+
+
+def test_change_scoped_per_document_rules_see_nothing_here(git_tree):
+    """The contrast, kept so the gap cannot silently reopen.
+
+    A whole-corpus run would report these as L-BROKEN. The gap is specific to
+    change scoping, which is the mode contributors are told to use: the only
+    changed path is the deleted file, and running the per-document rules over
+    it yields nothing at all.
+    """
+    from conftest import checks_for
+    root, run = git_tree(SEED)
+    run("rm", "-q", "docs/doomed.md")
+    run("commit", "-q", "-m", "delete")
+    changed = git.changed_files("HEAD~1", str(root))
+    assert changed == ["docs/doomed.md"]
+    assert checks_for(root, changed) == []

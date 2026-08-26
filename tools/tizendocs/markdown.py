@@ -16,6 +16,12 @@ CURLY_ANCHOR = re.compile(r"\{#([^}]+)\}")
 # Pattern kept byte-for-byte from the original implementation: loosening the
 # closing fence to allow trailing text made an opening fence with a language
 # tag pair as a closer, which silently masked live content.
+# Raw HTML is used throughout the corpus wherever Markdown cannot express
+# something: sized images, videos, and tables of links. Parsing only Markdown
+# syntax left every one of those references unchecked.
+HTML_TAG = re.compile(r"<(img|a|source|video|iframe)\b([^>]*)>", re.I)
+HTML_ATTR = re.compile(r"\b(src|href|poster)\s*=\s*(['\"])(.*?)\2", re.I)
+
 FENCE = re.compile(r"^\s*(```|~~~).*?^\s*\1\s*$", re.M | re.S)
 INLINE_CODE = re.compile(r"`[^`]*`")
 
@@ -84,6 +90,24 @@ class Source:
         for pattern, syntax in ((LINK, "md-link"), (IMAGE, "md-image")):
             for match in pattern.finditer(self.text):
                 yield syntax, match.group(1).strip("<> "), match.start()
+
+    def html_references(self):
+        """Yield ``(syntax, url, offset)`` for HTML link, image and media refs.
+
+        Two stages rather than one regex, so a tag carrying more than one
+        relevant attribute (a <video> with both src and poster) is fully
+        covered.
+        """
+        for tag in HTML_TAG.finditer(self.text):
+            name = tag.group(1).lower()
+            for attr in HTML_ATTR.finditer(tag.group(2)):
+                yield (f"html-{name}", attr.group(3).strip(),
+                       tag.start(2) + attr.start(3))
+
+    def all_references(self):
+        """Every reference in the document, Markdown and HTML alike."""
+        yield from self.references()
+        yield from self.html_references()
 
     def anchors(self):
         found = {match.group(1).lower() for match in NAMED_ANCHOR.finditer(self.text)}

@@ -74,3 +74,9 @@ re-import; editing the output here is lost on the next import."""
 "T-ORPHAN" = "error"
 "L-BROKEN" = "error"
 "L-ANCHOR" = "error"
+
+# Reverse-direction rules. ERROR from the start and they add no backlog: they
+# are scoped to the paths a change removes, so a change that removes nothing
+# reports nothing.
+"R-INBOUND" = "error"
+"R-TOC" = "error"
