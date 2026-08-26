@@ -33,8 +33,8 @@ separate cleanup issue when appropriate.
 ## Authoring workflow
 
 1. **Choose the destination.** Browse the relevant section under `docs/` and locate its
-   governing `toc*.md`. The main sections are `application/`, `platform/`, `iot/`,
-   `partners/`, and `extensions/`. See the [directory map](references/directory-map.md)
+   governing `toc*.md`. The main sections are `application/`, `platform/`, `iot/`, and
+   `extensions/`. See the [directory map](references/directory-map.md)
    for what each section and subdirectory contains, including which sibling files are
    generated content that should not be edited by hand.
 2. **Check for imported content.** Do not hand-edit Markdown under `*/api/**`,

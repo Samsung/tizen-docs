@@ -76,5 +76,3 @@ Several IoT Cloud solutions are also integrated in Tizen 5.5. Tizen 5.5 provides
 Tizen 5.5 provides IoT total solution of the open hardware platform, platform OS and IoT cloud.
 
 ![img](media/5.5_4_IoT.png)
-
-For more information, see [IoT Partners](../../../partners/iot-partners/nubison.md).
