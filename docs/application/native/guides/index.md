@@ -19,7 +19,7 @@ The following list defines Tizen Native API. The list describes the API modules 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
   | AccountManager | Provides CRUD (Create, Read, Update, Delete) account management functionality. | [Latest](../api/common/latest/group__CAPI__ACCOUNT__MANAGER__MODULE.html) | [Account Management](personal/account.md) | 
-  | FIDO Client    | Allows you to utilize the device's available authenticators for online service integration. | [Latest](../api/common/latest/group__CAPI__FIDO__MODULE.html) | FIDO Universal Authentication Framework |
+  | FIDO Client    | Allows you to utilize the device's available authenticators for online service integration. | [9.0](../api/common/9.0/group__CAPI__FIDO__MODULE.html) | FIDO Universal Authentication Framework |
   | OAuth 2.0      | Provides an easy way to gain an access token between a server and client. | [Latest](../api/common/latest/group__CAPI__OAUTH2__MODULE.html) | [OAuth 2.0](personal/oauth.md)               |
   | Sync Manager   | Helps applications in scheduling their data sync operations. | [Latest](../api/common/latest/group__CAPI__SYNC__MANAGER__MODULE.html) | [Synchronization Management](personal/data-sync.md) |
   | libOAuth       | Provides a library for using an open standard for secure authorization. This library enables users to securely log into an account on an application by using their logon credentials from another secondary account that they can have with another account provider or application. | [Latest](../api/common/latest/group__OPENSRC__LIB__OAUTH__FRAMEK.html) |        |
@@ -86,9 +86,9 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | GeofenceManager | Provides a service related to geofence (geo-fence). | [Latest](../api/common/latest/group__CAPI__GEOFENCE__MANAGER__MODULE.html) | Geofences |
+  | GeofenceManager | Provides a service related to geofence (geo-fence). | [9.0](../api/common/9.0/group__CAPI__GEOFENCE__MANAGER__MODULE.html) | Geofences |
   | LocationManager | Acquires information about the geographical location of the device. It also allows the receiving of notifications about position changes, velocity changes, and when a given geographical area is left. | [Latest](../api/common/latest/group__CAPI__LOCATION__MANAGER__MODULE.html) | [Location Information](location-sensors/location.md) |
-  | Maps Service    | Provides a set of functions, helping to create map-aware applications. | [Latest](../api/common/latest/group__CAPI__MAPS__SERVICE__MODULE.html) | Maps and Maps Service |
+  | Maps Service    | Provides a set of functions, helping to create map-aware applications. | [9.0](../api/common/9.0/group__CAPI__MAPS__SERVICE__MODULE.html) | Maps and Maps Service |
 
 - **Messaging**
 
@@ -96,8 +96,8 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | Email | Allows composing, sending, and receiving of email messages.  | [Latest](../api/common/latest/group__CAPI__MESSAGING__EMAIL__MODULE.html) | Email |
-  | Messages | Allows composing, sending, and receiving of SMS, MMS, and WAP push messages. | [Latest](../api/common/latest/group__CAPI__MESSAGING__MESSAGES__MODULE.html) | Messages |
+  | Email | Allows composing, sending, and receiving of email messages.  | [9.0](../api/common/9.0/group__CAPI__MESSAGING__EMAIL__MODULE.html) | Email |
+  | Messages | Allows composing, sending, and receiving of SMS, MMS, and WAP push messages. | [9.0](../api/common/9.0/group__CAPI__MESSAGING__MESSAGES__MODULE.html) | Messages |
   | Push | Allows receiving of push notifications from a push server.| [Latest](../api/common/latest/group__CAPI__MESSAGING__PUSH__PUBLIC__MODULE.html) | [Push](messaging/push.md), [Push Server](messaging/push-server.md) |
 
 - **Multimedia**
@@ -150,7 +150,7 @@ The following list defines Tizen Native API. The list describes the API modules 
   | Smartcard    | Provides application communication to the SE applet functions. | [Latest](../api/common/latest/group__CAPI__NETWORK__SMARTCARD__MODULE.html) | [Smartcard](connectivity/smartcard.md) |
   | SoftAP       | Consists of SoftAP Manager and SoftAP Client. SoftAP Manager provides functions for managing the SoftAP and SoftAP Client provides functions for getting the information about a connected client. | [Latest](../api/common/latest/group__CAPI__NETWORK__SOFTAP__MODULE.html) | [SoftAP](connectivity/softap.md) |
   | VPN Service  | Manages Virtual Private Network (VPN) connections between two VPN devices. | [Latest](../api/common/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html) | [VPN Connections](connectivity/vpn.md) |
-  | Wi-Fi        | Manages Wi-Fi connections and monitors the state of Wi-Fi connections. | [Latest](../api/common/latest/group__CAPI__NETWORK__WIFI__PACKAGE.html) | [Wi-Fi](connectivity/wifi.md) |
+  | Wi-Fi        | Manages Wi-Fi connections and monitors the state of Wi-Fi connections. | [9.0](../api/common/9.0/group__CAPI__NETWORK__WIFI__PACKAGE.html) | [Wi-Fi](connectivity/wifi.md) |
   | Wi-Fi Aware  | Enables devices to discover and connect directly to each other without any other type of connectivity between them or without wireless access points (base stations) in the infrastructure mode. | [Latest](../api/common/latest/group__CAPI__NETWORK__WIFI__AWARE__MODULE.html) | [Wi-Fi Aware](connectivity/wifi-aware.md) |
   | Wi-Fi Direct | Manages the settings of Wi-Fi Direct. This submodule API also provides functions to connect and disconnect remote devices that use Wi-Fi Direct. | [Latest](../api/common/latest/group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html) | [Wi-Fi Direct](connectivity/wifi-direct.md) |
 
@@ -160,7 +160,7 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | CSR                         | Provides the Content Screening Service to scan the content for data, files, and directories, and the Web Protection Service to protect a device by checking whether a URL the user wants to access is risky. | [Latest](../api/common/latest/group__CAPI__CSR__FRAMEWORK__MODULE.html) | [CSR](security/csr.md) |
+  | CSR                         | Provides the Content Screening Service to scan the content for data, files, and directories, and the Web Protection Service to protect a device by checking whether a URL the user wants to access is risky. | [9.0](../api/common/9.0/group__CAPI__CSR__FRAMEWORK__MODULE.html) | [CSR](security/csr.md) |
   | Device Certificate Manager  | Provides cryptography services (digital certificates and keys) for authentication and secure communication with another system. | [Latest](../api/common/latest/group__CAPI__DEVICE__CERTIFICATE__MANAGER__MODULE.html) | [Device Certificate Manager](security/device-certificate-manager.md) |
   | Device Policy Manager       | Provides functions to create security-aware applications that are useful in enterprise settings. | [Latest](../api/common/latest/group__CAPI__SECURITY__DPM__MODULE.html) | [Device Policy Manager](security/dpm.md) |
   | Key Manager                 | Provides functions to store keys, certificates, and sensitive data related to users and their password-protected applications in a secure repository. It also provides cryptographic operations to prevent key value names from being revealed to clients. | [Latest](../api/common/latest/group__CAPI__KEY__MANAGER__MODULE.html) | [Key Manager](security/secure-key.md) |
@@ -212,11 +212,11 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | Clipboard History Manager | Provides copy and paste functionalities for applications. | [Latest](../api/common/latest/group__CAPI__CBHM__MODULE.html) |  |
+  | Clipboard History Manager | Provides copy and paste functionalities for applications. | [7.0 (mobile)](../api/mobile/7.0/group__CAPI__CBHM__MODULE.html) |  |
   | EFL                       | Provides a collection of libraries that are independent and can be built on top of each other to provide useful features that   complement the existing environment. | [Latest](../api/common/latest/group__EFL.html) | EFL |
   | EFL UTIL                  | Gets and sets the priority order of notification windows.  | [Latest](../api/common/latest/group__CAPI__EFL__UTIL__MODULE.html) | EFL Utilities | 
   | EFL Extension             | Enhances the EFL libraries and includes device-specific features (such as support for the hardware Back key). | [Latest](../api/common/latest/group__CAPI__EFL__EXTENSION__MODULE.html) | Managing Rotary Events |
-  | External Output Manager   | Provides functions for external outputs.     | [Latest](../api/common/latest/group__CAPI__UI__EOM__MODULE.html) |  |
+  | External Output Manager   | Provides functions for external outputs.     | [9.0](../api/common/9.0/group__CAPI__UI__EOM__MODULE.html) |  |
   | Fontconfig and Freetype   | Provides a text rendering library and font-handling library to let applications find a font or closely matching font. | [Latest](../api/common/latest/group__OPENSRC__FONTCONFIG__FRAMEWORK.html) |   |
   | HarfBuzz                  | Provides functions for text shaping. | [Latest](../api/common/latest/group__OPENSRC__HARFBUZZ__FRAMEWORK.html) |  |
   | Minicontrol               | Provides functions for creating and displaying an EFL socket window. | [Latest](../api/common/latest/group__MINICONTROL__LIBRARY.html) | [Minicontrol Window](notification/minicontrol.md) |
