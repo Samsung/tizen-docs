@@ -631,7 +631,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to indicate that the web application can handle a specific operation with the specified MIME type and URI. For more information, see <a href="../../web/guides/app-management/app-controls.md">Application Information and Controls</a>.
+			<td>Used to indicate that the web application can handle a specific operation with the specified MIME type and URI. For more information, see <a href="../../../application/web/guides/app-management/app-controls.md">Application Information and Controls</a>.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -778,7 +778,7 @@ The following sections show additional configuration elements used in the `confi
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>value</code>
-				<p>Mandatory; <a href="../../native/guides/applications/overview.md#allow_bg_table">background category</a></p>
+				<p>Mandatory; <a href="../../../application/native/guides/applications/overview.md#allow_bg_table">background category</a></p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
@@ -921,7 +921,7 @@ The following sections show additional configuration elements used in the `confi
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>name</code>
-				<p>Mandatory; <a href="../../web/guides/development/setting-properties.md#feature">feature key</a> URI</p>
+				<p>Mandatory; <a href="../../../application/web/guides/development/setting-properties.md#feature">feature key</a> URI</p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
@@ -1091,7 +1091,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
+			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../../application/web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1350,7 +1350,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
+			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../../application/web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>

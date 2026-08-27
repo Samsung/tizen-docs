@@ -13,7 +13,7 @@ Visual Studio Tools for Tizen extension is registered in the Visual Studio Marke
 The video below shows how Visual Studio Tools for Tizen is installed in windows:
 
 <video controls height="400">
-  <source src="../media/vstools-installation.mp4" type=video/mp4>
+  <source src="media/vstools-installation.mp4" type=video/mp4>
 </video>
 
 ## Initial Setup
@@ -30,5 +30,5 @@ After you set the SDK resource path, the server and core apps are installed. Wai
 The video below shows how to complete the initial setup in Windows:
 
 <video controls height="400">
-  <source src="../media/vstools-init.mp4" type="video/mp4">
+  <source src="media/vstools-init.mp4" type="video/mp4">
 </video>

@@ -20,7 +20,7 @@ To install VS Code Extension for Tizen from the Visual Studio Code Marketplace:
 The video below shows how to install Visual Studio Code Extension for Tizen from the marketplace:
 
 <video controls height="400">
-  <source src="../media/vscode-installation-new.mp4" type=video/mp4>
+  <source src="media/vscode-installation-new.mp4" type=video/mp4>
 </video>
 
 

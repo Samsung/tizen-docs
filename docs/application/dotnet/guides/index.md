@@ -52,7 +52,6 @@ For working code, see the [Tizen .NET sample applications](https://github.com/Sa
                         <li><a href="account/app-history.md">Application Usage History Data</a></li>
                         <li><a href="account/account.md">Account Management</a></li>
                         <li><a href="account/data-sync.md">Synchronization Management</a></li>
-                        <li><a href="account/fido.md">FIDO Universal Authentication Framework</a></li>
                     </ul>
                 </div>
             </div>
@@ -202,7 +201,6 @@ For working code, see the [Tizen .NET sample applications](https://github.com/Sa
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="location/location.md">Location</a></li>
-                        <li><a href="location/geofences.md">Geofences</a></li>
                     </ul>
                 </div>
             </div>
@@ -223,21 +221,6 @@ For working code, see the [Tizen .NET sample applications](https://github.com/Sa
             </div>
             <div class="card-footer">
                 <a class="link-standalone" href="machine-learning/overview.md">Learn more</a>
-            </div>
-        </div>
-    </div>
-    <div class="col col-md-3">
-        <div class="card card-infra card-list h-100">
-            <div class="card-body">
-                <p class="h3 card-title">Maps</p>
-                <div class="card-text">
-                    <ul class="list-infra list-infra-arrow">
-                        <li><a href="maps/here-credentials.md">Getting HERE Maps Credentials</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-footer">
-                <a class="link-standalone" href="maps/maps.md">Learn more</a>
             </div>
         </div>
     </div>
@@ -265,8 +248,6 @@ For working code, see the [Tizen .NET sample applications](https://github.com/Sa
                 <p class="h3 card-title">Messaging</p>
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
-                        <li><a href="messaging/email.md">Email</a></li>
-                        <li><a href="messaging/messages.md">Messages</a></li>
                         <li><a href="messaging/push-server.md">Push Server</a></li>
                         <li><a href="messaging/push.md">Push</a></li>
                     </ul>

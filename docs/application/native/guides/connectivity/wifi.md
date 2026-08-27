@@ -24,7 +24,7 @@ The main features of the Wi-Fi Manager API include:
 
 - Wi-Fi state monitoring
 
-  You can register a callback with the [Wi-Fi Monitor API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html) to monitor the Wi-Fi connection state changes. The supported states are defined in the `wifi_manager_connection_state_e` [enumerator](../../api/commmon/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2).
+  You can register a callback with the [Wi-Fi Monitor API](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html) to monitor the Wi-Fi connection state changes. The supported states are defined in the `wifi_manager_connection_state_e` [enumerator](../../api/common/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2).
 
   You can also register callbacks for monitoring changes in the Wi-Fi device state (whether Wi-Fi is activated) and the RSSI level of the Wi-Fi connection.
 
