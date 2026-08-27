@@ -250,7 +250,7 @@ To create a simple and repetitive animation effect (such as the following JAVA m
 
 ![JAVA mascot character  in GIF](./media/mascot.gif)
 
-The following sections compare the network capacity usage and timeline of the following animation types using the [Web Inspector](../../../../../sdk-tools/tizen-studio/web-tools/web-inspector.md):
+The following sections compare the network capacity usage and timeline of the following animation types using the [Web Inspector](../../../../../sdk-tools/baseline-sdk/web-tools/web-inspector.md):
 
 - [GIF animation](#gif)
 - [JavaScript animation](#js)

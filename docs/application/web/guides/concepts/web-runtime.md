@@ -31,7 +31,7 @@ The Web Runtime supports the following Web application types:
 -   Hosted Web applications
 
 All Web applications must be packaged according to the [Widget Packaging and XML Configuration
-guidelines](https://www.w3.org/TR/widgets/){:target="_blank"}. However, unlike packaged Web applications, the hosted Web applications have an externally hosted document as their starting page. For more information, see [Extending Configuration Elements](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#ww_extend).
+guidelines](https://www.w3.org/TR/widgets/){:target="_blank"}. However, unlike packaged Web applications, the hosted Web applications have an externally hosted document as their starting page. For more information, see [Extending Configuration Elements](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md#ww_extend).
 
 You can manage Web applications by:
 
@@ -188,7 +188,7 @@ process:
 ### Web application protection
 
 For Web applications that explicitly turn on encryption using the
-[`<tizen:setting/>`](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#ww_setting)
+[`<tizen:setting/>`](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md#ww_setting)
 element in the configuration file, the Web Runtime provides the following protection features:
 -   HTML, JavaScript, and CSS files of the Web application stored by the    device are encrypted.
 -   When the Web application is launched, the WRT decrypts all of its   resources in a manner which is transparent to the Web    application itself.

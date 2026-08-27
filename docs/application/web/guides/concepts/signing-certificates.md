@@ -105,7 +105,7 @@ The testing distributor certificate and its signing key with the public
 level are preloaded in Tizen Studio. The author certificate and its
 signing key can also be created in Tizen Studio. For more
 information, see [Working with the Certificate
-Profile](../../../../sdk-tools/tizen-studio/common-tools/certificate-registration.md).
+Profile](../../../../sdk-tools/baseline-sdk/common-tools/certificate-registration.md).
 
 A device vendor can disallow unauthorized applications to be installed
 on its devices to protect its devices from viruses and malwares. Samsung

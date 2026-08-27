@@ -64,4 +64,4 @@ Write the following additional information for extension meta packages:
            - Deployed as a repository of all extensions (Repo Server, Image, Package)
            ```
 
-For more information, see [Configuring the Extension SDK Repository](../../../sdk-tools/tizen-studio/setup/advanced-configuration.md#configuring-the-extension-sdk-repository).
+For more information, see [Configuring the Extension SDK Repository](../../../sdk-tools/baseline-sdk/setup/advanced-configuration.md#configuring-the-extension-sdk-repository).

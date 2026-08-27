@@ -1,7 +1,7 @@
 # Setting up VS Code Extension for Tizen
 
 > [!NOTE]
-> Support for Tizen Studio has ended with version 6.1. The `VS Code Extension for Tizen` is now the recommended tool for installing the Tizen SDK. For more information, visit the [Tizen Developers](https://developer.tizen.org/development/tizen-studio/tizen-studio-deprecation-notice/) site.
+> Support for Tizen Studio has ended with version 6.1. The `VS Code Extension for Tizen` is now the recommended tool for installing the Tizen SDK. For more information, visit the [Tizen Developers](https://developer.tizen.org/development/baseline-sdk/baseline-sdk-deprecation-notice/) site.
 
 Download and install the latest release of Tizen SDK from the below link. It is recommended to use the `VS Code Extension for Tizen` although you can still build Flutter apps using CLI only.
 
@@ -42,7 +42,7 @@ Note: If the emulator fails to run on Ubuntu 24.04, you may need to install `lib
 
 ## Create a certificate profile
 
-To install your app on a Tizen device or publish it to the TV App Store, you need to sign the app with a valid certificate. Use _Certificate Manager_, or the [`tizen certificate/security-profiles`](../../../../sdk-tools/tizen-studio/common-tools/command-line-interface.md) command (CLI) to create a certificate profile.
+To install your app on a Tizen device or publish it to the TV App Store, you need to sign the app with a valid certificate. Use _Certificate Manager_, or the [`tizen certificate/security-profiles`](../../../../sdk-tools/baseline-sdk/common-tools/command-line-interface.md) command (CLI) to create a certificate profile.
 
 Choose _Create Samsung Certificate_ instead of _Create Tizen Certificate_ as the profile type if you're not sure.
 

@@ -1,6 +1,6 @@
 # Tizen SDK & Development Tools
-## [Overview](/sdk-tools/tizen-studio/common-tools/overview.md)
-## [Release Notes](/sdk-tools/tizen-studio/release-notes/6-0-release-notes.md)
+## [Overview](/sdk-tools/baseline-sdk/common-tools/overview.md)
+## [Release Notes](/sdk-tools/baseline-sdk/release-notes/6-0-release-notes.md)
 
 ## Visual Studio Tools for Tizen
 ### [Overview](/sdk-tools/vstools/index.md)
@@ -45,14 +45,14 @@
 ##### [Install Tizen App](/sdk-tools/vstools/tools/install-tizen-app.md)
 ##### [Tizen Dotnet Hot Reload](/sdk-tools/vstools/tools/dotnet-hotreload.md)
 ##### Tool : Emulator
-###### [Overview](/sdk-tools/tizen-studio/common-tools/emulator.md)
+###### [Overview](/sdk-tools/baseline-sdk/common-tools/emulator.md)
 ###### [Emulator Manager](/sdk-tools/vstools/tools/emulator-manager.md)
 ###### [Emulator Control Panel](/sdk-tools/vstools/tools/emulator-control-panel.md)
 ##### [Tool : Device Manager](/sdk-tools/vstools/tools/device-manager.md)
-##### [Tool : SDB](/sdk-tools/tizen-studio/common-tools/smart-development-bridge.md)
+##### [Tool : SDB](/sdk-tools/baseline-sdk/common-tools/smart-development-bridge.md)
 
 #### SDK Diagnostics
-##### [Tizen Doctor](/sdk-tools/tizen-studio/common-tools/tizen-doctor.md)
+##### [Tizen Doctor](/sdk-tools/baseline-sdk/common-tools/tizen-doctor.md)
 
 #### Report Issues
 ##### [Issue Reporter](/sdk-tools/vstools/tools/issue-reporter-vs-tools.md)

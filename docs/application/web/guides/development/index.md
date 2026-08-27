@@ -21,7 +21,7 @@ Once you have finished the application plan and design, you are ready to create 
 After you have planned and designed your application, you are ready to [create the application project](creating-app-project.md) in Tizen Studio.
 
 Tizen Studio provides various project templates that make it easier for you to start coding your application. When you create a new project,
-you can select a specific template or sample. Based on the selection, the Tizen Web [Project Wizard](../../../../sdk-tools/tizen-studio/web-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
+you can select a specific template or sample. Based on the selection, the Tizen Web [Project Wizard](../../../../sdk-tools/baseline-sdk/web-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
 
 <a name="set"></a>
 ## Set project properties
@@ -136,7 +136,7 @@ When Tizen Studio packages the application, the following process is executed:
 Web application packaging process is based on the W3C packaging and
 configuration.
 
-You can package a Web application using the `web-packaging` command in the [Command Line Interface (CLI)](../../../../sdk-tools/tizen-studio/common-tools/command-line-interface.md), which is a functional tool in Tizen Studio:  
+You can package a Web application using the `web-packaging` command in the [Command Line Interface (CLI)](../../../../sdk-tools/baseline-sdk/common-tools/command-line-interface.md), which is a functional tool in Tizen Studio:  
 ```bash
 web-packaging project.wgt project/
 ```
