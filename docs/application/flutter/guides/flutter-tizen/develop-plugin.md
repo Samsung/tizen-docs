@@ -163,7 +163,7 @@ Types such as `flutter::MethodCall` and `flutter::EncodableValue` in the templat
 
 - C++17 standards
 - [cpp_client_wrapper](https://github.com/flutter-tizen/engine/tree/HEAD/shell/platform/common/client_wrapper/include/flutter)
-- [Tizen native APIs](https://docs.tizen.org/application/native/api/common/latest/index.html)
+- [Tizen native APIs](../../../native/api/common/latest/index.html)
 - External native libraries, if any (static/shared)
 
 Note: The API references for Tizen TV are not publicly available. However, most of the Tizen common APIs are also available for the TV profile, so you may refer to the common API references when developing plugins for TV devices.
@@ -179,7 +179,7 @@ Besides the above mentioned [MethodChannel](https://api.flutter.dev/flutter/serv
 
 If any privileges are required to run your plugin code, you have to list them in the plugin's README so that app developers can properly add them to their `tizen-manifest.xml`.
 
-If one or more privileges are [privacy-related privileges](https://docs.tizen.org/application/dotnet/get-started/api-privileges), permissions must be granted by user at runtime. To request permissions at runtime, use the [Privacy Privilege Manager API](https://docs.tizen.org/application/native/guides/security/privacy-related-permissions) ([example](https://github.com/flutter-tizen/plugins/blob/master/packages/permission_handler/tizen/src/permission_manager.cc)).
+If one or more privileges are [privacy-related privileges](../../../dotnet/reference/api-privileges.md), permissions must be granted by user at runtime. To request permissions at runtime, use the [Privacy Privilege Manager API](../../../native/guides/security/privacy-related-permissions.md) ([example](https://github.com/flutter-tizen/plugins/blob/master/packages/permission_handler/tizen/src/permission_manager.cc)).
 
 On TV devices, permissions are already granted to apps by default. Invoking permission-related APIs will result in a library loading error on TV devices. If you want to run your plugin on different types of devices using a single codebase, consider using the `TV_PROFILE` macro to separate the TV-specific code ([example](https://github.com/flutter-tizen/plugins/blob/master/packages/permission_handler/tizen/src/permission_manager.cc)).
 

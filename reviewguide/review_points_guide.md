@@ -19,10 +19,10 @@ When you review a guide page, check these points and get the page consistency.
    - [Code block type](#codeblock_type)
    - [Consistency between code block and description](#codeblock_check)
 - [Hyper link](#hyperlink)
-   - [Page in docs.tizen.org](#hyperlink_guide)
+   - [Page on the published site](#hyperlink_guide)
    - [Native or Web API](#hyperlink_not_dotnet)
    - [.NET API](#hyperlink_dotnet)
-   - [Outside of docs.tizen.org](#hyperlink_out)
+   - [Outside the published site](#hyperlink_out)
    - [Feature and privileges](#hyperlink_not_link)
 - [Images](#images)
 - [Related information](#related_info)
@@ -36,10 +36,10 @@ There are several branches in tizen-docs repository. When a PR is created, check
 
 - **master** branch
 
-   To handle the document for the latest published Tizen Platform version. The updates in this branch is to be displayed on docs.tizen.org. If document for current Tizen version needs to be updated, use this branch.
+   To handle the document for the latest published Tizen Platform version. The updates in this branch is to be displayed on the published site. If document for current Tizen version needs to be updated, use this branch.
 - **live** branch
 
-   To update the docs.tizen.org with the update on master branch.
+   To update the published site with the update on master branch.
 - **tizen\_\<VERSION>\_prepare** branch
 
    To prepare the next Tizen document. It holds the updates till the next Tizen version is published. When the next Tizen is published, merge this branch into master, and resolve the conflicts.
@@ -73,7 +73,7 @@ When a new  page is added, check the **toc_all.md** and **overview** of the crea
 
 ### toc_all.md
 
-This file is to update the LNB menu when a new pages is added. LNB of docs.tizen.org is listed  as in order of `toc_all.md`.
+This file is to update the LNB menu when a new pages is added. LNB of the published site is listed  as in order of `toc_all.md`.
 
 **Example :** 
 
@@ -81,7 +81,7 @@ This file is to update the LNB menu when a new pages is added. LNB of docs.tizen
 
 **Added page** : application-launcher.md
 
-As `application-launcher.md` file is added, update `toc_all.md` file to locate the page in the LNB of docs.tizen.org.
+As `application-launcher.md` file is added, update `toc_all.md` file to locate the page in the LNB of the published site.
 
 Check the validation of the toc_all.md using the stg build.
 
@@ -197,15 +197,15 @@ Check whether if there is a difference between the code block and the descriptio
 
 ## Hyper link
 There are links to other pages. Mostly the hyper links are going to below locations : 
-- [page in docs.tizen.org](#hyperlink_guide)
+- [page on the published site](#hyperlink_guide)
 - API link
   - [Native or Web API](#hyperlink_not_dotnet)
   - [.NET API](#hyperlink_dotnet)
--  [Other page from outside of docs.tizen.org](#hyperlink_out)
+-  [Other page from outside the published site](#hyperlink_out)
 
 <a name="hyperlink_guide"></a>
 
-### Page in docs.tizen.org
+### Page on the published site
 
 Relative Path is suggested.
 
@@ -236,7 +236,7 @@ This link should checked on stg build of each PR, as it doesn't work on github p
 
 <a name="hyperlink_out"></a>
 
-### Outside of docs.tizen.org
+### Outside the published site
 Check whether if the link is not broken.
 
 <a name="hyperlink_not_link"></a>

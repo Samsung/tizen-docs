@@ -28,11 +28,17 @@ def findings_only(stdout):
 
 def test_all_reports_the_same_from_any_directory():
     """The old code hardcoded a relative docs/ path, so running it from inside
-    docs/ silently checked nothing and exited 0."""
+    docs/ silently checked nothing and exited 0.
+
+    Compares the file count rather than findings, so this keeps working now
+    that the corpus is clean.
+    """
     from_root = run("--all")
     from_docs = run("--all", cwd=REPO / "docs")
     assert findings_only(from_root.stdout) == findings_only(from_docs.stdout)
-    assert findings_only(from_docs.stdout) != []
+    count = from_root.stdout.rsplit("(", 1)[1].split(" files")[0]
+    assert int(count) > 900
+    assert f"({count} files" in from_docs.stdout
 
 
 def test_a_summary_is_always_printed():
@@ -42,11 +48,23 @@ def test_a_summary_is_always_printed():
     assert result.stdout.splitlines()[-1].startswith("check_docs: ")
 
 
-def test_every_format_produces_output():
-    """Run with the baseline off, so there is something for each to render."""
-    for name in ("text", "jsonl", "sarif", "github"):
-        result = run("--all", "--format", name, "--no-baseline", "--severity", "WARN")
-        assert result.stdout.strip(), name
+def test_every_format_is_accepted_and_well_formed():
+    """Rendering of individual findings is asserted in test_formats.py; this
+    checks the CLI wiring on the real corpus, which is currently clean."""
+    import json
+
+    text = run("--all", "--format", "text")
+    assert text.returncode == 0
+    assert text.stdout.strip().startswith("check_docs: 0 ERROR")
+
+    empty = run("--all", "--format", "jsonl")
+    assert empty.returncode == 0 and empty.stdout == ""
+
+    assert run("--all", "--format", "github").stdout == ""
+
+    document = json.loads(run("--all", "--format", "sarif").stdout)
+    assert document["version"] == "2.1.0"
+    assert document["runs"][0]["results"] == []
 
 
 def test_a_clean_corpus_exits_zero():

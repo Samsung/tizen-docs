@@ -14,7 +14,7 @@ You can load the Web content as follows:
     var webview = new WebView()
     {
         Size = new Size(1280, 960),
-        Url = "https://docs.tizen.org"
+        Url = "https://samsungtizenos.com/docs"
     };
 
     NUIApplication.GetDefaultWindow().Add(webview);
@@ -41,7 +41,7 @@ You can load the Web content as follows:
         Size = new Size(1280, 960),
     };
 
-    webview.LoadUrl("https://docs.tizen.org");
+    webview.LoadUrl("https://samsungtizenos.com/docs");
     NUIApplication.GetDefaultWindow().Add(webview);
     ```
 
@@ -108,7 +108,7 @@ NUI `WebView` provides several APIs to control JavaScript in a currently loaded 
         webview.EvaluateJavaScript("document.body.style.backgroundColor = 'yellow';");
     };
 
-    webview.LoadUrl("https://docs.tizen.org");
+    webview.LoadUrl("https://samsungtizenos.com/docs");
 
     NUIApplication.GetDefaultWindow().Add(webview);
     ```
@@ -131,7 +131,7 @@ NUI `WebView` provides several APIs to control JavaScript in a currently loaded 
 
     mWebView.AddJavaScriptMessageHandler("InjectedObject", InjectedMethod);
 
-    webview.LoadUrl("https://docs.tizen.org");
+    webview.LoadUrl("https://samsungtizenos.com/docs");
 
     webview.PageLoadFinished += (s, e) =>
     {

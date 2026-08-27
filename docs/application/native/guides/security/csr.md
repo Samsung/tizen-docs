@@ -5,6 +5,7 @@ The Content Screening and Reputation (CSR) framework allows you to screen the co
 
 > [!NOTE]
 > Since Tizen 8.0, all CSR APIs are deprecated and will be removed without any alternative.
+> The API reference is published up to Tizen 9.0; the APIs are absent from 10.0.
 
 The main features of the CSR API include:
 
@@ -27,7 +28,7 @@ You can [manage the anti-malware engines](#managing_engine) by enabling and disa
 
 To enable your application to use the CSR framework functionality:
 
-1. To use the [CSR API](../../api/common/latest/group__CAPI__CSR__FRAMEWORK__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [CSR API](../../api/common/9.0/group__CAPI__CSR__FRAMEWORK__MODULE.html), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>

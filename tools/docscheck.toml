@@ -25,6 +25,9 @@ schema = 1
 id = "api-handwritten"
 match = [
   "docs/application/web/api/index.md",
+  # Hand-authored in #2369 despite sitting beside generated API pages. There is
+  # no generator for it anywhere in the repository.
+  "docs/extensions/tizenx/api/toc.md",
 ]
 reason = """These live under an api/ directory but are hand-written pages, not
 imported output. They get the full set of checks."""

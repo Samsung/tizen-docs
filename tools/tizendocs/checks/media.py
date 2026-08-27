@@ -1,7 +1,8 @@
 """M-* rules: image and media assets."""
 import os
+import re
 
-from .. import markdown
+from .. import markdown, paths
 from ..findings import ERROR, WARN, Finding
 
 ALT = "M-ALT"
@@ -37,6 +38,51 @@ def _media_files(index):
 
 
 
+#: File types that can reference an asset. Markdown alone is not enough: the
+#: generated API reference is HTML with its own CSS and JS, toc.xml is XML, and
+#: an asset referenced only from one of those is not an orphan.
+REFERRER_SUFFIXES = (".md", ".html", ".htm", ".xml", ".yaml", ".yml",
+                     ".js", ".css", ".json", ".txt", ".svg")
+
+REFERENCE = re.compile(
+    rb"""(?:src|href|url|poster|data|content)\s*=\s*['"]([^'"]+)['"]"""
+    rb"""|\]\(([^)\s]+)""", re.I)
+
+
+def _referenced_assets(index):
+    """Every asset path referenced from any text file under docs/.
+
+    Deliberately not the shared link graph, which is Markdown-only because
+    every run builds it. This reads about 59,000 files and belongs in the
+    opt-in media scan.
+    """
+    names = {os.path.basename(path).lower() for path, _ in _media_files(index)}
+    found = set()
+    for path in index.files:
+        if not path.endswith(REFERRER_SUFFIXES):
+            continue
+        try:
+            with open(index.absolute(path), "rb") as handle:
+                data = handle.read()
+        except OSError:
+            continue
+        directory = os.path.dirname(path)
+        for match in REFERENCE.finditer(data):
+            raw = (match.group(1) or match.group(2) or b"")
+            raw = raw.split(b"#")[0].split(b"?")[0]
+            if not raw:
+                continue
+            url = raw.decode("utf-8", "ignore")
+            if url.startswith(("http", "mailto:", "data:", "//")):
+                continue
+            if os.path.basename(url).lower() not in names:
+                continue
+            target = paths.resolve(f"{directory}/x" if directory else "x", url)
+            found.add(target)
+            found.add(target.lower())
+    return found
+
+
 def check_orphans(index):
     """Assets nothing references.
 
@@ -45,10 +91,7 @@ def check_orphans(index):
     the link rules are clean: a broken reference makes its own target look
     unreferenced. The runner refuses to answer while any L-* error is open.
     """
-    referenced = set()
-    for target in index.in_edges:
-        referenced.add(target)
-        referenced.add(target.lower())
+    referenced = _referenced_assets(index)
     for path, _ in _media_files(index):
         if path in referenced or path.lower() in referenced:
             continue

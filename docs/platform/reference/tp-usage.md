@@ -62,7 +62,7 @@ If you have a review.tizen.org account:
  - Use ssh://review.tizen.org:29418/ for the SSH protocol.
 
 You don't have a review.tizen.org account.
-- Guide: https://docs.tizen.org/platform/developing/setting-up/
+- Guide: [Set Up the Development Environment](../developing/setting-up.md)
 
 If you don't want to register for an account, use git.tizen.org.
 

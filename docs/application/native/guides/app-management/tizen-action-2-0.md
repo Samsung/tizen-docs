@@ -208,7 +208,7 @@ sdb shell action-tool execute '{
     "appid": "org.example.tidlcustomactionsample",
     "arguments": {
       "Id": "bookmark-1",
-      "Url": "https://docs.tizen.org",
+      "Url": "https://samsungtizenos.com/docs",
       "Title": "Tizen Documentation"
     }
   }

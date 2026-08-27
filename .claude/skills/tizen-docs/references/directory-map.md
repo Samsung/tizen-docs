@@ -121,7 +121,7 @@ when reviewing a PR in the matching area:
 - `stg_build.md` — how to use the staging (stg) preview URL that Jenkins builds for each
   PR to check rendered output before merge
 - `update_docs_tizen_org.md` — how a merged `master` change is promoted to the live
-  `docs.tizen.org` site via a `master` → `live` pull request
+  published site via a `master` → `live` pull request
 
 ## Cross-cutting: generated vs. hand-written content
 

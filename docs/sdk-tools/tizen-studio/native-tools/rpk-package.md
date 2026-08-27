@@ -236,5 +236,3 @@ In this example, if those RPKs contain `libcustom.so`, the file from `tizen.samp
 ## Related Information
 
 For more information on CLI commands, see [Command Line Interface Commands](../common-tools/command-line-interface.md).
-
-For further details, refer to the official Tizen documentation: [Tizen Resource Package Documentation](https://docs.tizen.org/application/native/guides/app-management/resource-packages/)

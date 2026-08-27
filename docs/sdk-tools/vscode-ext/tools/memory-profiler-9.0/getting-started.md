@@ -11,7 +11,7 @@
 
 ## Preparation
 1. [Install VS Code](https://code.visualstudio.com/download)
-2. [Install Tizen SDK](https://docs.tizen.org/application/vscode-ext/Tizen/dotnet/)
+2. [Install Tizen SDK](../../Tizen/dotnet.md)
    - Install VS Code [Tizen Extension](https://marketplace.visualstudio.com/items?itemName=tizen.vscode-tizen-csharp)
    - Install Tizen Baseline SDK
      - You can install it from VS Code's command palette(`Ctrl + Shift + P`) by selecting `Tizen: Wizard to set Tizen Baseline SDK path or install a new`.
@@ -32,7 +32,7 @@
         10000000104ab1ca        device          rpi4
    ```
 2. Launching Tizen Memory Profiler in VS Code
-   - [Create a new Tizen application project](https://docs.tizen.org/application/dotnet/get-started/first-app/#deploy-and-run-your-application) or open an existing project directory.
+   - [Create a new Tizen application project](../../../../application/dotnet/get-started/first-app.md#deploy-and-run-your-application) or open an existing project directory.
    - Installing Tizen Applicaiton
      - Select `Tizen: Install Tizen application` from the VS Code's command palette (`Ctrl + Shift + P`) to install your written application on the device.
    - Launch the application in profiling mode
