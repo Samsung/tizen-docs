@@ -4,7 +4,7 @@ When a PR is created, a stg URL is built with the updates in the PR.
 
 ![image-20211116113538440](./media/stg.png)
 
-To check how the update looks on docs.tizen.org, use the stg URL.
+To check how the update looks on the published site, use the stg URL.
 
 ![image-20211116113814486](./media/stg_url.png)
 

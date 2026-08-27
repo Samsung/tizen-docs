@@ -8,7 +8,7 @@
 
 This repo contains Tizen documents for platform and application developers. 
 
-All files under ./docs/ are hosted on the [Tizen Docs site](https://samsungtizenos.com/docs/bridge/). 
+All files under ./docs/ are hosted on the [Tizen Docs site](https://samsungtizenos.com/docs).
 
 Only add information that is suitable for public release. Do not include credentials,
 private contact information, unreleased product details, or other non-public material.
@@ -17,7 +17,7 @@ private contact information, unreleased product details, or other non-public mat
 
 ```
 tizen-docs/
-├── docs/                       # Published site source (docs.tizen.org)
+├── docs/                       # Published site source (samsungtizenos.com/docs)
 │   ├── application/            # App developer guides — native, web, dotnet, flutter
 │   │   └── */api/               # Generated API reference (HTML). Do not hand-edit.
 │   ├── sdk-tools/              # SDK and IDE tooling docs — tizen-studio, vscode-ext,

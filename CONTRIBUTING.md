@@ -2,160 +2,137 @@
 
 Thank you for your interest in contributing to the Tizen documentation!
 
-The document covers the process for contributing to the articles and code samples that are hosted on the [Tizen documentation site](https://docs.tizen.org/). Contributions may be as simple as typo corrections or as complex as new articles.
+This document covers the process for contributing to the articles and code samples
+published at <https://samsungtizenos.com/docs>. Contributions may be as simple as a typo
+correction or as complex as a new article.
 
 Only contribute information suitable for public release. Do not add credentials, private
 contact information, unreleased product details, or other non-public material.
 
-Write all issues and pull requests (titles, descriptions, and comments) in English so that
-the whole community can read and participate in the discussion.
+Write all issues and pull requests — titles, descriptions, and comments — in English so
+that the whole community can read and participate.
 
-1.  [Process for contributing](#process-for-contributing)
-    1. [Repository structure](#repository-structure)
-    1. [File Name](#file-name)
-    1. [Naming Rules for Tizen Terms](./styleguide/naming-rules.md)
-1.  [DOs and DON'Ts](#dos-and-donts)
-1.  [Content license](#content-license)
-1.  [Contributor License Agreement](#contributor-license-agreement)
-1.  [Reference](#reference)
+For the repository layout, the review labels, and the licence, see
+[README.md](README.md). For the rules that apply while editing, see [AGENTS.md](AGENTS.md),
+the [style guide](styleguide/), and the [reviewer guides](reviewguide/).
 
+1. [Process for contributing](#process-for-contributing)
+1. [File names](#file-names)
+1. [How to open a pull request](#how-to-open-a-pull-request)
+1. [DOs and DON'Ts](#dos-and-donts)
+1. [Licence and the Contributor License Agreement](#licence-and-the-contributor-license-agreement)
 
 ## Process for contributing
 
-You need a basic understanding of [Git and GitHub.com](https://guides.github.com/activities/hello-world/).
+You need a basic understanding of [Git and GitHub](https://guides.github.com/activities/hello-world/).
 
-**Step 1:** Skip this step for small changes. Open an [issue](https://github.com/Samsung/tizen-docs/issues) describing what you want to do, such as change an existing article or create a new one.
-The content inside the **docs** folder is organized into sections that are reflected in the Table of Contents (toc_all.md). Define where the topic will be located in the toc_all.md. Get feedback on your proposal.
+**Step 1: agree on the change.** For anything larger than a small fix, open an
+[issue](https://github.com/Samsung/tizen-docs/issues) describing what you want to do and
+where it belongs, and get feedback before investing time. You can also pick up one of the
+[open issues](https://github.com/Samsung/tizen-docs/issues).
 
-You must use heading tags(#, ##, ###, ####...) for items of TOC. Each top-level directory under `docs/` is its own section with its own `toc_all.md`: `application/` (app developer guides), `sdk-tools/` (SDK and IDE tooling), `platform/` (Open Source Project) and `extensions/`.
+Decide which section the page belongs to and which table of contents publishes it. Each
+top-level directory under `docs/` is a section: `application/` (app developer guides),
+`sdk-tools/` (SDK and IDE tooling), `platform/` (Open Source Project), and `extensions/`.
+A TOC is a Markdown file whose heading depth is the navigation depth.
 
-Be aware that not every TOC is read by the publishing pipeline, and not every block of a TOC that is read gets consumed. Under `sdk-tools/`, the six per-IDE TOCs (`toc_vscode_*.md`, `toc_vs-ext_*.md`) are what actually publish, while `sdk-tools/toc_all.md` documents the structure only. If a new page must appear on the site, confirm which TOC governs it rather than assuming `toc_all.md` is enough.
+Be aware that not every TOC is read by the publishing pipeline, and not every block of a
+TOC that is read gets consumed. Under `sdk-tools/`, the six per-IDE TOCs
+(`toc_vscode_*.md`, `toc_vs-ext_*.md`) are what actually publish, while
+`sdk-tools/toc_all.md` documents the structure only. Confirm which TOC governs your page
+rather than assuming `toc_all.md` is enough.
 
-You can also look at our [open issues](https://github.com/Samsung/tizen-docs/issues) list and volunteer to work on the ones you're interested in.
+**Step 2: fork and branch.** Fork `Samsung/tizen-docs` and create a branch for your
+changes. For a small edit you can use GitHub's web interface, which creates the branch for
+you.
 
-**Step 2:** Fork the `/Samsung/tizen-docs` repo and create a branch for your changes.
+**Step 3: write.** Start from the [template](styleguide/template-guide.md) and follow the
+[style guide](styleguide/style.md). Put the article in the folder for its section, and put
+images in a `media` folder beside the article. A section's main article is `index.md`.
 
-For small changes, you can use GitHub's web interface. Simply click the **Edit the file in your fork of this project** on the file you'd like to change.
-GitHub creates the new branch for you when you submit the changes.
+Register the page in its governing TOC. A page absent from every TOC is not reachable on
+the published site.
 
-**Step 3:** Make the changes on this new branch.
+**Step 4: validate.** Before opening the pull request:
 
-If it's a new topic, you can use this [template file](./styleguide/template-guide.md) as your starting point. It contains the writing guidelines and also explains the metadata required for each article, such as author information.
+```bash
+python3 tools/check_docs.py --changed-only --base origin/master
+git diff --check
+```
 
-Navigate to the folder that corresponds to the TOC location determined for your article in step 1.
-That folder contains the Markdown files for all articles in that section.
-If necessary, create a new folder to place the files for your content. The main article for that section is called *index.md*.
-For images and other static resources, create a subfolder called **media** inside the folder that contains your article, if it doesn't already exist. Inside the **media** folder, create a subfolder with the article name (except for the index file).
+`ERROR` findings block the pull request. `WARN` findings do not block, but each one should
+be fixed or explained. The same command also reports what a deletion or rename breaks
+elsewhere in the repository, including references written as HTML — which a search for the
+filename in Markdown syntax will not find.
 
-Be sure to follow the proper Markdown syntax. For more information, see the [style guide](./styleguide/style.md).
+**Step 5: open the pull request** against `Samsung/tizen-docs/master`, and add the
+`Review/Requested` label. Keep one pull request to one issue where you can; separate fixes
+in unrelated files are easier to review separately. If the change closes an issue, put
+`Fixes #Issue_Number` in the description.
 
-### Repository structure
+A staging site is built for each pull request so you can see the rendered result before it
+is published; see [reviewguide/stg_build.md](reviewguide/stg_build.md) for how to find and
+refresh that URL.
 
-- All markdown files are in the docs folder and various subfolders.
-- The docs/index.md file defines the landing (hub) page are it appears on docs.tizen.org (TBD).
-- The docs/TOC.md file defines the left-hand navigation panel that appears when you navigate to any page other than the hub page.
-- Images are contained within media folders within each subfolder.
-- Example structure
-  ```
-  docs
-    /open-source-project
-      /porting
-        porting-overview.md
-        /media
-          image.png
-  ```
+**Step 6: respond to review.** A maintainer merges the pull request into `master` once the
+feedback is applied. On a cadence, `master` is promoted to the `live` branch and your
+contribution appears at <https://samsungtizenos.com/docs>.
 
-### File name
+## File names
 
-File names use the following rules:
-- Contain only lowercase letters, numbers, and hyphens.
-- No spaces or punctuation characters. Use the hyphens to separate words and numbers in the file name.
-- Use action verbs that are specific, such as develop, buy, build, troubleshoot. No -ing words.
-- No small words - don't include a, and, the, in, or, etc.
-- Must be in Markdown and use the .md file extension.
-- Keep file names reasonably short. They are part of the URL for your articles.
+- Only lowercase letters, numbers, and hyphens. No spaces or punctuation; use hyphens to
+  separate words.
+- Use specific action verbs, such as develop, buy, build, troubleshoot. No `-ing` words.
+- No small words — leave out a, and, the, in, or.
+- Markdown, with the `.md` extension.
+- Keep names reasonably short: they become part of the article's URL.
 
-**Step 4:** Submit a Pull Request (PR) from your branch to `Samsung/tizen-docs/master`.
+## How to open a pull request
 
-Each PR should usually address one issue at a time. The PR can modify one or multiple files. If you're addressing multiple fixes on different files, separate PRs are preferred.
+If you are new to GitHub, see [Fork a repo](https://help.github.com/articles/fork-a-repo/)
+and [GitHub Flow](https://guides.github.com/introduction/flow/). In short, after forking
+<https://github.com/Samsung/tizen-docs>:
 
-If your PR is addressing an existing issue, add the `Fixes #Issue_Number` keyword to the commit message or PR description. That way, the issue is automatically closed when the PR is merged. For more information, see [Closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/).
+```bash
+git clone https://github.com/YOUR-USERNAME/tizen-docs.git
+cd tizen-docs
 
-The Tizen Document team will review your PR and let you know if there are any other updates/changes necessary in order to approve it.
+# Add the original repository, so you can pull updates into your fork later.
+git remote add upstream https://github.com/Samsung/tizen-docs.git
 
-> **Note**
->
-> After you submit PRs to the master branch, you can see your changes on https://docs.stage.tizen.org/staging/{PR #}/ before they are published on the live Tizen Docs site.
+git switch -c my-change            # work on a branch, never on master
+# ... edit, then validate as in step 4 above ...
+git add <files> && git commit
+git push origin my-change
+```
 
-**Step 5:** Make any necessary updates to your branch as discussed with the team.
-
-The maintainers will merge your PR into the master branch once feedback has been applied and your change is approved.
-
-On a certain cadence, we push all commits from master branch into the live branch and then you'll be able to see your contribution live at https://docs.tizen.org/.
-
-### How to PR
-
-1. Fork form the original repository, https://github.com/Samsung/tizen-docs.
-   (Ref. https://help.github.com/articles/fork-a-repo/)
-
-2. Type `git clone`, and then paste the URL you copied in 1. It will look like this, with your GitHub username instead of `YOUR-USERNAME`:
-   ```bash
-   $ git clone https://github.com/YOUR-USERNAME/tizen-docs.git
-   ```
-3. Set to synchronize the original repository and the forked repository.
-   ```bash
-   $ git remote -v
-   $ git remote add upstream https://github.com/Samsung/tizen-docs.git
-   $ git remote -v
-   ```
-4. Create a new branch on the forked repository or the local repository,
-   and switch to the new branch.
-   ```bash
-   $ git checkout -b <new branch name>
-   ```
-5. Create a local commit.
-   ```bash
-   $ git status
-   $ git add
-   $ git commit -a
-   ```
-6. Push the branch
-   ```bash
-   $ git push origin <new branch name>
-   ```
-7. Open a pull request on https://github.com/Samsung/tizen-docs.
-
+Then open the pull request from your branch against `Samsung/tizen-docs/master`.
 
 ## DOs and DON'Ts
 
-The following list shows some guiding rules that you should keep in mind when you're contributing to the Tizen documentation:
-
-- **DON'T** surprise us with large pull requests. Instead, file an issue and start a discussion so we can agree on a direction before you invest a large amount of time.
+- **DON'T** surprise us with a large pull request. File an issue and start a discussion so
+  we can agree on a direction before you invest a lot of time.
 - **DO** write issues and pull requests in English.
-- **DO** read the [style guide](styleguide/style.md) guideline.
-- **DO** use the [template](styleguide/template-guide.md) file as the starting point of your work.
+- **DO** read the [style guide](styleguide/style.md).
+- **DO** use the [template](styleguide/template-guide.md) as the starting point.
 - **DO** create a separate branch on your fork before working on the articles.
 - **DO** follow the [GitHub Flow workflow](https://guides.github.com/introduction/flow/).
-- **DO** blog and tweet (or whatever) about your contributions, frequently!
+- **DO** blog and tweet about your contributions, frequently!
 
 > **Note**
 >
-> you might notice that some of the topics are not currently following all the guidelines specified here and on the [style guide](./styleguide/style.md) as well. We're working towards achieving consistency throughout the site. Check the list of [open issues](https://github.com/Samsung/tizen-docs/issues?q=is%3Aissue+is%3Aopen) we're currently tracking for that specific goal.
+> Some existing pages do not follow every guideline here or in the
+> [style guide](styleguide/style.md) yet. We are working towards consistency across the
+> site; see the [open issues](https://github.com/Samsung/tizen-docs/issues?q=is%3Aissue+is%3Aopen)
+> tracking that.
 
+## Licence and the Contributor License Agreement
 
-## Content License
+Documentation is licensed under
+[Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/) and code
+examples under the [BSD-3-Clause License](https://www.tizen.org/bsd-3-clause-license). See
+[content-license.md](content-license.md) for details.
 
-The contents in this project are under the [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by/3.0/) License or the [BSD-3-Clause License](https://www.tizen.org/bsd-3-clause-license).
-For more information, see the [Content License](content-license.md).
-
-
-## Contributor License Agreement
-
-You can read more about [Contribution License Agreements (CLA)](https://en.wikipedia.org/wiki/Contributor_License_Agreement) on Wikipedia.
-
-
-## Reference
-
-- https://github.com/dotnet/docs
-- https://github.com/NuGet/docs.microsoft.com-nuget
-- https://github.com/google/styleguide/
+By contributing you agree that your contribution is licensed under those terms. For
+background on what that means, see
+[Contributor License Agreement](https://en.wikipedia.org/wiki/Contributor_License_Agreement).

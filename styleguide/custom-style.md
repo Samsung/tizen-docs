@@ -21,7 +21,7 @@ Some custom markdown were added for Tizen Docs.
 > Dangerous certain consequences of an action.
 ```
 
-These alerts look like this on docs.tizen.org:
+These alerts look like this on the published site:
 
 ![Alerts](media/alerts.png)
 

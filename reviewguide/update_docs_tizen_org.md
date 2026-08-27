@@ -1,14 +1,14 @@
-# Applying changes in master to docs.tizen.org
+# Applying changes in master to the published site
 
 
 
-This page describes how to apply the updates in tizen-docs github to docs.tizen.org.
+This page describes how to apply the updates in tizen-docs github to the published site at https://samsungtizenos.com/docs.
 
 There are 2 main branches, **master** and **live** branches.
 
 - master branch : To handle the updates for the latest Tizen platform version,
 
-- live branch : To update docs.tizen.org site.
+- live branch : To update the published site.
 
 So to update the content for the latest published Tizen platfrom, the update must be applied to master first by a PR.
 
