@@ -1,8 +1,6 @@
 {
-  "commit": "95041054e",
+  "commit": "426e8d06c",
   "counts": {
-    "L-BROKEN": 11,
-    "M-ORPHAN": 399,
-    "T-META": 1
+    "M-ORPHAN": 399
   }
 }
