@@ -212,7 +212,6 @@ The following list defines Tizen Native API. The list describes the API modules 
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
-  | Clipboard History Manager | Provides copy and paste functionalities for applications. | [7.0 (mobile)](../api/mobile/7.0/group__CAPI__CBHM__MODULE.html) |  |
   | EFL                       | Provides a collection of libraries that are independent and can be built on top of each other to provide useful features that   complement the existing environment. | [Latest](../api/common/latest/group__EFL.html) | EFL |
   | EFL UTIL                  | Gets and sets the priority order of notification windows.  | [Latest](../api/common/latest/group__CAPI__EFL__UTIL__MODULE.html) | EFL Utilities | 
   | EFL Extension             | Enhances the EFL libraries and includes device-specific features (such as support for the hardware Back key). | [Latest](../api/common/latest/group__CAPI__EFL__EXTENSION__MODULE.html) | Managing Rotary Events |
