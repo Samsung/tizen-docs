@@ -5,7 +5,7 @@ Tizen provides localized resources to make your application usable for different
 
 > **Note**
 >
-> The `.po` files must be placed in the `res/po` directory of the application. The files can be edited using the [PO file editor](../../../../sdk-tools/tizen-studio/native-tools/po-file-editor.md) provided by Tizen Studio.
+> The `.po` files must be placed in the `res/po` directory of the application. The files can be edited using the [PO file editor](../../../../sdk-tools/baseline-sdk/native-tools/po-file-editor.md) provided by Tizen Studio.
 >
 > The `.po` file is compiled into a `.mo` file, and the `.mo` file name is defined using the project name that you define when you create the project in Tizen Studio. The application ID is made based on the project name, and the framework finds the application `.mo` file based on the application ID.
 >

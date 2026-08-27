@@ -15,7 +15,7 @@ The main features of the Resource Manager API include:
   >
   > If you cannot access the `Resource Manager` view in Tizen Studio, check the version and API version attributes in the `<manifest>` element of the application manifest file.
   >
-  > For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../../sdk-tools/tizen-studio/native-tools/resource-manager.md).
+  > For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../../sdk-tools/baseline-sdk/native-tools/resource-manager.md).
 
 - Using the resources
 
@@ -134,7 +134,7 @@ To get the appropriate resource file path in your code:
 <a name="check_resource"></a>
 ## Checking Resources with the Emulator Manager
 
-To check how the resources are shown on different device configurations, create emulator instances with different resolutions with the [Emulator Manager](../../../../sdk-tools/tizen-studio/common-tools/emulator-manager.md) and run the application on the instances using different language settings:
+To check how the resources are shown on different device configurations, create emulator instances with different resolutions with the [Emulator Manager](../../../../sdk-tools/baseline-sdk/common-tools/emulator-manager.md) and run the application on the instances using different language settings:
 
 1. Open the Emulator Manager by selecting **Tools &gt; Emulator Manager** in the Tizen Studio menu.
 
@@ -146,7 +146,7 @@ To check how the resources are shown on different device configurations, create 
 
    ![Create a new emulator](./media/resource_manager_emulator_new.png)
 
-   Select the **WVGA** template. Click **Finish**. If the HD emulator has not been created, create it as well. For more information on creating an emulator instance, see [Creating Emulator Instances](../../../../sdk-tools/tizen-studio/common-tools/emulator-manager.md#create).
+   Select the **WVGA** template. Click **Finish**. If the HD emulator has not been created, create it as well. For more information on creating an emulator instance, see [Creating Emulator Instances](../../../../sdk-tools/baseline-sdk/common-tools/emulator-manager.md#create).
 
 3. Run the application on the WVGA device emulator:
 

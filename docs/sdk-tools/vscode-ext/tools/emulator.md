@@ -6,7 +6,7 @@ Using the Emulator Manager, you can create a variety of environments (different 
 
 The emulator is based on the open-source QEMU project and consists of a virtual CPU, memory, and various peripherals. Currently, Tizen emulators only support x86 and x64 architecture hosts.
 
-You can use the [Emulator Manager](emulator-manager.md) to create and launch a Virtual Machine (emulator) instance. You can communicate with the emulator instance using the [Smart Development Bridge (SDB)](../../tizen-studio/common-tools/smart-development-bridge.md).
+You can use the [Emulator Manager](emulator-manager.md) to create and launch a Virtual Machine (emulator) instance. You can communicate with the emulator instance using the [Smart Development Bridge (SDB)](../../baseline-sdk/common-tools/smart-development-bridge.md).
 
 The emulator provides the following main features:
 
@@ -42,7 +42,7 @@ In the Emulator Manager, in addition to creating new emulator instances accordin
 
 ## Increasing the Application Execution Speed
 
-The Tizen x86 Emulator exploits [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel-based Virtual Machine in Linux) or [HAX](../../tizen-studio/setup/hardware-accelerated-execution-manager.md) (Hardware Accelerated eXecution in Windows&reg; and macOS) with HW virtualization support.
+The Tizen x86 Emulator exploits [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel-based Virtual Machine in Linux) or [HAX](../../baseline-sdk/setup/hardware-accelerated-execution-manager.md) (Hardware Accelerated eXecution in Windows&reg; and macOS) with HW virtualization support.
 
 If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator Manager, check the following prerequisites and install KVM or HAX:
 
@@ -78,7 +78,7 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
    - **In Windows&reg; and macOS:**
 
-     The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../../tizen-studio/setup/hardware-accelerated-execution-manager.md).
+     The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../../baseline-sdk/setup/hardware-accelerated-execution-manager.md).
 
    > [!NOTE]
    > If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable the NX (or PAE and DEP) related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
@@ -95,7 +95,7 @@ You can also run the emulator with HW virtualization support from the command li
 
 ## Supported Features
 
-The emulator provides various virtual HW, media formats, codecs, and [OpenGL&reg; ES acceleration](#opengl). For better performance of the OpenGL&reg; ES support, the Tizen Emulator exploits the latest feature of the graphic driver, so always [install the latest vendor-provided graphic driver](../../tizen-studio/setup/prerequisites.md#emulator). The emulator, however, has some limitations and [differences compared to physical target devices](#target).
+The emulator provides various virtual HW, media formats, codecs, and [OpenGL&reg; ES acceleration](#opengl). For better performance of the OpenGL&reg; ES support, the Tizen Emulator exploits the latest feature of the graphic driver, so always [install the latest vendor-provided graphic driver](../../baseline-sdk/setup/prerequisites.md#emulator). The emulator, however, has some limitations and [differences compared to physical target devices](#target).
 
 The following table lists the basic features supported in the emulator.
 

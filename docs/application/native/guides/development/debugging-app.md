@@ -375,7 +375,7 @@ The **Expressions** view can be used in the following ways:
 
 ## Debugging Applications on the Emulator
 
-You can debug Tizen native applications on the [emulator](../../../../sdk-tools/tizen-studio/common-tools/emulator.md) using the **Project Explorer** view or the Tizen Studio menu.
+You can debug Tizen native applications on the [emulator](../../../../sdk-tools/baseline-sdk/common-tools/emulator.md) using the **Project Explorer** view or the Tizen Studio menu.
 
 To debug your application on the emulator:
 
@@ -401,7 +401,7 @@ To debug your application on the emulator:
 
 4. Use the application in the emulator as you would on a target device.
 
-   While the application is running, Tizen Studio [Log view](../../../../sdk-tools/tizen-studio/common-tools/log-view.md) shows the log, debug, and exception messages from the methods defined in the log macros.
+   While the application is running, Tizen Studio [Log view](../../../../sdk-tools/baseline-sdk/common-tools/log-view.md) shows the log, debug, and exception messages from the methods defined in the log macros.
 
 5. To stop debugging, do one of the following:
 
@@ -410,7 +410,7 @@ To debug your application on the emulator:
 
 After debugging, run your application again to check its functionality and to ensure that the bugs detected during the debugging process are fixed.
 
-In the emulator settings, you can change the display language settings, keyboard language settings, proxy address, and location settings. In addition, you can use the [Emulator Control Panel](../../../../sdk-tools/tizen-studio/common-tools/emulator-control-panel.md) to generate application events (such as sensor data, incoming calls, or location data) for debugging and testing purposes.
+In the emulator settings, you can change the display language settings, keyboard language settings, proxy address, and location settings. In addition, you can use the [Emulator Control Panel](../../../../sdk-tools/baseline-sdk/common-tools/emulator-control-panel.md) to generate application events (such as sensor data, incoming calls, or location data) for debugging and testing purposes.
 
 ## Using Developer Options
 

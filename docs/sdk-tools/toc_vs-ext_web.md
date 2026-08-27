@@ -1,6 +1,6 @@
 # Tizen SDK & Development Tools
-## [Overview](/sdk-tools/tizen-studio/common-tools/overview.md)
-## [Release Notes](/sdk-tools/tizen-studio/release-notes/6-0-release-notes.md)
+## [Overview](/sdk-tools/baseline-sdk/common-tools/overview.md)
+## [Release Notes](/sdk-tools/baseline-sdk/release-notes/6-0-release-notes.md)
 
 ## Visual Studio Tools for Tizen
 ### [Overview](/sdk-tools/vstools/index.md)
@@ -30,22 +30,22 @@
 
 #### Debugging & Profiling Application
 ##### [Debug App](/sdk-tools/vstools/getting-started/debug-app-web.md)
-##### [Tool: Web Inspector](/sdk-tools/tizen-studio/web-tools/web-inspector.md)
+##### [Tool: Web Inspector](/sdk-tools/baseline-sdk/web-tools/web-inspector.md)
 
 #### Running and Testing Application
 ##### [Normal Run](/sdk-tools/vstools/getting-started/edit-code.md)
 ##### [Install Tizen App](/sdk-tools/vstools/tools/install-tizen-app.md)
 ##### Tool : Emulator
-###### [Overview](/sdk-tools/tizen-studio/common-tools/emulator.md)
+###### [Overview](/sdk-tools/baseline-sdk/common-tools/emulator.md)
 ###### [Emulator Manager](/sdk-tools/vstools/tools/emulator-manager.md)
 ###### [Emulator Control Panel](/sdk-tools/vstools/tools/emulator-control-panel.md)
 ##### [Tool : Device Manager](/sdk-tools/vstools/tools/device-manager.md)
-##### [Tool : SDB](/sdk-tools/tizen-studio/common-tools/smart-development-bridge.md)
-##### [Tool : TV Web Simulator](/sdk-tools/tizen-studio/common-tools/smart-development-bridge.md)
+##### [Tool : SDB](/sdk-tools/baseline-sdk/common-tools/smart-development-bridge.md)
+##### [Tool : TV Web Simulator](/sdk-tools/baseline-sdk/common-tools/smart-development-bridge.md)
 ##### [Web Unit Test](/sdk-tools/vstools/getting-started/web-app-unit-test.md)
 
 #### SDK Diagnostics
-##### [Tizen Doctor](/sdk-tools/tizen-studio/common-tools/tizen-doctor.md)
+##### [Tizen Doctor](/sdk-tools/baseline-sdk/common-tools/tizen-doctor.md)
 
 #### Report Issues
 ##### [Issue Reporter](/sdk-tools/vstools/tools/issue-reporter-vs-tools.md)

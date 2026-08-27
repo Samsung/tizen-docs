@@ -13,11 +13,11 @@ The Visual Studio Code Extension for Tizen enables you to easily develop Tizen .
 
 ## Emulator Requirements
 
-The Tizen Emulator for the VS Code Extension has the same requirements as the Tizen Studio Emulator. For detailed hardware and software requirements, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator):
+The Tizen Emulator for the VS Code Extension has the same requirements as the Tizen Studio Emulator. For detailed hardware and software requirements, see [Emulator Requirements](../baseline-sdk/setup/prerequisites.md#emulator):
 
 ### Using the Intel&reg; HAXM Driver
 
-- The Intel&reg; Hardware Accelerated Execution Manager (Intel&reg; HAXM) speeds up Tizen emulation on Intel VT-enabled systems. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md).
+- The Intel&reg; Hardware Accelerated Execution Manager (Intel&reg; HAXM) speeds up Tizen emulation on Intel VT-enabled systems. For more information, see [Hardware Accelerated Execution Manager](../baseline-sdk/setup/hardware-accelerated-execution-manager.md).
 
 > [!NOTE]
 > This option is not applicable to and will not work on AMD processors.

@@ -241,7 +241,7 @@ shake the device, and displays the acceleration value on the screen:
     shake the device.
 
     To test on the emulator, use the [control
-    panel](../../../../sdk-tools/tizen-studio/common-tools/emulator-control-panel.md):
+    panel](../../../../sdk-tools/baseline-sdk/common-tools/emulator-control-panel.md):
 
     a.  Right-click the emulator and select **Control Panel**.
 

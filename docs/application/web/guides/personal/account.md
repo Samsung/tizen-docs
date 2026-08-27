@@ -109,7 +109,7 @@ To create accounts, you must learn how to get access to account providers:
 
 - Get a specific account provider with the given application ID using the `getProviders()` method of the `ApplicationManager` interface (in [tv](../../api/latest/device_api/tv/tizen/application.html#ApplicationManager) applications).
 
-  If the current application is an account provider application (meaning that it contains the `<tizen:account>` element, in [tv](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#ww_account) applications, in its `config.xml` file), you can use the current application ID.  Otherwise, get the ID of the current application using the `getCurrentApplication()` method of the `ApplicationManager` interface:
+  If the current application is an account provider application (meaning that it contains the `<tizen:account>` element, in [tv](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md#ww_account) applications, in its `config.xml` file), you can use the current application ID.  Otherwise, get the ID of the current application using the `getCurrentApplication()` method of the `ApplicationManager` interface:
 
   ```
   var appId = tizen.application.getCurrentApplication().appInfo.id;
@@ -136,7 +136,7 @@ Creating, adding, updating, and deleting accounts is a basic account management 
 > [!NOTE]
 > To perform these operations, your application must be the account provider.
 
-1. To create an account, first get an account provider. If your application is an account provider application (meaning that it contains the `<tizen:account>` element, in [tv](../../../../sdk-tools/tizen-studio/web-tools/config-editor.md#ww_account) applications, in its `config.xml` file), use the `getProvider()` method:
+1. To create an account, first get an account provider. If your application is an account provider application (meaning that it contains the `<tizen:account>` element, in [tv](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md#ww_account) applications, in its `config.xml` file), use the `getProvider()` method:
 
    ```
    var appId = tizen.application.getCurrentApplication().appInfo.id;

@@ -1,6 +1,6 @@
 # Tizen SDK & Development Tools
 
-## [Overview](/sdk-tools/tizen-studio/common-tools/overview.md)
+## [Overview](/sdk-tools/baseline-sdk/common-tools/overview.md)
 
 ## [Release Notes](/sdk-tools/vscode-ext/release-notes/release-notes.md)
 
@@ -46,7 +46,7 @@
 
 ##### [Debug App](/sdk-tools/vscode-ext/getting-started/debug-app-web.md)
 
-##### [Tool: Web Inspector](/sdk-tools/tizen-studio/web-tools/web-inspector.md)
+##### [Tool: Web Inspector](/sdk-tools/baseline-sdk/web-tools/web-inspector.md)
 
 #### Running and Testing Application
 
@@ -58,17 +58,17 @@
 
 ###### [Emulator Control Panel](/sdk-tools/vscode-ext/tools/emulator-control-panel.md)
 
-###### [Extended Emulator Features](/sdk-tools/tizen-studio/common-tools/emulator-features.md)
+###### [Extended Emulator Features](/sdk-tools/baseline-sdk/common-tools/emulator-features.md)
 
 ##### [Tool: Devices](/sdk-tools/vscode-ext/tools/device-manager.md)
 
-##### [Tool: SDB](/sdk-tools/tizen-studio/common-tools/smart-development-bridge.md)
+##### [Tool: SDB](/sdk-tools/baseline-sdk/common-tools/smart-development-bridge.md)
 
 ##### [Tool: TV Web Simulator](/sdk-tools/vscode-ext/tools/tv-web-simulator.md)
 
 #### SDK Diagnostics
 
-##### [Tizen Doctor](/sdk-tools/tizen-studio/common-tools/tizen-doctor.md)
+##### [Tizen Doctor](/sdk-tools/baseline-sdk/common-tools/tizen-doctor.md)
 
 #### Report Issues
 

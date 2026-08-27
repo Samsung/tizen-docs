@@ -521,7 +521,7 @@ The following figures illustrate the difference in memory performance, when usin
 When the styles are applied using JavaScript, the UI thread is used to create the pop-up. The UI thread increases the usage of CPU memory in proportion to the number of pop-ups used.
 
 > **Note**  
-> Tizen provides remote debugging through the [JavaScript Debugger tool](../../../../../sdk-tools/tizen-studio/web-tools/web-inspector.md).  
+> Tizen provides remote debugging through the [JavaScript Debugger tool](../../../../../sdk-tools/baseline-sdk/web-tools/web-inspector.md).  
 
 
 > **Note**  

@@ -18,13 +18,13 @@ The sidebar contains following features:
 ### Tizen Tools
    - **Tizen Tools** section contains the following tools for Tizen app development: 
 
-     1. [**Tizen Emulator Manager**](../../tizen-studio/common-tools/emulator.md): Tizen Emulator Manager allows you to create and manage Emulator instances.
+     1. [**Tizen Emulator Manager**](../../baseline-sdk/common-tools/emulator.md): Tizen Emulator Manager allows you to create and manage Emulator instances.
 
-     2. [**Device Manager**](../../tizen-studio/common-tools/device-manager.md): Device Manager allows you to connect your device and manage it.
+     2. [**Device Manager**](../../baseline-sdk/common-tools/device-manager.md): Device Manager allows you to connect your device and manage it.
 
-     3. [**Certificate Manager**](../../tizen-studio/common-tools/certificate-registration.md): Certificate Manager allows you to create and manage certificates.
+     3. [**Certificate Manager**](../../baseline-sdk/common-tools/certificate-registration.md): Certificate Manager allows you to create and manage certificates.
 
-     4. [**Package Manager**](../../tizen-studio/setup/advanced-configuration.md): Package Manager allows you to install, update, and remove Tizen packages.
+     4. [**Package Manager**](../../baseline-sdk/setup/advanced-configuration.md): Package Manager allows you to install, update, and remove Tizen packages.
 
 
      To **access these tools**, click on the **respective icons** in **Tizen Tools section**. Each tool will open separately, providing you with the necessary functionalities for efficient Tizen app development.

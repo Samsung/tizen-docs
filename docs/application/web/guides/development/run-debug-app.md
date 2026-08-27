@@ -6,11 +6,11 @@ You can run your application on the [emulator](#emulator) or the [target device]
 <a name="emulator"></a>
 ## Run Web applications on emulator
 
-You can debug Tizen Web applications on the [emulator](../../../../sdk-tools/tizen-studio/common-tools/emulator.md) using the **Project Explorer** view or the Tizen Studio menu.
+You can debug Tizen Web applications on the [emulator](../../../../sdk-tools/baseline-sdk/common-tools/emulator.md) using the **Project Explorer** view or the Tizen Studio menu.
 
 To launch the emulator, do one of the following:
 
--   Use the [Emulator Manager](../../../../sdk-tools/tizen-studio/common-tools/emulator-manager.md):
+-   Use the [Emulator Manager](../../../../sdk-tools/baseline-sdk/common-tools/emulator-manager.md):
     1.  Start the Emulator Manager using the Desktop (in Ubuntu) or Start menu (in Windows&reg;), or using the command line.
     2.  In the **Emulator Manager** window, select the emulator instance from the list.
 
@@ -18,7 +18,7 @@ To launch the emulator, do one of the following:
 
     3.  Click **Launch**.
 
--   Use the [command line](../../../../sdk-tools/tizen-studio/common-tools/emulator-features.md#startup).
+-   Use the [command line](../../../../sdk-tools/baseline-sdk/common-tools/emulator-features.md#startup).
 
 To run the application on the emulator, do one of the following:
 
@@ -60,15 +60,15 @@ To run your application on the target device, follow these steps:
     - In the Tizen Studio menu, go to **Run &gt; Run As &gt; Tizen Web Application**.
     - On the Tizen Studio toolbar, click **Run**.
 
-If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../../sdk-tools/tizen-studio/web-tools/web-editor.md#js_log) is automatically launched in Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
+If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../../sdk-tools/baseline-sdk/web-tools/web-editor.md#js_log) is automatically launched in Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
 
 <a name="simulator"></a>
 ## Run Web applications on simulator
 
-You can run Tizen Web applications on the [Web Simulator](../../../../sdk-tools/tizen-studio/web-tools/web-simulator.md) using the **Project Explorer** view or the Tizen Studio menu.
+You can run Tizen Web applications on the [Web Simulator](../../../../sdk-tools/baseline-sdk/web-tools/web-simulator.md) using the **Project Explorer** view or the Tizen Studio menu.
 
 > [!NOTE]
-> The Tizen Web Simulator runs only on the Google Chrome&trade; browser. To use the Web Simulator, download and install the [Google Chrome&trade;](http://www.google.com/chrome/){:target="_blank"} browser. You can manually specify the installation location of the browser in the [simulator preferences](../../../../sdk-tools/tizen-studio/web-tools/web-simulator.md#pref).
+> The Tizen Web Simulator runs only on the Google Chrome&trade; browser. To use the Web Simulator, download and install the [Google Chrome&trade;](http://www.google.com/chrome/){:target="_blank"} browser. You can manually specify the installation location of the browser in the [simulator preferences](../../../../sdk-tools/baseline-sdk/web-tools/web-simulator.md#pref).
 
 If you are running your Web application on the Web Simulator for the first time, create a running configuration by selecting **Run &gt; Run Configurations &gt; Tizen Web Simulator Application** in the Tizen Studio menu. The running configuration contains the application launch settings.
 
@@ -80,12 +80,12 @@ To run your application on the Simulator, do one of the following:
 
 When the application is launched, the Web Simulator loads the file specified in the **Content** field of the `config.xml` file. The mostly commonly specified file is `index.html`.
 
-The simulator renders your application on the browser using the [WebKit](http://www.webkit.org/){:target="_blank"} engine. All the Google Chrome&trade; browser development features are available (by pressing the **F12** keyboard key) in the simulator, as is the [Web Inspector](../../../../sdk-tools/tizen-studio/web-tools/web-inspector.md) tool. You can leverage the advantages of the Web Simulator tool by setting the device screen size and orientation, and by sending events and messages, such as geolocation data and sensor input events, to your application for debugging it.
+The simulator renders your application on the browser using the [WebKit](http://www.webkit.org/){:target="_blank"} engine. All the Google Chrome&trade; browser development features are available (by pressing the **F12** keyboard key) in the simulator, as is the [Web Inspector](../../../../sdk-tools/baseline-sdk/web-tools/web-inspector.md) tool. You can leverage the advantages of the Web Simulator tool by setting the device screen size and orientation, and by sending events and messages, such as geolocation data and sensor input events, to your application for debugging it.
 
  <a name="debug"></a>
 ## Debug Web applications
 
-Debugging a Web application enables you to understand its flow of control. You can debug a Web application by running it on the target device and debugging its JavaScript code. JavaScript code debugging uses the [Web Inspector](../../../../sdk-tools/tizen-studio/web-tools/web-inspector.md) tool.
+Debugging a Web application enables you to understand its flow of control. You can debug a Web application by running it on the target device and debugging its JavaScript code. JavaScript code debugging uses the [Web Inspector](../../../../sdk-tools/baseline-sdk/web-tools/web-inspector.md) tool.
 
 To debug your application on the target device, follow these steps:  
 1.  Connect the target device to your computer.
@@ -140,7 +140,7 @@ To debug your application on the target device, follow these steps:
     | ![Step out](./media/stepout.png)  | Steps out of the current method.|
     |  ![Deactivate all break  points](./media/deactivate.png)    |  Deactivates all break points. |
 
-If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../../sdk-tools/tizen-studio/web-tools/web-editor.md#js_log) is automatically launched in Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
+If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../../sdk-tools/baseline-sdk/web-tools/web-editor.md#js_log) is automatically launched in Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
 
 <a name="rds"></a>
 ## Rapid Development Support

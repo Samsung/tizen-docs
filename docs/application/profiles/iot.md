@@ -30,4 +30,4 @@ To begin your Tizen Native service application development journey, use the foll
 
     An IoT native service application can be created using the C language and is targeted to run on Raspberry Pi. The application uses the Native APIs, which provide various interfaces to the device hardware, allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
-Ensure that you have installed the latest version of [Tizen Studio](../../sdk-tools/tizen-studio/index.md).
+Ensure that you have installed the latest version of [Tizen Studio](../../sdk-tools/baseline-sdk/index.md).
