@@ -29,8 +29,6 @@ Follow these instructions to install the appropriate JDK version for your system
   >
   > Since Tizen Studio 3.7, the JDK installation is bundled with Tizen Studio. There is no need to explicitly install JDK or set the variable paths.
 
-You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 12 and OpenJFX Installation Guide](openjdk.md).
-
 ## OS and System Requirements
 
 The following table lists the supported operating systems and hardware requirements for Tizen Studio.

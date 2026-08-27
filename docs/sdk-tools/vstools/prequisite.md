@@ -22,7 +22,7 @@ Tizen Baseline SDK. Make sure you download and install the exact version.
 
   - [Oracle Java Development Kit(JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
-  - OpenJDK 12 and OpenJFX: [OpenJDK 12 and OpenJFX Installation Guide](../tizen-studio/setup/openjdk.md#install-openjdk-for-windows).
+  - OpenJDK 12 and OpenJFX: download from the [OpenJDK archive](https://jdk.java.net/archive/).
 
 ## Emulator requirements
 
