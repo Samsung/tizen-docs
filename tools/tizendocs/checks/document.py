@@ -28,8 +28,11 @@ def check_h1(index, path, source):
 
 FRONT_MATTER = "D-FM"
 
-#: The only key the corpus uses. SKILL.md tells authors not to invent others.
-KNOWN_KEYS = frozenset({"keyword"})
+#: keyword is this repo's own convention. title/sidebar_label/category are
+#: tizen-docs-internal's -- the same validator is used there (ported in
+#: tizen-docs-internal#81) against a corpus that uses both sets, so both are
+#: recognized here to keep the two in sync.
+KNOWN_KEYS = frozenset({"keyword", "title", "sidebar_label", "category"})
 
 
 def check_front_matter(index, path, source):
