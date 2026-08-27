@@ -65,7 +65,6 @@
 ##### [Update Tizen Studio](/sdk-tools/tizen-studio/setup/update-sdk.md)
 ##### [Hardware Accelerated Execution Manager](/sdk-tools/tizen-studio/setup/hardware-accelerated-execution-manager.md)
 ##### [CLI Installer](/sdk-tools/tizen-studio/setup/cli-installer.md)
-##### [OpenJDK Installation](/sdk-tools/tizen-studio/setup/openjdk.md)
 
 #### [Configure the Package Manager](/sdk-tools/tizen-studio/setup/advanced-configuration.md)
 #### [Uninstall Tizen Studio](/sdk-tools/tizen-studio/setup/uninstall-sdk.md)
