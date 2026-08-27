@@ -51,16 +51,15 @@ pipeline reads just its `# .NET Application`, `# Web Application` and
 `# Native Application` blocks; `# Get Started` and `# Reference` are not consumed
 today, so adding a page there alone will not make it appear on the site.
 
-### `docs/sdk-tools/` (252 md)
+### `docs/sdk-tools/` (257 md)
 
 SDK and IDE tooling documentation, organized by tool:
 
 | Subdirectory | Content |
 | --- | --- |
-| `tizen-studio/` (138 md) | Tizen Studio IDE guide: setup, common/native/web/platform tools, tizen-core, release notes. |
+| `baseline-sdk/` (137 md) | Tizen Studio IDE guide: setup, common/native/web/platform tools, tizen-core, release notes. |
 | `vscode-ext/` (63 md) | VS Code extension guide. |
 | `vstools/` (49 md) | Visual Studio Tools for Tizen (Windows). |
-| `vstools-mac/` (1 md) | Visual Studio Tools for Tizen (Mac). |
 | `sdktool-index.md` | Flat A–Z index of every SDK tool, linking into the three trees above. |
 
 Navigation here is unusual and worth understanding before you edit it. The six
