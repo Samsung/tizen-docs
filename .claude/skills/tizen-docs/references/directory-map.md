@@ -60,7 +60,6 @@ SDK and IDE tooling documentation, organized by tool:
 | `tizen-studio/` (138 md) | Tizen Studio IDE guide: setup, common/native/web/platform tools, tizen-core, release notes. |
 | `vscode-ext/` (63 md) | VS Code extension guide. |
 | `vstools/` (49 md) | Visual Studio Tools for Tizen (Windows). |
-| `vstools-mac/` (1 md) | Visual Studio Tools for Tizen (Mac). |
 | `sdktool-index.md` | Flat A–Z index of every SDK tool, linking into the three trees above. |
 
 Navigation here is unusual and worth understanding before you edit it. The six

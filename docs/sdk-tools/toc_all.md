@@ -239,8 +239,6 @@
 ### [Certificate Manager](/sdk-tools/vstools/tools/certificate-manager.md)
 ### [Device Manager](/sdk-tools/vstools/tools/device-manager.md)
 
-## [Visual Studio for Mac Extension for Tizen](/sdk-tools/vstools-mac/overview.md)
-
 # Not On The Published Navigation
 
 These pages are part of the SDK tool documentation but no TOC that the
