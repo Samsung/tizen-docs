@@ -42,7 +42,7 @@ Note: If the emulator fails to run on Ubuntu 24.04, you may need to install `lib
 
 ## Create a certificate profile
 
-To install your app on a Tizen device or publish it to the TV App Store, you need to sign the app with a valid certificate. Use _Certificate Manager_, or the [`tizen certificate/security-profiles`](https://docs.tizen.org/application/tizen-studio/common-tools/command-line-interface) command (CLI) to create a certificate profile.
+To install your app on a Tizen device or publish it to the TV App Store, you need to sign the app with a valid certificate. Use _Certificate Manager_, or the [`tizen certificate/security-profiles`](../../../../sdk-tools/tizen-studio/common-tools/command-line-interface.md) command (CLI) to create a certificate profile.
 
 Choose _Create Samsung Certificate_ instead of _Create Tizen Certificate_ as the profile type if you're not sure.
 

@@ -87,7 +87,7 @@ You need a Linux PC (for flashing), a Raspberry Pi 4 board, and a micro SD card 
    $ sudo ./sd_fusing.py -d /dev/sdc -t rpi4 --format
    ```
 
-1. [Download a Tizen OS image](https://docs.tizen.org/platform/developing/flashing-rpi/#download-binaries). Visit the links below and download two `.tar.gz` files.
+1. [Download a Tizen OS image](../../../../platform/developing/flashing-rpi.md#download-binaries). Visit the links below and download two `.tar.gz` files.
    - [tizen-boot-armv7l-rpi4](https://download.tizen.org/releases/milestone/TIZEN/Tizen-9.0/Tizen-9.0-Unified/latest/images/standard/tizen-boot-armv7l-rpi4//)
    - [tizen-headed-armv7l](https://download.tizen.org/releases/milestone/TIZEN/Tizen-9.0/Tizen-9.0-Unified/latest/images/standard/tizen-headed-armv7l/)
 

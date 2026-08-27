@@ -71,7 +71,7 @@ Configure the target device where the application will be deployed.
 
 ## Set Certificate Profile
 
-Configure the certificate profile for signing the application. If you don't have a certificate, you can create one by following this `<a href="https://docs.tizen.org/application/dotnet/get-started/certificates/creating-certificates/">`guide`</a>`.
+Configure the certificate profile for signing the application. If you don't have a certificate, you can create one by following this [guide](../../../application/dotnet/guides/concepts/signing-certificates/creating-certificates.md).
 
 1. Open the project YAML:
 
