@@ -1,0 +1,142 @@
+# Configuration for tools/check_docs.py
+#
+# One place decides what is exempt from what. Scattering exclusions across
+# several tools' own ignore files is how these setups rot, so third-party
+# ignore files are generated from here rather than hand-maintained:
+#
+#     python3 tools/check_docs.py export-ignores --tool markdownlint
+#
+# Run `python3 tools/check_docs.py doctor` after editing. It reports patterns
+# that no longer match anything and severities naming a rule that does not
+# exist, which is the failure mode this file is prone to: docs/menu.yaml was
+# deleted upstream and a rule that validated it became dead weight.
+
+schema = 1
+
+# ---------------------------------------------------------------------------
+# Path classes.
+#
+# classify() takes the FIRST match, so order is meaningful: a hand-written
+# document that happens to live under an api/ directory must appear before the
+# generated class that would otherwise swallow it.
+# ---------------------------------------------------------------------------
+
+[[classes]]
+id = "api-handwritten"
+match = [
+  "docs/application/web/api/index.md",
+]
+reason = """These live under an api/ directory but are hand-written pages, not
+imported output. They get the full set of checks."""
+
+[[classes]]
+id = "published-elsewhere"
+match = [
+  # docs/application/dotnet/api/ is not in this checkout at all - the .NET API
+  # reference is published from the TizenFX repository - yet ~1230 links point
+  # into it. Marked "?" for that reason, not because it is stale.
+  "?docs/application/dotnet/api/**",
+  # The tizen.dev URL shape. No link uses it today; kept so that reintroducing
+  # one does not produce a wave of false positives.
+  "?docs/**/api/[0-9]*.[0-9]*/**",
+]
+link_policy = "exempt-existence"
+reason = """API routes served by a separate pipeline, so no file exists in this
+checkout and a link to one cannot be verified here.
+
+Deliberately narrow. `latest` is a committed symlink, so paths beneath
+docs/application/native/api/*/latest/ do resolve and are checked - exempting
+that shape as well used to hide thirteen real defects, one of them a directory
+misspelt with three m's."""
+
+[[classes]]
+id = "generated"
+match = [
+  "docs/**/api/**",
+  # Guards, marked "?" because they may match nothing today without being
+  # stale: AGENTS.md names both as imported content, and it should already be
+  # exempt on the day it reappears rather than after someone edits it by hand.
+  "?docs/**/wiki/**",
+  "?docs/**/*.autogen.md",
+]
+skip_rules = ["N-*", "D-*", "T-ORPHAN"]
+# One defect in a generator becomes hundreds of findings in its output, and
+# hundreds of findings are only ever a reason to stop reading the report.
+aggregate_rules = ["T-META"]
+reason = """Imported from another pipeline. Correct the upstream source and
+re-import; editing the output here is lost on the next import."""
+
+# ---------------------------------------------------------------------------
+# Rule severities. ERROR fails the run; WARN must be fixed or explained in
+# review; NOTE is advisory only. Globs are allowed, most specific first.
+# ---------------------------------------------------------------------------
+
+[rules]
+"N-KEBAB" = "error"
+"D-H1" = "error"
+"T-ORPHAN" = "error"
+"L-BROKEN" = "error"
+"L-ANCHOR" = "error"
+"L-ANCHOR-AMBIG" = "warn"
+
+# Sub-diagnoses of a broken reference. Separate ids because each names a
+# different mistake and three of them can name the correction too, which is
+# what turns a finding into a one-click fix.
+"L-HTML" = "error"
+"L-DEPTH" = "error"
+"L-CASE" = "error"
+"L-DOCSPREFIX" = "error"
+
+# Reverse-direction rules. ERROR from the start and they add no backlog: they
+# are scoped to the paths a change removes, so a change that removes nothing
+# reports nothing.
+"R-INBOUND" = "error"
+"R-TOC" = "error"
+
+# Navigation. Heading depth in a toc*.md *is* navigation depth, so a skipped
+# level loses a node; both of these read zero today and are gated to keep it.
+"T-DANGLING" = "error"
+"T-DEPTH" = "error"
+"T-META-SRC" = "error"
+
+"T-META" = "warn"
+
+"T-XML" = "error"
+"T-XMLVER" = "error"
+"M-ALT" = "error"
+"M-ORPHAN" = "warn"
+"D-FM" = "warn"
+"N-KEBAB-DIR" = "error"
+
+# A baseline entry that no longer reproduces, which is how a regression hides.
+"B-STALE" = "error"
+
+# Content advisories from reviewguide/review_points_guide.md. Both are narrow
+# in scope on purpose; see [scope] below.
+"D-OVERVIEW" = "warn"
+"L-FEATPRIV" = "warn"
+"R-MEDIA" = "warn"
+"R-ANCHOR" = "warn"
+
+# ---------------------------------------------------------------------------
+# Rule scope. "added-only" means the rule is applied to files a change adds,
+# and stays silent otherwise. It is for requirements that are right for new
+# content but whose legacy violation count can never reach zero.
+# ---------------------------------------------------------------------------
+
+[scope]
+# 22 existing directories do not conform - platform/HAL/, vstools/Tizen/,
+# nui/NUIsetup/ and so on. Renaming them would break dozens of links for a
+# cosmetic gain, so only new directories are held to the rule.
+"N-KEBAB-DIR" = "added-only"
+
+# Two thirds of existing pages are not linked from their section landing page,
+# and reaching a page through the TOC alone is legitimate. The value of this
+# rule is the reminder while a page is being written, not a corpus audit.
+"D-OVERVIEW" = "added-only"
+
+# 219 keys in the corpus are hyperlinked, but 143 of those are in
+# platform/release-notes/tizen-2-*.md - historical records that should not be
+# rewritten - and 65 more are in the features/ reference tables. Scoped to
+# changed files, the rule fixes a line when someone is already editing it.
+"L-FEATPRIV" = "changed-only"

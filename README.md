@@ -28,7 +28,7 @@ tizen-docs/
 │   └── trademarks.md            # Third-party trademark attribution page
 ├── styleguide/                  # Writing style and naming-rule references
 ├── reviewguide/                 # PR reviewer walkthroughs (per content type, stg build)
-├── tools/check_docs.py          # Link/TOC validator, run before every PR
+├── tools/                       # Documentation validator, run before every PR
 ├── .github/                     # CODEOWNERS, pull request template
 └── .claude/skills/tizen-docs/   # Claude Code skill for authoring and review
 ```
@@ -56,6 +56,17 @@ Validate changed documentation before opening a pull request:
 python3 tools/check_docs.py --changed-only --base origin/master
 git diff --check
 ```
+
+`ERROR` findings block the pull request. `WARN` findings do not block, but each
+one must be fixed or explained before approval. A successful run always prints
+a summary line such as `check_docs: 0 ERROR, 0 WARN (12 files)`; if nothing is
+printed at all the validator did not run, so check the `--base` revision.
+
+If the change deletes, renames or moves a document, the same command also
+reports what that breaks elsewhere in the repository. See
+[`.claude/skills/tizen-docs/SKILL.md`](.claude/skills/tizen-docs/SKILL.md) for
+the full workflow, and `python3 tools/check_docs.py --help` for the other
+options.
 
 
 ## NOTE

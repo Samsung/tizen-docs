@@ -1,0 +1,2 @@
+L-DOCSPREFIX docs/guides/page.md
+M-ORPHAN docs/guides/media/shot.png

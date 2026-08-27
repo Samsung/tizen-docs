@@ -21,13 +21,13 @@ there.
 | `.github/pull_request_template.md` | Required PR sections: Change Description, Bugs Fixed, API Changes |
 | `styleguide/` | Writing rules — see below |
 | `reviewguide/` | Reviewer walkthroughs — see below |
-| `tools/check_docs.py` | Link/TOC validator; run before every PR |
+| `tools/` | Documentation validator; run before every PR. `check_docs.py` is the entry point, `docscheck.toml` holds every exemption and severity, `tizendocs/` the implementation, `tests/` its tests |
 | `.claude/skills/tizen-docs/` | This skill |
 
 ## `docs/` — published site source
 
 Everything under `docs/` is published to the Tizen Docs site. It contains roughly
-1,900 hand-authored Markdown pages and, separately, tens of thousands of generated,
+990 hand-authored Markdown pages and, separately, tens of thousands of generated,
 versioned API-reference files (mostly static HTML with supporting JS/CSS) under
 `*/api/**` directories. The generated files are imported from another pipeline; never
 hand-edit them (see AGENTS.md). The counts below are Markdown-file counts unless a row
@@ -40,10 +40,10 @@ lives in [`docs/sdk-tools/`](#docssdk-tools-252-md) instead:
 
 | Subdirectory | Content |
 | --- | --- |
-| `native/` (228 md) | C API guides, tutorials, overview. `native/api/` holds versioned, generated HTML API reference (e.g. `5.0/`, `6.5/`) — do not hand-edit. |
-| `web/` (164 md) | Web/W3C API guides. `web/api/` holds the largest generated HTML block in the repo (device_api, ui_fw_api, w3c_api, versioned by release). See `reviewguide/review_points_web_api.md` before touching anything under here — Web is unusual in that the API reference itself lives in this repo as HTML, not Markdown, and must follow HTML markup conventions, not Markdown syntax. |
+| `native/` (196 md) | C API guides, tutorials, overview. `native/api/` holds versioned, generated HTML API reference (e.g. `5.0/`, `6.5/`) — do not hand-edit. |
+| `web/` (172 md) | Web/W3C API guides. `web/api/` holds the largest generated HTML block in the repo (device_api, ui_fw_api, w3c_api, versioned by release). See `reviewguide/review_points_web_api.md` before touching anything under here — Web is unusual in that the API reference itself lives in this repo as HTML, not Markdown, and must follow HTML markup conventions, not Markdown syntax. |
 | `dotnet/` (197 md) | .NET guides for NUI. No `api/` directory: `/application/dotnet/api/**` is published from the TizenFX repository, not from here. |
-| `flutter/` (13 md) | Flutter guides — the newest, smallest profile. |
+| `flutter/` (14 md) | Flutter guides — the newest, smallest profile. |
 | `features/` (5 md), `profiles/` (3 md) | Small cross-cutting overview pages. |
 
 `application/toc_all.md` is the section's only TOC. Be aware that the publishing
@@ -74,7 +74,7 @@ TOC that should list a page, not just one.
 information architecture and keeps `tools/check_docs.py` able to distinguish a
 genuine orphan from a known one; adding a page there does not publish it.
 
-### `docs/platform/` (121 md, no generated bulk)
+### `docs/platform/` (120 md, plus a small generated HAL API tree)
 
 Platform/OS documentation:
 
@@ -87,7 +87,7 @@ Platform/OS documentation:
 - `reference/` — GBS, Gerrit, MIC, TIC FAQ, Docker setup, TP usage
 - `release-notes/` — one file per Tizen platform version, back to Tizen 1.0
 
-### `docs/extensions/tizenx/` (819 md, ~800 of which are generated API reference)
+### `docs/extensions/tizenx/` (20 hand-written md, plus ~800 generated API files)
 
 TizenX extension SDK documentation:
 
@@ -126,9 +126,23 @@ when reviewing a PR in the matching area:
 ## Cross-cutting: generated vs. hand-written content
 
 Every `*/api/**` directory in this repository (`application/native/api`,
-`application/web/api`, `extensions/tizenx/api`) is
-generated and/or versioned content imported from elsewhere. Together they account for
-the large majority of files tracked in this repository. `AGENTS.md` states the rule;
-this map exists so you know, before you open an editor, which of the roughly 80,000
-files under `docs/` are actually meant to be hand-edited (~1,900 Markdown pages) and
-which are not.
+`application/web/api`, `platform/HAL/api`, `extensions/tizenx/api`) is generated and/or
+versioned content imported from elsewhere. Together they account for the large majority
+of files tracked here. `AGENTS.md` states the rule; this map exists so you know, before
+you open an editor, which of the roughly 69,800 files under `docs/` are meant to be
+hand-edited (about 990 Markdown pages) and which are not.
+
+Two distinctions matter when a link points into one of those trees, and the validator
+draws them:
+
+- **Present and checked.** `application/web/api/`, `platform/HAL/api/` and
+  `extensions/tizenx/api/` are in this repository, and the `latest` symlinks are
+  committed, so links into them resolve and are verified.
+- **Published elsewhere and exempt.** `application/dotnet/api/` does not exist here at
+  all — the .NET API reference comes from the TizenFX repository — and versioned routes
+  under `application/native/api/<profile>/latest/` are served by a separate pipeline.
+  Links to these cannot be verified locally and are not reported.
+
+A handful of hand-written pages live under an `api/` directory in spite of the rule, such
+as `application/web/api/index.md`. They are listed in `tools/docscheck.toml` so the
+validator keeps checking them.

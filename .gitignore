@@ -1,3 +1,7 @@
 _config.yml
 _themes/
 *.pdf
+
+# Python bytecode from tools/
+__pycache__/
+*.py[cod]
