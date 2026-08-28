@@ -395,7 +395,7 @@ tz pack [options]
   > tz pack -t tpk -s profiletest -b C:\Users\workspace\basicnative\Debug\org.example.basicnative-1.0.0-x86.tpk
   Using default certificates
   Signing using certificates:
-          Author cert : C:\tizen-studio\tools\certificate-generator\certificates\developer\tempMobile.p12
+          Author cert : C:\tizen-studio\tools\certificate-generator\certificates\developer\tempAuthor.p12
           Distributor cert : C:\tizen-studio\tools\certificate-generator\certificates\distributor\tizen-distributor-signer.p12
           Distributor2 cert :
 
@@ -406,7 +406,7 @@ tz pack [options]
   ```
   $ tz pack -t tpk -s profiletest -b /home/user/basicnative/Debug/org.example.basicnative-1.0.0-x86.tpk
   Signing using certificates:
-          Author cert : /home/user1/tizen-studio/tools/certificate-generator/certificates/developer/tempMobile.p12
+          Author cert : /home/user1/tizen-studio/tools/certificate-generator/certificates/developer/tempAuthor.p12
           Distributor cert : /home/user1/tizen-studio/tools/certificate-generator/certificates/distributor/tizen-distributor-signer.p12
           Distributor2 cert :
 

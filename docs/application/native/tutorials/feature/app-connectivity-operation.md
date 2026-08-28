@@ -137,7 +137,7 @@ content:
 -   With [libcurl](http://curl.haxx.se/libcurl/), which is an open
     source library.
 -   With the
-    [Download](../../api/mobile/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)
+    [Download](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)
     API, which is one of Tizen framework APIs.
 
 ### Required Privileges
@@ -345,7 +345,7 @@ download_thread_cancel_cb(void *data, Ecore_Thread *thread)
 
 You can download content asynchronously from a given URL into the device
 storage. The
-[Download](../../api/mobile/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)
+[Download](../../api/common/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)
 API provides functions to create and manage 1 or more download requests.
 
 The following figure illustrates the download states:

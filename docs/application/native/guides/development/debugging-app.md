@@ -416,10 +416,6 @@ In the emulator settings, you can change the display language settings, keyboard
 
 You can utilize additional features for application development and debugging by enabling the developer options.
 
-> **Note**
->
-> The developer options are currently supported on the Tizen 2.3.2 Wearable Emulator only.
-
 The developer options allow you to make the pixel ratio visible on the screen:
 
 1. In the emulator, go to **Settings > Developer options**.

@@ -10,8 +10,7 @@
                 "Tizen.Location",
                 "Tizen.Location.Geofence",
                 "Tizen.Sensor"
-            ],
-            "profiles": ["mobile", "wearable"]
+            ]
         },
         "auto": {
             "topics": ["sample"]

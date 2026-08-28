@@ -189,7 +189,6 @@ private void Window_KeyEvent(object sender, Window.KeyEventArgs e)
 ```
 
 <!-- uncomment after the review of the sample
-[Here](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NUI_Pagination) one can find a working example using the above code.
 -->
 
 ## Related information

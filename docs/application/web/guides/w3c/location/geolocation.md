@@ -18,7 +18,7 @@ Using the `Geolocation` interface, you can [retrieve position information](#retr
 
 ## Retrieve location information
 
-To provide users with location-based features, you must learn to create a mobile GPS application to retrieve location information:
+To provide users with location-based features, you must learn to create a GPS application to retrieve location information:
 
 1. Create event handlers for the location requests.		
 

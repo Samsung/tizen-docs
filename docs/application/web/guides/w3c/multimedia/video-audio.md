@@ -65,7 +65,7 @@ To provide users with HTML5 audio and video features, you must learn to create a
 > The `preload` attribute is set to `auto` by default, meaning that the media metadata is automatically loaded. If you do not want to load the metadata, set the attribute value as `metadata` or `none`.
 
 > [!NOTE]
-> Carefully consider before using the `autoplay` feature (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-media-autoplay){:target="_blank"} applications), which plays content automatically in the mobile environment without user interaction. The user can face unintended Internet packet fees or interfering factors, such as playback being stopped unintentionally.
+> Carefully consider before using the `autoplay` feature (in [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-media-autoplay){:target="_blank"} applications), which plays content automatically without user interaction. The user can face unintended network charges or interfering factors, such as playback being stopped unintentionally.
 
 ### Source code
 

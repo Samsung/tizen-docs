@@ -84,14 +84,6 @@ tizen list <option>
 
   ```
   > tizen list native-project
-
-  [PROFILE]		[TEMPLATE]
-  mobile-2.3		service_app
-  mobile-2.3		basic_edc_ui
-  mobile-2.3		shared_library
-  wearable-2.3		service_app
-  wearable-2.3		basic_edc_ui
-  wearable-2.3		shared_library
   ```
 
 - List rootstraps.
@@ -100,18 +92,7 @@ tizen list <option>
 
   ```
   > tizen list rootstrap
-  [ROOTSTRAP] 			[INFORMATION]
-  mobile-2.3-device.core		Mobile 2.3, armel
-  mobile-2.3-emulator.core	Mobile 2.3, i386
-  mobile-2.4-device.core		Mobile 2.4, armel
-  mobile-2.4-emulator.core	Mobile 2.4, i386
-  wearable-3.0-device.core	Wearable 3.0, armel
-
-  > tizen list rootstrap wearable-3.0-device.core
-  rootstrap : wearable-3.0-device.core
-  [FRAMEWORK NAME]        [TYPE]      [DESCRIPTION]
-  Native_API              base        Native_API Libraries
-  bixby                   add-on
+  > tizen list rootstrap <rootstrap-name>
   ```
 
 ## Creating a Tizen Project
@@ -131,19 +112,19 @@ tizen create <sub-command> [options]
 
 **Examples:**
 
-- Create a template project based on the basic Tizen mobile UI project.
+- Create a native project from an installed template.
 
   Windows&reg;:
 
   ```
-  > tizen create native-project -p mobile-2.4 -t basic-ui -n basic -- C:\Users\workspace
+  > tizen create native-project -p <profile> -t <template> -n basic -- C:\Users\workspace
   > cd C:\Users\workspace\basic
   ```
 
   Ubuntu and macOS:
 
   ```
-  $ tizen create native-project -p mobile-2.3 -t basic_ui -n basic -- ~/workspace
+  $ tizen create native-project -p <profile> -t <template> -n basic -- ~/workspace
   $ cd ~/workspace/basic
   ```
 
@@ -237,14 +218,14 @@ tizen <sub-command> [options]
   Windows&reg;:
 
   ```
-  > tizen build-native -r mobile-2.4-device.core -C Release -- C:\Users\workspace\basic
+  > tizen build-native -r <rootstrap-name> -C Release -- C:\Users\workspace\basic
   > dir C:\Users\workspace\basic\Release
   ```
 
   Ubuntu and macOS:
 
   ```
-  $ tizen build-native -r mobile-2.4-device.core -C Release -- ~/workspace/basic
+  $ tizen build-native -r <rootstrap-name> -C Release -- ~/workspace/basic
   $ ls ~/workspace/basic/Release
   ```
 
@@ -845,7 +826,7 @@ package: [
   Windows&reg;, Ubuntu, and macOS:
 
   ```
-  > tizen build-app -m "name:m1,compiler:llvm,rootstraps:[{"name":"wearable-3.0-device.core","platform":"wearable-3.0","arch":"arm"}],configs:[Debug,Release]" -b "name:b1,targets:[webbasicapp,service],methods:[m1]" -p "name:mypkg, targets:[b1]" -s MyProfile
+  > tizen build-app -m "name:m1,compiler:llvm,rootstraps:[{"name":"<rootstrap-name>","platform":"<platform>","arch":"<architecture>"}],configs:[Debug,Release]" -b "name:b1,targets:[webbasicapp,service],methods:[m1]" -p "name:mypkg,targets:[b1]" -s MyProfile
   ```
 
 
@@ -979,13 +960,13 @@ cli-config, list, create, build-native, build-web, clean, certificate, security-
           Specifies the destination directory where the project is created.
 
   Examples:
-      Creates a template project based on the basic Tizen mobile UI project:
+      Creates a native project from an installed template:
           Windows:
-              > tizen.bat create native-project -p mobile-2.4 -t basic-ui -n basic --
+              > tizen.bat create native-project -p <profile> -t <template> -n basic --
                   C:\Users\workspace
                   > cd C:\Users\workspace\basic
           Ubuntu and macOS:
-                  $ tizen create native-project -p mobile-2.4 -t basic-ui -n basic -- /ho
+                  $ tizen create native-project -p <profile> -t <template> -n basic -- /ho
                   me/workspace
                   $ cd /home/workspace/basic
   ```

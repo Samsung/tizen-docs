@@ -38,13 +38,13 @@ To use the tag in an HTML file, set its name and content:
 <meta name="viewport" content="XXX">
 ```
 
-As shown in the following code snippet, use the `viewport` meta tag to tell the Web engine which device width is targeted by the application. The Web engine can estimate the scale factor based on the target content size and the real screen width. For example, usually almost all wearable applications have the following `viewport` meta tag, which sets the viewport width to the appropriate size based on each device:
+As shown in the following code snippet, use the `viewport` meta tag to tell the Web engine which device width is targeted by the application. The Web engine can estimate the scale factor based on the target content size and the real screen width. The following `viewport` meta tag sets the viewport width based on the device:
 
 ```
 <meta name="viewport" content="width=device-width, user-scalable=no">
 ```
 
-If you want to set your content layout to the target width of 320 px on every wearable device, use the following meta tag:
+To set your content layout to a target width of 320 px, use the following meta tag:
 
 ```
 <meta name="viewport" content="width=320">
@@ -80,11 +80,11 @@ The following figure shows what happens if you use an absolute 320x320 layout. T
 
 ### Header and Footer Position
 
-While the content layout itself becomes the application UI layout on a Web page, a typical wearable application layout consists of a header area, content area, and footer area. With this trend, many wearable Web applications are designed by separating the 3 areas explicitly.
+An application layout can consist of a header area, content area, and footer area. These areas can be separated explicitly.
 
-**Figure: Typical wearable Web application layout**
+**Figure: Typical Web application layout**
 
-![Typical wearable Web application layout](./media/layout_app.png)
+![Typical Web application layout](./media/layout_app.png)
 
 Not setting the place of the header and footer areas clearly can easily cause problems for your layout. For the header, the side-effect is relatively small. However, a wrongly defined footer area can be quite visible and lead to poor usability. The following figure shows the original layout of a pedometer application that consists of a header, content, and footer, with a Stop button set in the footer area.
 

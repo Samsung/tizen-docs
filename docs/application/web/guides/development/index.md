@@ -162,8 +162,6 @@ actual project files.
 
 **Figure: Viewing the Web application package**
 
-![Viewing the Web application package](./media/view_package_mw.png)
-
 Additionally, you can [localize the Web application](setting-properties.md#localization) to support different languages and environments.
 
 <a name="multi"></a>

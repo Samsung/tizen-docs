@@ -41,11 +41,7 @@ following features:
         P2P connection.
 
 To share content through application controls, you must use the App
-Control API (in
-[mobile](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__APP__CONTROL__MODULE.html)
-applications). Application controls are a way of sharing an
+Control API ([API reference](../../api/common/latest/group__CAPI__APP__CONTROL__MODULE.html)). Application controls are a way of sharing an
 application's functionality in Tizen. The App Control API provides
 functions for launching other applications with a specific operation,
 URI, MIME type, and extra data, and for settings and getting the

@@ -1091,7 +1091,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../../application/web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
+			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../../application/web/api/latest/device_api/tv/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1350,7 +1350,7 @@ The following sections show additional configuration elements used in the `confi
 		</thead>
 		<tbody>
 		<tr>
-			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../../application/web/api/latest/device_api/wearable/tizen/application.html">Application</a> API.
+			<td>Used to define metadata information shared with other web applications. The defined metadata can be accessed (read-only) through the Tizen <a href="../../../application/web/api/latest/device_api/tv/tizen/application.html">Application</a> API.
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>

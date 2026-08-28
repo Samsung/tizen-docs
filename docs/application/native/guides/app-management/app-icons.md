@@ -1,7 +1,7 @@
 # Application Icons
 
 
-You can show the mobile application icon as a shortcut on the home screen to allow the user to easily launch the application. In the device application list, you can show a badge with the application icon to provide additional information about the application state or notifications to the user.
+You can show the application icon as a shortcut on the home screen to allow the user to easily launch the application. In the device application list, you can show a badge with the application icon to provide additional information about the application state or notifications to the user.
 
 This API is supported on specifc Tizen devices that support [badge and shortcut features](#prerequisites).
 

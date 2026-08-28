@@ -15,7 +15,6 @@
 ### [Overview](/application/dotnet/get-started/index.md)
 ### [Create .NET Application](/application/dotnet/get-started/first-app.md)
 ### [API Privileges](/application/dotnet/reference/api-privileges.md)
-### [Hybrid Application](/application/dotnet/get-started/hybrid-application.md)
 ### [Install Samsung Smart TV Extension](/application/dotnet/get-started/install-samsung-tv-extension.md)
 
 ### [Application Filtering](/application/dotnet/reference/app-filtering.md)
@@ -304,8 +303,6 @@
 ### [Overview](/application/web/get-started/overview.md)
 ### [Create TV Web Application](/application/web/get-started/tv/first-app.md)
 ### [Create Samsung Smart TV Web Application](/application/web/get-started/tv/first-samsung-tv-app.md)
-### [Create Web Service Application](/application/web/get-started/web-service/first-service.md)
-### [Create Web Application Addon](/application/web/get-started/addon/first-addon.md)
 
 ## Tutorials
 ### [Overview](/application/web/tutorials/overview.md)
@@ -325,7 +322,6 @@
 #### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
 
 ### Concepts
-#### [Event Handling](/application/web/guides/concepts/event-handling.md)
 #### [Web Runtime](/application/web/guides/concepts/web-runtime.md)
 #### [Application Signing and Certificates](/application/web/guides/concepts/signing-certificates.md)
 #### [Error Handling](/application/web/guides/concepts/error-handling.md)
@@ -334,7 +330,6 @@
 #### [Overview](/application/web/guides/applications/overview.md)
 
 #### [Service Application](/application/web/guides/applications/service-app.md)
-#### [Widget Application](/application/web/guides/applications/web-widget.md)
 #### [Web Application Addon](/application/web/guides/applications/addon.md)
 
 ### Application Management
@@ -382,9 +377,7 @@
 #### [Audio Management](/application/web/guides/multimedia/audio.md)
 #### [Audio Latency](/application/web/guides/multimedia/player-util.md)
 #### [Media Controller](/application/web/guides/multimedia/media-controller.md)
-#### [Media Key Events](/application/web/guides/multimedia/media-key.md)
 #### [Radio](/application/web/guides/multimedia/radio.md)
-#### [Camera](/application/web/guides/multimedia/camera.md)
 
 ### Connectivity and Wireless
 #### [Overview](/application/web/guides/connectivity/connectivity.md)
@@ -746,7 +739,6 @@
 #### [Autofill](/application/native/guides/text-input/autofill.md)
 #### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
 #### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
-#### [Gesture](/application/native/guides/text-input/capi-ui-gesture.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Text-to-speech Engine](/application/native/guides/text-input/tts-engine.md)
@@ -781,7 +773,6 @@
 #### [System Information](/application/native/guides/device/system.md)
 #### [System Settings](/application/native/guides/device/settings.md)
 #### [Sound and Vibration Feedback](/application/native/guides/device/feedback.md)
-#### [Battery Monitor](/application/native/guides/device/battery-monitor.md)
 #### [Resource Monitor](/application/native/guides/device/resource-monitor.md)
 #### [Update Control](/application/native/guides/device/update-control.md)
 
@@ -818,22 +809,6 @@
 ### [8.0](/application/native/api/common/8.0/index.html){:target="_blank"}
 
 ### Archive
-#### Wearable
-##### [7.0](/application/native/api/wearable/7.0/index.html){:target="_blank"}
-##### [6.5](/application/native/api/wearable/6.5/index.html){:target="_blank"}
-##### [6.0](/application/native/api/wearable/6.0/index.html){:target="_blank"}
-##### [5.5](/application/native/api/wearable/5.5/index.html){:target="_blank"}
-##### [5.0](/application/native/api/wearable/5.0/index.html){:target="_blank"}
-##### [4.0](/application/native/api/wearable/4.0/index.html){:target="_blank"}
-
-#### Mobile
-##### [7.0](/application/native/api/mobile/7.0/index.html){:target="_blank"}
-##### [6.5](/application/native/api/mobile/6.5/index.html){:target="_blank"}
-##### [6.0](/application/native/api/mobile/6.0/index.html){:target="_blank"}
-##### [5.5](/application/native/api/mobile/5.5/index.html){:target="_blank"}
-##### [5.0](/application/native/api/mobile/5.0/index.html){:target="_blank"}
-##### [4.0](/application/native/api/mobile/4.0/index.html){:target="_blank"}
-
 #### Iot Headed
 ##### [7.0](/application/native/api/iot-headed/7.0/index.html){:target="_blank"}
 ##### [6.5](/application/native/api/iot-headed/6.5/index.html){:target="_blank"}

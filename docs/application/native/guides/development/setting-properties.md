@@ -71,16 +71,7 @@ You can perform the following tasks using the **Overview** tab:
 
 - Add an application icon.
 
-  You can add a launcher icon to your application by defining it in the **Icon** panel. If your application supports both HD and WVGA, it is best to provide an icon for HD for better image quality in both cases.
-
-  The following table describes the available icons.
-
-  **Table: Application icons**
-
-  | Profile  | Mandatory | Format                 | Xhigh (HD) Size   | High (WVGA) Size  | Description                       |
-  |----------|-----------|------------------------|-------------------|-------------------|-----------------------------------|
-  | Mobile   | Yes       | 32-bit PNG with  alpha | 117 x 117 pixels  | 78 x 78 pixels    | Image displayed in the main menu. |
-  | Wearable | Yes       | 32-bit PNG with alpha  | 152 x 152 pixels  | 152 x 152 pixels  | Image displayed in the main menu. |
+  You can add a launcher icon to your application by defining it in the **Icon** panel. Use a 32-bit PNG image sized appropriately for the target display.
 
 - Set the application author.
 
@@ -197,24 +188,6 @@ You can perform the following tasks using the **Advanced** tab:
   To define an application control used to access the functionality of your application, click **+** in the **Application Control** section.
 
   Each application control can have multiple operation, MIME type, and URI attributes.
-
-- Add accounts (in mobile applications only).
-
-  Account providers, such as Google and Facebook, represent specific service provider-related information or protocol that provides user accounts. To add, update, or remove accounts, you must register a specific account provider in your application.
-
-  To register an account provider, click **+** in the **Account** section and define the account provider information, as described in the following table.
-
-  **Table: Account provider properties**
-
-  | Acount property1  | Acount property2 | Data type | Property type                            |
-  |-------------------|------------------|-----------|------------------------------------------|
-  | Multiple account  |             | bool      | Indicates  whether multiple accounts are supported.<br>This is a mandatory property. |
-  | Provider ID       |             | String    | ID  of the account provider.             |
-  | Default label     |             | String    | Display  name of the account provider.<br>This is a mandatory property. |
-  | Icons             | Icon        | String    | File  path of the account provider icon.<br> The  icon size is:<br> - 72 x 72 for Xhigh (HD)<br> - 48 x 48 for High (WVGA)<br> Since the  icon is used in Settings > Accounts, place the icon in a shared  directory.<br> This is a mandatory property. |
-  | Icons             | Icon  small | String    | File  path of the account provider icon. <br>The icon size is: <br> -  45 x 45 for Xhigh  (HD)<br> - 30 x 30 for High  (WVGA)<br>  Since the small icon is used  in other applications, place the icon in a shared directory.<br>  This is a mandatory property. |
-  | Name              |             | String    | Localization  support for the display name.<br> To add a localized name, click + in  the Name panel, select the language, define the display name for  that language, and click OK. |
-  | Capabilities      |             | String    | Capability  of the account provider.<br>Capabilities are defined in the `http://<VENDOR_INFORMATION>/accounts/capability/<NAME>` IRI  format.    <br>The following predefined capabilities can be used in Tizen:    <br>- `http://tizen.org/account/capability/calendar` <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a calendar.    <br>- `http://tizen.org/account/capability/contact`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to contacts.    <br>- `http://tizen.org/account/capability/document`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a document.    <br>- `http://tizen.org/account/capability/email`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to email.    <br>- `http://tizen.org/account/capability/game`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a game.    <br>- `http://tizen.org/account/capability/message`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a message.    <br>- `http://tizen.org/account/capability/music`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to music.    <br>- `http://tizen.org/account/capability/photo`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a photo.    <br>- `http://tizen.org/account/capability/video`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a video.    <br>To add a capability, click + in the Capabilities panel. A default  capability is added to the table. Click the default capability and change it  to the one you need.    <br>This is an optional property. |
 
 - Add the background category type (since Tizen 2.4).
 

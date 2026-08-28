@@ -247,7 +247,7 @@ This privilege is for both native and Web application.
 
 Allows the application to change Bluetooth settings, such as switching Bluetooth on and off, setting the device name, and enabling and disabling AV remote control.\
 This is a platform privilege for a native application and a public privilege for a Web application.\
-This privilege is deprecated since 2.4 for Web applilcation in mobile and since 3.0 for Web application in wearable. Use <http://tizen.org/privilege/bluetooth> instead.
+This privilege is deprecated. Use <http://tizen.org/privilege/bluetooth> instead.
 
 [Edit Key](https://www.tizen.org/node/8002/edit?destination=privilege "edit"){.edit}
 
@@ -260,7 +260,7 @@ This privilege is deprecated since 2.4 for Web applilcation in mobile and since 
 
 Allows the application to use the Generic Access Profile (GAP) to, for example, scan for and pair devices.\
 This privilege is for a Web application.\
-This privilege is deprecated since 2.4 for Web applilcation in mobile and since 3.0 for Web application in wearable. Use <http://tizen.org/privilege/bluetooth> instead.
+This privilege is deprecated. Use <http://tizen.org/privilege/bluetooth> instead.
 
 [Edit Key](https://www.tizen.org/node/8003/edit?destination=privilege "edit"){.edit}
 
@@ -273,7 +273,7 @@ This privilege is deprecated since 2.4 for Web applilcation in mobile and since 
 
 Allows the application to use the Health Device Profile (HDP) to, for example, send health data.\
 This privilege is for a Web application.\
-This privilege is deprecated since 2.4 for Web applilcation in mobile and since 3.0 for Web application in wearable. Use <http://tizen.org/privilege/bluetooth> instead.
+This privilege is deprecated. Use <http://tizen.org/privilege/bluetooth> instead.
 
 [Edit Key](https://www.tizen.org/node/8004/edit?destination=privilege "edit"){.edit}
 
@@ -286,7 +286,7 @@ This privilege is deprecated since 2.4 for Web applilcation in mobile and since 
 
 Allows the application to use the Serial Port Profile (SPP) to, for example, send serial data.\
 This privilege is for a Web application.\
-This privilege is deprecated since 2.4 for Web applilcation in mobile and since 3.0 for Web application in wearable. Use <http://tizen.org/privilege/bluetooth> instead.
+This privilege is deprecated. Use <http://tizen.org/privilege/bluetooth> instead.
 
 [Edit Key](https://www.tizen.org/node/8006/edit?destination=privilege "edit"){.edit}
 

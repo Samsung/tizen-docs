@@ -40,7 +40,7 @@ Implementing your application consists of:
 
 - **Coding applications**
 
-  Code your application in Tizen Studio using the namespaces defined in the Native API Reference (in [mobile](../../api/mobile/latest/modules.html) and [wearable](../../api/wearable/latest/modules.html) applications).
+  Code your application in Tizen Studio using the namespaces defined in the Native API Reference ([API reference](../../api/common/latest/modules.html)).
 
 If needed, update the privileges of the application.
 
@@ -156,11 +156,11 @@ After you have packaged your application, you are ready to certify and publish y
 
 To certify and publish your application:
 
-- Upload your mobile native application to the official site for Tizen applications or your wearable native application to the Samsung Galaxy Apps Store for registration.
+- Upload your application to its distribution site for registration.
 
-  After the application is uploaded, the application is signed as a certified application installer package and the `<Application_name>.tpk` archive format, which contains the distributor signature, is added by the official site for Tizen applications or Samsung Galaxy Apps Store.
+  After the application is uploaded, it is signed as a certified application installer package, and the distributor signature is added to the `<Application_name>.tpk` archive.
 
-- Check your application on the official site for Tizen applications or Samsung Galaxy Apps Store for validation and selling.
+- Check your application on its distribution site for validation and publication.
 
   The official site for Tizen applications or Samsung Galaxy Apps Store checks whether your application functions properly.
 

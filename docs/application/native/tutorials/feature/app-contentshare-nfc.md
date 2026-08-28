@@ -16,11 +16,7 @@ coupled devices.
 
 To initialize NFC:
 
-1.  To use the functions and data types of the NFC API (in
-    [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MODULE.html)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MODULE.html)
-    applications), include the `<nfc.h>` header file in your
+1.  To use the functions and data types of the NFC API ([API reference](../../api/common/latest/group__CAPI__NETWORK__NFC__MODULE.html)), include the `<nfc.h>` header file in your
     application:
 
     ```cpp

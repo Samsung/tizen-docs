@@ -50,11 +50,7 @@ notification. For instance, if the Wi-FI network is changed to a visited
 mobile network (roaming), the user can pay for the mobile data without
 user recognition.
 
-The Connection API (in
-[mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MODULE.html)
-applications) provides a function that provides a notification about the
+The Connection API ([API reference](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MODULE.html)) provides a function that provides a notification about the
 connection status. The application can download or upload files only
 when Wi-Fi is connected by checking the network type in the triggered
 callback.
@@ -115,38 +111,14 @@ data network.
 
 ### Getting the State of Mobile Network Service
 
-The Telephony Information API (in
-[mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION.html)
-applications) is composed of Call (in
-[mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__CALL.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__CALL.html)
-applications), SIM (in
-[mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__SIM.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__SIM.html)
-applications), Network (in
-[mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html)
-applications), and Modem (in
-[mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__MODEM.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__MODEM.html)
-applications) APIs for the mobile network service.
+The Telephony Information API ([API reference](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION.html)) is composed of Call ([API reference](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION__CALL.html)), SIM ([API reference](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION__SIM.html)), Network ([API reference](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html)), and Modem ([API reference](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION__MODEM.html)) APIs for the mobile network service.
 
 The Telephony Network API provides the detailed mobile network
 information: LAC, Cell ID, RSSI, roaming state, MCC, MNC, network
 provider name, PS type, and network type. The
 `telephony_network_get_service_state()` function gets the current
 network state of the telephony service. It returns one of the
-`telephony_network_service_state_e` enumerator values (in
-[mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#gae9f3b6e54a1086b8734f4acc71fd001b)
-and
-[wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#gae9f3b6e54a1086b8734f4acc71fd001b)
-applications).
+`telephony_network_service_state_e` enumerator values ([API reference](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#gae9f3b6e54a1086b8734f4acc71fd001b)).
 
 The following table indicates the `telephony_network_service_state_e`
 enumeration that has the mobile network service state.
@@ -264,11 +236,7 @@ The following table indicates the available notification IDs.
 | Default data subscription | `TELEPHONY_NOTI_NETWORK_DEFAULT_DATA_SUBSCRIPTION` |
 | Default subscription      | `TELEPHONY_NOTI_NETWORK_DEFAULT_SUBSCRIPTION` |
 
-The `telephony_noti_e` enumerator (in
-[mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d)
-and
-[wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d)
-applications) defines the available notification IDs. The callback
+The `telephony_noti_e` enumerator ([API reference](../../api/common/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d)) defines the available notification IDs. The callback
 function registered by the `telephony_set_noti_cb()` function
 (`network_service_state_noti_cb()` in the following example) delivers
 change notifications for a network asynchronously.
@@ -333,11 +301,7 @@ app_terminate(void *data)
 The connection state can be changed depending on various mobile
 environments, such as the settings of the mobile phone or the signal
 strength received by the mobile phone from the cellular network or Wi-Fi
-AP (access point). The Connection API (in
-[mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MODULE.html)
-applications) provides a function that gets the current state of the
+AP (access point). The Connection API ([API reference](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MODULE.html)) provides a function that gets the current state of the
 mobile network service and Wi-Fi network.
 
 ### Getting the Mobile (Cellular) Network Connection State
@@ -419,11 +383,7 @@ default:
 <a name="statistics"></a>
 ## Collecting Connection Statistics
 
-The Connection Statistics API (in
-[mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html)
-applications) provides functions for getting statistical information,
+The Connection Statistics API ([API reference](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html)) provides functions for getting statistical information,
 such as the amount of sent or received data. The API also provides
 functions for getting the cumulative size of packets sent or received
 since the last reset based on the operation mode, such as packet
@@ -434,17 +394,11 @@ and the last sent and received data. The parameters of the
 `connection_get_statistics()` function determine which connection type
 and which statistics are gathered:
 
--   The `connection_type_e` enumerator (in
-    [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga85c33901b8ac24f2e5f66440ec4519ee)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga85c33901b8ac24f2e5f66440ec4519ee) applications)
+-   The `connection_type_e` enumerator ([API reference](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga85c33901b8ac24f2e5f66440ec4519ee))
     defines the connection types: `CONNECTION_TYPE_WIFI` is Wi-Fi and
     `CONNECTION_TYPE_CELLULAR` is the mobile network. Only Wi-Fi and
     mobile network connections are supported in the statistics.
--   The `connection_statistics_type_e` enumerator (in
-    [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) applications)
+-   The `connection_statistics_type_e` enumerator ([API reference](../../api/common/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63))
     defines the statistics type.
 
 The following example demonstrates how to get received data and sent

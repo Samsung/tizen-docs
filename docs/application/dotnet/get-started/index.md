@@ -62,12 +62,4 @@ You can also use command line tools to create .NET project on any platform.
             </div>
         </a>
     </div>
-    <div class="col col-6">
-        <a href="hybrid-application.md" class="card card-infra card-neutral h-100">
-            <div class="card-body">
-                <p class="h3 card-title">Hybrid Application</p>
-                <p class="card-text">Learn how to create hybrid package application combining .NET and web application.</p>
-            </div>
-        </a>
-    </div>
 </div>

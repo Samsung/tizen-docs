@@ -578,7 +578,7 @@ Learning how to receive notifications allows you to monitor when the status of a
    }
 
    try {
-       watchId = tizen.application.addAppStatusChangeListener(appStatusEventCallback, 'app1test.BasicMobileApp');
+       watchId = tizen.application.addAppStatusChangeListener(appStatusEventCallback, 'app1test.BasicApp');
    } catch (err) {
        console.log('Exception: ' + err.name);
    }

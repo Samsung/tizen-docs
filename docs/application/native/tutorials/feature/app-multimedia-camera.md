@@ -2,11 +2,7 @@
 # Image Capturing with the Camera
 
 You can capture still images with the device's internal camera and keep
-images on your target device using the Camera API (in
-[mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html)
-applications). The main features of the Camera API include:
+images on your target device using the Camera API ([API reference](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html)). The main features of the Camera API include:
 
 -   Previewing images in real time
 -   Capturing and saving images
@@ -34,11 +30,7 @@ To initialize the camera, create a handle for the camera, configure the
 camera settings, and register callback functions for the events of
 preview and auto-focus:
 
-1.  To use the functions and data types of the Camera API (in
-    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html)
-    applications), include the &lt;camera.h&gt; header file in your
+1.  To use the functions and data types of the Camera API ([API reference](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html)), include the &lt;camera.h&gt; header file in your
     application:
 
     ```c++
@@ -73,10 +65,7 @@ preview and auto-focus:
     The `CAMERA_DEVICE_CAMERA0` parameter means that the currently
     activated device camera is 0, which is the primary camera. You can
     select between the primary (0) and the secondary (1) camera, which
-    are defined in the `camera_device_e` enumeration (in
-    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#gab030be4ec6b05144c3f2a732541e4104)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#gab030be4ec6b05144c3f2a732541e4104) applications).
+    are defined in the `camera_device_e` enumeration ([API reference](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#gab030be4ec6b05144c3f2a732541e4104)).
     Since devices can have multiple camera sensors with different
     capabilities, you must create a camera handle with a proper
     `camera_device_e` value, determining which camera sensor is used.
@@ -214,11 +203,7 @@ preview and auto-focus:
 
         Using the `camera_set_capture_format()` function, set the
         capture format. The available formats are defined in the
-        `camera_pixel_format_e` enumeration (in
-        [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece)
-        and
-        [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece)
-        applications), such as `NV12`, `NV16`, and `JPEG`.
+        `camera_pixel_format_e` enumeration ([API reference](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece)), such as `NV12`, `NV16`, and `JPEG`.
 
         ```c++
         error_code = camera_set_capture_format(cam_data.g_camera, CAMERA_PIXEL_FORMAT_JPEG);

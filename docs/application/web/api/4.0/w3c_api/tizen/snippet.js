@@ -1478,7 +1478,7 @@ var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|\\!|\\!=|\\!==|\\#|\\%|\\%=|&|&&|&
 })();
 
 var jqueryjsElement = document.createElement("script");
-jqueryjsElement.src = "/application/native/api/mobile/4.0/jquery.js";
+jqueryjsElement.src = "/application/native/api/common/latest/jquery.js";
 jqueryjsElement.type = "text/javascript";
 document.getElementsByTagName("head")[0].appendChild(jqueryjsElement);
 

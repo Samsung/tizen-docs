@@ -114,18 +114,6 @@ The following table describes the Git repository structure for Tizen 3.0 and hig
 | Test      |            |           | Code for testing a profile (ex Common)   |
 |           | tools      |           | Tools for testing a profile              |
 | Profile   |            |           | Profile-specific                         |
-|           | Mobile     |           | Mobile profile-specific                  |
-|           |            | platform  | Platform component                       |
-|           |            | apps      | Mobile profile-specific application      |
-|           |            | sdk       | SDK                                      |
-|           |            | scm       | Privilege setting and metadata for configuration |
-|           |            | test      | Code for testing a profile (ex Common)   |
-|           | wearable   |           | Wearable profile-specific                |
-|           |            | platform  | Platform component                       |
-|           |            | apps      | Wearable profile-specific application    |
-|           |            | sdk       | SDK                                      |
-|           |            | scm       | Privilege setting and metadata for configuration |
-|           |            | test      | Code for testing a profile (ex Common)   |
 |           | common     |           | Common profile-specific                  |
 |           |            | platform  | Platform component                       |
 |           |            | apps      | Common profile-specific application      |

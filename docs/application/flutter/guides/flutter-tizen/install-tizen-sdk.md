@@ -14,7 +14,7 @@ After installing the `VS Code Extension for Tizen`, open _Tizen: Package Manager
 
 ![Tizen Package Manager](media/advanced-package-installation.png)
 
-- [Advanced] - [6.0 IOT-Headed + Mobile]
+- The latest Tizen platform package for your target device
 
 To enable emulator support, install the following additional packages.
 

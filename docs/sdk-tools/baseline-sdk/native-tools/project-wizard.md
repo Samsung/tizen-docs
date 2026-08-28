@@ -43,10 +43,6 @@ You can select the profile and version supported by your project. In addition, T
 
 Based on the selected profile and version, a list of templates is shown in the template selection step.
 
-**Figure: Selecting the profile and version**
-
-![File analysis](./media/create_project_wizard_version.png)
-
 To move to the next step, select the profile and version, and click **Next**.
 
 ## Application Type
@@ -55,29 +51,17 @@ You can select the native or Web application type for your project. For more inf
 
 Based on the selected application type, a list of templates is shown in the template selection step.
 
-**Figure: Selecting the application type**
-
-![Selecting the application type](./media/create_project_wizard_app.png)
-
 To move to the next step, select the application type and click **Next**.
 
 ## Template
 
 You can select the template for your project while viewing information about a variety of templates. The Tizen Project Wizard creates the project based on the selected template.
 
-**Figure: Selecting the template**
-
-![Selecting the template](./media/create_project_wizard_template.png)
-
 To move to the next step, select the template and click **Next**.
 
 ## Project Properties
 
 You can set basic project properties, such as the project name, location, and working sets.
-
-**Figure: Setting project properties**
-
-![Setting project properties](./media/create_project_wizard_properties.png)
 
 The options you can set are listed in the following table.
 
