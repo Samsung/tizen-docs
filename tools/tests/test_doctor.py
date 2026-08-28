@@ -76,3 +76,23 @@ def test_reports_a_class_fully_shadowed_by_an_earlier_one(tmp_path):
 
 def test_real_repository_configuration_is_healthy():
     assert list(doctor.problems(DocsIndex())) == []
+
+
+def test_legacy_directory_that_still_exists_is_not_reported(tmp_path):
+    """The list is only misleading once the directory it names is gone."""
+    (tmp_path / "docs" / "HAL").mkdir(parents=True, exist_ok=True)
+    (tmp_path / "docs" / "HAL" / "page.md").write_text("# P\n", encoding="utf-8")
+    index = index_for(tmp_path, naming={"legacy_directories": ["HAL"]})
+    assert not [p for p in doctor.problems(index) if "legacy_directories" in p]
+
+
+def test_legacy_directory_that_is_gone_is_reported(tmp_path):
+    """A renamed or deleted directory leaves an entry that exempts nothing.
+
+    Left alone it keeps widening what N-KEBAB-DIR accepts while reading like
+    documentation of a decision that no longer applies.
+    """
+    index = index_for(tmp_path, naming={"legacy_directories": ["GoneForGood"]})
+    reported = [p for p in doctor.problems(index) if "legacy_directories" in p]
+    assert len(reported) == 1
+    assert "GoneForGood" in reported[0]

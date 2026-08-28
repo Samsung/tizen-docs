@@ -90,3 +90,18 @@ def test_missing_file_yields_an_empty_config():
     from tizendocs import config as module
     cfg = module.load(path="/nonexistent/docscheck.toml")
     assert cfg.source == "" and cfg.classes == []
+
+
+def test_legacy_directories_default_to_empty():
+    """A file without [naming] must not exempt anything."""
+    assert Config({}).legacy_directories == ()
+    assert not Config({}).legacy_directory("HAL")
+
+
+def test_legacy_directory_matches_exact_names_only():
+    """Substring matching here would exempt far more than intended."""
+    config = Config({"naming": {"legacy_directories": ["HAL"]}})
+    assert config.legacy_directory("HAL")
+    assert not config.legacy_directory("hal")
+    assert not config.legacy_directory("HALO")
+    assert not config.legacy_directory("my-HAL")

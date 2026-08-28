@@ -48,6 +48,19 @@ def problems(index):
             yield (f"class {entry.id}: pattern matches nothing: {pattern}"
                    " - the path it exempted is gone, so delete it")
 
+    # [naming] rots the same way a class pattern does: a directory gets
+    # renamed or deleted and its entry becomes text that exempts nothing,
+    # while still quietly widening what the rule accepts.
+    if config.legacy_directories:
+        present = {part
+                   for path in paths
+                   for part in os.path.dirname(path).split("/")[1:]}
+        for name in config.legacy_directories:
+            if name not in present:
+                yield (f"[naming] legacy_directories: no directory named"
+                       f" {name!r} exists - the name it exempted is gone,"
+                       " so delete it")
+
     known = set(checks.RULE_IDS)
     for rule in config.rules:
         if "*" not in rule and rule not in known:

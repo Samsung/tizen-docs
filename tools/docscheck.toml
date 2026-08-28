@@ -70,6 +70,36 @@ reason = """Imported from another pipeline. Correct the upstream source and
 re-import; editing the output here is lost on the next import."""
 
 # ---------------------------------------------------------------------------
+# Directory names that predate N-KEBAB-DIR and stay.
+#
+# The rule holds *new* directories to lowercase kebab-case. Its check walks
+# every path component of an added file, though, so without this list adding
+# any file to one of these directories reports the directory - which is not
+# something the change can fix and not what the rule is for.
+#
+# Renaming them is off the table: HAL and NUI are the names people use, and a
+# rename would break every inbound link for a cosmetic gain. `doctor` reports
+# an entry here that no longer names a real directory, so the list cannot rot
+# into misleading text.
+#
+# New directories are still held to the rule: a name absent from this list is
+# reported as before.
+# ---------------------------------------------------------------------------
+
+[naming]
+legacy_directories = [
+  # Acronyms and product names, deliberately kept as written.
+  "HAL",
+  "NUIsetup",
+  "Tizen",
+  "codeExamples",
+  # Snake_case predating the rule, under the generated web API trees.
+  "device_api",
+  "ui_fw_api",
+  "w3c_api",
+]
+
+# ---------------------------------------------------------------------------
 # Rule severities. ERROR fails the run; WARN must be fixed or explained in
 # review; NOTE is advisory only. Globs are allowed, most specific first.
 # ---------------------------------------------------------------------------
