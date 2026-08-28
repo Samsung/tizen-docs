@@ -30,7 +30,7 @@ for accessing only external storage using this API, a privilege <a href="http://
 for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
         </ul>
         <p>
-For more information on the Content features, see <a href="/application/web/guides/data/stored-content">Stored Content Management</a>.
+For more information on the Content features, see <a href="https://samsungtizenos.com/docs/application/web/guides/data/stored-content">Stored Content Management</a>.
         </p>
         <p>
 Playlist functionality has been added in Tizen 2.3.
@@ -631,7 +631,7 @@ tizen.content.getDirectories(getDirectoriesCB, errorCB);
 <div class="description">
             <p>
 This method allows searching based on a supplied filter. For more details on AbstractFilter, see the
-<a href="tizen.html#::Tizen::AbstractFilter">Tizen</a> module. The filter allows precise searching such
+<a href="tizen#::Tizen::AbstractFilter">Tizen</a> module. The filter allows precise searching such
 as "return all songs by artist U2, ordered by name".
             </p>
             <p>
@@ -652,7 +652,7 @@ UnknownError: In any other error case.              </li>
             </p>
 <p><span class="remark">Remark: </span>
  Attributes available for <em>Content</em> objects filtering are listed in
-<a href="/application/web/guides/data/data-filter#content-filter-attributes">Data Filtering and Sorting guide</a>.
+<a href="https://samsungtizenos.com/docs/application/web/guides/data/data-filterhttps://samsungtizenos.com/docs/application/web/guides/data/data-filter#content-content-filter-attributes">Data Filtering and Sorting guide</a>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -1069,7 +1069,7 @@ Calling this function has no effect if there is no listener with given id.
           <li class="param">
 <span class="name">listenerId</span>:
  Identifier of the listener to be removed. It is returned by.
-<a href="./content.html#ContentManager::addChangeListener">addChangeListener()</a> when a listener is successfully added.
+<a href="content#ContentManager::addChangeListener">addChangeListener()</a> when a listener is successfully added.
                 </li>
         </ul>
 </div>
@@ -1589,14 +1589,14 @@ tizen.content.find(findCB);
  2.1
             </p>
 <p><span class="remark">Remark: </span>
- This callback is also invoked upon success of the <a href="content.html#ContentManager::scanDirectory">scanDirectory()</a> method since Tizen 2.4. Therefore, the <em>uri</em> parameter may now also be the URI of a <em>ContentDirectory</em> object.
+ This callback is also invoked upon success of the <a href="content#ContentManager::scanDirectory">scanDirectory()</a> method since Tizen 2.4. Therefore, the <em>uri</em> parameter may now also be the URI of a <em>ContentDirectory</em> object.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
 <span class="name">uri</span>:
- The URI of the <a href="content.html#Content">Content</a> or the <a href="content.html#ContentDirectory">ContentDirectory</a> object.
+ The URI of the <a href="content#Content">Content</a> or the <a href="content#ContentDirectory">ContentDirectory</a> object.
                 </li>
         </ul>
 </div>

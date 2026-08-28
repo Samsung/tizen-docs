@@ -62,7 +62,7 @@ for accessing only recorder using this API, a privilege <a href="http://tizen.or
 for accessing camera and recorder using this API, privileges (<a href="http://tizen.org/privilege/camera">http://tizen.org/privilege/camera</a> and <a href="http://tizen.org/privilege/recorder">http://tizen.org/privilege/recorder</a>) must be provided.          </li>
         </ul>
         <p>
-For more information on the Pipeline API features, see <a href="/application/web/guides/machine-learning/pipeline">Pipeline Guide</a>.
+For more information on the Pipeline API features, see <a href="https://samsungtizenos.com/docs/application/web/guides/machine-learning/pipeline">Pipeline Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -1965,13 +1965,13 @@ result to <em>output</em>. <em>output</em> contents will be passed to the furthe
 To use their contents after callback return, copy them to objects valid outside the callback.
             </p>
 <p><span class="remark">Remark: </span>
- The <em>input</em> and <em>output</em> cannot be disposed. Calling the <a href="ml.html#TensorsData::dispose">TensorsData::dispose()</a>has no effect.
+ The <em>input</em> and <em>output</em> cannot be disposed. Calling the <a href="ml#TensorsData::dispose">TensorsData::dispose()</a>has no effect.
             </p>
 <p><span class="remark">Remark: </span>
- The <em>input</em> cannot be modified. Calling <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> on <em>input</em> has no effect.
+ The <em>input</em> cannot be modified. Calling <a href="ml#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> on <em>input</em> has no effect.
             </p>
 <p><span class="remark">Remark: </span>
- The <em>output</em> passed to the callback contains random values. Use <a href="ml.html#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> to modify it.
+ The <em>output</em> passed to the callback contains random values. Use <a href="ml#TensorsData::setTensorRawData">TensorsData::setTensorRawData()</a> to modify it.
             </p>
 <p><span class="remark">Remark: </span>
  Returning a negative status value stops the pipeline and changes its state to <var>UNKNOWN</var>.
@@ -2034,7 +2034,7 @@ To guarantee the running of the application on a device with Machine Learning In
 <li class="feature">http://tizen.org/feature/machine_learning.inference</li>
 </div>
 <p></p>
-                    For more information, see <a href="/application/web/reference/app-filtering">Application Filtering.</a>
+                    For more information, see <a href="https://samsungtizenos.com/docs/application/web/reference/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Pipeline {
