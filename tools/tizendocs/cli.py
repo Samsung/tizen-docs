@@ -15,6 +15,15 @@ from .findings import ERROR, LEVELS, WARN, Finding, rank
 from .index import DocsIndex
 
 
+#: Written above a baseline this command creates, so the next reader knows what
+#: the file is for without having to find the module that consumes it.
+DEFAULT_BASELINE_HEADER = (
+    "# Findings accepted for now, so their rule can gate new instances today.",
+    "# Format: <rule>\t<path>\t<message>. Line numbers are deliberately absent,",
+    "# so editing around a finding does not silently un-baseline it.",
+    "# An entry that no longer reproduces is reported as B-STALE by --all.",
+)
+
 def build_parser():
     parser = argparse.ArgumentParser(
         prog="check_docs.py", description="Validate public Tizen Docs Markdown.")
@@ -159,6 +168,24 @@ def main(argv=None):
 
     if change is not None and change.removed:
         collected.extend(checks.run_change(index, change))
+
+    if args.write_baseline:
+        # --all only. A scoped run looked at a handful of files, so writing its
+        # findings would silently drop every entry it never examined and turn a
+        # baseline into a way of losing findings rather than recording them.
+        if not args.all:
+            sys.stderr.write(
+                "--write-baseline needs --all: a scoped run would drop every "
+                "finding it did not look for.\n")
+            return 2
+        target = os.path.join(index.root, args.baseline)
+        _, comments = baseline.load(target)
+        errors = [finding for finding in collected if finding.is_error]
+        with open(target, "w", encoding="utf-8") as handle:
+            handle.write(baseline.render(errors, comments or DEFAULT_BASELINE_HEADER))
+        sys.stderr.write(f"Wrote {len(errors)} entries to {args.baseline}\n")
+        return 0
+
     stale = []
     if not args.no_baseline:
         entries, _ = baseline.load(os.path.join(index.root, args.baseline))

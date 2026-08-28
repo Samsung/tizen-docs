@@ -1,0 +1,12 @@
+# Findings accepted for now, so their rule can gate new instances today.
+# Format: <rule>	<path>	<message>. Line numbers are deliberately absent,
+# so editing around a finding does not silently un-baseline it.
+# An entry that no longer reproduces is reported as B-STALE by --all.
+# The three P-ROUTE entries are generated output: the TizenX API generator
+# writes Name_TView,TValue_.md for a two-parameter generic. Renaming the files
+# here is undone by the next import, so the fix belongs in that generator —
+# DocFX and the .NET API tree in this repository both use an arity suffix
+# (Tizen.NUI.DaliEventHandler-2), which needs no comma.
+P-ROUTE	docs/extensions/tizenx/api/Tizen.UI.Components/Tizen.UI.Components.PropertySetter_TView,TValue_.md	the published URL cannot contain a comma
+P-ROUTE	docs/extensions/tizenx/api/Tizen.UI/Tizen.UI.BindingProperty_TView,TValue_.md	the published URL cannot contain a comma
+P-ROUTE	docs/extensions/tizenx/api/Tizen.UI/Tizen.UI.TwoWayBindingProperty_TView,TValue_.md	the published URL cannot contain a comma
