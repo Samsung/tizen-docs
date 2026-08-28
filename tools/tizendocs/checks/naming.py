@@ -25,9 +25,17 @@ def check_directory(index, path, source):
     """New directory names must be lowercase kebab-case.
 
     Only new ones. Renaming an existing directory such as platform/HAL/ would
-    break dozens of links for a cosmetic gain, so the legacy names stay.
+    break dozens of links for a cosmetic gain, so the legacy names stay and are
+    listed under [naming] in docscheck.toml.
+
+    That list is load-bearing rather than cosmetic. The rule is scoped to added
+    files, but this check walks every component of the path, so without it
+    adding *any* file inside a legacy directory reports the directory - a
+    finding the change cannot act on and the rule never meant to raise.
     """
     for part in os.path.dirname(path).split("/")[1:]:
+        if index.legacy_directory(part):
+            continue
         if not KEBAB_DIR.match(part):
             yield Finding(ERROR, DIR_RULE, path,
                           f"directory name is not lowercase kebab-case: {part}")

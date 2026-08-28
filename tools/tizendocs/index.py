@@ -94,6 +94,10 @@ class DocsIndex:
     def skips(self, path, rule):
         return self.config.skips(path, rule)
 
+    def legacy_directory(self, name):
+        """Whether *name* predates the kebab-case rule. See [naming]."""
+        return self.config.legacy_directory(name)
+
     def handwritten(self, path):
         """Whether *path* is a document a person is expected to edit.
 

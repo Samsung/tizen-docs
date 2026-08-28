@@ -99,6 +99,9 @@ class Config:
         self.rules = dict(data.get("rules", {}))
         #: rule id -> scope name. See Config.scope().
         self.scopes = dict(data.get("scope", {}))
+        #: directory names that predate N-KEBAB-DIR. See legacy_directory().
+        self.legacy_directories = tuple(
+            data.get("naming", {}).get("legacy_directories", ()))
 
     # ---- path classification (first match wins) --------------------------
 
@@ -135,6 +138,14 @@ class Config:
         """
         return any(entry.matches(path)
                    for entry in self.classes if entry.id == class_id)
+
+    def legacy_directory(self, name):
+        """Whether *name* is a directory that predates the kebab-case rule.
+
+        Listed in [naming]. Renaming these would break inbound links for a
+        cosmetic gain, so they stay and additions inside them are not reported.
+        """
+        return name in self.legacy_directories
 
     def exempt_existence(self, target):
         """Whether a link to *target* may point at a file that is not here."""
