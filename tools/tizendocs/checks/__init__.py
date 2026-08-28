@@ -34,6 +34,7 @@ CORPUS_REGISTRY = (
     (toc_checks.META_SRC, toc_checks.check_meta_source),
     (xml_toc.XML, xml_toc.check_wellformed),
     (xml_toc.XMLVER, xml_toc.check_versions),
+    (naming.ROUTE, naming.check_route),
 )
 
 

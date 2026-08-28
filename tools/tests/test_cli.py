@@ -50,21 +50,31 @@ def test_a_summary_is_always_printed():
 
 def test_every_format_is_accepted_and_well_formed():
     """Rendering of individual findings is asserted in test_formats.py; this
-    checks the CLI wiring on the real corpus, which is currently clean."""
+    checks the CLI wiring on the real corpus.
+
+    The corpus is error-free, not finding-free: docscheck-baseline.txt accepts
+    three P-ROUTE findings that belong to a generator upstream. Asserting empty
+    output would make this test fail the moment a rule is switched on the way
+    the baseline exists to allow, so it asserts the property that matters —
+    nothing is reported as an error.
+    """
     import json
 
     text = run("--all", "--format", "text")
     assert text.returncode == 0
-    assert text.stdout.strip().startswith("check_docs: 0 ERROR")
+    assert text.stdout.strip().splitlines()[-1].startswith("check_docs: 0 ERROR")
 
-    empty = run("--all", "--format", "jsonl")
-    assert empty.returncode == 0 and empty.stdout == ""
+    lines = run("--all", "--format", "jsonl")
+    assert lines.returncode == 0
+    assert all(json.loads(line)["level"] != "ERROR"
+               for line in lines.stdout.splitlines() if line.strip())
 
-    assert run("--all", "--format", "github").stdout == ""
+    assert "::error" not in run("--all", "--format", "github").stdout
 
     document = json.loads(run("--all", "--format", "sarif").stdout)
     assert document["version"] == "2.1.0"
-    assert document["runs"][0]["results"] == []
+    assert all(result.get("level") != "error"
+               for result in document["runs"][0]["results"])
 
 
 def test_a_clean_corpus_exits_zero():
@@ -84,3 +94,32 @@ def test_relative_path_from_a_subdirectory_resolves():
 @pytest.mark.parametrize("flag", ["--format"])
 def test_unknown_format_is_rejected(flag):
     assert run(flag, "yaml", "--all").returncode == 2
+
+
+def test_write_baseline_refuses_a_scoped_run():
+    """A scoped run looked at a handful of files.
+
+    Writing its findings would drop every entry it never examined, turning the
+    baseline from a record of accepted findings into a way of losing them. The
+    flag was declared and never implemented, so before this it silently did
+    nothing at all — which is the same failure wearing a friendlier face.
+    """
+    result = run("--write-baseline", "docs/application/dotnet/overview.md")
+    assert result.returncode == 2
+    assert "--write-baseline needs --all" in result.stderr
+
+
+def test_write_baseline_records_the_open_errors(tmp_path):
+    """Round trip: what the flag writes is what makes the run clean."""
+    target = tmp_path / "baseline.txt"
+    written = run("--all", "--write-baseline", "--baseline", str(target))
+    assert written.returncode == 0
+
+    entries = [line for line in target.read_text(encoding="utf-8").splitlines()
+               if line and not line.startswith("#")]
+    assert entries, "the corpus has open P-ROUTE findings to record"
+    assert all(len(line.split("\t")) == 3 for line in entries)
+
+    after = run("--all", "--baseline", str(target), "--format", "text")
+    assert after.returncode == 0
+    assert after.stdout.strip().splitlines()[-1].startswith("check_docs: 0 ERROR")

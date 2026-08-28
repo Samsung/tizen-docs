@@ -43,3 +43,19 @@ def test_redundant_docs_prefix_is_its_own_diagnosis():
 def test_a_site_root_route_without_an_extension_is_not_a_finding():
     """The published site serves routes that have no file in this checkout."""
     assert findings("minimal") == set()
+
+def test_a_site_root_media_reference_must_resolve():
+    """The route exemption above is for pages, not images.
+
+    A page behind /application/... may come from another pipeline, so its
+    absence here proves nothing. Media has no other pipeline — every image the
+    site serves under docs/ is committed here — yet the exemption was keyed on
+    "not .md" and swallowed images too.
+
+    That silence cost 33 files. "/docs/<path>" resolves to docs/docs/<path>, so
+    the orphan scan never counted those references either; M-ORPHAN called the
+    images unreferenced and #2388 deleted them while eight published pages still
+    pointed at them. Reporting the reference is what closes the loop: orphans
+    are only trusted once the L-* rules are clean.
+    """
+    assert findings("l-media-site-root") == {("L-HTML", "")}
