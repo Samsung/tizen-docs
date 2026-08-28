@@ -24,6 +24,15 @@ def test_jsonl_is_one_object_per_line():
     assert first["syntax"] == "html-source"
 
 
+def test_jsonl_includes_structured_finding_data():
+    finding = Finding(WARN, "T-ORPHAN", "docs/a.md", "unlisted",
+                      data={"governing_tocs": ["docs/toc.md"],
+                            "inbound_links": 2})
+    record = json.loads(jsonl.render([finding]))
+    assert record["governing_tocs"] == ["docs/toc.md"]
+    assert record["inbound_links"] == 2
+
+
 def test_jsonl_omits_empty_optional_fields():
     record = json.loads(jsonl.render([ORPHANED]).strip())
     assert "line" not in record and "fix" not in record and "cause" not in record

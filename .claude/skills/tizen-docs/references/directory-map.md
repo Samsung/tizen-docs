@@ -46,10 +46,11 @@ lives in [`docs/sdk-tools/`](#docssdk-tools-252-md) instead:
 | `flutter/` (14 md) | Flutter guides — the newest, smallest profile. |
 | `features/` (5 md), `profiles/` (3 md) | Small cross-cutting overview pages. |
 
-`application/toc_all.md` is the section's only TOC. Be aware that the publishing
-pipeline reads just its `# .NET Application`, `# Web Application` and
-`# Native Application` blocks; `# Get Started` and `# Reference` are not consumed
-today, so adding a page there alone will not make it appear on the site.
+`application/toc_all.md` remains the top-level information-architecture index and
+the fallback governing TOC for Application content. The publishing pipeline now
+reads section-local `toc.md` files for Overview, Get Started, Guides, Tutorials,
+and Reference. Keep the relevant local TOC in sync with `toc_all.md`; adding a
+page only to the top-level index does not publish it in one of those sections.
 
 ### `docs/sdk-tools/` (257 md)
 

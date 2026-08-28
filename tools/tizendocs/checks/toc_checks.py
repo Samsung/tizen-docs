@@ -17,9 +17,11 @@ DEPTH = "T-DEPTH"
 META = "T-META"
 META_SRC = "T-META-SRC"
 
-# A document absent from its TOC is not discoverable on the published site.
-# Landing pages are exempt because the site routes a directory to them.
-ORPHAN_EXEMPT = ("README.md", "index.md")
+# A document absent from its governing TOC is not discoverable in site
+# navigation. README files are repository instructions, not documents. Any
+# automatically navigated landing page must be declared in docscheck.toml;
+# ``index.md`` is intentionally not a blanket exemption.
+ORPHAN_EXEMPT = ("README.md",)
 
 
 def check_orphan(index, path, source):
@@ -30,21 +32,37 @@ def check_orphan(index, path, source):
     from a document body is real content that simply needs registering.
     """
     base = os.path.basename(path)
-    if base.startswith("toc") or base in ORPHAN_EXEMPT:
+    if (base.startswith("toc") or base in ORPHAN_EXEMPT
+            or index.config.automatic_landing(path)
+            or index.config.publication_exception(path)):
         return
-    if path in index.toc_targets:
+    section = index.config.publication_section(path)
+    all_tocs = index.toc_target_sources.get(path, ())
+    # Repositories which have not declared an owner retain the historic "any
+    # TOC" behaviour. The Tizen Docs configuration covers every public source
+    # family explicitly, so new pages in those families cannot escape the gate.
+    governing = section.governing_tocs if section else tuple(index.toc_files)
+    registered = tuple(toc for toc in all_tocs if toc in governing)
+    if registered:
         return
     inbound = [ref for ref in index.references_to(path)
                if not os.path.basename(ref.source).startswith("toc")]
-    if inbound:
-        related = tuple(f"referenced by {ref.source}:{ref.line}" for ref in inbound[:5])
-        message = (f"linked from no toc*.md, but referenced by {len(inbound)} "
-                   "document(s) - register it in the governing TOC")
+    details = {
+        "governing_tocs": list(governing),
+        "registered_tocs": list(all_tocs),
+        "inbound_links": len(inbound),
+        "recommended_section": (section.recommended_section if section else ""),
+    }
+    if all_tocs:
+        message = "registered only in a non-governing TOC; register it in the governing TOC"
+    elif inbound:
+        message = (f"referenced by {len(inbound)} document(s), but no governing "
+                   "TOC publishes it - register it in the governing TOC")
     else:
-        related = ()
-        message = ("linked from no toc*.md and referenced by no document - "
-                   "unreachable on the published site; delete or register it")
-    yield Finding(ERROR, ORPHAN, path, message, related=related)
+        message = ("not registered in a governing TOC and referenced by no "
+                   "document - register, retire, or add a reviewed exception")
+    related = tuple(f"referenced by {ref.source}:{ref.line}" for ref in inbound[:5])
+    yield Finding(ERROR, ORPHAN, path, message, related=related, data=details)
 
 
 def _tocs(index):

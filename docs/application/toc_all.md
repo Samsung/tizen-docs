@@ -293,16 +293,13 @@
 ## [Overview](/application/web/index.md)
 ## [API Overview](/application/web/overview/overview.md)
 
+## [Get Started](/application/web/get-started/index.md)
+
 ## Get Started with Visual Studio Code Extension
 ### [Web application development](/sdk-tools/vscode-ext/Tizen/web-app.md)
 
 ## Get Started with Visual Studio
 ### [Web application development](/sdk-tools/vstools/Tizen/web.md)
-
-## Get Started with Tizen Studio
-### [Overview](/application/web/get-started/overview.md)
-### [Create TV Web Application](/application/web/get-started/tv/first-app.md)
-### [Create Samsung Smart TV Web Application](/application/web/get-started/tv/first-samsung-tv-app.md)
 
 ## Tutorials
 ### [Overview](/application/web/tutorials/overview.md)
@@ -532,15 +529,13 @@
 ## [Overview](/application/native/index.md)
 ## [API Overview](/application/native/overview/overview.md)
 
+## [Get Started](/application/native/get-started/index.md)
+
 ## Get Started with Visual Studio Code Extension
 ### [Native application development](/sdk-tools/vscode-ext/Tizen/native.md)
 
 ## Get Started with Visual Studio
 ### [Native application development](/sdk-tools/vstools/Tizen/native.md)
-
-## Get Started with Tizen Studio
-### [Overview](/application/native/get-started/overview.md)
-### [Create IoT Native Service Application](/application/native/get-started/iot/first-app.md)
 
 ## Tutorials
 ### [Overview](/application/native/tutorials/overview.md)
@@ -637,6 +632,9 @@
 ### Graphics
 #### [Overview](/application/native/guides/graphics/overview.md)
 #### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
+
+### User Interface
+#### [Tizen Window System Shell](/application/native/guides/ui/tizen-ws-shell/index.md)
 
 ### Notifications and Content Sharing
 #### [Overview](/application/native/guides/notification/overview.md)

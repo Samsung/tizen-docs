@@ -10,6 +10,7 @@ been deleted upstream, and nothing in the toolkit would have said so.
 """
 import os
 import re
+from datetime import date
 
 from . import checks
 
@@ -60,6 +61,40 @@ def problems(index):
                 yield (f"[naming] legacy_directories: no directory named"
                        f" {name!r} exists - the name it exempted is gone,"
                        " so delete it")
+
+    # Publication ownership is a contract with the conversion pipeline. A
+    # typo silently makes every document in a section look unpublishable, so
+    # validate the declared TOCs and keep exemptions from becoming permanent.
+    for section in config.publication_sections:
+        if not section.patterns:
+            yield f"publication section {section.id}: match must not be empty"
+        elif not any(section.matches(path) for path in paths):
+            yield f"publication section {section.id}: match patterns match nothing"
+        for toc in section.governing_tocs:
+            if toc not in index.toc_files:
+                yield (f"publication section {section.id}: governing TOC does not "
+                       f"exist or is not a toc*.md: {toc}")
+
+    for landing, matcher in zip(config.automatic_landings,
+                                config._automatic_landing_matchers):
+        if not any(matcher.match(path) for path in paths):
+            yield f"publication automatic_landing matches nothing: {landing}"
+
+    for exception in config.publication_exceptions:
+        if not any(exception.matches(path) for path in paths):
+            yield ("publication exception matches nothing: "
+                   f"{', '.join(exception.patterns)}")
+        if not exception.reason.strip() or not exception.owner.strip():
+            yield "publication exception must declare a non-empty reason and owner"
+        try:
+            review = date.fromisoformat(str(exception.review_by))
+        except ValueError:
+            yield ("publication exception has an invalid review_by date: "
+                   f"{exception.review_by!r}")
+        else:
+            if review < date.today():
+                yield ("publication exception review_by has passed: "
+                       f"{exception.review_by}")
 
     known = set(checks.RULE_IDS)
     for rule in config.rules:

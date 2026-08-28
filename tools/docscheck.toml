@@ -173,3 +173,100 @@ legacy_directories = [
 # rewritten - and 65 more are in the features/ reference tables. Scoped to
 # changed files, the rule fixes a line when someone is already editing it.
 "L-FEATPRIV" = "changed-only"
+
+# ---------------------------------------------------------------------------
+# Publication ownership.
+#
+# ``toc_all.md`` is not automatically a publishing TOC. In particular the SDK
+# Tools copy jobs consume the six model/IDE TOCs below; its toc_all.md is IA
+# source material and cannot make a page reachable on tizen.dev. Keep a
+# section here whenever a publisher section is introduced.
+# ---------------------------------------------------------------------------
+
+[publication]
+automatic_landings = []
+
+[[publication.sections]]
+id = "application-flutter"
+match = ["docs/application/flutter/**"]
+governing_tocs = ["docs/application/flutter/toc.md"]
+recommended_section = "Application / Flutter"
+
+[[publication.sections]]
+id = "application"
+match = ["docs/application/**"]
+governing_tocs = ["docs/application/toc_all.md"]
+recommended_section = "Application"
+
+[[publication.sections]]
+id = "extensions-tizenx"
+match = ["docs/extensions/tizenx/**"]
+governing_tocs = ["docs/extensions/tizenx/guides/toc.md"]
+recommended_section = "Extensions / TizenX"
+
+[[publication.sections]]
+id = "sdk-tools"
+match = ["docs/sdk-tools/**"]
+governing_tocs = [
+  "docs/sdk-tools/toc_vscode_dotnet.md",
+  "docs/sdk-tools/toc_vscode_native.md",
+  "docs/sdk-tools/toc_vscode_web.md",
+  "docs/sdk-tools/toc_vs-ext_dotnet.md",
+  "docs/sdk-tools/toc_vs-ext_native.md",
+  "docs/sdk-tools/toc_vs-ext_web.md",
+]
+recommended_section = "SDK Tools (select the applicable model and IDE TOC)"
+
+[[publication.sections]]
+id = "platform-hal"
+match = ["docs/platform/HAL/**"]
+governing_tocs = ["docs/platform/HAL/toc.md"]
+recommended_section = "Platform / HAL"
+
+[[publication.sections]]
+id = "tizen-platform-overview"
+match = ["docs/platform/what-is-tizen/**"]
+governing_tocs = ["docs/platform/what-is-tizen/toc.md"]
+recommended_section = "Platform / Tizen Platform / Overview"
+
+[[publication.sections]]
+id = "tizen-platform-get-started"
+match = ["docs/platform/get-started/**"]
+governing_tocs = ["docs/platform/get-started/toc.md"]
+recommended_section = "Platform / Tizen Platform / Get Started"
+
+[[publication.sections]]
+id = "tizen-platform-developing"
+match = ["docs/platform/developing/**"]
+governing_tocs = ["docs/platform/developing/toc.md"]
+recommended_section = "Platform / Tizen Platform / Guides / Developing"
+
+[[publication.sections]]
+id = "tizen-platform-compliance"
+match = ["docs/platform/compliance/**"]
+governing_tocs = ["docs/platform/compliance/toc.md"]
+recommended_section = "Platform / Tizen Platform / Guides / Compliance"
+
+[[publication.sections]]
+id = "tizen-platform-porting"
+match = ["docs/platform/porting/**"]
+governing_tocs = ["docs/platform/porting/toc.md"]
+recommended_section = "Platform / Tizen Platform / Guides / Porting"
+
+[[publication.sections]]
+id = "tizen-platform-reference"
+match = ["docs/platform/reference/**"]
+governing_tocs = ["docs/platform/reference/toc.md"]
+recommended_section = "Platform / Tizen Platform / Reference"
+
+[[publication.sections]]
+id = "tizen-platform-release-notes"
+match = ["docs/platform/release-notes/**"]
+governing_tocs = ["docs/platform/release-notes/toc.md"]
+recommended_section = "Platform / Tizen Platform / Release Notes"
+
+[[publication.sections]]
+id = "shared-trademarks"
+match = ["docs/trademarks.md"]
+governing_tocs = ["docs/application/toc_all.md"]
+recommended_section = "Shared / Trademarks"

@@ -1,0 +1,11 @@
+# Porting
+## [Overview](/platform/porting/overview.md)
+## [Kernel](/platform/porting/kernel.md)
+## [System](/platform/porting/system.md)
+## [Graphics and UI](/platform/porting/graphics-and-ui.md)
+## [Recovery](/platform/porting/recovery.md)
+## [Multimedia](/platform/porting/multimedia.md)
+## [Connectivity](/platform/porting/connectivity.md)
+## [Location](/platform/porting/location.md)
+## [Telephony](/platform/porting/telephony.md)
+## [Application](/platform/porting/application.md)

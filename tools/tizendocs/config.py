@@ -87,6 +87,34 @@ class PathClass:
         return any(matcher.match(path) for matcher in self.matchers)
 
 
+class PublicationSection:
+    """The TOCs that can publish one family of hand-written documents."""
+
+    def __init__(self, data):
+        self.id = data["id"]
+        self.patterns = tuple(data.get("match", ()))
+        self.matchers = tuple(compile_glob(pattern) for pattern in self.patterns)
+        self.governing_tocs = tuple(data.get("governing_tocs", ()))
+        self.recommended_section = data.get("recommended_section", self.id)
+
+    def matches(self, path):
+        return any(matcher.match(path) for matcher in self.matchers)
+
+
+class PublicationException:
+    """A reviewed, time-bounded exception to the governing-TOC rule."""
+
+    def __init__(self, data):
+        self.patterns = tuple(data.get("match", ()))
+        self.matchers = tuple(compile_glob(pattern) for pattern in self.patterns)
+        self.reason = data["reason"]
+        self.owner = data["owner"]
+        self.review_by = data["review_by"]
+
+    def matches(self, path):
+        return any(matcher.match(path) for matcher in self.matchers)
+
+
 def rule_matches(rule, patterns):
     return any(fnmatch.fnmatchcase(rule, pattern) for pattern in patterns)
 
@@ -102,6 +130,14 @@ class Config:
         #: directory names that predate N-KEBAB-DIR. See legacy_directory().
         self.legacy_directories = tuple(
             data.get("naming", {}).get("legacy_directories", ()))
+        publication = data.get("publication", {})
+        self.publication_sections = [PublicationSection(entry) for entry in
+                                     publication.get("sections", ())]
+        self.publication_exceptions = [PublicationException(entry) for entry in
+                                       publication.get("exceptions", ())]
+        self.automatic_landings = tuple(publication.get("automatic_landings", ()))
+        self._automatic_landing_matchers = tuple(
+            compile_glob(pattern) for pattern in self.automatic_landings)
 
     # ---- path classification (first match wins) --------------------------
 
@@ -151,6 +187,20 @@ class Config:
         """Whether a link to *target* may point at a file that is not here."""
         return any(entry.matches(target)
                    for entry in self.classes if entry.link_policy == EXEMPT_EXISTENCE)
+
+    def publication_section(self, path):
+        """Return the publishing owner for *path*, if configured."""
+        return next((section for section in self.publication_sections
+                     if section.matches(path)), None)
+
+    def publication_exception(self, path):
+        """Return its reviewed exception, if one covers *path*."""
+        return next((entry for entry in self.publication_exceptions
+                     if entry.matches(path)), None)
+
+    def automatic_landing(self, path):
+        """Whether the publisher creates navigation for this landing page."""
+        return any(matcher.match(path) for matcher in self._automatic_landing_matchers)
 
     # ---- severities ------------------------------------------------------
 

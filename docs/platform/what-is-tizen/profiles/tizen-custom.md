@@ -14,7 +14,7 @@ Tizen supports the following environment for development:
 ## Develop applications for Tizen custom device
 To develop applications for Tizen custom device, refer to the following:
 - [Create Your First Tizen .NET Application](../../../application/dotnet/get-started/first-app.md)
-- [Create Your First Tizen Native Service Application](../../../application/native/get-started/iot/first-app.md)
+- [Native application development with VS Code](../../../sdk-tools/vscode-ext/Tizen/native.md)
 
 ## Create Tizen custom images
 Tizen provides a building block pool of components mainly based on the [Tizen Native API sets](../../../application/native/api/iot-headed/latest/index.html)
