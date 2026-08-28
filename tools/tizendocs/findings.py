@@ -42,6 +42,8 @@ class Finding:
     syntax: str = ""
     cause: str = ""
     related: tuple = field(default_factory=tuple)
+    #: Structured diagnostic context, primarily consumed by JSONL reports.
+    data: dict = field(default_factory=dict)
 
     @property
     def is_error(self):
@@ -63,4 +65,5 @@ class Finding:
                 data[name] = value
         if self.related:
             data["related"] = list(self.related)
+        data.update(self.data)
         return data

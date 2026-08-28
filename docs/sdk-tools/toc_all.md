@@ -64,10 +64,8 @@
 ##### [Install Tizen Studio](/sdk-tools/baseline-sdk/setup/install-sdk.md)
 ##### [Update Tizen Studio](/sdk-tools/baseline-sdk/setup/update-sdk.md)
 ##### [Hardware Accelerated Execution Manager](/sdk-tools/baseline-sdk/setup/hardware-accelerated-execution-manager.md)
-##### [CLI Installer](/sdk-tools/baseline-sdk/setup/cli-installer.md)
 
 #### [Configure the Package Manager](/sdk-tools/baseline-sdk/setup/advanced-configuration.md)
-#### [Uninstall Tizen Studio](/sdk-tools/baseline-sdk/setup/uninstall-sdk.md)
 
 ### Native Tools
 #### [Overview](/sdk-tools/baseline-sdk/native-tools/index.md)
@@ -78,7 +76,6 @@
 ##### [Project Explorer View](/sdk-tools/baseline-sdk/native-tools/project-explorer-view.md)
 ##### [Certificate Registration](/sdk-tools/baseline-sdk/common-tools/certificate-registration.md)
 ##### [Device Manager](/sdk-tools/baseline-sdk/common-tools/device-manager.md)
-##### [Connection Explorer View](/sdk-tools/baseline-sdk/common-tools/connection-explorer-view.md)
 
 #### Write and Edit Code
 ##### [Overview](/sdk-tools/baseline-sdk/native-tools/coding.md)
@@ -96,13 +93,10 @@
 ###### [Combine Screens from Multiple Applications](/sdk-tools/baseline-sdk/native-tools/ui-builder/combine-screens.md)
 
 ##### [EDC Editor](/sdk-tools/baseline-sdk/native-tools/edc-editor.md)
-##### [Component Designer](/sdk-tools/baseline-sdk/native-tools/component-designer.md)
 
 #### Configure Your App
 ##### [Overview](/sdk-tools/baseline-sdk/native-tools/configuring.md)
 ##### [Manifest Text Editor](/sdk-tools/baseline-sdk/native-tools/manifest-text-editor.md)
-##### [Metadata Element](/sdk-tools/baseline-sdk/native-tools/metadata-element.md)
-##### [Additional Manifest Elements](/sdk-tools/baseline-sdk/native-tools/manifest-elements.md)
 ##### [Resource Manager](/sdk-tools/baseline-sdk/native-tools/resource-manager.md)
 ##### [PO File Localization Editor](/sdk-tools/baseline-sdk/native-tools/po-file-editor.md)
 
@@ -116,10 +110,6 @@
 ###### [Advanced Tasks](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/advanced-tasks.md)
 ###### [Memory Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/memory-analysis.md)
 ###### [Thread Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/thread-analysis.md)
-###### [File Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/file-analysis.md)
-###### [Network Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/network-analysis.md)
-###### [OpenGL Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/opengl-analysis.md)
-###### [UI Hierarchy Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/ui-hierarchy-analysis.md)
 
 ##### [Call Stack View](/sdk-tools/baseline-sdk/native-tools/call-stack-view.md)
 ##### [Static Analyzer](/sdk-tools/baseline-sdk/native-tools/static-analyzer.md)
@@ -135,9 +125,6 @@
 ##### [Unit Test](/sdk-tools/baseline-sdk/native-tools/unit-test.md)
 
 #### CLI
-##### [Overview](/sdk-tools/baseline-sdk/native-tools/cli-overview.md)
-##### [Convert Projects for CLI](/sdk-tools/baseline-sdk/native-tools/project-conversion.md)
-##### [RPK Package](/sdk-tools/baseline-sdk/native-tools/rpk-package.md)
 
 #### [Keyboard Shortcuts](/sdk-tools/baseline-sdk/common-tools/keyboard-shortcuts.md)
 
@@ -238,47 +225,3 @@
 
 ### [Certificate Manager](/sdk-tools/vstools/tools/certificate-manager.md)
 ### [Device Manager](/sdk-tools/vstools/tools/device-manager.md)
-
-# Not On The Published Navigation
-
-These pages are part of the SDK tool documentation but no TOC that the
-publishing pipeline reads lists them, so they are not reachable from the site
-navigation today. They are recorded here so the tree has no undocumented page
-and `tools/check_docs.py` can tell a genuine orphan from a known one.
-
-Until 2026-08-26 they were masked by `application/toc_all_new.md`, a draft the
-pipeline never read; deleting it made them visible. Whether each should be
-published from a per-IDE TOC or removed is a content decision for the SDK team
-and is tracked separately -- do not treat this section as a permanent home.
-
-## Baseline SDK
-### [Package Manager](/sdk-tools/baseline-sdk/common-tools/package-manager.md)
-### [Configuring the Package Manager](/sdk-tools/baseline-sdk/common-tools/pkgmgr-advanced-configuration.md)
-### [Configuring Tizen Studio - providing two(Web/Native) contents on a single page simultaneously.](/sdk-tools/baseline-sdk/getting-started/configuring.md)
-### [Creating Application Projects](/sdk-tools/baseline-sdk/getting-started/creating-application-projects.md)
-### [Debug Your Application - providing two(Web/Native) contents on a single page simultaneously](/sdk-tools/baseline-sdk/getting-started/debug-app.md)
-### [Edit Code - providing two(Web/Native) contents on a single page simultaneously.](/sdk-tools/baseline-sdk/getting-started/edit-code.md)
-### [Importing Tizen Studio - providing two(Web/Native) contents on a single page simultaneously.](/sdk-tools/baseline-sdk/getting-started/import.md)
-### [Test Profile App - providing two(Web/Native) contents on a single page simultaneously.](/sdk-tools/baseline-sdk/getting-started/test-profile-app.md)
-### [View Composition - Supporting Tools Menu](/sdk-tools/baseline-sdk/getting-started/view-composition-supporting-tools-menu.md)
-### [Install Samsung Certificate Extension for TV](/sdk-tools/baseline-sdk/setup/tv-certificate-extension.md)
-
-## Visual Studio Code Extension for Tizen
-### [Configuring App](/sdk-tools/vscode-ext/getting-started/configuring-app-signing.md)
-### [Configuring .NET Workload & Add NuGet Source](/sdk-tools/vscode-ext/getting-started/configuring-app-workload-nuget.md)
-### [Create application](/sdk-tools/vscode-ext/getting-started/creating-application-projects.md)
-### [Debugger Setting (.Net/Web/Native)](/sdk-tools/vscode-ext/getting-started/debug-app.md)
-### [Edit Code(Build, Install & Normal Run)](/sdk-tools/vscode-ext/getting-started/edit-code.md)
-### [Test Profile App (ASAN/LSAN)](/sdk-tools/vscode-ext/getting-started/test-profile-app/asan-lsan.md)
-### [Get Started with Performance Profiling](/sdk-tools/vscode-ext/getting-started/test-profile-app/profiling.md)
-### [Get Unit Test Information with Code Coverage](/sdk-tools/vscode-ext/getting-started/test-profile-app/unit-test-code-coverage.md)
-### [Address Sanitizer](/sdk-tools/vscode-ext/tools/address-sanitizer.md)
-### [Core Profiler](/sdk-tools/vscode-ext/tools/core-profiler.md)
-### [Leak Sanitizer](/sdk-tools/vscode-ext/tools/leak-sanitizer.md)
-### [Legacy Memory Profiler](/sdk-tools/vscode-ext/tools/memory-profiler.md)
-### [Get Unit Test Information with Code Coverage](/sdk-tools/vscode-ext/tools/unit-test-code-coverage.md)
-### [Install TV extension & certificate extenstion guide](/sdk-tools/vscode-ext/tv-certificate-extension.md)
-
-## Visual Studio Tools for Tizen
-### [Debugging Tizen Application](/sdk-tools/vstools/getting-started/debug-app.md)
-### [Test Profile App Unit Test Code Coverage](/sdk-tools/vstools/getting-started/test-profile-app-unit-test-code-coverage.md)

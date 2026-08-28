@@ -225,6 +225,6 @@ You can use shell commands to install, uninstall, update, and launch application
 
 The introduction to native applications documentation provides overall information you need to become familiar with native-specific Tizen programming and the Tizen application model:
 
-- [Get Started](get-started/overview.md)
+- [Native application development with VS Code](../../sdk-tools/vscode-ext/Tizen/native.md)
 
-    Demonstrates how you can create your first simple native application.
+    Explains how to create, build, run, and debug a native application.

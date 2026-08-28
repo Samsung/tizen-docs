@@ -50,7 +50,8 @@ def apply(findings, entries):
             out.append(Finding(
                 WARN, finding.rule, finding.path,
                 f"{finding.message}  [baselined]", finding.line, finding.col,
-                finding.fix, finding.syntax, finding.cause, finding.related))
+                finding.fix, finding.syntax, finding.cause, finding.related,
+                finding.data))
         else:
             out.append(finding)
     unmatched = [entry for entry, hits in remaining.items() if hits == 0]

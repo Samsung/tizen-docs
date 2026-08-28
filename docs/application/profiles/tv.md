@@ -22,16 +22,13 @@ Explore more about the Tizen TV .NET application development:
 You can create rich web applications that consist of HTML, JavaScript, and CSS that are combined in a package.
 
 To begin your Tizen Web application development journey, use the following quick start guides:
--   [TV Web application](../web/get-started/tv/first-app.md)
--   [Samsung Smart TV Web application](../web/get-started/tv/first-samsung-tv-app.md)
+-   [Web application development with VS Code](../../sdk-tools/vscode-ext/Tizen/web-app.md)
 
-Ensure that you have installed the latest version of [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download).
+See the [VS Code Extension for Tizen overview](../../sdk-tools/vscode-ext/overview.md) for setup information.
 
 Explore more about the Tizen TV web application development:
 -   [Tutorials](../web/tutorials/overview.md)
 -   [Guides](../web/guides/index.md)
 -   [API reference](../web/api/index.md)
-
-
 
 

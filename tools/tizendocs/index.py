@@ -35,6 +35,7 @@ class DocsIndex:
         self._files = None
         self._toc_files = None
         self._toc_targets = None
+        self._toc_target_sources = None
         self._in_edges = None
 
     # ---- filesystem -----------------------------------------------------
@@ -224,3 +225,17 @@ class DocsIndex:
                     targets.add(paths.resolve(toc, raw))
             self._toc_targets = targets
         return self._toc_targets
+
+    @property
+    def toc_target_sources(self):
+        """Map a TOC target to every ``toc*.md`` that registers it."""
+        if self._toc_target_sources is None:
+            sources = collections.defaultdict(set)
+            for toc in self.toc_files:
+                for match in markdown.LINK.finditer(self.source(toc).text):
+                    raw, _ = markdown.split_fragment(match.group(1).strip("<> "))
+                    if raw and not markdown.is_external(raw):
+                        sources[paths.resolve(toc, raw)].add(toc)
+            self._toc_target_sources = {
+                target: tuple(sorted(tocs)) for target, tocs in sources.items()}
+        return self._toc_target_sources

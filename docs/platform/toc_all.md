@@ -85,20 +85,6 @@
 ### [MIC Reference](/platform/reference/mic/mic-reference.md)
 ### [FAQ](/platform/reference/mic/mic-faq.md)
 
-## Tizen Studio
-### [Overview](/platform/reference/tizen-studio/overview.md)
-### [Contributing to Tizen Studio](/platform/reference/tizen-studio/contribute-gerrit.md)
-### Developing Extensions
-#### [IDE Extension Development](/platform/reference/tizen-studio/web-extension-guide.md)
-#### [Emulator Extension Development](/platform/reference/tizen-studio/emulator-extension-guide.md)
-#### [Package File Description](/platform/reference/tizen-studio/package-file-desc-guide.md)
-#### [Metapackage File Description](/platform/reference/tizen-studio/meta-package.md)
-### Building Tizen Studio Code
-#### [Build Environment](/platform/reference/tizen-studio/environment.md)
-#### [Local Build Guide](/platform/reference/tizen-studio/local-build.md)
-### [Modifying Certificate Manager Texts](/platform/reference/tizen-studio/example-web-certi-ext.md)
-### [Modifying Eclipse Themes](/platform/reference/tizen-studio/example-web-theme-ext.md)
-
 ## [Tizen Image Creator FAQ](/platform/reference/tic-faq.md)
 ## [Set up docker](/platform/reference/set-up-docker.md)
 # Release Notes
@@ -113,13 +99,13 @@
 ## [Tizen 6.5 Public M2](/platform/release-notes/tizen-6-5-m2.md)
 ## [Tizen 6.5 Public M1](/platform/release-notes/tizen-6-5-m1.md)
 ## [Tizen 6.0 Public M2](/platform/release-notes/tizen-6-0-m2.md)
-## [Tizen 5.5 Public M3](/platform/release-notes/tizen-5-5-m3.md)
 ## [Tizen 6.0 Public M1](/platform/release-notes/tizen-6-0-m1.md)
+## [Tizen 5.5 Public M3](/platform/release-notes/tizen-5-5-m3.md)
 ## [Tizen 5.5 Public M2](/platform/release-notes/tizen-5-5-m2.md)
 ## [Tizen 5.5 Public M1](/platform/release-notes/tizen-5-5-m1.md)
 ## [Tizen 5.0 Public M2](/platform/release-notes/tizen-5-0-m2.md)
-## [Tizen 4.0 Public M3](/platform/release-notes/tizen-4-0-m3.md)
 ## [Tizen 5.0 Public M1](/platform/release-notes/tizen-5-0-m1.md)
+## [Tizen 4.0 Public M3](/platform/release-notes/tizen-4-0-m3.md)
 ## [Tizen 4.0 Public M2](/platform/release-notes/tizen-4-0-m2.md)
 ## [Tizen 4.0 Public M1](/platform/release-notes/tizen-4-0-m1.md)
 ## [Tizen 3.0 Public M4](/platform/release-notes/tizen-3-0-m4.md)

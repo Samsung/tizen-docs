@@ -105,3 +105,49 @@ def test_legacy_directory_matches_exact_names_only():
     assert not config.legacy_directory("hal")
     assert not config.legacy_directory("HALO")
     assert not config.legacy_directory("my-HAL")
+
+
+def test_publication_section_and_reviewed_exception():
+    cfg = config(publication={
+        "sections": [{"id": "guides", "match": ["docs/guides/**"],
+                      "governing_tocs": ["docs/guides/toc.md"]}],
+        "exceptions": [{"match": ["docs/guides/legacy.md"],
+                        "reason": "migration", "owner": "docs@example.invalid",
+                        "review_by": "2027-01-01"}],
+        "automatic_landings": ["docs/guides/index.md"],
+    })
+    assert cfg.publication_section("docs/guides/a.md").id == "guides"
+    assert cfg.publication_exception("docs/guides/legacy.md").owner == "docs@example.invalid"
+    assert cfg.automatic_landing("docs/guides/index.md")
+
+
+def test_index_records_every_toc_that_registers_a_target(tmp_path):
+    from tizendocs.index import DocsIndex
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "docs" / "page.md").write_text("# Page\n", encoding="utf-8")
+    (tmp_path / "docs" / "toc.md").write_text("# [Page](page.md)\n", encoding="utf-8")
+    (tmp_path / "docs" / "toc_other.md").write_text("# [Page](page.md)\n", encoding="utf-8")
+    index = DocsIndex(root=str(tmp_path), config=Config({}))
+    assert index.toc_target_sources["docs/page.md"] == (
+        "docs/toc.md", "docs/toc_other.md")
+
+
+def test_orphan_requires_a_governing_toc_and_reports_context(tmp_path):
+    from tizendocs.checks.toc_checks import check_orphan
+    from tizendocs.index import DocsIndex
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "docs" / "page.md").write_text("# Page\n", encoding="utf-8")
+    (tmp_path / "docs" / "toc_all.md").write_text("# [Page](page.md)\n", encoding="utf-8")
+    (tmp_path / "docs" / "toc.md").write_text("# Empty\n", encoding="utf-8")
+    cfg = Config({"publication": {"sections": [{
+        "id": "published", "match": ["docs/**"],
+        "governing_tocs": ["docs/toc.md"], "recommended_section": "Guides",
+    }]}})
+    index = DocsIndex(root=str(tmp_path), config=cfg)
+    finding = next(check_orphan(index, "docs/page.md", index.source("docs/page.md")))
+    assert finding.data == {
+        "governing_tocs": ["docs/toc.md"],
+        "registered_tocs": ["docs/toc_all.md"],
+        "inbound_links": 0,
+        "recommended_section": "Guides",
+    }

@@ -24,10 +24,10 @@ Ensure that you have installed the latest version of [Visual Studio Tools for Ti
 
 You can create rich applications in C to run on Raspberry Pi with various interfaces to the device hardware.
 
-To begin your Tizen Native service application development journey, use the following quick start guide:
+To begin your Tizen Native service application development journey, use the current VS Code guide:
 
-- [IoT Native Service application](../native/get-started/iot/first-app.md)
+- [Native application development](../../sdk-tools/vscode-ext/Tizen/native.md)
 
-    An IoT native service application can be created using the C language and is targeted to run on Raspberry Pi. The application uses the Native APIs, which provide various interfaces to the device hardware, allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
+    Native service applications use C and the Native APIs to access device capabilities.
 
-Ensure that you have installed the latest version of [Tizen Studio](../../sdk-tools/baseline-sdk/index.md).
+See the [VS Code Extension for Tizen overview](../../sdk-tools/vscode-ext/overview.md) for setup information.
