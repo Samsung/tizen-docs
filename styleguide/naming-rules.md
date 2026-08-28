@@ -21,7 +21,7 @@ The compound nouns consist of Brand + Feature + Type + Suffix.
 2. Profile name or device brand related to the function of a hardware device  
      A brand name of the device comes for the 1st layer.  
 
-     e.g. Tizen TV, Tizen Wearable, Tizen IoT, Tizen IVI
+     e.g. Tizen TV, Tizen IoT, Tizen IVI
 
 3. Application type
 
@@ -56,9 +56,7 @@ Each product is to use the exact service/product type name.
 
 The following nouns are proper nouns:
 - Tizen
-- Tizen Mobile
 - Tizen TV
-- Tizen Wearable
 - Tizen IoT
 - Tizen IVI
 - Tizen .NET
@@ -75,9 +73,7 @@ The following nouns are proper nouns:
 
 1. Do use without 'the' when you use the following nouns alone:
       - Tizen, Tizen 3.x, 4.x, 5.x
-      - Tizen Mobile, Tizen Mobile 3.x, 4.x, 5.x
       - Tizen TV
-      - Tizen Wearable
       - Tizen IoT
       - Tizen IVI
       - Tizen .NET
@@ -96,5 +92,5 @@ The following nouns are proper nouns:
 3. Do use 'the' when the proper nouns are used with common nouns.
 
       - The Tizen Studio menu,
-      - The Tizen Mobile profile
+      - The Tizen TV profile
       - etc.

@@ -23,10 +23,7 @@ application is using, do one of the following:
 
     For example, if an application wants to use location information, it
     can check the device capability by using the `system_info_get_XXX()`
-    function of the System Information API (in
-    [mobile](../api/mobile/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html)
-    and
-    [wearable](../api/wearable/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html) applications).
+    function of the System Information API ([API reference](../api/common/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html)).
     If the device supports GPS, the application uses GPS information,
     and if the device supports WPS only, the application uses WPS
     information instead of GPS.

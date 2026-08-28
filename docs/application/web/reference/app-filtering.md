@@ -22,11 +22,8 @@ application is using, do one of the following:
 
     For example, if an application wants to use location information, it
     can check the device capability by using the `getCapability()`
-    method of the `SystemInfo` interface (in
-    [mobile](../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo),
-    [wearable](../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfo),
-    and
-    [TV](../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfo) applications).
+    method of the [`SystemInfo`](../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfo)
+    interface.
     If the device supports GPS, the application uses GPS information,
     and if the device supports WPS only, the application uses WPS
     information instead of GPS.
@@ -188,16 +185,3 @@ The official site for Tizen applications compares the device profile and the `pr
 element in an application. The store only shows the applications with a
 profile name matching the device profile to prevent unsupported
 applications from being installed.
-
-<a name="multi_profile"></a>
-## Single Web application for multiple profiles
-
-Applications are created for a single specific target profile and can
-only run on devices compliant to that profile. However, it is easily
-possible to develop a Web application on one profile and make it work on
-another profile if you use Web APIs that are common to both the
-profiles. You simply modify the ` <tizen:profile>` tag to switch
-profiles. You may also have to make other changes, like adapting your
-application to different screen sizes and input events. It is
-recommended that you test this modified application to ensure it
-performs as desired.

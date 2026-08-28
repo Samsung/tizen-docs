@@ -4,8 +4,6 @@ The **Project Explorer** view allows you to view and manage Tizen projects. You 
 
 **Figure: Project Explorer**
 
-![Project Explorer](./media/proj_explorer_w.png)
-
 In this view, you can:
 
 - Browse the file elements
@@ -31,8 +29,6 @@ Usually, the **Project Explorer** view is located in the upper-left side of Tize
 The files that you select in the **Project Explorer** view affect the information that is displayed in the other views. You can execute and set some operations and configurations by clicking the icons (![Toolbar icons](./media/proj_explorer_op_config.png)) in the toolbar.
 
 **Figure: Executing operations**
-
-![Executing operations](./media/proj_explorer_right_click_w.png)
 
 To execute operations, such as copying, moving, creating new resources, and comparing resources with each other, right-click on any resource in the **Project Explorer** view, and select the desired action in the context menu. The items in the context menu depend on the focused item. Different folder and file types have different action options.
 

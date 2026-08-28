@@ -6,8 +6,7 @@
             "api": {
                 "from": "4.0"
             },
-            "namespaces": ["Tizen.Messaging", "Tizen.Messaging.Push"],
-            "profiles": ["mobile", "wearable"]
+            "namespaces": ["Tizen.Messaging", "Tizen.Messaging.Push"]
         },
         "auto": {
             "topics": ["sample"]

@@ -3,15 +3,7 @@
 
 Tizen enables your application to manage video content and provides
 control functions for using video resources. To play and record video
-files, use the Player (in
-[mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-applications) and Recorder (in
-[mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-applications) APIs. Managing video files is very similar to managing
+files, use the Player ([API reference](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)) and Recorder ([API reference](../../api/common/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)) APIs. Managing video files is very similar to managing
 audio content, but it requires more consideration to display the visual
 content.
 
@@ -21,11 +13,7 @@ MKV, and OGG. The available formats depend on the target device.
 
 ## Playing Video
 
-To play video files stored on the device, use the Player API (in
-[mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-applications). The Player API also provides interfaces for getting media
+To play video files stored on the device, use the Player API ([API reference](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)). The Player API also provides interfaces for getting media
 content information and controlling media operations, such as play,
 pause, resume, and stop.
 
@@ -57,11 +45,7 @@ interruptions, ends, and errors during playback.
 To prepare the player for playback, and to define the necessary
 callbacks to handle playback events:
 
-1.  To use the data types and functions of the Player API (in
-    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-    applications), include the `<player.h>` header file in your
+1.  To use the data types and functions of the Player API ([API reference](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)), include the `<player.h>` header file in your
     application:
 
     ```c++
@@ -324,10 +308,7 @@ To configure the display settings:
 2. Set the display mode.
 
     The available display modes are defined in the
-    `player_display_mode_e` enumeration (in
-    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gaafcf6f7487d8cb376e1851a6e1253f3a)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gaafcf6f7487d8cb376e1851a6e1253f3a) applications).
+    `player_display_mode_e` enumeration ([API reference](../../api/common/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gaafcf6f7487d8cb376e1851a6e1253f3a)).
     Note that the DST ROI mode is deprecated since Tizen 3.0.
 
     ```c++
@@ -338,10 +319,7 @@ To configure the display settings:
 3. Set the display orientation.
 
     The display orientations are defined in the
-    `player_display_rotation_e` enumeration (in
-    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gab8c4c170d4b2628a09831edc8d652302)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gab8c4c170d4b2628a09831edc8d652302) applications).
+    `player_display_rotation_e` enumeration ([API reference](../../api/common/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gab8c4c170d4b2628a09831edc8d652302)).
 
     ```c++
     error_code = player_set_display_rotation(ad->player, PLAYER_DISPLAY_ROTATION_90);
@@ -369,11 +347,7 @@ if (error_code != PLAYER_ERROR_NONE)
 
 ## Recording Video
 
-To record video, use the Recorder API (in
-[mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-applications). The main features of the Recorder API include:
+To record video, use the Recorder API ([API reference](../../api/common/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)). The main features of the Recorder API include:
 
 -   Basic recording functionalities: record, stop, pause, cancel, and
     mute
@@ -393,11 +367,7 @@ The following figure illustrates the general recorder state changes.
 To prepare the recorder for the recording session, and to define the
 necessary callbacks to handle recording events:
 
-1.  To use the data types and functions of the Recorder API (in
-    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-    applications), include the `<recorder.h>` header file in your
+1.  To use the data types and functions of the Recorder API ([API reference](../../api/common/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)), include the `<recorder.h>` header file in your
     application:
 
     ```c++
@@ -496,10 +466,7 @@ necessary callbacks to handle recording events:
         device supports by calling the
         `recorder_foreach_supported_video_encoder()` function. The
         possible video codec values are defined in the
-        `recorder_video_codec_e` enumeration (in
-        [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#gaaf3f0deeb1717f568e2b93bb9a375b63)
-        and
-        [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#gaaf3f0deeb1717f568e2b93bb9a375b63) applications).
+        `recorder_video_codec_e` enumeration ([API reference](../../api/common/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#gaaf3f0deeb1717f568e2b93bb9a375b63)).
         Using the returned value and the `recorder_set_video_encoder()`
         function, you can set the video recorder codec:
 

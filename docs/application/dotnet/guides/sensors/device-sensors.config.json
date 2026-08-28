@@ -6,8 +6,7 @@
             "api": {
                 "from": "4.0"
             },
-            "namespaces": ["Tizen.Sensor"],
-            "profiles": ["mobile", "wearable"]
+            "namespaces": ["Tizen.Sensor"]
         },
         "auto": {
             "topics": ["sample"]

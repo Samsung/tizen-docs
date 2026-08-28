@@ -141,8 +141,6 @@ SDB is a device management tool used for remote shell command, file transfer, co
 - To use SDB, you must install a kernel driver.
 
     For example:
-    - [Gadget Driver for SLP based on Android](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/linux-3.10-sc7730.git;a=blob;f=drivers/usb/gadget/slp.c;h=c0d935f5362cc5ae03807d3533fe84df88e8c354;hb=refs/heads/accepted/tizen_mobile)
-    - [Gadget Driver for Samsung SDB (based on Android ADB)](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/linux-3.10-sc7730.git;a=blob;f=drivers/usb/gadget/f_sdb.c;h=7f334ba01139d6bcbe7668bd84582e078d563638;hb=refs/heads/accepted/tizen_mobile)
 
 - To recognize the target as a Tizen device, the SDB interface on the target device must have the following information in the USB interface descriptor:
     ```

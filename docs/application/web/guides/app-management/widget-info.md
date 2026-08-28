@@ -204,7 +204,7 @@ Using the `WidgetInstance` interface, you can:
 - Send or get content to and from the widget instance.
 
 > [!NOTE]
-> These features are not supported by Web widgets. You can only use them in Web applications to manage installed widgets. For more information, see [Web Device API supported by Widget Engine](../../api/latest/wearable_widget/web_widget.html#user-content-web-device-api).
+> These features are not supported by Web widgets. You can only use them in Web applications to manage installed widgets.
 
 <a name="period"></a>
 ### Change the update period

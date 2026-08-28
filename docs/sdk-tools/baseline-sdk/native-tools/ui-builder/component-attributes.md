@@ -60,7 +60,6 @@ The `<configuration>` element is placed as a child of the `<mscreen>` element. T
 | `id`          | Identification for the configuration     |
 | `name`        | Name of the display                      |
 | `type`        | Whether the configuration is `specific` or `common` |
-| `device`      | Supported device:<br> - Mobile: `HD`, `WVGA`<br> - Wearable square: `SQUARE_320x320`<br> - Wearable circle: `CIRCLE_360x360` |
 | `orientation` | `portrait` or `landscape`                |
 
 ### Variation

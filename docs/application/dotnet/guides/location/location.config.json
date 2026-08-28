@@ -6,8 +6,7 @@
             "api": {
                 "from": "4.0"
             },
-            "namespaces": ["Tizen.Location"],
-            "profiles": ["mobile", "wearable"]
+            "namespaces": ["Tizen.Location"]
         },
         "auto": {
             "topics": ["sample"]

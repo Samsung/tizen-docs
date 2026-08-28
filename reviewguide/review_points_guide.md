@@ -273,29 +273,10 @@ Related information section is to list up the additional link that user can read
 
   This section shows **the least support Tizen Platform version**.
 
-  - .NET guides
+  Use one dependency line unless the document needs to distinguish currently supported profiles.
 
-    .Net guide doesn't require profile, so only 1 line is needed.
+  - Tizen X.X and Higher
 
-     - Tizen X.X and Higher
+    **Example:**
 
-       **Example :**
-
-       ![Dependencies in .NET](./media/guide_dotnet_dependencies.png)
-  - Native / Web guides
-
-    There are 2 profiles, Mobile and Wearable. So 2 lines are needed.
-
-    - Tizen X.X and Higher for Mobile
-
-    - Tizen X.X and Higher for Wearable
-
-      **Example :**
-
-      ![Dependencies in Native and Web](./media/guide_native_web_dependencies.png)
-
-      When only one profile is needed, listing that profile only is enough.
-
-      **Example :**
-
-      ![One profile in dependencies](./media/guide_one_profile.png)
+    ![Dependencies](./media/guide_dotnet_dependencies.png)

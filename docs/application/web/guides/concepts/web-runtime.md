@@ -221,95 +221,11 @@ privilege level behavior mapping.
 
 <td>
 
-Geolocation (in **mobile and wearable applications only**)</td>
-<td>
-
-`http://tizen.org/privilege/location`</td>
-<td>
-
-**Local domain**: Grant permission if defined, otherwise block execution.<br>
-**Remote domain**: Popup user prompt if defined, otherwise block execution.
-</td>
-</tr>
-<tr>
-
-<td>
-
-Getusermedia (in **mobile and wearable applications only**)</td>
-<td>
-
-`http://tizen.org/privilege/mediacapture`</td>
-<td>
-
-**Local domain**: Grant permission if defined, otherwise block execution.<br>
-**Remote domain**: Popup user prompt if defined, otherwise block execution.
-</td>
-</tr>
-<tr>
-
-<td>
-
-Web Notifications (in **mobile applications only**)</td>
-<td>
-
-`http://tizen.org/privilege/notification`</td>
-<td>
-
-**Local domain**: Grant permission if defined, otherwise popup user prompt.<br>
-**Remote domain**: Popup user prompt.
-</td>
-</tr>
-<tr>
-
-<td>
-
-Storage (in **mobile and wearable applications only**)<br>(IndexedDB, FileSystem capacity, quota exceeding WebDatabase)
-</td>
-<td>
-
-`http://tizen.org/privilege/unlimitedstorage`</td>
-<td>
-
-**Local domain**: Grant permission if defined, otherwise popup user prompt.<br>
-**Remote domain**: Popup user prompt.
-</td>
-</tr>
-<tr>
-
-<td>
-
-FullScreen (in **mobile and TV applications only**)</td>
+FullScreen (in **TV applications only**)</td>
 <td>
 
 `http://tizen.org/privilege/fullscreen`</td>
 <td>If defined, launch in fullscreen mode. If not defined, launch fullscreen mode according to user input (which depends on the content).</td>
-</tr>
-<tr>
-<td>
-
-Audio Recording (in **wearable applications only**)</td>
-<td>
-
-`http://tizen.org/privilege/audiorecorder`</td>
-<td>
-
-**Local domain**: Grant permission if defined, otherwise block execution.<br>
-**Remote domain**: Block execution.
-</td>
-</tr>
-<tr>
-
-<td>
-
-Video Recording (in **wearable applications only**)</td>
-<td>
-
-`http://tizen.org/privilege/camera`</td>
-<td>
-
-**Local domain**: Grant permission if defined, otherwise block execution.<br>
-**Remote domain**: Block execution.
-</td>
 </tr>
 </table>
 
@@ -412,10 +328,7 @@ Web application configuration can include 1 or more
 `<tizen:allow-navigation>` elements. If these are included, the Web
 application is set to the **CSP-based security mode**.
 
-In the CSP-based security mode, the Web Runtime provides content
-security as per **Content Security Policy Level 2** (in mobile
-applications) and **Content Security Policy 1.0** (in wearable
-applications). CSP policies can be delivered from the following sources:
+In the CSP-based security mode, CSP policies can be delivered from the following sources:
 
 -   Default policy (enforced by WRT, if required):
     `default-src *; script-src 'self'; style-src 'self'; object-src 'none';`

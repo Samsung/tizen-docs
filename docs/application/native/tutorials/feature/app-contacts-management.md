@@ -95,18 +95,7 @@ You can retrieve person details in many ways:
         Conditions can be joined by using the logical operators `AND`
         and `OR`. For contact filters, there are enumerations of
         operators and conditions for each type:
-        `contacts_filter_operator_e` (in
-        [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga2111e378d844cc7659ed5b4ff96bc433)
-        and
-        [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga2111e378d844cc7659ed5b4ff96bc433)
-        applications), `contacts_match_int_flag_e` (in
-        [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#gad0453305468fab6453b07183e31628ba)
-        and
-        [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#gad0453305468fab6453b07183e31628ba)
-        applications), and `contacts_match_str_flag_e` (in
-        [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga5a4ee5c71ae14d0fbf7520597514f0c2)
-        and
-        [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga5a4ee5c71ae14d0fbf7520597514f0c2) applications).
+        `contacts_filter_operator_e` ([API reference](../../api/common/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga2111e378d844cc7659ed5b4ff96bc433)), `contacts_match_int_flag_e` ([API reference](../../api/common/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#gad0453305468fab6453b07183e31628ba)), and `contacts_match_str_flag_e` ([API reference](../../api/common/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga5a4ee5c71ae14d0fbf7520597514f0c2)).
 
     The following code demonstrates how to retrieve the contacts
     associated with a person using queries and filters. As a person can
@@ -414,10 +403,7 @@ the handle:
 
         An event consists of a type, date, and other properties. You can
         set various types of events, as defined in the
-        `contacts_event_type_e` enumeration (in
-        [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#ga434cc4b7cec62ccab70fa4825ce0801d)
-        and
-        [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#ga434cc4b7cec62ccab70fa4825ce0801d) applications).
+        `contacts_event_type_e` enumeration ([API reference](../../api/common/latest/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#ga434cc4b7cec62ccab70fa4825ce0801d)).
         If the event type is `CUSTOM`, you can set a custom label for
         the event using the `_contacts_event.label` property.
 

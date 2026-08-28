@@ -19,15 +19,9 @@ To create a native application project:
 
    b. Select the profile and version from a drop-down list and click **Next**.
 
-      ![Selecting the profile and version](media/create_project_wizard_version_wearable.png)
-
    c. Select the **Native Application** application type and click **Next**.
 
-      ![Selecting the application type](media/create_project_wizard_app_wearable.png)
-
    d. Select the template you want to use and click **Next**.
-
-      ![Selecting the template](media/create_project_wizard_template_wn.png)
 
    e. Define the project properties and click **Finish**.
 
@@ -35,8 +29,6 @@ To create a native application project:
 
       > **Note**  
       > The Tizen API names cannot be used as project names. The project name must be more than 2 characters and is restricted to the following regular expression: [a-zA-Z][a-zA-Z0-9-]{2,49}.
-
-      ![Defining properties](media/create_project_wizard_properties_wn.png)
 
       The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../../sdk-tools/baseline-sdk/native-tools/project-wizard.md).
 

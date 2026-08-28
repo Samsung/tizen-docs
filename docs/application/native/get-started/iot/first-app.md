@@ -67,11 +67,7 @@ To create the application project:
 
         The version depends on the platform version you have installed and with which you are developing the application.
 
-        ![Selecting the profile and version](media/create_project_wizard_version.png)
-
     3. Select the **Native Application** application type, and click **Next**.
-
-        ![Selecting the application type](media/create_project_wizard_app.png)
 
     4. Select the **Service** template, and click **Next**.
 
@@ -289,4 +285,3 @@ To run the application on a Raspberry Pi:
     > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.
     >    ![Run Configurations window](media/run_configurations.png)
-

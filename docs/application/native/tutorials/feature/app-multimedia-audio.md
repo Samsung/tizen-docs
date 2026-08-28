@@ -12,11 +12,7 @@ WAV, and AMR. The available formats depend on the target device.
 
 ## Playing Audio
 
-To play audio files stored on the device, use the Player API (in
-[mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-applications). The Player API also provides interfaces for getting
+To play audio files stored on the device, use the Player API ([API reference](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)). The Player API also provides interfaces for getting
 content information and controlling operations, such as playback, pause,
 resume, and stop.
 
@@ -37,11 +33,7 @@ interruptions, ends, and errors during playback.
 To prepare the player for playback, and to define the necessary
 callbacks to handle playback events:
 
-1.  To use the data types and functions of the Player API (in
-    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
-    applications), include the `<player.h>` header file in your
+1.  To use the data types and functions of the Player API ([API reference](../../api/common/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)), include the `<player.h>` header file in your
     application:
 
     ```c++
@@ -294,11 +286,7 @@ if (error_code != PLAYER_ERROR_NONE)
 
 ## Recording Audio
 
-To record audio, use the Recorder API (in
-[mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-and
-[wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-applications). The main features of the Recorder API include:
+To record audio, use the Recorder API ([API reference](../../api/common/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)). The main features of the Recorder API include:
 
 -   Basic recording functionalities: record, stop, pause, cancel, and
     mute
@@ -318,11 +306,7 @@ The following figure illustrates the general recorder state changes.
 To prepare the recorder for the recording session, and to define the
 necessary callbacks to handle recording events:
 
-1.  To use the data types and functions of the Recorder API (in
-    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-    and
-    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
-    applications), include the `<recorder.h>` header file in your
+1.  To use the data types and functions of the Recorder API ([API reference](../../api/common/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)), include the `<recorder.h>` header file in your
     application:
 
     ```c++
@@ -379,10 +363,7 @@ necessary callbacks to handle recording events:
     -   Set the audio codec for encoding the audio stream using the
         `recorder_set_audio_encoder()` function. The possible audio
         codec values are defined in the `recorder_audio_codec_e`
-        enumeration (in
-        [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46)
-        and
-        [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) applications).
+        enumeration ([API reference](../../api/common/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46)).
 
         ```c++
         #define FILENAME_PREFIX "AUDIO"
@@ -399,10 +380,7 @@ necessary callbacks to handle recording events:
         file format based on the audio codec. For example, if you set
         the codec to AAC, set the file format to 3GP. The possible file
         format values are defined in the `recorder_file_format_e`
-        enumeration (in
-        [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e)
-        and
-        [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) applications).
+        enumeration ([API reference](../../api/common/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e)).
 
         ```c++
         /* Set the file format according to the audio encoder */
@@ -432,10 +410,7 @@ necessary callbacks to handle recording events:
 
     - Set the file size limit, encoder bitrate, audio device, and
         sample rate. The possible audio device values are defined in the
-        `recorder_audio_device_e` enumeration (in
-        [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3)
-        and
-        [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3) applications).
+        `recorder_audio_device_e` enumeration ([API reference](../../api/common/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3)).
 
         ```c++
         /* Set the maximum file size to 1024 (kB) */

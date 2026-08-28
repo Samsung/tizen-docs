@@ -35,8 +35,6 @@ The Web application configuration consists of application information, such as v
 
 **Figure: Setting the application configuration**
 
-![Setting the application configuration](./media/tizen_project_explorer_w.png)
-
 You can [edit the application properties using the form tabs of the Web application configuration editor](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md#edit).
 
 <a name="overview"></a>

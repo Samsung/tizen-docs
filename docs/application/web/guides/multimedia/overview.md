@@ -24,17 +24,9 @@ You can use the following media and camera features in your Web applications:
 
   You can communicate between the media controller server and client. The client can send requests to the server to modify the media, and the server can respond to the requests by modifying the media directly as requested. For the media controller feature to work, you must create both the client and server applications.
 
-- [Media Key Events](./media-key.md) **(Optional feature)**
-
-  You can handle media keys in your application to control multimedia playback. When the user clicks a media key, you can detect the event in the application and adjust the media playback accordingly.
-
 - [Radio](./radio.md) **(Optional feature)**
 
   You can allow the user to listen to the FM radio on the device. You can scan for available frequencies and change between found frequencies. You can control the radio playback, and get information about interruptions from other sound sources.
-
-- [Camera](./camera.md) **(Optional feature)**
-
-  You can control the device camera by using the camera options. You can capture images and record video.
 
 ## Related information
 - Dependencies

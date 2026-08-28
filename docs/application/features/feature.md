@@ -226,7 +226,6 @@ The platform returns true for this key, if the device supports Contact API.
 
 **Application filtering:**\
 Specify this key, if the application requires Contextual Trigger feature.\
-This feature is only used for Mobile native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports Contextual Trigger feature.
@@ -323,7 +322,6 @@ The platform returns true for this key, if the device supports FIDO(Fast Identit
 
 **Application filtering:**\
 Specify this key, if the application requires an FM radio.\
-This feature is used for native application and mobile Web application filtering but not used for wearable Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports an FM radio.
@@ -410,7 +408,6 @@ The platform returns the keyboard layout (string, such as "qwerty") supported by
 
 **Application filtering:**\
 Specify this key, if the application requires the rotating bezel feature.\
-This feature is only used for wearable Web application and native application filtering and not used for mobile Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports rotating bezel feature.
@@ -507,7 +504,6 @@ The platform returns true for this key and the <http://tizen.org/feature/locatio
 
 **Application filtering:**\
 Specify this key, if the application requires the Geofence feature.\
-This feature is only used for mobile Native application filtering and not used for wearable Native application and Web application filtering.
 
 **System information:**\
 The platform returns true for this key and the <http://tizen.org/feature/location> key, if the device supports the Geofence feature.
@@ -587,7 +583,6 @@ The platform returns true for this key, if the device supports the Map Service f
 
 **Application filtering:**\
 Specify this key, if the application requires the audio recording feature.\
-This feature is only used for wearable Web application filtering and not used for mobile Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the audio recording feature.
@@ -603,7 +598,6 @@ The platform returns true for this key, if the device supports the audio recordi
 
 **Application filtering:**\
 Specify this key, if the application requires image capturing feature.\
-This feature is only used for wearable Web application filtering and not used for mobile Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the image capture feature.
@@ -619,7 +613,6 @@ The platform returns true for this key, if the device supports the image capture
 
 **Application filtering:**\
 Specify this key, if the application requires the video recording feature.\
-This feature is only used for wearable Web application filtering and not used for mobile Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the video recording feature.
@@ -651,7 +644,6 @@ The platform returns true for this key, if the device supports a microphone.
 
 **Application filtering:**\
 Specify this key, if the application requires Minicontrol API.\
-This feature is only used for mobile Native application filtering and not used for wearable Native application and Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports Minicontrol API.
@@ -853,7 +845,6 @@ The platform returns true for this key, if the device supports the Bluetooth Hum
 
 **Application filtering:**\
 Specify this key, if the application requires the Bluetooth Human Interface Device (HID) device feature.\
-This feature is only used for Wearable native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the Bluetooth Human Interface Device (HID) device feature.
@@ -917,7 +908,6 @@ The platform returns true for this key, if the device supports Bluetooth Object 
 
 **Application filtering:**\
 Specify this key, if the application requires the Bluetooth Phone Book Access (PBAP) client feature.\
-This feature is only used for Wearable native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the Bluetooth Phone Book Access (PBAP) client feature.
@@ -949,7 +939,6 @@ The platform returns true for this key, if the device supports Ethernet
 
 **Application filtering:**\
 Specify this key, if the application requires Internet access.\
-This feature is only used for wearable Web application and native application filtering and not used for mobile Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports Internet access.
@@ -965,7 +954,6 @@ The platform returns true for this key, if the device supports Internet access.
 
 **Application filtering:**\
 Specify this key, if the application requires the Media Transfer Protocol(MTP) Host(Initiator) feature.\
-This feature is only used for Mobile native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the Media Transfer Protocol(MTP) Host(Initiator) feature.
@@ -1205,7 +1193,6 @@ The platform returns true for this key, if the device supports all APIs which re
 
 **Application filtering:**\
 Specify this key, if the application requires the MMS feature.\
-This feature is used for native application and mobile Web application filtering but not used for wearable Web application filtering.
 
 **System information:**\
 The platform returns true for this key and the <http://tizen.org/feature/network.telephony> key, if the device supports MMS.
@@ -1379,7 +1366,6 @@ This feature is deprecated since Tizen 2.3.
 
 **Application filtering:**\
 Specify this key, if the application requires any kind of tethering feature.\
-This feature is only used for Mobile native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports any kind of tethering.
@@ -1395,7 +1381,6 @@ The platform returns true for this key, if the device supports any kind of tethe
 
 **Application filtering:**\
 Specify this key, if the application requires the tethering over Bluetooth feature.\
-This feature is only used for Mobile native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key and the <http://tizen.org/feature/network.tethering> key, if the device supports tethering over Bluetooth.
@@ -1411,7 +1396,6 @@ The platform returns true for this key and the <http://tizen.org/feature/network
 
 **Application filtering:**\
 Specify this key, if the application requires the tethering over USB connection feature.\
-This feature is only used for Mobile native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key and the <http://tizen.org/feature/network.tethering> key, if the device supports tethering over USB connection.
@@ -1427,7 +1411,6 @@ The platform returns true for this key and the <http://tizen.org/feature/network
 
 **Application filtering:**\
 Specify this key, if the application requires the tethering over Wi-Fi feature.\
-This feature is only used for Mobile native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key and the <http://tizen.org/feature/network.tethering> key, if the device supports tethering over Wi-Fi.
@@ -1443,7 +1426,6 @@ The platform returns true for this key and the <http://tizen.org/feature/network
 
 **Application filtering:**\
 Specify this key, if the application requires the tethering over Wi-Fi Direct™ connection.\
-This feature is only used for Mobile native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key and the <http://tizen.org/feature/network.tethering> key, if the device supports the tethering over Wi-Fi Direct™ connection.
@@ -1507,7 +1489,6 @@ The platform returns true for this key, if the device supports all APIs which re
 
 **Application filtering:**\
 Specify this key, if the application requires the Wi-Fi Direct™ feature.\
-only used for mobile Native application filtering and not used for wearable Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key and the <http://tizen.org/feature/network.wifi> key, if the device supports Wi-Fi Direct™.
@@ -1523,7 +1504,6 @@ The platform returns true for this key and the <http://tizen.org/feature/network
 
 **Application filtering:**\
 Specify this key, if the application requires the Wi-Fi Direct™ display feature.\
-This feature is only used for mobile Native application filtering and not used for wearable Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key and the <http://tizen.org/feature/network.wifi> key, if the device supports Wi-Fi Direct™ display feature.
@@ -1539,7 +1519,6 @@ The platform returns true for this key and the <http://tizen.org/feature/network
 
 **Application filtering:**\
 Specify this key, if the application requires the Wi-Fi Direct™ service discovery feature.\
-This feature is only used for Mobile native application filtering and not used for wearable Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key and the <http://tizen.org/feature/network.wifi> key, if the device supports Wi-Fi Direct™ service discovery.
@@ -2323,7 +2302,6 @@ The platform returns true for this key, if the device supports RCA output.
 
 **Application filtering:**\
 Specify this key, if the application supports the circle-shape screen.\
-This feature is only used for wearable Web application and native application filtering and not used for mobile Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports circle-shaped screen.
@@ -2339,7 +2317,6 @@ The platform returns true for this key, if the device supports circle-shaped scr
 
 **Application filtering:**\
 Specify this key, if the application supports the rectangle-shape screen.\
-This feature is only used for wearable Web application and native application filtering and not used for mobile Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports rectangle shape screen.
@@ -2414,7 +2391,6 @@ You can specify multiple <http://tizen.org/feature/screen.size.normal.*> keys, i
 
 If no screen size key is declared, it is assumed that the application supports only screen.size.normal.720.1280. To avoid this, specify at least 1 screen size key.
 
-This feature is used for native application and mobile Web application filtering but not used for wearable Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the 1080x1920 resolution for the normal screen size.\
@@ -2435,7 +2411,6 @@ You can specify multiple <http://tizen.org/feature/screen.size.normal.*> keys, i
 
 If no screen size key is declared, it is assumed that the application supports only screen.size.normal.720.1280. To avoid this, specify at least 1 screen size key.
 
-This feature is used for native application and mobile Web application filtering but not used for wearable Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the 240x400 resolution for the normal screen size.\
@@ -2517,7 +2492,6 @@ You can specify multiple <http://tizen.org/feature/screen.size.normal.*> keys, i
 
 If no screen size key is declared, it is assumed that the application supports only screen.size.normal.720.1280. To avoid this, specify at least 1 screen size key.
 
-This feature is used for native application and mobile Web application filtering but not used for wearable Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the 360x480 resolution for the normal screen size.\
@@ -2539,7 +2513,6 @@ You can specify multiple <http://tizen.org/feature/screen.size.normal.*> keys, i
 
 If no screen size key is declared, it is assumed that the application supports only screen.size.normal.720.1280. To avoid this, specify at least 1 screen size key.
 
-This feature is used for native application and mobile Web application filtering but not used for wearable Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the 480x800 resolution for the normal screen size.\
@@ -2561,7 +2534,6 @@ You can specify multiple <http://tizen.org/feature/screen.size.normal.*> keys, i
 
 If no screen size key is declared, it is assumed that the application supports only screen.size.normal.720.1280. To avoid this, specify at least 1 screen size key.
 
-This feature is used for native application and mobile Web application filtering but not used for wearable Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the 540x960 resolution for the normal screen size.\
@@ -2583,7 +2555,6 @@ You can specify multiple <http://tizen.org/feature/screen.size.normal.*> keys, i
 
 If no screen size key is declared, it is assumed that the application supports only screen.size.normal.720.1280. To avoid this, specify at least 1 screen size key.
 
-This feature is used for native application and mobile Web application filtering but not used for wearable Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports 600x1024 resolution for the normal screen size.\
@@ -2605,7 +2576,6 @@ You can specify multiple <http://tizen.org/feature/screen.size.normal.*> keys, i
 
 If no screen size key is declared, it is assumed that the application supports only screen.size.normal.720.1280. To avoid this, specify at least 1 screen size key.
 
-This feature is used for native application and mobile Web application filtering but not used for wearable Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the 720x1280 resolution for the normal screen size.\
@@ -3226,7 +3196,6 @@ The platform returns true for this key, if the device supports the AppWidget (Dy
 
 **Application filtering:**\
 Specify this key, if the application requires Shortcut API.\
-This feature is only used for Mobile native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports Shortcut API.
@@ -3325,7 +3294,7 @@ Specify this key, if the application requires the HOME\_SCREEN setting type of t
 This feature is used for both native application and Web application filtering.
 
 **System information:**\
-The platform returns true for this key and <http://tizen.org/feature/systemsetting>, if the device supports a way to change/get the picture on home screen. That means that ***"HOME\_SCREEN"*** in [SystemSettingType](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/systemsetting.html#SystemSettingType) is supported.
+The platform returns true for this key and <http://tizen.org/feature/systemsetting>, if the device supports a way to change or get the picture on the home screen.
 
 [Edit Key](https://www.tizen.org/node/8681/edit?destination=feature "edit"){.edit}
 
@@ -3493,7 +3462,6 @@ The platform returns true for this key, if the device supports the USB client or
 
 **Application filtering:**\
 Specify this key, if the application requires the USB host feature.\
-only used for Mobile native application filtering and not used for Web application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the USB host mode.
@@ -3621,7 +3589,6 @@ The platform returns true for this key, if the device supports Vulkan™ version
 
 **Application filtering:**\
 Specify this key, if the application requires Watch Application API.\
-This feature is only used for wearable Web application and native application filtering and not used for mobile Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports Minicontrol API.
@@ -3649,7 +3616,6 @@ The platform returns true for this key, if the device supports Web IME.
 
 **Application filtering:**\
 Specify this key, if the application requires the Web Service Application feature.\
-This feature is only used for wearable Web application filtering and not used for mobile Web application and native application filtering.
 
 **System information:**\
 The platform returns true for this key, if the device supports the Web service model.

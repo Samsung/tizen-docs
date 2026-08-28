@@ -65,8 +65,6 @@ To create the application project, follow the steps below:
 
         The version depends on the platform version you have installed and with which you are developing the application.
 
-        ![Selecting the profile and version](media/create_project_wizard_version_tv.png)
-
     3. Select the **Web Application** application type and click **Next**.
 
         ![Selecting the application type](media/create_project_wizard_app_web_tv.png)
@@ -423,5 +421,4 @@ The text is set to show up as bolded, and colored white (`#fff`). To change the 
 **Figure: Application screen with the new text color**
 
 ![Application screen with the new text color](media/emulator_running_modified_tv.png)
-
 

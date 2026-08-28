@@ -1,6 +1,6 @@
 # Providing Resources for Multiple Device Types
 
-Tizen native applications can run on different types of devices, such as wearable, phone, tablets, and TVs. Tizen also supports various resolutions (WVGA ~ XQXGA) and resources.
+Tizen native applications can run on devices with different display sizes and resolutions (WVGA ~ XQXGA).
 
 When you take advantage of the above features, remember that you must always polish your work to create an optimal application for each device. Tizen Studio provides a tool (**Resource Manager** view) for developing applications for multiple device types and resolutions.
 
@@ -28,18 +28,6 @@ A specific subdirectory is named with a **configuration-qualifier**. The configu
 |----------------------------|---------------------------------|----------------------------------------|
 | Language and region code     | For example, `en_US` or `en_UK`   | The type values have the form `ll_CC`, where `ll` stands for an [ISO 639](https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html) 2-letter language code, and the optionally followed `CC` stands for an [ISO 3166](https://www.gnu.org/software/gettext/manual/html_node/Country-Codes.html#Country-Codes) 2-upper-letter region code. |
 | DPI (Dot Per Inch) density   |`LDPI`<br/>`MDPI`<br/>`HDPI`<br/>`XHDPI`<br/>`XXHDPI` | `LDPI`: low-dpi from 0 to 240<br/>`MDPI`: medium-dpi from 241 to 300<br/>`HDPI`: high-dpi from 301 to 380<br/>`XHDPI`: extra-high-dpi from 381 to 480<br/>`XXHDPI`: extra-extra-high-dpi from 481 to 600 |
-
-Each application base scale can be applied to each DPI through a relation modification between the DPI and profile factor. For example, in the mobile profile, the Z device has a small screen (profile factor: 0.7) and the 1.8 base scale value, so the proper DPI is LDPI. The Z3 device has a large screen (profile factor: 0.8) and the 2.6 base scale value, so the proper DPI is MDPI.
-
-**Table: DPI and profile factor**
-
-| DPI type | Base scale in a small screen mobile(profile factor: 0.7) | Base scale in a large screen mobile(profile factor: 0.8) |
-|--------|----------------------------------------|----------------------------------------|
-| LDPI     | 0 ~ 1.9                                  | 0 ~ 2.1                                  |
-| MDPI     | 1.9 ~ 2.3                                | 2.1 ~ 2.7                                |
-| HDPI     | 2.3 ~ 3.0                                | 2.7 ~ 3.4                                |
-| XHDPI    | 3.0 ~ 3.7                                | 3.4 ~ 4.3                                |
-| XXHDPI   | 3.7 ~                                    | 4.3 ~                                    |
 
 The `res.xml` file is composed of XML elements, and describes where each alternative resource is grouped into a device configuration. The following example shows a `res.xml` file based on the BasicUI project.
 

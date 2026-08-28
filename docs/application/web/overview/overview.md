@@ -138,7 +138,7 @@ Locale and region-specific features:
 
 ## Application Filtering
 Applications can specify target devices and capabilities:
-- Device profiles (mobile, wearable, TV)
+- Device profile (TV)
 - API version requirements
 - Feature requirements (e.g., Bluetooth, GPS)
 - Screen size and resolution
