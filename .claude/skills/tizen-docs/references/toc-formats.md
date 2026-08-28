@@ -45,10 +45,12 @@ Rules, all of which the validator checks:
 - `source` must be the GitHub blob URL of **the file this entry links to**. When the
   entry moves, the URL moves with it.
 
-Only `docs/application/flutter/toc.md`, `docs/platform/HAL/toc.md`, and
-`docs/extensions/tizenx/guides/toc.md` use metadata. The other TOCs carry none, and
-adding it is not required. `docs/extensions/tizenx/api/toc.md` is generated and puts its
-metadata outside the parentheses; fix the generator rather than the file.
+Metadata is optional and about half the TOCs carry none, so a TOC without it is not
+deficient. Where it does appear, `source:` usually stands alone - it identifies the
+entry - while `tags:` and `authors:` are deliberate overrides of what the site would
+otherwise derive from this repository's git history. `docs/extensions/tizenx/api/toc.md`
+is generated and puts its metadata outside the parentheses; fix the generator rather
+than the file.
 
 ## Editing rules
 
