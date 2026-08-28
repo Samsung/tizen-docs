@@ -23,6 +23,7 @@
 						<topic href="10.1/device_api/wearable/tizen/notification.html" label="Notification"/>
 						<topic href="10.1/device_api/wearable/tizen/package.html" label="Package"/>
 						<topic href="10.1/device_api/wearable/tizen/preference.html" label="Preference"/>
+						<topic href="10.1/device_api/wearable/tizen/rpcport.html" label="RPC Port"/>
 						<topic href="10.1/device_api/wearable/tizen/widgetservice.html" label="WidgetService"/>
 					</topic>
 					<topic href="10.1/device_api/wearable/index.html#Content" label="Content">

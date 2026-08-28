@@ -23,6 +23,7 @@
 						<topic href="10.1/device_api/mobile/tizen/notification.html" label="Notification"/>
 						<topic href="10.1/device_api/mobile/tizen/package.html" label="Package"/>
 						<topic href="10.1/device_api/mobile/tizen/preference.html" label="Preference"/>
+						<topic href="10.1/device_api/mobile/tizen/rpcport.html" label="RPC Port"/>
 						<topic href="10.1/device_api/mobile/tizen/widgetservice.html" label="WidgetService"/>
 					</topic>
 					<topic href="10.1/device_api/mobile/index.html#Content" label="Content">
