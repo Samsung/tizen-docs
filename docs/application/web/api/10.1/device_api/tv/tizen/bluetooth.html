@@ -36,7 +36,7 @@ Act as a GATT client (Generic Attribute Profile client)          </li>
 Configure the local GATT server (Generic Attribute Profile)          </li>
         </ul>
         <p>
-For more information on the Bluetooth features, see <a href="/application/web/guides/connectivity/bluetooth">Bluetooth Guide</a>.
+For more information on the Bluetooth features, see <a href="https://samsungtizenos.com/docs/application/web/guides/connectivity/bluetooth">Bluetooth Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -506,8 +506,8 @@ OPEN - corresponds to opened bluetooth socket.            </li>
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- <em>BluetoothLESolicitationUUID</em> is an alias for <a href="bluetooth.html#BluetoothUUID">BluetoothUUID</a>. Values of both types can take the same 16-bit, 32-bit or 128-bit forms.
-Functions taking <em>BluetoothLESolicitationUUID</em> parameters will accept the same UUID formats as those accepting <a href="bluetooth.html#BluetoothUUID">BluetoothUUID</a> values.
+ <em>BluetoothLESolicitationUUID</em> is an alias for <a href="bluetooth#BluetoothUUID">BluetoothUUID</a>. Values of both types can take the same 16-bit, 32-bit or 128-bit forms.
+Functions taking <em>BluetoothLESolicitationUUID</em> parameters will accept the same UUID formats as those accepting <a href="bluetooth#BluetoothUUID">BluetoothUUID</a> values.
           </p>
 </div>
 <div class="enum" id="BluetoothAdvertisePacketType">
@@ -932,7 +932,7 @@ advertise.solicitationuuids = ["180f", "7cae86d2-a021-11ea-bb37-0242ac130002"];
             </div>
 <div class="description">
             <p>
-See the <a href="https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Characteristics/org.bluetooth.characteristic.gap.appearance.xml">list of appearance codes</a> for sample values.
+See the <a href="https://www.bluetooth.com/specifications/assigned-numbers/">list of appearance codes</a> for sample values.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1143,7 +1143,7 @@ catch (err)
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- To check if this method is supported or not, use <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability</a>("http://tizen.org/feature/network.bluetooth.le").
+ To check if this method is supported or not, use <a href="systeminfo#SystemInfo::getCapability">tizen.systeminfo.getCapability</a>("http://tizen.org/feature/network.bluetooth.le").
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
@@ -2973,10 +2973,10 @@ UnknownError - If any other error occurs              </li>
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- Values of <a href="bluetooth.html#BluetoothLEAdvertiseData::uuids">service UUIDs</a> and <a href="bluetooth.html#BluetoothLEAdvertiseData::solicitationuuids">solicitation UUIDs</a> may be converted to one of equivalent formats defined in <a href="bluetooth.html#BluetoothUUID">BluetoothUUID</a> before advertising. Consult the documentation of these fields for more information.
+ Values of <a href="bluetooth#BluetoothLEAdvertiseData::uuids">service UUIDs</a> and <a href="bluetooth#BluetoothLEAdvertiseData::solicitationuuids">solicitation UUIDs</a> may be converted to one of equivalent formats defined in <a href="bluetooth#BluetoothUUID">BluetoothUUID</a> before advertising. Consult the documentation of these fields for more information.
             </p>
 <p><span class="remark">Remark: </span>
- Consult the documentation of <a href="bluetooth.html#BluetoothLEAdvertiseData::serviceData">BluetoothLEAdvertiseData::serviceData</a> for the information about the UUID format of service data that can be advertised.
+ Consult the documentation of <a href="bluetooth#BluetoothLEAdvertiseData::serviceData">BluetoothLEAdvertiseData::serviceData</a> for the information about the UUID format of service data that can be advertised.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3651,7 +3651,7 @@ UnknownError - If any other error occurs              </li>
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3747,7 +3747,7 @@ UnknownError - If any other error occurs              </li>
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3844,7 +3844,7 @@ adapter.startScan(function onsuccess(device)
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3926,10 +3926,10 @@ Calling this function has no effect if there is no listener with given id.
             </p>
            </div>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothGATTCharacteristic::addValueChangeListener">addValueChangeListener</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothGATTCharacteristic::addValueChangeListener">addValueChangeListener</a> code example.
             </p>
 <p><span class="remark">Remark: </span>
- Value change listeners cannot be registered and thus unregistered for <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects. An attempt to remove value change listener for such an object will result in no operation.
+ Value change listeners cannot be registered and thus unregistered for <a href="bluetooth#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects. An attempt to remove value change listener for such an object will result in no operation.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -4469,7 +4469,7 @@ The ErrorCallback is launched with these error types:
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -4566,7 +4566,7 @@ UnknownError - If any other error occurs              </li>
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -5471,7 +5471,7 @@ server.getConnectionMtu("12:34:56:78:90:ab", successCB, errorCB);
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothLEAdapter::startScan">startScan</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothLEAdapter::startScan">startScan</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -5511,7 +5511,7 @@ server.getConnectionMtu("12:34:56:78:90:ab", successCB, errorCB);
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothLEAdapter::startAdvertise">startAdvertise</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothLEAdapter::startAdvertise">startAdvertise</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -5553,7 +5553,7 @@ server.getConnectionMtu("12:34:56:78:90:ab", successCB, errorCB);
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothLEDevice::addConnectStateChangeListener">addConnectStateChangeListener</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothLEDevice::addConnectStateChangeListener">addConnectStateChangeListener</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8382,7 +8382,7 @@ function unRegisterChatService()
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::setChangeListener">setChangeListener</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::setChangeListener">setChangeListener</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8465,7 +8465,7 @@ function unRegisterChatService()
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::getDevice">getDevice</a> and <a href="bluetooth.html#BluetoothAdapter::createBonding">createBonding</a> code examples.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::getDevice">getDevice</a> and <a href="bluetooth#BluetoothAdapter::createBonding">createBonding</a> code examples.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8506,7 +8506,7 @@ function unRegisterChatService()
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::getKnownDevices">getKnownDevices</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::getKnownDevices">getKnownDevices</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8551,7 +8551,7 @@ Each element is a BluetoothDevice.
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::discoverDevices">discoverDevices</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::discoverDevices">discoverDevices</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8647,7 +8647,7 @@ After that, this device is no longer visible.
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothDevice::connectToServiceByUUID">connectToServiceByUUID</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothDevice::connectToServiceByUUID">connectToServiceByUUID</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8688,7 +8688,7 @@ After that, this device is no longer visible.
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::registerRFCOMMServiceByUUID">registerRFCOMMServiceByUUID</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::registerRFCOMMServiceByUUID">registerRFCOMMServiceByUUID</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8756,7 +8756,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
 <li class="feature">http://tizen.org/feature/network.bluetooth.le.gatt.server</li>
 </div>
 <p></p>
-                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
+                    For more information, see <a href="https://samsungtizenos.com/docs/application/web/reference/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Bluetooth {
