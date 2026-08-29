@@ -78,6 +78,35 @@ refresh that URL.
 feedback is applied. On a cadence, `master` is promoted to the `live` branch and your
 contribution appears at <https://samsungtizenos.com/docs>.
 
+## Retired areas
+
+Some areas of this repository are being retired on purpose. They are listed here so that a
+future reader can tell a deliberate removal from an accident, and so that removed pages are
+not reintroduced by a later contribution.
+
+**Tizen Studio.** The Eclipse-based Tizen Studio is no longer the documented development
+environment. Application development is documented for Visual Studio Code and Visual
+Studio instead, and the entry points are
+[`application/web/get-started/index.md`](docs/application/web/get-started/index.md) and
+[`application/native/get-started/index.md`](docs/application/native/get-started/index.md),
+which ask the reader to choose an IDE. Removed under this decision:
+
+- Tool guides under `docs/sdk-tools/baseline-sdk/` (`baseline-sdk` is Tizen Studio).
+- The Tizen Studio based Get Started walkthroughs under
+  `docs/application/{web,native}/get-started/` and their screenshots.
+- `docs/platform/reference/tizen-studio/`, the guides for building, extending and
+  contributing to Tizen Studio itself. Pull request #2391 had said this directory was left
+  untouched deliberately; #2397 removed it, because contributor documentation for a retired
+  product is retired with it. This note records that reversal, which the commit message of
+  #2397 did not.
+
+Do not add new pages to these areas. If a removed page still has inbound links from
+elsewhere, prefer a short stub pointing at the successor over leaving the link broken.
+
+**When you retire something yourself**, put the reason in the commit message body, not only
+in the pull request description. Pull request descriptions live on GitHub; the repository
+has to be able to explain itself on its own.
+
 ## File names
 
 - Only lowercase letters, numbers, and hyphens. No spaces or punctuation; use hyphens to
