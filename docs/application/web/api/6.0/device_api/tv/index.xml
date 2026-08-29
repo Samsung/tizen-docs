@@ -38,6 +38,7 @@
 					</topic>
 					<topic href="6.0/device_api/tv/index.html#Security" label="Security">
 						<topic href="6.0/device_api/tv/tizen/keymanager.html" label="Keymanager"/>
+						<topic href="6.0/device_api/tv/tizen/libteec.html" label="LibTeec"/>
 					</topic>
 					<topic href="6.0/device_api/tv/index.html#System" label="System">
 						<topic href="6.0/device_api/tv/tizen/systeminfo.html" label="System Information"/>
