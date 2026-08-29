@@ -17,7 +17,7 @@ To develop applications for Tizen custom device, refer to the following:
 - [Native application development with VS Code](../../../sdk-tools/vscode-ext/Tizen/native.md)
 
 ## Create Tizen custom images
-Tizen provides a building block pool of components mainly based on the [Tizen Native API sets](../../../application/native/api/iot-headed/latest/index.html)
+Tizen provides a building block pool of components mainly based on the [Tizen Native API overview](../../../application/native/overview/overview.md)
 
 **Building block presets for Tizen core:**
 - The minimum set of bootable modules that make up the Tizen platform image for Tizen devices.
