@@ -91,7 +91,6 @@ Studio instead, and the entry points are
 [`application/native/get-started/index.md`](docs/application/native/get-started/index.md),
 which ask the reader to choose an IDE. Removed under this decision:
 
-- Tool guides under `docs/sdk-tools/baseline-sdk/` (`baseline-sdk` is Tizen Studio).
 - The Tizen Studio based Get Started walkthroughs under
   `docs/application/{web,native}/get-started/` and their screenshots.
 - `docs/platform/reference/tizen-studio/`, the guides for building, extending and
@@ -100,8 +99,15 @@ which ask the reader to choose an IDE. Removed under this decision:
   product is retired with it. This note records that reversal, which the commit message of
   #2397 did not.
 
-Do not add new pages to these areas. If a removed page still has inbound links from
-elsewhere, prefer a short stub pointing at the successor over leaving the link broken.
+`docs/sdk-tools/baseline-sdk/` (Tizen Studio's own tool guides) is not on this list: #2397
+removed a handful of its pages, but most of it — 114 Markdown files, still linked 116 times
+from `docs/sdk-tools/toc_all.md` as of this writing — remains published. Retiring the rest
+is a separate, larger change; do not add new pages to it in the meantime, and do not read
+its continued presence here as a sign that the decision above does not apply to it.
+
+Do not add new pages to the areas already removed above. If a removed page still has
+inbound links from elsewhere, prefer a short stub pointing at the successor over leaving
+the link broken.
 
 **When you retire something yourself**, put the reason in the commit message body, not only
 in the pull request description. Pull request descriptions live on GitHub; the repository
