@@ -18,7 +18,7 @@
 It allows to register, discover and access to resources via RESTful API.
         </p>
         <p>
-For more information on the IoT features, see <a href="/application/web/guides/connectivity/iotcon">IoT Guide</a>.
+For more information on the IoT features, see <a href="https://samsungtizenos.com/docs/application/web/guides/connectivity/iotcon">IoT Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -687,7 +687,7 @@ catch (err)
             </p>
 <div class="description">
             <p>
-This method returns the common timeout value for methods: <br><a href="iotcon.html#Client::findDeviceInfo">findDeviceInfo</a><br><a href="iotcon.html#Client::findPlatformInfo">findPlatformInfo</a><br><a href="iotcon.html#Client::findResource">findResource</a><br><a href="iotcon.html#RemoteResource::methodGet">methodGet</a><br><a href="iotcon.html#RemoteResource::methodPut">methodPut</a><br><a href="iotcon.html#RemoteResource::methodPost">methodPost</a><br><a href="iotcon.html#RemoteResource::methodDelete">methodDelete</a><br>All asynchronous APIs have the same timeout value, there is no way to have different timeout values at each method.
+This method returns the common timeout value for methods: <br><a href="iotcon#Client::findDeviceInfo">findDeviceInfo</a><br><a href="iotcon#Client::findPlatformInfo">findPlatformInfo</a><br><a href="iotcon#Client::findResource">findResource</a><br><a href="iotcon#RemoteResource::methodGet">methodGet</a><br><a href="iotcon#RemoteResource::methodPut">methodPut</a><br><a href="iotcon#RemoteResource::methodPost">methodPost</a><br><a href="iotcon#RemoteResource::methodDelete">methodDelete</a><br>All asynchronous APIs have the same timeout value, there is no way to have different timeout values at each method.
 Without a response after the specified time, the mentioned methods would trigger an error callback with <var>TimeoutError</var>.
             </p>
            </div>
@@ -722,7 +722,7 @@ console.log("Timeout value is " + timeout);
             </p>
 <div class="description">
             <p>
-The timeout value is common for methods: <br><a href="iotcon.html#Client::findDeviceInfo">findDeviceInfo</a><br><a href="iotcon.html#Client::findPlatformInfo">findPlatformInfo</a><br><a href="iotcon.html#Client::findResource">findResource</a><br><a href="iotcon.html#RemoteResource::methodGet">methodGet</a><br><a href="iotcon.html#RemoteResource::methodPut">methodPut</a><br><a href="iotcon.html#RemoteResource::methodPost">methodPost</a><br><a href="iotcon.html#RemoteResource::methodDelete">methodDelete</a><br>All asynchronous APIs have the same timeout value, there is no way to have different timeout values at each method.
+The timeout value is common for methods: <br><a href="iotcon#Client::findDeviceInfo">findDeviceInfo</a><br><a href="iotcon#Client::findPlatformInfo">findPlatformInfo</a><br><a href="iotcon#Client::findResource">findResource</a><br><a href="iotcon#RemoteResource::methodGet">methodGet</a><br><a href="iotcon#RemoteResource::methodPut">methodPut</a><br><a href="iotcon#RemoteResource::methodPost">methodPost</a><br><a href="iotcon#RemoteResource::methodDelete">methodDelete</a><br>All asynchronous APIs have the same timeout value, there is no way to have different timeout values at each method.
 Without a response after the specified time, the mentioned methods would trigger an error callback with <var>TimeoutError</var>.
             </p>
            </div>
@@ -826,7 +826,7 @@ watchId = tizen.iotcon.addGeneratedPinListener(RandomPinSuccess);
  3.0
             </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Iotcon::addGeneratedPinListener">addGeneratedPinListener</a> code example.
+ Example of using can be find at <a href="iotcon#Iotcon::addGeneratedPinListener">addGeneratedPinListener</a> code example.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -1119,7 +1119,7 @@ Resource type: oic.wk.ad
  http://tizen.org/privilege/internet
             </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Client::addPresenceEventListener">addPresenceEventListener</a> code example.
+ Example of using can be find at <a href="iotcon#Client::addPresenceEventListener">addPresenceEventListener</a> code example.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -1689,7 +1689,7 @@ server.stopPresence();
  http://tizen.org/privilege/internet
             </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Server::startPresence">startPresence</a> code example.
+ Example of using can be find at <a href="iotcon#Server::startPresence">startPresence</a> code example.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -2466,7 +2466,7 @@ catch (err)
  http://tizen.org/privilege/internet
             </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#RemoteResource::startObserving">startObserving</a> code example.
+ Example of using can be find at <a href="iotcon#RemoteResource::startObserving">startObserving</a> code example.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -2587,7 +2587,7 @@ key: openstate, value: open
  http://tizen.org/privilege/internet
             </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#RemoteResource::startCaching">startCaching</a> code example.
+ Example of using can be find at <a href="iotcon#RemoteResource::startCaching">startCaching</a> code example.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -2719,7 +2719,7 @@ Calling this function has no effect if listener is not set.
  http://tizen.org/privilege/internet
             </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#RemoteResource::setResourceStateChangeListener">setResourceStateChangeListener</a> code example.
+ Example of using can be find at <a href="iotcon#RemoteResource::setResourceStateChangeListener">setResourceStateChangeListener</a> code example.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -3544,7 +3544,7 @@ Calling this function has no effect if listener was not set.
             </p>
            </div>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Resource::setRequestListener">setRequestListener</a> code example.
+ Example of using can be find at <a href="iotcon#Resource::setRequestListener">setRequestListener</a> code example.
             </p>
 </dd>
 </dl>
@@ -3870,7 +3870,7 @@ query["filter"] = filter;
 <div class="interface" id="Response">
 <a class="backward-compatibility-anchor" name="::Iotcon::Response"></a><h3>2.13. Response</h3>
 <div class="brief">
- The Response Interface holds response from server for specified request of client. It is server-side object, Response on client-side is hold as <a href="iotcon.html#RemoteResponse">RemoteResponse</a> object.
+ The Response Interface holds response from server for specified request of client. It is server-side object, Response on client-side is hold as <a href="iotcon#RemoteResponse">RemoteResponse</a> object.
           </div>
 <pre class="webidl prettyprint">  [Constructor(<a href="#Request">Request</a> request)]
   interface Response {
@@ -4084,7 +4084,7 @@ response.send();
 <div class="interface" id="RemoteResponse">
 <a class="backward-compatibility-anchor" name="::Iotcon::RemoteResponse"></a><h3>2.14. RemoteResponse</h3>
 <div class="brief">
- The RemoteResponse Interface holds response from server for specified request of client, this is client-side version of <a href="iotcon.html#Response">Response</a> object.
+ The RemoteResponse Interface holds response from server for specified request of client, this is client-side version of <a href="iotcon#Response">Response</a> object.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface RemoteResponse {
     readonly attribute <a href="#ResponseResult">ResponseResult</a> result;
@@ -4326,7 +4326,7 @@ response.send();
  3.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Resource::setRequestListener">setRequestListener</a> code example.
+ Example of using can be find at <a href="iotcon#Resource::setRequestListener">setRequestListener</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -4460,7 +4460,7 @@ for <em>Client.findResource()</em>.
  3.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Client::findResource">findResource</a> code example.
+ Example of using can be find at <a href="iotcon#Client::findResource">findResource</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -4501,7 +4501,7 @@ for <em>Client.findResource()</em>.
  3.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Client::addPresenceEventListener">addPresenceEventListener</a> code example.
+ Example of using can be find at <a href="iotcon#Client::addPresenceEventListener">addPresenceEventListener</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -4542,7 +4542,7 @@ for <em>Client.findResource()</em>.
  3.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Client::findDeviceInfo">findDeviceInfo</a> code example.
+ Example of using can be find at <a href="iotcon#Client::findDeviceInfo">findDeviceInfo</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -4583,7 +4583,7 @@ for <em>Client.findResource()</em>.
  3.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Client::findPlatformInfo">findPlatformInfo</a> code example.
+ Example of using can be find at <a href="iotcon#Client::findPlatformInfo">findPlatformInfo</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -4624,7 +4624,7 @@ for <em>Client.findResource()</em>.
  3.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#RemoteResource::methodGet">methodGet</a> code example.
+ Example of using can be find at <a href="iotcon#RemoteResource::methodGet">methodGet</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -4665,7 +4665,7 @@ for <em>Client.findResource()</em>.
  3.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#RemoteResource::setResourceStateChangeListener">setResourceStateChangeListener</a> code example.
+ Example of using can be find at <a href="iotcon#RemoteResource::setResourceStateChangeListener">setResourceStateChangeListener</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -4706,7 +4706,7 @@ for <em>Client.findResource()</em>.
  3.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#RemoteResource::startCaching">startCaching</a> code example.
+ Example of using can be find at <a href="iotcon#RemoteResource::startCaching">startCaching</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -4747,7 +4747,7 @@ for <em>Client.findResource()</em>.
  3.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="iotcon.html#Iotcon::addGeneratedPinListener">addGeneratedPinListener</a> code example.
+ Example of using can be find at <a href="iotcon#Iotcon::addGeneratedPinListener">addGeneratedPinListener</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -4791,7 +4791,7 @@ To guarantee this application will run on a device with a Iotcon, add the below 
 <li class="feature">http://tizen.org/feature/iot.ocf</li>
 </div>
 <p></p>
-                    For more information, see <a href="/application/web/reference/app-filtering">Application Filtering.</a>
+                    For more information, see <a href="https://samsungtizenos.com/docs/application/web/reference/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Iotcon {

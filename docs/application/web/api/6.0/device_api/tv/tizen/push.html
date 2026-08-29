@@ -30,7 +30,7 @@ Registering your application, if the application has not been registered yet    
 Getting notification data          </li>
         </ul>
         <p>
-For more information on the Push features, see <a href="/application/web/guides/messaging/push">Push Guide</a>.
+For more information on the Push features, see <a href="https://samsungtizenos.com/docs/application/web/guides/messaging/push">Push Guide</a>.
         </p>
         <p>
 To use Push features the application needs the permission to access the Tizen Push servers.
@@ -238,7 +238,7 @@ The <em>connect()</em> method must be called before calling the <em>register()</
  http://tizen.org/privilege/push
             </p>
 <p><span class="remark">Remark: </span>
- In order to use the push messaging service, see <a href="/application/web/guides/messaging/push">Push Guide</a>.
+ In order to use the push messaging service, see <a href="https://samsungtizenos.com/docs/application/web/guides/messaging/push">Push Guide</a>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -595,7 +595,7 @@ The registration ID: 04a150867a50f48cb79695ac732cbe550b4a6782fffd23cbc14ba8dd5c5
 </dt>
 <dd>
 <div class="brief">
- Requests to get unread push notifications. As a consequence, the PushNotificationCallback which was set using the <a href="push.html#PushManager::connect">connect()</a> method will be invoked to retrieve the notifications.
+ Requests to get unread push notifications. As a consequence, the PushNotificationCallback which was set using the <a href="push#PushManager::connect">connect()</a> method will be invoked to retrieve the notifications.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void getUnreadNotifications();</pre></div>
 <p><span class="version">Since: </span>
@@ -678,7 +678,7 @@ tizen.push.connect(stateChangeCallback, notificationCallback);
 <div class="description">
             <p>
 If the application is launched by the push service, the push service is connected when the application is launched.
-Therefore, you can get push messages without calling the <a href="push.html#PushManager::connect">connect()</a> function.
+Therefore, you can get push messages without calling the <a href="push#PushManager::connect">connect()</a> function.
             </p>
             <p>
 If the application was not launched by the push service, this method returns <var>null</var>.
@@ -999,7 +999,7 @@ To guarantee that the push application runs on a device with the push feature, d
 <li class="feature">http://tizen.org/feature/network.push</li>
 </div>
 <p></p>
-                    For more information, see <a href="/application/web/reference/app-filtering">Application Filtering.</a>
+                    For more information, see <a href="https://samsungtizenos.com/docs/application/web/reference/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Push {
