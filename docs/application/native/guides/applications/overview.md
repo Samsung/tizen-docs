@@ -99,7 +99,7 @@ Since Tizen 2.4, an application is not allowed to run in the background except w
 | Background network             | Processing general network operations in the background (such as sync-manager, IM, and VOIP) | [Sync Manager API](../../api/common/latest/group__CAPI__SYNC__MANAGER__MODULE.html), Socket, and [Curl API](../../api/common/latest/group__OPENSRC__CURL__FRAMEWORK.html) | `background-network`                     |
 | Location                       | Processing location data in the background | [Location API](../../api/common/latest/group__CAPI__LOCATION__FRAMEWORK.html) | `location`                               |
 | Sensor (context)               | Processing context data from the sensors, such as gesture | [Sensor API](../../api/common/latest/group__CAPI__SYSTEM__SENSOR__MODULE.html) | `sensor`                                 |
-| IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Wi-Fi (9.0)](../../api/common/9.0/group__CAPI__NETWORK__WIFI__PACKAGE.html) and [Bluetooth API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) | `iot-communication`                      |
+| IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Wi-Fi (9.0)](../../api/9.0.0/common/group__CAPI__NETWORK__WIFI__PACKAGE.html) and [Bluetooth API](../../api/common/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) | `iot-communication`                      |
 
   > **Note**
   >

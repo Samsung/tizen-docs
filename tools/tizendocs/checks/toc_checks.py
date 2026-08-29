@@ -8,7 +8,7 @@ dangling entries in the corpus had gone unnoticed for exactly that reason.
 """
 import os
 
-from .. import toc
+from .. import publication, toc
 from ..findings import ERROR, WARN, Finding
 
 ORPHAN = "T-ORPHAN"
@@ -16,6 +16,7 @@ DANGLING = "T-DANGLING"
 DEPTH = "T-DEPTH"
 META = "T-META"
 META_SRC = "T-META-SRC"
+CLOSURE = "T-CLOSURE"
 
 # A document absent from its governing TOC is not discoverable in site
 # navigation. README files are repository instructions, not documents. Any
@@ -131,3 +132,27 @@ def check_meta_source(index):
             yield Finding(ERROR, META_SRC, node.toc,
                           f"source: names {declared} but the entry links to "
                           f"{node.target}", line=node.line, syntax="toc-md")
+
+
+def check_link_closure(index):
+    """Every published page's internal links must publish in that TOC too."""
+    for section in index.config.publication_sections:
+        if not section.require_link_closure:
+            continue
+        for toc_path in section.governing_tocs:
+            if not index.exists(toc_path):
+                continue
+            parsed = toc.parse(index.source(toc_path).text, toc_path)
+            published = {target for target in parsed.targets if index.exists(target)}
+            for source_path in sorted(published):
+                if not source_path.endswith(".md"):
+                    continue
+                for target, line, _, raw in publication.linked_documents(index, source_path):
+                    if not section.matches(target) or target in published:
+                        continue
+                    yield Finding(
+                        ERROR, CLOSURE, toc_path,
+                        f"{source_path}:{line} links to {raw}, but this TOC does "
+                        f"not publish {target}",
+                        related=(f"add {target} to {toc_path}",),
+                        syntax="toc-md")

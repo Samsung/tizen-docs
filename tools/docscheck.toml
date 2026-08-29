@@ -131,6 +131,7 @@ legacy_directories = [
 "T-DANGLING" = "error"
 "T-DEPTH" = "error"
 "T-META-SRC" = "error"
+"T-CLOSURE" = "error"
 
 "T-META" = "warn"
 
@@ -213,6 +214,7 @@ recommended_section = "Extensions / TizenX"
 [[publication.sections]]
 id = "sdk-tools"
 match = ["docs/sdk-tools/**"]
+require_link_closure = true
 governing_tocs = [
   "docs/sdk-tools/toc_vscode_dotnet.md",
   "docs/sdk-tools/toc_vscode_native.md",

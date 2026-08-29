@@ -40,7 +40,7 @@ Implementing your application consists of:
 
 - **Coding applications**
 
-  Code your application in Tizen Studio using the namespaces defined in the Native API Reference ([API reference](../../api/common/latest/modules.html)).
+  Code your application in Tizen Studio using the namespaces defined in the Native API Reference ([API reference](../../api/common/latest/group__CAPI__APPLICATION__FRAMEWORK.html)).
 
 If needed, update the privileges of the application.
 

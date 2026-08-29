@@ -1,0 +1,1 @@
+T-CLOSURE docs/sdk-tools/toc_vscode_dotnet.md

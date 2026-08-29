@@ -96,6 +96,7 @@ class PublicationSection:
         self.matchers = tuple(compile_glob(pattern) for pattern in self.patterns)
         self.governing_tocs = tuple(data.get("governing_tocs", ()))
         self.recommended_section = data.get("recommended_section", self.id)
+        self.require_link_closure = bool(data.get("require_link_closure", False))
 
     def matches(self, path):
         return any(matcher.match(path) for matcher in self.matchers)

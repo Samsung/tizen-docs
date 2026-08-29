@@ -110,13 +110,15 @@ def test_legacy_directory_matches_exact_names_only():
 def test_publication_section_and_reviewed_exception():
     cfg = config(publication={
         "sections": [{"id": "guides", "match": ["docs/guides/**"],
-                      "governing_tocs": ["docs/guides/toc.md"]}],
+                      "governing_tocs": ["docs/guides/toc.md"],
+                      "require_link_closure": True}],
         "exceptions": [{"match": ["docs/guides/legacy.md"],
                         "reason": "migration", "owner": "docs@example.invalid",
                         "review_by": "2027-01-01"}],
         "automatic_landings": ["docs/guides/index.md"],
     })
     assert cfg.publication_section("docs/guides/a.md").id == "guides"
+    assert cfg.publication_section("docs/guides/a.md").require_link_closure
     assert cfg.publication_exception("docs/guides/legacy.md").owner == "docs@example.invalid"
     assert cfg.automatic_landing("docs/guides/index.md")
 
@@ -151,3 +153,24 @@ def test_orphan_requires_a_governing_toc_and_reports_context(tmp_path):
         "inbound_links": 0,
         "recommended_section": "Guides",
     }
+
+
+def test_link_closure_is_variant_specific(tmp_path):
+    from tizendocs.checks.toc_checks import check_link_closure
+    from tizendocs.index import DocsIndex
+    (tmp_path / "docs" / "sdk-tools").mkdir(parents=True)
+    (tmp_path / "docs" / "sdk-tools" / "a.md").write_text(
+        "# A\n\nSee [B](b.md).\n", encoding="utf-8")
+    (tmp_path / "docs" / "sdk-tools" / "b.md").write_text("# B\n", encoding="utf-8")
+    (tmp_path / "docs" / "sdk-tools" / "toc_a.md").write_text(
+        "# [A](a.md)\n", encoding="utf-8")
+    (tmp_path / "docs" / "sdk-tools" / "toc_b.md").write_text(
+        "# [B](b.md)\n", encoding="utf-8")
+    cfg = Config({"publication": {"sections": [{
+        "id": "sdk-tools", "match": ["docs/sdk-tools/**"],
+        "governing_tocs": ["docs/sdk-tools/toc_a.md", "docs/sdk-tools/toc_b.md"],
+        "require_link_closure": True,
+    }]}})
+    findings = list(check_link_closure(DocsIndex(root=str(tmp_path), config=cfg)))
+    assert [(finding.rule, finding.path) for finding in findings] == [
+        ("T-CLOSURE", "docs/sdk-tools/toc_a.md")]

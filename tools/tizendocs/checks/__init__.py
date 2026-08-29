@@ -32,6 +32,7 @@ CORPUS_REGISTRY = (
     (toc_checks.DANGLING, toc_checks.check_dangling),
     (toc_checks.DEPTH, toc_checks.check_depth),
     (toc_checks.META_SRC, toc_checks.check_meta_source),
+    (toc_checks.CLOSURE, toc_checks.check_link_closure),
     (xml_toc.XML, xml_toc.check_wellformed),
     (xml_toc.XMLVER, xml_toc.check_versions),
     (naming.ROUTE, naming.check_route),
