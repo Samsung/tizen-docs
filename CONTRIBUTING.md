@@ -78,6 +78,41 @@ refresh that URL.
 feedback is applied. On a cadence, `master` is promoted to the `live` branch and your
 contribution appears at <https://samsungtizenos.com/docs>.
 
+## Retired areas
+
+Some areas of this repository are being retired on purpose. They are listed here so that a
+future reader can tell a deliberate removal from an accident, and so that removed pages are
+not reintroduced by a later contribution.
+
+**Tizen Studio.** The Eclipse-based Tizen Studio is no longer the documented development
+environment. Application development is documented for Visual Studio Code and Visual
+Studio instead, and the entry points are
+[`application/web/get-started/index.md`](docs/application/web/get-started/index.md) and
+[`application/native/get-started/index.md`](docs/application/native/get-started/index.md),
+which ask the reader to choose an IDE. Removed under this decision:
+
+- The Tizen Studio based Get Started walkthroughs under
+  `docs/application/{web,native}/get-started/` and their screenshots.
+- `docs/platform/reference/tizen-studio/`, the guides for building, extending and
+  contributing to Tizen Studio itself. Pull request #2391 had said this directory was left
+  untouched deliberately; #2397 removed it, because contributor documentation for a retired
+  product is retired with it. This note records that reversal, which the commit message of
+  #2397 did not.
+
+`docs/sdk-tools/baseline-sdk/` (Tizen Studio's own tool guides) is not on this list: #2397
+removed a handful of its pages, but most of it — 114 Markdown files, still linked 116 times
+from `docs/sdk-tools/toc_all.md` as of this writing — remains published. Retiring the rest
+is a separate, larger change; do not add new pages to it in the meantime, and do not read
+its continued presence here as a sign that the decision above does not apply to it.
+
+Do not add new pages to the areas already removed above. If a removed page still has
+inbound links from elsewhere, prefer a short stub pointing at the successor over leaving
+the link broken.
+
+**When you retire something yourself**, put the reason in the commit message body, not only
+in the pull request description. Pull request descriptions live on GitHub; the repository
+has to be able to explain itself on its own.
+
 ## File names
 
 - Only lowercase letters, numbers, and hyphens. No spaces or punctuation; use hyphens to
