@@ -11,6 +11,7 @@ import re
 
 from .. import markdown, paths, slug as slug_module
 from ..findings import ERROR, WARN, Finding
+from .media import MEDIA_SUFFIXES
 
 BROKEN = "L-BROKEN"
 ANCHOR = "L-ANCHOR"
@@ -43,6 +44,28 @@ def _docs_prefixed(index, raw):
         return ""
     candidate = paths.resolve("", raw[len(paths.DOCS) + 1:])
     return candidate if index.exists(candidate) else ""
+
+
+def _is_media(raw):
+    """An asset that has to be in this repository.
+
+    The exemption below exists for site-root *routes*: /application/... is a
+    published URL and the page behind it may come from another pipeline, so its
+    absence here proves nothing. Media has no other pipeline — every image the
+    site serves under docs/ is committed here — so a site-root media reference
+    that resolves to nothing is simply broken and must be reported.
+
+    Skipping it cost 33 images. A reference written "/docs/<path>" resolves to
+    docs/docs/<path>, so the orphan scan never counted it and M-ORPHAN reported
+    the files as unreferenced; #2388 then deleted them as dead weight while
+    eight published pages still pointed at them. Reporting the reference is what
+    closes that loop: check_orphans is only trusted once the L-* rules are
+    clean, so the bad reference now has to be fixed before anything can be
+    called an orphan.
+
+    Compared case-insensitively: the corpus carries both .png and .PNG.
+    """
+    return raw.lower().endswith(MEDIA_SUFFIXES)
 
 
 def _depth_shifted(index, source_path, raw):
@@ -97,7 +120,8 @@ def check_links(index, path, source):
             continue
         target = paths.resolve(path, raw)
         if not index.exists(target):
-            if raw.startswith("/") and not raw.endswith(".md"):
+            if raw.startswith("/") and not raw.endswith(".md") \
+                    and not _is_media(raw):
                 # A site-root route need not have a file here, but a redundant
                 # docs/ prefix is a mistake whatever the extension.
                 if not _docs_prefixed(index, raw):

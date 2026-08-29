@@ -79,6 +79,9 @@
 							<topic href="html/device_api/tv/tizen/cordova/media.html" label="Media" ></topic>
 							<topic href="html/device_api/tv/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
+						<topic href="html/device_api/tv/index.html#Deprecated API" label="Deprecated API">
+							<topic href="html/device_api/tv/tizen/libteec.html" label="LibTeec"/>
+						</topic>
 					</topic>
 				</topic>
 
@@ -248,6 +251,9 @@
 							<topic href="html/device_api/tv/tizen/cordova/globalization.html" label="Globalization" ></topic>
 							<topic href="html/device_api/tv/tizen/cordova/media.html" label="Media" ></topic>
 							<topic href="html/device_api/tv/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
+						</topic>
+						<topic href="html/device_api/tv/index.html#Deprecated API" label="Deprecated API">
+							<topic href="html/device_api/tv/tizen/libteec.html" label="LibTeec"/>
 						</topic>
 					</topic>
 				</topic>
@@ -419,6 +425,9 @@
 							<topic href="html/device_api/tv/tizen/cordova/media.html" label="Media" ></topic>
 							<topic href="html/device_api/tv/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
+						<topic href="html/device_api/tv/index.html#Deprecated API" label="Deprecated API">
+							<topic href="html/device_api/tv/tizen/libteec.html" label="LibTeec"/>
+						</topic>
 					</topic>
 				</topic>
 
@@ -589,6 +598,9 @@
 							<topic href="html/device_api/tv/tizen/cordova/media.html" label="Media" ></topic>
 							<topic href="html/device_api/tv/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
 						</topic>
+						<topic href="html/device_api/tv/index.html#Deprecated API" label="Deprecated API">
+							<topic href="html/device_api/tv/tizen/libteec.html" label="LibTeec"/>
+						</topic>
 					</topic>
 				</topic>
 
@@ -758,6 +770,9 @@
 							<topic href="html/device_api/tv/tizen/cordova/globalization.html" label="Globalization" ></topic>
 							<topic href="html/device_api/tv/tizen/cordova/media.html" label="Media" ></topic>
 							<topic href="html/device_api/tv/tizen/cordova/networkInformation.html" label="Network Information" ></topic>
+						</topic>
+						<topic href="html/device_api/tv/index.html#Deprecated API" label="Deprecated API">
+							<topic href="html/device_api/tv/tizen/libteec.html" label="LibTeec"/>
 						</topic>
 					</topic>
 				</topic>

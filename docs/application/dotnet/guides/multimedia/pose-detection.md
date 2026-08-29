@@ -128,7 +128,7 @@ To detect human pose from an image, proceed as follows:
 2. Get the image file and fill the MediaVisionSource `source` with the decoded raw data.
    In the following example image `sample.jpg`, a person is shown in a squat pose:
 
-   <img alt="sample.jpg" src="/application/native/guides/multimedia/media/mediavision_pose_sample_sumo.png" width=300>
+   <img alt="sample.jpg" src="media/mediavision_pose_sample_sumo.png" width=300>
 
    ```csharp
    MediaVisionSource source = new MediaVisionSource(rgbframe, width, height, Tizen.Multimedia.ColorSpace.Rgb888);

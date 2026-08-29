@@ -72,6 +72,9 @@
 						<topic href="6.5/device_api/tv/tizen/cordova/media.html" label="Media"/>
 						<topic href="6.5/device_api/tv/tizen/cordova/networkInformation.html" label="Network Information"/>
 					</topic>
+					<topic href="6.5/device_api/tv/index.html#Deprecated API" label="Deprecated API">
+						<topic href="6.5/device_api/tv/tizen/libteec.html" label="LibTeec" deprecatedSince="6.5"/>
+					</topic>
 				</topic>
 			</topic>
 			<topic href="6.5/w3c_api/w3c_api_tv.html" label="W3C/HTML5 and Supplementaries API Reference">

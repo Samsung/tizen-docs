@@ -144,6 +144,12 @@ legacy_directories = [
 # A baseline entry that no longer reproduces, which is how a regression hides.
 "B-STALE" = "error"
 
+# Reachability, not house style. A name the site route cannot serve is a 404
+# wherever it came from, so unlike N-KEBAB this is not skipped for generated
+# trees. Three entries are baselined: they come from the TizenX API generator
+# and have to be fixed there, not here.
+"P-ROUTE" = "error"
+
 # Content advisories from reviewguide/review_points_guide.md. Both are narrow
 # in scope on purpose; see [scope] below.
 "D-OVERVIEW" = "warn"

@@ -89,7 +89,7 @@ To manage Web service callbacks, follow these steps:
 
 A Web application package can contain one Web application and several Web services. Each application in the Web application package shares the same package ID and has a unique application ID. In the following example, you can use the `<tizen:application>` element to define information for the Web application. The `<tizen:service>` element is used to define information about the Web service. The Web application and the Web service have the same package ID and different application IDs.
 
-The Web application package file is installed, updated, and uninstalled as a single [package](../../index.md#package).
+The Web application package file is installed, updated, and uninstalled as a single [package](../development/index.md#package).
 
 To package the Web service with a Web application, define the service in the `config.xml` file. The `<tizen:service>` element allows you to define the characteristics of the Web service. For example, you can specify the name, type and starting JavaScipt file of the Web service:
 

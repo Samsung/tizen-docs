@@ -10,7 +10,7 @@ The build type determines how the application is compiled and optimized. Common 
 
 1. Click on the **Build Configuration dropdown** in Visual Studio.
 2. Select the desired build configuration (e.g., Debug or Release).
-<img alt="Build Type" style="border: 1px solid #000000;" src="/docs/application/vstools/media/vs2022_config_build.png" />
+<img alt="Build Type" style="border: 1px solid #000000;" src="../media/vs2022_config_build.png" />
 
 ## Set Device & Architecture
 
@@ -20,4 +20,4 @@ The application architecture depends on the selected target device. The chosen d
 
 1. Click on the **Debug and Run** dropdown in Visual Studio.
 2. Select the target device from the available list.
-<img alt="Select Device" style="border: 1px solid #000000;" src="/docs/application/vstools/media/vs2022_config_device.png" />
+<img alt="Select Device" style="border: 1px solid #000000;" src="../media/vs2022_config_device.png" />

@@ -15,7 +15,7 @@ There are two ways to edit the tizen-manifest.xml file:
     3. Modify the necessary fields in the form.
     4. Save the changes (Ctrl + S).
 
-<img alt="Manifest Editor" style="border: 1px solid #000000;" src="/docs/application/vstools/media/vs2022_manifest_editor_1.png" />
+<img alt="Manifest Editor" style="border: 1px solid #000000;" src="../media/vs2022_manifest_editor_1.png" />
 <p></P>
 
 2. **Using the XML (Text) Editor**
@@ -26,7 +26,7 @@ There are two ways to edit the tizen-manifest.xml file:
     4. Ensure the file maintains valid XML syntax and follows Tizen’s application specifications.
     5. Save the changes (Ctrl + S).
 
-<img alt="XML Editor" style="border: 1px solid #000000;" src="/docs/application/vstools/media/vs2022_manifest_editor_2.png" />
+<img alt="XML Editor" style="border: 1px solid #000000;" src="../media/vs2022_manifest_editor_2.png" />
 <p></P>
 
 **⚠ Caution:** Editing XML directly is recommended only for advanced users.Incorrect modifications can lead to validation errors or installation failures.
@@ -45,7 +45,7 @@ Steps:
 4. Ensure the XML structure remains valid.
 5. Save the changes (Ctrl + S).
 
-<img alt="Config Editor" style="border: 1px solid #000000;" src="/docs/application/vstools/media/vs2022_config_editor.png" />
+<img alt="Config Editor" style="border: 1px solid #000000;" src="../media/vs2022_config_editor.png" />
 <p></P>
 
 **Structure of config.xml**
