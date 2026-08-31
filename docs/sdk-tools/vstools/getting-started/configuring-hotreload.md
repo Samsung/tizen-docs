@@ -34,7 +34,7 @@ This example demonstrates using Hot Reload in a **Tizen ElmSharp-based UI** appl
     - A callback method is assigned to a button click event.
     - The app is launched in debug mode on a target device.
     - The callback method is modified and saved (Ctrl+S), applying Hot Reload without restarting.
-[![Demo Video: Hot reload without breakpoint](../tools/media/hotreload_without_bp.png)](/docs/application/vstools/media/Hotreload_Without_Breakpoint.mp4 "Reload example video without breakpoint")
+[![Demo Video: Hot reload without breakpoint](../tools/media/hotreload_without_bp.png)](../tools/media/Hotreload_Without_Breakpoint.mp4 "Reload example video without breakpoint")
 <br>
 
 2. **Tizen .NET Hot Reload With Breakpoint**<br>
@@ -42,4 +42,4 @@ This example demonstrates Hot Reload usage with a breakpoint in a **Tizen ElmSha
     - A breakpoint is set in the main method on a static method call.
     - The app is launched in debug mode on a target device.
     - The method is modified and saved (Ctrl+S), applying Hot Reload while debugging.
-[![Demo Video: Hot reload with breakpoint](../tools/media/hotreload_with_bp.png)](/docs/application/vstools/media/Hotreload_With_Breakpoint.mp4 "Reload example video with breakpoint")
+[![Demo Video: Hot reload with breakpoint](../tools/media/hotreload_with_bp.png)](../tools/media/Hotreload_With_Breakpoint.mp4 "Reload example video with breakpoint")
