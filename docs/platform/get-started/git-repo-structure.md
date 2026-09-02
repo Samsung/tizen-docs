@@ -85,7 +85,7 @@ Tizen source codes run a on PC emulator and an ARM-based reference device. This 
 <a href="http://download.tizen.org/releases/milestone/tizen/unified/">Snapshots ></a>
 </div>
 
-<div>
+</div>
 </section>
 
 The following table describes the Git repository structure for Tizen 3.0 and higher.
