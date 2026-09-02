@@ -914,7 +914,7 @@ tz trust-anchor <sub-command> [options]
 			Options are:
 			<ul>
 				<li><code>-p</code>, <code>--project="."</code>          :Project path</li>
-        <li><code>-c</code>, <code--cert-paths=STRING</code>     :Path of the certificates inside the .trust-anchor/. Quote enclosed and comma separated</li>
+        <li><code>-c</code>, <code>--cert-paths=STRING</code>     :Path of the certificates inside the .trust-anchor/. Quote enclosed and comma separated</li>
 			</ul>
 			</td>
 		</tr>

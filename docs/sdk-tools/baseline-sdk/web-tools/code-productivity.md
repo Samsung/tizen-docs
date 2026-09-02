@@ -32,7 +32,7 @@ If you use the Code Beautifier in the **Source Editor** view, no new file is gen
 
 ![Code Beautifier with CSS file - after beautifying](./media/code_productivity_after_beautifying.png)
 
-## Using the Code Minifier</a>
+## Using the Code Minifier
 
 Minification is the process of compressing the code from its original size to the smallest size, without affecting its operation. The Code Minifier is a smart compression tool which removes or modifies unnecessary characters from the code.
 
