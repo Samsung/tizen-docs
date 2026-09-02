@@ -50,11 +50,11 @@ The Tizen web application configuration file consists of XML elements organized 
 	</colgroup>
 	<tbody>
 		<tr>
-			<td colspan="4"><code><a href="#widget">&lt;widget&gt;</a></code></td>
+			<td colspan="4"><code><a href="#widget"><widget></a></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code><a href="#access">&lt;access&gt;</a></code></td>
+			<td colspan="3"><code><a href="#access"><access></a></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -118,7 +118,7 @@ The Tizen web application configuration file consists of XML elements organized 
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code><a href="#author">&lt;author&gt;</a></code></td>
+			<td colspan="3"><code><a href="#author"><author></a></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -135,7 +135,7 @@ The Tizen web application configuration file consists of XML elements organized 
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code><a href="#content_element">&lt;content&gt;</a></code></td>
+			<td colspan="3"><code><a href="#content_element"><content></a></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -151,7 +151,7 @@ The Tizen web application configuration file consists of XML elements organized 
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code><a href="#description">&lt;description&gt;</a></code></td>
+			<td colspan="3"><code><a href="#description"><description></a></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -160,7 +160,7 @@ The Tizen web application configuration file consists of XML elements organized 
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code>&lt;feature&gt;</code></td>
+			<td colspan="3"><code><feature></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -169,7 +169,7 @@ The Tizen web application configuration file consists of XML elements organized 
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code><a href="#icon">&lt;icon&gt;</a></code></td>
+			<td colspan="3"><code><a href="#icon"><icon></a></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -212,7 +212,7 @@ The Tizen web application configuration file consists of XML elements organized 
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code><a href="#license">&lt;license&gt;</a></code></td>
+			<td colspan="3"><code><a href="#license"><license></a></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -225,7 +225,7 @@ The Tizen web application configuration file consists of XML elements organized 
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code><a href="#name">&lt;name&gt;</a></code></td>
+			<td colspan="3"><code><a href="#name"><name></a></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -234,7 +234,7 @@ The Tizen web application configuration file consists of XML elements organized 
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code><a href="#preference">&lt;preference&gt;</a></code></td>
+			<td colspan="3"><code><a href="#preference"><preference></a></code></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -301,14 +301,14 @@ The following tables summarize the W3C configuration elements used in the `confi
 <table id="widget">
 	<thead>
 		<tr>
-			<th>&lt;widget&gt; element</th>
+			<th><widget> element</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>Represents the root element of a configuration document.
 			<p><strong>Expected children:</strong></p>
-			<p><code>&lt;access&gt;</code>, <code>&lt;tizen:account&gt;</code>, <code>&lt;tizen:app-control&gt;</code>, <code>&lt;tizen:appdefined-privilege&gt;</code>, <code>&lt;tizen:application&gt;</code>, <code>&lt;author&gt;</code>, <code>&lt;content&gt;</code>, <code>&lt;tizen:content&gt;</code>, <code>&lt;description&gt;</code>, <code>&lt;feature&gt;</code>, <code>&lt;icon&gt;</code>, <code>&lt;license&gt;</code>, <code>&lt;name&gt;</code>, <code>&lt;preference&gt;</code>, <code>&lt;tizen:privilege&gt;</code>, <code>&lt;tizen:provides-appdefined-privilege&gt;</code>, <code>&lt;tizen:profile&gt;</code>, and <code>&lt;tizen:setting&gt;</code></p>
+			<p><code><access></code>, <code>&lt;tizen:account&gt;</code>, <code>&lt;tizen:app-control&gt;</code>, <code>&lt;tizen:appdefined-privilege&gt;</code>, <code>&lt;tizen:application&gt;</code>, <code><author></code>, <code><content></code>, <code>&lt;tizen:content&gt;</code>, <code><description></code>, <code><feature></code>, <code><icon></code>, <code><license></code>, <code><name></code>, <code><preference></code>, <code>&lt;tizen:privilege&gt;</code>, <code>&lt;tizen:provides-appdefined-privilege&gt;</code>, <code>&lt;tizen:profile&gt;</code>, and <code>&lt;tizen:setting&gt;</code></p>
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>xml:lang</code></li>
@@ -330,7 +330,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 <table id="access">
 	<thead>
 		<tr>
-			<th>&lt;access&gt; element</th>
+			<th><access> element</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -349,7 +349,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 <table id="author">
 	<thead>
 		<tr>
-			<th>&lt;author&gt; element</th>
+			<th><author> element</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -372,7 +372,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 <table id="content_element">
 	<thead>
 		<tr>
-			<th>&lt;content&gt; element</th>
+			<th><content> element</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -394,7 +394,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 <table id="description">
 	<thead>
 		<tr>
-			<th>&lt;description&gt; element</th>
+			<th><description> element</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -415,7 +415,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 <table id="icon">
 	<thead>
 		<tr>
-			<th>&lt;icon&gt; element</th>
+			<th><icon> element</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -437,7 +437,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 <table id="license">
 	<thead>
 		<tr>
-			<th>&lt;license&gt; element</th>
+			<th><license> element</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -459,7 +459,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 <table id="name">
 	<thead>
 		<tr>
-			<th>&lt;name&gt; element</th>
+			<th><name> element</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -502,7 +502,7 @@ The following tables summarize the W3C configuration elements used in the `confi
 <table id="preference">
 	<thead>
 		<tr>
-			<th>&lt;preference&gt; element</th>
+			<th><preference> element</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -576,7 +576,7 @@ The following sections show additional configuration elements used in the `confi
 				<p>Mandatory; display name of the account provider</p>
 				</li>
 				<li><code>capability</code>
-				<p>Optional; capability of the account provider. Capabilities are defined in the <code>http://&lt;VENDOR_INFORMATION&gt;/accounts/capability/&lt;NAME&gt;</code> IRI format.</p>
+				<p>Optional; capability of the account provider. Capabilities are defined in the <code>http://<VENDOR_INFORMATION>/accounts/capability/<NAME></code> IRI format.</p>
 				</li>
 			</ul>
 			<p><strong>Attributes:</strong></p>
@@ -770,7 +770,7 @@ The following sections show additional configuration elements used in the `confi
 		<tr>
 			<td>Used to represent the category of an application that is allowed to run in the background.
 			<blockquote><p><strong>Note</strong><br>
-            In addition to declaring the <code>&lt;background-category&gt;</code> element, you must <a href="#ww_setting">set the <code>&lt;tizen:setting background-support&gt;</code> attribute to <code>enable</code></a> to run web applications in the background.</p></blockquote>
+            In addition to declaring the <code><background-category></code> element, you must <a href="#ww_setting">set the <code>&lt;tizen:setting background-support&gt;</code> attribute to <code>enable</code></a> to run web applications in the background.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>

@@ -19,7 +19,7 @@
 | [BackgroundTokenPropertyChangedEventArgs](Tizen.UI.BackgroundTokenPropertyChangedEventArgs.md 'Tizen.UI.BackgroundTokenPropertyChangedEventArgs') | Provides data for background token property changed events. |
 | [BindingExtensions](Tizen.UI.BindingExtensions.md 'Tizen.UI.BindingExtensions') | Provides extension methods for binding properties of a view model to a view. |
 | [BindingProperty&lt;TView,TValue&gt;](Tizen.UI.BindingProperty_TView,TValue_.md 'Tizen.UI.BindingProperty&lt;TView,TValue>') | The BindingProperty class represents a binding property for a view. |
-| [BindingSession&lt;TViewModel&gt;](Tizen.UI.BindingSession_TViewModel_.md 'Tizen.UI.BindingSession&lt;TViewModel>') | BindingSession class provides a mechanism for binding properties of a view model to a view. |
+| [BindingSession<TViewModel>](Tizen.UI.BindingSession_TViewModel_.md 'Tizen.UI.BindingSession&lt;TViewModel>') | BindingSession class provides a mechanism for binding properties of a view model to a view. |
 | [ColorBackground](Tizen.UI.ColorBackground.md 'Tizen.UI.ColorBackground') | The ColorBackground class is used to display a solid color on the screen. |
 | [ColorTokenPropertyChangedEventArgs](Tizen.UI.ColorTokenPropertyChangedEventArgs.md 'Tizen.UI.ColorTokenPropertyChangedEventArgs') | Provides data for color token property changed events. |
 | [ContentView](Tizen.UI.ContentView.md 'Tizen.UI.ContentView') | ContentView is a view that displays body view as its content. |
@@ -28,7 +28,7 @@
 | [DisplayMetrics](Tizen.UI.DisplayMetrics.md 'Tizen.UI.DisplayMetrics') | Provides methods for converting between display units and pixels. |
 | [DpExtensions](Tizen.UI.DpExtensions.md 'Tizen.UI.DpExtensions') | Provides extension methods for representing the the device-independent pixels (dp), point (pt) and pixel (px). |
 | [DragEventArgs](Tizen.UI.DragEventArgs.md 'Tizen.UI.DragEventArgs') | The event arguments of drag. |
-| [EditableTextBindings&lt;T&gt;](Tizen.UI.EditableTextBindings_T_.md 'Tizen.UI.EditableTextBindings&lt;T>') | Provides a set of static properties that represent the data-binding capabilities of the [IText](Tizen.UI.IText.md 'Tizen.UI.IText') and [ITextEditable](Tizen.UI.ITextEditable.md 'Tizen.UI.ITextEditable') interface. |
+| [EditableTextBindings<T>](Tizen.UI.EditableTextBindings_T_.md 'Tizen.UI.EditableTextBindings&lt;T>') | Provides a set of static properties that represent the data-binding capabilities of the [IText](Tizen.UI.IText.md 'Tizen.UI.IText') and [ITextEditable](Tizen.UI.ITextEditable.md 'Tizen.UI.ITextEditable') interface. |
 | [EventHandlerHelper](Tizen.UI.EventHandlerHelper.md 'Tizen.UI.EventHandlerHelper') | EventHandlerHelper class provides a helper method to set and get event handlers using actions. |
 | [ExceptionHelper](Tizen.UI.ExceptionHelper.md 'Tizen.UI.ExceptionHelper') | Including methods that helps to throw exceptions. |
 | [FocusChangedEventArgs](Tizen.UI.FocusChangedEventArgs.md 'Tizen.UI.FocusChangedEventArgs') | Provides data for the [FocusChanged](Tizen.UI.FocusManager.md#Tizen.UI.FocusManager.FocusChanged 'Tizen.UI.FocusManager.FocusChanged') event. |
@@ -91,8 +91,8 @@
 | [TapGestureDetectedEventArgs](Tizen.UI.TapGestureDetectedEventArgs.md 'Tizen.UI.TapGestureDetectedEventArgs') | Event arguments for [TapGesture](Tizen.UI.TapGesture.md 'Tizen.UI.TapGesture') event. |
 | [TapGestureDetector](Tizen.UI.TapGestureDetector.md 'Tizen.UI.TapGestureDetector') | The TapGestureDetector class is used to detect when the user performs a tap gesture on a view. |
 | [TbmSurfaceView](Tizen.UI.TbmSurfaceView.md 'Tizen.UI.TbmSurfaceView') | The TbmSurfaceView class represents a view that renders a texture using a TBM (Tizen Buffer Manager) surface. |
-| [Template&lt;T&gt;](Tizen.UI.Template_T_.md 'Tizen.UI.Template&lt;T>') | A generic template class that provides a way to create and setup instances of a specified type. |
-| [TextBindings&lt;T&gt;](Tizen.UI.TextBindings_T_.md 'Tizen.UI.TextBindings&lt;T>') | Provides a set of static properties that represent the data-binding capabilities of the  [Itext](https://docs.microsoft.com/en-us/dotnet/api/Itext 'Itext') interface. |
+| [Template<T>](Tizen.UI.Template_T_.md 'Tizen.UI.Template&lt;T>') | A generic template class that provides a way to create and setup instances of a specified type. |
+| [TextBindings<T>](Tizen.UI.TextBindings_T_.md 'Tizen.UI.TextBindings&lt;T>') | Provides a set of static properties that represent the data-binding capabilities of the  [Itext](https://docs.microsoft.com/en-us/dotnet/api/Itext 'Itext') interface. |
 | [TextEditor](Tizen.UI.TextEditor.md 'Tizen.UI.TextEditor') | A TextEditor is a multi-line text input control that supports various text editing features. |
 | [TextEditorExtensions](Tizen.UI.TextEditorExtensions.md 'Tizen.UI.TextEditorExtensions') | Provides a set of extension methods for the [TextEditor](Tizen.UI.TextEditor.md 'Tizen.UI.TextEditor') class. |
 | [TextExtensions](Tizen.UI.TextExtensions.md 'Tizen.UI.TextExtensions') | Provides a series of extension methods that support configuring a Text. |
@@ -170,7 +170,7 @@
 | [ITextFormatting](Tizen.UI.ITextFormatting.md 'Tizen.UI.ITextFormatting') | The ITextFormatting interface provides a method for setting the text formatting. |
 | [ITextPadding](Tizen.UI.ITextPadding.md 'Tizen.UI.ITextPadding') | The ITextPadding interface provides a method for setting the text padding. |
 | [IToken](Tizen.UI.IToken.md 'Tizen.UI.IToken') | Interface for token. |
-| [ITokenTable&lt;T&gt;](Tizen.UI.ITokenTable_T_.md 'Tizen.UI.ITokenTable&lt;T>') | The interface for a token table. |
+| [ITokenTable<T>](Tizen.UI.ITokenTable_T_.md 'Tizen.UI.ITokenTable&lt;T>') | The interface for a token table. |
 
 | Enums | |
 | :--- | :--- |

@@ -5,7 +5,7 @@
 **A**: Your network can have some issues, or your proxy does not work. Try another proxy and check the network status.
 
 
-**Q**: MIC shows "Error &lt;repository&gt;: found 1 resolver problem, abort!" What does it mean?
+**Q**: MIC shows "Error <repository>: found 1 resolver problem, abort!" What does it mean?
 
 **A**: This is not an issue with MIC, but with the repository you used. Make sure the packages in the used repository have proper dependencies. Try using the repository under the `release` folder, instead of the `snapshot` folder.
 

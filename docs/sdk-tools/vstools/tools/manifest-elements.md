@@ -3,7 +3,7 @@
 The following sections summarize some of the common child elements used in the `tizen-manifest.xml` file of a Tizen .NET application.
 
 <a name="appcontrol"></a>
-## &lt;app-control&gt; Element
+## <app-control> Element
 
 This element represents Tizen application control configuration information.
 
@@ -32,7 +32,7 @@ For more information on the relationship between the elements, see the [element 
 ```
 
 <a name="operation"></a>
-### &lt;operation&gt; Element
+### <operation> Element
 
 This element represents the operation type of the application control.
 
@@ -48,7 +48,7 @@ This element represents the operation type of the application control.
 <operation name="http://tizen.org/appcontrol/operation/compose"/>
 ```
 <a name="uri"></a>
-### &lt;uri&gt; Element
+### <uri> Element
 
 This element represents the URI scheme of the application control.
 
@@ -65,7 +65,7 @@ This element represents the URI scheme of the application control.
 ```
 
 <a name="mime"></a>
-### &lt;mime&gt; Element
+### <mime> Element
 
 This element represents the MIME type of the application control.
 
@@ -82,7 +82,7 @@ This element represents the MIME type of the application control.
 ```
 
 <a name="bg-category"></a>
-## &lt;background-category&gt; Element
+## <background-category> Element
 
 This element represents the category of an application that runs in the background.
 
@@ -104,7 +104,7 @@ For more information on the relationship between the elements, see the [element 
 <background-category value="download"/>
 ```
 <a name="datacontrol"></a>
-## &lt;datacontrol&gt; Element
+## <datacontrol> Element
 
 This element represents configuration information for the Tizen data controls.
 
@@ -143,7 +143,7 @@ For more information on the relationship between the elements, see the [element 
 ```
 
 <a name="icon"></a>
-## &lt;icon&gt; Element
+## <icon> Element
 
 This element represents the icon relative or absolute file path for the Tizen application.
 
@@ -190,7 +190,7 @@ For more information on the relationship between the elements, see the [element 
 <label xml:lang="en-gb">testlabel</label>
 ```
 <a name="metadata"></a>
-## &lt;metadata&gt; Element
+## <metadata> Element
 
 This element represents user-defined key-value pairs for the application.
 
@@ -217,7 +217,7 @@ For more information on the relationship between the elements, see the [element 
 ```
 
 <a name="splash-screens"></a>
-## &lt;splash-screens&gt; Element 
+## <splash-screens> Element 
 This element represents Tizen splash-screen configuration information.
 
 For more information on the relationship between the elements, see the [element hierarchy](manifest-editor.md#hierarchy).
@@ -242,7 +242,7 @@ For more information on the relationship between the elements, see the [element 
 ```
 
 <a name="splash-screen"></a>
-### &lt;splash-screen&gt; Element
+### <splash-screen> Element
 
 This element represents a splash-screen of the application. The splash-screen is an image that covers the entire screen. It is displayed when the application is launched, and disappears after the application main screen is loaded.
 

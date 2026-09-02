@@ -219,7 +219,7 @@ The following table lists the commands supported by the control panel CLI.
 		</tr>
 		<tr>
 			<td><code>keycode</code></td>
-			<td><code>keycode &lt;key-code&gt; [period|press|release]</code></td>
+			<td><code>keycode <key-code> [period|press|release]</code></td>
 			<td>To enter a key code:
 			<ul>
 				<li><code>114</code>: Volume down</li>
@@ -248,7 +248,7 @@ The following table lists the commands supported by the control panel CLI.
 			<td>Enable the host directory sharing feature between the specified <code>&lt;host path&gt;</code> and the emulator's <code>&lt;guest path&gt;</code>. The specified path must be a folder, not a file.</td>
 		</tr>
 		<tr>
-			<td><code>hds unmount &lt;id&gt;</code></td>
+			<td><code>hds unmount <id></code></td>
 			<td>Unmount the mounted host directory sharing path. The <code>id</code> is the HDS ID and you can get it from the <code>hds status</code> command.</td>
 		</tr>
 		<tr>

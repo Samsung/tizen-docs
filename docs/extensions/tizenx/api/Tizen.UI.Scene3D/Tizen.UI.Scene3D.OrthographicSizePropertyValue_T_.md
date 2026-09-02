@@ -23,7 +23,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 ## OrthographicSizePropertyValue(float) Constructor
 
-Initializes a new instance of the [OrthographicSizePropertyValue&lt;T&gt;](Tizen.UI.Scene3D.OrthographicSizePropertyValue_T_.md 'Tizen.UI.Scene3D.OrthographicSizePropertyValue&lt;T>') class.
+Initializes a new instance of the [OrthographicSizePropertyValue<T>](Tizen.UI.Scene3D.OrthographicSizePropertyValue_T_.md 'Tizen.UI.Scene3D.OrthographicSizePropertyValue&lt;T>') class.
 
 ```csharp
 public OrthographicSizePropertyValue(float orthographicSize);

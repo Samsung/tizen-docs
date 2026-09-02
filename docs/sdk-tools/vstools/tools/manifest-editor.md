@@ -79,7 +79,7 @@ The Tizen .NET application manifest file consists of XML elements organized in a
 The following sections summarize the elements used in the `tizen-manifest.xml` file of a Tizen .NET application.
 
 <a name="manifest_element"></a>
-### &lt;manifest&gt; Element
+### <manifest> Element
 
 This element contains the manifest information for a Tizen .NET application. The `<manifest>` element is an easily-readable description of the Tizen package and serves as a container for the other elements of the configuration document.
 
@@ -152,7 +152,7 @@ For more information on the relationship between the elements, see the [element 
 ```
 
 <a name="author"></a>
-### &lt;author&gt; Element
+### <author> Element
 
 This element represents the creator of the Tizen package.
 
@@ -183,7 +183,7 @@ For more information on the relationship between the elements, see the [element 
 ```
 
 <a name="description"></a>
-### &lt;description&gt; Element
+### <description> Element
 
 This element contains an easily readable description of the Tizen package.
 
@@ -210,7 +210,7 @@ For more information on the relationship between the elements, see the [element 
 ```
 
 <a name="profile_element"></a>
-### &lt;profile&gt; Element
+### <profile> Element
 
 In a Tizen .NET application, the `<profile>` element must be set to `common`. This element has no child elements.
 
@@ -231,7 +231,7 @@ In a Tizen .NET application, the `<profile>` element must be set to `common`. Th
 ```
 
 <a name="ui"></a>
-### &lt;ui-application&gt; Element
+### <ui-application> Element
 
 This element contains the manifest information for a Tizen .NET UI application with a graphical user interface (GUI).
 
@@ -402,7 +402,7 @@ This element contains the widget application text.
 ```
 
 <a name="widget_icon"></a>
-#### &lt;icon&gt; Element
+#### <icon> Element
 
 This element contains the widget application icon image.
 
@@ -421,7 +421,7 @@ This element contains the widget application icon image.
 ```
 
 <a name="widget_supportsize"></a>
-#### &lt;support-size&gt; Element
+#### <support-size> Element
 
 This element contains the size supported by the widget application.
 
@@ -452,7 +452,7 @@ This element contains the size supported by the widget application.
 ```
 
 <a name="widget_class"></a>
-#### &lt;widget-class&gt; Element
+#### <widget-class> Element
 
 This element contains the settings for the widget class. After adding this element, you can use the `widget_app_class_add()` function to create widget instances in the widget application (maximum number of instances is defined in the `max-instance` attribute of the `<widget-application>` element).
 
@@ -495,7 +495,7 @@ This element contains the settings for the widget class. After adding this eleme
 ```
 
 <a name="shortcut-list"></a>
-### &lt;shortcut-list&gt; Element
+### <shortcut-list> Element
 
 This element contains the shortcut template list used for adding a shortcut to the home screen.
 
@@ -520,7 +520,7 @@ For more information on the relationship between the elements, see the [element 
 ```
 
 <a name="shortcut"></a>
-#### &lt;shortcut&gt; Element
+#### <shortcut> Element
 
 This element contains the information that indicates the shortcut for the application on the home screen.
 
@@ -565,7 +565,7 @@ This element contains the information that indicates the shortcut for the applic
 </shortcut>
 ```
 <a name="account"></a>
-### &lt;account&gt; Element
+### <account> Element
 
 This element contains a set of user accounts and account provider-related information for a Tizen application.
 
@@ -589,7 +589,7 @@ For more information on the relationship between the elements, see the [element 
 </account>
 ```
 <a name="accountprovider"></a>
-#### &lt;account-provider&gt; Element
+#### <account-provider> Element
 
 This element contains specific service provider or user account protocol-related information.
 
@@ -627,7 +627,7 @@ This element contains specific service provider or user account protocol-related
 </account-provider>
 ```
 
-#### &lt;icon&gt; Element
+#### <icon> Element
 
 This element contains the account provider icon image. Since the icons are used on the device under **Settings &gt; Accounts**, place them in a shared directory.
 
@@ -649,7 +649,7 @@ This element contains the account provider icon image. Since the icons are used 
 ```
 
 <a name="capability"></a>
-#### &lt;capability&gt; Element
+#### <capability> Element
 
 This element contains the account provider capability. The capabilities are defined as `http://<VENDOR_INFORMATION>/account/capability/<NAME>`.
 
@@ -664,7 +664,7 @@ This element contains the account provider capability. The capabilities are defi
 ```
 
 <a name="privileges"></a>
-### &lt;privileges&gt; Element
+### <privileges> Element
 
 This element contains the set of required privileges for a Tizen application.
 
@@ -672,7 +672,7 @@ Applications that use sensitive APIs must declare the required privileges in the
 
 Click **Add** to open the **Privileges** dialog.
 
-**Figure: Editing the &lt;privileges&gt; element in the Manifest Editor**
+**Figure: Editing the <privileges> element in the Manifest Editor**
 
 ![Editing the feature element in the Manifest Editor](media/vs_manifest_privileges.png)
 
@@ -699,7 +699,7 @@ For more information on the relationship between the elements, see the [element 
 ```
 
 <a name="privilege"></a>
-#### &lt;privilege&gt; Element
+#### <privilege> Element
 
 This element contains a required privilege for a Tizen application.
 
@@ -728,7 +728,7 @@ For more information on the expected values, see [Security and API Privileges](.
 ```
 
 <a name="appdefined-privilege"></a>
-#### &lt;appdefined-privilege&gt; Element
+#### <appdefined-privilege> Element
 
 This element is used to get the required access privileges provided by a consumer package.
 
@@ -756,7 +756,7 @@ This element is used to get the required access privileges provided by a consume
 ```
 
 <a name="provides-appdefined-privileges"></a>
-### &lt;provides-appdefined-privileges&gt; Element
+### <provides-appdefined-privileges> Element
 
 This element specifies the app-defined access privileges provided by a provider package.
 
@@ -781,7 +781,7 @@ For more information on the relationship between the elements, see the [element 
 </provides-appdefined-privileges>
 ```
 <a name="appdefined-privilege2"></a>
-#### &lt;appdefined-privilege&gt; Element
+#### <appdefined-privilege> Element
 
 This element is used to get the required access privileges provided by a provider package.
 
@@ -809,13 +809,13 @@ This element is used to get the required access privileges provided by a provide
 ```
 
 <a name="feature"></a>
-### &lt;feature&gt; Element
+### <feature> Element
 
 This element contains a list of required features for feature-based filtering in the official site for Tizen applications.
 
 The element is used to define the hardware and software components for the Tizen application. In order to use or access an API that is specialized for each vendor or platform, the feature must be declared. This element has no child elements.
 
-**Figure: Editing the &lt;feature&gt; element in the Manifest Editor**
+**Figure: Editing the <feature> element in the Manifest Editor**
 
 ![Editing the feature element in the Manifest Editor](media/vs_manifest_features.png)
 

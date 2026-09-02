@@ -25,7 +25,7 @@ Implements [System.IDisposable](https://docs.microsoft.com/en-us/dotnet/api/Syst
 
 ## ObjectPool(T) Constructor
 
-Initializes a new instance of the [ObjectPool&lt;T&gt;](Tizen.UI.Internal.ObjectPool_T_.md 'Tizen.UI.Internal.ObjectPool&lt;T>') class.
+Initializes a new instance of the [ObjectPool<T>](Tizen.UI.Internal.ObjectPool_T_.md 'Tizen.UI.Internal.ObjectPool&lt;T>') class.
 
 ```csharp
 public ObjectPool(T value);

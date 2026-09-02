@@ -2,7 +2,7 @@
 
 ## StaticDrawer Class
 
-A [StaticDrawer&lt;T&gt;](Tizen.UI.Components.Material.StaticDrawer_T_.md 'Tizen.UI.Components.Material.StaticDrawer&lt;T>') with default item type of [StaticDrawer](Tizen.UI.Components.Material.StaticDrawer.md 'Tizen.UI.Components.Material.StaticDrawer').
+A [StaticDrawer<T>](Tizen.UI.Components.Material.StaticDrawer_T_.md 'Tizen.UI.Components.Material.StaticDrawer&lt;T>') with default item type of [StaticDrawer](Tizen.UI.Components.Material.StaticDrawer.md 'Tizen.UI.Components.Material.StaticDrawer').
 
 ```csharp
 public class StaticDrawer : Tizen.UI.Components.Material.StaticDrawer&lt;Tizen.UI.Components.Material.DrawerItem>

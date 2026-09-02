@@ -30,7 +30,7 @@ To initialize the camera, create a handle for the camera, configure the
 camera settings, and register callback functions for the events of
 preview and auto-focus:
 
-1.  To use the functions and data types of the Camera API ([API reference](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html)), include the &lt;camera.h&gt; header file in your
+1.  To use the functions and data types of the Camera API ([API reference](../../api/common/latest/group__CAPI__MEDIA__CAMERA__MODULE.html)), include the <camera.h> header file in your
     application:
 
     ```c++

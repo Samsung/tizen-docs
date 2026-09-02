@@ -13,7 +13,7 @@ Derived
 &#8627; [GroupSelectableBox](Tizen.UI.Components.GroupSelectableBox.md 'Tizen.UI.Components.GroupSelectableBox')  
 &#8627; [PressableBox](Tizen.UI.Components.PressableBox.md 'Tizen.UI.Components.PressableBox')  
 &#8627; [SelectableBox](Tizen.UI.Components.SelectableBox.md 'Tizen.UI.Components.SelectableBox')  
-&#8627; [SelectionGroupBox&lt;T&gt;](Tizen.UI.Components.SelectionGroupBox_T_.md 'Tizen.UI.Components.SelectionGroupBox&lt;T>')
+&#8627; [SelectionGroupBox<T>](Tizen.UI.Components.SelectionGroupBox_T_.md 'Tizen.UI.Components.SelectionGroupBox&lt;T>')
 ### Properties
 
 <a name='Tizen.UI.Components.ILayoutBox.Children'></a>

@@ -2,7 +2,7 @@
 
 ## TabBar Class
 
-A [TabBar&lt;T&gt;](Tizen.UI.Components.Material.TabBar_T_.md 'Tizen.UI.Components.Material.TabBar&lt;T>') with default item type of [TabItem](Tizen.UI.Components.Material.TabItem.md 'Tizen.UI.Components.Material.TabItem').
+A [TabBar<T>](Tizen.UI.Components.Material.TabBar_T_.md 'Tizen.UI.Components.Material.TabBar&lt;T>') with default item type of [TabItem](Tizen.UI.Components.Material.TabItem.md 'Tizen.UI.Components.Material.TabItem').
 
 ```csharp
 public class TabBar : Tizen.UI.Components.Material.TabBar&lt;Tizen.UI.Components.Material.TabItem>

@@ -20,14 +20,14 @@ The type of view that the property value belongs to.
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Animatable3DPropertyValue&lt;T>
 
 Derived  
-&#8627; [CustomPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.CustomPropertyValue_T_.md 'Tizen.UI.Scene3D.CustomPropertyValue&lt;T>')  
-&#8627; [FieldOfViewPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.FieldOfViewPropertyValue_T_.md 'Tizen.UI.Scene3D.FieldOfViewPropertyValue&lt;T>')  
-&#8627; [OpacityPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.OpacityPropertyValue_T_.md 'Tizen.UI.Scene3D.OpacityPropertyValue&lt;T>')  
-&#8627; [OrthographicSizePropertyValue&lt;T&gt;](Tizen.UI.Scene3D.OrthographicSizePropertyValue_T_.md 'Tizen.UI.Scene3D.OrthographicSizePropertyValue&lt;T>')  
-&#8627; [Position3DPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.Position3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Position3DPropertyValue&lt;T>')  
-&#8627; [Rotation3DPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.Rotation3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Rotation3DPropertyValue&lt;T>')  
-&#8627; [Scale3DPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.Scale3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Scale3DPropertyValue&lt;T>')  
-&#8627; [Size3DPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.Size3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Size3DPropertyValue&lt;T>')
+&#8627; [CustomPropertyValue<T>](Tizen.UI.Scene3D.CustomPropertyValue_T_.md 'Tizen.UI.Scene3D.CustomPropertyValue&lt;T>')  
+&#8627; [FieldOfViewPropertyValue<T>](Tizen.UI.Scene3D.FieldOfViewPropertyValue_T_.md 'Tizen.UI.Scene3D.FieldOfViewPropertyValue&lt;T>')  
+&#8627; [OpacityPropertyValue<T>](Tizen.UI.Scene3D.OpacityPropertyValue_T_.md 'Tizen.UI.Scene3D.OpacityPropertyValue&lt;T>')  
+&#8627; [OrthographicSizePropertyValue<T>](Tizen.UI.Scene3D.OrthographicSizePropertyValue_T_.md 'Tizen.UI.Scene3D.OrthographicSizePropertyValue&lt;T>')  
+&#8627; [Position3DPropertyValue<T>](Tizen.UI.Scene3D.Position3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Position3DPropertyValue&lt;T>')  
+&#8627; [Rotation3DPropertyValue<T>](Tizen.UI.Scene3D.Rotation3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Rotation3DPropertyValue&lt;T>')  
+&#8627; [Scale3DPropertyValue<T>](Tizen.UI.Scene3D.Scale3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Scale3DPropertyValue&lt;T>')  
+&#8627; [Size3DPropertyValue<T>](Tizen.UI.Scene3D.Size3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Size3DPropertyValue&lt;T>')
 
 Implements [System.IDisposable](https://docs.microsoft.com/en-us/dotnet/api/System.IDisposable 'System.IDisposable')
 ### Properties
@@ -150,7 +150,7 @@ The new OrthographicSizePropertyValue object.
 
 ## Animatable3DPropertyValue&lt;T>.CreatePosition3DValue(float, float, float) Method
 
-Creates a new [Position3DPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.Position3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Position3DPropertyValue&lt;T>') object with the given values.
+Creates a new [Position3DPropertyValue<T>](Tizen.UI.Scene3D.Position3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Position3DPropertyValue&lt;T>') object with the given values.
 
 ```csharp
 public static Tizen.UI.Scene3D.Animatable3DPropertyValue&lt;T> CreatePosition3DValue(float x, float y, float z);

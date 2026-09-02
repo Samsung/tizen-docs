@@ -2,7 +2,7 @@
 
 ## DropdownList Class
 
-A [DropdownList&lt;T&gt;](Tizen.UI.Components.Material.DropdownList_T_.md 'Tizen.UI.Components.Material.DropdownList&lt;T>') with default item type of [DropdownItem](Tizen.UI.Components.Material.DropdownItem.md 'Tizen.UI.Components.Material.DropdownItem').
+A [DropdownList<T>](Tizen.UI.Components.Material.DropdownList_T_.md 'Tizen.UI.Components.Material.DropdownList&lt;T>') with default item type of [DropdownItem](Tizen.UI.Components.Material.DropdownItem.md 'Tizen.UI.Components.Material.DropdownItem').
 
 ```csharp
 public class DropdownList : Tizen.UI.Components.Material.DropdownList&lt;Tizen.UI.Components.Material.DropdownItem>

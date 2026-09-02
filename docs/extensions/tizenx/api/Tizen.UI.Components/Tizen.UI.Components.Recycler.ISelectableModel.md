@@ -11,7 +11,7 @@ System.ComponentModel.INotifyPropertyChanged
 
 Derived  
 &#8627; [SelectableModel](Tizen.UI.Components.Recycler.SelectableModel.md 'Tizen.UI.Components.Recycler.SelectableModel')  
-&#8627; [SelectionModelGroup&lt;T&gt;](Tizen.UI.Components.Recycler.SelectionModelGroup_T_.md 'Tizen.UI.Components.Recycler.SelectionModelGroup&lt;T>')
+&#8627; [SelectionModelGroup<T>](Tizen.UI.Components.Recycler.SelectionModelGroup_T_.md 'Tizen.UI.Components.Recycler.SelectionModelGroup&lt;T>')
 
 Implements [System.ComponentModel.INotifyPropertyChanged](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.INotifyPropertyChanged 'System.ComponentModel.INotifyPropertyChanged')
 ### Properties

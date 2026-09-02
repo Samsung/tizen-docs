@@ -111,6 +111,6 @@ $ echo "root:x:0:0:root:/root:/bin/bash" >>path/to/buildroot/etc/passwd$ echo "r
 
 ## Miscellaneous issues
 
-**Q**: Fedora GBS shows an error: "&lt;user&gt; is not in the sudoers file. This incident will be reported". What is wrong?
+**Q**: Fedora GBS shows an error: "<user> is not in the sudoers file. This incident will be reported". What is wrong?
 
-**A**: Update `/etc/sudoers` to give &lt;user&gt; sudo permission.
+**A**: Update `/etc/sudoers` to give <user> sudo permission.
