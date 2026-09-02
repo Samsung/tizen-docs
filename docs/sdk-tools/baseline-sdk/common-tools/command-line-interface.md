@@ -747,7 +747,7 @@ tizen build-app [options] [args specified with JSON-like format]
 			<th>Type</th>
 			<th>JSON-like expression</th>
 		</tr>
-	</tead>
+	</thead>
 	<tbody>
 		<tr>
 			<td><code>build</code></td>

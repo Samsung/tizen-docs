@@ -52,7 +52,6 @@ For example, see the "Privilege:" section in the following picture:
 <ul>
 <li><a href="common/9.0/index.html" target="_blank">9.0</a></li>
 <li><a href="common/8.0/index.html" target="_blank">8.0</a></li>
-</li>
 <li>Iot-Headed
   <ul>
     <li><a href="iot-headed/7.0/index.html" target="_blank">7.0</a></li>

@@ -3,7 +3,7 @@
 ## System requirements
 
 - Operating system: macOS
-   - The [Rosetta translation environment](https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment) must be available if you're installing on an [Apple Silicon](https://support.apple.com/en-us/HT211814) Mac.<p>
+   - The [Rosetta translation environment](https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment) must be available if you're installing on an [Apple Silicon](https://support.apple.com/en-us/HT211814) Mac.
      ```sh
      sudo softwareupdate --install-rosetta --agree-to-license
      ```
