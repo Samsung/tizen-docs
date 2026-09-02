@@ -11,7 +11,7 @@
 
 | Structs | |
 | :--- | :--- |
-| [TypedAnimationTargetBridge&lt;T&gt;](Tizen.UI.Components.Animations.TypedAnimationTargetBridge_T_.md 'Tizen.UI.Components.Animations.TypedAnimationTargetBridge&lt;T>') | A bridge between a typed animation and extensions.<br/>It provides animation instance and target view to extension method. |
+| [TypedAnimationTargetBridge<T>](Tizen.UI.Components.Animations.TypedAnimationTargetBridge_T_.md 'Tizen.UI.Components.Animations.TypedAnimationTargetBridge&lt;T>') | A bridge between a typed animation and extensions.<br/>It provides animation instance and target view to extension method. |
 
 
 

@@ -8,7 +8,7 @@
 | [LottieVisualMap](Tizen.UI.Internal.LottieVisualMap.md 'Tizen.UI.Internal.LottieVisualMap') | LottieVisualMap is a class that represents a visual map for Lottie animation. |
 | [NativeImageSource](Tizen.UI.Internal.NativeImageSource.md 'Tizen.UI.Internal.NativeImageSource') | Represents a native image source that can be used for rendering. |
 | [ObjectPool](Tizen.UI.Internal.ObjectPool.md 'Tizen.UI.Internal.ObjectPool') | Provides a set of static methods for creating new object pools. |
-| [ObjectPool&lt;T&gt;](Tizen.UI.Internal.ObjectPool_T_.md 'Tizen.UI.Internal.ObjectPool&lt;T>') | Provides a pool of objects that can be reused to improve performance and reduce memory usage. |
+| [ObjectPool<T>](Tizen.UI.Internal.ObjectPool_T_.md 'Tizen.UI.Internal.ObjectPool&lt;T>') | Provides a pool of objects that can be reused to improve performance and reduce memory usage. |
 | [ResourceManager](Tizen.UI.Internal.ResourceManager.md 'Tizen.UI.Internal.ResourceManager') | Provides a method to get the path of a resource file. |
 | [WindowExtensions](Tizen.UI.Internal.WindowExtensions.md 'Tizen.UI.Internal.WindowExtensions') | |
 

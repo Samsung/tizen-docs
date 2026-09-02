@@ -2526,8 +2526,8 @@ livedumper [-m] [-P <fd>] [-f <file_name>] <PID>
 
 Option               | Description
 ---------------------|-------------------------------------------------------------------------------
--f &lt;file_name&gt; | Saves core dump to the specified file (default livecore.&lt;PID&gt; in current directory).
--P &lt;fd&gt;        | Descriptor for the registers structure (used by crash-manager).
+-f <file_name> | Saves core dump to the specified file (default livecore.<PID> in current directory).
+-P <fd>        | Descriptor for the registers structure (used by crash-manager).
 -m                   | Saves minicore. Saves minimum information that allows to restore the call stack.
 
 Example:

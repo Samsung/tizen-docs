@@ -2,7 +2,7 @@
 
 ## OpacityPropertyValue&lt;T> Class
 
-Represents the opacity property value for an [Animatable3DPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.Animatable3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Animatable3DPropertyValue&lt;T>').
+Represents the opacity property value for an [Animatable3DPropertyValue<T>](Tizen.UI.Scene3D.Animatable3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Animatable3DPropertyValue&lt;T>').
 
 ```csharp
 public class OpacityPropertyValue&lt;T> : Tizen.UI.Scene3D.Animatable3DPropertyValue&lt;T>

@@ -53,7 +53,7 @@ public bool IsLongpressDragEnabled { get; set; }
 Return true if the current ViewHolder can be dropped over the the target ViewHolder.  
 This method is used when selecting drop target for the dragged View.  
 After Views are eliminated either via bounds check or via this method,  
-resulting set of views will be passed to [ChooseDropTarget(ViewHolder, List&lt;ViewHolder&gt;, Point)](Tizen.UI.Components.Recycler.ItemTouchHelperCallback.md#Tizen.UI.Components.Recycler.ItemTouchHelperCallback.ChooseDropTarget(Tizen.UI.Components.Recycler.ViewHolder,System.Collections.Generic.List_Tizen.UI.Components.Recycler.ViewHolder_,Tizen.UI.Point) 'Tizen.UI.Components.Recycler.ItemTouchHelperCallback.ChooseDropTarget(Tizen.UI.Components.Recycler.ViewHolder, System.Collections.Generic.List&lt;Tizen.UI.Components.Recycler.ViewHolder>, Tizen.UI.Point)').  
+resulting set of views will be passed to [ChooseDropTarget(ViewHolder, List<ViewHolder>, Point)](Tizen.UI.Components.Recycler.ItemTouchHelperCallback.md#Tizen.UI.Components.Recycler.ItemTouchHelperCallback.ChooseDropTarget(Tizen.UI.Components.Recycler.ViewHolder,System.Collections.Generic.List_Tizen.UI.Components.Recycler.ViewHolder_,Tizen.UI.Point) 'Tizen.UI.Components.Recycler.ItemTouchHelperCallback.ChooseDropTarget(Tizen.UI.Components.Recycler.ViewHolder, System.Collections.Generic.List&lt;Tizen.UI.Components.Recycler.ViewHolder>, Tizen.UI.Point)').  
 Default implementation returns true.
 
 ```csharp

@@ -50,7 +50,7 @@ The key manager provides 2 types of operations, as shown below:
 ## Aliases
 
 All data stored in the secure repository is saved under an alias, which is a text string that must conform to certain conditions:
--   The format of an alias is "&lt;package\_id&gt; &lt;name&gt;" and the name cannot contain any white space characters.
+-   The format of an alias is "&lt;package\_id&gt; <name>" and the name cannot contain any white space characters.
 -   If the client does not provide the package ID, the `CreateFullAlias()` method of the [Tizen.Security.SecureRepository.Manager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Manager.html) class adds the client package ID to the name internally.
 -   The client can only specify its own package ID in the alias when storing a key, certificate, or data.
 -   The client must specify the package ID of the owner in the alias to retrieve a key, certificate, or data shared by other applications.

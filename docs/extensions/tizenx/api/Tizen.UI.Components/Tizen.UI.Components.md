@@ -39,12 +39,12 @@
 | [ScrollableLayoutManager](Tizen.UI.Components.ScrollableLayoutManager.md 'Tizen.UI.Components.ScrollableLayoutManager') | Provides functionality for arranging and measuring the children of a Scrollable. |
 | [ScrollBarBase](Tizen.UI.Components.ScrollBarBase.md 'Tizen.UI.Components.ScrollBarBase') | A base class representing a scroll bar that can be used to control the scrolling of a view. |
 | [Selectable](Tizen.UI.Components.Selectable.md 'Tizen.UI.Components.Selectable') | SelectableComponent.<br/>It provides [SelectedChanged](Tizen.UI.Components.ISelectable.md#Tizen.UI.Components.ISelectable.SelectedChanged 'Tizen.UI.Components.ISelectable.SelectedChanged') event when it activated. |
-| [SelectableBindings&lt;TView&gt;](Tizen.UI.Components.SelectableBindings_TView_.md 'Tizen.UI.Components.SelectableBindings&lt;TView>') | Provides a set of static properties that represent the data-binding capabilities of the [ISelectable](Tizen.UI.Components.ISelectable.md 'Tizen.UI.Components.ISelectable') class. |
+| [SelectableBindings<TView>](Tizen.UI.Components.SelectableBindings_TView_.md 'Tizen.UI.Components.SelectableBindings&lt;TView>') | Provides a set of static properties that represent the data-binding capabilities of the [ISelectable](Tizen.UI.Components.ISelectable.md 'Tizen.UI.Components.ISelectable') class. |
 | [SelectableBox](Tizen.UI.Components.SelectableBox.md 'Tizen.UI.Components.SelectableBox') | Selectable component with a content.<br/>It provides [SelectedChanged](Tizen.UI.Components.ISelectable.md#Tizen.UI.Components.ISelectable.SelectedChanged 'Tizen.UI.Components.ISelectable.SelectedChanged') event when it activated. |
 | [SelectableHStack](Tizen.UI.Components.SelectableHStack.md 'Tizen.UI.Components.SelectableHStack') | Selectable view with horizontal stacking layout. |
 | [SelectableVStack](Tizen.UI.Components.SelectableVStack.md 'Tizen.UI.Components.SelectableVStack') | Selectable view with vertical stacking layout. |
 | [SelectionGroup](Tizen.UI.Components.SelectionGroup.md 'Tizen.UI.Components.SelectionGroup') | SelectionGroup is the selection manager of [IGroupSelectable](Tizen.UI.Components.IGroupSelectable.md 'Tizen.UI.Components.IGroupSelectable'). |
-| [SelectionGroupBox&lt;T&gt;](Tizen.UI.Components.SelectionGroupBox_T_.md 'Tizen.UI.Components.SelectionGroupBox&lt;T>') | A group view of tab items for tab bar implementation. |
+| [SelectionGroupBox<T>](Tizen.UI.Components.SelectionGroupBox_T_.md 'Tizen.UI.Components.SelectionGroupBox&lt;T>') | A group view of tab items for tab bar implementation. |
 | [SelectionGroupItemClickedEventArgs](Tizen.UI.Components.SelectionGroupItemClickedEventArgs.md 'Tizen.UI.Components.SelectionGroupItemClickedEventArgs') | The event arguments for the ItemClicked event for selection group components. |
 | [SnapControlExtensions](Tizen.UI.Components.SnapControlExtensions.md 'Tizen.UI.Components.SnapControlExtensions') | Provides extension methods for setting snap points type and alignment on a Scrollable. |
 | [Swatch](Tizen.UI.Components.Swatch.md 'Tizen.UI.Components.Swatch') | Represents a color swatch generated from a [Palette](Tizen.UI.Components.Palette.md 'Tizen.UI.Components.Palette').<br/><br/><br/>A swatch contains a color, its population in the image, and suitable text colors for use over the swatch's color. |
@@ -62,7 +62,7 @@
 | [UIConfigManager](Tizen.UI.Components.UIConfigManager.md 'Tizen.UI.Components.UIConfigManager') | The manager of UIConfig. |
 | [UIShadowExtensions](Tizen.UI.Components.UIShadowExtensions.md 'Tizen.UI.Components.UIShadowExtensions') | Extensions methods for Tizen.UI.Shadow |
 | [UIStateChangedEventArgs](Tizen.UI.Components.UIStateChangedEventArgs.md 'Tizen.UI.Components.UIStateChangedEventArgs') | The event arguments for the UIState changed event. |
-| [UIStateConnectingProperty&lt;TView&gt;](Tizen.UI.Components.UIStateConnectingProperty_TView_.md 'Tizen.UI.Components.UIStateConnectingProperty&lt;TView>') | Represents a property for a view that can be connected to a state. |
+| [UIStateConnectingProperty<TView>](Tizen.UI.Components.UIStateConnectingProperty_TView_.md 'Tizen.UI.Components.UIStateConnectingProperty&lt;TView>') | Represents a property for a view that can be connected to a state. |
 | [UIStateManager](Tizen.UI.Components.UIStateManager.md 'Tizen.UI.Components.UIStateManager') | Provides methods to get a UIState from a view or to notify UIState change.<br/>Note that there is no direct way to set a view UIState to a view.<br/>The indirect way is to set connected property.<br/>To set [Disabled](Tizen.UI.Components.UIState.md#Tizen.UI.Components.UIState.Disabled 'Tizen.UI.Components.UIState.Disabled'), for example, you need to set Tizen.UI.View.IsEnabled to false. |
 | [UITextManager](Tizen.UI.Components.UITextManager.md 'Tizen.UI.Components.UITextManager') | Text manager for UI. |
 | [UIThemeManager](Tizen.UI.Components.UIThemeManager.md 'Tizen.UI.Components.UIThemeManager') | ThemeManager for UI. |
@@ -73,7 +73,7 @@
 
 | Structs | |
 | :--- | :--- |
-| [ClosedRange&lt;T&gt;](Tizen.UI.Components.ClosedRange_T_.md 'Tizen.UI.Components.ClosedRange&lt;T>') | A range that is inclusive of both ends. |
+| [ClosedRange<T>](Tizen.UI.Components.ClosedRange_T_.md 'Tizen.UI.Components.ClosedRange&lt;T>') | A range that is inclusive of both ends. |
 | [UIState](Tizen.UI.Components.UIState.md 'Tizen.UI.Components.UIState') | Defines a value type of view state. |
 | [UIStateConstraint](Tizen.UI.Components.UIStateConstraint.md 'Tizen.UI.Components.UIStateConstraint') | Represents a constraint for a state that will be given when calling [Match(UIStateChangedEventArgs)](Tizen.UI.Components.UIStateConstraint.md#Tizen.UI.Components.UIStateConstraint.Match(Tizen.UI.Components.UIStateChangedEventArgs) 'Tizen.UI.Components.UIStateConstraint.Match(Tizen.UI.Components.UIStateChangedEventArgs)'). |
 
@@ -100,7 +100,7 @@
 | [INavigationAnimationController](Tizen.UI.Components.INavigationAnimationController.md 'Tizen.UI.Components.INavigationAnimationController') | The INavigationAnimationController interface defines interfaces for navigation animation. |
 | [INavigationTransition](Tizen.UI.Components.INavigationTransition.md 'Tizen.UI.Components.INavigationTransition') | The INavigationTransition interface defines methods to notice the changes of the navigation transition such as appearing or disappearing. |
 | [IPressable](Tizen.UI.Components.IPressable.md 'Tizen.UI.Components.IPressable') | Represents pressable element.<br/>All derived class of Tizen.UI.View that implements this interface can have [Pressed](Tizen.UI.Components.UIState.md#Tizen.UI.Components.UIState.Pressed 'Tizen.UI.Components.UIState.Pressed') state when [IsPressed](Tizen.UI.Components.IPressable.md#Tizen.UI.Components.IPressable.IsPressed 'Tizen.UI.Components.IPressable.IsPressed') is true. |
-| [IPropertySetter&lt;TValue&gt;](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>') | The interface for property setter. |
+| [IPropertySetter<TValue>](Tizen.UI.Components.IPropertySetter_TValue_.md 'Tizen.UI.Components.IPropertySetter&lt;TValue>') | The interface for property setter. |
 | [ISelectable](Tizen.UI.Components.ISelectable.md 'Tizen.UI.Components.ISelectable') | Represents selectable element.<br/>All derived class of Tizen.UI.View that implements this interface can have [Selected](Tizen.UI.Components.UIState.md#Tizen.UI.Components.UIState.Selected 'Tizen.UI.Components.UIState.Selected') state when [IsSelected](Tizen.UI.Components.ISelectable.md#Tizen.UI.Components.ISelectable.IsSelected 'Tizen.UI.Components.ISelectable.IsSelected') is true. |
 | [ISelectionGroup](Tizen.UI.Components.ISelectionGroup.md 'Tizen.UI.Components.ISelectionGroup') | Interface for a group of [IGroupSelectable](Tizen.UI.Components.IGroupSelectable.md 'Tizen.UI.Components.IGroupSelectable'). |
 | [IThemeLoader](Tizen.UI.Components.IThemeLoader.md 'Tizen.UI.Components.IThemeLoader') | Interface for loading system theme. |

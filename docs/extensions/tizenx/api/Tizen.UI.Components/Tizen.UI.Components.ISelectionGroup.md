@@ -10,7 +10,7 @@ public interface ISelectionGroup
 
 Derived  
 &#8627; [SelectionGroup](Tizen.UI.Components.SelectionGroup.md 'Tizen.UI.Components.SelectionGroup')  
-&#8627; [SelectionGroupBox&lt;T&gt;](Tizen.UI.Components.SelectionGroupBox_T_.md 'Tizen.UI.Components.SelectionGroupBox&lt;T>')
+&#8627; [SelectionGroupBox<T>](Tizen.UI.Components.SelectionGroupBox_T_.md 'Tizen.UI.Components.SelectionGroupBox&lt;T>')
 ### Properties
 
 <a name='Tizen.UI.Components.ISelectionGroup.Selected'></a>

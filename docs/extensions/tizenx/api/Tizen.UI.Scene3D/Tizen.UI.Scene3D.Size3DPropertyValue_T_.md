@@ -23,7 +23,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 ## Size3DPropertyValue(float, float, float) Constructor
 
-Initializes a new instance of the [Size3DPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.Size3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Size3DPropertyValue&lt;T>') class with the specified values.
+Initializes a new instance of the [Size3DPropertyValue<T>](Tizen.UI.Scene3D.Size3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Size3DPropertyValue&lt;T>') class with the specified values.
 
 ```csharp
 public Size3DPropertyValue(float x, float y, float z);
@@ -52,7 +52,7 @@ The depth component of the size.
 
 ## Size3DPropertyValue(Size3D) Constructor
 
-Initializes a new instance of the [Size3DPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.Size3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Size3DPropertyValue&lt;T>') class with the specified size.
+Initializes a new instance of the [Size3DPropertyValue<T>](Tizen.UI.Scene3D.Size3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Size3DPropertyValue&lt;T>') class with the specified size.
 
 ```csharp
 public Size3DPropertyValue(Tizen.UI.Scene3D.Size3D size);

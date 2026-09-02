@@ -23,7 +23,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 ## FieldOfViewPropertyValue(float) Constructor
 
-Initializes a new instance of the [FieldOfViewPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.FieldOfViewPropertyValue_T_.md 'Tizen.UI.Scene3D.FieldOfViewPropertyValue&lt;T>') class.
+Initializes a new instance of the [FieldOfViewPropertyValue<T>](Tizen.UI.Scene3D.FieldOfViewPropertyValue_T_.md 'Tizen.UI.Scene3D.FieldOfViewPropertyValue&lt;T>') class.
 
 ```csharp
 public FieldOfViewPropertyValue(float fieldOfView);

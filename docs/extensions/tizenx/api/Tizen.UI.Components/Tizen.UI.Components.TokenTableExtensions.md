@@ -48,7 +48,7 @@ public static void Unbind(this Tizen.UI.ITokenTable&lt;Tizen.UI.Color> colorTabl
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Unbind(thisTizen.UI.ITokenTable_Tizen.UI.Color_,Tizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_).colorTable'></a>
 
-`colorTable` Tizen.UI.ITokenTable&lt;Tizen.UI.Color&gt;
+`colorTable` Tizen.UI.ITokenTable<Tizen.UI.Color>
 
 <a name='Tizen.UI.Components.TokenTableExtensions.Unbind(thisTizen.UI.ITokenTable_Tizen.UI.Color_,Tizen.UI.View,Tizen.UI.Components.IPropertySetter_Tizen.UI.Color_).target'></a>
 

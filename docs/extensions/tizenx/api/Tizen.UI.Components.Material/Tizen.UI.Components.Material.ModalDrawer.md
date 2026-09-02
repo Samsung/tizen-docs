@@ -2,7 +2,7 @@
 
 ## ModalDrawer Class
 
-A [ModalDrawer&lt;T&gt;](Tizen.UI.Components.Material.ModalDrawer_T_.md 'Tizen.UI.Components.Material.ModalDrawer&lt;T>') with default item type of [DrawerItem](Tizen.UI.Components.Material.DrawerItem.md 'Tizen.UI.Components.Material.DrawerItem').
+A [ModalDrawer<T>](Tizen.UI.Components.Material.ModalDrawer_T_.md 'Tizen.UI.Components.Material.ModalDrawer&lt;T>') with default item type of [DrawerItem](Tizen.UI.Components.Material.DrawerItem.md 'Tizen.UI.Components.Material.DrawerItem').
 
 ```csharp
 public class ModalDrawer : Tizen.UI.Components.Material.ModalDrawer&lt;Tizen.UI.Components.Material.DrawerItem>

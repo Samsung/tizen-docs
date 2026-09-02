@@ -23,7 +23,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 ## Rotation3DPropertyValue(Quaternion) Constructor
 
-Initializes a new instance of the [Rotation3DPropertyValue&lt;T&gt;](Tizen.UI.Scene3D.Rotation3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Rotation3DPropertyValue&lt;T>') class.
+Initializes a new instance of the [Rotation3DPropertyValue<T>](Tizen.UI.Scene3D.Rotation3DPropertyValue_T_.md 'Tizen.UI.Scene3D.Rotation3DPropertyValue&lt;T>') class.
 
 ```csharp
 public Rotation3DPropertyValue(Tizen.UI.Scene3D.Quaternion quaternion);

@@ -178,19 +178,19 @@ The following table shows some options for the `sdb dlog` and `dlogutil` command
 	</thead>
 	<tbody>
 		<tr>
-			<td><code>-f &lt;filename&gt;</code></td>
-			<td>Writes the log to the <code>&lt;filename&gt;</code> file. The default file is stdout.</td>
+			<td><code>-f <filename></code></td>
+			<td>Writes the log to the <code><filename></code> file. The default file is stdout.</td>
 		</tr>
 		<tr>
-			<td><code>-r &lt;Kbytes&gt;</code></td>
-			<td>Rotates the log file every <code>&lt;Kbytes&gt;</code> of output. The default value is 16. This option also requires the <code>-f</code> option.</td>
+			<td><code>-r <Kbytes></code></td>
+			<td>Rotates the log file every <code><Kbytes></code> of output. The default value is 16. This option also requires the <code>-f</code> option.</td>
 		</tr>
 		<tr>
-			<td><code>-n &lt;count&gt;</code></td>
-			<td>Sets the maximum number of rotated logs to <code>&lt;count&gt;</code>. The default value is 4. This option also requires the <code>-r</code> option.</td>
+			<td><code>-n <count></code></td>
+			<td>Sets the maximum number of rotated logs to <code><count></code>. The default value is 4. This option also requires the <code>-r</code> option.</td>
 		</tr>
 		<tr>
-			<td><code>-v &lt;format&gt;</code></td>
+			<td><code>-v <format></code></td>
 			<td>Sets the output format for log messages.
 			<p>You can define which metadata fields are included in log messages by setting one of the following output formats:</p>
 			<ul>

@@ -14,7 +14,7 @@ Derived
 &#8627; [Camera](Tizen.UI.Scene3D.Camera.md 'Tizen.UI.Scene3D.Camera')  
 &#8627; [Light](Tizen.UI.Scene3D.Light.md 'Tizen.UI.Scene3D.Light')  
 &#8627; [Panel](Tizen.UI.Scene3D.Panel.md 'Tizen.UI.Scene3D.Panel')  
-&#8627; [SceneObjectGroup&lt;T&gt;](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>')
+&#8627; [SceneObjectGroup<T>](Tizen.UI.Scene3D.SceneObjectGroup_T_.md 'Tizen.UI.Scene3D.SceneObjectGroup&lt;T>')
 ### Properties
 
 <a name='Tizen.UI.Scene3D.SceneObject.IsVisible'></a>

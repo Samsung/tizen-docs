@@ -13,8 +13,8 @@ System.Collections.IEnumerable
 ```
 
 Derived  
-&#8627; [ISelectionModelGroup&lt;T&gt;](Tizen.UI.Components.Recycler.ISelectionModelGroup_T_.md 'Tizen.UI.Components.Recycler.ISelectionModelGroup&lt;T>')  
-&#8627; [SelectionModelGroup&lt;T&gt;](Tizen.UI.Components.Recycler.SelectionModelGroup_T_.md 'Tizen.UI.Components.Recycler.SelectionModelGroup&lt;T>')
+&#8627; [ISelectionModelGroup<T>](Tizen.UI.Components.Recycler.ISelectionModelGroup_T_.md 'Tizen.UI.Components.Recycler.ISelectionModelGroup&lt;T>')  
+&#8627; [SelectionModelGroup<T>](Tizen.UI.Components.Recycler.SelectionModelGroup_T_.md 'Tizen.UI.Components.Recycler.SelectionModelGroup&lt;T>')
 
 Implements [System.Collections.IList](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList 'System.Collections.IList'), [System.Collections.ICollection](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.ICollection 'System.Collections.ICollection'), [System.Collections.IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable 'System.Collections.IEnumerable')
 ### Properties

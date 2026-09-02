@@ -2,7 +2,7 @@
 
 ## BottomBar Class
 
-A [BottomBar&lt;T&gt;](Tizen.UI.Components.Material.BottomBar_T_.md 'Tizen.UI.Components.Material.BottomBar&lt;T>') with default item type of [TabItem](Tizen.UI.Components.Material.TabItem.md 'Tizen.UI.Components.Material.TabItem').
+A [BottomBar<T>](Tizen.UI.Components.Material.BottomBar_T_.md 'Tizen.UI.Components.Material.BottomBar&lt;T>') with default item type of [TabItem](Tizen.UI.Components.Material.TabItem.md 'Tizen.UI.Components.Material.TabItem').
 
 ```csharp
 public class BottomBar : Tizen.UI.Components.Material.BottomBar&lt;Tizen.UI.Components.Material.TabItem>

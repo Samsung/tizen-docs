@@ -17,7 +17,7 @@ public class TabBar&lt;T> : Tizen.UI.Components.SelectionGroupBox&lt;T>
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; Tizen.UI.NObject &#129106; Tizen.UI.View &#129106; Tizen.UI.ContentView &#129106; Tizen.UI.Components.SelectionGroupBox&lt;[T](Tizen.UI.Components.Material.TabBar_T_.md#Tizen.UI.Components.Material.TabBar_T_.T 'Tizen.UI.Components.Material.TabBar&lt;T>.T')&gt; &#129106; TabBar&lt;T>
 
 Derived  
-&#8627; [BottomBar&lt;T&gt;](Tizen.UI.Components.Material.BottomBar_T_.md 'Tizen.UI.Components.Material.BottomBar&lt;T>')  
+&#8627; [BottomBar<T>](Tizen.UI.Components.Material.BottomBar_T_.md 'Tizen.UI.Components.Material.BottomBar&lt;T>')  
 &#8627; [TabBar](Tizen.UI.Components.Material.TabBar.md 'Tizen.UI.Components.Material.TabBar')
 ### Constructors
 

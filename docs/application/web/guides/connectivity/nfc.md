@@ -531,7 +531,7 @@ The following table lists the NFC operations, URI scheme and MIME.
 		</tr>
 		<tr>
 			<td rowspan="2"><code>http://tizen.org/appcontrol/operation/nfc/wellknown</code></td>
-			<td><code>&lt;scheme&gt;:&lt;host&gt;/&lt;path&gt;</code> <p>URL, for example:</p>
+			<td><code><scheme>:<host>/<path></code> <p>URL, for example:</p>
 				<ul>
 					<li><code>http</code></li>
 					<li><code>http://tizen.org/</code></li>
@@ -544,30 +544,30 @@ The following table lists the NFC operations, URI scheme and MIME.
 					<li><code>mailto:tommy@tizen.org</code></li>
 				</ul>
 			</td>
-			<td><code>U/&lt;protocol_code&gt;</code> <p>For example: <code>U/0x03, U/0x05, U/*</code></p> </td>
+			<td><code>U/<protocol_code></code> <p>For example: <code>U/0x03, U/0x05, U/*</code></p> </td>
 		</tr>
 		<tr>
 			<td><code>NULL</code></td>
-			<td><code>&lt;type_string&gt;/*</code> <p>For example: <code>T/*, sp/*, */*</code></p> </td>
+			<td><code><type_string>/*</code> <p>For example: <code>T/*, sp/*, */*</code></p> </td>
 		</tr>
 		<tr>
 			<td><code>http://tizen.org/appcontrol/operation/nfc/mime</code></td>
 			<td><code>NULL</code></td>
-			<td><code>&lt;type_string&gt;/&lt;subtype_string&gt;</code> (case-insensitive) <p>For example: <code>text/x-vard, text/*, */*</code></p> </td>
+			<td><code><type_string>/<subtype_string></code> (case-insensitive) <p>For example: <code>text/x-vard, text/*, */*</code></p> </td>
 		</tr>
 		<tr>
 			<td><code>http://tizen.org/appcontrol/operation/nfc/uri</code></td>
-			<td><code>&lt;uri&gt;</code> <p>For example: <code>http://tizen.org/about/devices</code></p> </td>
+			<td><code><uri></code> <p>For example: <code>http://tizen.org/about/devices</code></p> </td>
 			<td><code>NULL</code></td>
 		</tr>
 		<tr>
 			<td><code>http://tizen.org/appcontrol/operation/nfc/external</code></td>
-			<td><code>&lt;scheme&gt;:&lt;string&gt;</code> (case-insensitive) <p>For example: <code>nfc:ext.tizen.org.ABC</code></p> </td>
+			<td><code><scheme>:<string></code> (case-insensitive) <p>For example: <code>nfc:ext.tizen.org.ABC</code></p> </td>
 			<td><code>NULL</code></td>
 		</tr>
 		<tr>
 			<td><code>http://tizen.org/appcontrol/operation/nfc/transaction</code></td>
-			<td><code>nfc://secure/&lt;SE name&gt;/aid/&lt;aid&gt;</code><p>For example:</p>
+			<td><code>nfc://secure/&lt;SE name&gt;/aid/<aid></code><p>For example:</p>
 				<ul>
 					<li><code>nfc://secure/SIM1/aid/123456789</code></li>
 					<li><code>nfc://secure/SIM1/aid/1234*</code></li>

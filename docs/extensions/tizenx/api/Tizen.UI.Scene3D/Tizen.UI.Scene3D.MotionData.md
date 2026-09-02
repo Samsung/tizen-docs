@@ -12,7 +12,7 @@ Tizen.UI.Scene3D.IMotionData
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; MotionData
 
 Derived  
-&#8627; [MotionData&lt;T&gt;](Tizen.UI.Scene3D.MotionData_T_.md 'Tizen.UI.Scene3D.MotionData&lt;T>')  
+&#8627; [MotionData<T>](Tizen.UI.Scene3D.MotionData_T_.md 'Tizen.UI.Scene3D.MotionData&lt;T>')  
 &#8627; [MotionDataSet](Tizen.UI.Scene3D.MotionDataSet.md 'Tizen.UI.Scene3D.MotionDataSet')
 
 Implements [IMotionData](Tizen.UI.Scene3D.IMotionData.md 'Tizen.UI.Scene3D.IMotionData')
