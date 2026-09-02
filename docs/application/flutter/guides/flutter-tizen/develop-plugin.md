@@ -163,7 +163,7 @@ Types such as `flutter::MethodCall` and `flutter::EncodableValue` in the templat
 
 - C++17 standards
 - [cpp_client_wrapper](https://github.com/flutter-tizen/engine/tree/HEAD/shell/platform/common/client_wrapper/include/flutter)
-- [Tizen native APIs](../../../native/api/common/latest/index.html)
+- [Tizen native APIs](../../../native/api/common/latest/group__CAPI__APPLICATION__FRAMEWORK.html)
 - External native libraries, if any (static/shared)
 
 Note: The API references for Tizen TV are not publicly available. However, most of the Tizen common APIs are also available for the TV profile, so you may refer to the common API references when developing plugins for TV devices.

@@ -68,4 +68,4 @@ For detailed information on each subsystem, refer to the following guides:
 - [Security](../guides/security.md) - Auth, Certs, Keys
 - [Machine Learning](../guides/ml.md) - Hardware-accelerated inference
 
-For API documentation, see the [HAL API Reference](../api/1.0/index.html).
+For API documentation, see the [HAL API Reference](../api/1.0/modules.html).

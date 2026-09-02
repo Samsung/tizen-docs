@@ -14,7 +14,7 @@ The following figure illustrates the Tizen architecture for smart phone and tabl
 
 ![Tizen architecture](media/what-is-tizen-architecture.png)
 
-For more information on the Tizen framework layer, see the [Tizen Application Types](../../application/index.md#tizen-application-types).
+The Tizen framework layer supports .NET, web, and native applications.
 
 ## Core layer
 
