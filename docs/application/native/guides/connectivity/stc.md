@@ -33,7 +33,7 @@ To enable your application to use the STC API:
    </privileges>
    ```
 
-2. To use the functions and data types of the STC API, include the <stc.h> header file in your application:
+2. To use the functions and data types of the STC API, include the &lt;stc.h&gt; header file in your application:
 
    ```
    #include <stc.h>

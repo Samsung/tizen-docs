@@ -16,7 +16,7 @@ public class CatalogManager
 ## CatalogManager()
 
 Initializes a new instance of the CatalogManager class.
-The catalog starts empty and can be populated via UpdateCatalog(IEnumerable<CatalogItem>).
+The catalog starts empty and can be populated via UpdateCatalog(IEnumerable&lt;CatalogItem&gt;).
 
 ```csharp
 public CatalogManager()
@@ -34,7 +34,7 @@ public IEnumerable<CatalogItem> Catalogs { get; }
 ```
 #### Property Value
 
-IEnumerable<CatalogItem>
+IEnumerable&lt;CatalogItem&gt;
 
 An enumerable collection of all registered CatalogItem objects.
 
@@ -84,7 +84,7 @@ true if a component with the specified name exists in the catalog; otherwise, fa
 
 <a name='TizenX.GenUI.CatalogManager.UpdateCatalog.System.Collections.Generic.IEnumerable.TizenX.GenUI.CatalogItem..'></a>
 
-## UpdateCatalog(IEnumerable<CatalogItem>)
+## UpdateCatalog(IEnumerable&lt;CatalogItem&gt;)
 
 Adds or updates catalog items in the manager.
 If an item with the same name already exists, it will be replaced.
@@ -94,7 +94,7 @@ public void UpdateCatalog(IEnumerable<CatalogItem> catalog)
 ```
 #### Parameters
 
-`catalog` IEnumerable<CatalogItem>
+`catalog` IEnumerable&lt;CatalogItem&gt;
 
 An enumerable collection of CatalogItem objects to register.
 Each item's Name property is used as the key.

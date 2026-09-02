@@ -74,7 +74,7 @@ A DateTimeOffset representing when the parcel was created or processed.
 
 <a name='TizenX.RPCPort.ParcelHeader.ReadFrom.System.Span.System.Byte..'></a>
 
-## ReadFrom(Span<byte>)
+## ReadFrom(Span&lt;byte&gt;)
 
 Reads header data from the specified byte span.
 
@@ -83,7 +83,7 @@ public int ReadFrom(Span<byte> bytes)
 ```
 #### Parameters
 
-`bytes` Span<byte>
+`bytes` Span&lt;byte&gt;
 
 The byte span to read from.
 
@@ -114,7 +114,7 @@ The nanoseconds component.
 
 <a name='TizenX.RPCPort.ParcelHeader.WriteTo.System.Span.System.Byte..'></a>
 
-## WriteTo(Span<byte>)
+## WriteTo(Span&lt;byte&gt;)
 
 Writes the header data to the specified byte span.
 
@@ -123,7 +123,7 @@ public int WriteTo(Span<byte> bytes)
 ```
 #### Parameters
 
-`bytes` Span<byte>
+`bytes` Span&lt;byte&gt;
 
 The byte span to write to.
 

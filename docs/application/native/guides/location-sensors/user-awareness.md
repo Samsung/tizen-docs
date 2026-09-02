@@ -26,7 +26,7 @@ To enable your application to use the User Awareness API functionality, follow t
        <privilege>http://tizen.org/privilege/network.get</privilege>
     </privileges>
     ```
-2.  To use the functions and data types of the User Awareness API, include the <user-awareness.h> header file in your application:
+2.  To use the functions and data types of the User Awareness API, include the &lt;user-awareness.h&gt; header file in your application:
   
     ```
     #include <user-awareness.h>

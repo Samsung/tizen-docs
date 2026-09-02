@@ -36,7 +36,7 @@ To enable your application to use the thumbnail util functionality:
 
 2. Ensure that you have access to the file required to extract the thumbnail.
 
-   This guide uses a JPEG image file, which is accessed through its file path. Include the <storage.h> header file as the example code uses internal storage. The example code is as follows:
+   This guide uses a JPEG image file, which is accessed through its file path. Include the &lt;storage.h&gt; header file as the example code uses internal storage. The example code is as follows:
 
    ```
    int internal_storage_id;

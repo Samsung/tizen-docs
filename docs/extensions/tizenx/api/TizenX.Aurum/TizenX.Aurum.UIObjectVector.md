@@ -20,14 +20,14 @@ public UIObjectVector()
 ```
 <a name='TizenX.Aurum.UIObjectVector..ctor.System.Collections.Generic.IEnumerable.TizenX.Aurum.UIObject..'></a>
 
-## UIObjectVector(IEnumerable<UIObject>)
+## UIObjectVector(IEnumerable&lt;UIObject&gt;)
 
 ```csharp
 public UIObjectVector(IEnumerable<UIObject> c)
 ```
 #### Parameters
 
-`c` IEnumerable<UIObject>
+`c` IEnumerable&lt;UIObject&gt;
 
 <a name='TizenX.Aurum.UIObjectVector..ctor.System.Collections.IEnumerable.'></a>
 

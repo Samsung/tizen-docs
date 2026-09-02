@@ -171,7 +171,7 @@ $ gbs remotebuild --profile=tv
 
 ### Configure a repository
 
-You can configure a repository to adapt the GBS build. The repository configuration specification starts with the section declaration named "[repo.<customized_name>]", and is followed by various properties, including:
+You can configure a repository to adapt the GBS build. The repository configuration specification starts with the section declaration named "[repo.&lt;customized_name&gt;]", and is followed by various properties, including:
 
 - `url`
 

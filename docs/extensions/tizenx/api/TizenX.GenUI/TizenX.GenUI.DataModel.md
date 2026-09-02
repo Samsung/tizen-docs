@@ -53,7 +53,7 @@ JsonNode
 
 <a name='TizenX.GenUI.DataModel.GetValue..1.TizenX.GenUI.DataPath.'></a>
 
-## GetValue<T>(DataPath)
+## GetValue&lt;T&gt;(DataPath)
 
 ```csharp
 public T GetValue<T>(DataPath absolutePath)
@@ -107,7 +107,7 @@ public void SetExternalDataProvider(IExternalDataProvider provider)
 
 <a name='TizenX.GenUI.DataModel.TryGetValue..1.TizenX.GenUI.DataPath...0..'></a>
 
-## TryGetValue<T>(DataPath, out T)
+## TryGetValue&lt;T&gt;(DataPath, out T)
 
 ```csharp
 public bool TryGetValue<T>(DataPath absolutePath, out T value)

@@ -54,7 +54,7 @@ The current ParcelBuilder instance for method chaining.
 
 <a name='TizenX.RPCPort.ParcelBuilder.Add..1...0.'></a>
 
-## Add<T>(T)
+## Add&lt;T&gt;(T)
 
 Adds a value type to the builder by wrapping it in a ValueParcelable.
 

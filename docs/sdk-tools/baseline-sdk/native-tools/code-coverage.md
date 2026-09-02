@@ -56,7 +56,7 @@ To Enable HTML code coverage report generation:
     > [!NOTE]
     > To annotate the source files when opened from **Project Explorer**, select the checkbox **Enable annotation when source files are opened** in the preferences dialog box.
 
-2. Run the Code coverage again by following the steps mentioned in previous section. After the execution completes, the HTML reports are generated under **<Unit_test_project_path>/Coverage_Report/Html_Report**, where **<Unit_test_project_path>** is the path where the Unit Test project is created:
+2. Run the Code coverage again by following the steps mentioned in previous section. After the execution completes, the HTML reports are generated under **&lt;Unit_test_project_path&gt;/Coverage_Report/Html_Report**, where **&lt;Unit_test_project_path&gt;** is the path where the Unit Test project is created:
 
     ![Code Coverage HTML Folder](./media/code_coverage_html_folder_11.png)
 

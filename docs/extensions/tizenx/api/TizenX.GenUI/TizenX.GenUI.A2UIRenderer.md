@@ -153,7 +153,7 @@ The SurfaceContext for the rendered surface, or null if rendering failed.
 
 <a name='TizenX.GenUI.A2UIRenderer.UpdateCatalog.System.Collections.Generic.IEnumerable.TizenX.GenUI.CatalogItem..'></a>
 
-## UpdateCatalog(IEnumerable<CatalogItem>)
+## UpdateCatalog(IEnumerable&lt;CatalogItem&gt;)
 
 Updates the component catalog with custom catalog items.
 Use this method to register custom components for rendering.
@@ -163,7 +163,7 @@ public void UpdateCatalog(IEnumerable<CatalogItem> catalogItems)
 ```
 #### Parameters
 
-`catalogItems` IEnumerable<CatalogItem>
+`catalogItems` IEnumerable&lt;CatalogItem&gt;
 
 An enumerable collection of catalog items to add or update.
 

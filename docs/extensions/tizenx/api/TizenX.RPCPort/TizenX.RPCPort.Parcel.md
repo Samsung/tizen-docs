@@ -19,7 +19,7 @@ public Span<byte> RawData { get; }
 ```
 #### Property Value
 
-Span<byte>
+Span&lt;byte&gt;
 
 ### Methods
 
@@ -46,7 +46,7 @@ The IntPtr handle of the RPC port.
 
 <a name='TizenX.RPCPort.Parcel.ListParcelSize.System.Collections.Generic.List.System.Int32..'></a>
 
-## ListParcelSize(List<int>)
+## ListParcelSize(List&lt;int&gt;)
 
 Calculates the size of a list of integers when serialized to a parcel.
 
@@ -55,7 +55,7 @@ public static int ListParcelSize(List<int> data)
 ```
 #### Parameters
 
-`data` List<int>
+`data` List&lt;int&gt;
 
 The list of integers to calculate the size for.
 
@@ -67,7 +67,7 @@ The size in bytes of the serialized list.
 
 <a name='TizenX.RPCPort.Parcel.ListParcelSize.System.Collections.Generic.List.System.String..'></a>
 
-## ListParcelSize(List<string>)
+## ListParcelSize(List&lt;string&gt;)
 
 Calculates the size of a list of strings when serialized to a parcel.
 
@@ -76,7 +76,7 @@ public static int ListParcelSize(List<string> data)
 ```
 #### Parameters
 
-`data` List<string>
+`data` List&lt;string&gt;
 
 The list of strings to calculate the size for.
 
@@ -109,7 +109,7 @@ The size of the loaded data in bytes.
 
 <a name='TizenX.RPCPort.Parcel.LoadFromRaw.System.Span.System.Byte..'></a>
 
-## LoadFromRaw(Span<byte>)
+## LoadFromRaw(Span&lt;byte&gt;)
 
 Loads data from a byte span into the parcel.
 
@@ -118,7 +118,7 @@ public int LoadFromRaw(Span<byte> bytes)
 ```
 #### Parameters
 
-`bytes` Span<byte>
+`bytes` Span&lt;byte&gt;
 
 The span of bytes to load data from.
 
@@ -172,7 +172,7 @@ The new read offset position.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Boolean..'></a>
 
-## Read(Span<byte>, out bool)
+## Read(Span&lt;byte&gt;, out bool)
 
 Reads a boolean value from the specified buffer.
 
@@ -181,7 +181,7 @@ public static int Read(Span<byte> buffer, out bool value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
@@ -197,7 +197,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Byte..'></a>
 
-## Read(Span<byte>, out byte)
+## Read(Span&lt;byte&gt;, out byte)
 
 Reads a byte value from the specified buffer.
 
@@ -206,7 +206,7 @@ public static int Read(Span<byte> buffer, out byte value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
@@ -222,7 +222,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Collections.Generic.List.System.Int32...'></a>
 
-## Read(Span<byte>, out List<int>)
+## Read(Span&lt;byte&gt;, out List&lt;int&gt;)
 
 Reads a list of integers from the specified buffer.
 
@@ -231,11 +231,11 @@ public static int Read(Span<byte> buffer, out List<int> data)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
-`data` List<int>
+`data` List&lt;int&gt;
 
 The list of integers read from the buffer.
 
@@ -247,7 +247,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Collections.Generic.List.System.String...'></a>
 
-## Read(Span<byte>, out List<string>)
+## Read(Span&lt;byte&gt;, out List&lt;string&gt;)
 
 Reads a list of strings from the specified buffer.
 
@@ -256,11 +256,11 @@ public static int Read(Span<byte> buffer, out List<string> data)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
-`data` List<string>
+`data` List&lt;string&gt;
 
 The list of strings read from the buffer.
 
@@ -272,7 +272,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Double..'></a>
 
-## Read(Span<byte>, out double)
+## Read(Span&lt;byte&gt;, out double)
 
 Reads a double value from the specified buffer.
 
@@ -281,7 +281,7 @@ public static int Read(Span<byte> buffer, out double value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
@@ -297,7 +297,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Int16..'></a>
 
-## Read(Span<byte>, out short)
+## Read(Span&lt;byte&gt;, out short)
 
 Reads a short value from the specified buffer.
 
@@ -306,7 +306,7 @@ public static int Read(Span<byte> buffer, out short value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
@@ -322,7 +322,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Int32..'></a>
 
-## Read(Span<byte>, out int)
+## Read(Span&lt;byte&gt;, out int)
 
 Reads an integer value from the specified buffer.
 
@@ -331,7 +331,7 @@ public static int Read(Span<byte> buffer, out int value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
@@ -347,7 +347,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Int64..'></a>
 
-## Read(Span<byte>, out long)
+## Read(Span&lt;byte&gt;, out long)
 
 Reads a long value from the specified buffer.
 
@@ -356,7 +356,7 @@ public static int Read(Span<byte> buffer, out long value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
@@ -372,7 +372,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Single..'></a>
 
-## Read(Span<byte>, out float)
+## Read(Span&lt;byte&gt;, out float)
 
 Reads a float value from the specified buffer.
 
@@ -381,7 +381,7 @@ public static int Read(Span<byte> buffer, out float value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
@@ -397,7 +397,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.Span.System.Byte...'></a>
 
-## Read(Span<byte>, out Span<byte>)
+## Read(Span&lt;byte&gt;, out Span&lt;byte&gt;)
 
 Reads a byte span from the specified buffer.
 
@@ -406,11 +406,11 @@ public static int Read(Span<byte> buffer, out Span<byte> data)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
-`data` Span<byte>
+`data` Span&lt;byte&gt;
 
 The byte span read from the buffer.
 
@@ -422,7 +422,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.String..'></a>
 
-## Read(Span<byte>, out string)
+## Read(Span&lt;byte&gt;, out string)
 
 Reads a string value from the specified buffer.
 
@@ -431,7 +431,7 @@ public static int Read(Span<byte> buffer, out string value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
@@ -447,7 +447,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte..System.UInt32..'></a>
 
-## Read(Span<byte>, out uint)
+## Read(Span&lt;byte&gt;, out uint)
 
 Reads a uint value from the specified buffer.
 
@@ -456,7 +456,7 @@ public static int Read(Span<byte> buffer, out uint value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to read from.
 
@@ -472,7 +472,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.Parcel.Read.System.Span.System.Byte...'></a>
 
-## Read(out Span<byte>)
+## Read(out Span&lt;byte&gt;)
 
 Reads a byte span from the parcel.
 
@@ -481,7 +481,7 @@ public int Read(out Span<byte> data)
 ```
 #### Parameters
 
-`data` Span<byte>
+`data` Span&lt;byte&gt;
 
 The byte span read from the parcel.
 
@@ -606,7 +606,7 @@ The size in bytes of the serialized string.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Boolean.'></a>
 
-## Write(Span<byte>, bool)
+## Write(Span&lt;byte&gt;, bool)
 
 Writes a boolean value to the specified buffer.
 
@@ -615,7 +615,7 @@ public static int Write(Span<byte> buffer, bool value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
@@ -631,7 +631,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Byte.'></a>
 
-## Write(Span<byte>, byte)
+## Write(Span&lt;byte&gt;, byte)
 
 Writes a byte value to the specified buffer.
 
@@ -640,7 +640,7 @@ public static int Write(Span<byte> buffer, byte value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
@@ -656,7 +656,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Collections.Generic.List.System.Int32..'></a>
 
-## Write(Span<byte>, List<int>)
+## Write(Span&lt;byte&gt;, List&lt;int&gt;)
 
 Writes a list of integers to the specified buffer.
 
@@ -665,11 +665,11 @@ public static int Write(Span<byte> buffer, List<int> data)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
-`data` List<int>
+`data` List&lt;int&gt;
 
 The list of integers to write.
 
@@ -681,7 +681,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Collections.Generic.List.System.String..'></a>
 
-## Write(Span<byte>, List<string>)
+## Write(Span&lt;byte&gt;, List&lt;string&gt;)
 
 Writes a list of strings to the specified buffer.
 
@@ -690,11 +690,11 @@ public static int Write(Span<byte> buffer, List<string> data)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
-`data` List<string>
+`data` List&lt;string&gt;
 
 The list of strings to write.
 
@@ -706,7 +706,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Double.'></a>
 
-## Write(Span<byte>, double)
+## Write(Span&lt;byte&gt;, double)
 
 Writes a double value to the specified buffer.
 
@@ -715,7 +715,7 @@ public static int Write(Span<byte> buffer, double value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
@@ -731,7 +731,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Int16.'></a>
 
-## Write(Span<byte>, short)
+## Write(Span&lt;byte&gt;, short)
 
 Writes a short value to the specified buffer.
 
@@ -740,7 +740,7 @@ public static int Write(Span<byte> buffer, short value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
@@ -756,7 +756,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Int32.'></a>
 
-## Write(Span<byte>, int)
+## Write(Span&lt;byte&gt;, int)
 
 Writes an integer value to the specified buffer.
 
@@ -765,7 +765,7 @@ public static int Write(Span<byte> buffer, int value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
@@ -781,7 +781,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Int64.'></a>
 
-## Write(Span<byte>, long)
+## Write(Span&lt;byte&gt;, long)
 
 Writes a long value to the specified buffer.
 
@@ -790,7 +790,7 @@ public static int Write(Span<byte> buffer, long value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
@@ -806,7 +806,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Single.'></a>
 
-## Write(Span<byte>, float)
+## Write(Span&lt;byte&gt;, float)
 
 Writes a float value to the specified buffer.
 
@@ -815,7 +815,7 @@ public static int Write(Span<byte> buffer, float value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
@@ -831,7 +831,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.Span.System.Byte..'></a>
 
-## Write(Span<byte>, Span<byte>)
+## Write(Span&lt;byte&gt;, Span&lt;byte&gt;)
 
 Writes a byte span to the specified buffer.
 
@@ -840,11 +840,11 @@ public static int Write(Span<byte> buffer, Span<byte> data)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
-`data` Span<byte>
+`data` Span&lt;byte&gt;
 
 The byte span to write.
 
@@ -856,7 +856,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.String.'></a>
 
-## Write(Span<byte>, string)
+## Write(Span&lt;byte&gt;, string)
 
 Writes a string value to the specified buffer.
 
@@ -865,7 +865,7 @@ public static int Write(Span<byte> buffer, string value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
@@ -881,7 +881,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.System.Span.System.Byte..System.UInt32.'></a>
 
-## Write(Span<byte>, uint)
+## Write(Span&lt;byte&gt;, uint)
 
 Writes a uint value to the specified buffer.
 
@@ -890,7 +890,7 @@ public static int Write(Span<byte> buffer, uint value)
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 
@@ -906,7 +906,7 @@ The number of bytes written.
 
 <a name='TizenX.RPCPort.Parcel.Write.TizenX.RPCPort.ParcelHeader.System.Collections.Generic.IEnumerable.TizenX.RPCPort.IParcelable..'></a>
 
-## Write(ParcelHeader, IEnumerable<IParcelable>)
+## Write(ParcelHeader, IEnumerable&lt;IParcelable&gt;)
 
 Writes a header and multiple parcelable objects to the parcel.
 
@@ -919,7 +919,7 @@ public int Write(ParcelHeader header, IEnumerable<IParcelable> parcels)
 
 The ParcelHeader to write.
 
-`parcels` IEnumerable<IParcelable>
+`parcels` IEnumerable&lt;IParcelable&gt;
 
 The collection of IParcelable objects to write.
 
@@ -971,7 +971,7 @@ The IntPtr handle to the RPC port.
 
 <a name='TizenX.RPCPort.Parcel.Write..1.System.Span.System.Byte....0.'></a>
 
-## Write<T>(Span<byte>, T)
+## Write&lt;T&gt;(Span&lt;byte&gt;, T)
 
 Writes a generic struct value to the specified buffer.
 
@@ -980,7 +980,7 @@ public static int Write<T>(Span<byte> buffer, T value) where T : struct
 ```
 #### Parameters
 
-`buffer` Span<byte>
+`buffer` Span&lt;byte&gt;
 
 The buffer to write to.
 

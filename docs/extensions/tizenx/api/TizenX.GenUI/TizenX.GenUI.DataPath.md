@@ -63,7 +63,7 @@ public List<string> Segments { get; }
 ```
 #### Property Value
 
-List<string>
+List&lt;string&gt;
 
 ### Fields
 

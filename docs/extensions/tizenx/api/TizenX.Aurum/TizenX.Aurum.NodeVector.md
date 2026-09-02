@@ -17,14 +17,14 @@ public NodeVector()
 ```
 <a name='TizenX.Aurum.NodeVector..ctor.System.Collections.Generic.IEnumerable.TizenX.Aurum.Node..'></a>
 
-## NodeVector(IEnumerable<Node>)
+## NodeVector(IEnumerable&lt;Node&gt;)
 
 ```csharp
 public NodeVector(IEnumerable<Node> c)
 ```
 #### Parameters
 
-`c` IEnumerable<Node>
+`c` IEnumerable&lt;Node&gt;
 
 <a name='TizenX.Aurum.NodeVector..ctor.System.Collections.IEnumerable.'></a>
 

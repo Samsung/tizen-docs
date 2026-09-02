@@ -29,7 +29,7 @@ The size in bytes of the serialized data.
 
 <a name='TizenX.RPCPort.IParcelable.ReadFrom.System.Span.System.Byte..'></a>
 
-## ReadFrom(Span<byte>)
+## ReadFrom(Span&lt;byte&gt;)
 
 Reads the object data from the specified byte span.
 
@@ -38,7 +38,7 @@ int ReadFrom(Span<byte> bytes)
 ```
 #### Parameters
 
-`bytes` Span<byte>
+`bytes` Span&lt;byte&gt;
 
 The span of bytes to read the data from.
 
@@ -50,7 +50,7 @@ The number of bytes read.
 
 <a name='TizenX.RPCPort.IParcelable.WriteTo.System.Span.System.Byte..'></a>
 
-## WriteTo(Span<byte>)
+## WriteTo(Span&lt;byte&gt;)
 
 Writes the object data to the specified byte span.
 
@@ -59,7 +59,7 @@ int WriteTo(Span<byte> bytes)
 ```
 #### Parameters
 
-`bytes` Span<byte>
+`bytes` Span&lt;byte&gt;
 
 The span of bytes to write the data to.
 

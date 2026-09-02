@@ -41,7 +41,7 @@ To configure SSH for Gerrit access, follow the steps below:
    >
    > If invoked without specifying key type, `ssh-keygen` generates an RSA key for use in SSH protocol 2 connections, thus making `[-t rsa]`, which specifies the key type, optional.
    >
-   > For an RSA key, if invoked without adding any comment, `ssh-keygen` initializes the comment as "<user>@<host>" when the key is generated, thus making `[-C "<Comments>"]` optional. In spite of this, adding this argument is recommended because a rephrased comment can make it easier to identify the keys.
+   > For an RSA key, if invoked without adding any comment, `ssh-keygen` initializes the comment as "&lt;user&gt;@&lt;host&gt;" when the key is generated, thus making `[-C "<Comments>"]` optional. In spite of this, adding this argument is recommended because a rephrased comment can make it easier to identify the keys.
 
    Based on the on-screen prompts, specify the file in which to save the key, and the passphrase.
 

@@ -17,14 +17,14 @@ public UISelectorVector()
 ```
 <a name='TizenX.Aurum.UISelectorVector..ctor.System.Collections.Generic.IEnumerable.TizenX.Aurum.UISelector..'></a>
 
-## UISelectorVector(IEnumerable<UISelector>)
+## UISelectorVector(IEnumerable&lt;UISelector&gt;)
 
 ```csharp
 public UISelectorVector(IEnumerable<UISelector> c)
 ```
 #### Parameters
 
-`c` IEnumerable<UISelector>
+`c` IEnumerable&lt;UISelector&gt;
 
 <a name='TizenX.Aurum.UISelectorVector..ctor.System.Collections.IEnumerable.'></a>
 

@@ -148,7 +148,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 
 - Common tools
   - Smart Development Bridge (SDB)
-    - The PATH setting <tizen-sdk>/tools in Linux when SDB is installed has been removed. Run the SDB in the <tizen-sdk>/tools directory or set the PATH variable yourself.
+    - The PATH setting &lt;tizen-sdk&gt;/tools in Linux when SDB is installed has been removed. Run the SDB in the &lt;tizen-sdk&gt;/tools directory or set the PATH variable yourself.
     - Displaying the target name in the connect command is supported.
 
 #### Fixed bugs

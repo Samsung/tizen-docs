@@ -75,7 +75,7 @@ The Palette library attempts to extract the following six color profiles:
 - Muted
 - Dark muted
 
-Each of the Palettes `get<Profile>Color()` returns the color in the Palette associated with that particular profile, where <Profile> is replaced by the name of one of the six color profiles. For example, the method to get the Dark Vibrant color profile is `getDarkVibrantColor()`. Not all images contain all color profiles, you must also provide a default color to return:
+Each of the Palettes `get<Profile>Color()` returns the color in the Palette associated with that particular profile, where &lt;Profile&gt; is replaced by the name of one of the six color profiles. For example, the method to get the Dark Vibrant color profile is `getDarkVibrantColor()`. Not all images contain all color profiles, you must also provide a default color to return:
 
 ![Palette](./media/Palette.png)
 
@@ -88,7 +88,7 @@ The Palette class also generates `Palette.Swatch` objects for each color profile
 
 The following methods return colors that are appropriate for use over the swatch’s color:
 
-- Each of Palettes `get<Profile>Swatch()` returns the swatch associated with that particular profile, where <Profile> is replaced by the name of one of the six color profiles.
+- Each of Palettes `get<Profile>Swatch()` returns the swatch associated with that particular profile, where &lt;Profile&gt; is replaced by the name of one of the six color profiles.
 
 - The Palettes `get<Profile>Swatch()` does not require default value parameters, the method returns null if a particular profile does not exist in the image. Therefore, you must ensure that a swatch is not null before using it. For example, the following code gets the title text color from a Palette, if the vibrant swatch is not null:
 
