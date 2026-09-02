@@ -506,16 +506,28 @@ This section shows how to use the ml-service.
   static void
   _ml_service_event_cb (ml_service_event_e event, ml_information_h event_data, void *user_data)
   {
-    ml_tensors_data_h data;
-    void *_data;
-    size_t _size;
- 
     switch (event) {
       case ML_SERVICE_EVENT_NEW_DATA:
+      {
         // For the case of new data event, handle output data.
+        ml_tensors_data_h data;
+        void *_data;
+        size_t _size;
+
         ml_information_get (event_data, "data", &data);
         ml_tensors_data_get_tensor_data (data, 0, &_data, &_size);
         break;
+      }
+      case ML_SERVICE_EVENT_MESSAGE:
+      {
+        // For the case of message event, get the message string from event data.
+        char *type = NULL;
+        char *msg = NULL;
+
+        ml_information_get (event_data, "type", (void **) (&type));
+        ml_information_get (event_data, "message", (void **) (&msg));
+        break;
+      }
       default:
         break;
     }
