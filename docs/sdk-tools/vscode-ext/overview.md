@@ -22,19 +22,24 @@ The **Visual Studio Code Extension for Tizen** is a tool designed to streamline 
   > **Note**: The Web app debugger is provided with a separate view (Web Inspector) and is triggered by "Debug Project" on the Tizen sidebar menu.
 
 - **Tizen Sidebar Menu**: Provides entry points for managing your development environment and launching key actions.
-  - **Welcome**: Opens the Tizen Extension walkthrough page and explores key features.
+  - **Notice**: Opens the Tizen Extension welcome page and provides extension status information.
+  - **Baseline Tools**: Launches the standalone Tizen tools:
+    - **Package Manager**: Installs, updates, and configures SDK packages.
+    - **Emulator Manager**: Creates, launches, and manages emulators.
+    - **Device Manager**: Connects and manages local or remote devices.
+    - **Certificate Manager**: Creates and manages certificate profiles.
   - **Active Targets**
     - **Project**: Shows the currently active project. Click to view or switch projects.
     - **Device**: Displays the connected device or emulator. Click to open the Device Manager or change the target.
     - **Certificate**: Indicates the active signing certificate. Click to open the Certificate Manager or switch profiles.
-      > 💡 _Active Targets replaces the old “Tizen Tools” section. Instead of launching tools directly, you can now manage and switch your working targets from one integrated view._
   - **Actions**
     - **Create Project**: Create a new app project from templates (Web, Native, or .NET for the selected platform version).
     - **Build Project**: Build and sign the active project to generate an installable package.
     - **Run Project**: Build (if needed), install, and launch the active project on a target device or emulator.
     - **Debug Project**: Launch the active project in debugging mode with runtime inspection.
-  - **Report Issue**: Opens the Tizen GitHub issue page and provides issue reporting templates.
+  - **Contact**
+    - **Report Issue**: Opens the Tizen GitHub issue page and provides issue reporting templates.
 
 **Figure: Menus of Visual Studio Code Extension for Tizen**
 
-![Tizen VS Code Menu](./image/overview/vscode-menu.png)
+![Visual Studio Code extension menus](./image/overview/vscode-menu.png)
