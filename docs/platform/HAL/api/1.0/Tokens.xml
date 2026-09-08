@@ -7563,6 +7563,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>is_supported_sleep_state</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>_hal_backend_device_power_funcs</Scope>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__DEVICE__POWER__MODULE.html</Path>
+    <Anchor>adde560f1f687bc2e637f7cb7b8f126ff</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>HAL_DEVICE_POWER_TRANSITION_REASON_UNKNOWN</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -19851,6 +19861,15 @@
     </TokenIdentifier>
     <Path>group__HALAPI__HAL__SECURITY__KEYS__MODULE.html</Path>
     <Anchor>gga6152821d442f84a2f612de48815a8981aa7fd58453439f6fca371dd5202bae326</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HAL_SECURITY_KEYS_DBP_SCHEME_LEGACY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__HALAPI__HAL__SECURITY__KEYS__MODULE.html</Path>
+    <Anchor>gga81f77dba0509f9319625c5207817c396ae0f9dc7819f65626958d4613298281b1</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

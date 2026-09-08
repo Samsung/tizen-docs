@@ -56,6 +56,41 @@ The Security HAL provides comprehensive security features.
 
 The Machine Learning HAL provides an interface for hardware-accelerated neural network inference.
 
+## Supported version of HAL Interface
+
+| Name                         | Tizen 10.0 | Package name       |
+|------------------------------|------------|--------------------|
+| Audio                        | 1.0        | hal-api-audio      |
+| Bluetooth                    | 1.0        | hal-api-bluetooth  |
+| Camera                       | 1.2        | hal-api-camera     |
+| Codec                        | 1.4        | hal-api-codec      |
+| Common                       | 1.0        | hal-api-common     |
+| DRM                          | 1.0        | hal-api-drm        |
+| Device - Battery             | 1.0        | hal-api-device     |
+| Device - Bezel               | 1.0        | hal-api-device     |
+| Device - Board               | 1.0        | hal-api-device     |
+| Device - Display             | 1.0        | hal-api-device     |
+| Device - External Connection | 1.0        | hal-api-device     |
+| Device - Haptic              | 1.0        | hal-api-device     |
+| Device - Input               | 1.0        | hal-api-device     |
+| Device - Ir                  | 1.0        | hal-api-device     |
+| Device - Led                 | 1.0        | hal-api-device     |
+| Device - Memory              | 1.0        | hal-api-device     |
+| Device - Power               | 1.1        | hal-api-device     |
+| Device - Thermal             | 1.0        | hal-api-device     |
+| Device - Touchscreen         | 1.0        | hal-api-device     |
+| HDCP                         | 1.0        | hal-api-hdcp       |
+| Location                     | 1.0        | hal-api-location   |
+| Power                        | 1.0        | hal-api-power      |
+| Radio                        | 1.0        | hal-api-radio      |
+| Security - Auth              | 1.0        | hal-api-security   |
+| Security - Certs             | 1.0        | hal-api-security   |
+| Security - Keys              | 1.1        | hal-api-security   |
+| Sensor                       | 1.1        | hal-api-sensor     |
+| TBM                          | 1.1        | hal-api-tbm        |
+| TDM                          | 1.0        | hal-api-tdm        |
+| Wi-Fi                        | 1.0        | hal-api-wifi       |
+
 ## Related Documentation
 
 For detailed information on each subsystem, refer to the following guides:
