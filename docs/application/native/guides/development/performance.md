@@ -59,16 +59,9 @@ The following instructions and examples help you to use the Dynamic Analyzer eff
 
 ### Running Dynamic Analyzer
 
-You can launch the Dynamic Analyzer in Tizen Studio or as a standalone application from the Tizen Studio submenu.
+The Dynamic Analyzer is a standalone Baseline SDK tool. To run it:
 
-- To launch the Dynamic Analyzer in Tizen Studio:
-  1. Right-click your project in Tizen Studio **Project Explorer** view.
-  2. Select **Profile As > Profile with Dynamic Analyzer**.
-
-  The selected project is built, packaged, and installed on the target device. The Dynamic Analyzer is launched and the profiling starts automatically.
-
-- To run the Dynamic Analyzer as a standalone from the Tizen Studio submenu:
-  1. Launch the Dynamic Analyzer from the Tizen Studio **Tools > Dynamic Analyzer** menu.
+  1. Launch the Dynamic Analyzer. For the launch routes on each operating system, see [Handling Common Dynamic Analyzer Tasks](../../../../sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/common-tasks.md).
   2. Select the target device and the application to be traced from the combo box in the Dynamic Analyzer toolbar.
   3. Click the **Start** button.
 
@@ -131,8 +124,8 @@ To analyze performance of the application with the Dynamic Analyzer, use the fol
   1. Select the **Timeline** tab and view the CPU chart.
   2. Hover the mouse on a CPU peak to view the CPU load value in a tooltip.
   3. Click the CPU peak to highlight the last user method called before the peak in the Call Trace table.
-  4. Right-click the highlighted method and select **View Declaration Source**. The source code is displayed as a tooltip. To investigate the method, double-click it, and the source code is displayed in Tizen Studio.
-  5. Modify the code in Tizen Studio, re-build, and re-analyze the application to see if the bottleneck has been eliminated.
+  4. Right-click the highlighted method and select **View Declaration Source**. The source code is displayed as a tooltip.
+  5. Modify the code, re-build, and re-analyze the application to see if the bottleneck has been eliminated.
 
   **Figure: Timeline CPU chart and Call Trace table**
 
@@ -394,4 +387,4 @@ For information on executing Valgrind on the command line interface, see the [Va
 
 To save a Valgrind profiling result, click **Save file** on the Valgrind result view toolbar.
 
-To load a saved Valgrind result file, select **File > Open File** in the Tizen Studio menu.
+To load a saved Valgrind result file, open it from the Valgrind result view.

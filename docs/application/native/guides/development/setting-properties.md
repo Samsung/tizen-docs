@@ -2,12 +2,12 @@
 
 Before you implement the actual application functionality, define all the necessary properties for your application project:
 
-- To set the [application project properties for API and privilege checks](#checking-api-and-privilege-usage), right-click the project in the Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
+- To set the [application project properties for API and privilege checks](#checking-api-and-privilege-usage), open the project properties in your IDE.
 - To define the [application manifest settings](#setting-the-application-manifest), edit the `tizen-manifest.xml` file.
 
 > **Note**
 >
-> Only modify the manifest file by using the manifest editor in Tizen Studio. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
+> Only modify the manifest file by using the manifest editor. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
 
 After you have finished setting the project properties, you are ready to [design the UI and implement the application code](index.md#designing).
 
@@ -49,7 +49,7 @@ You can perform the following tasks using the **Overview** tab:
 
 - View the application ID.
 
-  Tizen Studio creates automatically an application ID, which uniquely identifies the application within the package.
+  The project wizard creates automatically an application ID, which uniquely identifies the application within the package.
 
 - Set the package name of the application.
 

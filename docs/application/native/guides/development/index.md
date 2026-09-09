@@ -30,17 +30,13 @@ Implementing your application consists of:
 
 - **Designing and creating the application UI (User Interface)**
 
-  You can design and create the application UI (user interface) with UI Builder.
-
-  UI Builder is included in Tizen Studio, and functions as a WYSIWYG (What You See Is What You Get) design environment for creating UIs for native applications.
-
-  > **Note**  
-  > You can also design the application UI using the controls defined in the User Interface guides.
+  You can design and create the application UI using the controls defined in the
+  User Interface guides.
 
 
 - **Coding applications**
 
-  Code your application in Tizen Studio using the APIs defined in the [Application Framework API reference](../../api/common/latest/group__CAPI__APPLICATION__FRAMEWORK.html).
+  Code your application using the APIs defined in the [Application Framework API reference](../../api/common/latest/group__CAPI__APPLICATION__FRAMEWORK.html).
 
 If needed, update the privileges of the application.
 
@@ -49,9 +45,9 @@ Once you have finished implementing your application, you are ready to [build yo
 <a name="build"></a>
 ## Building the Application
 
-You must [build your native application project](building-app.md) before you can [run and debug the application](#debugging).
+You must [build your native application project](../../../../sdk-tools/vscode-ext/Tizen/native.md#build-your-project) before you can [run and debug the application](#debugging).
 
-The build configuration is the [set of properties](building-app.md#prop) which are used in the build process. The build configuration includes the following properties:
+The build configuration is the [set of properties](../../../../sdk-tools/vscode-ext/Tizen/native.md#build-your-project) which are used in the build process. The build configuration includes the following properties:
 
 - Build (compile and link) options
 - Source files to build
@@ -61,7 +57,7 @@ The build configuration is the [set of properties](building-app.md#prop) which a
 <a name="debugging"></a>
 ## Running and Debugging the Application
 
-You can [run your application in the emulator](running-app.md). The device emulator, provided with Tizen Studio, imitates the target environment running Tizen native applications. Using this replicated environment, you can test your application before deploying it to the real target device.
+You can [run your application in the emulator](../../../../sdk-tools/vscode-ext/Tizen/native.md#deploy-and-run-your-application-in-emulator). The device emulator, provided with the Tizen SDK, imitates the target environment running Tizen native applications. Using this replicated environment, you can test your application before deploying it to the real target device.
 
 You can also [debug your application with the
 emulator](debugging-app.md#debugging-applications-on-the-emulator). The emulator represents the almost identical functionality of the corresponding device model.
@@ -73,18 +69,18 @@ The emulator provides the following debugging capabilities:
 - Acting as a source-level debugger
 - Producing console output
 
-You can make running and testing your application faster using the [Rapid Development Support (RDS)](running-app.md#rapid-development-support). For more information on the debugging methods and tools you can use, see [Debugging Applications](debugging-app.md).
+You can make running and testing your application faster using the [Rapid Development Support (RDS)](../../../../sdk-tools/vscode-ext/Tizen/native.md#deploy-and-run-your-application-in-emulator). For more information on the debugging methods and tools you can use, see [Debugging Applications](debugging-app.md).
 
 You can also [optimize your application](performance.md) to achieve the best possible performance.
 
-To debug your application with the emulator or the target device, you must first [build the application](building-app.md).
+To debug your application with the emulator or the target device, you must first [build the application](../../../../sdk-tools/vscode-ext/Tizen/native.md#build-your-project).
 
 <a name="packaging"></a>
 ## Packaging the Application
 
-You can package your application using Tizen Studio. If you want to register your application in the official site for Tizen applications, [register the author certificate](../../../../sdk-tools/baseline-sdk/common-tools/certificate-registration.md) before packaging your application.
+You can package your application with your IDE. If you want to register your application in the official site for Tizen applications, [register the author certificate](../../../../sdk-tools/baseline-sdk/common-tools/certificate-registration.md) before packaging your application.
 
-1. If you have made changes to the application after testing it, [rebuild the application](building-app.md).
+1. If you have made changes to the application after testing it, [rebuild the application](../../../../sdk-tools/vscode-ext/Tizen/native.md#build-your-project).
 
 2. Select the project in the **Project Explorer** view.
 
@@ -103,20 +99,15 @@ To develop a multi-project native application:
 
 1. [Create a UI application](#creating).
 2. Create a service or widget application.
-3. Package a multi-project application using Tizen Studio:
-
-   1. In Tizen Studio, make sure all the applications you want to include in the package are located in the **Project Explorer** view.  
-      To make the projects appear in the **Project Explorer** view, you can create new applications, or import existing projects or sample applications into Tizen Studio.
-
-   2. To establish a project reference between a UI application and a service or widget application:  
-      - In the **Project Explorer** view, right-click the UI application.  
-      - Select **Properties &gt; Tizen Studio &gt; Package &gt; Multi**.  
-      - Select the check box for the service or widget application, and click **OK**.  
-        In the **Project Explorer** view, a message (with the UI application) appears next to the referenced project name for all the applications you have added to the package.
+3. Package the applications together. Open all the applications you want to
+   include in the package in your workspace, then establish a project reference
+   from the UI application to the service or widget application. For the
+   multi-project packaging support of your IDE, see
+   [Hybrid application development](../../../../sdk-tools/vscode-ext/Tizen/hybrid.md).
 
    After packaging the multi-project application, the package consists of the application binary, resource, and data files of the root and referenced applications. Their `tizen-manifest.xml` files are merged into one. [The application ID in the `tizen-manifest.xml` must be assigned with the package ID as a prefix.](../../index.md#packageID)
 
-4. [Build](building-app.md) and [run](running-app.md) the UI application.
+4. [Build](../../../../sdk-tools/vscode-ext/Tizen/native.md#build-your-project) and [run](../../../../sdk-tools/vscode-ext/Tizen/native.md#deploy-and-run-your-application-in-emulator) the UI application.
 
    The service or widget application is built and run automatically
    while the UI application is built and run.
@@ -124,7 +115,7 @@ To develop a multi-project native application:
 > **Note**  
 > Tizen has limited a multi-project application combination policy for device usability. If you do not follow the policy, the submission of your application to the store can be rejected.
 >
-> For your convenience, some policies can be allowed in Tizen Studio only. For example, you can make a STANDALONE service application or STANDALONE widget application in Tizen Studio, but these applications can be rejected in the store.
+> For your convenience, some policies can be allowed by the packaging tool only. For example, you can make a STANDALONE service application or STANDALONE widget application, but these applications can be rejected in the store.
 
 The following table shows the possible combinations for a native multi-project. **1** means that only one application can be packaged as a sub application, while **M** means that multiple applications can be packaged as sub applications. The **STANDALONE** column defines whether the application can be packaged alone as the main application.
 

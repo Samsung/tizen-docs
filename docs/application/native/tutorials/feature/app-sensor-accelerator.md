@@ -14,7 +14,7 @@ To determine whether the accelerator sensor is supported on the device:
     template, and specify the project name as **SensorAccelerator**.
 
     For more information on how to create a project, see
-    [Creating the Application Project](../../guides/development/creating-app-project.md).
+    [Creating the Application Project](../../../../sdk-tools/vscode-ext/getting-started/creating-native-application-projects.md).
 
 2. In the new project, open the `sensoraccelerator.c` source file in
     the `src` folder and add the required library header file and
@@ -128,8 +128,8 @@ To determine whether the accelerator sensor is supported on the device:
     show_is_supported(ad);
     ```
 
-5. [Build](../../guides/development/building-app.md) and
-    [run](../../guides/development/running-app.md)
+5. [Build](../../../../sdk-tools/vscode-ext/Tizen/native.md#build-your-project) and
+    [run](../../../../sdk-tools/vscode-ext/Tizen/native.md#deploy-and-run-your-application-in-emulator)
     the application. If the accelerator sensor is supported, the
     **Accelerator Sensor is support** message is shown on the
     device screen.

@@ -1,27 +1,8 @@
 # Debugging Applications
 
-Debugging your application enables you to understand its flow of control. With Tizen Studio, you can use various [application debugging methods](#application-debugging-methods). However, remember that the best way to debug an application is to not make bugs in the first place, so learn how to [prevent bugs by using logs](#debugging-with-logs).
+Debugging your application enables you to understand its flow of control. You can use various [application debugging methods](#application-debugging-methods). However, remember that the best way to debug an application is to not make bugs in the first place, so learn how to [prevent bugs by using logs](#debugging-with-logs).
 
-The debugging environment uses [GDB](http://www.gnu.org/software/gdb/gdb.html) (GNU Debugger) for debugging with the emulator and a target device. GDB can debug both locally and [remotely](#remote-debugging). To ease the debugging process, you can set [break points](#break-points), step in, step out, and step over break points, and watch variables to track the changes in their values in the **Debug** view.
-
-Debugging native applications with Tizen Studio is same as with Eclipse CDT. For more information, see [Debugging in Eclipse](http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_o_debug.htm).
-
-## Debug View
-
-The **Debug** view provides debug control buttons that help you to track source code easily.
-
-You can control debug execution in various ways. After a break point suspends the program execution, you can step through your program or suspend the program by force. To control the execution, use the following control buttons in the **Debug** view.
-
-**Table: Debug view control buttons**
-
-| Button                                   | Keyboard shortcut | Description                              |
-|----------------------------------------|-----------------|----------------------------------------|
-| ![Resume](./media/debug_view_resume.png) | **F8**            | Resumes a suspended thread.              |
-| ![Step Into](./media/debug_view_stepinto.png) | **F5**            | Steps into the highlighted statement.</br>Executes the current line, and if the line contains a method, steps into the method. |
-| ![Step Over](./media/debug_view_stepover.png) | **F6**            | Steps over the highlighted statement.</br>Executes the current line, and if the line contains a method, executes the method without entering it. |
-| ![Step Return](./media/debug_view_stepreturn.png) | **F7**            | Step out of the current method.          |
-| ![Suspend](./media/debug_view_suspend.png) | -                 | Suspends the selected thread.            |
-| ![Terminate](./media/debug_view_terminate.png) | **Ctrl + F2**     | Terminates the selected debug target.    |
+The debugging environment uses [GDB](http://www.gnu.org/software/gdb/gdb.html) (GNU Debugger) for debugging with the emulator and a target device. GDB can debug both locally and [remotely](#remote-debugging). To ease the debugging process, you can set [break points](#break-points), step in, step out, and step over break points, and watch variables to track the changes in their values.
 
 <a name="methods"></a>
 ## Application Debugging Methods
@@ -32,23 +13,24 @@ You can apply the normal or attached method for debugging a Tizen application.
 
 The normal debugging method is used to debug from start to finish an executable Tizen application, which can be run as a standalone. To debug the application:
 
-1. In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Native Application**.
+1. Start a debug run of the project from your IDE. For the debug workflow of the
+   VS Code Extension for Tizen, see [Debug your application in emulator](../../../../sdk-tools/vscode-ext/Tizen/native.md#debug-your-application-in-emulator).
 
    Debugging starts.
 
-2. To stop the program execution, select **Run > Suspend** in the Tizen Studio menu. The program can be stopped also by a break point you have set before debugging.
+2. To stop the program execution, suspend it from your IDE. The program can be stopped also by a break point you have set before debugging.
 
-You can debug the source code by, for example, checking variables, registers, and memory. You can also use the **Step Over**, **Step In**, and **Resume** buttons in the **Debug** view for step-by-step debugging actions.
+You can debug the source code by, for example, checking variables, registers, and memory. You can also step over, step into, and resume execution for step-by-step debugging actions.
 
 ### Attached Debugging
 
 The attached debugging method is effective for debugging Tizen applications that have no external interaction with the UI, such as middle-ware and libraries. This method attaches the "GDB" debugger to an application which is running in a target.
 
-If the Tizen Studio workspace has a project that contains the source code of the application currently running on the target, you can apply "attach debugging" at a source level.
+If your workspace has a project that contains the source code of the application currently running on the target, you can apply "attach debugging" at a source level.
 
 To debug an application that is already running on the emulator or a device:
 
-- In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Native Application - Attach**.
+- Start an attach debug run against the running application from your IDE.
 
 > [!NOTE]
 > The source code of the project must be related to the application that is running on the target. Also, once the attach happens, the debugger can stop at an arbitrary address that belongs to the internal code of the main loop, hence its code might not be visible. In this case, you can add a breakpoint in the application code which can be hit later on, and click **Continue** to resume debugging.
@@ -56,7 +38,7 @@ To debug an application that is already running on the emulator or a device:
 <a name="remote"></a>
 ## Remote Debugging
 
-Tizen Studio supports remote debugging. Remote debugging is used to debug the OS Kernel or a system which cannot support local debugging. Remote debugging requires a "GDB client" on the host side and a "GDB server" on the target side. Both sides must be connected by serial or TCP/IP communication.
+The Tizen SDK supports remote debugging. Remote debugging is used to debug the OS Kernel or a system which cannot support local debugging. Remote debugging requires a "GDB client" on the host side and a "GDB server" on the target side. Both sides must be connected by serial or TCP/IP communication.
 
 **Figure: Remote debugging**
 
@@ -67,7 +49,7 @@ Tizen Studio supports remote debugging. Remote debugging is used to debug the OS
 
 A cross remote debugging environment is used to support the armel architecture of the Tizen devices. This means that the "cross GDB" and "GDB server" are used instead of native GDB and GDB server. Tizen also supports native (i386) remote debugging for the i386 emulator.
 
-The Eclipse CDT based Tizen Studio supports the UI and control of the debugging process. The following figure shows the control flow of the remote debugging process.
+The following figure shows the control flow of the remote debugging process.
 
 **Figure: Remote debugging control flow**
 
@@ -375,37 +357,28 @@ The **Expressions** view can be used in the following ways:
 
 ## Debugging Applications on the Emulator
 
-You can debug Tizen native applications on the [emulator](../../../../sdk-tools/baseline-sdk/common-tools/emulator.md) using the **Project Explorer** view or the Tizen Studio menu.
+You can debug Tizen native applications on the [emulator](../../../../sdk-tools/baseline-sdk/common-tools/emulator.md) from your IDE.
 
 To debug your application on the emulator:
 
 1. Start the emulator in the **Connections** view.
 
-2. Start the debugging by doing one of the following:
-
-   - In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Native Application**.
-   - In the Tizen Studio menu, go to **Run > Debug As > Tizen Native Application**.
-   - On the Tizen Studio toolbar, click **Debug**.
+2. Start the debugging from your IDE. For the VS Code Extension for Tizen, see
+   [Debug your application in emulator](../../../../sdk-tools/vscode-ext/Tizen/native.md#debug-your-application-in-emulator).
 
    If the application binary does not exist, it is built automatically for the emulator.
 
    If many active emulator instances are connected, select the emulator to run the application from the dialog box.
 
-3. The debug messages are displayed in Tizen Studio **Console** view. To see the GDB console, in the **Console** view, click the **Display Selected Console** button and select the option containing **gdb**. With the GDB console, you can also execute GDB commands.
-
-   To display verbose GDB output in the GDB console:
-
-   - Right-click the **Project Explorer** view and select **Debug As > Debug Configurations**.
-   - On the **Remote** tab, select the **Show verbose messages in console** check box.
-   - Click **Debug**.
+3. The debug messages are displayed in the **Console** view. To see the GDB console, in the **Console** view, click the **Display Selected Console** button and select the option containing **gdb**. With the GDB console, you can also execute GDB commands.
 
 4. Use the application in the emulator as you would on a target device.
 
-   While the application is running, Tizen Studio [Log view](../../../../sdk-tools/baseline-sdk/common-tools/log-view.md) shows the log, debug, and exception messages from the methods defined in the log macros.
+   While the application is running, the [log view](../../../../sdk-tools/baseline-sdk/common-tools/log-view.md) shows the log, debug, and exception messages from the methods defined in the log macros.
 
 5. To stop debugging, do one of the following:
 
-   - In Tizen Studio, in the **Console** or **Debug** view, click the **Terminate** button. If the application execution is not suspended before you click the **Terminate** button, touch an arbitrary control on the screen or press a hard key on the emulator after clicking **Terminate**.
+   - In the **Console** or **Debug** view, click the **Terminate** button. If the application execution is not suspended before you click the **Terminate** button, touch an arbitrary control on the screen or press a hard key on the emulator after clicking **Terminate**.
    - On the emulator, press the **End** key.
 
 After debugging, run your application again to check its functionality and to ensure that the bugs detected during the debugging process are fixed.

@@ -3,11 +3,11 @@
 
 Before you implement the actual application functionality, define all the necessary properties for your application project:
 
-- To set the application project properties for [build](#set) and [JSON properties](#set_json), right-click the project in Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
+- To set the application project properties for [build](#set) and [JSON properties](#set_json), open the project properties in your IDE.
 - To define the [Web application configuration](#set_widget), edit the `config.xml` file.  
   > [!NOTE]
   > Only modify the Web application configuration by using the
-    configuration editor in Tizen Studio. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
+    configuration editor. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
 
 After you have finished setting the project properties, you are ready to [design the UI](index.md#plan-and-design-the-application).
 
@@ -16,8 +16,7 @@ After you have finished setting the project properties, you are ready to [design
 
 You can set build properties for your project. To select the build properties:
 
-1. In the **Properties** window, select **Tizen Studio &gt;
-   Package &gt; Web**.
+1. In the project properties, open the Web package settings.
 2. Check **Optimize web resources**, and add any files for excluding    optimization in the **Optimization** panel.
 
 <a name="set_json"></a>
@@ -25,7 +24,7 @@ You can set build properties for your project. To select the build properties:
 
 You can set a JSON property for your project. To select the JSON property:
 
-1. In the **Properties** window, select **Tizen Studio &gt; Web &gt;    JSON Properties**.
+1. In the project properties, open the Web JSON settings.
 2. Check **Enable JSON validation in project**.
 
 <a name="set_widget"></a>
@@ -46,7 +45,7 @@ You can perform the following tasks using the **Overview** tab:
 
 -   View the application identifier.
 
-    Tizen Studio creates automatically an application ID, which uniquely identifies the application within the package.
+    The project wizard creates automatically an application ID, which uniquely identifies the application within the package.
 
 -   Set the content.
 

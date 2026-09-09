@@ -314,10 +314,8 @@
 ### [Overview](/application/web/guides/index.md)
 ### Application Development Process
 #### [Overview](/application/web/guides/development/index.md)
-#### [Creating the Application Project](/application/web/guides/development/creating-app-project.md)
 #### [Setting Project Properties](/application/web/guides/development/setting-properties.md)
 #### [Coding Applications](/application/web/guides/development/coding-app.md)
-#### [Running and Debugging Applications](/application/web/guides/development/run-debug-app.md)
 
 ### Concepts
 #### [Web Runtime](/application/web/guides/concepts/web-runtime.md)
@@ -587,10 +585,7 @@
 ### [Overview](/application/native/guides/index.md)
 ### Application Development Process
 #### [Overview](/application/native/guides/development/index.md)
-#### [Creating the Application Project](/application/native/guides/development/creating-app-project.md)
 #### [Setting Project Properties](/application/native/guides/development/setting-properties.md)
-#### [Building Applications](/application/native/guides/development/building-app.md)
-#### [Running Applications](/application/native/guides/development/running-app.md)
 #### [Debugging Applications](/application/native/guides/development/debugging-app.md)
 #### [Optimizing Application Performance](/application/native/guides/development/performance.md)
 
