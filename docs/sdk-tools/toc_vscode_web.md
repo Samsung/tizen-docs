@@ -83,7 +83,6 @@
 
 ##### [Debug App](/sdk-tools/vscode-ext/getting-started/debug-app-web.md)
 
-##### [Tool: Web Inspector](/sdk-tools/baseline-sdk/web-tools/web-inspector.md)
 
 #### Running and Testing Application
 
@@ -139,44 +138,14 @@
 #### [CLI](/sdk-tools/baseline-sdk/common-tools/command-line-interface.md)
 #### [Emulator Manager](/sdk-tools/baseline-sdk/common-tools/emulator-manager.md)
 #### [Emulator Control Panel](/sdk-tools/baseline-sdk/common-tools/emulator-control-panel.md)
-### Configurable SDK
-#### [Configurable SDK](/sdk-tools/baseline-sdk/configurable-sdk/configurable-sdk.md)
-### Overview
-#### [Overview](/sdk-tools/baseline-sdk/index.md)
-### Platform development tools
-#### [Overview](/sdk-tools/baseline-sdk/platform-tools/overview.md)
-#### [Platform Development Tools](/sdk-tools/baseline-sdk/platform-tools/platform-tools.md)
 ### Setup
 #### [Prerequisites](/sdk-tools/baseline-sdk/setup/prerequisites.md)
-#### [Install Tizen Studio](/sdk-tools/baseline-sdk/setup/install-sdk.md)
-#### [Update Tizen Studio](/sdk-tools/baseline-sdk/setup/update-sdk.md)
+#### [Install the Tizen SDK](/sdk-tools/baseline-sdk/setup/install-sdk.md)
+#### [Update the Tizen SDK](/sdk-tools/baseline-sdk/setup/update-sdk.md)
 #### [Hardware Accelerated Execution Manager](/sdk-tools/baseline-sdk/setup/hardware-accelerated-execution-manager.md)
 #### [Configure the Package Manager](/sdk-tools/baseline-sdk/setup/advanced-configuration.md)
 ### Tizen Core
 #### [Tizen-Core CLI](/sdk-tools/baseline-sdk/tizen-core/tizen-core-cli.md)
-### Web tools
-#### [Overview](/sdk-tools/baseline-sdk/web-tools/index.md)
-#### [Overview](/sdk-tools/baseline-sdk/web-tools/managing-projects.md)
-#### [Project Creation Wizard](/sdk-tools/baseline-sdk/web-tools/project-wizard.md)
-#### [Project Explorer View](/sdk-tools/baseline-sdk/web-tools/project-explorer-view.md)
-#### [Overview](/sdk-tools/baseline-sdk/web-tools/coding.md)
-#### [Web Editor](/sdk-tools/baseline-sdk/web-tools/web-editor.md)
-#### [Live Edit](/sdk-tools/baseline-sdk/web-tools/live-editing.md)
-#### [Content Assist](/sdk-tools/baseline-sdk/web-tools/content-assist.md)
-#### [Code Clean](/sdk-tools/baseline-sdk/web-tools/code-productivity.md)
-#### [REST Viewer](/sdk-tools/baseline-sdk/web-tools/rest-viewer.md)
-#### [Previewer](/sdk-tools/baseline-sdk/web-tools/previewer.md)
-#### [Privilege Checker](/sdk-tools/baseline-sdk/web-tools/privilege-checker.md)
-#### [Tizen Studio Web Preferences](/sdk-tools/baseline-sdk/web-tools/ide-preferences.md)
-#### [Overview](/sdk-tools/baseline-sdk/web-tools/configuring.md)
-#### [Configuration Editor](/sdk-tools/baseline-sdk/web-tools/config-editor.md)
-#### [Web Localization](/sdk-tools/baseline-sdk/web-tools/web-localization.md)
-#### [Overview](/sdk-tools/baseline-sdk/web-tools/debugging.md)
-#### [JavaScript Analyzer](/sdk-tools/baseline-sdk/web-tools/js-analyzer.md)
-#### [Overview](/sdk-tools/baseline-sdk/web-tools/running-testing.md)
-#### [Overview](/sdk-tools/baseline-sdk/web-tools/web-simulator.md)
-#### [Extended Web Simulator Features](/sdk-tools/baseline-sdk/web-tools/web-simulator-features.md)
-#### [Web Unit Test Tool](/sdk-tools/baseline-sdk/web-tools/web-unit-test-tool.md)
 ### Visual Studio Code extension
 #### [Tizen Welcome Page](/sdk-tools/vscode-ext/tools/welcome-page.md)
 #### [Tizen Activity Bar](/sdk-tools/vscode-ext/tools/activity-bar.md)

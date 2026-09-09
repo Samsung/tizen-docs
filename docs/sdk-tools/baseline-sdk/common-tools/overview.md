@@ -1,8 +1,25 @@
 # Overview Tizen SDK
 
-Tizen SDK supports IDE Extensions for Tizen App development based on three IDEs(Eclipse based Tizen Studio, Visual Studio, Visual Studio Code).
+Tizen SDK supports IDE Extensions for Tizen App development based on two IDEs (Visual Studio and Visual Studio Code).
 
 IDE Extensions share Baseline SDK, which is a common tool required for Tizen application development.
+
+## How to get these tools
+
+**Install the extension for your IDE. The extension installs the Baseline SDK for you** —
+there is no separate SDK download to perform first.
+
+- **Visual Studio Code**: install [Visual Studio Code Extension for Tizen](../../vscode-ext/Tizen/dotnet.md)
+  from the Visual Studio Code Marketplace. On first launch the extension asks for a Tizen
+  SDK path and then downloads and installs the required SDK resources. If no Baseline SDK
+  is found on the machine, the extension installs one.
+- **Visual Studio**: install [Visual Studio Tools for Tizen](../../vstools/install.md) from
+  the Visual Studio Marketplace. On first launch it asks for an SDK resource path and then
+  installs the server and core apps.
+
+For a machine without an IDE — a build server, or a terminal-only environment — install the
+Baseline SDK with the CLI installer instead. See
+[Installing the Tizen SDK](../setup/install-sdk.md).
 
 Baseline SDK includes the following standalone tools.
 
@@ -22,9 +39,6 @@ Baseline SDK includes the following standalone tools.
 Tizen SDK provides various development tools and platform resources for native (c, c++), web(HTML, JS, CSS), and .NET(c#) application and also supports hybrid application packaging tool.
 
 Developers can use "Visual Studio Code Extension for Tizen" or "Visual Studio Tools for Tizen" for developing all types of application supported by Tizen platform from project creation to onboarding debug and tests on actual devices.
-
-> **Note**
-> Tizen Studio does not currently support .NET application development.
 
 | Development Tools              | Native                                      | Web                                         | .NET                                                                                                                                                              |
 | ------------------------------ | ------------------------------------------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -3,11 +3,11 @@
 
 Before you implement the actual application functionality, define all the necessary properties for your application project:
 
-- To set the application project properties for [build](#set) and [JSON properties](#set_json), right-click the project in Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
+- To set the application project properties for [build](#set) and [JSON properties](#set_json), open the project properties in your IDE.
 - To define the [Web application configuration](#set_widget), edit the `config.xml` file.  
   > [!NOTE]
   > Only modify the Web application configuration by using the
-    configuration editor in Tizen Studio. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
+    configuration editor. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
 
 After you have finished setting the project properties, you are ready to [design the UI](index.md#plan-and-design-the-application).
 
@@ -16,8 +16,7 @@ After you have finished setting the project properties, you are ready to [design
 
 You can set build properties for your project. To select the build properties:
 
-1. In the **Properties** window, select **Tizen Studio &gt;
-   Package &gt; Web**.
+1. In the project properties, open the Web package settings.
 2. Check **Optimize web resources**, and add any files for excluding    optimization in the **Optimization** panel.
 
 <a name="set_json"></a>
@@ -25,7 +24,7 @@ You can set build properties for your project. To select the build properties:
 
 You can set a JSON property for your project. To select the JSON property:
 
-1. In the **Properties** window, select **Tizen Studio &gt; Web &gt;    JSON Properties**.
+1. In the project properties, open the Web JSON settings.
 2. Check **Enable JSON validation in project**.
 
 <a name="set_widget"></a>
@@ -35,7 +34,7 @@ The Web application configuration consists of application information, such as v
 
 **Figure: Setting the application configuration**
 
-You can [edit the application properties using the form tabs of the Web application configuration editor](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md#edit).
+You can edit the application properties in the `config.xml` file. For the element specifications, see [Web Application Configuration](../../reference/config-xml.md).
 
 <a name="overview"></a>
 ### Define and edit general information in the Overview tab
@@ -46,7 +45,7 @@ You can perform the following tasks using the **Overview** tab:
 
 -   View the application identifier.
 
-    Tizen Studio creates automatically an application ID, which uniquely identifies the application within the package.
+    The project wizard creates automatically an application ID, which uniquely identifies the application within the package.
 
 -   Set the content.
 
@@ -211,7 +210,7 @@ To add a localized name, description, or license:
     </license>
     ```
 
-You can localize a Web application to adapt to various languages and cultural environments by creating different Web application versions for different languages. For more information, see [Localizing Web Applications](../../../../sdk-tools/baseline-sdk/web-tools/web-localization.md).
+You can localize a Web application to adapt to various languages and cultural environments by creating different Web application versions for different languages.
 
 <a name="preferences"></a>
 ### Declare name-value pairs in the Preferences tab
@@ -489,7 +488,7 @@ The following table describes the schema extension properties that you can edit.
   <td>
 
   Defines service application-specific settings.<br>
-  To define the setting values, click **+** in the **Service** section, and define the values. For more information on the values, see [Tizen Service](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md#ww_service).
+  To define the setting values, click **+** in the **Service** section, and define the values. For more information on the values, see [Tizen Service](../../reference/config-xml.md#ww_service).
   </td>
 </tr>
 </table>
@@ -497,7 +496,7 @@ The following table describes the schema extension properties that you can edit.
 <a name="source"></a>
 ### Edit the config.xml file in the Source tab
 
-The **Source** tab of the Web application configuration editor shows the code of the `config.xml` file. You can [edit the basic syntax of the XML document](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
+The **Source** tab of the Web application configuration editor shows the code of the `config.xml` file. You can [edit the basic syntax of the XML document](../../reference/config-xml.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
 
 > [!NOTE]
 > The `config.xml` must conform not only to the XML file format

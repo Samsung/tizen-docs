@@ -4,7 +4,7 @@
 
 A higher coverage percentage indicates that most of your source code has been tested, which reduces the likelihood of undetected software bugs. By using **Unit Tests**, you can verify the correctness of your code, improve reliability, and maintain high software quality.
 
-The **Tizen Studio Extension for Visual Studio** provides tools for:
+**Visual Studio Tools for Tizen** provides tools for:
 - Creating, building, and editing unit tests  
 - Running and analyzing test results  
 - Measuring and visualizing code coverage  

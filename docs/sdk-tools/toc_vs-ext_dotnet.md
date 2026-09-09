@@ -109,17 +109,10 @@
 #### [CLI](/sdk-tools/baseline-sdk/common-tools/command-line-interface.md)
 #### [Emulator Manager](/sdk-tools/baseline-sdk/common-tools/emulator-manager.md)
 #### [Emulator Control Panel](/sdk-tools/baseline-sdk/common-tools/emulator-control-panel.md)
-### Configurable SDK
-#### [Configurable SDK](/sdk-tools/baseline-sdk/configurable-sdk/configurable-sdk.md)
-### Overview
-#### [Overview](/sdk-tools/baseline-sdk/index.md)
-### Platform development tools
-#### [Overview](/sdk-tools/baseline-sdk/platform-tools/overview.md)
-#### [Platform Development Tools](/sdk-tools/baseline-sdk/platform-tools/platform-tools.md)
 ### Setup
 #### [Prerequisites](/sdk-tools/baseline-sdk/setup/prerequisites.md)
-#### [Install Tizen Studio](/sdk-tools/baseline-sdk/setup/install-sdk.md)
-#### [Update Tizen Studio](/sdk-tools/baseline-sdk/setup/update-sdk.md)
+#### [Install the Tizen SDK](/sdk-tools/baseline-sdk/setup/install-sdk.md)
+#### [Update the Tizen SDK](/sdk-tools/baseline-sdk/setup/update-sdk.md)
 #### [Hardware Accelerated Execution Manager](/sdk-tools/baseline-sdk/setup/hardware-accelerated-execution-manager.md)
 #### [Configure the Package Manager](/sdk-tools/baseline-sdk/setup/advanced-configuration.md)
 ### Tizen Core

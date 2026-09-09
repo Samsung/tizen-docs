@@ -26,10 +26,10 @@
 
 1. Find the path to `sdb` and add it to your PATH.
 
-   - If you have installed `Tizen Studio`, add the tools directory to your PATH. For example, if `Tizen Studio` is installed in the default location on Linux or macOS:
+   - Add the Tizen SDK tools directory to your PATH. For example, for the default VS Code Extension for Tizen location on Linux or macOS:
 
      ```sh
-     export PATH="$HOME/tizen-studio/tools:$PATH"
+     export PATH="$HOME/.tizen-extension-platform/tools:$PATH"
      ```
 
    - If you have installed the `VS Code Extension for Tizen`, the PATH is automatically configured, so you do not need to set it manually.

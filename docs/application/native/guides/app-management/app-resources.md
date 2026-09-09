@@ -7,15 +7,13 @@ The main features of the Resource Manager API include:
 
 - Setting resources
 
-  You can [set resources](#set) for your application in the **Resource Manager** view in Tizen Studio. By setting specific resources for specific languages and screen resolutions, you ensure that the application works flawlessly on multiple devices.
+  You can [set resources](#set) for your application per language and screen resolution. By setting specific resources for specific languages and screen resolutions, you ensure that the application works flawlessly on multiple devices.
 
   > **Note**
   >
   > The Resource Manager tool is supported since Tizen 2.4.
   >
-  > If you cannot access the `Resource Manager` view in Tizen Studio, check the version and API version attributes in the `<manifest>` element of the application manifest file.
-  >
-  > For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../../sdk-tools/baseline-sdk/native-tools/resource-manager.md).
+  > Check the version and API version attributes in the `<manifest>` element of the application manifest file.
 
 - Using the resources
 
@@ -41,40 +39,25 @@ To use the functions and resource types of the [Resource Manager API](../../api/
 ```
 
 <a name="set"></a>
-## Setting Resources Using the Resource Manager Tool
+## Setting Resources
 
 To set the resources:
 
-1. To activate the **Resource Manager** view content in Tizen Studio, select the project in the **Project Explorer** view.
+1. Add resource directories for the required languages and screen resolutions
+   under the project `res` directory. Each combination of language and DPI has
+   its own directory.
 
-   ![Show view](./media/resource_manager_show_view2.png)
-
-   If the **Resource Manager** view is not visible, open it: in the Tizen Studio menu, go to **Window > Show View > Resource Manager**.
-
-2. To open the **Resource Configuration Dialog** window, click the ![Resource Manager configuration icon](./media/resource_manager_config_icon.png) icon in the **Resource Manager** view toolbar menu.
-
-3. To add resource directories for the required languages and screen resolutions, select them in the **Language** and **DPI** drop-down menus, and click **Add**.
-
-   The resource directory hierarchy is created.
-
-   ![Resource configuration dialog](./media/resource_manager_config.png)
-
-4. To add images in the created resource directory, copy them directly to the resource directories.
-
-   ![Add images](./media/resource_manager_add_images.png)
-
-   ![Image files for variants](./media/resource_manager_image_files.png)
+2. Copy the images for each variant into the matching resource directory.
 
    > **Note**
    >
-   > The file names of the resources that you want to use interchangeably depending on the device conditions must be the same.
+   > The file names of the resources that you want to use interchangeably
+   > depending on the device conditions must be the same.
 
+3. To view the resource directories, use the `res.xml` file.
 
-5. To view the resource directories, use the `res.xml` file.
-
-   Tizen Studio creates the `res.xml` file automatically when you build the application package.
-
-   ![res.xml file](./media/resource_manager_res_xml.png)
+   The build creates the `res.xml` file automatically when you build the
+   application package.
 
 <a name="get_path"></a>
 ## Getting the Resource File Path
@@ -136,7 +119,7 @@ To get the appropriate resource file path in your code:
 
 To check how the resources are shown on different device configurations, create emulator instances with different resolutions with the [Emulator Manager](../../../../sdk-tools/baseline-sdk/common-tools/emulator-manager.md) and run the application on the instances using different language settings:
 
-1. Open the Emulator Manager by selecting **Tools &gt; Emulator Manager** in the Tizen Studio menu.
+1. Open the [Emulator Manager](../../../../sdk-tools/baseline-sdk/common-tools/emulator-manager.md).
 
    ![Emulator Manager](./media/resource_manager_conn_explorer.png)
 
@@ -158,7 +141,7 @@ To check how the resources are shown on different device configurations, create 
 
       ![Emulator running](./media/resource_manager_emulator_running.png)
 
-   2. In the **Project Explorer** view in Tizen Studio, right-click the application and select **Run As > Tizen Native Application**.
+   2. Run the application on the emulator from your IDE.
 
       The application launches on the emulator.
 
@@ -176,7 +159,7 @@ To check how the resources are shown on different device configurations, create 
 
       ![Emulator running](./media/resource_manager_emulator_running_hd.png)
 
-   2. In the **Project Explorer** view in Tizen Studio, right-click the application and select **Run As > Tizen Native Application**.
+   2. Run the application on the emulator from your IDE.
 
       The application launches on the emulator, and you can see that a different image is displayed depending on the device display resolution.
 

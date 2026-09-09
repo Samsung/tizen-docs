@@ -7,8 +7,8 @@ It includes dotnet-gcdump, dotnet-dump, and dotnet-trace tools to aid .NET devel
 
 Below are the prerequisites for using Tizen .NET Core Diagnostics in Visual Studio:
 
-- Make sure that Tizen Studio Version 5.5 or above is installed.
-- Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with the installed 5.5 or above Tizen Studio path.
+- Make sure that Tizen SDK version 5.5 or above is installed.
+- Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with the installed 5.5 or above Tizen SDK path.
 
 ## Tizen .NET Core Diagnostics tools
 

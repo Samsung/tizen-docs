@@ -22,7 +22,7 @@ To select the certificates used to package your application:
 
    - **Using an existing certificate profile**
 
-     If you have used Tizen Studio before and have already generated a certificate profile using the Tizen Certificate Manager, you can import the profile by selecting **Use profile of Tizen Certificate Manager** from the drop-down list.
+     If you have already generated a certificate profile using the Tizen Certificate Manager, you can import the profile by selecting **Use profile of Tizen Certificate Manager** from the drop-down list.
 
      If you want to create a new certificate profile, see [Create a certificate profile](#create-a-certificate-profile).
 

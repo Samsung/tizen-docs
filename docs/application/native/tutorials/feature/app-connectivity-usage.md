@@ -183,7 +183,7 @@ app_terminate(void *data)
     telephony_deinit(&handle_list);
 }
 
-/* Auto-generated functions (from Tizen Studio) are not included */
+/* Auto-generated functions (from the project wizard) are not included */
 
 int
 main(int argc, char* argv[])

@@ -4,7 +4,7 @@ The Code Coverage is a profiling tool used to determine the coverage details of 
 
 The code coverage tool in the Tizen Extension for Visual Studio is based on the `llvm-cov` tool. Using the Code Coverage tool, you can detect parts of code that are not covered by a unit test, and ensure that the uncovered code does not cause errors at runtime. The Code Coverage tool supports functional, statement, and branch coverage.
 
-With a Unit Test, you can verify that your code works well, and increases its reliability. Tizen Studio Extension for VS provides the creating, building, and editing tools for unit tests, and a view for checking and analyzing the test results.
+With a Unit Test, you can verify that your code works well, and increases its reliability. Visual Studio Tools for Tizen provides the creating, building, and editing tools for unit tests, and a view for checking and analyzing the test results.
 It uses the `gtest` framework to make and launch the test cases. To manage your test cases, you can use the test explorer view.
 
 Get started with [Unit test code coverage information of native application on VS](../getting-started/test-profile-app-unit-test-code-coverage.md)

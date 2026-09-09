@@ -12,8 +12,8 @@ as Evas objects.
 The following example is created using the **Basic UI** template as a
 source code. To create a new project:
 
-1.  In the Tizen Studio menu, select **File &gt; New &gt; Tizen
-    Project**.
+1.  Start the project wizard of your IDE extension and create a new Tizen
+    project.
 
     ![Open the Project Wizard](./media/graphics_project.png)
 

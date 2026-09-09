@@ -18,7 +18,7 @@ The following figure shows the overall architecture of the Tizen Web IME support
 
 When a Web IME is executed, the Input Service framework launches the Input Service Engine process, as with native IME applications. The Input Service Engine process loads a special bridge IME module, `ise-web-helper-agent`, which executes a Web IME within its Web container and communicates with the executed Web IME.
 
-The communication between the Web IME and the `ise-web-helper-agent` module is accomplished by 2 utility modules, `web-helper-agent` on the Web helper agent side and `web-helper-client` on the Web IME side. Therefore, a Web IME application must contain the `web-helper-client.js`, which is created automatically when you create a Web IME project using Tizen Studio.
+The communication between the Web IME and the `ise-web-helper-agent` module is accomplished by 2 utility modules, `web-helper-agent` on the Web helper agent side and `web-helper-client` on the Web IME side. Therefore, a Web IME application must contain the `web-helper-client.js`, which is created automatically when you create a Web IME project.
 
 Since the Web IME runs within a Web container and communicates with it, as a Web IME application developer you do not need knowledge of the platform architecture or details of the native API. You can develop Web IME applications as if they were normal Web applications, as long as the `web-helper-client.js` file is included and properly used.
 
@@ -99,7 +99,7 @@ The following table lists the events that you can implement in your handler obje
 
 ## Web IME configuration
 
-The Web IME configuration follows the Tizen packaging policy with certain extensions. Tizen applications are packaged according to the [Widget packaging guidelines](https://www.w3.org/TR/widgets/){:target="_blank"}. For more information on Tizen extensions to configuration elements, see [Configuration Elements](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md#elements) and [Extending Configuration Elements](../../../../sdk-tools/baseline-sdk/web-tools/config-editor.md#ww_extend).
+The Web IME configuration follows the Tizen packaging policy with certain extensions. Tizen applications are packaged according to the [Widget packaging guidelines](https://www.w3.org/TR/widgets/){:target="_blank"}. For more information on Tizen extensions to configuration elements, see [Configuration Elements](../../reference/config-xml.md#elements) and [Extending Configuration Elements](../../reference/config-xml.md#ww_extend).
 
 Internally, the application package manager is responsible for installing, uninstalling, and updating packages and storing their information.
 
@@ -232,7 +232,7 @@ A Web IME in the visible or invisible state can move on to the terminated state 
 
 To create an IME application, follow these steps:
 
-1. To create the Web IME project, launch Tizen Studio and go to **File > New > Tizen Project**.
+1. Create a Web IME project with the project wizard of your IDE extension.
 2. In the Project Wizard, select **Template** as the project type, **Applicable** profile and applicable version, **Web Application** type, and **Web Input Method Editor** template.
 3. Enter the project name and click **Finish**.   
 ![Create a Web IME project](./media/web_ime_create_project.png)

@@ -13,7 +13,7 @@ The Visual Studio Code Extension for Tizen enables you to easily develop Tizen .
 
 ## Emulator Requirements
 
-The Tizen Emulator for the VS Code Extension has the same requirements as the Tizen Studio Emulator. For detailed hardware and software requirements, see [Emulator Requirements](../baseline-sdk/setup/prerequisites.md#emulator):
+The Tizen Emulator for the VS Code Extension has the same requirements as the Tizen SDK emulator. For detailed hardware and software requirements, see [Emulator Requirements](../baseline-sdk/setup/prerequisites.md#emulator):
 
 ### Using the Intel&reg; HAXM Driver
 

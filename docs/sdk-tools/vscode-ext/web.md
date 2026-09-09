@@ -84,7 +84,7 @@ To change a Tizen SDK path, follow these steps:
 ### Install Tizen Baseline SDK
 
 > [!NOTE]
-> You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 for Tizen Studio 3.5 and higher.
+> You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 for Tizen SDK 3.5 and higher.
 >
 > For more information on download and install, see [Oracle Java Download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 

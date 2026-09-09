@@ -64,7 +64,7 @@ check the currently used connection type with the Connection API:
 ```c++
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by Tizen Studio */
+#include "service.h" /* Auto-generated header file by the project wizard */
 #include <net_connection.h>
 
 static connection_h connection;
@@ -101,7 +101,7 @@ service_app_terminate(void *data)
     return;
 }
 
-/* Assume that auto-generated functions from Tizen Studio are here */
+/* Assume that auto-generated functions from the project wizard are here */
 
 int
 main(int argc, char* argv[])
@@ -173,7 +173,7 @@ libcurl:
 ```c++
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by Tizen Studio */
+#include "service.h" /* Auto-generated header file by the project wizard */
 #include <curl/curl.h>
 
 /*
@@ -201,7 +201,7 @@ service_app_create(void *data)
     return true;
 }
 
-/* Assume that auto-generated functions from Tizen Studio are here */
+/* Assume that auto-generated functions from the project wizard are here */
 
 int
 main(int argc, char* argv[])
@@ -366,7 +366,7 @@ The following example demonstrates how to perform an HTTP download:
 ```c++
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by Tizen Studio */
+#include "service.h" /* Auto-generated header file by the project wizard */
 #include <download.h>
 
 download_error_e error;
@@ -457,7 +457,7 @@ service_app_terminate(void *data)
     return;
 }
 
-/* Assume that auto-generated functions from Tizen Studio are here */
+/* Assume that auto-generated functions from the project wizard are here */
 
 int
 main(int argc, char* argv[])

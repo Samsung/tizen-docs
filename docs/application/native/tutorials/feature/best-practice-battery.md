@@ -395,7 +395,7 @@ The following example demonstrates how you can stop the location service using t
 ```cpp
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by Tizen Studio */
+#include "service.h" /* Auto-generated header file by the project wizard */
 #include <locations.h>
 #include <Ecore.h>
 
@@ -525,7 +525,7 @@ service_app_terminate(void *data)
 }
 
 
-/* Assume that auto-generated functions from Tizen Studio are here */
+/* Assume that auto-generated functions from the project wizard are here */
 
 int
 main(int argc, char* argv[])
@@ -555,7 +555,7 @@ The following example demonstrates how you can stop the location service using a
 ```cpp
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by Tizen Studio */
+#include "service.h" /* Auto-generated header file by the project wizard */
 #include <locations.h>
 #include <app_alarm.h>
 #include <app_control.h>
@@ -697,7 +697,7 @@ app_terminate(void *data)
         destroy_location_service(ad);
 }
 
-/* Assume that auto-generated functions from Tizen Studio are here */
+/* Assume that auto-generated functions from the project wizard are here */
 
 int
 main(int argc, char *argv[])
@@ -740,7 +740,7 @@ service_app_low_battery(app_event_info_h event_info, void *user_data)
         stop_location_service(ad);
 }
 
-/* Assume that auto-generated functions from Tizen Studio are here */
+/* Assume that auto-generated functions from the project wizard are here */
 
 int
 main(int argc, char* argv[])

@@ -101,7 +101,7 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
   | **File Shared Path**       | Path to the shared host directory                 |
   | **Kernel Log File**        | Kernel log file path                              |
   | **Emulator Log File**      | Emulator (Qemu) log file path                     |
-  | **Emulator Version**       | Tizen Studio version                              |
+  | **Emulator Version**       | Tizen SDK version                                 |
 
 - **Always On Top**
 

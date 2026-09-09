@@ -349,4 +349,4 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 ## Related information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

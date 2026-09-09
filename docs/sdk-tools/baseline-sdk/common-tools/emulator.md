@@ -4,7 +4,7 @@ The Tizen Emulator is a tool that reduces the inconvenience of testing the appli
 
 Using the Emulator Manager, you can create a variety of environments (different device types) and you can preview the problems during the development process. The emulator provides the actual hardware similar to real device controls, and you can check the application features, such as data processing and user scenarios.
 
-The emulator is based on the open source QEMU project and consists of a virtual CPU, memory, and various peripherals. Currently, Tizen Studio only supports the x86 machine architecture for guest.
+The emulator is based on the open source QEMU project and consists of a virtual CPU, memory, and various peripherals. Currently, the Tizen SDK only supports the x86 machine architecture for guest.
 
 You can use the [Emulator Manager](emulator-manager.md) to create and launch a Virtual Machine (emulator) instance. You can communicate with the emulator instance using the [Smart Development Bridge (SDB)](smart-development-bridge.md).
 
@@ -18,7 +18,7 @@ For more information, see [Supported Features](#supported).
 
 ## Running an Application in the Emulator
 
-To use the emulator, you need the Emulator Manager. If you do not have the Emulator Manager, install it through the Tizen Studio Package Manager.
+To use the emulator, you need the Emulator Manager. If you do not have the Emulator Manager, install it through the Tizen SDK Package Manager.
 
 To start the emulator and run an application:
 
@@ -29,7 +29,7 @@ To start the emulator and run an application:
 2. Select the emulator instance and click **Launch**.
 
 3. Test your application in the emulator. You can launch your application in 2 ways:
-   - In Tizen Studio, select the project and click **Run As**.
+   - In your IDE, run the project on the emulator.
    - Drag an application package file (for example, the WGT file) to the emulator to install and launch the application on the emulator.
 
 4. To close the emulator, right-click the emulator and select **Close**, or click and hold the **Power** key.
@@ -77,7 +77,7 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
    - In Windows&reg; and macOS:
 
-     The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../setup/hardware-accelerated-execution-manager.md).
+     The HAXM driver is installed during the Tizen SDK installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../setup/hardware-accelerated-execution-manager.md).
 
    > **Note**  
    > If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable NX (or PAE and DEP) -related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
@@ -257,7 +257,7 @@ The following tables describe the differences between a real target device and t
 			<td rowspan="5">Development environment</td>
 			<td>Target</td>
 			<td>Buy a target device or reference board (by model)</td>
-			<td>Download Tizen Studio (multi-profile and multi-model support)</td>
+			<td>Download the Tizen SDK (multi-profile and multi-model support)</td>
 		</tr>
 		<tr>
 			<td>Network</td>
@@ -516,4 +516,4 @@ The following tables describe the differences between a real target device and t
 
 ## Related information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

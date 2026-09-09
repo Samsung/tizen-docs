@@ -18,10 +18,10 @@ Once you have finished the application plan and design, you are ready to create 
 <a name="create"></a>
 ## Create the application project
 
-After you have planned and designed your application, you are ready to [create the application project](creating-app-project.md) in Tizen Studio.
+After you have planned and designed your application, you are ready to [create the application project](../../../../sdk-tools/vscode-ext/getting-started/creating-web-application-projects.md).
 
-Tizen Studio provides various project templates that make it easier for you to start coding your application. When you create a new project,
-you can select a specific template or sample. Based on the selection, the Tizen Web [Project Wizard](../../../../sdk-tools/baseline-sdk/web-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
+The Tizen SDK provides various project templates that make it easier for you to start coding your application. When you create a new project,
+you can select a specific template or sample. Based on the selection, the Tizen Web [project wizard](../../../../sdk-tools/vscode-ext/getting-started/creating-web-application-projects.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
 
 <a name="set"></a>
 ## Set project properties
@@ -31,14 +31,14 @@ After creating the application project, you can [configure the properties of the
 <a name="code"></a>
 ## Code the application
 
-[Code your application](coding-app.md) in Tizen Studio using the APIs defined in the Web [API References](../../api/latest/device_api/tv/index.html).
+[Code your application](coding-app.md) using the APIs defined in the Web [API References](../../api/latest/device_api/tv/index.html).
 
 Once you have finished coding your application, you are ready to build your application.
 
 <a name="build"></a>
 ## Build the application
 
-When Tizen Studio builds an application, the following process is executed:  
+When the Tizen SDK builds an application, the following process is executed:  
   1. Validation check for:
      - JavaScript
      - CSS
@@ -53,43 +53,17 @@ When Tizen Studio builds an application, the following process is executed:
  > -   Compiled CoffeeScript output file name is `<file name>.js`. This file is used when the project is packed to the WGT package file, but the script tag's reference path must be changed manually.
  > -   Compiled less output file name is `<file name>.css`. This file is   used when the project is packed to the WGT package file, but the script tag's reference path must be changed manually.
 
-If the project has errors, they are shown in the **Problems** and **Project Explorer** views after the build.
+If the project has errors, they are reported by your IDE after the build.
 
-You can build a Web application automatically or manually:
+For how to build a project in your IDE, see
+[Build your project](../../../../sdk-tools/vscode-ext/Tizen/web-app.md#build-your-project).
 
--   Automatic build:
-
-    In the Tizen Studio menu, select **Project &gt; Build Automatically**.
-
-    If you select this option, whenever the source or a resource is changed and saved, Tizen Studio automatically recognizes any saved changes and rebuilds the project source.
-
--   Manual build:
-
-    In the Tizen Studio menu, select **Project &gt; Build Project**.
-
-    You can build your project at your convenience. If you want to use the manual build, ensure that the **Project &gt; Build Automatically** option is not selected.
-
-  > [!NOTE]
-  > In the manual build mode:  
-  > -   Ensure that you have the latest build output before you run or debug a project.
-  > -   To remove a project build output, select `Project > Clean` in the Tizen Studio menu.
-
- To customize the application, set the build properties:
-
- -   JS validation  
-    Set the options in the Tizen Studio menu: **Window &gt;
-    Preferences &gt; Tizen Studio &gt; Web &gt; Editor &gt; JavaScript Editor**.
-
- -   CSS validation  
-    Set the options in Tizen Studio menu: **Window &gt; Preferences &gt; Tizen Studio &gt; Web &gt; Editor &gt; CSS Editor**.
-
- -   Privilege validation  
-    Set the options in Tizen Studio menu: **Window &gt; Preferences &gt; Tizen Studio &gt; Web &gt; Editor &gt; Privilege**.
+Ensure that you have the latest build output before you run or debug a project.
 
 <a name="run"></a>
 ## Run and debug the application
 
-When Tizen Studio runs or debugs the application, the following process is executed:
+When the Tizen SDK runs or debugs the application, the following process is executed:
 
 1.  Build automatically if no build has been created yet.
 2.  Package.
@@ -100,30 +74,30 @@ When Tizen Studio runs or debugs the application, the following process is execu
 
 You can run your application in one of the following environments:
 
--   [Emulator](run-debug-app.md#emulator)
+-   [Emulator](../../../../sdk-tools/vscode-ext/Tizen/web-app.md#deploy-and-run-your-application-in-emulator)
 
-    The device emulator, provided with Tizen Studio, imitates the target environment running Tizen Web applications. Using this
+    The device emulator, provided with the Tizen SDK, imitates the target environment running Tizen Web applications. Using this
     replicated environment, you can test your application before deploying it to the real target device.
 
--   [Target device](run-debug-app.md#target)
+-   [Target device](../../../../sdk-tools/vscode-ext/Tizen/web-app.md#deploy-and-run-your-application-in-emulator)
 
     Running your application on a target device allows you to debug and test your application in a real-time environment.
 
--   [Simulator](run-debug-app.md#simulator)
+-   [Simulator](../../../../sdk-tools/vscode-ext/Tizen/web-app.md#debug-your-application-in-web-simulator)
 
     Tizen Web simulator allows you to run application that use the Tizen Web APIs.
 
 You can run the application smartly:
 
--   You can use the [Rapid Development Support (RDS)](run-debug-app.md#rds) mode to run or test faster.
+-   You can use the [Rapid Development Support (RDS)](../../../../sdk-tools/vscode-ext/Tizen/web-app.md#deploy-and-run-your-application-in-emulator) mode to run or test faster.
 -   You can use the live editing mode to test faster (debug mode does not support it).
 
-For more information on the debugging process and tools, see [Debugging Web Applications](run-debug-app.md#debug).
+For more information on the debugging process and tools, see [Debugging Web Applications](../../../../sdk-tools/vscode-ext/Tizen/web-app.md#debug-your-application-in-emulator).
 
 <a name="package"></a>
 ## Package the application
 
-When Tizen Studio packages the application, the following process is executed:
+When the Tizen SDK packages the application, the following process is executed:
 
 1.  Build automatically if no build has been created yet
 2.  Optimize resources:
@@ -136,31 +110,20 @@ When Tizen Studio packages the application, the following process is executed:
 Web application packaging process is based on the W3C packaging and
 configuration.
 
-You can package a Web application using the `web-packaging` command in the [Command Line Interface (CLI)](../../../../sdk-tools/baseline-sdk/common-tools/command-line-interface.md), which is a functional tool in Tizen Studio:  
+You can package a Web application using the `web-packaging` command in the [Command Line Interface (CLI)](../../../../sdk-tools/baseline-sdk/common-tools/command-line-interface.md), which is a functional tool of the Tizen SDK:  
 ```bash
 web-packaging project.wgt project/
 ```
 
-Tizen Studio provides the functionality to package a Web application quickly in the required format and to set the package properties.
+The Tizen SDK provides the functionality to package a Web application quickly in the required format and to set the package properties.
 
-In the Tizen Studio menu, you can set the package properties in **Project &gt; Properties &gt; Tizen Studio &gt; Package** by selecting
-the resources to be included in the package. For a Web application, you can set the properties in **Project &gt; Properties &gt; Tizen Studio
-&gt; Package &gt; Web**:
+The package properties control which resources are included:
 
--   **Set excluding optimization resources**
+-   **Excluding optimization resources**
 
     You can minify your JavaScript, CSS, HTML, and PNG resources and put in an exclude file pattern that you do not want to optimize.
 
--   **Set hybrid application's main service application**
-
-By default, the Web application package is created once. You can view the package content at any point of the application development process
-by double-clicking the project `.wgt` file in the **Project Explorer** view. All the files present in the application project are displayed in
-a list.
-
-Any changes made to the files in the package content list, such as deleting files or dragging and dropping files, are not reflected in the
-actual project files.
-
-**Figure: Viewing the Web application package**
+-   **The hybrid application's main service application**
 
 Additionally, you can [localize the Web application](setting-properties.md#localization) to support different languages and environments.
 
@@ -176,15 +139,13 @@ A hybrid application package combines a Web application and 1 or more native ser
 
 To create and run a hybrid application, follow these steps:
 
-1. Create a project for a [Web UI application](creating-app-project.md) and [native service application](../../../native/guides/development/index.md#creating).
-2. To establish a project reference between a UI and service application:  
-   - In the Web UI application project context menu, select **Properties &gt; Tizen Studio &gt; Package &gt; Multi**.
-   - Select the check box for the service application, and click **OK**.
-
-    In the **Project Explorer** view, a **with &lt;Web UI application&gt;** message appears next to the service application project name for each application you have added to the package.
+1. Create a project for a [Web UI application](../../../../sdk-tools/vscode-ext/getting-started/creating-web-application-projects.md) and [native service application](../../../native/guides/development/index.md#creating).
+2. Establish a project reference from the Web UI application to the service
+   application. For the multi-project packaging support of your IDE, see
+   [Hybrid application development](../../../../sdk-tools/vscode-ext/Tizen/hybrid.md).
 
 3. [Build](#build) and [run](#run) the Web UI application. The service application is built and executed automatically at the same time,
-    and you can find a WGT file (hybrid application package) under the Web UI application project in the **Project Explorer** view.
+    and a WGT file (hybrid application package) is produced under the Web UI application project.
 
     To modify the build configuration of the service application, see [Building the
     Application](../../../native/guides/development/index.md#build).
@@ -256,9 +217,9 @@ You can upgrade your application even after you have certified and published it 
 
 To upgrade your application, follow these steps:
 
-1.  Update your application version, and if needed the privileges, in the `config.xml` configuration file in Tizen Studio.
+1.  Update your application version, and if needed the privileges, in the `config.xml` configuration file.
 2.  Update the application code as needed.
-3.  If needed, update the privileges in the `config.xml` configuration file in Tizen Studio.
+3.  If needed, update the privileges in the `config.xml` configuration file.
 4.  Build, test, and repackage the application.
 5.  Register the upgraded application on the applicable store.
 

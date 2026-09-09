@@ -12,7 +12,7 @@ This is a user manual on how to use ASAN/LSAN in the Visual Studio environment.
 ### Certificate Manager
 Simplifies the process of managing and configuring certificates for Tizen applications, ensuring secure development and deployment.
 ### CLI(Command Line Interface)
-Provides functionalities for developing Tizen applications without Tizen Studio. It includes the entire development process from creating the project to running the application.
+Provides functionalities for developing Tizen applications without an IDE. It includes the entire development process from creating the project to running the application.
 ### Core Profiler
 Allows developers to analyze application performance and memory usage by running emulators, starting profilers, and visualizing detailed data through various views like flame graphs, allocation graphs, and histograms for efficient debugging and optimization.
 ### Device Manager
@@ -46,5 +46,5 @@ Provides functionalities for developing Tizen applications using the terminal. I
 ### Unit Test and Code Coverage
 Helps developers assess code quality by executing Native unit tests and analyzing code coverage, displaying results in a tree view for convenient review and navigation to failure locations in the source code within the VS Code Extension.
 ### WASM(Web Assembly)
-Involves creating a web project, integrating WASM modules, building the modules, and running the application on Tizen targets, supported by Visual Studio Code extensions and Tizen Studio for efficient development and debugging.
+Involves creating a web project, integrating WASM modules, building the modules, and running the application on Tizen targets, supported by the Visual Studio Code Extension for Tizen for efficient development and debugging.
 

@@ -5,7 +5,7 @@ To effectively protect the device system and user private data, the Tizen securi
 
 Tizen provides API-level access control for security-sensitive operations which, if not used properly, can harm user privacy and system stability. Therefore, applications that use such sensitive APIs must declare the required privileges in the [config.xml](../guides/development/setting-properties.md#privilege) file.  Privileges are categorized into public, partner, and platform levels according to their hierarchy:
 
--   The public level is the minimum privilege level, which means that any application developed using Tizen Studio can use these privileges.
+-   The public level is the minimum privilege level, which means that any application developed with the Tizen SDK can use these privileges.
 -   The partner level privileges require at least a partner-signed certificate which is granted to developers who have a business relationship with the vendor.
 -   The platform level is the highest privilege level, and an application that needs these privileges requires at least a  platform-signed certificate, which is granted to vendor developers.
 
@@ -20,7 +20,7 @@ Since Tizen platform 3.0, some privileges are categorized as privacy-related and
 > Since Tizen 8.0, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternatives, and [privacy feature](http://tizen.org/feature/security.privacy_privilege){:target="_blank"} will be disabled in all profiles.
 
 
-Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../../sdk-tools/baseline-sdk/web-tools/privilege-checker.md).
+The VS Code Extension for Tizen and Visual Studio Tools for Tizen also provide privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../../sdk-tools/vscode-ext/tools/api-privilege-checker.md).
 
 <a name="API"></a>
 ## Web API privileges

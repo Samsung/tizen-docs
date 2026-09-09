@@ -35,7 +35,7 @@ The main features of the service application include:
 
 - [Packaging](#packaging)
 
-  To generate a package for an addon, you can use Tizen Studio. There is a separate tag for addon in config.xml.
+  To generate a package for an addon, you can use the Tizen SDK. There is a separate tag for addon in config.xml.
 
 - [Management](#management)
 
@@ -149,7 +149,7 @@ Addon APIs are provided to support the way to handle the window in both the brow
 <a name="packaging"></a>
 ## Package
 
-To generate a package for an addon, you can use Tizen Studio.
+To generate a package for an addon, you can use the Tizen SDK.
 
 The characteristics of the addon packages include:
 

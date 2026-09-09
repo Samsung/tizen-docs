@@ -216,9 +216,9 @@ An application can only access the resources that are allowed by the privileges.
 
 You can use shell commands to install, uninstall, update, and launch applications.
 
-**Figure: Tizen Studio interactions**
+**Figure: Tizen SDK interactions**
 
-![Tizen Studio interactions](./media/ide_interactions.png)
+![Tizen SDK interactions](./media/ide_interactions.png)
 
 
 ## Native Applications Tutorials

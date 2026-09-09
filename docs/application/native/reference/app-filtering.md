@@ -127,7 +127,7 @@ The feature keys have a hierarchy. For example, consider the
 To enable filtering for your native application, follow the steps below to add the feature list
 for the application `tizen-manifest.xml` file:
 
-1.  To open the manifest editor in Tizen Studio, double-click the
+1.  To open the manifest editor, double-click the
     `tizen-manifest.xml` file in the **Project Explorer** view.
 2. Select the features you need, one at a time:
 

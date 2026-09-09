@@ -19,7 +19,7 @@ The main features of the Console API include the following:
   You can [measure the time elapsed during an operation](#measure-time).
 
 > [!NOTE]
-> To see the message writing results, use the system console in the Tizen Studio or use the `sdb dlog` command.
+> To see the message writing results, use the system console in your IDE or use the `sdb dlog` command.
 
 The global `console` object contains some additional features defined by Cordova.
 
@@ -48,7 +48,7 @@ console.error('console.error works well');
 ```
 
 > [!NOTE]
-> To see the writing results, use the system console available in your Tizen Studio or use the `sdb dlog` command.
+> To see the writing results, use the system console available in your IDE or use the `sdb dlog` command.
 
 ## Format objects
 

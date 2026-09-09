@@ -167,7 +167,7 @@ Inbound connections from external to the emulator fail in the NAT backend. If yo
 
 - Launch configuration on boot
 
-  You can forward the port upon booting the emulator by modifying the QEMU redirection option. The QEMU redirection option can be appended in the existing `-netdev user,id=net0` option in the `<TIZEN_STUDIO_DATA>/emulator/vms/<image name>/vm_launch.conf` file with the following appending command:
+  You can forward the port upon booting the emulator by modifying the QEMU redirection option. The QEMU redirection option can be appended in the existing `-netdev user,id=net0` option in the `<TIZEN_SDK_DATA>/emulator/vms/<image name>/vm_launch.conf` file with the following appending command:
 
   ```
   -netdev user,id=net0,hostfwd=[tcp|udp]:[<hostaddr>]:<hostport>-[<guestaddr>]:<guestport>
@@ -226,7 +226,7 @@ In the following host operating systems, you must configure the properties of th
 <a name="skin"></a>
 ## Using Custom Skin Layout
 
-The emulator skin consists of an `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-resources/skins/<SKIN_NAME>/layout.xml` XML meta file. The file defines layout-related information, such as skin image file name, display location, and the location of hardware keys.
+The emulator skin consists of an `<TIZEN_SDK>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-resources/skins/<SKIN_NAME>/layout.xml` XML meta file. The file defines layout-related information, such as skin image file name, display location, and the location of hardware keys.
 
 The following example shows the content of the `layout.xml` layout file:
 
@@ -267,7 +267,7 @@ The following example shows the content of the `layout.xml` layout file:
 </EmulatorUI>
 ```
 
-The emulator skin also contains a `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-resources/skins/<SKIN_NAME>/info.ini` property file. The file defines skin-related information, such as skin name and supported resolutions.
+The emulator skin also contains a `<TIZEN_SDK>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-resources/skins/<SKIN_NAME>/info.ini` property file. The file defines skin-related information, such as skin name and supported resolutions.
 
 The following example shows the contents of the `info.ini` property file:
 
@@ -279,7 +279,7 @@ resolution.height=800
 
 To create your own skin layout:
 
-1. Create a new skin folder in the `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-resources/skins` folder.
+1. Create a new skin folder in the `<TIZEN_SDK>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-resources/skins` folder.
 
 2. In the skin folder, define the content of the `layout.xml` and `info.ini` files and include the required skin image files.
 
@@ -289,7 +289,7 @@ To create your own skin layout:
 
 > **Note**
 > 
-> If you reinstall Tizen Studio, the custom skin folders are reset.
+> If you reinstall the Tizen SDK, the custom skin folders are reset.
 
 <a name="eventcast"></a>
 ## Using EventCast
@@ -391,7 +391,7 @@ To connect the EventCaster application to the emulator:
 <a name="startup"></a>
 ## Starting an Emulator with a Configuration File
 
-If you create an emulator instance using the Emulator Manager, a configuration file defining the emulator start-up options is generated (`<TIZEN_STUDIO_DATA>/emulator/vms/<VM_NAME>/vm_launch.conf`).
+If you create an emulator instance using the Emulator Manager, a configuration file defining the emulator start-up options is generated (`<TIZEN_SDK_DATA>/emulator/vms/<VM_NAME>/vm_launch.conf`).
 
 With the configuration file, you can launch the emulator in the command line:
 
@@ -399,7 +399,7 @@ With the configuration file, you can launch the emulator in the command line:
 ./emulator --conf <configuration file>
 ```
 
-The emulator binaries are located in the `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/common/emulator/bin` folder.
+The emulator binaries are located in the `<TIZEN_SDK>/platforms/<PLATFORM_VERSION>/common/emulator/bin` folder.
 
 The configuration file consists of 2 sections:
 
@@ -502,7 +502,7 @@ append="vm_name=${vm_name} video=LVDS-1:${display_resolution}-32@60 dpi=${displa
 <a name="dir"></a>
 ## Emulator Directory Structure
 
-The following table describes the content of the emulator directory, located in the `<TIZEN_STUDIO>/tools/emulator` folder.
+The following table describes the content of the emulator directory, located in the `<TIZEN_SDK>/tools/emulator` folder.
 
 **Table: Emulator directory content**
 
@@ -520,7 +520,7 @@ The following table describes the content of the emulator directory, located in 
 | `storages/sdcard/sdcard_xxx.img`     | `.img` files (base sdcard images) specific to the data size used by the Emulator Manager |
 | `storages/swap/swap.img`             | Disk image for swap                      |
 
-The following table describes the platform image directories that are located in the `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-images` folder.
+The following table describes the platform image directories that are located in the `<TIZEN_SDK>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-images` folder.
 
 **Table: Platform image directory content**
 
@@ -530,7 +530,7 @@ The following table describes the platform image directories that are located in
 | `<IMAGE_DIR>/emulimg-<VERSION>.<ARCHITECTURE>` | Platform image, which represents an emulator root file system for x86 in the guest OS view |
 | `<IMAGE_DIR>/info.ini`                   | File for specifying platform image information |
 
-The following table describes the platform common directories that are located in the `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/common/emulator` folder.
+The following table describes the platform common directories that are located in the `<TIZEN_SDK>/platforms/<PLATFORM_VERSION>/common/emulator` folder.
 
 **Table: Platform common directory content**
 
@@ -542,7 +542,7 @@ The following table describes the platform common directories that are located i
 | `data/bios/`          | `.bin` files for initializing the guest OS |
 | `data/kernel/`        | Kernel image for the guest Linux OS      |
 
-The following table describes the platform resource directories that are located in the `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-resources` folder.
+The following table describes the platform resource directories that are located in the `<TIZEN_SDK>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-resources` folder.
 
 **Table: Platform resource directory content**
 
@@ -558,7 +558,7 @@ The following table describes the platform resource directories that are located
 | `template/<IMAGE_NAME>.xml`              | XML file for default configuration of the virtual machine created by the Emulator Manager |
 | `template/<IMAGE_NAME>-template.xml`     | XML file for the template of the virtual machine created by the Emulator Manager |
 
-The following table describes the directory structure of the user-specific files that are located in the `<TIZEN_STUDIO_DATA>/emulator/vms` folder.
+The following table describes the directory structure of the user-specific files that are located in the `<TIZEN_SDK_DATA>/emulator/vms` folder.
 
 **Table: User directory content**
 
@@ -579,4 +579,4 @@ The following table describes the directory structure of the user-specific files
 
 ## Related information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

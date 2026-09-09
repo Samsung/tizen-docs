@@ -2,19 +2,19 @@
 
 Before you implement the actual application functionality, define all the necessary properties for your application project:
 
-- To set the [application project properties for API and privilege checks](#checking-api-and-privilege-usage), right-click the project in the Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
+- To set the [application project properties for API and privilege checks](#checking-api-and-privilege-usage), open the project properties in your IDE.
 - To define the [application manifest settings](#setting-the-application-manifest), edit the `tizen-manifest.xml` file.
 
 > **Note**
 >
-> Only modify the manifest file by using the manifest editor in Tizen Studio. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
+> Only modify the manifest file by using the manifest editor. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
 
 After you have finished setting the project properties, you are ready to [design the UI and implement the application code](index.md#designing).
 
 <a name="api"></a>
 ## Checking API and Privilege Usage
 
-You can [check the source code in your project for any violation of API and privilege usage](../../../../sdk-tools/baseline-sdk/native-tools/api-checker.md). To enable the non-default checks (the default checks are always performed):
+You can [check the source code in your project for any violation of API and privilege usage](../../../../sdk-tools/vscode-ext/tools/api-privilege-checker.md). To enable the non-default checks (the default checks are always performed):
 
 1. In the **Properties** window, select **C/C++ Build > Tizen Settings > API and Privilege Checker Properties**.
 2. Select the required checks in the **Privilege Check** panel.
@@ -39,7 +39,7 @@ The application manifest consists of application information, such as package, v
 
 ![Setting the application manifest](media/tizen_project_explorer.png)
 
-You can [edit the application properties using the form tabs of the manifest editor](../../../../sdk-tools/baseline-sdk/native-tools/manifest-text-editor.md#edit-the-manifest-file).
+You can [edit the application properties using the form tabs of the manifest editor](../../reference/manifest-xml.md).
 
 ### Defining and Editing General Information in the Overview Tab
 
@@ -49,7 +49,7 @@ You can perform the following tasks using the **Overview** tab:
 
 - View the application ID.
 
-  Tizen Studio creates automatically an application ID, which uniquely identifies the application within the package.
+  The project wizard creates automatically an application ID, which uniquely identifies the application within the package.
 
 - Set the package name of the application.
 
@@ -143,7 +143,7 @@ To add a localized name or description:
 <description xml:lang="en-us">This is a sample</description>
 ```
 
-You can localize a native application to adapt to various languages and cultural environments by creating different native application versions for different languages. For more information, see [Localizing Application Resources](../../../../sdk-tools/baseline-sdk/native-tools/po-file-editor.md).
+You can localize a native application to adapt to various languages and cultural environments by creating different native application versions for different languages. Place the translated `.po` files in the `res/po` directory of the application.
 
 ### Defining Advanced Features in the Advanced Tab
 
@@ -212,7 +212,7 @@ You can perform the following tasks using the **Advanced** tab:
 
 ### Editing the tizen-manifest.xml File in the Source Tab
 
-  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../../sdk-tools/baseline-sdk/native-tools/manifest-text-editor.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
+  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../reference/manifest-xml.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
 
 > **Note**
 >

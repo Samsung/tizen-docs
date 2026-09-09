@@ -1,30 +1,9 @@
-# Configure the Application Manifest
+# Application Manifest
 
 A Tizen native application package contains a manifest file, called `tizen-manifest.xml`, which is used to describe the application information. The manifest file is composed of XML elements, which include the root [\<manifest\>](#manifest) element and child elements representing application information, such as `<version>`, and `<privileges>`. The [child elements are organized into a specific hierarchy](#hierarchy). The elements can have attributes associated with them, providing more information on the element.
 
-## Edit the manifest file
-
-There are 2 different ways to edit the `tizen-manifest.xml` file, which are described below:
-
-- Use the manifest editor to modify the manifest in a form editor:
-
-  Double-click the `tizen-manifest.xml` file in the **Project Explorer** view.
-
-  **Figure: Manifest editor**
-
-  ![Manifest editor](./media/manifest_editor.png)
-
-- Use the text editor to modify the XML structure directly:
-
-  1. Right-click the `tizen-manifest.xml` file in the **Project Explorer** view.
-  2. Select **Open with > Text Editor**.
-
-  **Figure: Text Editor**
-
-  ![Text Editor](./media/manifest_text.png)
-
 > [!NOTE]
-> The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen Native application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
+> The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen Native application specification requirements. If the file does not conform to the standard and the requirements, errors can occur during installation.
 
 <a name="hierarchy"></a>
 ## Manifest element hierarchy
@@ -52,9 +31,6 @@ The Tizen Native application manifest file consists of XML elements organized in
 |              |                                  | `<metadata>`            |                  |
 |              |                                  | `<datacontrol>`         |                  |
 |              |                                  | `<background-category>` |                  |
-|              | `<watch-application>`            |                         |                  |
-|              |                                  | `<icon>`                |                  |
-|              |                                  | `<label>`               |                  |
 |              | `<widget-application>`           |                         |                  |
 |              |                                  | `<icon>`                |                  |
 |              |                                  | `<label>`               |                  |
@@ -117,7 +93,6 @@ For more information on the relationship between the elements, see the [element 
 | `<profile>`                     | 1 or more (optional) |
 | `<ui-application>`              | 1 (optional)         |
 | `<service-application>`         | 1 (optional)         |
-| `<watch-application>`           | 1 (optional)         |
 | `<widget-application>`          | 1 (optional)         |
 | `<component-based-application>` | 1 (optional)         |
 | `<shortcut-list>`               | 1 (optional)         |
@@ -127,8 +102,6 @@ For more information on the relationship between the elements, see the [element 
 | `<dependencies>`                | 1 (optional)         |
 
 **Figure: Editing the \<manifest\> element in the manifest editor**
-
-![Editing the manifest element in the manifest editor](./media/manifest.png)
 
 **Attributes:**
 
@@ -415,91 +388,6 @@ For more information on the relationship between the elements, see the [element 
    <metadata key="testkey1" value="testvalue2"/>
    <metadata key="testkey" value="testvalue"/>
 </service-application>
-```
-
-<a name="watch_app"></a>
-
-### \<watch-application\> element
-
-This element contains the settings for a watch application.
-
-For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
-
-**Occurrences:**
-
-- 1 (optional)
-
-**Expected children:**
-
-| Child element | Occurrences |
-|---------------|-------------|
-| `<label>`     | 1 or more   |
-| `<icon>`      | 1 or more   |
-
-**Attributes:**
-
-- `ambient-support`
-
-  Indicates whether the application draws the ambient mode UI itself (available values: `true`, `false`)
-
-  If the value is `false`, the system default ambient mode UI is shown when the device enters the ambient mode.
-
-- `appid`
-
-  Watch application unique ID (string)
-
-- `exec`
-
-  Watch application executable file path (string)
-
-- `setup-appid`
-
-  Watch application setup application ID (string)
-
-  If the value is `watchface-editor`, the system default editor is shown when the device enters the editing mode.
-
-
-**For example:**
-
-```xml
-<watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample" setup-appid="watchface-editor">
-   <label>.....</label>
-   <icon>.....</icon>
-</watch-application>
-```
-
-#### \<label\> element
-
-This element contains the watch application text.
-
-**Occurrences:**
-
-- 1
-
-**Expected value:**
-
-- Label value in string
-
-**For example:**
-
-```xml
-<label>watchsample</label>
-```
-
-#### \<icon\> element
-
-This element contains the watch application icon image.
-
-**Occurrences:**
-
-- 1
-
-**Expected value:**
-
-- Icon file name
-
-```xml
-<icon>watchsample.png</icon>
 ```
 
 <a name="widget_app"></a>
@@ -1104,8 +992,6 @@ Click **+** to open the **Add Privilege** dialog.
 
 **Figure: Editing the \<privileges\> element in the manifest editor**
 
-![Editing the privileges element in the manifest editor](./media/manifest_privilege.png)
-
 For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
 
 **Occurrences:**
@@ -1161,8 +1047,6 @@ This element contains a list of required features for feature-based filtering in
 The element is used to define the hardware and software components for the Tizen application. In order to use or access an API that is specialized for each vendor or platform, the feature must be declared. This element has no child elements.
 
 **Figure: Editing the \<feature\> element in the manifest editor**
-
-![Editing the feature element in the manifest editor](./media/manifest_features.png)
 
 For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
 

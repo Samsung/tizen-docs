@@ -1,11 +1,11 @@
 # Command Line Interface Commands
 
-The Command Line Interface (CLI) provides functionalities for developing Tizen applications without Tizen Studio. It includes the entire development process from creating the project to running the application.
+The Command Line Interface (CLI) provides functionalities for developing Tizen applications without an IDE. It includes the entire development process from creating the project to running the application.
 
-The CLI is located in the `$<TIZEN_STUDIO>/tools/ide/bin/` directory. For developing an application using the CLI, add the CLI directory path to the `$PATH` environment variable using the following command:
+The CLI is located in the `$<TIZEN_SDK>/tools/ide/bin/` directory. For developing an application using the CLI, add the CLI directory path to the `$PATH` environment variable using the following command:
 
 ```
-export PATH=$PATH:$<TIZEN_STUDIO>/tools/ide/bin/
+export PATH=$PATH:$<TIZEN_SDK>/tools/ide/bin/
 ```
 
 ## Setting Configuration Options
@@ -28,7 +28,7 @@ tizen cli-config [options]
 
 | Option                 | Description                              |
 |------------------------|------------------------------------------|
-| `-g`, `--global`       | Specifies whether the operation must be done for a global scope (for all installed SDKs or for the current Tizen Studio only). |
+| `-g`, `--global`       | Specifies whether the operation must be done for a global scope (for all installed SDKs or for the current Tizen SDK only). |
 | `<key>=<value>`        | Sets a value for the CLI configuration key. |
 | `-l`, `--list`         | Displays the list of all CLI configuration keys and values. |
 | `-d`, `--delete <key>` | Removes the CLI configuration key and value. |
@@ -300,7 +300,7 @@ tizen certificate [options]
 | `-n`, `--name <name>`                 | Specifies the user name.                 |
 | `-e`, `--email <email>`               | Specifies the user email.                |
 | `-f`, `--filename <filename>`         | Specifies the file name without a file extension. A certificate file is created with the file name.<br> If you skip this option, the default file name, `author`, is used on creating the certificate file. |
-| `-- <certificate output path>`        | Specifies the output directory path to create the certificate.<br> If you skip this option, the default output directory path, `<TIZEN_STUDIO_DATA>/keystore/author/`, is used on saving the certificate file. |
+| `-- <certificate output path>`        | Specifies the output directory path to create the certificate.<br> If you skip this option, the default output directory path, `<TIZEN_SDK_DATA>/keystore/author/`, is used on saving the certificate file. |
 
 **Examples:**
 
@@ -375,11 +375,11 @@ tizen security-profiles <sub-command> [options]
 				<li><code>-p</code>, <code>--password</code>: Specifies the password used to access the author certificate.</li>
 				<li><code>-c</code>, <code>--ca</code>: Specifies the directory path where the author CA certificate file is located. The file extension of the CA certificate is <code>.cer</code>.</li>
 				<li><code>-r</code>, <code>--rootca</code>: Specifies the directory path where the author root CA certificate file is located. The file extension of the root CA certificate is <code>.cer</code>.</li>
-				<li><code>-d</code>, <code>--dist</code>: Specifies the directory path where the distributor certificate file is located. If you skip this option, the default distributor certificate file embedded in the Tizen Studio is used.</li>
+				<li><code>-d</code>, <code>--dist</code>: Specifies the directory path where the distributor certificate file is located. If you skip this option, the default distributor certificate file embedded in the Tizen SDK is used.</li>
 				<li><code>-dp</code>, <code>--dist-password</code>: Specifies the password of the distributor certificate.</li>
 				<li><code>-dc</code>, <code>--dist-ca</code>: Specifies the directory path where the distributor CA certificate file is located.</li>
 				<li><code>-dr</code>, <code>--dist-rootca</code>: Specifies the directory path where the distributor root CA certificate file is located.</li>
-				<li><code>--</code>: Specifies the directory path where the <code>profiles.xml</code> file is located. If you skip this option, the value of the <code>default.profiles.path</code> key in the CLI configuration is used to find the <code>profiles.xml</code> file, which consists of new security profiles that are generated in the <code>&lt;TIZEN_STUDIO_DATA&gt;/keystore/</code> directory. The directory path is added to the CLI configuration.</li>
+				<li><code>--</code>: Specifies the directory path where the <code>profiles.xml</code> file is located. If you skip this option, the value of the <code>default.profiles.path</code> key in the CLI configuration is used to find the <code>profiles.xml</code> file, which consists of new security profiles that are generated in the <code>&lt;TIZEN_SDK_DATA&gt;/keystore/</code> directory. The directory path is added to the CLI configuration.</li>
 			</ul>
 			</td>
 		</tr>
@@ -622,7 +622,7 @@ Examples:
 
 ## Packaging a Tizen Application with Signing
 
-The command packages the Tizen application with signing. If there is a package file in the options, the package is re-signed. The Tizen application is signed with a certified profile in the `profiles.xml` file. You can create the default profile from the Tizen Studio, which generates the file in a hidden directory in your workspace (`<Your workspace directory>/.metadata/.plugins/org.tizen.common.sign/profiles.xml`). Set the path of the `profiles.xml` file before packaging the Tizen application (by using the tizen `cli-config` command).
+The command packages the Tizen application with signing. If there is a package file in the options, the package is re-signed. The Tizen application is signed with a certified profile in the `profiles.xml` file. You can create the default profile with the Certificate Manager, which generates the file in a hidden directory in your workspace (`<Your workspace directory>/.metadata/.plugins/org.tizen.common.sign/profiles.xml`). Set the path of the `profiles.xml` file before packaging the Tizen application (by using the tizen `cli-config` command).
 
 **Syntax:**
 
@@ -994,4 +994,4 @@ tizen version
 
 ## Related Information
 * Dependencies  
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

@@ -17,7 +17,7 @@ Privileges are categorized into public, partner, and platform levels
 according to their hierarchy:
 
 -   The public level is the minimum privilege level, which means that
-    any application developed using Tizen Studio can use
+    any application developed with the Tizen SDK can use
     these privileges.
 -   The partner level privileges require at least a partner-signed
     certificate which is granted to developers who have a business
@@ -41,8 +41,8 @@ switched it **on**.
 >
 > Since Tizen 8.0, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternatives, and [privacy feature](http://tizen.org/feature/security.privacy_privilege) will be disabled in all profiles.
 
-Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
-Privileges](../../../sdk-tools/baseline-sdk/native-tools/api-checker.md).
+The VS Code Extension for Tizen and Visual Studio Tools for Tizen also provide privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
+Privileges](../../../sdk-tools/vscode-ext/tools/api-privilege-checker.md).
 
 <a name="API"></a>
 ## .NET API privileges

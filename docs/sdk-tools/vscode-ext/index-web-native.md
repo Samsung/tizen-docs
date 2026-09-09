@@ -19,13 +19,13 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET, Tizen 
 
       Download from <https://www.python.org/ftp/python/2.7.18/python-2.7.18-macosx10.9.pkg>.
 
-    - Tizen Baseline SDK or Tizen Studio
+    - Tizen Baseline SDK
 
-      If neither of these is found, VS Code Extension for Tizen installs the Baseline SDK.
+      If it is not found, VS Code Extension for Tizen installs the Baseline SDK.
 
 ## Emulator Requirements
 
-Tizen Emulator for VS Code Extension for Tizen has the same requirements as the Emulator in Tizen Studio. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../baseline-sdk/setup/prerequisites.md#emulator):
+Tizen Emulator for VS Code Extension for Tizen has the same requirements as the Tizen SDK emulator. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../baseline-sdk/setup/prerequisites.md#emulator):
 
 ### Using Intel&reg; HAXM Driver
 

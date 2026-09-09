@@ -2,10 +2,10 @@
 
 The Tizen-Core Command Line Interface (CLI) provides functionalities for developing Tizen applications using the terminal. It includes the entire development process from creating the project to running the application.
 
-The CLI is located in the `$<TIZEN_STUDIO>/tools/tizen-core/` directory. For developing an application using the CLI, add the CLI directory path to the `$PATH` environment variable using the following command:
+The CLI is located in the `$<TIZEN_SDK>/tools/tizen-core/` directory. For developing an application using the CLI, add the CLI directory path to the `$PATH` environment variable using the following command:
 
 ```
-export PATH=$PATH:$<TIZEN_STUDIO>/tools/tizen-core/
+export PATH=$PATH:$<TIZEN_SDK>/tools/tizen-core/
 ```
 ## List profile templates
 
@@ -54,7 +54,7 @@ tz list templates [options]
 
 ## List installed rootstraps
 
-The following command displays a list of all the installed rootstraps in Tizen Studio:
+The following command displays a list of all the installed rootstraps in the Tizen SDK:
 
 Windows&reg;, Ubuntu, and macOS:
 ```
@@ -1022,4 +1022,4 @@ templates, new, add-deps, rem-deps, clean, build, pack, install, run, uninstall,
 
 ## Related information
 - Dependencies  
-  - Tizen Studio 6.0 and Higher
+  - Tizen SDK 6.0 and Higher

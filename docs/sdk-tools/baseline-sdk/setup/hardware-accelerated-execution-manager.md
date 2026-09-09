@@ -1,6 +1,6 @@
 # Hardware Accelerated Execution Manager
 
-The Intel Hardware Accelerated Execution Manager (Intel&reg; HAXM) is a hardware-assisted virtualization engine (hypervisor) that uses Intel Virtualization Technology (VT) to speed-up Tizen application emulation on Windows and macOS host machines. In combination with Tizen x86 emulator images and the [Tizen Studio](../index.md), Intel&reg; HAXM speed-ups the Tizen emulation on Intel-VT-enabled systems.
+The Intel Hardware Accelerated Execution Manager (Intel&reg; HAXM) is a hardware-assisted virtualization engine (hypervisor) that uses Intel Virtualization Technology (VT) to speed-up Tizen application emulation on Windows and macOS host machines. In combination with Tizen x86 emulator images and the [Tizen SDK](../common-tools/overview.md), Intel&reg; HAXM speed-ups the Tizen emulation on Intel-VT-enabled systems.
 
 This topic describes how to install the HAXM on your [Windows](#on_Windows) or [macOS](#on_MacOS) development system.
 
@@ -17,7 +17,7 @@ Hardware requirements:
 
 Supported Windows versions: 10 (64-bit)
 
-**HAXM is automatically installed as part of Tizen Studio**. If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
+**HAXM is automatically installed as part of the Tizen SDK**. If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
 
 **Table: Windows installer package**
 
@@ -88,7 +88,7 @@ If you meet an installation failure because of hardware requirements, check the 
 
 Supported macOS versions: 11.4 (Big Sur), 12.3 (Monterey)
 
-**HAXM is automatically installed as part of the Tizen Studio.** If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/mac/](http://download.tizen.org/sdk/haxm/7.0.0/mac/IntelHAXM_7.0.0.dmg) and download the macOS installer package.In case the version 7.0.0 installation fails then the latest version of HAXM can be tried which is available at https://github.com/intel/haxm/releases/tag/v7.7.0
+**HAXM is automatically installed as part of the Tizen SDK.** If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/mac/](http://download.tizen.org/sdk/haxm/7.0.0/mac/IntelHAXM_7.0.0.dmg) and download the macOS installer package.In case the version 7.0.0 installation fails then the latest version of HAXM can be tried which is available at https://github.com/intel/haxm/releases/tag/v7.7.0
 
 **Table: Windows installer package**
 
@@ -128,4 +128,4 @@ The Intel&reg; HAXM significantly enhances the performance of the Tizen Emulator
 
 ## Related information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher
