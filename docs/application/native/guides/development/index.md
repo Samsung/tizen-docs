@@ -16,7 +16,7 @@ Once you have finished the application plan and design, you are ready to [create
 <a name="creating"></a>
 ## Creating the Application Project
 
-Tizen Studio provides various project templates that make it easier for you to start coding your application. When you create a new project, you can select a specific template or sample. Based on the selection, The Tizen Native [Project Wizard](../../../../sdk-tools/baseline-sdk/native-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
+The Tizen SDK provides various project templates that make it easier for you to start coding your application. When you create a new project, you can select a specific template or sample. Based on the selection, The Tizen Native [project wizard](../../../../sdk-tools/vscode-ext/getting-started/creating-native-application-projects.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
 
 <a name="setting"></a>
 ## Setting Project Properties

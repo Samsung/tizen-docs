@@ -60,4 +60,4 @@ You can perform a variety of actions in the **Log** view:
 
 ## Related information
 * Dependencies  
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

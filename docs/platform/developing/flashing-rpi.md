@@ -274,7 +274,7 @@ To configure the Raspberry Pi board, follow the steps below:
 6.  Enter the `sdb help` command in the Linux shell (Linux) or Command window (Windows) of the host computer, for more information.
 
     > [!NOTE]
-    > `sdb` execution file is available in the `tools` sub-directory of the directory where Tizen Studio is installed.
+    > `sdb` execution file is available in the `tools` sub-directory of the directory where the Tizen SDK is installed.
 
 
 ### Install drivers

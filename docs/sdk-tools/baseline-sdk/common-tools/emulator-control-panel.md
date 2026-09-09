@@ -86,7 +86,7 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
   | **File Shared Path**       | Path to the shared host directory        |
   | **Kernel Log File**        | Kernel log file path                     |
   | **Emulator Log File**      | Emulator (Qemu) log file path            |
-  | **Emulator Version**       | Tizen Studio version                     |
+  | **Emulator Version**       | Tizen SDK version                        |
 
 - **Always On Top**
 
@@ -178,11 +178,11 @@ You can control and monitor the Tizen Emulator by using the Emulator Control Pan
 
 - Ubuntu:
 
-  `<TIZEN_STUDIO>/tools/emulator/bin/ecp-cli`
+  `<TIZEN_SDK>/tools/emulator/bin/ecp-cli`
 
 - Windows&reg;:
 
-  `<TIZEN_STUDIO>\tools\emulator\bin\ecp-cli.bat`
+  `<TIZEN_SDK>\tools\emulator\bin\ecp-cli.bat`
 
 You can use the CLI in a session mode or shell mode:
 
@@ -261,4 +261,4 @@ The following table lists the commands supported by the control panel CLI.
 
 ## Related Information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

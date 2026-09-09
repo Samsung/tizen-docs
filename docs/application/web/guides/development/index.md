@@ -21,7 +21,7 @@ Once you have finished the application plan and design, you are ready to create 
 After you have planned and designed your application, you are ready to [create the application project](creating-app-project.md) in Tizen Studio.
 
 Tizen Studio provides various project templates that make it easier for you to start coding your application. When you create a new project,
-you can select a specific template or sample. Based on the selection, the Tizen Web [Project Wizard](../../../../sdk-tools/baseline-sdk/web-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
+you can select a specific template or sample. Based on the selection, the Tizen Web [project wizard](../../../../sdk-tools/vscode-ext/getting-started/creating-web-application-projects.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
 
 <a name="set"></a>
 ## Set project properties

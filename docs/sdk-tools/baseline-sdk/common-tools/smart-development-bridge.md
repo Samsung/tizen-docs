@@ -11,7 +11,7 @@ The SDB is a client-server program that consists of a client, daemon, and server
 - **Daemon** runs commands on the device. The daemon runs as a background process on each target device.
 - **Server** manages communication between the client and the daemon. The server runs as a background process on your computer.
 
-You can find the SDB tools in the `$<TIZEN_STUDIO>/tools/` folder.
+You can find the SDB tools in the `$<TIZEN_SDK>/tools/` folder.
 
 ## Enabling the SDB
 
@@ -217,4 +217,4 @@ For example, to view all log messages of the error and fatal priority in additio
 
 ## Related information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

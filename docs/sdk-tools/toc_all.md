@@ -57,51 +57,26 @@
 ### [Tizen Web](/sdk-tools/vscode-ext/web.md)
 
 ## Baseline SDK
-### [Overview](/sdk-tools/baseline-sdk/index.md)
 ### Set up
 #### Install
 ##### [Prerequisites](/sdk-tools/baseline-sdk/setup/prerequisites.md)
-##### [Install Tizen Studio](/sdk-tools/baseline-sdk/setup/install-sdk.md)
-##### [Update Tizen Studio](/sdk-tools/baseline-sdk/setup/update-sdk.md)
+##### [Install the Tizen SDK](/sdk-tools/baseline-sdk/setup/install-sdk.md)
+##### [Update the Tizen SDK](/sdk-tools/baseline-sdk/setup/update-sdk.md)
 ##### [Hardware Accelerated Execution Manager](/sdk-tools/baseline-sdk/setup/hardware-accelerated-execution-manager.md)
 
 #### [Configure the Package Manager](/sdk-tools/baseline-sdk/setup/advanced-configuration.md)
 
 ### Native Tools
-#### [Overview](/sdk-tools/baseline-sdk/native-tools/index.md)
 
 #### Manage Projects
-##### [Overview](/sdk-tools/baseline-sdk/native-tools/managing-projects.md)
-##### [Project Creation Wizard](/sdk-tools/baseline-sdk/native-tools/project-wizard.md)
-##### [Project Explorer View](/sdk-tools/baseline-sdk/native-tools/project-explorer-view.md)
 ##### [Certificate Registration](/sdk-tools/baseline-sdk/common-tools/certificate-registration.md)
 ##### [Device Manager](/sdk-tools/baseline-sdk/common-tools/device-manager.md)
 
-#### Write and Edit Code
-##### [Overview](/sdk-tools/baseline-sdk/native-tools/coding.md)
-##### [Content Assist](/sdk-tools/baseline-sdk/native-tools/content-assist.md)
-##### [API and Privilege Checker](/sdk-tools/baseline-sdk/native-tools/api-checker.md)
 
-##### UI Builder
-###### [Overview](/sdk-tools/baseline-sdk/native-tools/ui-builder/ui-builder.md)
-###### [Storyboard](/sdk-tools/baseline-sdk/native-tools/ui-builder/storyboard.md)
-###### [Component Attributes](/sdk-tools/baseline-sdk/native-tools/ui-builder/component-attributes.md)
-###### [Custom UI Component](/sdk-tools/baseline-sdk/native-tools/ui-builder/custom-ui-component.md)
-###### [Databind](/sdk-tools/baseline-sdk/native-tools/ui-builder/databind.md)
-###### [Multiple Screen Support](/sdk-tools/baseline-sdk/native-tools/ui-builder/multiple-screens.md)
-###### [Convert Projects for UI Builder](/sdk-tools/baseline-sdk/native-tools/ui-builder/convert-projects.md)
-###### [Combine Screens from Multiple Applications](/sdk-tools/baseline-sdk/native-tools/ui-builder/combine-screens.md)
 
-##### [EDC Editor](/sdk-tools/baseline-sdk/native-tools/edc-editor.md)
 
-#### Configure Your App
-##### [Overview](/sdk-tools/baseline-sdk/native-tools/configuring.md)
-##### [Manifest Text Editor](/sdk-tools/baseline-sdk/native-tools/manifest-text-editor.md)
-##### [Resource Manager](/sdk-tools/baseline-sdk/native-tools/resource-manager.md)
-##### [PO File Localization Editor](/sdk-tools/baseline-sdk/native-tools/po-file-editor.md)
 
 #### Debug Your App
-##### [Overview](/sdk-tools/baseline-sdk/native-tools/debugging.md)
 ##### [Log View](/sdk-tools/baseline-sdk/common-tools/log-view.md)
 
 ##### Dynamic Analyzer
@@ -111,71 +86,28 @@
 ###### [Memory Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/memory-analysis.md)
 ###### [Thread Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/thread-analysis.md)
 
-##### [Call Stack View](/sdk-tools/baseline-sdk/native-tools/call-stack-view.md)
-##### [Static Analyzer](/sdk-tools/baseline-sdk/native-tools/static-analyzer.md)
-##### [Valgrind](/sdk-tools/baseline-sdk/native-tools/valgrind.md)
-##### [T-trace](/sdk-tools/baseline-sdk/native-tools/t-trace.md)
-##### [Address Sanitizer](/sdk-tools/baseline-sdk/native-tools/address-sanitizer.md)
-##### [Leak Sanitizer](/sdk-tools/baseline-sdk/native-tools/leak-sanitizer.md)
-##### [Code Coverage](/sdk-tools/baseline-sdk/native-tools/code-coverage.md)
-##### [Battery Historian](/sdk-tools/baseline-sdk/native-tools/batt-historian.md)
 
-#### Run and Test Your App
-##### [Overview](/sdk-tools/baseline-sdk/native-tools/running-testing.md)
-##### [Unit Test](/sdk-tools/baseline-sdk/native-tools/unit-test.md)
 
-#### CLI
 
 #### [Keyboard Shortcuts](/sdk-tools/baseline-sdk/common-tools/keyboard-shortcuts.md)
 
 ### Web Tools
-#### [Overview](/sdk-tools/baseline-sdk/web-tools/index.md)
 
 #### Manage Projects
-##### [Overview](/sdk-tools/baseline-sdk/web-tools/managing-projects.md)
-##### [Project Creation Wizard](/sdk-tools/baseline-sdk/web-tools/project-wizard.md)
-##### [Project Explorer View](/sdk-tools/baseline-sdk/web-tools/project-explorer-view.md)
 ##### [Certificate Registration](/sdk-tools/baseline-sdk/common-tools/certificate-registration.md)
 ##### [Device Manager](/sdk-tools/baseline-sdk/common-tools/device-manager.md)
 
-#### Write and Edit Code
-##### [Overview](/sdk-tools/baseline-sdk/web-tools/coding.md)
-##### [Web Editor](/sdk-tools/baseline-sdk/web-tools/web-editor.md)
-##### [Live Edit](/sdk-tools/baseline-sdk/web-tools/live-editing.md)
-##### [Content Assist](/sdk-tools/baseline-sdk/web-tools/content-assist.md)
-##### [Code Clean](/sdk-tools/baseline-sdk/web-tools/code-productivity.md)
-##### [REST Viewer](/sdk-tools/baseline-sdk/web-tools/rest-viewer.md)
-##### [Previewer](/sdk-tools/baseline-sdk/web-tools/previewer.md)
-##### [Privilege Checker](/sdk-tools/baseline-sdk/web-tools/privilege-checker.md)
-##### [Tizen Studio Web Preferences](/sdk-tools/baseline-sdk/web-tools/ide-preferences.md)
 
-#### Configure Your App
-##### [Overview](/sdk-tools/baseline-sdk/web-tools/configuring.md)
-##### [Configuration Editor](/sdk-tools/baseline-sdk/web-tools/config-editor.md)
-##### [Web Localization](/sdk-tools/baseline-sdk/web-tools/web-localization.md)
 
 #### Debug Your App
-##### [Overview](/sdk-tools/baseline-sdk/web-tools/debugging.md)
 ##### [Log View](/sdk-tools/baseline-sdk/common-tools/log-view.md)
-##### [Web Inspector](/sdk-tools/baseline-sdk/web-tools/web-inspector.md)
-##### [JavaScript Analyzer](/sdk-tools/baseline-sdk/web-tools/js-analyzer.md)
 
-#### Run and Test Your App
-##### [Overview](/sdk-tools/baseline-sdk/web-tools/running-testing.md)
 
-##### Web Simulator
-###### [Overview](/sdk-tools/baseline-sdk/web-tools/web-simulator.md)
-###### [Extended Web Simulator Features](/sdk-tools/baseline-sdk/web-tools/web-simulator-features.md)
 
-##### [Web Unit Test Tool](/sdk-tools/baseline-sdk/web-tools/web-unit-test-tool.md)
 
 #### [Keyboard Shortcuts](/sdk-tools/baseline-sdk/common-tools/keyboard-shortcuts.md)
 
-### Platform Tools
-#### [Overview](/sdk-tools/baseline-sdk/platform-tools/overview.md)
-#### [Platform Development Tools](/sdk-tools/baseline-sdk/platform-tools/platform-tools.md)
 
-### [Configurable SDK](/sdk-tools/baseline-sdk/configurable-sdk/configurable-sdk.md)
 
 ### Release Notes
 #### [10.0 (Nov 4, 2025)](/sdk-tools/baseline-sdk/release-notes/10-0-release-notes.md)

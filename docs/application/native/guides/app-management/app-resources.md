@@ -13,9 +13,7 @@ The main features of the Resource Manager API include:
   >
   > The Resource Manager tool is supported since Tizen 2.4.
   >
-  > If you cannot access the `Resource Manager` view in Tizen Studio, check the version and API version attributes in the `<manifest>` element of the application manifest file.
-  >
-  > For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../../sdk-tools/baseline-sdk/native-tools/resource-manager.md).
+  > Check the version and API version attributes in the `<manifest>` element of the application manifest file.
 
 - Using the resources
 

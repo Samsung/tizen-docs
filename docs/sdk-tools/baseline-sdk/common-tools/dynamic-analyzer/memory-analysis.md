@@ -208,4 +208,4 @@ The table contains the following columns:
 
 ## Related information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

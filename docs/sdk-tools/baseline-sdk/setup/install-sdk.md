@@ -1,63 +1,32 @@
-# Installing Tizen Studio
+# Installing the Tizen SDK
 
-The installer has been renewed to provide a better user experience and show the unique Tizen philosophy. Using the new installer, you can now install the basic platform and the useful tools with a few clicks.
+The Tizen SDK provides the Baseline SDK — the toolset that every Tizen IDE extension
+shares. For the tools it contains, see [Overview Tizen SDK](../common-tools/overview.md).
 
-You can use either the GUI or the CLI version of the installer.
+## How to get the Baseline SDK
 
-## Using the GUI Installer
+**Install an IDE extension. The extension installs the Baseline SDK for you.** This is
+the recommended route and the one most developers need:
 
-To install Tizen Studio:
+- [Visual Studio Code Extension for Tizen](../../vscode-ext/Tizen/dotnet.md) — install it
+  from the Visual Studio Code Marketplace. On first launch it asks for a Tizen SDK path
+  and then downloads and installs the required SDK resources.
+- [Visual Studio Tools for Tizen](../../vstools/install.md) — install it from the Visual
+  Studio Marketplace. On first launch it asks for an SDK resource path and then installs
+  the server and core apps.
 
-1. Launch the Tizen Studio installer.
-
-2. Accept the software license.
-
-   The license contains important legal notices for using Tizen Studio. Read it fully, and click **Accept** only if you agree with the license statement:
-
-   ![Tizen Studio License Agreement](./media/install_sdk_license.png)
-
-3. Click the ![Browse](./media/advanced_conf_browse.png) button and specify a new directory to set the SDK and data location. If the new directory is valid and shows no errors, click **Install**:
-
-   ![Set SDK and data location](./media/install_sdk_directory.png)
-
-4. Click **Install** to install the required packages and tools in the specified directory.
-
-   You can monitor the installation process or cancel the installation. The installation process is completed in a few minutes, unless you cancel it.
-
-5. Click **Finish** and close the installer:
-
-
-   ![Installation complete](./media/migration_finish_instal.png)
-
-   If you want to install additional platforms and tools, launch the Package Manager by checking the **Launch the Package Manager** check box and click **Finish**.
-
-   Using the Tizen Studio Package Manager, you can install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](./update-sdk.md).
-
-
-   > **Note**
-   >
-   > If you install Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, administrator privileges are required to run the Tizen SDK tools.
-
-The video below shows how Tizen Studio is installed in Windows using the IDE installer:
-
-<video controls height="400">
-  <source src="media/tizenstudio-ideinstaller.mp4" type=video/mp4>
-</video>
-
-The video below shows how Tizen Studio is installed in Linux using the IDE installer:
-
-<video controls height="400">
-  <source src="media/tizenstudio-ideinstaller-linux.mp4" type=video/mp4>
-</video>
-
+If you need the Baseline SDK on a machine without an IDE — a build server, or a
+terminal-only environment — install it with the CLI installer described below. Download
+the installer for your platform from the
+[Tizen tools download page](https://samsungtizenos.com/tools-download/).
 
 ## Using the CLI Installer
 
 The CLI (command line interface) provides functional tools for running the CLI installer without the GUI environment.
 
-To install Tizen Studio using the CLI installer:
+To install the Tizen SDK using the CLI installer:
 
-1. [Download the appropriate CLI installer for your platform](https://developer.tizen.org/development/tizen-studio/download).
+1. [Download the appropriate CLI installer for your platform](https://samsungtizenos.com/tools-download/).
 
 2. Run the CLI installer:
 
@@ -65,14 +34,14 @@ To install Tizen Studio using the CLI installer:
    - On Ubuntu and macOS, open the terminal, go to the directory where the installer is downloaded, and enter the `chmod +x` command to apply the execute permission to the installer file. Then, execute the installer by entering the command with the following syntax:
 
    ```
-   web-cli_Tizen_Studio_<version> [options] [<directory path>]
+   web-cli_Tizen_SDK_<version> [options] [<directory path>]
    ```
 
    **Table: Install options**
 
    | Option             | Description                              |
    |--------------------|------------------------------------------|
-   | `--show-license`   | Displays the Tizen Studio software license agreement.<br/> You must use this option alone. Do not use with other options. |
+   | `--show-license`   | Displays the Tizen SDK software license agreement.<br/> You must use this option alone. Do not use with other options. |
    | `--accept-license` | Accepts the license terms.               |
    | `--no-java-check`  | Skips the Java version check.            |
 
@@ -80,29 +49,17 @@ To install Tizen Studio using the CLI installer:
 
    | Parameter        | Description                              |
    |------------------|------------------------------------------|
-   | `directory path` | Specifies the installation directory path.<br/> If you do not enter the path, Tizen Studio is installed in the default directory (`/home/{user}/tizen-studio`). |
+   | `directory path` | Specifies the installation directory path.<br/> If you do not enter the path, the Tizen SDK is installed in the default directory (`/home/{user}/tizen-studio`). |
 
 3. If you agree to the software license and the license terms, enter **Y(yes)** for the conditions.
 
-4. Enter the Tizen Studio installation location.
+4. Enter the Tizen SDK installation location.
 
    The CLI installer begins to install the Web App Development platform and tools on your computer.
 
 > **Note**
 >
 > If you want to develop a native application on the CLI, you must install the Native App Development platform and tools using the CLI Package Manager.
-
-The video below shows how Tizen Studio is installed in Windows using the CLI installer:
-
-<video controls height="400">
-  <source src="media/tizenstudio-cliinstaller.mp4" type=video/mp4>
-</video>
-
-The video below shows how Tizen Studio is installed in Linux using the CLI installer:
-
-<video controls height="400">
-  <source src="media/tizenstudio-cliinstaller-linux.mp4" type=video/mp4>
-</video>
 
 ## Display packages with CLI
 
@@ -430,4 +387,4 @@ Run the commands using the following syntax:
 
 ## Related information
 - Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

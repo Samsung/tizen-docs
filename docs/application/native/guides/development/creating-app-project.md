@@ -30,7 +30,7 @@ To create a native application project:
       > **Note**  
       > The Tizen API names cannot be used as project names. The project name must be more than 2 characters and is restricted to the following regular expression: [a-zA-Z][a-zA-Z0-9-]{2,49}.
 
-      The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../../sdk-tools/baseline-sdk/native-tools/project-wizard.md).
+      The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Native Application Projects](../../../../sdk-tools/vscode-ext/getting-started/creating-native-application-projects.md).
 
 The new application project is shown in the **Project Explorer** view of Tizen Studio, with default content in the `tizen-manifest.xml` file as well as in several project folders.
 

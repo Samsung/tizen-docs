@@ -304,6 +304,7 @@
 ## Tutorials
 ### [Overview](/application/web/tutorials/overview.md)
 
+### [Web Application Configuration](/application/web/reference/config-xml.md)
 ### [Application Filtering](/application/web/reference/app-filtering.md)
 ### [Security and API Privileges](/application/web/reference/security-privileges.md)
 ### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/reference/security-privileges-legacy.md)

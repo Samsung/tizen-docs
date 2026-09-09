@@ -78,7 +78,7 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
    - **In Windows&reg; and macOS:**
 
-     The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../../baseline-sdk/setup/hardware-accelerated-execution-manager.md).
+     The HAXM driver is installed during the Tizen SDK installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../../baseline-sdk/setup/hardware-accelerated-execution-manager.md).
 
    > [!NOTE]
    > If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable the NX (or PAE and DEP) related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
@@ -261,7 +261,7 @@ The following tables describe the differences between a real target device and t
 			<td rowspan="5">Development environment</td>
 			<td>Target</td>
 			<td>Buy a target device or reference board (by model)</td>
-			<td>Download Tizen Studio (multi-profile and multi-model support)</td>
+			<td>Download the Tizen SDK (multi-profile and multi-model support)</td>
 		</tr>
 		<tr>
 			<td>Network</td>

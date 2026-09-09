@@ -14,7 +14,7 @@ The main features of the Emulator Manager are:
 
 ## Accessing the Emulator Manager
 
-If you do not have the Emulator Manager installed, you can install it using the Tizen Studio Package Manager.
+If you do not have the Emulator Manager installed, you can install it using the Tizen SDK Package Manager.
 
 There are 2 different ways to access the Emulator Manager:
 
@@ -24,13 +24,8 @@ There are 2 different ways to access the Emulator Manager:
 
   | Ubuntu                                   | Windows&reg;                                 | macOS                                    |
   |----------------------------------------|----------------------------------------|----------------------------------------|
-  | **Desktop > Applications > Emulator Manager:** <br> ![Shortcut Ubuntu](./media/emulator_manager_linux_shortcut.png) | **Start > All Programs > Tizen Studio > Emulator Manager:** <br> ![Shortcut Windows](./media/emulator_manager_win_shortcut.png) | **Finder > Applications > Tizen Studio > Emulator Manager:** <br> ![Shortcut macOS](./media/emulator_manager_mac_shortcut.png) |
+  | **Desktop > Applications > Emulator Manager:** <br> ![Shortcut Ubuntu](./media/emulator_manager_linux_shortcut.png) | **Start > All Programs > Tizen SDK > Emulator Manager:** <br> ![Shortcut Windows](./media/emulator_manager_win_shortcut.png) | **Finder > Applications > Tizen SDK > Emulator Manager:** <br> ![Shortcut macOS](./media/emulator_manager_mac_shortcut.png) |
 
-- In Tizen Studio, select **Tools > Emulator Manager** or click the Emulator Manager icon on the toolbar.
-
-  **Figure: Launch the Emulator Manager in Tizen Studio**
-
-  ![Launch the Emulator Manager](./media/emulator_manager_launch.png)
 
 <a name="create"></a>
 ## Creating an Emulator Instance
@@ -74,7 +69,7 @@ To create a custom platform:
 
 3. In the **Platform Configuration** dialog, select a base platform and platform image file.
 
-   You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with Tizen Studio. You can also create a qcow2 image by [exporting an emulator](#export).
+   You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with the Tizen SDK. You can also create a qcow2 image by [exporting an emulator](#export).
 
    A platform image in the development stage is in raw format. If you launch an emulator with a raw image, you can see the current state of the image. This can be useful for platform developers.
 
@@ -157,11 +152,11 @@ You can create, modify, delete, and list your VMs through the command line inter
 
 - Ubuntu:
 
-  `<TIZEN_STUDIO>/tools/emulator/bin/em-cli`
+  `<TIZEN_SDK>/tools/emulator/bin/em-cli`
 
 - Windows&reg;:
 
-  `<TIZEN_STUDIO>\tools\emulator\bin\em-cli.bat`
+  `<TIZEN_SDK>\tools\emulator\bin\em-cli.bat`
 
 For more information, see the CLI help messages.
 
@@ -209,4 +204,4 @@ The **Issue Reporter** button can be used to report any issue that may arise whi
 
 ## Related information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

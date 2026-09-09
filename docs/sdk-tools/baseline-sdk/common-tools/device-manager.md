@@ -19,13 +19,13 @@ To use Device Manager with a specific device, you must connect the device over S
 
       | Ubuntu                                   | Windows&reg;                                 | macOS                                    |
       |----------------------------------------|----------------------------------------|----------------------------------------|
-      | **Desktop > Applications > Device Manager:**![Device Manager in Ubuntu](media/device_manager_icon_ubuntu.png) | **Start > All Programs > Tizen Studio > Tools > Device Manager:**![Device Manager in Windows](media/device_manager_icon_windows.png) | **Finder > Applications > Tizen Studio > Device Manager:**![Device Manager in macOS](media/device_manager_icon_macos.png) |
+      | **Desktop > Applications > Device Manager:**![Device Manager in Ubuntu](media/device_manager_icon_ubuntu.png) | **Start > All Programs > Tizen SDK > Tools > Device Manager:**![Device Manager in Windows](media/device_manager_icon_windows.png) | **Finder > Applications > Tizen SDK > Device Manager:**![Device Manager in macOS](media/device_manager_icon_macos.png) |
 
     - Run Device Manager from the command line.
 
       | Ubuntu                                   | Windows&reg;                                 | macOS                                    |
       |----------------------------------------|----------------------------------------|----------------------------------------|
-      | `<TIZEN_STUDIO>/tools/device-manager/bin/device-manager` | `<TIZEN_STUDIO>\tools\device-manager\bin\device-manager.exe` | `<TIZEN_STUDIO>/tools/device-manager/bin/device-manager.app/Contents/MacOS/device-manager` |
+      | `<TIZEN_SDK>/tools/device-manager/bin/device-manager` | `<TIZEN_SDK>\tools\device-manager\bin\device-manager.exe` | `<TIZEN_SDK>/tools/device-manager/bin/device-manager.app/Contents/MacOS/device-manager` |
 
     If the program is executed normally, the **Device Manager** window appears.
 
@@ -61,7 +61,7 @@ Connecting a device to a computer depends on the device type:
 
     To connect a remote device, follow these steps:
 
-    1. In the Tizen Studio menu, select **Tools > Device Manager**.
+    1. Start the Device Manager as described in [Launch the Device Manager](#launch).
     2. In the **Device Manager** window that appears,  click **Remote Device Manager** ![Remote Device Manager](./media/device_manager_remote_device_manager_icon.png).        
     3. In the **Remote Device Manager** window that appears, you can scan, add, edit, and delete a device. You can click **Scan Devices** ![Scan Device](./media/dm_scan_devices_icon.png) to see the list of available devices. 
     
@@ -237,4 +237,4 @@ The **Issue Reporter** button can be used to report any issue that may arise whi
 
 ## Related Information
 * Dependencies    
-    - Tizen Studio 2.0 and Higher
+    - Tizen SDK 2.0 and Higher

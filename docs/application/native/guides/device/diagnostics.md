@@ -14,7 +14,7 @@ To enable your application to use Diagnostics API:
 
    To sign application with a platform level certificate:
 
-   1. In Tizen Studio, select **Tools > Certificate Manager**.
+   1. Start the Certificate Manager from the Tizen SDK tools.
    2. To add a new certificate profile, click **+** in the Certificate Manager window.
 
       ![Add a new profile](media/diag-add-new-profile.png)

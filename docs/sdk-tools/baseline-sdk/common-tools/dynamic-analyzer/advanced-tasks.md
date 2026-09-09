@@ -338,7 +338,7 @@ The following commands are the most useful when controlling the Dynamic Analyzer
     org.tizen.gallery              : org.tizen.gallery        : Gallery
     org.tizen.browser              : org.tizen.browser        : Internet
   ```
-  Take note of your application identifier. It is used to specify the application in other Dynamic Analyzer CLI commands. If you cannot find your application, make sure it has been installed (for example, from Tizen Studio). The application ID can differ from the package ID.
+  Take note of your application identifier. It is used to specify the application in other Dynamic Analyzer CLI commands. If you cannot find your application, make sure it has been installed (for example, from your IDE). The application ID can differ from the package ID.
 
 - `start`
 
@@ -393,15 +393,15 @@ The following commands are the most useful when controlling the Dynamic Analyzer
   DA Version      2.4.4
   Build Time      20161213-0258
   Tizen Site      http://www.tizen.org
-  Release Note    https://developer.tizen.org/development/tizen-studio/download/release-notes
+  Release Note    https://samsungtizenos.com/tools-download/
   ```
   In the command output:
   - **DA Version** is the version of the Dynamic Analyzer.
   - **Build Time** is the build timestamp.
   - **Tizen Site** is the link to the Tizen Web site.
-  - **Release Note** is the link to the Tizen Studio Release Notes.
+  - **Release Note** is the link to the Tizen SDK release notes.
   
 
 ## Related Information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

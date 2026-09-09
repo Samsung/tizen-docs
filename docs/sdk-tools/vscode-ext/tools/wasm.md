@@ -10,8 +10,8 @@ VS Code Extension for Tizen supports **Tizen WebAssembly** application developer
 
 Below are the prerequisites for using **Tizen WebAssembly (WASM)** in Visual Studio Code:
 
-- Make sure that Tizen Studio Version 6.0 or above is installed.
-- Make sure to set Tizen Studio path with the installed 6.0 or above by using VS Code command: **Tizen: Wizard to set Tizen Baseline SDK path or install a new one**.
+- Make sure that Tizen SDK version 6.0 or above is installed.
+- Make sure to set the Tizen SDK path with the installed 6.0 or above by using VS Code command: **Tizen: Wizard to set Tizen Baseline SDK path or install a new one**.
 - Make sure that latest [Visual Studio Code](https://code.visualstudio.com) is installed.
 - Make sure that **Tizen Extension** from the market place is installed. **Tizen Extension** can be installed by searching in the extensions view (Ctrl+Shift+X).
 - Make sure Tizen Emscripten SDK setup is done.

@@ -1,13 +1,13 @@
-# Prerequisites for Tizen Studio
+# Prerequisites for the Tizen SDK
 
-Check the following prerequisites before attempting to install Tizen Studio.
+Check the following prerequisites before installing the Tizen SDK.
 
 ## Java Development Kit (JDK) Requirements
 > **Note**
 >
-> There is no JDK prerequisite for Tizen Studio 3.7 and higher.
+> There is no JDK prerequisite for Tizen SDK 3.7 and higher.
 
-You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 for Tizen Studio 3.5 and Tizen Studio 3.6.
+You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 for Tizen SDK 3.5 and 3.6.
 
 Follow these instructions to install the appropriate JDK version for your system:
 
@@ -27,11 +27,11 @@ Follow these instructions to install the appropriate JDK version for your system
 
   > **Note**
   >
-  > Since Tizen Studio 3.7, the JDK installation is bundled with Tizen Studio. There is no need to explicitly install JDK or set the variable paths.
+  > Since Tizen SDK 3.7, the JDK installation is bundled with the SDK. There is no need to explicitly install JDK or set the variable paths.
 
 ## OS and System Requirements
 
-The following table lists the supported operating systems and hardware requirements for Tizen Studio.
+The following table lists the supported operating systems and hardware requirements for the Tizen SDK.
 
 **Table: OS and system requirements**
 
@@ -143,7 +143,7 @@ The Intel driver version must be 8.0.1 or higher.
 
 ## Google Chrome&trade; Browser Requirements
 
-You must install the Google Chrome&trade; browser to use the [Web Inspector](../web-tools/web-inspector.md) tool.
+You must install the Google Chrome&trade; browser to use the Web Inspector tool.
 
 Since the Web Inspector server uses the Web core in the platform, there is a limit on the Google Chrome&trade; browser version in your environment. For all functions of the Web Inspector to work properly, use the **Google Chrome&trade; browser version 77 or higher**.
 
@@ -223,7 +223,7 @@ To install Homebrew, see the <a href="http://brew.sh/">Brew Web site</a>.
 <tr>
 <td>Prerequisite packages (glib, curl, sdl, pixel manipulation) for using the emulator
 </td>
-<td>At the terminal prompt, enter the following command for Tizen Studio:
+<td>At the terminal prompt, enter the following command for the Tizen SDK:
 <pre><code>$ sudo apt-get install acl bridge-utils openvpn libfontconfig1 libglib2.0-0 libjpeg-turbo8 libpixman-1-0 libpng12-0 libsdl1.2debian libsm6 libv4l-0 libx11-xcb1 libxcb-icccm4 libxcb-image0 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxcb-xfixes0 libxi6</code></pre></td>
 </tr>
 </tbody>
@@ -231,4 +231,4 @@ To install Homebrew, see the <a href="http://brew.sh/">Brew Web site</a>.
 
 ## Related Information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

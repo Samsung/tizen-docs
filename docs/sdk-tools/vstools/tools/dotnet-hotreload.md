@@ -8,8 +8,8 @@ With Hot Reload changes are applied only on the second entrance to the function.
 
 Below are the prerequisites for using Tizen .NET Hot Reload in Visual Studio:
 
-- Make sure that Tizen Studio Version 5.1 or above is installed.
-- Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with the installed 5.1 or above Tizen Studio path.
+- Make sure that Tizen SDK version 5.1 or above is installed.
+- Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with the installed 5.1 or above Tizen SDK path.
 
 ## Enable Tizen .NET Hot Reload
 

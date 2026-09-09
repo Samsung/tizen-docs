@@ -8,12 +8,9 @@ The common tasks in the Dynamic Analyzer show how you can launch the Dynamic Ana
 
 ## Dynamic Analyzer Launch
 
-You can launch the Dynamic Analyzer in the **Project Explorer** view or from the Tizen Studio sub-menu:
+You can launch the Dynamic Analyzer from your desktop environment:
 
-- **In the Project Explorer view:**
-  - Right-click the project in the **Project Explorer** view and select **Profile As > Profile with Dynamic Analyzer**
-- **From Tizen Studio sub-menu:**
-  - Windows&reg;: **Startup > Tizen Studio > Tools > Dynamic Analyzer**
+  - Windows&reg;: **Start > All Programs > Tizen SDK > Tools > Dynamic Analyzer**
   - Ubuntu: **Applications > Dynamic Analyzer**
   - macOS: **Launchpad > Dynamic Analyzer**
 
@@ -233,4 +230,4 @@ The Warning table contains the following columns:
 
 ## Related information
 * Dependencies
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

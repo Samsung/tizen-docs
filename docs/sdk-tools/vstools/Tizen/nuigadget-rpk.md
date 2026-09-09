@@ -9,8 +9,8 @@ The following sections explain how to use Visual Studio Extension for creating T
 
 Below are the prerequisites for creating Tizen .NET NUIGadget project in Visual Studio:
 
-- Make sure that Tizen Studio Version 5.1 or above is installed.
-- Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with the installed 5.1 or above Tizen Studio path.
+- Make sure that Tizen SDK version 5.1 or above is installed.
+- Make sure to set the Tool Path (Tizen SDK) in **Tools > Options > Tizen > Tools** with the installed 5.1 or above Tizen SDK path.
 
 
 ### Create Tizen .NET NUIGadget project

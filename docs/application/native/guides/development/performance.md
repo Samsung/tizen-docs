@@ -16,13 +16,13 @@ To improve the performance of an application:
 <a name="measure_app_perf"></a>
 ## Measuring Application Performance
 
-Tizen Studio supports various tools which help to measure and increase performance at runtime:
+The Tizen SDK supports various tools which help to measure and increase performance at runtime:
 
 - [Dynamic Analyzer](../../../../sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/overview.md)
 
   The Dynamic Analyzer helps to identify bottlenecks and improve resource usage patterns in applications. For more information on its usage, see [Dynamic Analysis](#dynamic-analysis).
 
-- [Valgrind](../../../../sdk-tools/baseline-sdk/native-tools/valgrind.md)
+- Valgrind
 
   Valgrind detects memory errors or leaks. This tool helps to improve memory usage patterns in native applications. For more information on its usage, see [Valgrind Analysis](#valgrind-analysis).
 

@@ -18,7 +18,7 @@ The certificate profile consists of an author certificate and 1 or 2 distributor
 
 You can create a new certificate profile with the Certificate Manager:
 
-1. In the Tizen Studio menu, select **Tools > Certificate Manager**.
+1. Start the Certificate Manager from the Tizen SDK tools.
 
    ![Certificate Manager](./media/cert_reg_cert_manager.png)
 
@@ -104,4 +104,4 @@ To migrate a certificate profile:
 
 ## Related Informatioin
 - Dependencies  
-  - Tizen Studio 1.0 and Higher
+  - Tizen SDK 1.0 and Higher

@@ -21,7 +21,7 @@ Before using the `Tizen: Add Web Unit Test` command, ensure you have the followi
 
 *   **Visual Studio Code**: Installed on your development machine.
 *   **Tizen Extension for VS Code**: The official Tizen extension must be installed and enabled in your VS Code environment.
-*   **Tizen Studio**: While the command automates copying libraries, having Tizen Studio installed ensures that the necessary QUnit library files are available to the extension.
+*   **Tizen SDK**: While the command automates copying libraries, having the Tizen SDK installed ensures that the necessary QUnit library files are available to the extension.
 *   **An Existing Tizen Web Project**: You should have a Tizen web project open in your VS Code workspace. The command will operate within the context of this active project.
 
 ## How to Execute the Command
@@ -96,7 +96,7 @@ Let's walk through an example:
 When you click the "Finish" button, the command performs several actions in the background:
 
 1.  **Copies Required Libraries**:
-    *   It copies the QUnit testing framework files from your Tizen Studio installation into your project. This typically includes:
+    *   It copies the QUnit testing framework files from your Tizen SDK installation into your project. This typically includes:
         *   `qunit.js`: The core QUnit testing library.
         *   `qunit-reporter.js`: A reporter for Tizen-specific test output.
         *   `style.css`: Stylesheets for the QUnit test runner page.
