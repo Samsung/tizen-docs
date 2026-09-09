@@ -31,9 +31,6 @@ The Tizen Native application manifest file consists of XML elements organized in
 |              |                                  | `<metadata>`            |                  |
 |              |                                  | `<datacontrol>`         |                  |
 |              |                                  | `<background-category>` |                  |
-|              | `<watch-application>`            |                         |                  |
-|              |                                  | `<icon>`                |                  |
-|              |                                  | `<label>`               |                  |
 |              | `<widget-application>`           |                         |                  |
 |              |                                  | `<icon>`                |                  |
 |              |                                  | `<label>`               |                  |
@@ -96,7 +93,6 @@ For more information on the relationship between the elements, see the [element 
 | `<profile>`                     | 1 or more (optional) |
 | `<ui-application>`              | 1 (optional)         |
 | `<service-application>`         | 1 (optional)         |
-| `<watch-application>`           | 1 (optional)         |
 | `<widget-application>`          | 1 (optional)         |
 | `<component-based-application>` | 1 (optional)         |
 | `<shortcut-list>`               | 1 (optional)         |
@@ -392,91 +388,6 @@ For more information on the relationship between the elements, see the [element 
    <metadata key="testkey1" value="testvalue2"/>
    <metadata key="testkey" value="testvalue"/>
 </service-application>
-```
-
-<a name="watch_app"></a>
-
-### \<watch-application\> element
-
-This element contains the settings for a watch application.
-
-For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
-
-**Occurrences:**
-
-- 1 (optional)
-
-**Expected children:**
-
-| Child element | Occurrences |
-|---------------|-------------|
-| `<label>`     | 1 or more   |
-| `<icon>`      | 1 or more   |
-
-**Attributes:**
-
-- `ambient-support`
-
-  Indicates whether the application draws the ambient mode UI itself (available values: `true`, `false`)
-
-  If the value is `false`, the system default ambient mode UI is shown when the device enters the ambient mode.
-
-- `appid`
-
-  Watch application unique ID (string)
-
-- `exec`
-
-  Watch application executable file path (string)
-
-- `setup-appid`
-
-  Watch application setup application ID (string)
-
-  If the value is `watchface-editor`, the system default editor is shown when the device enters the editing mode.
-
-
-**For example:**
-
-```xml
-<watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample" setup-appid="watchface-editor">
-   <label>.....</label>
-   <icon>.....</icon>
-</watch-application>
-```
-
-#### \<label\> element
-
-This element contains the watch application text.
-
-**Occurrences:**
-
-- 1
-
-**Expected value:**
-
-- Label value in string
-
-**For example:**
-
-```xml
-<label>watchsample</label>
-```
-
-#### \<icon\> element
-
-This element contains the watch application icon image.
-
-**Occurrences:**
-
-- 1
-
-**Expected value:**
-
-- Icon file name
-
-```xml
-<icon>watchsample.png</icon>
 ```
 
 <a name="widget_app"></a>
