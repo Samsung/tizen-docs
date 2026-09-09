@@ -39,7 +39,7 @@ The application manifest consists of application information, such as package, v
 
 ![Setting the application manifest](media/tizen_project_explorer.png)
 
-You can [edit the application properties using the form tabs of the manifest editor](../../../../sdk-tools/vstools/tools/manifest-editor.md#editing-the-manifest-file).
+You can [edit the application properties using the form tabs of the manifest editor](../../reference/manifest-xml.md).
 
 ### Defining and Editing General Information in the Overview Tab
 
@@ -212,7 +212,7 @@ You can perform the following tasks using the **Advanced** tab:
 
 ### Editing the tizen-manifest.xml File in the Source Tab
 
-  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../../sdk-tools/vstools/tools/manifest-editor.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
+  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../reference/manifest-xml.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
 
 > **Note**
 >

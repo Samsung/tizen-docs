@@ -540,7 +540,8 @@
 ### [Overview](/application/native/tutorials/overview.md)
 
 ### Understanding Tizen Programming
-#### [Application Filtering](/application/native/reference/app-filtering.md)
+#### [Application Manifest](/application/native/reference/manifest-xml.md)
+### [Application Filtering](/application/native/reference/app-filtering.md)
 #### [Security and API Privileges](/application/native/reference/security-privileges.md)
 #### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/reference/security-privileges-legacy.md)
 #### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/reference/deprecation-policy.md)
