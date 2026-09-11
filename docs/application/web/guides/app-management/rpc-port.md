@@ -2,13 +2,13 @@
 
 The RPC Port API provides inter-process communication (IPC) between Tizen applications. It allows applications to establish communication channels, serialize and deserialize data, and exchange messages using a protocol-based messaging system.
 
-The RPC Port API is based on the native rpc-port library and is available for TV, mobile, and wearable profiles. All mandatory APIs are supported on the Tizen emulators.
+The RPC Port API is based on the native rpc-port library and is available for the TV profile. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the RPC Port API include the following:
 
 - **Parcel serialization**
 
-  The `Parcel` interface (in [TV](../../api/latest/device_api/tv/tizen/rpcport.html#Parcel), [Mobile](../../api/latest/device_api/mobile/tizen/rpcport.html#Parcel), and [Wearable](../../api/latest/device_api/wearable/tizen/rpcport.html#Parcel) applications) provides a serialization container for marshalling data across process boundaries. You can write and read various data types including bytes, integers, strings, arrays, and bundles.
+  The `Parcel` interface (in [TV](../../api/latest/device_api/tv/tizen/rpcport.html#Parcel) applications) provides a serialization container for marshalling data across process boundaries. You can write and read various data types including bytes, integers, strings, arrays, and bundles.
 
 - **Proxy/Stub communication**
 
@@ -16,11 +16,11 @@ The main features of the RPC Port API include the following:
 
 - **Event publishing and receiving**
 
-  Applications can publish events using the `publishEvent()` method of the `RPCPortManager` interface (in [TV](../../api/latest/device_api/tv/tizen/rpcport.html#RPCPortManager), [Mobile](../../api/latest/device_api/mobile/tizen/rpcport.html#RPCPortManager), and [Wearable](../../api/latest/device_api/wearable/tizen/rpcport.html#RPCPortManager) applications) and receive them using event receivers registered with the `addEventReceiver()` method.
+  Applications can publish events using the `publishEvent()` method of the `RPCPortManager` interface (in [TV](../../api/latest/device_api/tv/tizen/rpcport.html#RPCPortManager) applications) and receive them using event receivers registered with the `addEventReceiver()` method.
 
 - **Port management**
 
-  Communication channels are managed through `Port` objects (in [TV](../../api/latest/device_api/tv/tizen/rpcport.html#Port), [Mobile](../../api/latest/device_api/mobile/tizen/rpcport.html#Port), and [Wearable](../../api/latest/device_api/wearable/tizen/rpcport.html#Port) applications). The API supports MAIN ports for primary communication and CALLBACK ports for response channels.
+  Communication channels are managed through `Port` objects (in [TV](../../api/latest/device_api/tv/tizen/rpcport.html#Port) applications). The API supports MAIN ports for primary communication and CALLBACK ports for response channels.
 
 - **File sharing**
 
@@ -28,7 +28,7 @@ The main features of the RPC Port API include the following:
 
 ## Prerequisites
 
-To use the RPC Port API (in [TV](../../api/latest/device_api/tv/tizen/rpcport.html), [Mobile](../../api/latest/device_api/mobile/tizen/rpcport.html), and [Wearable](../../api/latest/device_api/wearable/tizen/rpcport.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the RPC Port API (in [TV](../../api/latest/device_api/tv/tizen/rpcport.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <!-- Required for connecting to remote applications -->
@@ -198,8 +198,6 @@ Applications can share private files through RPC ports. The file paths must be u
 
 ## Related information
 * Dependencies
-   - Tizen 10.1 and Higher for TV, Mobile, and Wearable
+   - Tizen 10.1 and Higher for TV
 * API References
    - [TV](../../api/latest/device_api/tv/tizen/rpcport.html)
-   - [Mobile](../../api/latest/device_api/mobile/tizen/rpcport.html)
-   - [Wearable](../../api/latest/device_api/wearable/tizen/rpcport.html)
