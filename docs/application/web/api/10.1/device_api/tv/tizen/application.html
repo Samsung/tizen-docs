@@ -1821,7 +1821,7 @@ app.broadcastTrustedEvent({"name": "custom_user_event"}, myTrustedCustomData);
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationInformation {
     readonly attribute <a href="#ApplicationId">ApplicationId</a> id;
     readonly attribute DOMString name;
-    readonly attribute DOMString iconPath;
+    attribute DOMString iconPath raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute DOMString version;
     readonly attribute boolean show;
     readonly attribute DOMString[] categories;
@@ -1854,13 +1854,44 @@ app.broadcastTrustedEvent({"name": "custom_user_event"}, myTrustedCustomData);
             </p>
 </li>
 <li class="attribute" id="ApplicationInformation::iconPath">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">DOMString </span><span class="name">iconPath</span></span><div class="brief">
+<span class="attrName"><span class="type">DOMString </span><span class="name">iconPath</span></span><div class="brief">
  An attribute to store the icon path of an application.
             </div>
+<div class="description">
+            <p>
+Since Tizen 10.1, the icon of the current application can be changed.
+The icon file specified by <em>path</em> should be included in the package which the application belongs to.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  1.0
             </p>
+<p><span class="privilegelevel">Privilege level: </span>
+ platform
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/packagemanager.admin
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to change this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if path is invalid.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var app = tizen.application.getCurrentApplication();
+app.appInfo.iconPath = "/opt/usr/globalapps/SANiDQiX7s/shared/res/SANiDQiX7s.ExampleApp.png";
+</pre>
+</div>
 </li>
 <li class="attribute" id="ApplicationInformation::version">
 <span class="attrName"><span class="readonly">                readonly
@@ -3003,7 +3034,7 @@ To guarantee the running of the application on a device which has battery, decla
   [NoInterfaceObject] interface ApplicationInformation {
     readonly attribute <a href="#ApplicationId">ApplicationId</a> id;
     readonly attribute DOMString name;
-    readonly attribute DOMString iconPath;
+    attribute DOMString iconPath raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute DOMString version;
     readonly attribute boolean show;
     readonly attribute DOMString[] categories;
