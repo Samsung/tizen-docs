@@ -97,10 +97,6 @@
 
 ##### [Tool: SDB](/sdk-tools/baseline-sdk/common-tools/smart-development-bridge.md)
 
-#### SDK Diagnostics
-
-##### [Tizen Doctor](/sdk-tools/baseline-sdk/common-tools/tizen-doctor.md)
-
 #### Report Issues
 
 ##### [Issue Reporter](/sdk-tools/vscode-ext/tools/issue-reporter.md)

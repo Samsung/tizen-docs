@@ -25,10 +25,6 @@
   - LLVM toolchain is deprecated for Tizen-10.0 version.
   - Removed TAU library and unused templates.
   - Removed outdated GCC 6.x toolchain.
-- Tizen Doctor
-  - A new CLI based tool is provided for diagnosing the developer environment setup for Tizen SDK and will analyze the system and display a list of any issues it detects, along with suggestions for resolving them.
-    
-
 ### Fixed bugs
   - Fixed issue of source exclude files not being processed while native build in tizen-core.
   - Fixed issue of certain XML tags getting excluded from tizen-manifest.xml file in the tpk built from tizen-core.
