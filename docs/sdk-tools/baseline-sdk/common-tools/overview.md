@@ -1,5 +1,8 @@
 # Overview Tizen SDK
 
+> [!IMPORTANT]
+> **Tizen Studio is deprecated and no longer supported.** Tizen Studio — the retired Eclipse-based IDE — must not be installed or used. Tizen application development is supported through the IDE extensions below, which install and share the Baseline SDK.
+
 Tizen SDK supports IDE Extensions for Tizen App development based on two IDEs (Visual Studio and Visual Studio Code).
 
 IDE Extensions share Baseline SDK, which is a common tool required for Tizen application development.

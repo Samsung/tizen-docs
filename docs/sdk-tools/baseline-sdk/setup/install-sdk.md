@@ -3,6 +3,9 @@
 The Tizen SDK provides the Baseline SDK — the toolset that every Tizen IDE extension
 shares. For the tools it contains, see [Overview Tizen SDK](../common-tools/overview.md).
 
+> [!IMPORTANT]
+> **Tizen Studio is deprecated and no longer supported.** The retired Eclipse-based IDE must not be installed or used. The routes below — an IDE extension or the CLI installer — are the supported ways to get the Tizen SDK.
+
 ## How to get the Baseline SDK
 
 **Install an IDE extension. The extension installs the Baseline SDK for you.** This is

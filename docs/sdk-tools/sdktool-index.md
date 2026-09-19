@@ -1,5 +1,8 @@
 # Tizen SDK Tools User Manual
 
+> [!IMPORTANT]
+> **Tizen Studio is deprecated and no longer supported.** Do not install or use the retired Eclipse-based IDE. The tools listed in this index are part of the current Tizen SDK and are delivered through the [VS Code Extension for Tizen](vscode-ext/index.md) and [Visual Studio Tools for Tizen](vstools/index.md).
+
 ## Index of Tools
 ### API and Privilege Checker
 Helps detect undefined and unused privileges in Tizen .NET applications, enabling developers to resolve issues at compile time using Visual Studio's Quick Actions for efficient manifest file updates and error resolution.
