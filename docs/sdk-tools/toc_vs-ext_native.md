@@ -114,7 +114,7 @@
 #### [Unit Test with Code Coverage](/sdk-tools/vstools/tools/unit-test-with-code-coverage.md)
 #### [Log Viewer](/sdk-tools/vstools/tools/log-viewer.md)
 #### [Command Line Interface](/sdk-tools/vstools/tools/dotnet-cli-ext.md)
-#### [Importing Tizen Studio Projects](/sdk-tools/vstools/Tizen/import.md)
+#### [Importing Legacy Projects](/sdk-tools/vstools/Tizen/import.md)
 #### [Test Profile App Unit Test Code Coverage](/sdk-tools/vstools/getting-started/test-profile-app-unit-test-code-coverage.md)
 <!-- docscheck:referenced-sdk:end -->
 

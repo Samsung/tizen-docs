@@ -1,11 +1,14 @@
-# Importing Tizen Studio Projects Into Visual Studio
+# Importing Legacy Projects
 
-The following sections explain how to use Visual Studio Extension for Tizen to import your projects created in Tizen Studio to Visual Studio.
+> [!IMPORTANT]
+> **Tizen Studio is deprecated and no longer supported.** Do not use it for new development. This page only covers migrating existing Tizen Studio projects into Visual Studio.
+
+The following sections explain how to use Visual Studio Tools for Tizen to import legacy projects that were created in Tizen Studio, the retired Eclipse-based IDE, into Visual Studio.
 
 > [!NOTE]
-> Ensure that the Tizen Studio project was exported to CLI before importing to Visual Studio.
+> Ensure that the legacy Tizen Studio project was exported to CLI before importing it to Visual Studio.
 
-1. Go to **Tools** Menu in Visual Studio, select **Tizen > Import Tizen Studio Project** from the dropdown menu. **Tizen Project Wizard** will open.
+1. Go to **Tools** Menu in Visual Studio, select **Tizen > Import Tizen Studio Project** from the dropdown menu. The menu item name is a legacy product UI string that refers to importing legacy Tizen Studio projects. **Tizen Project Wizard** will open.
    ![Import project](media/import_project_menu.png)
 
 2. In Wizard, browse and select the path of project to be imported.
@@ -18,4 +21,3 @@ The following sections explain how to use Visual Studio Extension for Tizen to i
 5. The Visual Studio window with newly imported project appears on the Solution Explorer.
 
    ![Visual Studio screen](media/import_project_screen.png)
-

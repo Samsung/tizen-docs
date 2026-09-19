@@ -30,7 +30,7 @@
 
 ### Tizen
 #### [Hybrid application development](/sdk-tools/vstools/Tizen/hybrid.md)
-#### [Importing Tizen Studio Projects](/sdk-tools/vstools/Tizen/import.md)
+#### [Importing Legacy Projects](/sdk-tools/vstools/Tizen/import.md)
 #### [TizenNUIGadget RPK development](/sdk-tools/vstools/Tizen/nuigadget-rpk.md)
 
 ## Visual Studio Code Extension for Tizen
