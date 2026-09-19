@@ -2,6 +2,9 @@
 
 - Release Date: Jan 18, 2017
 
+> [!WARNING]
+> **Tizen Studio is deprecated and no longer supported.** Do not use Tizen Studio for new development. For current Tizen development, use the [VS Code Extension for Tizen](../../vscode-ext/index.md) or [Visual Studio Tools for Tizen](../../vstools/index.md). This document is kept for historical reference only.
+
 ## IDE and Tools
 
 ### New Features
