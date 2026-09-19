@@ -2,6 +2,9 @@
 
 - Release Date: April 16, 2025
 
+> [!WARNING]
+> **Tizen Studio is deprecated and no longer supported.** Do not use Tizen Studio for new development. For current Tizen development, use the [VS Code Extension for Tizen](../../vscode-ext/index.md) or [Visual Studio Tools for Tizen](../../vstools/index.md). This document is kept for historical reference only.
+
 ## IDE and tools
 
 ### New features
@@ -10,7 +13,7 @@
   - Added support for default certificates on Public Target.
   - Tizen app samples and Web Add-on template are deprecated.
   - log4j library version up from log4j1(v.1.2.17) to log4j2(v.2.24.3).
-  - Notification popup added for the deprecation of Tizen Studio and Dynamic Analyzer in the next version.
+  - Notification popup added announcing the deprecation of Tizen Studio and Dynamic Analyzer — both tools are deprecated and no longer supported.
   - Enhanced Tizen development tools usage data collection.
   - Modified sdb device detection scheme to use --only-detect-tizen as default option.
 - Visual Studio Code

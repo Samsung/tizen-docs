@@ -2,6 +2,9 @@
 
 Release date: Nov. 30, 2017
 
+> [!WARNING]
+> **Tizen Studio is deprecated and no longer supported.** This is a historical document; mentions of Tizen Studio are kept for archival reference only. For current Tizen development, use the [VS Code Extension for Tizen](../../sdk-tools/vscode-ext/index.md) or [Visual Studio Tools for Tizen](../../sdk-tools/vstools/index.md).
+
 Tizen 3.0 public M4 has been released, mainly containing security fixes.
 
 
