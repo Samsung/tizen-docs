@@ -76,9 +76,6 @@
 ##### [Tool : SDB](/sdk-tools/baseline-sdk/common-tools/smart-development-bridge.md)
 ##### [Web Unit Test](/sdk-tools/vstools/getting-started/web-app-unit-test.md)
 
-#### SDK Diagnostics
-##### [Tizen Doctor](/sdk-tools/baseline-sdk/common-tools/tizen-doctor.md)
-
 #### Report Issues
 ##### [Issue Reporter](/sdk-tools/vstools/tools/issue-reporter-vs-tools.md)
 

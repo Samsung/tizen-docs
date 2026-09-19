@@ -102,10 +102,6 @@
 
 ##### [Tool: TV Web Simulator](/sdk-tools/vscode-ext/tools/tv-web-simulator.md)
 
-#### SDK Diagnostics
-
-##### [Tizen Doctor](/sdk-tools/baseline-sdk/common-tools/tizen-doctor.md)
-
 #### Report Issues
 
 ##### [Issue Reporter](/sdk-tools/vscode-ext/tools/issue-reporter.md)
