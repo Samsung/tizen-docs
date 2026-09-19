@@ -15,6 +15,9 @@
 
 ## Install Tizen SDK
 
+> [!NOTE]
+> Tizen Studio — the retired Eclipse-based IDE — is deprecated and no longer supported. The **Setup Tizen Studio** button label below is a legacy UI string; the wizard it launches installs the current **Tizen SDK**, not the deprecated Tizen Studio IDE.
+
    - Click on **Setup Tizen Studio** to launch Tizen **SDK Installer Wizard** in a new tab:
 
      ![Click Setup Tizen Studio](media/installation-wizard.png)

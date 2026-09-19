@@ -2,6 +2,9 @@
 
 Release date: May 31, 2018
 
+> [!WARNING]
+> **Tizen Studio is deprecated and no longer supported.** This is a historical document; mentions of Tizen Studio are kept for archival reference only. For current Tizen development, use the [VS Code Extension for Tizen](../../sdk-tools/vscode-ext/index.md) or [Visual Studio Tools for Tizen](../../sdk-tools/vstools/index.md).
+
 The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native/C# APIs.
 
 

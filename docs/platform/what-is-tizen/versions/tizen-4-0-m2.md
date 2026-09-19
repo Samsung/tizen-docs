@@ -2,6 +2,9 @@
 
 Since its first release in 2012, Tizen has evolved adapting to the market requirements and technical advances. As smart devices are widespread in the market, Tizen is deployed to mobile phones, wearable devices, TVs, and home appliances. In the near future, lots of IoT (Internet of Things) services will pervade everyone's life. Tizen is moving forward as a convergence platform and Tizen 4.0 is another big step to the world of everything connected.
 
+> [!WARNING]
+> **Tizen Studio is deprecated and no longer supported.** This is a historical document; mentions of Tizen Studio are kept for archival reference only. For current Tizen development, use the [VS Code Extension for Tizen](../../../sdk-tools/vscode-ext/index.md) or [Visual Studio Tools for Tizen](../../../sdk-tools/vstools/index.md).
+
 **Figure: Evolution of Tizen**
 
 ![img](media/4.0_Tizen_Evolution.png)

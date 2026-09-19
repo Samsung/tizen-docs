@@ -1,5 +1,8 @@
 # Overview Visual Studio Extension for Tizen
 
+> [!IMPORTANT]
+> **Tizen Studio is deprecated and no longer supported.** Do not install or use the retired Eclipse-based IDE. Visual Studio Tools for Tizen, documented on this site, is the supported way to develop Tizen applications in Visual Studio.
+
 Visual Studio Extension for Tizen supports Tizen native, web and .NET App development.
 
 On first launch, the extension installs its server and core apps in the selected SDK resource path. Its integrated tools are available from **Tools > Tizen**.
