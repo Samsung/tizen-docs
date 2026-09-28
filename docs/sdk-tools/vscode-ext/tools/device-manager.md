@@ -30,11 +30,11 @@ Each connected target shows a selection control, device name, platform version, 
 
 Use **Scan Device** to discover devices available on the local network. The Remote Device Manager also lets you connect, disconnect, edit, and delete saved devices.
 
-### Troubleshooting Remote Connection Issues
+## Troubleshooting Remote Connection Issues
 
 When connecting a remote device, you may encounter error messages. This section explains common issues and how to resolve them.
 
-#### Prerequisites
+### Prerequisites
 
 Before connecting a remote device, ensure the following:
 
@@ -44,7 +44,7 @@ Before connecting a remote device, ensure the following:
 - A valid network connection exists between the host PC and device
 - For detailed SDB configuration and troubleshooting, refer to the [Smart Development Bridge (SDB) documentation](../../baseline-sdk/common-tools/smart-development-bridge.md)
 
-#### Non-Standard Port Warning
+### Non-Standard Port Warning
 
 **When you see this message:** "This remote device is running on a non-standard port."
 
@@ -52,7 +52,7 @@ Before connecting a remote device, ensure the following:
 
 **How to resolve:**
 
-1. Verify the actual port number used by the device. On the device, run the following command and read the port number from the `:::<port>` line:
+1. Verify the actual port number used by the device. On the device shell, run the following command and read the port number from the `:::<port>` line:
 
    ```
    netstat -an | grep ":::" | grep "LISTEN "
@@ -66,7 +66,7 @@ Before connecting a remote device, ensure the following:
 
 3. Ports other than 26101 are allowed and commonly used for security reasons.
 
-#### No IP Address Error
+### No IP Address Error
 
 **When you see this message:** "There is no IP address, please check the physical connection."
 
@@ -74,7 +74,7 @@ Before connecting a remote device, ensure the following:
 
 **How to resolve:**
 
-1. On the device, navigate to Settings to find the device's IP address
+1. Find IP address of the tizen device
 2. From the host PC, run a ping test to verify the device is reachable: `ping <device_ip>`
 3. Ensure the host PC and device are on the same network
 4. Check your firewall settings to ensure the SDB port is not blocked
