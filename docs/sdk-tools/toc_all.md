@@ -157,3 +157,10 @@
 
 ### [Certificate Manager](/sdk-tools/vstools/tools/certificate-manager.md)
 ### [Device Manager](/sdk-tools/vstools/tools/device-manager.md)
+
+## Tizen SDK Skills
+### [Overview](/sdk-tools/tizen-sdk-skills/index.md)
+### [Installing Tizen SDK Skills](/sdk-tools/tizen-sdk-skills/install.md)
+### [Skills Reference](/sdk-tools/tizen-sdk-skills/skills-reference.md)
+### [Usage Scenarios](/sdk-tools/tizen-sdk-skills/usage-scenarios.md)
+### [Troubleshooting](/sdk-tools/tizen-sdk-skills/troubleshooting.md)

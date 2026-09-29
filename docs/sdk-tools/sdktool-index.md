@@ -44,6 +44,8 @@ Allows developers to create Tizen .NET application projects by selecting templat
 A versatile command-line tool for managing Tizen devices, enabling file transfers, shell commands, application installation/uninstallation, port forwarding, and log monitoring for efficient development and debugging.
 ### Tizen Activity Bar
 Provides a streamlined interface for managing and accessing Tizen development tools and features within Visual Studio Code.
+### Tizen SDK Skills
+Lets AI coding assistants (Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code) and a standalone `tizen-sdk` CLI run the Tizen SDK tools from natural-language requests, covering SDK installation, project creation and build, emulator and device management, app installation, remote debugging, certificates, log analysis, and Playwright tests.
 ### Tizen-Core CLI(Command Line Interface)
 Provides functionalities for developing Tizen applications using the terminal. It includes the entire development process from creating the project to running the application.
 ### Unit Test and Code Coverage
