@@ -118,4 +118,16 @@
 #### [Test Profile App Unit Test Code Coverage](/sdk-tools/vstools/getting-started/test-profile-app-unit-test-code-coverage.md)
 <!-- docscheck:referenced-sdk:end -->
 
+## Tizen SDK Skills for AI Agents
+
+### [Overview](/sdk-tools/tizen-sdk-skills/index.md)
+
+### [Installing Tizen SDK Skills](/sdk-tools/tizen-sdk-skills/install.md)
+
+### [Skills Reference](/sdk-tools/tizen-sdk-skills/skills-reference.md)
+
+### [Usage Scenarios](/sdk-tools/tizen-sdk-skills/usage-scenarios.md)
+
+### [Troubleshooting](/sdk-tools/tizen-sdk-skills/troubleshooting.md)
+
 ## [Tool Index](/sdk-tools/sdktool-index.md)
