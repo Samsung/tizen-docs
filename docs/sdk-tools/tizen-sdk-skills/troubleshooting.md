@@ -63,6 +63,14 @@ node bin/tizen-sdk.js --doctor
 2. For a physical device, check the USB cable or ask to "Connect to the device at `<ip>`" to use the network.
 3. Ask to "Show me the connected devices" to confirm.
 
+## Several devices are connected
+
+**When you see this:** An envelope with the category `multiple_devices`. The `details` list names the online serials, and `suggested_fix.command` repeats the command with a serial.
+
+**What it means:** More than one device or emulator is online and the request did not say which one to use.
+
+**How to resolve:** Name the target in your request, for example "Take a screenshot of emulator-26101", or ask the assistant to run the suggested command. Only online devices are listed.
+
 ## Tizen SDK path not found
 
 **When you see this:** A message that the SDK path does not exist, or that `~/.tizen.sdk.path.config` is missing.
@@ -131,6 +139,78 @@ node bin/tizen-sdk.js --doctor
 **What it means:** The app was built in Release configuration, which ships no portable PDB files.
 
 **How to resolve:** Ask to "Build the project with the Debug configuration", reinstall the app, and start debugging again.
+
+## A second F5 in Visual Studio Code ends the .NET session at once
+
+**When you see this:** The first .NET debug session works. After you stop it, the next F5 reports that the session started and then ends immediately.
+
+**What it means:** Stopping a session ends both the app and netcoredbg on the device, while the port forward on the host keeps accepting connections. Nothing is listening behind it anymore.
+
+**How to resolve:** Let `tizen-dotnet-debug` write the Visual Studio Code files by telling it the project directory, for example "Debug MyTizenDotnetApp in this project". It writes a `tasks.json` with a relaunch task and wires it into the `Tizen .NET (netcoredbg)` configuration as `preLaunchTask`, so every F5 relaunches the app first. If you wrote `launch.json` by hand, remove your entry and run the skill again. A `launch.json` that is not strict JSON, for example one with comments or trailing commas, is left alone with a warning.
+
+## The app name is rejected
+
+**When you see this:** Creating a project fails with `invalid_parameters` and a message that the name needs at least 10 letters or digits.
+
+**What it means:** The Tizen package ID is made of the first 10 ASCII letters and digits of the app name. Hyphens, underscores, spaces, and non-ASCII characters do not count, so `MyApp` or `dali-demo` cannot produce a valid ID. A package with a shorter ID would fail to install on the device.
+
+**How to resolve:** Choose a name such as `MyTizenWebApp` or `MyTizenApp01`. The assistant states the rule when it asks for the name and only offers names that pass it.
+
+## A Native project for Tizen 11.0 does not build
+
+**When you see this:** A Native project that was created from the Basic UI template with an earlier plugin version for a `tizen-11.0` profile fails to build, and the build output cannot resolve a consistent rootstrap.
+
+**What it means:** The template copy carried a fixed API version 10.0 in `tizen-manifest.xml`, while the project files named 11.0.
+
+**How to resolve:** Update the plugin and ask to "Show me the app templates". Listing the templates repairs template copies that are still identical to the shipped template. Then create the project again, or set the `api-version` attribute of the `<manifest>` element in your existing project to `11.0`.
+
+## The assistant stops after starting log collection
+
+**When you see this:** After you report a problem, the assistant starts the log collectors and ends its turn with two options, "Done, the symptom occurred" and "Nothing happened", without analyzing anything.
+
+**What it means:** This is the intended flow of `tizen-dlog-analyzer`. The reproduction window is yours. The assistant does not wait on a timer, and the guard hooks deny `sleep` around the analyzer.
+
+**How to resolve:** Reproduce the problem on the device, then answer with one of the two options. The analysis runs in both cases, because silent errors are common.
+
+## Log collection fails with sdk_path_not_set
+
+**When you see this:** A log action such as monitoring, app log collection, or kernel log collection fails with the category `sdk_path_not_set`, although a device is connected.
+
+**What it means:** The log analyzer stores its logs in the SDK data directory, for example `<sdk>-data/dloganalyzer/`, and reads the SDK location from `~/.tizen.sdk.path.config`. The file is missing, empty, or points to a directory that no longer exists. A byte order mark at the start of the file also breaks the path, and the message says so.
+
+**How to resolve:** Ask to "Set the Tizen SDK path to `<path>`", or ask to "Install the Tizen SDK" if you have none. Only the one-shot log dump and log clear work without a configured SDK path.
+
+## The emulator disappears after a reboot
+
+**When you see this:** On Windows, you ask to reboot the emulator, the emulator window closes, and `sdb` never sees the emulator again.
+
+**What it means:** A reboot from inside the guest resets the virtual CPU under the Windows Hypervisor Platform, which terminates the emulator process.
+
+**How to resolve:** Ask to "Restart the emulator" instead. `tizen-sdb-helper` hands that request to `tizen-device-manager`, which stops the emulator, and to `tizen-launch-emulator`, which starts it again. If you ask to reboot or shut down a device whose serial belongs to an emulator, the confirmation repeats this warning.
+
+## Cline stops checking an install after a few status checks
+
+**When you see this:** In Cline, the assistant reports that the SDK install continues in the background and ends its turn while the install is still running.
+
+**What it means:** Cline aborts a tool after five identical calls in a row and does not wake the assistant when a background job finishes. The installer therefore runs detached, and the assistant polls at most four times per turn.
+
+**How to resolve:** Wait for the install to finish, which takes 10 to 15 minutes for a full SDK, then ask "Tell me the install progress" or "설치 진행 상태를 알려줘". The assistant runs the status check and continues where it left off. No completion notice arrives on its own.
+
+## .NET setup used a bundled dotnet but did not persist it
+
+**When you see this:** `tizen-dotnet-setup` succeeds with a warning that the .NET SDK bundled inside a Tizen extension was used for this run only.
+
+**What it means:** No .NET SDK was found on `PATH`, in `DOTNET_ROOT`, or in an official install location, so the setup fell back to a dotnet that ships inside a Tizen extension. That copy can move or disappear when the extension updates, so it is not written into your user environment by default.
+
+**How to resolve:** Either install an official .NET SDK and run the setup again, or ask to "Set up .NET for Tizen and persist the environment", which passes `--persist-env`. If the result reports a stale `DOTNET_ROOT`, run the command it suggests to clear it.
+
+## File transfer fails with a path under the Git installation
+
+**When you see this:** In Claude Code on Windows, a push or pull to a device path such as `/opt/usr/apps/x` fails, or the envelope carries a warning that a path starting with `C:/Program Files/Git` was restored.
+
+**What it means:** Claude Code uses Git Bash, which rewrites any argument that starts with a slash into a path under the Git installation before the runner sees it. The runner detects this and restores the device path. The warning is informational.
+
+**How to resolve:** Pass the device path exactly as it is on the device. Do not add a second leading slash and do not set `MSYS_NO_PATHCONV`, which would also break the path to the runner itself. If the error names `EXEPATH`, the Git installation is in an unusual location. In that case run the request from PowerShell instead.
 
 ## The emulator does not start in WSL
 
