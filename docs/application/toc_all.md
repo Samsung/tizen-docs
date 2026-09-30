@@ -731,6 +731,7 @@
 ### Text Input, Gesture, and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
 #### [Input Method](/application/native/guides/text-input/input-method.md)
+#### [Tizen Core IMF](/application/native/guides/text-input/tizen-core-imf.md)
 #### [Autofill](/application/native/guides/text-input/autofill.md)
 #### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
 #### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
