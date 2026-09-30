@@ -4,7 +4,7 @@ Tizen SDK Skills (`tizen-sdk-skills`) is an open-source automation plugin that l
 
 The plugin works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. It also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen SDK Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. The plugin lives in the `tizen-sdk-skills/` directory of that repository.
+Tizen SDK Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. The plugin lives in the `tizen-sdk-skills/` directory of that repository. This section describes version 1.4.0.
 
 > [!NOTE]
 > You do not need to install the Tizen SDK before you start. The `tizen-sdk-install` skill downloads and installs it for you. See [Installing Tizen SDK Skills](install.md).
@@ -17,7 +17,7 @@ Tizen SDK Skills covers the whole application development lifecycle with 29 skil
 - **Create and build projects**: scaffold Native, .NET, Web, RPK resource, TV, and Platform projects from the templates in your installed SDK, import an existing `.wgt` archive as a project, and build `.tpk`, `.wgt`, `.rpk`, or `.rpm` packages.
 - **Manage emulators and devices**: create emulator images with the screen size you want, launch and stop them, find connected devices, connect a TV over the network instead of USB, and take screenshots.
 - **Install and run apps**: install a package on the emulator or device and launch it, push and pull files, and run everyday `sdb` actions such as port forwarding or rebooting.
-- **Debug and analyze**: set up remote debugging with GDB for Native apps, netcoredbg for .NET apps, and Remote Web Inspector or Chrome DevTools Protocol (CDP) for Web apps. Collect device logs (dlog) and get an automatic crash and exception analysis.
+- **Debug and analyze**: set up remote debugging with GDB for Native apps, netcoredbg for .NET apps, and Remote Web Inspector or Chrome DevTools Protocol (CDP) for Web apps. Collect device logs (dlog) and kernel logs and get an automatic crash and exception analysis. Report a symptom such as high CPU usage or a video that does not play, and the analyzer runs evidence probes, collects logs while you reproduce the problem, and reports the likely root cause.
 - **Test**: scaffold and run Playwright tests against a Tizen Web app over CDP.
 - **Sign**: generate author certificates, choose distributor certificates, manage signing profiles, and issue Samsung certificates for TV targets.
 
@@ -30,13 +30,13 @@ You can use Tizen SDK Skills from any of the following environments. The same sk
 | Host | What is installed | Notes |
 |------|-------------------|-------|
 | Claude Code | Skills, agents, and PreToolUse guard hooks | Long-running installs run in the background, and you are notified when they finish. |
-| Cline | Skills, guard hooks, and an always-on rules file | Long-running installs run in the foreground. Hooks are not active on Windows; the rules file covers that case. |
+| Cline | Skills, guard hooks, and an always-on rules file | Long-running installs run as a detached process. The assistant checks the status a few times, then hands control back to you. Ask for the install progress to continue. Hooks are not active on Windows; the rules file covers that case. |
 | Codex CLI | Skills, agents in TOML format, hooks, and a guard section in `AGENTS.md` | Hooks must be trusted once with the `/hooks` command after installation. |
 | Gemini CLI | Skills, agents, a BeforeTool hook adapter, and a guard section in `GEMINI.md` | |
 | Visual Studio Code | The Tizen AI Extension installs and synchronizes the plugin for Claude Code, Cline, and Codex CLI from inside the editor | No scripts to run. Uninstalling the extension removes everything it installed. |
 | Standalone `tizen-sdk` CLI | A single executable bundle of all 35 commands | No AI assistant needed. Prints machine-readable JSON, so it fits shell scripts and CI. |
 
-Windows, Linux, and macOS are supported. The Tizen emulator can also run inside Windows Subsystem for Linux (WSL2) with some extra configuration, which is described in the project repository.
+Windows, Linux, and macOS are supported. The log analyzer binary used by `tizen-dlog-analyzer` ships for Linux, Windows, and macOS (x86_64). The Tizen emulator can also run inside Windows Subsystem for Linux (WSL2) with some extra configuration, which is described in the project repository.
 
 ## How it works
 
@@ -96,8 +96,9 @@ Secrets such as certificate passwords are redacted from the envelope before it i
 The plugin installs a few guard hooks in your AI assistant that keep the generated work consistent with the Tizen SDK:
 
 - Project files such as `tizen-manifest.xml` and `config.xml` are never written by hand. They are always generated from the templates in the installed SDK.
-- The assistant does not call the `tizen` CLI or run `sdb` directly. It always goes through the skills, which know where the SDK is installed and return a structured result.
-- Destructive actions, such as deleting a project, clearing device logs, or rebooting a device, ask for confirmation first.
+- The assistant does not call the `tizen` CLI or run `sdb` directly. It always goes through the skills, which know where the SDK is installed and return a structured result. This includes diagnostics: kernel logs and CPU or memory measurements are taken by the log analyzer, not by hand-typed `dmesg`, `top`, or `ps` commands over `sdb`.
+- Any report of a problem, such as a crash, a freeze, or high CPU usage, is routed to `tizen-dlog-analyzer`, even when the request mentions the emulator or a device.
+- Destructive actions, such as deleting a project, clearing device logs, uninstalling a package, or rebooting a device, ask for confirmation first.
 
 ## Talk to it in natural language
 
@@ -110,6 +111,7 @@ Build this project and install it on the emulator
 Launch the emulator and show me the connected devices
 Debug this native app with GDB
 The app crashed. Analyze the dlog
+The emulator CPU went to 300% and the video does not play. Investigate
 타이젠 SDK 설치해줘
 웹앱 만들어서 에뮬레이터에 설치해줘
 ```
