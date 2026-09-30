@@ -70,6 +70,9 @@ Every host has a thin wrapper script in its own directory. All wrappers call the
 
 4. Restart Cline or reload the VS Code window.
 
+> [!NOTE]
+> Cline stops a tool after five identical calls in a row and does not wake the assistant when a background job finishes. SDK and package installs therefore run as a detached process. The assistant checks the status up to four times, then tells you that the install continues in the background and ends its turn. No completion notice arrives on its own. When you want to continue, ask "Tell me the install progress" or "설치 진행 상태를 알려줘".
+
 ## Codex CLI
 
 1. Run the setup script from the `tizen-sdk-skills` directory.
@@ -168,8 +171,10 @@ And these settings:
    node bin/tizen-sdk.js --capabilities     # which commands are usable right now
    node bin/tizen-sdk.js --help             # list every command
    node bin/tizen-sdk.js check-node
-   node bin/tizen-sdk.js build-project --project ~/tizen-apps/MyApp
+   node bin/tizen-sdk.js build-project --project ~/tizen-apps/MyTizenWebApp
    ```
+
+   `--help`, `--version`, and `<command> --help` also answer with a JSON envelope. The text is carried in `result.help_text`.
 
 3. Optionally put `tizen-sdk` on your `PATH`:
 
@@ -179,6 +184,9 @@ And these settings:
    ```
 
 If you run the launcher before building, it prints a `PLUGIN_NOT_BUILT` envelope that contains the build command. Prebuilt bundles are also attached to each GitHub release as `tizen-sdk-vX.Y.Z.zip`.
+
+> [!NOTE]
+> When you run the Node.js launcher, the installer commands (`sdk-install`, `platform-install`, `tv-sdk-install`, `update-package`, and the other package installers) return the installer command in `suggested_fix.command` instead of running it, so that you can start it in the background. Set the environment variable `TIZEN_SDK_INLINE_INSTALLER=1` to have them run the installer inline. The prebuilt bundle attached to a release always runs the installer inline.
 
 ## Verify the installation
 
