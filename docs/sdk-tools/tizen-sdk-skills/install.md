@@ -23,7 +23,14 @@ git clone https://github.com/Samsung/tizen-agent-skills.git
 cd tizen-agent-skills/tizen-sdk-skills
 ```
 
-Every host has a thin wrapper script in its own directory. All wrappers call the same shared setup implementation, so the result is identical across hosts.
+Every host has a thin wrapper script in its own directory. All wrappers call the same shared setup implementation, so the result is identical across hosts. You can also call the shared script directly with the host name as an argument:
+
+```
+bash common/setup/setup.sh --harness <claude|cline|codex|gemini> [--repo <path>] [--skip-validation] [--no-restart]
+.\common\setup\setup.ps1 -Harness <claude|cline|codex|gemini> [-RepoPath <path>] [-SkipValidation] [-NoRestart]
+```
+
+The PowerShell script also accepts the Bash spelling of the options (`--harness`, `--repo`, `--skip-validation`, `--no-restart`), so the same command line works in both shells.
 
 ## Claude Code
 
@@ -69,6 +76,8 @@ Every host has a thin wrapper script in its own directory. All wrappers call the
 3. Enable Hooks and Subagents once in the Cline settings, on Cline builds that support them. On Windows the hooks are inactive, and the rules file provides the same guard rules.
 
 4. Restart Cline or reload the VS Code window.
+
+On Windows, Cline runs commands in either a cmd.exe or a PowerShell terminal. Every skill contains a runner lookup for each shell, and the rules file tells the assistant to use the block that matches the terminal, because the cmd.exe form is a syntax error in PowerShell and the PowerShell form only works when its lines run directly in the terminal. If the assistant reports that it cannot find the runner, see [Troubleshooting Tizen SDK Skills](troubleshooting.md#the-runner-is-not-found-in-a-cline-terminal-on-windows).
 
 > [!NOTE]
 > Cline stops a tool after five identical calls in a row and does not wake the assistant when a background job finishes. SDK and package installs therefore run as a detached process. The assistant checks the status up to four times, then tells you that the install continues in the background and ends its turn. No completion notice arrives on its own. When you want to continue, ask "Tell me the install progress" or "설치 진행 상태를 알려줘".
