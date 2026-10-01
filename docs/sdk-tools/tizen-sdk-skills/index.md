@@ -4,7 +4,7 @@ Tizen SDK Skills (`tizen-sdk-skills`) is an open-source automation plugin that l
 
 The plugin works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. It also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen SDK Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. The plugin lives in the `tizen-sdk-skills/` directory of that repository. This section describes version 1.4.0.
+Tizen SDK Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. The plugin lives in the `tizen-sdk-skills/` directory of that repository. This section describes version 1.4.1.
 
 > [!NOTE]
 > You do not need to install the Tizen SDK before you start. The `tizen-sdk-install` skill downloads and installs it for you. See [Installing Tizen SDK Skills](install.md).
@@ -30,7 +30,7 @@ You can use Tizen SDK Skills from any of the following environments. The same sk
 | Host | What is installed | Notes |
 |------|-------------------|-------|
 | Claude Code | Skills, agents, and PreToolUse guard hooks | Long-running installs run in the background, and you are notified when they finish. |
-| Cline | Skills, guard hooks, and an always-on rules file | Long-running installs run as a detached process. The assistant checks the status a few times, then hands control back to you. Ask for the install progress to continue. Hooks are not active on Windows; the rules file covers that case. |
+| Cline | Skills, guard hooks, and an always-on rules file | Long-running installs run as a detached process. The assistant checks the status a few times, then hands control back to you. Ask for the install progress to continue. Hooks are not active on Windows; the rules file covers that case. On Windows, each skill carries a separate runner lookup for the cmd.exe and PowerShell terminals. |
 | Codex CLI | Skills, agents in TOML format, hooks, and a guard section in `AGENTS.md` | Hooks must be trusted once with the `/hooks` command after installation. |
 | Gemini CLI | Skills, agents, a BeforeTool hook adapter, and a guard section in `GEMINI.md` | |
 | Visual Studio Code | The Tizen AI Extension installs and synchronizes the plugin for Claude Code, Cline, and Codex CLI from inside the editor | No scripts to run. Uninstalling the extension removes everything it installed. |
