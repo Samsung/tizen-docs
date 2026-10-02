@@ -220,6 +220,7 @@ The following list defines Tizen Native API. The list describes the API modules 
   | HarfBuzz                  | Provides functions for text shaping. | [Latest](../api/common/latest/group__OPENSRC__HARFBUZZ__FRAMEWORK.html) |  |
   | Minicontrol               | Provides functions for creating and displaying an EFL socket window. | [Latest](../api/common/latest/group__MINICONTROL__LIBRARY.html) | [Minicontrol Window](notification/minicontrol.md) |
   | TBM Surface               | Provides functions for the graphics buffer.  | [Latest](../api/common/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html) | [Graphic Buffer and Surface](graphics/graphic-buffer.md) |
+  | Tizen Core Wayland        | Provides functions for managing the Wayland display connection, windows, and input events on the Tizen Core main loop. |  | [Tizen Core Wayland](ui/tizen-core-wl/index.md) |
   | Tizen Window System Shell            | Allows you to communicate with the window manager.   | [Latest](../api/common/latest/group__TIZEN__WS__SHELL__MODULE.html) | [Tizen Window System Shell](ui/tizen-ws-shell/index.md) |
   | Vulkan                    | Provides functions for rendering 3D and 2D graphics in embedded systems. | [Latest](../api/common/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) | Vulkan |
 

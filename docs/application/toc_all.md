@@ -630,6 +630,7 @@
 #### [Graphic Buffer and Surface](/application/native/guides/graphics/graphic-buffer.md)
 
 ### User Interface
+#### [Tizen Core Wayland](/application/native/guides/ui/tizen-core-wl/index.md)
 #### [Tizen Window System Shell](/application/native/guides/ui/tizen-ws-shell/index.md)
 
 ### Notifications and Content Sharing
