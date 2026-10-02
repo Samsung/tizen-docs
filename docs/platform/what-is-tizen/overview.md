@@ -55,18 +55,3 @@ Samsung holds the highest market share in the global TV market and its recent mo
 ## Productivity
 
 To facilitate developing Tizen applications, Tizen provides two IDE extensions: [Visual Studio Code Extension for Tizen](../../sdk-tools/vscode-ext/index.md) and [Visual Studio Tools for Tizen](../../sdk-tools/vstools/index.md). With either extension you can develop, build, debug, profile, and emulate Tizen Web, Native, and .NET applications. Both extensions share the [Tizen SDK](../../sdk-tools/baseline-sdk/common-tools/overview.md), whose tools include the Emulator, Package Manager, Device Manager, Certificate Manager, and Dynamic Analyzer for profiling.
-
-## Versions
-
-The latest versions of the Tizen platform include the following:
-
-- [Tizen 9.0](versions/tizen-9-0-m2.md)
-- [Tizen 8.0](versions/tizen-8-0-m2.md)
-- [Tizen 7.0](versions/tizen-7-0-m2.md)
-- [Tizen 6.5](versions/tizen-6-5-m2.md)
-- [Tizen 6.0](versions/tizen-6-0-m2.md)
-- [Tizen 5.5](versions/tizen-5-5-m2.md)
-- [Tizen 5.0](versions/tizen-5-0-m2.md)
-- [Tizen 4.0 M2](versions/tizen-4-0-m2.md)
-- [Tizen 4.0 M1](versions/tizen-4-0-m1.md)
-- [Tizen 3.0](versions/tizen-3-0.md)
