@@ -1,4 +1,4 @@
-# Reference
+# Tools
 ## [Gerrit](/platform/reference/gerrit-usage.md)
 ## Git Build System (GBS)
 ### [Overview](/platform/reference/gbs/gbs-overview.md)
