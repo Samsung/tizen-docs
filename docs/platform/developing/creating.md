@@ -18,7 +18,7 @@ The tool offers three major functions as follows:
 - Chroot into an image.
 - Convert an image to another format.
 
-For more information on the tool and its functions, see [MIC Image Creator](../reference/mic/mic-overview.md).
+For more information on the tool and its functions, see [MIC Image Creator](/platform/hal/reference/mic/mic-overview.md).
 
 ## Prepare the kickstart file
 
