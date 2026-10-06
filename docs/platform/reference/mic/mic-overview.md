@@ -13,7 +13,7 @@ MIC is an image creator used when creating images for Tizen. With the MIC tool, 
 
 This is a very useful function when handling situations sensitive to image format.
 
-Before going into further MIC details, make sure you have [set up the development environment](../../developing/setting-up.md) and learned how to [install and upgrade tools](../../developing/installing.md).
+Before going into further MIC details, make sure you have [set up the development environment](/platform/hal/development/developing/setting-up.md) and learned how to [install and upgrade tools](/platform/hal/development/developing/installing.md).
 
 Afterwards, become familiar with MIC by reading the following instructions:
 

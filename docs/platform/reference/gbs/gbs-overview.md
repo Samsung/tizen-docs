@@ -2,7 +2,7 @@
 
 GBS (git-build-system) is a command line tool that supports Tizen package development. It is used to generate tarballs based on Git repositories, to do local test buildings, and to submit code to OBS (Tizen's main build service).
 
-Before going into further GBS details, make sure you have [set up the development environment](../../developing/setting-up.md) and learned how to [install and upgrade tools](../../developing/installing.md).
+Before going into further GBS details, make sure you have [set up the development environment](/platform/hal/development/developing/setting-up.md) and learned how to [install and upgrade tools](/platform/hal/development/developing/installing.md).
 
 Afterwards, become familiar with GBS by reading the following instructions:
 

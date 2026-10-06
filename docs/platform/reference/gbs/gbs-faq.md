@@ -4,7 +4,7 @@
 
 **Q**: I cannot get zypper to refresh from [http://download.tizen.org/tools/latest-release/openSUSE_13.2/](http://download.tizen.org/tools/latest-release/openSUSE_13.2/), but I am not getting a repository error. What is wrong?
 
-**A**: This can be caused by proxy settings. Double-check the proxy settings and add the `-E` option when running the `sudo zypper refresh` command. If that solves the problem, preserve the environment variables by modifying `/etc/sudoers`. For more information, see [Setting up Development Environment](../../developing/setting-up.md).
+**A**: This can be caused by proxy settings. Double-check the proxy settings and add the `-E` option when running the `sudo zypper refresh` command. If that solves the problem, preserve the environment variables by modifying `/etc/sudoers`. For more information, see [Setting up Development Environment](/platform/hal/development/developing/setting-up.md).
 
 Another possible reason is a cached version at the proxy server. Try running the following commands to clean the cache:
 ```
@@ -20,7 +20,7 @@ $ zypper install gbs
 
 **Q**: How do I update GBS and its dependencies?
 
-**A**: GBS is open source software. For more information, see [Installing Development Tools](../../developing/installing.md).
+**A**: GBS is open source software. For more information, see [Installing Development Tools](/platform/hal/development/developing/installing.md).
 
 
 ## GBS build issues
