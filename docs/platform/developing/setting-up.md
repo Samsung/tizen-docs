@@ -180,7 +180,7 @@ profile = profile.unified_standard
 
 > [!NOTE]
 > The default GBS build parameters, based on the above block, are as follows:
-> - Tizen version: latest (check [release note](../release-notes/latest-note.md)).
+> - Tizen version: latest.
 > - Profile: unified
 > - Repository: standard
 
