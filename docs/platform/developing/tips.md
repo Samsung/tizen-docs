@@ -37,7 +37,7 @@
 - **Speed up a full build using GBS**
 
   - Normally a full build using GBS takes more time. So, GBS provides several options to speed up the build.
-    You can see other build options on [gbs-build](/platform/hal/reference/gbs/gbs-build.md) page and use a recommended option in this page.
+    You can see other build options on [gbs-build](/platform/hal/tools/gbs/gbs-build.md) page and use a recommended option in this page.
   - For example:
     ```
     $ gbs build -A i586 --threads=6 --define "_smp_mflags -j8" --baselibs --clean-once --skip-srcrpm
