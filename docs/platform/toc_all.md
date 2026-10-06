@@ -1,15 +1,3 @@
-# What is Tizen?
-## [Overview](/platform/what-is-tizen/overview.md)
-## Devices
-### [Products](/platform/what-is-tizen/devices/products.md)
-### [Custom](/platform/what-is-tizen/profiles/tizen-custom.md)
-
-# Get Started
-## [Tizen Open Source Project](/platform/get-started/open-source-project.md)
-## [Development Workflow](/platform/get-started/work-flow.md)
-## [Git Repository Structure](/platform/get-started/git-repo-structure.md)
-## [Typographic Conventions](/platform/get-started/conventions.md)
-
 # Developing
 ## [Installing Development Tools](/platform/developing/installing.md)
 ## [Setting up Development Environment](/platform/developing/setting-up.md)

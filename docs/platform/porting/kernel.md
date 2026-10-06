@@ -4,7 +4,7 @@ For information on how to set up the Tizen OS development environment, see [Sett
 
 ## Prerequisite
 
-If you want to contribute to Tizen, You need to register Tizen Account, see [Get started with Tizen](../get-started/open-source-project.md#get-started-with-tizen)
+If you want to contribute to Tizen, You need to register Tizen Account.
 
 ## U-Boot build
 
