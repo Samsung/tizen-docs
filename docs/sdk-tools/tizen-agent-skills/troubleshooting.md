@@ -132,6 +132,27 @@ node bin/tizen-sdk.js --doctor
 
 **How to resolve:** No action is needed. The setup installs an always-on rules file under `Documents/Cline/Rules` that applies the same guard rules on Windows.
 
+## The runner is not found in a Cline terminal on Windows
+
+**When you see this:** In Cline on Windows, the assistant reports that it cannot find the runner for a skill, or one of these errors appears:
+
+- `AmpersandNotAllowed` or "The ampersand (&) character is not allowed" in a PowerShell terminal.
+- "foreach 뒤에 변수 이름이 없습니다" or "Missing variable name after foreach".
+- `MODULE_NOT_FOUND` with a message such as `Cannot find module '<your working directory>\list-templates'`.
+
+**What it means:** Each skill contains a runner lookup for the cmd.exe terminal and another for the PowerShell terminal. The lookup for the wrong shell was used:
+
+- The cmd.exe lookup chains `dir` commands with `&`, which is a reserved character in PowerShell.
+- The PowerShell lookup was wrapped in `powershell -Command "..."`. The outer shell expands `$CLI`, `$env:USERPROFILE`, and the other variables first, and the inner shell receives an empty script.
+- The `node "$CLI" ...` line was run on its own, without the two lookup lines before it in the same session. `$CLI` is then empty, Windows PowerShell drops the empty argument, and Node.js treats the first command argument as the script path. The module is not missing. The lookup was skipped.
+
+**How to resolve:**
+
+1. Update the plugin to version 1.0.0 or later and run the setup script again. From this version the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
+2. In a PowerShell terminal, run all three lines of the PowerShell block in order, in the same session, directly in the terminal.
+3. In a cmd.exe terminal, run the `cmd /c dir ...` chain and then `node "<found path>" ...` with the highest version that was listed.
+4. If no lookup finds a runner in `~/.claude`, `~/.cline`, `~/.codex`, or `~/.gemini`, the plugin is not installed on this machine. Install it first.
+
 ## Breakpoints do not bind in a .NET app
 
 **When you see this:** `tizen-dotnet-debug` stops with `build_failed`, or netcoredbg attaches but breakpoints are never hit.
@@ -179,6 +200,37 @@ node bin/tizen-sdk.js --doctor
 **What it means:** The log analyzer stores its logs in the SDK data directory, for example `<sdk>-data/dloganalyzer/`, and reads the SDK location from `~/.tizen.sdk.path.config`. The file is missing, empty, or points to a directory that no longer exists. A byte order mark at the start of the file also breaks the path, and the message says so.
 
 **How to resolve:** Ask to "Set the Tizen SDK path to `<path>`", or ask to "Install the Tizen SDK" if you have none. Only the one-shot log dump and log clear work without a configured SDK path.
+
+## Log collection is refused with already_running
+
+**When you see this:** Starting log monitoring or app log collection returns the category `already_running`. The message names a process ID that holds the collector lock and the command that stops it.
+
+**What it means:** The log analyzer runs one device log collector at a time and records the owner in a lock file under the log directory. Another collector is already streaming the same log buffer. It is either a session this assistant started, or a collector from an earlier session that outlived its tracking files.
+
+**How to resolve:** Follow the command in the envelope:
+
+- If system-wide monitoring holds the lock and you asked for app log collection, keep the monitor running. It already captures the app, and the analysis uses its capture.
+- If the holder is a session you started, stop it first with "Stop log monitoring" or "Stop collecting the app logs", then start again.
+- If the holder is a collector from an earlier session, the envelope tells you to terminate that process after confirming that it is still the analyzer. Terminate it and start again.
+- If the envelope reports a stale lock, the process ID has been reused by an unrelated program. Do not terminate that program. The lock file can be removed once no analyzer process is running.
+
+Do not delete the lock file while its holder runs. Two collectors on the same directory corrupt each other's logs.
+
+## The log analyzer warns about UnicodeEncodeError on Windows
+
+**When you see this:** On Windows, an investigation, probe, or error analysis succeeds, but the envelope carries a warning that mentions `UnicodeEncodeError` and a code page such as cp949, and `output_truncated` is `true`.
+
+**What it means:** The analyzer binary writes through the system code page and stopped on a character that the code page cannot represent, after it had already printed the report. The runner keeps the printed output and returns it as a success.
+
+**How to resolve:** Use the output as it is. Retrying with `chcp 65001` or with the `PYTHONUTF8` or `PYTHONIOENCODING` environment variables has no effect, because they do not reach the bundled binary. If the end of the report matters, check the log files in the SDK data directory under `dloganalyzer/`.
+
+## The log analyzer reports No such command
+
+**When you see this:** A symptom investigation fails with a message such as `No such command 'investigate'`, although the plugin is up to date.
+
+**What it means:** Before version 1.0.0 the runner used the first analyzer binary it found in the plugin caches, which could be an older version from an earlier plugin install. From version 1.0.0 the runner always uses the binary that ships with its own plugin version, and falls back to the newest cached version only when that binary is missing.
+
+**How to resolve:** Update the plugin and run the setup script again. You can also remove old version directories under `~/<dot-dir>/plugins/cache/tizen-platform/tizen-sdk-skills/` that you no longer need.
 
 ## The emulator disappears after a reboot
 

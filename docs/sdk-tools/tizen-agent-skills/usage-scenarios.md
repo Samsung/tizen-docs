@@ -176,7 +176,7 @@ Goal: find out why the emulator or an app misbehaves when nothing crashes.
 
    The request goes to `tizen-dlog-analyzer`, not to the device manager, even though it mentions the emulator. The analyzer detects the device on its own.
 
-2. **First pass and collectors.** The analyzer runs a one-shot investigation that matches your words to probe bundles for CPU, memory, freezes, media, and graphics, and summarizes what it found. It then starts the system-wide log monitor, the kernel log collector, and the app-scoped log collector, and asks you to reproduce the problem. It does not wait on a timer. The reproduction window is yours.
+2. **First pass and collectors.** The analyzer runs a one-shot investigation that matches your words to probe bundles for CPU, memory, freezes, media, and graphics, and summarizes what it found. It then starts the system-wide log monitor, the kernel log collector, and the app-scoped log collector, and asks you to reproduce the problem. It does not wait on a timer. The reproduction window is yours. Only one device log collector can run at a time, so the app-scoped collector may answer `already_running` and name the monitor as the holder. In that case the monitor keeps running and already captures the app, and its capture is analyzed in step 4.
 
 3. **Reproduce the problem**, then answer with one of the two options it offers:
 
@@ -256,6 +256,7 @@ Use `tizen-sdk --capabilities` to see which commands can run on the current mach
 - **Pick a long enough app name.** The name needs at least 10 ASCII letters or digits. Names such as `MyApp` or `TestApp` are rejected before anything is created.
 - **Long installs.** In Claude Code, SDK and package installs run in the background and you can keep working. In Cline they run as a detached process, the assistant checks the status up to four times, and then hands control back to you. Ask for the install progress to continue. In Codex CLI, ask for long operations to run in the background so that they are not cut off by the per-call time limit.
 - **Restart the emulator the safe way.** Ask to "restart the emulator". The emulator is stopped and started again instead of being rebooted from inside, which terminates the emulator on Windows.
+- **Cline on Windows.** The skills work in both the cmd.exe and the PowerShell terminal. If the assistant reports that it cannot find a runner, or a `MODULE_NOT_FOUND` error names a file in your working directory, it ran the lookup for the wrong shell. See [Troubleshooting Tizen Agent Skills](troubleshooting.md#the-runner-is-not-found-in-a-cline-terminal-on-windows).
 - **Korean works too.** Requests such as "타이젠 SDK 설치해줘" or "웹앱 만들어서 에뮬레이터에 설치해줘" are routed to the same skills.
 - **Read the envelope.** When something fails, the error object contains a stable error code, a category such as `device_not_found`, and often a suggested command. You can ask the assistant to apply the suggested fix.
 - **Detailed walkthroughs.** The project repository contains longer step-by-step guides for each scenario under `usage/` and `docs/`, including a WSL emulator guide and a Platform GBS build guide.

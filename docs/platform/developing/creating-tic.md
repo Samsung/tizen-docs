@@ -2,7 +2,7 @@
 
 This topic provides information on how to create a Tizen image with TIC.
 
-To use TIC, you have to set up the docker initially. For information on docker setup, see [Set up docker](../reference/set-up-docker.md).
+To use TIC, you have to set up the docker initially. For information on docker setup, see [Set up docker](/platform/hal/tools/set-up-docker.md).
 
 ## Tizen Image Creator
 
@@ -87,4 +87,4 @@ To flash the generated image by TIC to a target device for verification, see [Fl
 
 To use the generated SDK for application development, see [Configuring the Package Manager](../../sdk-tools/baseline-sdk/setup/advanced-configuration.md).
 
-[TIC Frequently Asked Questions](../reference/tic-faq.md) describes frequently asked questions and known issues.
+[TIC Frequently Asked Questions](/platform/hal/tools/tic-faq.md) describes frequently asked questions and known issues.

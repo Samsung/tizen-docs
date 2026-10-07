@@ -1,4 +1,4 @@
-# Developing
+# Development
 ## [Installing Development Tools](/platform/developing/installing.md)
 ## [Setting up Development Environment](/platform/developing/setting-up.md)
 ## [Cloning Tizen Source Files](/platform/developing/cloning.md)

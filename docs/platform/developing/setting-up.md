@@ -180,7 +180,7 @@ profile = profile.unified_standard
 
 > [!NOTE]
 > The default GBS build parameters, based on the above block, are as follows:
-> - Tizen version: latest (check [release note](../release-notes/latest-note.md)).
+> - Tizen version: latest.
 > - Profile: unified
 > - Repository: standard
 
@@ -217,7 +217,7 @@ Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, 
 > url = http://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/tizen-unified_20230905.212203/repos/standard/packages/
 > ```
 
-For more information on `.gbs.conf`, see [GBS Configuration](../reference/gbs/gbs-conf.md).
+For more information on `.gbs.conf`, see [GBS Configuration](/platform/hal/tools/gbs/gbs-conf.md).
 
 <a name="setting-up-the-repo-tool"></a>
 ## Set up the repo tool

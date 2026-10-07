@@ -2,8 +2,6 @@
 
 This topic describes how you can contribute code to Tizen.
 
-For more information about the whole work process, see [Tizen Development Workflow](../get-started/work-flow.md).
-
 ## Clone source files over SSH
 
 To clone source files for a specific project, see [Cloning Tizen Source Files](cloning.md).

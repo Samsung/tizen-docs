@@ -41,7 +41,7 @@ You can use Tizen Agent Skills from any of the following environments. The same 
 | Host | What is installed | Notes |
 |------|-------------------|-------|
 | Claude Code | Skills, agents, and PreToolUse guard hooks | Long-running installs run in the background, and you are notified when they finish. |
-| Cline | Skills, guard hooks, and an always-on rules file | Long-running installs run as a detached process. The assistant checks the status a few times, then hands control back to you. Ask for the install progress to continue. Hooks are not active on Windows; the rules file covers that case. |
+| Cline | Skills, guard hooks, and an always-on rules file | Long-running installs run as a detached process. The assistant checks the status a few times, then hands control back to you. Ask for the install progress to continue. Hooks are not active on Windows; the rules file covers that case. On Windows, each skill carries a separate runner lookup for the cmd.exe and PowerShell terminals. |
 | Codex CLI | Skills, agents in TOML format, hooks, and a guard section in `AGENTS.md` | Hooks must be trusted once with the `/hooks` command after installation. |
 | Gemini CLI | Skills, agents, a BeforeTool hook adapter, and a guard section in `GEMINI.md` | |
 | Visual Studio Code | The Tizen AI Extension installs and synchronizes the plugin for Claude Code, Cline, and Codex CLI from inside the editor | No scripts to run. Uninstalling the extension removes everything it installed. |
@@ -135,6 +135,7 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 - [Tizen Agent Skills reference](skills-reference.md): every skill grouped by task, with example requests.
 - [Using Tizen Agent Skills](usage-scenarios.md): end-to-end walkthroughs from a fresh machine to a debugged app.
 - [Troubleshooting Tizen Agent Skills](troubleshooting.md): common messages and how to resolve them.
+- [Tizen Agent Skills 요약 (한국어)](tizen-agent-skills-summary-ko.md): Korean-language summary of Tizen Agent Skills.
 
 ## Related information
 * Dependencies

@@ -1,27 +1,4 @@
-# What is Tizen?
-## [Overview](/platform/what-is-tizen/overview.md)
-## Devices
-### [Products](/platform/what-is-tizen/devices/products.md)
-### [Custom](/platform/what-is-tizen/profiles/tizen-custom.md)
-## Versions
-### [Tizen 9.0](/platform/what-is-tizen/versions/tizen-9-0-m2.md)
-### [Tizen 8.0](/platform/what-is-tizen/versions/tizen-8-0-m2.md)
-### [Tizen 7.0](/platform/what-is-tizen/versions/tizen-7-0-m2.md)
-### [Tizen 6.5](/platform/what-is-tizen/versions/tizen-6-5-m2.md)
-### [Tizen 6.0](/platform/what-is-tizen/versions/tizen-6-0-m2.md)
-### [Tizen 5.5](/platform/what-is-tizen/versions/tizen-5-5-m2.md)
-### [Tizen 5.0](/platform/what-is-tizen/versions/tizen-5-0-m2.md)
-### [Tizen 4.0 M2](/platform/what-is-tizen/versions/tizen-4-0-m2.md)
-### [Tizen 4.0 M1](/platform/what-is-tizen/versions/tizen-4-0-m1.md)
-### [Tizen 3.0](/platform/what-is-tizen/versions/tizen-3-0.md)
-
-# Get Started
-## [Tizen Open Source Project](/platform/get-started/open-source-project.md)
-## [Development Workflow](/platform/get-started/work-flow.md)
-## [Git Repository Structure](/platform/get-started/git-repo-structure.md)
-## [Typographic Conventions](/platform/get-started/conventions.md)
-
-# Developing
+# Development
 ## [Installing Development Tools](/platform/developing/installing.md)
 ## [Setting up Development Environment](/platform/developing/setting-up.md)
 ## [Cloning Tizen Source Files](/platform/developing/cloning.md)
@@ -58,7 +35,7 @@
 ### [Telephony](/platform/porting/telephony.md)
 ### [Application](/platform/porting/application.md)
 
-# Reference
+# Tools
 ## [Gerrit](/platform/reference/gerrit-usage.md)
 ## Git Build System (GBS)
 ### [Overview](/platform/reference/gbs/gbs-overview.md)
@@ -87,42 +64,6 @@
 
 ## [Tizen Image Creator FAQ](/platform/reference/tic-faq.md)
 ## [Set up docker](/platform/reference/set-up-docker.md)
-# Release Notes
-## [Latest Release Notes](/platform/release-notes/latest-note.md)
-## [Tizen 10.0 Public](/platform/release-notes/tizen-10-0.md)
-## [Tizen 9.0 Public M2](/platform/release-notes/tizen-9-0-m2.md)
-## [Tizen 9.0 Public M1](/platform/release-notes/tizen-9-0-m1.md)
-## [Tizen 8.0 Public M2](/platform/release-notes/tizen-8-0-m2.md)
-## [Tizen 8.0 Public M1](/platform/release-notes/tizen-8-0-m1.md)
-## [Tizen 7.0 Public M2](/platform/release-notes/tizen-7-0-m2.md)
-## [Tizen 7.0 Public M1](/platform/release-notes/tizen-7-0-m1.md)
-## [Tizen 6.5 Public M2](/platform/release-notes/tizen-6-5-m2.md)
-## [Tizen 6.5 Public M1](/platform/release-notes/tizen-6-5-m1.md)
-## [Tizen 6.0 Public M2](/platform/release-notes/tizen-6-0-m2.md)
-## [Tizen 6.0 Public M1](/platform/release-notes/tizen-6-0-m1.md)
-## [Tizen 5.5 Public M3](/platform/release-notes/tizen-5-5-m3.md)
-## [Tizen 5.5 Public M2](/platform/release-notes/tizen-5-5-m2.md)
-## [Tizen 5.5 Public M1](/platform/release-notes/tizen-5-5-m1.md)
-## [Tizen 5.0 Public M2](/platform/release-notes/tizen-5-0-m2.md)
-## [Tizen 5.0 Public M1](/platform/release-notes/tizen-5-0-m1.md)
-## [Tizen 4.0 Public M3](/platform/release-notes/tizen-4-0-m3.md)
-## [Tizen 4.0 Public M2](/platform/release-notes/tizen-4-0-m2.md)
-## [Tizen 4.0 Public M1](/platform/release-notes/tizen-4-0-m1.md)
-## [Tizen 3.0 Public M4](/platform/release-notes/tizen-3-0-m4.md)
-## [Tizen 3.0 Public M3](/platform/release-notes/tizen-3-0-m3.md)
-## [Tizen 3.0 Public M2](/platform/release-notes/tizen-3-0-m2.md)
-## [Tizen 3.0 Milestones](/platform/release-notes/tizen-3-0-milestones.md)
-## [Tizen Common Milestones](/platform/release-notes/tizen-common-milestones.md)
-## [Tizen IVI 3.0 Milestones](/platform/release-notes/tizen-ivi-3-0-milestones.md)
-## [Tizen 2.3.2 for Wearable](/platform/release-notes/tizen-2-3-2.md)
-## [Tizen 2.4](/platform/release-notes/tizen-2-4.md)
-## [Tizen 2.3.1](/platform/release-notes/tizen-2-3-1.md)
-## [Tizen 2.3](/platform/release-notes/tizen-2-3.md)
-## [Tizen 2.2.1](/platform/release-notes/tizen-2-2-1.md)
-## [Tizen 2.2](/platform/release-notes/tizen-2-2.md)
-## [Tizen 2.1](/platform/release-notes/tizen-2-1.md)
-## [Tizen 2.0](/platform/release-notes/tizen-2-0.md)
-## [Tizen 1.0](/platform/release-notes/tizen-1-0.md)
 
 # Compliance
 ## [Tizen Compliance Program](/platform/compliance/compliance-program.md)

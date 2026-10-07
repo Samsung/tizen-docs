@@ -4,7 +4,7 @@ For information on how to set up the Tizen OS development environment, see [Sett
 
 ## Prerequisite
 
-If you want to contribute to Tizen, You need to register Tizen Account, see [Get started with Tizen](../get-started/open-source-project.md#get-started-with-tizen)
+If you want to contribute to Tizen, You need to register Tizen Account.
 
 ## U-Boot build
 
@@ -82,7 +82,7 @@ To build the Tizen kernel for the Raspberry Pi 4 board, follow these steps:
 	```
 
 
-For information on how to create an image using MIC, see [MIC Image Creator](../reference/mic/mic-overview.md).
+For information on how to create an image using MIC, see [MIC Image Creator](/platform/hal/tools/mic/mic-overview.md).
 
 > [!TIP] If use USB-PWR  Splitter, you can utilize the USB OTG function as well as the USB SDB and lthor on linux environment.
 

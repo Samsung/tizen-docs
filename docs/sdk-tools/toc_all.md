@@ -164,3 +164,4 @@
 ### [Skills Reference](/sdk-tools/tizen-agent-skills/skills-reference.md)
 ### [Usage Scenarios](/sdk-tools/tizen-agent-skills/usage-scenarios.md)
 ### [Troubleshooting](/sdk-tools/tizen-agent-skills/troubleshooting.md)
+### [Tizen Agent Skills 요약 (한국어)](/sdk-tools/tizen-agent-skills/tizen-agent-skills-summary-ko.md)
