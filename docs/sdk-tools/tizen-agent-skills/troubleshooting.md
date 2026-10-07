@@ -1,6 +1,6 @@
-# Troubleshooting Tizen SDK Skills
+# Troubleshooting Tizen Agent Skills
 
-This page lists messages and situations you may run into with Tizen SDK Skills and how to resolve them. Every failure is reported as a Standard JSON Envelope with an `error_code`, an `error_category`, and usually a `suggested_fix`, so the first step is always to read that object, or to ask your assistant to apply the suggested fix.
+This page lists messages and situations you may run into with Tizen Agent Skills and how to resolve them. Every failure is reported as a Standard JSON Envelope with an `error_code`, an `error_category`, and usually a `suggested_fix`, so the first step is always to read that object, or to ask your assistant to apply the suggested fix.
 
 ## A skill is not picked up
 
@@ -106,7 +106,7 @@ node bin/tizen-sdk.js --doctor
 
 **How to resolve:**
 
-1. Restart Codex and run `/hooks` to trust the Tizen SDK Skills hooks.
+1. Restart Codex and run `/hooks` to trust the Tizen Agent Skills hooks.
 2. If they still do not run, add the following to `~/.codex/config.toml`:
 
    ```
@@ -228,6 +228,6 @@ If the steps above do not help, open an issue in the [tizen-agent-skills](https:
 * Dependencies
   - Node.js 20 or higher
   - Tizen SDK 10.0 and higher
-* [Tizen SDK Skills](index.md)
-* [Installing Tizen SDK Skills](install.md)
-* [Using Tizen SDK Skills](usage-scenarios.md)
+* [Tizen Agent Skills](index.md)
+* [Installing Tizen Agent Skills](install.md)
+* [Using Tizen Agent Skills](usage-scenarios.md)

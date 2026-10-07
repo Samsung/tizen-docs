@@ -25,7 +25,7 @@ Baseline SDK with the CLI installer instead. See
 [Installing the Tizen SDK](../setup/install-sdk.md).
 
 If you work with an AI coding assistant such as Claude Code, Cline, Codex CLI, or Gemini CLI,
-[Tizen SDK Skills](../../tizen-sdk-skills/index.md) can install the Baseline SDK and drive these
+[Tizen Agent Skills](../../tizen-agent-skills/index.md) can install the Baseline SDK and drive these
 tools for you from natural-language requests.
 
 Baseline SDK includes the following standalone tools.

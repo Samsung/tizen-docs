@@ -1,8 +1,8 @@
-# Using Tizen SDK Skills
+# Using Tizen Agent Skills
 
-This page walks through common Tizen development workflows with Tizen SDK Skills. Each step shows what to type in your AI coding assistant, which skill answers, and what a successful result looks like. You can copy the requests as they are, or phrase them in your own words in English or Korean.
+This page walks through common Tizen development workflows with Tizen Agent Skills. Each step shows what to type in your AI coding assistant, which skill answers, and what a successful result looks like. You can copy the requests as they are, or phrase them in your own words in English or Korean.
 
-Before you start, install the plugin as described in [Installing Tizen SDK Skills](install.md).
+Before you start, install the plugin as described in [Installing Tizen Agent Skills](install.md).
 
 ## Scenario 1: Set up a fresh machine
 
@@ -238,7 +238,7 @@ Goal: an automated UI test against a Tizen Web app.
 
 Goal: build and install without an AI assistant, for example in CI.
 
-After building the CLI as described in [Installing Tizen SDK Skills](install.md#standalone-tizen-sdk-cli), each command prints one JSON envelope, so you can parse it with a tool such as `jq`:
+After building the CLI as described in [Installing Tizen Agent Skills](install.md#standalone-tizen-sdk-cli), each command prints one JSON envelope, so you can parse it with a tool such as `jq`:
 
 ```
 tizen-sdk build-project --project ~/tizen-apps/MyTizenNativeApp > build.json
@@ -264,7 +264,7 @@ Use `tizen-sdk --capabilities` to see which commands can run on the current mach
 * Dependencies
   - Node.js 20 or higher
   - Tizen SDK 10.0 and higher
-* [Tizen SDK Skills](index.md)
-* [Tizen SDK Skills reference](skills-reference.md)
-* [Troubleshooting Tizen SDK Skills](troubleshooting.md)
+* [Tizen Agent Skills](index.md)
+* [Tizen Agent Skills reference](skills-reference.md)
+* [Troubleshooting Tizen Agent Skills](troubleshooting.md)
 * [tizen-agent-skills on GitHub](https://github.com/Samsung/tizen-agent-skills)

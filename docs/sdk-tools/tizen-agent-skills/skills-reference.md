@@ -1,6 +1,6 @@
-# Tizen SDK Skills reference
+# Tizen Agent Skills reference
 
-Tizen SDK Skills provides 29 skills. Each skill is triggered by natural language in your AI coding assistant, and most skills also exist as an agent that can run as a separate task. The standalone `tizen-sdk` CLI exposes the same functionality as 35 commands. This page lists every skill grouped by task, with an example of how to ask for it.
+Tizen Agent Skills provides 29 skills. Each skill is triggered by natural language in your AI coding assistant, and most skills also exist as an agent that can run as a separate task. The standalone `tizen-sdk` CLI exposes the same functionality as 35 commands. This page lists every skill grouped by task, with an example of how to ask for it.
 
 All skills return a Standard JSON Envelope. If a step fails, the envelope includes an error code and, when possible, a suggested fix. See [How it works](index.md#how-it-works).
 
@@ -127,7 +127,7 @@ Run `tizen-sdk --help` for the full list and `tizen-sdk <command> --help` for th
 * Dependencies
   - Node.js 20 or higher
   - Tizen SDK 10.0 and higher
-* [Tizen SDK Skills](index.md)
-* [Using Tizen SDK Skills](usage-scenarios.md)
+* [Tizen Agent Skills](index.md)
+* [Using Tizen Agent Skills](usage-scenarios.md)
 * [Command Line Interface](../baseline-sdk/common-tools/command-line-interface.md)
 * [Smart Development Bridge](../baseline-sdk/common-tools/smart-development-bridge.md)
