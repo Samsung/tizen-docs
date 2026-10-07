@@ -1,17 +1,28 @@
-# Tizen SDK Skills
+# Tizen Agent Skills
 
-Tizen SDK Skills (`tizen-sdk-skills`) is an open-source automation plugin that lets AI coding assistants operate the Tizen SDK for you. Instead of memorizing `tizen`, `sdb`, and `em-cli` commands, you describe what you want in plain English or Korean. The matching skill then installs the SDK, creates and builds your project, launches an emulator, installs the app, or sets up a remote debugging session.
+Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of agent skills and plugins that bring the Tizen platform development environment to AI coding assistants. Instead of memorizing `tizen`, `sdb`, and `em-cli` commands, you describe what you want in plain English or Korean. The matching skill then installs the SDK, creates and builds your project, launches an emulator, installs the app, or sets up a remote debugging session.
 
-The plugin works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. It also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
+The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen SDK Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. The plugin lives in the `tizen-sdk-skills/` directory of that repository. This section describes version 1.4.1.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.0.0, the first release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+
+## Plugins in this collection
+
+The `tizen-agent-skills` repository contains one directory per plugin. Each plugin covers one area of Tizen development and can be installed on its own.
+
+| Plugin | What it does | Hosts |
+|--------|--------------|-------|
+| [`tizen-sdk-skills`](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/README.md) | Automates the Tizen SDK end to end: SDK install, project creation and build, emulator and device management, app installation, remote debugging (GDB / netcoredbg / CDP), certificates, dlog analysis, and Playwright testing. 29 skills, 24 agents, a standalone `tizen-sdk` CLI, and the Tizen AI Extension for VS Code. | Claude Code, Cline, Codex CLI, VS Code, standalone CLI |
+| [`tizen-action-skills`](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/README.md) | Builds Tizen Action Framework providers: picks a default Action category or authors custom `.action`/`.entity` schemas, generates `actionc`/TIDL stubs for C#, C++, JavaScript or Flutter-Tizen/Dart, registers provider metadata, and verifies with `action-tool`. 1 skill. | Claude Code |
+
+The rest of this section focuses on the `tizen-sdk-skills` plugin, which covers the application development lifecycle. For the `tizen-action-skills` plugin, see its [README on GitHub](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/README.md).
 
 > [!NOTE]
-> You do not need to install the Tizen SDK before you start. The `tizen-sdk-install` skill downloads and installs it for you. See [Installing Tizen SDK Skills](install.md).
+> You do not need to install the Tizen SDK before you start. The `tizen-sdk-install` skill downloads and installs it for you. See [Installing Tizen Agent Skills](install.md).
 
 ## What you can do with it
 
-Tizen SDK Skills covers the whole application development lifecycle with 29 skills:
+The `tizen-sdk-skills` plugin covers the whole application development lifecycle with 29 skills:
 
 - **Set up the environment**: check Node.js and free disk space, install the Tizen SDK from the public CDN or from your own package repository, install platform, emulator, mobile, and TV SDK packages, add custom rootstraps, update packages, and set up the .NET workload.
 - **Create and build projects**: scaffold Native, .NET, Web, RPK resource, TV, and Platform projects from the templates in your installed SDK, import an existing `.wgt` archive as a project, and build `.tpk`, `.wgt`, `.rpk`, or `.rpm` packages.
@@ -21,11 +32,11 @@ Tizen SDK Skills covers the whole application development lifecycle with 29 skil
 - **Test**: scaffold and run Playwright tests against a Tizen Web app over CDP.
 - **Sign**: generate author certificates, choose distributor certificates, manage signing profiles, and issue Samsung certificates for TV targets.
 
-For the full list, see [Tizen SDK Skills reference](skills-reference.md).
+For the full list, see [Tizen Agent Skills reference](skills-reference.md).
 
 ## Supported hosts
 
-You can use Tizen SDK Skills from any of the following environments. The same skills, agents, and guard rules are installed in every host; only the installation location and the file format differ.
+You can use Tizen Agent Skills from any of the following environments. The same skills, agents, and guard rules are installed in every host; only the installation location and the file format differ.
 
 | Host | What is installed | Notes |
 |------|-------------------|-------|
@@ -116,20 +127,23 @@ The emulator CPU went to 300% and the video does not play. Investigate
 웹앱 만들어서 에뮬레이터에 설치해줘
 ```
 
-Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-project`, `tizen-build-project`, `tizen-install-app`, `tizen-gdb-debug`, or `tizen-dlog-analyzer`. For step-by-step workflows, see [Using Tizen SDK Skills](usage-scenarios.md).
+Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-project`, `tizen-build-project`, `tizen-install-app`, `tizen-gdb-debug`, or `tizen-dlog-analyzer`. For step-by-step workflows, see [Using Tizen Agent Skills](usage-scenarios.md).
 
 ## In this section
 
-- [Installing Tizen SDK Skills](install.md): prerequisites, setup for each host, the VS Code extension, and the standalone `tizen-sdk` CLI.
-- [Tizen SDK Skills reference](skills-reference.md): every skill grouped by task, with example requests.
-- [Using Tizen SDK Skills](usage-scenarios.md): end-to-end walkthroughs from a fresh machine to a debugged app.
-- [Troubleshooting Tizen SDK Skills](troubleshooting.md): common messages and how to resolve them.
+- [Installing Tizen Agent Skills](install.md): prerequisites, setup for each host, the VS Code extension, and the standalone `tizen-sdk` CLI.
+- [Tizen Agent Skills reference](skills-reference.md): every skill grouped by task, with example requests.
+- [Using Tizen Agent Skills](usage-scenarios.md): end-to-end walkthroughs from a fresh machine to a debugged app.
+- [Troubleshooting Tizen Agent Skills](troubleshooting.md): common messages and how to resolve them.
+- [Tizen Agent Skills 요약 (한국어)](tizen-agent-skills-summary-ko.md): Korean-language summary of Tizen Agent Skills.
 
 ## Related information
 * Dependencies
   - Node.js 20 or higher
   - Tizen SDK 10.0 and higher (installed by the plugin if missing)
 * [tizen-agent-skills on GitHub](https://github.com/Samsung/tizen-agent-skills)
+* [tizen-sdk-skills plugin README](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/README.md)
+* [tizen-action-skills plugin README](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/README.md)
 * [Command Line Interface](../baseline-sdk/common-tools/command-line-interface.md)
 * [Smart Development Bridge](../baseline-sdk/common-tools/smart-development-bridge.md)
 * [Emulator Manager](../baseline-sdk/common-tools/emulator-manager.md)

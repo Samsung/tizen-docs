@@ -1,6 +1,6 @@
-# Troubleshooting Tizen SDK Skills
+# Troubleshooting Tizen Agent Skills
 
-This page lists messages and situations you may run into with Tizen SDK Skills and how to resolve them. Every failure is reported as a Standard JSON Envelope with an `error_code`, an `error_category`, and usually a `suggested_fix`, so the first step is always to read that object, or to ask your assistant to apply the suggested fix.
+This page lists messages and situations you may run into with Tizen Agent Skills and how to resolve them. Every failure is reported as a Standard JSON Envelope with an `error_code`, an `error_category`, and usually a `suggested_fix`, so the first step is always to read that object, or to ask your assistant to apply the suggested fix.
 
 ## A skill is not picked up
 
@@ -106,7 +106,7 @@ node bin/tizen-sdk.js --doctor
 
 **How to resolve:**
 
-1. Restart Codex and run `/hooks` to trust the Tizen SDK Skills hooks.
+1. Restart Codex and run `/hooks` to trust the Tizen Agent Skills hooks.
 2. If they still do not run, add the following to `~/.codex/config.toml`:
 
    ```
@@ -148,7 +148,7 @@ node bin/tizen-sdk.js --doctor
 
 **How to resolve:**
 
-1. Update the plugin to version 1.4.1 or later and run the setup script again. From this version the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
+1. Update the plugin to version 1.0.0 or later and run the setup script again. From this version the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
 2. In a PowerShell terminal, run all three lines of the PowerShell block in order, in the same session, directly in the terminal.
 3. In a cmd.exe terminal, run the `cmd /c dir ...` chain and then `node "<found path>" ...` with the highest version that was listed.
 4. If no lookup finds a runner in `~/.claude`, `~/.cline`, `~/.codex`, or `~/.gemini`, the plugin is not installed on this machine. Install it first.
@@ -228,7 +228,7 @@ Do not delete the lock file while its holder runs. Two collectors on the same di
 
 **When you see this:** A symptom investigation fails with a message such as `No such command 'investigate'`, although the plugin is up to date.
 
-**What it means:** Before version 1.4.1 the runner used the first analyzer binary it found in the plugin caches, which could be an older version from an earlier plugin install. From version 1.4.1 the runner always uses the binary that ships with its own plugin version, and falls back to the newest cached version only when that binary is missing.
+**What it means:** Before version 1.0.0 the runner used the first analyzer binary it found in the plugin caches, which could be an older version from an earlier plugin install. From version 1.0.0 the runner always uses the binary that ships with its own plugin version, and falls back to the newest cached version only when that binary is missing.
 
 **How to resolve:** Update the plugin and run the setup script again. You can also remove old version directories under `~/<dot-dir>/plugins/cache/tizen-platform/tizen-sdk-skills/` that you no longer need.
 
@@ -280,6 +280,6 @@ If the steps above do not help, open an issue in the [tizen-agent-skills](https:
 * Dependencies
   - Node.js 20 or higher
   - Tizen SDK 10.0 and higher
-* [Tizen SDK Skills](index.md)
-* [Installing Tizen SDK Skills](install.md)
-* [Using Tizen SDK Skills](usage-scenarios.md)
+* [Tizen Agent Skills](index.md)
+* [Installing Tizen Agent Skills](install.md)
+* [Using Tizen Agent Skills](usage-scenarios.md)

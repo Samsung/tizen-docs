@@ -1,8 +1,8 @@
-# Using Tizen SDK Skills
+# Using Tizen Agent Skills
 
-This page walks through common Tizen development workflows with Tizen SDK Skills. Each step shows what to type in your AI coding assistant, which skill answers, and what a successful result looks like. You can copy the requests as they are, or phrase them in your own words in English or Korean.
+This page walks through common Tizen development workflows with Tizen Agent Skills. Each step shows what to type in your AI coding assistant, which skill answers, and what a successful result looks like. You can copy the requests as they are, or phrase them in your own words in English or Korean.
 
-Before you start, install the plugin as described in [Installing Tizen SDK Skills](install.md).
+Before you start, install the plugin as described in [Installing Tizen Agent Skills](install.md).
 
 ## Scenario 1: Set up a fresh machine
 
@@ -238,7 +238,7 @@ Goal: an automated UI test against a Tizen Web app.
 
 Goal: build and install without an AI assistant, for example in CI.
 
-After building the CLI as described in [Installing Tizen SDK Skills](install.md#standalone-tizen-sdk-cli), each command prints one JSON envelope, so you can parse it with a tool such as `jq`:
+After building the CLI as described in [Installing Tizen Agent Skills](install.md#standalone-tizen-sdk-cli), each command prints one JSON envelope, so you can parse it with a tool such as `jq`:
 
 ```
 tizen-sdk build-project --project ~/tizen-apps/MyTizenNativeApp > build.json
@@ -256,7 +256,7 @@ Use `tizen-sdk --capabilities` to see which commands can run on the current mach
 - **Pick a long enough app name.** The name needs at least 10 ASCII letters or digits. Names such as `MyApp` or `TestApp` are rejected before anything is created.
 - **Long installs.** In Claude Code, SDK and package installs run in the background and you can keep working. In Cline they run as a detached process, the assistant checks the status up to four times, and then hands control back to you. Ask for the install progress to continue. In Codex CLI, ask for long operations to run in the background so that they are not cut off by the per-call time limit.
 - **Restart the emulator the safe way.** Ask to "restart the emulator". The emulator is stopped and started again instead of being rebooted from inside, which terminates the emulator on Windows.
-- **Cline on Windows.** The skills work in both the cmd.exe and the PowerShell terminal. If the assistant reports that it cannot find a runner, or a `MODULE_NOT_FOUND` error names a file in your working directory, it ran the lookup for the wrong shell. See [Troubleshooting Tizen SDK Skills](troubleshooting.md#the-runner-is-not-found-in-a-cline-terminal-on-windows).
+- **Cline on Windows.** The skills work in both the cmd.exe and the PowerShell terminal. If the assistant reports that it cannot find a runner, or a `MODULE_NOT_FOUND` error names a file in your working directory, it ran the lookup for the wrong shell. See [Troubleshooting Tizen Agent Skills](troubleshooting.md#the-runner-is-not-found-in-a-cline-terminal-on-windows).
 - **Korean works too.** Requests such as "타이젠 SDK 설치해줘" or "웹앱 만들어서 에뮬레이터에 설치해줘" are routed to the same skills.
 - **Read the envelope.** When something fails, the error object contains a stable error code, a category such as `device_not_found`, and often a suggested command. You can ask the assistant to apply the suggested fix.
 - **Detailed walkthroughs.** The project repository contains longer step-by-step guides for each scenario under `usage/` and `docs/`, including a WSL emulator guide and a Platform GBS build guide.
@@ -265,7 +265,7 @@ Use `tizen-sdk --capabilities` to see which commands can run on the current mach
 * Dependencies
   - Node.js 20 or higher
   - Tizen SDK 10.0 and higher
-* [Tizen SDK Skills](index.md)
-* [Tizen SDK Skills reference](skills-reference.md)
-* [Troubleshooting Tizen SDK Skills](troubleshooting.md)
+* [Tizen Agent Skills](index.md)
+* [Tizen Agent Skills reference](skills-reference.md)
+* [Troubleshooting Tizen Agent Skills](troubleshooting.md)
 * [tizen-agent-skills on GitHub](https://github.com/Samsung/tizen-agent-skills)

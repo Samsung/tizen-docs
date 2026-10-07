@@ -1,6 +1,6 @@
-# Installing Tizen SDK Skills
+# Installing Tizen Agent Skills
 
-This page explains how to install Tizen SDK Skills for each supported host, how to verify that the installation works, and how to update or remove it. Pick the section for the AI coding assistant you use, or install the standalone `tizen-sdk` CLI if you do not use an assistant at all.
+This page explains how to install Tizen Agent Skills for each supported host, how to verify that the installation works, and how to update or remove it. Pick the section for the AI coding assistant you use, or install the standalone `tizen-sdk` CLI if you do not use an assistant at all.
 
 ## Prerequisites
 
@@ -77,7 +77,7 @@ The PowerShell script also accepts the Bash spelling of the options (`--harness`
 
 4. Restart Cline or reload the VS Code window.
 
-On Windows, Cline runs commands in either a cmd.exe or a PowerShell terminal. Every skill contains a runner lookup for each shell, and the rules file tells the assistant to use the block that matches the terminal, because the cmd.exe form is a syntax error in PowerShell and the PowerShell form only works when its lines run directly in the terminal. If the assistant reports that it cannot find the runner, see [Troubleshooting Tizen SDK Skills](troubleshooting.md#the-runner-is-not-found-in-a-cline-terminal-on-windows).
+On Windows, Cline runs commands in either a cmd.exe or a PowerShell terminal. Every skill contains a runner lookup for each shell, and the rules file tells the assistant to use the block that matches the terminal, because the cmd.exe form is a syntax error in PowerShell and the PowerShell form only works when its lines run directly in the terminal. If the assistant reports that it cannot find the runner, see [Troubleshooting Tizen Agent Skills](troubleshooting.md#the-runner-is-not-found-in-a-cline-terminal-on-windows).
 
 > [!NOTE]
 > Cline stops a tool after five identical calls in a row and does not wake the assistant when a background job finishes. SDK and package installs therefore run as a detached process. The assistant checks the status up to four times, then tells you that the install continues in the background and ends its turn. No completion notice arrives on its own. When you want to continue, ask "Tell me the install progress" or "설치 진행 상태를 알려줘".
@@ -131,7 +131,7 @@ On Windows, Cline runs commands in either a cmd.exe or a PowerShell terminal. Ev
 
 ## Visual Studio Code
 
-The **Tizen AI Extension** installs and synchronizes Tizen SDK Skills for Claude Code, Cline, and Codex CLI from inside Visual Studio Code, without running any script.
+The **Tizen AI Extension** installs and synchronizes Tizen Agent Skills for Claude Code, Cline, and Codex CLI from inside Visual Studio Code, without running any script.
 
 1. Download `tizen-ai-extension-vX.Y.Z.vsix` from the [Releases](https://github.com/Samsung/tizen-agent-skills/releases) page.
 
@@ -227,6 +227,6 @@ Replace `<dot-dir>`, `<skills-dir>`, and `<agents-dir>` with the paths listed fo
 * Dependencies
   - Node.js 20 or higher
   - Tizen SDK 10.0 and higher (installed by the plugin if missing)
-* [Tizen SDK Skills](index.md)
-* [Tizen SDK Skills reference](skills-reference.md)
+* [Tizen Agent Skills](index.md)
+* [Tizen Agent Skills reference](skills-reference.md)
 * [Installing the Tizen SDK](../baseline-sdk/setup/install-sdk.md)
