@@ -38,7 +38,7 @@ To install VS Code Extension for Tizen from a VSIX file:
 
    <img src="media/vscode_install_notification.png" alt="VS Code Notification Toast" width="600">
 
-   This notification indicates that the initial setup process has finished.  
+   This notification indicates that the initial setup process has finished.
    After it appears, you can start using the Tizen Extension right away by opening the **Tizen** view from the Activity Bar.
 
 ## After Installation: Setting the Tizen SDK Path
@@ -57,7 +57,7 @@ To configure the Tizen SDK path:
 
      > [!NOTE]
      > The default SDK path depends on your operating system:
-     > - **Windows**: `C:\.tizen-extension-platform`
+     > - **Windows**: `C:\Users\<username>\.tizen-extension-platform`
      > - **Linux**: `/home/<username>/.tizen-extension-platform`
      > - **macOS**: `/Users/<username>/.tizen-extension-platform`
 
