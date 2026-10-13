@@ -83,7 +83,7 @@
 ##### [Hybrid Application Development](/sdk-tools/vstools/Tizen/hybrid.md)
 ##### [TizenNUIGadget RPK Development](/sdk-tools/vstools/Tizen/nuigadget-rpk.md)
 <!-- docscheck:referenced-sdk:start -->
-## Referenced SDK documentation
+<!-- ## Referenced SDK documentation
 ### Common tools
 #### [Overview](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/overview.md)
 #### [Common Tasks](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/common-tasks.md)
@@ -111,7 +111,7 @@
 #### [Log Viewer](/sdk-tools/vstools/tools/log-viewer.md)
 #### [Command Line Interface](/sdk-tools/vstools/tools/dotnet-cli-ext.md)
 #### [Importing Legacy Projects](/sdk-tools/vstools/Tizen/import.md)
-#### [Test Profile App Unit Test Code Coverage](/sdk-tools/vstools/getting-started/test-profile-app-unit-test-code-coverage.md)
+#### [Test Profile App Unit Test Code Coverage](/sdk-tools/vstools/getting-started/test-profile-app-unit-test-code-coverage.md) -->
 <!-- docscheck:referenced-sdk:end -->
 
 ## Tizen Agent Skills for AI Agents

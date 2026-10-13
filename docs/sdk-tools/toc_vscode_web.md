@@ -120,7 +120,7 @@
 
 ##### [Run Unit Test and Coverage](/sdk-tools/vscode-ext/tools/web-unit-test-result.md)
 <!-- docscheck:referenced-sdk:start -->
-## Referenced SDK documentation
+<!-- ## Referenced SDK documentation
 ### Common tools
 #### [Overview](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/overview.md)
 #### [Common Tasks](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/common-tasks.md)
@@ -158,7 +158,7 @@
 #### [Tizen Web](/sdk-tools/vscode-ext/web.md)
 #### [Test Profile App (ASAN/LSAN)](/sdk-tools/vscode-ext/getting-started/test-profile-app/asan-lsan.md)
 #### [Get Unit Test Information with Code Coverage](/sdk-tools/vscode-ext/getting-started/test-profile-app/unit-test-code-coverage.md)
-#### [Legacy Memory Profiler](/sdk-tools/vscode-ext/tools/memory-profiler.md)
+#### [Legacy Memory Profiler](/sdk-tools/vscode-ext/tools/memory-profiler.md) -->
 <!-- docscheck:referenced-sdk:end -->
 
 ## Tizen Agent Skills for AI Agents
