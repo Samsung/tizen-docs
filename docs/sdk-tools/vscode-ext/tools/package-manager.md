@@ -12,43 +12,45 @@ In the **Tizen** panel, under **Baseline Tools**, select **Package Manager**.
 
 The **Installed Packages** tab lists installed packages by category and shows their versions. Expand a category to review its packages. When updates are available, select **Update** in the summary bar to install them.
 
-![Installed Packages tab with an expanded category](media/package-manager-installed-packages.png)
+![Installed Packages tab with an expanded category](media/Installed_Packages.png)
 
 ## Install a Platform Version
 
 Use **Advanced SDK Installation** to add or remove an entire Tizen platform version:
 
-1. Select **Advanced SDK Installation**.
-2. Select **Install** next to the platform version that you need.
-3. To remove an installed version, select **Uninstall**.
+1.  Select **Advanced SDK Installation**.
 
-![Advanced SDK Installation](media/package-manager-advanced-sdk.png)
+    ![Advanced SDK Installation](media/Advanced_SDK_Installtion.png)
+
+2.  Select **Install** next to the platform version that you need.
+3.  To remove an installed version, select **Uninstall**.
 
 The available versions include Tizen 10.0, 9.0, 8.0, 7.0, 6.5, 6.0, and TV extensions. Install the platform version and profile required by the application and target device.
 
 ## Configure Package Repositories
 
-1. Select the **Repository** (gear) button in Package Manager.
-2. Configure the Tizen repository for official SDK packages and the TV repository for TV extension packages or local ZIP files.
-3. Select **Apply** after changing a repository URL.
-4. Select **Update** in Package Manager to complete the repository update.
+1.  Select the **Repository** (gear) button in Package Manager.
 
-![Repository configuration](media/package-manager-repository.png)
+    ![Repository configuration](media/Repository_URL.png)
+
+2.  Configure the Tizen repository for official SDK packages and the TV repository for TV extension packages or local ZIP files.
+3.  Select **Apply** after changing a repository URL.
+4.  Select **Update** in Package Manager to complete the repository update.
 
 ### Install TV packages from a local ZIP file
 
 You can select a local `.zip` file as the TV repository to install TV SDK packages and an emulator image.
 
-1. In Package Manager, select **Repository** to open **Repository Configuration**.
-2. Select **Browse** next to **TV repository**, select the TV `.zip` file, and select **Open**.
+1.  In Package Manager, select **Repository** to open **Repository Configuration**.
+2.  Select **Browse** next to **TV repository**, select the TV `.zip` file, and select **Open**.
 
-   ![Select a local TV ZIP file using the Browse button](../media/TV_ZIP.png)
+    ![Select a local TV ZIP file using the Browse button](../media/TV_ZIP.png)
 
-3. Select **Apply** and wait for the repository configuration to finish applying.
+3.  Select **Apply** and wait for the repository configuration to finish applying.
 
-   ![Package Manager applying the local TV ZIP repository configuration](../media/TV_ZIP_Apply.png)
+    ![Package Manager applying the local TV ZIP repository configuration](../media/TV_ZIP_Apply.png)
 
-4. Select **Update** in Package Manager and wait for the update to complete.
+4.  Select **Update** in Package Manager and wait for the update to complete.
 
 The package list in **Advanced SDK Installation** updates to reflect the TV packages from the ZIP file. The TV emulator also appears in Emulator Manager.
 
@@ -56,8 +58,44 @@ The package list in **Advanced SDK Installation** updates to reflect the TV pack
 
 To run the emulator, open **Emulator Manager** from **Baseline Tools** in the **Tizen** panel, select the TV emulator, and select **Launch**. For more information, see [Launch and manage emulators](emulator-manager.md#launch-and-manage-emulators).
 
+## Manage extension SDKs
+
+Use **Extension SDK** in Package Manager to add external extensions, such as RTL TV Tools, and install their packages. It contains two tabs: **Repositories**, where you manage extension sources, and **Packages**, where you install and remove extension packages.
+
+### Add an extension
+
+1.  In Package Manager, select **Extension SDK**.
+2.  Select **+ Add Extension**.
+3.  Enter a name for the extension in **Name**.
+4.  Select the browse (**...**) button next to **Repository URL**, select the extension's `.zip` file, and select **Open**. You can also enter a server URL in **Repository URL**.
+5.  Select **Add** to register the extension.
+
+    ![Add an extension by entering a name and selecting a local ZIP file](media/RTV_TV_ADD.png)
+
+### Manage extension repositories
+
+In the **Repositories** tab, select an extension to view **Selected Extension Details**, including its name, vendor, repository URL, and description.
+
+Use the pencil icon in the extension's **Action** column to edit its configuration, or the trash icon to delete the repository entry.
+
+![Repositories tab showing an extension, edit and delete controls, and selected extension details](media/Extension_SDK_Repo_details.png)
+
+### Install and remove extension packages
+
+1.  Select the **Packages** tab to view packages from the added extensions.
+2.  Select a package to open **Package Details**. Review its name, description, version, vendor, extension name, installation status, and license information, when available.
+
+    ![Packages tab showing RTL TV Tools and its package details before installation](media/Extension_SDK_pack_details.png)
+
+3.  Select **Install** next to the extension's package group and wait for installation to complete.
+4.  Select the package again to verify that its status is **Installed** in **Package Details**.
+
+    ![Installed extension packages with Installed status and the Uninstall All button](media/Extension_SDK_installed.png)
+
+To remove the installed packages for an extension, select **Uninstall All** next to its package group.
+
 ## Report an Issue
 
 Select **Issue Report** in the upper-right corner of Package Manager to open the GitHub issues page and report an issue.
 
-![Issue Report button](media/package_manager_issue_report_highlighted.png)
+![Issue Report button](media/Issue_report.png)
