@@ -184,8 +184,9 @@ legacy_directories = [
 # Publication ownership.
 #
 # ``toc_all.md`` is not automatically a publishing TOC. In particular the SDK
-# Tools copy jobs consume the six model/IDE TOCs below; its toc_all.md is IA
-# source material and cannot make a page reachable on tizen.dev. Keep a
+# Tools copy jobs consume the six model/IDE TOCs below plus the Tizen Agent
+# Skills TOC; its toc_all.md is IA source material and cannot make a page
+# reachable on tizen.dev. Keep a
 # section here whenever a publisher section is introduced.
 # ---------------------------------------------------------------------------
 
@@ -220,8 +221,9 @@ governing_tocs = [
   "docs/sdk-tools/toc_vs-ext_dotnet.md",
   "docs/sdk-tools/toc_vs-ext_native.md",
   "docs/sdk-tools/toc_vs-ext_web.md",
+  "docs/sdk-tools/toc_agent-skills.md",
 ]
-recommended_section = "SDK Tools (select the applicable model and IDE TOC)"
+recommended_section = "SDK Tools (select the applicable model and IDE TOC, or the Tizen Agent Skills TOC)"
 
 [[publication.sections]]
 id = "platform-hal"
