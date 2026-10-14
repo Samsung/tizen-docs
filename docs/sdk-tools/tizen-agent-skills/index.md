@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.0.0, the first release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.1.0, the second release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
