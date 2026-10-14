@@ -1,6 +1,5 @@
-# Tizen VS Code Extension Release Notes
+# Tizen VS Code Extension 10.3.8 Release Notes
 
-**Version:** 10.3.8  
 **Release Date:** July 2, 2026
 
 
