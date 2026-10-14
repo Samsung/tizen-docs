@@ -61,7 +61,7 @@ SDK and IDE tooling documentation, organized by tool:
 | `baseline-sdk/` (137 md) | Tizen Studio IDE guide: setup, common/native/web/platform tools, tizen-core, release notes. |
 | `vscode-ext/` (63 md) | VS Code extension guide. |
 | `vstools/` (49 md) | Visual Studio Tools for Tizen (Windows). |
-| `tizen-agent-skills/` (6 md) | Tizen Agent Skills guide for AI coding agents; published by its own `toc_agent-skills.md`. |
+| `ax/` (7 md) | AX section for AI coding assistants (`skills/tizen-agent-skills/` and an overview); published by its own `ax/toc.md`. |
 | `sdktool-index.md` | Flat A–Z index of every SDK tool, linking into the trees above. |
 
 Navigation here is unusual and worth understanding before you edit it. The six
@@ -69,9 +69,10 @@ per-IDE TOCs — `toc_vscode_{native,web,dotnet}.md` and
 `toc_vs-ext_{native,web,dotnet}.md` — are what the pipeline actually publishes, one
 per app-model × IDE permutation, and all six draw from the same three tool trees.
 A page reachable in one permutation may be missing from another, so check every
-TOC that should list a page, not just one. `toc_agent-skills.md` is a seventh
-publishing TOC that stands alone: it lists only the `tizen-agent-skills/` pages, which
-are not part of any per-IDE TOC.
+TOC that should list a page, not just one. `ax/toc.md` is a seventh publishing
+TOC that stands alone: it publishes the `ax/` pages as one model-independent section
+(`/sdk-tools/ax/...`) next to the two IDEs, and those pages are not part of any
+per-IDE TOC. Unlike the per-IDE TOCs it links its pages relative to `ax/`.
 
 `sdk-tools/toc_all.md` is *not* read by the pipeline. It documents the section's
 information architecture and keeps `tools/check_docs.py` able to distinguish a

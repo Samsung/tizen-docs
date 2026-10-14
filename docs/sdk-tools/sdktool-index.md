@@ -1,12 +1,12 @@
 # Tizen SDK Tools User Manual
 
 > [!IMPORTANT]
-> **Tizen Studio is deprecated and no longer supported.** Do not install or use the retired Eclipse-based IDE. The tools listed in this index are part of the current Tizen SDK and are delivered through the [VS Code Extension for Tizen](vscode-ext/index.md), [Visual Studio Tools for Tizen](vstools/index.md), and, for AI coding assistants, [Tizen Agent Skills](tizen-agent-skills/index.md).
+> **Tizen Studio is deprecated and no longer supported.** Do not install or use the retired Eclipse-based IDE. The tools listed in this index are part of the current Tizen SDK and are delivered through the [VS Code Extension for Tizen](vscode-ext/index.md), [Visual Studio Tools for Tizen](vstools/index.md), and, for AI coding assistants, [Tizen Agent Skills](ax/skills/tizen-agent-skills/index.md).
 
 ## Tools for AI coding agents
 
-### [Tizen Agent Skills](tizen-agent-skills/index.md)
-Lets AI coding assistants such as Claude Code, Cline, Codex CLI, and Gemini CLI operate the Tizen SDK from natural-language requests, with no SDK commands to memorize. Covers SDK installation, project creation and build, emulator and device management, app installation, remote debugging, certificates, log analysis, and Playwright tests. Also available as a standalone `tizen-sdk` CLI for scripts and CI. See [Installing Tizen Agent Skills](tizen-agent-skills/install.md).
+### [Tizen Agent Skills](ax/skills/tizen-agent-skills/index.md)
+Lets AI coding assistants such as Claude Code, Cline, Codex CLI, and Gemini CLI operate the Tizen SDK from natural-language requests, with no SDK commands to memorize. Covers SDK installation, project creation and build, emulator and device management, app installation, remote debugging, certificates, log analysis, and Playwright tests. Also available as a standalone `tizen-sdk` CLI for scripts and CI. See [Installing Tizen Agent Skills](ax/skills/tizen-agent-skills/install.md).
 
 ## Index of Tools
 ### API and Privilege Checker
