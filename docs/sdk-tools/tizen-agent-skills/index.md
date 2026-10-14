@@ -129,6 +129,48 @@ The emulator CPU went to 300% and the video does not play. Investigate
 
 Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-project`, `tizen-build-project`, `tizen-install-app`, `tizen-gdb-debug`, or `tizen-dlog-analyzer`. For step-by-step workflows, see [Using Tizen Agent Skills](usage-scenarios.md).
 
+## Release history
+
+This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.1.0 (2026-10-14)
+
+The second unified release. It ships `tizen-sdk-skills` 1.4.3 and `tizen-action-skills` 1.0.0. No new skills were added; the release is a patch and improvement update.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.4.2 to 1.4.3.
+- Tizen AI Extension (vsix) 1.4.3 released alongside.
+
+#### tizen-dlog-analyzer
+- Bundled analyzer binary updated to v0.2.8a0 (Linux / Windows / macOS).
+
+#### PowerShell runner lookup improvement
+- Added a `FullName` secondary sort key to the PowerShell runner lookup block in every SKILL.md: mitigates the case where wrapping the lookup in `powershell -Command "..."` causes the outer shell to expand `$_` to an empty string, which defeats the `[version]` sort.
+- The fallback is correct for same-digit versions (1.4.0 vs 1.4.2) but may pick the lower version for different digit counts (1.4.2 vs 1.4.10), so wrapping the lookup in `powershell -Command` is still not recommended.
+- The guard rules now document this limitation.
+
+#### Repository documentation
+- Added a repository-level `AGENTS.md` for AI coding agents: covers plugin structure, versioning model, documentation conventions, security, commit/PR style, and per-plugin validation commands.
+
+### v1.0.0 (2026-10-07)
+
+The first unified release of the `tizen-agent-skills` collection. It ships `tizen-sdk-skills` 1.4.2 and `tizen-action-skills` 1.0.0. No new skills were added; the release is a patch update.
+
+#### tizen-dlog-analyzer
+- Bundled analyzer binary updated to v0.2.5a0 (Linux / Windows / macOS).
+- Collector lock (`_meta/collector.lock`) handling fixed: when another collector held the lock, `start` reported success and then deleted the lock file. It now returns `already_running` with the owning PID and a stop command. The runner never touches the lock file.
+- When a previous session's collector held the lock, the PID's executable name is checked so that only a `tizen-dlog-analyzer` process is targeted for shutdown; a reused PID is reported as a stale lock.
+- The runner now prefers the binary that ships with its own plugin version and falls back to the newest cached version only when that binary is missing. Previously it used the first binary found, which could be an older version from an earlier plugin install.
+- On Windows cp949 code page, if `UnicodeEncodeError` truncates the report, the printed report is returned as `success` + warning + `output_truncated: true` instead of returning only the traceback.
+
+#### Cline on Windows (PowerShell terminal)
+- SKILL.md runner lookup block titles now name the shell they are for (the cmd.exe chain is cmd.exe-only; the PowerShell block is run directly in the terminal).
+- Added an `$CLI is empty` guard to the PowerShell `node "$CLI" …` line, preventing a misleading `MODULE_NOT_FOUND` such as `Cannot find module '<cwd>\list-templates'` when the line is run on its own.
+- The guard rules (Korean 7/9, English 8/10) now document both failure modes and restrict the encoding wrapper to commands without `$` variables.
+
+#### Setup scripts
+- `setup.ps1` now accepts the `setup.sh` spelling of the options (`--harness … --repo … --skip-validation --no-restart`).
+
 ## In this section
 
 - [Installing Tizen Agent Skills](install.md): prerequisites, setup for each host, the VS Code extension, and the standalone `tizen-sdk` CLI.
