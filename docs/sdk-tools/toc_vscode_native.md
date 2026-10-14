@@ -2,12 +2,12 @@
 
 ## [Overview](/sdk-tools/baseline-sdk/common-tools/overview.md)
 
-## [Release Notes](/sdk-tools/vscode-ext/release-notes/release-notes.md)
+## Release Notes
 
 <!-- docscheck:sdk-history:start -->
 ### History
 #### [10.4.3 (October 2, 2026)](/sdk-tools/vscode-ext/release-notes/10-4-3-release-notes.md)
-#### [10.4.0 (July 25, 2026)](/sdk-tools/vscode-ext/release-notes/10-4-0-release-notes.md)
+#### [10.4.0 (July 15, 2026)](/sdk-tools/vscode-ext/release-notes/10-4-0-release-notes.md)
 #### [10.3.8 (July 2, 2026)](/sdk-tools/vscode-ext/release-notes/10-3-8-release-notes.md)
 #### [10.0 (Nov 4, 2025)](/sdk-tools/baseline-sdk/release-notes/10-0-release-notes.md)
 #### [6.1 (Apr 16, 2025)](/sdk-tools/baseline-sdk/release-notes/6-1-release-notes.md)

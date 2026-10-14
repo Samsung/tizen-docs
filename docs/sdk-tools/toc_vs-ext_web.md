@@ -1,6 +1,6 @@
 # Tizen SDK & Development Tools
 ## [Overview](/sdk-tools/baseline-sdk/common-tools/overview.md)
-## [Release Notes](/sdk-tools/baseline-sdk/release-notes/6-0-release-notes.md)
+## Release Notes
 
 <!-- docscheck:sdk-history:start -->
 ### History
