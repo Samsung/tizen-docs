@@ -19,7 +19,8 @@ The API Checker currently detects the following issues in Tizen .NET application
 
 To run the API Checker on your application:
 
-1. Select **Tizen Web: Run Privilege Checker** in command palette.
-2. Select Target Application.
-3. Run Privliege Checker and find the missing privilege from tizen-manifest.xml file.
+1. Select Target Project from "Active Targets" section of left panel.
+![Active Project](media/active_project.png)
+2. Select **Tizen: Run Privilege Checker** in command palette.
+3. This will Run Privliege Checker and find the missing privilege from tizen-manifest.xml/config.xml file. Then it will show output in both Tizen Log panel and Middle panel.
 ![Api Privilge Checker](../media/api_privilege_checker.png)

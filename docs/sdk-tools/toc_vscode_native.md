@@ -111,7 +111,7 @@
 
 ##### [RPK Application Development](/sdk-tools/vscode-ext/Tizen/rpk.md)
 <!-- docscheck:referenced-sdk:start -->
-## Referenced SDK documentation
+<!-- ## Referenced SDK documentation
 ### Common tools
 #### [Overview](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/overview.md)
 #### [Common Tasks](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/common-tasks.md)
@@ -149,7 +149,7 @@
 #### [Test Profile App (ASAN/LSAN)](/sdk-tools/vscode-ext/getting-started/test-profile-app/asan-lsan.md)
 #### [Get Unit Test Information with Code Coverage](/sdk-tools/vscode-ext/getting-started/test-profile-app/unit-test-code-coverage.md)
 #### [Legacy Memory Profiler](/sdk-tools/vscode-ext/tools/memory-profiler.md)
-#### [Native application development](/sdk-tools/vscode-ext/Tizen/native.md)
+#### [Native application development](/sdk-tools/vscode-ext/Tizen/native.md) -->
 <!-- docscheck:referenced-sdk:end -->
 
 ## [Tool Index](/sdk-tools/sdktool-index.md)
