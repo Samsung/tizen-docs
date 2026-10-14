@@ -130,7 +130,7 @@ tizen-agent-skills v1.1.0은 `tizen-sdk-skills` 1.4.3과 `tizen-action-skills` 1
 
 ---
 
-## v1.0.0 변경 사항 (2026-10-01)
+## v1.0.0 변경 사항 (2026-10-07)
 
 tizen-agent-skills PR #26으로 반영된 패치 릴리스입니다. 새 스킬은 없고, 아래 수정이 포함됩니다.
 
