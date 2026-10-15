@@ -38,7 +38,7 @@ A TOC is a Markdown file whose heading depth is the navigation depth.
 
 Be aware that not every TOC is read by the publishing pipeline, and not every block of a
 TOC that is read gets consumed. Under `sdk-tools/`, the six per-IDE TOCs
-(`toc_vscode_*.md`, `toc_vs-ext_*.md`) and the standalone `toc_agent-skills.md` are
+(`toc_vscode_*.md`, `toc_vs-ext_*.md`) and the model-independent AX TOC `ax/toc.md` are
 what actually publish, while
 `sdk-tools/toc_all.md` documents the structure only. Confirm which TOC governs your page
 rather than assuming `toc_all.md` is enough.

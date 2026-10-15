@@ -221,9 +221,9 @@ governing_tocs = [
   "docs/sdk-tools/toc_vs-ext_dotnet.md",
   "docs/sdk-tools/toc_vs-ext_native.md",
   "docs/sdk-tools/toc_vs-ext_web.md",
-  "docs/sdk-tools/toc_agent-skills.md",
+  "docs/sdk-tools/ax/toc.md",
 ]
-recommended_section = "SDK Tools (select the applicable model and IDE TOC, or the Tizen Agent Skills TOC)"
+recommended_section = "SDK Tools (select the applicable model and IDE TOC, or the AX TOC)"
 
 [[publication.sections]]
 id = "platform-hal"

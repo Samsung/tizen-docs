@@ -158,10 +158,13 @@
 ### [Certificate Manager](/sdk-tools/vstools/tools/certificate-manager.md)
 ### [Device Manager](/sdk-tools/vstools/tools/device-manager.md)
 
-## Tizen Agent Skills
-### [Overview](/sdk-tools/tizen-agent-skills/index.md)
-### [Installing Tizen Agent Skills](/sdk-tools/tizen-agent-skills/install.md)
-### [Skills Reference](/sdk-tools/tizen-agent-skills/skills-reference.md)
-### [Usage Scenarios](/sdk-tools/tizen-agent-skills/usage-scenarios.md)
-### [Troubleshooting](/sdk-tools/tizen-agent-skills/troubleshooting.md)
-### [Tizen Agent Skills 요약 (한국어)](/sdk-tools/tizen-agent-skills/tizen-agent-skills-summary-ko.md)
+## AX
+### [AX Overview](/sdk-tools/ax/index.md)
+### Skills
+#### Tizen Agent Skills
+##### [Overview](/sdk-tools/ax/skills/tizen-agent-skills/index.md)
+##### [Installing Tizen Agent Skills](/sdk-tools/ax/skills/tizen-agent-skills/install.md)
+##### [Skills Reference](/sdk-tools/ax/skills/tizen-agent-skills/skills-reference.md)
+##### [Usage Scenarios](/sdk-tools/ax/skills/tizen-agent-skills/usage-scenarios.md)
+##### [Troubleshooting](/sdk-tools/ax/skills/tizen-agent-skills/troubleshooting.md)
+##### [Tizen Agent Skills 요약 (한국어)](/sdk-tools/ax/skills/tizen-agent-skills/tizen-agent-skills-summary-ko.md)

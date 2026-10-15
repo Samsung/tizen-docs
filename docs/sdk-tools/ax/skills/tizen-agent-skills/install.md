@@ -229,4 +229,4 @@ Replace `<dot-dir>`, `<skills-dir>`, and `<agents-dir>` with the paths listed fo
   - Tizen SDK 10.0 and higher (installed by the plugin if missing)
 * [Tizen Agent Skills](index.md)
 * [Tizen Agent Skills reference](skills-reference.md)
-* [Installing the Tizen SDK](../baseline-sdk/setup/install-sdk.md)
+* [Installing the Tizen SDK](../../../baseline-sdk/setup/install-sdk.md)

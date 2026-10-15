@@ -132,5 +132,5 @@ Run `tizen-sdk --help` for the full list and `tizen-sdk <command> --help` for th
   - Tizen SDK 10.0 and higher
 * [Tizen Agent Skills](index.md)
 * [Using Tizen Agent Skills](usage-scenarios.md)
-* [Command Line Interface](../baseline-sdk/common-tools/command-line-interface.md)
-* [Smart Development Bridge](../baseline-sdk/common-tools/smart-development-bridge.md)
+* [Command Line Interface](../../../baseline-sdk/common-tools/command-line-interface.md)
+* [Smart Development Bridge](../../../baseline-sdk/common-tools/smart-development-bridge.md)
