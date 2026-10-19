@@ -148,7 +148,7 @@ node bin/tizen-sdk.js --doctor
 
 **How to resolve:**
 
-1. Update the plugin to version 1.1.0 or later and run the setup script again. From version 1.0.0 the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
+1. Update the plugin to version 1.1.1 or later and run the setup script again. From version 1.0.0 the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
 2. In a PowerShell terminal, run all three lines of the PowerShell block in order, in the same session, directly in the terminal.
 3. In a cmd.exe terminal, run the `cmd /c dir ...` chain and then `node "<found path>" ...` with the highest version that was listed.
 4. If no lookup finds a runner in `~/.claude`, `~/.cline`, `~/.codex`, or `~/.gemini`, the plugin is not installed on this machine. Install it first.
