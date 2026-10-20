@@ -109,6 +109,37 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.1.1 변경 사항 (2026-10-18)
+
+tizen-agent-skills v1.1.1은 `tizen-sdk-skills` 1.4.4와 `tizen-action-skills` 1.0.0을 포함하는 세 번째 통합 릴리스입니다. 새 스킬은 없으며, 기존 스킬의 기능 추가와 라우팅 및 에뮬레이터 관련 수정이 포함됩니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.4.3 → 1.4.4로 상향
+- Tizen AI Extension(vsix) 1.4.4 및 독립 실행형 CLI 번들 `tizen-sdk-v1.4.4.zip` 동반 릴리스
+
+### tizen-dlog-analyzer
+- 러너가 번들된 v0.2.8a0 분석기 바이너리의 기능 세트를 제공 (바이너리 자체는 v1.1.0과 동일)
+- 새 `rules` 액션: `rules list` / `rules show <id>` / `rules validate [path]` / `rules test <fixture.json>`으로 내장 분석 규칙 24개를 읽기 전용으로 조회. `--rules-dir <path>`로 사용자 규칙 YAML 추가 로드
+- `investigate`에 v0.2.8a0 옵션 추가 (`--rules-dir`, `--parallel`, `--max-workers`, `--deduplicate`, `--similarity-threshold`, `--allow-heavy`, `--no-noise-filter`, `--fuzzy-symptoms`, `--symptom-map`). 결과에 순위가 매겨진 `conclusions`(신뢰도, 역할, 근거, 수정), `ruled_out`, `unexplained`, `consent_needed`, `redaction_summary` 포함
+- `probe run`에 앱 범위를 지정하는 `--app-id`와 사용자 동의 시에만 네트워크 프로브를 실행하는 `--allow-network-probe` 옵션 추가
+- 기존 캡처 파일을 오프라인으로 분석하는 파일 모드 지원
+- 분석 보고서 템플릿의 근본 원인 항목에 `Confidence`/`Role` 필드, `Ruled Out` 및 `Unexplained Anomalies` 섹션 추가
+- 새 가드 규칙이 `sdb shell`에서 직접 입력한 `openssl s_client` / `curl` / `wget`을 거부하고, 동의 기반 `--allow-network-probe` 옵션을 안내
+
+### 에뮬레이터 관리
+- "사용 가능한 에뮬레이터 목록" 같은 요청이 `tizen-create-emulator`의 `list-vm --detail`로 라우팅되어, 어시스턴트가 VM을 직접 찾아 나서지 않음. 새 가드 규칙이 `em-cli` 직접 실행과 에뮬레이터 VM 디렉터리에 대한 `ls` / `find` / `Get-ChildItem`을 차단
+- `list-vm --detail`이 플랫폼 이미지 이름에서 파생한 각 VM의 `profile`을 보고 (`tizen-*` → `tizen`, `tv-*` → `tv`). `tizen-10.0-x86_64` VM이 더 이상 Mobile 에뮬레이터로 표시되지 않음
+- VM 이름을 지정하지 않으면 `tizen-launch-emulator`가 플랫폼 버전을 구간별로 비교하고 프로필로 필터링하여, `10.0`이 `9.0`보다 우선 선택되고 `tizen` 요청이 TV 이미지를 고르지 않음
+- WSL용 에뮬레이터 홈 화면 복구가 헤드리스 Linux 호스트에도 적용됨
+
+### 러너 탐색
+- 모든 SKILL.md의 CLI 러너 탐색 섹션에 `node` 줄을 그대로 실행하라는 안내 추가
+
+### 테스트 러너
+- 플러그인 테스트 러너가 `PATH`의 전역 설치 `tizen-cli`/`tizen-sdk` 바이너리(오래된 설치일 수 있음)를 찾지 않고 항상 로컬로 빌드한 `tizen-sdk` 런처를 실행
+
+---
+
 ## v1.1.0 변경 사항 (2026-10-14)
 
 tizen-agent-skills v1.1.0은 `tizen-sdk-skills` 1.4.3과 `tizen-action-skills` 1.0.0을 포함하는 두 번째 통합 릴리스입니다. 새 스킬은 없으며, 아래 수정 및 개선이 포함됩니다.

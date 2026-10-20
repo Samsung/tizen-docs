@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.1.0, the second release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.1.1, the third release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -132,6 +132,35 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.1.1 (2026-10-18)
+
+The third unified release. It ships `tizen-sdk-skills` 1.4.4 and `tizen-action-skills` 1.0.0. No new skills were added; the release adds features to existing skills and fixes routing and emulator issues.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.4.3 to 1.4.4.
+- Tizen AI Extension (vsix) 1.4.4 and the standalone CLI bundle `tizen-sdk-v1.4.4.zip` released alongside.
+
+#### tizen-dlog-analyzer
+- The runner now exposes the feature set of the bundled v0.2.8a0 analyzer binary. The binary itself is unchanged from v1.1.0.
+- New `rules` action: `rules list`, `rules show <id>`, `rules validate [path]`, and `rules test <fixture.json>` inspect the 24 built-in analysis rules read-only. `--rules-dir <path>` loads additional user rule YAML files.
+- `investigate` accepts the v0.2.8a0 options (`--rules-dir`, `--parallel`, `--max-workers`, `--deduplicate`, `--similarity-threshold`, `--allow-heavy`, `--no-noise-filter`, `--fuzzy-symptoms`, `--symptom-map`). Its result now includes ranked `conclusions` (confidence, role, evidence, and fix), `ruled_out`, `unexplained`, `consent_needed`, and `redaction_summary`.
+- `probe run` accepts `--app-id` to scope probes to one app and `--allow-network-probe` to run network probes only with your consent.
+- Existing capture files can be analyzed offline in file mode.
+- The analysis report template adds `Confidence` and `Role` fields to each root cause, plus `Ruled Out` and `Unexplained Anomalies` sections.
+- A new guard rule denies hand-typed `openssl s_client`, `curl`, or `wget` over `sdb shell` and points to the consent-gated `--allow-network-probe` options instead.
+
+#### Emulator management
+- A request such as "list the available emulators" is now routed to `tizen-create-emulator`, which runs `list-vm --detail`, instead of the assistant searching for VMs by hand. A new guard rule denies running `em-cli` directly and listing the emulator VM directory with `ls`, `find`, or `Get-ChildItem`.
+- `list-vm --detail` reports each VM's `profile`, derived from its platform image name (`tizen-*` is `tizen`, `tv-*` is `tv`), so a `tizen-10.0-x86_64` VM is no longer reported as a Mobile emulator.
+- When no VM name is given, `tizen-launch-emulator` compares platform versions segment by segment and filters by profile, so `10.0` is chosen over `9.0` and a `tizen` request never picks a TV image.
+- The emulator home-screen recovery for WSL also covers headless Linux hosts.
+
+#### Runner lookup
+- Every CLI runner lookup section in SKILL.md now notes that the `node` line must be run as is.
+
+#### Test runner
+- The plugin's test runner always runs the locally built `tizen-sdk` launcher instead of looking up globally installed `tizen-cli` or `tizen-sdk` binaries on `PATH`, which could pick a stale install.
 
 ### v1.1.0 (2026-10-14)
 
