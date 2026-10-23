@@ -109,6 +109,36 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.1.2 변경 사항 (2026-10-21)
+
+tizen-agent-skills v1.1.2는 `tizen-sdk-skills` 1.4.5와 `tizen-action-skills` 1.0.0을 포함하는 네 번째 통합 릴리스입니다. 새 스킬은 없으며, 명령 가드 훅이 Tizen 작업으로 범위가 한정되고, Platform(GBS) 빌드가 ARM 디바이스를 겨냥할 수 있게 되었으며, 에뮬레이터·디버그·설치 관련 수정이 포함됩니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.4.4 → 1.4.5로 상향
+- Tizen AI Extension(vsix) 1.4.5 및 독립 실행형 CLI 번들 `tizen-sdk-v1.4.5.zip` 동반 릴리스
+
+### 명령 가드 훅
+- 훅이 Tizen 작업으로 범위가 한정됨: Tizen 도구 규칙(tz 플래그, sdb 경로, gdbserver, em-cli, dlog 프로브, 타이머 대기)은 플러그인을 통해 SDK가 구성된 경우(`~/.tizen.sdk.path.config` 존재)에만 적용. 해당 파일이 없는 프로젝트에서는 호스트 셸 문법 규칙만 유지되므로 `which sdb`, `tizen version` 같은 일반 환경 확인이 더 이상 차단되지 않음
+- Tizen Studio의 `tizen` CLI와 sdb 위치 확인(`which` / `where` / `Get-Command sdb`)을 더 이상 금지하지 않음
+- 직접 입력한 sdb는 구성된 SDK의 `tools/sdb`여야 함. 다른 디렉터리의 sdb(두 번째 SDK 설치본, `tools/tizen-core/`, 복사본)는 구성된 경로와 `tizen-sdk-init`을 안내하는 메시지와 함께 거부
+
+### Platform(GBS) 빌드
+- `tizen-build-project`가 ARM 디바이스를 대상으로 할 수 있음. 요청을 `--arch x86_64`(에뮬레이터), `armv7l`(32비트 ARM), `aarch64`(64비트 ARM)로 매핑하고, 아키텍처가 지정되지 않은 디바이스 빌드에서는 묻는 흐름 추가. 디바이스의 `uname -m`과 `/usr/lib64` 존재 여부로 아키텍처를 판별. 기존에는 Platform 빌드가 항상 에뮬레이터 전용 x86_64 RPM을 생성
+
+### 수정 사항
+- `launch-emulator --timeout 0`이 실패 대신 300초 대기하던 문제 수정. `--timeout`이 없을 때만 300초 기본값을 사용하며, `0`은 1–540 범위 밖 값처럼 `invalid_parameters`로 거부
+- `emulator-manager modify --size`가 `--platform` 없이 호출될 때 잘못된 템플릿 목록으로 크기를 해석하던 문제 수정. 이제 `list-vm --detail`로 VM의 플랫폼을 조회해 해당 플랫폼의 템플릿을 사용
+- `tizen-gdb-debug`가 빈 `GDB init file:` 마커를 받아들이던 문제 수정. 빈 마커는 더 이상 성공으로 보고하지 않음
+- `tizen-dotnet-debug`가 "package … not found" 출력을 모두 netcoredbg 누락으로 분류하던 문제 수정. netcoredbg 관련 출력만 해당 방식으로 분류
+- `tizen-playwright-test`의 `--port`, `--setup-timeout`, `--timeout`이 `9222abc`, `1.9`, `30s` 같은 부분 숫자를 받아들이던 문제 수정. 이제 정수만 허용
+- `tizen-install-app`, `tizen-playwright-test`, 프로젝트 생성·삭제·빌드·템플릿 조회, 삼성 인증서 플로우의 초기 검증 실패 시 `duration_ms`가 호출 시점부터 측정되도록 수정
+
+### 내부 개선
+- 에뮬레이터, 디버그, install-app, playwright-test, dlog-analyzer, sdb-helper, 삼성 인증서 모듈을 모듈 전용 헬퍼로 분리해 순환 복잡도를 낮춤. 동작 변화 없음: 내보내는 API, 엔벨로프, 메시지, 오류 코드는 모두 동일
+- 저장소에 PR 검사(`check-pr.js`)와 이를 활용해 `tizen-sdk-skills` PR을 리뷰하는 에이전트 스킬이 추가됨
+
+---
+
 ## v1.1.1 변경 사항 (2026-10-18)
 
 tizen-agent-skills v1.1.1은 `tizen-sdk-skills` 1.4.4와 `tizen-action-skills` 1.0.0을 포함하는 세 번째 통합 릴리스입니다. 새 스킬은 없으며, 기존 스킬의 기능 추가와 라우팅 및 에뮬레이터 관련 수정이 포함됩니다.

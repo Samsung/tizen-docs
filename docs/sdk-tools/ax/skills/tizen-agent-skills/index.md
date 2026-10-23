@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.1.1, the third release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.1.2, the fourth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -132,6 +132,34 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.1.2 (2026-10-21)
+
+The fourth unified release. It ships `tizen-sdk-skills` 1.4.5 and `tizen-action-skills` 1.0.0. No new skills were added; the release scopes the command guard hook to Tizen work, targets Platform (GBS) builds at ARM devices, and fixes emulator, debug, and install issues.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.4.4 to 1.4.5.
+- Tizen AI Extension (vsix) 1.4.5 and the standalone CLI bundle `tizen-sdk-v1.4.5.zip` released alongside.
+
+#### Command guard hook
+- The hook is now scoped to Tizen work: its Tizen tooling rules (tz flags, sdb paths, gdbserver, em-cli, dlog probes, timer waits) apply only when the SDK has been configured through the plugin (`~/.tizen.sdk.path.config`). In a project without that file the hook only keeps its host shell-syntax rules, so ordinary environment checks such as `which sdb` or `tizen version` are no longer denied.
+- The hook no longer forbids the Tizen Studio `tizen` CLI or looking up where sdb is.
+- A hand-typed sdb must be the configured SDK's `tools/sdb`. An sdb from any other directory (a second SDK install, `tools/tizen-core/`, a stray copy) is denied with a message naming the configured path and `tizen-sdk-init`.
+
+#### Platform (GBS) builds
+- `tizen-build-project` can now target ARM devices. The skill maps the request to `--arch x86_64` (emulator), `armv7l` (32-bit ARM) or `aarch64` (64-bit ARM), asks when a device build names no architecture, and reads the architecture from the device's `uname -m` and whether `/usr/lib64` exists. Previously Platform builds always produced the emulator-only x86_64 RPM.
+
+#### Fixes
+- `launch-emulator --timeout 0` waited 300 s instead of failing. Only an absent `--timeout` takes the 300 s default; `0` is rejected with `invalid_parameters` like any value outside 1–540.
+- `emulator-manager modify --size` without `--platform` resolved the size against the wrong template list. It now looks up the VM's own platform with `list-vm --detail` and lists templates for that platform.
+- `tizen-gdb-debug` accepted an empty `GDB init file:` marker; an empty one no longer reports success or reads the next output line as the init file.
+- `tizen-dotnet-debug` reported any "package … not found" output as a missing netcoredbg. Only netcoredbg-specific output is classified that way.
+- `tizen-playwright-test` accepted partial numbers such as `9222abc`, `1.9`, or `30s` for `--port`, `--setup-timeout`, and `--timeout`. Whole numbers only are accepted now.
+- Early validation failures of `tizen-install-app`, `tizen-playwright-test`, project creation, deletion, build, template listing, and the Samsung certificate flows now measure `duration_ms` from the call instead of from a later point.
+
+#### Internal
+- The emulator, debug, install-app, playwright-test, dlog-analyzer, sdb-helper, and Samsung certificate modules were split into module-private helpers to lower cyclomatic complexity. No behavior change: the exported APIs, envelopes, messages, and error codes are unchanged.
+- The repository gained a pull request check (`check-pr.js`) that validates changed files against the mechanical contribution rules and reports `ERROR` / `WARN` by rule ID, plus an agent skill that reviews `tizen-sdk-skills` pull requests with it.
 
 ### v1.1.1 (2026-10-18)
 
