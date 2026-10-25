@@ -109,6 +109,35 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.2.0 변경 사항 (2026-10-25)
+
+tizen-agent-skills v1.2.0은 `tizen-sdk-skills` 1.5.0과 `tizen-action-skills` 1.0.0을 포함하는 다섯 번째 통합 릴리스입니다. 새 스킬은 없으며, 여러 Tizen 플랫폼 버전을 나란히 관리할 수 있게 되었고, Wayland/HWC 타겟용 스크린샷 폴백과 dlog-analyzer `crash-report` 액션이 추가되었으며, SDK·TV SDK·플랫폼 설치 관련 수정이 포함됩니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.4.5 → 1.5.0으로 상향
+- Tizen AI Extension(vsix) 1.5.0 및 독립 실행형 CLI 번들 `tizen-sdk-v1.5.0.zip` 동반 릴리스
+
+### 여러 플랫폼 버전 관리
+- `platform-install --list`(tizen-cli `platform-list`, 새 읽기 전용 명령)가 각 `platforms/tizen-X.Y`를 `installed`, `incomplete`(완료되지 않은 `platform-install`), `not_installed`로 보고하며, 프로필과 에뮬레이터 이미지, 가장 높은 설치 버전을 함께 표시
+- `create`와 `list-templates`가 `--platform-version <X.Y>`를 지원. 설치되지 않은 버전은 `platform_version_not_found`로 실패하며 `platform-install` 명령을 안내. 옵션이 없으면 가장 높은 설치 플랫폼을 사용. 기존에는 공유 `common` 데이터만 있는 버전을 선택할 수 있었음
+- `--type tv`에서 버전을 지정하면 해당 `tv-samsung-X.Y` 프로필도 선택하며, 그 TV 확장이 없으면 TV 확장이 있는 버전을 안내하며 실패
+
+### Wayland/HWC 타겟용 스크린샷 폴백
+- DA 가전처럼 HWC가 UI를 오버레이 플레인에 올려 디바이스 덤프가 검은 화면으로 나오던 타겟에서, `enlightenment_info` 단계가 `winfo`로 배포된 클라이언트도 찾고 단색 덤프는 HWC를 끈 상태로 한 번 재시도한 뒤 HWC를 복원
+- 모든 디바이스 측 방법 이후에 호스트 측 VNC 폴백이 실행됨. sdb로 디바이스의 5900 포트를 포워딩하거나 `TIZEN_VNC_SERVER`를 사용하며, 클라이언트는 모든 호스트의 vncdotool 또는 Linux의 `vncsnapshot`. 스크립트 타임아웃이 60초에서 90초로 늘었고, 엔벨로프 경고가 설치할 항목이나 VNC 연결 실패 원인을 안내
+
+### dlog-analyzer 크래시 리포트
+- 새 `crash-report` 액션이 `/opt/usr/share/crash/dump`, `/run/crash/dump`, `--dump-dir`의 crash-worker 덤프를 조회하고 앱 ID 또는 프로세스 이름(`--process`)으로 매칭하므로, 앱 ID가 없는 시스템 데몬도 다룰 수 있음. 최신 덤프(`--limit`, 기본값 3)의 시그널, 실행 파일, 콜 스택을 반환하고 `.info` 리포트와 함께 묶인 dlog를 저장하며 해당 `error-analyze` 호출을 제시. 읽을 수 있는 덤프 디렉터리가 없으면 `permission_denied`로 실패하며 `root on`을 안내
+
+### 수정 사항
+- `create`, `list-templates --type tv --platform-version X.Y`의 TV 안내가 `tizen-tv-sdk-install`과 `tizen-tv-sdk-install-from-zip`을 모두 제시하므로, 온라인 저장소에 없는 버전의 TV 확장도 ZIP으로 설치 가능. TV SDK가 이미 설치로 표시된 경우 `--force`를 추가
+- 플랫폼 버전은 `platforms/tizen-X.Y`에 실제 플랫폼 콘텐츠가 있고 진행 중 마커가 남아 있지 않을 때만 설치된 것으로 판정. `tizen-platform-install`이 이미 있는 버전을 다시 내려받지 않고, `--force`가 다른 버전의 기록을 지우지 않으며, 실패한 실행은 완료로 간주되지 않고 이어서 재개됨
+- Cline에서 TV SDK 설치가 동작: 스킬이 사용하던 `--detach`, `--status` 옵션을 설치 프로그램에 추가하고, Cline 실행 명령이 `--force`(Windows에서는 `-ZipPath`도)를 유지하며, Linux 폴러가 실행 중인 설치가 없을 때 `STATUS=running`을 보고하지 않고, Windows 분리 실행이 공백이 포함된 경로를 따옴표로 감쌈
+- `--force` / `-Force`가 매니페스트가 있는 패키지를 모두 건너뛰지 않고 설치된 SDK를 실제로 재설치하므로, 새 패키지와 `--repo-url` 전환이 반영됨. 중간에 실패한 강제 실행은 더 이상 설치 완료로 보고되지 않음
+- SDK 및 TV SDK 설치 스킬이 Cline 설치 실패를 포함한 모든 완료 경로에서 결과 엔벨로프를 보고
+
+---
+
 ## v1.1.2 변경 사항 (2026-10-21)
 
 tizen-agent-skills v1.1.2는 `tizen-sdk-skills` 1.4.5와 `tizen-action-skills` 1.0.0을 포함하는 네 번째 통합 릴리스입니다. 새 스킬은 없으며, 명령 가드 훅이 Tizen 작업으로 범위가 한정되고, Platform(GBS) 빌드가 ARM 디바이스를 겨냥할 수 있게 되었으며, 에뮬레이터·디버그·설치 관련 수정이 포함됩니다.

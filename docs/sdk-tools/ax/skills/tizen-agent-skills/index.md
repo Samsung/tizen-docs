@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.1.2, the fourth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.2.0, the fifth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -132,6 +132,33 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.2.0 (2026-10-25)
+
+The fifth unified release. It ships `tizen-sdk-skills` 1.5.0 and `tizen-action-skills` 1.0.0. No new skills were added; the release lets several Tizen platform versions be managed side by side, adds screenshot fallbacks for Wayland/HWC targets and a dlog-analyzer `crash-report` action, and fixes SDK, TV SDK, and platform installation issues.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.4.5 to 1.5.0.
+- Tizen AI Extension (vsix) 1.5.0 and the standalone CLI bundle `tizen-sdk-v1.5.0.zip` released alongside.
+
+#### Multiple platform versions
+- `platform-install --list` (tizen-cli `platform-list`, a new read-only command) reports each `platforms/tizen-X.Y` as `installed`, `incomplete` (an unfinished `platform-install`), or `not_installed`, with its profiles and emulator images, plus the newest installed version.
+- `create` and `list-templates` accept `--platform-version <X.Y>`. A version that is not installed fails with `platform_version_not_found` and names the `platform-install` command. Without the option, both use the newest installed platform; previously they could pick a version that held only the shared `common` data.
+- For `--type tv`, an explicit version also selects the matching `tv-samsung-X.Y` profile and fails when that TV extension is missing, naming the versions that have it.
+
+#### Screenshot fallbacks for Wayland/HWC targets
+- On targets such as DA appliances, where HWC puts the UI on overlay planes and on-device dumps came back solid black, the `enlightenment_info` step now also finds the client when it ships as `winfo` and retries a solid-color dump once with HWC turned off, restoring HWC afterwards.
+- A new host-side VNC fallback runs after every on-device method. It forwards the device's port 5900 over sdb, or uses `TIZEN_VNC_SERVER`, with vncdotool on any host or `vncsnapshot` on Linux. The script timeout goes from 60 s to 90 s, and the envelope warning says what to install or why the VNC connection failed.
+
+#### dlog-analyzer crash reports
+- The new `crash-report` action lists the crash-worker dumps in `/opt/usr/share/crash/dump`, `/run/crash/dump`, and any `--dump-dir`, and matches them by app ID or by process name (`--process`), so system daemons without an app ID are covered. For the newest dumps (`--limit`, default 3) it returns the signal, executable, and call stack, saves the `.info` report and the packed dlog, and gives the matching `error-analyze` call. If no dump directory is readable, it fails with `permission_denied` and suggests `root on`.
+
+#### Fixes
+- TV hints from `create` and `list-templates --type tv --platform-version X.Y` now offer both `tizen-tv-sdk-install` and `tizen-tv-sdk-install-from-zip`, so a missing TV extension of a version the online repository does not carry can be installed from a ZIP. `--force` is added when a TV SDK is already marked installed.
+- A platform version counts as installed only when `platforms/tizen-X.Y` holds real platform content and no in-progress marker is left. `tizen-platform-install` no longer re-downloads versions that are present, `--force` no longer wipes the record of other versions, and a failed run is resumed instead of being treated as finished.
+- TV SDK installs work under Cline: the installer gained the `--detach` and `--status` options the skill already used, the Cline launch commands keep `--force` (and `-ZipPath` on Windows), the Linux pollers no longer report `STATUS=running` when nothing is running, and the Windows detached launch quotes paths that contain spaces.
+- `--force` / `-Force` now reinstalls an installed SDK instead of skipping every package with an existing manifest, so newer packages and a `--repo-url` switch take effect. A forced run that fails partway is no longer reported as installed.
+- The SDK and TV SDK install skills now report the result envelope on every completion path, including a failed Cline install.
 
 ### v1.1.2 (2026-10-21)
 
