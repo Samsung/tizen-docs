@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.3.0, the sixth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.3.1, the seventh release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -132,6 +132,30 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.3.1 (2026-10-26)
+
+The seventh unified release, a patch release. It ships `tizen-sdk-skills` 1.6.1 and `tizen-action-skills` 1.0.0. No new skills were added; the release makes the new-release notice work behind HTTPS-re-signing proxies and on slow machines, records why an update check failed, updates the bundled DLog Analyzer, and adds a one-page quick guide.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.6.0 to 1.6.1.
+- Tizen AI Extension (vsix) 1.6.1 and the standalone CLI bundle `tizen-sdk-v1.6.1.zip` released alongside.
+
+#### Added
+- A one-page quick guide (`quick-guide.md`, `quick-guide.ko.md`) summarizes what the plugin does, the development flow with all 36 commands, setup per host, common problems, and key locations, so a new user does not have to read the full README first.
+
+#### Changed
+- The bundled DLog Analyzer binaries for Linux, Windows, and macOS are updated to 0.2.9a0. The update validates `exception-detect --category` values in every mode, and the `tls-trust` probe now finds Tizen trust stores, including hash-named certificates and bundle files.
+- The update-check cache (`~/.tizen.agent.update.json`) also stores `checkedAtText` and `notifiedAtText`, the check and notice times in local time, for a person reading the file.
+- A failed update check now records an `error` code in the cache (for example, `UNABLE_TO_VERIFY_LEAF_SIGNATURE`, `TIMEOUT`, `HTTP_404`, or `PROXY_NEEDS_NODE_22_21`), which is cleared on the next success. A new README troubleshooting entry, _No update notice_, explains each code.
+
+#### Fixes
+- Behind a corporate proxy that re-signs HTTPS with a root certificate trusted by the OS but not by Node.js, the catalog fetch failed and no notice was shown. The proxy re-run now trusts the OS certificate store for that request only (`--use-system-ca`), without changing the user's environment. Without a proxy, `NODE_USE_SYSTEM_CA=1` or `NODE_EXTRA_CA_CERTS` remains the fix.
+- The proxy re-run was capped at 4 s, which was too short for a second `node` process to start on Windows machines with on-access virus scanning. The cap is now 13 s.
+- The `SessionStart` hook for the update check was registered with a 5 s timeout, so on slow machines it was killed before it wrote the cache and no notice could be shown. The timeout is now 20 s on every host; the hook still exits as soon as it finishes. Run the setup script again to update the registered entry.
+
+#### Internal
+- The repository's pull request review skill gained Codex and Cline entrypoints that point to the single canonical procedure, and every review comment now ends with a line naming the model that wrote it.
 
 ### v1.3.0 (2026-10-25)
 

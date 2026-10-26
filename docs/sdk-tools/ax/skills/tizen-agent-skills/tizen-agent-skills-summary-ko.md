@@ -109,6 +109,32 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.3.1 변경 사항 (2026-10-26)
+
+tizen-agent-skills v1.3.1은 `tizen-sdk-skills` 1.6.1과 `tizen-action-skills` 1.0.0을 포함하는 일곱 번째 통합 릴리스(패치 릴리스)입니다. 새 스킬은 없으며, HTTPS를 재서명하는 프록시 환경과 느린 머신에서도 새 릴리스 알림이 동작하도록 수정하고, 업데이트 확인 실패 원인을 기록하며, 번들된 DLog Analyzer를 갱신하고, 한 페이지 빠른 가이드를 추가했습니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.6.0 → 1.6.1로 상향
+- Tizen AI Extension(vsix) 1.6.1 및 독립 실행형 CLI 번들 `tizen-sdk-v1.6.1.zip` 동반 릴리스
+
+### 추가
+- 한 페이지 빠른 가이드(`quick-guide.md`, `quick-guide.ko.md`) 추가. 플러그인 기능, 36개 명령을 포함한 개발 흐름, 호스트별 설정, 자주 발생하는 문제, 주요 위치를 요약해 새 사용자가 전체 README를 먼저 읽지 않아도 됨
+
+### 변경
+- 번들된 Linux, Windows, macOS용 DLog Analyzer 바이너리를 0.2.9a0으로 갱신. 모든 모드에서 `exception-detect --category` 값을 검증하고, `tls-trust` 프로브가 해시 이름 인증서와 번들 파일을 포함한 Tizen 신뢰 저장소를 찾음
+- 업데이트 확인 캐시(`~/.tizen.agent.update.json`)에 확인 및 알림 시각을 현지 시간으로 기록한 `checkedAtText`, `notifiedAtText`를 추가해 사람이 읽기 쉽게 함
+- 업데이트 확인 실패 시 캐시에 `error` 코드(예: `UNABLE_TO_VERIFY_LEAF_SIGNATURE`, `TIMEOUT`, `HTTP_404`, `PROXY_NEEDS_NODE_22_21`)를 기록하며, 다음 성공 시 지움. README에 각 코드를 설명하는 _No update notice_ 문제 해결 항목 추가
+
+### 수정 사항
+- OS는 신뢰하지만 Node.js는 신뢰하지 않는 루트 인증서로 HTTPS를 재서명하는 사내 프록시 환경에서 카탈로그 조회가 실패해 알림이 표시되지 않던 문제 수정. 프록시 재실행이 해당 요청에 한해 OS 인증서 저장소를 신뢰(`--use-system-ca`)하며 사용자 환경은 변경하지 않음. 프록시가 없는 환경에서는 `NODE_USE_SYSTEM_CA=1` 또는 `NODE_EXTRA_CA_CERTS`로 해결
+- 프록시 재실행 제한 시간이 4초여서 실시간 바이러스 검사를 사용하는 Windows 머신에서 두 번째 `node` 프로세스가 시작되기에 부족하던 문제 수정. 제한 시간을 13초로 늘림
+- 업데이트 확인용 `SessionStart` 훅이 5초 타임아웃으로 등록되어 느린 머신에서 캐시를 쓰기 전에 종료되고 알림이 표시되지 않던 문제 수정. 모든 호스트에서 타임아웃을 20초로 늘렸으며, 훅은 작업이 끝나는 즉시 종료됨. 등록된 항목을 갱신하려면 설치 스크립트를 다시 실행
+
+### 내부 개선
+- 저장소의 PR 리뷰 스킬에 단일 기준 절차를 가리키는 Codex 및 Cline 진입점을 추가하고, 모든 리뷰 코멘트 끝에 작성한 모델을 밝히는 줄을 추가
+
+---
+
 ## v1.3.0 변경 사항 (2026-10-25)
 
 tizen-agent-skills v1.3.0은 `tizen-sdk-skills` 1.6.0과 `tizen-action-skills` 1.0.0을 포함하는 여섯 번째 통합 릴리스입니다. 새 스킬은 없으며, 새 릴리스가 나오면 세션 시작 시 사용자에게 알려 주는 기능이 추가되었습니다.
