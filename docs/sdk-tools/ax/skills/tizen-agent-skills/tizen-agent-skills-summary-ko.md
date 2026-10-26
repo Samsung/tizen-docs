@@ -109,6 +109,22 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.3.0 변경 사항 (2026-10-25)
+
+tizen-agent-skills v1.3.0은 `tizen-sdk-skills` 1.6.0과 `tizen-action-skills` 1.0.0을 포함하는 여섯 번째 통합 릴리스입니다. 새 스킬은 없으며, 새 릴리스가 나오면 세션 시작 시 사용자에게 알려 주는 기능이 추가되었습니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.5.0 → 1.6.0으로 상향
+- Tizen AI Extension(vsix) 1.6.0 및 독립 실행형 CLI 번들 `tizen-sdk-v1.6.0.zip` 동반 릴리스
+
+### 세션 시작 시 새 릴리스 알림
+- 설치 스크립트가 모든 호스트에 세션 시작 훅을 등록(Claude Code, Codex CLI, Gemini CLI는 `SessionStart`, Cline은 `TaskStart`). 설치된 플러그인 버전을 GitHub `main` 브랜치의 `.claude-plugin/marketplace.json`과 비교해 더 새 버전이 있으면 한 줄 알림을 표시. 훅 출력이 UI에 표시되지 않는 환경(Visual Studio Code용 Claude Code 확장, Cline)에서는 어시스턴트가 첫 응답에서 알림을 전달
+- 카탈로그는 하루에 최대 한 번 조회하고(`~/.tizen.agent.update.json`에 캐시, 타임아웃 3초), 같은 알림도 하루에 최대 한 번 표시. 실패 시 아무것도 출력하지 않으며 4시간 후 재시도
+- `HTTPS_PROXY` 환경에서는 Node.js 내장 프록시 지원(Node.js 22.21 이상 또는 24 이상)을 사용하며, 이전 버전의 Node.js에서는 확인을 건너뜀
+- Visual Studio Code 확장은 이 확인을 등록하지 않지만, 확장 제거 시 `SessionStart` 항목과 Cline `TaskStart` 어댑터도 함께 제거
+
+---
+
 ## v1.2.0 변경 사항 (2026-10-25)
 
 tizen-agent-skills v1.2.0은 `tizen-sdk-skills` 1.5.0과 `tizen-action-skills` 1.0.0을 포함하는 다섯 번째 통합 릴리스입니다. 새 스킬은 없으며, 여러 Tizen 플랫폼 버전을 나란히 관리할 수 있게 되었고, Wayland/HWC 타겟용 스크린샷 폴백과 dlog-analyzer `crash-report` 액션이 추가되었으며, SDK·TV SDK·플랫폼 설치 관련 수정이 포함됩니다.

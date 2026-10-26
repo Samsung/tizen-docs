@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.2.0, the fifth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.3.0, the sixth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -132,6 +132,20 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.3.0 (2026-10-25)
+
+The sixth unified release. It ships `tizen-sdk-skills` 1.6.0 and `tizen-action-skills` 1.0.0. No new skills were added; the release adds a session-start notice that tells the user when a newer release is available.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.5.0 to 1.6.0.
+- Tizen AI Extension (vsix) 1.6.0 and the standalone CLI bundle `tizen-sdk-v1.6.0.zip` released alongside.
+
+#### New-release notice at session start
+- The setup scripts now register a session-start hook for every host (Claude Code, Codex CLI, and Gemini CLI `SessionStart`, Cline `TaskStart`). It compares the installed plugin versions with `.claude-plugin/marketplace.json` on the GitHub `main` branch and shows a one-line notice when a newer version is out. Where the UI does not display hook output (the Claude Code extension for Visual Studio Code, Cline), the assistant is asked to mention the notice in its first reply.
+- The catalog is fetched at most once a day (cached in `~/.tizen.agent.update.json`, 3 s timeout), and the same notice is shown at most once a day. Any failure prints nothing and is retried after 4 hours.
+- Behind `HTTPS_PROXY`, the check uses Node.js built-in proxy support (Node.js 22.21 or later, or 24 or later) and is skipped on older Node.js versions.
+- The Visual Studio Code extension does not register the check, but its uninstall now also removes the `SessionStart` entry and the Cline `TaskStart` adapter.
 
 ### v1.2.0 (2026-10-25)
 
