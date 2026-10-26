@@ -3,6 +3,9 @@
 ## 개요
 Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tizen 개발 환경에서 다양한 작업을 자동화하고 지원합니다.
 
+> [!NOTE]
+> `tizen-sdk-skills`를 처음 사용한다면 한 페이지 빠른 가이드부터 읽어 보세요. [한국어](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.ko.md) 및 [영어](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.md)로 제공되며, 플러그인 기능, 전체 개발 흐름, 호스트별 설정, 자주 발생하는 문제를 정리했습니다.
+
 ---
 
 ## 핵심 에이전트별 기능
@@ -118,7 +121,7 @@ tizen-agent-skills v1.3.1은 `tizen-sdk-skills` 1.6.1과 `tizen-action-skills` 1
 - Tizen AI Extension(vsix) 1.6.1 및 독립 실행형 CLI 번들 `tizen-sdk-v1.6.1.zip` 동반 릴리스
 
 ### 추가
-- 한 페이지 빠른 가이드(`quick-guide.md`, `quick-guide.ko.md`) 추가. 플러그인 기능, 36개 명령을 포함한 개발 흐름, 호스트별 설정, 자주 발생하는 문제, 주요 위치를 요약해 새 사용자가 전체 README를 먼저 읽지 않아도 됨
+- 한 페이지 빠른 가이드([한국어](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.ko.md), [영어](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.md)) 추가. 플러그인 기능, 36개 명령을 포함한 개발 흐름, 호스트별 설정, 자주 발생하는 문제, 주요 위치를 요약해 새 사용자가 전체 README를 먼저 읽지 않아도 됨
 
 ### 변경
 - 번들된 Linux, Windows, macOS용 DLog Analyzer 바이너리를 0.2.9a0으로 갱신. 모든 모드에서 `exception-detect --category` 값을 검증하고, `tls-trust` 프로브가 해시 이름 인증서와 번들 파일을 포함한 Tizen 신뢰 저장소를 찾음

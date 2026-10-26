@@ -18,6 +18,9 @@ The `tizen-agent-skills` repository contains one directory per plugin. Each plug
 The rest of this section focuses on the `tizen-sdk-skills` plugin, which covers the application development lifecycle. For the `tizen-action-skills` plugin, see its [README on GitHub](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/README.md).
 
 > [!NOTE]
+> New to `tizen-sdk-skills`? Start with the one-page quick guide, available in [English](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.md) and [Korean](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.ko.md). It covers what the plugin does, the full development flow, setup per host, and common problems.
+
+> [!NOTE]
 > You do not need to install the Tizen SDK before you start. The `tizen-sdk-install` skill downloads and installs it for you. See [Installing Tizen Agent Skills](install.md).
 
 ## What you can do with it
@@ -142,7 +145,7 @@ The seventh unified release, a patch release. It ships `tizen-sdk-skills` 1.6.1 
 - Tizen AI Extension (vsix) 1.6.1 and the standalone CLI bundle `tizen-sdk-v1.6.1.zip` released alongside.
 
 #### Added
-- A one-page quick guide (`quick-guide.md`, `quick-guide.ko.md`) summarizes what the plugin does, the development flow with all 36 commands, setup per host, common problems, and key locations, so a new user does not have to read the full README first.
+- A one-page quick guide ([English](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.md), [Korean](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.ko.md)) summarizes what the plugin does, the development flow with all 36 commands, setup per host, common problems, and key locations, so a new user does not have to read the full README first.
 
 #### Changed
 - The bundled DLog Analyzer binaries for Linux, Windows, and macOS are updated to 0.2.9a0. The update validates `exception-detect --category` values in every mode, and the `tls-trust` probe now finds Tizen trust stores, including hash-named certificates and bundle files.
@@ -307,6 +310,7 @@ The first unified release of the `tizen-agent-skills` collection. It ships `tize
   - Tizen SDK 10.0 and higher (installed by the plugin if missing)
 * [tizen-agent-skills on GitHub](https://github.com/Samsung/tizen-agent-skills)
 * [tizen-sdk-skills plugin README](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/README.md)
+* tizen-sdk-skills quick guide: [English](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.md), [Korean](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/quick-guide.ko.md)
 * [tizen-action-skills plugin README](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/README.md)
 * [Command Line Interface](../../../baseline-sdk/common-tools/command-line-interface.md)
 * [Smart Development Bridge](../../../baseline-sdk/common-tools/smart-development-bridge.md)
