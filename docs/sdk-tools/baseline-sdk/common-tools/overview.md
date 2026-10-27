@@ -36,7 +36,6 @@ Baseline SDK includes the following standalone tools.
 * Emulator Manager : Tool to create and manage emulator instances.
 * Device Manager : Standalone tool that manages device and allows you to access your internal file systems and logs.
 * Command-line Interface : CLI provides functionalities for entire Tizen application development process by using the terminal.
-* Dynamic Analyzer : Native profiling tool for Tizen application
 * SDB (Smart Device Bridge) : Command line tool that communicates with a conneted target device (It can be an emulator instance of a real Tizen devce like TV)
 
 **Figure : Overview Tizen SDK Components**
@@ -57,4 +56,4 @@ Developers can use "Visual Studio Code Extension for Tizen" or "Visual Studio To
 | Static Analyzer                | Static Analyzer                             | JavaScript Analyzer                         | -                                                                                                                                                                 |
 | Unit Test & Code Coverage Tool | gtest & gcov                                | `<QUnit>`                                 | `<NUnit>`<br />※ .NET Unit Test Tool is provided by .NET CLI.<br />You can refer to [LINK](https://learn.microsoft.com/en-us/dotnet/core/testing/#testing-tools) |
 | Address & Leak Sanitizer       | ASAN/LSAN                                   | -                                           | -                                                                                                                                                                 |
-| Profiler                       | <br />Dynamic Analyzer<br />T-Trace         | Web Inspector                               | Core Profiler<br />Memory Profiler<br />.NET Diagnostics<br />(dotnet dummp/Trace, GC dump)                                                                      |
+| Profiler                       | T-Trace         | Web Inspector                               | Core Profiler<br />Memory Profiler<br />.NET Diagnostics<br />(dotnet dummp/Trace, GC dump)                                                                      |

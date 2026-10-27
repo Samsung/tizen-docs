@@ -99,7 +99,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 **Fixed Bugs**
 
 - Installer and Update Manager
-  - The bug, where the SDK Update Notification did not appear when you ran the dynamic analyzer on Mac OS X, has been fixed.
 - Web & Native IDE
   - When you tried to convert a project to an earlier version, an error occurred and the conversion failed. This bug has been fixed. You can convert the project to earlier versions.
 - Native IDE
@@ -186,7 +185,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Installer and Update Manager
 
-  - When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear though there are available SDK updates.
   - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 
 - Native IDE
@@ -283,11 +281,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - The Live view supports displaying a dummy spacer.
 
 
-- Dynamic Analyzer
-  - The Table Filtering feature has been added to show the information filtered by the keyword a user set in the analysis results.
-
-
-
 **Changed Features**
 
 - Installer and Update Manager
@@ -367,7 +360,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Installer and Update Manager
   - Some errors in the update command of the 2.4 rev1 and rev2 CLI Installer have been found. If you use the 2.4 rev1 or rev2 CLI Installer, you fail to update your Tizen SDK. To solve the problem, CLI installer patch files are released. Download the patch at the *download location* and do the following: Open the terminal or command line, and go to the location where the downloaded patch file exists. Move the patch file to the location where the SDK is installed. At the prompt, type **update-manager-cli_2.4_patch update_{OS}_{bit}.{bin|exe}** to install the patch.
-  - You can also upgrade your CLI Installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tizen-studio/download). If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working. When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear even though there are available SDK updates. If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
+  - You can also upgrade your CLI Installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tizen-studio/download). If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working. If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 
 
 - Native IDE
@@ -436,11 +429,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - CLI and SDB
   -  A new -r, --rootstrap option has been added to the tizen build-native CLI command. You can build a native application using a rootstrap name.
-- Dynamic Analyzer
-  - The UI hierarchy analysis supports the Tizen 2.3.1 based devices.
-
-
-
 **Changed Features**
 
 - Web IDE
@@ -475,7 +463,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
     - Move the patch file to the location where the SDK is installed.
     - At the prompt, enter the update-manager-cli_2.4_patch update_{OS}_{bit}.{bin|exe} command to install the patch.
   -  If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working.
-  -  When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear though there are available SDK updates.
   -  If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 
 
@@ -542,12 +529,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - Significant performance improvements for SDB push/pull over the Bluetooth have been added.
 
 
-- Dynamic Analyzer
-  - The UI hierarchy analysis has been added (supports 2.4 mobile applications only). It shows the information of the EFL UI objects (Evas, Elementary, and Edje). It also provides the hierarchy relationship of all UI objects and detailed information of each UI object.
-  - The energy analysis for Wi-Fi and Bluetooth has been added. It shows the power consumption of Wi-Fi and Bluetooth (target device only).
-
-
-
 **Changed Features**
 
 - Common
@@ -598,7 +579,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
     - Move the patch file to the location where the SDK is installed.
     - At the prompt, enter the **update-manager-cli_2.4_patch_{OS}{bit}.{bin|exe}** command to install the patch.
   - If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working.
-  - When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear though there are available SDK updates. 
   - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 
 
@@ -702,7 +682,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Common
   - The Project wizard has been enhanced to be opened and closed faster than in the 2.4 official version.
-  - To improve the security of a connected Tizen device, the execute permission has been changed from the root/administrator to the developer in some features that control the device, such as the dynamic analyzer and SDBD.
+  - To improve the security of a connected Tizen device, the execute permission has been changed from the root/administrator to the developer in some features that control the device, such as SDBD.
   - The IDE has been changed to hold the settings (**filter, log level, category**) of the Log view after the device is disconnected.
   - The default value for the **log level** property of the Log view has been changed from **Verbose** to **Error**.
 - Installer and Update Manager
@@ -723,7 +703,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 **Fixed Bugs**
 
 - Common
-  - The Apple JDK dependency issue, which appeared when starting the Tizen IDE and dynamic analyzer, has been fixed.
+  - The Apple JDK dependency issue, which appeared when starting the Tizen IDE, has been fixed.
 - Native IDE
   - The bug, which caused unnecessary files (such as .EDC file) to be included when native modules were packaged into the .tpk file, has been fixed.
 - CLI
@@ -734,7 +714,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - Installer and Update Manager
   - If there is a multibyte character in the installation path of the Tizen SDK, some development packages cannot find the installed SDK’s location when they are working.
   - When you install packages by using the **All Packages** tab in the Update Manager, the number of the progress indicator is only changed each time a package in dependency is downloaded. While downloading, the number of the progress indicator is not changed. 
-  - When you run the dynamic analyzer on Mac OS, the SDK Update Notification does not appear though there are available SDK updates.
   - If the **SDK Update Notification** appears when you start the Tizen IDE or Emulator on Mac OS, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 - Native IDE
   - When you import some projects generated from Tizen 2.3 Rev2, the import can take some time.
@@ -796,10 +775,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - Sharing host PC’s directories with the emulator is supported. The shared directory can be added or removed in the ECP (Emulator Control Panel) while the emulator is running.
   - Low-memory event in the ECP has been added.
   - Shortcut keys for Windows and Ubuntu have been added. **Ctrl + Shift + S** or **Ctrl + F6** can be used to open the sdb shell when the emulator is focused.
-- Dynamic Analyzer
-  - Checkpoint analysis has been added. It displays the checked variable value of the application in real time.
-  - App startup analysis has been added. It displays information both before and after the application starts.
-  - UI gesture event chart has been added. It displays the UI application’s gesture events.
 - T-trace
   - Profiling tool has been added to optimize the application performance by measuring and visualizing instrumented function calls in the Tizen platform.
 - Stale Object Checker
@@ -1388,7 +1363,6 @@ New Features
 - Support for the 6Lowpan module for Bluetooth Low Energy has been added.
 - Support for Samsung Game Pad I-GP20 has been added.
 - Support for HID device drivers (BT mouse and keyboard) has been added.
-- Built-in SWAP kernel module has been added for supporting the dynamic analyzer.
 
 **Change Notes**
 

@@ -62,11 +62,6 @@
 <!-- docscheck:referenced-sdk:start -->
 <!-- ## Referenced SDK documentation
 ### Common tools
-#### [Overview](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/overview.md)
-#### [Common Tasks](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/common-tasks.md)
-#### [Advanced Tasks](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/advanced-tasks.md)
-#### [Memory Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/memory-analysis.md)
-#### [Thread Analysis](/sdk-tools/baseline-sdk/common-tools/dynamic-analyzer/thread-analysis.md)
 #### [Certificate Registration](/sdk-tools/baseline-sdk/common-tools/certificate-registration.md)
 #### [Device Manager](/sdk-tools/baseline-sdk/common-tools/device-manager.md)
 #### [Log View](/sdk-tools/baseline-sdk/common-tools/log-view.md)

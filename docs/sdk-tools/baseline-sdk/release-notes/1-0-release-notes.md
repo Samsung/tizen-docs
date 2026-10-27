@@ -38,17 +38,6 @@
   - The `manual` command has been added to display the description, syntax, options, and examples of the specific command.
   - Support has been added to develop native widget and watch applications.
   - The use of the `PROJ_PATH`, `BUILD_ARCH`, and `BUILD_CONFIG` environment variables has been added in the `project_def.prop` and `build_def.prop` files.
-- Dynamic Analyzer
-  - The new UX has been applied to the Dynamic Analyzer.
-  - The command line-based interface has been introduced.
-  - The template selection during the launch of the Dynamic Analyzer has been change to allow you to select the profiling features. This change leads you easily understand what you want to profile.
-  - The memory analysis functionality has been added to analyze memory allocation and application free memory deeply.
-  - A marker system has been introduced to add markers to the **Timeline** tab.
-  - A range analysis system has been introduced between specific 2 markers or a user-selected area.
-  - A dlog table has been added to help you to understand the tracing start and end point.
-  - A zoom/scroll key shortcut has been added to handle the Dynamic Analyzer results more conveniently.
-  - A screen capture can be conducted without selecting the feature.
-
 ### Changed Features
 
 - Installer, Package Manager, and Uninstaller
@@ -97,9 +86,6 @@
     - To improve the user&apos;s concentration on the values of an event injection device, the UX has been designed with a card selection style.
 - Toolchain
   - The version of msys (collection of GNU utilities, such as bash, make, and gawk) tools has been upgraded to msys2.
-- Dynamic Analyzer
-  - Save and load functionalities have been changed to store and restore the trace data on an arbitrary path.
-
 ### Fixed Bugs
 
 - Web IDE and Native IDE

@@ -42,7 +42,7 @@ The Tizen 2.3.1 release provides developers with the Tizen kernel, device driver
     - The colors of the following are changed
       - Selector, Circular index scrollbar
 - Common
-  - To improve security for connected Tizen devices, the execute permission of some features, such as Dynamic Analyzer, SDBD, etc., which control the devices, has been changed from the root/administrator to the developer.
+  - To improve security for connected Tizen devices, the execute permission of some features, such as SDBD, which control the devices, has been changed from the root/administrator to the developer.
 
 **Fixed Bugs**
 
@@ -66,7 +66,6 @@ The Tizen 2.3.1 release provides developers with the Tizen kernel, device driver
     - If the RAM size is set as 768 or 1024 MB for the VM in the Emulator Manager, change the RAM size to 512 MB.
     - Increase the user area of the virtual memory in the system to 3 GB by typing **bcdedit /set increaseuserva 3072** on the console with administrator rights (Windows 7 only) and reboot.
   - If you use a MacBook Pro which has both Intel HD and NVidia GPUs, when you execute the Emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the Emulator may be unexpectedly terminated. Please use the **OpenGL ES ver. v2.0 & v3.0 **option.
-  - The Dynamic Analyzer may not recognize the Emulator the first time but it will recognize it next time.
 
 
 
@@ -456,4 +455,3 @@ The following features have been added to the existing mobile native APIs in thi
       - Select all tab on Emulator Manager
     - Solution
       - Roll back the wearable-2.3.1 profile into x86-circle
-- Dynamic Analyzer failed to recognize emulator for 1st time only & later running fine.

@@ -656,11 +656,6 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - sdbd has the "developer" privilege, so a user requiring root permission must use the "sdb root on" command
     - The "sdb install" command supports the Web package (*.wgt)
   - Rootstrap Manager removed (use the Platform SDK)
-- Dynamic analyzer
-  - Feature configuration view is added
-  - File chart information on the File analysis page is updated (see the manual)
-
-
 - Platform IDE
 
 
@@ -756,11 +751,6 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - You cannot play all video files that are linked in YouTube or other Web pages and require the browsers registered to them
 
   - The Emulator log file (emulator.log) can become too large if you run the Emulator for a long time
-
-- Dynamic analyzer
-
-  - A screenshot is sometimes not taken if the screen or scene change is implemented using an animation technique
-  - The analysis of the IME and Service Applications is not supported
 
 - Install Manager
 

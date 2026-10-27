@@ -13,7 +13,7 @@
   - Added support for default certificates on Public Target.
   - Tizen app samples and Web Add-on template are deprecated.
   - log4j library version up from log4j1(v.1.2.17) to log4j2(v.2.24.3).
-  - Notification popup added announcing the deprecation of Tizen Studio and Dynamic Analyzer — both tools are deprecated and no longer supported.
+  - Notification popup added announcing the deprecation of Tizen Studio — the tool is deprecated and no longer supported.
   - Enhanced Tizen development tools usage data collection.
   - Modified sdb device detection scheme to use --only-detect-tizen as default option.
 - Visual Studio Code
@@ -65,14 +65,5 @@
 - CLI and SDB
   - Tizen Studio does not support the [Smart Development Bridge](../common-tools/smart-development-bridge.md) (SDB) bash auto-completion on Windows (it is available on Ubuntu and macOS).
   - sdb install for rpk is not supported in TV 8.0 emulator(it will be supported in TV 9.0 emulator) and makes sdb freeze, press Ctrl+C to unfreeze.
-- Dynamic Analyzer
-  - When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
-    - The core frequency information is not shown.
-    - The screenshots on the scene transitions feature will not work.
-  - When analyzing applications on Tizen 4.0 Emulator or reference device, the startup profiling information is not shown.
-  - The UI Hierarchy viewer feature and startup profiling are not performed simultaneously.
-  - The Dynamic Analyzer cannot show lifecycle information for web applications.
-  - Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
-  - The Dynamic Analyzer sometimes gets stuck, which is caused by an internal security checking program.
 - Visual Studio
   - NUI XAML application build error can be resolved by doing a clean build.
