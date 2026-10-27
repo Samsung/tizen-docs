@@ -72,16 +72,6 @@
 - CLI and SDB
     -   Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
     
-- Dynamic Analyzer
-    -   When analyzing applications on commercial devices running Tizen 3.0, both newly-released or after a firmware update, the following problems exist:
-        -   The **Core Frequency** information is not shown.
-        -   The **Screenshots on scene transitions** feature is not working.
-    -   When analyzing applications on the Tizen 4.0 Emulator or reference device, the start-up profiling information is not shown.
-    -   The UI Hierarchy viewer feature and start-up profiling are not performed simultaneously.
-    -   The Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device, due to the security policy.
-    -   The Dynamic Analyzer cannot show life-cycle information for Web applications.
-    -   Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
-    
 - Web Inspector
     -   According to your Google Chrome&trade; browser version, the Web Inspector console and some other functions do not work properly due to Web core compatibility issues.
 

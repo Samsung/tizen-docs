@@ -172,28 +172,6 @@ The following tables introduce the keyboard shortcuts available for the various 
 	</tbody>
 </table>
 
-## Dynamic Analyzer
-
-**Table: Dynamic analyzer shortcuts**
-
-| Command                                  | Ubuntu       | Windows&reg;     | macOS           |
-|----------------------------------------|------------|------------|---------------|
-| About the analyzer                       | **F1**       | **F1**       | **F1**          |
-| Configuration                            | **F2**       | **F2**       | **F2**          |
-| Enable the source view of the toolbar    | **F3**       | **F3**       | **F3**          |
-| Select the Timeline tab                  | **Ctrl + 1** | **Ctrl + 1** | **Command + 1** |
-| Select the File tab                      | **Ctrl + 2** | **Ctrl + 2** | **Command + 2** |
-| Select the Thread tab                    | **Ctrl + 3** | **Ctrl + 3** | **Command + 3** |
-| Select the User Interface tab            | **Ctrl + 4** | **Ctrl + 4** | **Command + 4** |
-| Select the Summary tab                   | **Ctrl + 5** | **Ctrl + 5** | **Command + 5** |
-| Select the Range tab                     | **Ctrl + 6** | **Ctrl + 6** | **Command + 6** |
-| Start/stop trace                         | **Ctrl + G** | **Ctrl + G** | **Command + G** |
-| Open trace                               | **Ctrl + O** | **Ctrl + O** | **Command + O** |
-| Save trace                               | **Ctrl + S** | **Ctrl + S** | **Command + S** |
-| Replay                                   | **Ctrl + P** | **Ctrl + P** | **Command + P** |
-| Toggle the range information between create and remove | **Ctrl + R** | **Ctrl + R** | **Command + R** |
-| Open the search dialog box               | **Ctrl + F** | **Ctrl + F** | **Command + F** |
-| Delete the saved file of the open trace dialog box | **Delete**   | **Delete**   | **Fn + Delete** |
 
 ## Emulator Manager
 

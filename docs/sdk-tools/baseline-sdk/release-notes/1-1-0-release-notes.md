@@ -40,11 +40,6 @@
   - By using the new `build-app` command with various options, you can build and package multiple projects at once.
   - Support has been added for encrypting all data packets transferred to a target.
 
-- Dynamic Analyzer
-
-  - A Leak Sanitizer tool for memory leak detection has been added to the Heap Allocation profiling in Tizen 3.0.
-  - Any application from a single package containing multiple applications can be selected for profiling.
-
 ### Changed Features
 
 - Installer, Package Manager, and Uninstaller
@@ -87,15 +82,6 @@
 
   - The speed of the data transfer has been increased by 2.5 to 10 times compared to before.
 
-- Dynamic Analyzer
-
-  - **Persistent Allocations** table is hidden by default.
-  - Filter and search functionality is available for all plain tables.
-  - Table column resize behavior has been improved.
-  - New "Preparing for trace" life-cycle state has been added.
-  - New `version` command has been added for the CLI.
-  - UI for empty tables has been unified.
-
 ### Fixed Bugs
 
 - Web and Native IDE
@@ -104,13 +90,6 @@
   - The RDS failure on Windows&reg; has been fixed.
 - Native UI Builder
   - When the WYSIWYG editor of the Native UI Builder for Windows&reg; ran over 12 hours, your computer slowed down because of the editor&apos;s high memory usage. This issue has been fixed.
-- Dynamic Analyzer
-  - The launch time on Windows&reg; has been improved.
-  - The bug that caused empty fields in the **Texture** table of the OpenGL&reg; ES profiling has been fixed.
-  - The bug in screenshot capturing when tracing is started repeatedly has been fixed.
-  - The **Reset to default** button behavior in the **Preferences** window has been fixed.
-  - The bug that caused an incorrect state in the **View > Report** toggle after trace opening has been fixed.
-
 ### Known Issues
 
 - Installer, Package Manager, and Uninstaller
@@ -138,11 +117,5 @@
   - If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, when you execute the emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 - CLI and SDB
   - Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
-- Dynamic Analyzer
-  - The Dynamic Analyzer is not available for x86-64 Tizen 3.0 emulators.
-  - The UI Hierarchy viewer feature and start-up profiling are not performed simultaneously.
-  - The Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device due to the security policy.
-  - The Dynamic Analyzer cannot show life-cycle information for Web applications.
-  - Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
 - Web Inspector
   - If your Google Chrome&trade; browser version is higher than 54, the Web Inspector console and some other functions do not work properly due to Web core compatibility issues.

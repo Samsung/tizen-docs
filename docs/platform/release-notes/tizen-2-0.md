@@ -611,7 +611,7 @@ The Tizen native framework is newly supported in this version.
   - Multiple OS support
     - The IDE is available for 32-bit and 64-bit Linux (Ubuntu), Windows, and Mac OS X.
   - Native (C++) development support
-    - The native (C++) SDK provides convenient development tools, such as the IDE, dynamic analyzer, unit test, code coverage, UI builder, effective UI builder, and API checker.
+    - The native (C++) SDK provides convenient development tools, such as the IDE, unit test, code coverage, UI builder, effective UI builder, and API checker.
   - Eclipse version upgrade
     - Upgrades the Eclipse for IDE from Helios SR1 to Indigo SR2.
   - Design renewal
@@ -796,20 +796,6 @@ The Tizen native framework is newly supported in this version.
     - C++ UI builder, C++ UI Effect Builder, and API checker tools
     - OProfile profiling tool, which detects the method and module execution time
     - Valgrind profiling tool, which detects the abnormal use of heap and stack memory
-- Dynamic analyzer
-  - This feature provides:
-    - Effective analysis of the application behavior at runtime
-    - Integration with the IDE menu
-    - System information in the Timeline view
-    - Overall application analysis in the Summary view
-    - Detailed file, thread, and UI analysis
-    - Saving and loading the trace result
-    - Recording and replaying application user interaction
-    - Showing related source code as a tooltip and in the IDE
-    - Combining chart and table selections
-    - Range-based analysis
-
-
 - This component uses a GBS (> 0.12)-based build system.
 - The Platform IDE enables configuring various GBS build options, such as offline build and incremental build.
 
@@ -942,10 +928,6 @@ The Tizen native framework is newly supported in this version.
   - When you use the camera on Mac OS X, the brightness and contrast settings would not work.
 
   - Some menu items of the top menu bars of the Emulator and the Emulator Manager do not work on Mac OS X.
-
-- Dynamic analyzer
-
-  - A screenshot is sometimes not taken if the screen or scene change is implemented using an animation technique.
 
 - Install Manager
 

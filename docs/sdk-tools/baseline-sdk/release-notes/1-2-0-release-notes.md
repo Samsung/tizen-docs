@@ -20,18 +20,6 @@
 
     This feature is available for mobile profiles since Tizen 2.4, and for wearable profiles since Tizen 3.0.
 
-- Dynamic Analyzer
-
-  - Support for using function profiling for application libraries has been added.
-  - A memory map can be shown for the selected time.
-  - Support for copying and exporting data from tables has been added.
-  - Filter and sort icons have been added to the tables.
-  - Notification popups on device connect and disconnect have been added.
-  - Target connection status icons have been added to the feature selection dialog.
-  - A guide text appears on the **Timeline** tab if the connected device does not match the selected device.
-  - Features can be configured from the feature selection dialog.
-  - A progress bar has been added for time-consuming operations.
-
 - RT IDE
 
   - You can create RT projects from either a local template or remote Git.
@@ -46,11 +34,6 @@
   - On Windows&reg;, the CLI Package Manager now runs as a foreground process that stays in sync with the command line and supports the self-update feature.
 - Native UI Builder
   - The new UX has been applied to the **Convert to UI Builder Project** wizard.
-- Dynamic Analyzer
-  - Memory usage and performance for Heap Allocation profiling has been improved.
-  - UI performance has been improved by removing redundant double updates in left table views.
-  - In the chart view, the **Analyze range** pop-up menu item has been renamed **Select range**.
-  - Logging of SWAP messages has been disabled by default to improve performance.
 - Manifest Editor
   - You can add multiple widget classes from the **Advanced** tab.
 
@@ -61,12 +44,6 @@
   - The bug where the test result field does not display the result when a shared library unit test project is run has been fixed.
 - EDC Editor
   - The EDC Editor did not work in Ubuntu due to a current shared library reference error. This issue has been fixed.
-- Dynamic Analyzer
-  - The bug with incorrect callstack construction has been fixed. The callstack is shown only after tracing is stopped.
-  - The behavior of the **Cancel** button in the start tracing progress bar has been fixed.
-  - Memory map building has been fixed.
-  - The Core Usage feature did not work when it was the only feature selected. This issue has been fixed.
-  - The **Callstack** table in the **Memory** tab is now shown only when needed.
 - Platform IDE
   - The bug where the IDE failed to build for Tizen 3.0 has been fixed.
   - The bug where the IDE failed to install the output RPM binary using `pkgcmd` has been fixed.
@@ -104,11 +81,5 @@
   - Basic Web applications do not install on SD cards.
 - CLI and SDB
   - Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
-- Dynamic Analyzer
-  - The Dynamic Analyzer is not available for x86-64 Tizen 3.0 emulators.
-  - The UI Hierarchy viewer feature and start-up profiling are not performed simultaneously.
-  - The Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device due to the security policy.
-  - The Dynamic Analyzer cannot show life-cycle information for Web applications.
-  - Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
 - Web Inspector
   - If your Google Chrome&trade; browser version is higher than 54, the Web Inspector console and some other functions do not work properly due to Web core compatibility issues.

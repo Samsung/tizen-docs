@@ -14,18 +14,11 @@
 - Emulator
   - A default VM instance is provided to run an application without the creation process in the emulator.
   - The high color AOD (Always On Display) is supported in Tizen 2.3.2 wearable applications.
-- Dynamic Analyzer
-  - A memory call stack trace has been added for all memory allocation traces.
-  - A range analysis feature has been added for memory analysis. It enables the user to analyze candidate memory leaks between scenario starts and stops.
-  - Persistent memory charts have been added to show the increase or decrease of the memory allocation per each library and executable.
-  - The UI Event dialog has been added for the UI Event chart.
-
 ### Changed Features
 
 - Web and Native IDE
   - In the Preferences and Properties, Eclipse options have been enabled.
   - In the Remote Device Manager, you can cancel the scanning of nearby devices.
-  - The keyboard shortcuts for Preference (**Alt + Shift + Enter**), Emulator Manager (**Alt + Shift + E**), Dynamic Analyzer (**Alt + Shift + D**), Package Manager (**Alt + Shift + P**), and Certificate Manager (**Alt + Shift + C**) have been added. You can see the shortcut information in the **Tools** menu in Tizen Studio.
   - In the Web IDE, the directory structure of the widget package has been changed.
   - In the Web application configuration editor, a short description of the privilege is displayed.
   - Native project creation has been improved by reducing the latency for indexing.
@@ -36,12 +29,6 @@
   - New feedback UX has been applied in the Design mode.
 - Emulator
   - Support has been added for Google Maps&apos; search box in the location card.
-- Dynamic Analyzer
-  - Memory allocation trace table has been improved. The table name has been changed from **Memory Allocation** to **Persistent Allocation**, to make it clear that the table contains whole un-freed (persistent) memory allocations.
-  - Timeline markers pinning a specific event are numbered.
-  - Preference selection for the Screenshot feature has changed in both GUI and CLI. You can now select both options at the same time: take a screenshot on scene transition and take it periodically.
-  - Memory Map table shows memory mapping data for each process of the traced application.
-
 ### Fixed Bugs
 
 - Installer, Package Manager, and Uninstaller
@@ -55,11 +42,6 @@
 - CLI and SDB
   - When the Remote Device Manager displayed the Gear device connected over Wi-Fi, the device name was shown as "unknown" due to the SDB internal error. This issue has been fixed.
   - The bug, which caused the Unity 5.4.x and 5.5.x project to fail to be packaged, has been fixed.
-- Dynamic Analyzer
-  - Function profiling information has been fixed to be properly collected and shown.
-  - The bug, which caused the selected features not to be updated on a target change, has been fixed.
-  - The `--output` option in CLI has been fixed to save the result to the specified path.
-
 ### Known Issues
 
 - Installer, Package Manager, and Uninstaller
@@ -86,6 +68,3 @@
   - If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, when you execute the emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 - CLI and SDB
   - To use the SDB bash completion feature, enter the `source .sdb-complete.bash` command on the bash shell. Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
-- Dynamic Analyzer
-  - The UI Hierarchy viewer feature and start-up profiling are not performed simultaneously.
-  - The Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device due to the security policy.

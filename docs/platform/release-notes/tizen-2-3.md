@@ -666,11 +666,6 @@ The wearable profile provides a complete implementation of the Web API optimized
   - Adds the PO file editor for i18n.
   - Adds EFL Enventor only in Ubuntu. It supports editing and previewing edc source files.
   - Adds the Potential Bug Detector static analysis tool to help to find bugs in applications.
-- Dynamic Analyzer
-  - Changes the data collecting mechanism.
-  - Adds Network Analysis.
-  - Adds OpenGL Analysis.
-  - Adds Energy Usage in the Time line view.
 - Emulator
   - Adds a new Emulator Control Panel (ECP) tool to replace the Event Injector in the previous version.
     - Supports the device manager, such as Device Tree and Network.
@@ -716,9 +711,6 @@ The wearable profile provides a complete implementation of the Web API optimized
     - Enables the sensor, location, and telephony events in the wearable Emulator.
     - Changes the marking map injection from a mouse-double-click to a mouse-left-click on Location.
     - Changes the moving map from a mouse drag to mouse-left-click on Location.
-- Dynamic Analyzer
-  - Changes the settings dialog UX to select one of the feature templates.
-
 ##### Fixed bugs
 
 - IDE

@@ -21,7 +21,7 @@
 -	Device Manager
 	-   Device Manager is updated to support JAVA 9.
 -	Profiling Tools
-	-   Dynamic Analyzer and TTrace are updated to support JAVA 9.
+	-   TTrace is updated to support JAVA 9.
 -	Installer, Package Manager, and Uninstaller
 	-   Package Manager and Installer are updated to support JAVA 9.
 -	RT IDE (Integrated Development Environment)
@@ -80,14 +80,5 @@
 	-   Basic Web applications does not install on SD cards.
 -	CLI and SDB
 	-   Tizen Studio does not support the [Smart Development Bridge](../common-tools/smart-development-bridge.md) (SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
--	Dynamic Analyzer
-	-   When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
-	    -   The Core Frequency information is not shown.
-	    -   The screenshots on scene transitions feature will not work.
-	-   When analyzing applications on the Tizen 4.0 Emulator or reference device, the startup profiling information is not shown.
-	-   The UI Hierarchy viewer feature and startup profiling are not performed simultaneously.
-	-   Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device, due to the security policy.
-	-   Dynamic Analyzer cannot show lifecycle information for Web applications.
-	-   Widget applications cannot be profiled with Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
 -	Web Inspector
 	-   If your Google Chrome&trade; browser version is higher than 54, the Web Inspector console and some other functions does not work properly due to Web core compatibility issues.
