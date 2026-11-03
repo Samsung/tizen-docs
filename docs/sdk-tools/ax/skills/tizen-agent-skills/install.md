@@ -4,7 +4,7 @@ This page explains how to install Tizen Agent Skills for each supported host, ho
 
 ## Prerequisites
 
-- **Node.js 20 or higher** on your `PATH`. Every skill is backed by a Node.js runner. Download it from [nodejs.org](https://nodejs.org/) or use your package manager, for example `winget install OpenJS.NodeJS.LTS` on Windows or `brew install node` on macOS.
+- **Node.js 22 or higher** on your `PATH`. Every skill is backed by a Node.js runner. Download it from [nodejs.org](https://nodejs.org/) or use your package manager, for example `winget install OpenJS.NodeJS.LTS` on Windows or `brew install node` on macOS.
 - **Git** to clone the repository.
 - **One supported host**: Claude Code, Cline, Codex CLI, Gemini CLI, or Visual Studio Code. None is needed for the standalone CLI.
 - **Git Bash on Windows** if you want the guard hooks. The hooks are shell scripts and need `bash` on `PATH`.
@@ -225,7 +225,7 @@ Replace `<dot-dir>`, `<skills-dir>`, and `<agents-dir>` with the paths listed fo
 
 ## Related information
 * Dependencies
-  - Node.js 20 or higher
+  - Node.js 22 or higher
   - Tizen SDK 10.0 and higher (installed by the plugin if missing)
 * [Tizen Agent Skills](index.md)
 * [Tizen Agent Skills reference](skills-reference.md)

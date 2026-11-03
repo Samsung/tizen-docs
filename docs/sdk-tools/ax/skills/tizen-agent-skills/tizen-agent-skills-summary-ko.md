@@ -112,6 +112,30 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.4.0 변경 사항 (2026-11-03)
+
+tizen-agent-skills v1.4.0은 `tizen-sdk-skills` 1.7.0과 `tizen-action-skills` 1.0.0을 포함하는 여덟 번째 통합 릴리스입니다. 새 스킬은 없으며, Node.js 요구 버전을 22로 올리고, 사용자가 실제로 설치한 플랫폼을 보고하며, 서로 다른 버전의 TV SDK ZIP을 함께 설치할 수 있게 하고, 플랫폼 보고와 인증서 비밀번호 저장소 문제를 수정했습니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.6.1 → 1.7.0으로 상향
+- Tizen AI Extension(vsix) 1.7.0 및 독립 실행형 CLI 번들 `tizen-sdk-v1.7.0.zip` 동반 릴리스
+
+### 변경
+- **Node.js 22 이상 필수**(Node.js 20은 2026-04-30에 지원 종료). `check-node`, `sdk-install` 사전 확인, `tizen-sdk doctor`가 하나의 검사를 공유: 22 이상은 통과, 18–21은 업그레이드 경고와 함께 실행, 18 미만은 `node_version_unsupported`(`TIZEN_SDK_ENV_E003`)로 실패
+- Node.js 설치 안내는 실행 중인 Node.js의 설치 방식(nvm, nvm-windows, fnm, volta, Windows 설치 프로그램, Homebrew)을 알 때만 명령을 제시하며, Linux 시스템 Node.js 등 그 외에는 nodejs.org 다운로드 페이지 링크를 제공
+- `sdk-install`, `sdk-install-custom-repo`, `platform-install --list`가 모든 `platforms/tizen-X.Y` 폴더 대신 `<sdk>/.platform-installed`에 기록된, 사용자가 설치한 플랫폼을 보고. 항목 이름은 `Tizen SDK X.Y`이며 프로필을 함께 표시하므로, TV 확장이 함께 설치하는 이전 버전의 `tv` 폴더가 설치된 버전으로 보고되지 않음
+- 서로 다른 버전의 TV SDK ZIP을 `--force` 없이 함께 설치 가능. 새 `--tv-version <X.Y>` 옵션(PowerShell은 `-TvVersion`)으로 ZIP의 TV 버전 지정
+- Cline이 Ask 또는 Plan 모드일 때 실행할 명령을 사용자에게 넘기지 않고 Act 모드로 전환하도록 요청
+
+### 수정 사항
+- `sdk-install --tizen-version 9.0`, `platform-install --platform-version 9.0`이 TV 확장의 `tv`, `tv-samsung` 폴더만 있는 경우 "이미 설치됨"으로 응답하던 문제 수정
+- `sdk-install`이 최신 버전 하나만 담은 `Tizen Platforms (N)` 항목 대신 버전별 `Tizen Platform X.Y` 항목을 상태 및 프로필과 함께 보고
+- 심볼릭 링크 또는 Windows 정션인 플랫폼·프로필 디렉터리를 설치된 것으로 인식하고, bash 설치 스크립트가 대소문자를 구분하는 파일 시스템에서 `Tizen-X.Y` 디렉터리를 찾음
+- 백그라운드 설치 후 에이전트가 같은 버전으로 `sdk-install` 사전 확인을 다시 실행하므로, 누락된 플랫폼 버전은 `platform-install` 해결 방법과 함께 보고됨
+- Samsung 인증서 비밀번호 저장소: macOS에서 `security`의 경고가 성공한 저장을 실패로 처리하지 않음, 빈 비밀번호는 모든 플랫폼에서 실패, 앞뒤 공백 유지, Linux `secret-tool`의 비 ASCII 문자 유지, Windows에서 읽은 비밀번호 끝에 `\r`이 붙지 않음, NUL 문자가 포함된 비밀번호는 내용을 노출하지 않고 거부
+
+---
+
 ## v1.3.1 변경 사항 (2026-10-26)
 
 tizen-agent-skills v1.3.1은 `tizen-sdk-skills` 1.6.1과 `tizen-action-skills` 1.0.0을 포함하는 일곱 번째 통합 릴리스(패치 릴리스)입니다. 새 스킬은 없으며, HTTPS를 재서명하는 프록시 환경과 느린 머신에서도 새 릴리스 알림이 동작하도록 수정하고, 업데이트 확인 실패 원인을 기록하며, 번들된 DLog Analyzer를 갱신하고, 한 페이지 빠른 가이드를 추가했습니다.
