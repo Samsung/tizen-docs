@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.3.1, the seventh release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.4.0, the eighth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -135,6 +135,28 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.4.0 (2026-11-03)
+
+The eighth unified release. It ships `tizen-sdk-skills` 1.7.0 and `tizen-action-skills` 1.0.0. No new skills were added; the release raises the Node.js requirement to 22, reports the platforms the user actually installed, lets TV SDK ZIPs of different versions install side by side, and fixes platform reporting and the certificate password store.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.6.1 to 1.7.0.
+- Tizen AI Extension (vsix) 1.7.0 and the standalone CLI bundle `tizen-sdk-v1.7.0.zip` released alongside.
+
+#### Changed
+- **Node.js 22 or later is now required**, because Node.js 20 reached end-of-life on 2026-04-30. `check-node`, the `sdk-install` preflight, and `tizen-sdk doctor` share one check: Node.js 22 or later passes, Node.js 18 to 21 still runs with an upgrade warning, and a version below 18 fails with `node_version_unsupported` (`TIZEN_SDK_ENV_E003`).
+- The Node.js install hint suggests a command only when it knows how the running Node.js was installed (nvm, nvm-windows, fnm, volta, the Windows installer, or Homebrew). Other installs, including a Linux system Node.js, get a link to the nodejs.org download page instead.
+- `sdk-install`, `sdk-install-custom-repo`, and `platform-install --list` report the platforms the user installed, read from `<sdk>/.platform-installed`, instead of every `platforms/tizen-X.Y` folder. Entries are named `Tizen SDK X.Y` and list their profiles, so the TV extension's bundled `tv` folders for older versions are no longer reported as installed versions.
+- TV SDK ZIPs of different versions install side by side without `--force`. The new `--tv-version <X.Y>` option (`-TvVersion` in PowerShell) names the TV version the ZIP is for.
+- In Ask or Plan mode, Cline now asks the user to switch to Act mode instead of handing over the runner commands to run by hand.
+
+#### Fixes
+- `sdk-install --tizen-version 9.0` and `platform-install --platform-version 9.0` no longer answer "already installed" when the folder holds only the TV extension's `tv` and `tv-samsung` folders.
+- `sdk-install` reports one `Tizen Platform X.Y` entry per version, with its status and profiles, instead of a single `Tizen Platforms (N)` entry with only the newest version.
+- A platform or profile directory that is a symbolic link or Windows junction now counts as installed, and the bash installers find a mixed-case `Tizen-X.Y` directory on case-sensitive file systems.
+- After the background install, the agent re-runs the `sdk-install` pre-check with the same version, so a missing platform version is reported with the `platform-install` fix.
+- Samsung certificate password store: a warning from `security` on macOS no longer fails a successful store, an empty password fails on every platform, leading and trailing spaces are kept, non-ASCII characters from `secret-tool` on Linux stay intact, passwords read on Windows no longer end in `\r`, and a password containing a NUL character is refused without echoing it.
 
 ### v1.3.1 (2026-10-26)
 
@@ -306,7 +328,7 @@ The first unified release of the `tizen-agent-skills` collection. It ships `tize
 
 ## Related information
 * Dependencies
-  - Node.js 20 or higher
+  - Node.js 22 or higher
   - Tizen SDK 10.0 and higher (installed by the plugin if missing)
 * [tizen-agent-skills on GitHub](https://github.com/Samsung/tizen-agent-skills)
 * [tizen-sdk-skills plugin README](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/README.md)

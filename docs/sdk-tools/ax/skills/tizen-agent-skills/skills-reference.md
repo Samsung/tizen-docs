@@ -128,7 +128,7 @@ Run `tizen-sdk --help` for the full list and `tizen-sdk <command> --help` for th
 
 ## Related information
 * Dependencies
-  - Node.js 20 or higher
+  - Node.js 22 or higher
   - Tizen SDK 10.0 and higher
 * [Tizen Agent Skills](index.md)
 * [Using Tizen Agent Skills](usage-scenarios.md)

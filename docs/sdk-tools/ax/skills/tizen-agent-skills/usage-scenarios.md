@@ -263,7 +263,7 @@ Use `tizen-sdk --capabilities` to see which commands can run on the current mach
 
 ## Related information
 * Dependencies
-  - Node.js 20 or higher
+  - Node.js 22 or higher
   - Tizen SDK 10.0 and higher
 * [Tizen Agent Skills](index.md)
 * [Tizen Agent Skills reference](skills-reference.md)

@@ -22,18 +22,19 @@ This page lists messages and situations you may run into with Tizen Agent Skills
 
 ## Node.js is not installed or not on PATH
 
-**When you see this:** An envelope with `error_category` `node_not_found`, or the message "Node.js is not installed or not on PATH".
+**When you see this:** An envelope with the error code `TIZEN_SDK_ENV_E001` and the category `node_not_found`, or the message "Node.js is not installed or not on PATH". Node.js 18 to 21 still runs with an upgrade warning; a version below 18 fails with `node_version_unsupported` (`TIZEN_SDK_ENV_E003`).
 
-**What it means:** The runners behind every skill need Node.js 20 or higher.
+**What it means:** The runners behind every skill need Node.js 22 or higher.
 
-**How to resolve:** Install Node.js and open a new terminal so the `PATH` change takes effect.
+**How to resolve:** Install or upgrade Node.js and open a new terminal so the `PATH` change takes effect.
 
 | OS | Command |
 |----|---------|
 | Windows | `winget install OpenJS.NodeJS.LTS` |
-| macOS | `brew install node` |
-| Ubuntu and Debian | `sudo apt update && sudo apt install -y nodejs npm` |
+| macOS | `brew install node`, or `brew upgrade node` to upgrade |
 | Any OS | Download the LTS installer from [nodejs.org](https://nodejs.org/) |
+
+The `nodejs` package from the Ubuntu or Debian repositories can be older than Node.js 22. On Linux, use a version manager such as nvm or the installer from nodejs.org.
 
 Then ask the assistant to "check node" to confirm.
 
@@ -148,7 +149,7 @@ node bin/tizen-sdk.js --doctor
 
 **How to resolve:**
 
-1. Update the plugin to version 1.3.1 or later and run the setup script again. From version 1.0.0 the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
+1. Update the plugin to version 1.4.0 or later and run the setup script again. From version 1.0.0 the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
 2. In a PowerShell terminal, run all three lines of the PowerShell block in order, in the same session, directly in the terminal.
 3. In a cmd.exe terminal, run the `cmd /c dir ...` chain and then `node "<found path>" ...` with the highest version that was listed.
 4. If no lookup finds a runner in `~/.claude`, `~/.cline`, `~/.codex`, or `~/.gemini`, the plugin is not installed on this machine. Install it first.
@@ -278,7 +279,7 @@ If the steps above do not help, open an issue in the [tizen-agent-skills](https:
 
 ## Related information
 * Dependencies
-  - Node.js 20 or higher
+  - Node.js 22 or higher
   - Tizen SDK 10.0 and higher
 * [Tizen Agent Skills](index.md)
 * [Installing Tizen Agent Skills](install.md)
