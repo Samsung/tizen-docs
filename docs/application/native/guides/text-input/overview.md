@@ -9,6 +9,10 @@ You can use the following text input, gesture and voice features in your native 
 
   You can create an Input Method Editor (IME) application that provides a customized keyboard for the user. You can show and hide the keyboard as needed, and offer a keyboard option menu to allow the user to manage the keyboard settings.
 
+- [Tizen Core IMF](tizen-core-imf.md)
+
+  You can connect the text input fields of your application with the input method, receive the entered text, and configure and monitor the input panel.
+
 - [Autofill](autofill.md)
 
   You can retrieve the previously entered data stored in an autofill service.
