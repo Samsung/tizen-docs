@@ -2597,6 +2597,20 @@ The platform returns the width of the screen in pixels supported by the device.
 
 </div>
 
+<div class="views-row views-row-230 views-row-odd">
+
+[http://tizen.org/feature/security.attestation](){#feature/security.attestation}
+--------------------------------------------------------------------------------
+
+**Application filtering:**\
+Specify this key, if the application requires the device to support security attestation.\
+This feature is only used for native application filtering and not used for Web application filtering.
+
+**System information:**\
+The platform returns true for this key, if the device supports generating device and key attestation evidence.
+
+</div>
+
 <div class="views-row views-row-168 views-row-odd">
 
 [http://tizen.org/feature/security.tee](){#feature/security.tee}
