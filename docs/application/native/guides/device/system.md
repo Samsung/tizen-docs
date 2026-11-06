@@ -73,6 +73,8 @@ To obtain the information, query a feature or system key.
 - [System keys](#system)
 
    - [Build](#build)
+   - [HAL build](#halbuild)
+   - [Product build](#productbuild)
    - [Device type](#devicetype)
    - [Manufacturer](#manufacturer)
    - [Model name](#modelname)
@@ -148,62 +150,74 @@ func(void)
 }
 ```
 
-## Platform and HAL Feature Combination
+## Platform, HAL, and Product Feature Combination
 
-Tizen System Information supports both Platform features and HAL (Hardware Abstraction Layer) features. The final feature value is determined by combining Platform and HAL features according to specific rules based on the feature data type.
+Tizen System Information supports Platform features, HAL (Hardware Abstraction Layer) features, and Product features. The final feature value is determined by combining Platform, HAL, and Product features according to specific rules based on the feature data type.
 
-### Platform and HAL Feature Combination Rules
+### Platform, HAL, and Product Feature Combination Rules
 
-The behavior differs depending on the feature data type when both Platform and HAL features are defined:
+The behavior differs depending on the feature data type when Platform, HAL, and Product features are defined:
 
 #### int, double, and string types
-- If only Platform feature is defined, the Platform value is used
-- If only HAL feature is defined, the HAL value is used
-- If both Platform and HAL features are defined, the **HAL feature value takes priority** and overrides the Platform feature value
+The feature values are applied in priority order: **HAL -> Product -> Platform** (HAL has the highest priority, followed by Product, and Platform has the lowest priority).
+- If the HAL feature is defined, the HAL feature value takes highest priority and is used
+- If the HAL feature is not defined, the Product feature value is used if defined
+- If neither HAL nor Product feature is defined, the Platform feature value is used if defined
 
-**Table: Platform and HAL feature combination for int, double, and string types**
+**Table: Feature combination for int, double, and string types**
 
-| Platform Feature | HAL Feature | Final Result | Description |
-|------------------|-------------|--------------|-------------|
-| Defined | Not defined | Platform value | Use Platform feature value only |
-| Not defined | Defined | HAL value | Use HAL feature value only |
-| Defined | Defined | HAL value | HAL feature overrides Platform feature |
+| Platform Feature | Product Feature | HAL Feature | Final Result | Description |
+|------------------|-----------------|-------------|--------------|-------------|
+| Defined | Not defined | Not defined | Platform value | Use Platform feature value only |
+| Not defined | Defined | Not defined | Product value | Use Product feature value only |
+| Not defined | Not defined | Defined | HAL value | Use HAL feature value only |
+| Defined | Defined | Not defined | Product value | Product feature overrides Platform feature |
+| Defined | Not defined | Defined | HAL value | HAL feature overrides Platform feature |
+| Not defined | Defined | Defined | HAL value | HAL feature overrides Product feature |
+| Defined | Defined | Defined | HAL value | HAL feature takes highest priority (HAL > Product > Platform) |
 
 #### bool type
-- If only Platform feature is defined, the Platform value is used
-- If only HAL feature is defined, the HAL value is used
-- If both Platform and HAL features are defined, the **AND operation result** of both values is used
+For the `bool` type, the final result is calculated by performing a logical **AND operation** among all existing/defined features (`Platform && HAL && Product` for existing keys only).
+- If a feature is not defined at a particular layer, that layer is excluded from the AND operation calculation
+- If only one layer defines the feature, that layer's value is used
+- If multiple layers define the feature, the AND operation result of those defined values is used
 
 The AND operation behavior has important semantic meaning:
-- Platform feature = `true`: The platform provides the framework/API support for the feature
-- Platform feature = `false`: The platform explicitly does not support the feature
-- Platform feature = Not defined: The platform does not have a specific definition for the feature (the platform may not consider this feature)
-- HAL feature = `true`: The actual hardware for the feature is available
-- HAL feature = `false`: The actual hardware for the feature is not available
-- Final result = `true` only when both framework and hardware support are available
+- **Platform feature** = `true`: The platform provides framework/API support for the feature
+- **Platform feature** = `false`: The platform explicitly does not support the feature
+- **Platform feature** = Not defined: The platform does not have a specific definition for the feature
+- **HAL feature** = `true`: The actual hardware capability is available
+- **HAL feature** = `false`: The actual hardware is not available
+- **HAL feature** = Not defined: The HAL does not have a specific definition for the feature
+- **Product feature** = `true`: The product provides support for the feature
+- **Product feature** = `false`: The product explicitly does not support the feature
+- **Product feature** = Not defined: The product does not have a specific definition for the feature
+- **Final result** = `true` only when all defined features among Platform, HAL, and Product are `true`. If any defined feature is `false`, the final result is `false`.
 
-**Important Note:** When a Platform feature is not defined (as opposed to explicitly set to `false`), the system uses the HAL feature value directly. This design is intentional because:
+**Important Note:** When a feature is not defined at a certain layer (as opposed to explicitly set to `false`), the system evaluates the AND operation only across the remaining defined layers. This design is intentional because:
 
-- An undefined Platform feature means the platform does not have a specific stance on that feature - it neither explicitly supports nor rejects it
-- A `false` Platform feature means the platform explicitly does not support the feature, regardless of hardware availability
-- Using the HAL feature value when Platform is undefined allows for hardware-specific features to be available even when the platform doesn't have a specific framework for them
+- An undefined feature means that layer does not take a specific stance on that feature - it neither explicitly supports nor rejects it
+- A `false` feature at any layer means that layer explicitly does not support the feature, regardless of other layers
+- Evaluating only existing keys allows features to be supported even when some layers do not define them
 
-For example, if `http://tizen.org/feature/camera` has Platform feature = `true` and HAL feature = `false`, the final result is `false`. This means that while the platform provides camera framework and APIs, the actual camera hardware is not available, making the camera feature unusable.
+For example, if `http://tizen.org/feature/camera` has Platform feature = `true`, HAL feature = `true`, but Product feature = `false`, the final result is `false` because the product explicitly does not support the camera feature even though the platform framework and hardware support are available.
 
-However, if the Platform feature is not defined and HAL feature = `true`, the final result is `true`. This allows the feature to be available based on hardware capability even when the platform doesn't have a specific framework definition for it.
+However, if Platform feature = `true`, HAL feature = `true`, and Product feature is not defined, the final result is `true` (`true && true`).
 
-**Table: Platform and HAL feature combination for bool type**
+**Table: Feature combination for bool type**
 
-| Platform Feature | HAL Feature | Final Result | Description |
-|------------------|-------------|--------------|-------------|
-| true | Not defined | true | Platform support only |
-| Not defined | true | true | HAL support only |
-| false | Not defined | false | Platform no support |
-| Not defined | false | false | HAL no support |
-| true | true | true | Both support (AND operation) |
-| true | false | false | Platform support but HAL no support |
-| false | true | false | Platform no support but HAL support |
-| false | false | false | Both no support (AND operation) |
+| Platform Feature | HAL Feature | Product Feature | Final Result | Description |
+|------------------|-------------|-----------------|--------------|-------------|
+| true | Not defined | Not defined | true | Platform support only |
+| Not defined | true | Not defined | true | HAL support only |
+| Not defined | Not defined | true | true | Product support only |
+| true | true | true | true | All layers support (AND operation) |
+| true | true | Not defined | true | Platform and HAL support (Product not defined) |
+| true | Not defined | true | true | Platform and Product support (HAL not defined) |
+| Not defined | true | true | true | HAL and Product support (Platform not defined) |
+| false | Any / Not defined | Any / Not defined | false | Platform no support |
+| Any / Not defined | false | Any / Not defined | false | HAL no support |
+| Any / Not defined | Any / Not defined | false | false | Product no support |
 
 <a name="feature"></a>
 ## Feature Keys
@@ -837,6 +851,38 @@ The following table lists the build system keys:
 | `http://tizen.org/system/build.type`     | `String` | The platform returns the build type, such as `"user"` or `"eng"`. The build type is made when the platform image is created. |
 | `http://tizen.org/system/build.variant`  | `String` | The platform returns the variant release information. The variant release information is made when the platform image is created. |
 | `http://tizen.org/system/build.release` | `String` | The platform returns the build version information. The build version information is made when the platform image is created. |
+
+The following table lists the HAL build system keys:
+
+<a name="halbuild"></a>
+**Table: HAL build system keys**
+
+| Key                                         | Type     | Description                              |
+|---------------------------------------------|----------|------------------------------------------|
+| `http://tizen.org/system/hal.build.date`    | `String` | The platform returns the HAL build date. The HAL build date is made when the HAL image is created. |
+| `http://tizen.org/system/hal.build.id`      | `String` | The platform returns the HAL build ID. The HAL build ID is made when the HAL image is created. |
+| `http://tizen.org/system/hal.build.model`   | `String` | The platform returns the HAL build model. The HAL build model is made when the HAL image is created. |
+| `http://tizen.org/system/hal.build.release` | `String` | The platform returns the HAL build release. The HAL build release is made when the HAL image is created. |
+| `http://tizen.org/system/hal.build.string`  | `String` | The platform returns the HAL build information string. The HAL build information string is made when the HAL image is created. |
+| `http://tizen.org/system/hal.build.time`    | `String` | The platform returns the HAL build time. The HAL build time is made when the HAL image is created. |
+| `http://tizen.org/system/hal.build.type`    | `String` | The platform returns the HAL build type, such as `"user"` or `"eng"`. The HAL build type is made when the HAL image is created. |
+| `http://tizen.org/system/hal.build.variant` | `String` | The platform returns the HAL build variant. The HAL build variant is made when the HAL image is created. |
+
+The following table lists the product build system keys:
+
+<a name="productbuild"></a>
+**Table: Product build system keys**
+
+| Key                                             | Type     | Description                              |
+|-------------------------------------------------|----------|------------------------------------------|
+| `http://tizen.org/system/product.build.date`    | `String` | The platform returns the product build date. The product build date is made when the product image is created. |
+| `http://tizen.org/system/product.build.id`      | `String` | The platform returns the product build ID. The product build ID is made when the product image is created. |
+| `http://tizen.org/system/product.build.model`   | `String` | The platform returns the product build model. The product build model is made when the product image is created. |
+| `http://tizen.org/system/product.build.release` | `String` | The platform returns the product build release. The product build release is made when the product image is created. |
+| `http://tizen.org/system/product.build.string`  | `String` | The platform returns the product build information string. The product build information string is made when the product image is created. |
+| `http://tizen.org/system/product.build.time`    | `String` | The platform returns the product build time. The product build time is made when the product image is created. |
+| `http://tizen.org/system/product.build.type`    | `String` | The platform returns the product build type, such as `"user"` or `"eng"`. The product build type is made when the product image is created. |
+| `http://tizen.org/system/product.build.variant` | `String` | The platform returns the product build variant. The product build variant is made when the product image is created. |
 
 The following table lists the device type system keys:
 
