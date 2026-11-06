@@ -122,6 +122,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/keygrab` | platform |  | The application can read actions involving special keys, such as the volume keys on this or other devices (for example, TV remote controls), even when it is running in the background. |
 | `http://tizen.org/privilege/keymanager` | public |  | The application can save keys, certificates, and data to, and retrieve and delete them from, password-protected storage. Checking the statuses of certificates while connected to a mobile network may result in additional charges depending on user's payment plan. Deprecated since 3.0. |
 | `http://tizen.org/privilege/keymanager.admin` | platform |  | The application can lock and unlock password-protected storage, and manage password changes for it. Deprecated since 3.0. |
+| `http://tizen.org/privilege/keymanager.extended` | platform |  | The application can generate device and key attestation evidence. |
 | `http://tizen.org/privilege/led` | public |  | The application can turn LEDs on or off. For example, the LED on the front of the device and the camera flash can be turned on or off. |
 | `http://tizen.org/privilege/location` | public | Location | The application can use user's location data. |
 | `http://tizen.org/privilege/location.coarse` | public | Location | The application can determine user's approximate location including user's device's Cell ID, Location Area Code (LAC), and Tracking Area Code (TAC). |
