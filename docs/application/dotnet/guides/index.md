@@ -380,7 +380,6 @@ For working code, see the [Tizen .NET sample applications](https://github.com/Sa
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="uix/input-method-manager.md">Input Method Manager</a></li>
-                        <li><a href="uix/input-method.md">Input Method</a></li>
                         <li><a href="uix/stt.md">Speech-to-text</a></li>
                         <li><a href="uix/tts.md">Text-to-speech</a></li>
                     </ul>
