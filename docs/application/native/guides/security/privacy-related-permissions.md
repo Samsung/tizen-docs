@@ -6,7 +6,7 @@ You can check current permissions for privacy-related privileges and request use
 Before Tizen 4.0, the pop-up requesting the user's consent to use privacy-related privileges was triggered by first access to protected resources or functionality. Since Tizen 4.0, you can decide the moment in the application life-cycle when permissions are granted. It can be at the application startup, or at the moment when some additional functionality is to be used. For example, a notepad application where the user can enter both text notes and photographs does not automatically require camera access in order to be used (maybe the user only wants to add text notes). Optimally, the application requests the user to grant camera access permission only when the user needs the camera.
 
 > [!NOTE]
-> Since Tizen 8.0, all Privacy Privilege Manager APIs are deprecated and will be removed without any alternative.
+> Since Tizen 10.1, the `*_ALLOW_IN_USE`, `*_ALLOW_SESSION`, and `*_DENY_SESSION` values of the `ppm_check_result_e` and `ppm_request_result_e` enumerations are available.
 
 The main features of the Privacy Privilege Manager API include:
 
@@ -65,21 +65,24 @@ To check whether an application has permission to use a privilege, and to reques
 
 2. React to the permission check appropriately:
 
-   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
+   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW`, `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW_SESSION` (permission granted only for the current application session, until the application terminates), or `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW_IN_USE` (permission granted only while the application is in the foreground), the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
 
      ```
          if (ret == PRIVACY_PRIVILEGE_MANAGER_ERROR_NONE) {
              switch (result) {
                  case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW:
+                 case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW_SESSION:
+                 case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW_IN_USE:
                      /* Update UI and start accessing protected functionality */
                      break;
      ```
 
-   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API function that involves the privilege results in an error.
+   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY` or `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY_SESSION` (permission denied only for the current application session, until the application terminates), the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API function that involves the privilege results in an error.
 
      ```
                  case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY:
-                     /* Show a message and terminate the application */
+                 case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY_SESSION:
+                     /* Show a message and disable protected functionality */
                      break;
      ```
 
@@ -118,10 +121,13 @@ To check whether an application has permission to use a privilege, and to reques
 
        switch (result) {
            case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER:
+           case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_SESSION:
+           case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_IN_USE:
                /* Update UI and start accessing protected functionality */
                break;
            case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER:
-               /* Show a message and terminate the application */
+           case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_SESSION:
+               /* Show a message and disable protected functionality */
                break;
            case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE:
                /* Show a message with explanation */
@@ -130,8 +136,10 @@ To check whether an application has permission to use a privilege, and to reques
    }
    ```
 
-   - If the user decision is `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER` or `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER`, the decision is definitive and the application can react appropriately. It can finish its execution (if denied permission) or start to use protected APIs (if granted permission).
+   - If the user decision is `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER` or `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER`, the decision is definitive and the application can react appropriately. It can disable protected functionality (if denied permission) or start to use protected APIs (if granted permission).
    - If the user decision is `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE`, the decision is not definitive. In this case, access to protected functionality is still prohibited. This decision can be interpreted as a cancel action on behalf of the user, indicating that the user is not sure what the purpose of the request is. Therefore, consider providing some additional information to explain why the permission is required.
+   - If the user decision is `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_SESSION` or `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_SESSION`, the decision is valid only for the current application session, until the application terminates. The application can start to use protected APIs (if granted permission) or must not use them (if denied permission) for the rest of the session.
+   - If the user decision is `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_IN_USE`, the application is allowed to use protected APIs only while it is in use (in the foreground).
 
    If the decision is definitive, any subsequent `ppm_request_permission()` calls result in an immediate response with an appropriate result: `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER` or `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
 
@@ -166,7 +174,7 @@ To check whether an application has permission to use a privilege, and to reques
 
 2. React to the permissions check appropriately:
 
-   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
+   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW`, `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW_SESSION` (permission granted only for the current application session, until the application terminates), or `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW_IN_USE` (permission granted only while the application is in the foreground), the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
 
         ```
             if (ret == PRIVACY_PRIVILEGE_MANAGER_ERROR_NONE) {
@@ -174,15 +182,18 @@ To check whether an application has permission to use a privilege, and to reques
                 {
                     switch (results[it]) {
                     case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW:
+                    case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW_SESSION:
+                    case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW_IN_USE:
                         /* Update UI and start accessing protected functionality */
                         break;
         ```
 
-   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API function that involves the privilege results in an error.
+   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY` or `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY_SESSION` (permission denied only for the current application session, until the application terminates), the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API function that involves the privilege results in an error.
 
      ```
                 case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY:
-                    /* Show a message and terminate the application */
+                case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY_SESSION:
+                    /* Show a message and disable protected functionality */
                     break;
 
      ```
@@ -224,10 +235,13 @@ To check whether an application has permission to use a privilege, and to reques
         for (int it = 0; it < privileges_count; ++it) {
             switch (results[it]) {
                 case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER:
+                case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_SESSION:
+                case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_IN_USE:
                     /* Update UI and start accessing protected functionality */
                     break;
                 case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER:
-                    /* Show a message and terminate the application */
+                case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_SESSION:
+                    /* Show a message and disable protected functionality */
                     break;
                 case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE:
                     /* Show a message with explanation */
@@ -235,6 +249,12 @@ To check whether an application has permission to use a privilege, and to reques
             }
         }
     }
+    ```
+
+   - If the user decision is `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER` or `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER`, the decision is definitive and the application can react appropriately. It can disable protected functionality (if denied permission) or start to use protected APIs (if granted permission).
+   - If the user decision is `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE`, the decision is not definitive. In this case, access to protected functionality is still prohibited. Consider providing some additional information to explain why the permission is required.
+   - If the user decision is `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_SESSION` or `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_SESSION`, the decision is valid only for the current application session, until the application terminates.
+   - If the user decision is `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_IN_USE`, the application is allowed to use protected APIs only while it is in use (in the foreground).
 
 ## Checking Permissions
 
