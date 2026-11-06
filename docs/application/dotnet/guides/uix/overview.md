@@ -5,9 +5,9 @@ The text input and voice features introduce how you can convert speech to text a
 
 You can use the following text input and voice features in your .NET applications:
 
--   [Input Method](input-method.md) and [Input Method Manager](input-method-manager.md)
+-   [Input Method Manager](input-method-manager.md)
 
-    You can create an IME (Input Method Editor) application that provides a customized keyboard for the user. You can show and hide the keyboard as needed, and offer a keyboard option menu to allow the user to manage the keyboard settings.
+    You can manage the IMEs (Input Method Editors) installed on the device. You can open a list of installed IMEs, allow the user to enable an installed IME, and show an IME selector for the user to select one as the default keyboard.
 
 -   [Sticker](sticker.md)
 
