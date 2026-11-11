@@ -51,7 +51,7 @@ Tizen enables your application to [play video](#play_video), and it uses its own
 
    You can display video on a UI layer with the Evas object as well as on an overlay layer.
    > [!NOTE]
-   > Using the Evas object have been deprecated since Tizen 11.0.
+   > The overlay layer and Evas object display types (`PLAYER_DISPLAY_TYPE_OVERLAY`, `PLAYER_DISPLAY_TYPE_EVAS`, and `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI`) have been deprecated since Tizen 10.1.
 
 2. Create the player instance.
 
@@ -391,6 +391,9 @@ To play a video file:
    ```
 
    After the `player_set_display()` function has been successfully executed, the player is connected to the display.
+
+   > [!NOTE]
+   > The `PLAYER_DISPLAY_TYPE_OVERLAY`, `PLAYER_DISPLAY_TYPE_EVAS`, and `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI` display types have been deprecated since Tizen 10.1.
 
    > **Note**
    >
