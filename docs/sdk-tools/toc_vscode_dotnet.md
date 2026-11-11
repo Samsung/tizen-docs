@@ -23,6 +23,8 @@
 
 #### [Install VSCode Extension for Tizen](/sdk-tools/vscode-ext/Tizen/dotnet.md)
 
+#### [Install TV Extension](/sdk-tools/vscode-ext/samsung-tv-extension.md)
+
 #### Tool: Packages
 
 ##### [Configure Package Repository](/sdk-tools/vscode-ext/tools/package-manager.md)
