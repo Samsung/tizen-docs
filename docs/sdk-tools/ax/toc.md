@@ -1,4 +1,4 @@
-# [AX Overview](index.md)
+# [Overview](index.md)
 # Skills
 ## Tizen Agent Skills
 ### [Overview](skills/tizen-agent-skills/index.md)

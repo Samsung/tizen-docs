@@ -1,4 +1,4 @@
-# AX: AI Tools for Tizen Development
+# AI Tools for Tizen Development
 
 The AX section collects the resources that let AI coding assistants work with the Tizen platform. Where the VS Code and Visual Studio sections describe the tools you operate yourself, the AX section describes what an AI coding assistant such as Claude Code, Cline, Codex CLI, or Gemini CLI can install and use on your behalf.
 
