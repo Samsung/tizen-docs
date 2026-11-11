@@ -17,7 +17,7 @@
 #### [Prerequisite](/sdk-tools/vstools/prequisite.md)
 #### [Install VS Extension for Tizen](/sdk-tools/vstools/install.md)
 #### [Install SDK Common Tools & Tizen Platform](/sdk-tools/vstools/install-sdk-common-tools.md)
-#### [Install TV Extension](/sdk-tools/vstools/tv-certificate-extension.md)
+#### [Install TV Extension](/sdk-tools/vstools/samsung-tv-extension.md)
 
 ### Web Application Development
 <!-- #### [Overview](/sdk-tools/vstools/getting-started/creating-application-projects.md) -->
