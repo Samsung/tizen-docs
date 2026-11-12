@@ -341,8 +341,7 @@ To initialize the player for use:
 
      The player error callback is triggered when the player stops working due to an error. You can use the callback to try to recover from the error. For example, try to change the player state to `PLAYER_STATE_READY` by calling the `player_stop()` function. Then remove all other callbacks and reset the player by calling the `player_unprepare()` function. At the end, the player is in the `PLAYER_STATE_IDLE` state, so you can release the resources allocated to the player.
 
-     > **Note**
-     >
+     > [!NOTE]
      > Do not call the `player_destroy()` function from the called context, as this can cause the `PLAYER_ERROR_INVALID_OPERATION` error.
 
 <a name="play_audio"></a>
@@ -415,8 +414,7 @@ To play a video file:
 
    With the `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI2` display type, the video is rendered in full scale in the drawing area of the video surface. To change the video rendering position and synchronize it with the UI, change the position and size of the video surface with your UI framework instead of using the player display functions.
 
-   > **Note**
-   >
+   > [!NOTE]
    > For an overlay surface, when the device orientation changes, the displayed video does not rotate automatically. If you want to change the video orientation according to the device orientation, use the `player_set_display_rotation()` function within the `app_device_orientation_cb()` callback function used by the application. For an Evas surface, the Evas object for the video is rotated by the window manager used by the application, not by the `player_set_display_rotation()` function.
 
 3. <a name="play_video_prepare"></a>Prepare the player for playback using the `player_prepare()` function:
@@ -677,8 +675,7 @@ To retrieve information about the audio and video streams:
 
 1. [Create the player handle](#init_handle), [prepare and start the player](#play_video), and [set the display parameters](#set_parameters).
 
-   > **Note**
-   >
+   > [!NOTE]
    > To retrieve the stream information, the player state must be either `PLAYER_STATE_PLAYING` or `PLAYER_STATE_PAUSED`.
 
 2. Retrieve the stream information:
@@ -769,9 +766,8 @@ To retrieve information about the audio and video streams:
      dlog_print(DLOG_INFO, LOG_TAG, "player_get_content_info year = %d", year);
      ```
 
-     > **Note**
-     >
-	 > The values must be released using the `free()` function.
+     > [!NOTE]
+     > The values must be released using the `free()` function.
 
    - Album artwork
 
@@ -808,8 +804,7 @@ To insert subtitles to a video file:
    free(path);
    ```
 
-   > **Note**
-   >
+   > [!NOTE]
    > You can set the subtitle path when the player state is `PLAYER_STATE_IDLE`, `PLAYER_STATE_READY`, `PLAYER_STATE_PLAYING`, or `PLAYER_STATE_PAUSED`.
 
 ## Related Information
