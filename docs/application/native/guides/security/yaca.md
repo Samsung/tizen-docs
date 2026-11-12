@@ -18,11 +18,15 @@ The main features of the YACA API include:
 
   The encryption and decryption features provide simple and advanced functionalities for encrypting and decrypting data, and creating an IV. You can use [symmetric](#symmetric) or [asymmetric](#asymmetric) keys for the encryption.
 
+- Certificate handling
+
+  You can [manage X.509 certificates](#certificate), including Certificate Signing Requests (CSRs), attributes, and extensions. You can create and sign CSRs, issue certificates, import and export them, read their contents, and verify them against trusted CA certificates.
+
 ## Prerequisites
 
 To enable your application to use the YACA functionality:
 
-1. To use the functions and data types of the [YACA API](../../api/common/latest/group__CAPI__YACA__MODULE.html), include the `<yaca_crypto.h>`, `<yaca_error.h>`, `<yaca_key.h>`, `<yaca_digest.h>`, `<yaca_encrypt.h>`, `<yaca_seal.h>`, `<yaca_sign.h>`, and `<yaca_simple.h>` header files in your application:
+1. To use the functions and data types of the [YACA API](../../api/common/latest/group__CAPI__YACA__MODULE.html), include the `<yaca_crypto.h>`, `<yaca_error.h>`, `<yaca_key.h>`, `<yaca_digest.h>`, `<yaca_encrypt.h>`, `<yaca_seal.h>`, `<yaca_sign.h>`, `<yaca_simple.h>`, `<yaca_x509.h>`, `<yaca_x509_req.h>`, `<yaca_x509_attr.h>`, and `<yaca_x509_ext.h>` header files in your application:
 
    ```
    /* Needed for general operations */
@@ -49,6 +53,18 @@ To enable your application to use the YACA functionality:
 
    /* Needed for asymmetric encryption */
    #include <yaca_seal.h>
+
+   /* Needed for X.509 certificates */
+   #include <yaca_x509.h>
+
+   /* Needed for X.509 Certificate Signing Requests (CSRs) */
+   #include <yaca_x509_req.h>
+
+   /* Needed for X.509 attributes */
+   #include <yaca_x509_attr.h>
+
+   /* Needed for X.509 extensions */
+   #include <yaca_x509_ext.h>
    ```
 
 2. Initialize and clean up the library:
@@ -1431,6 +1447,590 @@ To encrypt and decrypt data with asymmetric keys:
   yaca_key_destroy(key_priv);
   ```
 
+<a name="certificate"></a>
+## Managing X.509 Certificates
+
+You can create, sign, import, export, read, and verify X.509 certificates and Certificate Signing Requests (CSRs), and add attributes and extensions to them.
+
+The examples assume that `yaca_initialize()` has already been called in the current thread. Each example declares all handles up front, initializes them to their NULL values, and releases them in a `cleanup` section, so the cleanup is safe on any error path. Every call checks its return value. When a call fails, the example jumps to `cleanup` and returns the error code in `ret`.
+
+- Create a CSR and sign it:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_key_h priv_key = YACA_KEY_NULL;
+  yaca_key_h pub_key = YACA_KEY_NULL;
+  yaca_x509_req_h req = YACA_X509_REQ_NULL;
+
+  ret = yaca_key_generate(YACA_KEY_TYPE_RSA_PRIV, YACA_KEY_LENGTH_2048BIT, &priv_key);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_key_extract_public(priv_key, &pub_key);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_new(&req);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_set_version(req, YACA_X509_REQ_VERSION_1);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_set_subject(req, "C = KR, O = Example, CN = device.example.com");
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_set_public_key(req, pub_key);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* The signature covers the subject, the public key, and the extensions */
+  ret = yaca_x509_req_sign(req, priv_key, YACA_DIGEST_SHA256);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* The CSR is ready to be exported or used to issue a certificate */
+
+  cleanup:
+  yaca_x509_req_destroy(&req);
+  yaca_key_destroy(pub_key);
+  yaca_key_destroy(priv_key);
+  return ret;
+  ```
+
+- Verify the CSR signature:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_req_h req = YACA_X509_REQ_NULL;
+  yaca_key_h req_pub_key = YACA_KEY_NULL;
+
+  /* req is a CSR imported or created earlier.
+   * YACA_ERROR_DATA_MISMATCH means the signature does not match the public key in the CSR. */
+  ret = yaca_x509_req_verify(req);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_get_public_key(req, &req_pub_key);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  cleanup:
+  yaca_key_destroy(req_pub_key);
+  yaca_x509_req_destroy(&req);
+  return ret;
+  ```
+
+- Issue a CA certificate (self-signed) and a leaf certificate from a CSR:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  time_t not_before = time(NULL);
+  time_t not_after = not_before + 365 * 24 * 3600;
+
+  yaca_key_h ca_priv = YACA_KEY_NULL;
+  yaca_key_h ca_pub = YACA_KEY_NULL;
+  yaca_x509_req_h ca_req = YACA_X509_REQ_NULL;
+  yaca_x509_h ca_cert = YACA_X509_NULL;
+  yaca_key_h leaf_priv = YACA_KEY_NULL;
+  yaca_key_h leaf_pub = YACA_KEY_NULL;
+  yaca_x509_req_h leaf_req = YACA_X509_REQ_NULL;
+  yaca_x509_h leaf_cert = YACA_X509_NULL;
+  yaca_x509_ext_h ca_ext = YACA_X509_EXT_NULL;
+
+  /* 1. CA key and CSR, with the CA:TRUE basic constraint.
+   *    For an intermediate CA, use a config such as "CA:TRUE, pathlen:0" to limit
+   *    how many CA certificates may follow it in a chain. */
+  ret = yaca_key_generate(YACA_KEY_TYPE_RSA_PRIV, YACA_KEY_LENGTH_2048BIT, &ca_priv);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_key_extract_public(ca_priv, &ca_pub);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_new(&ca_req);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_set_version(ca_req, YACA_X509_REQ_VERSION_1);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_set_subject(ca_req, "C = KR, O = Example, CN = Example Root CA");
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_set_public_key(ca_req, ca_pub);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_ext_new_by_config(YACA_EXT_OID_BASIC_CONSTRAINTS, 1, "CA:TRUE", &ca_ext);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_add_extensions(ca_req, &ca_ext, 1);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_sign(ca_req, ca_priv, YACA_DIGEST_SHA256);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* 2. Self-signed CA certificate: ca_cert is YACA_X509_NULL, issuer = subject.
+   *    YACA_EXT_COPY_ALL copies the CA:TRUE extension from the CSR. */
+  ret = yaca_x509_issue(ca_req, YACA_X509_NULL, ca_priv, NULL,
+                        not_before, not_after, YACA_DIGEST_SHA256,
+                        YACA_EXT_COPY_ALL, &ca_cert);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* 3. Leaf key and CSR */
+  ret = yaca_key_generate(YACA_KEY_TYPE_RSA_PRIV, YACA_KEY_LENGTH_2048BIT, &leaf_priv);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_key_extract_public(leaf_priv, &leaf_pub);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_new(&leaf_req);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_set_version(leaf_req, YACA_X509_REQ_VERSION_1);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_set_subject(leaf_req, "C = KR, O = Example, CN = device.example.com");
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_set_public_key(leaf_req, leaf_pub);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_sign(leaf_req, leaf_priv, YACA_DIGEST_SHA256);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* 4. Leaf certificate signed by the CA key. The CA private key must match ca_cert.
+   *    Serial NULL: a random serial number is generated. */
+  ret = yaca_x509_issue(leaf_req, ca_cert, ca_priv, NULL,
+                        not_before, not_after, YACA_DIGEST_SHA256,
+                        YACA_EXT_COPY_NONE, &leaf_cert);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* Use leaf_cert and ca_cert */
+
+  cleanup:
+  yaca_x509_destroy(&leaf_cert);
+  yaca_x509_destroy(&ca_cert);
+  yaca_x509_req_destroy(&leaf_req);
+  yaca_key_destroy(leaf_pub);
+  yaca_key_destroy(leaf_priv);
+  yaca_x509_ext_destroy(ca_ext);
+  yaca_x509_req_destroy(&ca_req);
+  yaca_key_destroy(ca_pub);
+  yaca_key_destroy(ca_priv);
+  return ret;
+  ```
+
+- Verify a certificate against a trusted CA certificate:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_verify_result_e result = YACA_X509_VERIFY_OK;
+  yaca_x509_h leaf_cert = YACA_X509_NULL;   /* Certificate to verify */
+  yaca_x509_h ca_cert = YACA_X509_NULL;     /* Trusted root CA certificate */
+  yaca_x509_h trusted[1];
+  yaca_x509_h untrusted[1];
+  yaca_x509_h inter_cert = YACA_X509_NULL;  /* Intermediate CA certificate (signed by ca_cert) */
+
+  trusted[0] = ca_cert;
+
+  /* Pass NULL and 0 for untrusted certificates when there are none */
+  ret = yaca_x509_verify_cert(leaf_cert, trusted, 1, NULL, 0, &result);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* A failed verification is not an API error: ret stays YACA_ERROR_NONE
+   * and the outcome is in result (expired, untrusted, self-signed, signature, ...) */
+  if (result != YACA_X509_VERIFY_OK) {
+      /* Handle the failure */
+      goto cleanup;
+  }
+
+  /* To also require the CA flag on intermediate and root certificates: */
+  ret = yaca_x509_verify_cert_with_caflag(leaf_cert, trusted, 1, NULL, 0, &result);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  if (result != YACA_X509_VERIFY_OK) {
+      /* Handle the failure */
+      goto cleanup;
+  }
+
+  /* Chain: leaf_cert -> inter_cert -> ca_cert. Only ca_cert is trusted;
+   * inter_cert is passed as an untrusted certificate to complete the chain */
+  untrusted[0] = inter_cert;
+  ret = yaca_x509_verify_cert(leaf_cert, trusted, 1, untrusted, 1, &result);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  if (result != YACA_X509_VERIFY_OK) {
+      /* Handle the failure */
+      goto cleanup;
+  }
+
+  cleanup:
+  return ret;
+  ```
+
+- Export a certificate to PEM or DER data, and import it back:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_h cert = YACA_X509_NULL;   /* Certificate to export */
+  yaca_x509_h imported = YACA_X509_NULL;
+  char *pem = NULL;
+  size_t pem_len = 0;
+
+  ret = yaca_x509_export(cert, YACA_CERT_FORMAT_PEM, &pem, &pem_len);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* pem_len does not include the terminating null byte */
+  ret = yaca_x509_import(YACA_CERT_FORMAT_PEM, pem, pem_len, &imported, NULL);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  cleanup:
+  yaca_x509_destroy(&imported);
+  yaca_free(pem);
+  yaca_x509_destroy(&cert);
+  return ret;
+  ```
+
+  To store and load a file instead:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_h cert = YACA_X509_NULL;
+  yaca_x509_h loaded = YACA_X509_NULL;
+
+  ret = yaca_x509_export_to_file(cert, YACA_CERT_FORMAT_DER, "/tmp/device_cert.der");
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* Tries PEM first, then DER */
+  ret = yaca_x509_import_from_file("/tmp/device_cert.der", &loaded, NULL);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  cleanup:
+  yaca_x509_destroy(&loaded);
+  yaca_x509_destroy(&cert);
+  return ret;
+  ```
+
+- Read the information of a certificate:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_h cert = YACA_X509_NULL;   /* Certificate to read */
+  time_t not_before = 0;
+  time_t not_after = 0;
+  yaca_key_h pub_key = YACA_KEY_NULL;
+  char *subject = NULL;
+  size_t subject_len = 0;
+  char *cn = NULL;
+  size_t cn_len = 0;
+  unsigned long hash = 0;
+
+  /* Validity period: either output can be NULL if not needed */
+  ret = yaca_x509_get_validity(cert, &not_before, &not_after);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_get_public_key(cert, &pub_key);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* Full subject name in RFC 4514 format, e.g. "CN = Test, O = Org, C = US" */
+  ret = yaca_x509_get_string_field(cert, YACA_X509_FIELD_SUBJECT, &subject, &subject_len);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* Only the first CN is returned if there are several */
+  ret = yaca_x509_get_string_field(cert, YACA_X509_FIELD_SUBJECT_COMMON_NAME, &cn, &cn_len);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_get_subject_hash(cert, &hash);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  cleanup:
+  yaca_free(cn);
+  yaca_free(subject);
+  yaca_key_destroy(pub_key);
+  yaca_x509_destroy(&cert);
+  return ret;
+  ```
+
+- Import a certificate chain from one buffer. The `consumed` value tells you where the next certificate starts:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  const char *chain_pem = NULL;   /* PEM data with several certificates, e.g. read from a file */
+  size_t chain_len = 0;
+  size_t offset = 0;
+  size_t consumed = 0;
+  yaca_x509_h cert = YACA_X509_NULL;
+
+  /* Import the first certificate of the chain */
+  ret = yaca_x509_import(YACA_CERT_FORMAT_PEM, chain_pem, chain_len, &cert, &consumed);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* Use cert, then release it */
+  yaca_x509_destroy(&cert);
+
+  /* To import the next certificate, move the buffer pointer by consumed bytes
+   * and call yaca_x509_import() again with the remaining length */
+  offset += consumed;
+
+  cleanup:
+  yaca_x509_destroy(&cert);
+  return ret;
+  ```
+
+- Export a CSR, import it back, and duplicate it. A CSR must be signed before it is duplicated:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_req_h req = YACA_X509_REQ_NULL;     /* Signed CSR */
+  yaca_x509_req_h imported = YACA_X509_REQ_NULL;
+  yaca_x509_req_h copy = YACA_X509_REQ_NULL;
+  char *pem = NULL;
+  size_t pem_len = 0;
+
+  ret = yaca_x509_req_export(req, YACA_CERT_FORMAT_PEM, &pem, &pem_len);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_import(YACA_CERT_FORMAT_PEM, pem, pem_len, &imported);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_dup(imported, &copy);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  cleanup:
+  yaca_x509_req_destroy(&copy);
+  yaca_x509_req_destroy(&imported);
+  yaca_free(pem);
+  yaca_x509_req_destroy(&req);
+  return ret;
+  ```
+
+  To store a CSR in a file, use `yaca_x509_req_export_to_file()`, and read it back with `yaca_x509_req_import_from_file()`.
+
+- Read the subject and public key of a CSR:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_req_h req = YACA_X509_REQ_NULL;   /* CSR to read */
+  char *subject = NULL;
+  size_t subject_len = 0;
+  yaca_key_h pub_key = YACA_KEY_NULL;
+  long version = 0;
+
+  ret = yaca_x509_req_get_version(req, &version);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_get_subject(req, &subject, &subject_len);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_get_public_key(req, &pub_key);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  cleanup:
+  yaca_key_destroy(pub_key);
+  yaca_free(subject);
+  yaca_x509_req_destroy(&req);
+  return ret;
+  ```
+
+- Add attributes to a CSR:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_req_h req = YACA_X509_REQ_NULL;   /* CSR being built */
+  yaca_x509_attr_h attr = YACA_X509_ATTR_NULL;
+  const char *password = "secret";
+
+  /* Create an attribute from its NID and add it to the CSR. The CSR keeps its own copy. */
+  ret = yaca_x509_attr_new(YACA_ATTR_NID_CHALLENGE_PASSWORD, YACA_ATTR_DATA_TYPE_UTF8STRING,
+                           (const unsigned char *)password, strlen(password), &attr);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  ret = yaca_x509_req_add_attr(req, attr);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* Or add it directly by NID, without creating an attribute handle */
+  ret = yaca_x509_req_add_attr_by_nid(req, YACA_ATTR_NID_UNSTRUCTURED_NAME,
+                                      YACA_ATTR_DATA_TYPE_ASCII,
+                                      (const unsigned char *)"device-01", strlen("device-01"));
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  cleanup:
+  yaca_x509_attr_destroy(attr);
+  yaca_x509_req_destroy(&req);
+  return ret;
+  ```
+
+  Supported attribute NIDs are `YACA_ATTR_NID_CHALLENGE_PASSWORD`, `YACA_ATTR_NID_UNSTRUCTURED_NAME`, and `YACA_ATTR_NID_EXTENSION_REQUEST`. Supported data types are `YACA_ATTR_DATA_TYPE_UTF8STRING` and `YACA_ATTR_DATA_TYPE_ASCII`.
+
+- Read the attributes of a CSR:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_req_h req = YACA_X509_REQ_NULL;   /* CSR to read */
+  size_t count = 0;
+  size_t i;
+  yaca_attr_nid_e nid = YACA_ATTR_NID_UNKNOWN;
+  unsigned char *data = NULL;
+  size_t data_len = 0;
+
+  ret = yaca_x509_req_get_attr_count(req, &count);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  for (i = 0; i < count; i++) {
+      /* If several attributes share the same type, only the first one of that type is returned */
+      ret = yaca_x509_req_get_attr(req, (int)i, &nid, &data, &data_len);
+      if (ret != YACA_ERROR_NONE)
+          goto cleanup;
+
+      /* Use data (length data_len) */
+      yaca_free(data);
+      data = NULL;
+  }
+
+  /* Delete the attribute at index 0 */
+  if (count > 0) {
+      ret = yaca_x509_req_delete_attr(req, 0);
+      if (ret != YACA_ERROR_NONE)
+          goto cleanup;
+  }
+
+  cleanup:
+  yaca_free(data);
+  yaca_x509_req_destroy(&req);
+  return ret;
+  ```
+
+- Add extensions to a CSR:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_req_h req = YACA_X509_REQ_NULL;   /* CSR being built */
+  yaca_x509_ext_h exts[2] = { YACA_X509_EXT_NULL, YACA_X509_EXT_NULL };
+
+  /* Key usage, from a config string */
+  ret = yaca_x509_ext_new_by_config(YACA_EXT_OID_KEY_USAGE, 1,
+                                    "digitalSignature,keyEncipherment", &exts[0]);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* Subject Alternative Name, from an OID string and a config string */
+  ret = yaca_x509_ext_new_by_oid_string_config("2.5.29.17", 0,
+                                               "DNS:device.example.com,DNS:*.example.com", &exts[1]);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  /* The CSR keeps its own copy, so the extension handles must still be destroyed */
+  ret = yaca_x509_req_add_extensions(req, exts, 2);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  cleanup:
+  yaca_x509_ext_destroy(exts[1]);
+  yaca_x509_ext_destroy(exts[0]);
+  yaca_x509_req_destroy(&req);
+  return ret;
+  ```
+
+Adding extensions to a CSR also adds the `extensionRequest` attribute to it automatically. Do not add that attribute yourself.
+
+- Read the extensions of a CSR or a certificate:
+
+  ```
+  int ret = YACA_ERROR_NONE;
+  yaca_x509_h cert = YACA_X509_NULL;   /* Certificate to read (use yaca_x509_req_get_extensions() for a CSR) */
+  size_t ext_count = 0;
+  yaca_x509_ext_h *exts = NULL;
+  size_t i = 0;
+
+  ret = yaca_x509_get_extensions(cert, &ext_count, &exts);
+  if (ret != YACA_ERROR_NONE)
+      goto cleanup;
+
+  for (i = 0; i < ext_count; i++) {
+      char *oid = NULL;
+      size_t oid_len = 0;
+      char *config = NULL;
+      size_t config_len = 0;
+      int critical = 0;
+
+      ret = yaca_x509_ext_get_oid(exts[i], &oid, &oid_len);
+      if (ret != YACA_ERROR_NONE)
+          goto cleanup_ext;
+
+      ret = yaca_x509_ext_get_critical(exts[i], &critical);
+      if (ret != YACA_ERROR_NONE)
+          goto cleanup_ext;
+
+      /* The value as a config string, e.g. "CA:TRUE" or "DNS:example.com" */
+      ret = yaca_x509_ext_get_data_str(exts[i], &config, &config_len);
+      if (ret != YACA_ERROR_NONE)
+          goto cleanup_ext;
+
+      /* Use oid, critical, and config */
+
+  cleanup_ext:
+      yaca_free(config);
+      yaca_free(oid);
+      yaca_x509_ext_destroy(exts[i]);
+      exts[i] = YACA_X509_EXT_NULL;
+      if (ret != YACA_ERROR_NONE)
+          goto cleanup;
+  }
+
+  cleanup:
+  /* Destroy the extensions that were not reached after an error */
+  for (; exts != NULL && i < ext_count; i++)
+      yaca_x509_ext_destroy(exts[i]);
+  yaca_free(exts);
+  yaca_x509_destroy(&cert);
+  return ret;
+  ```
+
+  Each extension handle must be destroyed with `yaca_x509_ext_destroy()`, and the array itself must be freed with `yaca_free()`.
+
 ## Related Information
 - Dependencies
   - Since Tizen 3.0
+  - Since Tizen 10.1 (X.509 certificates, CSRs, attributes, and extensions)
