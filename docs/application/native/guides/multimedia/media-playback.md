@@ -52,6 +52,7 @@ Tizen enables your application to [play video](#play_video), and it uses its own
    You can display video on a UI layer with the Evas object as well as on an overlay layer.
    > [!NOTE]
    > The overlay layer and Evas object display types (`PLAYER_DISPLAY_TYPE_OVERLAY`, `PLAYER_DISPLAY_TYPE_EVAS`, and `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI`) have been deprecated since Tizen 10.1.
+   > Use the `PLAYER_DISPLAY_TYPE_OVERLAY2` or `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI2` display types instead (since Tizen 11.0).
 
 2. Create the player instance.
 
@@ -395,6 +396,25 @@ To play a video file:
    > [!NOTE]
    > The `PLAYER_DISPLAY_TYPE_OVERLAY`, `PLAYER_DISPLAY_TYPE_EVAS`, and `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI` display types have been deprecated since Tizen 10.1.
 
+   Since Tizen 11.0, use the `PLAYER_DISPLAY_TYPE_OVERLAY2` display type with the window handle of the window where the video is displayed:
+
+   ```
+   /* win: handle of the window to display the video on */
+   error_code = player_set_display(g_player, PLAYER_DISPLAY_TYPE_OVERLAY2, GET_DISPLAY(win));
+   ```
+
+   To display the video with the UI, use the `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI2` display type with the string handle exported from the video surface:
+
+   ```
+   /* handle: string handle exported from the video surface to display the video on */
+   error_code = player_set_display(g_player, PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI2, GET_DISPLAY(handle));
+   ```
+
+   > [!NOTE]
+   > With the `PLAYER_DISPLAY_TYPE_OVERLAY2` display type, pass a window handle. With the `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI2` display type, pass a string handle exported from a video surface, not the video surface handle itself.
+
+   With the `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI2` display type, the video is rendered in full scale in the drawing area of the video surface. To change the video rendering position and synchronize it with the UI, change the position and size of the video surface with your UI framework instead of using the player display functions.
+
    > **Note**
    >
    > For an overlay surface, when the device orientation changes, the displayed video does not rotate automatically. If you want to change the video orientation according to the device orientation, use the `player_set_display_rotation()` function within the `app_device_orientation_cb()` callback function used by the application. For an Evas surface, the Evas object for the video is rotated by the window manager used by the application, not by the `player_set_display_rotation()` function.
@@ -604,6 +624,9 @@ To play multiple files simultaneously:
 ## Configuring the Video Playback Display
 
 To set the display parameters for playing a video file:
+
+> [!NOTE]
+> With the `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI2` display type, the `player_set_display_mode()`, `player_set_display_rotation()`, and `player_set_display_roi_area()` functions are not available and return `PLAYER_ERROR_NOT_AVAILABLE`. To change the video rendering position and size, change the position and size of the video surface.
 
 1. Make sure that the [player handle has been created](#init_handle), the [display set](#play_video_display), and the [player prepared](#play_video_prepare) and [started](#play_video_play).
 
