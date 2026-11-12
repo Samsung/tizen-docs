@@ -32,21 +32,9 @@ The main media content features include:
 
   You can also retrieve [general information about the media and more specific information about the media type](#media_info).
 
-- Media bookmarks (Deprecated since 9.0)
-
-  You can [insert](#inserting), [search for](#finding), [read](#reading), and [remove](#removing) bookmarks for video and audio files.
-
 - Filter
 
   You can [create a filter](#filter) to find specific media items.
-
-- Media playlists (Deprecated since 9.0)
-
-  You can [add](#create_playlist) or [delete](#delete_playlist) a playlist of video and audio files, and add media files to a created playlist. In addition, you can also [search for playlists](#find_playlist) and [read playlist information](#read_playlist).
-
-- Media tags (Deprecated since 9.0)
-
-  You can access the tag information for the media files in the database. You can, for example, [add media tags](#tag_add), [retrieve tag information](#tag_list), and [delete tags](#tag_delete).
 
 - Media albums
 
@@ -73,7 +61,7 @@ To enable your application to use the media content functionality:
    </privileges>
    ```
 
-2. Media Content functions use a SQLite database to save the metadata of the media files on the user device, along with the tags and bookmarks that the user sets. To use the functions and data types of the Media Content API, include the `<media_content.h>` header file in your application:
+2. Media Content functions use a SQLite database to save the metadata of the media files on the user device. To use the functions and data types of the Media Content API, include the `<media_content.h>` header file in your application:
 
    ```
    #include <media_content.h>
@@ -533,141 +521,6 @@ To access information about the media items in a given album:
    >
    > Free the `title` and `mime_type` variables after use.
 
-<a name="media_bookmark"></a>
-## Bookmark
-
-> [!NOTE]
-> All media bookmark APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
-
-<a name="inserting"></a>
-### Inserting Bookmarks
-
-To set a bookmark for a video file at a given timestamp, use the `media_bookmark_insert_to_db()` function:
-
-```
-char* thumbnail_path = "path/to/image/file";
-
-media_bookmark_insert_to_db(media_id, 220, thumbnail_path);
-media_bookmark_insert_to_db(media_id, 210, thumbnail_path);
-```
-
-The parameters are the media ID of the video file, the moment (time in seconds from the beginning) in the video to bookmark, and the image used as a thumbnail for the bookmark. You can use the same thumbnail for more than 1 bookmark.
-
-<a name="finding"></a>
-### Finding Bookmarks
-
-To find a media item's bookmarks and filter the results:
-
-1. To find the bookmarks satisfying certain criteria, or modify the results in a specific way, create a filter and set its properties.
-
-   The following example filters bookmarks so that only the bookmarks set at the 220th second of the file or later are included in the result. The filter is case-insensitive, and the results are sorted in ascending order by the time point they mark in the file. The file also defines an offset where only the first 3 results are returned. For more information on the filter properties, see [Setting up a Filter](#filter).
-
-   ```
-   filter_h filter = NULL;
-
-   media_filter_create(&filter);
-
-   #define BUFLEN 200
-   char buf[BUFLEN] = {'\0'};
-
-   snprintf(buf, BUFLEN, "%s >= 220", BOOKMARK_MARKED_TIME);
-   media_filter_set_condition(filter, buf, MEDIA_CONTENT_COLLATE_DEFAULT);
-
-   media_filter_set_offset(filter,
-                           /* Offset */
-                           0,
-                           /* Count */
-                           3);
-
-   media_filter_set_order(filter, MEDIA_CONTENT_ORDER_ASC, BOOKMARK_MARKED_TIME, MEDIA_CONTENT_COLLATE_NOCASE);
-   ```
-
-2. To find the bookmarks set for a media item, use the `media_info_foreach_bookmark_from_db()` function.
-
-   To find only a subset of the bookmarks, use a filter. If you want to find all bookmarks set for a media item, set the filter parameter to `NULL`.
-
-   ```
-   /* Find all items */
-   media_info_foreach_bookmark_from_db(media_id, NULL, get_bookmarks_cb, NULL);
-
-   /* Find filtered items */
-   media_info_foreach_bookmark_from_db(media_id, filter, get_bookmarks_cb, NULL);
-   ```
-
-   Obtain the media ID (first parameter) by calling the `*_get_media_id()` functions. The handles that these functions require can be obtained from various sources. For example, `media_info_h` (needed for `media_info_get_media_id()`) is provided after calling the `media_info_foreach_media_from_db()` or `media_info_insert_to_db()` function.
-
-   The `media_info_foreach_bookmark_from_db()` function requires a callback, which is called for every found bookmark. The function is synchronous, and it blocks until the callback has been called for all bookmarks in the media item or the callback returns `false`. For information on how to implement the callback, see [Reading Bookmark Information](#reading).
-
-3. Destroy the filter:
-
-   ```
-   media_filter_destroy(filter);
-   ```
-
-<a name="reading"></a>
-### Reading Bookmark Information
-
-To read bookmark information, define a callback for the `media_info_foreach_bookmark_from_db()` function and retrieve the basic bookmark information (thumbnail path and marked time) in the callback:
-
-1. Read the bookmark details within the callback:
-
-   ```
-   bool
-   get_bookmarks_cb(media_bookmark_h bookmark, void* user_data)
-   {
-   ```
-
-   A handle to the record is passed as a parameter. The return value determines whether the iterative calls of the callback continue (`true`) or are stopped (`false`).
-
-2. Once you have the bookmark handle (`media_bookmark_h`), you can read the bookmark information:
-	- Use the `media_bookmark_get_thumbnail_path()` function to get the thumbnail path of the bookmark:
-
-      ```
-          char *thumb = NULL;
-
-          if (bookmark != NULL) {
-              media_bookmark_get_thumbnail_path(bookmark, &thumb);
-              dlog_print(DLOG_DEBUG, LOG_TAG, "Thumbnail path: %s\n", thumb);
-              free(thumb);
-      ```
-      > **Note**
-      >
-      > Free the thumbnail path after use.
-
-	- Use the `media_bookmark_get_marked_time()` function to get the marked time of the bookmark:
-
-      ```
-              time_t time;
-
-              media_bookmark_get_marked_time(bookmark, &time);
-              dlog_print(DLOG_DEBUG, LOG_TAG, "Marked time [s]: %d\n", (int) time);
-          }
-
-          return true;
-      }
-      ```
-
-<a name="removing"></a>
-### Removing Bookmarks
-
-To remove a bookmark:
-
-1. Acquire the bookmark ID:
-
-   ```
-   media_bookmark_h bookmark = NULL;
-
-   /* Assuming you have the bookmark handle (media_bookmark_h) */
-   int bookmark_id = -1;
-   media_bookmark_get_bookmark_id(bookmark, &bookmark_id);
-   ```
-
-2. Delete the bookmark:
-
-   ```
-   media_bookmark_delete_from_db(bookmark_id);
-   ```
-
 <a name="media_filter"></a>
 ## Filter
 
@@ -1014,7 +867,7 @@ To access media item information:
 
    To find only a subset of the items, use a filter. If you want to find all items, set the filter parameter to `NULL`.
 
-   After the callback has created the item list, you can access the item details with various `media_info_get_XXX()` functions. Note that media information is based on the media information handle, and to obtain the information (metadata), you must first retrieve the handle. The available metadata varies depending on the media type, such as image, video, or audio.
+   After the callback has created the item list, you can access the item details with various `media_info_get_XXX()` functions. Note that media information is based on the media information handle, and to obtain the information (metadata), you must first retrieve the handle. The available metadata varies depending on the media type, such as image, audio, or book.
 
    ```
    ret = media_info_foreach_media_from_db(filter, gallery_media_item_cb, &all_item_list);
@@ -1209,429 +1062,13 @@ To insert a media folder, and optionally any subfolders, in the database:
     }
     ```
 
-<a name="media_playlist"></a>
-## Playlist
-
-> [!NOTE]
-> All media playlist APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
-
-<a name="create_playlist"></a>
-### Creating Playlists
-
-To create and insert a playlist to the database:
-
-1. Insert a playlist record to the database.
-
-   To operate on the database, it has to contain records. Add a new playlist to the database using the `media_playlist_insert_to_db()` function. It returns a handle to the newly created record.
-
-   ```
-   media_playlist_h playlist = NULL;
-   GList *media_id_list = NULL; /* This requires glib.h inclusion */
-   int media_count;
-   int start_position = -1;
-   int count = -1;
-   int x;
-   int id;
-   int ret;
-
-   /* Create the playlist */
-   media_playlist_insert_to_db("playlist_for_tutorial", &playlist);
-   ```
-
-   You can modify the playlist name later using the `media_playlist_set_name()` function.
-
-2. Define a callback function for the `media_info_foreach_media_from_db()` function, called for each available media item. Use the callback to cast the user data to a proper type and copy the media ID to a list:
-
-   ```
-   bool
-   _media_info_cb(media_info_h media, void *user_data)
-   {
-       char *data = NULL;
-       char *id = NULL;
-
-       if (media != NULL) {
-           GList **list = (GList**)user_data;
-
-           media_info_get_media_id(media, &id);
-           dlog_print(DLOG_DEBUG, LOG_TAG, "Media found: %s\n", id);
-
-           data = strdup(id);
-           *list = g_list_append(*list, data);
-
-           free(id);
-       }
-
-       return true;
-   }
-   ```
-
-3. To be able to fill a playlist with data, [insert existing media in the database](#insert) using the `media_content_scan_file()` function. You can also check the media database size using the `media_info_get_media_count_from_db()` function and allocate the required amount of space.
-
-   ```
-   /* path must be set to an audio file */
-   media_content_scan_file(path);
-
-   media_info_get_media_count_from_db(NULL, &media_count);
-   ```
-
-4. To find the media items to be added to the playlist, call the `media_info_foreach_media_from_db()` function with the defined callback. After the callback has created the media ID list, you can add the media items to the playlist with the `media_playlist_add_media()` function.
-
-   ```
-   media_info_foreach_media_from_db(NULL, _media_info_cb, &media_id_list);
-
-   if (media_count > 0) {
-       for (x = 0; x < media_count; x++) {
-           char *media_id = (char*)g_list_nth_data(media_id_list, x);
-
-           ret = media_playlist_add_media(playlist, media_id);
-
-           free(media_id);
-       }
-   }
-
-   media_playlist_update_to_db(playlist);
-   ```
-
-5. When no longer needed, destroy the playlist:
-
-   ```
-   media_playlist_destroy(playlist);
-   ```
-<a name="find_playlist"></a>
-### Finding Playlists
-
-To find playlists and filter the results:
-
-1. To find only playlists satisfying certain criteria, or modify the results in a specific way, create a filter and set its properties.
-
-   For information on creating a filter, see [Setting up the Filter](#filter).
-
-2. To find the playlists, use the `media_playlist_foreach_playlist_from_db()` function.
-
-   To find only a subset of the playlists, use a filter. If you want to find all playlists, set the filter parameter to `NULL`.
-
-   ```
-   /* Find all playlists */
-   media_playlist_foreach_playlist_from_db(NULL, playlist_list_cb, NULL);
-
-   /* Find filtered playlists */
-   media_playlist_foreach_playlist_from_db(filter, playlist_list_cb, NULL);
-   ```
-
-   The `media_playlist_foreach_playlist_from_db()` function requires a callback, which is called for every found playlist. The function is synchronous, and it blocks until the callback has been called for all playlists or the callback returns `false`. For information on how to implement the callback, see [Reading Playlist Information](#read_playlist).
-
-3. Destroy the filter:
-
-   ```
-   media_filter_destroy(filter);
-   ```
-
-<a name="read_playlist"></a>
-### Reading Playlist Information
-
-To read playlist information, define a callback for the `media_playlist_foreach_playlist_from_db()` function and retrieve the basic playlist information (name, ID, and records included in the playlist) in the callback:
-
-1. Read the playlist details within the callback:
-
-   ```
-   static bool
-   playlist_list_cb(media_playlist_h playlist, void* user_data)
-   {
-       char *name = NULL;
-       int playlist_id = 0;
-       int count = 0;
-   ```
-
-   A handle to the record is passed as a parameter. The return value determines whether the iterative calls of the callback continue (`true`) or are stopped (`false`).
-
-2. Once you have the playlist handle (`media_playlist_h`), you can read the playlist information:
-	- Use the `media_playlist_get_name()` and `media_playlist_get_playlist_id()` functions to read the playlist name and ID:
-      ```
-          media_playlist_get_name(playlist, &name);
-          media_playlist_get_playlist_id(playlist, &playlist_id);
-      ```
-
-	- Access the records within the playlist using the playlist ID.
-
-      In the following example, 2 searches are executed for the records. The first search operates on all records on the playlist and retrieves the record count. The second search retrieves the first 10 records. Destroy the filters after all operations.
-      ```
-          filter_h temp_filter = NULL;
-          media_filter_create(&temp_filter);
-
-          media_filter_set_offset(temp_filter, -1, -1);
-
-          media_playlist_get_media_count_from_db(playlist_id, temp_filter, &count);
-          filter_h audio_fltr;
-
-          media_filter_create(&audio_fltr);
-
-          media_filter_set_offset(audio_fltr, 0, 10);
-
-          media_playlist_foreach_media_from_db(playlist_id, audio_fltr,
-                                              audio_list_cb, NULL);
-
-          media_filter_destroy(audio_fltr);
-          media_filter_destroy(temp_filter);
-
-          return true;
-      }
-      ```
-	- The search results are returned in a callback that is triggered for each record matching the filter. To get the media info, use the following functions in the callback:
-		- `media_info_get_audio()`
-		- `media_info_get_media_id()`
-		- `media_info_get_size()`
-
-      ```
-      static bool
-      audio_list_cb(int playlist_member_id, media_info_h media_hndl, void *user_data)
-      {
-          char * id;
-          media_info_get_media_id(media_hndl, &id);
-          dlog_print(DLOG_DEBUG, LOG_TAG, "Media on the playlist: %s\n", id);
-          free(id);
-
-          return true;
-      }
-      ```
-
-3. When no longer needed, destroy the playlist:
-
-   ```
-   media_playlist_destroy(playlist);
-   ```
-
-<a name="delete_playlist"></a>
-### Deleting Playlists
-
-After all operations, delete the playlist from the database to avoid creating useless records.
-
-In addition, destroy all filters and handles to the records.
-
-```
-media_playlist_get_playlist_id(playlist, &id);
-media_playlist_delete_from_db(id);
-```
-
-<a name="media_tag"></a>
-## Tag
-
-> [!NOTE]
-> All media tag APIs have been deprecated since Tizen 9.0 and will be removed after two releases without any alternatives.
-
-<a name="tag_add"></a>
-### Adding Tags
-
-To add a tag to the database, and a file to the tag:
-
-1. Add the tag.
-
-   Use the `media_tag_insert_to_db()` function to add the tag. The result is a handle to the new tag.
-
-   ```
-   media_tag_h tag = NULL;
-   const char *tag_name = "Tag name";
-
-   media_tag_insert_to_db(tag_name, &tag);
-   ```
-
-2. Insert a media item into the tag.
-
-   To insert an item into the tag, you need to know the ID of the item. One way of obtaining the ID is to insert a media item into the database. In the following example, a media file is inserted and added to the tag.
-
-   ```
-   media_info_h image_info = NULL;
-   char *image_id = NULL;
-
-   media_info_insert_to_db("path/to/image_file", &image_info);
-
-   media_info_get_media_id(image_info, &image_id);
-
-   media_tag_add_media(tag, image_id);
-   ```
-
-3. Update the tag.
-
-   After you make any changes to the tag, such as changing its name or adding items, you need to update it.
-
-   ```
-   media_tag_update_to_db(tag);
-   ```
-
-4. Destroy the tag handle.
-
-   After the tag has been inserted into the database and all updates to it have been made, destroy the handle. Destroying the handle does not [delete the tag](#tag_delete) from the database.
-
-   ```
-   media_tag_destroy(tag);
-   ```
-
-<a name="tag_list"></a>
-### Retrieving Tag Information
-
-To access information first about the tags and then about the media items related to specific tags:
-
-1. Define callback functions for the `media_tag_foreach_tag_from_db()` and `media_tag_foreach_media_from_db()` functions, called for each available tag and each available media item for a specific tag. Use the callbacks to create a list of tags and media items.
-
-    ```
-    /* glib library is used, so include glib.h */
-
-    bool
-    gallery_tag_item_cb(media_tag_h tag, void *user_data)
-    {
-        media_tag_h new_tag = NULL;
-        media_tag_clone(&new_tag, tag);
-
-        GList **list = (GList**)user_data;
-        *list = g_list_append(*list, new_tag);
-
-        return true;
-    }
-
-    bool
-    gallery_media_item_cb(media_info_h media, void *user_data)
-    {
-        media_info_h new_media = NULL;
-        media_info_clone(&new_media, media);
-
-        GList **list = (GList**)user_data;
-        *list = g_list_append(*list, new_media);
-
-        return true;
-    }
-    ```
-
-2. To find the tags and related media items, use the `media_tag_foreach_tag_from_db()` and `media_tag_foreach_media_from_db()` functions with the defined callbacks. The functions are synchronous, and they block until the callbacks have been called for all items or the callbacks return `false`.
-
-    To find only a subset of the items, use a filter. If you want to find all items, set the filter parameter to `NULL`.
-
-    After the callbacks have created the lists, you can access the tag details with various `media_tag_get_XXX()` functions, and the media item details with various `media_info_get_XXX()` functions.
-
-    ```
-    media_tag_h tag_handle = NULL;
-    GList *tag_list = NULL;
-    GList *media_list_in_tag = NULL;
-
-    ret = media_tag_foreach_tag_from_db(NULL, gallery_tag_item_cb, &tag_list);
-
-    if (ret != MEDIA_CONTENT_ERROR_NONE) {
-        dlog_print(DLOG_ERROR, LOG_TAG, "media_tag_foreach_tag_from_db() failed: %d", ret);
-
-        return ret;
-    } else {
-        dlog_print(DLOG_DEBUG, LOG_TAG, "media_tag_foreach_tag_from_db() successful");
-        char *tag_name = NULL;
-        int tag_id;
-
-        for (i = 0; i < g_list_length(tag_list); i++) {
-            tag_handle = (media_tag_h)g_list_nth_data(tag_list, i);
-            media_tag_get_tag_id(tag_handle, &tag_id);
-            media_tag_get_name(tag_handle, &tag_name);
-
-            ret = media_tag_foreach_media_from_db(tag_id, NULL, gallery_media_item_cb,
-                                                &media_list_in_tag);
-            if (ret != MEDIA_CONTENT_ERROR_NONE) {
-                dlog_print(DLOG_ERROR, LOG_TAG,
-                            "media_tag_foreach_media_from_db() failed: %d", ret);
-
-                return ret;
-            } else {
-                dlog_print(DLOG_DEBUG, LOG_TAG,
-                            "media_tag_foreach_media_from_db() successful");
-                int j = 0;
-                media_info_h tag_media_handle;
-                char *media_id = NULL;
-                char *media_name = NULL;
-                char *media_path = NULL;
-                media_content_type_e media_type = MEDIA_CONTENT_TYPE_IMAGE;
-
-                for (j = 0; j < g_list_length(media_list_in_tag); j++) {
-                    tag_media_handle = (media_info_h)g_list_nth_data(media_list_in_tag, j);
-                    ret = media_info_get_media_id(tag_media_handle, &media_id);
-
-                    ret = media_info_get_display_name(tag_media_handle, &media_name);
-
-                    ret = media_info_get_file_path(tag_media_handle, &media_path);
-
-                    ret = media_info_get_media_type(tag_media_handle, &media_type);
-
-                    dlog_print(DLOG_DEBUG, LOG_TAG,
-                                "[%s] media_id [%d]: %s", tag_name, j, media_id);
-                    dlog_print(DLOG_DEBUG, LOG_TAG,
-                                "[%s] media_type [%d]: %d", tag_name, j, media_type);
-                    dlog_print(DLOG_DEBUG, LOG_TAG,
-                                "[%s] media_name [%d]: %s", tag_name, j, media_name);
-                    dlog_print(DLOG_DEBUG, LOG_TAG,
-                                "[%s] media_path [%d]: %s", tag_name, j, media_path);
-
-                    free(media_name);
-                    free(media_path);
-                    media_info_destroy(tag_media_handle);
-                }
-            }
-            free(tag_name);
-            media_tag_destroy(tag_handle);
-            g_list_free(media_list_in_tag);
-            media_list_in_tag = NULL;
-        }
-        g_list_free(tag_list);
-    }
-    ```
-
-<a name="tag_delete"></a>
-### Deleting Tags
-
-To delete a tag:
-
-1. Retrieve the tag ID to delete the tag.
-
-   In this use case, the ID is obtained by calling the `media_tag_foreach_tag_from_db()` function, gathering a tag list in the function callback, iterating through the tag list to find the needed tag handle, and getting the tag ID with the handle using the `media_tag_get_tag_id()` function.
-
-   The callback is identical to the one used in the [Retrieving Tag Information](#tag_list) use case.
-
-   ```
-   GList *tag_list = NULL;
-   media_tag_h tag_handle = NULL;
-   int tag_id;
-   char *tag_name = NULL;
-
-   media_tag_foreach_tag_from_db(NULL, gallery_tag_item_cb, &tag_list);
-
-   int len = g_list_length(tag_list);
-
-   int i;
-   for (i = 0; i < len; i++) {
-       tag_handle = (media_tag_h) g_list_nth_data(tag_list, i);
-       ret = media_tag_get_tag_id(tag_handle, &tag_id);
-   ```
-
-2. Delete the tag with the `media_tag_delete_from_db()` function.
-
-    ```
-        ret = media_tag_delete_from_db(tag_id);
-    ```
-
-3. When no longer needed, destroy the handle:
-
-   ```
-       ret = media_tag_destroy(tag_handle);
-   }
-   ```
-
-4. Free the tag list.
-
-   After all elements have been accessed, free the tag handle list:
-
-   ```
-   g_list_free(tag_list);
-   tag_list = NULL;
-   ```
 <a name="media_group"></a>
 ## Media Group
 
 <a name="find_groups"></a>
 ### Finding Media Item Groups
 
-A group is a collection of media items which have the same value of a given property. For example, if the property is the artist, there are as many groups as there are artists, and each group consists of items by the same artist. The possible groups are determined by the [`media_group_e` enumerator values](../../api/common/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gae17fa4b89b29bafd9b8a123138039655), such as `MEDIA_CONTENT_GROUP_ARTIST` and `MEDIA_CONTENT_GROUP_MIME_TYPE`.
+A group is a collection of media items which have the same value of a given property. For example, if the property is the artist, there are as many groups as there are artists, and each group consists of items by the same artist. The possible groups are determined by the [`media_group_e` enumerator values](../../api/common/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gae17fa4b89b29bafd9b8a123138039655), such as `MEDIA_CONTENT_GROUP_ARTIST`.
 
 To find media item groups and filter the results:
 
@@ -1651,12 +1088,12 @@ To find media item groups and filter the results:
    media_filter_set_condition(filter, buf, MEDIA_CONTENT_COLLATE_DEFAULT);
    ```
 
-2. To group media files by MIME type:
+2. To group media files by artist:
 
-   1. To find the number of MIME type-related groups, use the `media_group_get_group_count_from_db()` function:
+   1. To find the number of artist groups, use the `media_group_get_group_count_from_db()` function:
 
       ```
-      media_group_e group = MEDIA_CONTENT_GROUP_MIME_TYPE;
+      media_group_e group = MEDIA_CONTENT_GROUP_ARTIST;
       int count = -1;
 
       media_group_get_group_count_from_db(NULL, group, &count);
@@ -1697,7 +1134,7 @@ To read media item group information, define a callback for the `media_group_for
    {
    ```
 
-   The group name is passed as the `name` parameter. In this case, names are set to various found MIME types, such as `image/png` and `audio/mpeg`.
+   The group name is passed as the `name` parameter. In this case, names are set to the artist names found in the media database.
 
    The callback return value determines whether the iterative calls of the callback continue (`true`) or are stopped (`false`).
 
@@ -1760,16 +1197,8 @@ The following tables list the information available about the media files.
 | `Size`            | File size of the media content           |
 | `Added time`      | Time the media content was added to the database |
 | `Modified time`   | Last modification time of the media content |
-| `Timeline`        | Time the media content was created<br> You can use this value to sort the content. (Deprecated since 9.0) |
 | `Thumbnail path`  | Path of the stored thumbnail image of the media content |
-| `Description`     | Description of the media content (Deprecated since 9.0) |
-| `Longitude`       | Longitude of the media content (Deprecated since 9.0) |
-| `Latitude`        | Latitude of the media content (Deprecated since 9.0) |
-| `Altitude`        | Altitude of the media content (Deprecated since 9.0) |
-| `Rating`          | Rating of the media content (Deprecated since 9.0) |
-| `Favorite`        | Favorite status of the media content (Deprecated since 9.0) |
 | `Title`           | Title of the media content               |
-| `Is DRM`          | Check flag for DRM content (Deprecated since 9.0) |
 
 For metadata of an audio file, call the `media_info_get_audio()` function with the media handle.
 
@@ -1782,16 +1211,8 @@ For metadata of an audio file, call the `media_info_get_audio()` function with t
 | `Artist`         | Artist of the audio content              |
 | `Album Artist`   | Album artist of the audio content<br> The artist and album artist can be the same. |
 | `Genre`          | Genre of the audio content               |
-| `Composer`       | Composer of the audio content (Deprecated since 9.0) |
 | `Year`           | Year the audio content was created       |
-| `Recorded date`  | Date the audio content was recorded (Deprecated since 9.0) |
-| `Copyright`      | Copyright information for the audio content (Deprecated since 9.0) |
 | `Track number`   | Track number of the audio content        |
-| `Bit rate`       | Bit rate of the audio content (Deprecated since 9.0) |
-| `Bit per sample` | Bit per sample of the audio content<br> The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. (Deprecated since 9.0) |
-| `Sample rate`    | Sample rate of the audio content (Deprecated since 9.0) |
-| `Channel`        | Channel information for the audio content (Deprecated since 9.0) |
-| `Duration`       | Duration of the audio content (Deprecated since 9.0) |
 
 For metadata of a book file, call the `media_info_get_book()` function with the media handle.
 
@@ -1802,8 +1223,6 @@ For metadata of a book file, call the `media_info_get_book()` function with the 
 | `Media ID`      | Media ID of the book<br> This value is the same as the media ID in the general information. |
 | `Subject`       | Subject(or genre) of the book            |
 | `Author`        | Author of the book                       |
-| `Date`          | Release date of the book (Deprecated since 9.0) |
-| `Publisher`     | Publisher of the book (Deprecated since 9.0) |
 
 For metadata of an image file, call the `media_info_get_image()` function with the media handle.
 
@@ -1820,28 +1239,6 @@ For metadata of an image file, call the `media_info_get_image()` function with t
 | `Model`         | Model name of the camera that created the image (Deprecated since 8.0) |
 | `Orientation`   | Orientation of the image                 |
 | `Date taken`    | Time the image was created<br> You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
-
-For metadata of a video file, call the `media_info_get_video()` function with the media handle. (Deprecated since 9.0)
-
-**Table: Video metadata (only for video files)**
-
-| Metadata name   | Description                              |
-|-----------------|------------------------------------------|
-| `Media ID`      | Media ID of the video content<br> This value is same as the media ID in the general information. |
-| `Album`         | Album information for the video content (Deprecated since 9.0) |
-| `Artist`        | Artist of the video content (Deprecated since 9.0) |
-| `Album artist`  | Album artist of the video content (Deprecated since 9.0) |
-| `Genre`         | Genre of the video content (Deprecated since 9.0) |
-| `Composer`      | Media composer of the video content (Deprecated since 9.0) |
-| `Year`          | Year the video content was created (Deprecated since 9.0) |
-| `Recorded date` | Date the video content was recorded (Deprecated since 9.0) |
-| `Copyright`     | Copyright of the video content (Deprecated since 9.0) |
-| `Track number`  | Track number of the video content (Deprecated since 9.0) |
-| `Bit rate`      | Bit rate of the video content (Deprecated since 9.0) |
-| `Duration`      | Duration of the video content (Deprecated since 9.0) |
-| `Width`         | Width of the video content (Deprecated since 9.0) |
-| `Height`        | Height of the video content (Deprecated since 9.0) |
-| `rotation`      | The clockwise rotation angle of the video content in degrees (Deprecated since 9.0) |
 
 ## Related Information
 - Dependencies
