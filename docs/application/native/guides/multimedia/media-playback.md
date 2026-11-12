@@ -414,6 +414,8 @@ To play a video file:
 
    With the `PLAYER_DISPLAY_TYPE_OVERLAY_SYNC_UI2` display type, the video is rendered in full scale in the drawing area of the video surface. To change the video rendering position and synchronize it with the UI, change the position and size of the video surface with your UI framework instead of using the player display functions.
 
+   To render the video on the application UI instead of on an overlay surface, use a media view that supports UI rendering. Get the media frame source handle using the `player_get_media_frame_source()` function and pass it to the media view (since Tizen 11.0). In this case, do not call the `player_set_display()` function because the media view renders the video frames on the UI.
+
    > [!NOTE]
    > For an overlay surface, when the device orientation changes, the displayed video does not rotate automatically. If you want to change the video orientation according to the device orientation, use the `player_set_display_rotation()` function within the `app_device_orientation_cb()` callback function used by the application. For an Evas surface, the Evas object for the video is rotated by the window manager used by the application, not by the `player_set_display_rotation()` function.
 
