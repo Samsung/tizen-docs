@@ -8,10 +8,6 @@ You can use the following security features in your Web applications:
 
   You can provide a secure repository for keys, certificates, and sensitive data related to users and their password-protected applications. You can also use secure cryptographic operations for non-exportable keys without revealing the key values to clients.
 
-- [TEE Communication](tee-client.md)
-
-  You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment.
-
 - [Privacy-related Permissions](privacy-related-permissions.md)
 
   You can check current permissions for privacy-related privileges and request user permission to use specified privileges.
