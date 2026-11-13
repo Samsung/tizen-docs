@@ -533,6 +533,9 @@ You can decide how to handle audio/video streaming data received from a remote p
     > [!IMPORTANT]
     > `webrtc_set_sound_stream_info()` or `webrtc_set_display()` must be called inside of the callback set by `webrtc_set_track_added_cb()` if you want to output the audio or video track from the remote peer to the local target device's audio device or video display.
 
+    > [!NOTE]
+    > The overlay and Evas object display types (`WEBRTC_DISPLAY_TYPE_OVERLAY` and `WEBRTC_DISPLAY_TYPE_EVAS`) have been deprecated since Tizen 10.1.
+
 2. To get media packet handle which packs the audio or video data from a remote peer, use `webrtc_set_encoded_audio_frame_cb()` or `webrtc_set_encoded_video_frame_cb()`:
 
     ```c
