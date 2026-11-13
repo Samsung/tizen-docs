@@ -548,7 +548,9 @@ WARNING - indicating the remaining memory is insufficient. Low memory warnings m
 <div class="brief">
  An enumerator to indicate the type of video source.
           </div>
-<pre class="webidl prettyprint">  enum SystemInfoVideoSourceType { "TV", "AV", "SVIDEO", "COMP", "PC", "HDMI", "SCART", "DVI", "MEDIA" };</pre>
+<pre class="webidl prettyprint">  enum SystemInfoVideoSourceType { "TV", "AV", "SVIDEO", "COMP", "PC", "HDMI", "SCART", "DVI", "MEDIA", "10.1", "DP", "SDI", "USB_C",
+    "OPS", "HDBT", "MAGICINFO", "MULTISCREEN", "HDMIPBP", "PLAYBACK", "PLAYBACK_AV", "ANALYSIS", "HYBRID_TV", "DUAL_VIEW_DTV",
+    "DUAL_VIEW_HDMI", "DUAL_VIEW_AV", "DUAL_VIEW_SCART", "DUAL_VIEW_COMP", "DUAL_VIEW_PC", "10.1",  };</pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -572,6 +574,42 @@ SCART - The input source from SCART(21-pin connector)            </li>
 DVI - The input source from DVI(Digital Visual Interface)            </li>
             <li>
 MEDIA - The input source from media            </li>
+            <li>
+DP - The input source from DisplayPort            </li>
+            <li>
+SDI - The input source from SDI(Serial Digital Interface)            </li>
+            <li>
+USB_C - The input source from USB Type-C            </li>
+            <li>
+OPS - The input source from OPS(Open Pluggable Specification)            </li>
+            <li>
+HDBT - The input source from HDBaseT            </li>
+            <li>
+MAGICINFO - The input source from Samsung MagicInfo            </li>
+            <li>
+MULTISCREEN - The input source from multiscreen            </li>
+            <li>
+HDMIPBP - The input source from HDMI Picture-by-Picture            </li>
+            <li>
+PLAYBACK - The input source from playback            </li>
+            <li>
+PLAYBACK_AV - The input source from playback AV            </li>
+            <li>
+ANALYSIS - The input source from analysis            </li>
+            <li>
+HYBRID_TV - The input source from hybrid TV            </li>
+            <li>
+DUAL_VIEW_DTV - The input source from dual view DTV            </li>
+            <li>
+DUAL_VIEW_HDMI - The input source from dual view HDMI            </li>
+            <li>
+DUAL_VIEW_AV - The input source from dual view AV            </li>
+            <li>
+DUAL_VIEW_SCART - The input source from dual view SCART            </li>
+            <li>
+DUAL_VIEW_COMP - The input source from dual view COMP            </li>
+            <li>
+DUAL_VIEW_PC - The input source from dual view PC            </li>
           </ul>
          </div>
 </div>
@@ -3218,7 +3256,9 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
   enum SystemInfoSimState { "ABSENT", "INITIALIZING", "READY", "PIN_REQUIRED", "PUK_REQUIRED", "NETWORK_LOCKED", "SIM_LOCKED", "UNKNOWN" };
   enum SystemInfoProfile { "MOBILE", "WEARABLE", "TV" };
   enum SystemInfoLowMemoryStatus { "NORMAL", "WARNING" };
-  enum SystemInfoVideoSourceType { "TV", "AV", "SVIDEO", "COMP", "PC", "HDMI", "SCART", "DVI", "MEDIA" };
+  enum SystemInfoVideoSourceType { "TV", "AV", "SVIDEO", "COMP", "PC", "HDMI", "SCART", "DVI", "MEDIA", "10.1", "DP", "SDI", "USB_C",
+    "OPS", "HDBT", "MAGICINFO", "MULTISCREEN", "HDMIPBP", "PLAYBACK", "PLAYBACK_AV", "ANALYSIS", "HYBRID_TV", "DUAL_VIEW_DTV",
+    "DUAL_VIEW_HDMI", "DUAL_VIEW_AV", "DUAL_VIEW_SCART", "DUAL_VIEW_COMP", "DUAL_VIEW_PC", "10.1" };
   dictionary SystemInfoOptions {
     unsigned long timeout;
     double highThreshold;
