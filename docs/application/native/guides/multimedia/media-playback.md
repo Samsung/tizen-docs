@@ -135,6 +135,8 @@ You can set specific URLs for streaming media playback by using the `player_set_
 
 Both Hypertext Transfer Protocol (HTTP) and Real Time Streaming Protocol (RTSP) protocols support streaming media playback. The HTTP request header supports the playback of both complete and download-in-progress media files.
 
+To play streaming media that requires authentication, set the authorization token with the authentication scheme included, such as `Bearer <token>`, using the `player_set_streaming_authorization_token()` function (since Tizen 10.1).
+
 For HTTP streaming, buffering can happen when the player is prepared. You can get the status using the `player_set_buffering_cb()` function.
 
 The player supports the streaming protocol features:
