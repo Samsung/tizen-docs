@@ -21,16 +21,11 @@ You can use the following security features in your .NET applications:
 
     You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment.
 
--   [Device Policy Management](dpm.md)
-
-    You can create security-aware applications to manage device policies. In enterprise settings, you can provide rich control for IT administrators over employee devices.
-
 ## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
 * API References
   - [Tizen.Security](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.html)
-  - [Tizen.Security.DevicePolicyManager](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.DevicePolicyManager.html)
   - [Tizen.Security.Tizen.Security.SecureRepository](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.html)
   - [Tizen.Security.Tizen.Security.SecureRepository.Crypto](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Crypto.html)
   - [Tizen.Security.Tizen.Security.TEEC](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.html)
