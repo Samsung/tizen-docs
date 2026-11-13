@@ -548,9 +548,9 @@ WARNING - indicating the remaining memory is insufficient. Low memory warnings m
 <div class="brief">
  An enumerator to indicate the type of video source.
           </div>
-<pre class="webidl prettyprint">  enum SystemInfoVideoSourceType { "TV", "AV", "SVIDEO", "COMP", "PC", "HDMI", "SCART", "DVI", "MEDIA", "10.1", "DP", "SDI", "USB_C",
-    "OPS", "HDBT", "MAGICINFO", "MULTISCREEN", "HDMIPBP", "PLAYBACK", "PLAYBACK_AV", "ANALYSIS", "HYBRID_TV", "DUAL_VIEW_DTV",
-    "DUAL_VIEW_HDMI", "DUAL_VIEW_AV", "DUAL_VIEW_SCART", "DUAL_VIEW_COMP", "DUAL_VIEW_PC", "10.1",  };</pre>
+<pre class="webidl prettyprint">  enum SystemInfoVideoSourceType { "TV", "AV", "SVIDEO", "COMP", "PC", "HDMI", "SCART", "DVI", "MEDIA", "DP", "SDI", "USB_C", "OPS",
+    "HDBT", "MAGICINFO", "MULTISCREEN", "HDMIPBP", "PLAYBACK", "PLAYBACK_AV", "ANALYSIS", "HYBRID_TV", "DUAL_VIEW_DTV", "DUAL_VIEW_HDMI",
+    "DUAL_VIEW_AV", "DUAL_VIEW_SCART", "DUAL_VIEW_COMP", "DUAL_VIEW_PC" };</pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -3256,9 +3256,9 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
   enum SystemInfoSimState { "ABSENT", "INITIALIZING", "READY", "PIN_REQUIRED", "PUK_REQUIRED", "NETWORK_LOCKED", "SIM_LOCKED", "UNKNOWN" };
   enum SystemInfoProfile { "MOBILE", "WEARABLE", "TV" };
   enum SystemInfoLowMemoryStatus { "NORMAL", "WARNING" };
-  enum SystemInfoVideoSourceType { "TV", "AV", "SVIDEO", "COMP", "PC", "HDMI", "SCART", "DVI", "MEDIA", "10.1", "DP", "SDI", "USB_C",
-    "OPS", "HDBT", "MAGICINFO", "MULTISCREEN", "HDMIPBP", "PLAYBACK", "PLAYBACK_AV", "ANALYSIS", "HYBRID_TV", "DUAL_VIEW_DTV",
-    "DUAL_VIEW_HDMI", "DUAL_VIEW_AV", "DUAL_VIEW_SCART", "DUAL_VIEW_COMP", "DUAL_VIEW_PC", "10.1" };
+  enum SystemInfoVideoSourceType { "TV", "AV", "SVIDEO", "COMP", "PC", "HDMI", "SCART", "DVI", "MEDIA", "DP", "SDI", "USB_C", "OPS",
+    "HDBT", "MAGICINFO", "MULTISCREEN", "HDMIPBP", "PLAYBACK", "PLAYBACK_AV", "ANALYSIS", "HYBRID_TV", "DUAL_VIEW_DTV", "DUAL_VIEW_HDMI",
+    "DUAL_VIEW_AV", "DUAL_VIEW_SCART", "DUAL_VIEW_COMP", "DUAL_VIEW_PC" };
   dictionary SystemInfoOptions {
     unsigned long timeout;
     double highThreshold;
