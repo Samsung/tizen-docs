@@ -187,7 +187,6 @@
 #### [Secure Key Management](/application/dotnet/guides/security/secure-repository.md)
 #### [Privilege Information](/application/dotnet/guides/security/privilege.md)
 #### [Privacy-related Permissions](/application/dotnet/guides/security/privacy-related-permissions.md)
-#### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
 
 ### Sensors
 #### [Overview](/application/dotnet/guides/sensors/overview.md)
@@ -451,7 +450,6 @@
 
 ### Security
 #### [Secure Key Management](/application/web/guides/security/secure-key.md)
-#### [TEE Communication](/application/web/guides/security/tee-client.md)
 #### [Privacy-related Permissions](/application/web/guides/security/privacy-related-permissions.md)
 
 ### [Error Handling](/application/web/guides/error/error.md)

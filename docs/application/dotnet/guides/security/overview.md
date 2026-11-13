@@ -17,10 +17,6 @@ You can use the following security features in your .NET applications:
 
     You can check current permissions for privacy-related privileges and request user permission to use specific privileges.
 
--   [TEE Communication](tee-client.md)
-
-    You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment.
-
 ## Related information
 * Dependencies
   -   Tizen 4.0 and Higher
@@ -28,5 +24,4 @@ You can use the following security features in your .NET applications:
   - [Tizen.Security](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.html)
   - [Tizen.Security.Tizen.Security.SecureRepository](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.html)
   - [Tizen.Security.Tizen.Security.SecureRepository.Crypto](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.SecureRepository.Crypto.html)
-  - [Tizen.Security.Tizen.Security.TEEC](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.TEEC.html)
   - [Tizen.Security.Tizen.Security.WebAuthn](/application/dotnet/api/TizenFX/latest/api/Tizen.Security.WebAuthn.html)
