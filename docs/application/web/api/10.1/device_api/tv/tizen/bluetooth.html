@@ -6015,10 +6015,10 @@ If the callback does not return a <a href="#GATTRequestReply">GATTRequestReply</
     readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>[] uuids;
     void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback,
                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void audioConnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void audioDisconnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void audioConnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void audioDisconnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean isProfileConnected(<a href="#BluetoothConnectionProfileType">BluetoothConnectionProfileType</a> profileType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -6372,7 +6372,8 @@ else
 <div class="brief">
  Connects to a remote Bluetooth audio device with the specified audio profile type.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void audioConnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void audioConnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  10.1
             </p>
@@ -6478,7 +6479,8 @@ else
 <div class="brief">
  Disconnects from a remote Bluetooth audio device with the specified audio profile type.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void audioDisconnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void audioDisconnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  10.1
             </p>
@@ -9439,10 +9441,10 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>[] uuids;
     void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback,
                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void audioConnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void audioDisconnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void audioConnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void audioDisconnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean isProfileConnected(<a href="#BluetoothConnectionProfileType">BluetoothConnectionProfileType</a> profileType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothLEDevice {
