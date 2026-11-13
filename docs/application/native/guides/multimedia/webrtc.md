@@ -535,6 +535,16 @@ You can decide how to handle audio/video streaming data received from a remote p
 
     > [!NOTE]
     > The overlay and Evas object display types (`WEBRTC_DISPLAY_TYPE_OVERLAY` and `WEBRTC_DISPLAY_TYPE_EVAS`) have been deprecated since Tizen 10.1.
+    > Use the `WEBRTC_DISPLAY_TYPE_OVERLAY2` display type instead (since Tizen 11.0).
+
+    Since Tizen 11.0, use the `WEBRTC_DISPLAY_TYPE_OVERLAY2` display type with the window handle of the window where the video is displayed:
+
+    ```c
+    /* win_id: id of the window to display the video on */
+    ret = webrtc_set_display(webrtc, track_id, WEBRTC_DISPLAY_TYPE_OVERLAY2, data->win_id);
+    ```
+
+    The same display type is used when rendering a local video loopback with `webrtc_media_source_set_video_loopback()`.
 
 2. To get media packet handle which packs the audio or video data from a remote peer, use `webrtc_set_encoded_audio_frame_cb()` or `webrtc_set_encoded_video_frame_cb()`:
 
