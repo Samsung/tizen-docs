@@ -21,10 +21,6 @@ You can use the following security features in your native applications:
 
   You can encrypt and decrypt data with symmetric or asymmetric encryption, and manage keys with YACA (Yet Another Crypto API). You can also digest messages, create digital signatures, and manage X.509 certificates, including certificate signing requests (CSRs), attributes, and extensions.
 
-- [Device Policy Management](dpm.md)
-
-  You can create security-aware applications to manage device policies. In enterprise settings, you can provide rich control for IT administrators over employee devices.
-
 - [Malware Scanning and Web Protection](csr.md)
 
   You can scan data, files, and directories to detect malware. You can also check the URL reputation before accessing a specific URL.

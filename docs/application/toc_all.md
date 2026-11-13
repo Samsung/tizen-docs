@@ -178,7 +178,6 @@
 #### [Privilege Information](/application/dotnet/guides/security/privilege.md)
 #### [Privacy-related Permissions](/application/dotnet/guides/security/privacy-related-permissions.md)
 #### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
-#### [Device Policy Management](/application/dotnet/guides/security/dpm.md)
 
 ### Sensors
 #### [Overview](/application/dotnet/guides/sensors/overview.md)
@@ -805,7 +804,6 @@
 #### [Privilege Information](/application/native/guides/security/privilege.md)
 #### [Privacy-related Permissions](/application/native/guides/security/privacy-related-permissions.md)
 #### [Cryptographic Operations](/application/native/guides/security/yaca.md)
-#### [Device Policy Management](/application/native/guides/security/dpm.md)
 #### [Malware Scanning and Web Protection](/application/native/guides/security/csr.md)
 #### [Device Certificate Manager](/application/native/guides/security/device-certificate-manager.md)
 #### [Security Tips](/application/native/guides/security/security-tip.md)
