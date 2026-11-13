@@ -208,7 +208,6 @@
 
 ### Text Input and Voice
 #### [Overview](/application/dotnet/guides/uix/overview.md)
-#### [Input Method](/application/dotnet/guides/uix/input-method.md)
 #### [Input Method Manager](/application/dotnet/guides/uix/input-method-manager.md)
 #### [Sticker](/application/dotnet/guides/uix/sticker.md)
 #### [Speech-to-text](/application/dotnet/guides/uix/stt.md)

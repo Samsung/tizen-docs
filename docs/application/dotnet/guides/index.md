@@ -397,7 +397,6 @@ Tizen.Wearable.CircularUI supports Tizen wearable-specific user interfaces, and 
                 <div class="card-text">
                     <ul class="list-infra list-infra-arrow">
                         <li><a href="uix/input-method-manager.md">Input Method Manager</a></li>
-                        <li><a href="uix/input-method.md">Input Method</a></li>
                         <li><a href="uix/stt.md">Speech-to-text</a></li>
                         <li><a href="uix/tts.md">Text-to-speech</a></li>
                     </ul>
