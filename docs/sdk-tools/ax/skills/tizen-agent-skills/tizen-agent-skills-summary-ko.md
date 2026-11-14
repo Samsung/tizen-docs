@@ -112,6 +112,36 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.5.0 변경 사항 (2026-11-14)
+
+tizen-agent-skills v1.5.0은 `tizen-sdk-skills` 1.8.0과 `tizen-action-skills` 1.0.0을 포함하는 아홉 번째 통합 릴리스입니다. 새 스킬은 없으며, Apple Silicon Mac에서 TV 에뮬레이터를 부팅하고, 원격 디바이스 검색이 사용자 자신의 디바이스만 탐색할 수 있게 하며, 설치 인계와 GBS 누락을 전용 상태로 보고하고, GBS 빌드·TV SDK ZIP 설치·macOS 설치 스크립트 문제를 수정했습니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.7.0 → 1.8.0으로 상향
+- Tizen AI Extension(vsix) 1.8.0 및 독립 실행형 CLI 번들 `tizen-sdk-v1.8.0.zip` 동반 릴리스
+
+### 추가
+- **Apple Silicon Mac에서 TV 에뮬레이터 실행**: 이미지 버전 3.0 이상은 Intel 전용인 HAXM이 필요해 `em-cli`로는 ARM Mac에서 TV(`tv-samsung`) VM을 부팅할 수 없음. macOS arm64에서 TV VM의 `launch`, `create --launch`는 플랫폼의 emulator-v2(QEMU 9.x + VirGL)로 실행하며, 러너가 디스크를 v2 기본 이미지로 리베이스하고, VM의 해상도·스킨·RAM으로 실행 설정을 작성하고, v2 바이너리의 실행 권한을 복원한 뒤 평소처럼 `sdb` 연결을 대기. 엔벨로프는 `launch_method: "emulator-v2"`를 보고. 기존 VM 디스크 재생성과 macOS 격리 해제는 사용자 동의가 필요하며, 동의가 없으면 아무것도 바꾸지 않고 `--rebase-disk` 또는 `--clear-quarantine`으로 다시 실행할 명령과 함께 `user_input_required`를 반환. `TIZEN_TV_V2_LAUNCH=off`로 `em-cli` 유지 가능. M2 MacBook Pro의 Tizen 10.0에서 검증
+- **`remote-device scan --connected-only`, `--saved-only`**: 기본 `scan`은 로컬 /24 서브넷의 모든 주소를 탐색해 다른 사람의 디바이스를 포함한 모든 개발자 모드 Tizen 디바이스를 보고함. `--connected-only`는 `sdb devices`에 표시된 원격 디바이스만, `--saved-only`는 북마크 목록만 탐색하며, 함께 쓰면 둘 다 탐색. 그 외 주소에는 접근하지 않음. `tizen-cli`에도 같은 두 옵션 추가
+
+### 변경
+- **사전 확인 후 설치 인계는 `status: "needs_action"`으로 보고**: 사전 확인을 통과하고 설치 프로그램 실행만 남은 경우(SDK, TV SDK, 사용자 지정 저장소, 에뮬레이터, 플랫폼, 모바일 플랫폼, 루트스트랩), 엔벨로프가 `failure`/`execution_error` 대신 새 `install_required` 카테고리(`TIZEN_SDK_PRECHECK_E001`)와 함께 `needs_action`을 보고. `errors[]`, `suggested_fix` 형식과 종료 코드 `1`은 동일
+- **GBS가 없는 Platform 빌드는 `gbs_not_found`로 보고**(`TIZEN_SDK_BUILD_E002`): 일반적인 `build_failed` 대신 보고하며, `suggested_fix.command`가 Tizen 도구 apt 저장소를 추가하고 `gbs`를 설치
+- **앱 실행 실패나 즉시 종료 시 `tizen-dlog-analyzer` 안내**: `install-app --run`이 앱을 실행하지 못하거나 앱이 시작 직후 종료되면(`app_running: false`) 엔벨로프 경고에 `tizen-dlog-analyzer`와 시작 흐름이 표시되고, 에이전트가 요청 없이도 로그 분석을 제안. `sdb-helper` 실행 실패에도 같은 안내 추가
+- **`list-templates`가 네이티브 `BasicUI` 템플릿을 더 이상 표시하지 않음**: 에이전트가 제안하지 않으며, `create-project --type native --template BasicUI`처럼 이름을 지정하면 여전히 생성 가능
+
+### 수정 사항
+- 사용자 지정 `buildroot`를 쓰는 GBS 빌드가 "Package file not found"로 실패하던 문제 수정. RPM 검색 순서: `gbs build`가 출력한 로컬 저장소 → GBS 방식으로 해석한 빌드 루트 → `~/GBS-ROOT`. 소스 RPM은 빌드 결과물로 보고하지 않음
+- `build/tizen/CMakeLists.txt`처럼 `CMakeLists.txt`가 루트에서 세 단계 아래까지 있는 Platform 프로젝트를 "Not a valid Tizen project"로 거부하지 않고 인식
+- Apple Silicon Mac에서 Intel Homebrew bash가 Rosetta로 실행될 때 TV 에뮬레이터 생성이 `TIZEN_SDK_EMULATOR_E003`(HAXM)으로 실패하던 문제 수정
+- `tizen-tv-sdk-install-from-zip`이 `TV-SAMSUNG-Public_10.0.0_macos-64.zip` 같은 현재 번들 이름에서 TV 버전을 다시 인식
+- Linux·macOS에서 ZIP 설치 후 TV 에뮬레이터 바이너리의 실행 권한이 유지되어 `Permission denied`로 실행에 실패하지 않음
+- macOS 기본 bash 3.2에서 설치 스크립트가 `declare: -A: invalid option`으로 멈추던 문제 수정. `PATH` 또는 Homebrew 경로의 bash 4 이상으로 다시 실행하며, 없으면 설치 전에 멈추고 `brew install bash`를 안내
+- macOS에서 UTF-8 BOM이 있는 플랫폼 설치 기록을 올바르게 읽음
+- `sdb-helper`가 한국어 디바이스 목록 요청과 `sdb devices`를 `Could not match request`로 실패하지 않고 `tizen-device-manager`로 넘기며, 여러 줄 요청을 한 줄 요청과 같게 분류
+
+---
+
 ## v1.4.0 변경 사항 (2026-11-03)
 
 tizen-agent-skills v1.4.0은 `tizen-sdk-skills` 1.7.0과 `tizen-action-skills` 1.0.0을 포함하는 여덟 번째 통합 릴리스입니다. 새 스킬은 없으며, Node.js 요구 버전을 22로 올리고, 사용자가 실제로 설치한 플랫폼을 보고하며, 서로 다른 버전의 TV SDK ZIP을 함께 설치할 수 있게 하고, 플랫폼 보고와 인증서 비밀번호 저장소 문제를 수정했습니다.

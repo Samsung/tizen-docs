@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.4.0, the eighth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.5.0, the ninth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -135,6 +135,34 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.5.0 (2026-11-14)
+
+The ninth unified release. It ships `tizen-sdk-skills` 1.8.0 and `tizen-action-skills` 1.0.0. No new skills were added; the release boots TV emulators on Apple Silicon Macs, lets remote device scans probe only your own devices, reports installer hand-offs and missing GBS with dedicated statuses, and fixes GBS builds, TV SDK ZIP installs, and installer scripts on macOS.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.7.0 to 1.8.0.
+- Tizen AI Extension (vsix) 1.8.0 and the standalone CLI bundle `tizen-sdk-v1.8.0.zip` released alongside.
+
+#### Added
+- **TV emulator launch on Apple Silicon Macs.** `em-cli` cannot boot a TV (`tv-samsung`) VM on an ARM Mac, because image version 3.0 and later requires HAXM, which is Intel-only. `launch` and `create --launch` for a TV VM on macOS arm64 now start the platform's emulator-v2 (QEMU 9.x with VirGL) instead: the runner rebases the disk on the v2 base image, writes the launch configuration with the VM's own resolution, skin, and RAM, restores the execute bit on the v2 binaries, and waits for `sdb` as usual. The envelope reports `launch_method: "emulator-v2"`. Recreating an existing VM's disk and clearing the macOS quarantine need your consent; without it the runner changes nothing and returns `user_input_required` with the command to re-run with `--rebase-disk` or `--clear-quarantine`. Set `TIZEN_TV_V2_LAUNCH=off` to keep using `em-cli`. Verified for Tizen 10.0 on an M2 MacBook Pro.
+- **`remote-device scan --connected-only` and `--saved-only`.** A plain `scan` sweeps every address of each local /24 subnet and reports every developer-mode Tizen device on it, including other people's. `--connected-only` probes only the remote devices that `sdb devices` lists, and `--saved-only` only the bookmarked list; together they probe both. No other address is touched. `tizen-cli` gains the same two flags.
+
+#### Changed
+- **Pre-check installer hand-offs report `status: "needs_action"`.** When a pre-check passes and only the installer still has to run (SDK, TV SDK, custom repository, emulator, platform, mobile platform, and rootstrap), the envelope now reports `needs_action` with the new `install_required` category (`TIZEN_SDK_PRECHECK_E001`) instead of `failure` with `execution_error`. The `errors[]` and `suggested_fix` shape and the exit code `1` are unchanged.
+- **A Platform build without GBS reports `gbs_not_found`** (`TIZEN_SDK_BUILD_E002`) instead of a generic `build_failed`. `suggested_fix.command` adds the Tizen tools apt repository and installs `gbs`.
+- **A failed or short-lived app launch points to `tizen-dlog-analyzer`.** When `install-app --run` cannot launch the app, or the app exits right after starting (`app_running: false`), the envelope warnings name `tizen-dlog-analyzer` and its startup flow, and the assistant offers the log analysis without being asked. A failed `sdb-helper` launch adds the same hint.
+- **`list-templates` no longer lists the native `BasicUI` template**, so the assistant no longer offers it. It can still be created by name, for example `create-project --type native --template BasicUI`.
+
+#### Fixes
+- A GBS build with a custom `buildroot` no longer fails with "Package file not found". The RPM lookup now searches the local repository that `gbs build` prints, then the build root resolved the way GBS resolves it, and only then `~/GBS-ROOT`. Source RPMs are not reported as build artifacts.
+- Platform projects whose `CMakeLists.txt` is up to three levels below the root, such as `build/tizen/CMakeLists.txt`, are detected instead of being rejected as "Not a valid Tizen project".
+- TV emulator creation on Apple Silicon Macs no longer fails with `TIZEN_SDK_EMULATOR_E003` (HAXM) when an Intel Homebrew bash runs under Rosetta.
+- `tizen-tv-sdk-install-from-zip` detects the TV version from current bundle names such as `TV-SAMSUNG-Public_10.0.0_macos-64.zip` again.
+- TV emulator binaries keep their execute bit after a ZIP install on Linux and macOS, so the TV emulator no longer fails to start with `Permission denied`.
+- Installer scripts no longer stop with `declare: -A: invalid option` on the bash 3.2 that ships with macOS. They re-run themselves with a bash 4 or later found on `PATH` or at a Homebrew path, or stop before installing anything and say to run `brew install bash`.
+- Platform install records with a UTF-8 BOM are read correctly on macOS.
+- `sdb-helper` hands Korean device-list requests and `sdb devices` to `tizen-device-manager` instead of failing with `Could not match request`, and classifies a multi-line request the same way as its single-line form.
 
 ### v1.4.0 (2026-11-03)
 

@@ -149,7 +149,7 @@ node bin/tizen-sdk.js --doctor
 
 **How to resolve:**
 
-1. Update the plugin to version 1.4.0 or later and run the setup script again. From version 1.0.0 the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
+1. Update the plugin to version 1.5.0 or later and run the setup script again. From version 1.0.0 the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
 2. In a PowerShell terminal, run all three lines of the PowerShell block in order, in the same session, directly in the terminal.
 3. In a cmd.exe terminal, run the `cmd /c dir ...` chain and then `node "<found path>" ...` with the highest version that was listed.
 4. If no lookup finds a runner in `~/.claude`, `~/.cline`, `~/.codex`, or `~/.gemini`, the plugin is not installed on this machine. Install it first.
@@ -184,7 +184,31 @@ node bin/tizen-sdk.js --doctor
 
 **What it means:** The template copy carried a fixed API version 10.0 in `tizen-manifest.xml`, while the project files named 11.0.
 
-**How to resolve:** Update the plugin and ask to "Show me the app templates". Listing the templates repairs template copies that are still identical to the shipped template. Then create the project again, or set the `api-version` attribute of the `<manifest>` element in your existing project to `11.0`.
+**How to resolve:** Update the plugin and ask to "Show me the app templates". Listing the templates repairs template copies that are still identical to the shipped template. Then create the project again, or set the `api-version` attribute of the `<manifest>` element in your existing project to `11.0`. From version 1.5.0 the Basic UI template is no longer listed; create it by name, for example "Create a native project from the BasicUI template".
+
+## A Platform build fails with gbs_not_found
+
+**When you see this:** A Platform (GBS) build returns an envelope with the category `gbs_not_found` and the error code `TIZEN_SDK_BUILD_E002`.
+
+**What it means:** Neither a tizen-cli GBS plugin nor `gbs` is on `PATH`.
+
+**How to resolve:** Ask the assistant to run the envelope's `suggested_fix.command`, which adds the Tizen tools apt repository and installs `gbs`. Then build again.
+
+## An installer stops with declare: -A: invalid option on macOS
+
+**When you see this:** A platform, emulator package, TV SDK, or package update install on macOS stops with `declare: -A: invalid option`, or with a message that bash 4 or later is required.
+
+**What it means:** macOS ships bash 3.2, and the installer scripts need bash 4 or later. From version 1.5.0 the scripts re-run themselves with a newer bash found on `PATH` or at a Homebrew path, and stop before installing anything when there is none.
+
+**How to resolve:** Run `brew install bash`, then ask again. You do not need to change your login shell or `PATH`.
+
+## A TV emulator does not boot on an Apple Silicon Mac
+
+**When you see this:** Launching a TV (`tv-samsung`) emulator on an Apple Silicon Mac fails with `TIZEN_SDK_EMULATOR_E003`, or the envelope returns `user_input_required` and asks for `--rebase-disk` or `--clear-quarantine`.
+
+**What it means:** `em-cli` needs HAXM, which is Intel-only, to boot TV images 3.0 and later. From version 1.5.0 the runner starts the platform's emulator-v2 instead, and it needs your consent before it recreates the VM disk or clears the macOS quarantine on the emulator binaries.
+
+**How to resolve:** Update the plugin to version 1.5.0 or later. When the assistant asks for consent, confirm, or run the command from `suggested_fix.command`, which re-runs the launch with the consent flags. If you need the old behavior, set `TIZEN_TV_V2_LAUNCH=off`.
 
 ## The assistant stops after starting log collection
 
