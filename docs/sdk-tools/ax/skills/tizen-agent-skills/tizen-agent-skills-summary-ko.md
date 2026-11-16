@@ -112,6 +112,28 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.6.0 변경 사항 (2026-11-16)
+
+tizen-agent-skills v1.6.0은 `tizen-sdk-skills` 1.9.0과 `tizen-action-skills` 1.0.0을 포함하는 열 번째 통합 릴리스입니다. 새 스킬은 없으며, 모든 호스트에 플러그인을 한 번에 설치하는 스크립트를 추가하고, Gemini CLI가 Codex CLI와 스킬 폴더를 함께 쓰도록 바꾸고, Gemini CLI와 Cline에서 스킬·에이전트가 로드되지 않던 문제를 수정했습니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.8.0 → 1.9.0으로 상향
+- Tizen AI Extension(vsix) 1.9.0 및 독립 실행형 CLI 번들 `tizen-sdk-v1.9.0.zip` 동반 릴리스
+
+### 추가
+- **`setup-all`로 모든 호스트에 한 번에 설치**: `common/setup/setup-all.sh`(`.ps1`, `.bat`)가 Claude Code, Cline, Codex CLI, Gemini CLI 순서로 같은 옵션(`--repo`, `--skip-validation`, `--no-restart`)을 주어 셋업을 실행. 한 호스트가 실패해도 나머지는 계속 진행하고, 끝에 실패한 호스트를 요약하며 하나라도 실패하면 종료 코드 `1`
+
+### 변경
+- **Gemini CLI 스킬을 `~/.agents/skills`에 설치**: Gemini CLI는 `~/.gemini/skills`와 `~/.agents/skills`를 모두 읽고 Codex CLI 셋업은 이미 `~/.agents/skills`에 설치하므로, 두 호스트를 모두 설치하면 스킬마다 두 번 발견되어 `Skill conflict detected` 경고가 나왔음. 이제 Gemini 셋업도 `~/.agents/skills`에 설치하고, `~/.gemini/skills`에서는 이 플러그인의 스킬 폴더만 삭제(다른 폴더는 유지). Gemini CLI 0.28.0 미만은 `~/.agents/skills`를 읽지 않으므로 계속 `~/.gemini/skills`에 설치. Gemini CLI 버전을 읽을 수 없으면 `~/.agents/skills`에 설치하되 기존 사본은 남기고 경고. Codex CLI와 Gemini CLI가 스킬 한 벌을 함께 쓰므로, 둘 중 하나를 제거하기 전에 [설치 문서](install.md#update-or-remove)를 참고
+- **에이전트 변환이 잘못된 이름·설명에서 오류로 중단**: Gemini CLI나 Codex CLI용 에이전트 변환이 `name`·`description`이 없거나 비어 있거나, `"C:\Tizen"`처럼 YAML이 거부하는 이스케이프가 든 큰따옴표 값이면 파일 이름과 함께 오류로 중단
+
+### 수정 사항
+- Gemini CLI가 변환된 에이전트를 모두 다시 로드. `": "`가 든 설명이 YAML 매핑으로 해석되어 에이전트 로드에 실패했으며, 이제 `name`과 `description`을 YAML 작은따옴표 문자열로 기록
+- Cline이 `tizen-device-manager` 스킬을 다시 표시. 같은 `": "` 때문에 frontmatter가 잘못된 YAML이 되어 Cline이 오류 없이 스킬을 누락했음. 모든 스킬·에이전트 frontmatter가 엄격한 YAML인지 확인하는 테스트 추가
+- Gemini CLI가 스킬의 러너 탐색을 "Command injection detected"로 차단하지 않음. Gemini CLI는 `$(...)`, 백틱, `<(...)`가 든 셸 명령을 거부하는데 모든 Bash 탐색이 `$(...)`를 사용했음. 이제 셸 내장 기능만으로 탐색하며, 순서(이 호스트의 캐시 → `~/.claude` → `~/.cline` → `~/.codex` → `~/.gemini`)는 동일
+
+---
+
 ## v1.5.0 변경 사항 (2026-11-14)
 
 tizen-agent-skills v1.5.0은 `tizen-sdk-skills` 1.8.0과 `tizen-action-skills` 1.0.0을 포함하는 아홉 번째 통합 릴리스입니다. 새 스킬은 없으며, Apple Silicon Mac에서 TV 에뮬레이터를 부팅하고, 원격 디바이스 검색이 사용자 자신의 디바이스만 탐색할 수 있게 하며, 설치 인계와 GBS 누락을 전용 상태로 보고하고, GBS 빌드·TV SDK ZIP 설치·macOS 설치 스크립트 문제를 수정했습니다.

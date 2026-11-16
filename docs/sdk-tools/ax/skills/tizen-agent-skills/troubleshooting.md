@@ -149,7 +149,7 @@ node bin/tizen-sdk.js --doctor
 
 **How to resolve:**
 
-1. Update the plugin to version 1.5.0 or later and run the setup script again. From version 1.0.0 the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
+1. Update the plugin to version 1.6.0 or later and run the setup script again. From version 1.0.0 the lookup blocks name the shell they are for, and the PowerShell `node` line stops with the message `$CLI is empty` instead of a misleading module error.
 2. In a PowerShell terminal, run all three lines of the PowerShell block in order, in the same session, directly in the terminal.
 3. In a cmd.exe terminal, run the `cmd /c dir ...` chain and then `node "<found path>" ...` with the highest version that was listed.
 4. If no lookup finds a runner in `~/.claude`, `~/.cline`, `~/.codex`, or `~/.gemini`, the plugin is not installed on this machine. Install it first.
@@ -185,6 +185,38 @@ node bin/tizen-sdk.js --doctor
 **What it means:** The template copy carried a fixed API version 10.0 in `tizen-manifest.xml`, while the project files named 11.0.
 
 **How to resolve:** Update the plugin and ask to "Show me the app templates". Listing the templates repairs template copies that are still identical to the shipped template. Then create the project again, or set the `api-version` attribute of the `<manifest>` element in your existing project to `11.0`. From version 1.5.0 the Basic UI template is no longer listed; create it by name, for example "Create a native project from the BasicUI template".
+
+## Gemini CLI warns "Skill conflict detected" for every skill
+
+**When you see this:** When Gemini CLI starts, it prints `Skill conflict detected: "tizen-..." from "~/.agents/skills/..." is overriding the same skill from "~/.gemini/skills/..."` for each Tizen skill.
+
+**What it means:** Both the Codex CLI and the Gemini CLI setups are installed. Codex CLI installs the skills to `~/.agents/skills`, earlier Gemini CLI setups installed them to `~/.gemini/skills`, and Gemini CLI 0.28.0 and later reads both folders.
+
+**How to resolve:** Update the plugin to version 1.6.0 or later and run the Gemini CLI setup script again. It installs the skills to `~/.agents/skills` and removes the plugin's folders from `~/.gemini/skills`. If the setup warns that it could not read the Gemini CLI version, run it again in a shell where `gemini --version` works, or delete the `tizen-*` folders in `~/.gemini/skills` once you have confirmed that Gemini CLI is 0.28.0 or later.
+
+## Gemini CLI loses the Tizen skills after Codex CLI is removed
+
+**When you see this:** After you remove the Codex CLI installation, for example with **Tizen AI: Remove Installed Files** in Visual Studio Code, Gemini CLI no longer lists the Tizen skills.
+
+**What it means:** From version 1.6.0, Codex CLI and Gemini CLI share one copy of the skills in `~/.agents/skills`, and neither installation tracks the other. Removing one host's skills removes them for both.
+
+**How to resolve:** Run the Gemini CLI setup script again. Do not install Codex CLI both through the Tizen AI Extension and with `codex/setup`.
+
+## Gemini CLI blocks a command as "Command injection detected"
+
+**When you see this:** In Gemini CLI, a skill's runner lookup is refused with `Blocked: command substitution detected in shell command.`
+
+**What it means:** Gemini CLI refuses shell commands that contain `$(...)`, a backtick, or `<(...)` unless you approve them, and runner lookups before version 1.6.0 used `$(...)`.
+
+**How to resolve:** Update the plugin to version 1.6.0 or later and run the setup script again. The lookup now uses only shell builtins.
+
+## A Tizen agent or skill is missing in Gemini CLI or Cline
+
+**When you see this:** `/agents` in Gemini CLI does not list some `tizen-*` agents, or Cline does not list the `tizen-device-manager` skill. No error is shown.
+
+**What it means:** A description that contained `": "` made the frontmatter invalid YAML, and the host skipped the file.
+
+**How to resolve:** Update the plugin to version 1.6.0 or later and run the setup script for that host again.
 
 ## A Platform build fails with gbs_not_found
 
