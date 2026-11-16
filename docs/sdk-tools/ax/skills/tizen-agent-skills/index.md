@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.5.0, the ninth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.6.0, the tenth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -135,6 +135,26 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.6.0 (2026-11-16)
+
+The tenth unified release. It ships `tizen-sdk-skills` 1.9.0 and `tizen-action-skills` 1.0.0. No new skills were added; the release adds a script that installs the plugin for every host in one run, makes Gemini CLI share its skills folder with Codex CLI, and fixes skill and agent loading in Gemini CLI and Cline.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.8.0 to 1.9.0.
+- Tizen AI Extension (vsix) 1.9.0 and the standalone CLI bundle `tizen-sdk-v1.9.0.zip` released alongside.
+
+#### Added
+- **`setup-all` installs the plugin for every host in one run.** `common/setup/setup-all.sh` (`.ps1`, `.bat`) runs the setup for Claude Code, Cline, Codex CLI, and Gemini CLI in turn with the same options (`--repo`, `--skip-validation`, `--no-restart`). A failed host does not stop the others; the summary names the failed hosts, and the exit code is `1` if any failed.
+
+#### Changed
+- **Gemini CLI skills are installed to `~/.agents/skills`.** Gemini CLI reads skills from both `~/.gemini/skills` and `~/.agents/skills`, and the Codex CLI setup already installs to `~/.agents/skills`, so with both hosts installed every skill was found twice and Gemini CLI printed `Skill conflict detected` for each one. The Gemini setup now installs to `~/.agents/skills` as well and removes the plugin's skill folders from `~/.gemini/skills`, leaving other folders there untouched. Gemini CLI older than 0.28.0 does not read `~/.agents/skills`, so for those versions the setup keeps installing to `~/.gemini/skills`. When the setup cannot read the Gemini CLI version, it installs to `~/.agents/skills`, keeps the old copies, and warns. Codex CLI and Gemini CLI now share one copy of the skills; see [Installing Tizen Agent Skills](install.md#update-or-remove) before removing one of them.
+- **Agent conversion stops on an invalid name or description.** Converting the agents for Gemini CLI or Codex CLI now fails with an error that names the file when `name` or `description` is missing or empty, or is a double-quoted value with an escape that YAML rejects, such as `"C:\Tizen"`.
+
+#### Fixes
+- Gemini CLI loads every converted agent again. A description that contained `": "` was read as a YAML mapping, so the agent failed to load. `name` and `description` are now written as YAML single-quoted strings.
+- Cline lists the `tizen-device-manager` skill again. The same `": "` made its frontmatter invalid YAML, and Cline dropped the skill without an error. A new test checks that every skill and agent frontmatter is strict YAML.
+- Gemini CLI no longer blocks the runner lookup in a skill as "Command injection detected". Gemini CLI refuses shell commands that contain `$(...)`, a backtick, or `<(...)`, and every Bash lookup used `$(...)`. The lookup is now built from shell builtins and keeps the same order: this host's own cache first, then `~/.claude`, `~/.cline`, `~/.codex`, and `~/.gemini`.
 
 ### v1.5.0 (2026-11-14)
 

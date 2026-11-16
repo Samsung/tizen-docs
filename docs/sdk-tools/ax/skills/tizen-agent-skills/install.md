@@ -32,6 +32,24 @@ bash common/setup/setup.sh --harness <claude|cline|codex|gemini> [--repo <path>]
 
 The PowerShell script also accepts the Bash spelling of the options (`--harness`, `--repo`, `--skip-validation`, `--no-restart`), so the same command line works in both shells.
 
+## Install for every host at once
+
+From version 1.6.0, `setup-all` installs the plugin for Claude Code, Cline, Codex CLI, and Gemini CLI in one run. It needs no options:
+
+Windows:
+
+```
+common\setup\setup-all.bat
+```
+
+Linux and macOS:
+
+```
+bash common/setup/setup-all.sh
+```
+
+It runs the setup for each host in turn with the same options (`--repo`, `--skip-validation`, `--no-restart`, or `-RepoPath`, `-SkipValidation`, `-NoRestart` in PowerShell). A failed host does not stop the others. At the end it prints a summary that names the failed hosts, and it exits with `1` if any failed. The `.bat` file starts PowerShell with `-ExecutionPolicy Bypass`; running `setup-all.ps1` directly needs an execution policy that allows local scripts. `--no-restart` only hides the notes printed at the end. The scripts never restart a host, so restart each host yourself after installing.
+
 ## Claude Code
 
 1. Run the setup script from the `tizen-sdk-skills` directory.
@@ -125,7 +143,9 @@ On Windows, Cline runs commands in either a cmd.exe or a PowerShell terminal. Ev
    bash gemini/setup/setup.sh
    ```
 
-2. The script installs the cache under `~/.gemini`, the skills to `~/.gemini/skills/tizen-*/`, the agents to `~/.gemini/agents/tizen-*.md`, a BeforeTool hook entry in `~/.gemini/settings.json`, and a guard section in `~/.gemini/GEMINI.md`.
+2. The script installs the cache under `~/.gemini`, the skills to `~/.agents/skills/tizen-*/`, the agents to `~/.gemini/agents/tizen-*.md`, a BeforeTool hook entry in `~/.gemini/settings.json`, and a guard section in `~/.gemini/GEMINI.md`.
+
+   `~/.agents/skills` is the folder Codex CLI also uses, so both hosts share one copy of the skills. Gemini CLI reads it from version 0.28.0. When `gemini --version` reports an older version, the script installs the skills to `~/.gemini/skills/tizen-*/` instead. When the version cannot be read, for example because `gemini` is not on the `PATH` of the shell that runs the script, it installs to `~/.agents/skills` and warns. Before version 1.6.0 the skills went to `~/.gemini/skills`; the script removes those copies when it moves them.
 
 3. Restart Gemini CLI. `/skills list` and `/agents` should show the Tizen entries.
 
@@ -222,6 +242,9 @@ rm -rf ~/<dot-dir>/hooks/tizen-sdk-skills
 ```
 
 Replace `<dot-dir>`, `<skills-dir>`, and `<agents-dir>` with the paths listed for your host above. If you installed through the Tizen AI Extension, uninstalling the extension removes everything it installed and leaves your own skills and agents untouched.
+
+> [!NOTE]
+> Codex CLI and Gemini CLI read the same `~/.agents/skills/tizen-*` folders, and neither installation tracks the other. When you remove only one of them, keep those folders; delete them once neither host is installed. Removing the Tizen AI Extension's Codex CLI installation also removes the skills Gemini CLI reads, so run the Gemini CLI setup script again afterwards. Do not install Codex CLI both through the extension and with `codex/setup`. If skills go missing or are out of date after you remove or update one host, run that host's setup script again.
 
 ## Related information
 * Dependencies
