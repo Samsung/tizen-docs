@@ -121,6 +121,9 @@ To prepare the screen mirroring sink:
 
 2. Set a display object using the `scmirroring_sink_set_display()` function:
 
+   > [!NOTE]
+   > The `SCMIRRORING_DISPLAY_TYPE_OVERLAY` and `SCMIRRORING_DISPLAY_TYPE_EVAS` display types have been deprecated since Tizen 10.1.
+
    ```
        switch (display_type) {
        case SCMIRRORING_DISPLAY_TYPE_EVAS:
@@ -162,6 +165,9 @@ To prepare the screen mirroring sink:
    ```
 
 3. Create the display object based on the applicable [scmirroring_display_type_e](../../api/common/latest/group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html#ga2c7d012d260b35e0e550618c2546f751) enumerator value:
+
+   > [!NOTE]
+   > The overlay and Evas object display types (`SCMIRRORING_DISPLAY_TYPE_OVERLAY` and `SCMIRRORING_DISPLAY_TYPE_EVAS`) have been deprecated since Tizen 10.1.
 
    ```
    #define PACKAGE_NAME "SCREEN_MIRRORING_SINK_APP"
