@@ -1,6 +1,6 @@
 # Tizen Agent Skills reference
 
-Tizen Agent Skills provides 29 skills. Each skill is triggered by natural language in your AI coding assistant, and most skills also exist as an agent that can run as a separate task. The standalone `tizen-sdk` CLI exposes the same functionality as 35 commands. This page lists every skill grouped by task, with an example of how to ask for it.
+Tizen Agent Skills provides 30 skills. Each skill is triggered by natural language in your AI coding assistant, and most skills also exist as an agent that can run as a separate task. The standalone `tizen-sdk` CLI exposes the same functionality as 36 commands. This page lists every skill grouped by task, with an example of how to ask for it.
 
 All skills return a Standard JSON Envelope. If a step fails, the envelope includes an error code and, when possible, a suggested fix. See [How it works](index.md#how-it-works).
 
@@ -56,7 +56,7 @@ Notes:
 |-------|--------------|-----------------|
 | `tizen-create-emulator` | Creates an emulator image with the screen size you choose (1080 by default), a platform, and a profile. Also lists platforms, emulator templates, and existing images, and deletes images. | "Create a 720p Tizen emulator" |
 | `tizen-launch-emulator` | Boots an existing emulator image and waits until it is connected through `sdb`. If you give no name, it launches the first image in the list. | "Launch the emulator" |
-| `tizen-device-manager` | Lists the devices and emulators connected through `sdb`, or shuts down running emulators. Supports both standard Tizen and Samsung TV emulator profiles. Does not analyze problems. | "Show me the connected devices" |
+| `tizen-device-manager` | Finds a connected device or emulator, lists every device that `sdb` reports with its state and type, or shuts down running emulators. Supports both standard Tizen and Samsung TV emulator profiles. Does not analyze problems. | "Show me the connected devices" |
 | `tizen-remote-device` | Scans your local network for Tizen devices, connects or disconnects them over the network instead of USB, and manages the bookmarked remote device list. | "Connect to the TV at 192.168.0.20" |
 | `tizen-install-app` | Installs a `.tpk`, `.wgt`, `.rpk`, or `.rpm` package on the connected device or emulator and optionally launches the app. | "Install the app and run it" |
 | `tizen-file-transfer` | Pushes files and directories to the device or pulls them back to the host through `sdb`. | "Copy data.json to the device" |
@@ -90,6 +90,7 @@ Notes:
 - Collected logs are stored in the SDK data directory under `dloganalyzer/`, for example `<sdk>-data/dloganalyzer/app/<app-id>/`. The SDK path must therefore be configured before you collect logs. If it is not, the skill returns `sdk_path_not_set`, and `tizen-sdk-init` fixes it. Only temporary files such as the one-shot log dump stay in the system temporary directory.
 - Stopping a monitoring session keeps its analysis. The stop result carries the last lines that were captured, and a later check returns the whole output until the next monitoring session starts.
 - The analyzer runs one device log collector at a time and records the owner in a lock file under the log directory. When you start monitoring or app log collection while another collector holds the lock, the result is `already_running` and names the holder process together with the command that stops it. If the app-scoped collector is refused because system-wide monitoring already runs, the monitor keeps running and its capture is analyzed instead. A holder that no session is tracking is a collector left over from an earlier session. The runner checks that the process is still the analyzer before it suggests terminating it, and reports a lock whose process ID now belongs to a different program as stale. The lock file is never deleted while its holder runs.
+- The analyzer caps its text output so that a long log does not fill the assistant's context window, and marks what it cut with `... N more omitted`. Ask for the complete, untruncated output when you need it, and the analyzer runs with `--full`.
 - The analyzer binary that runs is the one shipped with the installed plugin version. If the runner has to look in a plugin cache that holds several versions, it picks the newest.
 - On Windows, a `warnings` entry that mentions `UnicodeEncodeError` is not a failure. The analyzer binary writes through the system code page, such as cp949, and can stop on a character outside that code page after it has already printed the report. The result is returned as a success with the printed output and `output_truncated` set to `true`. Use the output as it is. Changing the code page with `chcp 65001` or setting `PYTHONUTF8` does not reach the binary, so retrying with them has no effect.
 - `.vscode/launch.json` written by `tizen-dotnet-debug` contains a configuration named `Tizen .NET (netcoredbg)`. Other configurations in an existing file are preserved. The companion `tasks.json` contains a task that relaunches the app before each debug session, because stopping a session in Visual Studio Code ends both the app and the debugger on the device. The configuration uses the `coreclr` debug type, which needs the C# extension for Visual Studio Code.
@@ -111,13 +112,27 @@ Notes:
 - Local certificates need no network and no account.
 - Samsung certificates are for TV targets. They require a Samsung Account and the device unique ID (DUID) of a connected TV or TV emulator, which the skill can read for you.
 
+## Working across assistants
+
+| Skill | What it does | Example request |
+|-------|--------------|-----------------|
+| `tizen-handoff` | Shows the handoff notes of a Tizen project so that one assistant can continue another assistant's work, and updates the task state when an assistant stops or switches. The runners of the other skills record builds, installs, device and emulator actions, debugging, and SDK and certificate changes automatically. | "Continue where Codex left off" |
+
+Notes:
+
+- The notes are stored outside the project, in `~/.tizen-sdk-skills/handoff/<project>-<id>/`, so they are never packaged into the app and never appear in git. `STATE.md` and `DECISIONS.md` are written by the assistant; `BUILDS.md`, `DEVICES.md`, `DEBUG.md`, `ENVIRONMENT.md`, and `LOG.md` are written by the runners.
+- The assistant treats the notes as a hint, not as proof. It checks the real package, device, or file before it relies on an entry.
+- Set `TIZEN_HANDOFF=0` to turn recording off, or `TIZEN_HANDOFF=existing` to record only for projects that already have notes.
+- `tizen-handoff` is not part of the standalone `tizen-sdk` CLI.
+
 ## Standalone CLI command names
 
-In the standalone `tizen-sdk` CLI, most skills map to a command with the same name without the `tizen-` prefix, for example `tizen-sdk build-project`. Six extra commands expose actions that belong to a larger skill:
+In the standalone `tizen-sdk` CLI, most skills map to a command with the same name without the `tizen-` prefix, for example `tizen-sdk build-project`. Seven extra commands expose actions that belong to a larger skill:
 
 | CLI command | Skill that owns it | Purpose |
 |-------------|--------------------|---------|
 | `sdk-repo-info` | `tizen-sdk-install` | Shows the package repository information. |
+| `platform-list` | `tizen-platform-install` | Lists the installed Tizen platform versions. |
 | `validate-repo-url` | `tizen-sdk-install-custom-repo` | Validates a repository URL without installing. |
 | `list-templates` | `tizen-create-project` | Lists the available project templates. |
 | `import-wgt` | `tizen-create-project` | Imports a `.wgt` archive as a Web project. |

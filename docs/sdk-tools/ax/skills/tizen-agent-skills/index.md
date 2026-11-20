@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.6.0, the tenth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.7.0, the eleventh release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -12,7 +12,7 @@ The `tizen-agent-skills` repository contains one directory per plugin. Each plug
 
 | Plugin | What it does | Hosts |
 |--------|--------------|-------|
-| [`tizen-sdk-skills`](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/README.md) | Automates the Tizen SDK end to end: SDK install, project creation and build, emulator and device management, app installation, remote debugging (GDB / netcoredbg / CDP), certificates, dlog analysis, and Playwright testing. 29 skills, 24 agents, a standalone `tizen-sdk` CLI, and the Tizen AI Extension for VS Code. | Claude Code, Cline, Codex CLI, VS Code, standalone CLI |
+| [`tizen-sdk-skills`](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/README.md) | Automates the Tizen SDK end to end: SDK install, project creation and build, emulator and device management, app installation, remote debugging (GDB / netcoredbg / CDP), certificates, dlog analysis, and Playwright testing. 30 skills, 24 agents, a standalone `tizen-sdk` CLI, and the Tizen AI Extension for VS Code. | Claude Code, Cline, Codex CLI, VS Code, standalone CLI |
 | [`tizen-action-skills`](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/README.md) | Builds Tizen Action Framework providers: picks a default Action category or authors custom `.action`/`.entity` schemas, generates `actionc`/TIDL stubs for C#, C++, JavaScript or Flutter-Tizen/Dart, registers provider metadata, and verifies with `action-tool`. 1 skill. | Claude Code |
 
 The rest of this section focuses on the `tizen-sdk-skills` plugin, which covers the application development lifecycle. For the `tizen-action-skills` plugin, see its [README on GitHub](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/README.md).
@@ -25,7 +25,7 @@ The rest of this section focuses on the `tizen-sdk-skills` plugin, which covers 
 
 ## What you can do with it
 
-The `tizen-sdk-skills` plugin covers the whole application development lifecycle with 29 skills:
+The `tizen-sdk-skills` plugin covers the whole application development lifecycle with 30 skills:
 
 - **Set up the environment**: check Node.js and free disk space, install the Tizen SDK from the public CDN or from your own package repository, install platform, emulator, mobile, and TV SDK packages, add custom rootstraps, update packages, and set up the .NET workload.
 - **Create and build projects**: scaffold Native, .NET, Web, RPK resource, TV, and Platform projects from the templates in your installed SDK, import an existing `.wgt` archive as a project, and build `.tpk`, `.wgt`, `.rpk`, or `.rpm` packages.
@@ -34,6 +34,7 @@ The `tizen-sdk-skills` plugin covers the whole application development lifecycle
 - **Debug and analyze**: set up remote debugging with GDB for Native apps, netcoredbg for .NET apps, and Remote Web Inspector or Chrome DevTools Protocol (CDP) for Web apps. Collect device logs (dlog) and kernel logs and get an automatic crash and exception analysis. Report a symptom such as high CPU usage or a video that does not play, and the analyzer runs evidence probes, collects logs while you reproduce the problem, and reports the likely root cause.
 - **Test**: scaffold and run Playwright tests against a Tizen Web app over CDP.
 - **Sign**: generate author certificates, choose distributor certificates, manage signing profiles, and issue Samsung certificates for TV targets.
+- **Hand work over between assistants**: pick up a Tizen project where another assistant, such as Claude Code or Codex CLI, left off, from notes that record each build, install, and device action.
 
 For the full list, see [Tizen Agent Skills reference](skills-reference.md).
 
@@ -48,9 +49,9 @@ You can use Tizen Agent Skills from any of the following environments. The same 
 | Codex CLI | Skills, agents in TOML format, hooks, and a guard section in `AGENTS.md` | Hooks must be trusted once with the `/hooks` command after installation. |
 | Gemini CLI | Skills, agents, a BeforeTool hook adapter, and a guard section in `GEMINI.md` | |
 | Visual Studio Code | The Tizen AI Extension installs and synchronizes the plugin for Claude Code, Cline, and Codex CLI from inside the editor | No scripts to run. Uninstalling the extension removes everything it installed. |
-| Standalone `tizen-sdk` CLI | A single executable bundle of all 35 commands | No AI assistant needed. Prints machine-readable JSON, so it fits shell scripts and CI. |
+| Standalone `tizen-sdk` CLI | A single executable bundle of all 36 commands | No AI assistant needed. Prints machine-readable JSON, so it fits shell scripts and CI. |
 
-Windows, Linux, and macOS are supported. The log analyzer binary used by `tizen-dlog-analyzer` ships for Linux, Windows, and macOS (x86_64). The Tizen emulator can also run inside Windows Subsystem for Linux (WSL2) with some extra configuration, which is described in the project repository.
+Windows, Linux, and macOS are supported. The log analyzer binary used by `tizen-dlog-analyzer` ships for Linux, Windows, and macOS (Intel and Apple Silicon). The Tizen emulator can also run inside Windows Subsystem for Linux (WSL2) with some extra configuration, which is described in the project repository.
 
 ## How it works
 
@@ -135,6 +136,29 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.7.0 (2026-11-20)
+
+The eleventh unified release. It ships `tizen-sdk-skills` 1.10.0 and `tizen-action-skills` 1.0.0. It adds the `tizen-handoff` skill, so Claude Code, Codex CLI, and Cline can continue each other's Tizen work, lists every connected device, installs the plugin and the standalone CLI without cloning the repository, and ships a native log analyzer for Apple Silicon Macs.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.9.0 to 1.10.0.
+- Tizen AI Extension (vsix) 1.10.0 and the standalone CLI bundle `tizen-sdk-v1.10.0.zip` released alongside.
+- The skill count is now 30. The standalone CLI has 36 commands; earlier documentation said 35.
+
+#### Added
+- **`tizen-handoff` skill and automatic handoff notes.** Each Tizen project gets a folder of plain Markdown notes in `~/.tizen-sdk-skills/handoff/<project>-<id>/`, outside the project, so the notes are never packaged into a `.wgt` and never appear in git. The runners append every build, install, emulator and device action, file transfer, screenshot, log collection, debugging session, and SDK, platform, package, or certificate change on their own; read-only calls such as list and check are skipped. The assistant writes the task and its progress to `STATE.md` and its choices to `DECISIONS.md`. When the previous entry came from a different assistant, the envelope carries a warning that starts with `Handoff notes:` and names the folder to read first. Certificate commands record only the action and its status, and a failure to write a note never changes the envelope or the exit code. Set `TIZEN_HANDOFF=0` to turn recording off, `TIZEN_HANDOFF=existing` to record only for projects that already have notes, or `TIZEN_HANDOFF_HOME` to move the notes folder.
+- **`device-manager --action list` shows every connected device.** It lists each device that `sdb devices` reports with its serial, state (`device`, `offline`, `locked`, `unauthorized`, or another sdb state such as `no permissions`), and type (`emulator`, `usb`, or `remote`), together with `device_count` and `online_count`. No devices is a success with a warning, not `device_not_found`. The default action still returns a single device.
+- **Install without cloning.** `common/setup/setup-remote.sh` (`.ps1`, `.bat`) downloads the source from GitHub, runs the regular setup, and deletes the download when the setup succeeds. `common/setup/setup-tizen-sdk.sh` (`.ps1`, `.bat`) installs the standalone `tizen-sdk` CLI from the `tizen-sdk-v<version>.zip` asset of a release. See [Installing Tizen Agent Skills](install.md#install-without-cloning).
+- **`--path <dir>` on `sdk-install`.** The pre-check examines `<dir>` instead of the configured SDK path, the installer installs there, and the re-run hint in the envelope repeats the option. It also works together with `--repo-url`.
+- **`--full` on `tizen-dlog-analyzer`.** The analyzer caps its text output to protect the assistant's context window. `--full` turns the cap off for `error-analyze`, `app-log`, `search`, `investigate`, and `kernel analyze`, including their `--file` modes. The assistant uses it only when you ask for the complete output.
+
+#### Changed
+- **The SDK install pre-check measures free space on the install drive**, not on the home drive, so an SDK path on another drive is checked against the right disk.
+- **The bundled log analyzer is updated to 0.3.0 and runs natively on Apple Silicon.** The macOS binary is picked by CPU architecture. When the native build is missing, the Intel build runs under Rosetta and every result carries a warning that names the fallback.
+
+#### Fixes
+- Every device command reads `sdb devices` with the same rules as `device-manager list`. A message such as `target device not found` is no longer taken for a device named `target`, and devices in states such as `no permissions` are no longer dropped. An sdb `error:` line is reported as `io_error` instead of "no device", a serial that is not shell-safe is never picked, and the Samsung DUID lookup returns the device name instead of its state.
 
 ### v1.6.0 (2026-11-16)
 

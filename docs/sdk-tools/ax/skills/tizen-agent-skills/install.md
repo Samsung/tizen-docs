@@ -16,7 +16,7 @@ This page explains how to install Tizen Agent Skills for each supported host, ho
 
 ## Get the source
 
-All script-based installs start from a clone of the public repository. The plugin lives in the `tizen-sdk-skills` subdirectory:
+The script-based installs below start from a clone of the public repository. To install without a clone, see [Install without cloning](#install-without-cloning). The plugin lives in the `tizen-sdk-skills` subdirectory:
 
 ```
 git clone https://github.com/Samsung/tizen-agent-skills.git
@@ -49,6 +49,32 @@ bash common/setup/setup-all.sh
 ```
 
 It runs the setup for each host in turn with the same options (`--repo`, `--skip-validation`, `--no-restart`, or `-RepoPath`, `-SkipValidation`, `-NoRestart` in PowerShell). A failed host does not stop the others. At the end it prints a summary that names the failed hosts, and it exits with `1` if any failed. The `.bat` file starts PowerShell with `-ExecutionPolicy Bypass`; running `setup-all.ps1` directly needs an execution policy that allows local scripts. `--no-restart` only hides the notes printed at the end. The scripts never restart a host, so restart each host yourself after installing.
+
+## Install without cloning
+
+From version 1.7.0, `setup-remote` installs the plugin without a local clone. It downloads the source from GitHub, runs the regular setup scripts from the extracted copy, and deletes the download when the setup succeeds. A failed setup keeps the download for debugging.
+
+Linux and macOS:
+
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/Samsung/tizen-agent-skills/main/tizen-sdk-skills/common/setup/setup-remote.sh)
+```
+
+Windows (cmd.exe or PowerShell):
+
+```
+curl -fsSL -o setup-remote.ps1 https://raw.githubusercontent.com/Samsung/tizen-agent-skills/main/tizen-sdk-skills/common/setup/setup-remote.ps1
+powershell -ExecutionPolicy Bypass -File setup-remote.ps1
+```
+
+Without options, it installs the plugin for all four hosts. The script accepts the following options:
+
+| Option | PowerShell | Meaning |
+|--------|------------|---------|
+| `--harness <name>` | `-Harness <name>` | Installs for one host only: `claude`, `cline`, `codex`, or `gemini`. |
+| `--ref <branch or tag>` | `-Ref <branch or tag>` | Downloads a branch or a release tag, for example `tizen-agent-skills-v1.7.0`, instead of `main`. |
+| `--keep` | `-Keep` | Keeps the download after a successful setup. |
+| `--skip-validation`, `--no-restart` | `-SkipValidation`, `-NoRestart` | Passed on to the setup script. |
 
 ## Claude Code
 
@@ -213,6 +239,23 @@ And these settings:
    ```
 
 If you run the launcher before building, it prints a `PLUGIN_NOT_BUILT` envelope that contains the build command. Prebuilt bundles are also attached to each GitHub release as `tizen-sdk-vX.Y.Z.zip`.
+
+To install a prebuilt bundle without cloning or building, run `setup-tizen-sdk`. It needs only Node.js 22 or higher:
+
+Linux and macOS:
+
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/Samsung/tizen-agent-skills/main/tizen-sdk-skills/common/setup/setup-tizen-sdk.sh)
+```
+
+Windows (cmd.exe or PowerShell):
+
+```
+curl -fsSL -o setup-tizen-sdk.ps1 https://raw.githubusercontent.com/Samsung/tizen-agent-skills/main/tizen-sdk-skills/common/setup/setup-tizen-sdk.ps1
+powershell -ExecutionPolicy Bypass -File setup-tizen-sdk.ps1
+```
+
+The script downloads the bundle of the latest release, installs it into `~/.tizen-sdk-cli` with a `tizen-sdk` command, checks it with `--capabilities`, and deletes the download. Use `--release <tag>` (`-Release <tag>`) to pin a release, `--dir <path>` to install somewhere else, and `--tizen-cli` (`-TizenCli`) to also register the plugin with a `tizen-cli` host.
 
 > [!NOTE]
 > When you run the Node.js launcher, the installer commands (`sdk-install`, `platform-install`, `tv-sdk-install`, `update-package`, and the other package installers) return the installer command in `suggested_fix.command` instead of running it, so that you can start it in the background. Set the environment variable `TIZEN_SDK_INLINE_INSTALLER=1` to have them run the installer inline. The prebuilt bundle attached to a release always runs the installer inline.
