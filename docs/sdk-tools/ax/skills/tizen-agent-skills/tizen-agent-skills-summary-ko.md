@@ -112,6 +112,31 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.7.0 변경 사항 (2026-11-20)
+
+tizen-agent-skills v1.7.0은 `tizen-sdk-skills` 1.10.0과 `tizen-action-skills` 1.0.0을 포함하는 열한 번째 통합 릴리스입니다. Claude Code, Codex CLI, Cline이 서로의 Tizen 작업을 이어받을 수 있게 하는 `tizen-handoff` 스킬을 추가하고, 연결된 디바이스 전체 목록을 보여 주며, 저장소를 clone하지 않고 플러그인과 독립 실행형 CLI를 설치할 수 있게 하고, Apple Silicon Mac용 네이티브 로그 분석기를 포함했습니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.9.0 → 1.10.0으로 상향
+- Tizen AI Extension(vsix) 1.10.0 및 독립 실행형 CLI 번들 `tizen-sdk-v1.10.0.zip` 동반 릴리스
+- 스킬 30개. 독립 실행형 CLI 명령은 36개(이전 문서의 35개는 오기)
+
+### 추가
+- **`tizen-handoff` 스킬과 자동 인수인계 노트**: 프로젝트마다 프로젝트 밖의 `~/.tizen-sdk-skills/handoff/<project>-<id>/`에 Markdown 노트 폴더를 만들므로 `.wgt`에 포함되거나 git에 나타나지 않음. 러너가 빌드, 설치, 에뮬레이터·디바이스 동작, 파일 전송, 스크린샷, 로그 수집, 디버깅, SDK·플랫폼·패키지·인증서 변경을 자동으로 기록하며, list·check 같은 읽기 전용 호출은 제외. 에이전트는 작업과 진행 상황을 `STATE.md`에, 결정 사항을 `DECISIONS.md`에 기록. 직전 기록이 다른 에이전트의 것이면 엔벨로프에 먼저 읽을 폴더를 알려 주는 `Handoff notes:` 경고가 붙음. 인증서 명령은 동작과 상태만 기록하며, 노트 기록 실패는 엔벨로프와 종료 코드에 영향을 주지 않음. `TIZEN_HANDOFF=0`으로 기록 끄기, `TIZEN_HANDOFF=existing`으로 노트가 이미 있는 프로젝트만 기록, `TIZEN_HANDOFF_HOME`으로 노트 폴더 위치 변경
+- **`device-manager --action list`로 연결된 디바이스 전체 표시**: `sdb devices`가 보고하는 모든 디바이스를 시리얼, 상태(`device`, `offline`, `locked`, `unauthorized` 또는 `no permissions` 같은 기타 sdb 상태), 유형(`emulator`, `usb`, `remote`)과 함께 `device_count`, `online_count`로 표시. 디바이스가 없으면 `device_not_found`가 아니라 경고와 함께 성공으로 보고. 기본 액션은 계속 디바이스 하나를 반환
+- **clone 없이 설치**: `common/setup/setup-remote.sh`(`.ps1`, `.bat`)는 GitHub에서 소스를 내려받아 일반 셋업을 실행하고 성공하면 다운로드를 삭제. `common/setup/setup-tizen-sdk.sh`(`.ps1`, `.bat`)는 릴리스의 `tizen-sdk-v<version>.zip`으로 독립 실행형 `tizen-sdk` CLI를 설치. [설치 문서](install.md#install-without-cloning) 참고
+- **`sdk-install`의 `--path <dir>`**: 사전 확인이 설정된 SDK 경로 대신 `<dir>`을 검사하고 설치 프로그램도 그 경로에 설치하며, 엔벨로프의 재실행 안내에도 옵션이 그대로 포함됨. `--repo-url`과 함께 사용 가능
+- **`tizen-dlog-analyzer`의 `--full`**: 분석기는 에이전트의 컨텍스트를 보호하려고 출력 텍스트를 제한함. `--full`은 `error-analyze`, `app-log`, `search`, `investigate`, `kernel analyze`(각 `--file` 모드 포함)에서 제한을 해제하며, 에이전트는 사용자가 전체 출력을 요청할 때만 사용
+
+### 변경
+- **SDK 설치 사전 확인이 설치 드라이브의 여유 공간을 측정**: 홈 드라이브 대신 설치 경로의 드라이브를 검사하므로 다른 드라이브의 SDK 경로도 올바르게 확인
+- **번들 로그 분석기를 0.3.0으로 갱신하고 Apple Silicon에서 네이티브 실행**: macOS 바이너리를 CPU 아키텍처에 따라 선택. 네이티브 빌드가 없으면 Intel 빌드를 Rosetta로 실행하며, 모든 결과에 대체 실행을 알리는 경고가 붙음
+
+### 수정 사항
+- 모든 디바이스 명령이 `device-manager list`와 같은 규칙으로 `sdb devices`를 읽음. `target device not found` 같은 메시지를 `target`이라는 디바이스로 오인하지 않고, `no permissions` 같은 상태의 디바이스를 누락하지 않음. sdb의 `error:` 줄은 "디바이스 없음" 대신 `io_error`로 보고하고, 셸에 안전하지 않은 시리얼은 선택하지 않으며, Samsung DUID 조회가 상태 대신 디바이스 이름을 반환
+
+---
+
 ## v1.6.0 변경 사항 (2026-11-16)
 
 tizen-agent-skills v1.6.0은 `tizen-sdk-skills` 1.9.0과 `tizen-action-skills` 1.0.0을 포함하는 열 번째 통합 릴리스입니다. 새 스킬은 없으며, 모든 호스트에 플러그인을 한 번에 설치하는 스크립트를 추가하고, Gemini CLI가 Codex CLI와 스킬 폴더를 함께 쓰도록 바꾸고, Gemini CLI와 Cline에서 스킬·에이전트가 로드되지 않던 문제를 수정했습니다.
