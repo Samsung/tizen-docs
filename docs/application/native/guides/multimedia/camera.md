@@ -150,6 +150,10 @@ To configure the camera:
    >
    > Depending on the device, the application must set the display preferences using the `elm_config_accel_preference_set()` function.
 
+   > **Note**
+   >
+   > The overlay layer and Evas object display types (`CAMERA_DISPLAY_TYPE_OVERLAY`, `CAMERA_DISPLAY_TYPE_EVAS`) have been deprecated since Tizen 10.1.
+
    The following example code sets the display according to the `display_type` parameter, whose type is `camera_display_type_e`. The `create_base_gui()` function must be called before previewing and thus the camera state must be `CAMERA_STATE_CREATED`.
 
    ```
