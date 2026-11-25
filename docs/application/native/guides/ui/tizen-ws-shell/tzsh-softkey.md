@@ -22,6 +22,10 @@ If you set the opacity state to opaque, the background of the Softkey service wi
 If you set the opacity state to transparent, the background changes to 32-bit colored transparent window as follows:
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
 
+> **Note**
+>
+> The example uses `TZSH_TOOLKIT_TYPE_TCORE_WAYLAND`, available since Tizen 11.0. It expects a connected Tizen Core Wayland display from your application.
+
 ## Prerequisites
 
 To use the functions and structures of the [TZSH-Softkey API](../../../api/common/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html), include the `<tzsh_softkey.h>` header file in your application:
@@ -32,39 +36,44 @@ To use the functions and structures of the [TZSH-Softkey API](../../../api/commo
 
 ## Create TZSH-Softkey Handler
 
-After you have created the main window of your application, call `tzsh_create()` and `tzsh_softkey_create()` with a native window ID to create the [`tzsh_softkey_h` structure](../../../api/common/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#ga2ee6e5dec1081136fe1139d6a611e58d):
-	
+Create the application window with `tizen_core_wl_create_window()`. Then create a `tzsh_h` handle with `TZSH_TOOLKIT_TYPE_TCORE_WAYLAND`, get the window's native surface ID, and pass it with the handle to `tzsh_softkey_create()` to create the [`tzsh_softkey_h` structure](../../../api/common/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#ga2ee6e5dec1081136fe1139d6a611e58d):
+
 ```
-#include <Elementary.h>
+#include <tizen_core_wl.h>
+#include <wayland-client.h>
+#include <tzsh.h>
+#include <tzsh_softkey.h>
 
 static void
-init(const char *name)
+init(tizen_core_wl_display_h display)
 {
-    Evas_Object *main_win;
-
-    /* create main window for your application */
-    main_win = elm-win_util_standard_add(name, name);
-
-    /* set up main window */
-    ...
-    evas_object_show(main_win);
-
-
-    tzsh_h tzsh;
-    tzsh_softkey_h tzsh_sk;
+    tizen_core_wl_window_h main_window = NULL;
+    tizen_core_wl_native_surface_h surface = NULL;
+    tzsh_h tzsh = NULL;
+    tzsh_softkey_h tzsh_sk = NULL;
     tzsh_window tz_win;
 
-    /* Get native window ID of main window */
-    tz_win = elm_win_window_id_get(main_win);
+    if (tizen_core_wl_create_window(display, NULL, 0, 0, 640, 480, &main_window) != TIZEN_CORE_WL_ERROR_NONE)
+        return;
 
-    /* Create tzsh_h structure */
-    tzsh = tzsh_create(tz_win);
+    tizen_core_wl_window_show(main_window);
 
-    /* Create tzsh_softkey_h structure */
+    if (tizen_core_wl_window_get_native_surface(main_window, &surface) != TIZEN_CORE_WL_ERROR_NONE || !surface)
+        return;
+
+    tz_win = (tzsh_window)wl_proxy_get_id((struct wl_proxy *)surface);
+    tzsh = tzsh_create(TZSH_TOOLKIT_TYPE_TCORE_WAYLAND);
+    if (!tzsh)
+        return;
+
     tzsh_sk = tzsh_softkey_create(tzsh, tz_win);
+    if (!tzsh_sk) {
+        tzsh_destroy(tzsh);
+        return;
+    }
 
-    ...
-    /* Do Something Creative */
+    /* Do something with TZSH-Softkey. */
+}
 ```
 
 ## Show or Hide Softkey Window
