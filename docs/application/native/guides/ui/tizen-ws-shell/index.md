@@ -25,35 +25,43 @@ To use the functions and structures of the TZSH API, include the `<tzsh.h>` head
 ```
 
 ## Create TZSH Structures
-After you have created the main window of your application, call `tzsh_create()` with a native window ID to create the `tzsh_h` structure. To create the `tzsh_h` structure, use the following code:
+Call `tzsh_create()` with the toolkit type used by your application to create the `tzsh_h` structure. The toolkit type selects the TZSH backend; `tzsh_create()` does not take a native window ID.
+
+| Toolkit type | Description | Since |
+| --- | --- | --- |
+| `TZSH_TOOLKIT_TYPE_EFL` | Use the EFL toolkit. Deprecated since Tizen 11.0; use `TZSH_TOOLKIT_TYPE_TCORE_WAYLAND` for tizen-core-wl apps. | Tizen 3.0 |
+| `TZSH_TOOLKIT_TYPE_TCORE_WAYLAND` | Use the tizen-core-wl toolkit. | Tizen 11.0 |
+
+The following example uses a connected Tizen Core Wayland display to create an application window, get its native surface ID, and create a TZSH structure. Pass the surface ID to a TZSH sub-library when creating a service handler.
 
 ```
-#include <Elementary.h>
+#include <tizen_core_wl.h>
+#include <wayland-client.h>
 #include <tzsh.h>
 
 static void
-init(const char *name)
+init(tizen_core_wl_display_h display)
 {
-    Evas_Object *main_win;
-
-    /* create main window for the application */
-    main_win = elm_win_util_standard_add(name, name);
-
-    /* set up main window */
-    ...
-    evas_object_show(main_win);
-
-
-    tzsh_h tzsh;
+    tizen_core_wl_window_h window = NULL;
+    tizen_core_wl_native_surface_h surface = NULL;
+    tzsh_h tzsh = NULL;
     tzsh_window tz_win;
 
-    /* Get native window ID of main window */
-    tz_win = elm_win_window_id_get(main_win);
+    if (tizen_core_wl_create_window(display, NULL, 0, 0, 640, 480, &window) != TIZEN_CORE_WL_ERROR_NONE)
+        return;
 
-    /* Create tzsh_h structure */
-    tzsh = tzsh_create(TZSH_TOOLKIT_TYPE_EFL);
+    tizen_core_wl_window_show(window);
 
-    /* Do Something with TZSH */
+    if (tizen_core_wl_window_get_native_surface(window, &surface) != TIZEN_CORE_WL_ERROR_NONE || !surface)
+        return;
+
+    tz_win = (tzsh_window)wl_proxy_get_id((struct wl_proxy *)surface);
+    tzsh = tzsh_create(TZSH_TOOLKIT_TYPE_TCORE_WAYLAND);
+    if (!tzsh)
+        return;
+
+    /* Pass tz_win to a TZSH sub-library create function. */
+}
 ```
 
 ## Destroy TZSH Structures
