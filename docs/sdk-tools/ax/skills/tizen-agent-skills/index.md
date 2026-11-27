@@ -4,7 +4,7 @@ Tizen Agent Skills (`tizen-agent-skills`) is Samsung's open-source collection of
 
 The collection works with Claude Code, Cline, Codex CLI, Gemini CLI, and Visual Studio Code. The `tizen-sdk-skills` plugin also ships as a standalone `tizen-sdk` command-line tool that runs the same automation without any AI assistant, which makes it useful in shell scripts and CI pipelines.
 
-Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.7.0, the eleventh release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
+Tizen Agent Skills is developed by Samsung and published under the Apache License 2.0 in the [tizen-agent-skills](https://github.com/Samsung/tizen-agent-skills) repository on GitHub. This section describes version 1.8.0, the twelfth release of the collection as a whole. Each plugin in the repository is versioned independently and has its own README and changelog.
 
 ## Plugins in this collection
 
@@ -12,7 +12,7 @@ The `tizen-agent-skills` repository contains one directory per plugin. Each plug
 
 | Plugin | What it does | Hosts |
 |--------|--------------|-------|
-| [`tizen-sdk-skills`](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/README.md) | Automates the Tizen SDK end to end: SDK install, project creation and build, emulator and device management, app installation, remote debugging (GDB / netcoredbg / CDP), certificates, dlog analysis, and Playwright testing. 30 skills, 24 agents, a standalone `tizen-sdk` CLI, and the Tizen AI Extension for VS Code. | Claude Code, Cline, Codex CLI, VS Code, standalone CLI |
+| [`tizen-sdk-skills`](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/README.md) | Automates the Tizen SDK end to end: SDK install, project creation and build, emulator and device management, app installation, remote debugging (GDB / netcoredbg / CDP), certificates, dlog analysis, and Playwright testing. 33 skills, 27 agents, a standalone `tizen-sdk` CLI, and the Tizen AI Extension for VS Code. | Claude Code, Cline, Codex CLI, VS Code, standalone CLI |
 | [`tizen-action-skills`](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/README.md) | Builds Tizen Action Framework providers: picks a default Action category or authors custom `.action`/`.entity` schemas, generates `actionc`/TIDL stubs for C#, C++, JavaScript or Flutter-Tizen/Dart, registers provider metadata, and verifies with `action-tool`. 1 skill. | Claude Code |
 
 The rest of this section focuses on the `tizen-sdk-skills` plugin, which covers the application development lifecycle. For the `tizen-action-skills` plugin, see its [README on GitHub](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/README.md).
@@ -25,16 +25,17 @@ The rest of this section focuses on the `tizen-sdk-skills` plugin, which covers 
 
 ## What you can do with it
 
-The `tizen-sdk-skills` plugin covers the whole application development lifecycle with 30 skills:
+The `tizen-sdk-skills` plugin covers the whole application development lifecycle with 33 skills:
 
 - **Set up the environment**: check Node.js and free disk space, install the Tizen SDK from the public CDN or from your own package repository, install platform, emulator, mobile, and TV SDK packages, add custom rootstraps, update packages, and set up the .NET workload.
 - **Create and build projects**: scaffold Native, .NET, Web, RPK resource, TV, and Platform projects from the templates in your installed SDK, import an existing `.wgt` archive as a project, and build `.tpk`, `.wgt`, `.rpk`, or `.rpm` packages.
-- **Manage emulators and devices**: create emulator images with the screen size you want, launch and stop them, find connected devices, connect a TV over the network instead of USB, and take screenshots.
+- **Manage emulators and devices**: create emulator images with the screen size you want, launch and stop them, find connected devices, connect a TV over the network instead of USB, take screenshots, and control a running emulator through the Emulator Control Panel, for example its battery level.
 - **Install and run apps**: install a package on the emulator or device and launch it, push and pull files, and run everyday `sdb` actions such as port forwarding or rebooting.
 - **Debug and analyze**: set up remote debugging with GDB for Native apps, netcoredbg for .NET apps, and Remote Web Inspector or Chrome DevTools Protocol (CDP) for Web apps. Collect device logs (dlog) and kernel logs and get an automatic crash and exception analysis. Report a symptom such as high CPU usage or a video that does not play, and the analyzer runs evidence probes, collects logs while you reproduce the problem, and reports the likely root cause.
-- **Test**: scaffold and run Playwright tests against a Tizen Web app over CDP.
+- **Test**: scaffold and run Playwright tests against a Tizen Web app over CDP, and create, build, and run Google Test (gtest) unit tests for a Native app.
 - **Sign**: generate author certificates, choose distributor certificates, manage signing profiles, and issue Samsung certificates for TV targets.
 - **Hand work over between assistants**: pick up a Tizen project where another assistant, such as Claude Code or Codex CLI, left off, from notes that record each build, install, and device action.
+- **Ask how to do something**: ask how a task works, for example how to create a certificate, and get an answer drawn only from the published guides, with links to the documents it used.
 
 For the full list, see [Tizen Agent Skills reference](skills-reference.md).
 
@@ -49,7 +50,7 @@ You can use Tizen Agent Skills from any of the following environments. The same 
 | Codex CLI | Skills, agents in TOML format, hooks, and a guard section in `AGENTS.md` | Hooks must be trusted once with the `/hooks` command after installation. |
 | Gemini CLI | Skills, agents, a BeforeTool hook adapter, and a guard section in `GEMINI.md` | |
 | Visual Studio Code | The Tizen AI Extension installs and synchronizes the plugin for Claude Code, Cline, and Codex CLI from inside the editor | No scripts to run. Uninstalling the extension removes everything it installed. |
-| Standalone `tizen-sdk` CLI | A single executable bundle of all 36 commands | No AI assistant needed. Prints machine-readable JSON, so it fits shell scripts and CI. |
+| Standalone `tizen-sdk` CLI | A single executable bundle of all 37 commands | No AI assistant needed. Prints machine-readable JSON, so it fits shell scripts and CI. |
 
 Windows, Linux, and macOS are supported. The log analyzer binary used by `tizen-dlog-analyzer` ships for Linux, Windows, and macOS (Intel and Apple Silicon). The Tizen emulator can also run inside Windows Subsystem for Linux (WSL2) with some extra configuration, which is described in the project repository.
 
@@ -136,6 +137,26 @@ Each request is routed to a skill such as `tizen-sdk-install`, `tizen-create-pro
 ## Release history
 
 This section documents what changed in each release of the `tizen-agent-skills` collection. Each plugin in the repository is versioned independently; for the full plugin changelogs, see [tizen-sdk-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-sdk-skills/CHANGELOG.md) and [tizen-action-skills](https://github.com/Samsung/tizen-agent-skills/blob/main/tizen-action-skills/CHANGELOG.md) on GitHub.
+
+### v1.8.0 (2026-11-27)
+
+The twelfth unified release. It ships `tizen-sdk-skills` 1.11.0 and `tizen-action-skills` 1.0.0. It adds three skills: `tizen-ecp` controls a running emulator through the Emulator Control Panel, `tizen-gtest` runs Google Test unit tests for Native apps, and `tizen-guide` answers how-to questions from the published guides. Emulator creation can now make the SDK's own default emulator, and `TIZEN_SDK_PATH` now follows the configured SDK path.
+
+#### tizen-sdk-skills plugin
+- Plugin version bumped from 1.10.0 to 1.11.0.
+- Tizen AI Extension (vsix) 1.11.0 and the standalone CLI bundle `tizen-sdk-v1.11.0.zip` released alongside.
+- The skill count is now 33 and the agent count 27. The standalone CLI has 37 commands; the new one is `ecp`.
+
+#### Added
+- **`tizen-ecp` skill and agent: Emulator Control Panel.** Runs one Emulator Control Panel (`ecp-cli`) request against a running emulator. Ask which devices a platform version supports ("What devices are available for version 9.0, profile tv?"), list the available commands, or control a device such as the battery: `battery level <n>`, `battery charger on|off`, and `battery status`. At least one emulator must be running; otherwise the skill points you to `tizen-launch-emulator`. The standalone CLI gains the `tizen-sdk ecp` command.
+- **`tizen-gtest` skill and agent: Google Test for Native apps.** Creates a gtest project from the SDK's `gtest` template, builds it with the `Test` build type, installs it on the emulator or device, runs it, and captures the gtest output. A test app that exits right after it starts is expected and is not reported as a crash. It uses the existing runners, so no new CLI command is added.
+- **`tizen-guide` skill: how-to answers from the published guides.** Ask how to do something, for example "How do I create a certificate?" or "Where is the TV emulator guide?", and the skill answers only from the user guides that the repository's `llms.txt` indexes, cites each document it used, and says so when the guides do not cover the question. It reads the guides from GitHub, so it works in any workspace. Requests to actually run something still go to the matching skill.
+- **`--default` emulator creation.** `create --default --platform <image>` creates the SDK's own default emulator under its canonical name, for example `T-10.0-x86_64` for `tizen-10.0-x86_64`, which the native Emulator Manager and the Tizen VS Code extension also use. `tizen-download-emulator-package` and `tizen-tv-sdk-install` now create the installed platform's default emulator when it is missing.
+
+#### Fixes
+- **`TIZEN_SDK_PATH` follows the configured SDK path.** The runners read the SDK location only from `~/.tizen.sdk.path.config`, so a `TIZEN_SDK_PATH` left behind by an earlier install pointed shells, and an `sdb` typed by hand, at a different SDK. `sdk-init` and the SDK installers now update `TIZEN_SDK_PATH` to the configured path. On Windows they update the user environment variable and replace the previous SDK's `bin` and `tools` entries in the user `Path`, keeping `%VAR%` entries and non-ASCII folder names intact. On Linux and macOS they update an existing `export TIZEN_SDK_PATH=` line in the shell profile. Open a new terminal afterward; a shell that is already open keeps the old value.
+- **`tizen-ecp` battery commands use the grammar that `ecp-cli` accepts.** "Set the battery level to 50" now runs `battery level 50` instead of failing with "Not supported commands.", and `help battery` prints the battery commands.
+- `tizen-sdk --doctor` no longer prints a Node.js `DEP0190` deprecation warning.
 
 ### v1.7.0 (2026-11-20)
 

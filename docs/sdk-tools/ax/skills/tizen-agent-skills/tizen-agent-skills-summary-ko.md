@@ -112,6 +112,28 @@ Tizen Agent Skills는 AI 에이전트를 위한 전문 기능 모음으로, Tize
 
 ---
 
+## v1.8.0 변경 사항 (2026-11-27)
+
+tizen-agent-skills v1.8.0은 `tizen-sdk-skills` 1.11.0과 `tizen-action-skills` 1.0.0을 포함하는 열두 번째 통합 릴리스입니다. 실행 중인 에뮬레이터를 Emulator Control Panel로 제어하는 `tizen-ecp`, 네이티브 앱의 Google Test 단위 테스트를 실행하는 `tizen-gtest`, 공개 가이드를 근거로 사용법 질문에 답하는 `tizen-guide` 스킬을 추가했습니다. 에뮬레이터 생성에서 SDK 자체의 기본 에뮬레이터를 만들 수 있게 했고, `TIZEN_SDK_PATH`가 설정된 SDK 경로를 따르도록 했습니다.
+
+### tizen-sdk-skills 플러그인
+- 플러그인 버전 1.10.0 → 1.11.0으로 상향
+- Tizen AI Extension(vsix) 1.11.0 및 독립 실행형 CLI 번들 `tizen-sdk-v1.11.0.zip` 동반 릴리스
+- 스킬 33개, 에이전트 27개. 독립 실행형 CLI 명령은 37개(새 명령 `ecp`)
+
+### 추가
+- **`tizen-ecp` 스킬·에이전트(Emulator Control Panel)**: 실행 중인 에뮬레이터에 Emulator Control Panel(`ecp-cli`) 요청 하나를 실행. 플랫폼 버전이 지원하는 기기 목록 조회("9.0 버전 tv 프로필에서 쓸 수 있는 기기 알려줘"), 사용 가능한 명령 목록, 배터리 같은 기기 제어(`battery level <n>`, `battery charger on|off`, `battery status`)를 지원. 에뮬레이터가 하나 이상 실행 중이어야 하며, 없으면 `tizen-launch-emulator`를 안내. 독립 실행형 CLI에 `tizen-sdk ecp` 명령 추가
+- **`tizen-gtest` 스킬·에이전트(네이티브 앱 Google Test)**: SDK의 `gtest` 템플릿으로 gtest 프로젝트를 만들고 `Test` 빌드 유형으로 빌드한 뒤 에뮬레이터나 디바이스에 설치·실행하고 gtest 출력을 수집. 테스트 앱이 실행 직후 종료되는 것은 정상이며 크래시로 보고하지 않음. 기존 러너를 사용하므로 새 CLI 명령은 없음
+- **`tizen-guide` 스킬(공개 가이드 기반 사용법 안내)**: "인증서 만드는 방법 알려줘", "TV 에뮬레이터 가이드 어디 있어?" 같은 질문에 저장소 `llms.txt`가 색인한 사용자 가이드만 근거로 답하고 참고한 문서 링크를 제시. 가이드에 없는 내용은 없다고 알림. GitHub에서 가이드를 읽으므로 어느 작업 폴더에서나 동작하며, 실제 실행 요청은 해당 스킬이 처리
+- **`--default` 에뮬레이터 생성**: `create --default --platform <image>`로 SDK 자체의 기본 에뮬레이터를 정식 이름으로 생성(예: `tizen-10.0-x86_64` → `T-10.0-x86_64`). 네이티브 Emulator Manager와 Tizen VS Code 확장이 쓰는 이름과 같음. `tizen-download-emulator-package`와 `tizen-tv-sdk-install`은 설치한 플랫폼의 기본 에뮬레이터가 없으면 만들어 줌
+
+### 수정 사항
+- **`TIZEN_SDK_PATH`가 설정된 SDK 경로를 따름**: 러너는 SDK 위치를 `~/.tizen.sdk.path.config`에서만 읽기 때문에, 이전 설치가 남긴 `TIZEN_SDK_PATH`가 셸과 직접 입력한 `sdb`를 다른 SDK로 가리키던 문제를 수정. `sdk-init`과 SDK 설치 스크립트가 `TIZEN_SDK_PATH`를 설정된 경로로 맞춤. Windows는 사용자 환경변수와 사용자 `Path`의 이전 SDK `bin`·`tools` 항목을 바꾸며 `%VAR%` 항목과 한글 폴더 이름은 그대로 유지. Linux·macOS는 셸 프로필에 있는 `export TIZEN_SDK_PATH=` 줄을 고침. 이미 열린 셸은 이전 값을 유지하므로 새 터미널을 열어야 함
+- **`tizen-ecp` 배터리 명령이 `ecp-cli` 문법을 따름**: "배터리 레벨을 50으로 설정해줘"가 "Not supported commands."로 실패하지 않고 `battery level 50`으로 실행되며, `help battery`가 배터리 명령을 보여 줌
+- `tizen-sdk --doctor`가 Node.js `DEP0190` 경고를 더 이상 출력하지 않음
+
+---
+
 ## v1.7.0 변경 사항 (2026-11-20)
 
 tizen-agent-skills v1.7.0은 `tizen-sdk-skills` 1.10.0과 `tizen-action-skills` 1.0.0을 포함하는 열한 번째 통합 릴리스입니다. Claude Code, Codex CLI, Cline이 서로의 Tizen 작업을 이어받을 수 있게 하는 `tizen-handoff` 스킬을 추가하고, 연결된 디바이스 전체 목록을 보여 주며, 저장소를 clone하지 않고 플러그인과 독립 실행형 CLI를 설치할 수 있게 하고, Apple Silicon Mac용 네이티브 로그 분석기를 포함했습니다.
