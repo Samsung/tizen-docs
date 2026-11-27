@@ -1,6 +1,6 @@
 # Tizen Agent Skills reference
 
-Tizen Agent Skills provides 30 skills. Each skill is triggered by natural language in your AI coding assistant, and most skills also exist as an agent that can run as a separate task. The standalone `tizen-sdk` CLI exposes the same functionality as 36 commands. This page lists every skill grouped by task, with an example of how to ask for it.
+Tizen Agent Skills provides 33 skills. Each skill is triggered by natural language in your AI coding assistant, and most skills also exist as an agent that can run as a separate task. The standalone `tizen-sdk` CLI exposes the same functionality as 37 commands. This page lists every skill grouped by task, with an example of how to ask for it.
 
 All skills return a Standard JSON Envelope. If a step fails, the envelope includes an error code and, when possible, a suggested fix. See [How it works](index.md#how-it-works).
 
@@ -24,7 +24,7 @@ Notes:
 
 - The public CDN mirror is chosen automatically from your time zone. The mirrors are `download.tizen.org`, `usa.sdk-dl.tizen.org`, `brazil.sdk-dl.tizen.org`, and `singapore.sdk-dl.tizen.org`. Hosts in UTC+9, which covers Korea and Japan, use `download.tizen.org` because it is hosted in Seoul and is the closest origin for those regions. The selected URL is recorded in `<sdk>/.package/repository.info`, and later package downloads reuse it.
 - A custom repository URL must serve a `pkg_list_<OS>-64` or `pkg_list_<OS>-32` file. Otherwise the install is refused before anything is downloaded. Use `--force` to switch repositories when an SDK is already installed. If the custom repository does not serve the extension catalog, the IoT Headed extension step of `tizen-download-mobile-platform` reads the catalog from the official repository and still downloads the packages from the repository the catalog names.
-- The default SDK location is `~/tizen-sdk`. You can also set the `TIZEN_SDK_PATH` environment variable.
+- The default SDK location is `~/tizen-sdk`. Every skill reads the SDK location from `~/.tizen.sdk.path.config`, not from the `TIZEN_SDK_PATH` environment variable. `tizen-sdk-init` and the SDK installers update `TIZEN_SDK_PATH` to match, so your shell and the skills agree; open a new terminal after a change.
 - `tizen-dotnet-setup` ranks the .NET SDKs it finds in this order: `PATH`, `DOTNET_ROOT`, the official install roots such as `C:\Program Files\dotnet`, `%LOCALAPPDATA%\Microsoft\dotnet`, or `~/.dotnet`, and finally a dotnet bundled inside a Tizen extension. An official SDK is wired into your user environment permanently. A bundled dotnet is used for the current run only, because an extension update can move it, unless you ask to persist it with `--persist-env`. The result lists every SDK found and reports a stale `DOTNET_ROOT` together with the command that clears it.
 
 ## Environment checks
@@ -56,6 +56,7 @@ Notes:
 |-------|--------------|-----------------|
 | `tizen-create-emulator` | Creates an emulator image with the screen size you choose (1080 by default), a platform, and a profile. Also lists platforms, emulator templates, and existing images, and deletes images. | "Create a 720p Tizen emulator" |
 | `tizen-launch-emulator` | Boots an existing emulator image and waits until it is connected through `sdb`. If you give no name, it launches the first image in the list. | "Launch the emulator" |
+| `tizen-ecp` | Runs one Emulator Control Panel (`ecp-cli`) request against a running emulator: lists the devices a platform version supports, lists the available commands, or controls a device such as the battery (`battery level <n>`, `battery charger on\|off`, `battery status`). At least one emulator must be running. | "Set the emulator battery level to 50" |
 | `tizen-device-manager` | Finds a connected device or emulator, lists every device that `sdb` reports with its state and type, or shuts down running emulators. Supports both standard Tizen and Samsung TV emulator profiles. Does not analyze problems. | "Show me the connected devices" |
 | `tizen-remote-device` | Scans your local network for Tizen devices, connects or disconnects them over the network instead of USB, and manages the bookmarked remote device list. | "Connect to the TV at 192.168.0.20" |
 | `tizen-install-app` | Installs a `.tpk`, `.wgt`, `.rpk`, or `.rpm` package on the connected device or emulator and optionally launches the app. | "Install the app and run it" |
@@ -66,6 +67,7 @@ Notes:
 Notes:
 
 - Emulator templates are screen sizes and resolutions. App templates belong to `tizen-create-project`.
+- `tizen-create-emulator` can also create the SDK's own default emulator under its canonical name, for example `T-10.0-x86_64` for the `tizen-10.0-x86_64` image (`--default --platform <image>`). `tizen-download-emulator-package` and `tizen-tv-sdk-install` create the installed platform's default emulator when it is missing.
 - An RPK package contains resources only and cannot be launched. An RPM package from a Platform build can be launched with its `/usr/bin` binary.
 - Requests to view, save, or clear device logs, and requests for the kernel log, are handled by `tizen-dlog-analyzer`, not by `tizen-sdb-helper`. The same applies to any problem report. `tizen-device-manager` only answers which devices are connected and stops emulators.
 - Asking to restart or reboot the emulator stops the emulator with `tizen-device-manager` and starts it again with `tizen-launch-emulator`. A reboot from inside the guest is not used, because on Windows it terminates the emulator process and the emulator never reconnects. When you ask to reboot or shut down a device whose serial belongs to an emulator, the confirmation carries the same warning.
@@ -100,6 +102,11 @@ Notes:
 | Skill | What it does | Example request |
 |-------|--------------|-----------------|
 | `tizen-playwright-test` | Scaffolds a Playwright test file for a Tizen Web app, or runs an existing test. It sets up debug mode and port forwarding through the Web app debug flow and then runs the test with Node.js in your test project. Web apps only. | "Run the Playwright tests against my web app" |
+| `tizen-gtest` | Creates a Google Test (gtest) project for a Native app from the SDK's `gtest` template, builds it with the `Test` build type, installs and runs it on the emulator or device, and returns the gtest output. A test app that exits right after it starts is expected, not a crash. | "Create a gtest project and run the tests" |
+
+Notes:
+
+- `tizen-gtest` uses the project, build, install, and `sdb` runners of the other skills, so it has no command of its own in the standalone `tizen-sdk` CLI.
 
 ## Certificates
 
@@ -111,6 +118,18 @@ Notes:
 
 - Local certificates need no network and no account.
 - Samsung certificates are for TV targets. They require a Samsung Account and the device unique ID (DUID) of a connected TV or TV emulator, which the skill can read for you.
+
+## Documentation
+
+| Skill | What it does | Example request |
+|-------|--------------|-----------------|
+| `tizen-guide` | Answers questions about how to use the Tizen Agent Skills plugins and points you to the right guide. It answers only from the user guides that the repository's `llms.txt` indexes, cites each document it used, and says so when the guides do not cover the question. | "How do I create a Tizen certificate?" |
+
+Notes:
+
+- `tizen-guide` reads the guides from GitHub, so it works in any workspace. It falls back to a local clone of the repository only when GitHub cannot be reached.
+- It only answers questions. A request to do something, such as building or installing, goes to the matching skill.
+- `tizen-guide` is not part of the standalone `tizen-sdk` CLI.
 
 ## Working across assistants
 
